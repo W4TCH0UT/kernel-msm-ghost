@@ -1,5 +1,6 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,6 +25,8 @@
 #define __WLAN_QCT_OS_TRACE_H
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
   *
   * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -47,6 +50,9 @@
 #define __WLAN_QCT_OS_TRACE_H
 
 #include <vos_trace.h>
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_DEBUG
@@ -103,6 +109,7 @@ void wpalDump( wpt_moduleid module, wpt_tracelevel level,
                wpt_uint8 *memory, wpt_uint32 length);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WPAL_TRACE wpalTrace
 #define WPAL_DUMP wpalDump
 
@@ -122,6 +129,8 @@ if ( ! ( _condition ) )                                   \
 #endif //WLAN_DEBUG
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WPAL_ASSERT( _condition )   do {                                \
         if ( ! ( _condition ) )                                         \
         {                                                               \
@@ -145,5 +154,8 @@ static inline void wpalTraceDisplay(void) {};
 #define WPAL_TRACE wpalTrace
 #define WPAL_DUMP wpalDump
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // __WLAN_QCT_OS_TRACE_H

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,10 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -54,8 +64,13 @@
       Power Management Control (PMC) processing routines.
 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Copyright 2008 (c) Qualcomm, Incorporated. All Rights Reserved.
 *     Qualcomm Confidential and Proprietary.
+=======
+* Copyright 2008 (c) Qualcomm Technologies, Inc. All Rights Reserved.
+*     Qualcomm Technologies Confidential and Proprietary.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 * Copyright 2008 (c) Qualcomm Technologies, Inc. All Rights Reserved.
 *     Qualcomm Technologies Confidential and Proprietary.
@@ -99,7 +114,11 @@ eHalStatus pmcEnterLowPowerState (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterLowPowerState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterLowPowerState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterLowPowerState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -112,7 +131,11 @@ eHalStatus pmcEnterLowPowerState (tHalHandle hHal)
     if (palTimerStop(pMac->hHdd, pMac->pmc.hImpsTimer) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -124,7 +147,11 @@ eHalStatus pmcEnterLowPowerState (tHalHandle hHal)
     if (palTimerStop(pMac->hHdd, pMac->pmc.hExitPowerSaveTimer) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot cancel exit power save mode timer\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot cancel exit power save mode timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot cancel exit power save mode timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -161,7 +188,11 @@ eHalStatus pmcExitLowPowerState (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcExitLowPowerState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcExitLowPowerState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcExitLowPowerState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -170,7 +201,11 @@ eHalStatus pmcExitLowPowerState (tHalHandle hHal)
     if (pMac->pmc.pmcState != LOW_POWER)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot exit Low Power State if not in that state\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot exit Low Power State if not in that state"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot exit Low Power State if not in that state"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -213,7 +248,11 @@ eHalStatus pmcEnterFullPowerState (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterFullPowerState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterFullPowerState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterFullPowerState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -253,7 +292,11 @@ eHalStatus pmcEnterFullPowerState (tHalHandle hHal)
     /* Cannot go directly to Full Power State from these states. */
     default:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Trying to enter Full Power State from state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Trying to enter Full Power State from state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Trying to enter Full Power State from state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -262,17 +305,23 @@ eHalStatus pmcEnterFullPowerState (tHalHandle hHal)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG1, "PMC: Enter full power done: Cancel XO Core ON vote\n");
     if (vos_chipVoteXOCore(NULL, NULL, NULL, VOS_FALSE) != VOS_STATUS_SUCCESS)
     {
         smsLog(pMac, LOGE, "Could not cancel XO Core ON vote. Not returning failure. "
                                 "Power consumed will be high\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog(pMac, LOG1, "PMC: Enter full power done: Cancel XO Core ON vote");
     if (vos_chipVoteXOCore(NULL, NULL, NULL, VOS_FALSE) != VOS_STATUS_SUCCESS)
     {
         smsLog(pMac, LOGE, "Could not cancel XO Core ON vote. Not returning failure. "
                                 "Power consumed will be high");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -303,7 +352,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
     VOS_STATUS status;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterRequestFullPowerState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterRequestFullPowerState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterRequestFullPowerState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -315,7 +368,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
     /* Should not request full power if already there. */
     case FULL_POWER:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Requesting Full Power State when already there\n"));
+=======
+        smsLog(pMac, LOGE, FL("Requesting Full Power State when already there"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Requesting Full Power State when already there"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -324,7 +381,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
     /* Only power events can take device out of Low Power State. */
     case LOW_POWER:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot request exit from Low Power State\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot request exit from Low Power State"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot request exit from Low Power State"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -341,7 +402,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
     case REQUEST_EXIT_WOWL:
         smsLog(pMac, LOGW, FL("Request for full power is being buffered. "
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Current state is %d\n"), pMac->pmc.pmcState);
+=======
+            "Current state is %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Current state is %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -412,7 +477,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
         {
             smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
             "eWNI_PMC_EXIT_IMPS_REQ\n");
+=======
+            "eWNI_PMC_EXIT_IMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "eWNI_PMC_EXIT_IMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -429,7 +498,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
         {
             smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
             "eWNI_PMC_EXIT_UAPSD_REQ\n");
+=======
+            "eWNI_PMC_EXIT_UAPSD_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "eWNI_PMC_EXIT_UAPSD_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -444,7 +517,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
         {
             smsLog(pMac, LOGP, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
             "eWNI_PMC_EXIT_WOWL_REQ\n");
+=======
+            "eWNI_PMC_EXIT_WOWL_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "eWNI_PMC_EXIT_WOWL_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -455,7 +532,11 @@ eHalStatus pmcEnterRequestFullPowerState (tHalHandle hHal, tRequestFullPowerReas
     /* Cannot go directly to Request Full Power State from these states. */
     default:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Trying to enter Request Full Power State from state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Trying to enter Request Full Power State from state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Trying to enter Request Full Power State from state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -485,7 +566,11 @@ eHalStatus pmcEnterRequestImpsState (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterRequestImpsState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterRequestImpsState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterRequestImpsState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -494,7 +579,11 @@ eHalStatus pmcEnterRequestImpsState (tHalHandle hHal)
     if (pMac->pmc.pmcState != FULL_POWER)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Trying to enter Request IMPS State from state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Trying to enter Request IMPS State from state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Trying to enter Request IMPS State from state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -508,7 +597,11 @@ eHalStatus pmcEnterRequestImpsState (tHalHandle hHal)
     if (pmcIssueCommand(hHal, eSmeCommandEnterImps, NULL, 0, FALSE) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_IMPS_REQ\n");
+=======
+        smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_IMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_IMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -519,7 +612,11 @@ eHalStatus pmcEnterRequestImpsState (tHalHandle hHal)
      }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("eWNI_PMC_ENTER_IMPS_REQ sent to PE\n"));
+=======
+    smsLog(pMac, LOG2, FL("eWNI_PMC_ENTER_IMPS_REQ sent to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("eWNI_PMC_ENTER_IMPS_REQ sent to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -549,7 +646,11 @@ eHalStatus pmcEnterImpsState (tHalHandle hHal)
     vos_call_status_type callType;
     VOS_STATUS status;
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterImpsState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterImpsState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterImpsState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -558,7 +659,11 @@ eHalStatus pmcEnterImpsState (tHalHandle hHal)
     if (pMac->pmc.pmcState != REQUEST_IMPS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Trying to enter IMPS State from state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Trying to enter IMPS State from state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Trying to enter IMPS State from state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -573,6 +678,7 @@ eHalStatus pmcEnterImpsState (tHalHandle hHal)
     if (pMac->pmc.requestFullPowerPending)
     {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_OS_TYPE_WINDOWS) && !defined(GEN6_ONWARDS)
         /* In Windows we cannot do this now since we are in DPC context and the message to the
@@ -594,6 +700,10 @@ eHalStatus pmcEnterImpsState (tHalHandle hHal)
         /* Start exit IMPS sequence now. */
         return pmcEnterRequestFullPowerState(hHal, pMac->pmc.requestFullPowerReason);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+        /* Start exit IMPS sequence now. */
+        return pmcEnterRequestFullPowerState(hHal, pMac->pmc.requestFullPowerReason);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* Set timer to come out of IMPS.only if impsPeriod is non-Zero*/
@@ -602,12 +712,15 @@ eHalStatus pmcEnterImpsState (tHalHandle hHal)
         if (palTimerStart(pMac->hHdd, pMac->pmc.hImpsTimer, pMac->pmc.impsPeriod * 1000, FALSE) != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("Cannot start IMPS timer\n"));
             PMC_ABORT;
             pmcEnterRequestFullPowerState(hHal, eSME_REASON_OTHER);
             return eHAL_STATUS_FAILURE;
         }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             pMac->pmc.ImpsReqTimerFailed = VOS_TRUE;
             if (!(pMac->pmc.ImpsReqTimerfailCnt & 0xF))
@@ -623,6 +736,9 @@ eHalStatus pmcEnterImpsState (tHalHandle hHal)
            smsLog(pMac, LOGE, FL("Start IMPS timer was failed %d times before success"), pMac->pmc.ImpsReqTimerfailCnt);
         }
         pMac->pmc.ImpsReqTimerfailCnt = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -660,7 +776,11 @@ eHalStatus pmcEnterRequestBmpsState (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterRequestBmpsState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterRequestBmpsState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterRequestBmpsState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -669,7 +789,11 @@ eHalStatus pmcEnterRequestBmpsState (tHalHandle hHal)
     if (pMac->pmc.pmcState != FULL_POWER)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Trying to enter Request BMPS State from state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Trying to enter Request BMPS State from state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Trying to enter Request BMPS State from state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -687,7 +811,11 @@ eHalStatus pmcEnterRequestBmpsState (tHalHandle hHal)
         if(pmcIssueCommand(hHal, eSmeCommandEnterBmps, NULL, 0, FALSE) != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_BMPS_REQ\n");
+=======
+            smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_BMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_BMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -703,7 +831,11 @@ eHalStatus pmcEnterRequestBmpsState (tHalHandle hHal)
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, "PMC: enter BMPS command already queued\n");
+=======
+        smsLog(pMac, LOGE, "PMC: enter BMPS command already queued");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, "PMC: enter BMPS command already queued");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -716,7 +848,11 @@ eHalStatus pmcEnterRequestBmpsState (tHalHandle hHal)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, FL("eWNI_PMC_ENTER_BMPS_REQ sent to PE\n"));
+=======
+    smsLog(pMac, LOGW, FL("eWNI_PMC_ENTER_BMPS_REQ sent to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGW, FL("eWNI_PMC_ENTER_BMPS_REQ sent to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -745,7 +881,11 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcEnterBmpsState\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcEnterBmpsState"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcEnterBmpsState"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -758,7 +898,11 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
         pMac->pmc.pmcState != REQUEST_EXIT_WOWL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Trying to enter BMPS State from state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Trying to enter BMPS State from state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Trying to enter BMPS State from state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -777,6 +921,7 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
     if (pMac->pmc.requestFullPowerPending)
     {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_OS_TYPE_WINDOWS) && !defined(GEN6_ONWARDS)
         /* In Windows, we cannot do this now since we are in DPC context and the message to the
@@ -799,12 +944,17 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
         return eHAL_STATUS_SUCCESS;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Start exit BMPS sequence now. */
         smsLog(pMac, LOGW, FL("Pending Full Power request found on entering BMPS mode. "
                   "Start exit BMPS exit sequence"));
         //Note: Reason must have been set when requestFullPowerPending flag was set.
         pmcEnterRequestFullPowerState(hHal, pMac->pmc.requestFullPowerReason);
         return eHAL_STATUS_SUCCESS;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -813,7 +963,11 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
     {
         smsLog(pMac, LOGW, FL("Both UAPSD and WOWL is required on entering BMPS mode. "
 <<<<<<< HEAD
+<<<<<<< HEAD
                "UAPSD will be prioritized over WOWL\n"));
+=======
+               "UAPSD will be prioritized over WOWL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "UAPSD will be prioritized over WOWL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -824,7 +978,11 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
     {
         smsLog(pMac, LOGW, FL("UAPSD session is required on entering BMPS mode. "
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "Start UAPSD entry sequence\n"));
+=======
+                  "Start UAPSD entry sequence"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "Start UAPSD entry sequence"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -837,7 +995,11 @@ eHalStatus pmcEnterBmpsState (tHalHandle hHal)
     {
         smsLog(pMac, LOGW, FL("WOWL is required on entering BMPS mode. "
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "Start WOWL entry sequence\n"));
+=======
+                  "Start WOWL entry sequence"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "Start WOWL entry sequence"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -872,7 +1034,11 @@ tANI_BOOLEAN pmcPowerSaveCheck (tHalHandle hHal)
     tANI_BOOLEAN bResult=FALSE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcPowerSaveCheck\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcPowerSaveCheck"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcPowerSaveCheck"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -892,7 +1058,11 @@ tANI_BOOLEAN pmcPowerSaveCheck (tHalHandle hHal)
             if (!checkRoutine(pPowerSaveCheckEntry->checkContext))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("pmcPowerSaveCheck fail!\n"));
+=======
+                smsLog(pMac, LOGE, FL("pmcPowerSaveCheck fail!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("pmcPowerSaveCheck fail!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -932,7 +1102,11 @@ eHalStatus pmcSendPowerSaveConfigMessage (tHalHandle hHal)
     tSirPowerSaveCfg powerSaveConfig;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcSendPowerSaveConfigMessage\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcSendPowerSaveConfigMessage"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcSendPowerSaveConfigMessage"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -997,7 +1171,11 @@ eHalStatus pmcSendPowerSaveConfigMessage (tHalHandle hHal)
         != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Send of eWNI_PMC_PWR_SAVE_CFG to PE failed\n"));
+=======
+        smsLog(pMac, LOGE, FL("Send of eWNI_PMC_PWR_SAVE_CFG to PE failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Send of eWNI_PMC_PWR_SAVE_CFG to PE failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1031,7 +1209,11 @@ eHalStatus pmcSendMessage (tpAniSirGlobal pMac, tANI_U16 messageType, void *pMes
     tSirMbMsg *pMsg;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcSendMessage, message type %d\n"), messageType);
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcSendMessage, message type %d"), messageType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcSendMessage, message type %d"), messageType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1040,7 +1222,11 @@ eHalStatus pmcSendMessage (tpAniSirGlobal pMac, tANI_U16 messageType, void *pMes
     if (palAllocateMemory(pMac->hHdd, (void **)&pMsg, WNI_CFG_MB_HDR_LEN + messageSize) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot allocate memory for message\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot allocate memory for message"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot allocate memory for message"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1054,7 +1240,11 @@ eHalStatus pmcSendMessage (tpAniSirGlobal pMac, tANI_U16 messageType, void *pMes
         if (palCopyMemory(pMac->hHdd, pMsg->data, pMessageData, messageSize) != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("Cannot copy message data\n"));
+=======
+            smsLog(pMac, LOGE, FL("Cannot copy message data"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("Cannot copy message data"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1067,7 +1257,11 @@ eHalStatus pmcSendMessage (tpAniSirGlobal pMac, tANI_U16 messageType, void *pMes
     if (palSendMBMessage(pMac->hHdd, pMsg) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot send message\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot send message"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot send message"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1102,7 +1296,11 @@ void pmcDoCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
     tpRequestFullPowerEntry pRequestFullPowerEntry;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcDoCallbacks\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcDoCallbacks"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcDoCallbacks"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1123,7 +1321,11 @@ void pmcDoCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
         if (palFreeMemory(pMac->hHdd, pRequestFullPowerEntry) != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("Cannot free request full power routine list entry\n"));
+=======
+            smsLog(pMac, LOGE, FL("Cannot free request full power routine list entry"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("Cannot free request full power routine list entry"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1156,7 +1358,11 @@ eHalStatus pmcStartTrafficTimer (tHalHandle hHal, tANI_U32 expirationTime)
     VOS_STATUS vosStatus;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcStartTrafficTimer\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcStartTrafficTimer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcStartTrafficTimer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1168,17 +1374,23 @@ eHalStatus pmcStartTrafficTimer (tHalHandle hHal, tANI_U32 expirationTime)
         {
             //Consider this ok since the timer is already started.
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("  traffic timer is already started\n"));
         }
         else
         {
             smsLog(pMac, LOGP, FL("Cannot start traffic timer\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOGW, FL("  traffic timer is already started"));
         }
         else
         {
             smsLog(pMac, LOGP, FL("Cannot start traffic timer"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eHAL_STATUS_FAILURE;
         }
@@ -1205,7 +1417,11 @@ void pmcStopTrafficTimer (tHalHandle hHal)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcStopTrafficTimer\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcStopTrafficTimer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcStopTrafficTimer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1232,7 +1448,11 @@ void pmcImpsTimerExpired (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcImpsTimerExpired\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcImpsTimerExpired"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcImpsTimerExpired"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1241,7 +1461,11 @@ void pmcImpsTimerExpired (tHalHandle hHal)
     if (pMac->pmc.pmcState != IMPS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Got IMPS timer expiration in state %d\n"), pMac->pmc.pmcState);
+=======
+        smsLog(pMac, LOGE, FL("Got IMPS timer expiration in state %d"), pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Got IMPS timer expiration in state %d"), pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1287,17 +1511,23 @@ void pmcTrafficTimerExpired (tHalHandle hHal)
     if(pMac->pmc.remainInPowerActiveTillDHCP)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("BMPS Traffic Timer expired before DHCP completion ignore enter BMPS\n"));
         pMac->pmc.remainInPowerActiveThreshold++;
         if( pMac->pmc.remainInPowerActiveThreshold >= DHCP_REMAIN_POWER_ACTIVE_THRESHOLD)
         {
            smsLog(pMac, LOGE, FL("Remain in power active DHCP threshold reached FALLBACK to enable enter BMPS\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG2, FL("BMPS Traffic Timer expired before DHCP completion ignore enter BMPS"));
         pMac->pmc.remainInPowerActiveThreshold++;
         if( pMac->pmc.remainInPowerActiveThreshold >= DHCP_REMAIN_POWER_ACTIVE_THRESHOLD)
         {
            smsLog(pMac, LOGE, FL("Remain in power active DHCP threshold reached FALLBACK to enable enter BMPS"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            /*FALLBACK: reset the flag to make BMPS entry possible*/
            pMac->pmc.remainInPowerActiveTillDHCP = FALSE;
@@ -1308,7 +1538,11 @@ void pmcTrafficTimerExpired (tHalHandle hHal)
         if ( !VOS_IS_STATUS_SUCCESS(vosStatus) && (VOS_STATUS_E_ALREADY != vosStatus) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGP, FL("Cannot re-start traffic timer\n"));
+=======
+            smsLog(pMac, LOGP, FL("Cannot re-start traffic timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGP, FL("Cannot re-start traffic timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1327,7 +1561,10 @@ void pmcTrafficTimerExpired (tHalHandle hHal)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
     if (pMac->isTdlsPowerSaveProhibited)
     {
@@ -1336,6 +1573,9 @@ void pmcTrafficTimerExpired (tHalHandle hHal)
     }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pmcPowerSaveCheck(hHal))
     {
@@ -1351,7 +1591,11 @@ void pmcTrafficTimerExpired (tHalHandle hHal)
         if ( !VOS_IS_STATUS_SUCCESS(vosStatus) && (VOS_STATUS_E_ALREADY != vosStatus) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGP, FL("Cannot start traffic timer\n"));
+=======
+            smsLog(pMac, LOGP, FL("Cannot start traffic timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGP, FL("Cannot start traffic timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1380,7 +1624,11 @@ void pmcExitPowerSaveTimerExpired (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcExitPowerSaveTimerExpired\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcExitPowerSaveTimerExpired"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcExitPowerSaveTimerExpired"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1415,14 +1663,20 @@ void pmcDoBmpsCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
    tpRequestBmpsEntry pRequestBmpsEntry;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcDoBmpsCallbacks\n");
 
    /* Call the routines in the request BMPS callback routine list. */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smsLog(pMac, LOG2, "PMC: entering pmcDoBmpsCallbacks");
 
    /* Call the routines in the request BMPS callback routine list. */
    csrLLLock(&pMac->pmc.requestBmpsList);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pEntry = csrLLRemoveHead(&pMac->pmc.requestBmpsList, FALSE);
    while (pEntry != NULL)
@@ -1435,6 +1689,10 @@ void pmcDoBmpsCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
       pEntry = csrLLRemoveHead(&pMac->pmc.requestBmpsList, FALSE);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   csrLLUnlock(&pMac->pmc.requestBmpsList);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    csrLLUnlock(&pMac->pmc.requestBmpsList);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1466,8 +1724,13 @@ void pmcDoStartUapsdCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
    tpStartUapsdEntry pStartUapsdEntry;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcDoStartUapsdCallbacks\n");
 
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcDoStartUapsdCallbacks");
+   csrLLLock(&pMac->pmc.requestStartUapsdList);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcDoStartUapsdCallbacks");
    csrLLLock(&pMac->pmc.requestStartUapsdList);
@@ -1483,6 +1746,10 @@ void pmcDoStartUapsdCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
       pEntry = csrLLRemoveHead(&pMac->pmc.requestStartUapsdList, FALSE);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   csrLLUnlock(&pMac->pmc.requestStartUapsdList);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    csrLLUnlock(&pMac->pmc.requestStartUapsdList);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1509,7 +1776,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
    v_BOOL_t fFullPower = VOS_FALSE;     //need to get back to full power state
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStartUapsdState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStartUapsdState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStartUapsdState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1523,7 +1794,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
          {
             smsLog(pMac, LOGW, "PMC: Power save check failed. UAPSD request "
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "will be accepted and buffered\n");
+=======
+                      "will be accepted and buffered");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "will be accepted and buffered");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1548,7 +1823,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
                {
                    smsLog(pMac, LOGE, "PMC: Device in Full Power. Enter Request Bmps failed. "
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "UAPSD request will be dropped \n");
+=======
+                            "UAPSD request will be dropped ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             "UAPSD request will be dropped ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1576,7 +1855,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
             {
                smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "eWNI_PMC_ENTER_BMPS_REQ\n");
+=======
+                  "eWNI_PMC_ENTER_BMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "eWNI_PMC_ENTER_BMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1588,7 +1871,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
          {
             //Not ready for UAPSD at this time, save it first and wake up the chip
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, " PMC state = %d\n",pMac->pmc.pmcState);
+=======
+            smsLog(pMac, LOGE, " PMC state = %d",pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, " PMC state = %d",pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1624,7 +1911,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
 
       default:
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, "PMC: trying to enter UAPSD State from state %d\n",
+=======
+         smsLog(pMac, LOGE, "PMC: trying to enter UAPSD State from state %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, "PMC: trying to enter UAPSD State from state %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1638,7 +1929,11 @@ eHalStatus pmcEnterRequestStartUapsdState (tHalHandle hHal)
       {
          //This is an error
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, FL(" fail to request full power because BTC\n"));
+=======
+         smsLog(pMac, LOGE, FL(" fail to request full power because BTC"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, FL(" fail to request full power because BTC"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1668,7 +1963,11 @@ eHalStatus pmcEnterUapsdState (tHalHandle hHal)
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcEnterUapsdState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcEnterUapsdState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcEnterUapsdState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1677,7 +1976,11 @@ eHalStatus pmcEnterUapsdState (tHalHandle hHal)
    if (pMac->pmc.pmcState != REQUEST_START_UAPSD )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, "PMC: trying to enter UAPSD State from state %d\n",
+=======
+      smsLog(pMac, LOGE, "PMC: trying to enter UAPSD State from state %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, "PMC: trying to enter UAPSD State from state %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1725,7 +2028,11 @@ eHalStatus pmcEnterRequestStopUapsdState (tHalHandle hHal)
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStopUapsdState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStopUapsdState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStopUapsdState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1741,7 +2048,11 @@ eHalStatus pmcEnterRequestStopUapsdState (tHalHandle hHal)
    {
       smsLog(pMac, LOGE, "PMC: trying to enter Request Stop UAPSD State from "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "state %d\n", pMac->pmc.pmcState);
+=======
+         "state %d", pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "state %d", pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1754,7 +2065,11 @@ eHalStatus pmcEnterRequestStopUapsdState (tHalHandle hHal)
    {
       smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "eWNI_PMC_EXIT_UAPSD_REQ\n");
+=======
+         "eWNI_PMC_EXIT_UAPSD_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "eWNI_PMC_EXIT_UAPSD_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1784,7 +2099,11 @@ eHalStatus pmcEnterRequestStandbyState (tHalHandle hHal)
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStandbyState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStandbyState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcEnterRequestStandbyState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1794,7 +2113,11 @@ eHalStatus pmcEnterRequestStandbyState (tHalHandle hHal)
    {
       smsLog(pMac, LOGE, "PMC: trying to enter Standby State from "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "state %d\n", pMac->pmc.pmcState);
+=======
+         "state %d", pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "state %d", pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1811,7 +2134,11 @@ eHalStatus pmcEnterRequestStandbyState (tHalHandle hHal)
    {
       smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "eWNI_PMC_ENTER_IMPS_REQ\n");
+=======
+         "eWNI_PMC_ENTER_IMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "eWNI_PMC_ENTER_IMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1847,7 +2174,11 @@ eHalStatus pmcEnterStandbyState (tHalHandle hHal)
    VOS_STATUS status;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcEnterStandbyState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcEnterStandbyState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcEnterStandbyState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1856,7 +2187,11 @@ eHalStatus pmcEnterStandbyState (tHalHandle hHal)
    if (pMac->pmc.pmcState != REQUEST_STANDBY)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, "PMC: trying to enter STANDBY State from state %d\n",
+=======
+      smsLog(pMac, LOGE, "PMC: trying to enter STANDBY State from state %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, "PMC: trying to enter STANDBY State from state %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1908,7 +2243,11 @@ void pmcDoStandbyCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcDoStandbyCallbacks\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcDoStandbyCallbacks");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcDoStandbyCallbacks");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1992,7 +2331,11 @@ void pmcDoDeviceStateUpdateCallbacks (tHalHandle hHal, tPmcState state)
 
     smsLog(pMac, LOG2, FL("PMC - Update registered modules of new device "
 <<<<<<< HEAD
+<<<<<<< HEAD
            "state: %s\n"), pmcGetPmcStateStr(state));
+=======
+           "state: %s"), pmcGetPmcStateStr(state));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            "state: %s"), pmcGetPmcStateStr(state));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2027,7 +2370,11 @@ eHalStatus pmcRequestEnterWowlState(tHalHandle hHal, tpSirSmeWowlEnterParams wow
 {
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcRequestEnterWowlState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcRequestEnterWowlState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcRequestEnterWowlState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2040,7 +2387,11 @@ eHalStatus pmcRequestEnterWowlState(tHalHandle hHal, tpSirSmeWowlEnterParams wow
          {
             smsLog(pMac, LOGE, "PMC: Device in Full Power. pmcEnterRequestBmpsState failed. "
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "Cannot enter WOWL\n");
+=======
+                    "Cannot enter WOWL");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "Cannot enter WOWL");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2051,7 +2402,11 @@ eHalStatus pmcRequestEnterWowlState(tHalHandle hHal, tpSirSmeWowlEnterParams wow
       case REQUEST_BMPS:
          smsLog(pMac, LOGW, "PMC: BMPS transaction going on. WOWL request "
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "will be buffered\n");
+=======
+                    "will be buffered");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "will be buffered");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2066,7 +2421,11 @@ eHalStatus pmcRequestEnterWowlState(tHalHandle hHal, tpSirSmeWowlEnterParams wow
             eHAL_STATUS_SUCCESS)
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_WOWL_REQ\n");
+=======
+            smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_WOWL_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_WOWL_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2078,7 +2437,11 @@ eHalStatus pmcRequestEnterWowlState(tHalHandle hHal, tpSirSmeWowlEnterParams wow
          //Multiple enter WOWL requests at the same time are not accepted
          smsLog(pMac, LOGE, "PMC: Enter WOWL transaction already going on. New WOWL request "
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "will be rejected\n");
+=======
+                    "will be rejected");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "will be rejected");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2087,17 +2450,23 @@ eHalStatus pmcRequestEnterWowlState(tHalHandle hHal, tpSirSmeWowlEnterParams wow
       case REQUEST_EXIT_WOWL:
          smsLog(pMac, LOGW, "PMC: Exit WOWL transaction going on. New WOWL request "
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "will be buffered\n");
          break;
 
       default:
          smsLog(pMac, LOGE, "PMC: Trying to enter WOWL State from state %s\n",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    "will be buffered");
          break;
 
       default:
          smsLog(pMac, LOGE, "PMC: Trying to enter WOWL State from state %s",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pmcGetPmcStateStr(pMac->pmc.pmcState));
          return eHAL_STATUS_FAILURE;
@@ -2126,7 +2495,11 @@ eHalStatus pmcEnterWowlState (tHalHandle hHal)
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcEnterWowlState\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcEnterWowlState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcEnterWowlState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2135,7 +2508,11 @@ eHalStatus pmcEnterWowlState (tHalHandle hHal)
    if (pMac->pmc.pmcState != REQUEST_ENTER_WOWL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGP, "PMC: trying to enter WOWL State from state %d\n",
+=======
+      smsLog(pMac, LOGP, "PMC: trying to enter WOWL State from state %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGP, "PMC: trying to enter WOWL State from state %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2180,7 +2557,11 @@ eHalStatus pmcRequestExitWowlState(tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, "PMC: entering pmcRequestExitWowlState\n");
+=======
+    smsLog(pMac, LOG2, "PMC: entering pmcRequestExitWowlState");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, "PMC: entering pmcRequestExitWowlState");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2193,7 +2574,11 @@ eHalStatus pmcRequestExitWowlState(tHalHandle hHal)
                 eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGP, "PMC: failure to send message eWNI_PMC_EXIT_WOWL_REQ\n");
+=======
+                smsLog(pMac, LOGP, "PMC: failure to send message eWNI_PMC_EXIT_WOWL_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGP, "PMC: failure to send message eWNI_PMC_EXIT_WOWL_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2203,17 +2588,23 @@ eHalStatus pmcRequestExitWowlState(tHalHandle hHal)
 
         case REQUEST_ENTER_WOWL:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGP, "PMC: Rcvd exit WOWL even before enter WOWL was completed\n");
             return eHAL_STATUS_FAILURE;
 
         default:
             smsLog(pMac, LOGW, "PMC: Got exit WOWL in state %s. Nothing to do as already out of WOWL\n",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOGP, "PMC: Rcvd exit WOWL even before enter WOWL was completed");
             return eHAL_STATUS_FAILURE;
 
         default:
             smsLog(pMac, LOGW, "PMC: Got exit WOWL in state %s. Nothing to do as already out of WOWL",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pmcGetPmcStateStr(pMac->pmc.pmcState));
             break;
@@ -2240,7 +2631,11 @@ void pmcDoEnterWowlCallbacks (tHalHandle hHal, eHalStatus callbackStatus)
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, "PMC: entering pmcDoWowlCallbacks\n");
+=======
+   smsLog(pMac, LOG2, "PMC: entering pmcDoWowlCallbacks");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG2, "PMC: entering pmcDoWowlCallbacks");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2271,7 +2666,11 @@ static void pmcProcessDeferredMsg( tpAniSirGlobal pMac )
                     != eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed\n"));
+=======
+                smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2285,7 +2684,11 @@ static void pmcProcessDeferredMsg( tpAniSirGlobal pMac )
                     != eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed\n"));
+=======
+                smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2299,7 +2702,11 @@ static void pmcProcessDeferredMsg( tpAniSirGlobal pMac )
                 != eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("Send of eWNI_PMC_PWR_SAVE_CFG to PE failed\n"));
+=======
+                smsLog(pMac, LOGE, FL("Send of eWNI_PMC_PWR_SAVE_CFG to PE failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("Send of eWNI_PMC_PWR_SAVE_CFG to PE failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2308,7 +2715,11 @@ static void pmcProcessDeferredMsg( tpAniSirGlobal pMac )
 
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("unknown message (%d)\n"), pDeferredMsg->messageType);
+=======
+            smsLog(pMac, LOGE, FL("unknown message (%d)"), pDeferredMsg->messageType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("unknown message (%d)"), pDeferredMsg->messageType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2328,7 +2739,11 @@ eHalStatus pmcDeferMsg( tpAniSirGlobal pMac, tANI_U16 messageType, void *pData, 
     if( !HAL_STATUS_SUCCESS( palAllocateMemory( pMac->hHdd, (void **)&pDeferredMsg, sizeof(tPmcDeferredMsg) ) ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Cannot allocate memory for callback context\n"));
+=======
+        smsLog(pMac, LOGE, FL("Cannot allocate memory for callback context"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Cannot allocate memory for callback context"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2343,7 +2758,11 @@ eHalStatus pmcDeferMsg( tpAniSirGlobal pMac, tANI_U16 messageType, void *pData, 
                                     pData, size ) ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("Cannot copy pattern for callback context\n"));
+=======
+            smsLog(pMac, LOGE, FL("Cannot copy pattern for callback context"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("Cannot copy pattern for callback context"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2365,7 +2784,11 @@ eHalStatus pmcDeferMsg( tpAniSirGlobal pMac, tANI_U16 messageType, void *pData, 
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("failed to request full power status = %d\n"), status);
+=======
+            smsLog(pMac, LOGE, FL("failed to request full power status = %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("failed to request full power status = %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2404,7 +2827,11 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
             {
             case eSmeCommandEnterImps:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to enter IMPS\n"));
+=======
+                smsLog(pMac, LOGE, FL("aborting request to enter IMPS"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("aborting request to enter IMPS"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2413,7 +2840,11 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 
             case eSmeCommandExitImps:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to exit IMPS \n"));
+=======
+                smsLog(pMac, LOGE, FL("aborting request to exit IMPS "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("aborting request to exit IMPS "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2422,7 +2853,11 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 
             case eSmeCommandEnterBmps:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to enter BMPS \n"));
+=======
+                smsLog(pMac, LOGE, FL("aborting request to enter BMPS "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("aborting request to enter BMPS "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2433,7 +2868,11 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 
             case eSmeCommandExitBmps:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to exit BMPS \n"));
+=======
+                smsLog(pMac, LOGE, FL("aborting request to exit BMPS "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("aborting request to exit BMPS "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2442,7 +2881,11 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 
             case eSmeCommandEnterUapsd:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to enter UAPSD \n"));
+=======
+                smsLog(pMac, LOGE, FL("aborting request to enter UAPSD "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("aborting request to enter UAPSD "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2453,22 +2896,29 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 
             case eSmeCommandExitUapsd:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to exit UAPSD \n"));
                 break;
 
             case eSmeCommandEnterWowl:
                 smsLog(pMac, LOGE, FL("aborting request to enter WOWL \n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog(pMac, LOGE, FL("aborting request to exit UAPSD "));
                 break;
 
             case eSmeCommandEnterWowl:
                 smsLog(pMac, LOGE, FL("aborting request to enter WOWL "));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pmcDoEnterWowlCallbacks(pMac, eHAL_STATUS_FAILURE);
                 break;
 
             case eSmeCommandExitWowl:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("aborting request to exit WOWL \n"));
                 break;
@@ -2476,18 +2926,27 @@ void pmcAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
             case eSmeCommandEnterStandby:
                 smsLog(pMac, LOGE, FL("aborting request to enter Standby \n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog(pMac, LOGE, FL("aborting request to exit WOWL "));
                 break;
 
             case eSmeCommandEnterStandby:
                 smsLog(pMac, LOGE, FL("aborting request to enter Standby "));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pmcDoStandbyCallbacks(pMac, eHAL_STATUS_FAILURE);
                 break;
 
             default:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("Request for PMC command (%d) is dropped\n"), pCommand->command);
+=======
+                smsLog(pMac, LOGE, FL("Request for PMC command (%d) is dropped"), pCommand->command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("Request for PMC command (%d) is dropped"), pCommand->command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2536,7 +2995,11 @@ eHalStatus pmcPrepareCommand( tpAniSirGlobal pMac, eSmeCommandType cmdType, void
                 {
                     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL, "%s fail to allocate memory for command (0x%X)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                         __FUNCTION__, cmdType);
+=======
+                        __func__, cmdType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         __func__, cmdType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2586,7 +3049,11 @@ eHalStatus pmcPrepareCommand( tpAniSirGlobal pMac, eSmeCommandType cmdType, void
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGE, (" exit BMPS must have a reason code\n") );
+=======
+                smsLog( pMac, LOGE, (" exit BMPS must have a reason code") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGE, (" exit BMPS must have a reason code") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2603,7 +3070,11 @@ eHalStatus pmcPrepareCommand( tpAniSirGlobal pMac, eSmeCommandType cmdType, void
 
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("  invalid command type %d\n"), cmdType );
+=======
+            smsLog( pMac, LOGE, FL("  invalid command type %d"), cmdType );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("  invalid command type %d"), cmdType );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2638,11 +3109,17 @@ eHalStatus pmcIssueCommand( tpAniSirGlobal pMac, eSmeCommandType cmdType, void *
         smePushCommand( pMac, pCommand, fPutToListHead );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else if( pCommand )
     {
         pmcReleaseCommand( pMac, pCommand );
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return( status );
@@ -2682,7 +3159,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 if( !HAL_STATUS_SUCCESS( status ) )
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_IMPS_REQ or pmcEnterImpsCheck failed\n");
+=======
+                    smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_IMPS_REQ or pmcEnterImpsCheck failed");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_IMPS_REQ or pmcEnterImpsCheck failed");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2709,7 +3190,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 {
                     pMac->pmc.pmcState = REQUEST_FULL_POWER;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOG2, FL("eWNI_PMC_EXIT_IMPS_REQ sent to PE\n"));
+=======
+                    smsLog(pMac, LOG2, FL("eWNI_PMC_EXIT_IMPS_REQ sent to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOG2, FL("eWNI_PMC_EXIT_IMPS_REQ sent to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2718,7 +3203,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL("eWNI_PMC_EXIT_IMPS_REQ fail to be sent to PE status %d\n"), status);
+=======
+                    smsLog(pMac, LOGE, FL("eWNI_PMC_EXIT_IMPS_REQ fail to be sent to PE status %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL("eWNI_PMC_EXIT_IMPS_REQ fail to be sent to PE status %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2738,17 +3227,23 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                     /* Change PMC state */
                     pMac->pmc.pmcState = REQUEST_BMPS;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOG2, "PMC: Enter BMPS req done: Force XO Core ON\n");
                     vstatus = vos_chipVoteXOCore(NULL, NULL, NULL, VOS_TRUE);
                     if ( !VOS_IS_STATUS_SUCCESS(vstatus) )
                     {
                         smsLog(pMac, LOGE, "Could not turn XO Core ON. Can't go to BMPS\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     smsLog(pMac, LOG2, "PMC: Enter BMPS req done: Force XO Core ON");
                     vstatus = vos_chipVoteXOCore(NULL, NULL, NULL, VOS_TRUE);
                     if ( !VOS_IS_STATUS_SUCCESS(vstatus) )
                     {
                         smsLog(pMac, LOGE, "Could not turn XO Core ON. Can't go to BMPS");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
                     else /* XO Core turn ON was successful */
@@ -2762,22 +3257,32 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                     else
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog(pMac, LOGE, "Fail to send enter BMPS msg to PE\n");
                             /* Cancel the vote for XO Core */
                             smsLog(pMac, LOGW, "In module init: Cancel the vote for XO CORE ON "
                                                              "since send enter bmps failed\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         smsLog(pMac, LOGE, "Fail to send enter BMPS msg to PE");
                             /* Cancel the vote for XO Core */
                             smsLog(pMac, LOGW, "In module init: Cancel the vote for XO CORE ON "
                                                              "since send enter bmps failed");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             if (vos_chipVoteXOCore(NULL, NULL, NULL, VOS_FALSE) != VOS_STATUS_SUCCESS)
                             {
                                 smsLog(pMac, LOGE, "Could not cancel XO Core ON vote."
                                                    "Not returning failure."
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                    "Power consumed will be high\n");
+=======
+                                                   "Power consumed will be high");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                                    "Power consumed will be high");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2789,7 +3294,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 if( !HAL_STATUS_SUCCESS( status ) )
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_BMPS_REQ status %d\n", status);
+=======
+                    smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_BMPS_REQ status %d", status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_BMPS_REQ status %d", status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2815,7 +3324,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                     pMac->pmc.pmcState = REQUEST_FULL_POWER;
                     fRemoveCmd = eANI_BOOLEAN_FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOG2, FL("eWNI_PMC_EXIT_BMPS_REQ sent to PE\n"));
+=======
+                    smsLog(pMac, LOG2, FL("eWNI_PMC_EXIT_BMPS_REQ sent to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOG2, FL("eWNI_PMC_EXIT_BMPS_REQ sent to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2824,7 +3337,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL("eWNI_PMC_EXIT_BMPS_REQ fail to be sent to PE status %d\n"), status);
+=======
+                    smsLog(pMac, LOGE, FL("eWNI_PMC_EXIT_BMPS_REQ fail to be sent to PE status %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL("eWNI_PMC_EXIT_BMPS_REQ fail to be sent to PE status %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2847,7 +3364,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 {
                     smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "eWNI_PMC_ENTER_BMPS_REQ\n");
+=======
+                       "eWNI_PMC_ENTER_BMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "eWNI_PMC_ENTER_BMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2883,7 +3404,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                {
                    smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "eWNI_PMC_EXIT_UAPSD_REQ\n");
+=======
+                      "eWNI_PMC_EXIT_UAPSD_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "eWNI_PMC_EXIT_UAPSD_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2906,7 +3431,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_WOWL_REQ\n");
+=======
+                    smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_WOWL_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, "PMC: failure to send message eWNI_PMC_ENTER_WOWL_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2934,7 +3463,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGP, "PMC: failure to send message eWNI_PMC_EXIT_WOWL_REQ\n");
+=======
+                    smsLog(pMac, LOGP, "PMC: failure to send message eWNI_PMC_EXIT_WOWL_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGP, "PMC: failure to send message eWNI_PMC_EXIT_WOWL_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2982,7 +3515,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 {
                     smsLog(pMac, LOGE, "PMC: failure to send message "
 <<<<<<< HEAD
+<<<<<<< HEAD
                         "eWNI_PMC_ENTER_IMPS_REQ\n");
+=======
+                        "eWNI_PMC_ENTER_IMPS_REQ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         "eWNI_PMC_ENTER_IMPS_REQ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2998,7 +3535,11 @@ tANI_BOOLEAN pmcProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
 
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("  invalid command type %d\n"), pCommand->command );
+=======
+            smsLog( pMac, LOGE, FL("  invalid command type %d"), pCommand->command );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("  invalid command type %d"), pCommand->command );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3016,8 +3557,13 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
     if( !PMC_IS_READY(pMac) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Requesting IMPS when PMC not ready\n"));
         smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s\n"),
+=======
+        smsLog(pMac, LOGE, FL("Requesting IMPS when PMC not ready"));
+        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Requesting IMPS when PMC not ready"));
         smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
@@ -3030,7 +3576,11 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
     if (!pMac->pmc.impsEnabled)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("IMPS is disabled\n"));
+=======
+        smsLog(pMac, LOG2, FL("IMPS is disabled"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG2, FL("IMPS is disabled"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3041,7 +3591,11 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
     if ((pMac->pmc.powerSource == AC_POWER) && !pMac->pmc.impsConfig.enterOnAc)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("IMPS is disabled when operating on AC power\n"));
+=======
+        smsLog(pMac, LOG2, FL("IMPS is disabled when operating on AC power"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG2, FL("IMPS is disabled when operating on AC power"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3052,7 +3606,11 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
     if (!pmcPowerSaveCheck(pMac))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("IMPS cannot be entered now\n"));
+=======
+        smsLog(pMac, LOG2, FL("IMPS cannot be entered now"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG2, FL("IMPS cannot be entered now"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3064,7 +3622,11 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
     if (!pmcAllowImps(pMac))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("IMPS cannot be entered now\n"));
+=======
+        smsLog(pMac, LOG2, FL("IMPS cannot be entered now"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG2, FL("IMPS cannot be entered now"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3076,11 +3638,14 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
         (pMac->pmc.pmcState == REQUEST_FULL_POWER))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("Already in IMPS\n"));
         return eHAL_STATUS_PMC_ALREADY_IN_IMPS;
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG2, FL("Already in IMPS"));
         return eHAL_STATUS_PMC_ALREADY_IN_IMPS;
     }
@@ -3092,6 +3657,9 @@ eHalStatus pmcEnterImpsCheck( tpAniSirGlobal pMac )
        return eHAL_STATUS_PMC_NOT_NOW;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return ( eHAL_STATUS_SUCCESS );
 }
@@ -3106,7 +3674,11 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
    if (!pMac->pmc.bmpsEnabled)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, "PMC: Cannot initiate BMPS. BMPS is disabled\n");
+=======
+      smsLog(pMac, LOGE, "PMC: Cannot initiate BMPS. BMPS is disabled");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, "PMC: Cannot initiate BMPS. BMPS is disabled");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3116,8 +3688,13 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
    if( !PMC_IS_READY(pMac) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog(pMac, LOGE, FL("Requesting BMPS when PMC not ready\n"));
        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s\n"),
+=======
+       smsLog(pMac, LOGE, FL("Requesting BMPS when PMC not ready"));
+       smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog(pMac, LOGE, FL("Requesting BMPS when PMC not ready"));
        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
@@ -3130,7 +3707,11 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
    if (!pmcValidateConnectState( pMac ))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, "PMC: STA not associated with an AP with single active session. BMPS cannot be entered\n");
+=======
+      smsLog(pMac, LOGE, "PMC: STA not associated with an AP with single active session. BMPS cannot be entered");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, "PMC: STA not associated with an AP with single active session. BMPS cannot be entered");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3141,7 +3722,11 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
    if (pMac->pmc.pmcState != FULL_POWER)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, "PMC: Device not in full power. Cannot request BMPS. pmcState %d\n", pMac->pmc.pmcState);
+=======
+      smsLog(pMac, LOGE, "PMC: Device not in full power. Cannot request BMPS. pmcState %d", pMac->pmc.pmcState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, "PMC: Device not in full power. Cannot request BMPS. pmcState %d", pMac->pmc.pmcState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3150,6 +3735,7 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
    /* Check that entry into a power save mode is allowed at this time. */
    if (!pmcPowerSaveCheck(pMac))
    {
+<<<<<<< HEAD
 <<<<<<< HEAD
       smsLog(pMac, LOGE, "PMC: Power save check failed. BMPS cannot be entered now\n");
       return eHAL_STATUS_PMC_NOT_NOW;
@@ -3165,6 +3751,8 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
             csrDisconnectAllActiveSessions(pMac);
             smsLog(pMac, LOGE, "PMC: doBMPSWorkaround was enabled. First Disconnect all sessions. pmcState %d\n", pMac->pmc.pmcState);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       smsLog(pMac, LOGE, "PMC: Power save check failed. BMPS cannot be entered now");
       return eHAL_STATUS_PMC_NOT_NOW;
    }
@@ -3180,6 +3768,9 @@ eHalStatus pmcEnterBmpsCheck( tpAniSirGlobal pMac )
             smsLog(pMac, LOG1, FL("reset doBMPSWorkaround to disabled %u"), pMac->roam.configParam.doBMPSWorkaround);
             csrDisconnectAllActiveSessions(pMac);
             smsLog(pMac, LOGE, "PMC: doBMPSWorkaround was enabled. First Disconnect all sessions. pmcState %d", pMac->pmc.pmcState);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eHAL_STATUS_FAILURE;
         }
@@ -3204,13 +3795,19 @@ tANI_BOOLEAN pmcShouldBmpsTimerRun( tpAniSirGlobal pMac )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pMac->pmc.isHostPsEn && pMac->pmc.remainInPowerActiveTillDHCP)
     {
         smsLog(pMac, LOG1, FL("Host controlled ps enabled and host wants active mode, so dont allow BMPS"));
         return eANI_BOOLEAN_FALSE;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((vos_concurrent_sessions_running()) &&
         ((csrIsConcurrentInfraConnected( pMac ) ||
@@ -3221,7 +3818,10 @@ tANI_BOOLEAN pmcShouldBmpsTimerRun( tpAniSirGlobal pMac )
         return eANI_BOOLEAN_FALSE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Check if there is an Infra session. BMPS is possible only if there is
@@ -3251,7 +3851,11 @@ void pmcDiagEvtTimerExpired (tHalHandle hHal)
     WLAN_VOS_DIAG_EVENT_REPORT(&psRequest, EVENT_WLAN_POWERSAVE_GENERIC);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, FL("DIAG event timer expired\n"));
+=======
+    smsLog(pMac, LOGW, FL("DIAG event timer expired"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGW, FL("DIAG event timer expired"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3260,7 +3864,11 @@ void pmcDiagEvtTimerExpired (tHalHandle hHal)
     if (pmcStartDiagEvtTimer(hHal) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGP, FL("Cannot re-arm DIAG evt timer\n"));
+=======
+        smsLog(pMac, LOGP, FL("Cannot re-arm DIAG evt timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGP, FL("Cannot re-arm DIAG evt timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3272,7 +3880,11 @@ eHalStatus pmcStartDiagEvtTimer (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcStartDiagEvtTimer\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcStartDiagEvtTimer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcStartDiagEvtTimer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3281,7 +3893,11 @@ eHalStatus pmcStartDiagEvtTimer (tHalHandle hHal)
                           1000, TRUE) != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog(pMac, LOGP, FL("Cannot start DIAG evt timer\n"));
+=======
+       smsLog(pMac, LOGP, FL("Cannot start DIAG evt timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog(pMac, LOGP, FL("Cannot start DIAG evt timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3295,7 +3911,11 @@ void pmcStopDiagEvtTimer (tHalHandle hHal)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG2, FL("Entering pmcStopDiagEvtTimer\n"));
+=======
+    smsLog(pMac, LOG2, FL("Entering pmcStopDiagEvtTimer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG2, FL("Entering pmcStopDiagEvtTimer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

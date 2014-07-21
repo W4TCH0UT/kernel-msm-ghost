@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -94,7 +100,10 @@
 
 #define WLANTL_HO_DEFAULT_RSSI      0xFF
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WLANTL_HO_DEFAULT_ALPHA     5
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLANTL_HO_INVALID_RSSI      -100
@@ -219,7 +228,10 @@ void WLANTL_StatDebugDisplay
 #endif /* WLANTL_HO_DEBUG_MSG */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLANTL_DEBUG
 void WLANTLPrintPktsRcvdPerRateIdx(v_PVOID_t pAdapter, v_U8_t staId, v_BOOL_t flush)
 {
@@ -325,6 +337,9 @@ void WLANTLPrintPktsRcvdPerRssi(v_PVOID_t pAdapter, v_U8_t staId, v_BOOL_t flush
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
 
@@ -353,7 +368,11 @@ void WLANTL_HSDebugDisplay
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid TL Context",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__));
+=======
+                       __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -409,7 +428,11 @@ void WLANTL_HSDebugDisplay
       if(VOS_TRUE == tlCtxt->isBMPS)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO," ----> CRegion %d, hRSSI:NA, BMPS, Alpha %d",
+=======
+         TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR," ----> CRegion %d, hRSSI:NA, BMPS, Alpha %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR," ----> CRegion %d, hRSSI:NA, BMPS, Alpha %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -418,7 +441,11 @@ void WLANTL_HSDebugDisplay
       else
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO," ----> CRegion %d, hRSSI %d, Alpha %d",
+=======
+         TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR," ----> CRegion %d, hRSSI %d, Alpha %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR," ----> CRegion %d, hRSSI %d, Alpha %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -562,7 +589,10 @@ VOS_STATUS WLANTL_StatHandleRXFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ( NULL == tlCtxt->atlSTAClients[STAid] )
    {
        TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -571,6 +601,9 @@ VOS_STATUS WLANTL_StatHandleRXFrame
    }
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(NULL == dataBuffer)
    {
@@ -579,7 +612,11 @@ VOS_STATUS WLANTL_StatHandleRXFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(0 == tlCtxt->atlSTAClients[STAid].ucExists)
+=======
+   if(0 == tlCtxt->atlSTAClients[STAid]->ucExists)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if(0 == tlCtxt->atlSTAClients[STAid]->ucExists)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -588,6 +625,7 @@ VOS_STATUS WLANTL_StatHandleRXFrame
       return VOS_STATUS_E_INVAL;
    }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    /* TODO : BC/MC/UC have to be determined by MAC address */
    statistics = &tlCtxt->atlSTAClients[STAid].trafficStatistics;
@@ -607,6 +645,8 @@ VOS_STATUS WLANTL_StatHandleRXFrame
          statistics->rxMCFcnt++;
          statistics->rxMCBcnt += (packetSize - WLANHAL_RX_BD_HEADER_SIZE);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    statistics = &tlCtxt->atlSTAClients[STAid]->trafficStatistics;
    vos_pkt_get_packet_length(dataBuffer, &packetSize);
 
@@ -652,6 +692,9 @@ VOS_STATUS WLANTL_StatHandleRXFrame
             TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"WLAN TL: error in finding bc/mc/uc type of the received frame"));
             return VOS_STATUS_E_INVAL;
             break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
    }
@@ -665,8 +708,11 @@ VOS_STATUS WLANTL_StatHandleRXFrame
    /* TODO caculation is needed, dimension of 500kbps */
    statistics->rxRate = WDA_GET_RX_MAC_RATE_IDX(pBDHeader);
 <<<<<<< HEAD
+<<<<<<< HEAD
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLANTL_DEBUG
    if( (statistics->rxRate - 1) < MAX_RATE_INDEX)
@@ -677,6 +723,9 @@ VOS_STATUS WLANTL_StatHandleRXFrame
    if( (v_U16_t)((WDA_GET_RX_RSSI_DB(pBDHeader)) * (-1)) < MAX_NUM_RSSI)
      tlCtxt->atlSTAClients[STAid]->trafficStatistics.pktCounterRssi[(v_U16_t)((WDA_GET_RX_RSSI_DB(pBDHeader)) * (-1))]++;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    TLLOG1(VOS_TRACE (VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_MED,
                   "****Received rate Index = %ld type=%d subtype=%d****\n",
@@ -708,10 +757,15 @@ VOS_STATUS WLANTL_StatHandleTXFrame
    v_U8_t           STAid,
    vos_pkt_t       *dataBuffer,
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_PVOID_t        pBDHeader
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
   ,WLANTL_MetaInfoType *txMetaInfo
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+   v_PVOID_t        pBDHeader,
+   WLANTL_MetaInfoType *txMetaInfo
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_PVOID_t        pBDHeader,
    WLANTL_MetaInfoType *txMetaInfo
@@ -730,8 +784,11 @@ VOS_STATUS WLANTL_StatHandleTXFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(0 == tlCtxt->atlSTAClients[STAid].ucExists)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ( NULL == tlCtxt->atlSTAClients[STAid] )
    {
        TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -740,6 +797,9 @@ VOS_STATUS WLANTL_StatHandleTXFrame
    }
 
    if(0 == tlCtxt->atlSTAClients[STAid]->ucExists)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"WLAN TL: %d STA ID is not exist", STAid));
@@ -747,6 +807,7 @@ VOS_STATUS WLANTL_StatHandleTXFrame
    }
 
    /* TODO : BC/MC/UC have to be determined by MAC address */
+<<<<<<< HEAD
 <<<<<<< HEAD
    statistics = &tlCtxt->atlSTAClients[STAid].trafficStatistics;
    vos_pkt_get_packet_length(dataBuffer, &packetSize);
@@ -764,6 +825,8 @@ VOS_STATUS WLANTL_StatHandleTXFrame
       statistics->txBCBcnt += (packetSize - WLANHAL_TX_BD_HEADER_SIZE);
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    statistics = &tlCtxt->atlSTAClients[STAid]->trafficStatistics;
    vos_pkt_get_packet_length(dataBuffer, &packetSize);
    if(txMetaInfo->ucBcast)
@@ -771,12 +834,16 @@ VOS_STATUS WLANTL_StatHandleTXFrame
       TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"This TX is BC frame"));
       statistics->txBCFcnt++;
       statistics->txBCBcnt += packetSize;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else if(txMetaInfo->ucMcast)
    {
       TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"This TX is MC frame"));
       statistics->txMCFcnt++;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
       statistics->txMCBcnt += packetSize;
@@ -786,17 +853,24 @@ VOS_STATUS WLANTL_StatHandleTXFrame
 =======
       statistics->txMCBcnt += packetSize;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+      statistics->txMCBcnt += packetSize;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else
    {
       TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"This is TX UC frame"));
       statistics->txUCFcnt++;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
       statistics->txUCBcnt += packetSize;
 #else
       statistics->txUCBcnt += (packetSize - WLANHAL_RX_BD_HEADER_SIZE);
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+      statistics->txUCBcnt += packetSize;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       statistics->txUCBcnt += packetSize;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -944,7 +1018,10 @@ VOS_STATUS WLANTL_HSGetRSSI
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ( NULL == tlCtxt->atlSTAClients[STAid] )
    {
        TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -952,6 +1029,9 @@ VOS_STATUS WLANTL_HSGetRSSI
        return VOS_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* 
       Compute RSSI only for the last MPDU of an AMPDU.
@@ -977,6 +1057,7 @@ VOS_STATUS WLANTL_HSGetRSSI
 #endif /* WLANTL_HO_UTEST */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Commenting this part of the code as this may not be necessarity true in all cases */
 #if 0
    if(WLANTL_HO_INVALID_RSSI == currentRSSI)
@@ -989,29 +1070,42 @@ VOS_STATUS WLANTL_HSGetRSSI
 =======
    if(0 == tlCtxt->atlSTAClients[STAid]->rssiAvg)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   if(0 == tlCtxt->atlSTAClients[STAid]->rssiAvg)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       *currentAvgRSSI = currentRSSI;
    }
    else
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       *currentAvgRSSI = ((currentHO->historyRSSI * currentHO->alpha) +
                          (currentRSSI * (10 - currentHO->alpha))) / 10;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       *currentAvgRSSI = ((tlCtxt->atlSTAClients[STAid]->rssiAvg  *
                           tlCtxt->atlSTAClients[STAid]->rssiAlpha) +
                          (currentRSSI * (10 - tlCtxt->atlSTAClients[STAid]->rssiAlpha))) / 10;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef RSSI_HACK
    *currentAvgRSSI = (v_S7_t)dumpCmdRSSI;
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    tlCtxt->atlSTAClients[STAid].rssiAvg = *currentAvgRSSI;
+=======
+   tlCtxt->atlSTAClients[STAid]->rssiAvg = *currentAvgRSSI;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tlCtxt->atlSTAClients[STAid]->rssiAvg = *currentAvgRSSI;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1052,6 +1146,10 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
    v_U8_t                          idx, sIdx;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1069,6 +1167,11 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   THSGETLOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
+                                                   &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    THSGETLOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
                                                    &tlCtxt->hoSupport.hosLock);
@@ -1101,6 +1204,11 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
    else if(preFWNotification == curFWNotification)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      THSRELEASELOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
+                                                   &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       THSRELEASELOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
                                                    &tlCtxt->hoSupport.hosLock);
@@ -1141,7 +1249,10 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    newRegionNumber = (nRegionNumber > pRegionNumber) ? nRegionNumber : pRegionNumber;
@@ -1150,6 +1261,11 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
       TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"No Region Change with BMPS mode"));
       preFWNotification = curFWNotification;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      THSRELEASELOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
+                                                   &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       THSRELEASELOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
                                                    &tlCtxt->hoSupport.hosLock);
@@ -1171,16 +1287,22 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
                   cbFunction = hoSupport->registeredInd[idx].crossCBFunction[sIdx];
                   usrCtxt = hoSupport->registeredInd[idx].usrCtxt[sIdx];
 <<<<<<< HEAD
+<<<<<<< HEAD
                   evtType = WLANTL_HO_THRESHOLD_DOWN;
                   TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx].triggerEvent[sIdx], idx));
                   currentHO->regionNumber = newRegionNumber;
                   status = cbFunction(pAdapter, evtType, usrCtxt);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                   evtType = WLANTL_HO_THRESHOLD_DOWN;
                   TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx].triggerEvent[sIdx], idx));
                   currentHO->regionNumber = newRegionNumber;
                   status = cbFunction(pAdapter, evtType, usrCtxt, pRSSINotification->avgRssi);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                }
             }
@@ -1203,16 +1325,22 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
                   cbFunction = hoSupport->registeredInd[idx].crossCBFunction[sIdx];
                   usrCtxt = hoSupport->registeredInd[idx].usrCtxt[sIdx];
 <<<<<<< HEAD
+<<<<<<< HEAD
                   evtType = WLANTL_HO_THRESHOLD_UP;
                   TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx].triggerEvent[sIdx], idx));
                   currentHO->regionNumber = newRegionNumber;
                   status = cbFunction(pAdapter, evtType, usrCtxt);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                   evtType = WLANTL_HO_THRESHOLD_UP;
                   TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx].triggerEvent[sIdx], idx));
                   currentHO->regionNumber = newRegionNumber;
                   status = cbFunction(pAdapter, evtType, usrCtxt, pRSSINotification->avgRssi);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                }
             }
@@ -1226,6 +1354,11 @@ VOS_STATUS WLANTL_HSBMPSRSSIRegionChangedNotification
                  evtType, currentHO->regionNumber));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   THSRELEASELOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
+                                                   &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    THSRELEASELOCK("WLANTL_HSBMPSRSSIRegionChangedNotification",
                                                    &tlCtxt->hoSupport.hosLock);
@@ -1315,14 +1448,20 @@ VOS_STATUS WLANTL_HSHandleRSSIChange
                   cbFunction = hoSupport->registeredInd[idx].crossCBFunction[sIdx];
                   usrCtxt = hoSupport->registeredInd[idx].usrCtxt[sIdx];
 <<<<<<< HEAD
+<<<<<<< HEAD
                   evtType = WLANTL_HO_THRESHOLD_DOWN;
                   TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx].triggerEvent[sIdx], idx));
                   status = WLANTL_HSSerializeTlIndication(pAdapter, evtType, usrCtxt, cbFunction);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                   evtType = WLANTL_HO_THRESHOLD_DOWN;
                   TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx].triggerEvent[sIdx], idx));
                   status = WLANTL_HSSerializeTlIndication(pAdapter, evtType, usrCtxt, cbFunction, currentRSSI);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                }
             }
@@ -1344,14 +1483,20 @@ VOS_STATUS WLANTL_HSHandleRSSIChange
                   cbFunction = hoSupport->registeredInd[idx - 1].crossCBFunction[sIdx];
                   usrCtxt = hoSupport->registeredInd[idx - 1].usrCtxt[sIdx];
 <<<<<<< HEAD
+<<<<<<< HEAD
                   evtType = WLANTL_HO_THRESHOLD_UP;
                   TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx - 1].triggerEvent[sIdx], idx - 1));
                   status = WLANTL_HSSerializeTlIndication(pAdapter, evtType, usrCtxt, cbFunction);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                   evtType = WLANTL_HO_THRESHOLD_UP;
                   TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Trigger Event %d, region index %d", hoSupport->registeredInd[idx - 1].triggerEvent[sIdx], idx - 1));
                   status = WLANTL_HSSerializeTlIndication(pAdapter, evtType, usrCtxt, cbFunction, currentRSSI);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                }
             }
@@ -1406,6 +1551,10 @@ VOS_STATUS WLANTL_HSHandleRXFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   THSGETLOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    THSGETLOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1439,6 +1588,10 @@ VOS_STATUS WLANTL_HSHandleRXFrame
       WLANTL_HSGetRSSI(pAdapter, pBDHeader, STAid, &currentAvgRSSI);
       currentHO->historyRSSI = currentAvgRSSI;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      THSRELEASELOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       THSRELEASELOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1449,6 +1602,10 @@ VOS_STATUS WLANTL_HSHandleRXFrame
    if((currentTimestamp - currentHO->sampleTime) < WLANTL_HO_SAMPLING_PERIOD)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      THSRELEASELOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       THSRELEASELOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1461,6 +1618,7 @@ VOS_STATUS WLANTL_HSHandleRXFrame
    if(!VOS_IS_STATUS_SUCCESS(status))
    {
       TLLOG1(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Get RSSI Fail"));
+<<<<<<< HEAD
 <<<<<<< HEAD
       return status;
    }
@@ -1482,6 +1640,8 @@ VOS_STATUS WLANTL_HSHandleRXFrame
    }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       THSRELEASELOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
       return status;
    }
@@ -1509,6 +1669,9 @@ VOS_STATUS WLANTL_HSHandleRXFrame
    }
 
    THSRELEASELOCK("WLANTL_HSHandleRXFrame", &tlCtxt->hoSupport.hosLock);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -1549,9 +1712,12 @@ VOS_STATUS WLANTL_HSHandleTXFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
    WLANTL_StatHandleTXFrame(pAdapter, STAid, dataBuffer, bdHeader);
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1646,7 +1812,11 @@ VOS_STATUS WLANTL_HSRegRSSIIndicationCB
             for(sIdx = 0; sIdx < WLANTL_HS_NUM_CLIENT; sIdx++)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Reg CB P 0x%x, registered CB P 0x%x",
+=======
+               TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Reg CB P %p, registered CB P %p",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Reg CB P %p, registered CB P %p",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1655,7 +1825,11 @@ VOS_STATUS WLANTL_HSRegRSSIIndicationCB
                if(crossCBFunction == hoSupport->registeredInd[idx].crossCBFunction[sIdx])
                {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Same RSSI %d, Same CB 0x%x already registered",
+=======
+                  TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Same RSSI %d, Same CB %p already registered",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Same RSSI %d, Same CB %p already registered",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1746,7 +1920,12 @@ VOS_STATUS WLANTL_HSRegRSSIIndicationCB
             {
                TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Registered RSSI value larger than Current RSSI, and DOWN event, Send Notification"));
 <<<<<<< HEAD
+<<<<<<< HEAD
                WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_DOWN, usrCtxt, crossCBFunction);
+=======
+               WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_DOWN, usrCtxt, crossCBFunction,
+                                              hoSupport->registeredInd[currentHO->regionNumber].rssiValue);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_DOWN, usrCtxt, crossCBFunction,
                                               hoSupport->registeredInd[currentHO->regionNumber].rssiValue);
@@ -1780,7 +1959,11 @@ VOS_STATUS WLANTL_HSRegRSSIIndicationCB
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Registered RSSI value larger than Current RSSI, and DOWN event, Send Notification"));
 <<<<<<< HEAD
+<<<<<<< HEAD
       WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_DOWN, usrCtxt, crossCBFunction);
+=======
+      WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_DOWN, usrCtxt, crossCBFunction, currentHO->historyRSSI);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_DOWN, usrCtxt, crossCBFunction, currentHO->historyRSSI);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1791,6 +1974,7 @@ VOS_STATUS WLANTL_HSRegRSSIIndicationCB
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Registered RSSI value smaller than Current RSSI, and UP event, Send Notification"));
 <<<<<<< HEAD
+<<<<<<< HEAD
       WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_UP, usrCtxt, crossCBFunction);
    }
 
@@ -1798,12 +1982,17 @@ VOS_STATUS WLANTL_HSRegRSSIIndicationCB
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Register into FW, now BMPS"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WLANTL_HSSerializeTlIndication(pAdapter, WLANTL_HO_THRESHOLD_UP, usrCtxt, crossCBFunction, currentHO->historyRSSI);
    }
 
    if((VOS_TRUE == tlCtxt->isBMPS) || (IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE))
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Register into FW, now BMPS"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* this function holds the lock across a downstream WDA function call, this is violates some lock
          ordering checks done on some HLOS see CR323221*/
@@ -1903,7 +2092,11 @@ VOS_STATUS WLANTL_HSDeregRSSIIndicationCB
    if(idx == currentHO->numThreshold)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Could not find entry, maybe invalid arg"));
+=======
+      TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Could not find entry, maybe invalid arg"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Could not find entry, maybe invalid arg"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1943,16 +2136,22 @@ VOS_STATUS WLANTL_HSDeregRSSIIndicationCB
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if((VOS_FALSE == tlCtxt->isBMPS) && (rssiValue >= currentHO->historyRSSI))
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,"Removed Threshold above current RSSI level, old RN %d", currentHO->regionNumber));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if( ((VOS_FALSE == tlCtxt->isBMPS) && (rssiValue >= currentHO->historyRSSI))
     || ((VOS_TRUE == tlCtxt->isBMPS) && (VOS_TRUE == bmpsAbove)) )
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,
                        "Removed Threshold above current RSSI level, old RN %d",
                                                       currentHO->regionNumber));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if(0 < currentHO->regionNumber)
       {
@@ -1960,6 +2159,7 @@ VOS_STATUS WLANTL_HSDeregRSSIIndicationCB
       }
       else
       {
+<<<<<<< HEAD
 <<<<<<< HEAD
          TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Current Region number is 0, cannot decrease anymore"));
       }
@@ -1970,6 +2170,8 @@ VOS_STATUS WLANTL_HSDeregRSSIIndicationCB
       currentHO->regionNumber--;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                         "Current Region number is 0, cannot decrease anymore"));
       }
@@ -1978,6 +2180,9 @@ VOS_STATUS WLANTL_HSDeregRSSIIndicationCB
                                                       currentHO->regionNumber));
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Decrease number of thresholds */
    tlCtxt->hoSupport.currentHOState.numThreshold--;
@@ -1985,7 +2190,11 @@ VOS_STATUS WLANTL_HSDeregRSSIIndicationCB
    tlCtxt->hoSupport.currentHOState.fwNotification=0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(VOS_TRUE == tlCtxt->isBMPS)
+=======
+   if((VOS_TRUE == tlCtxt->isBMPS) || (IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if((VOS_TRUE == tlCtxt->isBMPS) || (IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2268,7 +2477,12 @@ VOS_STATUS WLANTL_HSSerializeTlIndication
    v_U8_t      rssiNotification,
    v_PVOID_t   pUserCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
    WLANTL_RSSICrossThresholdCBType cbFunction
+=======
+   WLANTL_RSSICrossThresholdCBType cbFunction,
+   v_U8_t      avgRssi
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_RSSICrossThresholdCBType cbFunction,
    v_U8_t      avgRssi
@@ -2283,7 +2497,11 @@ VOS_STATUS WLANTL_HSSerializeTlIndication
    if ( NULL == pMsg ) 
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "In %s, failed to allocate mem for req", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "In %s, failed to allocate mem for req", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "In %s, failed to allocate mem for req", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2297,6 +2515,10 @@ VOS_STATUS WLANTL_HSSerializeTlIndication
    pMsg->pUserCtxt = pUserCtxt;
    pMsg->rssiNotification = rssiNotification;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   pMsg->avgRssi = avgRssi;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pMsg->avgRssi = avgRssi;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2310,7 +2532,11 @@ VOS_STATUS WLANTL_HSSerializeTlIndication
    if(VOS_STATUS_SUCCESS != vos_mq_post_message(VOS_MQ_ID_SME, &msg))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "In %s, failed to post msg to self", __FUNCTION__);
+=======
+       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "In %s, failed to post msg to self", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "In %s, failed to post msg to self", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

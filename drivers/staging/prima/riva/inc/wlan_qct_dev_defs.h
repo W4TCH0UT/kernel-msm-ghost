@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -62,8 +68,11 @@
 
 #ifdef WCN_PRONTO
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WCN_PRONTO_V1
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
 //supports both V1 and V2
@@ -108,6 +117,9 @@
 #define HAL_NUM_STA_INCLUDING_VSTA  32
 
 #elif WCN_PRONTO_V1
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* In Pronto 1.0 TPE descriptor size is increased to 1K per station
@@ -123,6 +135,7 @@
  * and SELF STA(staId 1). So total ASSOC stations which can connect to
  * Pronto 1.0 Softap = 9 - 1(self sta) - 1(Bcast sta) = 7 stations
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define HAL_NUM_STA                 9
 #define HAL_NUM_BSSID               2
@@ -148,6 +161,8 @@
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HAL_NUM_HW_STA              9
 #define HAL_NUM_STA                 (HAL_NUM_HW_STA)
 #define HAL_NUM_BSSID               2
@@ -231,6 +246,9 @@
 
 #endif /* WCN_PRONTO */
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HAL_INVALID_BSSIDX          HAL_NUM_BSSID
 
@@ -353,6 +371,11 @@ typedef enum sBmuWqId {
     BMUWQ_FW_DXECH2_1 = 16,  /* BD/PDU<->MEM conversion using DxE CH2.  Not in use by FW */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    /* NDPA Addr3 workaround */
+    BMUWQ_RXP_DEFAULT_PUSH_WQ = 17,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     /* NDPA Addr3 workaround */
     BMUWQ_RXP_DEFAULT_PUSH_WQ = 17,
@@ -414,7 +437,10 @@ typedef enum
 #define HWBD_TYPE_FRAG                     1   /* fragmentation BD format*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------- */
 /* HW Tx power                                                           */
 /*---------------------------------------------------------------------- */
@@ -427,5 +453,8 @@ typedef enum
    #define WLAN_SOC_PRIMA_MIN_TX_POWER 6
 #endif //#ifdef WCN_PRIMA
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* __WLAN_QCT_DEV_DEFS_H */

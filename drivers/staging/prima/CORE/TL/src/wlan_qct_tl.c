@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -152,9 +158,12 @@
 #include "wlan_qct_tli_ba.h" 
 #include "wlan_qct_tl_hosupport.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if !defined( FEATURE_WLAN_INTEGRATED_SOC )
 #include "wlan_qct_ssc.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "tlDebug.h"
@@ -165,10 +174,13 @@
 /*Enables debugging behavior in TL*/
 #define TL_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#define WLAN_SOFTAP_FLOWCTRL_EN
 
 //#define BTAMP_TEST
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*Enables debugging FC control frame in TL*/
 //#define TL_DEBUG_FC
 //#define WLAN_SOFTAP_FLOWCTRL_EN
@@ -178,6 +190,9 @@
 #include <wlan_qct_pal_device.h> // wpalReadRegister
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*----------------------------------------------------------------------------
  * Preprocessor Definitions and Constants
@@ -194,9 +209,12 @@ static v_U8_t WLANTL_AIRONET_SNAP_HEADER[] =  {0xAA, 0xAA, 0x03, 0x00, 0x40, 0x9
 const v_U8_t WLANTL_BT_AMP_OUI[] =  {0x00, 0x19, 0x58 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 #define WLANTL_BD_PDU_RESERVE_THRESHOLD           80
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -226,6 +244,7 @@ int bdPduInterruptGetThreshold = WLANTL_BD_PDU_INTERRUPT_GET_THRESHOLD;
                      ( WLANTL_CTRL_FRAME_TYPE == ( (_type_sub) & 0x30 ))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*MAX Allowed len processed by TL - MAx MTU + 802.3 header + BD+DXE+XTL*/
 #define WLANTL_MAX_ALLOWED_LEN    1514 + 100
 
@@ -233,6 +252,8 @@ int bdPduInterruptGetThreshold = WLANTL_BD_PDU_INTERRUPT_GET_THRESHOLD;
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
 #define WLANTL_IS_TDLS_FRAME(_eth_type)                                     \
                      ( WLANTL_LLC_TDLS_TYPE == ( _eth_type))
@@ -243,6 +264,9 @@ int bdPduInterruptGetThreshold = WLANTL_BD_PDU_INTERRUPT_GET_THRESHOLD;
 
 #define WLANTL_MASK_AC  0x03
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //some flow_control define
 //LWM mode will be enabled for this station if the egress/ingress falls below this ratio
@@ -256,8 +280,12 @@ int bdPduInterruptGetThreshold = WLANTL_BD_PDU_INTERRUPT_GET_THRESHOLD;
 
 #define WLANTL_AC_MASK (0x7)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WLANTL_STAID_OFFSET (0x4)
 #endif
+=======
+#define WLANTL_STAID_OFFSET (0x6)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WLANTL_STAID_OFFSET (0x6)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -375,6 +403,10 @@ typedef struct
 #define WLAN_TL_INVALID_U_SIG 255
 #define WLAN_TL_INVALID_B_SIG 255
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define ENTER() VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO, "Enter:%s", __func__)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define ENTER() VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO, "Enter:%s", __func__)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -410,7 +442,10 @@ WLANTL_GetEtherType
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
 /* FIXME_MUST: during TDLS integration to main/latest, WLANTL_GetEtherType() conflicts.
 But there is difference. existing WLANTL_GetEtherType() expects vosDataBuff->offset points to MPDU Header,
@@ -430,6 +465,9 @@ WLANTL_GetEtherType_2
   v_U16_t              * usEtherType
 );
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_WAPI
 /*---------------------------------------------------------------------------
@@ -437,7 +475,11 @@ WLANTL_GetEtherType_2
  * state so as to not set the protected bit to 1 in the case of WAI frames
  *---------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_U8_t gUcIsWai = 0;
+=======
+v_U8_t gUcIsWai;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_U8_t gUcIsWai;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -451,7 +493,10 @@ v_U8_t gUcIsWai;
  * Function Declarations and Documentation
  * -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
 
   FUNCTION        WLANTL_FreeClientMemory
@@ -486,6 +531,9 @@ void WLANTL_FreeClientMemory
     }
     return;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*==========================================================================
@@ -527,6 +575,10 @@ WLANTL_Open
   v_U8_t          ucIndex; 
   tHalHandle      smeContext;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  v_U32_t i = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   v_U32_t i = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -540,6 +592,10 @@ WLANTL_Open
     Extract TL control block
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ENTER();
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ENTER();
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -551,7 +607,11 @@ WLANTL_Open
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL: Invalid input pointer on WLANTL_Open TL %x Config %x", pTLCb, pTLConfig ));
+=======
+               "WLAN TL: Invalid input pointer on WLANTL_Open TL %p Config %p", pTLCb, pTLConfig ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL: Invalid input pointer on WLANTL_Open TL %p Config %p", pTLCb, pTLConfig ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -566,7 +626,11 @@ WLANTL_Open
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: Invalid smeContext", __FUNCTION__));
+=======
+                      "%s: Invalid smeContext", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "%s: Invalid smeContext", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -583,6 +647,7 @@ WLANTL_Open
              "WLAN TL:WLANTL_Open"));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients = vos_mem_malloc(sizeof(WLANTL_STAClientType) * WLAN_MAX_STA_COUNT);
   if (NULL == pTLCb->atlSTAClients)
   {
@@ -594,6 +659,8 @@ WLANTL_Open
   vos_mem_zero((v_VOID_t *)pTLCb->atlSTAClients, sizeof(WLANTL_STAClientType) * WLAN_MAX_STA_COUNT);
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   for ( i =0; i<WLAN_MAX_STA_COUNT; i++ )
   {
       if ( i < WLAN_NON32_STA_COUNT )
@@ -615,16 +682,25 @@ WLANTL_Open
       }
   }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pTLCb->reorderBufferPool = vos_mem_malloc(sizeof(WLANTL_REORDER_BUFFER_T) * WLANTL_MAX_BA_SESSION);
   if (NULL == pTLCb->reorderBufferPool)
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "WLAN TL: Reorder buffer allocation failed\n"));
 <<<<<<< HEAD
+<<<<<<< HEAD
     vos_mem_free(pTLCb->atlSTAClients);
     vos_free_context(pvosGCtx, VOS_MODULE_ID_TL, pTLCb);
     return VOS_STATUS_E_FAULT;
          
+=======
+    WLANTL_FreeClientMemory(pTLCb->atlSTAClients);
+    vos_free_context(pvosGCtx, VOS_MODULE_ID_TL, pTLCb);
+    return VOS_STATUS_E_FAULT;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     WLANTL_FreeClientMemory(pTLCb->atlSTAClients);
     vos_free_context(pvosGCtx, VOS_MODULE_ID_TL, pTLCb);
@@ -639,11 +715,17 @@ WLANTL_Open
   for ( ucIndex = 0; ucIndex < WLANTL_MAX_AC ; ucIndex++)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     pTLCb->tlConfigInfo.ucAcWeights[ucIndex] =
                 pTLConfig->ucAcWeights[ucIndex];
   }
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+    pTLCb->tlConfigInfo.ucAcWeights[ucIndex] = pTLConfig->ucAcWeights[ucIndex];
+  }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pTLCb->tlConfigInfo.ucAcWeights[ucIndex] = pTLConfig->ucAcWeights[ucIndex];
   }
@@ -665,6 +747,12 @@ WLANTL_Open
   pTLCb->tlConfigInfo.uMinFramesProcThres =
                 pTLConfig->uMinFramesProcThres;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+#ifdef FEATURE_WLAN_TDLS
+  pTLCb->ucTdlsPeerCount = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 #ifdef FEATURE_WLAN_TDLS
@@ -691,7 +779,11 @@ WLANTL_Open
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
               "Handoff support module init fail"));
 <<<<<<< HEAD
+<<<<<<< HEAD
     vos_mem_free(pTLCb->atlSTAClients);
+=======
+    WLANTL_FreeClientMemory(pTLCb->atlSTAClients);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     WLANTL_FreeClientMemory(pTLCb->atlSTAClients);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -753,6 +845,10 @@ WLANTL_Start
     Extract TL control block
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ENTER();
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ENTER();
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -793,7 +889,10 @@ WLANTL_Start
 
   pTLCb->uResCount = uResCount;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return VOS_STATUS_SUCCESS;
@@ -841,6 +940,10 @@ WLANTL_Stop
     Extract TL control block
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ENTER();
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ENTER();
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -885,16 +988,22 @@ WLANTL_Stop
     Clean client stations
    -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   for ( ucIndex = 0; ucIndex < WLAN_MAX_STA_COUNT ; ucIndex++)
   {
     WLANTL_CleanSTA(&pTLCb->atlSTAClients[ucIndex], 1 /*empty all queues*/);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   for ( ucIndex = 0; ucIndex < WLAN_MAX_STA_COUNT; ucIndex++)
   {
     if ( NULL != pTLCb->atlSTAClients[ucIndex] )
     {
         WLANTL_CleanSTA(pTLCb->atlSTAClients[ucIndex], 1 /*empty all queues*/);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -943,6 +1052,10 @@ WLANTL_Close
     Extract TL control block
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ENTER();
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ENTER();
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -961,7 +1074,11 @@ WLANTL_Close
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: Invalid smeContext", __FUNCTION__));
+=======
+                      "%s: Invalid smeContext", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "%s: Invalid smeContext", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -988,7 +1105,12 @@ WLANTL_Close
   WLANTL_CleanCB(pTLCb, 1 /* empty queues/lists/pkts if any*/);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   vos_mem_free(pTLCb->atlSTAClients);
+=======
+  WLANTL_FreeClientMemory(pTLCb->atlSTAClients);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_FreeClientMemory(pTLCb->atlSTAClients);
 
@@ -1038,7 +1160,11 @@ WLANTL_ConfigureSwFrameTXXlationForAll
    ------------------------------------------------------------------------*/
   WLANTL_CbType* pTLCb = VOS_GET_TL_CB(pvosGCtx);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1057,7 +1183,12 @@ WLANTL_ConfigureSwFrameTXXlationForAll
   for ( ucIndex = 0; ucIndex < WLAN_MAX_TID; ucIndex++) 
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( 0 != pTLCb->atlSTAClients[ucIndex].ucExists )
+=======
+    pClientSTA = pTLCb->atlSTAClients[ucIndex];
+    if ( NULL != pClientSTA && 0 != pClientSTA->ucExists )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pClientSTA = pTLCb->atlSTAClients[ucIndex];
     if ( NULL != pClientSTA && 0 != pClientSTA->ucExists )
@@ -1070,6 +1201,7 @@ WLANTL_ConfigureSwFrameTXXlationForAll
       if (!WDA_IsHwFrameTxTranslationCapable(pvosGCtx, ucIndex))
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pTLCb->atlSTAClients[ucIndex].wSTADesc.ucSwFrameTXXlation = 1;
       }
       else
@@ -1077,11 +1209,16 @@ WLANTL_ConfigureSwFrameTXXlationForAll
         pTLCb->atlSTAClients[ucIndex].wSTADesc.ucSwFrameTXXlation
                                              = enableFrameXlation;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pClientSTA->wSTADesc.ucSwFrameTXXlation = 1;
       }
       else
 #endif
         pClientSTA->wSTADesc.ucSwFrameTXXlation = enableFrameXlation;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
   }
@@ -1200,7 +1337,11 @@ void WLANTL_AssocFailed(v_U8_t staId)
   {
     VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
        " %s fails to start forwarding", __FUNCTION__);
+=======
+       " %s fails to start forwarding", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        " %s fails to start forwarding", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1238,6 +1379,7 @@ VOS_STATUS WLANTL_Finish_ULA( void (*callbackRoutine) (void *callbackContext),
                               void *callbackContext)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
    return WDA_DS_FinishULA( callbackRoutine, callbackContext); 
 #else
@@ -1251,6 +1393,9 @@ VOS_STATUS WLANTL_Finish_ULA( void (*callbackRoutine) (void *callbackContext),
    vosStatus = vos_tx_mq_serialize( VOS_MQ_ID_SSC, &vosMsg);
    return vosStatus;
 #endif
+=======
+   return WDA_DS_FinishULA( callbackRoutine, callbackContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    return WDA_DS_FinishULA( callbackRoutine, callbackContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1314,9 +1459,14 @@ WLANTL_RegisterSTAClient
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_CHIPSET_VOLANS
   v_U8_t    ucTid = 0;/*Local variable to clear previous replay counters of STA on all TIDs*/
 #endif
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+  v_U8_t    ucTid = 0;/*Local variable to clear previous replay counters of STA on all TIDs*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
   v_U8_t    ucTid = 0;/*Local variable to clear previous replay counters of STA on all TIDs*/
@@ -1327,6 +1477,10 @@ WLANTL_RegisterSTAClient
     Sanity check
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ENTER();
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ENTER();
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1357,10 +1511,13 @@ WLANTL_RegisterSTAClient
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 != pTLCb->atlSTAClients[pwSTADescType->ucSTAId].ucExists )
   {
     pTLCb->atlSTAClients[pwSTADescType->ucSTAId].ucExists++;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   //Code for checking and allocating memory for new STA
   if ( NULL == pTLCb->atlSTAClients[pwSTADescType->ucSTAId] ){
       pTLCb->atlSTAClients[pwSTADescType->ucSTAId] = vos_mem_malloc(sizeof(WLANTL_STAClientType));
@@ -1379,6 +1536,9 @@ WLANTL_RegisterSTAClient
   if ( 0 != pClientSTA->ucExists )
   {
     pClientSTA->ucExists++;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
       "WLAN TL:Station was already registered on WLANTL_RegisterSTAClient"));
@@ -1392,8 +1552,13 @@ WLANTL_RegisterSTAClient
              "WLAN TL:Registering STA Client ID: %d", pwSTADescType->ucSTAId ));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].pfnSTARx       = pfnSTARx;
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].pfnSTAFetchPkt = pfnSTAFetchPkt;
+=======
+  pClientSTA->pfnSTARx       = pfnSTARx;
+  pClientSTA->pfnSTAFetchPkt = pfnSTAFetchPkt;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pClientSTA->pfnSTARx       = pfnSTARx;
   pClientSTA->pfnSTAFetchPkt = pfnSTAFetchPkt;
@@ -1404,6 +1569,7 @@ WLANTL_RegisterSTAClient
   if ( NULL != pfnSTATxComp )
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     pTLCb->atlSTAClients[pwSTADescType->ucSTAId].pfnSTATxComp   = pfnSTATxComp;
   }
 
@@ -1413,6 +1579,8 @@ WLANTL_RegisterSTAClient
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wSTADesc.ucSTAId  =
     pwSTADescType->ucSTAId;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pClientSTA->pfnSTATxComp   = pfnSTATxComp;
   }
 
@@ -1420,6 +1588,9 @@ WLANTL_RegisterSTAClient
   pClientSTA->tlPri    = WLANTL_STA_PRI_NORMAL;
   pClientSTA->wSTADesc.ucSTAId  = pwSTADescType->ucSTAId;
   pClientSTA->ptkInstalled = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -1427,6 +1598,7 @@ WLANTL_RegisterSTAClient
              pwSTADescType->ucSTAId, 
               pwSTADescType->ucUcastSig, pwSTADescType->ucBcastSig));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wSTADesc.wSTAType =
     pwSTADescType->wSTAType;
@@ -1444,6 +1616,8 @@ WLANTL_RegisterSTAClient
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wSTADesc.ucIsCcxSta =
     pwSTADescType->ucIsCcxSta;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->wSTADesc.wSTAType = pwSTADescType->wSTAType;
 
   pClientSTA->wSTADesc.ucQosEnabled = pwSTADescType->ucQosEnabled;
@@ -1454,6 +1628,9 @@ WLANTL_RegisterSTAClient
 
 #ifdef FEATURE_WLAN_CCX
   pClientSTA->wSTADesc.ucIsCcxSta = pwSTADescType->ucIsCcxSta;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -1486,6 +1663,7 @@ WLANTL_RegisterSTAClient
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wSTADesc.ucSwFrameTXXlation =
     pwSTADescType->ucSwFrameTXXlation;
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wSTADesc.ucSwFrameRXXlation =
@@ -1517,6 +1695,8 @@ WLANTL_RegisterSTAClient
   }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->wSTADesc.ucSwFrameTXXlation = pwSTADescType->ucSwFrameTXXlation;
   pClientSTA->wSTADesc.ucSwFrameRXXlation = pwSTADescType->ucSwFrameRXXlation;
 
@@ -1538,6 +1718,9 @@ WLANTL_RegisterSTAClient
   {
     pClientSTA->ullReplayCounter[ucTid] =  0;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*--------------------------------------------------------------------
@@ -1546,6 +1729,7 @@ WLANTL_RegisterSTAClient
       made in the main TL loop after the supported mask is properly
       updated in the pending packets call
     --------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].ucCurrentAC     = WLANTL_AC_VO;
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].ucCurrentWeight = 0;
@@ -1557,6 +1741,8 @@ WLANTL_RegisterSTAClient
   vos_mem_zero( &pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wUAPSDInfo,
            sizeof(pTLCb->atlSTAClients[pwSTADescType->ucSTAId].wUAPSDInfo));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->ucCurrentAC     = WLANTL_AC_VO;
   pClientSTA->ucCurrentWeight = 0;
   pClientSTA->ucServicedAC    = WLANTL_AC_BK;
@@ -1565,11 +1751,15 @@ WLANTL_RegisterSTAClient
   vos_mem_zero( pClientSTA->aucACMask, sizeof(pClientSTA->aucACMask));
 
   vos_mem_zero( &pClientSTA->wUAPSDInfo, sizeof(pClientSTA->wUAPSDInfo));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*--------------------------------------------------------------------
     Reordering info and AMSDU de-aggregation
     --------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
   vos_mem_zero( pTLCb->atlSTAClients[pwSTADescType->ucSTAId].atlBAReorderInfo,
      sizeof(pTLCb->atlSTAClients[pwSTADescType->ucSTAId].atlBAReorderInfo[0])*
@@ -1582,6 +1772,8 @@ WLANTL_RegisterSTAClient
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].vosAMSDUChain     = NULL;
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].vosAMSDUChainRoot = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vos_mem_zero( pClientSTA->atlBAReorderInfo,
      sizeof(pClientSTA->atlBAReorderInfo[0])*
      WLAN_MAX_TID);
@@ -1592,12 +1784,16 @@ WLANTL_RegisterSTAClient
   pClientSTA->ucMPDUHeaderLen   = 0;
   pClientSTA->vosAMSDUChain     = NULL;
   pClientSTA->vosAMSDUChainRoot = NULL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
   /*--------------------------------------------------------------------
     Stats info
     --------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
   vos_mem_zero( pTLCb->atlSTAClients[pwSTADescType->ucSTAId].auRxCount,
       sizeof(pTLCb->atlSTAClients[pwSTADescType->ucSTAId].auRxCount[0])*
@@ -1606,17 +1802,23 @@ WLANTL_RegisterSTAClient
   vos_mem_zero( pTLCb->atlSTAClients[pwSTADescType->ucSTAId].auTxCount,
       sizeof(pTLCb->atlSTAClients[pwSTADescType->ucSTAId].auRxCount[0])*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vos_mem_zero( pClientSTA->auRxCount,
       sizeof(pClientSTA->auRxCount[0])*
       WLAN_MAX_TID);
 
   vos_mem_zero( pClientSTA->auTxCount,
       sizeof(pClientSTA->auRxCount[0])*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WLAN_MAX_TID);
   /* Initial RSSI is always reported as zero because TL doesnt have enough
      data to calculate RSSI. So to avoid reporting zero, we are initializing
      RSSI with RSSI saved in BssDescription during scanning. */
+<<<<<<< HEAD
 <<<<<<< HEAD
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].rssiAvg = rssi;
 
@@ -1624,6 +1826,8 @@ WLANTL_RegisterSTAClient
   vos_atomic_set_U8(
         &pTLCb->atlSTAClients[pwSTADescType->ucSTAId].ucTxSuspended, 0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->rssiAvg = rssi;
 #ifdef FEATURE_WLAN_TDLS
   if(WLAN_STA_TDLS == pClientSTA->wSTADesc.wSTAType)
@@ -1642,6 +1846,9 @@ WLANTL_RegisterSTAClient
   /*Tx not suspended and station fully registered*/
   vos_atomic_set_U8(
         &pClientSTA->ucTxSuspended, 0);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /* Used until multiple station support will be added*/
@@ -1657,7 +1864,11 @@ WLANTL_RegisterSTAClient
     Statistics info 
     -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   memset(&pTLCb->atlSTAClients[pwSTADescType->ucSTAId].trafficStatistics,
+=======
+  memset(&pClientSTA->trafficStatistics,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   memset(&pClientSTA->trafficStatistics,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1667,6 +1878,7 @@ WLANTL_RegisterSTAClient
   /*------------------------------------------------------------------------
     Start with the state suggested by client caller
     -----------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].tlState = 
     pwSTADescType->ucInitState;
@@ -1687,6 +1899,8 @@ WLANTL_RegisterSTAClient
 
   pTLCb->atlSTAClients[pwSTADescType->ucSTAId].uLwmThreshold = WLANTL_STA_BMU_THRESHOLD_MAX / 3;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->tlState = pwSTADescType->ucInitState;
   pClientSTA->ucRxBlocked = 1;
   /*-----------------------------------------------------------------------
@@ -1702,13 +1916,19 @@ WLANTL_RegisterSTAClient
   pClientSTA->uBuffThresholdMax = WLANTL_STA_BMU_THRESHOLD_MAX;
 
   pClientSTA->uLwmThreshold = WLANTL_STA_BMU_THRESHOLD_MAX / 3;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   //@@@ HDDSOFTAP does not queue unregistered packet for now
   if ( WLAN_STA_SOFTAP != pwSTADescType->wSTAType )
   { 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*------------------------------------------------------------------------
@@ -1720,12 +1940,15 @@ WLANTL_RegisterSTAClient
     {
       VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
          " %s fails to start forwarding", __FUNCTION__);
     }
 #ifdef WLAN_SOFTAP_FEATURE
   }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          " %s fails to start forwarding", __func__);
     }
 #ifdef FEATURE_WLAN_TDLS
@@ -1733,6 +1956,9 @@ WLANTL_RegisterSTAClient
         pTLCb->ucTdlsPeerCount++;
 #endif
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return VOS_STATUS_SUCCESS;
 }/* WLANTL_RegisterSTAClient */
@@ -1781,6 +2007,10 @@ WLANTL_ClearSTAClient
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ENTER();
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ENTER();
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1794,7 +2024,10 @@ WLANTL_ClearSTAClient
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
@@ -1809,8 +2042,11 @@ WLANTL_ClearSTAClient
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
       TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -1819,6 +2055,9 @@ WLANTL_ClearSTAClient
   }
 
   if ( 0 == pTLCb->atlSTAClients[ucSTAId]->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -1833,7 +2072,10 @@ WLANTL_ClearSTAClient
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
   /* decrement ucTdlsPeerCount only if it is non-zero */  
   if(WLAN_STA_TDLS == pTLCb->atlSTAClients[ucSTAId]->wSTADesc.wSTAType
@@ -1841,6 +2083,9 @@ WLANTL_ClearSTAClient
       pTLCb->ucTdlsPeerCount--;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Clear station
@@ -1848,7 +2093,11 @@ WLANTL_ClearSTAClient
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              "WLAN TL:Clearing STA Client ID: %d", ucSTAId ));
 <<<<<<< HEAD
+<<<<<<< HEAD
   WLANTL_CleanSTA(&pTLCb->atlSTAClients[ucSTAId], 1 /*empty packets*/);
+=======
+  WLANTL_CleanSTA(pTLCb->atlSTAClients[ucSTAId], 1 /*empty packets*/);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_CleanSTA(pTLCb->atlSTAClients[ucSTAId], 1 /*empty packets*/);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1945,8 +2194,11 @@ WLANTL_ChangeSTAState
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
       TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -1955,6 +2207,9 @@ WLANTL_ChangeSTAState
   }
 
   if ( 0 == pTLCb->atlSTAClients[ucSTAId]->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -1969,9 +2224,15 @@ WLANTL_ChangeSTAState
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              "WLAN TL:Changing state for STA Client ID: %d from %d to %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
              ucSTAId, pTLCb->atlSTAClients[ucSTAId].tlState, tlSTAState));
 
   pTLCb->atlSTAClients[ucSTAId].tlState = tlSTAState;
+=======
+             ucSTAId, pTLCb->atlSTAClients[ucSTAId]->tlState, tlSTAState));
+
+  pTLCb->atlSTAClients[ucSTAId]->tlState = tlSTAState;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              ucSTAId, pTLCb->atlSTAClients[ucSTAId]->tlState, tlSTAState));
 
@@ -1984,7 +2245,10 @@ WLANTL_ChangeSTAState
 /*===========================================================================
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FUNCTION    WLANTL_STAPtkInstalled
 
   DESCRIPTION
@@ -2068,6 +2332,9 @@ WLANTL_STAPtkInstalled
 
 /*===========================================================================
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FUNCTION    WLANTL_GetSTAState
 
@@ -2144,10 +2411,13 @@ WLANTL_GetSTAState
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
         TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -2158,6 +2428,9 @@ WLANTL_GetSTAState
   if ( 0 == pTLCb->atlSTAClients[ucSTAId]->ucExists )
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      "WLAN TL:Station was not previously registered on WLANTL_GetSTAState"));
     return VOS_STATUS_E_EXISTS;
@@ -2167,7 +2440,11 @@ WLANTL_GetSTAState
     Get STA state
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   *ptlSTAState = pTLCb->atlSTAClients[ucSTAId].tlState;
+=======
+  *ptlSTAState = pTLCb->atlSTAClients[ucSTAId]->tlState;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   *ptlSTAState = pTLCb->atlSTAClients[ucSTAId]->tlState;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2224,9 +2501,14 @@ WLANTL_STAPktPending
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   vos_msg_t      vosMsg;
 #endif
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+  vos_msg_t      vosMsg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
   vos_msg_t      vosMsg;
@@ -2246,7 +2528,10 @@ WLANTL_STAPktPending
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
@@ -2261,8 +2546,11 @@ WLANTL_STAPktPending
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -2273,6 +2561,9 @@ WLANTL_STAPktPending
   }
 
   if ( 0 == pClientSTA->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -2289,12 +2580,15 @@ WLANTL_STAPktPending
   pTLCb->ucRegisteredStaId = ucSTAId;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if( WLANTL_STA_AUTHENTICATED != pTLCb->atlSTAClients[ucSTAId].tlState )
   {
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
       "WLAN TL:Packet pending indication for STA: %d AC: %d State: %d", 
                ucSTAId, ucAc, pTLCb->atlSTAClients[ucSTAId].tlState);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if( WLANTL_STA_CONNECTED == pClientSTA->tlState )
   { /* EAPOL_HI_PRIORITY : need to find out whether EAPOL is pending before
        WLANTL_FetchPacket()/WLANTL_TxConn() is called.
@@ -2306,6 +2600,9 @@ WLANTL_STAPktPending
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
       "WLAN TL:Packet pending indication for STA: %d AC: %d State: %d", 
                ucSTAId, ucAc, pClientSTA->tlState);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -2316,6 +2613,7 @@ WLANTL_STAPktPending
     through WLANTL_TX_STAID_AC_IND message.
   -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if (WLAN_STA_SOFTAP != pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType)
     {
@@ -2325,6 +2623,8 @@ WLANTL_STAPktPending
 
       vos_atomic_set_U8( &pTLCb->atlSTAClients[ucSTAId].ucPktPending, 1);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FETURE_WLAN_TDLS
     if ((WLAN_STA_SOFTAP != pClientSTA->wSTADesc.wSTAType) &&
         !(vos_concurrent_sessions_running()) &&
@@ -2339,6 +2639,9 @@ WLANTL_STAPktPending
       pClientSTA->aucACMask[ucAc] = 1;
 
       vos_atomic_set_U8( &pClientSTA->ucPktPending, 1);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       /*------------------------------------------------------------------------
@@ -2363,7 +2666,10 @@ WLANTL_STAPktPending
               pTLCb->uResCount, pTLCb->ucTxSuspended );
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
@@ -2376,7 +2682,10 @@ WLANTL_STAPktPending
       return vos_tx_mq_serialize( VOS_MQ_ID_TL, &vosMsg);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return VOS_STATUS_SUCCESS;
@@ -2426,6 +2735,10 @@ WLANTL_SetSTAPriority
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2453,8 +2766,11 @@ WLANTL_SetSTAPriority
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -2465,6 +2781,9 @@ WLANTL_SetSTAPriority
   }
 
   if ( 0 == pClientSTA->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -2478,8 +2797,13 @@ WLANTL_SetSTAPriority
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              "WLAN TL:Changing state for STA Pri ID: %d from %d to %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
              ucSTAId, pTLCb->atlSTAClients[ucSTAId].tlPri, tlSTAPri));
   pTLCb->atlSTAClients[ucSTAId].tlPri = tlSTAPri;
+=======
+             ucSTAId, pClientSTA->tlPri, tlSTAPri));
+  pClientSTA->tlPri = tlSTAPri;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              ucSTAId, pClientSTA->tlPri, tlSTAPri));
   pClientSTA->tlPri = tlSTAPri;
@@ -2706,6 +3030,7 @@ WLANTL_TxBAPFrm
    ------------------------------------------------------------------------*/
   ucStaId = pTLCb->tlBAPClient.ucBAPSTAId;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (( 0 == pMetaInfo->ucDisableFrmXtl ) &&
       ( 0 != pTLCb->atlSTAClients[ucStaId].wSTADesc.ucSwFrameTXXlation ))
   {
@@ -2713,6 +3038,8 @@ WLANTL_TxBAPFrm
                                                   pTLCb, ucStaId,
                                                   pMetaInfo->ucUP, &ucWDSEnabled, &extraHeadSpace);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucStaId] )
   {
        TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -2725,6 +3052,9 @@ WLANTL_TxBAPFrm
     vosStatus =  WLANTL_Translate8023To80211Header( vosDataBuff, &vosStatus,
                                                     pTLCb, &ucStaId,
                                                     pMetaInfo->ucUP, &ucWDSEnabled, &extraHeadSpace);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if ( VOS_STATUS_SUCCESS != vosStatus )
@@ -2749,17 +3079,23 @@ WLANTL_TxBAPFrm
   vosStatus = WDA_DS_BuildTxPacketInfo( pvosGCtx, vosDataBuff , 
                     &vDestMacAddr, pMetaInfo->ucDisableFrmXtl, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     &usPktLen, pTLCb->atlSTAClients[ucStaId].wSTADesc.ucQosEnabled, 
                     ucWDSEnabled, extraHeadSpace, pMetaInfo->ucType,
                             &pTLCb->atlSTAClients[ucStaId].wSTADesc.vSelfMACAddress,
                     pMetaInfo->ucTID, 0 /* No ACK */, pMetaInfo->usTimeStamp,
                     pMetaInfo->ucIsEapol, pMetaInfo->ucUP );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     &usPktLen, pTLCb->atlSTAClients[ucStaId]->wSTADesc.ucQosEnabled,
                     ucWDSEnabled, extraHeadSpace, pMetaInfo->ucType,
                             &pTLCb->atlSTAClients[ucStaId]->wSTADesc.vSelfMACAddress,
                     pMetaInfo->ucTID, 0 /* No ACK */, pMetaInfo->usTimeStamp,
                     pMetaInfo->ucIsEapol || pMetaInfo->ucIsWai, pMetaInfo->ucUP );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if ( VOS_STATUS_SUCCESS != vosStatus )
@@ -2860,6 +3196,10 @@ WLANTL_GetRssi
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2894,8 +3234,11 @@ WLANTL_GetRssi
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -2906,6 +3249,9 @@ WLANTL_GetRssi
   }
 
   if ( 0 == pClientSTA->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -2919,7 +3265,11 @@ WLANTL_GetRssi
   if(pTLCb->isBMPS)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     *pRssi = pTLCb->atlSTAClients[ucSTAId].rssiAvgBmps;
+=======
+    *pRssi = pClientSTA->rssiAvgBmps;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     *pRssi = pClientSTA->rssiAvgBmps;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2930,7 +3280,11 @@ WLANTL_GetRssi
     if(0 == *pRssi)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       *pRssi = pTLCb->atlSTAClients[ucSTAId].rssiAvg;
+=======
+      *pRssi = pClientSTA->rssiAvg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       *pRssi = pClientSTA->rssiAvg;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2939,7 +3293,11 @@ WLANTL_GetRssi
   else
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     *pRssi = pTLCb->atlSTAClients[ucSTAId].rssiAvg;
+=======
+    *pRssi = pClientSTA->rssiAvg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     *pRssi = pClientSTA->rssiAvg;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3001,6 +3359,10 @@ WLANTL_GetLinkQuality
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3033,9 +3395,12 @@ WLANTL_GetLinkQuality
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -3046,6 +3411,9 @@ WLANTL_GetLinkQuality
   }
 
   if ( 0 == pClientSTA->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -3057,7 +3425,11 @@ WLANTL_GetLinkQuality
     Copy will not be locked; please read restriction
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   *puLinkQuality = pTLCb->atlSTAClients[ucSTAId].uLinkQualityAvg;
+=======
+  *puLinkQuality = pClientSTA->uLinkQualityAvg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   *puLinkQuality = pClientSTA->uLinkQualityAvg;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3128,8 +3500,11 @@ WLANTL_FlushStaTID
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
         TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -3138,6 +3513,9 @@ WLANTL_FlushStaTID
   }
 
   if ( 0 == pTLCb->atlSTAClients[ucSTAId]->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -3512,8 +3890,13 @@ WLANTL_TxMgmtFrm
        return vosStatus;
      }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_CCX
     /* CCX IAPP Frame which are data frames but technically used
+=======
+
+    /* CCX IAPP/TDLS Frame which are data frames but technically used
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     /* CCX IAPP/TDLS Frame which are data frames but technically used
@@ -3525,7 +3908,10 @@ WLANTL_TxMgmtFrm
         uQosHdr = VOS_TRUE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*----------------------------------------------------------------------
@@ -3704,8 +4090,11 @@ WLANTL_SuspendDataTx
   WLANTL_CbType*  pTLCb = NULL;
   vos_msg_t       vosMsg;
 <<<<<<< HEAD
+<<<<<<< HEAD
   v_U8_t          ucTxSuspendReq, ucTxSuspended;
   v_U32_t         STAId = 0;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -3717,7 +4106,11 @@ WLANTL_SuspendDataTx
    ------------------------------------------------------------------------*/
   pTLCb = VOS_GET_TL_CB(pvosGCtx);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( NULL == pTLCb || NULL == pucSTAId )
+=======
+  if ( NULL == pTLCb )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( NULL == pTLCb )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3730,6 +4123,7 @@ WLANTL_SuspendDataTx
   /*------------------------------------------------------------------------
     Check the type of request: generic suspend, or per station suspend
    ------------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
   /* Station IDs for Suspend request are received as bitmap                  */
   ucTxSuspendReq = *pucSTAId;
@@ -3747,12 +4141,19 @@ WLANTL_SuspendDataTx
 =======
   if (NULL == pucSTAId)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+  if (NULL == pucSTAId)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     /* General Suspend Request received */
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
               "WLAN TL:General suspend requested"));
 <<<<<<< HEAD
+<<<<<<< HEAD
     vos_atomic_set_U8( &pTLCb->ucTxSuspended, WLAN_ALL_STA);
+=======
+    vos_atomic_set_U8( &pTLCb->ucTxSuspended, 1);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     vos_atomic_set_U8( &pTLCb->ucTxSuspended, 1);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3760,6 +4161,7 @@ WLANTL_SuspendDataTx
   }
   else
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
     /* Station specific Suspend Request received */
     /* Update Station Id Bit map for suspend request */
@@ -3792,6 +4194,8 @@ WLANTL_SuspendDataTx
       STAId++;
     } while ( STAId < WLAN_MAX_STA_COUNT );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( WLANTL_STA_ID_INVALID( *pucSTAId ) )
     {
       TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -3817,6 +4221,9 @@ WLANTL_SuspendDataTx
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
          "WLAN TL:Suspend request for station: %d", *pucSTAId));
     vos_atomic_set_U8( &pTLCb->atlSTAClients[*pucSTAId]->ucTxSuspended, 1);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     vosMsg.reserved = *pucSTAId;
   }
@@ -3831,7 +4238,11 @@ WLANTL_SuspendDataTx
   {
     VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
        " %s fails to post message", __FUNCTION__);
+=======
+       " %s fails to post message", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        " %s fails to post message", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3881,8 +4292,11 @@ WLANTL_ResumeDataTx
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
   v_U8_t          ucTxResumeReq;
   v_U32_t         STAId = 0;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
@@ -3893,7 +4307,11 @@ WLANTL_ResumeDataTx
    ------------------------------------------------------------------------*/
   pTLCb = VOS_GET_TL_CB(pvosGCtx);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( NULL == pTLCb || NULL == pucSTAId)
+=======
+  if ( NULL == pTLCb )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( NULL == pTLCb )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3904,21 +4322,28 @@ WLANTL_ResumeDataTx
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   ucTxResumeReq = *pucSTAId;
   /*------------------------------------------------------------------------
     Check to see the type of resume
    ------------------------------------------------------------------------*/
   if ( WLAN_ALL_STA == *pucSTAId)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Check to see the type of resume
    ------------------------------------------------------------------------*/
   if ( NULL == pucSTAId )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
               "WLAN TL:General resume requested"));
     vos_atomic_set_U8( &pTLCb->ucTxSuspended, 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     /* Set to Resume for all stations */
@@ -3956,6 +4381,8 @@ WLANTL_ResumeDataTx
       STAId++;
     } while ( STAId < WLAN_MAX_STA_COUNT );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
   else
   {
@@ -3984,6 +4411,9 @@ WLANTL_ResumeDataTx
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
          "WLAN TL:Resume request for station: %d", *pucSTAId));
     vos_atomic_set_U8( &pTLCb->atlSTAClients[*pucSTAId]->ucTxSuspended, 0);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -3991,7 +4421,12 @@ WLANTL_ResumeDataTx
     Resuming transmission
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( pTLCb->uResCount >=  WDA_TLI_MIN_RES_MF )
+=======
+  if (( pTLCb->uResCount >=  WDA_TLI_MIN_RES_MF ) &&
+      ( 0 == pTLCb->ucTxSuspended ))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if (( pTLCb->uResCount >=  WDA_TLI_MIN_RES_MF ) &&
       ( 0 == pTLCb->ucTxSuspended ))
@@ -4158,8 +4593,11 @@ WLANTL_GetTxPktCount
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
         TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -4168,6 +4606,9 @@ WLANTL_GetTxPktCount
   }
 
   if ( 0 == pTLCb->atlSTAClients[ucSTAId]->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -4184,7 +4625,11 @@ WLANTL_GetTxPktCount
       //         ucSTAId, ucTid);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   *puTxPktCount = pTLCb->atlSTAClients[ucSTAId].auTxCount[ucTid];
+=======
+  *puTxPktCount = pTLCb->atlSTAClients[ucSTAId]->auTxCount[ucTid];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   *puTxPktCount = pTLCb->atlSTAClients[ucSTAId]->auTxCount[ucTid];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4236,6 +4681,10 @@ WLANTL_GetRxPktCount
 {
   WLANTL_CbType*  pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4270,9 +4719,12 @@ WLANTL_GetRxPktCount
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -4283,6 +4735,9 @@ WLANTL_GetRxPktCount
   }
 
   if ( 0 == pClientSTA->ucExists )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -4298,7 +4753,11 @@ WLANTL_GetRxPktCount
              ucSTAId, ucTid));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   *puRxPktCount = pTLCb->atlSTAClients[ucSTAId].auRxCount[ucTid];
+=======
+  *puRxPktCount = pClientSTA->auRxCount[ucTid];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   *puRxPktCount = pClientSTA->auRxCount[ucTid];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4307,7 +4766,10 @@ WLANTL_GetRxPktCount
 }/* WLANTL_GetRxPktCount */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS
@@ -4316,7 +4778,10 @@ WLANTL_TxFCFrame
   v_PVOID_t       pvosGCtx
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*============================================================================
@@ -4374,9 +4839,13 @@ WLANTL_GetFrames
   vos_pkt_t     **ppFrameDataBuff,
   v_U32_t         uSize,
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
   v_U8_t          uFlowMask,
 #endif
+=======
+  v_U8_t          uFlowMask,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   v_U8_t          uFlowMask,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4386,6 +4855,10 @@ WLANTL_GetFrames
    vos_pkt_t**         pvosDataBuff = (vos_pkt_t**)ppFrameDataBuff;
    WLANTL_CbType*      pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4401,6 +4874,10 @@ WLANTL_GetFrames
    v_U32_t             uTotalPktLen;
    v_U32_t             i=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   v_U32_t             j=0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_U32_t             j=0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4428,7 +4905,11 @@ WLANTL_GetFrames
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: Invalid pMac", __FUNCTION__));
+=======
+                      "%s: Invalid pMac", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "%s: Invalid pMac", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4439,9 +4920,13 @@ WLANTL_GetFrames
                                          each iteration */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
   pTLCb->uResCount = uSize;
 #endif
+=======
+  pTLCb->uResCount = uSize;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pTLCb->uResCount = uSize;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4457,6 +4942,7 @@ WLANTL_GetFrames
   pTLCb->bUrgent      = FALSE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   while (( pTLCb->tlConfigInfo.uMinFramesProcThres < pTLCb->uResCount ) &&
          ( 0 < uRemaining ))
@@ -4468,10 +4954,15 @@ WLANTL_GetFrames
     systemRole = wdaGetGlobalSystemRole(pMac);
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   while (( pTLCb->tlConfigInfo.uMinFramesProcThres < pTLCb->uResCount ) &&
          ( 0 < uRemaining ))
   {
     systemRole = wdaGetGlobalSystemRole(pMac);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_FLOWCTRL_EN
 /* FIXME: The code has been disabled since it is creating issues in power save */
@@ -4490,11 +4981,16 @@ WLANTL_GetFrames
     
        if ( ( pTLCb->uResCount > uResLen ) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
            ( uRemaining > uTotalPktLen )
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
            && ( uFlowMask & ( 1 << WDA_TXFLOW_FC ) )
 #endif
           )
+=======
+            ( uRemaining > uTotalPktLen ) &&
+            ( uFlowMask & ( 1 << WDA_TXFLOW_FC ) ) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             ( uRemaining > uTotalPktLen ) &&
             ( uFlowMask & ( 1 << WDA_TXFLOW_FC ) ) )
@@ -4520,7 +5016,11 @@ WLANTL_GetFrames
        {
           TLLOGW(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "WLAN TL:send fc out of source %s", __FUNCTION__));
+=======
+                "WLAN TL:send fc out of source %s", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "WLAN TL:send fc out of source %s", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4531,9 +5031,15 @@ WLANTL_GetFrames
    else 
 #endif //WLAN_SOFTAP_FLOWCTRL_EN
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif //#ifdef WLAN_SOFTAP_FEATURE
 
     if ( NULL != pTLCb->tlMgmtFrmClient.vosPendingDataBuff )
+=======
+
+    if (( NULL != pTLCb->tlMgmtFrmClient.vosPendingDataBuff ) &&
+        ( uFlowMask & ( 1 << WDA_TXFLOW_MGMT ) ) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     if (( NULL != pTLCb->tlMgmtFrmClient.vosPendingDataBuff ) &&
@@ -4547,11 +5053,16 @@ WLANTL_GetFrames
 
       if ( ( pTLCb->uResCount > uResLen ) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
            ( uRemaining > uTotalPktLen )
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
            && ( uFlowMask & ( 1 << WDA_TXFLOW_MGMT ) )
 #endif
          )
+=======
+           ( uRemaining > uTotalPktLen ) &&
+           ( uFlowMask & ( 1 << WDA_TXFLOW_MGMT ) ) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            ( uRemaining > uTotalPktLen ) &&
            ( uFlowMask & ( 1 << WDA_TXFLOW_MGMT ) ) )
@@ -4585,11 +5096,15 @@ WLANTL_GetFrames
     else if (( pTLCb->tlBAPClient.vosPendingDataBuff ) &&
              ( WDA_TLI_MIN_RES_BAP <= pTLCb->uResCount ) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
              ( 0 == pTLCb->ucTxSuspended )
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
            && ( uFlowMask & ( 1 << WDA_TXFLOW_BAP ) )
 #endif
           )
+=======
+             ( 0 == pTLCb->ucTxSuspended )          )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              ( 0 == pTLCb->ucTxSuspended )          )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4624,6 +5139,7 @@ WLANTL_GetFrames
       else
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
         ucResult = uResLen + WDA_TLI_MIN_RES_MF;
 #else
@@ -4643,6 +5159,8 @@ WLANTL_GetFrames
 #endif
           )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ucResult = uResLen + WDA_TLI_MIN_RES_MF;
         break; /* Out of resources or reached max len */
       }
@@ -4767,6 +5285,9 @@ WLANTL_GetFrames
               ( uFlowMask & ( 1 << WDA_TXFLOW_AC_BE ) ) ||
               ( uFlowMask & ( 1 << WDA_TXFLOW_AC_VI ) ) ||
               ( uFlowMask & ( 1 << WDA_TXFLOW_AC_VO ) )) )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       /*---------------------------------------------------------------------
@@ -4782,8 +5303,11 @@ WLANTL_GetFrames
         ucSTAId             = pTLCb->ucCachedSTAId; 
         ucAC                = pTLCb->ucCachedAC;
 <<<<<<< HEAD
+<<<<<<< HEAD
         pTLCb->atlSTAClients[ucSTAId].ucNoMoreData = 0;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
         {
@@ -4794,6 +5318,9 @@ WLANTL_GetFrames
 
         pTLCb->atlSTAClients[ucSTAId]->ucNoMoreData = 0;
         pClientSTA = pTLCb->atlSTAClients[ucSTAId];
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -4814,12 +5341,15 @@ WLANTL_GetFrames
         /* ucCurrentAC should have correct AC to be served by calling
            WLAN_TLGetNextTxIds */
 <<<<<<< HEAD
+<<<<<<< HEAD
         ucAC = pTLCb->atlSTAClients[ucSTAId].ucCurrentAC;
 
         pTLCb->atlSTAClients[ucSTAId].ucNoMoreData = 1;
         TLLOG4(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_LOW,
                    "WLAN TL: %s get one data frame, station ID %d ", __FUNCTION__, ucSTAId));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pClientSTA = pTLCb->atlSTAClients[ucSTAId];
         if ( NULL == pClientSTA )
         {
@@ -4833,11 +5363,15 @@ WLANTL_GetFrames
         pClientSTA->ucNoMoreData = 1;
         TLLOG4(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_LOW,
                    "WLAN TL: %s get one data frame, station ID %d ", __func__, ucSTAId));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*-------------------------------------------------------------------
         Check to see that STA is valid and tx is not suspended
          -------------------------------------------------------------------*/
         if ( ( ! WLANTL_STA_ID_INVALID( ucSTAId ) ) &&
+<<<<<<< HEAD
 <<<<<<< HEAD
            ( 0 == pTLCb->atlSTAClients[ucSTAId].ucTxSuspended ) &&
            ( 0 == pTLCb->atlSTAClients[ucSTAId].fcStaTxDisabled) )
@@ -4848,6 +5382,8 @@ WLANTL_GetFrames
 
           pfnSTAFsm = tlSTAFsm[pTLCb->atlSTAClients[ucSTAId].tlState].
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            ( 0 == pClientSTA->ucTxSuspended ) &&
            ( 0 == pClientSTA->fcStaTxDisabled) )
         {
@@ -4856,13 +5392,20 @@ WLANTL_GetFrames
           wSTAEvent = WLANTL_TX_EVENT;
 
           pfnSTAFsm = tlSTAFsm[pClientSTA->tlState].
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pfnSTATbl[wSTAEvent];
 
           if ( NULL != pfnSTAFsm )
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             pTLCb->atlSTAClients[ucSTAId].ucNoMoreData = 0;
+=======
+            pClientSTA->ucNoMoreData = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pClientSTA->ucNoMoreData = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4872,7 +5415,11 @@ WLANTL_GetFrames
                 ( NULL != vosTempBuf ))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                  pTLCb->atlSTAClients[ucSTAId].pfnSTATxComp( pvosGCtx,
+=======
+                 pClientSTA->pfnSTATxComp( pvosGCtx,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  pClientSTA->pfnSTATxComp( pvosGCtx,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4904,11 +5451,16 @@ WLANTL_GetFrames
 
         if ( ( pTLCb->uResCount >= (uResLen + WDA_TLI_MIN_RES_BAP ) ) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
            ( uRemaining > uTotalPktLen )
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
            && ( uFlowMask & ( 1 << ucAC ) )
 #endif
            )
+=======
+             ( uRemaining > uTotalPktLen ) &&
+             ( uFlowMask & ( 1 << ucAC ) ) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              ( uRemaining > uTotalPktLen ) &&
              ( uFlowMask & ( 1 << ucAC ) ) )
@@ -4927,6 +5479,7 @@ WLANTL_GetFrames
           pTLCb->uResCount  -= uResLen;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
           //fow control update
           pTLCb->atlSTAClients[ucSTAId].uIngress_length += uResLen;
@@ -4934,10 +5487,15 @@ WLANTL_GetFrames
             (pTLCb->atlSTAClients[ucSTAId].uBuffThresholdMax - uResLen) : 0;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           //fow control update
           pClientSTA->uIngress_length += uResLen;
           pClientSTA->uBuffThresholdMax = (pClientSTA->uBuffThresholdMax >= uResLen) ?
             (pClientSTA->uBuffThresholdMax - uResLen) : 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         }
@@ -4947,6 +5505,7 @@ WLANTL_GetFrames
           pTLCb->vosTempBuf = vosTempBuf;
           pTLCb->ucCachedSTAId = ucSTAId;
           pTLCb->ucCachedAC    = ucAC;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
           ucResult = uResLen + WDA_TLI_MIN_RES_BAP;
@@ -4961,6 +5520,11 @@ WLANTL_GetFrames
           TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                "min %d res required by TL.", ucResult ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+          ucResult = uResLen + WDA_TLI_MIN_RES_BAP;
+          TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
+               "min %d res required by TL.", ucResult ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           break; /* Out of resources or reached max len */
         }
       }
@@ -4969,8 +5533,13 @@ WLANTL_GetFrames
            for ( i = 0; i < WLAN_MAX_STA_COUNT; i++)
            {
 <<<<<<< HEAD
+<<<<<<< HEAD
               if ((pTLCb->atlSTAClients[i].ucExists) && 
                   (pTLCb->atlSTAClients[i].ucPktPending))
+=======
+              if (NULL != pTLCb->atlSTAClients[i] && (pTLCb->atlSTAClients[i]->ucExists) &&
+                  (pTLCb->atlSTAClients[i]->ucPktPending))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               if (NULL != pTLCb->atlSTAClients[i] && (pTLCb->atlSTAClients[i]->ucExists) &&
                   (pTLCb->atlSTAClients[i]->ucPktPending))
@@ -4998,7 +5567,10 @@ WLANTL_GetFrames
              "WLAN TL:Returning from GetFrame: resources = %d suspended = %d",
                  pTLCb->uResCount, pTLCb->ucTxSuspended));
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* TL is starving even when DXE is not in low resource condition 
@@ -5015,7 +5587,10 @@ WLANTL_GetFrames
          ucResult = WDA_TLI_MIN_RES_DATA;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        break; /*out of min data resources*/
@@ -5085,9 +5660,12 @@ WLANTL_TxComp
   WLANTL_TxCompCBType  pfnTxComp = NULL;
   VOS_STATUS           vosStatus = VOS_STATUS_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if !defined( FEATURE_WLAN_INTEGRATED_SOC )
   vos_msg_t            vosMsg;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vos_pkt_t*           vosTempTx = NULL;
@@ -5133,7 +5711,11 @@ WLANTL_TxComp
 
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL:Calling Tx complete for pkt %x in function %x",
+=======
+               "WLAN TL:Calling Tx complete for pkt %p in function %p",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL:Calling Tx complete for pkt %p in function %p",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5149,6 +5731,7 @@ WLANTL_TxComp
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if !defined( FEATURE_WLAN_INTEGRATED_SOC ) 
   if (( 0 == pTLCb->usPendingTxCompleteCount ) &&
       ( pTLCb->uResCount <= WDA_TLI_BD_PDU_RESERVE_THRESHOLD ))
@@ -5159,6 +5742,8 @@ WLANTL_TxComp
     vos_tx_mq_serialize( VOS_MQ_ID_TL, &vosMsg);
   }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  
@@ -5219,6 +5804,10 @@ WLANTL_CacheSTAFrame
   v_U8_t    ucBcastSig;
   v_BOOL_t  bOldSTAPkt;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5231,8 +5820,13 @@ WLANTL_CacheSTAFrame
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL: Invalid input pointer on WLANTL_CacheSTAFrame TL %x"
                " Packet %x", pTLCb, vosTempBuff ));
+=======
+               "WLAN TL: Invalid input pointer on WLANTL_CacheSTAFrame TL %p"
+               " Packet %p", pTLCb, vosTempBuff ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL: Invalid input pointer on WLANTL_CacheSTAFrame TL %p"
                " Packet %p", pTLCb, vosTempBuff ));
@@ -5247,7 +5841,10 @@ WLANTL_CacheSTAFrame
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -5256,14 +5853,22 @@ WLANTL_CacheSTAFrame
           "WLAN TL:Client Memory was not allocated on %s", __func__));
       return VOS_STATUS_E_FAILURE;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              "WLAN TL:Attempting to cache pkt for STA %d, BD DPU Sig: %d with sig UC: %d, BC: %d", 
              ucSTAId, uDPUSig,
 <<<<<<< HEAD
+<<<<<<< HEAD
              pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig,
              pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig));
+=======
+             pClientSTA->wSTADesc.ucUcastSig,
+             pClientSTA->wSTADesc.ucBcastSig));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              pClientSTA->wSTADesc.ucUcastSig,
              pClientSTA->wSTADesc.ucBcastSig));
@@ -5291,8 +5896,13 @@ WLANTL_CacheSTAFrame
     ucBcastSig = (v_U8_t)uDPUSig;
     bOldSTAPkt = (( WLAN_TL_INVALID_B_SIG != 
 <<<<<<< HEAD
+<<<<<<< HEAD
                   pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig ) &&
       ( ucBcastSig == pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig ));
+=======
+                  pClientSTA->wSTADesc.ucBcastSig ) &&
+      ( ucBcastSig == pClientSTA->wSTADesc.ucBcastSig ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   pClientSTA->wSTADesc.ucBcastSig ) &&
       ( ucBcastSig == pClientSTA->wSTADesc.ucBcastSig ));
@@ -5303,8 +5913,13 @@ WLANTL_CacheSTAFrame
     ucUcastSig = (v_U8_t)uDPUSig;
     bOldSTAPkt = (( WLAN_TL_INVALID_U_SIG != 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig ) &&
         ( ucUcastSig == pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig ));
+=======
+                    pClientSTA->wSTADesc.ucUcastSig ) &&
+        ( ucUcastSig == pClientSTA->wSTADesc.ucUcastSig ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     pClientSTA->wSTADesc.ucUcastSig ) &&
         ( ucUcastSig == pClientSTA->wSTADesc.ucUcastSig ));
@@ -5318,7 +5933,11 @@ WLANTL_CacheSTAFrame
     associated station 
   -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( bOldSTAPkt )
+=======
+  if ( bOldSTAPkt || bBcast )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( bOldSTAPkt || bBcast )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5328,8 +5947,13 @@ WLANTL_CacheSTAFrame
                "BC: %d - dropping", 
                uDPUSig, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig, 
                pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig));
+=======
+               pClientSTA->wSTADesc.ucUcastSig,
+               pClientSTA->wSTADesc.ucBcastSig));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                pClientSTA->wSTADesc.ucUcastSig,
                pClientSTA->wSTADesc.ucBcastSig));
@@ -5339,30 +5963,42 @@ WLANTL_CacheSTAFrame
   else
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( NULL == pTLCb->atlSTAClients[ucSTAId].vosBegCachedFrame ) 
     {
       /*this is the first frame that we are caching */
       pTLCb->atlSTAClients[ucSTAId].vosBegCachedFrame = vosTempBuff;   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( NULL == pClientSTA->vosBegCachedFrame )
     {
       /*this is the first frame that we are caching */
       pClientSTA->vosBegCachedFrame = vosTempBuff;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
     {
       /*this is a subsequent frame that we are caching: chain to the end */
 <<<<<<< HEAD
+<<<<<<< HEAD
       vos_pkt_chain_packet(pTLCb->atlSTAClients[ucSTAId].vosEndCachedFrame, 
                            vosTempBuff, VOS_TRUE);
     }
     pTLCb->atlSTAClients[ucSTAId].vosEndCachedFrame = vosTempBuff; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_pkt_chain_packet(pClientSTA->vosEndCachedFrame,
                            vosTempBuff, VOS_TRUE);
     }
     pClientSTA->vosEndCachedFrame = vosTempBuff;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }/*else new packet*/
 
@@ -5461,7 +6097,12 @@ WLANTL_ForwardSTAFrames
 )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   WLANTL_CbType*  pTLCb = NULL; 
+=======
+  WLANTL_CbType*  pTLCb = NULL;
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_CbType*  pTLCb = NULL;
   WLANTL_STAClientType* pClientSTA = NULL;
@@ -5476,7 +6117,11 @@ WLANTL_ForwardSTAFrames
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "WLAN TL: Invalid input pointer on WLANTL_ForwardSTAFrames TL %x",
+=======
+        "WLAN TL: Invalid input pointer on WLANTL_ForwardSTAFrames TL %p",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "WLAN TL: Invalid input pointer on WLANTL_ForwardSTAFrames TL %p",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5498,12 +6143,15 @@ WLANTL_ForwardSTAFrames
      if not registered, flush cached frames.
    ------------------------------------------------------------------------*/ 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists )
   {
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
        "WLAN TL:Station has been deleted for STA %d - flushing cache", ucSTAId));
     WLANTL_FlushCachedFrames(pTLCb->atlSTAClients[ucSTAId].vosBegCachedFrame);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -5518,6 +6166,9 @@ WLANTL_ForwardSTAFrames
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
        "WLAN TL:Station has been deleted for STA %d - flushing cache", ucSTAId));
     WLANTL_FlushCachedFrames(pClientSTA->vosBegCachedFrame);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto done; 
   }
@@ -5537,8 +6188,13 @@ WLANTL_ForwardSTAFrames
     Save the new signature values
   ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig  = ucUcastSig;
   pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig  = ucBcastSig;
+=======
+  pClientSTA->wSTADesc.ucUcastSig  = ucUcastSig;
+  pClientSTA->wSTADesc.ucBcastSig  = ucBcastSig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pClientSTA->wSTADesc.ucUcastSig  = ucUcastSig;
   pClientSTA->wSTADesc.ucBcastSig  = ucBcastSig;
@@ -5552,7 +6208,11 @@ WLANTL_ForwardSTAFrames
      Check to see if we have any cached data to forward 
    -------------------------------------------------------------------------*/ 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( NULL != pTLCb->atlSTAClients[ucSTAId].vosBegCachedFrame ) 
+=======
+  if ( NULL != pClientSTA->vosBegCachedFrame )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( NULL != pClientSTA->vosBegCachedFrame )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5563,7 +6223,11 @@ WLANTL_ForwardSTAFrames
     WLANTL_RxCachedFrames( pTLCb, 
                            ucSTAId, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                            pTLCb->atlSTAClients[ucSTAId].vosBegCachedFrame);
+=======
+                           pClientSTA->vosBegCachedFrame);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            pClientSTA->vosBegCachedFrame);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5579,8 +6243,13 @@ done:
    Clear the station cache 
    -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[ucSTAId].vosBegCachedFrame = NULL;   
   pTLCb->atlSTAClients[ucSTAId].vosEndCachedFrame = NULL; 
+=======
+  pClientSTA->vosBegCachedFrame = NULL;
+  pClientSTA->vosEndCachedFrame = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pClientSTA->vosBegCachedFrame = NULL;
   pClientSTA->vosEndCachedFrame = NULL;
@@ -5590,7 +6259,11 @@ done:
     After all the init is complete we can mark the existance flag 
     ----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[ucSTAId].ucRxBlocked = 0;
+=======
+  pClientSTA->ucRxBlocked = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pClientSTA->ucRxBlocked = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5894,7 +6567,10 @@ WLANTL_ProcessBAPFrame
 }/*WLANTL_ProcessBAPFrame*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -5945,12 +6621,15 @@ WLANTL_ProcessFCFrame
 #if 1 //enable processing of only fcStaTxDisabled bitmap for now. the else part is old better qos code.
       // need to revisit the old code for full implementation.
 <<<<<<< HEAD
+<<<<<<< HEAD
   v_U8_t               ucTxSuspended = 0, ucTxSuspendReq = 0, ucTxResumeReq = 0;
   WLANTL_CbType*       pTLCb = NULL;
 
   /*------------------------------------------------------------------------
      Extract TL control block
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   v_U8_t            ucSTAId;
   v_U16_t           ucStaValidBitmap;
   v_U16_t           ucStaTxDisabledBitmap;
@@ -5961,6 +6640,9 @@ WLANTL_ProcessFCFrame
   #endif
   /*------------------------------------------------------------------------
    Extract TL control block
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ------------------------------------------------------------------------*/
   pTLCb = VOS_GET_TL_CB(pvosGCtx);
@@ -5970,6 +6652,7 @@ WLANTL_ProcessFCFrame
           "WLAN TL:Invalid TL pointer from pvosGCtx on WLANTL_SuspendDataTx"));
     return VOS_STATUS_E_FAULT;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   /* Existing Stations with Tx suspended */
@@ -5993,6 +6676,8 @@ WLANTL_ProcessFCFrame
   {
     WLANTL_ResumeDataTx(pvosGCtx, &ucTxResumeReq);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ucStaValidBitmap = WDA_GET_RX_FC_VALID_STA_MASK(pvBDHeader);
   ucStaTxDisabledBitmap = WDA_GET_RX_FC_STA_TX_DISABLED_BITMAP(pvBDHeader);
 #ifdef TL_DEBUG_FC
@@ -6017,6 +6702,9 @@ WLANTL_ProcessFCFrame
     {
       WLANTL_ResumeDataTx(pvosGCtx, &ucSTAId);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -6033,7 +6721,11 @@ WLANTL_ProcessFCFrame
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "WLAN TL:Invalid pointer in %s \n", __FUNCTION__));
+=======
+        "WLAN TL:Invalid pointer in %s \n", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "WLAN TL:Invalid pointer in %s \n", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6122,7 +6814,10 @@ WLANTL_ProcessFCFrame
   return VOS_STATUS_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -6173,6 +6868,10 @@ WLANTL_RxFrames
   vos_pkt_t*          vosDataBuff = (vos_pkt_t*)pFrameDataBuff;
   WLANTL_CbType*      pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6187,17 +6886,23 @@ WLANTL_RxFrames
   v_BOOL_t            broadcast  = VOS_FALSE;
   v_BOOL_t            selfBcastLoopback = VOS_FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   static v_U8_t       first_data_pkt_arrived = 0;
   v_U32_t             uDPUSig; 
 #ifdef WLAN_SOFTAP_FEATURE
   v_U16_t             usPktLen;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   static v_U8_t       first_data_pkt_arrived;
   v_U32_t             uDPUSig; 
   v_U16_t             usPktLen;
 #ifdef FEATURE_WLAN_TDLS_INTERNAL 
   v_U8_t              ucMPDUHLen = 0 ;
   v_U16_t             usEtherType = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
@@ -6234,6 +6939,12 @@ WLANTL_RxFrames
   while ( NULL != vosTempBuff )
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    broadcast = VOS_FALSE;
+    selfBcastLoopback = VOS_FALSE; 
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     broadcast = VOS_FALSE;
     selfBcastLoopback = VOS_FALSE; 
@@ -6258,7 +6969,10 @@ WLANTL_RxFrames
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*---------------------------------------------------------------------
@@ -6276,7 +6990,10 @@ WLANTL_RxFrames
       continue;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -6306,10 +7023,13 @@ WLANTL_RxFrames
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     vos_pkt_get_packet_length(vosTempBuff, &usPktLen);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
     if ( WLANTL_IS_DATA_FRAME(ucFrmType))
     {
@@ -6318,6 +7038,9 @@ WLANTL_RxFrames
     }
 #endif
     vos_pkt_get_packet_length(vosTempBuff, &usPktLen);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /*---------------------------------------------------------------------
@@ -6325,13 +7048,19 @@ WLANTL_RxFrames
     ---------------------------------------------------------------------*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( WLANTL_IS_MGMT_FRAME(ucFrmType) )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( WLANTL_IS_MGMT_FRAME(ucFrmType) 
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
         || (WLANTL_IS_TDLS_FRAME(usEtherType)) 
 #endif
        )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -6425,6 +7154,7 @@ WLANTL_RxFrames
           the station before the new incoming ones 
       -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       if ((( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists ) ||
           ( (0 != pTLCb->atlSTAClients[ucSTAId].ucRxBlocked)
 #ifdef WLAN_SOFTAP_FEATURE
@@ -6434,6 +7164,8 @@ WLANTL_RxFrames
           ) ||
           ( WLANTL_STA_DISCONNECTED == pTLCb->atlSTAClients[ucSTAId].tlState)) &&
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pClientSTA = pTLCb->atlSTAClients[ucSTAId];
       if (NULL == pClientSTA)
       {
@@ -6500,6 +7232,9 @@ WLANTL_RxFrames
             && (WLAN_STA_SOFTAP != pClientSTA->wSTADesc.wSTAType)
           ) ||
           ( WLANTL_STA_DISCONNECTED == pClientSTA->tlState)) &&
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /*Dont buffer Broadcast/Multicast frames. If AP transmits bursts of Broadcast/Multicast data frames, 
              * libra buffers all Broadcast/Multicast packets after authentication with AP, 
@@ -6509,6 +7244,12 @@ WLANTL_RxFrames
         uDPUSig = WDA_GET_RX_DPUSIG( pvBDHeader );
           //Station has not yet been registered with TL - cache the frame
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        TLLOGW(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
+                 "%s: staId %d exist %d tlState %d cache rx frame \n", __func__, ucSTAId,
+                 pClientSTA->ucExists, pClientSTA->tlState));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         TLLOGW(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
                  "%s: staId %d exist %d tlState %d cache rx frame \n", __func__, ucSTAId,
@@ -6520,9 +7261,14 @@ WLANTL_RxFrames
       }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #ifdef FEATURE_WLAN_CCX
       if ((pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucIsCcxSta)|| broadcast)
+=======
+#ifdef FEATURE_WLAN_CCX
+      if ((pClientSTA->wSTADesc.ucIsCcxSta)|| broadcast)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef FEATURE_WLAN_CCX
       if ((pClientSTA->wSTADesc.ucIsCcxSta)|| broadcast)
@@ -6556,7 +7302,11 @@ WLANTL_RxFrames
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       if ( WLAN_STA_BT_AMP == pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType )
+=======
+      if ( WLAN_STA_BT_AMP == pClientSTA->wSTADesc.wSTAType )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if ( WLAN_STA_BT_AMP == pClientSTA->wSTADesc.wSTAType )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6589,7 +7339,11 @@ WLANTL_RxFrames
       wSTAEvent = WLANTL_RX_EVENT;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       pfnSTAFsm = tlSTAFsm[pTLCb->atlSTAClients[ucSTAId].tlState].
+=======
+      pfnSTAFsm = tlSTAFsm[pClientSTA->tlState].
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pfnSTAFsm = tlSTAFsm[pClientSTA->tlState].
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6627,7 +7381,11 @@ WLANTL_RxFrames
           TLLOGW(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
             "WLAN TL:NULL state function, STA:%d, State: %d- dropping packet",
 <<<<<<< HEAD
+<<<<<<< HEAD
                    ucSTAId, pTLCb->atlSTAClients[ucSTAId].tlState));
+=======
+                   ucSTAId, pClientSTA->tlState));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    ucSTAId, pClientSTA->tlState));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6636,6 +7394,7 @@ WLANTL_RxFrames
           vosTempBuff = vosDataBuff;
           continue;
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /* This will be handled within statistics module */
@@ -6648,6 +7407,8 @@ WLANTL_RxFrames
 #endif
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }/* else data frame*/
@@ -6703,6 +7464,10 @@ WLANTL_RxCachedFrames
 )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType* pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType* pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6716,7 +7481,11 @@ WLANTL_RxCachedFrames
   v_BOOL_t            bSigMatch  = VOS_FALSE; 
   v_BOOL_t            selfBcastLoopback = VOS_FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   static v_U8_t       first_data_pkt_arrived = 0;
+=======
+  static v_U8_t       first_data_pkt_arrived;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   static v_U8_t       first_data_pkt_arrived;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6746,6 +7515,12 @@ WLANTL_RxCachedFrames
   while ( NULL != vosTempBuff )
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    broadcast = VOS_FALSE;
+    selfBcastLoopback = VOS_FALSE; 
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     broadcast = VOS_FALSE;
     selfBcastLoopback = VOS_FALSE; 
@@ -6812,7 +7587,10 @@ WLANTL_RxCachedFrames
       newly added station 
     -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
 
@@ -6823,14 +7601,22 @@ WLANTL_RxCachedFrames
       return VOS_STATUS_E_FAILURE;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( broadcast )
     {
       ucBcastSig = (v_U8_t)uDPUSig;
       bSigMatch = (( WLAN_TL_INVALID_B_SIG != 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig ) &&
         ( ucBcastSig == pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucBcastSig ));
+=======
+                    pClientSTA->wSTADesc.ucBcastSig ) &&
+        ( ucBcastSig == pClientSTA->wSTADesc.ucBcastSig ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     pClientSTA->wSTADesc.ucBcastSig ) &&
         ( ucBcastSig == pClientSTA->wSTADesc.ucBcastSig ));
@@ -6841,8 +7627,13 @@ WLANTL_RxCachedFrames
       ucUcastSig = (v_U8_t)uDPUSig;
       bSigMatch = (( WLAN_TL_INVALID_U_SIG != 
 <<<<<<< HEAD
+<<<<<<< HEAD
                       pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig ) &&
           ( ucUcastSig == pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig ));
+=======
+                      pClientSTA->wSTADesc.ucUcastSig ) &&
+          ( ucUcastSig == pClientSTA->wSTADesc.ucUcastSig ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       pClientSTA->wSTADesc.ucUcastSig ) &&
           ( ucUcastSig == pClientSTA->wSTADesc.ucUcastSig ));
@@ -6855,6 +7646,7 @@ WLANTL_RxCachedFrames
     if ( !bSigMatch )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
             TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
         "WLAN TL: Cached packet does not match DPU Sig of the new STA - drop "
         " DPU Sig %d  UC %d BC %d B %d",
@@ -6862,12 +7654,17 @@ WLANTL_RxCachedFrames
         pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig,
         pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucUcastSig,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_MED,
         "WLAN TL: Cached packet does not match DPU Sig of the new STA - drop "
         " DPU Sig %d  UC %d BC %d B %d",
         uDPUSig,
         pClientSTA->wSTADesc.ucUcastSig,
         pClientSTA->wSTADesc.ucBcastSig,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         broadcast));
 
@@ -6884,7 +7681,11 @@ WLANTL_RxCachedFrames
         from BT-AMP Ctrl path 
     ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( WLAN_STA_BT_AMP == pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType )
+=======
+    if ( WLAN_STA_BT_AMP == pClientSTA->wSTADesc.wSTAType )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if ( WLAN_STA_BT_AMP == pClientSTA->wSTADesc.wSTAType )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6917,7 +7718,11 @@ WLANTL_RxCachedFrames
       wSTAEvent = WLANTL_RX_EVENT;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       pfnSTAFsm = tlSTAFsm[pTLCb->atlSTAClients[ucSTAId].tlState].
+=======
+      pfnSTAFsm = tlSTAFsm[pClientSTA->tlState].
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pfnSTAFsm = tlSTAFsm[pClientSTA->tlState].
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6957,7 +7762,11 @@ WLANTL_RxCachedFrames
         TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
             "WLAN TL:NULL state function, STA:%d, State: %d- dropping packet",
 <<<<<<< HEAD
+<<<<<<< HEAD
                    ucSTAId, pTLCb->atlSTAClients[ucSTAId].tlState));
+=======
+                   ucSTAId, pClientSTA->tlState));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    ucSTAId, pClientSTA->tlState));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7039,6 +7848,7 @@ WLANTL_ResourceCB
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /*============================================================================
                            TL STATE MACHINE
@@ -7061,6 +7871,8 @@ WLANTL_ResourceCB
    ucSTAId:        identifier of the station being processed
    vosDataBuff:   pointer to the tx vos buffer
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION   WLANTL_IsTxXmitPending
 
@@ -7076,11 +7888,15 @@ WLANTL_ResourceCB
     IN
     pvosGCtx:       pointer to the global vos context; a handle to TL's
                     or WDA's control block can be extracted from its context
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The result code associated with performing the operation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     VOS_STATUS_E_FAULT:   pointer to TL cb is NULL ; access would cause a
                           page fault
@@ -7092,10 +7908,15 @@ WLANTL_ResourceCB
     0:   No WDA_DS_TX_START_XMIT msg pending 
     1:   Msg WDA_DS_TX_START_XMIT already pending in TL msg queue 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+    0:   No WDA_DS_TX_START_XMIT msg pending 
+    1:   Msg WDA_DS_TX_START_XMIT already pending in TL msg queue 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   SIDE EFFECTS
 
 ============================================================================*/
+<<<<<<< HEAD
 <<<<<<< HEAD
 VOS_STATUS
 WLANTL_STATxConn
@@ -7121,10 +7942,19 @@ v_BOOL_t
 WLANTL_IsTxXmitPending
 (
   v_PVOID_t       pvosGCtx
+=======
+v_BOOL_t
+WLANTL_IsTxXmitPending
+(
+  v_PVOID_t       pvosGCtx
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 )
 {
 
    WLANTL_CbType*  pTLCb = NULL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
@@ -7135,6 +7965,7 @@ WLANTL_IsTxXmitPending
   pTLCb = VOS_GET_TL_CB(pvosGCtx);
   if ( NULL == pTLCb )
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
              "WLAN TL:Invalid TL pointer from pvosGCtx on WLANTL_STATxConn");
@@ -7177,6 +8008,8 @@ WLANTL_IsTxXmitPending
        - however it is possible that while analyzing results TL got
        preempted by a pending indication where the mask was again set
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_FATAL,
         "WLAN TL:Invalid TL pointer from pvosGCtx in WLANTL_IsTxXmitPending "));
     return FALSE;
@@ -7582,12 +8415,16 @@ WLANTL_STATxConn
        any more pkts available for AC -> if not TL will disable AC
        - however it is possible that while analyzing results TL got
        preempted by a pending indication where the mask was again set
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        TL will not check again and as a result when it resumes
        execution it will disable AC
        To prevent this the AC will be disabled here and if retrieve
        is successfull it will be re-enabled
   -------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
      pTLCb->atlSTAClients[ucSTAId].aucACMask[ucAC] = 0; 
   }
@@ -7627,6 +8464,8 @@ WLANTL_STATxConn
             "WLAN TL: WLANTL_STATxConn fetching packet from HDD for AC: %d AC Mask: %d Pkt Pending: %d", 
              ucAC, ucACMask, pTLCb->atlSTAClients[ucSTAId].ucPktPending);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
   //LTI:pTLCb->atlSTAClients[ucSTAId].
@@ -7694,6 +8533,9 @@ WLANTL_STATxConn
   VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,
             "WLAN TL: WLANTL_STATxConn fetching packet from HDD for AC: %d AC Mask: %d Pkt Pending: %d", 
              ucAC, ucACMask, pClientSTA->ucPktPending);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*------------------------------------------------------------------------
@@ -7702,11 +8544,17 @@ WLANTL_STATxConn
 //LTI
 #if 0 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   if (WLAN_STA_SOFTAP != pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType && 
      (!vos_concurrent_sessions_running()))
   {
 #endif
+=======
+  if (WLAN_STA_SOFTAP != pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType && 
+     (!vos_concurrent_sessions_running()))
+  {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if (WLAN_STA_SOFTAP != pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType && 
      (!vos_concurrent_sessions_running()))
@@ -7719,7 +8567,10 @@ WLANTL_STATxConn
                                   pTLCb->atlSTAClients[ucSTAId].ucCurrentAC,
                                   &vosDataBuff, &tlMetaInfo );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
@@ -7734,9 +8585,14 @@ WLANTL_STATxConn
   }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
   vosStatus = pTLCb->atlSTAClients[ucSTAId].pfnSTAFetchPkt( pvosGCtx, 
+=======
+
+  vosStatus = pClientSTA->pfnSTAFetchPkt( pvosGCtx,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
   vosStatus = pClientSTA->pfnSTAFetchPkt( pvosGCtx,
@@ -7758,15 +8614,21 @@ WLANTL_STATxConn
     made in the main TL loop
     --------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
     pTLCb->atlSTAClients[ucSTAId].ucCurrentAC     = WLANTL_AC_VO;
     pTLCb->atlSTAClients[ucSTAId].ucCurrentWeight = 0;
 
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pClientSTA->ucCurrentAC     = WLANTL_AC_VO;
     pClientSTA->ucCurrentWeight = 0;
 
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               "WLAN TL: WLANTL_STATxConn no more packets in HDD for AC: %d AC Mask: %d", 
                ucAC, ucACMask);
@@ -7777,9 +8639,15 @@ WLANTL_STATxConn
   /*There are still packets in HDD - set back the pending packets and 
    the no more data assumption*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   vos_atomic_set_U8( &pTLCb->atlSTAClients[ucSTAId].ucPktPending, 1);
   pTLCb->atlSTAClients[ucSTAId].ucNoMoreData = 0;
   pTLCb->atlSTAClients[ucSTAId].aucACMask[ucAC] = 1; 
+=======
+  vos_atomic_set_U8( &pClientSTA->ucPktPending, 1);
+  pClientSTA->ucNoMoreData = 0;
+  pClientSTA->aucACMask[ucAC] = 1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   vos_atomic_set_U8( &pClientSTA->ucPktPending, 1);
   pClientSTA->ucNoMoreData = 0;
@@ -7804,7 +8672,11 @@ WLANTL_STATxConn
 
      /* Fail tx for packet */
 <<<<<<< HEAD
+<<<<<<< HEAD
      pTLCb->atlSTAClients[ucSTAId].pfnSTATxComp( pvosGCtx, vosDataBuff,
+=======
+     pClientSTA->pfnSTATxComp( pvosGCtx, vosDataBuff,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      pClientSTA->pfnSTATxComp( pvosGCtx, vosDataBuff,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7821,7 +8693,11 @@ WLANTL_STATxConn
 
     /* Fail tx for packet */
 <<<<<<< HEAD
+<<<<<<< HEAD
     pTLCb->atlSTAClients[ucSTAId].pfnSTATxComp( pvosGCtx, vosDataBuff,
+=======
+    pClientSTA->pfnSTATxComp( pvosGCtx, vosDataBuff,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pClientSTA->pfnSTATxComp( pvosGCtx, vosDataBuff,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7862,6 +8738,7 @@ WLANTL_STATxConn
    ------------------------------------------------------------------------*/
   if ( ( 0 == tlMetaInfo.ucDisableFrmXtl ) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
       ( 0 != pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucSwFrameTXXlation) )
 #endif //#ifdef FEATURE_WLAN_WAPI
   {
@@ -7870,12 +8747,17 @@ WLANTL_STATxConn
                                                     tlMetaInfo.ucUP, &ucWDSEnabled, &extraHeadSpace);
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       ( 0 != pClientSTA->wSTADesc.ucSwFrameTXXlation) )
 #endif //#ifdef FEATURE_WLAN_WAPI
   {
     vosStatus =  WLANTL_Translate8023To80211Header( vosDataBuff, &vosStatus,
                                                     pTLCb, &ucSTAId,
                                                     tlMetaInfo.ucUP, &ucWDSEnabled, &extraHeadSpace);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( VOS_STATUS_SUCCESS != vosStatus )
     {
@@ -7894,7 +8776,11 @@ WLANTL_STATxConn
   ucTypeSubtype |= (WLANTL_80211_DATA_TYPE << 4);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucQosEnabled )
+=======
+  if ( pClientSTA->wSTADesc.ucQosEnabled )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( pClientSTA->wSTADesc.ucQosEnabled )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7902,6 +8788,7 @@ WLANTL_STATxConn
     ucTypeSubtype |= (WLANTL_80211_DATA_QOS_SUBTYPE);
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   vosStatus = (VOS_STATUS)WDA_DS_BuildTxPacketInfo( pvosGCtx, vosDataBuff , &vDestMacAddr,
@@ -7912,6 +8799,8 @@ WLANTL_STATxConn
                           ucTid, HAL_TX_NO_ENCRYPTION_MASK,
                           tlMetaInfo.usTimeStamp, tlMetaInfo.ucIsEapol, tlMetaInfo.ucUP );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_WAPI
   /* TL State does not transition to AUTHENTICATED till GTK is installed, So in
    * case of WPA where GTK handshake is done after the 4 way handshake, the
@@ -7939,6 +8828,9 @@ WLANTL_STATxConn
                           ucTypeSubtype, &pClientSTA->wSTADesc.vSelfMACAddress,
                           ucTid, txFlag,
                           tlMetaInfo.usTimeStamp, tlMetaInfo.ucIsEapol || tlMetaInfo.ucIsWai, tlMetaInfo.ucUP );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if ( VOS_STATUS_SUCCESS != vosStatus )
@@ -7954,15 +8846,21 @@ WLANTL_STATxConn
     !1 - should this be done for EAPOL frames?
     -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[ucSTAId].auTxCount[ucTid]++;
 
   vos_pkt_set_user_data_ptr( vosDataBuff, VOS_PKT_USER_DATA_ID_TL,
                (v_PVOID_t)pTLCb->atlSTAClients[ucSTAId].pfnSTATxComp );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->auTxCount[ucTid]++;
 
   vos_pkt_set_user_data_ptr( vosDataBuff, VOS_PKT_USER_DATA_ID_TL,
                (v_PVOID_t)pClientSTA->pfnSTATxComp );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*------------------------------------------------------------------------
@@ -7973,7 +8871,10 @@ WLANTL_STATxConn
   pTLCb->bUrgent      = TRUE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* TX Statistics */
@@ -7981,10 +8882,16 @@ WLANTL_STATxConn
   {
     /* This is TX UC frame */
 <<<<<<< HEAD
+<<<<<<< HEAD
     pTLCb->atlSTAClients[ucSTAId].trafficStatistics.txUCFcnt++;
     pTLCb->atlSTAClients[ucSTAId].trafficStatistics.txUCBcnt += usPktLen;
   }
 #endif
+=======
+    pClientSTA->trafficStatistics.txUCFcnt++;
+    pClientSTA->trafficStatistics.txUCBcnt += usPktLen;
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pClientSTA->trafficStatistics.txUCFcnt++;
     pClientSTA->trafficStatistics.txUCBcnt += usPktLen;
@@ -8046,7 +8953,11 @@ WLANTL_STATxAuth
    v_U8_t                ucSwFrmXtl = 0;
    v_U8_t                extraHeadSpace = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
    WLANTL_STAClientType *pStaClient;
+=======
+   WLANTL_STAClientType *pStaClient = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_STAClientType *pStaClient = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8064,7 +8975,11 @@ WLANTL_STATxAuth
   {
      TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "WLAN TL:Invalid input params on WLANTL_STATxAuth TL %x DB %x",
+=======
+            "WLAN TL:Invalid input params on WLANTL_STATxAuth TL %x DB %p",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "WLAN TL:Invalid input params on WLANTL_STATxAuth TL %x DB %p",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8076,6 +8991,7 @@ WLANTL_STATxAuth
     if(NULL != pTLCb)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pTLCb->atlSTAClients[ucSTAId].ucNoMoreData = 1;
     }
     return VOS_STATUS_E_FAULT;
@@ -8083,6 +8999,8 @@ WLANTL_STATxAuth
 
   pStaClient = &pTLCb->atlSTAClients[ucSTAId];
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
         {
             TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -8101,6 +9019,9 @@ WLANTL_STATxAuth
           "WLAN TL:Client Memory was not allocated on %s", __func__));
       return VOS_STATUS_E_FAILURE;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   vos_mem_zero(&tlMetaInfo, sizeof(tlMetaInfo));
@@ -8108,14 +9029,20 @@ WLANTL_STATxAuth
     Fetch packet from HDD
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
   if ((WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType) &&
       (!vos_concurrent_sessions_running()) &&
       !pTLCb->ucTdlsPeerCount)
   {
 #else
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ((WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType) &&
       (!vos_concurrent_sessions_running()))
@@ -8141,7 +9068,10 @@ WLANTL_STATxAuth
   // don't reset it, as other AC queues in HDD may have packets
   //vos_atomic_set_U8( &pStaClient->ucPktPending, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
@@ -8154,10 +9084,15 @@ WLANTL_STATxAuth
     //vos_atomic_set_U8( &pStaClient->ucPktPending, 0);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
   WLAN_TL_AC_ARRAY_2_MASK( pStaClient, ucACMask, i); 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+
+  WLAN_TL_AC_ARRAY_2_MASK( pStaClient, ucACMask, i); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
   WLAN_TL_AC_ARRAY_2_MASK( pStaClient, ucACMask, i); 
@@ -8172,7 +9107,10 @@ WLANTL_STATxAuth
     pStaClient->ucNoMoreData = 1;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -8202,6 +9140,7 @@ WLANTL_STATxAuth
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
   WLANTL_StatHandleTXFrame(pvosGCtx, ucSTAId, vosDataBuff, NULL, &tlMetaInfo);
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
@@ -8211,10 +9150,15 @@ WLANTL_STATxAuth
   WLANTL_StatHandleTXFrame(pvosGCtx, ucSTAId, vosDataBuff, NULL, &tlMetaInfo);
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+  WLANTL_StatHandleTXFrame(pvosGCtx, ucSTAId, vosDataBuff, NULL, &tlMetaInfo);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*There are still packets in HDD - set back the pending packets and 
    the no more data assumption*/
   vos_atomic_set_U8( &pStaClient->ucPktPending, 1);
   pStaClient->ucNoMoreData = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 
@@ -8227,6 +9171,14 @@ WLANTL_STATxAuth
 #ifdef WLAN_SOFTAP_FEATURE
   }
 #endif
+=======
+
+  if (WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType)
+  {
+  // don't need to set it, as we don't reset it in this function.
+  //vos_atomic_set_U8( &pTLCb->atlSTAClients[ucSTAId].ucPktPending, 1);
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
   if (WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType)
@@ -8267,8 +9219,12 @@ WLANTL_STATxAuth
   {
     pStaClient->ucCurrentAC     = ucAC;
 <<<<<<< HEAD
+<<<<<<< HEAD
     pStaClient->ucCurrentWeight = 
                          pTLCb->tlConfigInfo.ucAcWeights[ucAC] - 1;
+=======
+    pStaClient->ucCurrentWeight = pTLCb->tlConfigInfo.ucAcWeights[ucAC] - 1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pStaClient->ucCurrentWeight = pTLCb->tlConfigInfo.ucAcWeights[ucAC] - 1;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8278,10 +9234,15 @@ WLANTL_STATxAuth
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   if (WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType)
   {
 #endif
+=======
+  if (WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType)
+  {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if (WLAN_STA_SOFTAP != pStaClient->wSTADesc.wSTAType)
   {
@@ -8299,8 +9260,12 @@ WLANTL_STATxAuth
       {
          pStaClient->ucCurrentAC     = ucNextAC;
 <<<<<<< HEAD
+<<<<<<< HEAD
          pStaClient->ucCurrentWeight = 
                          pTLCb->tlConfigInfo.ucAcWeights[ucNextAC];
+=======
+         pStaClient->ucCurrentWeight = pTLCb->tlConfigInfo.ucAcWeights[ucNextAC];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pStaClient->ucCurrentWeight = pTLCb->tlConfigInfo.ucAcWeights[ucNextAC];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8315,9 +9280,13 @@ WLANTL_STATxAuth
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   }
 #endif
+=======
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8391,9 +9360,15 @@ WLANTL_STATxAuth
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        vosStatus = WLANTL_Translate8023To80211Header( vosDataBuff, &vosStatus,
                                                    pTLCb, ucSTAId,
                                                    tlMetaInfo.ucUP, &ucWDSEnabled, &extraHeadSpace);
+=======
+       vosStatus =  WLANTL_Translate8023To80211Header( vosDataBuff, &vosStatus,
+                                                    pTLCb, &ucSTAId,
+                                                    tlMetaInfo.ucUP, &ucWDSEnabled, &extraHeadSpace);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        vosStatus =  WLANTL_Translate8023To80211Header( vosDataBuff, &vosStatus,
                                                     pTLCb, &ucSTAId,
@@ -8439,13 +9414,19 @@ WLANTL_STATxAuth
   }
 #endif /* FEATURE_WLAN_WAPI */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
   if ( pStaClient->wSTADesc.wSTAType == WLAN_STA_TDLS )
   {
     ucTxFlag = ucTxFlag | HAL_TDLS_PEER_STA_MASK;
   }
 #endif /* FEATURE_WLAN_TDLS */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   vosStatus = (VOS_STATUS)WDA_DS_BuildTxPacketInfo( pvosGCtx, 
@@ -8454,7 +9435,11 @@ WLANTL_STATxAuth
                      pStaClient->wSTADesc.ucQosEnabled, ucWDSEnabled, 
                      extraHeadSpace,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      ucTypeSubtype, &pTLCb->atlSTAClients[ucSTAId].wSTADesc.vSelfMACAddress,
+=======
+                     ucTypeSubtype, &pStaClient->wSTADesc.vSelfMACAddress,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      ucTypeSubtype, &pStaClient->wSTADesc.vSelfMACAddress,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8470,7 +9455,10 @@ WLANTL_STATxAuth
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* TX Statistics */
@@ -8481,8 +9469,13 @@ WLANTL_STATxAuth
     pStaClient->trafficStatistics.txUCBcnt += usPktLen;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
+=======
+
+#ifndef FEATURE_WLAN_TDLS
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 #ifndef FEATURE_WLAN_TDLS
@@ -8492,11 +9485,14 @@ WLANTL_STATxAuth
     -----------------------------------------------------------------------*/
   pStaClient->auTxCount[ucTid]++;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   /* This code is to send traffic with lower priority AC when we does not 
      get admitted to send it. Today HAL does not downgrade AC so this code 
      does not get executed.(In other words, HAL doesnt change tid. The if 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
   pTLCb->atlSTAClients[ucSTAId]->auTxCount[ucTid]++;
 #endif
@@ -8504,6 +9500,9 @@ WLANTL_STATxAuth
   /* This code is to send traffic with lower priority AC when we does not 
      get admitted to send it. Today HAL does not downgrade AC so this code 
      does not get executed.(In other words, HAL doesn’t change tid. The if 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      statement is always false.)
      NOTE: In the case of LA downgrade occurs in HDD (that was the change 
@@ -8583,9 +9582,15 @@ WLANTL_STATxDisc
 {
    WLANTL_CbType*        pTLCb       = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 
+=======
+   WLANTL_STAClientType* pClientSTA = NULL;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_STAClientType* pClientSTA = NULL;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
@@ -8605,7 +9610,10 @@ WLANTL_STATxDisc
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -8615,6 +9623,9 @@ WLANTL_STATxDisc
       return VOS_STATUS_E_FAILURE;
   }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Error
@@ -8625,15 +9636,21 @@ WLANTL_STATxDisc
 
   *pvosDataBuff = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
    pTLCb->atlSTAClients[ucSTAId].ucNoMoreData = 1;
    
    //Should not be anything pending in disconnect state
    vos_atomic_set_U8( &pTLCb->atlSTAClients[ucSTAId].ucPktPending, 0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pClientSTA->ucNoMoreData = 1;
    
    //Should not be anything pending in disconnect state
    vos_atomic_set_U8( &pClientSTA->ucPktPending, 0);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return VOS_STATUS_SUCCESS;
@@ -8677,6 +9694,10 @@ WLANTL_STARxConn
 {
    WLANTL_CbType*           pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   WLANTL_STAClientType*    pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_STAClientType*    pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8715,7 +9736,10 @@ WLANTL_STARxConn
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -8724,6 +9748,9 @@ WLANTL_STARxConn
           "WLAN TL:Client Memory was not allocated on %s", __func__));
       return VOS_STATUS_E_FAILURE;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*------------------------------------------------------------------------
@@ -8773,7 +9800,11 @@ WLANTL_STARxConn
     if ( WLANTL_LLC_8021X_TYPE  != usEtherType && WLANTL_LLC_WAI_TYPE  != usEtherType )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
+=======
+      VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8794,17 +9825,23 @@ WLANTL_STARxConn
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                  "WLAN TL:RX Frame  EAPOL EtherType %d - processing", usEtherType);
 
       if (( 0 == WDA_GET_RX_FT_DONE(aucBDHeader) ) &&
          ( 0 != pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucSwFrameRXXlation))
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,
                  "WLAN TL:RX Frame  EAPOL EtherType %d - processing", usEtherType);
 
       if (( 0 == WDA_GET_RX_FT_DONE(aucBDHeader) ) &&
          ( 0 != pClientSTA->wSTADesc.ucSwFrameRXXlation))
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       {
       if (usMPDUDOffset > ucMPDUHOffset)
@@ -8830,7 +9867,11 @@ WLANTL_STARxConn
       if ( !WLANTL_TID_INVALID( ucTid) ) 
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pTLCb->atlSTAClients[ucSTAId].auRxCount[ucTid]++;
+=======
+        pClientSTA->auRxCount[ucTid]++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pClientSTA->auRxCount[ucTid]++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8851,6 +9892,7 @@ WLANTL_STARxConn
       wRxMetaInfo.ucUP = ucTid;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
       TLLOG4(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_LOW,
                "WLAN TL %s:Sending data chain to station \n", __FUNCTION__));
@@ -8864,6 +9906,8 @@ WLANTL_STARxConn
 #endif
       pTLCb->atlSTAClients[ucSTAId].pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       TLLOG4(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_LOW,
                "WLAN TL %s:Sending data chain to station \n", __func__));
       if ( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType )
@@ -8874,6 +9918,9 @@ WLANTL_STARxConn
       }
       else
       pClientSTA->pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             &wRxMetaInfo );
     }/*EAPOL frame or WAI frame*/
@@ -8883,7 +9930,10 @@ WLANTL_STARxConn
 }/* WLANTL_STARxConn */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
@@ -8923,6 +9973,7 @@ WLANTL_FwdPktToHDD
 )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_MACADDR_t DestMacAddress;
    v_MACADDR_t *pDestMacAddress = &DestMacAddress;
    v_SIZE_t usMacAddSize = VOS_MAC_ADDR_SIZE;
@@ -8936,6 +9987,8 @@ WLANTL_FwdPktToHDD
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_MACADDR_t              DestMacAddress;
    v_MACADDR_t              *pDestMacAddress = &DestMacAddress;
    v_SIZE_t                 usMacAddSize = VOS_MAC_ADDR_SIZE;
@@ -8948,6 +10001,9 @@ WLANTL_FwdPktToHDD
    v_U8_t                   ucDesSTAId;
    WLANTL_RxMetaInfoType    wRxMetaInfo;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Sanity check
@@ -8970,7 +10026,10 @@ WLANTL_FwdPktToHDD
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if(WLANTL_STA_ID_INVALID(ucSTAId))
   {
@@ -8988,6 +10047,9 @@ WLANTL_FwdPktToHDD
       return VOS_STATUS_E_FAILURE;
   }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* This the change required for SoftAp to handle Reordered Buffer. Since a STA
       may have packets destined to multiple destinations we have to process each packet
@@ -9002,7 +10064,11 @@ WLANTL_FwdPktToHDD
                                  (v_PVOID_t *)&STAMetaInfo );
       wRxMetaInfo.ucUP = (v_U8_t)(STAMetaInfo & WLANTL_AC_MASK);
 <<<<<<< HEAD
+<<<<<<< HEAD
       ucDesSTAId = ((v_U8_t)STAMetaInfo) >> WLANTL_STAID_OFFSET; 
+=======
+      ucDesSTAId = (v_U8_t)((STAMetaInfo) >> WLANTL_STAID_OFFSET); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       ucDesSTAId = (v_U8_t)((STAMetaInfo) >> WLANTL_STAID_OFFSET); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9026,22 +10092,29 @@ WLANTL_FwdPktToHDD
           ucDesSTAId = WLAN_RX_BCMC_STA_ID;
           TLLOG4(VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: BC/MC packet, id %d\n", __FUNCTION__, WLAN_RX_BCMC_STA_ID));
       }
       else
       {
          if (vos_is_macaddr_equal(pDestMacAddress, &pTLCb->atlSTAClients[ucSTAId].wSTADesc.vSelfMACAddress))
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "%s: BC/MC packet, id %d\n", __func__, WLAN_RX_BCMC_STA_ID));
       }
       else
       {
          if (vos_is_macaddr_equal(pDestMacAddress, &pClientSTA->wSTADesc.vSelfMACAddress))
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          {
             // destination is AP itself
             ucDesSTAId = WLAN_RX_SAP_SELF_STA_ID;
             TLLOG4(VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW,
+<<<<<<< HEAD
 <<<<<<< HEAD
                      "%s: packet to AP itself, id %d\n", __FUNCTION__, WLAN_RX_SAP_SELF_STA_ID));
          }
@@ -9051,6 +10124,8 @@ WLANTL_FwdPktToHDD
             TLLOG4(VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW,
                  "%s: get an station index larger than WLAN_MAX_STA_COUNT %d\n", __FUNCTION__, ucDesSTAId));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      "%s: packet to AP itself, id %d\n", __func__, WLAN_RX_SAP_SELF_STA_ID));
          }
          else if (( WLAN_MAX_STA_COUNT <= ucDesSTAId ) || (NULL != pTLCb->atlSTAClients[ucDesSTAId] && pTLCb->atlSTAClients[ucDesSTAId]->ucExists == 0))
@@ -9058,6 +10133,9 @@ WLANTL_FwdPktToHDD
             // destination station is something else
             TLLOG4(VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW,
                  "%s: get an station index larger than WLAN_MAX_STA_COUNT %d\n", __func__, ucDesSTAId));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             ucDesSTAId = WLAN_RX_SAP_SELF_STA_ID;
          }
@@ -9070,7 +10148,11 @@ WLANTL_FwdPktToHDD
       wRxMetaInfo.ucDesSTAId = ucDesSTAId;
      
 <<<<<<< HEAD
+<<<<<<< HEAD
    vosStatus = pTLCb->atlSTAClients[ucSTAId].pfnSTARx( pvosGCtx, vosDataBuff, ucDesSTAId,
+=======
+   vosStatus = pClientSTA->pfnSTARx( pvosGCtx, vosDataBuff, ucDesSTAId,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    vosStatus = pClientSTA->pfnSTARx( pvosGCtx, vosDataBuff, ucDesSTAId,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9087,7 +10169,10 @@ WLANTL_FwdPktToHDD
    return VOS_STATUS_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* WLANTL_SOFTAP_FEATURE */ 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -9129,6 +10214,10 @@ WLANTL_STARxAuth
 {
    WLANTL_CbType*           pTLCb = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   WLANTL_STAClientType*    pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_STAClientType*    pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9141,7 +10230,11 @@ WLANTL_STARxAuth
    v_U8_t                   ucTid;
 #ifdef FEATURE_WLAN_WAPI
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_U16_t                  usEtherType;
+=======
+   v_U16_t                  usEtherType = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_U16_t                  usEtherType = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9152,6 +10245,7 @@ WLANTL_STARxAuth
    VOS_STATUS               vosStatus;
    WLANTL_RxMetaInfoType    wRxMetaInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
    static v_U8_t            ucPMPDUHLen = 0;
 #ifdef WLAN_SOFTAP_FEATURE
    v_U8_t*                  STAMetaInfoPtr;
@@ -9161,12 +10255,21 @@ WLANTL_STARxAuth
    static v_U8_t            ucPMPDUHLen;
    v_U32_t*                  STAMetaInfoPtr;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   static v_U8_t            ucPMPDUHLen;
+   v_U32_t*                  STAMetaInfoPtr;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U8_t                   ucEsf=0; /* first subframe of AMSDU flag */
    v_U64_t                  ullcurrentReplayCounter=0; /*current replay counter*/
    v_U64_t                  ullpreviousReplayCounter=0; /*previous replay counter*/
    v_U16_t                  ucUnicastBroadcastType=0; /*It denotes whether received frame is UC or BC*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+   struct _BARFrmStruct     *pBarFrame = NULL;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    struct _BARFrmStruct     *pBarFrame = NULL;
 
@@ -9194,7 +10297,10 @@ WLANTL_STARxAuth
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -9203,6 +10309,9 @@ WLANTL_STARxAuth
           "WLAN TL:Client Memory was not allocated on %s", __func__));
       return VOS_STATUS_E_FAILURE;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*------------------------------------------------------------------------
@@ -9217,11 +10326,14 @@ WLANTL_STARxAuth
   ucTid         = (v_U8_t)WDA_GET_RX_TID(aucBDHeader);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_CHIPSET_VOLANS
   /*Host based replay check is needed for unicast data frames*/
   ucUnicastBroadcastType  = (v_U16_t)WDA_IS_RX_BCAST(aucBDHeader);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* Fix for a hardware bug. 
    * H/W does not update the tid field in BD header for BAR frames.
    * Fix is to read the tid field from MAC header of BAR frame */
@@ -9234,6 +10346,9 @@ WLANTL_STARxAuth
 
   /*Host based replay check is needed for unicast data frames*/
   ucUnicastBroadcastType  = (v_U16_t)WDA_IS_RX_BCAST(aucBDHeader);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if(0 != ucMPDUHLen)
   {
@@ -9281,7 +10396,11 @@ WLANTL_STARxAuth
 
 #ifdef FEATURE_WLAN_WAPI
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucIsWapiSta )
+=======
+  if ( pClientSTA->wSTADesc.ucIsWapiSta )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( pClientSTA->wSTADesc.ucIsWapiSta )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9332,7 +10451,11 @@ WLANTL_STARxAuth
   if ( !WLANTL_TID_INVALID( ucTid) ) 
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     pTLCb->atlSTAClients[ucSTAId].auRxCount[ucTid]++;
+=======
+    pClientSTA->auRxCount[ucTid]++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pClientSTA->auRxCount[ucTid]++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9369,7 +10492,11 @@ WLANTL_STARxAuth
     ----------------------------------------------------------------------*/
   if (( 0 == WDA_GET_RX_FT_DONE(aucBDHeader) ) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
       ( 0 != pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucSwFrameRXXlation) &&
+=======
+      ( 0 != pClientSTA->wSTADesc.ucSwFrameRXXlation) &&
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       ( 0 != pClientSTA->wSTADesc.ucSwFrameRXXlation) &&
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9399,6 +10526,7 @@ WLANTL_STARxAuth
        Category. Voschain or Buffer returned by BA would be unchain and this
        Meta Data would help in routing the packets to appropriate Destination */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if( WLAN_STA_SOFTAP == pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType)
     {
@@ -9408,19 +10536,28 @@ WLANTL_STARxAuth
     }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType)
     {
        STAMetaInfoPtr = (v_U32_t *)(ucTid | (WDA_GET_RX_ADDR3_IDX(aucBDHeader) << WLANTL_STAID_OFFSET));
        vos_pkt_set_user_data_ptr( vosDataBuff, VOS_PKT_USER_DATA_ID_TL,
                                  (v_PVOID_t)STAMetaInfoPtr);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*------------------------------------------------------------------------
     Check to see if re-ordering session is in place
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 != pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists )
+=======
+  if ( 0 != pClientSTA->atlBAReorderInfo[ucTid].ucExists )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( 0 != pClientSTA->atlBAReorderInfo[ucTid].ucExists )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9429,7 +10566,10 @@ WLANTL_STARxAuth
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_CHIPSET_VOLANS
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 if(0 == ucUnicastBroadcastType
@@ -9440,7 +10580,11 @@ if(0 == ucUnicastBroadcastType
 {
   /* replay check code : check whether replay check is needed or not */
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(VOS_TRUE == pTLCb->atlSTAClients[ucSTAId].ucIsReplayCheckValid)
+=======
+  if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9466,7 +10610,11 @@ if(0 == ucUnicastBroadcastType
               
               /* Getting 48-bit previous replay counter from TL control  block */
 <<<<<<< HEAD
+<<<<<<< HEAD
               ullpreviousReplayCounter = pTLCb->atlSTAClients[ucSTAId].ullReplayCounter[ucTid];
+=======
+              ullpreviousReplayCounter = pClientSTA->ullReplayCounter[ucTid];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               ullpreviousReplayCounter = pClientSTA->ullReplayCounter[ucTid];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9482,7 +10630,11 @@ if(0 == ucUnicastBroadcastType
               {
                    /* Not a replay paket, update previous replay counter in TL CB */    
 <<<<<<< HEAD
+<<<<<<< HEAD
                    pTLCb->atlSTAClients[ucSTAId].ullReplayCounter[ucTid] = ullcurrentReplayCounter;
+=======
+                   pClientSTA->ullReplayCounter[ucTid] = ullcurrentReplayCounter;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    pClientSTA->ullReplayCounter[ucTid] = ullcurrentReplayCounter;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9493,15 +10645,21 @@ if(0 == ucUnicastBroadcastType
                   "WLAN TL: AMSDU Drop the replay packet with PN : [0x%llX]\n",ullcurrentReplayCounter);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                   pTLCb->atlSTAClients[ucSTAId].ulTotalReplayPacketsDetected++;
                   VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                   "WLAN TL: AMSDU total dropped replay packets on STA ID  %X is [0x%lX]\n",
                   ucSTAId,  pTLCb->atlSTAClients[ucSTAId].ulTotalReplayPacketsDetected);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   pClientSTA->ulTotalReplayPacketsDetected++;
                   VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                   "WLAN TL: AMSDU total dropped replay packets on STA ID  %X is [0x%lX]\n",
                   ucSTAId,  pClientSTA->ulTotalReplayPacketsDetected);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                   /* Drop the packet */
@@ -9522,7 +10680,11 @@ if(0 == ucUnicastBroadcastType
 
            /* Getting 48-bit previous replay counter from TL control  block */
 <<<<<<< HEAD
+<<<<<<< HEAD
            ullpreviousReplayCounter = pTLCb->atlSTAClients[ucSTAId].ullReplayCounter[ucTid];
+=======
+           ullpreviousReplayCounter = pClientSTA->ullReplayCounter[ucTid];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            ullpreviousReplayCounter = pClientSTA->ullReplayCounter[ucTid];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9538,7 +10700,11 @@ if(0 == ucUnicastBroadcastType
            {
                 /* Not a replay paket, update previous replay counter in TL CB */    
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pTLCb->atlSTAClients[ucSTAId].ullReplayCounter[ucTid] = ullcurrentReplayCounter;
+=======
+                pClientSTA->ullReplayCounter[ucTid] = ullcurrentReplayCounter;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 pClientSTA->ullReplayCounter[ucTid] = ullcurrentReplayCounter;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9549,15 +10715,21 @@ if(0 == ucUnicastBroadcastType
                "WLAN TL: Non-AMSDU Drop the replay packet with PN : [0x%llX]\n",ullcurrentReplayCounter);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                pTLCb->atlSTAClients[ucSTAId].ulTotalReplayPacketsDetected++;
                VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                 "WLAN TL: Non-AMSDU total dropped replay packets on STA ID %X is [0x%lX]\n",
                 ucSTAId, pTLCb->atlSTAClients[ucSTAId].ulTotalReplayPacketsDetected);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pClientSTA->ulTotalReplayPacketsDetected++;
                VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                 "WLAN TL: Non-AMSDU total dropped replay packets on STA ID %X is [0x%lX]\n",
                 ucSTAId, pClientSTA->ulTotalReplayPacketsDetected);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                /* Repaly packet, drop the packet */
@@ -9570,6 +10742,7 @@ if(0 == ucUnicastBroadcastType
 /*It is a broadast packet DPU has already done replay check for 
   broadcast packets no need to do replay check of these packets*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /*End of #ifdef ANI_CHIPSET_VOLANS*/
 
   if ( NULL != vosDataBuff )
@@ -9577,21 +10750,29 @@ if(0 == ucUnicastBroadcastType
 #ifdef WLAN_SOFTAP_FEATURE
     if( WLAN_STA_SOFTAP == pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if ( NULL != vosDataBuff )
   {
     if( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       WLANTL_FwdPktToHDD( pvosGCtx, vosDataBuff, ucSTAId );
     }
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
     {
       wRxMetaInfo.ucUP = ucTid;
       pTLCb->atlSTAClients[ucSTAId].pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       wRxMetaInfo.ucUP = ucTid;
       wRxMetaInfo.rssiAvg = pClientSTA->rssiAvg;
@@ -9606,6 +10787,9 @@ if(0 == ucUnicastBroadcastType
       }
 #endif
       pClientSTA->pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             &wRxMetaInfo );
     }
@@ -9752,8 +10936,11 @@ WLANTL_McProcessMsg
     FlushACRspPtr = (tpFlushACRsp)(message->bodyptr);
     // Make sure the call back function is not null.
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_ASSERT(pTLCb->tlBAPClient.pfnFlushOpCompleteCb != NULL);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( NULL == pTLCb->tlBAPClient.pfnFlushOpCompleteCb )
     {
       VOS_ASSERT(0);
@@ -9761,6 +10948,9 @@ WLANTL_McProcessMsg
        "WLAN TL:Invalid TL pointer pfnFlushOpCompleteCb"));
       return VOS_STATUS_E_FAULT;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     TLLOG2(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -9971,6 +11161,7 @@ WLANTL_TxProcessMsg
    v_U8_t          ucUcastSig;
    v_U8_t          ucBcastSig;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    WLANTL_CbType*  pTLCb = NULL;
    WLANTL_ACEnumType    ucAC;
@@ -9980,11 +11171,16 @@ WLANTL_TxProcessMsg
    void *callbackContext;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WLANTL_CbType*        pTLCb = NULL;
    WLANTL_STAClientType* pClientSTA = NULL;
    WLANTL_ACEnumType     ucAC;
    void (*callbackRoutine) (void *callbackContext);
    void *callbackContext;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
@@ -10029,7 +11225,10 @@ WLANTL_TxProcessMsg
                                            ucUcastSig, ucBcastSig);
     break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WLANTL_TX_STAID_AC_IND:
@@ -10042,6 +11241,7 @@ WLANTL_TxProcessMsg
       }
 
       ucAC = message->bodyval &  WLANTL_AC_MASK;
+<<<<<<< HEAD
 <<<<<<< HEAD
       ucSTAId = (v_U8_t)message->bodyval >> WLANTL_STAID_OFFSET;  
       pTLCb->atlSTAClients[ucSTAId].aucACMask[ucAC] = 1; 
@@ -10056,6 +11256,8 @@ WLANTL_TxProcessMsg
     vosStatus = WDA_DS_TxFrames( pvosGCtx );
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       ucSTAId = (v_U8_t)(message->bodyval >> WLANTL_STAID_OFFSET);  
       pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
@@ -10075,11 +11277,15 @@ WLANTL_TxProcessMsg
   case WDA_DS_TX_START_XMIT:
       WLANTL_ClearTxXmitPending(pvosGCtx);
       vosStatus = WDA_DS_TxFrames( pvosGCtx );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
 
   case WDA_DS_FINISH_ULA:
     callbackContext = (void *)message->bodyval;
+<<<<<<< HEAD
 <<<<<<< HEAD
    
     callbackRoutine = message->bodyptr;
@@ -10087,6 +11293,8 @@ WLANTL_TxProcessMsg
     break;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     callbackRoutine = message->bodyptr;
     callbackRoutine(callbackContext);
     break;
@@ -10097,6 +11305,9 @@ WLANTL_TxProcessMsg
     WLANTL_TxThreadDebugHandler(pvosGCtx);
     WDA_TransportChannelDebug(NULL, VOS_TRUE, VOS_FALSE);
     break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   default:
@@ -10149,7 +11360,10 @@ WLANTL_TxFreeMsg
 }/*WLANTL_TxFreeMsg*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
@@ -10198,7 +11412,11 @@ WLANTL_TxFCFrame
 
   VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL: Send FC frame %s", __FUNCTION__);
+=======
+               "WLAN TL: Send FC frame %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL: Send FC frame %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10210,7 +11428,11 @@ WLANTL_TxFCFrame
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL:Invalid parameter %s", __FUNCTION__));
+=======
+               "WLAN TL:Invalid parameter %s", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL:Invalid parameter %s", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10225,7 +11447,11 @@ WLANTL_TxFCFrame
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "WLAN TL:Invalid pointer in %s \n", __FUNCTION__));
+=======
+        "WLAN TL:Invalid pointer in %s \n", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "WLAN TL:Invalid pointer in %s \n", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10247,7 +11473,11 @@ WLANTL_TxFCFrame
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: failed to reserve FC TX BD %d\n",__FUNCTION__, sizeof(tHalFcTxBd)));
+=======
+                 "%s: failed to reserve FC TX BD %d\n",__func__, sizeof(tHalFcTxBd)));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: failed to reserve FC TX BD %d\n",__func__, sizeof(tHalFcTxBd)));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10292,7 +11522,11 @@ WLANTL_TxFCFrame
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Fill FC TX BD unsuccessful\n", __FUNCTION__));
+=======
+                 "%s: Fill FC TX BD unsuccessful\n", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Fill FC TX BD unsuccessful\n", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10304,7 +11538,11 @@ WLANTL_TxFCFrame
   {
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Previous FC TX BD not sent\n", __FUNCTION__));
+=======
+                 "%s: Previous FC TX BD not sent\n", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Previous FC TX BD not sent\n", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10319,7 +11557,11 @@ WLANTL_TxFCFrame
 
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL: send FC frame leave %s", __FUNCTION__));
+=======
+               "WLAN TL: send FC frame leave %s", __func__));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL: send FC frame leave %s", __func__));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10328,7 +11570,10 @@ WLANTL_TxFCFrame
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -10374,7 +11619,10 @@ WLANTL_GetTxResourcesCB
   v_U8_t          ucBAP      = 0;
   v_U8_t          ucData     = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_FLOWCTRL_EN
@@ -10382,7 +11630,10 @@ WLANTL_GetTxResourcesCB
   tpAniSirGlobal pMac;
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
@@ -10429,7 +11680,10 @@ WLANTL_GetTxResourcesCB
   
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_FLOWCTRL_EN
@@ -10448,7 +11702,10 @@ WLANTL_GetTxResourcesCB
   }
 #endif //WLAN_SOFTAP_FLOWCTRL_EN 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif //WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -10490,7 +11747,13 @@ WLANTL_GetTxResourcesCB
    IN
     pTLCb:            TL control block
 <<<<<<< HEAD
+<<<<<<< HEAD
     ucStaId:          station ID
+=======
+   IN/OUT 
+    ucStaId:          station ID. Incase of TDLS, this returns actual TDLS
+                      station ID used
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    IN/OUT 
     ucStaId:          station ID. Incase of TDLS, this returns actual TDLS
@@ -10520,7 +11783,11 @@ WLANTL_Translate8023To80211Header
   VOS_STATUS*     pvosStatus,
   WLANTL_CbType*  pTLCb,
 <<<<<<< HEAD
+<<<<<<< HEAD
   v_U8_t          ucStaId,
+=======
+  v_U8_t          *pucStaId,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   v_U8_t          *pucStaId,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10536,9 +11803,15 @@ WLANTL_Translate8023To80211Header
   v_U8_t                 ucHeaderSize = 0;
   v_VOID_t               *ppvBDHeader = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   v_U8_t                 ucQoSOffset = WLAN80211_MANDATORY_HEADER_SIZE;
 #endif
+=======
+  WLANTL_STAClientType*  pClientSTA = NULL;
+  v_U8_t                 ucQoSOffset = WLAN80211_MANDATORY_HEADER_SIZE;
+  v_U8_t                 ucStaId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType*  pClientSTA = NULL;
   v_U8_t                 ucQoSOffset = WLAN80211_MANDATORY_HEADER_SIZE;
@@ -10557,9 +11830,12 @@ WLANTL_Translate8023To80211Header
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if ( 0 != pTLCb->atlSTAClients[ucStaId].wSTADesc.ucAddRmvLLC )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if( NULL == pucStaId )
   {
      TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -10609,6 +11885,9 @@ WLANTL_Translate8023To80211Header
 
 
   if ( 0 != pClientSTA->wSTADesc.ucAddRmvLLC )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     /* Push the length */
@@ -10661,7 +11940,11 @@ WLANTL_Translate8023To80211Header
 
 #ifdef BTAMP_TEST
 <<<<<<< HEAD
+<<<<<<< HEAD
   pTLCb->atlSTAClients[ucStaId].wSTADesc.wSTAType = WLAN_STA_BT_AMP;
+=======
+  pClientSTA->wSTADesc.wSTAType = WLAN_STA_BT_AMP;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pClientSTA->wSTADesc.wSTAType = WLAN_STA_BT_AMP;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10670,6 +11953,7 @@ WLANTL_Translate8023To80211Header
   // Find the space required for the 802.11 header format
   // based on the frame control fields.
   ucHeaderSize = MandatoryucHeaderSize;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (pTLCb->atlSTAClients[ucStaId].wSTADesc.ucQosEnabled)
   {  
@@ -10682,6 +11966,8 @@ WLANTL_Translate8023To80211Header
     ucQoSOffset += sizeof(pw80211Header->optvA4);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if (pClientSTA->wSTADesc.ucQosEnabled)
   {  
     ucHeaderSize += sizeof(pw80211Header->usQosCtrl);
@@ -10690,6 +11976,9 @@ WLANTL_Translate8023To80211Header
   {  
     ucHeaderSize += sizeof(pw80211Header->optvA4);
     ucQoSOffset += sizeof(pw80211Header->optvA4);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -10705,6 +11994,7 @@ WLANTL_Translate8023To80211Header
     return *pvosStatus;
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
   /* Check for alignment */
@@ -10726,6 +12016,8 @@ WLANTL_Translate8023To80211Header
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   // OK now we have the space. Fill the 80211 header
   /* Fill A2 */
@@ -10737,6 +12029,7 @@ WLANTL_Translate8023To80211Header
 
 #ifdef FEATURE_WLAN_WAPI
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( WLANTL_STA_AUTHENTICATED == pTLCb->atlSTAClients[ucStaId].tlState && gUcIsWai != 1 )
 #else
   if ( WLANTL_STA_AUTHENTICATED == pTLCb->atlSTAClients[ucStaId].tlState )
@@ -10745,6 +12038,8 @@ WLANTL_Translate8023To80211Header
     pw80211Header->wFrmCtrl.wep =
                  pTLCb->atlSTAClients[ucStaId].wSTADesc.ucProtectedFrame;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if (( WLANTL_STA_AUTHENTICATED == pClientSTA->tlState ||
         pClientSTA->ptkInstalled ) && gUcIsWai != 1)
 #else
@@ -10754,6 +12049,9 @@ WLANTL_Translate8023To80211Header
   {
     pw80211Header->wFrmCtrl.wep =
                  pClientSTA->wSTADesc.ucProtectedFrame;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -10765,6 +12063,7 @@ WLANTL_Translate8023To80211Header
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(pTLCb->atlSTAClients[ucStaId].wSTADesc.ucQosEnabled)
   {
       pw80211Header->wFrmCtrl.subType  = WLANTL_80211_DATA_QOS_SUBTYPE;
@@ -10775,11 +12074,16 @@ WLANTL_Translate8023To80211Header
       pw80211Header->usQosCtrl = ucUP;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if(pClientSTA->wSTADesc.ucQosEnabled)
   {
       pw80211Header->wFrmCtrl.subType  = WLANTL_80211_DATA_QOS_SUBTYPE;
 
       *((v_U16_t *)((v_U8_t *)ppvBDHeader + ucQoSOffset)) = ucUP;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   }
@@ -10794,7 +12098,11 @@ WLANTL_Translate8023To80211Header
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   switch( pTLCb->atlSTAClients[ucStaId].wSTADesc.wSTAType )
+=======
+  switch( pClientSTA->wSTADesc.wSTAType )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   switch( pClientSTA->wSTADesc.wSTAType )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10805,9 +12113,15 @@ WLANTL_Translate8023To80211Header
         /*Fix me*/
         vos_copy_macaddr( (v_MACADDR_t*)&pw80211Header->vA1,
 <<<<<<< HEAD
+<<<<<<< HEAD
               &pTLCb->atlSTAClients[ucStaId].wSTADesc.vSTAMACAddress);
         vos_mem_copy( pw80211Header->vA3,
               &pTLCb->atlSTAClients[ucStaId].wSTADesc.vBSSIDforIBSS ,
+=======
+              &pClientSTA->wSTADesc.vSTAMACAddress);
+        vos_mem_copy( pw80211Header->vA3,
+              &pClientSTA->wSTADesc.vBSSIDforIBSS ,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               &pClientSTA->wSTADesc.vSTAMACAddress);
         vos_mem_copy( pw80211Header->vA3,
@@ -10822,17 +12136,23 @@ WLANTL_Translate8023To80211Header
         pw80211Header->wFrmCtrl.fromDS        = 1;
         vos_copy_macaddr( (v_MACADDR_t*)&pw80211Header->vA1,
 <<<<<<< HEAD
+<<<<<<< HEAD
               &pTLCb->atlSTAClients[ucStaId].wSTADesc.vSTAMACAddress);
         vos_mem_copy( pw80211Header->vA2,
                 w8023Header.vSA, VOS_MAC_ADDR_SIZE);
         vos_copy_macaddr( (v_MACADDR_t*)&pw80211Header->vA3,
               &pTLCb->atlSTAClients[ucStaId].wSTADesc.vSTAMACAddress);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               &pClientSTA->wSTADesc.vSTAMACAddress);
         vos_mem_copy( pw80211Header->vA2,
                 w8023Header.vSA, VOS_MAC_ADDR_SIZE);
         vos_copy_macaddr( (v_MACADDR_t*)&pw80211Header->vA3,
               &pClientSTA->wSTADesc.vSTAMACAddress);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* fill the optional A4 header */
         vos_mem_copy( pw80211Header->optvA4,
@@ -10843,7 +12163,10 @@ WLANTL_Translate8023To80211Header
         break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WLAN_STA_SOFTAP:
@@ -10854,7 +12177,11 @@ WLANTL_Translate8023To80211Header
         vos_mem_copy( pw80211Header->vA1, w8023Header.vDA , VOS_MAC_ADDR_SIZE);   
         vos_copy_macaddr( (v_MACADDR_t*)&pw80211Header->vA2,
 <<<<<<< HEAD
+<<<<<<< HEAD
               &pTLCb->atlSTAClients[ucStaId].wSTADesc.vSelfMACAddress);
+=======
+              &pClientSTA->wSTADesc.vSelfMACAddress);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               &pClientSTA->wSTADesc.vSelfMACAddress);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10865,9 +12192,12 @@ WLANTL_Translate8023To80211Header
             ucStaId));
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
       case WLAN_STA_TDLS:
         pw80211Header->wFrmCtrl.toDS          = 0;
@@ -10882,6 +12212,9 @@ WLANTL_Translate8023To80211Header
             ("TL:TDLS CASE NOW ---------staid=%d\n"), ucStaId);
         break;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WLAN_STA_INFRA:
       default:
@@ -10889,7 +12222,11 @@ WLANTL_Translate8023To80211Header
         pw80211Header->wFrmCtrl.fromDS        = 0;
         vos_copy_macaddr( (v_MACADDR_t*)&pw80211Header->vA1,
 <<<<<<< HEAD
+<<<<<<< HEAD
               &pTLCb->atlSTAClients[ucStaId].wSTADesc.vSTAMACAddress);
+=======
+              &pClientSTA->wSTADesc.vSTAMACAddress);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               &pClientSTA->wSTADesc.vSTAMACAddress);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10910,7 +12247,11 @@ WLANTL_Translate8023To80211Header
    BEGIN LOG FUNCTION    !!! Remove me or clean me
 =============================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLANTL_DEBUG 
+=======
+#if 0 //def WLANTL_DEBUG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #if 0 //def WLANTL_DEBUG
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11042,7 +12383,10 @@ WLANTL_Translate80211To8023Header
   {
   case 0:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( w80211Header.wFrmCtrl.toDS )
@@ -11061,11 +12405,14 @@ WLANTL_Translate80211To8023Header
       vos_mem_copy( w8023Header.vSA, w80211Header.vA2, VOS_MAC_ADDR_SIZE);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
     /* IBSS */
     vos_mem_copy( w8023Header.vDA, w80211Header.vA1, VOS_MAC_ADDR_SIZE);
     vos_mem_copy( w8023Header.vSA, w80211Header.vA2, VOS_MAC_ADDR_SIZE);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     break;
@@ -11103,8 +12450,11 @@ WLANTL_Translate80211To8023Header
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 != pTLCb->atlSTAClients[ucSTAId].wSTADesc.ucAddRmvLLC )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
       TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -11113,6 +12463,9 @@ WLANTL_Translate80211To8023Header
   }
 
   if ( 0 != pTLCb->atlSTAClients[ucSTAId]->wSTADesc.ucAddRmvLLC )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     // Extract the LLC header
@@ -11179,7 +12532,10 @@ WLANTL_Translate80211To8023Header
 }/*WLANTL_Translate80211To8023Header*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION    WLANTL_FindFrameTypeBcMcUc
 
@@ -11300,6 +12656,9 @@ WLANTL_FindFrameTypeBcMcUc
   return VOS_STATUS_SUCCESS;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if 0
 #ifdef WLAN_PERF 
@@ -11468,9 +12827,12 @@ WLANTL_PrepareBDHeader
   v_U8_t      ucHeaderOffset;
   v_U8_t      ucHeaderLen;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef WLAN_SOFTAP_FEATURE
   v_PVOID_t   pvPeekData;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   v_U8_t      ucBDHeaderLen = WLANTL_BD_HEADER_LEN(ucDisableFrmXtl);
@@ -11506,7 +12868,10 @@ WLANTL_PrepareBDHeader
     Extract MAC address
    -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
@@ -11518,6 +12883,7 @@ WLANTL_PrepareBDHeader
                                      &usMacAddrSize );
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
   *pvosStatus = vos_pkt_peek_data( vosDataBuff,
                                      ucBDHeaderLen +
@@ -11528,6 +12894,8 @@ WLANTL_PrepareBDHeader
   /*Fix me*/
   vos_copy_macaddr(pvDestMacAdddr, (v_MACADDR_t*)pvPeekData);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( VOS_STATUS_SUCCESS != *pvosStatus )
@@ -11585,7 +12953,10 @@ WLANTL_PrepareBDHeader
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //THIS IS A HACK AND NEEDS TO BE FIXED FOR CONCURRENCY
@@ -11640,7 +13011,11 @@ WLAN_TLAPGetNextTxIds
   WLANTL_CbType*  pTLCb;
   v_U8_t          ucACFilter = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   v_U8_t          ucNextSTA ; 
+=======
+  v_U8_t          ucNextSTA = 0; // Motorola IKJB42MAIN-4103, are002, initialization
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   v_U8_t          ucNextSTA = 0; // Motorola IKJB42MAIN-4103, are002, initialization
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11649,7 +13024,11 @@ WLAN_TLAPGetNextTxIds
   v_U8_t          uFlowMask; // TX FlowMask from WDA
   uint8           ucACMask; 
 <<<<<<< HEAD
+<<<<<<< HEAD
   uint8           i; 
+=======
+  uint8           i = 0; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   uint8           i = 0; 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11722,6 +13101,7 @@ WLAN_TLAPGetNextTxIds
       for ( ; ucNextSTA < WLAN_MAX_STA_COUNT; ucNextSTA ++ )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         WLAN_TL_AC_ARRAY_2_MASK (&pTLCb->atlSTAClients[ucNextSTA], ucACMask, i); 
 
         if ( (0 == pTLCb->atlSTAClients[ucNextSTA].ucExists) ||
@@ -11731,6 +13111,8 @@ WLAN_TLAPGetNextTxIds
         {
           //current statioin does not exist or have any packet to serve.
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(NULL == pTLCb->atlSTAClients[ucNextSTA])
         {
             continue;
@@ -11751,6 +13133,9 @@ WLAN_TLAPGetNextTxIds
           TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                  "%s Sta %d not in auth state so skipping it.",
                  __func__, ucNextSTA));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           continue;
         }
@@ -11760,9 +13145,15 @@ WLAN_TLAPGetNextTxIds
         //station is allowed to send only after FW reports FW memory is below threshold and on-fly
         //packets are less then allowed value
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ( (TRUE == pTLCb->atlSTAClients[ucNextSTA].ucLwmModeEnabled) && 
              ((FALSE == pTLCb->atlSTAClients[ucNextSTA].ucLwmEventReported) || 
                  (0 < pTLCb->atlSTAClients[ucNextSTA].uBuffThresholdMax))
+=======
+        if ( (TRUE == pTLCb->atlSTAClients[ucNextSTA]->ucLwmModeEnabled) &&
+             ((FALSE == pTLCb->atlSTAClients[ucNextSTA]->ucLwmEventReported) ||
+                 (0 < pTLCb->atlSTAClients[ucNextSTA]->uBuffThresholdMax))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if ( (TRUE == pTLCb->atlSTAClients[ucNextSTA]->ucLwmModeEnabled) &&
              ((FALSE == pTLCb->atlSTAClients[ucNextSTA]->ucLwmEventReported) ||
@@ -11778,7 +13169,11 @@ WLAN_TLAPGetNextTxIds
         *pucSTAId = ucNextSTA;
         pTLCb->ucCurrentSTA = ucNextSTA;
 <<<<<<< HEAD
+<<<<<<< HEAD
         pTLCb->atlSTAClients[*pucSTAId].ucCurrentAC = pTLCb->uCurServedAC;
+=======
+        pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC = pTLCb->uCurServedAC;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC = pTLCb->uCurServedAC;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11863,6 +13258,7 @@ WLAN_TLGetNextTxIds
   v_U8_t          ucNextAC;
   v_U8_t          ucNextSTA; 
   v_U8_t          ucCount; 
+<<<<<<< HEAD
 <<<<<<< HEAD
   v_U8_t          uFlowMask; // TX FlowMask from WDA
   v_U8_t          ucACMask = 0;
@@ -12050,6 +13446,8 @@ WLAN_TLGetNextTxIds
   v_U8_t          ucNextSTA; 
   v_U8_t          ucCount; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   v_U8_t          uFlowMask; // TX FlowMask from WDA
   v_U8_t          ucACMask = 0;
   v_U8_t          i = 0; 
@@ -12067,6 +13465,9 @@ WLAN_TLGetNextTxIds
 
   systemRole = wdaGetGlobalSystemRole(pMac);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Extract TL control block
@@ -12080,7 +13481,10 @@ WLAN_TLGetNextTxIds
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
   if ((eSYSTEM_AP_ROLE == systemRole) || (vos_concurrent_sessions_running()) || pTLCb->ucTdlsPeerCount)
 #else
@@ -12098,6 +13502,9 @@ WLAN_TLGetNextTxIds
     return VOS_STATUS_E_FAULT;
   }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*STA id - no priority yet implemented */
   /*-----------------------------------------------------------------------
@@ -12113,6 +13520,7 @@ WLAN_TLGetNextTxIds
   {
     ucNextSTA = ( (ucNextSTA+1) >= WLAN_MAX_STA_COUNT )?0:(ucNextSTA+1);
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     if (( pTLCb->atlSTAClients[ucNextSTA].ucExists ) &&
         ( pTLCb->atlSTAClients[ucNextSTA].ucPktPending ))
@@ -12123,6 +13531,8 @@ WLAN_TLGetNextTxIds
       pTLCb->ucCurrentSTA = ucNextSTA; 
       break;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(NULL == pTLCb->atlSTAClients[ucNextSTA])
     {
         continue;
@@ -12143,6 +13553,9 @@ WLAN_TLGetNextTxIds
                "%s Sta %d is not in auth state, skipping this sta.",
                __func__, ucNextSTA));
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
   }
@@ -12150,12 +13563,15 @@ WLAN_TLGetNextTxIds
   *pucSTAId = pTLCb->ucCurrentSTA;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if ( ( WLANTL_STA_ID_INVALID( *pucSTAId ) ) ||
         ( 0 == ucACMask ) )
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
       "WLAN TL:No station registered with TL at this point or Mask 0"
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( WLANTL_STA_ID_INVALID( *pucSTAId ) )
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -12172,6 +13588,9 @@ WLAN_TLGetNextTxIds
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
       "WLAN TL: Mask 0 "
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       "STA ID: %d on WLAN_TLGetNextTxIds", *pucSTAId));
 
@@ -12187,6 +13606,7 @@ WLAN_TLGetNextTxIds
     exit this function at this point during the main Tx loop
   -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( 0 < pTLCb->atlSTAClients[*pucSTAId].ucCurrentWeight  )
   {
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -12194,12 +13614,17 @@ WLAN_TLGetNextTxIds
                   pTLCb->atlSTAClients[*pucSTAId].ucCurrentAC ,
                   pTLCb->atlSTAClients[*pucSTAId].ucCurrentWeight));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( 0 < pTLCb->atlSTAClients[*pucSTAId]->ucCurrentWeight  )
   {
     TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                   "WLAN TL: Maintaining serviced AC to: %d for Weight: %d",
                   pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC ,
                   pTLCb->atlSTAClients[*pucSTAId]->ucCurrentWeight));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_SUCCESS;
   }
@@ -12208,7 +13633,11 @@ WLAN_TLGetNextTxIds
      Choose highest priority AC - !!! optimize me
   -----------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   ucNextAC = pTLCb->atlSTAClients[*pucSTAId].ucCurrentAC;
+=======
+  ucNextAC = pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   ucNextAC = pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12222,25 +13651,36 @@ WLAN_TLGetNextTxIds
                ucACMask, ( 1 << ucNextAC ), ( ucACMask & ( 1 << ucNextAC ))));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( 0 !=  pTLCb->atlSTAClients[*pucSTAId].aucACMask[ucNextAC] )
     {
        pTLCb->atlSTAClients[*pucSTAId].ucCurrentAC     = 
                                    (WLANTL_ACEnumType)ucNextAC;
        pTLCb->atlSTAClients[*pucSTAId].ucCurrentWeight =
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( 0 != ( ucACMask & ( 1 << ucNextAC ) & uFlowMask ))
     {
        pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC     =
                                    (WLANTL_ACEnumType)ucNextAC;
        pTLCb->atlSTAClients[*pucSTAId]->ucCurrentWeight =
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        pTLCb->tlConfigInfo.ucAcWeights[ucNextAC];
 
         TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                   "WLAN TL: Switching serviced AC to: %d with Weight: %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   pTLCb->atlSTAClients[*pucSTAId].ucCurrentAC ,
                   pTLCb->atlSTAClients[*pucSTAId].ucCurrentWeight));
+=======
+                  pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC ,
+                  pTLCb->atlSTAClients[*pucSTAId]->ucCurrentWeight));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC ,
                   pTLCb->atlSTAClients[*pucSTAId]->ucCurrentWeight));
@@ -12258,6 +13698,7 @@ WLAN_TLGetNextTxIds
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              " C AC: %d C W: %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
              pTLCb->atlSTAClients[*pucSTAId].ucCurrentAC,
              pTLCb->atlSTAClients[*pucSTAId].ucCurrentWeight));
 
@@ -12265,12 +13706,17 @@ WLAN_TLGetNextTxIds
 }/* WLAN_TLGetNextTxIds */
 #endif //WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              pTLCb->atlSTAClients[*pucSTAId]->ucCurrentAC,
              pTLCb->atlSTAClients[*pucSTAId]->ucCurrentWeight));
 
   return VOS_STATUS_SUCCESS;
 }/* WLAN_TLGetNextTxIds */
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -12312,6 +13758,7 @@ WLANTL_MgmtFrmRxDefaultCb
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if !defined( FEATURE_WLAN_INTEGRATED_SOC )
   if(!vos_is_load_unload_in_progress(VOS_MODULE_ID_TL, NULL))
   {
@@ -12327,6 +13774,10 @@ WLANTL_MgmtFrmRxDefaultCb
 #if !defined( FEATURE_WLAN_INTEGRATED_SOC )
   }
 #endif
+=======
+      TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
+                 "WLAN TL: No registered Mgmt Frm client on pkt RX. Load/Unload in progress, Ignore"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                  "WLAN TL: No registered Mgmt Frm client on pkt RX. Load/Unload in progress, Ignore"));
@@ -12543,12 +13994,18 @@ WLANTL_CleanCB
   for ( ucIndex = 0; ucIndex < WLAN_MAX_STA_COUNT ; ucIndex++)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     WLANTL_CleanSTA( &pTLCb->atlSTAClients[ucIndex], ucEmpty);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(NULL != pTLCb->atlSTAClients[ucIndex])
     {
         WLANTL_CleanSTA( pTLCb->atlSTAClients[ucIndex], ucEmpty);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
@@ -12680,7 +14137,11 @@ WLANTL_CleanSTA
   {
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "WLAN TL:Non NULL vosAMSDUChainRoot (=%x) on WLANTL_CleanSTA," 
+=======
+               "WLAN TL:Non NULL vosAMSDUChainRoot (=%p) on WLANTL_CleanSTA,"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "WLAN TL:Non NULL vosAMSDUChainRoot (=%p) on WLANTL_CleanSTA,"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12821,7 +14282,11 @@ WLANTL_EnableUAPSDForAC
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                "WLAN TL:Invalid input params on WLANTL_EnableUAPSDForAC"
 <<<<<<< HEAD
+<<<<<<< HEAD
                " TL: %x  STA: %d  AC: %d SI: %d", 
+=======
+               " TL: %p  STA: %d  AC: %d SI: %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                " TL: %p  STA: %d  AC: %d SI: %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12830,9 +14295,12 @@ WLANTL_EnableUAPSDForAC
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*Set this flag in order to remember that this is a trigger enabled AC*/
   pTLCb->atlSTAClients[ucSTAId].wUAPSDInfo[ucAC].ucSet = 1; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( NULL == pTLCb->atlSTAClients[ucSTAId] )
   {
       TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -12842,6 +14310,9 @@ WLANTL_EnableUAPSDForAC
 
   /*Set this flag in order to remember that this is a trigger enabled AC*/
   pTLCb->atlSTAClients[ucSTAId]->wUAPSDInfo[ucAC].ucSet = 1;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -12917,6 +14388,7 @@ WLANTL_DisableUAPSDForAC
     TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                "WLAN TL:Invalid input params on WLANTL_DisableUAPSDForAC"
 <<<<<<< HEAD
+<<<<<<< HEAD
                " TL: %x  STA: %d  AC: %d", pTLCb, ucSTAId, ucAC ));
     return VOS_STATUS_E_FAULT;
   }
@@ -12924,6 +14396,8 @@ WLANTL_DisableUAPSDForAC
   /*Reset this flag as this is no longer a trigger enabled AC*/
   pTLCb->atlSTAClients[ucSTAId].wUAPSDInfo[ucAC].ucSet = 1; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                " TL: %p  STA: %d  AC: %d", pTLCb, ucSTAId, ucAC ));
     return VOS_STATUS_E_FAULT;
   }
@@ -12937,6 +14411,9 @@ WLANTL_DisableUAPSDForAC
 
   /*Reset this flag as this is no longer a trigger enabled AC*/
   pTLCb->atlSTAClients[ucSTAId]->wUAPSDInfo[ucAC].ucSet = 1;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -13153,6 +14630,10 @@ VOS_STATUS WLANTL_GetStatistics
 {
   WLANTL_CbType            *pTLCb  = VOS_GET_TL_CB(pAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType*     pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType*     pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13164,7 +14645,11 @@ VOS_STATUS WLANTL_GetStatistics
     Extract TL control block 
    ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (NULL == pTLCb) 
+=======
+  if ( NULL == pTLCb )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if ( NULL == pTLCb )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13175,8 +14660,11 @@ VOS_STATUS WLANTL_GetStatistics
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(0 == pTLCb->atlSTAClients[STAid].ucExists)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[STAid];
 
   if ( NULL == pClientSTA )
@@ -13187,6 +14675,9 @@ VOS_STATUS WLANTL_GetStatistics
   }
 
   if(0 == pClientSTA->ucExists)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -13202,7 +14693,11 @@ VOS_STATUS WLANTL_GetStatistics
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   statistics = &pTLCb->atlSTAClients[STAid].trafficStatistics;
+=======
+  statistics = &pClientSTA->trafficStatistics;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   statistics = &pClientSTA->trafficStatistics;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13235,6 +14730,10 @@ VOS_STATUS WLANTL_ResetStatistics
 {
   WLANTL_CbType            *pTLCb  = VOS_GET_TL_CB(pAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType*     pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType*     pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13253,8 +14752,11 @@ VOS_STATUS WLANTL_ResetStatistics
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(0 == pTLCb->atlSTAClients[STAid].ucExists)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[STAid];
 
   if ( NULL == pClientSTA )
@@ -13265,6 +14767,9 @@ VOS_STATUS WLANTL_ResetStatistics
   }
 
   if(0 == pClientSTA->ucExists)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -13273,7 +14778,11 @@ VOS_STATUS WLANTL_ResetStatistics
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   statistics = &pTLCb->atlSTAClients[STAid].trafficStatistics;
+=======
+  statistics = &pClientSTA->trafficStatistics;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   statistics = &pClientSTA->trafficStatistics;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13310,6 +14819,10 @@ VOS_STATUS WLANTL_GetSpecStatistic
 {
   WLANTL_CbType            *pTLCb  = VOS_GET_TL_CB(pAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType*     pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType*     pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13327,9 +14840,12 @@ VOS_STATUS WLANTL_GetSpecStatistic
     return VOS_STATUS_E_FAULT;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if(0 == pTLCb->atlSTAClients[STAid].ucExists)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[STAid];
 
   if ( NULL == pClientSTA )
@@ -13340,6 +14856,9 @@ VOS_STATUS WLANTL_GetSpecStatistic
   }
 
   if(0 == pClientSTA->ucExists)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -13355,7 +14874,11 @@ VOS_STATUS WLANTL_GetSpecStatistic
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   statistics = &pTLCb->atlSTAClients[STAid].trafficStatistics;
+=======
+  statistics = &pClientSTA->trafficStatistics;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   statistics = &pClientSTA->trafficStatistics;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13458,6 +14981,10 @@ VOS_STATUS WLANTL_ResetSpecStatistic
 {
   WLANTL_CbType            *pTLCb  = VOS_GET_TL_CB(pAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WLANTL_STAClientType*     pClientSTA = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WLANTL_STAClientType*     pClientSTA = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13476,8 +15003,11 @@ VOS_STATUS WLANTL_ResetSpecStatistic
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(0 == pTLCb->atlSTAClients[STAid].ucExists)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[STAid];
 
   if ( NULL == pClientSTA )
@@ -13488,6 +15018,9 @@ VOS_STATUS WLANTL_ResetSpecStatistic
   }
 
   if(0 == pClientSTA->ucExists)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -13496,7 +15029,11 @@ VOS_STATUS WLANTL_ResetSpecStatistic
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   statistics = &pTLCb->atlSTAClients[STAid].trafficStatistics;
+=======
+  statistics = &pClientSTA->trafficStatistics;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   statistics = &pClientSTA->trafficStatistics;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13596,11 +15133,14 @@ VOS_STATUS WLANTL_ReadRSSI
    if(NULL == tlCtxt)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "%s Invalid TL handle", __FUNCTION__));
       return VOS_STATUS_E_INVAL;
    }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR, "%s Invalid TL handle", __func__));
       return VOS_STATUS_E_INVAL;
    }
@@ -13612,13 +15152,20 @@ VOS_STATUS WLANTL_ReadRSSI
        return VOS_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    currentRSSI0 = WLANTL_GETRSSI0(pBDHeader);
    currentRSSI1 = WLANTL_GETRSSI1(pBDHeader);
    currentRSSI  = (currentRSSI0 > currentRSSI1) ? currentRSSI0 : currentRSSI1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    tlCtxt->atlSTAClients[STAid].rssiAvg = currentRSSI;
+=======
+   tlCtxt->atlSTAClients[STAid]->rssiAvg = currentRSSI;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tlCtxt->atlSTAClients[STAid]->rssiAvg = currentRSSI;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13754,7 +15301,11 @@ void WLANTL_PowerStateChangedCB
    {
      VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Invalid TL Control Block", __FUNCTION__ );
+=======
+                "%s: Invalid TL Control Block", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Invalid TL Control Block", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13877,7 +15428,10 @@ static VOS_STATUS WLANTL_GetEtherType
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
@@ -13915,13 +15469,19 @@ VOS_STATUS WLANTL_GetSoftAPStatistics(v_PVOID_t pAdapter, WLANTL_TRANSFER_STA_TY
     for (i = 0; i < WLAN_MAX_STA_COUNT; i++)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (pTLCb->atlSTAClients[i].wSTADesc.wSTAType == WLAN_STA_SOFTAP)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ( NULL == pTLCb->atlSTAClients[i])
         {
             continue;
         }
         if (pTLCb->atlSTAClients[i]->wSTADesc.wSTAType == WLAN_STA_SOFTAP)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
            vosStatus = WLANTL_GetStatistics(pAdapter, &statBufferTemp, i);// Can include staId 1 because statistics not collected for it
@@ -13955,9 +15515,12 @@ VOS_STATUS WLANTL_GetSoftAPStatistics(v_PVOID_t pAdapter, WLANTL_TRANSFER_STA_TY
     return vosStatus;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 #ifdef ANI_CHIPSET_VOLANS
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
 /*==========================================================================
   FUNCTION      WLANTL_GetEtherType_2
@@ -14036,6 +15599,9 @@ static VOS_STATUS WLANTL_GetEtherType_2
 }
 #endif /* FEATURE_WLAN_TDLS */
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===============================================================================
   FUNCTION      WLANTL_IsReplayPacket
@@ -14129,7 +15695,10 @@ WLANTL_GetReplayCounterFromRxBD
 }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -14160,7 +15729,11 @@ void WLANTL_PostResNeeded(v_PVOID_t pvosGCtx)
   {
     VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
        " %s fails to post message", __FUNCTION__);
+=======
+       " %s fails to post message", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        " %s fails to post message", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14190,12 +15763,15 @@ void WLANTL_UpdateRssiBmps(v_PVOID_t pvosGCtx, v_U8_t staId, v_S7_t rssi)
   WLANTL_CbType* pTLCb = VOS_GET_TL_CB(pvosGCtx);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (NULL != pTLCb)
   {
     pTLCb->atlSTAClients[staId].rssiAvgBmps = rssi;
   }
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if (NULL != pTLCb && NULL != pTLCb->atlSTAClients[staId])
   {
     pTLCb->atlSTAClients[staId]->rssiAvgBmps = rssi;
@@ -14329,4 +15905,7 @@ WLANTL_GetSTALinkCapacity
 
     return VOS_STATUS_SUCCESS;
 }/* WLANTL_GetSTALinkCapacity */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

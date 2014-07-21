@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -48,7 +54,11 @@
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * DO NOT EDIT - This file is generated automaticlly
+=======
+ * DO NOT EDIT - This file is generated automatically
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * DO NOT EDIT - This file is generated automatically
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -267,6 +277,7 @@
 #define WNI_CFG_MAX_AMSDU_LENGTH    201
 #define WNI_CFG_MPDU_DENSITY    202
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_MAX_RX_AMPDU_FACTOR    203
 #define WNI_CFG_SHORT_GI_20MHZ    204
 #define WNI_CFG_SHORT_GI_40MHZ    205
@@ -276,6 +287,8 @@
 #define WNI_CFG_RSSI_FILTER_PERIOD    209
 #define WNI_CFG_FT_RSSI_FILTER_PERIOD    210
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_NUM_BUFF_ADVERT    203
 #define WNI_CFG_MAX_RX_AMPDU_FACTOR    204
 #define WNI_CFG_SHORT_GI_20MHZ    205
@@ -284,6 +297,9 @@
 #define WNI_CFG_MAX_PS_POLL    208
 #define WNI_CFG_NUM_BEACON_PER_RSSI_AVERAGE    209
 #define WNI_CFG_RSSI_FILTER_PERIOD    210
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_MIN_RSSI_THRESHOLD    211
 #define WNI_CFG_NTH_BEACON_FILTER    212
@@ -302,6 +318,7 @@
 #define WNI_CFG_MAX_BA_SESSIONS    225
 #define WNI_CFG_BA_AUTO_SETUP    226
 #define WNI_CFG_ADDBA_REQ_DECLINE    227
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define WNI_CFG_BG_SCAN_CHANNEL_LIST    228
 #define WNI_CFG_MAX_MEDIUM_TIME    229
@@ -368,6 +385,8 @@
 #define WNI_CFG_GO_KEEP_ALIVE_TIMEOUT    290
 #define WNI_CFG_ENABLE_MC_ADDR_LIST    291
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_DEL_ALL_RX_BA_SESSIONS_2_4_G_BTC    228
 #define WNI_CFG_BG_SCAN_CHANNEL_LIST    229
 #define WNI_CFG_MAX_MEDIUM_TIME    230
@@ -438,6 +457,9 @@
 #define WNI_CFG_ENABLE_MCC_ADAPTIVE_SCHED    295
 #define WNI_CFG_DISABLE_LDPC_WITH_TXBF_AP    296
 #define WNI_CFG_AP_LINK_MONITOR_TIMEOUT    297
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
@@ -596,7 +618,11 @@
 #define WNI_CFG_REASSOCIATION_FAILURE_TIMEOUT_STAMIN    0
 #define WNI_CFG_REASSOCIATION_FAILURE_TIMEOUT_STAMAX    65535
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_REASSOCIATION_FAILURE_TIMEOUT_STADEF    2000
+=======
+#define WNI_CFG_REASSOCIATION_FAILURE_TIMEOUT_STADEF    1000
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WNI_CFG_REASSOCIATION_FAILURE_TIMEOUT_STADEF    1000
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -677,7 +703,11 @@
 
 #define WNI_CFG_FIXED_RATE_STAMIN    0
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_FIXED_RATE_STAMAX    31
+=======
+#define WNI_CFG_FIXED_RATE_STAMAX    44
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WNI_CFG_FIXED_RATE_STAMAX    44
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -716,7 +746,10 @@
 #define WNI_CFG_FIXED_RATE_0_5MBPS_SLR_20MHZ_SIMO    30
 #define WNI_CFG_FIXED_RATE_68_25MBPS_QC_PROP_20MHZ_SIMO    31
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_FIXED_RATE_54MBPS_MCS3_40MHZ_SIMO    32
 #define WNI_CFG_FIXED_RATE_81MBPS_MCS4_40MHZ_SIMO    33
 #define WNI_CFG_FIXED_RATE_108MBPS_MCS5_40MHZ_SIMO    34
@@ -730,6 +763,9 @@
 #define WNI_CFG_FIXED_RATE_120MBPS_MCS5_40MHZ_SIMO_SGI    42
 #define WNI_CFG_FIXED_RATE_135MBPS_MCS6_40MHZ_SIMO_SGI    43
 #define WNI_CFG_FIXED_RATE_150MBPS_MCS7_40MHZ_SIMO_SGI    44
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define WNI_CFG_FIXED_RATE_MULTICAST_24GHZ_STAMIN    0
@@ -1256,6 +1292,7 @@
 #define WNI_CFG_VHT_SU_BEAMFORMEE_CAP_STAMIN    0
 #define WNI_CFG_VHT_SU_BEAMFORMEE_CAP_STAMAX    1
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_VHT_SU_BEAMFORMEE_CAP_STADEF    1
 
 #define WNI_CFG_VHT_CSN_BEAMFORMEE_ANT_SUPPORTED_STAMIN    0
@@ -1266,6 +1303,8 @@
 #define WNI_CFG_VHT_NUM_SOUNDING_DIMENSIONS_STAMAX    1
 #define WNI_CFG_VHT_NUM_SOUNDING_DIMENSIONS_STADEF    1
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_VHT_SU_BEAMFORMEE_CAP_STADEF    0
 
 #define WNI_CFG_VHT_CSN_BEAMFORMEE_ANT_SUPPORTED_STAMIN    0
@@ -1275,6 +1314,9 @@
 #define WNI_CFG_VHT_NUM_SOUNDING_DIMENSIONS_STAMIN    0
 #define WNI_CFG_VHT_NUM_SOUNDING_DIMENSIONS_STAMAX    3
 #define WNI_CFG_VHT_NUM_SOUNDING_DIMENSIONS_STADEF    0
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define WNI_CFG_VHT_MU_BEAMFORMER_CAP_STAMIN    0
@@ -1318,6 +1360,7 @@
 #define WNI_CFG_VHT_TX_MCS_MAP_STADEF    65534
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_VHT_RX_HIGHEST_SUPPORTED_DATA_RATE_STAMIN    1
 #define WNI_CFG_VHT_RX_HIGHEST_SUPPORTED_DATA_RATE_STAMAX    434
 #define WNI_CFG_VHT_RX_HIGHEST_SUPPORTED_DATA_RATE_STADEF    434
@@ -1326,6 +1369,8 @@
 #define WNI_CFG_VHT_TX_HIGHEST_SUPPORTED_DATA_RATE_STAMAX    434
 #define WNI_CFG_VHT_TX_HIGHEST_SUPPORTED_DATA_RATE_STADEF    434
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_VHT_RX_HIGHEST_SUPPORTED_DATA_RATE_STAMIN    0
 #define WNI_CFG_VHT_RX_HIGHEST_SUPPORTED_DATA_RATE_STAMAX    390
 #define WNI_CFG_VHT_RX_HIGHEST_SUPPORTED_DATA_RATE_STADEF    0
@@ -1333,6 +1378,9 @@
 #define WNI_CFG_VHT_TX_HIGHEST_SUPPORTED_DATA_RATE_STAMIN    0
 #define WNI_CFG_VHT_TX_HIGHEST_SUPPORTED_DATA_RATE_STAMAX    390
 #define WNI_CFG_VHT_TX_HIGHEST_SUPPORTED_DATA_RATE_STADEF    0
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define WNI_CFG_VHT_CHANNEL_WIDTH_STAMIN    0
@@ -1354,8 +1402,13 @@
 
 #define WNI_CFG_VHT_BASIC_MCS_SET_STAMIN    0
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_VHT_BASIC_MCS_SET_STAMAX    3
 #define WNI_CFG_VHT_BASIC_MCS_SET_STADEF    0
+=======
+#define WNI_CFG_VHT_BASIC_MCS_SET_STAMAX    65535
+#define WNI_CFG_VHT_BASIC_MCS_SET_STADEF    65534
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WNI_CFG_VHT_BASIC_MCS_SET_STAMAX    65535
 #define WNI_CFG_VHT_BASIC_MCS_SET_STADEF    65534
@@ -1393,11 +1446,17 @@
 #define WNI_CFG_MPDU_DENSITY_STADEF    0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_NUM_BUFF_ADVERT_STAMIN    0
 #define WNI_CFG_NUM_BUFF_ADVERT_STAMAX    128
 #define WNI_CFG_NUM_BUFF_ADVERT_STADEF    64
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_MAX_RX_AMPDU_FACTOR_STAMIN    0
 #define WNI_CFG_MAX_RX_AMPDU_FACTOR_STAMAX    3
@@ -1435,11 +1494,15 @@
 #define WNI_CFG_RSSI_FILTER_PERIOD_STAMIN    0
 #define WNI_CFG_RSSI_FILTER_PERIOD_STAMAX    255
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_RSSI_FILTER_PERIOD_STADEF    20
 
 #define WNI_CFG_FT_RSSI_FILTER_PERIOD_STAMIN    0
 #define WNI_CFG_FT_RSSI_FILTER_PERIOD_STAMAX    255
 #define WNI_CFG_FT_RSSI_FILTER_PERIOD_STADEF    5
+=======
+#define WNI_CFG_RSSI_FILTER_PERIOD_STADEF    5
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WNI_CFG_RSSI_FILTER_PERIOD_STADEF    5
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1516,11 +1579,17 @@
 #define WNI_CFG_ADDBA_REQ_DECLINE_STADEF    0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_DEL_ALL_RX_BA_SESSIONS_2_4_G_BTC_STAMIN    0
 #define WNI_CFG_DEL_ALL_RX_BA_SESSIONS_2_4_G_BTC_STAMAX    1
 #define WNI_CFG_DEL_ALL_RX_BA_SESSIONS_2_4_G_BTC_STADEF    0
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_MAX_MEDIUM_TIME_STAMIN    0
 #define WNI_CFG_MAX_MEDIUM_TIME_STAMAX    65535
@@ -1707,7 +1776,11 @@
 
 #define WNI_CFG_ASSOC_STA_LIMIT_STAMIN    1
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WNI_CFG_ASSOC_STA_LIMIT_STAMAX    10
+=======
+#define WNI_CFG_ASSOC_STA_LIMIT_STAMAX    32
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WNI_CFG_ASSOC_STA_LIMIT_STAMAX    32
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1750,9 +1823,12 @@
 #define WNI_CFG_ENABLE_MC_ADDR_LIST_STADEF    0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_PARAM_MAX_NUM        292
 #define CFG_STA_IBUF_MAX_SIZE    226
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WNI_CFG_ENABLE_UC_FILTER_STAMIN    0
 #define WNI_CFG_ENABLE_UC_FILTER_STAMAX    1
 #define WNI_CFG_ENABLE_UC_FILTER_STADEF    0
@@ -1775,6 +1851,9 @@
 
 #define CFG_PARAM_MAX_NUM        298
 #define CFG_STA_IBUF_MAX_SIZE    232
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_STA_SBUF_MAX_SIZE    3388
 #define CFG_SEM_MAX_NUM          19

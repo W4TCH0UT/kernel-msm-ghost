@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -53,7 +59,11 @@
  * Date            Modified by    Modification Information
  * --------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
  * 
+=======
+ *
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  *
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -63,7 +73,11 @@
 #include "schDebug.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void schLog(tpAniSirGlobal pMac, tANI_U32 loglevel, const char *pString,...) 
+=======
+void schLog(tpAniSirGlobal pMac, tANI_U32 loglevel, const char *pString,...)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void schLog(tpAniSirGlobal pMac, tANI_U32 loglevel, const char *pString,...)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -80,7 +94,11 @@ void schLog(tpAniSirGlobal pMac, tANI_U32 loglevel, const char *pString,...)
 
         logDebug(pMac, SIR_SCH_MODULE_ID, loglevel, pString, marker);
 <<<<<<< HEAD
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -89,6 +107,7 @@ void schLog(tpAniSirGlobal pMac, tANI_U32 loglevel, const char *pString,...)
 #endif
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT==AP)
 #ifdef WMM_SA
@@ -161,6 +180,8 @@ void printQosClass(tANI_U8 classId)
 
 #endif /* WMM_SA */
 #endif // (WNI_POLARIS_FW_PRODUCT==AP)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

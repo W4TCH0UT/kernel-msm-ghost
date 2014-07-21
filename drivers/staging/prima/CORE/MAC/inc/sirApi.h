@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -94,12 +100,18 @@
 #define SIR_MDIE_SIZE               3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Max number of channels are 165, but to access 165th element of array,
  *array of 166 is required.
  */
 #define SIR_MAX_24G_5G_CHANNEL_RANGE      166
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -343,9 +355,13 @@ typedef enum eSirResultCodes
     eSIR_SME_FT_REASSOC_FAILURE,
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     eSIR_SME_SEND_ACTION_FAIL,
 #endif
+=======
+    eSIR_SME_SEND_ACTION_FAIL,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     eSIR_SME_SEND_ACTION_FAIL,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -426,7 +442,11 @@ typedef struct sSirSupportedRates {
    /*Indicate the highest VHT data rate that the STA is able to receive*/
     tANI_U16 vhtRxHighestDataRate;
 <<<<<<< HEAD
+<<<<<<< HEAD
    /*Indicates the Maximum MCS that can be transmitted	for each number
+=======
+   /*Indicates the Maximum MCS that can be transmitted for each number
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /*Indicates the Maximum MCS that can be transmitted for each number
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -460,7 +480,10 @@ typedef enum eBeaconForwarding
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirRemainOnChnReq
@@ -486,7 +509,10 @@ typedef struct sSirRegisterMgmtFrame
     tANI_U8  matchData[1];
 }tSirRegisterMgmtFrame, *tpSirRegisterMgmtFrame;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -528,9 +554,13 @@ typedef struct sSirSmeStartReq
     tSirMacAddr  bssId;          //Added For BT-AMP Support   
     tANI_U32   roamingAtPolaris;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == WLAN_STA) || defined(ANI_AP_CLIENT_SDK)
     tANI_U32   sendNewBssInd;
 #endif
+=======
+    tANI_U32   sendNewBssInd;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32   sendNewBssInd;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -554,6 +584,7 @@ typedef struct sSirSmeStartRsp
 } tSirSmeStartRsp, *tpSirSmeStartRsp;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 /**
  * Trigger Type
@@ -566,6 +597,8 @@ typedef enum {
     eSIR_TRIGGER_INIT_NM_PERIODIC
 }tSirDfsTrigType;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -581,9 +614,13 @@ typedef enum eSirBssType
 {
     eSIR_INFRASTRUCTURE_MODE,
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     eSIR_INFRA_AP_MODE,                    //Added for softAP support
 #endif
+=======
+    eSIR_INFRA_AP_MODE,                    //Added for softAP support
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     eSIR_INFRA_AP_MODE,                    //Added for softAP support
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -679,6 +716,7 @@ typedef struct sSirSmeStartBssReq
     tANI_U8                 channelId;
     ePhyChanBondState       cbMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     tSirAlternateRadioList  alternateRadioList;
     tANI_S8                 powerLevel;
@@ -686,6 +724,9 @@ typedef struct sSirSmeStartBssReq
 #endif
     
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -700,14 +741,20 @@ typedef struct sSirSmeStartBssReq
     tANI_U32                dtimPeriod;
     tANI_U8                 wps_state;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
     tVOS_CON_MODE           bssPersona;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tVOS_CON_MODE           bssPersona;
 
     tANI_U8                 txLdpcIniFeatureEnabled;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSirRSNie               rsnIE;             // RSN IE to be sent in
                                                // Beacon and Probe
@@ -717,10 +764,13 @@ typedef struct sSirSmeStartBssReq
     tSirMacRateSet          extendedRateSet;    // Has 11g rates
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U8                 numSSID;
     tSirMacSSid             ssIdList[ANI_MAX_NUM_OF_SSIDS];
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeStartBssReq, *tpSirSmeStartBssReq;
@@ -772,7 +822,11 @@ typedef struct sSirBssDescription
     tANI_U8              WscIeProbeRsp[WSCIE_PROBE_RSP_LEN];
     tANI_U8              reservedPadding4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -795,6 +849,7 @@ typedef struct sSirSmeStartBssRsp
     tSirBssDescription  bssDescription;//Peer BSS description
 } tSirSmeStartBssRsp, *tpSirSmeStartBssRsp;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 typedef struct sSirMeasControl
@@ -837,6 +892,8 @@ typedef struct sSirMeasDuration
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sSirChannelList
 {
@@ -845,13 +902,19 @@ typedef struct sSirChannelList
 } tSirChannelList, *tpSirChannelList;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirDFSChannelList
 {
     tANI_U32         timeStamp[SIR_MAX_24G_5G_CHANNEL_RANGE];
 
 } tSirDFSChannelList, *tpSirDFSChannelList;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_CCX
 typedef struct sTspecInfo {
@@ -866,6 +929,7 @@ typedef struct sCCXTspecTspecInfo {
 } tCCXTspecInfo;
 #endif
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 /// Definition for Neighbor BSS info
@@ -1015,6 +1079,8 @@ typedef struct sSirSmeSetWdsInfoRsp
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /// Definition for Radar Info
 typedef struct sSirRadarInfo
@@ -1047,6 +1113,11 @@ typedef enum eSirLinkTrafficCheck
 #define SIR_BG_SCAN_RETURN_FRESH_RESULTS               0x01
 #define SIR_SCAN_MAX_NUM_SSID                          0x09 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define SIR_BG_SCAN_RETURN_LFR_CACHED_RESULTS          0x02
+#define SIR_BG_SCAN_PURGE_LFR_RESULTS                  0x40
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define SIR_BG_SCAN_RETURN_LFR_CACHED_RESULTS          0x02
 #define SIR_BG_SCAN_PURGE_LFR_RESULTS                  0x40
@@ -1095,6 +1166,11 @@ typedef struct sSirSmeScanReq
      * Roaming/application when 11d is enabled.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tANI_U32 minChannelTimeBtc;    //in units of milliseconds
+    tANI_U32 maxChannelTimeBtc;    //in units of milliseconds
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32 minChannelTimeBtc;    //in units of milliseconds
     tANI_U32 maxChannelTimeBtc;    //in units of milliseconds
@@ -1136,10 +1212,14 @@ typedef struct sSirSmeScanReq
     
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     tANI_BOOLEAN         p2pSearch;
     tANI_BOOLEAN         skipDfsChnlInP2pSearch;
 #endif
+=======
+    tANI_BOOLEAN         p2pSearch;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_BOOLEAN         p2pSearch;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1171,15 +1251,21 @@ typedef struct sSirSmeScanReq
 
 #ifndef OEM_DATA_REQ_SIZE
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define OEM_DATA_REQ_SIZE 70
 #endif
 #ifndef OEM_DATA_RSP_SIZE
 #define OEM_DATA_RSP_SIZE 968
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define OEM_DATA_REQ_SIZE 134
 #endif
 #ifndef OEM_DATA_RSP_SIZE
 #define OEM_DATA_RSP_SIZE 1968
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -1255,6 +1341,7 @@ typedef struct sSirSmeAuthRsp
 } tSirSmeAuthRsp, *tpSirSmeAuthRsp;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 /// Association type
 typedef enum eSirAssocType
@@ -1279,6 +1366,10 @@ typedef enum eSirBpIndicatorType
 
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Definition for Join/Reassoc info - Reshmi: need to check if this is a def which moved from elsehwere.
 typedef struct sJoinReassocInfo
 {
@@ -1288,7 +1379,10 @@ typedef struct sJoinReassocInfo
     tSirSupChnl         supportedChannels;
 } tJoinReassocInfo, *tpJoinReassocInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1321,11 +1415,14 @@ typedef struct sSirSmeJoinReq
     tANI_U8                 uapsdPerAcBitmask;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tSirAssocType       assocType;              // Indicates whether STA is
                                                 // sending (Re) Association
                                                 // due to load balance or not
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSirMacRateSet      operationalRateSet;// Has 11a or 11b rates
@@ -1352,6 +1449,10 @@ typedef struct sSirSmeJoinReq
 #endif
 #ifdef FEATURE_WLAN_CCX
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tAniBool            isCCXFeatureIniEnabled;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tAniBool            isCCXFeatureIniEnabled;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1366,6 +1467,7 @@ typedef struct sSirSmeJoinReq
     tAniBool            isFastRoamIniFeatureEnabled;
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     tAniBool            bpIndicator;
@@ -1374,6 +1476,8 @@ typedef struct sSirSmeJoinReq
                                                 // flag
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     tANI_U8             txLdpcIniFeatureEnabled;
 #ifdef WLAN_FEATURE_11AC
@@ -1382,15 +1486,22 @@ typedef struct sSirSmeJoinReq
 #endif
     tANI_U8             isAmsduSupportInAMPDU;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tAniTitanCBNeighborInfo cbNeighbors;
     tAniBool            spectrumMgtIndicator;
     tSirMacPowerCapInfo powerCap;
     tSirSupChnl         supportedChannels;
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#if (WNI_POLARIS_FW_PRODUCT == WLAN_STA )
     tSirBssDescription  bssDescription;
 //#endif
+=======
+    tSirBssDescription  bssDescription;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirBssDescription  bssDescription;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1407,6 +1518,7 @@ typedef struct sSirSmeJoinRsp
     tANI_U16                transactionId;     // Transaction ID for cmd
     tSirResultCodes    statusCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == WLAN_STA)
     tAniAuthType       authType;
 //    tANI_U16           staId;             // Station ID for peer
@@ -1417,6 +1529,9 @@ typedef struct sSirSmeJoinRsp
     tSirMacAddr        alternateBssId;
     tANI_U8                 alternateChannelId;
 #endif
+=======
+    tAniAuthType       authType;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tAniAuthType       authType;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1485,6 +1600,7 @@ typedef struct sSirSmeAssocInd
     tSirAddie            addIE;// Additional IE received from peer, which possibly include WSC IE and/or P2P IE
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP)
     tANI_U16                  seqNum;
     tAniBool             wniIndicator;
@@ -1498,13 +1614,18 @@ typedef struct sSirSmeAssocInd
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // powerCap & supportedChannels are present only when
     // spectrumMgtIndicator flag is set
     tAniBool                spectrumMgtIndicator;
     tSirMacPowerCapInfo     powerCap;
     tSirSupChnl             supportedChannels;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tAniBool             wmmEnabledSta; /* if present - STA is WMM enabled */
@@ -1515,7 +1636,10 @@ typedef struct sSirSmeAssocInd
     tANI_U32             assocReqLength;
     tANI_U8*             assocReqPtr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeAssocInd, *tpSirSmeAssocInd;
@@ -1535,6 +1659,7 @@ typedef struct sSirSmeAssocCnf
     tANI_U8              alternateChannelId;
 } tSirSmeAssocCnf, *tpSirSmeAssocCnf;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /// Definition for Reassociation request
 /// ---> MAC
@@ -1636,6 +1761,8 @@ typedef struct sSirSmeReassocRsp
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Definition for Reassociation indication from peer
 typedef struct sSirSmeReassocInd
 {
@@ -1654,6 +1781,7 @@ typedef struct sSirSmeReassocInd
     tSirAddie           addIE;  // Additional IE received from peer
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U16             seqNum;
     tAniBool             wniIndicator;
@@ -1667,13 +1795,18 @@ typedef struct sSirSmeReassocInd
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // powerCap & supportedChannels are present only when
     // spectrumMgtIndicator flag is set
     tAniBool                spectrumMgtIndicator;
     tSirMacPowerCapInfo     powerCap;
     tSirSupChnl             supportedChannels;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Required for indicating the frames to upper layer
@@ -1683,7 +1816,10 @@ typedef struct sSirSmeReassocInd
     tANI_U32             assocReqLength;
     tANI_U8*             assocReqPtr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeReassocInd, *tpSirSmeReassocInd;
@@ -1703,6 +1839,7 @@ typedef struct sSirSmeReassocCnf
 } tSirSmeReassocCnf, *tpSirSmeReassocCnf;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 typedef enum {
     // Based on Periodic evaluation
@@ -1719,6 +1856,8 @@ typedef enum {
     eSIR_UPPER_LAYER_TRIGGERED
 }tSirFreqChangeReason;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1803,9 +1942,12 @@ typedef struct sSirSmeWmStatusChangeNtf
         // none for eSIR_SME_IBSS_ACTIVE
         // none for eSIR_SME_IBSS_INACTIVE
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
         tSirRadarInfo          radarInfo;         // eSIR_SME_RADAR_DETECTED
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tSirNewIbssPeerInfo     newIbssPeerInfo;  // eSIR_SME_IBSS_NEW_PEER
@@ -1813,9 +1955,12 @@ typedef struct sSirSmeWmStatusChangeNtf
         tSirBackgroundScanInfo  bkgndScanInfo;    // eSIR_SME_BACKGROUND_SCAN_FAIL
         tAniTitanCBNeighborInfo cbNeighbors;      // eSIR_SME_CB_LEGACY_BSS_FOUND_BY_STA
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
         tSirNeighborBssWdsInfo  neighborWdsInfo;  // eSIR_SME_CB_LEGACY_BSS_FOUND_BY_AP
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     } statusChangeInfo;
@@ -1824,9 +1969,13 @@ typedef struct sSirSmeWmStatusChangeNtf
 /// Definition for Disassociation request
 typedef
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 __ani_attr_pre_packed
 #endif
+=======
+__ani_attr_pre_packed
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 __ani_attr_pre_packed
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1841,6 +1990,7 @@ struct sSirSmeDisassocReq
     tANI_U16         reasonCode;
     tANI_U8          doNotSendOverTheAir;  //This flag tells LIM whether to send the disassoc OTA or not
                                            //This will be set in while handing off from one AP to other
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16         aid;
@@ -1857,11 +2007,16 @@ tSirSmeDisassocReq, *tpSirSmeDisassocReq;
 /// Definition for Tkip countermeasures request
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 __ani_attr_packed
 tSirSmeDisassocReq, *tpSirSmeDisassocReq;
 
 /// Definition for Tkip countermeasures request
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef __ani_attr_pre_packed struct sSirSmeTkipCntrMeasReq
 {
@@ -1873,7 +2028,10 @@ typedef __ani_attr_pre_packed struct sSirSmeTkipCntrMeasReq
     tANI_BOOLEAN        bEnable;        // Start/stop countermeasures
 } __ani_attr_packed tSirSmeTkipCntrMeasReq, *tpSirSmeTkipCntrMeasReq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2057,7 +2215,10 @@ typedef struct sAniStatSummaryStruct
 }tAniStatSummaryStruct,*tpAniStatSummaryStruct;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == WLAN_STA)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //structure for stats that may be reset, like the ones in sta descriptor
@@ -2090,7 +2251,10 @@ typedef struct _sPermStaStats
 }tPermanentStaStats;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif//#if (WNI_POLARIS_FW_PRODUCT == WLAN_STA)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2106,6 +2270,7 @@ typedef struct sSirSmeDisassocRsp
     tSirResultCodes    statusCode;
     tSirMacAddr        peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16           aid;
 #endif
@@ -2118,10 +2283,15 @@ typedef struct sSirSmeDisassocRsp
 __ani_attr_packed
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tAniStaStatStruct  perStaStats; // STA stats
     tANI_U16           staId;
 }
 __ani_attr_packed
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  tSirSmeDisassocRsp, *tpSirSmeDisassocRsp;
 
@@ -2136,6 +2306,7 @@ typedef struct sSirSmeDisassocInd
     tSirMacAddr         bssId;            
     tSirMacAddr         peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16            aid;
 #endif
@@ -2143,6 +2314,10 @@ typedef struct sSirSmeDisassocInd
 #ifdef WLAN_SOFTAP_FEATURE
     tANI_U16            staId;
 #endif
+=======
+    tAniStaStatStruct  perStaStats; // STA stats
+    tANI_U16            staId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tAniStaStatStruct  perStaStats; // STA stats
     tANI_U16            staId;
@@ -2160,9 +2335,12 @@ typedef struct sSirSmeDisassocCnf
     tSirMacAddr         bssId;            
     tSirMacAddr         peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16            aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeDisassocCnf, *tpSirSmeDisassocCnf;
@@ -2178,9 +2356,12 @@ typedef struct sSirSmeDeauthReq
     tSirMacAddr         peerMacAddr;
     tANI_U16            reasonCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16         aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeDeauthReq, *tpSirSmeDeauthReq;
@@ -2195,9 +2376,12 @@ typedef struct sSirSmeDeauthRsp
     tSirResultCodes     statusCode;
     tSirMacAddr        peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeDeauthRsp, *tpSirSmeDeauthRsp;
@@ -2213,6 +2397,7 @@ typedef struct sSirSmeDeauthInd
     tSirMacAddr         bssId;// AP BSSID
     tSirMacAddr         peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16            aid;
 #endif
@@ -2220,6 +2405,10 @@ typedef struct sSirSmeDeauthInd
 #ifdef WLAN_SOFTAP_FEATURE
     tANI_U16            staId;
 #endif
+=======
+
+    tANI_U16            staId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     tANI_U16            staId;
@@ -2237,9 +2426,12 @@ typedef struct sSirSmeDeauthCnf
     tSirMacAddr         bssId;             // AP BSSID
     tSirMacAddr        peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeDeauthCnf, *tpSirSmeDeauthCnf;
@@ -2265,6 +2457,7 @@ typedef struct sSirSmeStopBssRsp
     tANI_U16            transactionId;     // Transaction ID for cmd
 } tSirSmeStopBssRsp, *tpSirSmeStopBssRsp;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 /// Definition for Channel Select request
@@ -2327,6 +2520,8 @@ typedef struct sSirSmeSwitchChannelRsp
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /// Definition for Channel Switch indication for station
@@ -2348,9 +2543,12 @@ typedef struct sirUlaCompleteInd
     tSirResultCodes    statusCode;
     tSirMacAddr        peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirUlaCompleteInd, *tpSirUlaCompleteInd;
@@ -2363,9 +2561,12 @@ typedef struct sirUlaCompleteCnf
     tSirResultCodes    statusCode;
     tSirMacAddr        peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirUlaCompleteCnf, *tpSirUlaCompleteCnf;
@@ -2379,12 +2580,16 @@ typedef struct sSirSmeNeighborBssInd
     tANI_U16                    length;
     tANI_U8                     sessionId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     tSirNeighborBssInfo    neighborInfo;
     tSirWdsInfo            wdsInfo;
 #else
     tSirBssDescription     bssDescription[1];
 #endif
+=======
+    tSirBssDescription     bssDescription[1];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirBssDescription     bssDescription[1];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2403,13 +2608,19 @@ typedef struct sSirSmeMicFailureInd
 } tSirSmeMicFailureInd, *tpSirSmeMicFailureInd;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirSmeMissedBeaconInd
 {
     tANI_U16                    messageType; // eWNI_SME_MISSED_BEACON_IND
     tANI_U16                    length;
     tANI_U8                     bssIdx;
 } tSirSmeMissedBeaconInd, *tpSirSmeMissedBeaconInd;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /// Definition for Set Context request
@@ -2423,9 +2634,12 @@ typedef struct sSirSmeSetContextReq
     tSirMacAddr        peerMacAddr;
     tSirMacAddr        bssId;      // BSSID
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // TBD Following QOS fields to be uncommented
@@ -2445,9 +2659,12 @@ typedef struct sSirSmeSetContextRsp
     tSirResultCodes     statusCode;
     tSirMacAddr             peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeSetContextRsp, *tpSirSmeSetContextRsp;
@@ -2463,9 +2680,12 @@ typedef struct sSirSmeRemoveKeyReq
     tSirMacAddr         bssId;             // BSSID
     tSirMacAddr             peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8    edType;
@@ -2485,9 +2705,12 @@ typedef struct sSirSmeRemoveKeyRsp
     tSirResultCodes     statusCode;
     tSirMacAddr             peerMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeRemoveKeyRsp, *tpSirSmeRemoveKeyRsp;
@@ -2512,6 +2735,7 @@ typedef struct sSirSmeSetPowerRsp
     tANI_U16            transactionId;     // Transaction ID for cmd
 } tSirSmeSetPowerRsp, *tpSirSmeSetPowerRsp;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 /// Definition for Client Side Load Balancing request
@@ -2538,6 +2762,8 @@ typedef struct sSirSmeSetClientLoadBalanceRsp
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /// Definition for Link Test Start response
 /// MAC --->
@@ -2548,9 +2774,12 @@ typedef struct sSirSmeLinkTestStartRsp
     tSirMacAddr        peerMacAddr;
     tSirResultCodes    statusCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeLinkTestStartRsp, *tpSirSmeLinkTestStartRsp;
@@ -2564,9 +2793,12 @@ typedef struct sSirSmeLinkTestStopRsp
     tSirMacAddr        peerMacAddr;
     tSirResultCodes    statusCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U16                aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSmeLinkTestStopRsp, *tpSirSmeLinkTestStopRsp;
@@ -2870,7 +3102,10 @@ typedef struct sAniGetRssiReq
 } tAniGetRssiReq, *tpAniGetRssiReq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
 typedef struct sAniGetRoamRssiRsp
 {
@@ -2886,6 +3121,9 @@ typedef struct sAniGetRoamRssiRsp
 } tAniGetRoamRssiRsp, *tpAniGetRoamRssiRsp;
 
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Change country code request MSG structure */
 typedef struct sAniChangeCountryCodeReq
@@ -2943,12 +3181,18 @@ typedef enum eTxRateInfo
    eHAL_TX_RATE_HT40   = 0x4,    /* HT40 rates */
    eHAL_TX_RATE_SGI    = 0x8,    /* Rate with Short guard interval */
 <<<<<<< HEAD
+<<<<<<< HEAD
    eHAL_TX_RATE_LGI    = 0x10    /* Rate with Long guard interval */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    eHAL_TX_RATE_LGI    = 0x10,   /* Rate with Long guard interval */
    eHAL_TX_RATE_VHT20  = 0x20,   /* VHT 20 rates */
    eHAL_TX_RATE_VHT40  = 0x40,   /* VHT 40 rates */
    eHAL_TX_RATE_VHT80  = 0x80    /* VHT 80 rates */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tTxrateinfoflags;
 
@@ -3077,15 +3321,21 @@ typedef struct sSirRSSINotification
     tANI_U32             bRssiThres3PosCross : 1;
     tANI_U32             bRssiThres3NegCross : 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U32             bReserved           : 26;
 #else
     tANI_U32             bReserved           : 26;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_S7_t               avgRssi             : 8;
     tANI_U32             bReserved           : 18;
 #else
     tANI_U32             bReserved           : 18;
     v_S7_t               avgRssi             : 8;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32             bRssiThres3NegCross : 1;
     tANI_U32             bRssiThres3PosCross : 1;
@@ -3098,8 +3348,11 @@ typedef struct sSirRSSINotification
 }tSirRSSINotification, *tpSirRSSINotification;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sSirP2PNoaStart
 {
@@ -3107,6 +3360,9 @@ typedef struct sSirP2PNoaStart
    tANI_U32      bssIdx;
 } tSirP2PNoaStart, *tpSirP2PNoaStart;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirP2PNoaAttr
 {
@@ -3145,7 +3401,10 @@ typedef struct sSirP2PNoaAttr
    tANI_U32       uNoa2StartTime;
 } tSirP2PNoaAttr, *tpSirP2PNoaAttr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -3300,15 +3559,21 @@ typedef struct sSirAggrQosRsp
 typedef struct sSirSetTxPowerReq
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16    messageType;
     tANI_U16    length;
     tANI_U32    txPower;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U16       messageType;
     tANI_U16       length;
     tSirMacAddr    bssId;
     tANI_U8        mwPower;
     tANI_U8        bssIdx;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirSetTxPowerReq, *tpSirSetTxPowerReq;
 
@@ -3423,6 +3688,12 @@ typedef enum eRequestFullPowerReason
    eSME_FULL_PWR_NEEDED_BY_QOS,    /* QOS requests full power */
    eSME_FULL_PWR_NEEDED_BY_CHANNEL_SWITCH, /* channel switch request full power*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#ifdef FEATURE_WLAN_TDLS
+   eSME_FULL_PWR_NEEDED_BY_TDLS_PEER_SETUP, /* TDLS peer setup*/
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef FEATURE_WLAN_TDLS
    eSME_FULL_PWR_NEEDED_BY_TDLS_PEER_SETUP, /* TDLS peer setup*/
@@ -3524,7 +3795,10 @@ typedef struct sLimScanChnInfo
 }tLimScanChnInfo;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirSmeGetAssocSTAsReq
@@ -3538,7 +3812,10 @@ typedef struct sSirSmeGetAssocSTAsReq
     void        *pAssocStasArray;// Pointer to allocated memory passed in WLANSAP_GetAssocStations API
 } tSirSmeGetAssocSTAsReq, *tpSirSmeGetAssocSTAsReq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -3633,6 +3910,7 @@ typedef struct sSmeMaxAssocInd
 #define SIR_BOOT_DNLD_RSP_LEN              ((SIR_BOOT_DNLD_RSP_SIZE+1)<<2)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_RTAI_LINUX)
 // RTAI WRAPPER definition - Buffer block control entry
 // the new block Control entry is initialized by HDD
@@ -3651,6 +3929,8 @@ typedef struct
 } t_mac_block_table;
 
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -3753,6 +4033,10 @@ typedef struct sSirWowlAddBcastPtrn
     tANI_U8  ucPatternExt[SIR_WOWL_BCAST_PATTERN_MAX_SIZE]; // Extra Pattern
     tANI_U8  ucPatternMaskExt[SIR_WOWL_BCAST_PATTERN_MAX_SIZE]; // Extra Pattern mask
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tSirMacAddr    bssId;           // BSSID
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirMacAddr    bssId;           // BSSID
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3767,6 +4051,10 @@ typedef struct sSirWowlDelBcastPtrn
     /* Pattern ID of the wakeup pattern to be deleted */
     tANI_U8  ucPatternId;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tSirMacAddr    bssId;           // BSSID
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirMacAddr    bssId;           // BSSID
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3810,6 +4098,10 @@ typedef struct sSirSmeWowlEnterParams
 #endif // WLAN_WAKEUP_EVENTS
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tSirMacAddr bssId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirMacAddr bssId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3902,10 +4194,13 @@ typedef struct sSirHalWowlEnterParams
      */  
     eHalStatus  status;
 <<<<<<< HEAD
+<<<<<<< HEAD
 } tSirHalWowlEnterParams, *tpSirHalWowlEnterParams;
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*BSSID to find the current session
       */
@@ -3925,6 +4220,9 @@ typedef struct sSirHalWowlExitParams
     tANI_U8  bssIdx;
 } tSirHalWowlExitParams, *tpSirHalWowlExitParams;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define SIR_MAX_NAME_SIZE 64
@@ -4036,7 +4334,10 @@ typedef struct sSirUpdateParams
 } tSirUpdateParams, *tpSirUpdateParams;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Beacon Interval
 typedef struct sSirChangeBIParams
 {
@@ -4047,6 +4348,9 @@ typedef struct sSirChangeBIParams
     tANI_U8        sessionId;      // Session ID
 } tSirChangeBIParams, *tpSirChangeBIParams;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_WPS_UUID_LEN 16
 #define SIR_WPS_PBC_WALK_TIME   120  // 120 Second
@@ -4096,7 +4400,10 @@ typedef struct sSirUpdateAPWPARSNIEsReq
 } tSirUpdateAPWPARSNIEsReq, *tpSirUpdateAPWPARSNIEsReq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -4135,7 +4442,11 @@ typedef struct sSirHostOffloadReq
     tSirNsOffloadReq nsOffloadInfo;
 #endif //WLAN_NS_OFFLOAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 bssIdx;
+=======
+    tSirMacAddr  bssId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirMacAddr  bssId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4158,7 +4469,11 @@ typedef struct sSirKeepAliveReq
     tSirIpv4Addr    destIpv4Addr;
     tSirMacAddr     destMacAddr;
 <<<<<<< HEAD
+<<<<<<< HEAD
     v_U8_t          bssIdx;
+=======
+    tSirMacAddr     bssId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirMacAddr     bssId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4202,11 +4517,17 @@ typedef struct sSirSmeDelStaSelfRsp
 #define SIR_COEX_IND_TYPE_DISABLE_HB_MONITOR (0)
 #define SIR_COEX_IND_TYPE_ENABLE_HB_MONITOR (1)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_COEX_IND_TYPE_SCAN_COMPROMISED (2)
 #define SIR_COEX_IND_TYPE_SCAN_NOT_COMPROMISED (3)
 #define SIR_COEX_IND_TYPE_DISABLE_AGGREGATION_IN_2p4 (4)
 #define SIR_COEX_IND_TYPE_ENABLE_AGGREGATION_IN_2p4 (5)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sSirSmeCoexInd
@@ -4218,13 +4539,17 @@ typedef struct sSirSmeCoexInd
 }tSirSmeCoexInd, *tpSirSmeCoexInd;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirSmeMgmtFrameInd
 {
     tANI_U16        mesgType;
     tANI_U16        mesgLen;
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_U8        sessionId;
     tANI_U8         frameType;
@@ -4233,12 +4558,17 @@ typedef struct sSirSmeMgmtFrameInd
 }tSirSmeMgmtFrameInd, *tpSirSmeMgmtFrameInd;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32        rxChan;
     tANI_U8        sessionId;
     tANI_U8         frameType;
     tANI_S8         rxRssi;
     tANI_U8  frameBuf[1]; //variable
 }tSirSmeMgmtFrameInd, *tpSirSmeMgmtFrameInd;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define SIR_IS_FULL_POWER_REASON_DISCONNECTED(eReason) \
@@ -4250,7 +4580,10 @@ typedef struct sSirSmeMgmtFrameInd
 
 /* P2P Power Save Related */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirNoAParam
@@ -4264,9 +4597,13 @@ typedef struct sSirNoAParam
     tANI_U8   psSelection;
 }tSirNoAParam, *tpSirNoAParam;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4286,7 +4623,10 @@ typedef struct sSirWlanSetRxpFilters
     tANI_U8 setMcstBcstFilter;
 }tSirWlanSetRxpFilters,*tpSirWlanSetRxpFilters;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -4299,6 +4639,10 @@ typedef struct sSirWlanSetRxpFilters
 // Set PNO 
 #define SIR_PNO_MAX_NETW_CHANNELS  26
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define SIR_PNO_MAX_NETW_CHANNELS_EX  60
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define SIR_PNO_MAX_NETW_CHANNELS_EX  60
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4312,7 +4656,10 @@ typedef struct sSirWlanSetRxpFilters
 #define SIR_PNO_5G_DEFAULT_CH      36
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 #define SIR_ROAM_MAX_CHANNELS            NUM_RF_CHANNELS
 #define SIR_ROAM_SCAN_MAX_PB_REQ_SIZE    450
@@ -4326,6 +4673,9 @@ typedef struct sSirWlanSetRxpFilters
 #define SIR_ROAM_SCAN_RESERVED_BYTES     61
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef enum
 {
@@ -4343,7 +4693,11 @@ typedef struct
   tANI_U32    bcastNetwType; 
   tANI_U8     ucChannelCount;
 <<<<<<< HEAD
+<<<<<<< HEAD
   tANI_U8     aChannels[SIR_PNO_MAX_NETW_CHANNELS]; 
+=======
+  tANI_U8     aChannels[SIR_PNO_MAX_NETW_CHANNELS_EX];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tANI_U8     aChannels[SIR_PNO_MAX_NETW_CHANNELS_EX];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4378,7 +4732,10 @@ typedef struct sSirPNOScanReq
 } tSirPNOScanReq, *tpSirPNOScanReq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 typedef struct
 {
@@ -4435,6 +4792,9 @@ typedef struct sSirRoamOffloadScanReq
 } tSirRoamOffloadScanReq, *tpSirRoamOffloadScanReq;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirSetRSSIFilterReq
 {
@@ -4448,7 +4808,11 @@ typedef struct {
   tANI_U8   b11dResolved;
   tANI_U8   ucChannelCount; 
 <<<<<<< HEAD
+<<<<<<< HEAD
   tANI_U8   aChannels[SIR_PNO_MAX_NETW_CHANNELS]; 
+=======
+  tANI_U8   aChannels[SIR_PNO_MAX_NETW_CHANNELS_EX]; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tANI_U8   aChannels[SIR_PNO_MAX_NETW_CHANNELS_EX]; 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4463,6 +4827,7 @@ typedef struct {
 typedef struct
 {  
 <<<<<<< HEAD
+<<<<<<< HEAD
   tANI_U16        mesgType;
   tANI_U16        mesgLen;
   /* Network that was found with the highest RSSI*/
@@ -4470,6 +4835,8 @@ typedef struct
   /* Indicates the RSSI */
   tANI_U8        rssi;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   tANI_U16      mesgType;
   tANI_U16      mesgLen;
   /* Network that was found with the highest RSSI*/
@@ -4482,6 +4849,9 @@ typedef struct
   /* Index to memory location where the contents of
    * beacon or probe response frame will be copied */
   tANI_U8       data[1];
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirPrefNetworkFoundInd, *tpSirPrefNetworkFoundInd;
 #endif // FEATURE_WLAN_SCAN_PNO
@@ -4595,12 +4965,15 @@ typedef struct sSirRcvPktFilterCfg
   tANI_U32                        numFieldParams;
   tANI_U32                        coalesceTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
   tSirRcvPktFilterFieldParams     paramsData[SIR_MAX_NUM_TESTS_PER_FILTER];
   tSirMacAddr                     selfMacAddr;
   tSirMacAddr                     bssId; //Bssid of the connected AP
 }tSirRcvPktFilterCfgType, *tpSirRcvPktFilterCfgType;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   tSirMacAddr                     selfMacAddr;
   tSirMacAddr                     bssId; //Bssid of the connected AP
   tSirRcvPktFilterFieldParams     paramsData[SIR_MAX_NUM_TESTS_PER_FILTER];
@@ -4614,6 +4987,9 @@ typedef struct sSirInvokeV6Filter
     v_U8_t set;
 }tSirInvokeV6Filter;
 // IKJB42MAIN-1244, Motorola, a19091 - END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //
 // Filter Packet Match Count Parameters
@@ -4633,6 +5009,10 @@ typedef struct sSirRcvFltPktMatchRsp
   tANI_U32                 status;
   tSirRcvFltPktMatchCnt    filterMatchCnt[SIR_MAX_NUM_FILTERS];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  tSirMacAddr      bssId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tSirMacAddr      bssId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4693,6 +5073,10 @@ typedef struct
   tANI_U8      aKEK[16];            /* key encryption key */
   tANI_U64     ullKeyReplayCounter; /* replay counter */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  tSirMacAddr  bssId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tSirMacAddr  bssId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4712,6 +5096,10 @@ typedef struct
    tANI_U32   ulGTKRekeyCount;      /* successful GTK rekeys */
    tANI_U32   ulIGTKRekeyCount;     /* successful iGTK rekeys */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   tSirMacAddr bssId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tSirMacAddr bssId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4747,7 +5135,10 @@ typedef struct sAniSetTmLevelReq
 } tAniSetTmLevelReq, *tpAniSetTmLevelReq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
 /* TDLS Request struct SME-->PE */
 typedef struct sSirTdlsSendMgmtReq
@@ -5036,5 +5427,8 @@ typedef struct sSirSmeCandidateFoundInd
     tANI_U8             sessionId;  // Session Identifier
 } tSirSmeCandidateFoundInd, *tpSirSmeCandidateFoundInd;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* __SIR_API_H */

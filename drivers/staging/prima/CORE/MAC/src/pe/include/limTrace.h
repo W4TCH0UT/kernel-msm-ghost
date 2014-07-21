@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,6 +50,7 @@
 
 /**=========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   \file  limTrace.h
 
@@ -51,6 +58,8 @@
 
   \author Sunit Bhatia
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 * Copyright (c) 2013 Qualcomm Atheros, Inc.
 * All Rights Reserved.
 * Qualcomm Atheros Confidential and Proprietary.
@@ -59,6 +68,9 @@
 *  \brief definition for trace related APIs
 
 *  \author Sunit Bhatia
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
@@ -77,8 +89,11 @@
 #ifdef LIM_TRACE_RECORD
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CASE_RETURN_STRING( str )           \
     case ( ( str ) ): return( #str ); break \
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -101,7 +116,11 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef enum {
+=======
+enum {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 enum {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -114,8 +133,13 @@ enum {
     TRACE_CODE_TX_SME_MSG,
     TRACE_CODE_RX_SME_MSG,
 <<<<<<< HEAD
+<<<<<<< HEAD
     TRACE_CODE_TX_HAL_MSG,
     TRACE_CODE_RX_HAL_MSG,
+=======
+    TRACE_CODE_TX_WDA_MSG,
+    TRACE_CODE_RX_WDA_MSG,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     TRACE_CODE_TX_WDA_MSG,
     TRACE_CODE_RX_WDA_MSG,
@@ -129,6 +153,10 @@ enum {
     TRACE_CODE_TIMER_ACTIVATE,
     TRACE_CODE_TIMER_DEACTIVATE,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    TRACE_CODE_INFO_LOG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     TRACE_CODE_INFO_LOG
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

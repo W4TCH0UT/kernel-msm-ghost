@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -52,7 +58,10 @@
 #define WLAN_FW_FILE               ""
 #define WLAN_NV_FILE               "wlan/prima/WCNSS_qcom_wlan_nv.bin"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_NV_DEFAULTFILE        "wlan/prima/WCNSS_qcom_wlan_nv_default.bin"
 #ifdef WLAN_NV_OTA_UPGRADE
 #define WLAN_NV_FILE_REGULATORY    "wlan/prima/WCNSS_qcom_wlan_nv_regulatory.bin"
@@ -62,6 +71,9 @@
 #define WLAN_NV_FILE_CALIBRATION_M   "wlan/prima/WCNSS_qcom_wlan_nv_calibration_m.bin"
 // END IKJB42MAIN-9117
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_COUNTRY_INFO_FILE     "wlan/prima/WCNSS_wlan_country_info.dat"
 #define WLAN_HO_CFG_FILE           "wlan/prima/WCNSS_wlan_ho_config"
@@ -103,6 +115,12 @@ VOS_STATUS hdd_read_cfg_file(v_VOID_t *pCtx, char *pFileName, v_VOID_t *pBuffer,
 tVOS_CONCURRENCY_MODE hdd_get_concurrency_mode ( void );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+// BEGIN MOTOROLA IKJB42MAIN-274, dpn473, 01/02/2013, Add flag to disable/enable MCC mode
+v_U8_t hdd_get_mcc_mode( void );
+// END IKJB42MAIN-274
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 // BEGIN MOTOROLA IKJB42MAIN-274, dpn473, 01/02/2013, Add flag to disable/enable MCC mode
 v_U8_t hdd_get_mcc_mode( void );

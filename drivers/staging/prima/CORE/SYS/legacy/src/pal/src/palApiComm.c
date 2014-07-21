@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -50,6 +56,7 @@
 #include "wlan_qct_wda.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // its not worth the time trying to get all the includes in place to get to
 // halMmhForwardMBmsg.  if I inlude halMnt.h, I get all kids of compile errros
@@ -59,6 +66,8 @@
 
 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef MEMORY_DEBUG
@@ -320,7 +329,11 @@ eHalStatus palSendMBMessage(tHddHandle hHdd, void *pBuf)
    {
       VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: invalid vosContext", __FUNCTION__);
+=======
+                "%s: invalid vosContext", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: invalid vosContext", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -332,7 +345,11 @@ eHalStatus palSendMBMessage(tHddHandle hHdd, void *pBuf)
       {
          VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: invalid hHal", __FUNCTION__);
+=======
+                   "%s: invalid hHal", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: invalid hHal", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

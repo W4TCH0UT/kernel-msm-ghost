@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -147,7 +153,11 @@ typedef enum
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
          pVoid         pAdaptor : Driver global control block pointer
+=======
+         pVoid         pAdapter : Driver global control block pointer
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pVoid         pAdapter : Driver global control block pointer
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -168,7 +178,11 @@ typedef WDTS_RxFrameReadyCbType WLANDXE_RxFrameReadyCbType;
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
          pVoid      pAdaptor : Driver global control block pointer
+=======
+         pVoid      pAdapter : Driver global control block pointer
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pVoid      pAdapter : Driver global control block pointer
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -189,7 +203,11 @@ typedef WDTS_TxCompleteCbType WLANDXE_TxCompleteCbType;
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
       pVoid      pAdaptor : Driver global control block pointer
+=======
+      pVoid      pAdapter : Driver global control block pointer
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pVoid      pAdapter : Driver global control block pointer
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -232,7 +250,11 @@ typedef WDTS_SetPSCbType  WLANDXE_SetPowerStateCbType;
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
       pVoid      pAdaptor : Driver global control block pointer
+=======
+      pVoid      pAdapter : Driver global control block pointer
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pVoid      pAdapter : Driver global control block pointer
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -433,15 +455,21 @@ wpt_uint32 WLANDXE_GetFreeTxDataResNumber
 
 /*==========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   @  Function Name 
     WLANDXE_ChannelDebug
 
   @  Description 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @  Function Name
     WLANDXE_ChannelDebug
 
   @  Description
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     Display DXE Channel debugging information
     User may request to display DXE channel snapshot
@@ -449,7 +477,11 @@ wpt_uint32 WLANDXE_GetFreeTxDataResNumber
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
     displaySnapshot : Dispaly DXE snapshot option
+=======
+    displaySnapshot : Display DXE snapshot option
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     displaySnapshot : Display DXE snapshot option
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

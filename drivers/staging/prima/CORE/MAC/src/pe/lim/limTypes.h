@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -66,12 +75,16 @@
 #include "utilsApi.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halCommonApi.h"
 #endif 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "wlan_qct_wdi_ds.h"
 #endif
+=======
+#include "wlan_qct_wdi_ds.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wlan_qct_wdi_ds.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -93,6 +106,7 @@
 // MLM message types
 #define LIM_MLM_MSG_START           1000
 #define LIM_MLM_SCAN_REQ            LIM_MLM_MSG_START
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define LIM_MLM_SCAN_CNF            LIM_MLM_MSG_START + 1
 #define LIM_MLM_START_REQ           LIM_MLM_MSG_START + 2
@@ -135,6 +149,8 @@
 #define LIM_MLM_OEM_DATA_REQ            LIM_MLM_MSG_START + 41
 #define LIM_MLM_OEM_DATA_CNF            LIM_MLM_MSG_START + 42
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define LIM_MLM_SCAN_CNF            (LIM_MLM_MSG_START + 1)
 #define LIM_MLM_START_REQ           (LIM_MLM_MSG_START + 2)
 #define LIM_MLM_START_CNF           (LIM_MLM_MSG_START + 3)
@@ -175,6 +191,9 @@
 #ifdef FEATURE_OEM_DATA_SUPPORT
 #define LIM_MLM_OEM_DATA_REQ            (LIM_MLM_MSG_START + 41)
 #define LIM_MLM_OEM_DATA_CNF            (LIM_MLM_MSG_START + 42)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -263,11 +282,17 @@ typedef struct sLimMlmStartReq
     tANI_U8                    dualCTSProtection;
     tANI_U8                    txChannelWidthSet;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tANI_U8              ssidHidden;
     tANI_U8              wps_state;
     tANI_U8              obssProtEnabled;
 #endif
+=======
+    tANI_U8              ssidHidden;
+    tANI_U8              wps_state;
+    tANI_U8              obssProtEnabled;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8              ssidHidden;
     tANI_U8              wps_state;
@@ -326,7 +351,11 @@ typedef struct sLimMlmAssocInd
     tAniSSID             ssId;
     tSirRSNie            rsnIE;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tSirAddie            addIE; // additional IE recevied from the peer, which possibly includes WSC IE and/or P2P IE.
+=======
+    tSirAddie            addIE; // additional IE received from the peer, which possibly includes WSC IE and/or P2P IE.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirAddie            addIE; // additional IE received from the peer, which possibly includes WSC IE and/or P2P IE.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -337,6 +366,7 @@ typedef struct sLimMlmAssocInd
     tANI_U8                 sessionId;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tAniBool               WmmStaInfoPresent;
@@ -353,6 +383,10 @@ typedef struct sLimMlmAssocInd
     tANI_U32                  numBss; // List received from STA
     tSirNeighborBssInfo  neighborList[1]; // List received from STA
 #endif
+=======
+    tAniBool               WmmStaInfoPresent;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tAniBool               WmmStaInfoPresent;
 
@@ -389,7 +423,11 @@ typedef struct sLimMlmReassocInd
     tAniSSID             ssId;
     tSirRSNie            rsnIE;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tSirAddie            addIE; // additional IE recevied from the peer, which can be WSC IE and/or P2P IE.
+=======
+    tSirAddie            addIE; // additional IE received from the peer, which can be WSC IE and/or P2P IE.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirAddie            addIE; // additional IE received from the peer, which can be WSC IE and/or P2P IE.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -398,6 +436,7 @@ typedef struct sLimMlmReassocInd
     tSirMacPowerCapInfo     powerCap;
     tSirSupChnl             supportedChannels;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tAniBool               WmmStaInfoPresent;
@@ -414,6 +453,10 @@ typedef struct sLimMlmReassocInd
     tANI_U32                  numBss; // List received from STA
     tSirNeighborBssInfo  neighborList[1]; // List received from STA
 #endif
+=======
+    tAniBool               WmmStaInfoPresent;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tAniBool               WmmStaInfoPresent;
 
@@ -567,9 +610,12 @@ typedef struct sLimMlmLinkTestStopReq
     tSirMacAddr    peerMacAddr;
     tANI_U8       sessionId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
     tANI_U16             aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tLimMlmLinkTestStopReq, *tpLimMlmLinkTestStopReq;
@@ -757,11 +803,15 @@ void limHandleCFGparamUpdate(tpAniSirGlobal, tANI_U32);
 void limApplyConfiguration(tpAniSirGlobal,tpPESession);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 void limSetCfgProtection(tpAniSirGlobal pMac, tpPESession pesessionEntry);
 #else
 void limSetCfgProtection(tpAniSirGlobal pMac);
 #endif
+=======
+void limSetCfgProtection(tpAniSirGlobal pMac, tpPESession pesessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void limSetCfgProtection(tpAniSirGlobal pMac, tpPESession pesessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -789,7 +839,11 @@ void limProcessProbeReqFrame_multiple_BSS(tpAniSirGlobal, tANI_U8 *,tpPESession)
 void limProcessAuthFrame(tpAniSirGlobal, tANI_U8 *,tpPESession);
 #ifdef WLAN_FEATURE_VOWIFI_11R
 <<<<<<< HEAD
+<<<<<<< HEAD
 int limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *, void *body);
+=======
+tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *, void *body);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *, void *body);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -804,9 +858,13 @@ void limProcessDisassocFrame(tpAniSirGlobal, tANI_U8 *,tpPESession);
 void limProcessDeauthFrame(tpAniSirGlobal, tANI_U8 *,tpPESession);
 void limProcessActionFrame(tpAniSirGlobal, tANI_U8 *,tpPESession);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined WLAN_FEATURE_P2P
 void limProcessActionFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxMetaInfo);
 #endif
+=======
+void limProcessActionFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxMetaInfo);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void limProcessActionFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxMetaInfo);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -831,6 +889,7 @@ void limSendAddtsRspActionFrame(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
                            tANI_U16 statusCode, tSirAddtsReqInfo *addts, tSirMacScheduleIE *pSchedule,tpPESession);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 void limSendAssocRspMgmtFrame(tpAniSirGlobal, tANI_U16, tANI_U16, tSirMacAddr, tANI_U8, tpDphHashNode pSta,tpPESession);
 #endif
@@ -840,25 +899,36 @@ void limSendNullDataFrame(tpAniSirGlobal, tpDphHashNode);
 void limSendDisassocMgmtFrame(tpAniSirGlobal, tANI_U16, tSirMacAddr,tpPESession);
 void limSendDeauthMgmtFrame(tpAniSirGlobal, tANI_U16, tSirMacAddr,tpPESession);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limSendAssocRspMgmtFrame(tpAniSirGlobal, tANI_U16, tANI_U16, tSirMacAddr, tANI_U8, tpDphHashNode pSta,tpPESession);
 
 void limSendNullDataFrame(tpAniSirGlobal, tpDphHashNode);
 void limSendDisassocMgmtFrame(tpAniSirGlobal, tANI_U16, tSirMacAddr, tpPESession, tANI_BOOLEAN waitForAck);
 void limSendDeauthMgmtFrame(tpAniSirGlobal, tANI_U16, tSirMacAddr, tpPESession, tANI_BOOLEAN waitForAck);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void limContinueChannelScan(tpAniSirGlobal);
 tSirResultCodes limMlmAddBss(tpAniSirGlobal, tLimMlmStartReq *,tpPESession psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if 1 //(WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
 tSirRetStatus limSendChannelSwitchMgmtFrame(tpAniSirGlobal, tSirMacAddr, tANI_U8, tANI_U8, tANI_U8, tpPESession);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus limSendChannelSwitchMgmtFrame(tpAniSirGlobal, tSirMacAddr, tANI_U8, tANI_U8, tANI_U8, tpPESession);
 
 #ifdef WLAN_FEATURE_11AC
 tSirRetStatus limSendVHTOpmodeNotificationFrame(tpAniSirGlobal pMac,tSirMacAddr peer,tANI_U8 nMode, tpPESession  psessionEntry );
 tSirRetStatus limSendVHTChannelSwitchMgmtFrame(tpAniSirGlobal pMac,tSirMacAddr peer,tANI_U8 nChanWidth, tANI_U8 nNewChannel, tANI_U8 ncbMode, tpPESession  psessionEntry );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -873,7 +943,10 @@ void limProcessIappFrame(tpAniSirGlobal, tANI_U8 *,tpPESession);
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
 tSirRetStatus limSendTdlsDisReqFrame(tpAniSirGlobal pMac, 
            tSirMacAddr peer_mac, tANI_U8 dialog, tpPESession psessionEntry);
@@ -905,6 +978,9 @@ tSirRetStatus limSendTdlsTeardownFrame(tpAniSirGlobal pMac,
            tANI_U8 *addIe, tANI_U16 addIeLen); 
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // Algorithms & Link Monitoring related functions
 tSirBackgroundScanMode limSelectsBackgroundScanMode(tpAniSirGlobal);
@@ -917,6 +993,7 @@ void limHandleHeartBeatFailure(tpAniSirGlobal,tpPESession);
 /// Function that triggers link tear down with AP upon HB failure
 void limTearDownLinkWithAp(tpAniSirGlobal,tANI_U8, tSirMacReasonCodes);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 /// Function that performs periodic release of AIDs
@@ -931,6 +1008,8 @@ void limHandleCFpollRsp(tANI_U32);
 /// Function that processes PS-poll message from PMM
 void limHandlePSpoll(tANI_U32);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1007,6 +1086,11 @@ void limSendHalFinishScanReq( tpAniSirGlobal, tLimLimHalScanState);
 
 void limContinuePostChannelScan(tpAniSirGlobal pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+void limCovertChannelScanType(tpAniSirGlobal pMac,tANI_U8 channelNum, tANI_BOOLEAN passiveToActive);
+void limSetDFSChannelList(tpAniSirGlobal pMac,tANI_U8 channelNum, tSirDFSChannelList *dfsChannelList);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void limCovertChannelScanType(tpAniSirGlobal pMac,tANI_U8 channelNum, tANI_BOOLEAN passiveToActive);
 void limSetDFSChannelList(tpAniSirGlobal pMac,tANI_U8 channelNum, tSirDFSChannelList *dfsChannelList);
@@ -1079,7 +1163,11 @@ limPostSmeMessage(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));
+=======
+        limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1128,7 +1216,11 @@ limPostMlmMessage(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));
+=======
+        limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1205,7 +1297,10 @@ limGetIElenFromBssDescription(tpSirBssDescription pBssDescr)
 } /*** end limGetIElenFromBssDescription() ***/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -1225,9 +1320,13 @@ limGetIElenFromBssDescription(tpSirBssDescription pBssDescr)
 void 
 limSendBeaconInd(tpAniSirGlobal pMac, tpPESession psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1243,7 +1342,10 @@ limIsSmeGetWPSPBCSessionsReqValid(tpAniSirGlobal pMac, tSirSmeGetWPSPBCSessionsR
 
 #define LIM_WPS_OVERLAP_TIMER_MS                 10000
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1257,6 +1359,7 @@ limChangeChannelWithCallback(tpAniSirGlobal pMac, tANI_U8 newChannel,
    CHANGE_CHANNEL_CALLBACK callback, tANI_U32 *cbdata, tpPESession psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 void limSendSmeMgmtFrameInd(
                     tpAniSirGlobal pMac, tANI_U8 frameType,
@@ -1268,6 +1371,8 @@ void limAbortRemainOnChan(tpAniSirGlobal pMac);
 tSirRetStatus __limProcessSmeNoAUpdate(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limSendSmeMgmtFrameInd(
                     tpAniSirGlobal pMac, tANI_U8 frameType,
                     tANI_U8  *frame, tANI_U32 frameLen, tANI_U16 sessionId,
@@ -1315,6 +1420,9 @@ void limProcessRxScanEvent(tpAniSirGlobal mac, void *buf);
 
 int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg);
 void limRemainOnChnRsp(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* __LIM_TYPES_H */
 

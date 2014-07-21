@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,10 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -57,9 +67,15 @@
                
    This file contains the external API exposed by the wlan data transfer abstraction layer module.
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2011 QUALCOMM Incorporated.
    All Rights Reserved.
    Qualcomm Confidential and Proprietary
+=======
+   Copyright (c) 2011 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Qualcomm Technologies Confidential and Proprietary
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    Copyright (c) 2011 Qualcomm Technologies, Inc.
    All Rights Reserved.
@@ -110,8 +126,11 @@ when           who        what, where, why
 /* Start with base address */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WLANDXE_BMU_AVAILABLE_BD_PDU     0x03080084
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WCN_PRONTO
@@ -134,6 +153,7 @@ when           who        what, where, why
 #endif
 #endif /* PAL_OS_TYPE_BMP */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define WLANDXE_REGISTER_BASE_ADDRESS    WLANDXE_WCNSS_BASE_ADDRESS + 0x202000
 
@@ -181,6 +201,8 @@ when           who        what, where, why
 #define WLANDXE_DMA_CHAN5_BASE_ADDRESS   WLANDXE_REGISTER_BASE_ADDRESS + 0x540
 #define WLANDXE_DMA_CHAN6_BASE_ADDRESS   WLANDXE_REGISTER_BASE_ADDRESS + 0x580
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLANDXE_BMU_AVAILABLE_BD_PDU     (WLANDXE_WCNSS_BASE_ADDRESS + 0x80084)
 
 #define WLANDXE_REGISTER_BASE_ADDRESS    (WLANDXE_WCNSS_BASE_ADDRESS + 0x202000)
@@ -228,6 +250,9 @@ when           who        what, where, why
 #define WLANDXE_DMA_CHAN4_BASE_ADDRESS   (WLANDXE_REGISTER_BASE_ADDRESS + 0x500)
 #define WLANDXE_DMA_CHAN5_BASE_ADDRESS   (WLANDXE_REGISTER_BASE_ADDRESS + 0x540)
 #define WLANDXE_DMA_CHAN6_BASE_ADDRESS   (WLANDXE_REGISTER_BASE_ADDRESS + 0x580)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Channel specific register offset */
@@ -445,6 +470,10 @@ when           who        what, where, why
 
 #define WLANDXE_CH_STAT_MASKED_MASK     0x00000008
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define WLANDXE_CH_STAT_ENABLED_MASK    0x00000001
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WLANDXE_CH_STAT_ENABLED_MASK    0x00000001
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -712,6 +741,11 @@ typedef struct
    wpt_boolean                     rxPalPacketUnavailable;
    wpt_boolean                     driverReloadInProcessing;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   wpt_boolean                     smsmToggled;
+   wpt_timer                       rxResourceAvailableTimer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wpt_boolean                     smsmToggled;
    wpt_timer                       rxResourceAvailableTimer;

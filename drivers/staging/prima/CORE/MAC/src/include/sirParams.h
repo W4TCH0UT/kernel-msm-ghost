@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -61,8 +67,11 @@
 # include "sirTypes.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define SIR_SDK_OPT_MAX_NUM_PRE_AUTH    32
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // Firmware wide constants
@@ -73,7 +82,10 @@
 #define SIR_MAX_NUM_STA_IN_BSS  256
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef enum
@@ -82,7 +94,11 @@ typedef enum
     PHY_DOUBLE_CHANNEL_LOW_PRIMARY  = 1,        // 40MHz IF bandwidth with lower 20MHz supporting the primary channel
     PHY_DOUBLE_CHANNEL_HIGH_PRIMARY = 3,        // 40MHz IF bandwidth with higher 20MHz supporting the primary channel
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC    
+=======
+#ifdef WLAN_FEATURE_11AC
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WLAN_FEATURE_11AC
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -97,7 +113,10 @@ typedef enum
     PHY_CHANNEL_BONDING_STATE_MAX   = 11
 }ePhyChanBondState;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -106,6 +125,7 @@ typedef enum
 
 typedef enum {
 <<<<<<< HEAD
+<<<<<<< HEAD
    MCC	   = 0,
    P2P	   = 1,
    DOT11AC = 2,
@@ -113,6 +133,8 @@ typedef enum {
    DOT11AC_OPMODE = 4,
    MAX_FEATURE_SUPPORTED = 128,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    MCC     = 0,
    P2P     = 1,
    DOT11AC = 2,
@@ -126,6 +148,9 @@ typedef enum {
    WLAN_ROAM_SCAN_OFFLOAD = 23,
 #endif
    //MAX_FEATURE_SUPPORTED = 128
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } placeHolderInCapBitmap;
 
@@ -196,8 +221,12 @@ typedef struct sSirMbMsg
 } tSirMbMsg, *tpSirMbMsg;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 /// Mailbox Message Structure for P2P 
+=======
+/// Mailbox Message Structure for P2P
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /// Mailbox Message Structure for P2P
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -225,7 +254,10 @@ typedef struct sSirMbMsgP2p
     tANI_U32 data[1];
 } tSirMbMsgP2p, *tpSirMbMsgP2p;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -331,6 +363,7 @@ typedef struct sSirMbMsgP2p
 // HAL message types
 #define SIR_HAL_MSG_TYPES_BEGIN            (SIR_HAL_MODULE_ID << 8)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define SIR_HAL_ITC_MSG_TYPES_BEGIN        SIR_HAL_MSG_TYPES_BEGIN+0x20
 #define SIR_HAL_RADAR_DETECTED_IND         SIR_HAL_ITC_MSG_TYPES_BEGIN
 #define SIR_HAL_WDT_KAM_RSP                SIR_HAL_ITC_MSG_TYPES_BEGIN + 1
@@ -345,6 +378,8 @@ typedef struct sSirMbMsgP2p
 #define SIR_HAL_CCA_CHANGE_MODE            SIR_HAL_ITC_MSG_TYPES_BEGIN + 10
 #define SIR_HAL_TIMER_WRAP_AROUND_STATS_COLLECT_REQ   SIR_HAL_ITC_MSG_TYPES_BEGIN + 11
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_HAL_ITC_MSG_TYPES_BEGIN        (SIR_HAL_MSG_TYPES_BEGIN+0x20)
 #define SIR_HAL_RADAR_DETECTED_IND         SIR_HAL_ITC_MSG_TYPES_BEGIN
 #define SIR_HAL_WDT_KAM_RSP                (SIR_HAL_ITC_MSG_TYPES_BEGIN + 1)
@@ -358,11 +393,15 @@ typedef struct sSirMbMsgP2p
 #define SIR_HAL_CCA_MONITOR_STOP           (SIR_HAL_ITC_MSG_TYPES_BEGIN + 9)
 #define SIR_HAL_CCA_CHANGE_MODE            (SIR_HAL_ITC_MSG_TYPES_BEGIN + 10)
 #define SIR_HAL_TIMER_WRAP_AROUND_STATS_COLLECT_REQ   (SIR_HAL_ITC_MSG_TYPES_BEGIN + 11)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
  * New Taurus related messages
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define SIR_HAL_ADD_STA_REQ                SIR_HAL_ITC_MSG_TYPES_BEGIN + 13
 #define SIR_HAL_ADD_STA_RSP                SIR_HAL_ITC_MSG_TYPES_BEGIN + 14
@@ -606,6 +645,8 @@ typedef struct sSirMbMsgP2p
 #define SIR_HAL_TSM_STATS_REQ              SIR_HAL_ITC_MSG_TYPES_BEGIN + 184
 #define SIR_HAL_TSM_STATS_RSP              SIR_HAL_ITC_MSG_TYPES_BEGIN + 185
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_HAL_ADD_STA_REQ                (SIR_HAL_ITC_MSG_TYPES_BEGIN + 13)
 #define SIR_HAL_ADD_STA_RSP                (SIR_HAL_ITC_MSG_TYPES_BEGIN + 14)
 #define SIR_HAL_DELETE_STA_REQ             (SIR_HAL_ITC_MSG_TYPES_BEGIN + 15)
@@ -835,11 +876,15 @@ typedef struct sSirMbMsgP2p
 #ifdef FEATURE_WLAN_CCX
 #define SIR_HAL_TSM_STATS_REQ              (SIR_HAL_ITC_MSG_TYPES_BEGIN + 184)
 #define SIR_HAL_TSM_STATS_RSP              (SIR_HAL_ITC_MSG_TYPES_BEGIN + 185)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 
 #ifdef WLAN_WAKEUP_EVENTS
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define SIR_HAL_WAKE_REASON_IND            SIR_HAL_ITC_MSG_TYPES_BEGIN + 186
 #endif //WLAN_WAKEUP_EVENTS
@@ -862,6 +907,8 @@ typedef struct sSirMbMsgP2p
 #define SIR_LIM_MSG_TYPES_BEGIN        (SIR_LIM_MODULE_ID << 8)
 #define SIR_LIM_ITC_MSG_TYPES_BEGIN    SIR_LIM_MSG_TYPES_BEGIN+0xB0
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_HAL_WAKE_REASON_IND            (SIR_HAL_ITC_MSG_TYPES_BEGIN + 186)
 #endif //WLAN_WAKEUP_EVENTS
 
@@ -897,12 +944,16 @@ typedef struct sSirMbMsgP2p
 // LIM message types
 #define SIR_LIM_MSG_TYPES_BEGIN        (SIR_LIM_MODULE_ID << 8)
 #define SIR_LIM_ITC_MSG_TYPES_BEGIN    (SIR_LIM_MSG_TYPES_BEGIN+0xB0)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // Messages to/from HAL
 // Removed as part of moving HAL down to FW
 
 // Message from ISR upon TFP retry interrupt
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define SIR_LIM_RETRY_INTERRUPT_MSG        SIR_LIM_ITC_MSG_TYPES_BEGIN + 3
 // Message from BB Transport
@@ -921,6 +972,8 @@ typedef struct sSirMbMsgP2p
 // Message from ISR upon Radar Detection
 #define SIR_LIM_RADAR_DETECT_IND           SIR_LIM_ITC_MSG_TYPES_BEGIN + 0xC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_LIM_RETRY_INTERRUPT_MSG        (SIR_LIM_ITC_MSG_TYPES_BEGIN + 3)
 // Message from BB Transport
 #define SIR_BB_XPORT_MGMT_MSG              (SIR_LIM_ITC_MSG_TYPES_BEGIN + 4)
@@ -937,6 +990,9 @@ typedef struct sSirMbMsgP2p
 #define SIR_LIM_SCH_CLEAN_MSG              (SIR_LIM_ITC_MSG_TYPES_BEGIN + 0xB)
 // Message from ISR upon Radar Detection
 #define SIR_LIM_RADAR_DETECT_IND           (SIR_LIM_ITC_MSG_TYPES_BEGIN + 0xC)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /////////////////////////////////////
@@ -945,6 +1001,7 @@ typedef struct sSirMbMsgP2p
 
 
 // Message from Hal to send out a DEL-TS indication
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define SIR_LIM_DEL_TS_IND                  SIR_LIM_ITC_MSG_TYPES_BEGIN + 0xE
 //Message from HAL to send BA global timer timeout
@@ -1024,6 +1081,8 @@ typedef struct sSirMbMsgP2p
 #define SIR_PMM_MSG_TYPES_BEGIN        (SIR_PMM_MODULE_ID << 8)
 #define SIR_PMM_CHANGE_PM_MODE         SIR_PMM_MSG_TYPES_BEGIN
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_LIM_DEL_TS_IND                  (SIR_LIM_ITC_MSG_TYPES_BEGIN + 0xE)
 //Message from HAL to send BA global timer timeout
 #define SIR_LIM_ADD_BA_IND                  (SIR_LIM_ITC_MSG_TYPES_BEGIN + 0xF)
@@ -1100,12 +1159,16 @@ typedef struct sSirMbMsgP2p
 // PMM message types
 #define SIR_PMM_MSG_TYPES_BEGIN        (SIR_PMM_MODULE_ID << 8)
 #define SIR_PMM_CHANGE_PM_MODE         (SIR_PMM_MSG_TYPES_BEGIN)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_PMM_CHANGE_IMPS_MODE       (SIR_PMM_MSG_TYPES_BEGIN + 1)        //for Idle mode power save
 #define SIR_PMM_MSG_TYPES_END          (SIR_PMM_MSG_TYPES_BEGIN+0xFF)
 
 // MNT message types
 #define SIR_MNT_MSG_TYPES_BEGIN        (SIR_MNT_MODULE_ID << 8)
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define SIR_MNT_RELEASE_BD             SIR_MNT_MSG_TYPES_BEGIN + 0
 #define SIR_MNT_MSG_TYPES_END          SIR_MNT_MSG_TYPES_BEGIN + 0xFF
@@ -1115,6 +1178,8 @@ typedef struct sSirMbMsgP2p
 #define SIR_DVT_ITC_MSG_TYPES_BEGIN    SIR_DVT_MSG_TYPES_BEGIN+0x0F
 #define SIR_DVT_MSG_TYPES_END          SIR_DVT_ITC_MSG_TYPES_BEGIN+0xFFF
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_MNT_RELEASE_BD             (SIR_MNT_MSG_TYPES_BEGIN + 0)
 #define SIR_MNT_MSG_TYPES_END          (SIR_MNT_MSG_TYPES_BEGIN + 0xFF)
 
@@ -1122,6 +1187,9 @@ typedef struct sSirMbMsgP2p
 #define SIR_DVT_MSG_TYPES_BEGIN        (SIR_DVT_MODULE_ID << 8)
 #define SIR_DVT_ITC_MSG_TYPES_BEGIN    (SIR_DVT_MSG_TYPES_BEGIN+0x0F)
 #define SIR_DVT_MSG_TYPES_END          (SIR_DVT_ITC_MSG_TYPES_BEGIN+0xFFF)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -45,7 +51,10 @@
 /*
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
@@ -64,6 +73,7 @@
 #include <sirCommon.h>
 #include "aniGlobal.h"
 #include "utilsGlobal.h"
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined VOSS_ENABLED
 #include "VossWrapper.h"
@@ -90,6 +100,9 @@ extern void rt_sched_unlock();
 #define SIR_SCHED_UNLOCK()  TX_ENABLE_INTR;
 
 #endif
+=======
+#include "VossWrapper.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "VossWrapper.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -140,6 +153,7 @@ extern void cfgDeInit(tpAniSirGlobal);
 void sirDumpBuf(tpAniSirGlobal pMac, tANI_U8 modId, tANI_U32 level, tANI_U8 *buf, tANI_U32 size);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined ANI_OS_TYPE_LINUX
 
 
@@ -168,6 +182,8 @@ extern void sysSuspendThreads(tpAniSirGlobal pMac);
 #define RTAI_MAX_BUF_SIZE       BUF_8192
 
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -742,6 +758,7 @@ static inline tANI_U8 convertCW(tANI_U16 cw)
 #define upToAc(up)                ((WLAN_UP_TO_AC_MAP >> ((up) << 2)) & 0x03)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined VOSS_ENABLED
 
 #define sirBusyWait(microsecond)   vos_busy_wait(microsecond / 1000)
@@ -817,6 +834,8 @@ sirSleepWaitIntern(tANI_U32 duration)
 } // sirSleepWait
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // -------------------------------------------------------------------
 
@@ -885,7 +904,11 @@ void ConverttoBigEndian(void *ptr, tANI_U16 size);
 void CreateScanCtsFrame(tpAniSirGlobal pMac, tSirMacMgmtHdr *macMgmtHdr, tSirMacAddr selfMac);
 void CreateScanDataNullFrame(tpAniSirGlobal pMac, tSirMacMgmtHdr *macMgmtHdr,
 <<<<<<< HEAD
+<<<<<<< HEAD
                              tANI_U8 pwrMgmt, tSirMacAddr bssid, 
+=======
+                             tANI_U8 pwrMgmt, tSirMacAddr bssid,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              tANI_U8 pwrMgmt, tSirMacAddr bssid,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

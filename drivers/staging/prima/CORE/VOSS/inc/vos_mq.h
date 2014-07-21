@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -47,6 +53,7 @@
 
 /**=========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   \file  vos_mq.h
   
@@ -54,6 +61,8 @@
                
    Message Queue Definitions and API
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \file  vos_mq.h
 
@@ -61,6 +70,9 @@
 
    Message Queue Definitions and API
 <<<<<<< HEAD:CORE/VOSS/inc/vos_mq.h
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
    Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
@@ -68,7 +80,10 @@
    Qualcomm Confidential and Proprietary.
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
@@ -76,6 +91,9 @@
    Qualcomm Technologies Confidential and Proprietary.
 
 >>>>>>> f7413b6... wlan: voss: remove obsolete "INTEGRATED_SOC" featurization:prima/CORE/VOSS/inc/vos_mq.h
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ========================================================================*/
 
@@ -126,22 +144,29 @@ typedef struct vos_msg_s
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*------------------------------------------------------------------------- 
   Function declarations and documenation
   ------------------------------------------------------------------------*/
   
 /// Message Queue IDs  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*-------------------------------------------------------------------------
   Function declarations and documenation
   ------------------------------------------------------------------------*/
 
 /// Message Queue IDs
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef enum
 {
   /// Message Queue ID for messages bound for SME
   VOS_MQ_ID_SME = VOS_MODULE_ID_SME,
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   /// Message Queue ID for messages bound for PE
@@ -155,17 +180,23 @@ typedef enum
   VOS_MQ_ID_WDA = VOS_MODULE_ID_WDA,
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /// Message Queue ID for messages bound for PE
   VOS_MQ_ID_PE = VOS_MODULE_ID_PE,
 
   /// Message Queue ID for messages bound for WDA
   VOS_MQ_ID_WDA = VOS_MODULE_ID_WDA,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /// Message Queue ID for messages bound for TL
   VOS_MQ_ID_TL = VOS_MODULE_ID_TL,
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
   /// Message Queue ID for messages bound for SSC
@@ -184,12 +215,17 @@ typedef enum
 #endif
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /// Message Queue ID for messages bound for the SYS module
   VOS_MQ_ID_SYS = VOS_MODULE_ID_SYS,
 
   /// Message Queue ID for messages bound for WDI
   VOS_MQ_ID_WDI = VOS_MODULE_ID_WDI,
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } VOS_MQ_ID;
 
@@ -273,7 +309,10 @@ VOS_STATUS vos_mq_post_message( VOS_MQ_ID msgQueueId, vos_msg_t *message );
 VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *message );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------------
@@ -314,7 +353,10 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *message );
 VOS_STATUS vos_rx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *message );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

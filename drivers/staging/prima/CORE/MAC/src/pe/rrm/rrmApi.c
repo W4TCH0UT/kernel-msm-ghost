@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,12 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 
@@ -55,9 +67,12 @@
   \brief implementation for PE RRM APIs
   
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
    
    Qualcomm Confidential and Proprietary.
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
@@ -75,6 +90,7 @@
 #include "sirApi.h"
 #include "aniGlobal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #endif
@@ -83,6 +99,9 @@
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -95,7 +114,10 @@
 #include "rrmApi.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_U8
 rrmGetMinOfMaxTxPower(tPowerdBm regMax, tPowerdBm apTxPower)
 {
@@ -110,6 +132,9 @@ rrmGetMinOfMaxTxPower(tPowerdBm regMax, tPowerdBm apTxPower)
 
     return maxTxPower;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // --------------------------------------------------------------------
@@ -132,7 +157,11 @@ rrmCacheMgmtTxPower ( tpAniSirGlobal pMac, tPowerdBm txPower, tpPESession pSessi
 {
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "Cache Mgmt Tx Power = %d\n", txPower );) 
+=======
+   PELOGE(limLog( pMac, LOGE, "Cache Mgmt Tx Power = %d", txPower );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, "Cache Mgmt Tx Power = %d", txPower );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -163,7 +192,11 @@ rrmGetMgmtTxPower ( tpAniSirGlobal pMac, tpPESession pSessionEntry )
 {
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "RrmGetMgmtTxPower called\n" );) 
+=======
+   PELOGE(limLog( pMac, LOGE, "RrmGetMgmtTxPower called" );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, "RrmGetMgmtTxPower called" );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -200,7 +233,11 @@ rrmSendSetMaxTxPowerReq ( tpAniSirGlobal pMac, tPowerdBm txPower, tpPESession pS
    if( pSessionEntry == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL(" Inavalid parameters\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE, FL(" Inavalid parameters"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE, FL(" Inavalid parameters"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -210,7 +247,11 @@ rrmSendSetMaxTxPowerReq ( tpAniSirGlobal pMac, tPowerdBm txPower, tpPESession pS
             (void **) &pMaxTxParams, sizeof(tMaxTxPowerParams) ) ) 
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       limLog( pMac, LOGP, FL("Unable to allocate memory for pMaxTxParams \n") );
+=======
+      limLog( pMac, LOGP, FL("Unable to allocate memory for pMaxTxParams ") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       limLog( pMac, LOGP, FL("Unable to allocate memory for pMaxTxParams ") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -219,7 +260,11 @@ rrmSendSetMaxTxPowerReq ( tpAniSirGlobal pMac, tPowerdBm txPower, tpPESession pS
    }
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pMaxTxParams...will be freed in other module\n") );)
+=======
+   PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pMaxTxParams...will be freed in other module") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pMaxTxParams...will be freed in other module") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -241,10 +286,14 @@ rrmSendSetMaxTxPowerReq ( tpAniSirGlobal pMac, tPowerdBm txPower, tpPESession pS
    {
       limLog( pMac, LOGP, FL("Posting WDA_SET_MAX_TX_POWER_REQ to HAL failed, reason=%X"), retCode );
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (NULL != pMaxTxParams)
       {
          palFreeMemory( pMac->hHdd, (tANI_U8 *) pMaxTxParams );
       }
+=======
+      palFreeMemory( pMac->hHdd, (tANI_U8 *) pMaxTxParams );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       palFreeMemory( pMac->hHdd, (tANI_U8 *) pMaxTxParams );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -277,6 +326,7 @@ rrmSetMaxTxPowerRsp ( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
    tpMaxTxPowerParams pMaxTxParams = (tpMaxTxPowerParams) limMsgQ->bodyptr;
    tpPESession     pSessionEntry;
 <<<<<<< HEAD
+<<<<<<< HEAD
    tANI_U8 sessionId;
 
    if((pSessionEntry = peFindSessionByBssid(pMac, pMaxTxParams->bssId, &sessionId))==NULL)
@@ -288,6 +338,8 @@ rrmSetMaxTxPowerRsp ( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
    {
       rrmCacheMgmtTxPower ( pMac, pMaxTxParams->power, pSessionEntry );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tANI_U8  sessionId, i;
    tSirMacAddr bssid = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
@@ -313,6 +365,9 @@ rrmSetMaxTxPowerRsp ( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
       {
          rrmCacheMgmtTxPower ( pMac, pMaxTxParams->power, pSessionEntry );
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
@@ -349,17 +404,23 @@ rrmProcessLinkMeasurementRequest( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "Received Link measurement request\n");)
 #endif
    if( pRxPacketInfo == NULL || pLinkReq == NULL || pSessionEntry == NULL )
    {
       PELOGE(limLog( pMac, LOGE, "%s:%d: Invalid parameters - Ignoring the request\n");)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    PELOGE(limLog( pMac, LOGE, "Received Link measurement request");)
 #endif
    if( pRxPacketInfo == NULL || pLinkReq == NULL || pSessionEntry == NULL )
    {
       PELOGE(limLog( pMac, LOGE, "%s:%d: Invalid parameters - Ignoring the request");)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eSIR_FAILURE;
    }
@@ -368,7 +429,11 @@ rrmProcessLinkMeasurementRequest( tpAniSirGlobal pMac,
    if( pSessionEntry->maxTxPower != (tPowerdBm) pLinkReq->MaxTxPower.maxTxPower )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL(" maxTx power in link request is not same as local...Local = %d LinkReq = %d\n"), 
+=======
+      PELOGE(limLog( pMac, LOGE, FL(" maxTx power in link request is not same as local...Local = %d LinkReq = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL(" maxTx power in link request is not same as local...Local = %d LinkReq = %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -384,7 +449,11 @@ rrmProcessLinkMeasurementRequest( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "Received Link report frame with %d\n", currentRSSI);)
+=======
+   PELOGE(limLog( pMac, LOGE, "Received Link report frame with %d", currentRSSI);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, "Received Link report frame with %d", currentRSSI);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -402,7 +471,11 @@ rrmProcessLinkMeasurementRequest( tpAniSirGlobal pMac,
    
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "Sending Link report frame\n");)
+=======
+   PELOGE(limLog( pMac, LOGE, "Sending Link report frame");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, "Sending Link report frame");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -442,7 +515,11 @@ rrmProcessNeighborReportResponse( tpAniSirGlobal pMac,
    if( pNeighborRep == NULL || pSessionEntry == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL(" Invalid parameters\n") );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL(" Invalid parameters") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL(" Invalid parameters") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -451,7 +528,11 @@ rrmProcessNeighborReportResponse( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, FL("Neighbor report response received \n") );)
+=======
+   PELOGE(limLog( pMac, LOGE, FL("Neighbor report response received ") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, FL("Neighbor report response received ") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -461,7 +542,11 @@ rrmProcessNeighborReportResponse( tpAniSirGlobal pMac,
    if( pMac->rrm.rrmPEContext.DialogToken != pNeighborRep->DialogToken.token )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "Dialog token mismatch in the received Neighbor report\n");)
+=======
+      PELOGE(limLog( pMac, LOGE, "Dialog token mismatch in the received Neighbor report");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "Dialog token mismatch in the received Neighbor report");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -470,7 +555,11 @@ rrmProcessNeighborReportResponse( tpAniSirGlobal pMac,
    if( pNeighborRep->num_NeighborReport == 0 )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "No neighbor report in the frame...Dropping it\n");)
+=======
+      PELOGE(limLog( pMac, LOGE, "No neighbor report in the frame...Dropping it");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "No neighbor report in the frame...Dropping it");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -484,7 +573,11 @@ rrmProcessNeighborReportResponse( tpAniSirGlobal pMac,
             (void **) &pSmeNeighborRpt, length ) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGP, FL("Unable to allocate memory\n") );)
+=======
+      PELOGE(limLog( pMac, LOGP, FL("Unable to allocate memory") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGP, FL("Unable to allocate memory") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -494,7 +587,11 @@ rrmProcessNeighborReportResponse( tpAniSirGlobal pMac,
    palZeroMemory( pMac->hHdd, pSmeNeighborRpt, length ); 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pSmeNeighborRpt...will be freed by other module\n") );)
+=======
+   PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pSmeNeighborRpt...will be freed by other module") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pSmeNeighborRpt...will be freed by other module") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -563,7 +660,11 @@ rrmProcessNeighborReportReq( tpAniSirGlobal pMac,
    if( pNeighborReq == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "NeighborReq is NULL\n" );)
+=======
+      PELOGE(limLog( pMac, LOGE, "NeighborReq is NULL" );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "NeighborReq is NULL" );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -572,7 +673,11 @@ rrmProcessNeighborReportReq( tpAniSirGlobal pMac,
    if ((pSessionEntry = peFindSessionByBssid(pMac,pNeighborReq->bssId,&sessionId))==NULL)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -581,8 +686,13 @@ rrmProcessNeighborReportReq( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, FL("Neighbor Request received \n") );)
    PELOGE(limLog( pMac, LOGE, "SSID present = %d \n", pNeighborReq->noSSID );)
+=======
+   PELOGE(limLog( pMac, LOGE, FL("Neighbor Request received ") );)
+   PELOGE(limLog( pMac, LOGE, "SSID present = %d ", pNeighborReq->noSSID );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, FL("Neighbor Request received ") );)
    PELOGE(limLog( pMac, LOGE, "SSID present = %d ", pNeighborReq->noSSID );)
@@ -592,7 +702,11 @@ rrmProcessNeighborReportReq( tpAniSirGlobal pMac,
    palZeroMemory( pMac->hHdd, &NeighborReportReq, sizeof( tSirMacNeighborReportReq ) );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    NeighborReportReq.dialogToken = ++pMac->rrm.rrmPEContext.DialogToken; 
+=======
+   NeighborReportReq.dialogToken = ++pMac->rrm.rrmPEContext.DialogToken;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    NeighborReportReq.dialogToken = ++pMac->rrm.rrmPEContext.DialogToken;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -650,7 +764,11 @@ rrmProcessBeaconReportReq( tpAniSirGlobal pMac,
       // IEEE Std 802.11k-2008 Table 7-29g and section 11.10.8.1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "Droping the request: Reporting condition included in beacon report request and it is not zero\n");)
+=======
+      PELOGE(limLog( pMac, LOGE, "Dropping the request: Reporting condition included in beacon report request and it is not zero");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "Dropping the request: Reporting condition included in beacon report request and it is not zero");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -678,7 +796,11 @@ rrmProcessBeaconReportReq( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    limLog( pMac, LOGE, "maxDuration = %d sign = %d maxMeasduration = %d measDuration = %d\n",
+=======
+   limLog( pMac, LOGE, "maxDuration = %d sign = %d maxMeasduration = %d measDuration = %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    limLog( pMac, LOGE, "maxDuration = %d sign = %d maxMeasduration = %d measDuration = %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -690,7 +812,11 @@ rrmProcessBeaconReportReq( tpAniSirGlobal pMac,
       if( pBeaconReq->durationMandatory )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          limLog( pMac, LOGE, "Droping the request: duration mandatory and maxduration > measduration\n");
+=======
+         limLog( pMac, LOGE, "Dropping the request: duration mandatory and maxduration > measduration");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          limLog( pMac, LOGE, "Dropping the request: duration mandatory and maxduration > measduration");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -713,17 +839,23 @@ rrmProcessBeaconReportReq( tpAniSirGlobal pMac,
       {
             limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL( "Unable to PAL allocate memory for request IEs buffer\n" ));
             return eRRM_FAILURE;
       }
 #if defined WLAN_VOWIFI_DEBUG
       PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pElementIds\n") );)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL( "Unable to PAL allocate memory for request IEs buffer" ));
             return eRRM_FAILURE;
       }
 #if defined WLAN_VOWIFI_DEBUG
       PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pElementIds") );)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       pCurrentReq->request.Beacon.reqIes.num = pBeaconReq->measurement_request.Beacon.RequestedInfo.num_requested_eids;
@@ -745,7 +877,11 @@ rrmProcessBeaconReportReq( tpAniSirGlobal pMac,
    {
       limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Unable to PAL allocate memory during Beacon Report Req Ind to SME\n" ));
+=======
+            FL( "Unable to PAL allocate memory during Beacon Report Req Ind to SME" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Unable to PAL allocate memory during Beacon Report Req Ind to SME" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -758,7 +894,11 @@ rrmProcessBeaconReportReq( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pSmeBcnReportReq....will be freed by other module\n") );)
+=======
+   PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pSmeBcnReportReq....will be freed by other module") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pSmeBcnReportReq....will be freed by other module") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -836,7 +976,11 @@ rrmFillBeaconIes( tpAniSirGlobal pMac,
    if( (pIes == NULL) || (pNumIes == NULL) || (pBssDesc == NULL) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL(" Invalid parameters\n") );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL(" Invalid parameters") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL(" Invalid parameters") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -865,7 +1009,11 @@ rrmFillBeaconIes( tpAniSirGlobal pMac,
       len = *(pBcnIes + 1) + 2; //element id + length.
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "EID = %d, len = %d total = %d\n", *pBcnIes, *(pBcnIes+1), len );)
+=======
+      PELOGE(limLog( pMac, LOGE, "EID = %d, len = %d total = %d", *pBcnIes, *(pBcnIes+1), len );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "EID = %d, len = %d total = %d", *pBcnIes, *(pBcnIes+1), len );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -879,7 +1027,11 @@ rrmFillBeaconIes( tpAniSirGlobal pMac,
          {
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, "Adding Eid %d, len=%d\n", *pBcnIes, len );)
+=======
+            PELOGE(limLog( pMac, LOGE, "Adding Eid %d, len=%d", *pBcnIes, len );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, "Adding Eid %d, len=%d", *pBcnIes, len );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -898,7 +1050,11 @@ rrmFillBeaconIes( tpAniSirGlobal pMac,
    }
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "Total length of Ies added = %d\n", *pNumIes );)
+=======
+   PELOGE(limLog( pMac, LOGE, "Total length of Ies added = %d", *pNumIes );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, "Total length of Ies added = %d", *pNumIes );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -930,14 +1086,20 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
    tpPESession pSessionEntry ;
    tANI_U8 sessionId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #if defined WLAN_VOWIFI_DEBUG
    PELOGE(limLog( pMac, LOGE, "Received beacon report xmit indication\n");)  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U8_t flagBSSPresent = FALSE;
 
 #if defined WLAN_VOWIFI_DEBUG
    PELOGE(limLog( pMac, LOGE, "Received beacon report xmit indication");)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    if(NULL == pBcnReport)
@@ -946,7 +1108,11 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
    if ( pCurrentReq == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "Received report xmit while there is no request pending in PE\n");)
+=======
+      PELOGE(limLog( pMac, LOGE, "Received report xmit while there is no request pending in PE");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "Received report xmit while there is no request pending in PE");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -955,7 +1121,11 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
    if ((pSessionEntry = peFindSessionByBssid(pMac,pBcnReport->bssId,&sessionId))==NULL)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -970,6 +1140,7 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
    pReport->incapable = 0;
    pReport->type = SIR_MAC_RRM_BEACON_TYPE;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    //Valid response is included if the size of beacon xmit is == size of beacon xmit ind + ies 
    if ( pBcnReport->length > sizeof( tSirBeaconReportXmitInd ) )
@@ -987,6 +1158,8 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
       pReport->report.beaconReport.parentTSF = pBcnReport->pBssDescription[0]->parentTSF; 
       palCopyMemory(pMac->hHdd, pReport->report.beaconReport.bssid, pBcnReport->pBssDescription[0]->bssId, sizeof(tSirMacAddr));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //If the scan result is NULL then send report request with option subelement as NULL..
    if ( NULL != pBcnReport->pBssDescription[0] )
    {
@@ -1014,6 +1187,9 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
           palCopyMemory(pMac->hHdd, pReport->report.beaconReport.bssid,
                         pBcnReport->pBssDescription[0]->bssId, sizeof(tSirMacAddr));
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       switch ( pCurrentReq->request.Beacon.reportingDetail )
@@ -1021,7 +1197,11 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
          case BEACON_REPORTING_DETAIL_NO_FF_IE: //0 No need to include any elements.
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, "No reporting detail requested\n");)
+=======
+            PELOGE(limLog(pMac, LOGE, "No reporting detail requested");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, "No reporting detail requested");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1029,6 +1209,7 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
             break;
          case BEACON_REPORTING_DETAIL_ALL_FF_REQ_IE: //1: Include all FFs and Requested Ies.
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
 <<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, "Only requested IEs in reporting detail requested\n");)
 #endif
@@ -1038,6 +1219,8 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
                   pCurrentReq->request.Beacon.reqIes.pElementIds, pCurrentReq->request.Beacon.reqIes.num,
                   pBcnReport->pBssDescription[0] );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PELOGE(limLog(pMac, LOGE, "Only requested IEs in reporting detail requested");)
 #endif
 
@@ -1048,12 +1231,16 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
                       pCurrentReq->request.Beacon.reqIes.pElementIds, pCurrentReq->request.Beacon.reqIes.num,
                       pBcnReport->pBssDescription[0] );
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             break;
          case BEACON_REPORTING_DETAIL_ALL_FF_IE: //2 / default - Include all FFs and all Ies.
          default:
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
 <<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, "Default all IEs and FFs\n");)
 #endif
@@ -1062,6 +1249,8 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
                   NULL, 0,
                   pBcnReport->pBssDescription[0] );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PELOGE(limLog(pMac, LOGE, "Default all IEs and FFs");)
 #endif
             if ( flagBSSPresent )
@@ -1071,15 +1260,24 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
                       NULL, 0,
                       pBcnReport->pBssDescription[0] );
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
       }
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "Sending Action frame \n");)
 #endif
       limSendRadioMeasureReportActionFrame( pMac, pCurrentReq->dialog_token, 1, 
+=======
+      PELOGE(limLog( pMac, LOGE, "Sending Action frame ");)
+#endif
+      limSendRadioMeasureReportActionFrame( pMac, pCurrentReq->dialog_token, 1,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "Sending Action frame ");)
 #endif
@@ -1091,7 +1289,11 @@ rrmProcessBeaconReportXmit( tpAniSirGlobal pMac,
    if( pBcnReport->fMeasureDone )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "Measurement done....cleanup the context\n");)
+=======
+      PELOGE(limLog( pMac, LOGE, "Measurement done....cleanup the context");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, "Measurement done....cleanup the context");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1113,7 +1315,11 @@ void rrmProcessBeaconRequestFailure(tpAniSirGlobal pMac, tpPESession pSessionEnt
     {
          limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL( "Unable to PAL allocate memory during RRM Req processing\n" ));
+=======
+               FL( "Unable to PAL allocate memory during RRM Req processing" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL( "Unable to PAL allocate memory during RRM Req processing" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1133,7 +1339,11 @@ void rrmProcessBeaconRequestFailure(tpAniSirGlobal pMac, tpPESession pSessionEnt
             break;
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, FL(" Beacon request processing failed no report sent with status %d \n"), status););
+=======
+            PELOGE(limLog( pMac, LOGE, FL(" Beacon request processing failed no report sent with status %d "), status););
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, FL(" Beacon request processing failed no report sent with status %d "), status););
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1147,7 +1357,11 @@ void rrmProcessBeaconRequestFailure(tpAniSirGlobal pMac, tpPESession pSessionEnt
     palFreeMemory( pMac->hHdd, pReport );
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog( pMac, LOGE, FL(" Free memory for pReport\n") );)
+=======
+    PELOGE(limLog( pMac, LOGE, FL(" Free memory for pReport") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog( pMac, LOGE, FL(" Free memory for pReport") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1176,7 +1390,11 @@ void rrmProcessBeaconRequestFailure(tpAniSirGlobal pMac, tpPESession pSessionEnt
  */
 tSirRetStatus
 <<<<<<< HEAD
+<<<<<<< HEAD
 rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac, 
+=======
+rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1196,8 +1414,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
       //No measurement requests....
       //
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, "No requestIes in the measurement request\n" );)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
                (void **) &pReport,
                sizeof( tSirMacRadioMeasureReport ) ) )
@@ -1216,6 +1437,9 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
                   pReport, peer, pSessionEntry );
       palFreeMemory( pMac->hHdd, pReport );
       PELOGE(limLog( pMac, LOGE, "No requestIes in the measurement request" );)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eSIR_FAILURE;
    }
@@ -1230,7 +1454,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
       {
          limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL( "Unable to PAL allocate memory during RRM Req processing\n" ));
+=======
+               FL( "Unable to PAL allocate memory during RRM Req processing" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL( "Unable to PAL allocate memory during RRM Req processing" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1239,7 +1467,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
       palZeroMemory( pMac->hHdd, pReport, sizeof(tSirMacRadioMeasureReport) );
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pReport\n") );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pReport") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pReport") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1267,7 +1499,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
                   {
                      limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            FL( "Unable to PAL allocate memory during RRM Req processing\n" ));
+=======
+                           FL( "Unable to PAL allocate memory during RRM Req processing" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            FL( "Unable to PAL allocate memory during RRM Req processing" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1276,7 +1512,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
                   palZeroMemory( pMac->hHdd, pReport, sizeof( tSirMacRadioMeasureReport ) * (pRRMReq->num_MeasurementRequest - i) ); 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
                   limLog( pMac, LOGE, FL(" Allocated memory for pReport\n") );
+=======
+                  limLog( pMac, LOGE, FL(" Allocated memory for pReport") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   limLog( pMac, LOGE, FL(" Allocated memory for pReport") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1297,18 +1537,24 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
                {
                   limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         FL( "Unable to PAL allocate memory during RRM Req processing\n" ));
                   return eSIR_MEM_ALLOC_FAILED;
                }
 #if defined WLAN_VOWIFI_DEBUG
                PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pCurrentReq\n") );)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         FL( "Unable to PAL allocate memory during RRM Req processing" ));
                   palFreeMemory( pMac->hHdd, pReport );
                   return eSIR_MEM_ALLOC_FAILED;
                }
 #if defined WLAN_VOWIFI_DEBUG
                PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pCurrentReq") );)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
                palZeroMemory( pMac->hHdd, pCurrentReq, sizeof( *pCurrentReq ) );
@@ -1333,7 +1579,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
                {
                   limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         FL( "Unable to PAL allocate memory during RRM Req processing\n" ));
+=======
+                        FL( "Unable to PAL allocate memory during RRM Req processing" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         FL( "Unable to PAL allocate memory during RRM Req processing" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1342,7 +1592,11 @@ rrmProcessRadioMeasurementRequest( tpAniSirGlobal pMac,
                palZeroMemory( pMac->hHdd, pReport, sizeof( tSirMacRadioMeasureReport ) * (pRRMReq->num_MeasurementRequest - i) ); 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
                PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pReport\n") );)
+=======
+               PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pReport") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                PELOGE(limLog( pMac, LOGE, FL(" Allocated memory for pReport") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1366,7 +1620,11 @@ end:
       palFreeMemory( pMac->hHdd, pReport );
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL(" Free memory for pReport\n") );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL(" Free memory for pReport") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL(" Free memory for pReport") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1396,7 +1654,11 @@ rrmUpdateStartTSF ( tpAniSirGlobal pMac, tANI_U32 startTSF[2] )
 {
 #if 0 //defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    limLog( pMac, LOGE, "Update Start TSF = %d %d\n", startTSF[0], startTSF[1] ); 
+=======
+   limLog( pMac, LOGE, "Update Start TSF = %d %d", startTSF[0], startTSF[1] );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    limLog( pMac, LOGE, "Update Start TSF = %d %d", startTSF[0], startTSF[1] );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1425,7 +1687,11 @@ rrmGetStartTSF ( tpAniSirGlobal pMac, tANI_U32 *pStartTSF )
 {
 #if 0 //defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    limLog( pMac, LOGE, "Get the start TSF, TSF = %d %d \n", pMac->rrm.rrmPEContext.startTSF[0], pMac->rrm.rrmPEContext.startTSF[1] ); 
+=======
+   limLog( pMac, LOGE, "Get the start TSF, TSF = %d %d ", pMac->rrm.rrmPEContext.startTSF[0], pMac->rrm.rrmPEContext.startTSF[1] );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    limLog( pMac, LOGE, "Get the start TSF, TSF = %d %d ", pMac->rrm.rrmPEContext.startTSF[0], pMac->rrm.rrmPEContext.startTSF[1] );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1481,7 +1747,11 @@ void rrmUpdateConfig ( tpAniSirGlobal pMac,
    if (wlan_cfgGetInt(pMac, WNI_CFG_RRM_ENABLED, &val) != eSIR_SUCCESS)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        limLog(pMac, LOGP, FL("cfg get rrm enabled failed\n"));
+=======
+       limLog(pMac, LOGP, FL("cfg get rrm enabled failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        limLog(pMac, LOGP, FL("cfg get rrm enabled failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1492,7 +1762,11 @@ void rrmUpdateConfig ( tpAniSirGlobal pMac,
    if (wlan_cfgGetInt(pMac, WNI_CFG_RRM_OPERATING_CHAN_MAX, &val) != eSIR_SUCCESS)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        limLog(pMac, LOGP, FL("cfg get rrm operating channel max measurement duration failed\n"));
+=======
+       limLog(pMac, LOGP, FL("cfg get rrm operating channel max measurement duration failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        limLog(pMac, LOGP, FL("cfg get rrm operating channel max measurement duration failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1503,7 +1777,11 @@ void rrmUpdateConfig ( tpAniSirGlobal pMac,
    if (wlan_cfgGetInt(pMac, WNI_CFG_RRM_NON_OPERATING_CHAN_MAX, &val) != eSIR_SUCCESS)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        limLog(pMac, LOGP, FL("cfg get rrm non-operating channel max measurement duration failed\n"));
+=======
+       limLog(pMac, LOGP, FL("cfg get rrm non-operating channel max measurement duration failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        limLog(pMac, LOGP, FL("cfg get rrm non-operating channel max measurement duration failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1513,7 +1791,11 @@ void rrmUpdateConfig ( tpAniSirGlobal pMac,
 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
    PELOGE(limLog( pMac, LOGE, "RRM enabled = %d  OperatingChanMax = %d  NonOperatingMax = %d\n", pMac->rrm.rrmPEContext.rrmEnable,
+=======
+   PELOGE(limLog( pMac, LOGE, "RRM enabled = %d  OperatingChanMax = %d  NonOperatingMax = %d", pMac->rrm.rrmPEContext.rrmEnable,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    PELOGE(limLog( pMac, LOGE, "RRM enabled = %d  OperatingChanMax = %d  NonOperatingMax = %d", pMac->rrm.rrmPEContext.rrmEnable,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1591,7 +1873,11 @@ rrmCleanup(tpAniSirGlobal pMac)
          palFreeMemory( pMac->hHdd, pMac->rrm.rrmPEContext.pCurrentReq->request.Beacon.reqIes.pElementIds );
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
          PELOGE(limLog( pMac, LOGE, FL(" Free memory for pElementIds\n") );)
+=======
+         PELOGE(limLog( pMac, LOGE, FL(" Free memory for pElementIds") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          PELOGE(limLog( pMac, LOGE, FL(" Free memory for pElementIds") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1601,7 +1887,11 @@ rrmCleanup(tpAniSirGlobal pMac)
       palFreeMemory( pMac->hHdd, pMac->rrm.rrmPEContext.pCurrentReq ); 
 #if defined WLAN_VOWIFI_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL(" Free memory for pCurrentReq\n") );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL(" Free memory for pCurrentReq") );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL(" Free memory for pCurrentReq") );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

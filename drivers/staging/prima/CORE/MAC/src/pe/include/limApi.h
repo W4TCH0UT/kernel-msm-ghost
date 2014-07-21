@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -61,9 +67,12 @@
 #include "aniGlobal.h"
 #include "sirMacProtDef.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 #include "sirMacPropExts.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "sirCommon.h"
@@ -73,9 +82,13 @@
 #include "limGlobal.h"
 #include "halMsgApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "wlan_qct_wdi_ds.h"
 #endif
+=======
+#include "wlan_qct_wdi_ds.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wlan_qct_wdi_ds.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -137,9 +150,13 @@ extern tSirRetStatus limInitialize(tpAniSirGlobal);
 tSirRetStatus peOpen(tpAniSirGlobal pMac, tMacOpenParameters *pMacOpenParam);
 tSirRetStatus peClose(tpAniSirGlobal pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 tSirRetStatus limStart(tpAniSirGlobal pMac);
 #endif
+=======
+tSirRetStatus limStart(tpAniSirGlobal pMac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus limStart(tpAniSirGlobal pMac);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -161,10 +178,13 @@ extern void limCleanup(tpAniSirGlobal);
 extern tANI_U32  limPostMsgApi(tpAniSirGlobal, tSirMsgQ *);
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Function to fetch messages posted LIM thread
  */
 extern void limProcessMessageQueue(tpAniSirGlobal);
 /**
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Function to process messages posted to LIM thread
@@ -176,6 +196,7 @@ extern void limProcessMessages(tpAniSirGlobal, tpSirMsgQ); // DT test alt deferr
  * Function to check the LIM state if system is in Scan/Learn state.
  */
 extern tANI_U8 limIsSystemInScanState(tpAniSirGlobal);
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 /**
@@ -189,6 +210,8 @@ extern void limSetLearnMode(tpAniSirGlobal);
  */
 extern void limReEnableLearnMode(tpAniSirGlobal);
 #endif //#if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -216,12 +239,18 @@ extern void limInitWdsInfoParams(tpAniSirGlobal);
 extern void limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
 // Function that sends TDLS Del Sta indication to SME
 extern void limSendSmeTDLSDelStaInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psessionEntry, tANI_U16 reasonCode);
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Function that checks for change in AP's capabilties on STA
 extern void limDetectChangeInApCapabilities(tpAniSirGlobal,
@@ -238,7 +267,11 @@ extern void limSendDeltsReq (tpAniSirGlobal pMac, tANI_U16 staid, tANI_U8 tsid, 
 extern void limPostStartLearnModeMsgToSch(tpAniSirGlobal pMac);
 #ifdef WLAN_FEATURE_11AC
 <<<<<<< HEAD
+<<<<<<< HEAD
 extern ePhyChanBondState limGet11ACPhyCBState(tpAniSirGlobal pMac, tANI_U8 channel, tANI_U8 htSecondaryChannelOffset );
+=======
+extern ePhyChanBondState limGet11ACPhyCBState(tpAniSirGlobal pMac, tANI_U8 channel, tANI_U8 htSecondaryChannelOffset, tANI_U8 CenterChan,tpPESession );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 extern ePhyChanBondState limGet11ACPhyCBState(tpAniSirGlobal pMac, tANI_U8 channel, tANI_U8 htSecondaryChannelOffset, tANI_U8 CenterChan,tpPESession );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -248,6 +281,7 @@ tANI_U8 limIsSystemInActiveState(tpAniSirGlobal pMac);
 tSirRetStatus limUpdateGlobalChannelBonding(tpAniSirGlobal pMac, tHalBitVal cbBit);
 #endif /* 0 */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 extern void setupQuietBss( tpAniSirGlobal pMac, tANI_U32 learnInterval );
@@ -267,6 +301,11 @@ void limHandleLowRssiInd(tpAniSirGlobal pMac);
 void limHandleBmpsStatusInd(tpAniSirGlobal pMac);
 void limHandleMissedBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+void limHandleLowRssiInd(tpAniSirGlobal pMac);
+void limHandleBmpsStatusInd(tpAniSirGlobal pMac);
+void limHandleMissedBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tMgmtFrmDropReason limIsPktCandidateForDrop(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tANI_U32 subType);
 void limMicFailureInd(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
 /* ----------------------------------------------------------------------- */
@@ -276,17 +315,23 @@ extern void limGetBssid(tpAniSirGlobal pMac, tANI_U8 *bssId);
 extern void limGetMyMacAddr(tpAniSirGlobal pMac, tANI_U8 *mac);
 extern tSirRetStatus limCheckRxSeqNumber(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define limGetQosMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->limQosEnabled
 #define limGetWmeMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->limWmeEnabled
 #define limGetWsmMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->limWsmEnabled
 #define limGet11dMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->lim11dEnabled
 #define limGetAckPolicy(pMac, pVal)         *(pVal) = pMac->lim.ackPolicy
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define limGetQosMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->limQosEnabled)
 #define limGetWmeMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->limWmeEnabled)
 #define limGetWsmMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->limWsmEnabled)
 #define limGet11dMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->lim11dEnabled)
 #define limGetAckPolicy(pMac, pVal)         (*(pVal) = pMac->lim.ackPolicy)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ----------------------------------------------------------------------- */
 static inline void limGetPhyMode(tpAniSirGlobal pMac, tANI_U32 *phyMode, tpPESession psessionEntry)

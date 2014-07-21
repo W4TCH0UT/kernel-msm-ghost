@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -68,6 +74,7 @@
 #include "aniGlobal.h" //for tpAniSirGlobal
 #include "wlan_qct_wda.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "halMsgApi.h" //for HAL_STA_INVALID_IDX.
 #endif
@@ -75,6 +82,9 @@
 #include "halPhyApi.h"
 #include "halInternal.h"
 #endif
+=======
+#include "halMsgApi.h" //for HAL_STA_INVALID_IDX.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "halMsgApi.h" //for HAL_STA_INVALID_IDX.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -103,7 +113,11 @@
 #define CSR_DEF_IBSS_START_CHANNEL_24       1
 #define CSR_IBSS_JOIN_TIMEOUT_PERIOD        ( 1 *  PAL_TIMER_TO_SEC_UNIT )  // 1 second
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CSR_WAIT_FOR_KEY_TIMEOUT_PERIOD         ( 50 * PAL_TIMER_TO_SEC_UNIT )  // 50 seconds, for WPA, WPA2, CCKM
+=======
+#define CSR_WAIT_FOR_KEY_TIMEOUT_PERIOD         ( 5 * PAL_TIMER_TO_SEC_UNIT )  // 5 seconds, for WPA, WPA2, CCKM
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define CSR_WAIT_FOR_KEY_TIMEOUT_PERIOD         ( 5 * PAL_TIMER_TO_SEC_UNIT )  // 5 seconds, for WPA, WPA2, CCKM
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -134,10 +148,13 @@
   Static Type declarations
   ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 static tChannelListWithPower csrRoamPowerTableFromEeprom[WNI_CFG_VALID_CHANNEL_LIST_LEN];
 static tChannelListWithPower csrRoamPowerTableFromEeprom40MHz[WNI_CFG_VALID_CHANNEL_LIST_LEN];
 static tCsrRoamSession       csrRoamRoamSession[CSR_ROAM_SESSION_MAX];
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static tCsrRoamSession csrRoamRoamSession[CSR_ROAM_SESSION_MAX];
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 static const char KR_3[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
@@ -150,6 +167,9 @@ static const char KR_25[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
                             36, 40, 44, 48, 149, 153, 157, 161};
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*-------------------------------------------------------------------------- 
   Type declarations
@@ -224,7 +244,11 @@ static void initConfigParam(tpAniSirGlobal pMac);
 static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pCommand,
                                        eCsrRoamCompleteResult Result, void *Context );
 <<<<<<< HEAD
+<<<<<<< HEAD
 static eHalStatus csrRoamStartIbss( tpAniSirGlobal pMac, tANI_U32 sessionId, 
+=======
+static eHalStatus csrRoamStartIbss( tpAniSirGlobal pMac, tANI_U32 sessionId,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static eHalStatus csrRoamStartIbss( tpAniSirGlobal pMac, tANI_U32 sessionId,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -277,11 +301,15 @@ eHalStatus csrSendMBStatsReqMsg( tpAniSirGlobal pMac, tANI_U32 statsMask, tANI_U
 */
 static void csrRoamRemoveStatListEntry(tpAniSirGlobal pMac, tListElem *pEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile,tANI_U8 operationChn, eCsrBand *pBand );
 #else
 static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, eCsrPhyMode phyModeIn, tANI_U8 operationChn, eCsrBand *pBand );
 #endif
+=======
+static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile,tANI_U8 operationChn, eCsrBand *pBand );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile,tANI_U8 operationChn, eCsrBand *pBand );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -323,9 +351,14 @@ static void csrRoamInitGlobals(tpAniSirGlobal pMac)
     if(pMac)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pMac->roam.powerTableFromEeprom      = csrRoamPowerTableFromEeprom;
         pMac->roam.powerTableFromEeprom40MHz = csrRoamPowerTableFromEeprom40MHz;
         pMac->roam.roamSession               = csrRoamRoamSession;
+=======
+        vos_mem_zero(&csrRoamRoamSession, sizeof(csrRoamRoamSession));
+        pMac->roam.roamSession = csrRoamRoamSession;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         vos_mem_zero(&csrRoamRoamSession, sizeof(csrRoamRoamSession));
         pMac->roam.roamSession = csrRoamRoamSession;
@@ -339,9 +372,13 @@ static void csrRoamDeInitGlobals(tpAniSirGlobal pMac)
     if(pMac)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pMac->roam.powerTableFromEeprom      = NULL;
         pMac->roam.powerTableFromEeprom40MHz = NULL;
         pMac->roam.roamSession               = NULL;
+=======
+        pMac->roam.roamSession = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pMac->roam.roamSession = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -385,7 +422,11 @@ eHalStatus csrOpen(tpAniSirGlobal pMac)
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("  fail to get NV_FIELD_IMAGE\n") );
+=======
+            smsLog( pMac, LOGE, FL("  fail to get NV_FIELD_IMAGE") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("  fail to get NV_FIELD_IMAGE") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -395,8 +436,13 @@ eHalStatus csrOpen(tpAniSirGlobal pMac)
             pMac->scan.countryCodeDefault[2] = 'I';
             //status = eHAL_STATUS_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
         }        
         smsLog( pMac, LOGE, FL(" country Code from nvRam %s\n"), pMac->scan.countryCodeDefault );
+=======
+        }
+        smsLog( pMac, LOG1, FL(" country Code from nvRam %.2s"), pMac->scan.countryCodeDefault );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         }
         smsLog( pMac, LOG1, FL(" country Code from nvRam %.2s"), pMac->scan.countryCodeDefault );
@@ -414,7 +460,10 @@ eHalStatus csrOpen(tpAniSirGlobal pMac)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrSetRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode)
@@ -425,6 +474,7 @@ eHalStatus csrSetRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode)
     v_U8_t        cntryCodeLength;
     if(NULL == apCntryCode)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
        smsLog( pMac, LOGW, FL(" Invalid country Code Pointer\n") );
        return eHAL_STATUS_FAILURE;
@@ -439,6 +489,8 @@ eHalStatus csrSetRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode)
     {
         smsLog( pMac, LOGE, FL("  fail to get regId for country Code %s\n"), apCntryCode );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        smsLog( pMac, LOGW, FL(" Invalid country Code Pointer") );
        return eHAL_STATUS_FAILURE;
     }
@@ -460,6 +512,9 @@ eHalStatus csrSetRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode)
     if (status != eHAL_STATUS_SUCCESS)
     {
         smsLog( pMac, LOGE, FL("  fail to get regId for country Code %.2s"), apCntryCode );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return status;
     }
@@ -467,7 +522,11 @@ eHalStatus csrSetRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode)
     if (status != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("  fail to get regId for country Code %s\n"), apCntryCode );
+=======
+        smsLog( pMac, LOGE, FL("  fail to get regId for country Code %.2s"), apCntryCode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("  fail to get regId for country Code %.2s"), apCntryCode );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -515,6 +574,7 @@ eHalStatus csrSetChannels(tHalHandle hHal,  tCsrConfigParam *pParam  )
     return status;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 eHalStatus csrClose(tpAniSirGlobal pMac)
 {
@@ -522,10 +582,15 @@ eHalStatus csrClose(tpAniSirGlobal pMac)
     
     csrStop(pMac);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrClose(tpAniSirGlobal pMac)
 {
     eHalStatus status = eHAL_STATUS_SUCCESS;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrRoamClose(pMac);
     csrScanClose(pMac);
@@ -566,7 +631,11 @@ eHalStatus csrStart(tpAniSirGlobal pMac)
         if(!HAL_STATUS_SUCCESS(status)) 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
            smsLog(pMac, LOGW, " csrStart: Couldn't Init HO control blk \n");
+=======
+           smsLog(pMac, LOGW, " csrStart: Couldn't Init HO control blk ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            smsLog(pMac, LOGW, " csrStart: Couldn't Init HO control blk ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -603,7 +672,11 @@ eHalStatus csrStop(tpAniSirGlobal pMac)
     //Reset the domain back to the deault
     pMac->scan.domainIdCurrent = pMac->scan.domainIdDefault;
 <<<<<<< HEAD
+<<<<<<< HEAD
     csrResetCountryInformation(pMac, eANI_BOOLEAN_TRUE);
+=======
+    csrResetCountryInformation(pMac, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_FALSE );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     csrResetCountryInformation(pMac, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_FALSE );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -627,13 +700,19 @@ eHalStatus csrReady(tpAniSirGlobal pMac)
     /* HDD issues the init scan */
     csrScanStartResultAgingTimer(pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* If the gScanAgingTime is set to '0' then scan results aging timeout 
          based  on timer feature is not enabled*/  
     if(0 != pMac->scan.scanResultCfgAgingTime )
     {
        csrScanStartResultCfgAgingTimer(pMac);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Store the AC weights in TL for later use
     WLANTL_GetACWeights(pMac->roam.gVosContext, pMac->roam.ucACWeights);
@@ -641,7 +720,11 @@ eHalStatus csrReady(tpAniSirGlobal pMac)
     if ( ! HAL_STATUS_SUCCESS( status ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "csrInitChannelList failed during csrReady with status=%d\n",
+=======
+       smsLog( pMac, LOGE, "csrInitChannelList failed during csrReady with status=%d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog( pMac, LOGE, "csrInitChannelList failed during csrReady with status=%d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -695,7 +778,11 @@ eHalStatus csrRoamOpen(tpAniSirGlobal pMac)
       if(!HAL_STATUS_SUCCESS(status))
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("cannot allocate memory for WaitForKey time out timer\n"));
+=======
+        smsLog(pMac, LOGE, FL("cannot allocate memory for WaitForKey time out timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("cannot allocate memory for WaitForKey time out timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -705,7 +792,11 @@ eHalStatus csrRoamOpen(tpAniSirGlobal pMac)
       if(!HAL_STATUS_SUCCESS(status))
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, FL("cannot allocate memory for summary Statistics timer\n"));
+=======
+         smsLog(pMac, LOGE, FL("cannot allocate memory for summary Statistics timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, FL("cannot allocate memory for summary Statistics timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -745,7 +836,11 @@ eHalStatus csrRoamGetConnectState(tpAniSirGlobal pMac, tANI_U32 sessionId, eCsrC
 {
     eHalStatus status = eHAL_STATUS_INVALID_PARAMETER;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( pState )
+=======
+    if ( CSR_IS_SESSION_VALID(pMac, sessionId) && (NULL != pState) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if ( CSR_IS_SESSION_VALID(pMac, sessionId) && (NULL != pState) )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -850,11 +945,17 @@ eHalStatus csrRoamFreeConnectProfile(tpAniSirGlobal pMac, tCsrRoamConnectedProfi
         palFreeMemory(pMac->hHdd, pProfile->pBssDesc);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pProfile->pAddIEAssoc)
     {
         palFreeMemory(pMac->hHdd, pProfile->pAddIEAssoc);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palZeroMemory(pMac->hHdd, pProfile, sizeof(tCsrRoamConnectedProfile));
     pProfile->AuthType = eCSR_AUTH_TYPE_UNKNOWN;
@@ -938,6 +1039,7 @@ void csrAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
         {
         case eSmeCommandScan:
 <<<<<<< HEAD
+<<<<<<< HEAD
             // We need to inform the requester before droping the scan command
             smsLog( pMac, LOGW, "%s: Drop scan reason %d callback 0x%X\n", 
                 __FUNCTION__, pCommand->u.scanCmd.reason, (unsigned int)pCommand->u.scanCmd.callback);
@@ -945,12 +1047,17 @@ void csrAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
             {
                 smsLog( pMac, LOGW, "%s callback scan requester\n", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // We need to inform the requester before dropping the scan command
             smsLog( pMac, LOGW, "%s: Drop scan reason %d callback 0x%X",
                 __func__, pCommand->u.scanCmd.reason, (unsigned int)pCommand->u.scanCmd.callback);
             if (NULL != pCommand->u.scanCmd.callback)
             {
                 smsLog( pMac, LOGW, "%s callback scan requester", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrScanCallCallback(pMac, pCommand, eCSR_SCAN_ABORT);
             }
@@ -974,7 +1081,11 @@ void csrAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 
     default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, " CSR abort standard command %d\n", pCommand->command );
+=======
+            smsLog( pMac, LOGW, " CSR abort standard command %d", pCommand->command );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, " CSR abort standard command %d", pCommand->command );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -987,7 +1098,11 @@ void csrAbortCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fStop
 void csrRoamSubstateChange( tpAniSirGlobal pMac, eCsrRoamSubState NewSubstate, tANI_U32 sessionId)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG1, "   CSR RoamSubstate: [ %d <== %d ]\n", NewSubstate, pMac->roam.curSubState[sessionId]);
+=======
+    smsLog( pMac, LOG1, "   CSR RoamSubstate: [ %d <== %d ]", NewSubstate, pMac->roam.curSubState[sessionId]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG1, "   CSR RoamSubstate: [ %d <== %d ]", NewSubstate, pMac->roam.curSubState[sessionId]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1004,7 +1119,11 @@ eCsrRoamState csrRoamStateChange( tpAniSirGlobal pMac, eCsrRoamState NewRoamStat
     eCsrRoamState PreviousState;
           
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG1, "CSR RoamState: [ %d <== %d ]\n", NewRoamState, pMac->roam.curState[sessionId]);
+=======
+    smsLog( pMac, LOG1, "CSR RoamState: [ %d <== %d ]", NewRoamState, pMac->roam.curState[sessionId]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG1, "CSR RoamState: [ %d <== %d ]", NewRoamState, pMac->roam.curState[sessionId]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1079,7 +1198,10 @@ static void initConfigParam(tpAniSirGlobal pMac)
     pMac->roam.configParam.nPassiveMaxChnTime = CSR_PASSIVE_MAX_CHANNEL_TIME;
     pMac->roam.configParam.nPassiveMinChnTime = CSR_PASSIVE_MIN_CHANNEL_TIME;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->roam.configParam.nActiveMaxChnTimeBtc = CSR_ACTIVE_MAX_CHANNEL_TIME_BTC;
     pMac->roam.configParam.nActiveMinChnTimeBtc = CSR_ACTIVE_MIN_CHANNEL_TIME_BTC;
     pMac->roam.configParam.disableAggWithBtc = eANI_BOOLEAN_TRUE;
@@ -1092,6 +1214,9 @@ static void initConfigParam(tpAniSirGlobal pMac)
     pMac->roam.configParam.nNumStaChanCombinedConc = CSR_NUM_STA_CHAN_COMBINED_CONC;
     pMac->roam.configParam.nNumP2PChanCombinedConc = CSR_NUM_P2P_CHAN_COMBINED_CONC;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->roam.configParam.IsIdleScanEnabled = TRUE; //enable the idle scan by default
     pMac->roam.configParam.nTxPowerCap = CSR_MAX_TX_POWER;
@@ -1113,6 +1238,10 @@ static void initConfigParam(tpAniSirGlobal pMac)
     pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.channelList[2] = 11;
     pMac->roam.configParam.neighborRoamConfig.nNeighborResultsRefreshPeriod = 20000; //20 seconds
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    pMac->roam.configParam.neighborRoamConfig.nEmptyScanRefreshPeriod = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pMac->roam.configParam.neighborRoamConfig.nEmptyScanRefreshPeriod = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1125,6 +1254,11 @@ static void initConfigParam(tpAniSirGlobal pMac)
     pMac->roam.configParam.fScanTwice = eANI_BOOLEAN_FALSE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    //Remove this code once SLM_Sessionization is supported 
+    //BMPS_WORKAROUND_NOT_NEEDED
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     //Remove this code once SLM_Sessionization is supported 
     //BMPS_WORKAROUND_NOT_NEEDED
@@ -1138,7 +1272,10 @@ eCsrBand csrGetCurrentBand(tHalHandle hHal)
     return pMac->roam.configParam.bandCapability;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 tANI_BOOLEAN csrIsChannelInCountryValidList(tpAniSirGlobal pMac, tANI_U8 channel)
@@ -1354,6 +1491,9 @@ eHalStatus csrInitCountryValidChannelList(tpAniSirGlobal pMac,
 
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand)
 {
@@ -1363,15 +1503,21 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand)
             (eBand == eCSR_BAND_24))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* DOT11 mode configured to 11a only and received 
            request to change the band to 2.4 GHz */
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
             "failed to set band cfg80211 = %u, band = %u\n",  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* DOT11 mode configured to 11a only and received
            request to change the band to 2.4 GHz */
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
             "failed to set band cfg80211 = %u, band = %u",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->roam.configParam.uCfgDot11Mode, eBand);
         return eHAL_STATUS_INVALID_PARAMETER;
@@ -1380,6 +1526,7 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand)
                 CSR_IS_PHY_MODE_G_ONLY(pMac)) &&
             (eBand == eCSR_BAND_5G))
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         /* DOT11 mode configured to 11b/11g only and received 
            request to change the band to 5 GHz */
@@ -1394,6 +1541,8 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand)
     pMac->roam.configParam.bandCapability = eBand; 
     csrScanGetSupportedChannels( pMac );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* DOT11 mode configured to 11b/11g only and received
            request to change the band to 5 GHz */
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
@@ -1409,6 +1558,9 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand)
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     csrUpdateBgScanConfigIniChannelList( pMac, eBand );
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = csrInitGetChannels( pMac );
     if (eHAL_STATUS_SUCCESS == status)
@@ -1416,6 +1568,11 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand)
     return status;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 
@@ -1556,7 +1713,11 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         if (pParam->channelBondingMode24GHz > MAX_CB_VALUE_IN_INI)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, "Invalid CB value from ini in 2.4GHz band %d, CB DISABLED\n", pParam->channelBondingMode24GHz); 
+=======
+            smsLog( pMac, LOGW, "Invalid CB value from ini in 2.4GHz band %d, CB DISABLED", pParam->channelBondingMode24GHz);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, "Invalid CB value from ini in 2.4GHz band %d, CB DISABLED", pParam->channelBondingMode24GHz);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1565,7 +1726,11 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         if (pParam->channelBondingMode5GHz > MAX_CB_VALUE_IN_INI)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, "Invalid CB value from ini in 5GHz band %d, CB DISABLED\n", pParam->channelBondingMode5GHz); 
+=======
+            smsLog( pMac, LOGW, "Invalid CB value from ini in 5GHz band %d, CB DISABLED", pParam->channelBondingMode5GHz);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, "Invalid CB value from ini in 5GHz band %d, CB DISABLED", pParam->channelBondingMode5GHz);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1583,6 +1748,7 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         pMac->roam.configParam.bandCapability = pParam->bandCapability;
         pMac->roam.configParam.cbChoice = pParam->cbChoice;
         pMac->roam.configParam.bgScanInterval = pParam->bgScanInterval;
+<<<<<<< HEAD
 <<<<<<< HEAD
         //if HDD passed down non zero values then only update,
         //otherwise keep using the defaults
@@ -1605,6 +1771,8 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         //if upper layer wants to disable idle scan altogether set it to 0
         if(pParam->impsSleepTime)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->roam.configParam.disableAggWithBtc = pParam->disableAggWithBtc;
         //if HDD passed down non zero values then only update,
         //otherwise keep using the defaults
@@ -1664,6 +1832,9 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
 #endif
         //if upper layer wants to disable idle scan altogether set it to 0
         if (pParam->impsSleepTime)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             //Change the unit from second to microsecond
@@ -1683,6 +1854,7 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         }
         pMac->roam.configParam.eBand = pParam->eBand;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         pMac->roam.configParam.uCfgDot11Mode = csrGetCfgDot11ModeFromCsrPhyMode(NULL, pMac->roam.configParam.phyMode, 
                                                     pMac->roam.configParam.ProprietaryRatesEnabled);
@@ -1694,11 +1866,16 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         //otherwise keep using the defaults
         if(pParam->nScanResultAgeCount)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->roam.configParam.uCfgDot11Mode = csrGetCfgDot11ModeFromCsrPhyMode(NULL, pMac->roam.configParam.phyMode, 
                                                     pMac->roam.configParam.ProprietaryRatesEnabled);
         //if HDD passed down non zero values for age params, then only update,
         //otherwise keep using the defaults
         if (pParam->nScanResultAgeCount)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             pMac->roam.configParam.agingCount = pParam->nScanResultAgeCount;
@@ -1751,9 +1928,15 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_VOWIFI_11R 
         palCopyMemory( pMac->hHdd, &pMac->roam.configParam.csr11rConfig, &pParam->csr11rConfig, sizeof(tCsr11rConfigParams) );
         smsLog( pMac, LOG1, "IsFTResourceReqSupp = %d\n", pMac->roam.configParam.csr11rConfig.IsFTResourceReqSupported); 
+=======
+#ifdef WLAN_FEATURE_VOWIFI_11R
+        palCopyMemory( pMac->hHdd, &pMac->roam.configParam.csr11rConfig, &pParam->csr11rConfig, sizeof(tCsr11rConfigParams) );
+        smsLog( pMac, LOG1, "IsFTResourceReqSupp = %d", pMac->roam.configParam.csr11rConfig.IsFTResourceReqSupported);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WLAN_FEATURE_VOWIFI_11R
         palCopyMemory( pMac->hHdd, &pMac->roam.configParam.csr11rConfig, &pParam->csr11rConfig, sizeof(tCsr11rConfigParams) );
@@ -1764,6 +1947,7 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         pMac->roam.configParam.isFastTransitionEnabled = pParam->isFastTransitionEnabled;
         pMac->roam.configParam.RoamRssiDiff = pParam->RoamRssiDiff;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 #ifdef FEATURE_WLAN_LFR 
         pMac->roam.configParam.isFastRoamIniFeatureEnabled = pParam->isFastRoamIniFeatureEnabled;
@@ -1771,6 +1955,8 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
 
 #ifdef FEATURE_WLAN_CCX 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->roam.configParam.nImmediateRoamRssiDiff = pParam->nImmediateRoamRssiDiff;
         smsLog( pMac, LOG1, "nImmediateRoamRssiDiff = %d",
                 pMac->roam.configParam.nImmediateRoamRssiDiff );
@@ -1788,11 +1974,15 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
 #endif
 
 #ifdef FEATURE_WLAN_CCX
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->roam.configParam.isCcxIniFeatureEnabled = pParam->isCcxIniFeatureEnabled;
 #endif
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
         palCopyMemory( pMac->hHdd, &pMac->roam.configParam.neighborRoamConfig, &pParam->neighborRoamConfig, sizeof(tCsrNeighborRoamConfigParams) );
+<<<<<<< HEAD
 <<<<<<< HEAD
         smsLog( pMac, LOG1, "nNeighborScanTimerPerioid = %d\n", pMac->roam.configParam.neighborRoamConfig.nNeighborScanTimerPeriod);
         smsLog( pMac, LOG1, "nNeighborReassocRssiThreshold = %d\n", pMac->roam.configParam.neighborRoamConfig.nNeighborReassocRssiThreshold);  
@@ -1805,6 +1995,8 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
            int i;
            smsLog( pMac, LOG1, FL("Num of Channels in CFG Channel List: %d\n"), pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOG1, "nNeighborScanTimerPerioid = %d", pMac->roam.configParam.neighborRoamConfig.nNeighborScanTimerPeriod);
         smsLog( pMac, LOG1, "nNeighborReassocRssiThreshold = %d", pMac->roam.configParam.neighborRoamConfig.nNeighborReassocRssiThreshold);
         smsLog( pMac, LOG1, "nNeighborLookupRssiThreshold = %d", pMac->roam.configParam.neighborRoamConfig.nNeighborLookupRssiThreshold);
@@ -1817,13 +2009,20 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         {
            int i;
            smsLog( pMac, LOG1, FL("Num of Channels in CFG Channel List: %d"), pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            for( i=0; i< pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels; i++)
            {
               smsLog( pMac, LOG1, "%d ", pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.channelList[i] );
            }
 <<<<<<< HEAD
+<<<<<<< HEAD
            smsLog( pMac, LOG1, "\n");
+=======
+           smsLog( pMac, LOG1, "");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            smsLog( pMac, LOG1, "");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1834,6 +2033,10 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
         pMac->scan.fEnableBypass11d = pParam->fEnableBypass11d;
         pMac->scan.fEnableDFSChnlScan = pParam->fEnableDFSChnlScan;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        pMac->scan.scanResultCfgAgingTime = pParam->scanCfgAgingTime;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pMac->scan.scanResultCfgAgingTime = pParam->scanCfgAgingTime;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1846,6 +2049,11 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
          * single session
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        //Remove this code once SLM_Sessionization is supported 
+        //BMPS_WORKAROUND_NOT_NEEDED
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         //Remove this code once SLM_Sessionization is supported 
         //BMPS_WORKAROUND_NOT_NEEDED
@@ -1855,14 +2063,20 @@ eHalStatus csrChangeDefaultConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pPa
 #ifdef WLAN_FEATURE_11AC
         pMac->roam.configParam.nVhtChannelWidth = pParam->nVhtChannelWidth;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
         pMac->scan.fIgnore_chan165 = pParam->fIgnore_chan165;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->roam.configParam.txBFEnable= pParam->enableTxBF;
         pMac->roam.configParam.txBFCsnValue = pParam->txBFCsnValue;
 #endif
         pMac->roam.configParam.txLdpcEnable = pParam->enableTxLdpc;
         pMac->roam.configParam.isAmsduSupportInAMPDU = pParam->isAmsduSupportInAMPDU;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     
@@ -1899,7 +2113,10 @@ eHalStatus csrGetConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pParam)
         pParam->nPassiveMaxChnTime = pMac->roam.configParam.nPassiveMaxChnTime;
         pParam->nPassiveMinChnTime = pMac->roam.configParam.nPassiveMinChnTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pParam->nActiveMaxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
         pParam->nActiveMinChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
         pParam->disableAggWithBtc = pMac->roam.configParam.disableAggWithBtc;
@@ -1912,6 +2129,9 @@ eHalStatus csrGetConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pParam)
         pParam->nNumStaChanCombinedConc = pMac->roam.configParam.nNumStaChanCombinedConc;
         pParam->nNumP2PChanCombinedConc = pMac->roam.configParam.nNumP2PChanCombinedConc;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Change the unit from microsecond to second
         pParam->impsSleepTime = pMac->roam.configParam.impsSleepTime / PAL_TIMER_TO_SEC_UNIT;
@@ -1938,15 +2158,21 @@ eHalStatus csrGetConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pParam)
         pParam->fEnableBypass11d = pMac->scan.fEnableBypass11d;
         pParam->fEnableDFSChnlScan = pMac->scan.fEnableDFSChnlScan;
 <<<<<<< HEAD
+<<<<<<< HEAD
         pParam->fIgnore_chan165= pMac->scan.fIgnore_chan165;
         pParam->fScanTwice = pMac->roam.configParam.fScanTwice;
         pParam->fFirstScanOnly2GChnl = pMac->scan.fFirstScanOnly2GChnl;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pParam->fScanTwice = pMac->roam.configParam.fScanTwice;
         pParam->fFirstScanOnly2GChnl = pMac->scan.fFirstScanOnly2GChnl;
         pParam->fEnableMCCMode = pMac->roam.configParam.fenableMCCMode;
         pParam->fAllowMCCGODiffBI = pMac->roam.configParam.fAllowMCCGODiffBI;
         pParam->scanCfgAgingTime = pMac->scan.scanResultCfgAgingTime;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
@@ -1955,14 +2181,20 @@ eHalStatus csrGetConfigParam(tpAniSirGlobal pMac, tCsrConfigParam *pParam)
 #ifdef WLAN_FEATURE_11AC
         pParam->nVhtChannelWidth = pMac->roam.configParam.nVhtChannelWidth;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pParam->enableTxBF = pMac->roam.configParam.txBFEnable;
         pParam->txBFCsnValue = pMac->roam.configParam.txBFCsnValue;
 #endif
         pParam->enableTxLdpc = pMac->roam.configParam.txLdpcEnable;
         pParam->isAmsduSupportInAMPDU = pMac->roam.configParam.isAmsduSupportInAMPDU;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         csrSetChannels(pMac, pParam);
 
@@ -2073,7 +2305,11 @@ eHalStatus csrSetPhyMode(tHalHandle hHal, tANI_U32 phyMode, eCsrBand eBand, tANI
             {
                 //We will never be here
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGE, FL(" cannot recognize the phy mode 0x%08X\n"), phyMode );
+=======
+                smsLog( pMac, LOGE, FL(" cannot recognize the phy mode 0x%08X"), phyMode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGE, FL(" cannot recognize the phy mode 0x%08X"), phyMode );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2171,7 +2407,10 @@ void csrPruneChannelListForMode( tpAniSirGlobal pMac, tCsrChannel *pChannelList 
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define INFRA_AP_DEFAULT_CHANNEL 6
@@ -2189,7 +2428,11 @@ eHalStatus csrIsValidChannel(tpAniSirGlobal pMac, tANI_U8 chnNum)
     return status;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2210,7 +2453,11 @@ eHalStatus csrInitGetChannels(tpAniSirGlobal pMac)
     if ( (VOS_STATUS_SUCCESS != vosStatus) || (num20MHzChannelsFound == 0) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("failed to get channels \n"));
+=======
+        smsLog( pMac, LOGE, FL("failed to get channels "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("failed to get channels "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2228,6 +2475,7 @@ eHalStatus csrInitGetChannels(tpAniSirGlobal pMac)
         for ( Index = 0; Index < num20MHzChannelsFound; Index++)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC /* Need to fix this while dealing with NV item */
             pMac->scan.base20MHzChannels.channelList[ Index ] = pMac->scan.defaultPowerTable[ Index ].chanId;
 #else
@@ -2235,6 +2483,9 @@ eHalStatus csrInitGetChannels(tpAniSirGlobal pMac)
            pMac->scan.defaultPowerTable[Index].chanId = Index + 1;
            pMac->scan.defaultPowerTable[Index].pwr = 25;
 #endif
+=======
+            pMac->scan.base20MHzChannels.channelList[ Index ] = pMac->scan.defaultPowerTable[ Index ].chanId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pMac->scan.base20MHzChannels.channelList[ Index ] = pMac->scan.defaultPowerTable[ Index ].chanId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2260,13 +2511,19 @@ eHalStatus csrInitChannelList( tHalHandle hHal )
     csrPruneChannelListForMode(pMac, &pMac->scan.baseChannels);
     csrPruneChannelListForMode(pMac, &pMac->scan.base20MHzChannels);
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Apply the base channel list, power info, and set the Country code...
     csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrSaveChannelPowerForBand(pMac, eANI_BOOLEAN_FALSE);
     csrSaveChannelPowerForBand(pMac, eANI_BOOLEAN_TRUE);
     // Apply the base channel list, power info, and set the Country code...
     csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent, eANI_BOOLEAN_TRUE );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  
     return (status);
@@ -2352,7 +2609,11 @@ static eHalStatus CsrInit11dInfo(tpAniSirGlobal pMac, tCsr11dinfo *ps11dinfo)
     {
         // Apply the base channel list, power info, and set the Country code...
 <<<<<<< HEAD
+<<<<<<< HEAD
         csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent );
+=======
+        csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent, eANI_BOOLEAN_TRUE );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent, eANI_BOOLEAN_TRUE );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2426,12 +2687,18 @@ void csrRoamRemoveDuplicateCommand(tpAniSirGlobal pMac, tANI_U32 sessionId, tSme
             (pCommand && ( pCommand->sessionId == pDupCommand->sessionId ) &&
                 ((pCommand->command == pDupCommand->command) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /* This peermac check is requried for Softap/GO scenarios
                  * For STA scenario below OR check will suffice as pCommand will 
                  * always be NULL for STA scenarios
                  */
                 (vos_mem_compare(pDupCommand->u.roamCmd.peerMac, pCommand->u.roamCmd.peerMac, sizeof(v_MACADDR_t))) &&
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  (pCommand->u.roamCmd.roamReason == pDupCommand->u.roamCmd.roamReason ||
                     eCsrForcedDisassoc == pCommand->u.roamCmd.roamReason ||
@@ -2446,7 +2713,11 @@ void csrRoamRemoveDuplicateCommand(tpAniSirGlobal pMac, tANI_U32 sessionId, tSme
            )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("   roamReason = %d\n"), pDupCommand->u.roamCmd.roamReason);
+=======
+            smsLog(pMac, LOGW, FL("   roamReason = %d"), pDupCommand->u.roamCmd.roamReason);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("   roamReason = %d"), pDupCommand->u.roamCmd.roamReason);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2479,7 +2750,11 @@ eHalStatus csrRoamCallCallback(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
 #endif
     tCsrRoamSession *pSession;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( CSR_IS_SESSION_VALID( pMac, sessionId) )
+=======
+    if( pMac->roam.roamSession && CSR_IS_SESSION_VALID( pMac, sessionId) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if( pMac->roam.roamSession && CSR_IS_SESSION_VALID( pMac, sessionId) )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2489,7 +2764,11 @@ eHalStatus csrRoamCallCallback(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog(pMac, LOGE, "Session ID:%d is not valid\n", sessionId);
+=======
+       smsLog(pMac, LOGE, "Session ID:%d is not valid", sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog(pMac, LOGE, "Session ID:%d is not valid", sessionId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2499,9 +2778,15 @@ eHalStatus csrRoamCallCallback(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
     if(eCSR_ROAM_ASSOCIATION_COMPLETION == u1 && pRoamInfo)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, " Assoc complete result = %d statusCode = %d reasonCode = %d\n", u2, pRoamInfo->statusCode, pRoamInfo->reasonCode);
     }
     if ((u1 == eCSR_ROAM_FT_REASSOC_FAILED) && (pSession->bRefAssocStartCnt)) {
+=======
+        smsLog(pMac, LOGW, " Assoc complete result = %d statusCode = %d reasonCode = %d", u2, pRoamInfo->statusCode, pRoamInfo->reasonCode);
+    }
+    if (pSession && (u1 == eCSR_ROAM_FT_REASSOC_FAILED) && (pSession->bRefAssocStartCnt)) {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, " Assoc complete result = %d statusCode = %d reasonCode = %d", u2, pRoamInfo->statusCode, pRoamInfo->reasonCode);
     }
@@ -2524,7 +2809,11 @@ eHalStatus csrRoamCallCallback(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
         (eANI_BOOLEAN_FALSE == pSession->sessionActive) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG1, "Session ID is not valid\n");
+=======
+        smsLog(pMac, LOG1, "Session ID is not valid");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG1, "Session ID is not valid");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2623,7 +2912,11 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
     if ( csrIsConnStateConnectedInfra( pMac, sessionId ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL(" restore AC weights (%d-%d-%d-%d)\n"), pMac->roam.ucACWeights[0], pMac->roam.ucACWeights[1],
+=======
+        smsLog(pMac, LOG1, FL(" restore AC weights (%d-%d-%d-%d)"), pMac->roam.ucACWeights[0], pMac->roam.ucACWeights[1],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG1, FL(" restore AC weights (%d-%d-%d-%d)"), pMac->roam.ucACWeights[0], pMac->roam.ucACWeights[1],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2639,7 +2932,12 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
     {
         reasonCode = eSIR_MAC_DISASSOC_DUE_TO_FTHANDOFF_REASON;
 <<<<<<< HEAD
+<<<<<<< HEAD
     } else 
+=======
+    } 
+    else 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     } 
     else 
@@ -2654,7 +2952,12 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
         tpCsrNeighborRoamControlInfo pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
         palCopyMemory(pMac->hHdd, &bssId, pNeighborRoamInfo->csrNeighborRoamProfile.BSSIDs.bssid, sizeof(tSirMacAddr));
 <<<<<<< HEAD
+<<<<<<< HEAD
     } else 
+=======
+    } 
+    else 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     } 
     else 
@@ -2667,14 +2970,20 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
     
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOGE, "CSR Attempting to Disassociate Bssid= %02x-%02x-%02x-%02x-%02x-%02x subState = %d\n", 
                   bssId[ 0 ], bssId[ 1 ], bssId[ 2 ],
                   bssId[ 3 ], bssId[ 4 ], bssId[ 5 ], NewSubstate );    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog( pMac, LOG2, "CSR Attempting to Disassociate Bssid=%02x-%02x-%02x-%02x-%02x-%02x"
             "subState = %d reason=%d", bssId[ 0 ], bssId[ 1 ], bssId[ 2 ], bssId[ 3 ], 
             bssId[ 4 ], bssId[ 5 ], NewSubstate, reasonCode);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrRoamSubstateChange( pMac, NewSubstate, sessionId);
 
@@ -2688,6 +2997,7 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
         if(eCSR_ROAM_SUBSTATE_DISASSOC_HANDOFF != NewSubstate)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             //Tush-QoS: notify QoS module that disassoc happening
             sme_QosCsrEventInd(pMac, (v_U8_t)sessionId, SME_QOS_CSR_DISCONNECT_REQ, NULL);
         }
@@ -2697,6 +3007,8 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
 }
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //notify QoS module that disassoc happening
             sme_QosCsrEventInd(pMac, (v_U8_t)sessionId, SME_QOS_CSR_DISCONNECT_REQ, NULL);
         }
@@ -2709,6 +3021,9 @@ eHalStatus csrRoamIssueDisassociate( tpAniSirGlobal pMac, tANI_U32 sessionId,
 
     return (status);
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
@@ -2745,7 +3060,11 @@ eHalStatus csrRoamIssueDisassociateStaCmd( tpAniSirGlobal pMac,
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2791,7 +3110,11 @@ eHalStatus csrRoamIssueDeauthStaCmd( tpAniSirGlobal pMac,
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2811,7 +3134,11 @@ csrRoamIssueTkipCounterMeasures( tpAniSirGlobal pMac, tANI_U32 sessionId,
     if (!pSession)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, "csrRoamIssueTkipCounterMeasures:CSR Session not found\n");
+=======
+        smsLog( pMac, LOGE, "csrRoamIssueTkipCounterMeasures:CSR Session not found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, "csrRoamIssueTkipCounterMeasures:CSR Session not found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2824,15 +3151,21 @@ csrRoamIssueTkipCounterMeasures( tpAniSirGlobal pMac, tANI_U32 sessionId,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, "csrRoamIssueTkipCounterMeasures:Connected BSS Description in CSR Session not found\n");
         return (status);
     }
     smsLog( pMac, LOG2, "CSR issuing tkip counter measures for Bssid = %02x-%02x-%02x-%02x-%02x-%02x, Enable = %d\n", 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGE, "csrRoamIssueTkipCounterMeasures:Connected BSS Description in CSR Session not found");
         return (status);
     }
     smsLog( pMac, LOG2, "CSR issuing tkip counter measures for Bssid = %02x-%02x-%02x-%02x-%02x-%02x, Enable = %d",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   bssId[ 0 ], bssId[ 1 ], bssId[ 2 ],
                   bssId[ 3 ], bssId[ 4 ], bssId[ 5 ] , bEnable);
@@ -2850,7 +3183,11 @@ csrRoamGetAssociatedStas( tpAniSirGlobal pMac, tANI_U32 sessionId,
     if (!pSession)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, "csrRoamGetAssociatedStas:CSR Session not found\n");
+=======
+        smsLog( pMac, LOGE, "csrRoamGetAssociatedStas:CSR Session not found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, "csrRoamGetAssociatedStas:CSR Session not found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2863,15 +3200,21 @@ csrRoamGetAssociatedStas( tpAniSirGlobal pMac, tANI_U32 sessionId,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, "csrRoamGetAssociatedStas:Connected BSS Description in CSR Session not found\n");
         return (status);
     }
     smsLog( pMac, LOG2, "CSR getting associated stations for Bssid = %02x-%02x-%02x-%02x-%02x-%02x\n",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGE, "csrRoamGetAssociatedStas:Connected BSS Description in CSR Session not found");
         return (status);
     }
     smsLog( pMac, LOG2, "CSR getting associated stations for Bssid = %02x-%02x-%02x-%02x-%02x-%02x",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   bssId[ 0 ], bssId[ 1 ], bssId[ 2 ],
                   bssId[ 3 ], bssId[ 4 ], bssId[ 5 ] );
@@ -2889,7 +3232,11 @@ csrRoamGetWpsSessionOverlap( tpAniSirGlobal pMac, tANI_U32 sessionId,
     if (!pSession)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, "csrRoamGetWpsSessionOverlap:CSR Session not found\n");
+=======
+        smsLog( pMac, LOGE, "csrRoamGetWpsSessionOverlap:CSR Session not found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, "csrRoamGetWpsSessionOverlap:CSR Session not found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2902,15 +3249,21 @@ csrRoamGetWpsSessionOverlap( tpAniSirGlobal pMac, tANI_U32 sessionId,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, "csrRoamGetWpsSessionOverlap:Connected BSS Description in CSR Session not found\n");
         return (status);
     }
     smsLog( pMac, LOG2, "CSR getting WPS Session Overlap for Bssid = %02x-%02x-%02x-%02x-%02x-%02x\n",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGE, "csrRoamGetWpsSessionOverlap:Connected BSS Description in CSR Session not found");
         return (status);
     }
     smsLog( pMac, LOG2, "CSR getting WPS Session Overlap for Bssid = %02x-%02x-%02x-%02x-%02x-%02x",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   bssId[ 0 ], bssId[ 1 ], bssId[ 2 ],
                   bssId[ 3 ], bssId[ 4 ], bssId[ 5 ] );
@@ -2920,7 +3273,10 @@ csrRoamGetWpsSessionOverlap( tpAniSirGlobal pMac, tANI_U32 sessionId,
     return (status);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrRoamIssueDeauth( tpAniSirGlobal pMac, tANI_U32 sessionId, eCsrRoamSubState NewSubstate )
@@ -2940,7 +3296,11 @@ eHalStatus csrRoamIssueDeauth( tpAniSirGlobal pMac, tANI_U32 sessionId, eCsrRoam
         palCopyMemory(pMac->hHdd, &bssId, pSession->pConnectBssDesc->bssId, sizeof(tCsrBssid));
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG2, "CSR Attempting to Deauth Bssid= %02x-%02x-%02x-%02x-%02x-%02x\n", 
+=======
+    smsLog( pMac, LOG2, "CSR Attempting to Deauth Bssid= %02x-%02x-%02x-%02x-%02x-%02x",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG2, "CSR Attempting to Deauth Bssid= %02x-%02x-%02x-%02x-%02x-%02x",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2949,15 +3309,21 @@ eHalStatus csrRoamIssueDeauth( tpAniSirGlobal pMac, tANI_U32 sessionId, eCsrRoam
     csrRoamSubstateChange( pMac, NewSubstate, sessionId);
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     status = csrSendMBDeauthReqMsg( pMac, sessionId, bssId, eSIR_MAC_DISASSOC_LEAVING_BSS_REASON );    
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = csrSendMBDeauthReqMsg( pMac, sessionId, bssId, eSIR_MAC_DEAUTH_LEAVING_BSS_REASON );
     if(!HAL_STATUS_SUCCESS(status))
     {
         smsLog(pMac, LOGW, FL("csrSendMBDeauthReqMsg failed with status %d"), status);
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (status);
 }
@@ -3011,9 +3377,15 @@ eHalStatus csrRoamPrepareBssConfig(tpAniSirGlobal pMac, tCsrRoamProfile *pProfil
     eHalStatus status = eHAL_STATUS_SUCCESS;
     eCsrCfgDot11Mode cfgDot11Mode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
     VOS_ASSERT( pIes != NULL );
 #endif
+=======
+    VOS_ASSERT( pIes != NULL );
+    if (pIes == NULL)
+        return eHAL_STATUS_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_ASSERT( pIes != NULL );
     if (pIes == NULL)
@@ -3036,17 +3408,23 @@ eHalStatus csrRoamPrepareBssConfig(tpAniSirGlobal pMac, tCsrRoamProfile *pProfil
         if(csrIsNULLSSID(pBssConfig->SSID.ssId, pBssConfig->SSID.length))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, "  BSS desc SSID is a wildcard\n");
             //Return failed if profile doesn't have an SSID either.
             if(pProfile->SSIDs.numOfSSIDs == 0)
             {
                 smsLog(pMac, LOGW, "  Both BSS desc and profile doesn't have SSID\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOGW, "  BSS desc SSID is a wildcard");
             //Return failed if profile doesn't have an SSID either.
             if(pProfile->SSIDs.numOfSSIDs == 0)
             {
                 smsLog(pMac, LOGW, "  Both BSS desc and profile doesn't have SSID");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 status = eHAL_STATUS_FAILURE;
                 break;
@@ -3068,7 +3446,11 @@ eHalStatus csrRoamPrepareBssConfig(tpAniSirGlobal pMac, tCsrRoamProfile *pProfil
         else 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, "   Can not find match phy mode\n");
+=======
+            smsLog(pMac, LOGW, "   Can not find match phy mode");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, "   Can not find match phy mode");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3091,8 +3473,11 @@ eHalStatus csrRoamPrepareBssConfig(tpAniSirGlobal pMac, tCsrRoamProfile *pProfil
             pBssConfig->qosType = eCSR_MEDIUM_ACCESS_DCF;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
        
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if (((pBssConfig->uCfgDot11Mode == eCSR_CFG_DOT11_MODE_11N)  || 
                          (pBssConfig->uCfgDot11Mode == eCSR_CFG_DOT11_MODE_11AC)) &&
@@ -3105,6 +3490,9 @@ eHalStatus csrRoamPrepareBssConfig(tpAniSirGlobal pMac, tCsrRoamProfile *pProfil
             pBssConfig->qosType = eCSR_MEDIUM_ACCESS_WMM_eDCF_DSCP;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //auth type
         switch( pProfile->negotiatedAuthType ) 
@@ -3208,6 +3596,7 @@ static eHalStatus csrRoamPrepareBssConfigFromProfile(tpAniSirGlobal pMac, tCsrRo
        operationChannel = pProfile->ChannelInfo.ChannelList[0];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     pBssConfig->uCfgDot11Mode = csrRoamGetPhyModeBandForBss(pMac, pProfile, operationChannel, 
                                         &pBssConfig->eBand);
@@ -3219,12 +3608,19 @@ static eHalStatus csrRoamPrepareBssConfigFromProfile(tpAniSirGlobal pMac, tCsrRo
     pBssConfig->uCfgDot11Mode = csrRoamGetPhyModeBandForBss(pMac, pProfile, operationChannel, 
                                         &pBssConfig->eBand);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+    pBssConfig->uCfgDot11Mode = csrRoamGetPhyModeBandForBss(pMac, pProfile, operationChannel, 
+                                        &pBssConfig->eBand);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //QOS
     //Is this correct to always set to this //***
     if ( pBssConfig->BssCap.ess == 1 ) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*For Softap case enable WMM*/
@@ -3233,7 +3629,10 @@ static eHalStatus csrRoamPrepareBssConfigFromProfile(tpAniSirGlobal pMac, tCsrRo
         }
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (csrRoamGetQosInfoFromBss(pMac, pBssDesc) == eHAL_STATUS_SUCCESS) {
@@ -3256,7 +3655,11 @@ static eHalStatus csrRoamPrepareBssConfigFromProfile(tpAniSirGlobal pMac, tCsrRo
     
     //auth type
 <<<<<<< HEAD
+<<<<<<< HEAD
     switch( pProfile->AuthType.authType[0] ) //Take the prefered Auth type.
+=======
+    switch( pProfile->AuthType.authType[0] ) //Take the preferred Auth type.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     switch( pProfile->AuthType.authType[0] ) //Take the preferred Auth type.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3313,7 +3716,11 @@ static eHalStatus csrRoamGetQosInfoFromBss(tpAniSirGlobal pMac, tSirBssDescripti
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "csrRoamGetQosInfoFromBss() failed\n");
+=======
+                   "csrRoamGetQosInfoFromBss() failed");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "csrRoamGetQosInfoFromBss() failed");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3323,10 +3730,13 @@ static eHalStatus csrRoamGetQosInfoFromBss(tpAniSirGlobal pMac, tSirBssDescripti
       if( CSR_IS_QOS_BSS(pIes) )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          return eHAL_STATUS_SUCCESS;
       }
    } while (0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          status = eHAL_STATUS_SUCCESS;
       }
    } while (0);
@@ -3337,6 +3747,9 @@ static eHalStatus csrRoamGetQosInfoFromBss(tpAniSirGlobal pMac, tSirBssDescripti
        palFreeMemory(pMac->hHdd, pIes);
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -3381,6 +3794,10 @@ void csrSetCfgPrivacy( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile, tANI_BOOL
             
         case eCSR_ENCRYPT_TYPE_WEP40_STATICKEY:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        case eCSR_ENCRYPT_TYPE_WEP40:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         case eCSR_ENCRYPT_TYPE_WEP40:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3438,6 +3855,10 @@ void csrSetCfgPrivacy( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile, tANI_BOOL
         
         case eCSR_ENCRYPT_TYPE_WEP104_STATICKEY:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        case eCSR_ENCRYPT_TYPE_WEP104:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         case eCSR_ENCRYPT_TYPE_WEP104:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3496,8 +3917,11 @@ void csrSetCfgPrivacy( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile, tANI_BOOL
             break;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         case eCSR_ENCRYPT_TYPE_WEP40:
         case eCSR_ENCRYPT_TYPE_WEP104:
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eCSR_ENCRYPT_TYPE_TKIP:
@@ -3597,9 +4021,13 @@ static eHalStatus csrGetRateSet( tpAniSirGlobal pMac,  tCsrRoamProfile *pProfile
     palZeroMemory(pMac->hHdd, pOpRateSet, sizeof(tSirMacRateSet));
     palZeroMemory(pMac->hHdd, pExRateSet, sizeof(tSirMacRateSet));
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
     VOS_ASSERT( pIes != NULL );
 #endif
+=======
+    VOS_ASSERT( pIes != NULL );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_ASSERT( pIes != NULL );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3625,7 +4053,11 @@ static eHalStatus csrGetRateSet( tpAniSirGlobal pMac,  tCsrRoamProfile *pProfile
                 {
                     *pDstRate++ = pIes->SuppRates.rates[ i ];
 <<<<<<< HEAD
+<<<<<<< HEAD
                     pOpRateSet->numRates++;;
+=======
+                    pOpRateSet->numRates++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     pOpRateSet->numRates++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3657,7 +4089,11 @@ static eHalStatus csrGetRateSet( tpAniSirGlobal pMac,  tCsrRoamProfile *pProfile
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("failed to parse BssDesc\n"));
+=======
+        smsLog(pMac, LOGE, FL("failed to parse BssDesc"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("failed to parse BssDesc"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3682,9 +4118,13 @@ static void csrSetCfgRateSet( tpAniSirGlobal pMac, eCsrPhyMode phyMode, tCsrRoam
     tANI_U8 MCSRateIdxSet[ SIZE_OF_SUPPORTED_MCS_SET ];
     tANI_U32 MCSRateLength = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
     VOS_ASSERT( pIes != NULL );
 #endif
+=======
+    VOS_ASSERT( pIes != NULL );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_ASSERT( pIes != NULL );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3790,7 +4230,11 @@ static void csrSetCfgRateSet( tpAniSirGlobal pMac, eCsrPhyMode phyMode, tCsrRoam
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("failed to parse BssDesc\n"));
+=======
+        smsLog(pMac, LOGE, FL("failed to parse BssDesc"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("failed to parse BssDesc"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3837,11 +4281,15 @@ static void csrSetCfgRateSetFromProfile( tpAniSirGlobal pMac,
        operationChannel = pProfile->ChannelInfo.ChannelList[0];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, pProfile, operationChannel, &eBand );
 #else
     cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, (eCsrPhyMode)pProfile->phyMode, operationChannel, &eBand );
 #endif
+=======
+    cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, pProfile, operationChannel, &eBand );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, pProfile, operationChannel, &eBand );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3953,7 +4401,11 @@ void csrRoamCcmCfgSetCallback(tHalHandle hHal, tANI_S32 result)
     if(NULL == pEntry)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, "   CFG_CNF with active list empty\n");
+=======
+        smsLog(pMac, LOGW, "   CFG_CNF with active list empty");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, "   CFG_CNF with active list empty");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3999,7 +4451,11 @@ ePhyChanBondState csrGetHTCBStateFromVHTCBState(ePhyChanBondState aniCBMode)
             return PHY_DOUBLE_CHANNEL_LOW_PRIMARY;
         case PHY_QUADRUPLE_CHANNEL_20MHZ_CENTERED_40MHZ_CENTERED:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	    default :
+=======
+        default :
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         default :
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4027,15 +4483,21 @@ eHalStatus csrRoamSetBssConfigCfg(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrR
             csrApplyCountryInformation( pMac, TRUE );
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
         
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ((csrIs11dSupported (pMac)) && pIes)
         {
             if (!pIes->Country.present)
                 csrResetCountryInformation(pMac, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_FALSE );
         }
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Qos
     csrSetQosToCfg( pMac, sessionId, pBssConfig->qosType );
@@ -4055,7 +4517,10 @@ eHalStatus csrRoamSetBssConfigCfg(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrR
     //short slot time
     ccmCfgSetInt(pMac, WNI_CFG_11G_SHORT_SLOT_TIME_ENABLED, pBssConfig->uShortSlotTime, NULL, eANI_BOOLEAN_FALSE);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //11d
@@ -4063,7 +4528,10 @@ eHalStatus csrRoamSetBssConfigCfg(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrR
                         ((pBssConfig->f11hSupport) ? pBssConfig->f11hSupport : pProfile->ieee80211d),
                         NULL, eANI_BOOLEAN_FALSE);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*//11h
@@ -4096,6 +4564,7 @@ eHalStatus csrRoamSetBssConfigCfg(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrR
     }
 #ifdef WLAN_FEATURE_11AC
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(cfgCb > 2 )
     {
 	if(!WDA_getFwWlanFeatCaps(DOT11AC)) {
@@ -4106,6 +4575,8 @@ eHalStatus csrRoamSetBssConfigCfg(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrR
             ccmCfgSetInt(pMac, WNI_CFG_VHT_CHANNEL_WIDTH,  pMac->roam.configParam.nVhtChannelWidth, NULL, eANI_BOOLEAN_FALSE);
 	}
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // cbMode = 1 in cfg.ini is mapped to PHY_DOUBLE_CHANNEL_HIGH_PRIMARY = 3
     // in function csrConvertCBIniValueToPhyCBState()
     // So, max value for cbMode in 40MHz mode is 3 (MAC\src\include\sirParams.h)
@@ -4118,6 +4589,9 @@ eHalStatus csrRoamSetBssConfigCfg(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrR
         {
             ccmCfgSetInt(pMac, WNI_CFG_VHT_CHANNEL_WIDTH,  pMac->roam.configParam.nVhtChannelWidth, NULL, eANI_BOOLEAN_FALSE);
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
@@ -4167,9 +4641,13 @@ eHalStatus csrRoamStopNetwork( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
             //For IBSS, we need to prepare some more information
             if( csrIsBssTypeIBSS(pProfile->BSSType) || CSR_IS_WDS( pProfile )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
               || CSR_IS_INFRA_AP(pProfile)
 #endif
+=======
+              || CSR_IS_INFRA_AP(pProfile)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               || CSR_IS_INFRA_AP(pProfile)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4214,9 +4692,13 @@ eHalStatus csrRoamStopNetwork( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
                     // Nothing to stop.
                     if ( pBssDesc || CSR_IS_WDS_AP( pProfile )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                      || CSR_IS_INFRA_AP(pProfile)
 #endif
+=======
+                     || CSR_IS_INFRA_AP(pProfile)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      || CSR_IS_INFRA_AP(pProfile)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4282,7 +4764,11 @@ eCsrJoinState csrRoamJoin( tpAniSirGlobal pMac, tANI_U32 sessionId,
             if(csrIsSameProfile(pMac, &pSession->connectedProfile, pProfile))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, FL("  detect same profile authType = %d encryType = %d\n"), pProfile->AuthType, pProfile->EncryptionType);
+=======
+                smsLog(pMac, LOGW, FL("  detect same profile authType = %d encryType = %d"), pProfile->AuthType, pProfile->EncryptionType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, FL("  detect same profile authType = %d encryType = %d"), pProfile->AuthType, pProfile->EncryptionType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4319,7 +4805,11 @@ eCsrJoinState csrRoamJoin( tpAniSirGlobal pMac, tANI_U32 sessionId,
                                                         eCSR_ROAM_SUBSTATE_DISASSOC_REQ, FALSE )))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, FL("  fail to issue disassociate\n"));
+=======
+                    smsLog(pMac, LOGW, FL("  fail to issue disassociate"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, FL("  fail to issue disassociate"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4372,7 +4862,11 @@ static void csrRoamAssignDefaultParam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
     //Need to get all negotiated types in place first
     //auth type
 <<<<<<< HEAD
+<<<<<<< HEAD
     switch( pCommand->u.roamCmd.roamProfile.AuthType.authType[0] ) //Take the prefered Auth type.
+=======
+    switch( pCommand->u.roamCmd.roamProfile.AuthType.authType[0] ) //Take the preferred Auth type.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     switch( pCommand->u.roamCmd.roamProfile.AuthType.authType[0] ) //Take the preferred Auth type.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4401,7 +4895,10 @@ static void csrRoamAssignDefaultParam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static void csrSetAbortRoamingCommand(tpAniSirGlobal pMac, tSmeCmd *pCommand)
 {
@@ -4423,6 +4920,9 @@ static void csrSetAbortRoamingCommand(tpAniSirGlobal pMac, tSmeCmd *pCommand)
    }
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOLEAN fUseSameBss )
 {
@@ -4452,6 +4952,11 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
         //***if( !balIsCardPresent(pAdapter) ) break;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        palZeroMemory(pMac->hHdd, &roamInfo, sizeof(roamInfo));
+        memcpy (&roamInfo.bssid, &pSession->joinFailStatusCode.bssId, sizeof(tSirMacAddr));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         palZeroMemory(pMac->hHdd, &roamInfo, sizeof(roamInfo));
         memcpy (&roamInfo.bssid, &pSession->joinFailStatusCode.bssId, sizeof(tSirMacAddr));
@@ -4481,7 +4986,11 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
                     {
                         //We need to indicate to HDD that we are done with this one.
 <<<<<<< HEAD
+<<<<<<< HEAD
                         palZeroMemory(pMac->hHdd, &roamInfo, sizeof(tCsrRoamInfo));
+=======
+                        //palZeroMemory(pMac->hHdd, &roamInfo, sizeof(tCsrRoamInfo));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         //palZeroMemory(pMac->hHdd, &roamInfo, sizeof(tCsrRoamInfo));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4503,7 +5012,11 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
                             csrGetConcurrentOperationChannel(pMac);
                         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, "%s: "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 " csr Concurrent Channel = %d", __FUNCTION__, concurrentChannel);
+=======
+                                " csr Concurrent Channel = %d", __func__, concurrentChannel);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                 " csr Concurrent Channel = %d", __func__, concurrentChannel);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4558,12 +5071,15 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             if(pRoamInfo)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pSession->bRefAssocStartCnt--;
                 //Complete the last association attemp because a new one is about to be tried
                 csrRoamCallCallback(pMac, sessionId, pRoamInfo, pCommand->u.roamCmd.roamId, 
                                         eCSR_ROAM_ASSOCIATION_COMPLETION, 
                                         eCSR_ROAM_RESULT_NOT_ASSOCIATED);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(pSession->bRefAssocStartCnt)
                 {
                     pSession->bRefAssocStartCnt--;
@@ -4582,6 +5098,9 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
                 eRoamState = eCsrStopRoaming;
                 csrSetAbortRoamingCommand(pMac, pCommand);
                 break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             palZeroMemory(pMac->hHdd, &roamInfo, sizeof(roamInfo));
@@ -4591,7 +5110,11 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
                 if( !pIesLocal && (!HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, &pScanResult->Result.BssDescriptor, &pIesLocal))) )
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL(" cannot parse IEs\n"));
+=======
+                    smsLog(pMac, LOGE, FL(" cannot parse IEs"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL(" cannot parse IEs"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4659,9 +5182,13 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             }
             else if ( (CSR_IS_WDS_AP(pProfile))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
              || (CSR_IS_INFRA_AP(pProfile))
 #endif
+=======
+             || (CSR_IS_INFRA_AP(pProfile))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              || (CSR_IS_INFRA_AP(pProfile))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4685,7 +5212,11 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             {
                 //Nothing we can do
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, FL("cannot continue without BSS list\n"));
+=======
+                smsLog(pMac, LOGW, FL("cannot continue without BSS list"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, FL("cannot continue without BSS list"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4729,6 +5260,10 @@ static eCsrJoinState csrRoamJoinNextBss( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             pSession->bRefAssocStartCnt--;
             //Complete the last association attemp because a new one is about to be tried
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            pRoamInfo = &roamInfo;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pRoamInfo = &roamInfo;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4764,7 +5299,11 @@ static eHalStatus csrRoam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 if(!HAL_STATUS_SUCCESS(status))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, FL("  failed to issue disassociate, status = %d\n"), status);
+=======
+                    smsLog(pMac, LOGW, FL("  failed to issue disassociate, status = %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, FL("  failed to issue disassociate, status = %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4778,7 +5317,11 @@ static eHalStatus csrRoam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 if(!HAL_STATUS_SUCCESS(status))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, FL("  failed to issue stop bss, status = %d\n"), status);
+=======
+                    smsLog(pMac, LOGW, FL("  failed to issue stop bss, status = %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, FL("  failed to issue stop bss, status = %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4787,7 +5330,10 @@ static eHalStatus csrRoam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             else if (csrIsConnStateConnectedInfraAp(pMac, sessionId))
@@ -4796,7 +5342,11 @@ static eHalStatus csrRoam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 if(!HAL_STATUS_SUCCESS(status))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, FL("  failed to issue stop bss, status = %d\n"), status);
+=======
+                    smsLog(pMac, LOGW, FL("  failed to issue stop bss, status = %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, FL("  failed to issue stop bss, status = %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4805,7 +5355,10 @@ static eHalStatus csrRoam( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             else
@@ -4857,7 +5410,11 @@ eHalStatus csrProcessFTReassocRoamCommand ( tpAniSirGlobal pMac, tSmeCmd *pComma
     {
         //the roaming is cancelled. Simply complete the command
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG1, FL("  Roam command cancelled\n"));
+=======
+        smsLog(pMac, LOG1, FL("  Roam command cancelled"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG1, FL("  Roam command cancelled"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4873,7 +5430,11 @@ eHalStatus csrProcessFTReassocRoamCommand ( tpAniSirGlobal pMac, tSmeCmd *pComma
     {
         //the roaming is cancelled. Simply complete the command
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG1, FL("  Roam command cancelled\n"));
+=======
+        smsLog(pMac, LOG1, FL("  Roam command cancelled"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG1, FL("  Roam command cancelled"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4902,8 +5463,13 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
     {
     case eCsrForcedDisassoc:
 <<<<<<< HEAD
+<<<<<<< HEAD
         csrFreeRoamProfile(pMac, sessionId);
         status = csrRoamProcessDisassocDeauth( pMac, pCommand, TRUE, FALSE );
+=======
+        status = csrRoamProcessDisassocDeauth( pMac, pCommand, TRUE, FALSE );
+        csrFreeRoamProfile(pMac, sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         status = csrRoamProcessDisassocDeauth( pMac, pCommand, TRUE, FALSE );
         csrFreeRoamProfile(pMac, sessionId);
@@ -4920,6 +5486,7 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
         break;
     case eCsrForcedDisassocMICFailure:
 <<<<<<< HEAD
+<<<<<<< HEAD
         csrFreeRoamProfile(pMac, sessionId);
         status = csrRoamProcessDisassocDeauth( pMac, pCommand, TRUE, TRUE );
         break;
@@ -4927,12 +5494,17 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
         csrFreeRoamProfile(pMac, sessionId);
         status = csrRoamProcessDisassocDeauth( pMac, pCommand, FALSE, FALSE );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status = csrRoamProcessDisassocDeauth( pMac, pCommand, TRUE, TRUE );
         csrFreeRoamProfile(pMac, sessionId);
         break;
     case eCsrForcedDeauth:
         status = csrRoamProcessDisassocDeauth( pMac, pCommand, FALSE, FALSE );
         csrFreeRoamProfile(pMac, sessionId);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     case eCsrHddIssuedReassocToSameAP:
@@ -4946,7 +5518,11 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
             if(!HAL_STATUS_SUCCESS(status) )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("  fail to parse IEs\n"));
+=======
+                smsLog(pMac, LOGE, FL("  fail to parse IEs"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("  fail to parse IEs"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4963,10 +5539,13 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                                      eCSR_ROAM_ASSOCIATION_START, eCSR_ROAM_RESULT_NONE );
    
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOG1, FL("  calling csrRoamIssueReassociate\n"));
                 csrRoamIssueReassociate( pMac, sessionId, pSession->pConnectBssDesc, pIes,
                                          &pCommand->u.roamCmd.roamProfile );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog(pMac, LOG1, FL("  calling csrRoamIssueReassociate"));
                 status = csrRoamIssueReassociate( pMac, sessionId, pSession->pConnectBssDesc, pIes,
                                                   &pCommand->u.roamCmd.roamProfile );
@@ -4976,6 +5555,9 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                     csrReleaseCommandRoam( pMac, pCommand );
                 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 palFreeMemory(pMac->hHdd, pIes);
                 pIes = NULL;
@@ -4985,7 +5567,11 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
     }
     case eCsrCapsChange:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("received eCsrCapsChange \n"));
+=======
+        smsLog(pMac, LOGE, FL("received eCsrCapsChange "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("received eCsrCapsChange "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4994,7 +5580,11 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
         break;
     case eCsrSmeIssuedFTReassoc:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("received FT Reassoc Req \n"));
+=======
+        smsLog(pMac, LOGE, FL("received FT Reassoc Req "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("received FT Reassoc Req "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5020,6 +5610,7 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                      pCommand->u.roamCmd.reason);
        break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if 1
        /*Varun*/
     case eCsrPerformPreauth:
@@ -5029,12 +5620,17 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
        break;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     case eCsrPerformPreauth:
         smsLog(pMac, LOG1, FL("Attempting FT PreAuth Req"));
         status = csrRoamIssueFTPreauthReq(pMac, sessionId, 
                 pCommand->u.roamCmd.pLastRoamBss);
         break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     default:
@@ -5057,11 +5653,17 @@ eHalStatus csrRoamProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
         // Attempt to roam with the new scan results (if we need to..)
         status = csrRoam( pMac, pCommand );
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(!HAL_STATUS_SUCCESS(status))
         {
             smsLog(pMac, LOGW, FL("csrRoam() failed with status = 0x%08X"), status);
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     }
@@ -5104,7 +5706,11 @@ void csrRoamComplete( tpAniSirGlobal pMac, eCsrRoamCompleteResult Result, void *
     tSmeCmd *pCommand;
     tANI_BOOLEAN fReleaseCommand = eANI_BOOLEAN_TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG2, "roamQ: Roam Completion ...\n" );
+=======
+    smsLog( pMac, LOG2, "Roam Completion ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG2, "Roam Completion ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5128,8 +5734,13 @@ void csrRoamComplete( tpAniSirGlobal pMac, eCsrRoamCompleteResult Result, void *
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGE, " **********csrRoamComplete fail to release command reason %d\n",
                         pCommand->u.roamCmd.roamReason );
+=======
+                    smsLog( pMac, LOGE, " **********csrRoamComplete fail to release command reason %d",
+                           pCommand->u.roamCmd.roamReason );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGE, " **********csrRoamComplete fail to release command reason %d",
                            pCommand->u.roamCmd.roamReason );
@@ -5139,8 +5750,13 @@ void csrRoamComplete( tpAniSirGlobal pMac, eCsrRoamCompleteResult Result, void *
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGE, " **********csrRoamComplete fail to release command reason %d\n",
                     pCommand->u.roamCmd.roamReason );
+=======
+                smsLog( pMac, LOGE, " **********csrRoamComplete fail to release command reason %d",
+                       pCommand->u.roamCmd.roamReason );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGE, " **********csrRoamComplete fail to release command reason %d",
                        pCommand->u.roamCmd.roamReason );
@@ -5150,7 +5766,11 @@ void csrRoamComplete( tpAniSirGlobal pMac, eCsrRoamCompleteResult Result, void *
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, "CSR: Roam Completion called but ROAM command is not ACTIVE ...\n" );
+=======
+            smsLog( pMac, LOGW, "CSR: Roam Completion called but ROAM command is not ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, "CSR: Roam Completion called but ROAM command is not ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5159,7 +5779,11 @@ void csrRoamComplete( tpAniSirGlobal pMac, eCsrRoamCompleteResult Result, void *
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "CSR: Roam Completion called but NO commands are ACTIVE ...\n" );
+=======
+        smsLog( pMac, LOGW, "CSR: Roam Completion called but NO commands are ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "CSR: Roam Completion called but NO commands are ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5229,7 +5853,11 @@ static eHalStatus csrRoamSaveSecurityRspIE(tpAniSirGlobal pMac, tANI_U32 session
         if( !pIesLocal && (!HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, pSirBssDesc, &pIesLocal))) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL(" cannot parse IEs\n"));
+=======
+            smsLog(pMac, LOGE, FL(" cannot parse IEs"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL(" cannot parse IEs"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5261,6 +5889,10 @@ static eHalStatus csrRoamSaveSecurityRspIE(tpAniSirGlobal pMac, tANI_U32 session
                     if(HAL_STATUS_SUCCESS((status = palAllocateMemory(pMac->hHdd, (void **)&pSession->pWpaRsnRspIE, nIeLen + 2))))
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                        palZeroMemory(pMac->hHdd, pSession->pWpaRsnRspIE, nIeLen + 2);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         palZeroMemory(pMac->hHdd, pSession->pWpaRsnRspIE, nIeLen + 2);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5269,15 +5901,21 @@ static eHalStatus csrRoamSaveSecurityRspIE(tpAniSirGlobal pMac, tANI_U32 session
                         //copy upto akm_suites
                         pIeBuf = pSession->pWpaRsnRspIE + 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
                         palCopyMemory(pMac->hHdd, pIeBuf, &pIesLocal->RSN.version, 8);
                         pIeBuf += 8;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         palCopyMemory(pMac->hHdd, pIeBuf, &pIesLocal->RSN.version, sizeof(pIesLocal->RSN.version));
                         pIeBuf += sizeof(pIesLocal->RSN.version);
                         palCopyMemory(pMac->hHdd, pIeBuf, &pIesLocal->RSN.gp_cipher_suite, sizeof(pIesLocal->RSN.gp_cipher_suite));
                         pIeBuf += sizeof(pIesLocal->RSN.gp_cipher_suite);
                         palCopyMemory(pMac->hHdd, pIeBuf, &pIesLocal->RSN.pwise_cipher_suite_count, sizeof(pIesLocal->RSN.pwise_cipher_suite_count));
                         pIeBuf += sizeof(pIesLocal->RSN.pwise_cipher_suite_count );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         if( pIesLocal->RSN.pwise_cipher_suite_count )
                         {
@@ -5455,7 +6093,11 @@ static void csrCheckAndUpdateACWeight( tpAniSirGlobal pMac, tDot11fBeaconIEs *pI
         if(fWeightChange)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL(" change AC weights (%d-%d-%d-%d)\n"), bACWeights[0], bACWeights[1],
+=======
+            smsLog(pMac, LOGE, FL(" change AC weights (%d-%d-%d-%d)"), bACWeights[0], bACWeights[1],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL(" change AC weights (%d-%d-%d-%d)"), bACWeights[0], bACWeights[1],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5489,12 +6131,15 @@ tANI_BOOLEAN csrRoamIsCCXAssoc(tpAniSirGlobal pMac)
 #ifdef FEATURE_WLAN_LFR
 //Returns whether "Legacy Fast Roaming" is currently enabled...or not
 <<<<<<< HEAD
+<<<<<<< HEAD
 tANI_BOOLEAN csrRoamIsFastRoamEnabled(tpAniSirGlobal pMac)
 {
     return (pMac->roam.configParam.isFastRoamIniFeatureEnabled &&
             (!csrIsConcurrentSessionRunning(pMac)));
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrRoamIsFastRoamEnabled(tpAniSirGlobal pMac, tANI_U32 sessionId)
 {
     tCsrRoamSession *pSession = NULL;
@@ -5521,6 +6166,9 @@ tANI_BOOLEAN csrRoamIsRoamOffloadScanEnabled(tpAniSirGlobal pMac)
     return (pMac->roam.configParam.isRoamOffloadScanEnabled);
 }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -5545,9 +6193,13 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
     eHalStatus status;
     tANI_U32 key_timeout_interval = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tSirSmeStartBssRsp  *pSmeStartBssRsp = NULL;
 #endif
+=======
+    tSirSmeStartBssRsp  *pSmeStartBssRsp = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirSmeStartBssRsp  *pSmeStartBssRsp = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5559,7 +6211,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG1, FL("Processing ROAM results...\n"));
+=======
+    smsLog( pMac, LOG1, FL("Processing ROAM results..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG1, FL("Processing ROAM results..."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5582,7 +6238,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             // Success Join Response from LIM.  Tell NDIS we are connected and save the
             // Connected state...
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("receives association indication\n"));
+=======
+            smsLog(pMac, LOGW, FL("receives association indication"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("receives association indication"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5680,7 +6340,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                                                 FALSE, TRUE, eSIR_TX_RX, 0, 0, NULL, 0 ) ) ) // NO keys... these key parameters don't matter.
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog( pMac, LOGE, FL("  Set context for unicast fail\n") );
+=======
+                        smsLog( pMac, LOGE, FL("  Set context for unicast fail") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog( pMac, LOGE, FL("  Set context for unicast fail") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5714,7 +6378,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     {
                         //Reset our state so nothting is blocked.
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog( pMac, LOGE, FL("   Failed to start pre-auth timer\n") );
+=======
+                        smsLog( pMac, LOGE, FL("   Failed to start pre-auth timer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog( pMac, LOGE, FL("   Failed to start pre-auth timer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5761,8 +6429,13 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                             else
                             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 smsLog(pMac, LOGE, "%s: Copying of memory failed for %d bytes !!!\n", 
                                         __FUNCTION__, len);
+=======
+                                smsLog(pMac, LOGE, "%s: Copying of memory failed for %d bytes !!!",
+                                        __func__, len);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                 smsLog(pMac, LOGE, "%s: Copying of memory failed for %d bytes !!!",
                                         __func__, len);
@@ -5805,7 +6478,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
 #endif /* WLAN_MDM_CODE_REDUCTION_OPT*/
                 pSession->connectedProfile.acm_mask = acm_mask;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //start UAPSD if uapsd_mask is not 0 because HDD will configure for trigger frame
@@ -5813,24 +6489,36 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 if( pSession->connectedProfile.modifyProfileFields.uapsd_mask )
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, " uapsd_mask (0x%X) set, request UAPSD now\n",
                         pSession->connectedProfile.modifyProfileFields.uapsd_mask);
                     pmcStartUapsd( pMac, NULL, NULL );
                 }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     smsLog(pMac, LOGE, " uapsd_mask (0x%X) set, request UAPSD now",
                         pSession->connectedProfile.modifyProfileFields.uapsd_mask);
                     pmcStartUapsd( pMac, NULL, NULL );
                 }
                 pSession->connectedProfile.dot11Mode = pSession->bssParams.uCfgDot11Mode;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 roamInfo.u.pConnectedProfile = &pSession->connectedProfile;
                 if( pSession->bRefAssocStartCnt > 0 )
                 {
                     pSession->bRefAssocStartCnt--;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if(!IS_SLM_SESSIONIZATION_SUPPORTED_BY_FW && ( csrIsConcurrentSessionRunning( pMac )))
+=======
+                    //Remove this code once SLM_Sessionization is supported 
+                    //BMPS_WORKAROUND_NOT_NEEDED
+                    if(!IS_FEATURE_SUPPORTED_BY_FW(SLM_SESSIONIZATION) && ( csrIsConcurrentSessionRunning( pMac )))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     //Remove this code once SLM_Sessionization is supported 
                     //BMPS_WORKAROUND_NOT_NEEDED
@@ -5862,7 +6550,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, "  Roam command doesn't have a BSS desc\n");
+=======
+                smsLog(pMac, LOGW, "  Roam command doesn't have a BSS desc");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, "  Roam command doesn't have a BSS desc");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5895,11 +6587,17 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             // start the Ibss without any Bss description.  Lim was kind enough to return
             // the Bss Description that we start beaconing for the newly started Ibss.
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOG2, FL("receives start BSS ok indication\n"));
             status = eHAL_STATUS_FAILURE;
 #ifdef WLAN_SOFTAP_FEATURE
             pSmeStartBssRsp = (tSirSmeStartBssRsp *)Context;
 #endif             
+=======
+            smsLog(pMac, LOG2, FL("receives start BSS ok indication"));
+            status = eHAL_STATUS_FAILURE;
+            pSmeStartBssRsp = (tSirSmeStartBssRsp *)Context;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOG2, FL("receives start BSS ok indication"));
             status = eHAL_STATUS_FAILURE;
@@ -5911,7 +6609,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 pSession->connectState = eCSR_ASSOC_STATE_TYPE_IBSS_DISCONNECTED;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             else if (CSR_IS_INFRA_AP(pProfile))
@@ -5919,7 +6620,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 pSession->connectState = eCSR_ASSOC_STATE_TYPE_INFRA_DISCONNECTED;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             else
@@ -5930,6 +6634,7 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             {
                 csrRoamStateChange( pMac, eCSR_ROAMING_STATE_JOINED, sessionId );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                 pSirBssDesc = &pSmeStartBssRsp->bssDescription;
 #else
@@ -5939,10 +6644,15 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 {
                     smsLog(pMac, LOG2, FL("cannot parse IBSS IEs\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pSirBssDesc = &pSmeStartBssRsp->bssDescription;
                 if( !HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs( pMac, pSirBssDesc, &pIes )) )
                 {
                     smsLog(pMac, LOG2, FL("cannot parse IBSS IEs"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     roamInfo.pBssDesc = pSirBssDesc;
                     //We need to associate_complete it first, becasue Associate_start already indicated.
@@ -5951,9 +6661,13 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     break;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                 if (!CSR_IS_INFRA_AP(pProfile))
 #endif
+=======
+                if (!CSR_IS_INFRA_AP(pProfile))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if (!CSR_IS_INFRA_AP(pProfile))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6004,6 +6718,7 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 //Only set context for non-WDS_STA. We don't even need it for WDS_AP. But since the encryption
                 //is WPA2-PSK so it won't matter.
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                 if( CSR_IS_ENC_TYPE_STATIC( pProfile->negotiatedUCEncryptionType ) && !CSR_IS_INFRA_AP( pSession->pCurRoamProfile ))
                 {
@@ -6011,6 +6726,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 if( CSR_IS_ENC_TYPE_STATIC( pProfile->negotiatedUCEncryptionType ))
                 {
 #endif
+=======
+                if( CSR_IS_ENC_TYPE_STATIC( pProfile->negotiatedUCEncryptionType ) && !CSR_IS_INFRA_AP( pSession->pCurRoamProfile ))
+                {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if( CSR_IS_ENC_TYPE_STATIC( pProfile->negotiatedUCEncryptionType ) && !CSR_IS_INFRA_AP( pSession->pCurRoamProfile ))
                 {
@@ -6035,7 +6754,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                         // Set the roaming substate to 'join attempt'...
                         csrRoamSubstateChange( pMac, eCSR_ROAM_SUBSTATE_JOIN_REQ, sessionId);
 <<<<<<< HEAD
+<<<<<<< HEAD
                         status = csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes );
+=======
+                        status = csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes, eWNI_SME_JOIN_REQ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         status = csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes, eWNI_SME_JOIN_REQ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6044,7 +6767,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGE, " StartBSS for WDS station with no BssDesc\n" );
+=======
+                    smsLog( pMac, LOGE, " StartBSS for WDS station with no BssDesc" );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGE, " StartBSS for WDS station with no BssDesc" );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6064,7 +6791,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     roamResult = eCSR_ROAM_RESULT_WDS_STARTED;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if( CSR_IS_INFRA_AP( pProfile ) )
@@ -6073,7 +6803,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     roamResult = eCSR_ROAM_RESULT_INFRA_STARTED;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif  
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  
@@ -6089,15 +6822,21 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     roamInfo.pBssDesc = pSirBssDesc;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                 roamInfo.staId = (tANI_U8)pSmeStartBssRsp->staId;
 #endif
                 if(!IS_SLM_SESSIONIZATION_SUPPORTED_BY_FW &&
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 roamInfo.staId = (tANI_U8)pSmeStartBssRsp->staId;
                  //Remove this code once SLM_Sessionization is supported 
                  //BMPS_WORKAROUND_NOT_NEEDED
                 if(!IS_FEATURE_SUPPORTED_BY_FW(SLM_SESSIONIZATION) &&
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    ( csrIsConcurrentSessionRunning( pMac )))
                 {
@@ -6148,7 +6887,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 roamResult = eCSR_ROAM_RESULT_WDS_STARTED;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if( CSR_IS_INFRA_AP( pProfile ) )
@@ -6157,7 +6899,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 roamResult = eCSR_ROAM_RESULT_INFRA_START_FAILED;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(Context)
@@ -6179,7 +6924,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             //No message to PE
             // return the roaming state to Joined.
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("receives silently roaming indication\n"));
+=======
+            smsLog(pMac, LOGW, FL("receives silently roaming indication"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("receives silently roaming indication"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6200,7 +6949,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             //We are here because we try to connect to the same AP
             //No message to PE
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("receives silently stop roaming indication\n"));
+=======
+            smsLog(pMac, LOGW, FL("receives silently stop roaming indication"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("receives silently stop roaming indication"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6223,9 +6976,13 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
             roamInfo.staId = pSession->connectedInfo.staId;
             roamInfo.u.pConnectedProfile = &pSession->connectedProfile;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
             VOS_ASSERT( roamInfo.staId != 0 );
 #endif
+=======
+            VOS_ASSERT( roamInfo.staId != 0 );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             VOS_ASSERT( roamInfo.staId != 0 );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6240,7 +6997,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
 #endif
         case eCsrJoinWdsFailure:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("failed to join WDS\n"));
+=======
+            smsLog(pMac, LOGW, FL("failed to join WDS"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("failed to join WDS"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6262,8 +7023,13 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
         default:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("receives no association indication\n"));
             smsLog(pMac, LOG1, FL("Assoc ref count %d\n"), 
+=======
+            smsLog(pMac, LOGW, FL("receives no association indication"));
+            smsLog(pMac, LOG1, FL("Assoc ref count %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("receives no association indication"));
             smsLog(pMac, LOG1, FL("Assoc ref count %d"),
@@ -6288,6 +7054,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 case eCsrSmeIssuedAssocToSimilarAP:
                 case eCsrHddIssued:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                case eCsrSmeIssuedDisassocForHandoff:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 case eCsrSmeIssuedDisassocForHandoff:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6297,6 +7067,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     roamInfo.statusCode = pSession->joinFailStatusCode.statusCode;
                     roamInfo.reasonCode = pSession->joinFailStatusCode.reasonCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                    palCopyMemory(pMac->hHdd, &roamInfo.bssid, &pSession->joinFailStatusCode.bssId, sizeof(tCsrBssid));
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     palCopyMemory(pMac->hHdd, &roamInfo.bssid, &pSession->joinFailStatusCode.bssId, sizeof(tCsrBssid));
 
@@ -6327,8 +7102,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                             }
                         }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOG1, FL("  roam(reason %d) failed\n"), pCommand->u.roamCmd.roamReason);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         else
                         {
                             /* bRefAssocStartCnt is not incremented when
@@ -6342,6 +7120,9 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                                     eCSR_ROAM_RESULT_FAILURE);
                         }
                     smsLog(pMac, LOG1, FL("  roam(reason %d) failed"), pCommand->u.roamCmd.roamReason);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifndef WLAN_MDM_CODE_REDUCTION_OPT
                     sme_QosCsrEventInd(pMac, (tANI_U8)sessionId, SME_QOS_CSR_DISCONNECT_IND, NULL);
@@ -6406,7 +7187,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                     csrScanStartIdleScan(pMac);
                     break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 case eCsrStopBss:
@@ -6419,7 +7203,11 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                 case eCsrForcedDeauthSta:
                    csrRoamStateChange( pMac, eCSR_ROAMING_STATE_JOINED, sessionId);
 <<<<<<< HEAD
+<<<<<<< HEAD
                    if( CSR_IS_SESSION_VALID(pMac, sessionId) )
+=======
+                   if( pMac->roam.roamSession && CSR_IS_SESSION_VALID(pMac, sessionId) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    if( pMac->roam.roamSession && CSR_IS_SESSION_VALID(pMac, sessionId) )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6442,7 +7230,10 @@ static tANI_BOOLEAN csrRoamProcessResults( tpAniSirGlobal pMac, tSmeCmd *pComman
                    }
                    break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 case eCsrLostLink1:
@@ -6594,7 +7385,10 @@ eHalStatus csrRoamCopyProfile(tpAniSirGlobal pMac, tCsrRoamProfile *pDstProfile,
         pDstProfile->uapsd_mask = pSrcProfile->uapsd_mask;
         pDstProfile->beaconInterval = pSrcProfile->beaconInterval;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pDstProfile->privacy           = pSrcProfile->privacy;
@@ -6609,7 +7403,10 @@ eHalStatus csrRoamCopyProfile(tpAniSirGlobal pMac, tCsrRoamProfile *pDstProfile,
         pDstProfile->wps_state         = pSrcProfile->wps_state;
         pDstProfile->ieee80211d        = pSrcProfile->ieee80211d;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palCopyMemory(pMac->hHdd, &pDstProfile->Keys, &pSrcProfile->Keys, sizeof(pDstProfile->Keys));
@@ -6660,7 +7457,10 @@ eHalStatus csrRoamCopyConnectedProfile(tpAniSirGlobal pMac, tANI_U32 sessionId, 
             palCopyMemory(pMac->hHdd, &pDstProfile->SSIDs.SSIDList[0].SSID, &pSrcProfile->SSID, sizeof(tSirMacSSid));
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pSrcProfile->nAddIEAssocLength)
         {
             status = palAllocateMemory(pMac->hHdd, (void **)&pDstProfile->pAddIEAssoc, pSrcProfile->nAddIEAssocLength);
@@ -6673,6 +7473,9 @@ eHalStatus csrRoamCopyConnectedProfile(tpAniSirGlobal pMac, tANI_U32 sessionId, 
             palCopyMemory(pMac->hHdd, pDstProfile->pAddIEAssoc, pSrcProfile->pAddIEAssoc,
                 pSrcProfile->nAddIEAssocLength);
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status = palAllocateMemory(pMac->hHdd, (void **)&pDstProfile->ChannelInfo.ChannelList, 1);
         if(!HAL_STATUS_SUCCESS(status))
@@ -6724,7 +7527,11 @@ eHalStatus csrRoamIssueConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
     if(NULL == pCommand)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+        smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6773,7 +7580,11 @@ eHalStatus csrRoamIssueConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6794,7 +7605,11 @@ eHalStatus csrRoamIssueReassoc(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
     if(NULL == pCommand)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+        smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6835,7 +7650,11 @@ eHalStatus csrRoamIssueReassoc(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoam
         if( !HAL_STATUS_SUCCESS( status ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6857,7 +7676,11 @@ eHalStatus csrRoamEnqueuePreauth(tpAniSirGlobal pMac, tANI_U32 sessionId, tpSirB
     if(NULL == pCommand)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+        smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6878,7 +7701,11 @@ eHalStatus csrRoamEnqueuePreauth(tpAniSirGlobal pMac, tANI_U32 sessionId, tpSirB
             if( !HAL_STATUS_SUCCESS( status ) )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGE, FL(" fail to enqueue preauth command, status = %d\n"), status );
+=======
+                smsLog( pMac, LOGE, FL(" fail to enqueue preauth command, status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGE, FL(" fail to enqueue preauth command, status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6906,7 +7733,11 @@ eHalStatus csrRoamDequeuePreauth(tpAniSirGlobal pMac)
                 (eCsrPerformPreauth == pCommand->u.roamCmd.roamReason))
         {             
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("DQ-Command = %d, Reason = %d \n"), 
+=======
+            smsLog( pMac, LOG1, FL("DQ-Command = %d, Reason = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, FL("DQ-Command = %d, Reason = %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6916,7 +7747,11 @@ eHalStatus csrRoamDequeuePreauth(tpAniSirGlobal pMac)
             }
         } else  {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("Command = %d, Reason = %d \n"), 
+=======
+            smsLog( pMac, LOGE, FL("Command = %d, Reason = %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("Command = %d, Reason = %d "),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6925,7 +7760,11 @@ eHalStatus csrRoamDequeuePreauth(tpAniSirGlobal pMac)
     }
     else {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("pEntry NULL for eWNI_SME_FT_PRE_AUTH_RSP\n"));
+=======
+        smsLog( pMac, LOGE, FL("pEntry NULL for eWNI_SME_FT_PRE_AUTH_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("pEntry NULL for eWNI_SME_FT_PRE_AUTH_RSP"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6953,7 +7792,11 @@ eHalStatus csrRoamConnectWithBSSList(tpAniSirGlobal pMac, tANI_U32 sessionId, tC
         if(!HAL_STATUS_SUCCESS(status))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("failed to start a join process\n"));
+=======
+            smsLog(pMac, LOGE, FL("failed to start a join process"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("failed to start a join process"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6978,7 +7821,11 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
         return eHAL_STATUS_FAILURE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG1, FL("called  BSSType = %d authtype = %d  encryType = %d\n"),
+=======
+    smsLog(pMac, LOG1, FL("called  BSSType = %d authtype = %d  encryType = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG1, FL("called  BSSType = %d authtype = %d  encryType = %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6987,6 +7834,11 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
         !HAL_STATUS_SUCCESS( status = csrIsBTAMPAllowed( pMac, pProfile->operationChannel ) ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        smsLog(pMac, LOGE, FL("Request for BT AMP connection failed, channel requested is different than infra = %d"),
+               pProfile->operationChannel);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Request for BT AMP connection failed, channel requested is different than infra = %d"),
                pProfile->operationChannel);
@@ -6999,7 +7851,10 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
     //Only abort the scan if it is not used for other roam/connect purpose
     csrScanAbortMacScan(pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (!vos_concurrent_sessions_running() && (VOS_STA_SAP_MODE == pProfile->csrPersona))//In case of AP mode we do not want idle mode scan
@@ -7007,7 +7862,10 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
         csrScanDisable(pMac);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrRoamRemoveDuplicateCommand(pMac, sessionId, NULL, eCsrHddIssued);
@@ -7025,7 +7883,11 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
     if(CSR_INVALID_SCANRESULT_HANDLE != hBssListIn)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("is called with BSSList\n"));
+=======
+        smsLog(pMac, LOG1, FL("is called with BSSList"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG1, FL("is called with BSSList"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7078,6 +7940,7 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                 {
                     if( (pProfile && CSR_IS_WDS_AP( pProfile ) )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                      || (pProfile && CSR_IS_INFRA_AP ( pProfile ))
 #endif
@@ -7085,15 +7948,21 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                     {
                         //This can be start right away
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      || (pProfile && CSR_IS_INFRA_AP ( pProfile ))
                     )
                     {
                         //This can be started right away
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         status = csrRoamIssueConnect(pMac, sessionId, pProfile, NULL, eCsrHddIssued, 
                                                     roamId, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_FALSE);
                         if(!HAL_STATUS_SUCCESS(status))
                         {
+<<<<<<< HEAD
 <<<<<<< HEAD
                             fCallCallback = eANI_BOOLEAN_TRUE;
                         }
@@ -7102,6 +7971,8 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                     status = csrScanGetResult(pMac, pScanFilter, &hBSSList);
                     smsLog(pMac, LOG1, "************ csrScanGetResult Status ********* %d\n", status);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             smsLog(pMac, LOGE, FL("   CSR failed to issue start BSS command with status = 0x%08X"), status);
                             fCallCallback = eANI_BOOLEAN_TRUE;
                         }
@@ -7113,6 +7984,9 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                     }
                     status = csrScanGetResult(pMac, pScanFilter, &hBSSList);
                     smsLog(pMac, LOG1, "************ csrScanGetResult Status ********* %d", status);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if(HAL_STATUS_SUCCESS(status))
                     {
@@ -7121,6 +7995,10 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                         if(!HAL_STATUS_SUCCESS(status))
                         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                            smsLog(pMac, LOGE, FL("   CSR failed to issue connect command with status = 0x%08X"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             smsLog(pMac, LOGE, FL("   CSR failed to issue connect command with status = 0x%08X"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7138,7 +8016,11 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                             if(!HAL_STATUS_SUCCESS(status))
                             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 smsLog(pMac, LOGE, "   CSR failed to issue startIBSS command with status = 0x%08X\n", status);
+=======
+                                smsLog(pMac, LOGE, "   CSR failed to issue startIBSS command with status = 0x%08X", status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                 smsLog(pMac, LOGE, "   CSR failed to issue startIBSS command with status = 0x%08X", status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7152,9 +8034,12 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                             if(!HAL_STATUS_SUCCESS(status))
                             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 fCallCallback = eANI_BOOLEAN_TRUE;
                             }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 smsLog(pMac, LOGE, FL("   CSR failed to issue SSID scan command with status = 0x%08X"), status);
                                 fCallCallback = eANI_BOOLEAN_TRUE;
                             }
@@ -7162,6 +8047,9 @@ eHalStatus csrRoamConnect(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                             {
                                 smsLog(pMac, LOG1, FL("SSID scan requested for Infra connect req"));
                             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         }
                     }
@@ -7202,7 +8090,11 @@ eHalStatus csrRoamReassoc(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
       return eHAL_STATUS_FAILURE;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG1, FL("called  BSSType = %d authtype = %d  encryType = %d\n"), pProfile->BSSType, pProfile->AuthType.authType[0], pProfile->EncryptionType.encryptionType[0]);
+=======
+   smsLog(pMac, LOG1, FL("called  BSSType = %d authtype = %d  encryType = %d"), pProfile->BSSType, pProfile->AuthType.authType[0], pProfile->EncryptionType.encryptionType[0]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOG1, FL("called  BSSType = %d authtype = %d  encryType = %d"), pProfile->BSSType, pProfile->AuthType.authType[0], pProfile->EncryptionType.encryptionType[0]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7223,7 +8115,11 @@ eHalStatus csrRoamReassoc(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
          else
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOG1, FL("Not connected to the same SSID asked in the profile\n"));
+=======
+            smsLog(pMac, LOG1, FL("Not connected to the same SSID asked in the profile"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOG1, FL("Not connected to the same SSID asked in the profile"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7239,7 +8135,11 @@ eHalStatus csrRoamReassoc(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
       {
          smsLog(pMac, LOG1, FL("Either the profile is NULL or none of the fields "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "in tCsrRoamModifyProfileFields got modified\n"));
+=======
+                               "in tCsrRoamModifyProfileFields got modified"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "in tCsrRoamModifyProfileFields got modified"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7248,7 +8148,11 @@ eHalStatus csrRoamReassoc(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
    else
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOG1, FL("Not connected! No need to reassoc\n"));
+=======
+      smsLog(pMac, LOG1, FL("Not connected! No need to reassoc"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOG1, FL("Not connected! No need to reassoc"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7339,7 +8243,11 @@ eHalStatus csrRoamJoinLastProfile(tpAniSirGlobal pMac, tANI_U32 sessionId)
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("cannot find a roaming profile\n"));
+=======
+            smsLog(pMac, LOGW, FL("cannot find a roaming profile"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("cannot find a roaming profile"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7376,7 +8284,11 @@ eHalStatus csrRoamConnectToLastProfile(tpAniSirGlobal pMac, tANI_U32 sessionId)
 {
     eHalStatus status = eHAL_STATUS_FAILURE;
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, FL("is called\n"));
+=======
+    smsLog(pMac, LOGW, FL("is called"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGW, FL("is called"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7408,7 +8320,11 @@ eHalStatus csrRoamProcessDisassocDeauth( tpAniSirGlobal pMac, tSmeCmd *pCommand,
     else if ( csrIsConnStateInfra( pMac, sessionId ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL(" restore AC weights (%d-%d-%d-%d)\n"), pMac->roam.ucACWeights[0], pMac->roam.ucACWeights[1],
+=======
+        smsLog(pMac, LOG1, FL(" restore AC weights (%d-%d-%d-%d)"), pMac->roam.ucACWeights[0], pMac->roam.ucACWeights[1],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG1, FL(" restore AC weights (%d-%d-%d-%d)"), pMac->roam.ucACWeights[0], pMac->roam.ucACWeights[1],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7470,11 +8386,17 @@ eHalStatus csrRoamProcessDisassocDeauth( tpAniSirGlobal pMac, tSmeCmd *pCommand,
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else
     {
         smsLog(pMac, LOGW, FL(" failed with status %d"), status);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (status);
 }
@@ -7499,17 +8421,23 @@ eHalStatus csrRoamIssueDisassociateCmd( tpAniSirGlobal pMac, tANI_U32 sessionId,
     do
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("  reason = %d\n"), reason );
         pCommand = csrGetCommandBuffer( pMac );
         if ( !pCommand ) 
         {
             smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOG1, FL("  reason = %d"), reason );
         pCommand = csrGetCommandBuffer( pMac );
         if ( !pCommand ) 
         {
             smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = eHAL_STATUS_RESOURCES;
             break;
@@ -7551,7 +8479,11 @@ eHalStatus csrRoamIssueDisassociateCmd( tpAniSirGlobal pMac, tANI_U32 sessionId,
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7581,7 +8513,11 @@ eHalStatus csrRoamIssueStopBssCmd( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7591,7 +8527,11 @@ eHalStatus csrRoamIssueStopBssCmd( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+        smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7624,7 +8564,11 @@ eHalStatus csrRoamDisconnectInternal(tpAniSirGlobal pMac, tANI_U32 sessionId, eC
                 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOG2, FL("called\n"));
+=======
+        smsLog(pMac, LOG2, FL("called"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOG2, FL("called"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7681,7 +8625,10 @@ eHalStatus csrRoamSaveConnectedInfomation(tpAniSirGlobal pMac, tANI_U32 sessionI
 
     palCopyMemory(pMac->hHdd, &pConnectProfile->Keys, &pProfile->Keys, sizeof(tCsrKeys));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pConnectProfile->pAddIEAssoc)
     {
         palFreeMemory(pMac->hHdd, pConnectProfile->pAddIEAssoc);
@@ -7702,6 +8649,9 @@ eHalStatus csrRoamSaveConnectedInfomation(tpAniSirGlobal pMac, tANI_U32 sessionI
                 pProfile->nAddIEAssocLength);
     }
     
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Save bssid
     csrGetBssIdBssDesc(pMac, pSirBssDesc, &pConnectProfile->bssid);
@@ -7713,11 +8663,17 @@ eHalStatus csrRoamSaveConnectedInfomation(tpAniSirGlobal pMac, tANI_U32 sessionI
     }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( NULL == pIesTemp )
     {
         status = csrGetParsedBssDescriptionIEs(pMac, pSirBssDesc, &pIesTemp);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_CCX
     if ((csrIsProfileCCX(pProfile) || 
@@ -7727,8 +8683,12 @@ eHalStatus csrRoamSaveConnectedInfomation(tpAniSirGlobal pMac, tANI_U32 sessionI
               || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_WPA_PSK) 
               || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_RSN) 
 <<<<<<< HEAD
+<<<<<<< HEAD
               || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_RSN_PSK)))) 
         && (!(csrIsProfile11r( pProfile ))) 
+=======
+              || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_RSN_PSK))))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_RSN_PSK))))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7739,10 +8699,13 @@ eHalStatus csrRoamSaveConnectedInfomation(tpAniSirGlobal pMac, tANI_U32 sessionI
 #endif
     //save ssid
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( NULL == pIesTemp )
     {
         status = csrGetParsedBssDescriptionIEs(pMac, pSirBssDesc, &pIesTemp);
     }
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(HAL_STATUS_SUCCESS(status))
@@ -7757,13 +8720,19 @@ eHalStatus csrRoamSaveConnectedInfomation(tpAniSirGlobal pMac, tANI_U32 sessionI
         //Save the bss desc
         status = csrRoamSaveConnectedBssDesc(pMac, sessionId, pSirBssDesc);
 <<<<<<< HEAD
+<<<<<<< HEAD
            if( CSR_IS_QOS_BSS(pIesTemp) )
            {
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            
            if( CSR_IS_QOS_BSS(pIesTemp) || pIesTemp->HTCaps.present)
            {
               //Some HT AP's dont send WMM IE so in that case we assume all HT Ap's are Qos Enabled AP's
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               pConnectProfile->qap = TRUE;
            }
@@ -7839,7 +8808,11 @@ static void csrRoamJoinRspProcessor( tpAniSirGlobal pMac, tSirSmeJoinRsp *pSmeJo
         pSession->joinFailStatusCode.statusCode = pSmeJoinRsp->statusCode;
         pSession->joinFailStatusCode.reasonCode = pSmeJoinRsp->protStatusCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "SmeJoinReq failed with statusCode= 0x%08lX [%d]\n", pSmeJoinRsp->statusCode, pSmeJoinRsp->statusCode );
+=======
+        smsLog( pMac, LOGW, "SmeJoinReq failed with statusCode= 0x%08lX [%d]", pSmeJoinRsp->statusCode, pSmeJoinRsp->statusCode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "SmeJoinReq failed with statusCode= 0x%08lX [%d]", pSmeJoinRsp->statusCode, pSmeJoinRsp->statusCode );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7882,7 +8855,11 @@ eHalStatus csrRoamIssueJoin( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDes
 {
     eHalStatus status;
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG1, "Attempting to Join Bssid= %02x-%02x-%02x-%02x-%02x-%02x\n", 
+=======
+    smsLog( pMac, LOG1, "Attempting to Join Bssid= %02x-%02x-%02x-%02x-%02x-%02x",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG1, "Attempting to Join Bssid= %02x-%02x-%02x-%02x-%02x-%02x",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7893,7 +8870,11 @@ eHalStatus csrRoamIssueJoin( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDes
     csrRoamSubstateChange( pMac, eCSR_ROAM_SUBSTATE_JOIN_REQ, sessionId);
     // attempt to Join this BSS...
 <<<<<<< HEAD
+<<<<<<< HEAD
     status = csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes );
+=======
+    status = csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes, eWNI_SME_JOIN_REQ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     status = csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes, eWNI_SME_JOIN_REQ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7908,15 +8889,21 @@ static eHalStatus csrRoamIssueReassociate( tpAniSirGlobal pMac, tANI_U32 session
     csrRoamSubstateChange( pMac, eCSR_ROAM_SUBSTATE_REASSOC_REQ, sessionId );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGE, FL("  calling csrSendSmeReassocReqMsg\n"));
     
     // attempt to Join this BSS...
     return csrSendSmeReassocReqMsg( pMac, sessionId, pSirBssDesc, pIes, pProfile );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog(pMac, LOGE, FL(" calling csrSendJoinReqMsg (eWNI_SME_REASSOC_REQ)"));
     
     // attempt to Join this BSS...
     return csrSendJoinReqMsg( pMac, sessionId, pSirBssDesc, pProfile, pIes, eWNI_SME_REASSOC_REQ);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -7950,9 +8937,13 @@ void csrRoamReissueRoamCommand(tpAniSirGlobal pMac)
                 roamInfo.statusCode = pSession->joinFailStatusCode.statusCode;
                 roamInfo.reasonCode = pSession->joinFailStatusCode.reasonCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE              
                 if (CSR_IS_WDS(&pSession->connectedProfile)){
 #endif
+=======
+                if (CSR_IS_WDS(&pSession->connectedProfile)){
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if (CSR_IS_WDS(&pSession->connectedProfile)){
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7961,7 +8952,10 @@ void csrRoamReissueRoamCommand(tpAniSirGlobal pMac)
                                         eCSR_ROAM_WDS_IND, 
                                         eCSR_ROAM_RESULT_WDS_DISASSOCIATED);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef  WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 }else if (CSR_IS_INFRA_AP(&pSession->connectedProfile)){
@@ -7972,16 +8966,22 @@ void csrRoamReissueRoamCommand(tpAniSirGlobal pMac)
                                 }  
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif                  
 
                 if( !HAL_STATUS_SUCCESS( csrRoamIssueStopBss( pMac, sessionId, eCSR_ROAM_SUBSTATE_STOP_BSS_REQ ) ) )
                 {
                     smsLog(pMac, LOGE, " Failed to reissue stop_bss command for WDS after disassociated\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 if( !HAL_STATUS_SUCCESS( csrRoamIssueStopBss( pMac, sessionId, eCSR_ROAM_SUBSTATE_STOP_BSS_REQ ) ) )
                 {
                     smsLog(pMac, LOGE, " Failed to reissue stop_bss command for WDS after disassociated");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrRoamComplete( pMac, eCsrNothingToJoin, NULL );
                 }
@@ -7989,7 +8989,11 @@ void csrRoamReissueRoamCommand(tpAniSirGlobal pMac)
             else if(eCsrStopRoaming == csrRoamJoinNextBss(pMac, pCommand, eANI_BOOLEAN_TRUE))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, " Failed to reissue join command after disassociated\n");
+=======
+                smsLog(pMac, LOGW, " Failed to reissue join command after disassociated");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, " Failed to reissue join command after disassociated");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7999,7 +9003,11 @@ void csrRoamReissueRoamCommand(tpAniSirGlobal pMac)
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, "  Command is not roaming after disassociated\n");
+=======
+            smsLog(pMac, LOGW, "  Command is not roaming after disassociated");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, "  Command is not roaming after disassociated");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8008,7 +9016,11 @@ void csrRoamReissueRoamCommand(tpAniSirGlobal pMac)
     else 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, "   Disassoc rsp cannot continue because no command is available\n");
+=======
+        smsLog(pMac, LOGE, "   Disassoc rsp cannot continue because no command is available");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, "   Disassoc rsp cannot continue because no command is available");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8116,7 +9128,11 @@ eHalStatus csrRoamIssueReassociateCmd( tpAniSirGlobal pMac, tANI_U32 sessionId )
         if ( !pCommand ) 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+            smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8131,7 +9147,11 @@ eHalStatus csrRoamIssueReassociateCmd( tpAniSirGlobal pMac, tANI_U32 sessionId )
             else 
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGE, FL(" Unexpected active roam command present \n") );
+=======
+                smsLog( pMac, LOGE, FL(" Unexpected active roam command present ") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGE, FL(" Unexpected active roam command present ") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8147,7 +9167,11 @@ eHalStatus csrRoamIssueReassociateCmd( tpAniSirGlobal pMac, tANI_U32 sessionId )
     if(NULL == pCommand)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" fail to get command buffer as expected based on previous connect roam command\n") );
+=======
+        smsLog( pMac, LOGE, FL(" fail to get command buffer as expected based on previous connect roam command") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" fail to get command buffer as expected based on previous connect roam command") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8168,7 +9192,11 @@ eHalStatus csrRoamIssueReassociateCmd( tpAniSirGlobal pMac, tANI_U32 sessionId )
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8189,7 +9217,11 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
     if(NULL == pEntry)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, "   CFG_CNF with active list empty\n");
+=======
+        smsLog(pMac, LOGW, "   CFG_CNF with active list empty");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, "   CFG_CNF with active list empty");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8209,10 +9241,13 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
     {
         //the roaming is cancelled. Simply complete the command
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("  Roam command cancelled\n"));
         csrRoamComplete(pMac, eCsrNothingToJoin, NULL); 
     }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGW, FL("  Roam command cancelled"));
         csrRoamComplete(pMac, eCsrNothingToJoin, NULL); 
     }
@@ -8225,13 +9260,20 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
         csrSetAbortRoamingCommand( pMac, pCommand );
         csrRoamComplete(pMac, eCsrNothingToJoin, NULL);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else
     {
         if ( CCM_IS_RESULT_SUCCESS(result) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOG2, "Cfg sequence complete\n");
+=======
+            smsLog(pMac, LOG2, "Cfg sequence complete");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOG2, "Cfg sequence complete");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8245,9 +9287,13 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
             if ( csrIsBssTypeIBSS( pCommand->u.roamCmd.roamProfile.BSSType ) ||
                  CSR_IS_WDS( &pCommand->u.roamCmd.roamProfile ) 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                   || CSR_IS_INFRA_AP(&pCommand->u.roamCmd.roamProfile) 
 #endif
+=======
+                  || CSR_IS_INFRA_AP(&pCommand->u.roamCmd.roamProfile) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   || CSR_IS_INFRA_AP(&pCommand->u.roamCmd.roamProfile) 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8258,7 +9304,11 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
                                         pBssDesc, pCommand->u.roamCmd.roamId )))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, " CSR start BSS failed\n");
+=======
+                    smsLog(pMac, LOGW, " CSR start BSS failed");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, " CSR start BSS failed");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8271,7 +9321,11 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
                 if (!pCommand->u.roamCmd.pRoamBssEntry)
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, " pRoamBssEntry is NULL\n");
+=======
+                    smsLog(pMac, LOGW, " pRoamBssEntry is NULL");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, " pRoamBssEntry is NULL");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8342,7 +9396,11 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
 #ifdef FEATURE_WLAN_LFR
                         if (csrRoamIsHandoffInProgress(pMac) && 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                 csrRoamIsFastRoamEnabled(pMac))
+=======
+                                                csrRoamIsFastRoamEnabled(pMac, sessionId))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                                 csrRoamIsFastRoamEnabled(pMac, sessionId))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8375,7 +9433,11 @@ static void csrRoamingStateConfigCnfProcessor( tpAniSirGlobal pMac, tANI_U32 res
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, FL("  found BSSType mismatching the one in BSS description\n"));
+=======
+                    smsLog(pMac, LOGW, FL("  found BSSType mismatching the one in BSS description"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, FL("  found BSSType mismatching the one in BSS description"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8410,15 +9472,21 @@ static void csrRoamRoamingStateAuthRspProcessor( tpAniSirGlobal pMac, tSirSmeAut
 {
     //No one is sending eWNI_SME_AUTH_REQ to PE.
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, FL("is no-op\n"));
     if ( eSIR_SME_SUCCESS == pSmeAuthRsp->statusCode ) 
     {
         smsLog( pMac, LOGW, "CSR SmeAuthReq Successful\n" );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog(pMac, LOGW, FL("is no-op"));
     if ( eSIR_SME_SUCCESS == pSmeAuthRsp->statusCode ) 
     {
         smsLog( pMac, LOGW, "CSR SmeAuthReq Successful" );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Successfully authenticated with a new Bss.  Attempt to stop the current Bss and
         // join the new one...
@@ -8427,7 +9495,11 @@ static void csrRoamRoamingStateAuthRspProcessor( tpAniSirGlobal pMac, tSirSmeAut
     }
     else {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "CSR SmeAuthReq failed with statusCode= 0x%08lX [%d]\n", pSmeAuthRsp->statusCode, pSmeAuthRsp->statusCode );
+=======
+        smsLog( pMac, LOGW, "CSR SmeAuthReq failed with statusCode= 0x%08lX [%d]", pSmeAuthRsp->statusCode, pSmeAuthRsp->statusCode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "CSR SmeAuthReq failed with statusCode= 0x%08lX [%d]", pSmeAuthRsp->statusCode, pSmeAuthRsp->statusCode );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8447,7 +9519,11 @@ static void csrRoamRoamingStateReassocRspProcessor( tpAniSirGlobal pMac, tpSirSm
     if ( eSIR_SME_SUCCESS == pSmeJoinRsp->statusCode ) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "CSR SmeReassocReq Successful\n" );
+=======
+        smsLog( pMac, LOGW, "CSR SmeReassocReq Successful" );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "CSR SmeReassocReq Successful" );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8473,7 +9549,11 @@ static void csrRoamRoamingStateReassocRspProcessor( tpAniSirGlobal pMac, tpSirSm
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "CSR SmeReassocReq failed with statusCode= 0x%08lX [%d]\n", pSmeJoinRsp->statusCode, pSmeJoinRsp->statusCode );
+=======
+        smsLog( pMac, LOGW, "CSR SmeReassocReq failed with statusCode= 0x%08lX [%d]", pSmeJoinRsp->statusCode, pSmeJoinRsp->statusCode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "CSR SmeReassocReq failed with statusCode= 0x%08lX [%d]", pSmeJoinRsp->statusCode, pSmeJoinRsp->statusCode );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8567,7 +9647,11 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
     statusCode = SmeDisassocRsp.statusCode;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG2, "csrRoamRoamingStateDisassocRspProcessor sessionId %d\n", sessionId);
+=======
+    smsLog( pMac, LOG2, "csrRoamRoamingStateDisassocRspProcessor sessionId %d", sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG2, "csrRoamRoamingStateDisassocRspProcessor sessionId %d", sessionId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8594,7 +9678,11 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
         if ( eSIR_SME_SUCCESS == statusCode )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, "CSR SmeDisassocReq force disassociated Successfully\n" );
+=======
+            smsLog( pMac, LOG2, "CSR SmeDisassocReq force disassociated Successfully" );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, "CSR SmeDisassocReq force disassociated Successfully" );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8605,9 +9693,12 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
     else if ( CSR_IS_ROAM_SUBSTATE_DISASSOC_HO( pMac, sessionId ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "CSR SmeDisassocReq due to HO\n" );
 #if   defined (WLAN_FEATURE_NEIGHBOR_ROAMING)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        smsLog( pMac, LOGE, "CSR SmeDisassocReq due to HO on session %d", sessionId );
 #if   defined (WLAN_FEATURE_NEIGHBOR_ROAMING)
       /*
@@ -8648,11 +9739,15 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
         * After ensuring that the roam profile is in the scan result list,
         * dequeue the command from the active list.
         */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pEntry = csrLLPeekHead( &pMac->sme.smeCmdActiveList, LL_ACCESS_LOCK );
         if ( pEntry )
         {
             pCommand = GET_BASE_ADDR( pEntry, tSmeCmd, Link );
+<<<<<<< HEAD
 <<<<<<< HEAD
             // If the head of the queue is Active and it is a ROAM command, remove
             // and put this on the Free queue.
@@ -8662,6 +9757,8 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
                 //we need to process the result first before removing it from active list because state changes 
                 //still happening insides roamQProcessRoamResults so no other roam command should be issued
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* If the head of the queue is Active and it is a ROAM command, remove
              * and put this on the Free queue.
              */
@@ -8673,6 +9770,9 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
                  * because state changes still happening insides roamQProcessRoamResults so
                  * no other roam command should be issued.
                  */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCmd = csrLLRemoveEntry( &pMac->sme.smeCmdActiveList, pEntry, LL_ACCESS_LOCK );
                 if(pCommand->u.roamCmd.fReleaseProfile)
@@ -8682,6 +9782,7 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
                 }
                 if( fRemoveCmd )
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {
                     csrReleaseCommandRoam( pMac, pCommand );
                 }
@@ -8690,16 +9791,22 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
                     smsLog( pMac, LOGE, "  ********csrRoamRoamingStateDisassocRspProcessor fail to remove cmd reason %d\n",
                         pCommand->u.roamCmd.roamReason );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrReleaseCommandRoam( pMac, pCommand );
                 else
                 {
                     smsLog( pMac, LOGE, "%s: fail to remove cmd reason %d",
                             __func__, pCommand->u.roamCmd.roamReason );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
             else
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 smsLog( pMac, LOGW, "CSR: Roam Completion called but ROAM command is not ACTIVE ...\n" );
 =======
@@ -8758,10 +9865,14 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
                 // should have asserted, sending up roam complete instead. Let upper layer
                 // decide what to do next
                 csrCallRoamingCompletionCallback(pMac, pSession, &roamInfo, 0, eCSR_ROAM_RESULT_FAILURE);
+=======
+                smsLog( pMac, LOGE, "%s: roam command not active", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else
         {
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL(" fail to allocate memory for scan filter\n"));
             csrCallRoamingCompletionCallback(pMac, pSession, &roamInfo, 0, eCSR_ROAM_RESULT_FAILURE);
         }
@@ -8772,6 +9883,8 @@ void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisass
             palFreeMemory( pMac->hHdd, pScanFilter );
         }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOGE, "%s: NO commands are active", __func__ );
         }
 
@@ -8840,6 +9953,9 @@ POST_ROAM_FAILURE:
                     __func__, status);
             csrRoamComplete( pMac, eCsrJoinFailure, NULL );
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -8863,17 +9979,23 @@ POST_ROAM_FAILURE:
             // SSIDs.  In all cases, we set the new Bss configuration here and attempt to join
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, "CSR SmeDisassocReq disassociated Successfully\n" );
         }
         else
         {
             smsLog( pMac, LOGE, "SmeDisassocReq failed with statusCode= 0x%08lX\n", statusCode );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOG2, "CSR SmeDisassocReq disassociated Successfully" );
         }
         else
         {
             smsLog( pMac, LOGE, "SmeDisassocReq failed with statusCode= 0x%08lX", statusCode );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         //We are not done yet. Get the data and continue roaming
@@ -8886,7 +10008,11 @@ static void csrRoamRoamingStateDeauthRspProcessor( tpAniSirGlobal pMac, tSirSmeD
     tSirResultCodes statusCode;
     //No one is sending eWNI_SME_DEAUTH_REQ to PE.
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, FL("is no-op\n"));
+=======
+    smsLog(pMac, LOGW, FL("is no-op"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGW, FL("is no-op"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8902,17 +10028,23 @@ static void csrRoamRoamingStateDeauthRspProcessor( tpAniSirGlobal pMac, tSirSmeD
             // Successfully deauth from the 'old' Bss...
             //
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, "CSR SmeDeauthReq disassociated Successfully\n" );
         }
         else
         {
             smsLog( pMac, LOGW, "SmeDeauthReq failed with statusCode= 0x%08lX\n", statusCode );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOG2, "CSR SmeDeauthReq disassociated Successfully" );
         }
         else
         {
             smsLog( pMac, LOGW, "SmeDeauthReq failed with statusCode= 0x%08lX", statusCode );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         //We are not done yet. Get the data and continue roaming
@@ -8927,7 +10059,11 @@ static void csrRoamRoamingStateStartBssRspProcessor( tpAniSirGlobal pMac, tSirSm
     if ( eSIR_SME_SUCCESS == pSmeStartBssRsp->statusCode ) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "SmeStartBssReq Successful\n" );
+=======
+        smsLog( pMac, LOGW, "SmeStartBssReq Successful" );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "SmeStartBssReq Successful" );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8935,6 +10071,7 @@ static void csrRoamRoamingStateStartBssRspProcessor( tpAniSirGlobal pMac, tSirSm
     }
     else 
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         smsLog( pMac, LOGW, "SmeStartBssReq failed with statusCode= 0x%08lX\n", pSmeStartBssRsp->statusCode );
         //Let csrRoamComplete decide what to do
@@ -8946,11 +10083,16 @@ static void csrRoamRoamingStateStartBssRspProcessor( tpAniSirGlobal pMac, tSirSm
     csrRoamComplete( pMac, result, &pSmeStartBssRsp->bssDescription );
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGW, "SmeStartBssReq failed with statusCode= 0x%08lX", pSmeStartBssRsp->statusCode );
         //Let csrRoamComplete decide what to do
         result = eCsrStartBssFailure;
     }
     csrRoamComplete( pMac, result, pSmeStartBssRsp);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -8970,6 +10112,7 @@ void csrRoamingStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
         tANI_U32 sessionId = 0;
     pSmeRsp = (tSirSmeRsp *)pMsgBuf;
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG2, "Message %d[0x%04X] received in substate %d\n",
                 pSmeRsp->messageType, pSmeRsp->messageType,
                 pMac->roam.curSubState[pSmeRsp->sessionId] );
@@ -8982,6 +10125,14 @@ void csrRoamingStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
     pSmeRsp->length = (pSmeRsp->length);
     pSmeRsp->statusCode = (pSmeRsp->statusCode);
 #endif
+=======
+    smsLog( pMac, LOG2, "Message %d[0x%04X] received in substate %d",
+                pSmeRsp->messageType, pSmeRsp->messageType,
+                pMac->roam.curSubState[pSmeRsp->sessionId] );
+    pSmeRsp->messageType = (pSmeRsp->messageType);
+    pSmeRsp->length = (pSmeRsp->length);
+    pSmeRsp->statusCode = (pSmeRsp->statusCode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG2, "Message %d[0x%04X] received in substate %d",
                 pSmeRsp->messageType, pSmeRsp->messageType,
@@ -9032,7 +10183,11 @@ void csrRoamingStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
                  CSR_IS_ROAM_SUBSTATE_DISASSOC_HO( pMac, pSmeRsp->sessionId )         )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("eWNI_SME_DISASSOC_RSP subState = %d\n"), pMac->roam.curSubState[pSmeRsp->sessionId]);
+=======
+                smsLog(pMac, LOG1, FL("eWNI_SME_DISASSOC_RSP subState = %d"), pMac->roam.curSubState[pSmeRsp->sessionId]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOG1, FL("eWNI_SME_DISASSOC_RSP subState = %d"), pMac->roam.curSubState[pSmeRsp->sessionId]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9064,7 +10219,11 @@ void csrRoamingStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
         case eWNI_SME_IBSS_PEER_DEPARTED_IND:
             pIbssPeerInd = (tSmeIbssPeerInd*)pSmeRsp;
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, "CSR: Peer departed notification from LIM in joining state\n");
+=======
+            smsLog(pMac, LOGE, "CSR: Peer departed notification from LIM in joining state");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, "CSR: Peer departed notification from LIM in joining state");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9079,7 +10238,11 @@ void csrRoamingStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
             break;
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, "Unexpected message type = %d[0x%X] received in substate %d\n",
+=======
+            smsLog( pMac, LOG1, "Unexpected message type = %d[0x%X] received in substate %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, "Unexpected message type = %d[0x%X] received in substate %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9102,6 +10265,7 @@ void csrRoamJoinedStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
     {
        case eWNI_SME_GET_STATISTICS_RSP:
 <<<<<<< HEAD
+<<<<<<< HEAD
           smsLog( pMac, LOG2, FL("Stats rsp from PE\n"));
           csrRoamStatsRspProcessor( pMac, pSirMsg );
           break;
@@ -9110,12 +10274,17 @@ void csrRoamJoinedStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
         {
             tCsrRoamSession  *pSession;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           smsLog( pMac, LOG2, FL("Stats rsp from PE"));
           csrRoamStatsRspProcessor( pMac, pSirMsg );
           break;
         case eWNI_SME_UPPER_LAYER_ASSOC_CNF:
         {
             tCsrRoamSession  *pSession = NULL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             tSirSmeAssocIndToUpperLayerCnf *pUpperLayerAssocCnf;
             tCsrRoamInfo roamInfo;
@@ -9123,7 +10292,11 @@ void csrRoamJoinedStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
             tANI_U32 sessionId;
             eHalStatus status;
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, FL("ASSOCIATION confirmation can be given to upper layer \n"));
+=======
+            smsLog( pMac, LOG1, FL("ASSOCIATION confirmation can be given to upper layer "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, FL("ASSOCIATION confirmation can be given to upper layer "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9132,7 +10305,12 @@ void csrRoamJoinedStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
             pUpperLayerAssocCnf = (tSirSmeAssocIndToUpperLayerCnf *)pMsgBuf;
             status = csrRoamGetSessionIdFromBSSID( pMac, (tCsrBssid *)pUpperLayerAssocCnf->bssId, &sessionId );
 <<<<<<< HEAD
+<<<<<<< HEAD
             pSession = CSR_GET_SESSION(pMac, sessionId);
+=======
+            if (HAL_STATUS_SUCCESS(status))
+                pSession = CSR_GET_SESSION(pMac, sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             if (HAL_STATUS_SUCCESS(status))
                 pSession = CSR_GET_SESSION(pMac, sessionId);
@@ -9170,7 +10348,10 @@ void csrRoamJoinedStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
         }
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        default:
@@ -9232,7 +10413,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
         if(NULL == pCommand)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+            smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9252,7 +10437,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
                 if ( pSetKey->keyLength < CSR_WEP40_KEY_LEN ) 
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGW, "Invalid WEP40 keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                    smsLog( pMac, LOGW, "Invalid WEP40 keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGW, "Invalid WEP40 keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9272,7 +10461,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
                 if ( pSetKey->keyLength < CSR_WEP104_KEY_LEN ) 
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGW, "Invalid WEP104 keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                    smsLog( pMac, LOGW, "Invalid WEP104 keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGW, "Invalid WEP104 keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9288,7 +10481,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
             if ( pSetKey->keyLength < CSR_TKIP_KEY_LEN )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, "Invalid TKIP keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                smsLog( pMac, LOGW, "Invalid TKIP keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, "Invalid TKIP keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9302,7 +10499,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
             if ( pSetKey->keyLength < CSR_AES_KEY_LEN )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, "Invalid AES/CCMP keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                smsLog( pMac, LOGW, "Invalid AES/CCMP keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, "Invalid AES/CCMP keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9317,7 +10518,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
             if ( pSetKey->keyLength < CSR_WAPI_KEY_LEN )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, "Invalid WAPI keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                smsLog( pMac, LOGW, "Invalid WAPI keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, "Invalid WAPI keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9333,7 +10538,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
             if ( pSetKey->keyLength < CSR_KRK_KEY_LEN )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, "Invalid KRK keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                smsLog( pMac, LOGW, "Invalid KRK keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, "Invalid KRK keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9355,7 +10564,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
             if ( pSetKey->keyLength < CSR_AES_KEY_LEN )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, "Invalid AES/CCMP keylength [= %d] in SetContext call\n", pSetKey->keyLength );
+=======
+                smsLog( pMac, LOGW, "Invalid AES/CCMP keylength [= %d] in SetContext call", pSetKey->keyLength );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, "Invalid AES/CCMP keylength [= %d] in SetContext call", pSetKey->keyLength );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9379,7 +10592,11 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9388,18 +10605,24 @@ static eHalStatus csrRoamIssueSetKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessi
     // Free the command if there has been a failure, or it is a 
     // "local" operation like the set CCX CCKM KRK key.
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( (!HAL_STATUS_SUCCESS( status ) && ( NULL != pCommand )) 
 #ifdef FEATURE_WLAN_CCX
             || ( eCSR_ENCRYPT_TYPE_KRK == pSetKey->encType ) 
 #endif /* FEATURE_WLAN_CCX */
             )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( ( NULL != pCommand ) &&
          ( (!HAL_STATUS_SUCCESS( status ) )
 #ifdef FEATURE_WLAN_CCX
             || ( eCSR_ENCRYPT_TYPE_KRK == pSetKey->encType ) 
 #endif /* FEATURE_WLAN_CCX */
            ) )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         csrReleaseCommandSetKey( pMac, pCommand );
@@ -9418,7 +10641,11 @@ eHalStatus csrRoamIssueRemoveKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessionId
         if( !csrIsSetKeyAllowed(pMac, sessionId) ) 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, FL(" wrong state not allowed to set key\n") );
+=======
+            smsLog( pMac, LOGW, FL(" wrong state not allowed to set key") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, FL(" wrong state not allowed to set key") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9429,7 +10656,11 @@ eHalStatus csrRoamIssueRemoveKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessionId
         if(NULL == pCommand)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+            smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9448,7 +10679,11 @@ eHalStatus csrRoamIssueRemoveKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessionId
             fImediate = eANI_BOOLEAN_FALSE;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("keyType=%d, keyId=%d, PeerMac=%02x, %02x, %02x, %02x, %02x, %02x\n"),       
+=======
+        smsLog( pMac, LOGE, FL("keyType=%d, keyId=%d, PeerMac=%02x, %02x, %02x, %02x, %02x, %02x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("keyType=%d, keyId=%d, PeerMac=%02x, %02x, %02x, %02x, %02x, %02x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9463,7 +10698,11 @@ eHalStatus csrRoamIssueRemoveKeyCommand( tpAniSirGlobal pMac, tANI_U32 sessionId
         if( !HAL_STATUS_SUCCESS( status ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9532,7 +10771,11 @@ eHalStatus csrRoamProcessSetKeyCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, FL(" cannot process not connected\n") );
+=======
+        smsLog( pMac, LOGW, FL(" cannot process not connected") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, FL(" cannot process not connected") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9542,7 +10785,11 @@ eHalStatus csrRoamProcessSetKeyCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
     if( !HAL_STATUS_SUCCESS(status) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("  error status %d\n"), status );
+=======
+        smsLog( pMac, LOGE, FL("  error status %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("  error status %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9592,7 +10839,11 @@ eHalStatus csrRoamProcessRemoveKeyCommand( tpAniSirGlobal pMac, tSmeCmd *pComman
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, FL(" wrong state not allowed to set key\n") );
+=======
+        smsLog( pMac, LOGW, FL(" wrong state not allowed to set key") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, FL(" wrong state not allowed to set key") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9637,15 +10888,21 @@ eHalStatus csrRoamProcessRemoveKeyCommand( tpAniSirGlobal pMac, tSmeCmd *pComman
     if( !HAL_STATUS_SUCCESS( status ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" error status \n"), status );
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_CSR
         removeKeyEvent.eventId = WLAN_SECURITY_EVENT_REMOVE_KEY_RSP;
         removeKeyEvent.status = WLAN_SECURITY_STATUS_FAILURE;;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGE, FL(" error status "), status );
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_CSR
         removeKeyEvent.eventId = WLAN_SECURITY_EVENT_REMOVE_KEY_RSP;
         removeKeyEvent.status = WLAN_SECURITY_STATUS_FAILURE;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         WLAN_VOS_DIAG_EVENT_REPORT(&removeKeyEvent, EVENT_WLAN_SECURITY);
 #endif //FEATURE_WLAN_DIAG_SUPPORT_CSR
@@ -9736,7 +10993,11 @@ eHalStatus csrRoamPrepareFilterFromProfile(tpAniSirGlobal pMac, tCsrRoamProfile 
                  else 
                  {
 <<<<<<< HEAD
+<<<<<<< HEAD
                          smsLog(pMac, LOG1, FL("process a channel (%d) that is invalid\n"), pProfile->ChannelInfo.ChannelList[index]);
+=======
+                         smsLog(pMac, LOG1, FL("process a channel (%d) that is invalid"), pProfile->ChannelInfo.ChannelList[index]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                          smsLog(pMac, LOG1, FL("process a channel (%d) that is invalid"), pProfile->ChannelInfo.ChannelList[index]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9751,7 +11012,11 @@ eHalStatus csrRoamPrepareFilterFromProfile(tpAniSirGlobal pMac, tCsrRoamProfile 
         else 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("Channel list empty\n"));
+=======
+            smsLog(pMac, LOGW, FL("Channel list empty"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("Channel list empty"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9822,7 +11087,11 @@ tANI_BOOLEAN csrRoamIssueWmStatusChange( tpAniSirGlobal pMac, tANI_U32 sessionId
         if ( !pCommand )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to get command buffer\n") );
+=======
+            smsLog( pMac, LOGE, FL(" fail to get command buffer") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to get command buffer") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9854,7 +11123,11 @@ tANI_BOOLEAN csrRoamIssueWmStatusChange( tpAniSirGlobal pMac, tANI_U32 sessionId
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" fail to send message \n") );
+=======
+            smsLog( pMac, LOGE, FL(" fail to send message ") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" fail to send message ") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9880,7 +11153,11 @@ static void csrUpdateRssi(tpAniSirGlobal pMac, void* pMsg)
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("pGetRssiReq->pVosContext is NULL\n"));                
+=======
+            smsLog( pMac, LOGE, FL("pGetRssiReq->pVosContext is NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("pGetRssiReq->pVosContext is NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9894,7 +11171,11 @@ static void csrUpdateRssi(tpAniSirGlobal pMac, void* pMsg)
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("pGetRssiReq->rssiCallback is NULL\n"));                
+=======
+            smsLog( pMac, LOGE, FL("pGetRssiReq->rssiCallback is NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("pGetRssiReq->rssiCallback is NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9904,11 +11185,14 @@ static void csrUpdateRssi(tpAniSirGlobal pMac, void* pMsg)
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("pGetRssiReq is NULL\n"));    
     }
     return;
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGE, FL("pGetRssiReq is NULL"));
     }
     return;
@@ -9948,6 +11232,9 @@ void csrRoamRssiRspProcessor(tpAniSirGlobal pMac, void* pMsg)
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static void csrRoamRssiIndHdlr(tpAniSirGlobal pMac, void* pMsg)
 {
@@ -9958,24 +11245,34 @@ static void csrRoamRssiIndHdlr(tpAniSirGlobal pMac, void* pMsg)
         {
             ((WLANTL_RSSICrossThresholdCBType)(pTlRssiInd->tlCallback))
 <<<<<<< HEAD
+<<<<<<< HEAD
             (pTlRssiInd->pAdapter, pTlRssiInd->rssiNotification, pTlRssiInd->pUserCtxt);
         }
         else
         {
             smsLog( pMac, LOGE, FL("pTlRssiInd->tlCallback is NULL\n"));                
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             (pTlRssiInd->pAdapter, pTlRssiInd->rssiNotification, pTlRssiInd->pUserCtxt, pTlRssiInd->avgRssi);
         }
         else
         {
             smsLog( pMac, LOGE, FL("pTlRssiInd->tlCallback is NULL"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("pTlRssiInd is NULL\n"));    
+=======
+        smsLog( pMac, LOGE, FL("pTlRssiInd is NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("pTlRssiInd is NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9984,7 +11281,10 @@ static void csrRoamRssiIndHdlr(tpAniSirGlobal pMac, void* pMsg)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrSendResetApCapsChanged(tpAniSirGlobal pMac, tSirMacAddr *bssId)
 {
     tpSirResetAPCapsChange pMsg;
@@ -10012,6 +11312,9 @@ eHalStatus csrSendResetApCapsChanged(tpAniSirGlobal pMac, tSirMacAddr *bssId)
     return status;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
 {
@@ -10033,6 +11336,7 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
     tpSirSmeSwitchChannelInd pSwitchChnInd;
     tSmeMaxAssocInd *pSmeMaxAssocInd;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined ANI_PRODUCT_TYPE_AP
     pSirMsg->messageType = pal_be16_to_cpu(pSirMsg->messageType);
     pSirMsg->length = pal_be16_to_cpu(pSirMsg->length);
@@ -10043,10 +11347,15 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
     pSirMsg->statusCode = (pSirMsg->statusCode);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSmeCmd pCommand;
     pSirMsg->messageType = (pSirMsg->messageType);
     pSirMsg->length = (pSirMsg->length);
     pSirMsg->statusCode = (pSirMsg->statusCode);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palZeroMemory(pMac->hHdd, &roamInfo, sizeof(roamInfo));
     switch( pSirMsg->messageType ) 
@@ -10055,7 +11364,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             {
                 tCsrRoamSession  *pSession;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOG1, FL("ASSOCIATION Indication from SME\n"));
+=======
+                smsLog( pMac, LOG1, FL("ASSOCIATION Indication from SME"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOG1, FL("ASSOCIATION Indication from SME"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10091,12 +11404,18 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     palCopyMemory(pMac->hHdd, pRoamInfo->peerMac, pAssocInd->peerMacAddr, sizeof(tSirMacAddr));
                     palCopyMemory(pMac->hHdd, &pRoamInfo->bssid, pAssocInd->bssId, sizeof(tCsrBssid));
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                     pRoamInfo->wmmEnabledSta = pAssocInd->wmmEnabledSta;
                     if(CSR_IS_WDS_AP( pRoamInfo->u.pConnectedProfile))
 #endif 
                         status = csrRoamCallCallback(pMac, sessionId, pRoamInfo, 0, eCSR_ROAM_WDS_IND, eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND);//Sta
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+                    pRoamInfo->wmmEnabledSta = pAssocInd->wmmEnabledSta;
+                    if(CSR_IS_WDS_AP( pRoamInfo->u.pConnectedProfile))
+                        status = csrRoamCallCallback(pMac, sessionId, pRoamInfo, 0, eCSR_ROAM_WDS_IND, eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND);//Sta
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     pRoamInfo->wmmEnabledSta = pAssocInd->wmmEnabledSta;
                     if(CSR_IS_WDS_AP( pRoamInfo->u.pConnectedProfile))
@@ -10121,7 +11440,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                             pRoamInfo->statusCode = eSIR_SME_ASSOC_REFUSED;// Refused due to Mac filtering 
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     /* Send Association completion message to PE */
@@ -10134,7 +11456,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     status = csrSendAssocIndToUpperLayerCnfMsg(pMac, pAssocInd, status, sessionId);
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else if(CSR_IS_INFRA_AP(pRoamInfo->u.pConnectedProfile) && (pRoamInfo->statusCode != eSIR_SME_ASSOC_REFUSED))
@@ -10144,7 +11469,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     status = csrSendAssocIndToUpperLayerCnfMsg(pMac, pAssocInd, status, sessionId);
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
@@ -10152,7 +11480,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             break;
         case eWNI_SME_DISASSOC_IND:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL("DISASSOCIATION Indication from MAC\n"));
+=======
+            smsLog( pMac, LOGE, FL("DISASSOCIATION Indication from MAC"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL("DISASSOCIATION Indication from MAC"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10181,7 +11513,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
 #endif
 #ifdef FEATURE_WLAN_LFR
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (csrRoamIsFastRoamEnabled(pMac) && (csrNeighborRoamStatePreauthDone(pMac)))
+=======
+                if (csrRoamIsFastRoamEnabled(pMac, sessionId) && (csrNeighborRoamStatePreauthDone(pMac)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if (csrRoamIsFastRoamEnabled(pMac, sessionId) && (csrNeighborRoamStatePreauthDone(pMac)))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10207,7 +11543,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 csrRoamLinkDown(pMac, sessionId);
                 csrRoamIssueWmStatusChange( pMac, sessionId, eCsrDisassociated, pSirMsg );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(CSR_IS_INFRA_AP(&pSession->connectedProfile))
@@ -10225,6 +11564,7 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
 
                     status = csrRoamCallCallback(pMac, sessionId, pRoamInfo, 0, eCSR_ROAM_INFRA_IND, eCSR_ROAM_RESULT_DISASSOC_IND);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 }
 #endif                
             }
@@ -10232,6 +11572,8 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
         case eWNI_SME_DEAUTH_IND:
             smsLog( pMac, LOG1, FL("DEAUTHENTICATION Indication from MAC\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                     /*
                     *  STA/P2P client got  disassociated so remove any pending deauth 
@@ -10247,6 +11589,9 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             break;
         case eWNI_SME_DEAUTH_IND:
             smsLog( pMac, LOG1, FL("DEAUTHENTICATION Indication from MAC"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pDeauthInd = (tpSirSmeDeauthInd)pSirMsg;
             status = csrRoamGetSessionIdFromBSSID( pMac, (tCsrBssid *)pDeauthInd->bssId, &sessionId );
@@ -10270,7 +11615,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
 #endif
 #ifdef FEATURE_WLAN_LFR
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (csrRoamIsFastRoamEnabled(pMac) && (csrNeighborRoamStatePreauthDone(pMac)))
+=======
+                if (csrRoamIsFastRoamEnabled(pMac, sessionId) && (csrNeighborRoamStatePreauthDone(pMac)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if (csrRoamIsFastRoamEnabled(pMac, sessionId) && (csrNeighborRoamStatePreauthDone(pMac)))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10296,7 +11645,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 csrRoamLinkDown(pMac, sessionId);
                 csrRoamIssueWmStatusChange( pMac, sessionId, eCsrDeauthenticated, pSirMsg );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(CSR_IS_INFRA_AP(&pSession->connectedProfile))
@@ -10315,7 +11667,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     status = csrRoamCallCallback(pMac, sessionId, pRoamInfo, 0, eCSR_ROAM_INFRA_IND, eCSR_ROAM_RESULT_DEAUTH_IND);
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif                
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
@@ -10323,7 +11678,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
         
         case eWNI_SME_SWITCH_CHL_REQ:        // in case of STA, the SWITCH_CHANNEL originates from its AP
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, FL("eWNI_SME_SWITCH_CHL_REQ from SME\n"));
+=======
+            smsLog( pMac, LOGW, FL("eWNI_SME_SWITCH_CHL_REQ from SME"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, FL("eWNI_SME_SWITCH_CHL_REQ from SME"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10349,6 +11708,7 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 
         case eWNI_SME_DEAUTH_RSP:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, FL("eWNI_SME_DEAUTH_RSP from SME\n"));
 #ifdef WLAN_SOFTAP_FEATURE
             {
@@ -10356,11 +11716,16 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 sessionId = pDeauthRsp->sessionId;
                 if( CSR_IS_SESSION_VALID(pMac, sessionId) )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOGW, FL("eWNI_SME_DEAUTH_RSP from SME"));
             {
                 tSirSmeDeauthRsp* pDeauthRsp = (tSirSmeDeauthRsp *)pSirMsg;
                 sessionId = pDeauthRsp->sessionId;
                 if( pMac->roam.roamSession && CSR_IS_SESSION_VALID(pMac, sessionId) )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {                    
                     pSession = CSR_GET_SESSION(pMac, sessionId);
@@ -10381,6 +11746,7 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
             break;
             
@@ -10392,6 +11758,8 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 sessionId = pDisassocRsp->sessionId;
                 if( CSR_IS_SESSION_VALID(pMac, sessionId) )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
             
         case eWNI_SME_DISASSOC_RSP:
@@ -10401,6 +11769,9 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 tSirSmeDisassocRsp *pDisassocRsp = (tSirSmeDisassocRsp *)pSirMsg;
                 sessionId = pDisassocRsp->sessionId;
                 if( pMac->roam.roamSession && CSR_IS_SESSION_VALID(pMac, sessionId) )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {                    
                     pSession = CSR_GET_SESSION(pMac, sessionId);
@@ -10421,7 +11792,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
@@ -10470,7 +11844,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             }
             break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eWNI_SME_WPS_PBC_PROBE_REQ_IND:
@@ -10478,7 +11855,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 tpSirSmeProbeReqInd pProbeReqInd = (tpSirSmeProbeReqInd)pSirMsg;
                 tCsrRoamInfo roamInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOG1, FL("WPS PBC Probe request Indication from SME\n"));
+=======
+                smsLog( pMac, LOG1, FL("WPS PBC Probe request Indication from SME"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOG1, FL("WPS PBC Probe request Indication from SME"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10494,7 +11875,10 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             }
             break;        
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             
@@ -10522,7 +11906,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                         else
                         {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             smsLog(pMac, LOGE, "  CSR eSIR_SME_IBSS_NEW_PEER connected BSS is empty\n");
+=======
+                            smsLog(pMac, LOGE, "  CSR eSIR_SME_IBSS_NEW_PEER connected BSS is empty");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             smsLog(pMac, LOGE, "  CSR eSIR_SME_IBSS_NEW_PEER connected BSS is empty");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10608,7 +11996,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                         }
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, "CSR:  eSIR_SME_JOINED_NEW_BSS received from PE\n");
+=======
+                    smsLog(pMac, LOGW, "CSR:  eSIR_SME_JOINED_NEW_BSS received from PE");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, "CSR:  eSIR_SME_JOINED_NEW_BSS received from PE");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10616,6 +12008,7 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 // detection by LIM that the capabilities of the associated AP have changed.
                 case eSIR_SME_AP_CAPS_CHANGED:
                     pApNewCaps = &pStatusChangeMsg->statusChangeInfo.apNewCaps;
+<<<<<<< HEAD
 <<<<<<< HEAD
                     smsLog(pMac, LOGW, "CSR handling eSIR_SME_AP_CAPS_CHANGED\n");
                     status = csrRoamGetSessionIdFromBSSID( pMac, (tCsrBssid *)pApNewCaps->bssId, &sessionId );
@@ -10628,6 +12021,8 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     break;
             
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     smsLog(pMac, LOGW, "CSR handling eSIR_SME_AP_CAPS_CHANGED");
                     status = csrRoamGetSessionIdFromBSSID( pMac, (tCsrBssid *)pApNewCaps->bssId, &sessionId );
                     if( HAL_STATUS_SUCCESS( status ) )
@@ -10658,6 +12053,9 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     }
                     break;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 default:
                     roamStatus = eCSR_ROAM_FAILED;
@@ -10746,7 +12144,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, "  CSR eSIR_SME_IBSS_NEW_PEER connected BSS is empty\n");
+=======
+                    smsLog(pMac, LOGW, "  CSR eSIR_SME_IBSS_NEW_PEER connected BSS is empty");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, "  CSR eSIR_SME_IBSS_NEW_PEER connected BSS is empty");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10793,7 +12195,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 }
 #endif //FEATURE_WLAN_DIAG_SUPPORT_CSR
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, "CSR: Peer departed notification from LIM\n");
+=======
+                smsLog(pMac, LOGW, "CSR: Peer departed notification from LIM");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, "CSR: Peer departed notification from LIM");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10856,15 +12262,21 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                         if( CSR_IS_WAIT_FOR_KEY( pMac, sessionId) )
                         {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             //We are done with authentication, whethere succeed or not
                             csrRoamSubstateChange( pMac, eCSR_ROAM_SUBSTATE_NONE, sessionId);
 
                             csrRoamStopWaitForKeyTimer( pMac );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             csrRoamStopWaitForKeyTimer( pMac );
 
                             //We are done with authentication, whethere succeed or not
                             csrRoamSubstateChange( pMac, eCSR_ROAM_SUBSTATE_NONE, sessionId);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             //We do it here because this linkup function is not called after association 
                             //when a key needs to be set. 
@@ -10882,8 +12294,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                                            sizeof(tSirMacAddr) ) )
                                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     result = eCSR_ROAM_RESULT_AUTHENTICATED;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
                                     if(IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE)
                                     {
@@ -10896,6 +12311,9 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                                     }
 #endif
                                        result = eCSR_ROAM_RESULT_AUTHENTICATED;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 }
                                 else
@@ -10908,7 +12326,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                         {
                             result = eCSR_ROAM_RESULT_FAILURE;
 <<<<<<< HEAD
+<<<<<<< HEAD
                             smsLog( pMac, LOGE, "CSR: Roam Completion setkey command failed(%d) PeerMac %02X-%02X-%02X-%02X-%02X-%02X...\n", 
+=======
+                            smsLog( pMac, LOGE, "CSR: Roam Completion setkey command failed(%d) PeerMac %02X-%02X-%02X-%02X-%02X-%02X...",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             smsLog( pMac, LOGE, "CSR: Roam Completion setkey command failed(%d) PeerMac %02X-%02X-%02X-%02X-%02X-%02X...",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10940,7 +12362,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     else
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog( pMac, LOGE, "CSR: Roam Completion called but setkey command is not ACTIVE ...\n" );
+=======
+                        smsLog( pMac, LOGE, "CSR: Roam Completion called but setkey command is not ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog( pMac, LOGE, "CSR: Roam Completion called but setkey command is not ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10949,7 +12375,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGE, "CSR: SetKey Completion called but NO commands are ACTIVE ...\n" );
+=======
+                    smsLog( pMac, LOGE, "CSR: SetKey Completion called but NO commands are ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGE, "CSR: SetKey Completion called but NO commands are ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11016,7 +12446,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                     else
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog( pMac, LOGW, "CSR: Roam Completion called but setkey command is not ACTIVE ...\n" );
+=======
+                        smsLog( pMac, LOGW, "CSR: Roam Completion called but setkey command is not ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog( pMac, LOGW, "CSR: Roam Completion called but setkey command is not ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11025,7 +12459,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGW, "CSR: SetKey Completion called but NO commands are ACTIVE ...\n" );
+=======
+                    smsLog( pMac, LOGW, "CSR: SetKey Completion called but NO commands are ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGW, "CSR: SetKey Completion called but NO commands are ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11035,12 +12473,15 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             break;
         case eWNI_SME_GET_STATISTICS_RSP:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("Stats rsp from PE\n"));
             csrRoamStatsRspProcessor( pMac, pSirMsg );
             break;
         case eWNI_SME_GET_RSSI_REQ:
             smsLog( pMac, LOG2, FL("GetRssiReq from self\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOG2, FL("Stats rsp from PE"));
             csrRoamStatsRspProcessor( pMac, pSirMsg );
             break;
@@ -11052,6 +12493,9 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
 #endif
         case eWNI_SME_GET_RSSI_REQ:
             smsLog( pMac, LOG2, FL("GetRssiReq from self"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             csrUpdateRssi( pMac, pSirMsg );
             break;
@@ -11064,7 +12508,11 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
         case eWNI_SME_MAX_ASSOC_EXCEEDED:
             pSmeMaxAssocInd = (tSmeMaxAssocInd*)pSirMsg;
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, FL("send indication that max assoc have been reached and the new peer cannot be accepted\n"));          
+=======
+            smsLog( pMac, LOG1, FL("send indication that max assoc have been reached and the new peer cannot be accepted"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, FL("send indication that max assoc have been reached and the new peer cannot be accepted"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11077,6 +12525,7 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             
         case eWNI_SME_BTAMP_LOG_LINK_IND:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, FL("Establish logical link req from HCI serialized through MC thread\n"));
             btampEstablishLogLinkHdlr( pSirMsg );
             break;
@@ -11085,6 +12534,8 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             csrRoamRssiIndHdlr( pMac, pSirMsg );
         break;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOG1, FL("Establish logical link req from HCI serialized through MC thread"));
             btampEstablishLogLinkHdlr( pSirMsg );
             break;
@@ -11098,6 +12549,9 @@ void csrRoamCheckForLinkStatusChange( tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg )
             csrNeighborRoamCandidateFoundIndHdlr( pMac, pSirMsg );
         break;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         default:
@@ -11148,12 +12602,18 @@ tANI_BOOLEAN csrRoamCompleteRoaming(tpAniSirGlobal pMac, tANI_U32 sessionId,
     tANI_TIMESTAMP curTime = (tANI_TIMESTAMP)palGetTickCount(pMac->hHdd);
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(!pSession)
     {
         smsLog(pMac, LOGE, FL("  session %d not found "), sessionId);
         return eANI_BOOLEAN_FALSE;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Check whether time is up
     if(pSession->fCancelRoaming || fForce || 
@@ -11162,7 +12622,11 @@ tANI_BOOLEAN csrRoamCompleteRoaming(tpAniSirGlobal pMac, tANI_U32 sessionId,
        eCsrDynamicRoaming == pSession->roamingReason)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("  indicates roaming completion\n"));
+=======
+        smsLog(pMac, LOGW, FL("  indicates roaming completion"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("  indicates roaming completion"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11221,7 +12685,11 @@ void csrRoamCancelRoaming(tpAniSirGlobal pMac, tANI_U32 sessionId)
     if(CSR_IS_ROAMING(pSession))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, "   Cancelling roaming\n");
+=======
+        smsLog(pMac, LOGW, "   Cancelling roaming");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, "   Cancelling roaming");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11274,17 +12742,23 @@ eHalStatus csrRoamStartRoamingTimer(tpAniSirGlobal pMac, tANI_U32 sessionId, tAN
     if(!pSession)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("  session %d not found "), sessionId);
         return eHAL_STATUS_FAILURE;
     }
     
     smsLog(pMac, LOG1, " csrScanStartRoamingTimer \n ");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGE, FL("  session %d not found"), sessionId);
         return eHAL_STATUS_FAILURE;
     }
     
     smsLog(pMac, LOG1, " csrScanStartRoamingTimer");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSession->roamingTimerInfo.sessionId = (tANI_U8)sessionId;
     status = palTimerStart(pMac->hHdd, pSession->hTimerRoaming, interval, eANI_BOOLEAN_FALSE);
@@ -11302,12 +12776,15 @@ void csrRoamWaitForKeyTimeOutHandler(void *pv)
     tCsrTimerInfo *pInfo = (tCsrTimerInfo *)pv;
     tpAniSirGlobal pMac = pInfo->pMac;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( CSR_IS_WAIT_FOR_KEY( pMac, pInfo->sessionId ) )
     {
         smsLog(pMac, LOGW, " SME pre-auth state timeout. \n ");
         //Change the substate so command queue is unblocked.
         csrRoamSubstateChange( pMac, eCSR_ROAM_SUBSTATE_NONE, pInfo->sessionId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, pInfo->sessionId );
 
     smsLog(pMac, LOGW, "WaitForKey timer expired in state=%d sub-state=%d",
@@ -11351,6 +12828,9 @@ void csrRoamWaitForKeyTimeOutHandler(void *pv)
         {
             smsLog(pMac, LOGW, "%s: session not found", __func__);
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     
@@ -11360,9 +12840,12 @@ eHalStatus csrRoamStartWaitForKeyTimer(tpAniSirGlobal pMac, tANI_U32 interval)
 {
     eHalStatus status;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     smsLog(pMac, LOG1, " csrScanStartWaitForKeyTimer \n ");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
     if (csrNeighborRoamIsHandoffInProgress(pMac))
     {
@@ -11375,6 +12858,9 @@ eHalStatus csrRoamStartWaitForKeyTimer(tpAniSirGlobal pMac, tANI_U32 interval)
     }
 #endif
     smsLog(pMac, LOG1, " csrScanStartWaitForKeyTimer");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = palTimerStart(pMac->hHdd, pMac->roam.hTimerWaitForKey, interval, eANI_BOOLEAN_FALSE);
     
@@ -11384,7 +12870,10 @@ eHalStatus csrRoamStartWaitForKeyTimer(tpAniSirGlobal pMac, tANI_U32 interval)
 eHalStatus csrRoamStopWaitForKeyTimer(tpAniSirGlobal pMac)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog(pMac, LOG2, "WaitForKey timer stopped in state=%d sub-state=%d",
             pMac->roam.neighborRoamInfo.neighborRoamState,
             pMac->roam.curSubState[pMac->roam.WaitForKeyTimerInfo.sessionId]);
@@ -11403,6 +12892,9 @@ eHalStatus csrRoamStopWaitForKeyTimer(tpAniSirGlobal pMac)
             NULL, eANI_BOOLEAN_FALSE);
     }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (palTimerStop(pMac->hHdd, pMac->roam.hTimerWaitForKey));
 }
@@ -11439,7 +12931,11 @@ eHalStatus csrRoamStartIbssJoinTimer(tpAniSirGlobal pMac, tANI_U32 sessionId, tA
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOG1, " csrRoamStartIbssJoinTimer \n ");
+=======
+    smsLog(pMac, LOG1, " csrRoamStartIbssJoinTimer");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOG1, " csrRoamStartIbssJoinTimer");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11458,7 +12954,10 @@ void csrRoamCompletion(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamInfo *pR
     eRoamCmdStatus roamStatus = csrGetRoamCompleteStatus(pMac, sessionId);
     tANI_U32 roamId = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
     /* To silence the KW tool Null chaeck is added */
     if(!pSession)
@@ -11466,15 +12965,22 @@ void csrRoamCompletion(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamInfo *pR
         smsLog(pMac, LOGE, FL("  session %d not found "), sessionId);
         return;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     if(pCommand)
     {
         roamId = pCommand->u.roamCmd.roamId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
         VOS_ASSERT( sessionId == pCommand->sessionId );
 #endif
+=======
+        VOS_ASSERT( sessionId == pCommand->sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_ASSERT( sessionId == pCommand->sessionId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11487,8 +12993,13 @@ void csrRoamCompletion(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamInfo *pR
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_ASSERT((CSR_GET_SESSION( pMac, sessionId ))->bRefAssocStartCnt == 0);
         smsLog(pMac, LOGW, FL("  indicates association completion. roamResult = %d\n"), roamResult);
+=======
+        VOS_ASSERT(pSession->bRefAssocStartCnt == 0);
+        smsLog(pMac, LOGW, FL("  indicates association completion. roamResult = %d"), roamResult);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_ASSERT(pSession->bRefAssocStartCnt == 0);
         smsLog(pMac, LOGW, FL("  indicates association completion. roamResult = %d"), roamResult);
@@ -11506,12 +13017,15 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
     tCsrRoamInfo *pRoamInfo = NULL;
     tCsrRoamInfo roamInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
     //Only need to roam for infra station. In this case P2P client will roam as well
     tANI_BOOLEAN fToRoam = CSR_IS_INFRASTRUCTURE(&pSession->connectedProfile);
     pSession->fCancelRoaming = eANI_BOOLEAN_FALSE;
     if ( eWNI_SME_DISASSOC_IND == type )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_BOOLEAN fToRoam;
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
     /* To silence the KW tool Null chaeck is added */
@@ -11524,6 +13038,9 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
     fToRoam = CSR_IS_INFRASTRUCTURE(&pSession->connectedProfile);
     pSession->fCancelRoaming = eANI_BOOLEAN_FALSE;
     if ( eWNI_SME_DISASSOC_IND == type )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         result = eCSR_ROAM_RESULT_DISASSOC_IND;
@@ -11537,12 +13054,15 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
         pDeauthIndMsg = (tSirSmeDeauthInd *)pSirMsg;
         pSession->roamingStatusCode = pDeauthIndMsg->statusCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
         pSession->joinFailStatusCode.reasonCode = pDeauthIndMsg->reasonCode;
     }
     else
     {
         smsLog(pMac, LOGW, FL("gets an unknown type (%d)\n"), type);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Convert into proper reason code */
         pSession->joinFailStatusCode.reasonCode =
                 (pDeauthIndMsg->reasonCode == eSIR_BEACON_MISSED) ?
@@ -11554,6 +13074,9 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
     else
     {
         smsLog(pMac, LOGW, FL("gets an unknown type (%d)"), type);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         result = eCSR_ROAM_RESULT_NONE;
         pSession->joinFailStatusCode.reasonCode = 1;
@@ -11561,9 +13084,13 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
     
     // call profile lost link routine here
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(!CSR_IS_INFRA_AP(&pSession->connectedProfile))
 #endif
+=======
+    if(!CSR_IS_INFRA_AP(&pSession->connectedProfile))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(!CSR_IS_INFRA_AP(&pSession->connectedProfile))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11581,6 +13108,7 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
     }
     if(!HAL_STATUS_SUCCESS(status))
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
        //If fail to send confirmation to PE, not to trigger roaming
        fToRoam = eANI_BOOLEAN_FALSE;
@@ -11610,6 +13138,8 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
         //Tell HDD about the lost link
         csrRoamCallCallback(pMac, sessionId, &roamInfo, 0, eCSR_ROAM_LOSTLINK, result);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //If fail to send confirmation to PE, not to trigger roaming
         fToRoam = eANI_BOOLEAN_FALSE;
     }
@@ -11637,6 +13167,9 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
        currently roam, then notify HDD of the lost link */
     if(fToRoam)
     {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Only remove the connected BSS in infrastructure mode
         csrRoamRemoveConnectedBssFromScanCache(pMac, &pSession->connectedProfile);
@@ -11668,7 +13201,11 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, " %s Fail to start roaming, status = %d", __FUNCTION__, status);
+=======
+                smsLog(pMac, LOGW, " %s Fail to start roaming, status = %d", __func__, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, " %s Fail to start roaming, status = %d", __func__, status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11683,6 +13220,7 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
     }
     if(!fToRoam)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
        if( eWNI_SME_DISASSOC_IND == type)
        {
@@ -11705,6 +13243,8 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
         {
            csrScanStartIdleScan(pMac);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Tell HDD about the lost link
         if(!CSR_IS_INFRA_AP(&pSession->connectedProfile))
         {
@@ -11720,6 +13260,9 @@ eHalStatus csrRoamLostLink( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32 ty
         if(CSR_IS_INFRASTRUCTURE(&pSession->connectedProfile))
         {
             csrScanStartIdleScan(pMac);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
@@ -11765,7 +13308,11 @@ eHalStatus csrRoamLostLinkAfterhandoffFailure( tpAniSirGlobal pMac,tANI_U32 sess
              }
           }
 <<<<<<< HEAD
+<<<<<<< HEAD
           smsLog( pMac, LOGW, "Lost link roaming started ...\n");
+=======
+          smsLog( pMac, LOGW, "Lost link roaming started ...");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           smsLog( pMac, LOGW, "Lost link roaming started ...");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11798,7 +13345,11 @@ void csrRoamWmStatusChangeComplete( tpAniSirGlobal pMac )
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGE, " ******csrRoamWmStatusChangeComplete fail to release command\n");
+=======
+                smsLog( pMac, LOGE, " ******csrRoamWmStatusChangeComplete fail to release command");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGE, " ******csrRoamWmStatusChangeComplete fail to release command");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11808,7 +13359,11 @@ void csrRoamWmStatusChangeComplete( tpAniSirGlobal pMac )
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, "CSR: WmStatusChange Completion called but LOST LINK command is not ACTIVE ...\n" );
+=======
+            smsLog( pMac, LOGW, "CSR: WmStatusChange Completion called but LOST LINK command is not ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, "CSR: WmStatusChange Completion called but LOST LINK command is not ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11817,7 +13372,11 @@ void csrRoamWmStatusChangeComplete( tpAniSirGlobal pMac )
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, "CSR: WmStatusChange Completion called but NO commands are ACTIVE ...\n" );
+=======
+        smsLog( pMac, LOGW, "CSR: WmStatusChange Completion called but NO commands are ACTIVE ..." );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, "CSR: WmStatusChange Completion called but NO commands are ACTIVE ..." );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11849,7 +13408,11 @@ void csrRoamProcessWmStatusChangeCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand
             break;
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("gets an unknown command %d\n"), pCommand->u.wmStatusChangeCmd.Type);
+=======
+            smsLog(pMac, LOGW, FL("gets an unknown command %d"), pCommand->u.wmStatusChangeCmd.Type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("gets an unknown command %d"), pCommand->u.wmStatusChangeCmd.Type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11862,7 +13425,11 @@ void csrRoamProcessWmStatusChangeCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand
         {
             //This is not good
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("  failed to issue stopBSS command\n"));
+=======
+            smsLog(pMac, LOGE, FL("  failed to issue stopBSS command"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("  failed to issue stopBSS command"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11876,6 +13443,7 @@ void csrRoamProcessWmStatusChangeCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand
 //This function returns band and mode information.
 //The only tricky part is that if phyMode is set to 11abg, this function may return eCSR_CFG_DOT11_MODE_11B
 //instead of eCSR_CFG_DOT11_MODE_11G if everything is set to auto-pick.
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile, 
@@ -11898,6 +13466,8 @@ static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, eCsrPh
     //If the global setting for dot11Mode is set to auto/abg, we overwrite the setting in the profile.
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRoamProfile *pProfile, 
                                                      tANI_U8 operationChn, eCsrBand *pBand )
 {
@@ -11907,17 +13477,23 @@ static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRo
     eCsrBand eBand;
     
     //If the global setting for dot11Mode is set to auto/abg, we overwrite the setting in the profile.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( ((!CSR_IS_INFRA_AP(pProfile )&& !CSR_IS_WDS(pProfile )) && 
          ((eCSR_CFG_DOT11_MODE_AUTO == pMac->roam.configParam.uCfgDot11Mode) ||
          (eCSR_CFG_DOT11_MODE_ABG == pMac->roam.configParam.uCfgDot11Mode))) ||
         (eCSR_CFG_DOT11_MODE_AUTO == cfgDot11Mode) || (eCSR_CFG_DOT11_MODE_ABG == cfgDot11Mode) )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
     if( (eCSR_CFG_DOT11_MODE_AUTO == pMac->roam.configParam.uCfgDot11Mode) ||
         (eCSR_CFG_DOT11_MODE_ABG == pMac->roam.configParam.uCfgDot11Mode) ||
         (eCSR_CFG_DOT11_MODE_AUTO == cfgDot11Mode) || (eCSR_CFG_DOT11_MODE_ABG == cfgDot11Mode) )
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
@@ -12017,10 +13593,13 @@ static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRo
     
    if (operationChn == 14){ 
 <<<<<<< HEAD
+<<<<<<< HEAD
      smsLog(pMac, LOGE, FL("  Switching to Dot11B mode \n"));
      cfgDot11Mode = eCSR_CFG_DOT11_MODE_11B;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      smsLog(pMac, LOGE, FL("  Switching to Dot11B mode "));
      cfgDot11Mode = eCSR_CFG_DOT11_MODE_11B;
    }
@@ -12043,6 +13622,9 @@ static eCsrCfgDot11Mode csrRoamGetPhyModeBandForBss( tpAniSirGlobal pMac, tCsrRo
             cfgDot11Mode = eCSR_CFG_DOT11_MODE_11A;
         }
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return( cfgDot11Mode );
 }
@@ -12077,12 +13659,18 @@ eHalStatus csrRoamIssueStopBss( tpAniSirGlobal pMac, tANI_U32 sessionId, eCsrRoa
     // attempt to stop the Bss (reason code is ignored...)
     status = csrSendMBStopBssReqMsg( pMac, sessionId );
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(!HAL_STATUS_SUCCESS(status))
     {
         smsLog(pMac, LOGW, FL("csrSendMBStopBssReqMsg failed with status %d"), status);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (status);
 }
@@ -12097,7 +13685,10 @@ eHalStatus csrGetCfgValidChannels(tpAniSirGlobal pMac, tANI_U8 *pChannels, tANI_
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tPowerdBm csrGetCfgMaxTxPower (tpAniSirGlobal pMac, tANI_U8 channel)
 {
     tANI_U32    cfgLength = 0;
@@ -12157,6 +13748,9 @@ error:
 }
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrRoamIsChannelValid( tpAniSirGlobal pMac, tANI_U8 channel )
 {
@@ -12219,7 +13813,11 @@ tANI_BOOLEAN csrRoamIsValid40MhzChannel(tpAniSirGlobal pMac, tANI_U8 channel)
                  * supported channel width and recommended tx width as per standard
                  */
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOG1, "scws %u rtws %u sco %u\n",
+=======
+                smsLog(pMac, LOG1, "scws %u rtws %u sco %u",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOG1, "scws %u rtws %u sco %u",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12246,7 +13844,11 @@ tANI_BOOLEAN csrRoamIsValid40MhzChannel(tpAniSirGlobal pMac, tANI_U8 channel)
                 if((PHY_SINGLE_CHANNEL_CENTERED != eRet) && !csrRoamIsValid40MhzChannel(pMac, centerChn))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, "  Invalid center channel (%d), disable 40MHz mode\n", centerChn);
+=======
+                    smsLog(pMac, LOGE, "  Invalid center channel (%d), disable 40MHz mode", centerChn);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, "  Invalid center channel (%d), disable 40MHz mode", centerChn);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12475,6 +14077,7 @@ static void csrRoamGetBssStartParms( tpAniSirGlobal pMac, tCsrRoamProfile *pProf
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, pProfile, operationChannel, &eBand );
 #else
@@ -12482,6 +14085,10 @@ static void csrRoamGetBssStartParms( tpAniSirGlobal pMac, tCsrRoamProfile *pProf
 #endif
     
 #ifdef WLAN_FEATURE_P2P
+=======
+    cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, pProfile, operationChannel, &eBand );
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     cfgDot11Mode = csrRoamGetPhyModeBandForBss( pMac, pProfile, operationChannel, &eBand );
     
@@ -12494,16 +14101,22 @@ static void csrRoamGetBssStartParms( tpAniSirGlobal pMac, tCsrRoamProfile *pProf
         /* This should never happen */
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL, 
 <<<<<<< HEAD
+<<<<<<< HEAD
               FL("For P2PClient/P2P-GO (persona %d) cfgDot11Mode is 11B\n"), 
               pProfile->csrPersona);
         VOS_ASSERT(0);
     }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               FL("For P2PClient/P2P-GO (persona %d) cfgDot11Mode is 11B"),
               pProfile->csrPersona);
         VOS_ASSERT(0);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch( cfgDot11Mode )
     {
@@ -12537,7 +14150,11 @@ static void csrRoamGetBssStartParms( tpAniSirGlobal pMac, tCsrRoamProfile *pProf
     {
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("sees an unknown pSirNwType (%d)\n"), nwType);
+=======
+            smsLog(pMac, LOGE, FL("sees an unknown pSirNwType (%d)"), nwType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("sees an unknown pSirNwType (%d)"), nwType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12597,7 +14214,10 @@ static void csrRoamGetBssStartParms( tpAniSirGlobal pMac, tCsrRoamProfile *pProf
             break;     
         case eSIR_11G_NW_TYPE:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* For P2P Client and P2P GO, disable 11b rates */ 
@@ -12618,7 +14238,10 @@ static void csrRoamGetBssStartParms( tpAniSirGlobal pMac, tCsrRoamProfile *pProf
             }
             else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif            
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
@@ -12673,7 +14296,11 @@ static void csrRoamGetBssStartParmsFromBssDesc( tpAniSirGlobal pMac, tSirBssDesc
                 if(pIes->SuppRates.num_rates > SIR_MAC_RATESET_EID_MAX)
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL("num_rates :%d is more than SIR_MAC_RATESET_EID_MAX, resetting to SIR_MAC_RATESET_EID_MAX\n"),
+=======
+                    smsLog(pMac, LOGE, FL("num_rates :%d is more than SIR_MAC_RATESET_EID_MAX, resetting to SIR_MAC_RATESET_EID_MAX"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL("num_rates :%d is more than SIR_MAC_RATESET_EID_MAX, resetting to SIR_MAC_RATESET_EID_MAX"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12810,7 +14437,10 @@ eHalStatus csrRoamIssueStartBss( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRo
     pParam->pRSNIE = pProfile->pRSNReqIE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pParam->privacy           = pProfile->privacy;
@@ -12832,6 +14462,7 @@ eHalStatus csrRoamIssueStartBss( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRo
     pParam->ht_protection   = pProfile->cfg_protection;
     pParam->wps_state       = pProfile->wps_state;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
     
 #ifdef WLAN_SOFTAP_FEATURE
@@ -12841,6 +14472,11 @@ eHalStatus csrRoamIssueStartBss( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRo
     pParam->uCfgDot11Mode = csrRoamGetPhyModeBandForBss(pMac, (eCsrPhyMode)pProfile->phyMode, pProfile->operationChannel, 
                                         &eBand);
 #endif
+=======
+
+    pParam->uCfgDot11Mode = csrRoamGetPhyModeBandForBss(pMac, pProfile, pParam->operationChn /* pProfile->operationChannel*/, 
+                                        &eBand);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     pParam->uCfgDot11Mode = csrRoamGetPhyModeBandForBss(pMac, pProfile, pParam->operationChn /* pProfile->operationChannel*/, 
@@ -12909,7 +14545,11 @@ static void csrRoamPrepareBssParams(tpAniSirGlobal pMac, tANI_U32 sessionId, tCs
     if(Channel == 0)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, "   CSR cannot find a channel to start IBSS\n");
+=======
+        smsLog(pMac, LOGW, "   CSR cannot find a channel to start IBSS");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, "   CSR cannot find a channel to start IBSS");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12929,7 +14569,11 @@ static void csrRoamPrepareBssParams(tpAniSirGlobal pMac, tANI_U32 sessionId, tCs
                 cbMode = pMac->roam.configParam.channelBondingMode5GHz;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOG1, "##softap cbMode %d\n", cbMode);
+=======
+            smsLog(pMac, LOG1, "##softap cbMode %d", cbMode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOG1, "##softap cbMode %d", cbMode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13082,15 +14726,21 @@ eHalStatus csrRoamSetBKIDCache( tpAniSirGlobal pMac, tANI_U32 sessionId, tBkidCa
    if(!CSR_IS_SESSION_VALID( pMac, sessionId ))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog(pMac, LOGE, FL("  Invalid session ID\n"));
        return status;
    }
    smsLog(pMac, LOGW, "csrRoamSetBKIDCache called, numItems = %d\n", numItems);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        smsLog(pMac, LOGE, FL("  Invalid session ID"));
        return status;
    }
    smsLog(pMac, LOGW, "csrRoamSetBKIDCache called, numItems = %d", numItems);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pSession = CSR_GET_SESSION( pMac, sessionId );
    if(numItems <= CSR_MAX_BKID_ALLOWED)
@@ -13114,7 +14764,11 @@ eHalStatus csrRoamGetBKIDCache(tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32
    if(!CSR_IS_SESSION_VALID( pMac, sessionId ))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog(pMac, LOGE, FL("  Invalid session ID\n"));
+=======
+       smsLog(pMac, LOGE, FL("  Invalid session ID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog(pMac, LOGE, FL("  Invalid session ID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13133,7 +14787,11 @@ eHalStatus csrRoamGetBKIDCache(tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U32
            if(pSession->NumBkidCache > CSR_MAX_PMKID_ALLOWED)
            {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("NumPmkidCache :%d is more than CSR_MAX_PMKID_ALLOWED, resetting to CSR_MAX_PMKID_ALLOWED\n"),
+=======
+               smsLog(pMac, LOGE, FL("NumPmkidCache :%d is more than CSR_MAX_PMKID_ALLOWED, resetting to CSR_MAX_PMKID_ALLOWED"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("NumPmkidCache :%d is more than CSR_MAX_PMKID_ALLOWED, resetting to CSR_MAX_PMKID_ALLOWED"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13166,7 +14824,11 @@ eHalStatus csrRoamSetPMKIDCache( tpAniSirGlobal pMac, tANI_U32 sessionId,
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, "csrRoamSetPMKIDCache called, numItems = %d\n", numItems);
+=======
+    smsLog(pMac, LOGW, "csrRoamSetPMKIDCache called, numItems = %d", numItems);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGW, "csrRoamSetPMKIDCache called, numItems = %d", numItems);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13227,7 +14889,11 @@ eHalStatus csrRoamGetPMKIDCache(tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U3
             if(pSession->NumPmkidCache > CSR_MAX_PMKID_ALLOWED)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("NumPmkidCache :%d is more than CSR_MAX_PMKID_ALLOWED, resetting to CSR_MAX_PMKID_ALLOWED\n"),
+=======
+                smsLog(pMac, LOGE, FL("NumPmkidCache :%d is more than CSR_MAX_PMKID_ALLOWED, resetting to CSR_MAX_PMKID_ALLOWED"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("NumPmkidCache :%d is more than CSR_MAX_PMKID_ALLOWED, resetting to CSR_MAX_PMKID_ALLOWED"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13462,7 +15128,11 @@ eHalStatus csrIsBTAMPAllowed( tpAniSirGlobal pMac, tANI_U32 chnId )
             {
                 //co-exist with IBSS or BT-AMP is not supported
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, " BTAMP is not allowed due to IBSS/BT-AMP exist in session %d\n", sessionId );
+=======
+                smsLog( pMac, LOGW, " BTAMP is not allowed due to IBSS/BT-AMP exist in session %d", sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, " BTAMP is not allowed due to IBSS/BT-AMP exist in session %d", sessionId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13475,7 +15145,11 @@ eHalStatus csrIsBTAMPAllowed( tpAniSirGlobal pMac, tANI_U32 chnId )
                     ( (tANI_U8)chnId != pMac->roam.roamSession[sessionId].connectedProfile.operationChannel ) )
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog( pMac, LOGW, " BTAMP is not allowed due to channel (%d) diff than infr channel (%d)\n",
+=======
+                    smsLog( pMac, LOGW, " BTAMP is not allowed due to channel (%d) diff than infr channel (%d)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog( pMac, LOGW, " BTAMP is not allowed due to channel (%d) diff than infr channel (%d)",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13513,7 +15187,10 @@ static eHalStatus csrRoamStartWds( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsr
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //We don't expect Bt-AMP HDD not to disconnect the last connection first at this time. 
@@ -13522,7 +15199,10 @@ static eHalStatus csrRoamStartWds( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsr
         //send stop_bss to PE, before we can continue.
         VOS_ASSERT( !csrIsConnStateWds( pMac, sessionId ) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palZeroMemory(pMac->hHdd, &bssConfig, sizeof(tBssConfigParam));
@@ -13565,7 +15245,12 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     tANI_BOOLEAN found = FALSE;
     tANI_U32 size = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         tANI_U16 i;
+=======
+    tANI_S8 pwrLimit = 0;
+    tANI_U16 i;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_S8 pwrLimit = 0;
     tANI_U16 i;
@@ -13578,9 +15263,15 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     //We can do this because it is in HOST CPU order for now.
     pAP_capabilityInfo = (tSirMacCapabilityInfo *)&pBssDescription->capabilityInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
         //tell the target AP my 11H capability only if both AP and STA support 11H and the channel being used is 11a
         if ( csrIs11hSupported( pMac ) && pAP_capabilityInfo->spectrumMgt && eSIR_11A_NW_TYPE == pBssDescription->nwType )   
         {  
+=======
+    //tell the target AP my 11H capability only if both AP and STA support 11H and the channel being used is 11a
+    if ( csrIs11hSupported( pMac ) && pAP_capabilityInfo->spectrumMgt && eSIR_11A_NW_TYPE == pBssDescription->nwType )
+    {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     //tell the target AP my 11H capability only if both AP and STA support 11H and the channel being used is 11a
     if ( csrIs11hSupported( pMac ) && pAP_capabilityInfo->spectrumMgt && eSIR_11A_NW_TYPE == pBssDescription->nwType )
@@ -13596,7 +15287,11 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     pBuf += sizeof(tAniBool);
     *pBuf++ = MIN_STA_PWR_CAP_DBM; // it is for pMsg->powerCap.minTxPower = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         found = csrSearchChannelListForTxPower(pMac, pBssDescription, &channelGroup);
+=======
+    found = csrSearchChannelListForTxPower(pMac, pBssDescription, &channelGroup);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     found = csrSearchChannelListForTxPower(pMac, pBssDescription, &channelGroup);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13605,8 +15300,11 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     // This macro is provided by the halPhyCfg.h. We pick our
     // max and min capability by the halPhy provided macros
 <<<<<<< HEAD
+<<<<<<< HEAD
     *pBuf++ = MAX_STA_PWR_CAP_DBM;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pwrLimit = csrGetCfgMaxTxPower (pMac, pBssDescription->channelId);
     if (0 != pwrLimit)
     {
@@ -13616,6 +15314,9 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     {
         *pBuf++ = MAX_STA_PWR_CAP_DBM;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     size = sizeof(pMac->roam.validChannelList);
     if(HAL_STATUS_SUCCESS(csrGetCfgValidChannels(pMac, (tANI_U8 *)pMac->roam.validChannelList, &size)))
@@ -13630,7 +15331,11 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("can not find any valid channel\n"));
+=======
+        smsLog(pMac, LOGE, FL("can not find any valid channel"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("can not find any valid channel"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13647,7 +15352,11 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL(" BTC doesn't allow UAPSD for uapsd_mask(0x%X)\n"), uapsdMask);
+=======
+        smsLog(pMac, LOGE, FL(" BTC doesn't allow UAPSD for uapsd_mask(0x%X)"), uapsdMask);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL(" BTC doesn't allow UAPSD for uapsd_mask(0x%X)"), uapsdMask);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13671,7 +15380,11 @@ static void csrPrepareJoinReassocReqBuffer( tpAniSirGlobal pMac,
   */
 eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDescription *pBssDescription, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                               tCsrRoamProfile *pProfile, tDot11fBeaconIEs *pIes )
+=======
+                              tCsrRoamProfile *pProfile, tDot11fBeaconIEs *pIes, tANI_U16 messageType )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                               tCsrRoamProfile *pProfile, tDot11fBeaconIEs *pIes, tANI_U16 messageType )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13680,6 +15393,10 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
     tSirSmeJoinReq *pMsg;
     tANI_U8 *pBuf;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    v_U8_t acm_mask = 0, uapsd_mask;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     v_U8_t acm_mask = 0, uapsd_mask;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13696,11 +15413,14 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
         return eHAL_STATUS_FAILURE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     do {
         pSession->joinFailStatusCode.statusCode = eSIR_SME_SUCCESS;
         pSession->joinFailStatusCode.reasonCode = 0;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* To satisfy klockworks */
     if (NULL == pBssDescription)
     {
@@ -13712,6 +15432,9 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
         pSession->joinFailStatusCode.statusCode = eSIR_SME_SUCCESS;
         pSession->joinFailStatusCode.reasonCode = 0;
         memcpy (&pSession->joinFailStatusCode.bssId, &pBssDescription->bssId, sizeof(tSirMacAddr));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // There are a number of variable length fields to consider.  First, the tSirSmeJoinReq
         // includes a single bssDescription.   bssDescription includes a single tANI_U32 for the 
@@ -13728,7 +15451,11 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
         if ( !HAL_STATUS_SUCCESS(status) ) break;
         palZeroMemory(pMac->hHdd, pMsg, msgLen);
 <<<<<<< HEAD
+<<<<<<< HEAD
         pMsg->messageType = pal_cpu_to_be16((tANI_U16)eWNI_SME_JOIN_REQ);
+=======
+        pMsg->messageType = pal_cpu_to_be16((tANI_U16)messageType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pMsg->messageType = pal_cpu_to_be16((tANI_U16)messageType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13781,6 +15508,7 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
         pBuf++;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)        
@@ -13788,10 +15516,15 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
         status = csrGetRateSet(pMac, pProfile, (eCsrPhyMode)pProfile->phyMode, pBssDescription, pIes, &OpRateSet, &ExRateSet);
         if (HAL_STATUS_SUCCESS(status) ) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
         status = csrGetRateSet(pMac, pProfile, (eCsrPhyMode)pProfile->phyMode, pBssDescription, pIes, &OpRateSet, &ExRateSet);
         if (HAL_STATUS_SUCCESS(status) )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             // OperationalRateSet
@@ -13843,7 +15576,11 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
             if(ieLen > DOT11F_IE_RSN_MAX_LEN)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" WPA RSN IE length :%d is more than DOT11F_IE_RSN_MAX_LEN, resetting to %d\n"), ieLen, DOT11F_IE_RSN_MAX_LEN);
+=======
+                smsLog(pMac, LOGE, FL(" WPA RSN IE length :%d is more than DOT11F_IE_RSN_MAX_LEN, resetting to %d"), ieLen, DOT11F_IE_RSN_MAX_LEN);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" WPA RSN IE length :%d is more than DOT11F_IE_RSN_MAX_LEN, resetting to %d"), ieLen, DOT11F_IE_RSN_MAX_LEN);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13916,12 +15653,61 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
         }
 #ifdef FEATURE_WLAN_CCX
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Never include the cckmIE in an Join Request
         //length is two bytes
         *pBuf = 0;
         *(pBuf + 1) = 0;
         pBuf += 2;
 #endif 
+=======
+        if( eWNI_SME_JOIN_REQ == messageType )
+        {
+            // Never include the cckmIE in an Join Request
+            //length is two bytes
+            *pBuf = 0;
+            *(pBuf + 1) = 0;
+            pBuf += 2;
+        }
+        else if(eWNI_SME_REASSOC_REQ == messageType )
+        {
+            // cckmIE
+            if( csrIsProfileCCX( pProfile ) )
+            {
+                // Insert the CCKM IE into the join request
+                ieLen = csrConstructCcxCckmIe( pMac,
+                                          pSession,
+                                          pProfile,
+                                          pBssDescription,
+                                          pSession->pWpaRsnReqIE,
+                                          pSession->nWpaRsnReqIeLength,
+                                          (void *)( wpaRsnIE ) );
+            }
+            else
+            {
+                ieLen = 0;
+            }
+            //If present, copy the IE into the eWNI_SME_REASSOC_REQ message buffer
+            if( ieLen )
+            {
+                //Copy the CCKM IE over from the temp buffer (wpaRsnIE)
+                wTmp = pal_cpu_to_be16( ieLen );
+                palCopyMemory( pMac->hHdd, pBuf, &wTmp, sizeof(tANI_U16) );
+                pBuf += sizeof(tANI_U16);
+                palCopyMemory( pMac->hHdd, pBuf, wpaRsnIE, ieLen );
+                pBuf += ieLen;
+            }
+            else
+            {
+                //Indicate you have no CCKM IE
+                //length is two bytes
+                *pBuf = 0;
+                *(pBuf + 1) = 0;
+                pBuf += 2;
+            }
+        }
+#endif /* FEATURE_WLAN_CCX */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // addIEScan
         if(pProfile->nAddIEScanLength && pProfile->pAddIEScan)
         {
@@ -13929,10 +15715,17 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
             if(ieLen > pSession->nAddIEScanLength)
             {
                 if(pSession->pAddIEScan && pSession->nAddIEScanLength)
+<<<<<<< HEAD
         {
                     palFreeMemory(pMac->hHdd, pSession->pAddIEScan);
                 }
                 status = palAllocateMemory(pMac->hHdd, 
+=======
+                {
+                    palFreeMemory(pMac->hHdd, pSession->pAddIEScan);
+                }
+                status = palAllocateMemory(pMac->hHdd,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                  (void **)&pSession->pAddIEScan, ieLen);
                 if(!HAL_STATUS_SUCCESS(status)) break;
             }
@@ -13953,17 +15746,23 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
                 palFreeMemory(pMac->hHdd, pSession->pAddIEScan);
                 pSession->pAddIEScan = NULL;
             }
+<<<<<<< HEAD
 =======
         if( eWNI_SME_JOIN_REQ == messageType )
         {
             // Never include the cckmIE in an Join Request
             //length is two bytes
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             *pBuf = 0;
             *(pBuf + 1) = 0;
             pBuf += 2;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // addIEAssoc
         if(pProfile->nAddIEAssocLength && pProfile->pAddIEAssoc)
         {
@@ -13971,6 +15770,7 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
             if(ieLen > pSession->nAddIEAssocLength)
             {
                 if(pSession->pAddIEAssoc && pSession->nAddIEAssocLength)
+<<<<<<< HEAD
                 {
                     palFreeMemory(pMac->hHdd, pSession->pAddIEAssoc);
                 }
@@ -13980,6 +15780,17 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
             }
             pSession->nAddIEAssocLength = ieLen;
             palCopyMemory(pMac->hHdd, pSession->pAddIEAssoc, 
+=======
+        {
+                    palFreeMemory(pMac->hHdd, pSession->pAddIEAssoc);
+        }
+                status = palAllocateMemory(pMac->hHdd,
+                                 (void **)&pSession->pAddIEAssoc, ieLen);
+                if(!HAL_STATUS_SUCCESS(status)) break;
+        }
+            pSession->nAddIEAssocLength = ieLen;
+            palCopyMemory(pMac->hHdd, pSession->pAddIEAssoc,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       pProfile->pAddIEAssoc, ieLen);
             wTmp = pal_cpu_to_be16( ieLen );
             palCopyMemory( pMac->hHdd, pBuf, &wTmp, sizeof(tANI_U16) );
@@ -13999,6 +15810,7 @@ eHalStatus csrSendJoinReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirBssDe
             *(pBuf + 1) = 0;
             pBuf += 2;
         }
+<<<<<<< HEAD
         dwTmp = pal_cpu_to_be32( csrTranslateEncryptTypeToEdType( pProfile->negotiatedUCEncryptionType) );
         palCopyMemory( pMac->hHdd, pBuf, &dwTmp, sizeof(tANI_U32) );
         pBuf += sizeof(tANI_U32);        
@@ -14538,6 +16350,44 @@ eHalStatus csrSendSmeReassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
                 (pIes->CCXVersion.present) && (pMac->roam.configParam.isCcxIniFeatureEnabled))
 #endif
         )
+=======
+
+        if(eWNI_SME_REASSOC_REQ == messageType )
+        {
+            //Unmask any AC in reassoc that is ACM-set
+            uapsd_mask = (v_U8_t)pProfile->uapsd_mask;
+            if( uapsd_mask && ( NULL != pBssDescription ) )
+            {
+                if( CSR_IS_QOS_BSS(pIes) && CSR_IS_UAPSD_BSS(pIes) )
+                {
+#ifndef WLAN_MDM_CODE_REDUCTION_OPT
+                    acm_mask = sme_QosGetACMMask(pMac, pBssDescription, pIes);
+#endif /* WLAN_MDM_CODE_REDUCTION_OPT*/
+                    uapsd_mask &= ~(acm_mask);
+                }
+                else
+                {
+                    uapsd_mask = 0;
+                }
+            }
+        }
+
+        dwTmp = pal_cpu_to_be32( csrTranslateEncryptTypeToEdType( pProfile->negotiatedUCEncryptionType) );
+        palCopyMemory( pMac->hHdd, pBuf, &dwTmp, sizeof(tANI_U32) );
+        pBuf += sizeof(tANI_U32);
+
+        dwTmp = pal_cpu_to_be32( csrTranslateEncryptTypeToEdType( pProfile->negotiatedMCEncryptionType) );
+        palCopyMemory( pMac->hHdd, pBuf, &dwTmp, sizeof(tANI_U32) );
+        pBuf += sizeof(tANI_U32);
+#ifdef WLAN_FEATURE_VOWIFI_11R
+        pProfile->MDID.mdiePresent = pBssDescription->mdiePresent;
+        if (csrIsProfile11r( pProfile )
+#ifdef FEATURE_WLAN_CCX
+           && !((pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_OPEN_SYSTEM) &&
+                (pIes->CCXVersion.present) && (pMac->roam.configParam.isCcxIniFeatureEnabled))
+#endif
+        )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             // is11Rconnection;
             dwTmp = pal_cpu_to_be32(TRUE);
@@ -14614,6 +16464,9 @@ eHalStatus csrSendSmeReassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
                   || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_WPA_PSK)
                   || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_RSN)
                   || (pProfile->negotiatedAuthType == eCSR_AUTH_TYPE_RSN_PSK))))
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             && (pMac->roam.configParam.isCcxIniFeatureEnabled))
         {
@@ -14630,9 +16483,14 @@ eHalStatus csrSendSmeReassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
            pBuf += sizeof(ccxTspec.tspec);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         else 
         {
             {
+=======
+        else
+        {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         else
         {
@@ -14650,6 +16508,7 @@ eHalStatus csrSendSmeReassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
         // Fill in isFastTransitionEnabled
         if (pMac->roam.configParam.isFastTransitionEnabled
 #ifdef FEATURE_WLAN_LFR
+<<<<<<< HEAD
 <<<<<<< HEAD
          || csrRoamIsFastRoamEnabled(pMac)
 #endif
@@ -14689,6 +16548,8 @@ eHalStatus csrSendSmeReassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
 #endif
         status = palSendMBMessage( pMac->hHdd, pMsg );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          || csrRoamIsFastRoamEnabled(pMac, sessionId)
 #endif
          )
@@ -14766,6 +16627,9 @@ eHalStatus csrSendSmeReassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
             }
 #endif
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     } while( 0 );
     return( status );
@@ -14779,11 +16643,17 @@ eHalStatus csrSendMBDisassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
     tANI_U8 *pBuf;
     tANI_U16 wTmp;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
     if (!CSR_IS_SESSION_VALID( pMac, sessionId ))
         return eHAL_STATUS_FAILURE;
 #endif
+=======
+    tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
+    if (!CSR_IS_SESSION_VALID( pMac, sessionId ))
+        return eHAL_STATUS_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
     if (!CSR_IS_SESSION_VALID( pMac, sessionId ))
@@ -14804,10 +16674,16 @@ eHalStatus csrSendMBDisassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
         pBuf += sizeof(tANI_U16);
      
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE        
         if ( (pSession->pCurRoamProfile != NULL ) && 
              ( reasonCode == eSIR_MAC_UNSPEC_FAILURE_REASON ) && 
              ((CSR_IS_INFRA_AP(pSession->pCurRoamProfile)) || (CSR_IS_WDS_AP(pSession->pCurRoamProfile))))
+=======
+        if ( (pSession->pCurRoamProfile != NULL) &&
+             ((CSR_IS_INFRA_AP(pSession->pCurRoamProfile)) ||
+              (CSR_IS_WDS_AP(pSession->pCurRoamProfile))) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if ( (pSession->pCurRoamProfile != NULL) &&
              ((CSR_IS_INFRA_AP(pSession->pCurRoamProfile)) ||
@@ -14824,7 +16700,10 @@ eHalStatus csrSendMBDisassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // Set the peer MAC address before sending the message to LIM
@@ -14833,9 +16712,13 @@ eHalStatus csrSendMBDisassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
             status = palCopyMemory( pMac->hHdd, (tSirMacAddr *)pBuf, bssId, sizeof( pMsg->bssId ) );
             pBuf = pBuf + sizeof ( tSirMacAddr );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         }
 #endif
+=======
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14869,7 +16752,10 @@ eHalStatus csrSendMBDisassocReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSi
     return( status );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrSendMBTkipCounterMeasuresReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_BOOLEAN bEnable, tSirMacAddr bssId )
@@ -14983,8 +16869,11 @@ csrSendMBGetWPSPBCSessions( tpAniSirGlobal pMac, tANI_U32 sessionId,
     return( status );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 eHalStatus
 csrSendChngMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U32 sessionId)
@@ -15028,6 +16917,9 @@ csrSendChngMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U32 sessionId)
      return status;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrSendMBDeauthReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirMacAddr bssId, tANI_U16 reasonCode )
 {
@@ -15054,9 +16946,13 @@ eHalStatus csrSendMBDeauthReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirM
         pBuf += sizeof(tANI_U16);
         if ((pSession->pCurRoamProfile != NULL)  && (
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
              (CSR_IS_INFRA_AP(pSession->pCurRoamProfile)) || 
 #endif
+=======
+             (CSR_IS_INFRA_AP(pSession->pCurRoamProfile)) || 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              (CSR_IS_INFRA_AP(pSession->pCurRoamProfile)) || 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15198,7 +17094,10 @@ eHalStatus csrSendAssocCnfMsg( tpAniSirGlobal pMac, tpSirSmeAssocInd pAssocInd, 
     return( status );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrSendAssocIndToUpperLayerCnfMsg(   tpAniSirGlobal pMac, 
@@ -15266,7 +17165,10 @@ eHalStatus csrSendAssocIndToUpperLayerCnfMsg(   tpAniSirGlobal pMac,
     return( status );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -15282,8 +17184,13 @@ eHalStatus csrSendMBSetContextReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId ,
     tAniEdType tmpEdType;
     tAniKeyDirection tmpDirection;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 *pBuf;
     tANI_U8 *p;
+=======
+    tANI_U8 *pBuf = NULL;
+    tANI_U8 *p = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8 *pBuf = NULL;
     tANI_U8 *p = NULL;
@@ -15361,7 +17268,11 @@ eHalStatus csrSendMBSetContextReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId ,
             if(keyLength == 16)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOG1, "  SME Set keyIdx (%d) encType(%d) key = %02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X\n",
+=======
+                smsLog(pMac, LOG1, "  SME Set keyIdx (%d) encType(%d) key = %02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOG1, "  SME Set keyIdx (%d) encType(%d) key = %02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X-%02X",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15387,9 +17298,13 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
     tSirNwType nwType;
     ePhyChanBondState cbMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tANI_U32 authType;
 #endif
+=======
+    tANI_U32 authType;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32 authType;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15430,7 +17345,10 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
             wTmp = pal_cpu_to_be16( pBssDesc->beaconInterval );
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         else if(pParam->beaconInterval)
@@ -15438,7 +17356,10 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
             wTmp = pal_cpu_to_be16( pParam->beaconInterval );
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         else
@@ -15446,17 +17367,23 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
             wTmp = pal_cpu_to_be16( WNI_CFG_BEACON_INTERVAL_STADEF );
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(csrIsconcurrentsessionValid (pMac, sessionId, 
                                    pParam->bssPersona) 
                                    == eHAL_STATUS_SUCCESS )
         {    
            csrValidateBeaconInterval(pMac, pParam->operationChn, &wTmp, sessionId,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(csrIsconcurrentsessionValid (pMac, sessionId,
                                    pParam->bssPersona)
                                    == eHAL_STATUS_SUCCESS )
         {    
            csrValidateMCCBeaconInterval(pMac, pParam->operationChn, &wTmp, sessionId,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       pParam->bssPersona);
            //Update the beacon Interval 
@@ -15465,8 +17392,14 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac,LOGE, FL("****Start BSS failed persona already exists***\n"));
             status = eHAL_STATUS_FAILURE;
+=======
+            smsLog( pMac,LOGE, FL("****Start BSS failed persona already exists***"));
+            status = eHAL_STATUS_FAILURE;
+            palFreeMemory( pMac->hHdd, pMsg );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac,LOGE, FL("****Start BSS failed persona already exists***"));
             status = eHAL_STATUS_FAILURE;
@@ -15507,7 +17440,10 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
         pBuf += sizeof(ePhyChanBondState);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Set privacy
@@ -15545,7 +17481,10 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
         *pBuf = pParam->wps_state;
         pBuf++;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Persona
@@ -15553,6 +17492,12 @@ eHalStatus csrSendMBStartBssReqMsg( tpAniSirGlobal pMac, tANI_U32 sessionId, eCs
         pBuf++;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        //txLdpcIniFeatureEnabled
+        *pBuf = (tANI_U8)(tANI_U8)pMac->roam.configParam.txLdpcEnable;
+        pBuf++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         //txLdpcIniFeatureEnabled
         *pBuf = (tANI_U8)(tANI_U8)pMac->roam.configParam.txLdpcEnable;
@@ -15710,7 +17655,11 @@ eHalStatus csrProcessAddStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
       if(pMsg == NULL)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, "in %s msg ptr is NULL\n", __FUNCTION__);
+=======
+         smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15725,7 +17674,11 @@ eHalStatus csrProcessAddStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
          {
             pRsp = (tSirSmeAddStaSelfRsp*)pMsg;
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, "Add Sta rsp status = %d\n", pRsp->status );
+=======
+            smsLog( pMac, LOG1, "Add Sta rsp status = %d", pRsp->status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, "Add Sta rsp status = %d", pRsp->status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15742,8 +17695,13 @@ eHalStatus csrProcessAddStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
          else
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, "in %s eWNI_SME_ADD_STA_SELF_RSP Received but NO Add sta session command are ACTIVE ...\n",
                   __FUNCTION__);
+=======
+            smsLog(pMac, LOGE, "in %s eWNI_SME_ADD_STA_SELF_RSP Received but NO Add sta session command are ACTIVE ...",
+                  __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, "in %s eWNI_SME_ADD_STA_SELF_RSP Received but NO Add sta session command are ACTIVE ...",
                   __func__);
@@ -15755,8 +17713,13 @@ eHalStatus csrProcessAddStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
       else
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, "in %s eWNI_SME_ADD_STA_SELF_RSP Received but NO commands are ACTIVE ...\n",
                __FUNCTION__);
+=======
+         smsLog(pMac, LOGE, "in %s eWNI_SME_ADD_STA_SELF_RSP Received but NO commands are ACTIVE ...",
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, "in %s eWNI_SME_ADD_STA_SELF_RSP Received but NO commands are ACTIVE ...",
                __func__);
@@ -15783,7 +17746,11 @@ eHalStatus csrSendMBAddSelfStaReqMsg( tpAniSirGlobal pMac, tSirMacAddr macAddr )
       // self station address
       palCopyMemory( pMac->hHdd, (tANI_U8 *)pMsg->selfMacAddr, (tANI_U8 *)macAddr, sizeof(tSirMacAddr) );
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOG1, FL("selfMac=%02x, %02x, %02x, %02x, %02x, %02x"),       
+=======
+        smsLog( pMac, LOG1, FL("selfMac=%02x, %02x, %02x, %02x, %02x, %02x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOG1, FL("selfMac=%02x, %02x, %02x, %02x, %02x, %02x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15816,7 +17783,11 @@ eHalStatus csrIssueAddStaForSessionReq(tpAniSirGlobal pMac, tANI_U32 sessionId, 
       {
          //Should be panic??
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+         smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15827,7 +17798,11 @@ eHalStatus csrIssueAddStaForSessionReq(tpAniSirGlobal pMac, tANI_U32 sessionId, 
 eHalStatus csrProcessAddStaSessionCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    return csrSendMBAddSelfStaReqMsg( pMac, 
+=======
+   return csrSendMBAddSelfStaReqMsg( pMac,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    return csrSendMBAddSelfStaReqMsg( pMac,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15857,7 +17832,11 @@ eHalStatus csrRoamOpenSession( tpAniSirGlobal pMac, csrRoamCompleteCallback call
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("cannot allocate memory for Roaming timer\n"));
+=======
+                smsLog(pMac, LOGE, FL("cannot allocate memory for Roaming timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("cannot allocate memory for Roaming timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15869,7 +17848,11 @@ eHalStatus csrRoamOpenSession( tpAniSirGlobal pMac, csrRoamCompleteCallback call
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("cannot allocate memory for joinretry timer\n"));
+=======
+                smsLog(pMac, LOGE, FL("cannot allocate memory for joinretry timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("cannot allocate memory for joinretry timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15883,7 +17866,11 @@ eHalStatus csrRoamOpenSession( tpAniSirGlobal pMac, csrRoamCompleteCallback call
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("cannot allocate memory for IbssJoining timer\n"));
+=======
+                smsLog(pMac, LOGE, FL("cannot allocate memory for IbssJoining timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("cannot allocate memory for IbssJoining timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15911,7 +17898,11 @@ eHalStatus csrProcessDelStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
       if(pMsg == NULL)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, "in %s msg ptr is NULL\n", __FUNCTION__);
+=======
+         smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15927,7 +17918,11 @@ eHalStatus csrProcessDelStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
             tANI_U8 sessionId = pCommand->sessionId;
             pRsp = (tSirSmeDelStaSelfRsp*)pMsg;
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, "Del Sta rsp status = %d\n", pRsp->status );
+=======
+            smsLog( pMac, LOG1, "Del Sta rsp status = %d", pRsp->status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, "Del Sta rsp status = %d", pRsp->status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15945,7 +17940,11 @@ eHalStatus csrProcessDelStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
                     if (! HAL_STATUS_SUCCESS( status ) )
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog(pMac, LOGP, "%s: Failed to Acquire Lock\n", __FUNCTION__);
+=======
+                        smsLog(pMac, LOGP, "%s: Failed to Acquire Lock", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog(pMac, LOGP, "%s: Failed to Acquire Lock", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15954,7 +17953,11 @@ eHalStatus csrProcessDelStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
                 }
                 else {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, "%s: Failed to Release Lock\n", __FUNCTION__);
+=======
+                    smsLog(pMac, LOGE, "%s: Failed to Release Lock", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, "%s: Failed to Release Lock", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15972,8 +17975,13 @@ eHalStatus csrProcessDelStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
          else
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, "in %s eWNI_SME_DEL_STA_SELF_RSP Received but NO Del sta session command are ACTIVE ...\n",
                   __FUNCTION__);
+=======
+            smsLog(pMac, LOGE, "in %s eWNI_SME_DEL_STA_SELF_RSP Received but NO Del sta session command are ACTIVE ...",
+                  __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, "in %s eWNI_SME_DEL_STA_SELF_RSP Received but NO Del sta session command are ACTIVE ...",
                   __func__);
@@ -15985,8 +17993,13 @@ eHalStatus csrProcessDelStaSessionRsp( tpAniSirGlobal pMac, tANI_U8 *pMsg)
       else
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, "in %s eWNI_SME_DEL_STA_SELF_RSP Received but NO commands are ACTIVE ...\n",
                __FUNCTION__);
+=======
+         smsLog(pMac, LOGE, "in %s eWNI_SME_DEL_STA_SELF_RSP Received but NO commands are ACTIVE ...",
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, "in %s eWNI_SME_DEL_STA_SELF_RSP Received but NO commands are ACTIVE ...",
                __func__);
@@ -16041,7 +18054,11 @@ eHalStatus csrIssueDelStaForSessionReq(tpAniSirGlobal pMac, tANI_U32 sessionId,
       {
          //Should be panic??
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
+=======
+         smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16250,7 +18267,11 @@ static void csrRoamLinkUp(tpAniSirGlobal pMac, tCsrBssid bssid)
       profile info from pmac global structure                              */
    
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOGW, " csrRoamLinkUp: WLAN link UP with AP= %02x-%02x-%02x-%02x-%02x-%02x\n", 
+=======
+   smsLog(pMac, LOGW, " csrRoamLinkUp: WLAN link UP with AP= %02x-%02x-%02x-%02x-%02x-%02x",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smsLog(pMac, LOGW, " csrRoamLinkUp: WLAN link UP with AP= %02x-%02x-%02x-%02x-%02x-%02x",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16298,13 +18319,19 @@ static void csrRoamLinkDown(tpAniSirGlobal pMac, tANI_U32 sessionId)
    csrNeighborRoamIndicateDisconnect(pMac, sessionId);
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
    
     if(!IS_SLM_SESSIONIZATION_SUPPORTED_BY_FW && 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     //Remove this code once SLM_Sessionization is supported 
     //BMPS_WORKAROUND_NOT_NEEDED
     if(!IS_FEATURE_SUPPORTED_BY_FW(SLM_SESSIONIZATION) && 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         csrIsInfraApStarted( pMac ) &&  
         pMac->roam.configParam.doBMPSWorkaround)
@@ -16327,7 +18354,11 @@ void csrRoamTlStatsTimerHandler(void *pv)
    if(WLANTL_GetStatistics(pMac->roam.gVosContext, &tlStats, pMac->roam.connectedInfo.staId))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, FL("csrRoamTlStatsTimerHandler:couldn't get the stats from TL\n"));
+=======
+      smsLog(pMac, LOGE, FL("csrRoamTlStatsTimerHandler:couldn't get the stats from TL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, FL("csrRoamTlStatsTimerHandler:couldn't get the stats from TL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16348,7 +18379,11 @@ void csrRoamTlStatsTimerHandler(void *pv)
          if(!HAL_STATUS_SUCCESS(status))
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("csrRoamTlStatsTimerHandler:cannot start TlStatsTimer timer\n"));
+=======
+            smsLog(pMac, LOGE, FL("csrRoamTlStatsTimerHandler:cannot start TlStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("csrRoamTlStatsTimerHandler:cannot start TlStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16376,7 +18411,11 @@ void csrRoamPeStatsTimerHandler(void *pv)
       if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:failed to destroy hPeStatsTimer timer\n"));
+=======
+         smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:failed to destroy hPeStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:failed to destroy hPeStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16395,7 +18434,11 @@ void csrRoamPeStatsTimerHandler(void *pv)
          if(!HAL_STATUS_SUCCESS(status))
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:failed to send down stats req to PE\n"));
+=======
+            smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:failed to send down stats req to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:failed to send down stats req to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16430,7 +18473,11 @@ void csrRoamPeStatsTimerHandler(void *pv)
          if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) ) 
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:cannot start hPeStatsTimer timer\n"));
+=======
+            smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:cannot start hPeStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("csrRoamPeStatsTimerHandler:cannot start hPeStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16455,7 +18502,11 @@ void csrRoamStatsClientTimerHandler(void *pv)
        if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) ) 
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
           smsLog(pStaEntry->pMac, LOGE, FL("csrGetStatistics:cannot start StatsClient timer\n"));
+=======
+          smsLog(pStaEntry->pMac, LOGE, FL("csrGetStatistics:cannot start StatsClient timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           smsLog(pStaEntry->pMac, LOGE, FL("csrGetStatistics:cannot start StatsClient timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16479,7 +18530,11 @@ eHalStatus csrSendMBStatsReqMsg( tpAniSirGlobal pMac, tANI_U32 statsMask, tANI_U
    if ( !HAL_STATUS_SUCCESS(status) ) 
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOG1, " csrSendMBStatsReqMsg: failed to allocate mem for stats req \n");
+=======
+      smsLog(pMac, LOG1, " csrSendMBStatsReqMsg: failed to allocate mem for stats req ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOG1, " csrSendMBStatsReqMsg: failed to allocate mem for stats req ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16494,7 +18549,11 @@ eHalStatus csrSendMBStatsReqMsg( tpAniSirGlobal pMac, tANI_U32 statsMask, tANI_U
    if(!HAL_STATUS_SUCCESS(status))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOG1, " csrSendMBStatsReqMsg: failed to send down the stats req \n");
+=======
+      smsLog(pMac, LOG1, " csrSendMBStatsReqMsg: failed to send down the stats req ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOG1, " csrSendMBStatsReqMsg: failed to send down the stats req ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16516,16 +18575,22 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
    v_S7_t     rssi = 0;
    tANI_U32   *pRssi = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
    pSmeStatsRsp = (tAniGetPEStatsRsp *)pSirMsg;
    if(pSmeStatsRsp->rc)
    {
       smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:stats rsp from PE shows failure\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tANI_U32   linkCapacity;
    pSmeStatsRsp = (tAniGetPEStatsRsp *)pSirMsg;
    if(pSmeStatsRsp->rc)
    {
       smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:stats rsp from PE shows failure"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       goto post_update;
    }
@@ -16545,7 +18610,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
          {
          case eCsrSummaryStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:summary stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:summary stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:summary stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16554,7 +18623,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy summary stats\n"));
+=======
+               smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy summary stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy summary stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16564,7 +18637,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             break;
          case eCsrGlobalClassAStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassA stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassA stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassA stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16573,7 +18650,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassA stats\n"));
+=======
+               smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassA stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassA stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16583,7 +18664,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             break;
          case eCsrGlobalClassBStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassB stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassB stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassB stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16592,7 +18677,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassB stats\n"));
+=======
+               smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassB stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassB stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16602,7 +18691,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             break;
          case eCsrGlobalClassCStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassC stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassC stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:ClassC stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16611,7 +18704,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassC stats\n"));
+=======
+               smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassC stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy ClassC stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16621,7 +18718,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             break;
          case eCsrPerStaStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:PerSta stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:PerSta stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamStatsRspProcessor:PerSta stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16634,7 +18735,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             {
                status = eHAL_STATUS_FAILURE;
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGE, FL("csrRoamStatsRspProcessor:out bound staId:%d\n"), pSmeStatsRsp->staId);
+=======
+               smsLog( pMac, LOGE, FL("csrRoamStatsRspProcessor:out bound staId:%d"), pSmeStatsRsp->staId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGE, FL("csrRoamStatsRspProcessor:out bound staId:%d"), pSmeStatsRsp->staId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16643,7 +18748,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy PerSta stats\n"));
+=======
+               smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy PerSta stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:failed to copy PerSta stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16653,7 +18762,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
             break;
          default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:unknown stats type\n"));
+=======
+            smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:unknown stats type"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, FL("csrRoamStatsRspProcessor:unknown stats type"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16669,6 +18782,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
        pRssi = (tANI_U32*)pStats;
        rssi = (v_S7_t)*pRssi;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+       pStats += sizeof(tANI_U32);
+       length -= sizeof(tANI_U32);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        pStats += sizeof(tANI_U32);
        length -= sizeof(tANI_U32);
@@ -16680,8 +18798,11 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
        rssi = RSSI_HACK_BMPS;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    WDA_UpdateRssiBmps(pvosGCtx, pSmeStatsRsp->staId, rssi);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    WDA_UpdateRssiBmps(pvosGCtx, pSmeStatsRsp->staId, rssi);
 
@@ -16695,6 +18816,9 @@ void csrRoamStatsRspProcessor(tpAniSirGlobal pMac, tSirSmeRsp *pSirMsg)
    }
 
    WDA_UpdateLinkCapacity(pvosGCtx, pSmeStatsRsp->staId, linkCapacity);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 post_update:   
    //make sure to update the pe stats req list 
@@ -16730,7 +18854,11 @@ tListElem * csrRoamFindInPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  statsMask
    {
       //list empty
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOG2, "csrRoamFindInPeStatsReqList: List empty, no request to PE\n");
+=======
+      smsLog(pMac, LOG2, "csrRoamFindInPeStatsReqList: List empty, no request to PE");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOG2, "csrRoamFindInPeStatsReqList: List empty, no request to PE");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16742,7 +18870,11 @@ tListElem * csrRoamFindInPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  statsMask
       if(pTempStaEntry->statsMask == statsMask)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOG3, "csrRoamFindInPeStatsReqList: match found\n");
+=======
+         smsLog(pMac, LOG3, "csrRoamFindInPeStatsReqList: match found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOG3, "csrRoamFindInPeStatsReqList: match found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16764,7 +18896,11 @@ tListElem * csrRoamChecknUpdateClientReqList(tpAniSirGlobal pMac, tCsrStatsClien
       //list empty
       smsLog(pMac, LOG2, "csrRoamChecknUpdateClientReqList: List empty, no request from "
 <<<<<<< HEAD
+<<<<<<< HEAD
              "upper layer client(s)\n");
+=======
+             "upper layer client(s)");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "upper layer client(s)");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16777,7 +18913,11 @@ tListElem * csrRoamChecknUpdateClientReqList(tpAniSirGlobal pMac, tCsrStatsClien
          (pTempStaEntry->statsMask == pStaEntry->statsMask))
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOG3, "csrRoamChecknUpdateClientReqList: match found\n");
+=======
+         smsLog(pMac, LOG3, "csrRoamChecknUpdateClientReqList: match found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOG3, "csrRoamChecknUpdateClientReqList: match found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16803,7 +18943,11 @@ tListElem * csrRoamCheckClientReqList(tpAniSirGlobal pMac, tANI_U32 statsMask)
       //list empty
       smsLog(pMac, LOG2, "csrRoamCheckClientReqList: List empty, no request from "
 <<<<<<< HEAD
+<<<<<<< HEAD
              "upper layer client(s)\n");
+=======
+             "upper layer client(s)");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "upper layer client(s)");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16815,7 +18959,11 @@ tListElem * csrRoamCheckClientReqList(tpAniSirGlobal pMac, tANI_U32 statsMask)
       if((pTempStaEntry->statsMask & ~(1 << eCsrGlobalClassDStats))  == statsMask)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOG3, "csrRoamCheckClientReqList: match found\n");
+=======
+         smsLog(pMac, LOG3, "csrRoamCheckClientReqList: match found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOG3, "csrRoamCheckClientReqList: match found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16856,24 +19004,34 @@ void csrRoamVccTrigger(tpAniSirGlobal pMac)
       pMac->roam.configParam.vccUlMacLossThreshold;
    VOS_ASSERT( ul_mac_loss_trigger_threshold != 0 );
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOGW, "csrRoamVccTrigger: UL_MAC_LOSS_THRESHOLD is %d\n", 
           ul_mac_loss_trigger_threshold );
    if(ul_mac_loss_trigger_threshold < ul_mac_loss)
    {
       smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality is POOR \n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smsLog(pMac, LOGW, "csrRoamVccTrigger: UL_MAC_LOSS_THRESHOLD is %d",
           ul_mac_loss_trigger_threshold );
    if(ul_mac_loss_trigger_threshold < ul_mac_loss)
    {
       smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality is POOR ");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       newVccLinkQuality = eCSR_ROAM_LINK_QUAL_POOR_IND;
    }
    else
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality is GOOD\n");
+=======
+      smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality is GOOD");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality is GOOD");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16884,15 +19042,21 @@ void csrRoamVccTrigger(tpAniSirGlobal pMac)
    if(newVccLinkQuality != pMac->roam.vccLinkQuality)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality changed: trigger necessary\n");
       if(NULL != pMac->roam.linkQualityIndInfo.callback) 
       {
          smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality indication %d\n",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality changed: trigger necessary");
       if(NULL != pMac->roam.linkQualityIndInfo.callback) 
       {
          smsLog(pMac, LOGW, "csrRoamVccTrigger: link quality indication %d",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 newVccLinkQuality );
          
@@ -16919,24 +19083,34 @@ VOS_STATUS csrRoamVccTriggerRssiIndCallback(tHalHandle hHal,
      Check for a change in link quality and notify client if necessary
    -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: RSSI trigger threshold is %d\n", 
           pMac->roam.configParam.vccRssiThreshold);
    if(!csrIsConnStateConnectedInfra(pMac, sessionId))
    {
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: ignoring the indication as we are not connected\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: RSSI trigger threshold is %d",
           pMac->roam.configParam.vccRssiThreshold);
    if(!csrIsConnStateConnectedInfra(pMac, sessionId))
    {
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: ignoring the indication as we are not connected");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_SUCCESS;
    }
    if(WLANTL_HO_THRESHOLD_DOWN == rssiNotification)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality is POOR\n");
+=======
+      smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality is POOR");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality is POOR");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16945,7 +19119,11 @@ VOS_STATUS csrRoamVccTriggerRssiIndCallback(tHalHandle hHal,
    else if(WLANTL_HO_THRESHOLD_UP == rssiNotification)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality is GOOD \n");
+=======
+      smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality is GOOD ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality is GOOD ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16954,7 +19132,11 @@ VOS_STATUS csrRoamVccTriggerRssiIndCallback(tHalHandle hHal,
    else
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: unknown rssi notification %d\n", rssiNotification);
+=======
+      smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: unknown rssi notification %d", rssiNotification);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: unknown rssi notification %d", rssiNotification);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16966,15 +19148,21 @@ VOS_STATUS csrRoamVccTriggerRssiIndCallback(tHalHandle hHal,
    if(newVccLinkQuality != pMac->roam.vccLinkQuality)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality changed: trigger necessary\n");
       if(NULL != pMac->roam.linkQualityIndInfo.callback) 
       {
          smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality indication %d\n",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality changed: trigger necessary");
       if(NULL != pMac->roam.linkQualityIndInfo.callback) 
       {
          smsLog(pMac, LOGW, "csrRoamVccTriggerRssiIndCallback: link quality indication %d",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 newVccLinkQuality);
         /* we now invoke the callback once to notify client of initial value   */
@@ -17002,7 +19190,11 @@ tCsrStatsClientReqInfo * csrRoamInsertEntryIntoList( tpAniSirGlobal pMac,
       {
          smsLog(pMac, LOGW, "csrRoamInsertEntryIntoList: couldn't allocate memory for the "
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "entry\n");
+=======
+                "entry");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "entry");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17035,7 +19227,11 @@ tCsrPeStatsReqInfo * csrRoamInsertEntryIntoPeStatsReqList( tpAniSirGlobal pMac,
    {
       smsLog(pMac, LOGW, "csrRoamInsertEntryIntoPeStatsReqList: couldn't allocate memory for the "
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "entry\n");
+=======
+                  "entry");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "entry");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17064,17 +19260,23 @@ eHalStatus csrGetRssi(tpAniSirGlobal pMac,
 
    tAniGetRssiReq *pMsg;
 <<<<<<< HEAD
+<<<<<<< HEAD
    smsLog(pMac, LOG2, FL("called"));      
    status = palAllocateMemory(pMac->hHdd, (void **)&pMsg, sizeof(tAniGetRssiReq));
    if ( !HAL_STATUS_SUCCESS(status) ) 
    {
       smsLog(pMac, LOGE, " csrGetRssi: failed to allocate mem for req \n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smsLog(pMac, LOG2, FL("called"));
    status = palAllocateMemory(pMac->hHdd, (void **)&pMsg, sizeof(tAniGetRssiReq));
    if ( !HAL_STATUS_SUCCESS(status) ) 
    {
       smsLog(pMac, LOGE, " csrGetRssi: failed to allocate mem for req ");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
@@ -17093,6 +19295,7 @@ eHalStatus csrGetRssi(tpAniSirGlobal pMac,
    if(VOS_STATUS_SUCCESS != vos_mq_post_message(VOS_MQ_ID_SME, &msg))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog(pMac, LOGE, " csrGetRssi failed to post msg to self \n");   
        palFreeMemory(pMac->hHdd, (void *)pMsg);
        status = eHAL_STATUS_FAILURE;
@@ -17101,6 +19304,8 @@ eHalStatus csrGetRssi(tpAniSirGlobal pMac,
    return status;
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        smsLog(pMac, LOGE, " csrGetRssi failed to post msg to self ");
        palFreeMemory(pMac->hHdd, (void *)pMsg);
        status = eHAL_STATUS_FAILURE;
@@ -17141,6 +19346,9 @@ eHalStatus csrGetRoamRssi(tpAniSirGlobal pMac,
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requesterId, 
                             tANI_U32 statsMask, 
@@ -17161,7 +19369,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
    if( csrIsAllSessionDisconnected(pMac) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       //smsLog(pMac, LOGW, "csrGetStatistics: wrong state curState(%d) not connected\n", pMac->roam.curState);
+=======
+      //smsLog(pMac, LOGW, "csrGetStatistics: wrong state curState(%d) not connected", pMac->roam.curState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       //smsLog(pMac, LOGW, "csrGetStatistics: wrong state curState(%d) not connected", pMac->roam.curState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17171,7 +19383,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
    {
       //msg
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrGetStatistics: statsMask & callback empty in the request\n");
+=======
+      smsLog(pMac, LOGW, "csrGetStatistics: statsMask & callback empty in the request");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGW, "csrGetStatistics: statsMask & callback empty in the request");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17189,7 +19405,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
          //msg
          smsLog(pMac, LOGW, "csrGetStatistics: callback is empty in the request & couldn't "
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "find any existing request in statsClientReqList\n");
+=======
+                "find any existing request in statsClientReqList");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "find any existing request in statsClientReqList");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17219,7 +19439,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
                if(!HAL_STATUS_SUCCESS(status))
                {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   smsLog(pMac, LOGE, FL("csrGetStatistics:cannot stop TlStatsTimer timer\n"));
+=======
+                  smsLog(pMac, LOGE, FL("csrGetStatistics:cannot stop TlStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   smsLog(pMac, LOGE, FL("csrGetStatistics:cannot stop TlStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17235,7 +19459,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
          if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("csrGetStatistics:failed to destroy Client req timer\n"));
+=======
+            smsLog(pMac, LOGE, FL("csrGetStatistics:failed to destroy Client req timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("csrGetStatistics:failed to destroy Client req timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17291,7 +19519,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
             if(cache && pMac->roam.tlStatsReqInfo.numClient)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("csrGetStatistics:Looking for cached stats from TL\n"));
+=======
+               smsLog(pMac, LOGE, FL("csrGetStatistics:Looking for cached stats from TL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("csrGetStatistics:Looking for cached stats from TL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17323,7 +19555,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
                      if(WLANTL_GetStatistics(pMac->roam.gVosContext, pTlStats, staId))
                      {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog(pMac, LOGE, FL("csrGetStatistics:couldn't get the stats from TL\n"));
+=======
+                        smsLog(pMac, LOGE, FL("csrGetStatistics:couldn't get the stats from TL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog(pMac, LOGE, FL("csrGetStatistics:couldn't get the stats from TL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17349,7 +19585,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
                      if(!HAL_STATUS_SUCCESS(status))
                      {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         smsLog(pMac, LOGE, FL("csrGetStatistics:cannot start TlStatsTimer timer\n"));
+=======
+                        smsLog(pMac, LOGE, FL("csrGetStatistics:cannot start TlStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         smsLog(pMac, LOGE, FL("csrGetStatistics:cannot start TlStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17374,7 +19614,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("csrGetStatistics:failed to send down stats req to PE\n"));
+=======
+               smsLog(pMac, LOGE, FL("csrGetStatistics:failed to send down stats req to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("csrGetStatistics:failed to send down stats req to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17393,7 +19637,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
                if(!VOS_IS_STATUS_SUCCESS(WLANTL_GetStatistics(pMac->roam.gVosContext, pTlStats, staId)))
                {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   smsLog(pMac, LOGE, FL("csrGetStatistics:couldn't get the stats from TL\n"));
+=======
+                  smsLog(pMac, LOGE, FL("csrGetStatistics:couldn't get the stats from TL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   smsLog(pMac, LOGE, FL("csrGetStatistics:couldn't get the stats from TL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17426,7 +19674,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
          {
             //msg
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, "csrGetStatistics: Failed to insert req in statsClientReqList\n");
+=======
+            smsLog(pMac, LOGW, "csrGetStatistics: Failed to insert req in statsClientReqList");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, "csrGetStatistics: Failed to insert req in statsClientReqList");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17441,7 +19693,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
             if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("csrGetStatistics:cannot init StatsClient timer\n"));
+=======
+               smsLog(pMac, LOGE, FL("csrGetStatistics:cannot init StatsClient timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("csrGetStatistics:cannot init StatsClient timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17451,7 +19707,11 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
             if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) ) 
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("csrGetStatistics:cannot start StatsClient timer\n"));
+=======
+               smsLog(pMac, LOGE, FL("csrGetStatistics:cannot start StatsClient timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("csrGetStatistics:cannot start StatsClient timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17464,7 +19724,10 @@ eHalStatus csrGetStatistics(tpAniSirGlobal pMac, eCsrStatsRequesterType requeste
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 
 static tSirRetStatus
@@ -17824,6 +20087,9 @@ eHalStatus csrRoamOffloadScan(tpAniSirGlobal pMac, tANI_U8 command, tANI_U8 reas
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tCsrPeStatsReqInfo * csrRoamCheckPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  statsMask, 
                                                 tANI_U32 periodicity, tANI_BOOLEAN *pFound, tANI_U8 staId)
@@ -17868,7 +20134,11 @@ tCsrPeStatsReqInfo * csrRoamCheckPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  s
       {
          //msg
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGW, "csrRoamCheckPeStatsReqList: Failed to insert req in peStatsReqList\n");
+=======
+         smsLog(pMac, LOGW, "csrRoamCheckPeStatsReqList: Failed to insert req in peStatsReqList");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGW, "csrRoamCheckPeStatsReqList: Failed to insert req in peStatsReqList");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17900,7 +20170,11 @@ tCsrPeStatsReqInfo * csrRoamCheckPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  s
          if(!HAL_STATUS_SUCCESS(status))
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:failed to send down stats req to PE\n"));
+=======
+            smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:failed to send down stats req to PE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:failed to send down stats req to PE"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17920,7 +20194,11 @@ tCsrPeStatsReqInfo * csrRoamCheckPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  s
             if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:cannot init hPeStatsTimer timer\n"));
+=======
+               smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:cannot init hPeStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:cannot init hPeStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17929,17 +20207,23 @@ tCsrPeStatsReqInfo * csrRoamCheckPeStatsReqList(tpAniSirGlobal pMac, tANI_U32  s
          }
          //start timer
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOG1, "csrRoamCheckPeStatsReqList:peStatsTimer period %d\n", pTempStaEntry->periodicity);
          vosStatus = vos_timer_start( &pTempStaEntry->hPeStatsTimer, pTempStaEntry->periodicity );
          if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) ) 
          {
             smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:cannot start hPeStatsTimer timer\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          smsLog(pMac, LOG1, "csrRoamCheckPeStatsReqList:peStatsTimer period %d", pTempStaEntry->periodicity);
          vosStatus = vos_timer_start( &pTempStaEntry->hPeStatsTimer, pTempStaEntry->periodicity );
          if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) ) 
          {
             smsLog(pMac, LOGE, FL("csrRoamCheckPeStatsReqList:cannot start hPeStatsTimer timer"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return NULL;
          }
@@ -17974,7 +20258,11 @@ void csrRoamRemoveEntryFromPeStatsReqList(tpAniSirGlobal pMac, tCsrPeStatsReqInf
    {
       //list empty
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGW, "csrRoamRemoveEntryFromPeStatsReqList: List empty, no stats req for PE\n");
+=======
+      smsLog(pMac, LOGW, "csrRoamRemoveEntryFromPeStatsReqList: List empty, no stats req for PE");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGW, "csrRoamRemoveEntryFromPeStatsReqList: List empty, no stats req for PE");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -17986,7 +20274,11 @@ void csrRoamRemoveEntryFromPeStatsReqList(tpAniSirGlobal pMac, tCsrPeStatsReqInf
       if( pTempStaEntry && pTempStaEntry->statsMask == pPeStaEntry->statsMask)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          smsLog(pMac, LOGW, "csrRoamRemoveEntryFromPeStatsReqList: match found\n");
+=======
+         smsLog(pMac, LOGW, "csrRoamRemoveEntryFromPeStatsReqList: match found");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          smsLog(pMac, LOGW, "csrRoamRemoveEntryFromPeStatsReqList: match found");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18007,7 +20299,11 @@ void csrRoamRemoveEntryFromPeStatsReqList(tpAniSirGlobal pMac, tCsrPeStatsReqInf
                if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
                {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   smsLog(pMac, LOGE, FL("csrRoamRemoveEntryFromPeStatsReqList:failed to destroy hPeStatsTimer timer\n"));
+=======
+                  smsLog(pMac, LOGE, FL("csrRoamRemoveEntryFromPeStatsReqList:failed to destroy hPeStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   smsLog(pMac, LOGE, FL("csrRoamRemoveEntryFromPeStatsReqList:failed to destroy hPeStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18073,7 +20369,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
    if(!callback)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, FL("csrRoamReportStatistics:cannot report callback NULL\n"));
+=======
+      smsLog(pMac, LOGE, FL("csrRoamReportStatistics:cannot report callback NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, FL("csrRoamReportStatistics:cannot report callback NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18082,7 +20382,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
    if(!statsMask)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, FL("csrRoamReportStatistics:cannot report statsMask is 0\n"));
+=======
+      smsLog(pMac, LOGE, FL("csrRoamReportStatistics:cannot report statsMask is 0"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, FL("csrRoamReportStatistics:cannot report statsMask is 0"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18099,7 +20403,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
          {
          case eCsrSummaryStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:summary stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamReportStatistics:summary stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:summary stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18108,7 +20416,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy summary stats\n"));
+=======
+               smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy summary stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy summary stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18117,7 +20429,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             break;
          case eCsrGlobalClassAStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassA stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassA stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassA stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18126,7 +20442,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassA stats\n"));
+=======
+               smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassA stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassA stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18135,7 +20455,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             break;
          case eCsrGlobalClassBStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassB stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassB stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassB stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18144,7 +20468,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassB stats\n"));
+=======
+               smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassB stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassB stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18153,7 +20481,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             break;
          case eCsrGlobalClassCStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassC stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassC stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassC stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18162,7 +20494,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassC stats\n"));
+=======
+               smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassC stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassC stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18171,7 +20507,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             break;
          case eCsrGlobalClassDStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassD stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassD stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:ClassD stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18180,7 +20520,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassD stats\n"));
+=======
+               smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassD stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy ClassD stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18189,7 +20533,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             break;
          case eCsrPerStaStats:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:PerSta stats\n"));
+=======
+            smsLog( pMac, LOG2, FL("csrRoamReportStatistics:PerSta stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG2, FL("csrRoamReportStatistics:PerSta stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18198,7 +20546,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy PerSta stats\n"));
+=======
+               smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy PerSta stats"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOG1, FL("csrRoamReportStatistics:failed to copy PerSta stats"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18207,7 +20559,11 @@ void csrRoamReportStatistics(tpAniSirGlobal pMac, tANI_U32 statsMask,
             break;
          default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOG1, FL("csrRoamReportStatistics:unknown stats type\n"));
+=======
+            smsLog( pMac, LOG1, FL("csrRoamReportStatistics:unknown stats type"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, FL("csrRoamReportStatistics:unknown stats type"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18233,7 +20589,11 @@ eHalStatus csrRoamDeregStatisticsReq(tpAniSirGlobal pMac)
       //list empty
       smsLog(pMac, LOGW, "csrRoamDeregStatisticsReq: List empty, no request from "
 <<<<<<< HEAD
+<<<<<<< HEAD
              "upper layer client(s)\n");
+=======
+             "upper layer client(s)");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "upper layer client(s)");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18269,7 +20629,11 @@ eHalStatus csrRoamDeregStatisticsReq(tpAniSirGlobal pMac)
             if(!HAL_STATUS_SUCCESS(status))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("csrRoamDeregStatisticsReq:cannot stop TlStatsTimer timer\n"));
+=======
+               smsLog(pMac, LOGE, FL("csrRoamDeregStatisticsReq:cannot stop TlStatsTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("csrRoamDeregStatisticsReq:cannot stop TlStatsTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18291,7 +20655,11 @@ eHalStatus csrRoamDeregStatisticsReq(tpAniSirGlobal pMac)
           if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
               smsLog(pMac, LOGE, FL("csrRoamDeregStatisticsReq:failed to destroy Client req timer\n"));
+=======
+              smsLog(pMac, LOGE, FL("csrRoamDeregStatisticsReq:failed to destroy Client req timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               smsLog(pMac, LOGE, FL("csrRoamDeregStatisticsReq:failed to destroy Client req timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18345,6 +20713,12 @@ eHalStatus csrIsFullPowerNeeded( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             switch( pCommand->u.scanCmd.reason )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+            case eCsrScanGetLfrResult:
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             case eCsrScanGetLfrResult:
@@ -18445,7 +20819,10 @@ eHalStatus csrIsFullPowerNeeded( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             reason = eSME_LINK_DISCONNECTED_BY_OTHER;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
         else if( eSmeCommandTdlsAddPeer == pCommand->command )
         {
@@ -18454,6 +20831,9 @@ eHalStatus csrIsFullPowerNeeded( tpAniSirGlobal pMac, tSmeCmd *pCommand,
             reason = eSME_FULL_PWR_NEEDED_BY_TDLS_PEER_SETUP;
         }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     case REQUEST_STOP_UAPSD:
@@ -18478,7 +20858,11 @@ eHalStatus csrIsFullPowerNeeded( tpAniSirGlobal pMac, tSmeCmd *pCommand,
     case LOW_POWER:
         //We are not supposed to do anything
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL( "  cannot process because PMC is in stopped/standby state %d\n" ), pmcState );
+=======
+        smsLog( pMac, LOGE, FL( "  cannot process because PMC is in stopped/standby state %d" ), pmcState );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL( "  cannot process because PMC is in stopped/standby state %d" ), pmcState );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18594,16 +20978,22 @@ eHalStatus csrQueueSmeCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand, tANI_BOOL
         //Not to decrease pMac->roam.sPendingCommands here. Caller will decrease it when it 
         //release the command.
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL( "  cannot queue command %d\n" ), pCommand->command );
     }
     return ( status );
 }
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog( pMac, LOGE, FL( "  cannot queue command %d" ), pCommand->command );
     }
     return ( status );
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrRoamUpdateAPWPSIE( tpAniSirGlobal pMac, tANI_U32 sessionId, tSirAPWPSIEs* pAPWPSIES )
 {
@@ -18683,7 +21073,10 @@ eHalStatus csrRoamUpdateWPARSNIEs( tpAniSirGlobal pMac, tANI_U32 sessionId, tSir
     return ( status );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif //#ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -18718,7 +21111,12 @@ eHalStatus csrRoamIssueFTPreauthReq(tHalHandle hHal, tANI_U32 sessionId, tpSirBs
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (csrRoamIs11rAssoc(pMac))
+=======
+    if (csrRoamIs11rAssoc(pMac) && 
+          (pMac->roam.roamSession[sessionId].connectedProfile.AuthType != eCSR_AUTH_TYPE_OPEN_SYSTEM))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (csrRoamIs11rAssoc(pMac) && 
           (pMac->roam.roamSession[sessionId].connectedProfile.AuthType != eCSR_AUTH_TYPE_OPEN_SYSTEM))
@@ -18755,15 +21153,21 @@ void csrRoamFTPreAuthRspProcessor( tHalHandle hHal, tpSirFTPreAuthRsp pFTPreAuth
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOGE, FL("Preauth response status code %d"), pFTPreAuthRsp->status); 
 #endif
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
     status = csrNeighborRoamPreauthRspHandler(pMac, (VOS_STATUS)pFTPreAuthRsp->status);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog( pMac, LOGE, FL("Preauth response status code 0x%x"), pFTPreAuthRsp->status);
 #endif
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
     status = csrNeighborRoamPreauthRspHandler(pMac, pFTPreAuthRsp->status);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (status != eHAL_STATUS_SUCCESS) {
         /*
@@ -18789,7 +21193,11 @@ void csrRoamFTPreAuthRspProcessor( tHalHandle hHal, tpSirFTPreAuthRsp pFTPreAuth
     if (eHAL_STATUS_SUCCESS != status)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL("Preauth reassoc interval timer start failed to start with status %d\n"), status);
+=======
+        smsLog(pMac, LOGE, FL("Preauth reassoc interval timer start failed to start with status %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL("Preauth reassoc interval timer start failed to start with status %d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18806,7 +21214,11 @@ void csrRoamFTPreAuthRspProcessor( tHalHandle hHal, tpSirFTPreAuthRsp pFTPreAuth
     // If Legacy Fast Roaming is enabled, signal the supplicant  
     // So he can send us a PMK-ID for this candidate AP.
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (csrRoamIsFastRoamEnabled(pMac))
+=======
+    if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18833,7 +21245,11 @@ void csrRoamJoinRetryTimerHandler(void *pv)
     if( CSR_IS_SESSION_VALID(pMac, sessionId) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL( "  retrying the last roam profile on session %d\n" ), sessionId );
+=======
+        smsLog( pMac, LOGE, FL( "  retrying the last roam profile on session %d" ), sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL( "  retrying the last roam profile on session %d" ), sessionId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18843,7 +21259,11 @@ void csrRoamJoinRetryTimerHandler(void *pv)
             if( !HAL_STATUS_SUCCESS(csrRoamJoinLastProfile(pMac, sessionId)) )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGE, FL( "  fail to retry the last roam profile\n" ) );
+=======
+               smsLog( pMac, LOGE, FL( "  fail to retry the last roam profile" ) );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGE, FL( "  fail to retry the last roam profile" ) );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18859,7 +21279,11 @@ eHalStatus csrRoamStartJoinRetryTimer(tpAniSirGlobal pMac, tANI_U32 sessionId, t
     if(pSession->pCurRoamProfile && pSession->maxRetryCount)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL(" call sessionId %d retry count %d left\n "), sessionId, pSession->maxRetryCount);
+=======
+        smsLog(pMac, LOGE, FL(" call sessionId %d retry count %d left"), sessionId, pSession->maxRetryCount);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL(" call sessionId %d retry count %d left"), sessionId, pSession->maxRetryCount);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18870,7 +21294,11 @@ eHalStatus csrRoamStartJoinRetryTimer(tpAniSirGlobal pMac, tANI_U32 sessionId, t
         if(!HAL_STATUS_SUCCESS(status))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL(" fail to start timer status %s \n "), status);
+=======
+            smsLog(pMac, LOGE, FL(" fail to start timer status %s"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL(" fail to start timer status %s"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18879,7 +21307,11 @@ eHalStatus csrRoamStartJoinRetryTimer(tpAniSirGlobal pMac, tANI_U32 sessionId, t
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGE, FL(" not to start timer due to no profile or reach mac ret (%d)\n "), 
+=======
+        smsLog(pMac, LOGE, FL(" not to start timer due to no profile or reach mac ret (%d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGE, FL(" not to start timer due to no profile or reach mac ret (%d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18891,7 +21323,11 @@ eHalStatus csrRoamStartJoinRetryTimer(tpAniSirGlobal pMac, tANI_U32 sessionId, t
 eHalStatus csrRoamStopJoinRetryTimer(tpAniSirGlobal pMac, tANI_U32 sessionId)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGE, " csrRoamStopJoinRetryTimer \n ");
+=======
+    smsLog(pMac, LOGE, " csrRoamStopJoinRetryTimer");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGE, " csrRoamStopJoinRetryTimer");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -18962,7 +21398,10 @@ eHalStatus csrGetCurrentCountryCode(tpAniSirGlobal pMac, tANI_U8 *pCountry)
    return eHAL_STATUS_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 eHalStatus csrSetTxPower(tpAniSirGlobal pMac, v_U8_t sessionId, v_U8_t mW)
 {
@@ -19036,4 +21475,7 @@ tANI_BOOLEAN csrRoamIsStaMode(tpAniSirGlobal pMac, tANI_U32 sessionId)
 
   return eANI_BOOLEAN_FALSE;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

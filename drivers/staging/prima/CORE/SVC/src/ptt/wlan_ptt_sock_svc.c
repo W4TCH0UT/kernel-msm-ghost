@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -57,9 +63,13 @@
 #include <vos_types.h>
 #include <vos_trace.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
 #include <wlan_hdd_ftm.h>
 #endif
+=======
+#include <wlan_hdd_ftm.h>
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <wlan_hdd_ftm.h>
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -72,7 +82,11 @@
 #endif
 // Global variables
 <<<<<<< HEAD
+<<<<<<< HEAD
 static struct hdd_context_s *pAdapterHandle = NULL;
+=======
+static struct hdd_context_s *pAdapterHandle;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static struct hdd_context_s *pAdapterHandle;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -118,17 +132,23 @@ int ptt_sock_send_msg_to_app(tAniHdr *wmsg, int radio, int src_mod, int pid)
    struct nlmsghdr *nlh;
    int wmsg_length = be16_to_cpu(wmsg->length);
 <<<<<<< HEAD
+<<<<<<< HEAD
    static int nlmsg_seq = 0;
    if (radio < 0 || radio > ANI_MAX_RADIOS) {
       PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: invalid radio id [%d]\n",
          __FUNCTION__, radio);
       return -1;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    static int nlmsg_seq;
    if (radio < 0 || radio > ANI_MAX_RADIOS) {
       PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: invalid radio id [%d]\n",
          __func__, radio);
       return -EINVAL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    payload_len = wmsg_length + 4;  // 4 extra bytes for the radio idx
@@ -136,12 +156,15 @@ int ptt_sock_send_msg_to_app(tAniHdr *wmsg, int radio, int src_mod, int pid)
    if ((skb = dev_alloc_skb(tot_msg_len)) == NULL) {
       PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: dev_alloc_skb() failed for msg size[%d]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
          __FUNCTION__, tot_msg_len);
       return -1;
    }
    nlh = NLMSG_PUT(skb, pid, nlmsg_seq++, src_mod, payload_len);
    nlh->nlmsg_flags = NLM_F_REQUEST;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          __func__, tot_msg_len);
       return -ENOMEM;
    }
@@ -152,13 +175,20 @@ int ptt_sock_send_msg_to_app(tAniHdr *wmsg, int radio, int src_mod, int pid)
       kfree_skb(skb);
       return -ENOMEM;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wnl = (tAniNlHdr *) nlh;
    wnl->radio = radio;
    memcpy(&wnl->wmsg, wmsg, wmsg_length);
    PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: Sending Msg Type [0x%X] to pid[%d]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
       __FUNCTION__, be16_to_cpu(wmsg->type), pid);
+=======
+      __func__, be16_to_cpu(wmsg->type), pid);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       __func__, be16_to_cpu(wmsg->type), pid);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -167,7 +197,10 @@ int ptt_sock_send_msg_to_app(tAniHdr *wmsg, int radio, int src_mod, int pid)
 #endif
    err = nl_srv_ucast(skb, pid);
 <<<<<<< HEAD
+<<<<<<< HEAD
 nlmsg_failure:
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return err;
@@ -195,7 +228,11 @@ static void ptt_sock_proc_reg_req(tAniHdr *wmsg, int radio)
    {
       PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Error sending ANI_MSG_APP_REG_RSP to pid[%d]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
          __FUNCTION__, reg_req->pid);
+=======
+         __func__, reg_req->pid);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          __func__, reg_req->pid);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -212,7 +249,11 @@ static void ptt_proc_pumac_msg(struct sk_buff * skb, tAniHdr *wmsg, int radio)
       case ANI_MSG_APP_REG_REQ:
          PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: Received ANI_MSG_APP_REG_REQ [0x%X]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
             __FUNCTION__, ani_msg_type);
+=======
+            __func__, ani_msg_type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             __func__, ani_msg_type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -221,7 +262,11 @@ static void ptt_proc_pumac_msg(struct sk_buff * skb, tAniHdr *wmsg, int radio)
       default:
          PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Received Unknown Msg Type[0x%X]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
             __FUNCTION__, ani_msg_type);
+=======
+            __func__, ani_msg_type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             __func__, ani_msg_type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -243,7 +288,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
    if (radio < 0 || radio > ANI_MAX_RADIOS) {
       PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: ANI Msg [0x%X] invalid radio id [%d]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
          __FUNCTION__, ani_msg_type, radio);
+=======
+         __func__, ani_msg_type, radio);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          __func__, ani_msg_type, radio);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -261,7 +310,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             reg_addr = *(v_U32_t*) ((char*)wmsg + 8);
             PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: PTT_MSG_READ_REGISTER [0x%08lX]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, reg_addr);
+=======
+               __func__, reg_addr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, reg_addr);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -270,7 +323,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             if(vosStatus != VOS_STATUS_SUCCESS)
                PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Read Register [0x%08lX] failed!!\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, reg_addr);
+=======
+               __func__, reg_addr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, reg_addr);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -281,7 +338,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             reg_val = *(v_U32_t*)((const unsigned char*)wmsg + 12);
             PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: PTT_MSG_WRITE_REGISTER Addr [0x%08lX] value [0x%08lX]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, reg_addr, reg_val);
+=======
+               __func__, reg_addr, reg_val);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, reg_addr, reg_val);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -290,7 +351,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             {
                PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Write Register [0x%08lX] value [0x%08lX] failed!!\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, reg_addr, reg_val);
+=======
+                  __func__, reg_addr, reg_val);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, reg_addr, reg_val);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -303,7 +368,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             len_payload = *(v_U32_t*) ((char*)wmsg + 12);
             PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: PTT_MSG_READ_MEMORY addr [0x%08lX] bytes [0x%08lX]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, reg_addr, len_payload);
+=======
+               __func__, reg_addr, len_payload);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, reg_addr, len_payload);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -312,7 +381,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             if(vosStatus != VOS_STATUS_SUCCESS) {
                PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Memory read failed for [0x%08lX]!!\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, reg_addr);
+=======
+                  __func__, reg_addr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, reg_addr);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -326,7 +399,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             len_payload = *(v_U32_t*) ((char*)wmsg + 12);
             PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: PTT_MSG_DBG_WRITE_MEMORY addr [0x%08lX] bytes [0x%08lX]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, reg_addr, len_payload);
+=======
+               __func__, reg_addr, len_payload);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, reg_addr, len_payload);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -337,7 +414,11 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             {
                PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Memory write failed for addr [0x%08lX]!!\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, reg_addr);
+=======
+                  __func__, reg_addr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, reg_addr);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -352,6 +433,7 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             arg3 = *(unsigned int *) ((char *)wmsg + 20);
             arg4 = *(unsigned int *) ((char *)wmsg + 24);
             PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: PTT_MSG_LOG_DUMP_DBG %d arg1 %d arg2 %d arg3 %d arg4 %d\n",
+<<<<<<< HEAD
 <<<<<<< HEAD
                __FUNCTION__, cmd, arg1, arg2, arg3, arg4);
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
@@ -370,6 +452,8 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
             PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Unknown ANI Msg [0x%X], length [0x%X]\n",
                __FUNCTION__, ani_msg_type, be16_to_cpu(wmsg->length ));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                __func__, cmd, arg1, arg2, arg3, arg4);
             //send message to the app
             ptt_sock_send_msg_to_app(wmsg, 0, ANI_NL_MSG_PUMAC, wnl->nlh.nlmsg_pid);
@@ -380,6 +464,9 @@ static void ptt_proc_quarky_msg(tAniNlHdr *wnl, tAniHdr *wmsg, int radio)
          default:
             PTT_TRACE(VOS_TRACE_LEVEL_ERROR, "%s: Unknown ANI Msg [0x%X], length [0x%X]\n",
                __func__, ani_msg_type, be16_to_cpu(wmsg->length ));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
       }
@@ -400,7 +487,11 @@ static int ptt_sock_rx_nlink_msg (struct sk_buff * skb)
       case ANI_NL_MSG_PUMAC:  //Message from the PTT socket APP
          PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: Received ANI_NL_MSG_PUMAC Msg [0x%X]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
             __func__, type, radio);
+=======
+            __func__, type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             __func__, type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -409,7 +500,11 @@ static int ptt_sock_rx_nlink_msg (struct sk_buff * skb)
       case ANI_NL_MSG_PTT: //Message from Quarky GUI
          PTT_TRACE(VOS_TRACE_LEVEL_INFO, "%s: Received ANI_NL_MSG_PTT Msg [0x%X]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
             __func__, type, radio);
+=======
+            __func__, type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             __func__, type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

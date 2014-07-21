@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -70,6 +79,7 @@
 // Lim Quite timer in ticks
 #define LIM_QUIET_TIMER_TICKS                    100
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Lim Quite BSS timer inteval in ticks
 #define LIM_QUIET_BSS_TIMER_TICK                 100
 // Lim KeepAlive timer default (3000)ms
@@ -78,6 +88,8 @@
 //default beacon interval value used in HB timer interval calculation
 #define LIM_HB_TIMER_BEACON_INTERVAL             100
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // Lim Quite BSS timer interval in ticks
 #define LIM_QUIET_BSS_TIMER_TICK                 100
 // Lim KeepAlive timer default (3000)ms
@@ -92,6 +104,9 @@
    convert  ACTIVE DFS channel to DFS channels */
 #define ACTIVE_TO_PASSIVE_CONVERISON_TIMEOUT     1000
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limCreateTimers()
@@ -115,6 +130,7 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void
 limCreateTimers(tpAniSirGlobal pMac)
 {
@@ -122,12 +138,17 @@ limCreateTimers(tpAniSirGlobal pMac)
 
     PELOG1(limLog(pMac, LOG1, FL("Creating Timers used by LIM module in Role %d\n"), pMac->lim.gLimSystemRole);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_UINT_t
 limCreateTimers(tpAniSirGlobal pMac)
 {
     tANI_U32 cfgValue, i=0;
 
     PELOG1(limLog(pMac, LOG1, FL("Creating Timers used by LIM module in Role %d"), pMac->lim.gLimSystemRole);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_ACTIVE_MINIMUM_CHANNEL_TIME,
@@ -138,7 +159,11 @@ limCreateTimers(tpAniSirGlobal pMac)
          * from CFG. Log error.
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not retrieve MinChannelTimeout value\n"));
+=======
+        limLog(pMac, LOGP, FL("could not retrieve MinChannelTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not retrieve MinChannelTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -155,6 +180,7 @@ limCreateTimers(tpAniSirGlobal pMac)
         /// Could not start min channel timer.
         // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not create MIN channel timer\n"));
 
         return;
@@ -166,10 +192,15 @@ limCreateTimers(tpAniSirGlobal pMac)
 
     PELOG2(limLog(pMac, LOG2, FL("Created MinChannelTimer\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("could not create MIN channel timer"));
         return TX_TIMER_ERROR;
     }
     PELOG2(limLog(pMac, LOG2, FL("Created MinChannelTimer"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Periodic probe request timer value is half of the Min channel
@@ -190,8 +221,13 @@ limCreateTimers(tpAniSirGlobal pMac)
            /// Could not start Periodic Probe Req timer.
            // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
            limLog(pMac, LOGP, FL("could not create periodic probe timer\n"));
            return;
+=======
+           limLog(pMac, LOGP, FL("could not create periodic probe timer"));
+           goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            limLog(pMac, LOGP, FL("could not create periodic probe timer"));
            goto err_timer;
@@ -209,7 +245,11 @@ limCreateTimers(tpAniSirGlobal pMac)
          */
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve MAXChannelTimeout value\n"));
+=======
+               FL("could not retrieve MAXChannelTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve MAXChannelTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -225,6 +265,7 @@ limCreateTimers(tpAniSirGlobal pMac)
         /// Could not start max channel timer.
         // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not create MAX channel timer\n"));
 
         return;
@@ -237,11 +278,16 @@ limCreateTimers(tpAniSirGlobal pMac)
 
     PELOG2(limLog(pMac, LOG2, FL("Created MaxChannelTimer\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("could not create MAX channel timer"));
 
         goto err_timer;
     }
     PELOG2(limLog(pMac, LOG2, FL("Created MaxChannelTimer"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (pMac->lim.gLimSystemRole != eLIM_AP_ROLE)
@@ -256,8 +302,13 @@ limCreateTimers(tpAniSirGlobal pMac)
                             TX_NO_ACTIVATE) != TX_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("failed to create Channel Switch timer\n"));
             return;
+=======
+            limLog(pMac, LOGP, FL("failed to create Channel Switch timer"));
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("failed to create Channel Switch timer"));
             goto err_timer;
@@ -278,8 +329,13 @@ limCreateTimers(tpAniSirGlobal pMac)
                             TX_NO_ACTIVATE) != TX_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("failed to create Quiet Begin Timer\n"));
             return;
+=======
+            limLog(pMac, LOGP, FL("failed to create Quiet Begin Timer"));
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("failed to create Quiet Begin Timer"));
             goto err_timer;
@@ -302,8 +358,13 @@ limCreateTimers(tpAniSirGlobal pMac)
                             TX_NO_ACTIVATE) != TX_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("failed to create Quiet Begin Timer\n"));
             return;
+=======
+            limLog(pMac, LOGP, FL("failed to create Quiet Begin Timer"));
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("failed to create Quiet Begin Timer"));
             goto err_timer;
@@ -319,7 +380,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve JoinFailureTimeout value\n"));
+=======
+               FL("could not retrieve JoinFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve JoinFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -336,6 +401,7 @@ limCreateTimers(tpAniSirGlobal pMac)
             /// Could not create Join failure timer.
             // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not create Join failure timer\n"));
 
             return;
@@ -345,6 +411,8 @@ limCreateTimers(tpAniSirGlobal pMac)
                                  LIM_TIMER_EXPIRY_LIST);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGP, FL("could not create Join failure timer"));
 
             goto err_timer;
@@ -362,6 +430,9 @@ limCreateTimers(tpAniSirGlobal pMac)
             limLog(pMac, LOGP, FL("could not create Periodic Join Probe Request timer"));
             goto err_timer;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if (wlan_cfgGetInt(pMac, WNI_CFG_ASSOCIATION_FAILURE_TIMEOUT,
@@ -373,7 +444,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve AssocFailureTimeout value\n"));
+=======
+               FL("could not retrieve AssocFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve AssocFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -391,9 +466,15 @@ limCreateTimers(tpAniSirGlobal pMac)
             // Log error
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not create Association failure timer\n"));
 
             return;
+=======
+               FL("could not create Association failure timer"));
+
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not create Association failure timer"));
 
@@ -409,7 +490,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve ReassocFailureTimeout value\n"));
+=======
+               FL("could not retrieve ReassocFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve ReassocFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -427,6 +512,7 @@ limCreateTimers(tpAniSirGlobal pMac)
             // Log error
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not create Reassociation failure timer\n"));
 
             return;
@@ -435,6 +521,8 @@ limCreateTimers(tpAniSirGlobal pMac)
         if (wlan_cfgGetInt(pMac, WNI_CFG_ADDTS_RSP_TIMEOUT, &cfgValue) != eSIR_SUCCESS)
             limLog(pMac, LOGP, FL("Fail to get WNI_CFG_ADDTS_RSP_TIMEOUT \n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("could not create Reassociation failure timer"));
 
             goto err_timer;
@@ -442,6 +530,9 @@ limCreateTimers(tpAniSirGlobal pMac)
 
         if (wlan_cfgGetInt(pMac, WNI_CFG_ADDTS_RSP_TIMEOUT, &cfgValue) != eSIR_SUCCESS)
             limLog(pMac, LOGP, FL("Fail to get WNI_CFG_ADDTS_RSP_TIMEOUT "));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         cfgValue = SYS_MS_TO_TICKS(cfgValue);
@@ -457,9 +548,15 @@ limCreateTimers(tpAniSirGlobal pMac)
             /// Could not create Auth failure timer.
             // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not create Addts response timer\n"));
 
             return;
+=======
+            limLog(pMac, LOGP, FL("could not create Addts response timer"));
+
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("could not create Addts response timer"));
 
@@ -476,7 +573,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve AuthFailureTimeout value\n"));
+=======
+               FL("could not retrieve AuthFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve AuthFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -494,6 +595,7 @@ limCreateTimers(tpAniSirGlobal pMac)
             /// Could not create Auth failure timer.
             // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not create Auth failure timer\n"));
 
             return;
@@ -503,11 +605,16 @@ limCreateTimers(tpAniSirGlobal pMac)
                                  LIM_TIMER_EXPIRY_LIST);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGP, FL("could not create Auth failure timer"));
 
             goto err_timer;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (wlan_cfgGetInt(pMac, WNI_CFG_BEACON_INTERVAL,
                       &cfgValue) != eSIR_SUCCESS)
@@ -518,7 +625,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve BEACON_INTERVAL value\n"));
+=======
+               FL("could not retrieve BEACON_INTERVAL value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve BEACON_INTERVAL value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -537,7 +648,12 @@ limCreateTimers(tpAniSirGlobal pMac)
             // Log error
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("call to create heartbeat timer failed\n"));
+=======
+               FL("call to create heartbeat timer failed"));
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("call to create heartbeat timer failed"));
             goto err_timer;
@@ -553,7 +669,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve PROBE_AFTER_HB_FAIL_TIMEOUT value\n"));
+=======
+               FL("could not retrieve PROBE_AFTER_HB_FAIL_TIMEOUT value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve PROBE_AFTER_HB_FAIL_TIMEOUT value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -574,6 +694,7 @@ limCreateTimers(tpAniSirGlobal pMac)
             // Log error
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to create ProbeAfterHBTimer\n"));
         }
 
@@ -584,10 +705,15 @@ limCreateTimers(tpAniSirGlobal pMac)
 
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    FL("unable to create ProbeAfterHBTimer"));
             goto err_timer;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (wlan_cfgGetInt(pMac, WNI_CFG_BACKGROUND_SCAN_PERIOD,
                       &cfgValue) != eSIR_SUCCESS)
@@ -598,7 +724,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve Background scan period value\n"));
+=======
+               FL("could not retrieve Background scan period value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve Background scan period value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -632,8 +762,11 @@ limCreateTimers(tpAniSirGlobal pMac)
             // Log error
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("call to create background scan timer failed\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("call to create background scan timer failed"));
             goto err_timer;
         }
@@ -668,6 +801,9 @@ limCreateTimers(tpAniSirGlobal pMac)
             limLog(pMac, LOGP,
                FL("could not create TDLS discovery response wait timer"));
         goto err_timer;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 #endif
@@ -689,6 +825,7 @@ limCreateTimers(tpAniSirGlobal pMac)
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("create Disassociate throttle timer failed\n"));
     }
 #if defined(ANI_OS_TYPE_RTAI_LINUX)
@@ -699,11 +836,16 @@ limCreateTimers(tpAniSirGlobal pMac)
     PELOG1(limLog(pMac, LOG1,
            FL("Created Disassociate throttle timer \n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("create Disassociate throttle timer failed"));
         goto err_timer;
     }
     PELOG1(limLog(pMac, LOG1,
            FL("Created Disassociate throttle timer "));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /**
@@ -719,7 +861,11 @@ limCreateTimers(tpAniSirGlobal pMac)
          */
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve keepalive timeout value\n"));
+=======
+               FL("could not retrieve keepalive timeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve keepalive timeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -748,7 +894,12 @@ limCreateTimers(tpAniSirGlobal pMac)
     {
         // Cannot create keepalive timer.  Log error.
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("Cannot create keepalive timer.\n"));
+=======
+        limLog(pMac, LOGP, FL("Cannot create keepalive timer."));
+        goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("Cannot create keepalive timer."));
         goto err_timer;
@@ -768,7 +919,11 @@ limCreateTimers(tpAniSirGlobal pMac)
          */
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve CNF timeout value\n"));
+=======
+               FL("could not retrieve CNF timeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve CNF timeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -787,7 +942,12 @@ limCreateTimers(tpAniSirGlobal pMac)
         {
             // Cannot create timer.  Log error.
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Cannot create CNF wait timer.\n"));
+=======
+            limLog(pMac, LOGP, FL("Cannot create CNF wait timer."));
+            goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("Cannot create CNF wait timer."));
             goto err_timer;
@@ -810,6 +970,7 @@ limCreateTimers(tpAniSirGlobal pMac)
         **/
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve mac preauth value\n"));
     }
 #ifdef ANI_AP_SDK_OPT
@@ -820,10 +981,15 @@ limCreateTimers(tpAniSirGlobal pMac)
                FL("could not retrieve mac preauth value"));
     }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+               FL("could not retrieve mac preauth value"));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->lim.gLimPreAuthTimerTable.numEntry = cfgValue;
     if (palAllocateMemory(pMac->hHdd, (void **) &pMac->lim.gLimPreAuthTimerTable.pTable,
           cfgValue*sizeof(tLimPreAuthNode)) != eHAL_STATUS_SUCCESS)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed!\n"));
         return;
@@ -835,6 +1001,8 @@ limCreateTimers(tpAniSirGlobal pMac)
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("palAllocateMemory failed!"));
         goto err_timer;
     }
@@ -843,6 +1011,9 @@ limCreateTimers(tpAniSirGlobal pMac)
     PELOG1(limLog(pMac, LOG1, FL("alloc and init table for preAuth timers"));)
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         /**
@@ -857,7 +1028,11 @@ limCreateTimers(tpAniSirGlobal pMac)
              */
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve OLBD detect timeout value\n"));
+=======
+               FL("could not retrieve OLBD detect timeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve OLBD detect timeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -877,15 +1052,21 @@ limCreateTimers(tpAniSirGlobal pMac)
             // Cannot create update OLBC cache timer
             // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Cannot create update OLBC cache timer\n"));
         }
     }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGP, FL("Cannot create update OLBC cache timer"));
             goto err_timer;
         }
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
     // In future we need to use the auth timer, cause
@@ -904,8 +1085,13 @@ limCreateTimers(tpAniSirGlobal pMac)
         // Could not create Join failure timer.
         // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not create Join failure timer\n"));
         return;
+=======
+        limLog(pMac, LOGP, FL("could not create Join failure timer"));
+        goto err_timer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not create Join failure timer"));
         goto err_timer;
@@ -926,6 +1112,7 @@ limCreateTimers(tpAniSirGlobal pMac)
         // Could not create Join failure timer.
         // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not create Join failure timer\n"));
         return;
     }
@@ -933,11 +1120,16 @@ limCreateTimers(tpAniSirGlobal pMac)
 
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("could not create Join failure timer"));
         goto err_timer;
     }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     cfgValue = 1000;
     cfgValue = SYS_MS_TO_TICKS(cfgValue);
@@ -950,6 +1142,7 @@ limCreateTimers(tpAniSirGlobal pMac)
         // Could not create Join failure timer.
         // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not create Join failure timer\n"));
         return;
     }
@@ -957,6 +1150,8 @@ limCreateTimers(tpAniSirGlobal pMac)
 #endif
     pMac->lim.gLimTimersCreated = 1;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("could not create Join failure timer"));
         goto err_timer;
     }
@@ -1050,6 +1245,9 @@ limCreateTimers(tpAniSirGlobal pMac)
 
         return TX_TIMER_ERROR;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /****** end limCreateTimers() ******/
 
@@ -1097,7 +1295,11 @@ limTimerHandler(void *pMacGlobal, tANI_U32 param)
     if ((statusCode = limPostMsgApi(pMac, &msg)) != eSIR_SUCCESS)
         limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("posting message %X to LIM failed, reason=%d\n"),
+=======
+               FL("posting message %X to LIM failed, reason=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("posting message %X to LIM failed, reason=%d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1209,7 +1411,10 @@ limAssocFailureTimerHandler(void *pMacGlobal, tANI_U32 param)
     tpAniSirGlobal pMac = (tpAniSirGlobal)pMacGlobal;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     if((LIM_REASSOC == param) &&
        (NULL != pMac->lim.pSessionEntry))
@@ -1233,6 +1438,9 @@ limAssocFailureTimerHandler(void *pMacGlobal, tANI_U32 param)
         }
     }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Prepare and post message to LIM Message Queue
 
@@ -1266,7 +1474,10 @@ limAssocFailureTimerHandler(void *pMacGlobal, tANI_U32 param)
  * @return None
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void
@@ -1284,7 +1495,10 @@ limUpdateOlbcCacheTimerHandler(void *pMacGlobal, tANI_U32 param)
     limPostMsgApi(pMac, &msg);
 } /****** end limUpdateOlbcCacheTimerHandler() ******/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1327,7 +1541,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to deactivate AddtsRsp timer\n"));
+=======
+                       FL("Unable to deactivate AddtsRsp timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("Unable to deactivate AddtsRsp timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1342,7 +1560,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to deactivate min channel timer\n"));
+=======
+                       FL("Unable to deactivate min channel timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("Unable to deactivate min channel timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1367,7 +1589,10 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 {
                     val = SYS_MS_TO_TICKS(pMac->lim.gpLimMlmScanReq->minChannelTime);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if (pMac->btc.btcScanCompromise)
                     {
                         if (pMac->lim.gpLimMlmScanReq->minChannelTimeBtc)
@@ -1380,6 +1605,9 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                             limLog(pMac, LOGE, FL("BTC Active Scan Min Time is Not Set"));
                         }
                     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
                 else
@@ -1398,7 +1626,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Could not change min channel timer.
                 // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Unable to change min channel timer\n"));
+=======
+                limLog(pMac, LOGP, FL("Unable to change min channel timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("Unable to change min channel timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1414,11 +1646,14 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to deactivate periodic timer\n"));
             }
 
             val = SYS_MS_TO_TICKS(pMac->lim.gpLimMlmScanReq->minChannelTime)/2;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        FL("Unable to deactivate periodic timer"));
             }
 
@@ -1434,6 +1669,9 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                    limLog(pMac, LOGE, FL("BTC Active Scan Min Time is Not Set"));
                }
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (tx_timer_change(&pMac->lim.limTimers.gLimPeriodicProbeReqTimer,
                                 val, 0) != TX_SUCCESS)
@@ -1441,7 +1679,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Could not change min channel timer.
                 // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Unable to change periodic timer\n"));
+=======
+                limLog(pMac, LOGP, FL("Unable to change periodic timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("Unable to change periodic timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1457,10 +1699,16 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to deactivate max channel timer\n"));
             }
 
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+                       FL("Unable to deactivate max channel timer"));
+            }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("Unable to deactivate max channel timer"));
             }
@@ -1488,7 +1736,10 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                     {
                         val = SYS_MS_TO_TICKS(pMac->lim.gpLimMlmScanReq->maxChannelTime);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         if (pMac->btc.btcScanCompromise)
                         {
                             if (pMac->lim.gpLimMlmScanReq->maxChannelTimeBtc)
@@ -1501,6 +1752,9 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                                 limLog(pMac, LOGE, FL("BTC Active Scan Max Time is Not Set"));
                             }
                         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
                     else
@@ -1513,6 +1767,7 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 }
 #endif
             }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 #if defined(ANI_PRODUCT_TYPE_AP)
@@ -1533,6 +1788,8 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             if (tx_timer_change(&pMac->lim.limTimers.gLimMaxChannelTimer,
                                 val, 0) != TX_SUCCESS)
@@ -1541,7 +1798,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to change max channel timer\n"));
+=======
+                       FL("Unable to change max channel timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("Unable to change max channel timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1559,7 +1820,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to deactivate Join Failure timer\n"));
+=======
+                       FL("Unable to deactivate Join Failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("Unable to deactivate Join Failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1574,7 +1839,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve JoinFailureTimeout value\n"));
+=======
+                   FL("could not retrieve JoinFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve JoinFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1590,8 +1859,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to change Join Failure timer\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        FL("Unable to change Join Failure timer"));
             }
 
@@ -1613,6 +1885,9 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Could not change periodic join req times.
                 // Log error
                 limLog(pMac, LOGP, FL("Unable to change periodic join request timer"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
@@ -1626,7 +1901,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("Unable to deactivate auth failure timer\n"));
+=======
+                       FL("Unable to deactivate auth failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("Unable to deactivate auth failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1642,7 +1921,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AuthFailureTimeout value\n"));
+=======
+                   FL("could not retrieve AuthFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AuthFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1656,7 +1939,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("unable to change Auth failure timer\n"));
+=======
+                       FL("unable to change Auth failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("unable to change Auth failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1672,7 +1959,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to deactivate Association failure timer\n"));
+=======
+                   FL("unable to deactivate Association failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("unable to deactivate Association failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1688,7 +1979,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AssocFailureTimeout value\n"));
+=======
+                   FL("could not retrieve AssocFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AssocFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1702,7 +1997,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("unable to change Assoc failure timer\n"));
+=======
+                       FL("unable to change Assoc failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("unable to change Assoc failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1718,7 +2017,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to deactivate Reassoc failure timer\n"));
+=======
+                   FL("unable to deactivate Reassoc failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("unable to deactivate Reassoc failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1734,7 +2037,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve ReassocFailureTimeout value\n"));
+=======
+                   FL("could not retrieve ReassocFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve ReassocFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1748,7 +2055,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to change Reassociation failure timer\n"));
+=======
+                   FL("unable to change Reassociation failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("unable to change Reassociation failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1764,13 +2075,19 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("unable to deactivate Heartbeat timer\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        FL("unable to deactivate Heartbeat timer"));
             }
             else
             {
                 limLog(pMac, LOGW, FL("Deactivated heartbeat link monitoring"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
@@ -1783,7 +2100,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("could not retrieve BEACON_INTERVAL value\n"));
+=======
+                       FL("could not retrieve BEACON_INTERVAL value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("could not retrieve BEACON_INTERVAL value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1793,7 +2114,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                                                           eSIR_SUCCESS)
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve heartbeat failure value\n"));
+=======
+                   FL("could not retrieve heartbeat failure value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve heartbeat failure value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1808,16 +2133,22 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("unable to change HeartBeat timer\n"));
             }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        FL("unable to change HeartBeat timer"));
             }
             else
             {
                 limLog(pMac, LOGW, FL("HeartBeat timer value is changed = %lu"), val);
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
@@ -1829,13 +2160,19 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to deactivate probeAfterHBTimer\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    FL("unable to deactivate probeAfterHBTimer"));
             }
             else
             {
                 limLog(pMac, LOGE, FL("Deactivated probe after hb timer"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
@@ -1848,7 +2185,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve PROBE_AFTER_HB_FAIL_TIMEOUT value\n"));
+=======
+                   FL("could not retrieve PROBE_AFTER_HB_FAIL_TIMEOUT value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve PROBE_AFTER_HB_FAIL_TIMEOUT value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1864,13 +2205,19 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("unable to change ProbeAfterHBTimer\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        FL("unable to change ProbeAfterHBTimer"));
             }
             else
             {
                 limLog(pMac, LOGW, FL("Probe after HB timer value is changed = %lu"), val);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
@@ -1884,7 +2231,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to deactivate KeepaliveTimer timer\n"));
+=======
+                   FL("unable to deactivate KeepaliveTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("unable to deactivate KeepaliveTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1901,7 +2252,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve keepalive timeout value\n"));
+=======
+                   FL("could not retrieve keepalive timeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve keepalive timeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1924,7 +2279,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to change KeepaliveTimer timer\n"));
+=======
+                   FL("unable to change KeepaliveTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("unable to change KeepaliveTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1933,7 +2292,10 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eLIM_BACKGROUND_SCAN_TIMER:
@@ -1944,7 +2306,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("unable to deactivate BackgroundScanTimer timer\n"));
+=======
+                   FL("unable to deactivate BackgroundScanTimer timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("unable to deactivate BackgroundScanTimer timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1960,7 +2326,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve Background scan period value\n"));
+=======
+                   FL("could not retrieve Background scan period value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve Background scan period value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1981,6 +2351,7 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 // Could not change BackgroundScanTimer timer.
                 // Log error
                 limLog(pMac, LOGP,
+<<<<<<< HEAD
 <<<<<<< HEAD
                    FL("unable to change BackgroundScanTimer timer\n"));
             }
@@ -2058,18 +2429,27 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    FL("unable to change BackgroundScanTimer timer"));
             }
 
             break;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if 0
         case eLIM_CHANNEL_SWITCH_TIMER:
             if (tx_timer_deactivate(&pMac->lim.limTimers.gLimChannelSwitchTimer) != eSIR_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("tx_timer_deactivate failed!\n"));
+=======
+                limLog(pMac, LOGP, FL("tx_timer_deactivate failed!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("tx_timer_deactivate failed!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2081,7 +2461,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                                     0) != TX_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("tx_timer_change failed \n"));
+=======
+                limLog(pMac, LOGP, FL("tx_timer_change failed "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("tx_timer_change failed "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2091,6 +2475,7 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 #endif
 
         case eLIM_LEARN_DURATION_TIMER:
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
             if (tx_timer_deactivate(&pMac->lim.gLimMeasParams.learnDurationTimer) != TX_SUCCESS)
@@ -2144,6 +2529,8 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
 #if 0
@@ -2153,7 +2540,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             {
                 limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   FL("Unable to de-activate gLimQuietBssTimer! Will attempt to activate anyway...\n"));
+=======
+                  FL("Unable to de-activate gLimQuietBssTimer! Will attempt to activate anyway..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   FL("Unable to de-activate gLimQuietBssTimer! Will attempt to activate anyway..."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2168,7 +2559,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             {
                 limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   FL("Unable to change gLimQuietBssTimer! Will still attempt to activate anyway...\n"));
+=======
+                  FL("Unable to change gLimQuietBssTimer! Will still attempt to activate anyway..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   FL("Unable to change gLimQuietBssTimer! Will still attempt to activate anyway..."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2180,7 +2575,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             {
                 limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     FL( "Unable to deactivate gLimQuietTimer! Will still attempt to re-activate anyway...\n" ));
+=======
+                    FL( "Unable to deactivate gLimQuietTimer! Will still attempt to re-activate anyway..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     FL( "Unable to deactivate gLimQuietTimer! Will still attempt to re-activate anyway..." ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2192,7 +2591,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             {
                 limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     FL( "Unable to change gLimQuietTimer! Will still attempt to re-activate anyway...\n" ));
+=======
+                    FL( "Unable to change gLimQuietTimer! Will still attempt to re-activate anyway..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     FL( "Unable to change gLimQuietTimer! Will still attempt to re-activate anyway..." ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2201,7 +2604,10 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if 0
@@ -2218,7 +2624,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                   // Log error
                   limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                          FL("Unable to deactivate WPS overlap timer\n"));
+=======
+                         FL("Unable to deactivate WPS overlap timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                          FL("Unable to deactivate WPS overlap timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2231,7 +2641,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                   // Could not change Learn Interval timer.
                   // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                   limLog(pMac, LOGP, FL("Unable to change WPS overlap timer\n"));
+=======
+                  limLog(pMac, LOGP, FL("Unable to change WPS overlap timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   limLog(pMac, LOGP, FL("Unable to change WPS overlap timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2241,7 +2655,11 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 
               limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   FL("Setting WPS overlap TIMER to %d ticks\n"),
+=======
+                  FL("Setting WPS overlap TIMER to %d ticks"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   FL("Setting WPS overlap TIMER to %d ticks"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2250,7 +2668,10 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             break;
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2263,7 +2684,12 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 ** timer. Log error.
                 **/
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Unable to deactivate Preauth response Failure timer\n"));
+=======
+                limLog(pMac, LOGP, FL("Unable to deactivate Preauth response Failure timer"));
+                return;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("Unable to deactivate Preauth response Failure timer"));
                 return;
@@ -2279,7 +2705,12 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 * timer. Log error.
                 */
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Unable to change Join Failure timer\n"));
+=======
+                limLog(pMac, LOGP, FL("Unable to change Join Failure timer"));
+                return;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("Unable to change Join Failure timer"));
                 return;
@@ -2293,16 +2724,22 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                                                                 != TX_SUCCESS)
              {
 <<<<<<< HEAD
+<<<<<<< HEAD
                  limLog(pMac, LOGE, FL("Unable to deactivate TSM timer\n"));
              }
              break;
 #endif
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  limLog(pMac, LOGE, FL("Unable to deactivate TSM timer"));
              }
              break;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eLIM_REMAIN_CHN_TIMER:
             if (tx_timer_deactivate(&pMac->lim.limTimers.gLimRemainOnChannelTimer) != TX_SUCCESS)
@@ -2312,7 +2749,12 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 ** timer. Log error.
                 **/
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Unable to deactivate Remain on Chn timer\n"));
+=======
+                limLog(pMac, LOGP, FL("Unable to deactivate Remain on Chn timer"));
+                return;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("Unable to deactivate Remain on Chn timer"));
                 return;
@@ -2328,11 +2770,14 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
                 * timer. Log error.
                 */
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Unable to change timer\n"));
             }
             break;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limLog(pMac, LOGP, FL("Unable to change timer"));
                 return;
             }
@@ -2434,6 +2879,9 @@ limDeactivateAndChangeTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
             return;
         }
         break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         default:
@@ -2459,11 +2907,14 @@ limHeartBeatDeactivateAndChangeTimer(tpAniSirGlobal pMac, tpPESession psessionEn
     tANI_U32    val, val1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_HEART_BEAT_TIMER));
 
     if (tx_timer_deactivate(&pMac->lim.limTimers.gLimHeartBeatTimer) != TX_SUCCESS)
         limLog(pMac, LOGP, FL("Fail to deactivate HeartBeatTimer \n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == psessionEntry)
     {
         return;
@@ -2476,6 +2927,9 @@ limHeartBeatDeactivateAndChangeTimer(tpAniSirGlobal pMac, tpPESession psessionEn
 
     if (tx_timer_deactivate(&pMac->lim.limTimers.gLimHeartBeatTimer) != TX_SUCCESS)
         limLog(pMac, LOGP, FL("Fail to deactivate HeartBeatTimer "));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* HB Timer sessionisation: In case of 2 or more sessions, the HB interval keeps
@@ -2487,15 +2941,21 @@ limHeartBeatDeactivateAndChangeTimer(tpAniSirGlobal pMac, tpPESession psessionEn
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_HEART_BEAT_THRESHOLD, &val1) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("Fail to get WNI_CFG_HEART_BEAT_THRESHOLD \n"));
 
     PELOGW(limLog(pMac,LOGW,
                  FL("HB Timer Int.=100ms * %d, Beacon Int.=%dms,Session Id=%d \n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("Fail to get WNI_CFG_HEART_BEAT_THRESHOLD "));
 
     PELOGW(limLog(pMac,LOGW,
                  FL("HB Timer Int.=100ms * %d, Beacon Int.=%dms,Session Id=%d "),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  val1, psessionEntry->beaconParams.beaconInterval,
                  psessionEntry->peSessionId);)
@@ -2505,7 +2965,11 @@ limHeartBeatDeactivateAndChangeTimer(tpAniSirGlobal pMac, tpPESession psessionEn
 
     if (tx_timer_change(&pMac->lim.limTimers.gLimHeartBeatTimer, val, 0) != TX_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("Fail to change HeartBeatTimer\n"));
+=======
+        limLog(pMac, LOGP, FL("Fail to change HeartBeatTimer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("Fail to change HeartBeatTimer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2526,8 +2990,11 @@ void
 limReactivateHeartBeatTimer(tpAniSirGlobal pMac, tpPESession psessionEntry)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG3(limLog(pMac, LOG3, FL("Rxed Heartbeat. Count=%d\n"), psessionEntry->LimRxedBeaconCntDuringHB);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG3(limLog(pMac, LOG3, FL("Rxed Heartbeat. Count=%d"), psessionEntry->LimRxedBeaconCntDuringHB);)
 
 #ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
@@ -2537,6 +3004,9 @@ limReactivateHeartBeatTimer(tpAniSirGlobal pMac, tpPESession psessionEntry)
        return;
     }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     limHeartBeatDeactivateAndChangeTimer(pMac, psessionEntry);
@@ -2547,8 +3017,14 @@ limReactivateHeartBeatTimer(tpAniSirGlobal pMac, tpPESession psessionEntry)
         if (tx_timer_activate(&pMac->lim.limTimers.gLimHeartBeatTimer)!= TX_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP,FL("could not activate Heartbeat timer\n"));
         }
+=======
+            limLog(pMac, LOGP,FL("could not activate Heartbeat timer"));
+        }
+        limLog(pMac, LOGW, FL("Reactivated heartbeat link monitoring"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP,FL("could not activate Heartbeat timer"));
         }
@@ -2559,6 +3035,7 @@ limReactivateHeartBeatTimer(tpAniSirGlobal pMac, tpPESession psessionEntry)
 
 } /****** end limReactivateHeartBeatTimer() ******/
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if 0
 /******
@@ -2648,6 +3125,8 @@ limReactivateTimer(tpAniSirGlobal pMac, tANI_U32 timerId)
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * limActivateHearBeatTimer()
@@ -2672,12 +3151,18 @@ v_UINT_t limActivateHearBeatTimer(tpAniSirGlobal pMac)
     v_UINT_t status = TX_TIMER_ERROR;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
     if(IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE)
        return (status);
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(TX_AIRGO_TMR_SIGNATURE == pMac->lim.limTimers.gLimHeartBeatTimer.tmrSignature)
     {
@@ -2689,7 +3174,11 @@ v_UINT_t limActivateHearBeatTimer(tpAniSirGlobal pMac)
             {
                 PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not activate Heartbeat timer status(%d)\n"), status);)
+=======
+                   FL("could not activate Heartbeat timer status(%d)"), status);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not activate Heartbeat timer status(%d)"), status);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2743,7 +3232,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
             {
                  limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("unable to deactivate CNF wait timer\n"));
+=======
+                       FL("unable to deactivate CNF wait timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("unable to deactivate CNF wait timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2761,7 +3254,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve cnf timeout value\n"));
+=======
+                   FL("could not retrieve cnf timeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve cnf timeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2774,7 +3271,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
                 // Could not change cnf timer.
                 // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("unable to change cnf wait timer\n"));
+=======
+                limLog(pMac, LOGP, FL("unable to change cnf wait timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("unable to change cnf wait timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2791,7 +3292,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
             if (pAuthNode == NULL)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("Invalid Pre Auth Index passed :%d\n"), staId);
+=======
+                limLog(pMac, LOGP, FL("Invalid Pre Auth Index passed :%d"), staId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("Invalid Pre Auth Index passed :%d"), staId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2803,7 +3308,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
                 // Could not deactivate auth response timer.
                 // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("unable to deactivate auth response timer\n"));
+=======
+                limLog(pMac, LOGP, FL("unable to deactivate auth response timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("unable to deactivate auth response timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2819,7 +3328,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve auth response timeout value\n"));
+=======
+                   FL("could not retrieve auth response timeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve auth response timeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2832,7 +3345,11 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
                 // Could not change auth rsp timer.
                 // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("unable to change auth rsp timer\n"));
+=======
+                limLog(pMac, LOGP, FL("unable to change auth rsp timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("unable to change auth rsp timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2840,6 +3357,7 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
         }
             break;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) ||defined(ANI_PRODUCT_TYPE_AP_SDK))
         case eLIM_LEARN_INTERVAL_TIMER:
@@ -2875,6 +3393,8 @@ limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal pMac, tANI_U32 timerId, tANI_
             }
             break;
 #endif //#if (defined(ANI_PRODUCT_TYPE_AP) ||defined(ANI_PRODUCT_TYPE_AP_SDK))
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2915,7 +3435,11 @@ void limActivateCnfTimer(tpAniSirGlobal pMac, tANI_U16 staId, tpPESession psessi
     {
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not activate cnf wait timer\n"));
+=======
+                   FL("could not activate cnf wait timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not activate cnf wait timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2951,7 +3475,11 @@ void limActivateAuthRspTimer(tpAniSirGlobal pMac, tLimPreAuthNode *pAuthNode)
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not activate auth rsp timer\n"));
+=======
+               FL("could not activate auth rsp timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not activate auth rsp timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2991,7 +3519,11 @@ limSendDisassocFrameThresholdHandler(void *pMacGlobal, tANI_U32 param)
     if ((statusCode = limPostMsgApi(pMac, &msg)) != eSIR_SUCCESS)
             limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("posting to LIM failed, reason=%d\n"), statusCode);
+=======
+        FL("posting to LIM failed, reason=%d"), statusCode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("posting to LIM failed, reason=%d"), statusCode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3030,7 +3562,11 @@ limCnfWaitTmerHandler(void *pMacGlobal, tANI_U32 param)
     if ((statusCode = limPostMsgApi(pMac, &msg)) != eSIR_SUCCESS)
             limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("posting to LIM failed, reason=%d\n"), statusCode);
+=======
+        FL("posting to LIM failed, reason=%d"), statusCode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("posting to LIM failed, reason=%d"), statusCode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3069,7 +3605,11 @@ limKeepaliveTmerHandler(void *pMacGlobal, tANI_U32 param)
     if ((statusCode = limPostMsgApi(pMac, &msg)) != eSIR_SUCCESS)
         limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("posting to LIM failed, reason=%d\n"), statusCode);
+=======
+               FL("posting to LIM failed, reason=%d"), statusCode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("posting to LIM failed, reason=%d"), statusCode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3084,7 +3624,11 @@ limChannelSwitchTimerHandler(void *pMacGlobal, tANI_U32 param)
 
     PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("ChannelSwitch Timer expired.  Posting msg to LIM \n"));)
+=======
+        FL("ChannelSwitch Timer expired.  Posting msg to LIM "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("ChannelSwitch Timer expired.  Posting msg to LIM "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3108,7 +3652,11 @@ limQuietTimerHandler(void *pMacGlobal, tANI_U32 param)
 
     PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Post SIR_LIM_QUIET_TIMEOUT msg. \n"));)
+=======
+        FL("Post SIR_LIM_QUIET_TIMEOUT msg. "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Post SIR_LIM_QUIET_TIMEOUT msg. "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3126,10 +3674,16 @@ limQuietBssTimerHandler(void *pMacGlobal, tANI_U32 param)
     msg.bodyptr = NULL;
     PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Post SIR_LIM_QUIET_BSS_TIMEOUT msg. \n"));)
     limPostMsgApi(pMac, &msg);
 }
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        FL("Post SIR_LIM_QUIET_BSS_TIMEOUT msg. "));)
+    limPostMsgApi(pMac, &msg);
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Post SIR_LIM_QUIET_BSS_TIMEOUT msg. "));)
     limPostMsgApi(pMac, &msg);
@@ -3147,11 +3701,14 @@ limWPSOverlapTimerHandler(void *pMacGlobal, tANI_U32 param)
     msg.bodyptr = NULL;
     PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Post SIR_LIM_WPS_OVERLAP_TIMEOUT msg. \n"));)
     limPostMsgApi(pMac, &msg);
 }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         FL("Post SIR_LIM_WPS_OVERLAP_TIMEOUT msg. "));)
     limPostMsgApi(pMac, &msg);
 }
@@ -3199,5 +3756,8 @@ limMissedBeaconInActiveMode(void *pMacGlobal, tpPESession psessionEntry)
                  msg.type, statusCode);
     }
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif

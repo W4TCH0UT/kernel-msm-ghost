@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -46,7 +52,11 @@
  * Airgo Networks, Inc proprietary. All rights reserved.
  * logApi.cc - Handles log messages for all the modules.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Author:        Kevin Nguyen    
+=======
+ * Author:        Kevin Nguyen
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Author:        Kevin Nguyen
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -56,9 +66,14 @@
  * 03/12/02       Rearrange logDebug parameter list and add more params.
  * --------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
  * 
  */
 #define WNI_PRINT_DEBUG
+=======
+ *
+ */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  *
  */
@@ -68,6 +83,7 @@
 #include <sirDebug.h>
 #include <utilsApi.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(FEATURE_WLAN_NON_INTEGRATED_SOC)
 #include <halCommonApi.h>
 #endif
@@ -75,6 +91,11 @@
 
 #include <stdarg.h>
 #include "sirWrapper.h"
+=======
+#include <wlan_qct_wda.h>
+
+#include <stdarg.h>
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <wlan_qct_wda.h>
 
@@ -91,6 +112,7 @@
 #endif
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //This is not right here. Need to find a better place. 
 //_vsnprintf is a function in Windows
@@ -121,6 +143,11 @@
 /**
  * logInit()
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+// ---------------------------------------------------------------------
+/**
+ * logInit()
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * FUNCTION:
  * This function is called to prepare the logging utility.
@@ -136,7 +163,11 @@
  * @return None
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 tSirRetStatus 
+=======
+tSirRetStatus
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -152,12 +183,17 @@ logInit(tpAniSirGlobal pMac)
         pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = LOG1;
 #else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef LX5280
         pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = LOGE;
 #else
         pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = LOGW;
 #endif
 #endif
+=======
+        pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = LOGW;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = LOGW;
 #endif
@@ -175,7 +211,11 @@ logDeinit(tpAniSirGlobal pMac)
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * logDbg() 
+=======
+ * logDbg()
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * logDbg()
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -200,6 +240,7 @@ logDeinit(tpAniSirGlobal pMac)
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_OSX)
 #if defined ANI_FIREWIRE_LOG
 #include <IOKit/firewire/FireLog.h>
@@ -209,6 +250,8 @@ logDeinit(tpAniSirGlobal pMac)
 #endif
 #define tx_time_get()   (0)
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -225,6 +268,7 @@ void logDbg(tpAniSirGlobal pMac, tANI_U8 modId, tANI_U32 debugLevel, const char 
 
         logDebug(pMac, modId, debugLevel, pStr, marker);
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         va_end( marker );              /* Reset variable arguments.      */
     }      
@@ -235,6 +279,8 @@ void logDbg(tpAniSirGlobal pMac, tANI_U8 modId, tANI_U32 debugLevel, const char 
 static inline VOS_TRACE_LEVEL getVosDebugLevel(tANI_U32 debugLevel)
 {   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         va_end( marker );              /* Reset variable arguments.      */
     }
@@ -243,6 +289,9 @@ static inline VOS_TRACE_LEVEL getVosDebugLevel(tANI_U32 debugLevel)
 
 static inline VOS_TRACE_LEVEL getVosDebugLevel(tANI_U32 debugLevel)
 {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(debugLevel)
     {
@@ -285,7 +334,11 @@ static inline VOS_MODULE_ID getVosModuleId(tANI_U8 modId)
         case SIR_SYS_MODULE_ID:
             return VOS_MODULE_ID_SYS;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -297,7 +350,10 @@ static inline VOS_MODULE_ID getVosModuleId(tANI_U8 modId)
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // VOSS_ENABLED
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -312,6 +368,7 @@ void logDebug(tpAniSirGlobal pMac, tANI_U8 modId, tANI_U32 debugLevel, const cha
     vosModuleId = getVosModuleId(modId);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_OS_TYPE_ANDROID
     vsnprintf(logBuffer, LOG_SIZE - 1, pStr, marker);
 #else
@@ -323,6 +380,9 @@ void logDebug(tpAniSirGlobal pMac, tANI_U8 modId, tANI_U32 debugLevel, const cha
 #endif
 
 #endif
+=======
+    vsnprintf(logBuffer, LOG_SIZE - 1, pStr, marker);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     vsnprintf(logBuffer, LOG_SIZE - 1, pStr, marker);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -81,7 +87,11 @@ struct wlan_snap_hdr {
    unsigned char ctrl;
    unsigned char oui[WLAN_SNAP_OUI_LEN];
 <<<<<<< HEAD
+<<<<<<< HEAD
 } __attribute__((packed));
+=======
+} __packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 } __packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -93,7 +103,11 @@ struct wlan_8023 {
    struct wlan_snap_hdr h_snap;
    __be16               h_proto;
 <<<<<<< HEAD
+<<<<<<< HEAD
 } __attribute__((packed));
+=======
+} __packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 } __packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -107,7 +121,11 @@ struct wlan_8023_vlan {
    struct wlan_snap_hdr h_snap;
    __be16               h_proto;
 <<<<<<< HEAD
+<<<<<<< HEAD
 } __attribute__((packed));
+=======
+} __packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 } __packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -58,6 +64,7 @@
  */
 #include "aniGlobal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 #include "wniCfgAp.h"
 #else
@@ -66,14 +73,20 @@
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "sirCommon.h"
 #include "sirDebug.h"
 #include "utilsApi.h"
 #include "cfgApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halCommonApi.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "limApi.h"
@@ -85,6 +98,7 @@
 #include "limTrace.h"
 #include "limSession.h"
 #define LIM_GET_NOISE_MAX_TRY 5
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 /**
@@ -116,6 +130,8 @@ limGetCurrentLearnChannel(tpAniSirGlobal pMac)
 #endif //#if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limExtractApCapability()
  *
@@ -140,7 +156,12 @@ void
 limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
                        tANI_U8 *qosCap, tANI_U16 *propCap, tANI_U8 *uapsd, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                        tPowerdBm *localConstraint
+=======
+                       tPowerdBm *localConstraint,
+                       tpPESession psessionEntry
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        tPowerdBm *localConstraint,
                        tpPESession psessionEntry
@@ -155,7 +176,11 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
                                                 (void **)&pBeaconStruct, sizeof(tSirProbeRespBeacon)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limExtractApCapability\n") );
+=======
+        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limExtractApCapability") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limExtractApCapability") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -168,6 +193,7 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
     *uapsd = 0;
     PELOG3(limLog( pMac, LOG3,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("In limExtractApCapability: The IE's being received are:\n"));
     sirDumpBuf( pMac, SIR_LIM_MODULE_ID, LOG3, pIE, ieLen );)
     if (sirParseBeaconIE(pMac, pBeaconStruct, pIE, (tANI_U32)ieLen) == eSIR_SUCCESS)
@@ -177,10 +203,15 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
             LIM_BSS_CAPS_SET(HCF, *qosCap);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         FL("In limExtractApCapability: The IE's being received are:"));
     sirDumpBuf( pMac, SIR_LIM_MODULE_ID, LOG3, pIE, ieLen );)
     if (sirParseBeaconIE(pMac, pBeaconStruct, pIE, (tANI_U32)ieLen) == eSIR_SUCCESS)
     {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pBeaconStruct->wmeInfoPresent || pBeaconStruct->wmeEdcaPresent)
             LIM_BSS_CAPS_SET(WME, *qosCap);
@@ -197,6 +228,7 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
 #ifdef WLAN_FEATURE_11AC
         VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_INFO_MED,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "***beacon.VHTCaps.present*****=%d\n",pBeaconStruct->VHTCaps.present);
 
         if ( pBeaconStruct->VHTCaps.present && pBeaconStruct->VHTOperation.present)
@@ -209,6 +241,8 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
         {
             pMac->lim.vhtCapabilityPresentInBeacon = 0;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             "***beacon.VHTCaps.present*****=%d",pBeaconStruct->VHTCaps.present);
         VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_INFO_MED,
            "***beacon.SU Beamformer Capable*****=%d",pBeaconStruct->VHTCaps.suBeamFormerCap);
@@ -222,6 +256,9 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
         else
         {
             psessionEntry->vhtCapabilityPresentInBeacon = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 #endif
@@ -258,7 +295,11 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
         if (cfgSetInt(pMac, WNI_CFG_LOCAL_POWER_CONSTRAINT, localPowerConstraints) != eSIR_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Could not update local power constraint to cfg.\n"));
+=======
+            limLog(pMac, LOGP, FL("Could not update local power constraint to cfg."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("Could not update local power constraint to cfg."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -269,6 +310,7 @@ limExtractApCapability(tpAniSirGlobal pMac, tANI_U8 *pIE, tANI_U16 ieLen,
     return;
 } /****** end limExtractApCapability() ******/
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 /**
@@ -1183,6 +1225,8 @@ limRestorePreLearnState(tpAniSirGlobal pMac)
            pMac->sys.gSirRadioId);)
 } /****** end limRestorePreLearnState() ******/
 #endif //#if (defined(ANI_PRODUCT_TYPE_AP) || (ANI_PRODUCT_TYPE_AP_SDK))
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**

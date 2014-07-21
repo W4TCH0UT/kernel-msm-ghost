@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -58,9 +67,12 @@
 #include "aniGlobal.h"
 #include "sirMacProtDef.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "cfgApi.h"
@@ -69,6 +81,10 @@
 #include "limUtils.h"
 #include "limSecurityUtils.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include "limPropExtsUtils.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "limPropExtsUtils.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -77,6 +93,12 @@
 #include "schApi.h"
 #include "limSendMessages.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include "limAssocUtils.h"
+#include "limFT.h"
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "limAssocUtils.h"
 #include "limFT.h"
@@ -97,6 +119,7 @@
 
 ////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /// Get an integral configuration item & check return status; if it
 /// fails, return.
@@ -123,6 +146,8 @@
                 (nStatus) );                                       \
         return;                                                    \
     }
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -176,6 +201,7 @@ tSirRetStatus limPopulateMacHeader( tpAniSirGlobal pMac,
 
     // Prepare Address 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     #if 0
     if ((statusCode = wlan_cfgGetStr(pMac, WNI_CFG_STA_ID, (tANI_U8 *) pMacHdr->sa,
                                 &cfgLen)) != eSIR_SUCCESS)
@@ -186,6 +212,8 @@ tSirRetStatus limPopulateMacHeader( tpAniSirGlobal pMac,
         return statusCode;
     }
     #endif// TO SUPPORT BT-AMP
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     sirCopyMacAddr(pMacHdr->sa,selfMacAddr);
@@ -247,9 +275,13 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     tpPESession         psessionEntry;
     tANI_U8             sessionId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     tANI_U8             *p2pIe = NULL;
 #endif
+=======
+    tANI_U8             *p2pIe = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8             *p2pIe = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -285,7 +317,10 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     PopulateDot11fSSID( pMac, pSsid, &pr.SSID );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( nAdditionalIELen && pAdditionalIE )
@@ -310,7 +345,10 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PopulateDot11fSuppRates( pMac, nChannelNum, 
@@ -321,9 +359,13 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
             PopulateDot11fExtSuppRates1( pMac, nChannelNum, &pr.ExtSuppRates );
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     }
 #endif
+=======
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -355,7 +397,10 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
            }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Set channelbonding information as "disabled" when tunned to a 2.4 GHz channel */
     if( nChannelNum <= SIR_11B_CHANNEL_END)
@@ -364,6 +409,9 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
         pr.HTCaps.shortGI40MHz = 0;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
     if (psessionEntry != NULL ) {
@@ -389,7 +437,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Probe Request (0x%08x).\n"), nStatus );
+=======
+                               "or a Probe Request (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Probe Request (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -401,7 +453,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a Probe Request ("
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "0x%08x).\n"), nStatus );
+=======
+                               "0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -417,7 +473,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Pro"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "be Request.\n"), nBytes );
+=======
+                               "be Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "be Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -434,7 +494,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a Probe Request (%d).\n"),
+=======
+                               "tor for a Probe Request (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a Probe Request (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -451,7 +515,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a Probe Request (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a Probe Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a Probe Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -463,7 +531,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a P"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "robe Request (0x%08x).\n") );
+=======
+                               "robe Request (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "robe Request (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -482,11 +554,14 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
      */
     if( ( SIR_BAND_5_GHZ == limGetRFBand(nChannelNum))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
       || (( pMac->lim.gpLimMlmScanReq != NULL) &&
           pMac->lim.gpLimMlmScanReq->p2pSearch )
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       || (( pMac->lim.gpLimMlmScanReq != NULL) &&
           pMac->lim.gpLimMlmScanReq->p2pSearch )
       /* For unicast probe req mgmt from Join function
@@ -494,6 +569,9 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
          one more check whether it is pePersona is P2P_CLIENT or not */
       || ( ( psessionEntry != NULL ) &&
            ( VOS_P2P_CLIENT_MODE == psessionEntry->pePersona ) )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       ) 
     {
@@ -509,7 +587,11 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("could not send Probe Request frame!\n" ));
+=======
+        limLog( pMac, LOGE, FL("could not send Probe Request frame!" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("could not send Probe Request frame!" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -521,7 +603,10 @@ limSendProbeReqMgmtFrame(tpAniSirGlobal pMac,
 } // End limSendProbeReqMgmtFrame.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus limGetAddnIeForProbeResp(tpAniSirGlobal pMac,
@@ -562,7 +647,11 @@ tSirRetStatus limGetAddnIeForProbeResp(tpAniSirGlobal pMac,
             {
                 limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("****Invalid IEs eid = %d elem_len=%d left=%d*****\n"),
+=======
+                   FL("****Invalid IEs eid = %d elem_len=%d left=%d*****"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("****Invalid IEs eid = %d elem_len=%d left=%d*****"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -586,7 +675,10 @@ tSirRetStatus limGetAddnIeForProbeResp(tpAniSirGlobal pMac,
     return eSIR_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -615,7 +707,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     tANI_U8              txFlag = 0;
     tANI_U8              *addIE = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8             *pP2pIe = NULL;
@@ -625,7 +720,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
                                            + SIR_P2P_IE_HEADER_LEN];
     tANI_U8              noaIe[SIR_MAX_NOA_ATTR_LEN + SIR_P2P_IE_HEADER_LEN];
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
@@ -643,7 +741,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
                                                 (void **)&pFrm, sizeof(tDot11fProbeResponse)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limSendProbeRspMgmtFrame\n") );
+=======
+        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limSendProbeRspMgmtFrame") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limSendProbeRspMgmtFrame") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -658,7 +760,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
 
     // Beacon Interval:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -667,6 +772,7 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     }
     else
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
     CFG_LIM_GET_INT_NO_STATUS( nSirStatus, pMac,
@@ -677,6 +783,8 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         nSirStatus = wlan_cfgGetInt( pMac, WNI_CFG_BEACON_INTERVAL, &cfg);
         if (eSIR_SUCCESS != nSirStatus)
         {
@@ -687,6 +795,9 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         }
         pFrm->BeaconInterval.interval = ( tANI_U16 ) cfg;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     PopulateDot11fCapabilities( pMac, &pFrm->Capabilities, psessionEntry );
@@ -698,11 +809,15 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     PopulateDot11fIBSSParams( pMac, &pFrm->IBSSParams, psessionEntry );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
     PopulateDot11fCFParams( pMac, &pFrm->Capabilities, &pFrm->CFParams );
 #endif // AP Image
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -715,6 +830,7 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     }
     else
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
     if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
@@ -766,6 +882,8 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
             limLog(pMac, LOGP,"Failed to cfg get id %d", WNI_CFG_WPS_ENABLE );
 
@@ -792,6 +910,9 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     PopulateDot11fCountry( pMac, &pFrm->Country, psessionEntry);
     PopulateDot11fEDCAParamSet( pMac, &pFrm->EDCAParamSet, psessionEntry);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (psessionEntry->dot11mode != WNI_CFG_DOT11_MODE_11B)
@@ -808,6 +929,7 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     {
         PopulateDot11fHTCaps( pMac, psessionEntry, &pFrm->HTCaps );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         PopulateDot11fHTInfo( pMac, &pFrm->HTInfo, psessionEntry );
 #else
@@ -816,12 +938,19 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
 =======
         PopulateDot11fHTInfo( pMac, &pFrm->HTInfo, psessionEntry );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+        PopulateDot11fHTInfo( pMac, &pFrm->HTInfo, psessionEntry );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #ifdef WLAN_FEATURE_11AC
     if(psessionEntry->vhtCapability)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL("Populate VHT IE in Probe Response\n"));
+=======
+        limLog( pMac, LOG1, FL("Populate VHT IE in Probe Response"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOG1, FL("Populate VHT IE in Probe Response"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -830,6 +959,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         // we do not support multi users yet
         //PopulateDot11fVHTExtBssLoad( pMac, &frm.VHTExtBssLoad );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        PopulateDot11fExtCap( pMac, &pFrm->ExtCap);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PopulateDot11fExtCap( pMac, &pFrm->ExtCap);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -861,7 +994,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Probe Response (0x%08x).\n"),
+=======
+                               "or a Probe Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Probe Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -874,7 +1011,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a Probe Response "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(0x%08x).\n"), nStatus );
+=======
+                               "(0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -885,7 +1026,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     addnIEPresent = false;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pMac->lim.gpLimRemainOnChanReq )
@@ -896,7 +1040,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     //In listening mode, probe rsp IEs is passed in the message from SME to PE
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
@@ -996,7 +1143,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         totalAddnIeLen = addnIE1Len + addnIE2Len + addnIE3Len;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eSIR_SUCCESS != limGetAddnIeForProbeResp(pMac, addIE, &totalAddnIeLen, probeReqP2pIe))
@@ -1025,7 +1175,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
@@ -1037,7 +1190,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Pro"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "be Response.\n"), nBytes );
+=======
+                               "be Response."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "be Response."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1059,7 +1216,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a Probe Response (%d).\n"),
+=======
+                               "tor for a Probe Response (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a Probe Response (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1084,7 +1245,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a Probe Response (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a Probe Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a Probe Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1101,7 +1266,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a P"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "robe Response (0x%08x).\n") );
+=======
+                               "robe Response (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "robe Response (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1113,7 +1282,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     pMac->sys.probeRespond++;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pMac->lim.gpLimRemainOnChanReq )
@@ -1122,7 +1294,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
           pMac->lim.gpLimRemainOnChanReq->probeRspIe, (pMac->lim.gpLimRemainOnChanReq->length - sizeof( tSirRemainOnChnReq )) );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1143,7 +1318,10 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (noaLen != 0)
@@ -1156,6 +1334,7 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
@@ -1164,10 +1343,15 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -1184,7 +1368,11 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Could not send Probe Response.\n") );
+=======
+        limLog( pMac, LOGE, FL("Could not send Probe Response.") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Could not send Probe Response.") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1284,7 +1472,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
         {
             limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "or an Add TS Request (0x%08x).\n"),
+=======
+                                   "or an Add TS Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "or an Add TS Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1297,7 +1489,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
             limLog( pMac, LOGW, FL("There were warnings while calculating"
                                    "the packed size for an Add TS Request"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    " (0x%08x).\n"), nStatus );
+=======
+                                   " (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    " (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1335,7 +1531,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
         {
             limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "or a WMM Add TS Request (0x%08x).\n"),
+=======
+                                   "or a WMM Add TS Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "or a WMM Add TS Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1348,7 +1548,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
             limLog( pMac, LOGW, FL("There were warnings while calculating"
                                    "the packed size for a WMM Add TS Requ"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "est (0x%08x).\n"), nStatus );
+=======
+                                   "est (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "est (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1364,7 +1568,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for an Ad"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "d TS Request.\n"), nBytes );
+=======
+                               "d TS Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "d TS Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1381,7 +1589,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for an Add TS Request (%d).\n"),
+=======
+                               "tor for an Add TS Request (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for an Add TS Request (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1400,7 +1612,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
     {
         limLog( pMac, LOGP, FL("Failed to retrieve WNI_CFG_BSSID whil"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "e sending an Add TS Request.\n") );
+=======
+                               "e sending an Add TS Request.") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "e sending an Add TS Request.") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1422,7 +1638,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
         {
             limLog( pMac, LOGE, FL("Failed to pack an Add TS Request "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "(0x%08x).\n"),
+=======
+                                   "(0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "(0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1434,7 +1654,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
         {
             limLog( pMac, LOGW, FL("There were warnings while packing"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "an Add TS Request (0x%08x).\n") );
+=======
+                                   "an Add TS Request (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "an Add TS Request (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1449,7 +1673,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
         {
             limLog( pMac, LOGE, FL("Failed to pack a WMM Add TS Reque"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "st (0x%08x).\n"),
+=======
+                                   "st (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "st (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1461,7 +1689,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
         {
             limLog( pMac, LOGW, FL("There were warnings while packing"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "a WMM Add TS Request (0x%08x).\n") );
+=======
+                                   "a WMM Add TS Request (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "a WMM Add TS Request (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1473,10 +1705,15 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -1496,7 +1733,11 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
     {
         limLog( pMac, LOGE, FL( "*** Could not send an Add TS Request"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 " (%X) ***\n" ), halstatus );
+=======
+                                " (%X) ***" ), halstatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                 " (%X) ***" ), halstatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1505,6 +1746,7 @@ limSendAddtsReqActionFrame(tpAniSirGlobal    pMac,
 
 } // End limSendAddtsReqActionFrame.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* Added ANI_PRODUCT_TYPE_CLIENT for BT-AMP Support */
 #ifdef ANI_PRODUCT_TYPE_AP
@@ -1756,6 +1998,8 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
 #endif  // ANI_PRODUCT_TYPE_AP
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 void
@@ -1814,7 +2058,10 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -1824,7 +2071,10 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
             pAssocReq = 
                 (tpSirAssocReq) psessionEntry->parsedAssocReq[pSta->assocId];
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* populate P2P IE in AssocRsp when assocReq from the peer includes P2P IE */
@@ -1832,10 +2082,15 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
                 PopulateDot11AssocResP2PIE(pMac, &frm.P2PAssocRes, pAssocReq);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
         }
     }
 #endif
+=======
+        }
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         }
     }
@@ -1871,11 +2126,15 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
             {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                 PopulateDot11fWMMParams( pMac, &frm.WMMParams, psessionEntry);
 #else
                 PopulateDot11fWMMParams( pMac, &frm.WMMParams );
 #endif
+=======
+                PopulateDot11fWMMParams( pMac, &frm.WMMParams, psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PopulateDot11fWMMParams( pMac, &frm.WMMParams, psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1902,11 +2161,15 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
         {
             PopulateDot11fHTCaps( pMac, psessionEntry, &frm.HTCaps );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
             PopulateDot11fHTInfo( pMac, &frm.HTInfo, psessionEntry );
 #else
             PopulateDot11fHTInfo( pMac, &frm.HTInfo );
 #endif
+=======
+            PopulateDot11fHTInfo( pMac, &frm.HTInfo, psessionEntry );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PopulateDot11fHTInfo( pMac, &frm.HTInfo, psessionEntry );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1917,14 +2180,20 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
             psessionEntry->vhtCapability )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGW, FL("Populate VHT IEs in Assoc Response\n"));
             PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
             PopulateDot11fVHTOperation( pMac, &frm.VHTOperation);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog( pMac, LOG1, FL("Populate VHT IEs in Assoc Response"));
             PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
             PopulateDot11fVHTOperation( pMac, &frm.VHTOperation);
             PopulateDot11fExtCap( pMac, &frm.ExtCap);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 #endif
@@ -1935,7 +2204,10 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
    palZeroMemory( pMac->hHdd, ( tANI_U8* )&beaconParams, sizeof( tUpdateBeaconParams) );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( psessionEntry->limSystemRole == eLIM_AP_ROLE ){
@@ -1943,7 +2215,10 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
         limDecideApProtection(pMac, peerMacAddr, &beaconParams,psessionEntry);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1965,7 +2240,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or an Association Response (0x%08x).\n"),
+=======
+                               "or an Association Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or an Association Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1977,7 +2256,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for an Association Re"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "sponse (0x%08x).\n"), nStatus );
+=======
+                               "sponse (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "sponse (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2022,7 +2305,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("Call to bufAlloc failed for RE/ASSOC RSP.\n"));
+=======
+        limLog(pMac, LOGP, FL("Call to bufAlloc failed for RE/ASSOC RSP."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("Call to bufAlloc failed for RE/ASSOC RSP."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2044,7 +2331,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for an Association Response (%d).\n"),
+=======
+                               "tor for an Association Response (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for an Association Response (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2056,6 +2347,7 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
 
     pMacHdr = ( tpSirMacMgmtHdr ) pFrame;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     #if 0
     cfgLen = SIR_MAC_ADDR_LENGTH;
@@ -2070,6 +2362,8 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     #endif //TO SUPPORT BT-AMP
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     sirCopyMacAddr(pMacHdr->bssId,psessionEntry->bssId);
 
     nStatus = dot11fPackAssocResponse( pMac, &frm,
@@ -2078,7 +2372,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack an Association Response (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack an Association Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack an Association Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2091,7 +2389,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing an "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "Association Response (0x%08x).\n") );
+=======
+                               "Association Response (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "Association Response (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2118,7 +2420,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
                            &addIE[0], addnIELen ) != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Additional Assoc IEs request failed while Appending: %x\n"),halstatus);
+=======
+            limLog(pMac, LOGP, FL("Additional Assoc IEs request failed while Appending: %x"),halstatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("Additional Assoc IEs request failed while Appending: %x"),halstatus);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2130,10 +2436,15 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -2153,7 +2464,11 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("*** Could not Send Re/AssocRsp, retCode=%X ***\n"),
+=======
+               FL("*** Could not Send Re/AssocRsp, retCode=%X ***"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("*** Could not Send Re/AssocRsp, retCode=%X ***"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2290,7 +2605,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
         {
             limLog( pMac, LOGP, FL("Failed to calculate the packed si"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "ze for an Add TS Response (0x%08x).\n"),
+=======
+                                   "ze for an Add TS Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "ze for an Add TS Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2303,7 +2622,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
             limLog( pMac, LOGW, FL("There were warnings while calcula"
                                    "tingthe packed size for an Add TS"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    " Response (0x%08x).\n"), nStatus );
+=======
+                                   " Response (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    " Response (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2325,7 +2648,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
         {
             limLog( pMac, LOGP, FL("Failed to calculate the packed si"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "ze for a WMM Add TS Response (0x%08x).\n"),
+=======
+                                   "ze for a WMM Add TS Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "ze for a WMM Add TS Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2338,7 +2665,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
             limLog( pMac, LOGW, FL("There were warnings while calcula"
                                    "tingthe packed size for a WMM Add"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "TS Response (0x%08x).\n"), nStatus );
+=======
+                                   "TS Response (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "TS Response (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2352,7 +2683,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for an Ad"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "d TS Response.\n"), nBytes );
+=======
+                               "d TS Response."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "d TS Response."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2369,7 +2704,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for an Add TS Response (%d).\n"),
+=======
+                               "tor for an Add TS Response (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for an Add TS Response (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2387,7 +2726,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGP, FL("Failed to retrieve WNI_CFG_BSSID whil"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "e sending an Add TS Response.\n") );
+=======
+                               "e sending an Add TS Response.") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "e sending an Add TS Response.") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2407,7 +2750,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
         {
             limLog( pMac, LOGE, FL("Failed to pack an Add TS Response "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "(0x%08x).\n"),
+=======
+                                   "(0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "(0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2419,7 +2766,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
         {
             limLog( pMac, LOGW, FL("There were warnings while packing"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "an Add TS Response (0x%08x).\n") );
+=======
+                                   "an Add TS Response (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "an Add TS Response (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2434,7 +2785,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
         {
             limLog( pMac, LOGE, FL("Failed to pack a WMM Add TS Response "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "(0x%08x).\n"),
+=======
+                                   "(0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "(0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2446,7 +2801,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
         {
             limLog( pMac, LOGW, FL("There were warnings while packing"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "a WMM Add TS Response (0x%08x).\n") );
+=======
+                                   "a WMM Add TS Response (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "a WMM Add TS Response (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2459,10 +2818,15 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -2481,7 +2845,11 @@ limSendAddtsRspActionFrame(tpAniSirGlobal     pMac,
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to send Add TS Response (%X)!\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to send Add TS Response (%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to send Add TS Response (%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2527,7 +2895,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
         {
             limLog( pMac, LOGP, FL("Failed to calculate the packed si"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "ze for a Del TS (0x%08x).\n"),
+=======
+                                   "ze for a Del TS (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "ze for a Del TS (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2540,7 +2912,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
             limLog( pMac, LOGW, FL("There were warnings while calcula"
                                    "ting the packed size for a Del TS"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    " (0x%08x).\n"), nStatus );
+=======
+                                   " (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    " (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2560,7 +2936,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
         {
             limLog( pMac, LOGP, FL("Failed to calculate the packed si"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "ze for a WMM Del TS (0x%08x).\n"),
+=======
+                                   "ze for a WMM Del TS (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "ze for a WMM Del TS (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2573,7 +2953,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
             limLog( pMac, LOGW, FL("There were warnings while calcula"
                                    "ting the packed size for a WMM De"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "l TS (0x%08x).\n"), nStatus );
+=======
+                                   "l TS (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "l TS (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2587,7 +2971,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for an Ad"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "d TS Response.\n"), nBytes );
+=======
+                               "d TS Response."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "d TS Response."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2605,7 +2993,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for an Add TS Response (%d).\n"),
+=======
+                               "tor for an Add TS Response (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for an Add TS Response (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2624,7 +3016,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
     {
         limLog( pMac, LOGP, FL("Failed to retrieve WNI_CFG_BSSID whil"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "e sending an Add TS Response.\n") );
+=======
+                               "e sending an Add TS Response.") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "e sending an Add TS Response.") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2643,7 +3039,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
         if ( DOT11F_FAILED( nStatus ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGE, FL("Failed to pack a Del TS frame (0x%08x).\n"),
+=======
+            limLog( pMac, LOGE, FL("Failed to pack a Del TS frame (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGE, FL("Failed to pack a Del TS frame (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2655,7 +3055,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
         {
             limLog( pMac, LOGW, FL("There were warnings while packing"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "a Del TS frame (0x%08x).\n") );
+=======
+                                   "a Del TS frame (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "a Del TS frame (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2669,7 +3073,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
         if ( DOT11F_FAILED( nStatus ) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGE, FL("Failed to pack a WMM Del TS frame (0x%08x).\n"),
+=======
+            limLog( pMac, LOGE, FL("Failed to pack a WMM Del TS frame (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGE, FL("Failed to pack a WMM Del TS frame (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2681,7 +3089,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
         {
             limLog( pMac, LOGW, FL("There were warnings while packing"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    "a WMM Del TS frame (0x%08x).\n") );
+=======
+                                   "a WMM Del TS frame (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    "a WMM Del TS frame (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2693,10 +3105,15 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -2714,7 +3131,11 @@ limSendDeltsReqActionFrame(tpAniSirGlobal  pMac,
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to send Del TS (%X)!\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to send Del TS (%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to send Del TS (%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2768,7 +3189,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
                                                 (void **)&pFrm, sizeof(tDot11fAssocRequest)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limSendAssocReqMgmtFrame\n") );
+=======
+        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limSendAssocReqMgmtFrame") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limSendAssocReqMgmtFrame") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2925,16 +3350,22 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
 #ifdef WLAN_FEATURE_11AC
     if ( psessionEntry->vhtCapability &&
 <<<<<<< HEAD
+<<<<<<< HEAD
         pMac->lim.vhtCapabilityPresentInBeacon)
     {
         limLog( pMac, LOG1, FL("Populate VHT IEs in Assoc Request"));
         PopulateDot11fVHTCaps( pMac, &pFrm->VHTCaps );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         psessionEntry->vhtCapabilityPresentInBeacon)
     {
         limLog( pMac, LOG1, FL("Populate VHT IEs in Assoc Request"));
         PopulateDot11fVHTCaps( pMac, &pFrm->VHTCaps );
         PopulateDot11fExtCap( pMac, &pFrm->ExtCap);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
@@ -2945,7 +3376,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOG1, FL("mdie = %02x %02x %02x"), 
+=======
+        limLog( pMac, LOG1, FL("mdie = %02x %02x %02x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOG1, FL("mdie = %02x %02x %02x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2954,6 +3389,7 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
                 (unsigned int)psessionEntry->pLimJoinReq->bssDescription.mdie[2]);
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
         PopulateMDIE( pMac, &pFrm->MobilityDomain, psessionEntry->pLimJoinReq->bssDescription.mdie); 
     }
     else 
@@ -2961,6 +3397,8 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
         // No 11r IEs dont send any MDIE
         limLog( pMac, LOG1, FL("mdie not present")); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PopulateMDIE( pMac, &pFrm->MobilityDomain,
                                  psessionEntry->pLimJoinReq->bssDescription.mdie);
     }
@@ -2968,11 +3406,15 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
         // No 11r IEs dont send any MDIE
         limLog( pMac, LOG1, FL("MDIE not present"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
 
 #ifdef FEATURE_WLAN_CCX
+<<<<<<< HEAD
 <<<<<<< HEAD
     // For CCX Associations fill the CCX IEs
     if (psessionEntry->isCCXconnection)
@@ -2981,6 +3423,8 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
         PopulateDot11fCCXVersion(&pFrm->CCXVersion);
     }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* CCX Version IE will be included in association request
        when CCX is enabled on DUT through ini */
     if (psessionEntry->pLimJoinReq->isCCXFeatureIniEnabled)
@@ -2995,6 +3439,9 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
         PopulateDot11fCCXRadMgmtCap(&pFrm->CCXRadMgmtCap);
 #endif
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -3003,7 +3450,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "or an Association Request (0x%08x).\n"),
+=======
+                    "or an Association Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "or an Association Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3016,7 +3467,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                     "the packed size for an Association Re "
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "quest(0x%08x).\n"), nStatus );
+=======
+                    "quest(0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "quest(0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3031,7 +3486,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for an As"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "sociation Request.\n"), nBytes );
+=======
+                    "sociation Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "sociation Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3065,7 +3524,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "tor for an Association Request (%d).\n"),
+=======
+                    "tor for an Association Request (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "tor for an Association Request (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3084,7 +3547,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
         limLog( pMac, LOGE, FL("Failed to pack a Probe Response (0x%0"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "8x).\n"),
+=======
+                    "8x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "8x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3098,17 +3565,23 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a P"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "robe Response (0x%08x).\n") );
     }
 
     PELOG1(limLog( pMac, LOG1, FL("*** Sending Association Request length %d"
                     "to \n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "robe Response (0x%08x).") );
     }
 
     PELOG1(limLog( pMac, LOG1, FL("*** Sending Association Request length %d"
                     "to "),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 nBytes );)
         //   limPrintMacAddr( pMac, bssid, LOG1 );
@@ -3141,10 +3614,15 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -3155,12 +3633,18 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->pePersona == VOS_P2P_CLIENT_MODE)
     {
         txFlag |= HAL_USE_PEER_STA_REQUESTED_MASK;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     halstatus = halTxFrame( pMac, pPacket, ( tANI_U16 ) (sizeof(tSirMacMgmtHdr) + nPayload),
             HAL_TXRX_FRM_802_11_MGMT,
@@ -3170,7 +3654,11 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to send Association Request (%X)!\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to send Association Request (%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to send Association Request (%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3224,6 +3712,7 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined WLAN_FEATURE_VOWIFI_11R
     if (psessionEntry->is11Rconnection)
     {
@@ -3236,6 +3725,8 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* check this early to avoid unncessary operation */
     if(NULL == psessionEntry->pLimReAssocReq)
     {
@@ -3244,8 +3735,13 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     nAddIELen = psessionEntry->pLimReAssocReq->addIEAssoc.length; 
     pAddIE = psessionEntry->pLimReAssocReq->addIEAssoc.addIEdata;
 <<<<<<< HEAD
+<<<<<<< HEAD
     limLog( pMac, LOGE, FL("limSendReassocReqWithFTIEsMgmtFrame received in " 
                            "state (%d).\n"), psessionEntry->limMlmState);
+=======
+    limLog( pMac, LOG1, FL("limSendReassocReqWithFTIEsMgmtFrame received in "
+                           "state (%d)."), psessionEntry->limMlmState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limLog( pMac, LOG1, FL("limSendReassocReqWithFTIEsMgmtFrame received in "
                            "state (%d)."), psessionEntry->limMlmState);
@@ -3370,7 +3866,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
 #ifdef FEATURE_WLAN_CCX
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(psessionEntry->pLimReAssocReq->cckmIE.length)
+=======
+        if (psessionEntry->pLimReAssocReq->cckmIE.length)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if (psessionEntry->pLimReAssocReq->cckmIE.length)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3383,6 +3883,7 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
 #ifdef FEATURE_WLAN_CCX
 <<<<<<< HEAD
+<<<<<<< HEAD
     // For CCX Associations fill the CCX IEs
     if (psessionEntry->isCCXconnection)
     {
@@ -3391,6 +3892,8 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
 #endif //FEATURE_WLAN_CCX 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* CCX Version IE will be included in reassociation request
        when CCX is enabled on DUT through ini */
     if (psessionEntry->pLimReAssocReq->isCCXFeatureIniEnabled)
@@ -3406,6 +3909,9 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 #endif
     }
 #endif //FEATURE_WLAN_CCX
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //FEATURE_WLAN_CCX || FEATURE_WLAN_LFR
 
@@ -3440,7 +3946,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
                     tsrsIE.rates[0] = TSRS_11AG_RATE_6MBPS;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 else 
+=======
+                else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 else
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3451,7 +3961,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif    
+=======
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #endif
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3464,7 +3978,10 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R
     if ( psessionEntry->pLimReAssocReq->bssDescription.mdiePresent && (0 == pMac->ft.ftSmeContext.reassoc_ft_ies_length)
 #if defined FEATURE_WLAN_CCX
@@ -3486,13 +4003,20 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     nStatus = dot11fGetPackedReAssocRequestSize( pMac, &frm, &nPayload );
     if ( DOT11F_FAILED( nStatus ) )
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "or a Re-Association Request (0x%08x).\n"),
+=======
+                    "or a Re-Association Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "or a Re-Association Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3505,6 +4029,7 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                     "the packed size for a Re-Association Re "
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "quest(0x%08x).\n"), nStatus );
     }
 
@@ -3513,6 +4038,8 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
     limLog( pMac, LOGE, FL("FT IE Reassoc Req (%d).\n"), 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "quest(0x%08x)."), nStatus );
     }
 
@@ -3520,6 +4047,9 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
     limLog( pMac, LOG1, FL("FT IE Reassoc Req (%d)."),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->ft.ftSmeContext.reassoc_ft_ies_length);
 #endif
@@ -3540,7 +4070,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
         MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Re-As"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "sociation Request.\n"), nBytes );
+=======
+                    "sociation Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "sociation Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3552,7 +4086,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
 <<<<<<< HEAD
+<<<<<<< HEAD
     limPrintMacAddr(pMac, psessionEntry->limReAssocbssId, LOGE);
+=======
+    limPrintMacAddr(pMac, psessionEntry->limReAssocbssId, LOG1);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limPrintMacAddr(pMac, psessionEntry->limReAssocbssId, LOG1);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3565,7 +4103,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "tor for an Association Request (%d).\n"),
+=======
+                    "tor for an Association Request (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "tor for an Association Request (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3583,7 +4125,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to pack a Re-Association Reque"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "st (0x%08x).\n"),
+=======
+                    "st (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "st (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3595,17 +4141,23 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a R"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "e-Association Request (0x%08x).\n") );
     }
 
     PELOG3(limLog( pMac, LOG3, 
             FL("*** Sending Re-Association Request length %d %d to \n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "e-Association Request (0x%08x).") );
     }
 
     PELOG3(limLog( pMac, LOG3, 
             FL("*** Sending Re-Association Request length %d %d to "),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nBytes, nPayload );)
     if( psessionEntry->assocReq != NULL )
@@ -3650,8 +4202,13 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("Re-assoc Req Frame is: "));
             sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOGE,
+=======
+    PELOGE(limLog(pMac, LOG1, FL("Re-assoc Req Frame is: "));
+            sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog(pMac, LOG1, FL("Re-assoc Req Frame is: "));
             sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1,
@@ -3663,10 +4220,15 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -3677,7 +4239,10 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( NULL != psessionEntry->assocReq )
     {
         palFreeMemory(pMac->hHdd, psessionEntry->assocReq);
@@ -3699,6 +4264,9 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     halstatus = halTxFrame( pMac, pPacket, ( tANI_U16 ) (nBytes + ft_ies_length),
             HAL_TXRX_FRM_802_11_MGMT,
@@ -3709,7 +4277,11 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to send Re-Association Request"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "(%X)!\n"),
+=======
+                    "(%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "(%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3725,7 +4297,10 @@ end:
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void limSendRetryReassocReqFrame(tpAniSirGlobal     pMac,
                                  tLimMlmReassocReq *pMlmReassocReq,
@@ -3782,6 +4357,9 @@ end:
     limPostSmeMessage(pMac, LIM_MLM_REASSOC_CNF, (tANI_U32 *) &mlmReassocCnf);
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* WLAN_FEATURE_VOWIFI_11R */
 
@@ -3952,16 +4530,22 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
 #ifdef WLAN_FEATURE_11AC
     if ( psessionEntry->vhtCapability &&
 <<<<<<< HEAD
+<<<<<<< HEAD
              pMac->lim.vhtCapabilityPresentInBeacon)
     {
         limLog( pMac, LOGW, FL("Populate VHT IEs in Re-Assoc Request\n"));
         PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              psessionEntry->vhtCapabilityPresentInBeacon)
     {
         limLog( pMac, LOG1, FL("Populate VHT IEs in Re-Assoc Request"));
         PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
         PopulateDot11fExtCap( pMac, &frm.ExtCap);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
@@ -3971,7 +4555,11 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Re-Association Request (0x%08x).\n"),
+=======
+                               "or a Re-Association Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Re-Association Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3984,7 +4572,11 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a Re-Association Re "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "quest(0x%08x).\n"), nStatus );
+=======
+                               "quest(0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "quest(0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4001,7 +4593,11 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
         MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Re-As"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "sociation Request.\n"), nBytes );
+=======
+                               "sociation Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "sociation Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4019,7 +4615,11 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for an Association Request (%d).\n"),
+=======
+                               "tor for an Association Request (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for an Association Request (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4037,7 +4637,11 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to pack a Re-Association Reque"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "st (0x%08x).\n"),
+=======
+                               "st (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "st (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4049,17 +4653,23 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a R"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "e-Association Request (0x%08x).\n") );
     }
 
     PELOG1(limLog( pMac, LOG1, FL("*** Sending Re-Association Request length %d"
                            "to \n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "e-Association Request (0x%08x).") );
     }
 
     PELOG1(limLog( pMac, LOG1, FL("*** Sending Re-Association Request length %d"
                            "to "),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nBytes );)
 
@@ -4091,10 +4701,15 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
+=======
+       || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
+         ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -4105,12 +4720,18 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->pePersona == VOS_P2P_CLIENT_MODE)
     {
         txFlag |= HAL_USE_PEER_STA_REQUESTED_MASK;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     halstatus = halTxFrame( pMac, pPacket, ( tANI_U16 ) (sizeof(tSirMacMgmtHdr) + nPayload),
                             HAL_TXRX_FRM_802_11_MGMT,
@@ -4121,7 +4742,11 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     {
         limLog( pMac, LOGE, FL("Failed to send Re-Association Request"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(%X)!\n"),
+=======
+                               "(%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4213,6 +4838,7 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
 
 #if defined WLAN_FEATURE_VOWIFI_11R
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (pAuthFrameBody->authAlgoNumber == eSIR_FT_AUTH)
                 {
                     if (pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies) 
@@ -4225,6 +4851,8 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
                         limLog(pMac, LOG3, FL("Auth frame, Does not contain FTIES!!!\n"));
                 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pAuthFrameBody->authAlgoNumber == eSIR_FT_AUTH)
             {
                 if (0 != pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length) 
@@ -4239,6 +4867,9 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
                     frameLen += (2+SIR_MDIE_SIZE);
                 }
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
                 break;
@@ -4316,7 +4947,11 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
     {
         // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("call to bufAlloc failed for AUTH frame\n"));
+=======
+        limLog(pMac, LOGP, FL("call to bufAlloc failed for AUTH frame"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("call to bufAlloc failed for AUTH frame"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4355,7 +4990,11 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
 
         PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("*** Sending Auth seq# 3 status %d (%d) to\n"),
+=======
+           FL("*** Sending Auth seq# 3 status %d (%d) to"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("*** Sending Auth seq# 3 status %d (%d) to"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4388,9 +5027,15 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
             {
                 int i = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
                 if (pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length) 
                 {
+=======
+                if (pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length) 
+                {
+#if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if (pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length) 
                 {
@@ -4401,6 +5046,7 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
                             (tANI_U8 *)pBody,
                             (pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length));)
 <<<<<<< HEAD
+<<<<<<< HEAD
                 }
 #endif
                 for (i=0; i<pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length; i++)
@@ -4408,6 +5054,8 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
                     *pBody = pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies[i];
                     pBody++;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
                     for (i=0; i<pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies_length; i++)
                     {
@@ -4427,6 +5075,9 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
                       *pBody = pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription->mdie[i];
                        pBody++;
                     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
@@ -4445,6 +5096,7 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -4452,10 +5104,15 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
        || ((NULL != pMac->ft.ftPEContext.pFTPreAuthReq) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
        || ((NULL != pMac->ft.ftPEContext.pFTPreAuthReq)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            && ( SIR_BAND_5_GHZ == limGetRFBand(pMac->ft.ftPEContext.pFTPreAuthReq->preAuthchannelNum)))
 #endif
@@ -4465,12 +5122,18 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->pePersona == VOS_P2P_CLIENT_MODE)
     {
         txFlag |= HAL_USE_PEER_STA_REQUESTED_MASK;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /// Queue Authentication frame in high priority WQ
     halstatus = halTxFrame( pMac, pPacket, ( tANI_U16 ) frameLen,
@@ -4482,7 +5145,11 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("*** Could not send Auth frame, retCode=%X ***\n"),
+=======
+               FL("*** Could not send Auth frame, retCode=%X ***"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("*** Could not send Auth frame, retCode=%X ***"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4495,7 +5162,10 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
 } /*** end limSendAuthMgmtFrame() ***/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus limSendDeauthCnf(tpAniSirGlobal pMac)
 {
     tANI_U16                aid;
@@ -4676,6 +5346,9 @@ eHalStatus limDeauthTxCompleteCnf(tpAniSirGlobal pMac, tANI_U32 txCompleteSucces
     return limSendDeauthCnf(pMac);
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * \brief This function is called to send Disassociate frame.
@@ -4696,7 +5369,13 @@ void
 limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
                          tANI_U16       nReason,
 <<<<<<< HEAD
+<<<<<<< HEAD
                          tSirMacAddr    peer,tpPESession psessionEntry)
+=======
+                         tSirMacAddr    peer,
+                         tpPESession psessionEntry,
+                         tANI_BOOLEAN waitForAck)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                          tSirMacAddr    peer,
                          tpPESession psessionEntry,
@@ -4712,7 +5391,11 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     eHalStatus            halstatus;
     tANI_U8               txFlag = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    tANI_U32              val = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32              val = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4730,7 +5413,11 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Disassociation (0x%08x).\n"),
+=======
+                               "or a Disassociation (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Disassociation (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4743,7 +5430,11 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a Disassociation "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(0x%08x).\n"), nStatus );
+=======
+                               "(0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4758,7 +5449,11 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Dis"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "association.\n"), nBytes );
+=======
+                               "association."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "association."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4775,7 +5470,11 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a Disassociation (%d).\n"),
+=======
+                               "tor for a Disassociation (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a Disassociation (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4796,7 +5495,11 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a Disassociation (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a Disassociation (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a Disassociation (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4808,6 +5511,7 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     else if ( DOT11F_WARNED( nStatus ) )
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a D"
+<<<<<<< HEAD
 <<<<<<< HEAD
                                "isassociation (0x%08x).\n") );
     }
@@ -4822,6 +5526,8 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "isassociation (0x%08x).") );
     }
 
@@ -4832,12 +5538,16 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
         txFlag |= HAL_USE_BD_RATE2_FOR_MANAGEMENT_FRAME;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Queue Disassociation frame in high priority WQ
     halstatus = halTxFrame( pMac, pPacket, ( tANI_U16 ) nBytes,
@@ -4855,6 +5565,8 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((psessionEntry->pePersona == VOS_P2P_CLIENT_MODE) ||
        (psessionEntry->pePersona == VOS_P2P_GO_MODE))
     {
@@ -4907,6 +5619,9 @@ limSendDisassocMgmtFrame(tpAniSirGlobal pMac,
             return;
         }
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } // End limSendDisassocMgmtFrame.
 
@@ -4928,7 +5643,13 @@ void
 limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
                        tANI_U16       nReason,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        tSirMacAddr    peer,tpPESession psessionEntry)
+=======
+                       tSirMacAddr    peer,
+                       tpPESession psessionEntry,
+                       tANI_BOOLEAN waitForAck)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        tSirMacAddr    peer,
                        tpPESession psessionEntry,
@@ -4944,12 +5665,18 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     eHalStatus       halstatus;
     tANI_U8          txFlag = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32         val = 0;
 #ifdef FEATURE_WLAN_TDLS
     tANI_U16          aid;
     tpDphHashNode     pStaDs;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(NULL == psessionEntry)
@@ -4966,7 +5693,11 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a De-Authentication (0x%08x).\n"),
+=======
+                               "or a De-Authentication (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a De-Authentication (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4979,7 +5710,11 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a De-Authentication "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(0x%08x).\n"), nStatus );
+=======
+                               "(0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4994,7 +5729,11 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a De-"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "Authentication.\n"), nBytes );
+=======
+                               "Authentication."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "Authentication."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5011,7 +5750,11 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a De-Authentication (%d).\n"),
+=======
+                               "tor for a De-Authentication (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a De-Authentication (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5032,7 +5775,11 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a DeAuthentication (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a DeAuthentication (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a DeAuthentication (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5044,6 +5791,7 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     else if ( DOT11F_WARNED( nStatus ) )
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a D"
+<<<<<<< HEAD
 <<<<<<< HEAD
                                "e-Authentication (0x%08x).\n") );
     }
@@ -5058,6 +5806,8 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "e-Authentication (0x%08x).") );
     }
 
@@ -5068,12 +5818,16 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
         txFlag |= HAL_USE_BD_RATE2_FOR_MANAGEMENT_FRAME;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Queue Disassociation frame in high priority WQ
     halstatus = halTxFrame( pMac, pPacket, ( tANI_U16 ) nBytes,
@@ -5089,6 +5843,8 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
         //Pkt will be freed up by the callback
         return;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((psessionEntry->pePersona == VOS_P2P_CLIENT_MODE) ||
        (psessionEntry->pePersona == VOS_P2P_GO_MODE))
     {
@@ -5172,6 +5928,9 @@ limSendDeauthMgmtFrame(tpAniSirGlobal pMac,
             //Pkt will be freed up by the callback
             return;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -5231,7 +5990,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     default:
         limLog( pMac, LOGE, FL("Unknown measurement type %d in limSen"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "dMeasReportFrame.\n"),
+=======
+                               "dMeasReportFrame."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "dMeasReportFrame."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5246,7 +6009,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Measurement Report (0x%08x).\n"),
+=======
+                               "or a Measurement Report (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Measurement Report (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5259,7 +6026,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a Measurement Rep"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "ort (0x%08x).\n"), nStatus );
+=======
+                               "ort (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "ort (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5272,7 +6043,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a De-"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "Authentication.\n"), nBytes );
+=======
+                               "Authentication."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "Authentication."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5289,7 +6064,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a Measurement Report (%d).\n"),
+=======
+                               "tor for a Measurement Report (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a Measurement Report (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5306,7 +6085,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     {
         limLog( pMac, LOGE, FL("Failed to retrieve WNI_CFG_BSSID from"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " CFG (%d).\n"),
+=======
+                               " CFG (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " CFG (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5321,7 +6104,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a Measurement Report (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a Measurement Report (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a Measurement Report (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5333,7 +6120,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a M"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "easurement Report (0x%08x).\n") );
+=======
+                               "easurement Report (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "easurement Report (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5348,7 +6139,11 @@ limSendMeasReportFrame(tpAniSirGlobal             pMac,
     {
         limLog( pMac, LOGE, FL("Failed to send a Measurement Report  "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(%X)!\n"),
+=======
+                               "(%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5397,7 +6192,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a TPC Request (0x%08x).\n"),
+=======
+                               "or a TPC Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a TPC Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5410,7 +6209,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a TPC Request (0x"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "%08x).\n"), nStatus );
+=======
+                               "%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5423,7 +6226,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a TPC"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " Request.\n"), nBytes );
+=======
+                               " Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5440,7 +6247,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a TPC Request (%d).\n"),
+=======
+                               "tor for a TPC Request (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a TPC Request (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5457,7 +6268,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to retrieve WNI_CFG_BSSID from"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " CFG (%d).\n"),
+=======
+                               " CFG (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " CFG (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5472,7 +6287,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a TPC Request (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a TPC Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a TPC Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5484,7 +6303,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a T"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "PC Request (0x%08x).\n") );
+=======
+                               "PC Request (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "PC Request (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5499,7 +6322,11 @@ limSendTpcRequestFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to send a TPC Request "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(%X)!\n"),
+=======
+                               "(%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5556,7 +6383,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a TPC Report (0x%08x).\n"),
+=======
+                               "or a TPC Report (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a TPC Report (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5569,7 +6400,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a TPC Report (0x"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "%08x).\n"), nStatus );
+=======
+                               "%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5582,7 +6417,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a TPC"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " Report.\n"), nBytes );
+=======
+                               " Report."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " Report."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5599,7 +6438,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a TPC Report (%d).\n"),
+=======
+                               "tor for a TPC Report (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a TPC Report (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5616,7 +6459,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     {
         limLog( pMac, LOGE, FL("Failed to retrieve WNI_CFG_BSSID from"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " CFG (%d).\n"),
+=======
+                               " CFG (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " CFG (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5631,7 +6478,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a TPC Report (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a TPC Report (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a TPC Report (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5643,7 +6494,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a T"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "PC Report (0x%08x).\n") );
+=======
+                               "PC Report (0x%08x).") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "PC Report (0x%08x).") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5659,7 +6514,11 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
     {
         limLog( pMac, LOGE, FL("Failed to send a TPC Report "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(%X)!\n"),
+=======
+                               "(%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5675,7 +6534,10 @@ limSendTpcReportFrame(tpAniSirGlobal            pMac,
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if 1//def ANI_PRODUCT_TYPE_AP
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -5728,7 +6590,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Channel Switch (0x%08x).\n"),
+=======
+                               "or a Channel Switch (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Channel Switch (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5741,7 +6607,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
         limLog( pMac, LOGW, FL("There were warnings while calculating"
                                "the packed size for a Channel Switch (0x"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "%08x).\n"), nStatus );
+=======
+                               "%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5754,7 +6624,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a TPC"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " Report.\n"), nBytes );
+=======
+                               " Report."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " Report."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5776,7 +6650,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a Channel Switch (%d).\n"),
+=======
+                               "tor for a Channel Switch (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "tor for a Channel Switch (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5794,7 +6672,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to retrieve WNI_CFG_BSSID from"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " CFG (%d).\n"),
+=======
+                               " CFG (%d)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " CFG (%d)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5809,7 +6691,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL("Failed to pack a Channel Switch (0x%08x).\n"),
+=======
+        limLog( pMac, LOGE, FL("Failed to pack a Channel Switch (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL("Failed to pack a Channel Switch (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5821,6 +6707,7 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGW, FL("There were warnings while packing a C"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "hannel Switch (0x%08x).\n") );
     }
 
@@ -5830,12 +6717,17 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "hannel Switch (0x%08x).") );
     }
 
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -5850,7 +6742,11 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE, FL("Failed to send a Channel Switch "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "(%X)!\n"),
+=======
+                               "(%X)!"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "(%X)!"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5864,10 +6760,13 @@ limSendChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
 } // End limSendChannelSwitchMgmtFrame.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // (ANI_PRODUCT_TYPE_AP)
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 #ifdef WLAN_FEATURE_11AC    
@@ -6123,6 +7022,9 @@ limSendVHTChannelSwitchMgmtFrame(tpAniSirGlobal pMac,
 
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * \brief Send an ADDBA Req Action Frame to peer
@@ -6191,7 +7093,11 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
         limLog( pMac, LOGW,
         FL( "Failed to calculate the packed size for "
 <<<<<<< HEAD
+<<<<<<< HEAD
           "an ADDBA Request (0x%08x).\n"),
+=======
+          "an ADDBA Request (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "an ADDBA Request (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6205,7 +7111,11 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
         limLog( pMac, LOGW,
         FL( "There were warnings while calculating"
 <<<<<<< HEAD
+<<<<<<< HEAD
           "the packed size for an ADDBA Req (0x%08x).\n"),
+=======
+          "the packed size for an ADDBA Req (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "the packed size for an ADDBA Req (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6226,7 +7136,11 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
         // Log error
         limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("palPktAlloc FAILED! Length [%d], Status [%d]\n"),
+=======
+        FL("palPktAlloc FAILED! Length [%d], Status [%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("palPktAlloc FAILED! Length [%d], Status [%d]"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6261,7 +7175,11 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
         limLog( pMac, LOGP,
         FL( "Failed to retrieve WNI_CFG_BSSID while"
 <<<<<<< HEAD
+<<<<<<< HEAD
           "sending an ACTION Frame\n" ));
+=======
+          "sending an ACTION Frame" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "sending an ACTION Frame" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6284,7 +7202,11 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Failed to pack an ADDBA Req (0x%08x).\n" ),
+=======
+        FL( "Failed to pack an ADDBA Req (0x%08x)." ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Failed to pack an ADDBA Req (0x%08x)." ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6297,6 +7219,7 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
     else if( DOT11F_WARNED( nStatus ))
     {
         limLog( pMac, LOGW,
+<<<<<<< HEAD
 <<<<<<< HEAD
         FL( "There were warnings while packing an ADDBA Req (0x%08x).\n" ));
     }
@@ -6311,6 +7234,8 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         FL( "There were warnings while packing an ADDBA Req (0x%08x)." ));
     }
 
@@ -6321,6 +7246,9 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -6339,7 +7267,11 @@ tSirRetStatus limSendAddBAReq( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "halTxFrame FAILED! Status [%d]\n"),
+=======
+        FL( "halTxFrame FAILED! Status [%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "halTxFrame FAILED! Status [%d]"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6395,7 +7327,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
      if(NULL == psessionEntry)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Session entry is NULL!!!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Session entry is NULL!!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Session entry is NULL!!!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6420,8 +7356,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
       frmAddBARsp.AddBAParameterSet.policy = pMlmAddBARsp->baPolicy;
       frmAddBARsp.AddBAParameterSet.bufferSize = pMlmAddBARsp->baBufferSize;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       frmAddBARsp.AddBAParameterSet.amsduSupported = psessionEntry->amsduSupportedInBA;
 
       if(psessionEntry->isAmsduSupportInAMPDU)
@@ -6433,6 +7372,9 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
       {
           frmAddBARsp.AddBAParameterSet.amsduSupported = 0;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // BA timeout
       // 0 - indicates no BA timeout
@@ -6445,7 +7387,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
         limLog( pMac, LOGW,
             FL( "Failed to calculate the packed size for "
 <<<<<<< HEAD
+<<<<<<< HEAD
               "an ADDBA Response (0x%08x).\n"),
+=======
+              "an ADDBA Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "an ADDBA Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6459,7 +7405,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
         limLog( pMac, LOGW,
             FL( "There were warnings while calculating"
 <<<<<<< HEAD
+<<<<<<< HEAD
               "the packed size for an ADDBA Rsp (0x%08x).\n"),
+=======
+              "the packed size for an ADDBA Rsp (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "the packed size for an ADDBA Rsp (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6480,7 +7430,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
         // Log error
         limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL("palPktAlloc FAILED! Length [%d], Status [%d]\n"),
+=======
+            FL("palPktAlloc FAILED! Length [%d], Status [%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL("palPktAlloc FAILED! Length [%d], Status [%d]"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6516,7 +7470,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
         limLog( pMac, LOGP,
             FL( "Failed to retrieve WNI_CFG_BSSID while"
 <<<<<<< HEAD
+<<<<<<< HEAD
               "sending an ACTION Frame\n" ));
+=======
+              "sending an ACTION Frame" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "sending an ACTION Frame" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6539,7 +7497,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
       {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Failed to pack an ADDBA Rsp (0x%08x).\n" ),
+=======
+            FL( "Failed to pack an ADDBA Rsp (0x%08x)." ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Failed to pack an ADDBA Rsp (0x%08x)." ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6552,6 +7514,7 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
       else if( DOT11F_WARNED( nStatus ))
       {
         limLog( pMac, LOGW,
+<<<<<<< HEAD
 <<<<<<< HEAD
             FL( "There were warnings while packing an ADDBA Rsp (0x%08x).\n" ));
       }
@@ -6566,6 +7529,8 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             FL( "There were warnings while packing an ADDBA Rsp (0x%08x)." ));
       }
 
@@ -6576,6 +7541,9 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -6594,7 +7562,11 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "halTxFrame FAILED! Status [%d]\n" ),
+=======
+        FL( "halTxFrame FAILED! Status [%d]" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "halTxFrame FAILED! Status [%d]" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6679,7 +7651,11 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
         limLog( pMac, LOGW,
             FL( "Failed to calculate the packed size for "
 <<<<<<< HEAD
+<<<<<<< HEAD
               "an DELBA Indication (0x%08x).\n"),
+=======
+              "an DELBA Indication (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "an DELBA Indication (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6693,7 +7669,11 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
         limLog( pMac, LOGW,
             FL( "There were warnings while calculating"
 <<<<<<< HEAD
+<<<<<<< HEAD
               "the packed size for an DELBA Ind (0x%08x).\n"),
+=======
+              "the packed size for an DELBA Ind (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "the packed size for an DELBA Ind (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6714,7 +7694,11 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
         // Log error
         limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL("palPktAlloc FAILED! Length [%d], Status [%d]\n"),
+=======
+            FL("palPktAlloc FAILED! Length [%d], Status [%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL("palPktAlloc FAILED! Length [%d], Status [%d]"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6749,7 +7733,11 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
         limLog( pMac, LOGP,
             FL( "Failed to retrieve WNI_CFG_BSSID while"
 <<<<<<< HEAD
+<<<<<<< HEAD
               "sending an ACTION Frame\n" ));
+=======
+              "sending an ACTION Frame" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "sending an ACTION Frame" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6772,7 +7760,11 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
       {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Failed to pack an DELBA Ind (0x%08x).\n" ),
+=======
+            FL( "Failed to pack an DELBA Ind (0x%08x)." ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Failed to pack an DELBA Ind (0x%08x)." ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6785,6 +7777,7 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
       else if( DOT11F_WARNED( nStatus ))
       {
         limLog( pMac, LOGW,
+<<<<<<< HEAD
 <<<<<<< HEAD
             FL( "There were warnings while packing an DELBA Ind (0x%08x).\n" ));
       }
@@ -6799,6 +7792,8 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             FL( "There were warnings while packing an DELBA Ind (0x%08x)." ));
       }
 
@@ -6809,6 +7804,9 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -6826,7 +7824,11 @@ tSirRetStatus limSendDelBAInd( tpAniSirGlobal pMac,
                                pDelBAIndBuffer, txFlag )))
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]\n" ), halStatus );)
+=======
+    PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halStatus );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halStatus );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6887,7 +7889,11 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
    if ( psessionEntry == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Neighbor Report request action frame\n") );
+=======
+      limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Neighbor Report request action frame") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Neighbor Report request action frame") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6910,7 +7916,11 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                "or a Neighbor Report Request(0x%08x).\n"),
+=======
+               "or a Neighbor Report Request(0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "or a Neighbor Report Request(0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6923,7 +7933,11 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
       limLog( pMac, LOGW, FL("There were warnings while calculating"
                "the packed size for a Neighbor Rep"
 <<<<<<< HEAD
+<<<<<<< HEAD
                "ort Request(0x%08x).\n"), nStatus );
+=======
+               "ort Request(0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "ort Request(0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6936,7 +7950,11 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Neighbor "
 <<<<<<< HEAD
+<<<<<<< HEAD
                "Report Request.\n"), nBytes );
+=======
+               "Report Request."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "Report Request."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6971,7 +7989,11 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Failed to pack an Neighbor Report Request (0x%08x).\n" ),
+=======
+            FL( "Failed to pack an Neighbor Report Request (0x%08x)." ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Failed to pack an Neighbor Report Request (0x%08x)." ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6984,6 +8006,7 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
    else if( DOT11F_WARNED( nStatus ))
    {
       limLog( pMac, LOGW,
+<<<<<<< HEAD
 <<<<<<< HEAD
             FL( "There were warnings while packing Neighbor Report Request (0x%08x).\n" ));
    }
@@ -6998,6 +8021,8 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             FL( "There were warnings while packing Neighbor Report Request (0x%08x)." ));
    }
 
@@ -7008,6 +8033,9 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -7025,7 +8053,11 @@ limSendNeighborReportRequestFrame(tpAniSirGlobal        pMac,
                                   pFrame, txFlag )))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]\n" ), halstatus );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halstatus );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halstatus );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7079,7 +8111,11 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
    if ( psessionEntry == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Link Report action frame\n") );
+=======
+      limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Link Report action frame") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Link Report action frame") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7113,7 +8149,11 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                "or a Link Report (0x%08x).\n"),
+=======
+               "or a Link Report (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "or a Link Report (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7126,7 +8166,11 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
       limLog( pMac, LOGW, FL("There were warnings while calculating"
                "the packed size for a Link Rep"
 <<<<<<< HEAD
+<<<<<<< HEAD
                "ort (0x%08x).\n"), nStatus );
+=======
+               "ort (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "ort (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7139,7 +8183,11 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Link "
 <<<<<<< HEAD
+<<<<<<< HEAD
                "Report.\n"), nBytes );
+=======
+               "Report."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "Report."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7174,7 +8222,11 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Failed to pack an Link Report (0x%08x).\n" ),
+=======
+            FL( "Failed to pack an Link Report (0x%08x)." ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Failed to pack an Link Report (0x%08x)." ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7187,6 +8239,7 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
    else if( DOT11F_WARNED( nStatus ))
    {
       limLog( pMac, LOGW,
+<<<<<<< HEAD
 <<<<<<< HEAD
             FL( "There were warnings while packing Link Report (0x%08x).\n" ));
    }
@@ -7201,6 +8254,8 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             FL( "There were warnings while packing Link Report (0x%08x)." ));
    }
 
@@ -7211,6 +8266,9 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -7228,7 +8286,11 @@ limSendLinkReportActionFrame(tpAniSirGlobal        pMac,
                                   pFrame, txFlag )))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]\n" ), halstatus );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halstatus );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halstatus );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7288,7 +8350,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
          vos_mem_malloc(sizeof(tDot11fRadioMeasurementReport));
    if (!frm) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       limLog( pMac, LOGE, FL("Not enough memory to allocate tDot11fRadioMeasurementReport\n") );
+=======
+      limLog( pMac, LOGE, FL("Not enough memory to allocate tDot11fRadioMeasurementReport") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       limLog( pMac, LOGE, FL("Not enough memory to allocate tDot11fRadioMeasurementReport") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7298,7 +8364,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
    if ( psessionEntry == NULL )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Beacon Report action frame\n") );
+=======
+      limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Beacon Report action frame") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       limLog( pMac, LOGE, FL("(psession == NULL) in Request to send Beacon Report action frame") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7328,6 +8398,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
             break;
          default:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            frm->MeasurementReport[i].incapable = pRRMReport[i].incapable;
+            frm->MeasurementReport[i].refused = pRRMReport[i].refused;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             frm->MeasurementReport[i].incapable = pRRMReport[i].incapable;
             frm->MeasurementReport[i].refused = pRRMReport[i].refused;
@@ -7342,7 +8417,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGP, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                "or a Radio Measure Report (0x%08x).\n"),
+=======
+               "or a Radio Measure Report (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "or a Radio Measure Report (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7357,7 +8436,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
       limLog( pMac, LOGW, FL("There were warnings while calculating"
                "the packed size for a Radio Measure Rep"
 <<<<<<< HEAD
+<<<<<<< HEAD
                "ort (0x%08x).\n"), nStatus );
+=======
+               "ort (0x%08x)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "ort (0x%08x)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7370,7 +8453,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a Radio Measure "
 <<<<<<< HEAD
+<<<<<<< HEAD
                "Report.\n"), nBytes );
+=======
+               "Report."), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "Report."), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7406,7 +8493,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
    {
       limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Failed to pack an Radio Measure Report (0x%08x).\n" ),
+=======
+            FL( "Failed to pack an Radio Measure Report (0x%08x)." ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Failed to pack an Radio Measure Report (0x%08x)." ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7419,6 +8510,7 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
    else if( DOT11F_WARNED( nStatus ))
    {
       limLog( pMac, LOGW,
+<<<<<<< HEAD
 <<<<<<< HEAD
             FL( "There were warnings while packing Radio Measure Report (0x%08x).\n" ));
    }
@@ -7433,6 +8525,8 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             FL( "There were warnings while packing Radio Measure Report (0x%08x)." ));
    }
 
@@ -7443,6 +8537,9 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
     if( ( SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel))
        || ( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE ) ||
          ( psessionEntry->pePersona == VOS_P2P_GO_MODE)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          )
     {
@@ -7460,7 +8557,11 @@ limSendRadioMeasureReportActionFrame(tpAniSirGlobal        pMac,
                                   pFrame, txFlag )))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]\n" ), halstatus );)
+=======
+      PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halstatus );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog( pMac, LOGE, FL( "halTxFrame FAILED! Status [%d]" ), halstatus );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7535,7 +8636,11 @@ tSirMacAddr peer,tpPESession psessionEntry)
    {
       limLog( pMac, LOGP, FL("Failed to allocate %d bytes for a SA query response"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                " action frame\n"), nBytes );
+=======
+                               " action frame"), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                " action frame"), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -48,10 +54,16 @@
    Macros and Function prototypes FT and 802.11R purposes 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright 2010 (c) Qualcomm, Incorporated.  All Rights Reserved.
    
    Qualcomm Confidential and Proprietary.
   
+=======
+   Copyright 2010 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
+   Qualcomm Technologies Confidential and Proprietary.
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    Copyright 2010 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
    Qualcomm Technologies Confidential and Proprietary.
@@ -65,6 +77,10 @@
 
 #include <palTypes.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include "halMsgApi.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "halMsgApi.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -81,8 +97,13 @@
   Type declarations
   ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*-------------------------------------------------------------------------- 
   FT Pre Auth Req SME<->PE 
+=======
+/*--------------------------------------------------------------------------
+  FT Pre Auth Req SME<->PE
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /*--------------------------------------------------------------------------
   FT Pre Auth Req SME<->PE
@@ -103,6 +124,7 @@ typedef struct sSirFTPreAuthReq
 } tSirFTPreAuthReq, *tpSirFTPreAuthReq;
 
 /*-------------------------------------------------------------------------
+<<<<<<< HEAD
 <<<<<<< HEAD
   FT Pre Auth Rsp PE<->SME 
   ------------------------------------------------------------------------*/
@@ -132,6 +154,8 @@ typedef struct sSirFTUpdateKeyInfo
 /*-------------------------------------------------------------------------
   Global FT Information 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FT Pre Auth Rsp PE<->SME
   ------------------------------------------------------------------------*/
 typedef struct sSirFTPreAuthRsp
@@ -169,11 +193,15 @@ typedef struct sSirFTPreAuthKeyInfo
 
 /*-------------------------------------------------------------------------
   Global FT Information
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ------------------------------------------------------------------------*/
 typedef struct sFTPEContext
 {
     tpSirFTPreAuthReq pFTPreAuthReq;                      // Saved FT Pre Auth Req
+<<<<<<< HEAD
 <<<<<<< HEAD
     void              *psavedsessionEntry;                
     tANI_U8           ftPreAuthStatus;
@@ -183,6 +211,8 @@ typedef struct sFTPEContext
     // Items created for the new FT, session
     void              *pftSessionEntry;                   // Saved session created for pre-auth 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     void              *psavedsessionEntry;
     tSirRetStatus     ftPreAuthStatus;
     tANI_U16          saved_auth_rsp_length;
@@ -190,6 +220,9 @@ typedef struct sFTPEContext
     tSirFTPreAuthKeyInfo    *pPreAuthKeyInfo;
     // Items created for the new FT, session
     void              *pftSessionEntry;                   // Saved session created for pre-auth
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     void              *pAddBssReq;                        // Save add bss req.
     void              *pAddStaReq;                        // Save add sta req.

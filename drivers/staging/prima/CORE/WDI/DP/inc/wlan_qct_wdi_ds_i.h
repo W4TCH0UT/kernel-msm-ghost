@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -64,6 +70,10 @@
 #include "wlan_qct_pal_status.h"
 #include "wlan_qct_pal_packet.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include "wlan_qct_pal_trace.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wlan_qct_pal_trace.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -126,14 +136,20 @@ WPT_STATIC WPT_INLINE void DTI_TRACE ( DTI_TRACE_LEVEL level, ...) { };
    but need to get from correct common def
    This should be identified ASAP */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WDI_DS_MAX_STA_ID 16
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
 #define WDI_DS_MAX_STA_ID 41
 #else
 #define WDI_DS_MAX_STA_ID 16
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* !!! MAX NUM SUPPORTED BSS is not identified yet, 2 is correct value,
     but need to get from correct common def

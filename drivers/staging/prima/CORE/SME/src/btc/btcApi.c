@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -112,6 +118,10 @@ VOS_STATUS btcOpen (tHalHandle hHal)
    pMac->btc.btcEventState = 0;
    pMac->btc.btcHBActive = VOS_TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   pMac->btc.btcScanCompromise = VOS_FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pMac->btc.btcScanCompromise = VOS_FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -127,7 +137,11 @@ VOS_STATUS btcOpen (tHalHandle hHal)
    if( !HAL_STATUS_SUCCESS(pmcRegisterDeviceStateUpdateInd( pMac, btcPowerStateCB, pMac )) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "btcOpen: Fail to register PMC callback\n");
+=======
+       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "btcOpen: Fail to register PMC callback");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "btcOpen: Fail to register PMC callback");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -161,7 +175,11 @@ VOS_STATUS btcClose (tHalHandle hHal)
        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
          "%s: %d: cannot deregister with pmcDeregisterDeviceStateUpdateInd()",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, __LINE__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -216,7 +234,11 @@ static VOS_STATUS btcSendBTEvent(tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent)
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
                "Invalid link type %d for Sync Connection. BT event will be dropped ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, pBtEvent->uEventParam.btSyncConnection.linkType);
+=======
+               __func__, pBtEvent->uEventParam.btSyncConnection.linkType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, pBtEvent->uEventParam.btSyncConnection.linkType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -231,7 +253,11 @@ static VOS_STATUS btcSendBTEvent(tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent)
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
                "Invalid connection handle %d or link type %d for Sync Connection. BT event will be dropped ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__,
+=======
+               __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -246,7 +272,11 @@ static VOS_STATUS btcSendBTEvent(tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent)
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
                "Invalid mode %d for ACL Connection. BT event will be dropped ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__,
+=======
+               __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -265,7 +295,11 @@ static VOS_STATUS btcSendBTEvent(tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "Not able to allocate memory for BT event", __FUNCTION__);
+=======
+         "Not able to allocate memory for BT event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "Not able to allocate memory for BT event", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -283,7 +317,11 @@ static VOS_STATUS btcSendBTEvent(tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "Not able to post WDA_SIGNAL_BT_EVENT message to WDA", __FUNCTION__);
+=======
+         "Not able to post WDA_SIGNAL_BT_EVENT message to WDA", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "Not able to post WDA_SIGNAL_BT_EVENT message to WDA", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -322,7 +360,11 @@ VOS_STATUS btcSignalBTEvent (tHalHandle hHal, tpSmeBtEvent pBtEvent)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "Null pointer for SME BT Event", __FUNCTION__);
+=======
+         "Null pointer for SME BT Event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "Null pointer for SME BT Event", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -333,7 +375,11 @@ VOS_STATUS btcSignalBTEvent (tHalHandle hHal, tpSmeBtEvent pBtEvent)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
 <<<<<<< HEAD
+<<<<<<< HEAD
          "BTC execution mode not set to BTC_SMART_COEXISTENCE. BT event will be dropped", __FUNCTION__);
+=======
+         "BTC execution mode not set to BTC_SMART_COEXISTENCE. BT event will be dropped", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "BTC execution mode not set to BTC_SMART_COEXISTENCE. BT event will be dropped", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -344,7 +390,11 @@ VOS_STATUS btcSignalBTEvent (tHalHandle hHal, tpSmeBtEvent pBtEvent)
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
          "Invalid BT event %d being passed. BT event will be dropped",
 <<<<<<< HEAD
+<<<<<<< HEAD
           __FUNCTION__, pBtEvent->btEventType);
+=======
+          __func__, pBtEvent->btEventType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           __func__, pBtEvent->btEventType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -838,7 +888,11 @@ static VOS_STATUS btcDeferAclCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
     VOS_STATUS status = VOS_STATUS_SUCCESS;
     tpSmeBtAclEventHist pAclEventHist;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tSmeBtAclConnectionParam *pAclEvent;
+=======
+    tSmeBtAclConnectionParam *pAclEvent = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSmeBtAclConnectionParam *pAclEvent = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -862,7 +916,11 @@ static VOS_STATUS btcDeferAclCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" failed to find ACL event slot\n"));
+=======
+                smsLog(pMac, LOGE, FL(" failed to find ACL event slot"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" failed to find ACL event slot"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -875,8 +933,11 @@ static VOS_STATUS btcDeferAclCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         {
             //There is history on this BD address
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_ASSERT(pAclEventHist->bNextEventIdx > 0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if ((pAclEventHist->bNextEventIdx <= 0) ||
                 (pAclEventHist->bNextEventIdx > BT_MAX_NUM_EVENT_ACL_DEFERRED))
             {
@@ -885,22 +946,31 @@ static VOS_STATUS btcDeferAclCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
                 break;
             }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pAclEvent = &pAclEventHist->btAclConnection[pAclEventHist->bNextEventIdx - 1];
             if(BT_EVENT_CREATE_ACL_CONNECTION == pAclEventHist->btEventType[pAclEventHist->bNextEventIdx - 1])
             {
                 //The last cached event is creation, replace it with the new one
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vos_mem_copy(pAclEvent, 
                                 &pEvent->uEventParam.btAclConnection, 
                                 sizeof(tSmeBtAclConnectionParam));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (pAclEvent)
                 {
                     vos_mem_copy(pAclEvent,
                                  &pEvent->uEventParam.btAclConnection,
                                  sizeof(tSmeBtAclConnectionParam));
                 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //done
                 break;
@@ -915,7 +985,11 @@ static VOS_STATUS btcDeferAclCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
                     //The last event we have is success completion event. 
                     //Should not get a creation event before creation.
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL("  Missing disconnect event on handle %d\n"), pAclEvent->connectionHandle);
+=======
+                    smsLog(pMac, LOGE, FL("  Missing disconnect event on handle %d"), pAclEvent->connectionHandle);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL("  Missing disconnect event on handle %d"), pAclEvent->connectionHandle);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -937,7 +1011,11 @@ static VOS_STATUS btcDeferAclCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" ACL event overflow\n"));
+=======
+                smsLog(pMac, LOGE, FL(" ACL event overflow"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" ACL event overflow"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -980,7 +1058,11 @@ static VOS_STATUS btcDeferAclComplete( tpAniSirGlobal pMac, tpSmeBtEvent pEvent 
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL(" ACL completion fail but last event(%d) not creation\n"),
+=======
+                    smsLog(pMac, LOGE, FL(" ACL completion fail but last event(%d) not creation"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL(" ACL completion fail but last event(%d) not creation"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1006,7 +1088,11 @@ static VOS_STATUS btcDeferAclComplete( tpAniSirGlobal pMac, tpSmeBtEvent pEvent 
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" ACL event overflow\n"));
+=======
+                smsLog(pMac, LOGE, FL(" ACL event overflow"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" ACL event overflow"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1016,7 +1102,11 @@ static VOS_STATUS btcDeferAclComplete( tpAniSirGlobal pMac, tpSmeBtEvent pEvent 
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" cannot find match for failed BT_EVENT_ACL_CONNECTION_COMPLETE of bdAddr (%02X-%02X-%02X-%02X-%02X-%02X)\n"),
+=======
+            smsLog( pMac, LOGE, FL(" cannot find match for failed BT_EVENT_ACL_CONNECTION_COMPLETE of bdAddr (%02X-%02X-%02X-%02X-%02X-%02X)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" cannot find match for failed BT_EVENT_ACL_CONNECTION_COMPLETE of bdAddr (%02X-%02X-%02X-%02X-%02X-%02X)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1044,7 +1134,11 @@ static VOS_STATUS btcDeferSyncCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
     VOS_STATUS status = VOS_STATUS_SUCCESS;
     tpSmeBtSyncEventHist pSyncEventHist;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tSmeBtSyncConnectionParam *pSyncEvent;
+=======
+    tSmeBtSyncConnectionParam *pSyncEvent = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSmeBtSyncConnectionParam *pSyncEvent = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1068,7 +1162,11 @@ static VOS_STATUS btcDeferSyncCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" failed to find SYNC event slot\n"));
+=======
+                smsLog(pMac, LOGE, FL(" failed to find SYNC event slot"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" failed to find SYNC event slot"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1081,14 +1179,20 @@ static VOS_STATUS btcDeferSyncCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         {
             //There is history on this BD address
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_ASSERT(pSyncEventHist->bNextEventIdx > 0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if ((pSyncEventHist->bNextEventIdx <= 0) ||
                 (pSyncEventHist->bNextEventIdx > BT_MAX_NUM_EVENT_SCO_DEFERRED))
             {
                 VOS_ASSERT(0);
                 return VOS_STATUS_E_FAILURE;
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pSyncEvent = &pSyncEventHist->btSyncConnection[pSyncEventHist->bNextEventIdx - 1];
             if(BT_EVENT_CREATE_SYNC_CONNECTION == 
@@ -1096,16 +1200,22 @@ static VOS_STATUS btcDeferSyncCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
             {
                 //The last cached event is creation, replace it with the new one
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vos_mem_copy(pSyncEvent, 
                                 &pEvent->uEventParam.btSyncConnection, 
                                 sizeof(tSmeBtSyncConnectionParam));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(pSyncEvent)
                 {
                     vos_mem_copy(pSyncEvent,
                                  &pEvent->uEventParam.btSyncConnection,
                                  sizeof(tSmeBtSyncConnectionParam));
                 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //done
                 break;
@@ -1120,7 +1230,11 @@ static VOS_STATUS btcDeferSyncCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
                     //The last event we have is success completion event. 
                     //Should not get a creation event before creation.
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL("  Missing disconnect event on handle %d\n"), pSyncEvent->connectionHandle);
+=======
+                    smsLog(pMac, LOGE, FL("  Missing disconnect event on handle %d"), pSyncEvent->connectionHandle);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL("  Missing disconnect event on handle %d"), pSyncEvent->connectionHandle);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1142,7 +1256,11 @@ static VOS_STATUS btcDeferSyncCreate( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" SYNC event overflow\n"));
+=======
+                smsLog(pMac, LOGE, FL(" SYNC event overflow"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" SYNC event overflow"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1185,7 +1303,11 @@ static VOS_STATUS btcDeferSyncComplete( tpAniSirGlobal pMac, tpSmeBtEvent pEvent
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL(" SYNC completion fail but last event(%d) not creation\n"),
+=======
+                    smsLog(pMac, LOGE, FL(" SYNC completion fail but last event(%d) not creation"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL(" SYNC completion fail but last event(%d) not creation"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1212,7 +1334,11 @@ static VOS_STATUS btcDeferSyncComplete( tpAniSirGlobal pMac, tpSmeBtEvent pEvent
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" SYNC event overflow\n"));
+=======
+                smsLog(pMac, LOGE, FL(" SYNC event overflow"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" SYNC event overflow"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1221,7 +1347,11 @@ static VOS_STATUS btcDeferSyncComplete( tpAniSirGlobal pMac, tpSmeBtEvent pEvent
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_SYNC_CONNECTION_COMPLETE of bdAddr (%02X-%02X-%02X-%02X-%02X-%02X)\n"),
+=======
+            smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_SYNC_CONNECTION_COMPLETE of bdAddr (%02X-%02X-%02X-%02X-%02X-%02X)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_SYNC_CONNECTION_COMPLETE of bdAddr (%02X-%02X-%02X-%02X-%02X-%02X)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1263,7 +1393,11 @@ static VOS_STATUS btcDeferDisconnectEventForACL( tpAniSirGlobal pMac, tpSmeBtEve
         if( pAclEventHist->bNextEventIdx > BT_MAX_NUM_EVENT_ACL_DEFERRED)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL(" ACL event history index:%d overflow, resetting to BT_MAX_NUM_EVENT_ACL_DEFERRED\n"), pAclEventHist->bNextEventIdx);
+=======
+            smsLog(pMac, LOGE, FL(" ACL event history index:%d overflow, resetting to BT_MAX_NUM_EVENT_ACL_DEFERRED"), pAclEventHist->bNextEventIdx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL(" ACL event history index:%d overflow, resetting to BT_MAX_NUM_EVENT_ACL_DEFERRED"), pAclEventHist->bNextEventIdx);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1306,7 +1440,11 @@ static VOS_STATUS btcDeferDisconnectEventForACL( tpAniSirGlobal pMac, tpSmeBtEve
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" ACL event overflow\n"));
+=======
+                smsLog(pMac, LOGE, FL(" ACL event overflow"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" ACL event overflow"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1355,7 +1493,11 @@ static VOS_STATUS btcDeferDisconnectEventForSync( tpAniSirGlobal pMac, tpSmeBtEv
         if( pSyncEventHist->bNextEventIdx > BT_MAX_NUM_EVENT_SCO_DEFERRED)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL(" SYNC event history index:%d overflow, resetting to BT_MAX_NUM_EVENT_SCO_DEFERRED\n"), pSyncEventHist->bNextEventIdx);
+=======
+            smsLog(pMac, LOGE, FL(" SYNC event history index:%d overflow, resetting to BT_MAX_NUM_EVENT_SCO_DEFERRED"), pSyncEventHist->bNextEventIdx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL(" SYNC event history index:%d overflow, resetting to BT_MAX_NUM_EVENT_SCO_DEFERRED"), pSyncEventHist->bNextEventIdx);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1399,7 +1541,11 @@ static VOS_STATUS btcDeferDisconnectEventForSync( tpAniSirGlobal pMac, tpSmeBtEv
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL(" SYNC event overflow\n"));
+=======
+                smsLog(pMac, LOGE, FL(" SYNC event overflow"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL(" SYNC event overflow"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1434,7 +1580,11 @@ static VOS_STATUS btcDeferDisconnEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent
     if( BT_INVALID_CONN_HANDLE == pEvent->uEventParam.btDisconnect.connectionHandle )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" invalid handle\n") );
+=======
+        smsLog( pMac, LOGE, FL(" invalid handle") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" invalid handle") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1461,7 +1611,11 @@ static VOS_STATUS btcDeferDisconnEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_DISCONNECTION_COMPLETE of handle (%d)\n"),
+=======
+            smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_DISCONNECTION_COMPLETE of handle (%d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_DISCONNECTION_COMPLETE of handle (%d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1524,7 +1678,11 @@ static VOS_STATUS btcDeferEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         if( BT_INVALID_CONN_HANDLE == pEvent->uEventParam.btDisconnect.connectionHandle )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" invalid handle\n") );
+=======
+            smsLog( pMac, LOGE, FL(" invalid handle") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" invalid handle") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1543,7 +1701,11 @@ static VOS_STATUS btcDeferEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_SYNC_CONNECTION_UPDATED of handle (%d)\n"),
+=======
+            smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_SYNC_CONNECTION_UPDATED of handle (%d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_SYNC_CONNECTION_UPDATED of handle (%d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1558,7 +1720,11 @@ static VOS_STATUS btcDeferEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         if( BT_INVALID_CONN_HANDLE == pEvent->uEventParam.btDisconnect.connectionHandle )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" invalid handle\n") );
+=======
+            smsLog( pMac, LOGE, FL(" invalid handle") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" invalid handle") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1577,7 +1743,11 @@ static VOS_STATUS btcDeferEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_MODE_CHANGED of handle (%d)\n"),
+=======
+            smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_MODE_CHANGED of handle (%d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" cannot find match for BT_EVENT_MODE_CHANGED of handle (%d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1595,7 +1765,11 @@ static VOS_STATUS btcDeferEvent( tpAniSirGlobal pMac, tpSmeBtEvent pEvent )
         break;
     default:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" event (%d) is not deferred\n"), pEvent->btEventType );
+=======
+        smsLog( pMac, LOGE, FL(" event (%d) is not deferred"), pEvent->btEventType );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" event (%d) is not deferred"), pEvent->btEventType );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1828,7 +2002,11 @@ static void btcLogEvent (tHalHandle hHal, tpSmeBtEvent pBtEvent)
 {
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
 <<<<<<< HEAD
+<<<<<<< HEAD
                "Bluetooth Event %d received", __FUNCTION__, pBtEvent->btEventType);
+=======
+               "Bluetooth Event %d received", __func__, pBtEvent->btEventType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "Bluetooth Event %d received", __func__, pBtEvent->btEventType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1933,7 +2111,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
                //All SCO is disconnected
                pMac->btc.btcUapsdOk = VOS_TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGE, "BT event (DISCONNECTION) happens, UAPSD-allowed flag (%d) change to TRUE \n", 
+=======
+               smsLog( pMac, LOGE, "BT event (DISCONNECTION) happens, UAPSD-allowed flag (%d) change to TRUE",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGE, "BT event (DISCONNECTION) happens, UAPSD-allowed flag (%d) change to TRUE",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1943,7 +2125,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
        break;
    case BT_EVENT_DEVICE_SWITCHED_OFF:
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "BT event (DEVICE_OFF) happens, UAPSD-allowed flag (%d) change to TRUE \n", 
+=======
+       smsLog( pMac, LOGE, "BT event (DEVICE_OFF) happens, UAPSD-allowed flag (%d) change to TRUE",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog( pMac, LOGE, "BT event (DEVICE_OFF) happens, UAPSD-allowed flag (%d) change to TRUE",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1958,7 +2144,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
        break;
    case BT_EVENT_A2DP_STREAM_STOP:
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "BT event  (A2DP_STREAM_STOP) happens, UAPSD-allowed flag (%d) \n", 
+=======
+       smsLog( pMac, LOGE, "BT event  (A2DP_STREAM_STOP) happens, UAPSD-allowed flag (%d)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog( pMac, LOGE, "BT event  (A2DP_STREAM_STOP) happens, UAPSD-allowed flag (%d)",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1976,7 +2166,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
        {
             pMac->btc.fA2DPTrafStop = VOS_TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
            smsLog( pMac, LOGE, "BT_EVENT_A2DP_STREAM_STOP: UAPSD-allowed flag is now %d\n",
+=======
+           smsLog( pMac, LOGE, "BT_EVENT_A2DP_STREAM_STOP: UAPSD-allowed flag is now %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            smsLog( pMac, LOGE, "BT_EVENT_A2DP_STREAM_STOP: UAPSD-allowed flag is now %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1986,7 +2180,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
 
    case BT_EVENT_MODE_CHANGED:
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "BT event (BT_EVENT_MODE_CHANGED) happens, Mode (%d) UAPSD-allowed flag (%d)\n",
+=======
+       smsLog( pMac, LOGE, "BT event (BT_EVENT_MODE_CHANGED) happens, Mode (%d) UAPSD-allowed flag (%d)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog( pMac, LOGE, "BT event (BT_EVENT_MODE_CHANGED) happens, Mode (%d) UAPSD-allowed flag (%d)",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2009,7 +2207,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
                    pMac->btc.fA2DPTrafStop = VOS_FALSE;
                }
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog( pMac, LOGE, "BT_EVENT_MODE_CHANGED with Mode:%d UAPSD-allowed flag is now %d\n",
+=======
+               smsLog( pMac, LOGE, "BT_EVENT_MODE_CHANGED with Mode:%d UAPSD-allowed flag is now %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog( pMac, LOGE, "BT_EVENT_MODE_CHANGED with Mode:%d UAPSD-allowed flag is now %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2021,7 +2223,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
        {
            pMac->btc.btcUapsdOk = VOS_FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
            smsLog( pMac, LOGE, "BT_EVENT_CREATE_SYNC_CONNECTION (%d) happens, UAPSD-allowed flag (%d) change to FALSE \n", 
+=======
+           smsLog( pMac, LOGE, "BT_EVENT_CREATE_SYNC_CONNECTION (%d) happens, UAPSD-allowed flag (%d) change to FALSE",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            smsLog( pMac, LOGE, "BT_EVENT_CREATE_SYNC_CONNECTION (%d) happens, UAPSD-allowed flag (%d) change to FALSE",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2047,7 +2253,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
            if( i >= BT_MAX_SCO_SUPPORT )
            {
 <<<<<<< HEAD
+<<<<<<< HEAD
                smsLog(pMac, LOGE, FL("Too many SCO, ignore this one\n"));
+=======
+               smsLog(pMac, LOGE, FL("Too many SCO, ignore this one"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                smsLog(pMac, LOGE, FL("Too many SCO, ignore this one"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2069,17 +2279,23 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
                pMac->btc.btcUapsdOk = VOS_TRUE;
            }
 <<<<<<< HEAD
+<<<<<<< HEAD
            smsLog(pMac, LOGE, FL("TSYNC complete failed\n"));
        }
        break;
    case BT_EVENT_A2DP_STREAM_START:
        smsLog( pMac, LOGE, "BT_EVENT_A2DP_STREAM_START (%d) happens, UAPSD-allowed flag (%d) change to FALSE \n", 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            smsLog(pMac, LOGE, FL("TSYNC complete failed"));
        }
        break;
    case BT_EVENT_A2DP_STREAM_START:
        smsLog( pMac, LOGE, "BT_EVENT_A2DP_STREAM_START (%d) happens, UAPSD-allowed flag (%d) change to FALSE",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBtEvent->btEventType, pMac->btc.btcUapsdOk );
        pMac->btc.fA2DPTrafStop = VOS_FALSE;
@@ -2089,7 +2305,11 @@ void btcUapsdCheck( tpAniSirGlobal pMac, tpSmeBtEvent pBtEvent )
    default:
        //No change for these events
 <<<<<<< HEAD
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "BT event (%d) happens, UAPSD-allowed flag (%d) no change \n", 
+=======
+       smsLog( pMac, LOGE, "BT event (%d) happens, UAPSD-allowed flag (%d) no change",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        smsLog( pMac, LOGE, "BT event (%d) happens, UAPSD-allowed flag (%d) no change",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2119,7 +2339,11 @@ eHalStatus btcHandleCoexInd(tHalHandle hHal, void* pMsg)
    if (NULL == pMsg)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       smsLog(pMac, LOGE, "in %s msg ptr is NULL\n", __FUNCTION__);
+=======
+      smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2130,7 +2354,11 @@ eHalStatus btcHandleCoexInd(tHalHandle hHal, void* pMsg)
       // DEBUG
       smsLog(pMac, LOG1, "Coex indication in %s(), type %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, pSmeCoexInd->coexIndType);
+=======
+             __func__, pSmeCoexInd->coexIndType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, pSmeCoexInd->coexIndType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2153,12 +2381,15 @@ eHalStatus btcHandleCoexInd(tHalHandle hHal, void* pMsg)
         }
      }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      // unknown indication type
      else
      {
         smsLog(pMac, LOGE, "unknown Coex indication type in %s()", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      else if (pSmeCoexInd->coexIndType == SIR_COEX_IND_TYPE_SCAN_COMPROMISED)
      {
          pMac->btc.btcScanCompromise = VOS_TRUE;
@@ -2197,6 +2428,9 @@ eHalStatus btcHandleCoexInd(tHalHandle hHal, void* pMsg)
      else
      {
         smsLog(pMac, LOGE, "unknown Coex indication type in %s()", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      }
    }

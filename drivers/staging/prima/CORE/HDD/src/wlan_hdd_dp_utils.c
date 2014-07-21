@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -221,6 +227,10 @@ VOS_STATUS hdd_string_to_hex( char *pSrcMac, int length, char *pDescMac )
    int k;
    char temp[3] = {0};
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   int rv;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    int rv;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -235,7 +245,13 @@ VOS_STATUS hdd_string_to_hex( char *pSrcMac, int length, char *pDescMac )
    {
        memcpy(temp, pSrcMac+i, 2);
 <<<<<<< HEAD
+<<<<<<< HEAD
        pDescMac[k++] = (char)simple_strtoul (temp, NULL, 16);
+=======
+       rv = kstrtou8(temp, 16, &pDescMac[k++]);
+       if (rv < 0)
+           return VOS_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        rv = kstrtou8(temp, 16, &pDescMac[k++]);
        if (rv < 0)

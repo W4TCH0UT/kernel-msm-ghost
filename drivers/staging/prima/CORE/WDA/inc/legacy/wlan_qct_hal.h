@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -23,6 +27,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /*
  * Qualcomm, Inc proprietary. All rights reserved.
@@ -31,6 +36,8 @@
  * --------------------------------------------------------------------
  */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -52,6 +59,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifndef WLAN_QCT_HAL_H
 #define WLAN_QCT_HAL_H
@@ -82,9 +92,12 @@
 
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halBdDefs.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_HAL_DXE0_MASTERID  5
@@ -151,7 +164,10 @@ typedef struct sHalPdu {
 } tHalPdu, *tpHalPdu;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* UAPSD parameters passed per AC to HAL from TL */
@@ -164,7 +180,10 @@ typedef struct sUapsdInfo {
     tANI_U32 delayInterval; // Delay Interval
 } tUapsdInfo, tpUapsdInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -198,6 +217,7 @@ typedef struct sUapsdInfo {
 #define WLANHAL_RX_BD_ADDR3_SELF_IDX      0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
 // Should not use tHalTxBd nor tHalRxBd. UMAC doesn't know these HAL structure.
 #define WLANHAL_TX_BD_HEADER_SIZE 40
@@ -206,6 +226,11 @@ typedef struct sUapsdInfo {
 #define WLANHAL_TX_BD_HEADER_SIZE        sizeof(tHalTxBd)
 #define WLANHAL_RX_BD_HEADER_SIZE        sizeof(tHalRxBd)
 #endif
+=======
+// Should not use tHalTxBd nor tHalRxBd. UMAC doesn't know these HAL structure.
+#define WLANHAL_TX_BD_HEADER_SIZE 40
+#define WLANHAL_RX_BD_HEADER_SIZE 76
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 // Should not use tHalTxBd nor tHalRxBd. UMAC doesn't know these HAL structure.
 #define WLANHAL_TX_BD_HEADER_SIZE 40
@@ -247,8 +272,12 @@ typedef struct sUapsdInfo {
 #define WLANHAL_RX_BD_GET_DPU_SIG( _pvBDHeader )   (((tpHalRxBd)_pvBDHeader)->dpuSignature)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 #define WLANHAL_FC_RX_BD_REPORT_CONTENT_SIZE        2*HAL_NUM_STA*sizeof(tANI_U8)   // size of fcSTATxQLen[HAL_NUM_STA]+fcSTACurTxRate[HAL_NUM_STA]
+=======
+#define WLANHAL_FC_RX_BD_REPORT_CONTENT_SIZE        (2 * HAL_NUM_STA * sizeof(tANI_U8))   // size of fcSTATxQLen[HAL_NUM_STA]+fcSTACurTxRate[HAL_NUM_STA]
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WLANHAL_FC_RX_BD_REPORT_CONTENT_SIZE        (2 * HAL_NUM_STA * sizeof(tANI_U8))   // size of fcSTATxQLen[HAL_NUM_STA]+fcSTACurTxRate[HAL_NUM_STA]
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -283,7 +312,10 @@ typedef struct sUapsdInfo {
 #define tpHalFcTxParams  pFcTxParams_type               
 #define tpHalFcRxParams  pFcRxParams_type             
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -335,12 +367,15 @@ typedef struct sUapsdInfo {
 #define WLANHAL_RX_BD_SET_TYPE_SUBTYPE( _bd, _typeSubtype )        (((tpHalRxBd)_bd)->frameTypeSubtype = _typeSubtype)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef  WLAN_HAL_VOLANS 
 /*Macros to extract 48-bit replay counter when replay check is done at host in volans*/
 #define WLANHAL_RX_BD_GET_PMICMD_20TO23(_pvBDHeader)      ((((tpHalRxBd)_pvBDHeader)->pmiCmd4to23[4])) 
 #define WLANHAL_RX_BD_GET_UC_BC( _pvBDHeader )            (((tpHalRxBd)_pvBDHeader)->ub)
 #define WLANHAL_RX_BD_GET_PMICMD_24TO25(_pvBDHeader)      ((((tpHalRxBd)_pvBDHeader)->pmiCmd24to25))
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -358,6 +393,7 @@ typedef struct sUapsdInfo {
 #define WLANHAL_RX_BD_FT_DONE                  1 /* The value of the field when frame xtl was done*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC 
 //Check whether a RX frame is unprotected over the air
 #if defined(LIBRA_WAPI_SUPPORT)
@@ -371,13 +407,18 @@ typedef struct sUapsdInfo {
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*DPU_FEEDBACK_WPI_UNPROTECTED macro defined in volansdefs.h which is not available
   for UMAC in prima so declared it here */
 #define DPU_FEEDBACK_WPI_UNPROTECTED 0x20   
 #define WLANHAL_RX_IS_UNPROTECTED_WPI_FRAME(_pvBDHeader)  \
         (DPU_FEEDBACK_WPI_UNPROTECTED == ((WDI_RxBdType *)_pvBDHeader)->dpuFeedback)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -416,6 +457,7 @@ tANI_U8 WLANHAL_RxBD_GetFrameTypeSubType(v_PVOID_t _pvBDHeader, tANI_U16 usFrmCt
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
 #define HAL_TRIGGER_ENABLED_AC_MASK         0x10 //bit 4 for data frames belonging to trigger enabled AC
 #endif
@@ -424,6 +466,8 @@ tANI_U8 WLANHAL_RxBD_GetFrameTypeSubType(v_PVOID_t _pvBDHeader, tANI_U16 usFrmCt
 #define HAL_USE_BD_RATE2_FOR_MANAGEMENT_FRAME 0x40 // Bit 6 will be used to control BD rate for Management frames
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HAL_TRIGGER_ENABLED_AC_MASK         0x10 //bit 4 for data frames belonging to trigger enabled AC
 #define HAL_USE_NO_ACK_REQUESTED_MASK       0x20
 
@@ -433,6 +477,9 @@ tANI_U8 WLANHAL_RxBD_GetFrameTypeSubType(v_PVOID_t _pvBDHeader, tANI_U16 usFrmCt
 #ifdef FEATURE_WLAN_TDLS
 #define HAL_TDLS_PEER_STA_MASK              0x80 //bit 7 set for TDLS peer station 
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
 
@@ -476,6 +523,7 @@ tANI_U8 WLANHAL_RxBD_GetFrameTypeSubType(v_PVOID_t _pvBDHeader, tANI_U16 usFrmCt
   
 ============================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 VOS_STATUS WLANHAL_FillTxBd(void *pAdaptor, tANI_U8 typeSubtype, void *pDestMacAddr, void *pAddr2,
         tANI_U8* ptid, tANI_U8 disableFrmXtl, void *pTxBd, tANI_U8 txFlag, tANI_U32 timeStamp);
 
@@ -485,12 +533,17 @@ VOS_STATUS WLANHAL_FillFcTxBd(void *pVosGCtx, void *pFcParams, void *pFcTxBd);
 void WLANHAL_SwapFcRxBd(tANI_U8 *pBd);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS WLANHAL_FillTxBd(void *pAdapter, tANI_U8 typeSubtype, void *pDestMacAddr, void *pAddr2,
         tANI_U8* ptid, tANI_U8 disableFrmXtl, void *pTxBd, tANI_U8 txFlag, tANI_U32 timeStamp);
 
 VOS_STATUS WLANHAL_FillFcTxBd(void *pVosGCtx, void *pFcParams, void *pFcTxBd);
 /** To swap the report part of FC RxBD */
 void WLANHAL_SwapFcRxBd(tANI_U8 *pBd);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* To swap the data */
@@ -502,6 +555,7 @@ void WLANHAL_RxAmsduBdFix(void *pVosGCtx,v_PVOID_t _pvBDHeader);
 
 #ifdef WLAN_PERF
 <<<<<<< HEAD
+<<<<<<< HEAD
 tANI_U32 WLANHAL_TxBdFastFwd(void *pAdaptor, tANI_U8 *pDestMac, tANI_U8 tid, tANI_U8 unicastDst,  void *pTxBd, tANI_U16);
 #endif
 
@@ -510,11 +564,16 @@ VOS_STATUS WLANHAL_EnableUapsdAcParams(void* pVosGCtx, tANI_U8 staIdx, tUapsdInf
 VOS_STATUS WLANHAL_DisableUapsdAcParams(void* pVosGCtx, tANI_U8 staIdx, tANI_U8 ac);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_U32 WLANHAL_TxBdFastFwd(void *pAdapter, tANI_U8 *pDestMac, tANI_U8 tid, tANI_U8 unicastDst,  void *pTxBd, tANI_U16);
 #endif
 
 VOS_STATUS WLANHAL_EnableUapsdAcParams(void* pVosGCtx, tANI_U8 staIdx, tUapsdInfo *pUapsdInfo);
 VOS_STATUS WLANHAL_DisableUapsdAcParams(void* pVosGCtx, tANI_U8 staIdx, tANI_U8 ac);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 VOS_STATUS WLANHAL_EnableIdleBdPduInterrupt(void* pVosGCtx, tANI_U8 idleBdPduThreshold);

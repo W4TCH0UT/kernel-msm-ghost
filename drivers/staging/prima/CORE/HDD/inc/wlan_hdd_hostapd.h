@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -47,6 +53,7 @@
 
 /**===========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   \file  WLAN_HDD_HOSTAPD_H.h
   
@@ -62,6 +69,8 @@
   -------------------------------------------------------------------------*/ 
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \file  WLAN_HDD_HOSTAPD_H.h
 
@@ -81,6 +90,9 @@
   Include files
   -------------------------------------------------------------------------*/
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <linux/netdevice.h>
 #include <linux/skbuff.h>
@@ -91,9 +103,15 @@
 #include <wlan_hdd_main.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*--------------------------------------------------------------------------- 
   Preprocessor definitions and constants
   -------------------------------------------------------------------------*/ 
+=======
+/*---------------------------------------------------------------------------
+  Preprocessor definitions and constants
+  -------------------------------------------------------------------------*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /*---------------------------------------------------------------------------
   Preprocessor definitions and constants
@@ -122,7 +140,11 @@ eCsrEncryptionType
 hdd_TranslateWPAToCsrEncryptionType(u_int8_t cipher_suite[4]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void hdd_softap_sta_deauth(hdd_adapter_t*,v_U8_t*);
+=======
+VOS_STATUS hdd_softap_sta_deauth(hdd_adapter_t*,v_U8_t*);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS hdd_softap_sta_deauth(hdd_adapter_t*,v_U8_t*);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -136,11 +158,17 @@ int hdd_softap_unpackIE( tHalHandle halHandle,
                 u_int8_t *gen_ie );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCallback);
 VOS_STATUS hdd_init_ap_mode( hdd_adapter_t *pAdapter );
 void hdd_set_ap_ops( struct net_device *pWlanHostapdDev );
 #endif
+=======
+VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCallback);
+VOS_STATUS hdd_init_ap_mode( hdd_adapter_t *pAdapter );
+void hdd_set_ap_ops( struct net_device *pWlanHostapdDev );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCallback);
 VOS_STATUS hdd_init_ap_mode( hdd_adapter_t *pAdapter );

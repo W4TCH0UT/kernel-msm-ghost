@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -111,6 +117,7 @@ cfgProcessMbMsg(tpAniSirGlobal pMac, tSirMbMsg *pMsg)
 
     // Use type[7:0] as index to function table
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
     index = CFG_GET_FUNC_INDX(sirReadU16N((tANI_U8*)pMsg));
 #else
@@ -125,6 +132,8 @@ cfgProcessMbMsg(tpAniSirGlobal pMac, tSirMbMsg *pMsg)
     len    = pMsg->msgLen - WNI_CFG_MB_HDR_LEN;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     index = CFG_GET_FUNC_INDX(pMsg->type);
 
     if (index >= (sizeof(gCfgFunc) / sizeof(gCfgFunc[0])))
@@ -133,6 +142,9 @@ cfgProcessMbMsg(tpAniSirGlobal pMac, tSirMbMsg *pMsg)
         return;
     }
     len    = pMsg->msgLen - WNI_CFG_MB_HDR_LEN;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pParam = ((tANI_U32*)pMsg) + 1;
 
@@ -167,9 +179,12 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 {
     tANI_S32    i;
 <<<<<<< HEAD
+<<<<<<< HEAD
   #if defined(ANI_PRODUCT_TYPE_AP)
     tANI_U32 ap;
   #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -182,6 +197,7 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     tSirMsgQ    mmhMsg;
 
     // First Dword must contain the AP or STA magic dword
+<<<<<<< HEAD
 <<<<<<< HEAD
     PELOGW(cfgLog(pMac, LOGW, FL("CFG size %d bytes MAGIC dword is 0x%x\n"),
            length, sirReadU32N((tANI_U8*)pParam) );)
@@ -209,12 +225,17 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 
 #endif/* ANI_PRODUCT_TYPE_AP*/
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOGW(cfgLog(pMac, LOGW, FL("CFG size %d bytes MAGIC dword is 0x%x"),
            length, sirReadU32N((tANI_U8*)pParam) );)
 
     // if the string is not correct, return failure
         if (*pParam == CFG_STA_MAGIC_DWORD) {}
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -222,7 +243,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid magic dword 0x%x\n"),sirReadU32N((tANI_U8*)pParam) );)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid magic dword 0x%x"),sirReadU32N((tANI_U8*)pParam) );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid magic dword 0x%x"),sirReadU32N((tANI_U8*)pParam) );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -235,6 +260,7 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 
     // Verify message length
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
     if (ap)
     {
@@ -245,12 +271,15 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 #endif /* (WNI_POLARIS_FW_PRODUCT == AP) */
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         pMac->cfg.gCfgMaxIBufSize = CFG_STA_IBUF_MAX_SIZE;
         pMac->cfg.gCfgMaxSBufSize = CFG_STA_SBUF_MAX_SIZE;
     }
 
     // Parse the Cfg header
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
     tCfgBinHdr hdr;
@@ -270,6 +299,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     pParam += (sizeof(tCfgBinHdr) >> 2);
     PELOGW(cfgLog(pMac, LOGW, FL("CFG hdr totParams %d intParams %d strBufSize %d/%d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+    pHdr = (tpCfgBinHdr) pParam;
+    pParam += (sizeof(tCfgBinHdr) >> 2);
+    PELOGW(cfgLog(pMac, LOGW, FL("CFG hdr totParams %d intParams %d strBufSize %d/%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pHdr->controlSize, pHdr->iBufSize, pHdr->sBufSize, pMac->cfg.gCfgMaxSBufSize);)
 
     expLen = ((CFG_PARAM_MAX_NUM + 3 * pMac->cfg.gCfgMaxIBufSize) << 2) +
@@ -278,7 +312,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     if (length != expLen)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> DNLD_RSP invalid length %d (exp %d)\n"),
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("<CFG> DNLD_RSP invalid length %d (exp %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> DNLD_RSP invalid length %d (exp %d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -291,7 +329,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     if (pHdr->controlSize != CFG_PARAM_MAX_NUM)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Total parameter count mismatch\n"));)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Total parameter count mismatch"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Total parameter count mismatch"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -302,7 +344,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     if (pHdr->iBufSize != pMac->cfg.gCfgMaxIBufSize)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Integer parameter count mismatch\n"));)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Integer parameter count mismatch"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Integer parameter count mismatch"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -317,12 +363,16 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     while (pDst < pDstEnd)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
         *pDst++ = sirReadU32N((tANI_U8*)pSrc);
         pSrc++;
 #else
         *pDst++ = *pSrc++;
 #endif
+=======
+        *pDst++ = *pSrc++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         *pDst++ = *pSrc++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -333,12 +383,16 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     while (pDst < pDstEnd)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
         *pDst++ = sirReadU32N((tANI_U8*)pSrc);
         pSrc++;
 #else
         *pDst++ = *pSrc++;
 #endif
+=======
+        *pDst++ = *pSrc++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         *pDst++ = *pSrc++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -350,12 +404,16 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     while (pDst < pDstEnd)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
         *pDst++ = sirReadU32N((tANI_U8*)pSrc);
         pSrc++;
 #else
         *pDst++ = *pSrc++;
 #endif
+=======
+        *pDst++ = *pSrc++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         *pDst++ = *pSrc++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -367,12 +425,16 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     while (pDst < pDstEnd)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
         *pDst++ = sirReadU32N((tANI_U8*)pSrc);
         pSrc++;
 #else
         *pDst++ = *pSrc++;
 #endif
+=======
+        *pDst++ = *pSrc++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         *pDst++ = *pSrc++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -384,7 +446,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         {
             PELOGE(cfgLog(pMac, LOGE, FL("cfg id %d Invalid def value %d "
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "min %d max %d\n"),
+=======
+                            "min %d max %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             "min %d max %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -406,7 +472,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         pMac->cfg.gCfgSBuf[bufStart] = (tANI_U8)(bufEnd - bufStart - 2);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOG1(cfgLog(pMac, LOG1, FL("id %d max %d bufStart %d bufEnd %d\n"),
+=======
+       PELOG1(cfgLog(pMac, LOG1, FL("id %d max %d bufStart %d bufEnd %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        PELOG1(cfgLog(pMac, LOG1, FL("id %d max %d bufStart %d bufEnd %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -424,6 +494,7 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         if (strSize < 4)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes\n"), strSize);)
             retVal = WNI_CFG_INVALID_LEN;
             goto end;
@@ -436,12 +507,17 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         paramLen = *pSrc & 0xff;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes"), strSize);)
             retVal = WNI_CFG_INVALID_LEN;
             goto end;
         }
         paramId = *pSrc >> 16;
         paramLen = *pSrc & 0xff;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pSrc++;
         strSize -= 4;
@@ -450,8 +526,13 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         if (strSize < paramLenCeil4 << 2)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes\n"), strSize);)
             PELOGE(cfgLog(pMac, LOGE, FL("param id %d len %d bytes\n"), paramId, paramLen);)
+=======
+            PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes"), strSize);)
+            PELOGE(cfgLog(pMac, LOGE, FL("param id %d len %d bytes"), paramId, paramLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes"), strSize);)
             PELOGE(cfgLog(pMac, LOGE, FL("param id %d len %d bytes"), paramId, paramLen);)
@@ -462,6 +543,7 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         for (j=0; j < paramLenCeil4; j++)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
             pStr[4*j]   = (tANI_U8) ((sirReadU32N((tANI_U8*)pSrc) >> 24) & 0xff);
             pStr[4*j+1] = (tANI_U8) ((sirReadU32N((tANI_U8*)pSrc) >> 16) & 0xff);
@@ -470,12 +552,17 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pStr[4*j] = (tANI_U8) (*pSrc >> 24) & 0xff;
             pStr[4*j+1] = (tANI_U8) (*pSrc >> 16) & 0xff;
             pStr[4*j+2] = (tANI_U8) (*pSrc >> 8) & 0xff;
             pStr[4*j+3] = (tANI_U8) (*pSrc) & 0xff;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -484,17 +571,23 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(cfgLog(pMac, LOG1, FL("set str id %d len %d\n"), paramId, paramLen);)
 
         if (cfgSetStr(pMac, (tANI_U16) paramId, pStr, paramLen) != eSIR_SUCCESS)
         {
             PELOGE(cfgLog(pMac, LOGE, FL("Error setting str default param %d len %d\n"), paramId, paramLen);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOG1(cfgLog(pMac, LOG1, FL("set str id %d len %d"), paramId, paramLen);)
 
         if (cfgSetStr(pMac, (tANI_U16) paramId, pStr, paramLen) != eSIR_SUCCESS)
         {
             PELOGE(cfgLog(pMac, LOGE, FL("Error setting str default param %d len %d"), paramId, paramLen);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             retVal = WNI_CFG_INVALID_LEN;
             goto end;
@@ -504,6 +597,7 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     // Set the default log level based on config
     wlan_cfgGetInt(pMac, WNI_CFG_LOG_LEVEL, &logLevel);
     for (i = 0; i < LOG_ENTRY_NUM; i++)
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef LX5280
         pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = LOGE;
@@ -517,12 +611,19 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 =======
         pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = logLevel;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+        pMac->utils.gLogEvtLevel[i] = pMac->utils.gLogDbgLevel[i] = logLevel;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Set status to READY
     pMac->cfg.gCfgStatus = CFG_SUCCESS;
     retVal = WNI_CFG_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(cfgLog(pMac, LOG1, "<CFG> Completed successfully\n");)
+=======
+    PELOG1(cfgLog(pMac, LOG1, "<CFG> Completed successfully");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(cfgLog(pMac, LOG1, "<CFG> Completed successfully");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -534,11 +635,15 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 
     // Send response message to host
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
     sirStoreU32N((tANI_U8 *) &(pMac->cfg.gParamList[WNI_CFG_DNLD_CNF_RES]),  retVal);
 #else
     pMac->cfg.gParamList[WNI_CFG_DNLD_CNF_RES] = retVal;
 #endif
+=======
+    pMac->cfg.gParamList[WNI_CFG_DNLD_CNF_RES] = retVal;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pMac->cfg.gParamList[WNI_CFG_DNLD_CNF_RES] = retVal;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -554,7 +659,11 @@ ProcDnldRsp(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     if (wdaPostCtrlMsg(pMac, &mmhMsg) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("WDAPostMsgApi failed!\n"));)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("WDAPostMsgApi failed!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("WDAPostMsgApi failed!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -591,9 +700,15 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     tANI_U32    *pValue;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(cfgLog(pMac, LOG1, FL("Rcvd cfg get request %d bytes\n"), length);)
     for (i=0; i<length/4; i++)
         PELOG2(cfgLog(pMac, LOG2, FL("[%2d] 0x%08x\n"), i, pParam[i]);)
+=======
+    PELOG1(cfgLog(pMac, LOG1, FL("Rcvd cfg get request %d bytes"), length);)
+    for (i=0; i<length/4; i++)
+        PELOG2(cfgLog(pMac, LOG2, FL("[%2d] 0x%08x"), i, pParam[i]);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(cfgLog(pMac, LOG1, FL("Rcvd cfg get request %d bytes"), length);)
     for (i=0; i<length/4; i++)
@@ -603,6 +718,7 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
     if (!pMac->cfg.gCfgStatus)
     {
         cfgId = (tANI_U16)sirReadU32N((tANI_U8*)pParam);
+<<<<<<< HEAD
 <<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("CFG not ready, param %d\n"), cfgId);)
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
@@ -618,10 +734,15 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         pMac->cfg.gParamList[WNI_CFG_GET_RSP_PLEN] = 0;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(cfgLog(pMac, LOGE, FL("CFG not ready, param %d"), cfgId);)
         pMac->cfg.gParamList[WNI_CFG_GET_RSP_RES]  = WNI_CFG_NOT_READY;
         pMac->cfg.gParamList[WNI_CFG_GET_RSP_PID]  = cfgId;
         pMac->cfg.gParamList[WNI_CFG_GET_RSP_PLEN] = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         cfgSendHostMsg(pMac, WNI_CFG_GET_RSP, WNI_CFG_GET_RSP_PARTIAL_LEN,
                        WNI_CFG_GET_RSP_NUM, pMac->cfg.gParamList, 0, 0);
@@ -631,6 +752,7 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
         // Process all parameter ID's on the list
         while (length >= sizeof(tANI_U32))
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
             cfgId = (tANI_U16)sirReadU32N((tANI_U8*) pParam); pParam++;
@@ -642,11 +764,16 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
 
             PELOG1(cfgLog(pMac, LOG1, FL("Cfg get param %d\n"), cfgId);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             cfgId = (tANI_U16)*pParam++;
             pValue   = 0;
             valueLen = 0;
 
             PELOG1(cfgLog(pMac, LOG1, FL("Cfg get param %d"), cfgId);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             // Check for valid parameter ID, etc...
@@ -673,7 +800,11 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(cfgLog(pMac, LOGE, FL("Check param failed, param %d\n"), cfgId);)
+=======
+                PELOGE(cfgLog(pMac, LOGE, FL("Check param failed, param %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(cfgLog(pMac, LOGE, FL("Check param failed, param %d"), cfgId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -681,6 +812,7 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
             }
 
             // Send response message to host
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
             sirStoreU32N((tANI_U8 *) &(pMac->cfg.gParamList[WNI_CFG_GET_RSP_RES]),
@@ -694,6 +826,11 @@ ProcGetReq(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam)
             pMac->cfg.gParamList[WNI_CFG_GET_RSP_PID]  = cfgId;
             pMac->cfg.gParamList[WNI_CFG_GET_RSP_PLEN] = valueLen;
 #endif
+=======
+            pMac->cfg.gParamList[WNI_CFG_GET_RSP_RES]  = result;
+            pMac->cfg.gParamList[WNI_CFG_GET_RSP_PID]  = cfgId;
+            pMac->cfg.gParamList[WNI_CFG_GET_RSP_PLEN] = valueLen;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pMac->cfg.gParamList[WNI_CFG_GET_RSP_RES]  = result;
             pMac->cfg.gParamList[WNI_CFG_GET_RSP_PID]  = cfgId;
@@ -745,9 +882,15 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
     tANI_U32    value, result;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(cfgLog(pMac, LOGW, FL("Rcvd cfg set request %d bytes\n"), length);)
     //for (i=0; i<length/4; i++)
       //  PELOG2(cfgLog(pMac, LOG2, FL("[%2d] 0x%08x\n"), i, pParam[i]);)
+=======
+    PELOG1(cfgLog(pMac, LOGW, FL("Rcvd cfg set request %d bytes"), length);)
+    //for (i=0; i<length/4; i++)
+      //  PELOG2(cfgLog(pMac, LOG2, FL("[%2d] 0x%08x"), i, pParam[i]);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(cfgLog(pMac, LOGW, FL("Rcvd cfg set request %d bytes"), length);)
     //for (i=0; i<length/4; i++)
@@ -757,6 +900,7 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
     if (!pMac->cfg.gCfgStatus)
     {
         cfgId = (tANI_U16)sirReadU32N((tANI_U8*)pParam);
+<<<<<<< HEAD
 <<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("CFG not ready, param %d"), cfgId);)
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
@@ -768,6 +912,11 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
         pMac->cfg.gParamList[WNI_CFG_SET_CNF_RES] = WNI_CFG_NOT_READY;
         pMac->cfg.gParamList[WNI_CFG_SET_CNF_PID] = cfgId;
 #endif
+=======
+        PELOG1(cfgLog(pMac, LOG1, FL("CFG not ready, param %d"), cfgId);)
+        pMac->cfg.gParamList[WNI_CFG_SET_CNF_RES] = WNI_CFG_NOT_READY;
+        pMac->cfg.gParamList[WNI_CFG_SET_CNF_PID] = cfgId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(cfgLog(pMac, LOG1, FL("CFG not ready, param %d"), cfgId);)
         pMac->cfg.gParamList[WNI_CFG_SET_CNF_RES] = WNI_CFG_NOT_READY;
@@ -785,6 +934,7 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
         while (length >= (sizeof(tANI_U32) * 2))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
             // Get TYPE (cfgID) and LENGTH (length)
             cfgId = (tANI_U16)sirReadU32N((tANI_U8*)pParam);pParam++;
@@ -793,6 +943,10 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
             cfgId    = (tANI_U16) *pParam++;
             valueLen = (tANI_U16) *pParam++;
 #endif
+=======
+            cfgId    = (tANI_U16) *pParam++;
+            valueLen = (tANI_U16) *pParam++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             cfgId    = (tANI_U16) *pParam++;
             valueLen = (tANI_U16) *pParam++;
@@ -812,7 +966,11 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
                     if (valueLen != sizeof(tANI_U32))
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOGE(cfgLog(pMac, LOGE, FL("Invalid value length %d in set param %d (tot %d)\n"),
+=======
+                        PELOGE(cfgLog(pMac, LOGE, FL("Invalid value length %d in set param %d (tot %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOGE(cfgLog(pMac, LOGE, FL("Invalid value length %d in set param %d (tot %d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -822,12 +980,17 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
                     else
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
                         value = sirReadU32N((tANI_U8*) pParam);
 #else
                         value = *pParam;
 #endif
                         PELOG1(cfgLog(pMac, LOGW, FL("Cfg set int %d len %d(%d) val %d\n"),
+=======
+                        value = *pParam;
+                        PELOG1(cfgLog(pMac, LOGW, FL("Cfg set int %d len %d(%d) val %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         value = *pParam;
                         PELOG1(cfgLog(pMac, LOGW, FL("Cfg set int %d len %d(%d) val %d"),
@@ -855,7 +1018,11 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
                     if (valueLenRoundedUp4 > length)
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOGE(cfgLog(pMac, LOGE, FL("Invalid string length %d in set param %d (tot %d)\n"),
+=======
+                        PELOGE(cfgLog(pMac, LOGE, FL("Invalid string length %d in set param %d (tot %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOGE(cfgLog(pMac, LOGE, FL("Invalid string length %d in set param %d (tot %d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -866,7 +1033,11 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
                     {
                         GetStrValue((tANI_U8*)pParam, pMac->cfg.gSBuffer, valueLen);
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOG1(cfgLog(pMac, LOGW, FL("Cfg set str %d len %d(%d) bytes\n"),
+=======
+                        PELOG1(cfgLog(pMac, LOGW, FL("Cfg set str %d len %d(%d) bytes"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOG1(cfgLog(pMac, LOGW, FL("Cfg set str %d len %d(%d) bytes"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -891,7 +1062,11 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(cfgLog(pMac, LOGE, FL("Check param failed, param %d\n"), cfgId);)
+=======
+                PELOGE(cfgLog(pMac, LOGE, FL("Check param failed, param %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(cfgLog(pMac, LOGE, FL("Check param failed, param %d"), cfgId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -899,6 +1074,7 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
             }
 
             // Send confirm message to host
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX)
             sirStoreU32N((tANI_U8 *) &(pMac->cfg.gParamList[WNI_CFG_SET_CNF_RES]),
@@ -913,6 +1089,10 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
             pMac->cfg.gParamList[WNI_CFG_SET_CNF_RES] = result;
             pMac->cfg.gParamList[WNI_CFG_SET_CNF_PID] = cfgId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+            pMac->cfg.gParamList[WNI_CFG_SET_CNF_RES] = result;
+            pMac->cfg.gParamList[WNI_CFG_SET_CNF_PID] = cfgId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if( fRsp )
             {
                 cfgSendHostMsg(pMac, WNI_CFG_SET_CNF, WNI_CFG_SET_CNF_LEN,
@@ -921,7 +1101,11 @@ ProcSetReqInternal(tpAniSirGlobal pMac, tANI_U16 length, tANI_U32 *pParam, tANI_
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGW(cfgLog( pMac, LOG2, "  CFGID %d no rsp\n", cfgId);)
+=======
+                PELOGW(cfgLog( pMac, LOG2, "  CFGID %d no rsp", cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGW(cfgLog( pMac, LOG2, "  CFGID %d no rsp", cfgId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -986,7 +1170,11 @@ CheckParam(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 flag, tANI_U32 failedRe
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid param id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid param id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid param id %d"), cfgId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -998,7 +1186,11 @@ CheckParam(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 flag, tANI_U32 failedRe
         if ((pMac->cfg.gCfgEntry[cfgId].control & CFG_CTL_VALID) == 0)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(cfgLog(pMac, LOGE, FL("Param id %d not valid\n"), cfgId);)
+=======
+            PELOGE(cfgLog(pMac, LOGE, FL("Param id %d not valid"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(cfgLog(pMac, LOGE, FL("Param id %d not valid"), cfgId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1010,7 +1202,11 @@ CheckParam(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 flag, tANI_U32 failedRe
             if ((pMac->cfg.gCfgEntry[cfgId].control & flag) == 0)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(cfgLog(pMac, LOGE, FL("Param id %d wrong permissions %x\n"),
+=======
+                PELOGE(cfgLog(pMac, LOGE, FL("Param id %d wrong permissions %x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(cfgLog(pMac, LOGE, FL("Param id %d wrong permissions %x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1091,7 +1287,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
 
     // First Dword must contain the AP or STA magic dword
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGW(cfgLog(pMac, LOGW, FL("CFG size %d bytes MAGIC dword is 0x%x\n"),
+=======
+    PELOGW(cfgLog(pMac, LOGW, FL("CFG size %d bytes MAGIC dword is 0x%x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGW(cfgLog(pMac, LOGW, FL("CFG size %d bytes MAGIC dword is 0x%x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1101,7 +1301,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
     if (CFG_STA_MAGIC_DWORD != *pConfig)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid magic dword 0x%x\n"),
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid magic dword 0x%x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid magic dword 0x%x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1122,7 +1326,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
     pConfig += (sizeof(tCfgBinHdr) >> 2);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGW(cfgLog(pMac, LOGW, FL("CFG hdr totParams %d intParams %d strBufSize %d/%d\n"),
+=======
+    PELOGW(cfgLog(pMac, LOGW, FL("CFG hdr totParams %d intParams %d strBufSize %d/%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGW(cfgLog(pMac, LOGW, FL("CFG hdr totParams %d intParams %d strBufSize %d/%d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1135,7 +1343,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
     if (length != expLen)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> DNLD_RSP invalid length %d (exp %d)\n"),
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("<CFG> DNLD_RSP invalid length %d (exp %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> DNLD_RSP invalid length %d (exp %d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1148,7 +1360,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
     if (CFG_PARAM_MAX_NUM != pHdr->controlSize )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Total parameter count mismatch\n"));)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Total parameter count mismatch"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Total parameter count mismatch"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1159,7 +1375,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
     if (pHdr->iBufSize != pMac->cfg.gCfgMaxIBufSize)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Integer parameter count mismatch\n"));)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Integer parameter count mismatch"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(cfgLog(pMac, LOGE, FL("<CFG> Integer parameter count mismatch"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1207,7 +1427,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
         {
             PELOGE(cfgLog(pMac, LOGE, FL("cfg id %d Invalid def value %d "
 <<<<<<< HEAD
+<<<<<<< HEAD
                              "min %d max %d\n"),
+=======
+                             "min %d max %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              "min %d max %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1230,7 +1454,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
         pMac->cfg.gCfgSBuf[bufStart] = (tANI_U8)(bufEnd - bufStart - 2);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(cfgLog(pMac, LOG1, FL("id %d max %d bufStart %d bufEnd %d\n"),
+=======
+        PELOG1(cfgLog(pMac, LOG1, FL("id %d max %d bufStart %d bufEnd %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(cfgLog(pMac, LOG1, FL("id %d max %d bufStart %d bufEnd %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1248,7 +1476,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
         if (strSize < 4)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes\n"),
+=======
+            PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d bytes"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1267,8 +1499,13 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
         {
             PELOGE(cfgLog(pMac, LOGE, FL("Error parsing str defaults, rem %d"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                             "bytes\n"), strSize);)
             PELOGE(cfgLog(pMac, LOGE, FL("param id %d len %d bytes\n"),
+=======
+                                                            "bytes"), strSize);)
+            PELOGE(cfgLog(pMac, LOGE, FL("param id %d len %d bytes"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                                             "bytes"), strSize);)
             PELOGE(cfgLog(pMac, LOGE, FL("param id %d len %d bytes"),
@@ -1290,7 +1527,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(cfgLog(pMac, LOG1, FL("set str id %d len %d\n"), paramId, paramLen);)
+=======
+        PELOG1(cfgLog(pMac, LOG1, FL("set str id %d len %d"), paramId, paramLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(cfgLog(pMac, LOG1, FL("set str id %d len %d"), paramId, paramLen);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1299,7 +1540,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
         {
             PELOGE(cfgLog(pMac, LOGE, FL("Error setting str default param %d "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                 "len %d\n"), paramId, paramLen);)
+=======
+                                                "len %d"), paramId, paramLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                                 "len %d"), paramId, paramLen);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1317,7 +1562,11 @@ processCfgDownloadReq(tpAniSirGlobal pMac, tANI_U16 length,
     pMac->cfg.gCfgStatus = CFG_SUCCESS;
     retVal = WNI_CFG_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(cfgLog(pMac, LOG1, "<CFG> Completed successfully\n");)
+=======
+    PELOG1(cfgLog(pMac, LOG1, "<CFG> Completed successfully");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(cfgLog(pMac, LOG1, "<CFG> Completed successfully");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -53,7 +59,10 @@
   
   ==========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -73,9 +82,12 @@
 #include <aniGlobal.h>
 #include <halTypes.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include <halHddApis.h>
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <net/ieee80211_radiotap.h>
@@ -96,6 +108,7 @@
 static void hdd_softap_dump_sk_buff(struct sk_buff * skb)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: head = %p ", __FUNCTION__, skb->head);
   //VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: data = %p ", __FUNCTION__, skb->data);
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: tail = %p ", __FUNCTION__, skb->tail);
@@ -104,6 +117,8 @@ static void hdd_softap_dump_sk_buff(struct sk_buff * skb)
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: data_len = %d ", __FUNCTION__, skb->data_len);
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: mac_len = %d\n", __FUNCTION__, skb->mac_len);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: head = %p ", __func__, skb->head);
   //VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: data = %p ", __func__, skb->data);
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: tail = %p ", __func__, skb->tail);
@@ -111,6 +126,9 @@ static void hdd_softap_dump_sk_buff(struct sk_buff * skb)
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: len = %d ", __func__, skb->len);
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: data_len = %d ", __func__, skb->data_len);
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: mac_len = %d\n", __func__, skb->mac_len);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x ", 
@@ -122,7 +140,10 @@ static void hdd_softap_dump_sk_buff(struct sk_buff * skb)
 }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 extern void hdd_set_wlan_suspend_mode(bool suspend);
 
@@ -237,6 +258,9 @@ VOS_STATUS hdd_stop_trafficMonitor( hdd_adapter_t *pAdapter )
     return status;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**============================================================================
   @brief hdd_softap_flush_tx_queues() - Utility function to flush the TX queues
@@ -328,7 +352,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: enter", __FUNCTION__);
+=======
+              "%s: enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -346,7 +374,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: BC/MC packet\n", __FUNCTION__);
+=======
+              "%s: BC/MC packet\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: BC/MC packet\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -357,8 +389,13 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
       if (STAId == HDD_WLAN_INVALID_STA_ID)
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
                     "%s: Failed to find right station", __FUNCTION__);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
+                    "%s: Failed to find right station", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
                     "%s: Failed to find right station", __func__);
@@ -371,7 +408,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
       else if (FALSE == pAdapter->aStaInfo[STAId].isUsed )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: STA is unregistered", __FUNCTION__, STAId);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,"%s: STA %d is unregistered", __func__, STAId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,"%s: STA %d is unregistered", __func__, STAId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -385,8 +426,13 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
            (WLANTL_STA_AUTHENTICATED != pAdapter->aStaInfo[STAId].tlSTAState) )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
                     "%s: Station not connected yet", __FUNCTION__);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
+                    "%s: Station not connected yet", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
                     "%s: Station not connected yet", __func__);
@@ -401,8 +447,13 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
         if(ntohs(skb->protocol) != HDD_ETHERTYPE_802_1_X)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: NON-EAPOL packet in non-Authenticated state", __FUNCTION__);
+=======
+            VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
+                       "%s: NON-EAPOL packet in non-Authenticated state", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
                        "%s: NON-EAPOL packet in non-Authenticated state", __func__);
@@ -424,7 +475,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: Classified as ac %d up %d", __FUNCTION__, ac, up);
+=======
+              "%s: Classified as ac %d up %d", __func__, ac, up);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: Classified as ac %d up %d", __func__, ac, up);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -436,8 +491,13 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
     if(pktListSize >= pAdapter->aTxQueueLimit[ac])
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
             "%s: station %d ac %d queue over limit %d \n", __FUNCTION__, STAId, ac, pktListSize); 
+=======
+       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
+            "%s: station %d ac %d queue over limit %d \n", __func__, STAId, ac, pktListSize); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
             "%s: station %d ac %d queue over limit %d \n", __func__, STAId, ac, pktListSize); 
@@ -453,7 +513,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
        VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN, 
                   "%s: TX queue full for AC=%d Disable OS TX queue", 
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, ac );
+=======
+                  __func__, ac );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, ac );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -479,7 +543,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
    if ( !VOS_IS_STATUS_SUCCESS( status ) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s:Insert Tx queue failed. Pkt dropped", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,"%s:Insert Tx queue failed. Pkt dropped", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,"%s:Insert Tx queue failed. Pkt dropped", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -501,8 +569,13 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
       if ( !VOS_IS_STATUS_SUCCESS( status ) )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR, "%s: Failed to signal TL for AC=%d STAId =%d", 
                     __FUNCTION__, ac, STAId );
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN, "%s: Failed to signal TL for AC=%d STAId =%d", 
+                    __func__, ac, STAId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN, "%s: Failed to signal TL for AC=%d STAId =%d", 
                     __func__, ac, STAId );
@@ -523,7 +596,11 @@ int hdd_softap_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
    dev->trans_start = jiffies;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW, "%s: exit \n", __FUNCTION__);
+=======
+   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW, "%s: exit \n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW, "%s: exit \n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -560,7 +637,11 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
 
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: enter", __FUNCTION__);
+=======
+              "%s: enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -569,8 +650,13 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
    if ( FALSE == pAdapter->aStaInfo[STAId].isUsed )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
                  "%s: STA is unregistered", __FUNCTION__, STAId );
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
+                 "%s: STA %d is unregistered", __func__, STAId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
                  "%s: STA %d is unregistered", __func__, STAId );
@@ -588,7 +674,11 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
    ++pAdapter->hdd_stats.hddTxRxStats.txXmitClassifiedAC[ac];
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: Classified as ac %d up %d", __FUNCTION__, ac, up);
+=======
+              "%s: Classified as ac %d up %d", __func__, ac, up);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: Classified as ac %d up %d", __func__, ac, up);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -612,8 +702,13 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
        pktListSize >= pAdapter->aTxQueueLimit[ac])
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
             "%s: station %d ac %d queue over limit %d \n", __FUNCTION__, STAId, ac, pktListSize); 
+=======
+       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
+            "%s: station %d ac %d queue over limit %d \n", __func__, STAId, ac, pktListSize); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,
             "%s: station %d ac %d queue over limit %d \n", __func__, STAId, ac, pktListSize); 
@@ -633,7 +728,11 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
    if ( !VOS_IS_STATUS_SUCCESS( status ) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s:Insert Tx queue failed. Pkt dropped", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,"%s:Insert Tx queue failed. Pkt dropped", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN,"%s:Insert Tx queue failed. Pkt dropped", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -652,7 +751,11 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
    {
       //Let TL know we have a packet to send for this AC
 <<<<<<< HEAD
+<<<<<<< HEAD
       //VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s:Indicating Packet to TL", __FUNCTION__);
+=======
+      //VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s:Indicating Packet to TL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       //VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s:Indicating Packet to TL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -661,8 +764,13 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
       if ( !VOS_IS_STATUS_SUCCESS( status ) )
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR, "%s: Failed to signal TL for AC=%d STAId =%d", 
                     __FUNCTION__, ac, STAId );
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN, "%s: Failed to signal TL for AC=%d STAId =%d", 
+                    __func__, ac, STAId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_WARN, "%s: Failed to signal TL for AC=%d STAId =%d", 
                     __func__, ac, STAId );
@@ -683,7 +791,11 @@ VOS_STATUS hdd_softap_sta_2_sta_xmit(struct sk_buff *skb,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW, "%s: exit \n", __FUNCTION__);
+=======
+   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW, "%s: exit \n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW, "%s: exit \n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -705,7 +817,11 @@ void hdd_softap_tx_timeout(struct net_device *dev)
 {
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "%s: Transmission timeout occurred", __FUNCTION__);
+=======
+      "%s: Transmission timeout occurred", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       "%s: Transmission timeout occurred", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -783,13 +899,19 @@ VOS_STATUS hdd_softap_init_tx_rx( hdd_adapter_t *pAdapter )
    WLANTL_SetACWeights((WLAN_HDD_GET_CTX(pAdapter))->pvosContext, pACWeights);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (VOS_STATUS_SUCCESS != hdd_start_trafficMonitor(pAdapter))
    {
        VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
           "%s: failed to start Traffic Monito timer ", __func__ );
        return VOS_STATUS_E_INVAL;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -807,7 +929,10 @@ VOS_STATUS hdd_softap_deinit_tx_rx( hdd_adapter_t *pAdapter )
    VOS_STATUS status = VOS_STATUS_SUCCESS;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (VOS_STATUS_SUCCESS != hdd_stop_trafficMonitor(pAdapter))
    {
        VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
@@ -815,6 +940,9 @@ VOS_STATUS hdd_softap_deinit_tx_rx( hdd_adapter_t *pAdapter )
        return VOS_STATUS_E_INVAL;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = hdd_softap_flush_tx_queues(pAdapter);
 
@@ -888,7 +1016,11 @@ VOS_STATUS hdd_softap_init_tx_rx_sta( hdd_adapter_t *pAdapter, v_U8_t STAId, v_M
    if (pAdapter->aStaInfo[STAId].isUsed)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR, "%s: Reinit station %d", __FUNCTION__, STAId );
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR, "%s: Reinit station %d", __func__, STAId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR, "%s: Reinit station %d", __func__, STAId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -904,6 +1036,10 @@ VOS_STATUS hdd_softap_init_tx_rx_sta( hdd_adapter_t *pAdapter, v_U8_t STAId, v_M
 
    pAdapter->aStaInfo[STAId].isUsed = TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   pAdapter->aStaInfo[STAId].isDeauthInProgress = FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pAdapter->aStaInfo[STAId].isDeauthInProgress = FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -938,7 +1074,11 @@ VOS_STATUS hdd_softap_deinit_tx_rx_sta ( hdd_adapter_t *pAdapter, v_U8_t STAId )
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Deinit station not inited %d", __FUNCTION__, STAId );
+=======
+                 "%s: Deinit station not inited %d", __func__, STAId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Deinit station not inited %d", __func__, STAId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -950,6 +1090,10 @@ VOS_STATUS hdd_softap_deinit_tx_rx_sta ( hdd_adapter_t *pAdapter, v_U8_t STAId )
 
    pAdapter->aStaInfo[STAId].isUsed = FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   pAdapter->aStaInfo[STAId].isDeauthInProgress = FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pAdapter->aStaInfo[STAId].isDeauthInProgress = FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -979,7 +1123,11 @@ VOS_STATUS hdd_softap_deinit_tx_rx_sta ( hdd_adapter_t *pAdapter, v_U8_t STAId )
          {
             VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: TX queue re-enabled", __FUNCTION__);
+=======
+                       "%s: TX queue re-enabled", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: TX queue re-enabled", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1028,7 +1176,11 @@ VOS_STATUS hdd_softap_tx_complete_cbk( v_VOID_t *vosContext,
    if( ( NULL == vosContext ) || ( NULL == pVosPacket )  )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1041,7 +1193,11 @@ VOS_STATUS hdd_softap_tx_complete_cbk( v_VOID_t *vosContext,
    {
       //This is bad but still try to free the VOSS resources if we can
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1054,7 +1210,11 @@ VOS_STATUS hdd_softap_tx_complete_cbk( v_VOID_t *vosContext,
    if(pAdapter == NULL)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1071,7 +1231,11 @@ VOS_STATUS hdd_softap_tx_complete_cbk( v_VOID_t *vosContext,
    if(!VOS_IS_STATUS_SUCCESS( status ))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Could not return VOS packet to the pool", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Could not return VOS packet to the pool", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Could not return VOS packet to the pool", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1120,7 +1284,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
         ( NULL == pPktMetaInfo ) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null Params being passed", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null Params being passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null Params being passed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1132,7 +1300,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    if ( NULL == pHddCtx )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1146,8 +1318,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       return VOS_STATUS_E_FAILURE;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Monitor traffic */
    if ( pHddCtx->cfg_ini->enableTrafficMonitor )
    {
@@ -1168,6 +1343,9 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       }
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ++pAdapter->hdd_stats.hddTxRxStats.txFetched;
 
@@ -1176,7 +1354,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invalid STAId %d passed by TL", __FUNCTION__, STAId);
+=======
+                 "%s: Invalid STAId %d passed by TL", __func__, STAId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invalid STAId %d passed by TL", __func__, STAId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1187,7 +1369,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Unregistered STAId %d passed by TL", __FUNCTION__, STAId);
+=======
+                 "%s: Unregistered STAId %d passed by TL", __func__, STAId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Unregistered STAId %d passed by TL", __func__, STAId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1201,7 +1387,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invalid AC %d passed by TL", __FUNCTION__, ac);
+=======
+                 "%s: Invalid AC %d passed by TL", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invalid AC %d passed by TL", __func__, ac);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1212,7 +1402,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
 
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: AC %d passed by TL", __FUNCTION__, ac);
+=======
+              "%s: AC %d passed by TL", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: AC %d passed by TL", __func__, ac);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1232,7 +1426,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchLowResources;
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: VOSS in Low Resource scenario", __FUNCTION__);
+=======
+                 "%s: VOSS in Low Resource scenario", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: VOSS in Low Resource scenario", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1258,7 +1456,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
 
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: AC %d has packets pending", __FUNCTION__, ac);
+=======
+                       "%s: AC %d has packets pending", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: AC %d has packets pending", __func__, ac);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1275,7 +1477,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
                  "%s: Error in de-queuing skb from Tx queue status = %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, status );
+=======
+                 __func__, status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1289,7 +1495,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Error attaching skb", __FUNCTION__);
+=======
+                 "%s: Error attaching skb", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Error attaching skb", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1305,7 +1515,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: VOS packet returned by VOSS is NULL", __FUNCTION__);
+=======
+                 "%s: VOS packet returned by VOSS is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: VOS packet returned by VOSS is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1339,7 +1553,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       {
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_HIGH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: VOS packet is EAPOL packet", __FUNCTION__);
+=======
+                    "%s: VOS packet is EAPOL packet", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: VOS packet is EAPOL packet", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1348,6 +1566,7 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    }
  
 //xg: @@@@: temporarily disble these. will revisit later
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef WLAN_SOFTAP_FEATURE
    if(pAdapter->conn_info.uIsAuthenticated == VOS_TRUE)
@@ -1364,6 +1583,8 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    }
    else
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
@@ -1386,7 +1607,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: TX queue re-enabled", __FUNCTION__);
+=======
+                 "%s: TX queue re-enabled", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: TX queue re-enabled", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1410,7 +1635,11 @@ VOS_STATUS hdd_softap_tx_fetch_packet_cbk( v_VOID_t *vosContext,
 
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: Valid VOS PKT returned to TL", __FUNCTION__);
+=======
+              "%s: Valid VOS PKT returned to TL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: Valid VOS PKT returned to TL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1443,7 +1672,11 @@ VOS_STATUS hdd_softap_tx_low_resource_cbk( vos_pkt_t *pVosPacket,
    if(pAdapter == NULL)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1477,7 +1710,11 @@ VOS_STATUS hdd_softap_tx_low_resource_cbk( vos_pkt_t *pVosPacket,
                if( !VOS_IS_STATUS_SUCCESS( status ) )
                {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure in indicating pkt to TL for ac=%d", __FUNCTION__,i); 
+=======
+                  VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure in indicating pkt to TL for ac=%d", __func__,i); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure in indicating pkt to TL for ac=%d", __func__,i); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1522,7 +1759,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
         ( NULL == pRxMetaInfo ) )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1533,7 +1774,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
    if ( NULL == pHddCtx )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1547,8 +1792,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
       return VOS_STATUS_E_FAILURE;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Monitor traffic */
    if ( pHddCtx->cfg_ini->enableTrafficMonitor )
    {
@@ -1569,6 +1817,9 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
       }
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ++pAdapter->hdd_stats.hddTxRxStats.rxChains;
 
@@ -1585,7 +1836,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
       {
          ++pAdapter->hdd_stats.hddTxRxStats.rxDropped;
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure walking packet chain", __FUNCTION__);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure walking packet chain", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure walking packet chain", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1599,7 +1854,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
       {
          ++pAdapter->hdd_stats.hddTxRxStats.rxDropped;
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __FUNCTION__);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1639,7 +1898,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
          {
              VOS_TRACE(VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: skb allocation fails", __FUNCTION__);
+=======
+                      "%s: skb allocation fails", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "%s: skb allocation fails", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1653,6 +1916,7 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
       {
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                           "%s: send one packet to kernel \n", __FUNCTION__);
 
          skb->protocol = eth_type_trans(skb, skb->dev);
@@ -1660,6 +1924,8 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
 #ifdef WLAN_FEATURE_HOLD_RX_WAKELOCK
          wake_lock_timeout(&pHddCtx->rx_wake_lock, HDD_WAKE_LOCK_DURATION);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           "%s: send one packet to kernel \n", __func__);
 
          skb->protocol = eth_type_trans(skb, skb->dev);
@@ -1668,6 +1934,9 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
 #ifdef WLAN_FEATURE_HOLD_RX_WAKELOCK
          wake_lock_timeout(&pHddCtx->rx_wake_lock, msecs_to_jiffies(HDD_WAKE_LOCK_DURATION));
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
          rxstat = netif_rx_ni(skb);
@@ -1701,7 +1970,11 @@ VOS_STATUS hdd_softap_rx_packet_cbk( v_VOID_t *vosContext,
    if(!VOS_IS_STATUS_SUCCESS( status ))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure returning vos pkt", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure returning vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,"%s: Failure returning vos pkt", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1716,12 +1989,15 @@ VOS_STATUS hdd_softap_DeregisterSTA( hdd_adapter_t *pAdapter, tANI_U8 staId )
 {
     VOS_STATUS vosStatus = VOS_STATUS_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
     hdd_context_t *pHddCtx = pAdapter->pHddCtx;
 
     //Clear station in TL and then update HDD data structures. This helps 
     //to block RX frames from other station to this station.
     vosStatus = WLANTL_ClearSTAClient( (WLAN_HDD_GET_CTX(pAdapter))->pvosContext, staId );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_context_t *pHddCtx;
     if (NULL == pAdapter)
     {
@@ -1741,6 +2017,9 @@ VOS_STATUS hdd_softap_DeregisterSTA( hdd_adapter_t *pAdapter, tANI_U8 staId )
     //Clear station in TL and then update HDD data structures. This helps 
     //to block RX frames from other station to this station.
     vosStatus = WLANTL_ClearSTAClient( pHddCtx->pvosContext, staId );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( !VOS_IS_STATUS_SUCCESS( vosStatus ) )
     {
@@ -1776,7 +2055,11 @@ VOS_STATUS hdd_softap_RegisterSTA( hdd_adapter_t *pAdapter,
 {
    VOS_STATUS vosStatus = VOS_STATUS_E_FAILURE;
 <<<<<<< HEAD
+<<<<<<< HEAD
    WLAN_STADescType staDesc;   
+=======
+   WLAN_STADescType staDesc = {0};   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLAN_STADescType staDesc = {0};   
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1840,6 +2123,7 @@ VOS_STATUS hdd_softap_RegisterSTA( hdd_adapter_t *pAdapter,
    vosStatus = hdd_softap_init_tx_rx_sta(pAdapter, staId, &staDesc.vSTAMACAddress);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    staDesc.ucQosEnabled = fWmmEnabled;
 #else
@@ -1856,6 +2140,9 @@ VOS_STATUS hdd_softap_RegisterSTA( hdd_adapter_t *pAdapter,
 =======
    staDesc.ucQosEnabled = fWmmEnabled;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   staDesc.ucQosEnabled = fWmmEnabled;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
               "HDD SOFTAP register TL QoS_enabled=%d",
               staDesc.ucQosEnabled );
@@ -1863,6 +2150,7 @@ VOS_STATUS hdd_softap_RegisterSTA( hdd_adapter_t *pAdapter,
    staDesc.ucProtectedFrame = (v_U8_t)fPrivacyBit ;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
    /* Enable UMA for TX translation only when there is no concurrent session active */
@@ -1889,6 +2177,11 @@ VOS_STATUS hdd_softap_RegisterSTA( hdd_adapter_t *pAdapter,
    staDesc.ucSwFrameTXXlation = 1;
    staDesc.ucSwFrameRXXlation = 1;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   // For PRIMA UMA frame translation is not enable yet.
+   staDesc.ucSwFrameTXXlation = 1;
+   staDesc.ucSwFrameRXXlation = 1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    staDesc.ucAddRmvLLC = 1;
 
    // Initialize signatures and state
@@ -1898,6 +2191,11 @@ VOS_STATUS hdd_softap_RegisterSTA( hdd_adapter_t *pAdapter,
       WLANTL_STA_CONNECTED : WLANTL_STA_AUTHENTICATED;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   staDesc.ucIsReplayCheckValid = VOS_FALSE;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    staDesc.ucIsReplayCheckValid = VOS_FALSE;
 
@@ -1996,7 +2294,11 @@ VOS_STATUS hdd_softap_stop_bss( hdd_adapter_t *pAdapter)
     {
         VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Failed to deregister BC sta Id %d", __FUNCTION__, (WLAN_HDD_GET_AP_CTX_PTR(pAdapter))->uBCStaId);
+=======
+                   "%s: Failed to deregister BC sta Id %d", __func__, (WLAN_HDD_GET_AP_CTX_PTR(pAdapter))->uBCStaId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Failed to deregister BC sta Id %d", __func__, (WLAN_HDD_GET_AP_CTX_PTR(pAdapter))->uBCStaId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2011,7 +2313,11 @@ VOS_STATUS hdd_softap_stop_bss( hdd_adapter_t *pAdapter)
         {
             VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Failed to deregister sta Id %d", __FUNCTION__, staId);
+=======
+                       "%s: Failed to deregister sta Id %d", __func__, staId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Failed to deregister sta Id %d", __func__, staId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2026,6 +2332,7 @@ VOS_STATUS hdd_softap_change_STA_state( hdd_adapter_t *pAdapter, v_MACADDR_t *pD
     v_U8_t ucSTAId = WLAN_MAX_STA_COUNT;
     VOS_STATUS vosStatus = eHAL_STATUS_SUCCESS;
     v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pAdapter))->pvosContext;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     tHalHandle hHalHandle = (tHalHandle ) vos_get_context(VOS_MODULE_ID_HAL, pVosContext);
@@ -2058,6 +2365,8 @@ VOS_STATUS hdd_softap_change_STA_state( hdd_adapter_t *pAdapter, v_MACADDR_t *pD
     }
 #endif //FEATURE_WLAN_NON_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
                "%s: enter", __func__);
@@ -2068,13 +2377,20 @@ VOS_STATUS hdd_softap_change_STA_state( hdd_adapter_t *pAdapter, v_MACADDR_t *pD
                     "%s: Failed to find right station", __func__);
         return VOS_STATUS_E_FAILURE;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (FALSE == vos_is_macaddr_equal(&pAdapter->aStaInfo[ucSTAId].macAddrSTA, pDestMacAddress))
     {
          VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: Station MAC address does not matching", __FUNCTION__);
+=======
+                    "%s: Station MAC address does not matching", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: Station MAC address does not matching", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2084,7 +2400,11 @@ VOS_STATUS hdd_softap_change_STA_state( hdd_adapter_t *pAdapter, v_MACADDR_t *pD
     vosStatus = WLANTL_ChangeSTAState( pVosContext, ucSTAId, state );
     VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: change station to state %d succeed", __FUNCTION__, state);
+=======
+                   "%s: change station to state %d succeed", __func__, state);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: change station to state %d succeed", __func__, state);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2096,7 +2416,11 @@ VOS_STATUS hdd_softap_change_STA_state( hdd_adapter_t *pAdapter, v_MACADDR_t *pD
 
     VOS_TRACE(VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                      "%s exit\n",__FUNCTION__);
+=======
+                                     "%s exit\n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                      "%s exit\n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2123,8 +2447,11 @@ VOS_STATUS hdd_softap_GetStaId(hdd_adapter_t *pAdapter, v_MACADDR_t *pMacAddress
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif //WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS hdd_softap_GetConnectedStaId(hdd_adapter_t *pAdapter, v_U8_t *staId)
 {
     v_U8_t i;
@@ -2140,4 +2467,7 @@ VOS_STATUS hdd_softap_GetConnectedStaId(hdd_adapter_t *pAdapter, v_U8_t *staId)
 
     return VOS_STATUS_E_FAILURE;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

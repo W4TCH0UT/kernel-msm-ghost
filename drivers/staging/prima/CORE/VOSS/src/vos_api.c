@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,6 +50,7 @@
 
 /**=========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   \file  vos_api.c
 
@@ -53,10 +60,15 @@
    
    Qualcomm Confidential and Proprietary.
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \file  vos_api.c
 
   \brief Stub file for all virtual Operating System Services (vOSS) APIs
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
   ========================================================================*/
@@ -81,12 +93,15 @@
   Include Files
   ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "aniGlobal.h"
 #include "halTypes.h"
 #include "wlan_qct_sal.h"
 #include "wlan_qct_bal.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <vos_mq.h>
@@ -106,11 +121,17 @@
 #include "wlan_hdd_main.h"
 #include <linux/vmalloc.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 #ifdef WLAN_SOFTAP_FEATURE
 #include "sapApi.h"
 #endif
+=======
+#include "wlan_hdd_cfg80211.h"
+
+#include "sapApi.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wlan_hdd_cfg80211.h"
 
@@ -139,6 +160,12 @@
 #define VOS_WDA_STOP_TIMEOUT WDA_STOP_TIMEOUT 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/* Approximate amount of time to wait for WDA to issue a DUMP req */
+#define VOS_WDA_RESP_TIMEOUT WDA_STOP_TIMEOUT
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /* Approximate amount of time to wait for WDA to issue a DUMP req */
 #define VOS_WDA_RESP_TIMEOUT WDA_STOP_TIMEOUT
@@ -156,9 +183,12 @@ static pVosContextType gpVosContext;
 v_VOID_t vos_sys_probe_thread_cback ( v_VOID_t *pUserData );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 v_VOID_t vos_sys_start_complete_cback  ( v_VOID_t *pUserData );
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_VOID_t vos_core_return_msg(v_PVOID_t pVContext, pVosMsgWrapper pMsgWrapper);
@@ -166,9 +196,12 @@ v_VOID_t vos_core_return_msg(v_PVOID_t pVContext, pVosMsgWrapper pMsgWrapper);
 v_VOID_t vos_fetch_tl_cfg_parms ( WLANTL_ConfigInfoType *pTLConfig, 
     hdd_config_t * pConfig );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 VOS_STATUS vos_get_fwbinary( v_VOID_t **ppBinary, v_SIZE_t *pNumBytes );
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -325,7 +358,10 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
       return VOS_STATUS_E_FAILURE;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (vos_event_init( &(gpVosContext->wdaCompleteEvent) ) != VOS_STATUS_SUCCESS )
@@ -338,6 +374,7 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    /* Saving the HDD context */
    /* This is saved in hdd_wlan_start_up before calling vos_open
       gpVosContext->pHDDContext = pHddContext;*/
@@ -347,6 +384,8 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
    
 #endif
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Initialize the free message queue */
@@ -359,11 +398,15 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
                 "%s: Failed to initialize VOS free message queue", __func__);
       VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
       goto err_probe_event;
 #else
       goto err_wda_complete_event;
 #endif
+=======
+      goto err_wda_complete_event;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto err_wda_complete_event;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -376,6 +419,7 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
       INIT_LIST_HEAD(&gpVosContext->aMsgWrappers[iter].msgNode);
       vos_mq_put(&gpVosContext->freeVosMq, &(gpVosContext->aMsgWrappers[iter]));
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
    /* Initialize here the VOS Packet sub module */
@@ -393,6 +437,8 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
 #endif   
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Now Open the VOS Scheduler */
    vStatus= vos_sched_open(gpVosContext, &gpVosContext->vosSched,
@@ -405,6 +451,7 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
                 "%s: Failed to open VOS Scheduler", __func__);
       VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
       goto err_packet_close;
 #else
@@ -413,6 +460,11 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
    }
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+      goto err_msg_queue;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto err_msg_queue;
    }
@@ -454,7 +506,10 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
       goto err_wda_close;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -468,11 +523,15 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
                 "%s: Failed to open SYS module", __func__);
       VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
       goto err_sched_close;
 #else
       goto err_packet_close;
 #endif
+=======
+      goto err_packet_close;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto err_packet_close;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -488,6 +547,7 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
                 "%s: Failed to initialize the NV module", __func__);
      goto err_sys_close;
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
    /* Probe the MC thread */
@@ -518,6 +578,8 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* If we arrive here, both threads dispacthing messages correctly */
    
@@ -538,11 +600,17 @@ VOS_STATUS vos_open( v_CONTEXT_t *pVosContext, v_SIZE_t hddContextSize )
      goto err_nv_close;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* call crda before sme_Open which will read NV and store the default country code */
    wlan_hdd_get_crda_regd_entry(
       ((hdd_context_t*)(gpVosContext->pHDDContext))->wiphy,
       ((hdd_context_t*)(gpVosContext->pHDDContext))->cfg_ini);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Now proceed to open the SME */
@@ -591,7 +659,10 @@ err_sys_close:
    sysClose(gpVosContext);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 err_packet_close:
@@ -600,7 +671,10 @@ err_packet_close:
 err_wda_close:
    WDA_close(gpVosContext);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -608,10 +682,13 @@ err_sched_close:
    vos_sched_close(gpVosContext);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 err_packet_close:
    vos_packet_close( gpVosContext );
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -619,10 +696,15 @@ err_msg_queue:
    vos_mq_deinit(&gpVosContext->freeVosMq);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 err_wda_complete_event:
    vos_event_destroy( &gpVosContext->wdaCompleteEvent );
 #endif
+=======
+err_wda_complete_event:
+   vos_event_destroy( &gpVosContext->wdaCompleteEvent );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 err_wda_complete_event:
    vos_event_destroy( &gpVosContext->wdaCompleteEvent );
@@ -636,7 +718,10 @@ err_probe_event:
 } /* vos_open() */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
@@ -731,7 +816,10 @@ VOS_STATUS vos_preStart( v_CONTEXT_t vosContext )
    return VOS_STATUS_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -775,10 +863,13 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
   pVosContextType pVosContext = (pVosContextType)vosContext;
   tHalMacStartParameters halStartParams;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
   v_VOID_t *pFwBinary = NULL;
   v_SIZE_t  numFwBytes = 0;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -789,6 +880,7 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
   if (gpVosContext != pVosContext)
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
 <<<<<<< HEAD
            "%s: mismatch in context", __FUNCTION__);
      return VOS_STATUS_E_FAILURE;
@@ -812,16 +904,22 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
   }
 #else
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            "%s: mismatch in context", __func__);
      return VOS_STATUS_E_FAILURE;
   }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if (( pVosContext->pWDAContext == NULL) || ( pVosContext->pMACContext == NULL)
      || ( pVosContext->pTLContext == NULL))
   {
      if (pVosContext->pWDAContext == NULL)
         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
 <<<<<<< HEAD
             "%s: WDA NULL context", __FUNCTION__);
      else if (pVosContext->pMACContext == NULL)
@@ -831,6 +929,8 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
             "%s: TL NULL context", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             "%s: WDA NULL context", __func__);
      else if (pVosContext->pMACContext == NULL)
         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
@@ -838,6 +938,9 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
      else
         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
             "%s: TL NULL context", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      
      return VOS_STATUS_E_FAILURE;
@@ -876,7 +979,13 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
      }
      VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
      goto err_wda_stop;   
+=======
+     vos_event_reset( &(gpVosContext->wdaCompleteEvent) );
+     WDA_setNeedShutdown(vosContext);
+     return VOS_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      vos_event_reset( &(gpVosContext->wdaCompleteEvent) );
      WDA_setNeedShutdown(vosContext);
@@ -898,6 +1007,7 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
   VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
             "%s: WDA correctly started", __func__);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
   /* Start the MAC */
@@ -952,16 +1062,28 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
   sirStatus = macStart(pVosContext->pMACContext,(v_PVOID_t)&halStartParams);
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+  /* Start the MAC */
+  vos_mem_zero((v_PVOID_t)&halStartParams, sizeof(tHalMacStartParameters));
+
+  /* Start the MAC */
+  sirStatus = macStart(pVosContext->pMACContext,(v_PVOID_t)&halStartParams);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if (eSIR_SUCCESS != sirStatus)
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
               "%s: Failed to start MAC", __func__);
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     return VOS_STATUS_E_FAILURE;
 #else
     goto err_wda_stop;
 #endif
+=======
+    goto err_wda_stop;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     goto err_wda_stop;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -994,6 +1116,7 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
 
   VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
             "TL correctly started");
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC  
   /* START SYS. This will trigger the CFG download */
@@ -1034,16 +1157,21 @@ VOS_STATUS vos_start( v_CONTEXT_t vosContext )
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
             "%s: VOSS Start is successful!!", __func__);
 
   return VOS_STATUS_SUCCESS;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 err_tl_stop:
   WLANTL_Stop(pVosContext);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1053,6 +1181,7 @@ err_sme_stop:
 err_mac_stop:
   macStop( pVosContext->pMACContext, HAL_STOP_TYPE_SYS_RESET );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 err_wda_stop:   
@@ -1077,6 +1206,8 @@ err_wda_stop:
   }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 err_wda_stop:   
   vos_event_reset( &(gpVosContext->wdaCompleteEvent) );
   vStatus = WDA_stop( pVosContext, HAL_STOP_TYPE_RF_KILL);
@@ -1108,6 +1239,9 @@ err_wda_stop:
        WDA_setNeedShutdown(vosContext);
     }
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return VOS_STATUS_E_FAILURE;
@@ -1121,7 +1255,10 @@ VOS_STATUS vos_stop( v_CONTEXT_t vosContext )
   VOS_STATUS vosStatus;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* WDA_Stop is called before the SYS so that the processing of Riva 
@@ -1135,6 +1272,7 @@ VOS_STATUS vos_stop( v_CONTEXT_t vosContext )
      VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
          "%s: Failed to stop WDA", __func__);
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
+<<<<<<< HEAD
 <<<<<<< HEAD
   }
 
@@ -1157,6 +1295,8 @@ VOS_STATUS vos_stop( v_CONTEXT_t vosContext )
   }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDA_setNeedShutdown(vosContext);
   }
   else
@@ -1179,6 +1319,9 @@ VOS_STATUS vos_stop( v_CONTEXT_t vosContext )
        WDA_setNeedShutdown(vosContext);
     }
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /* SYS STOP will stop SME and MAC */
@@ -1199,6 +1342,7 @@ VOS_STATUS vos_stop( v_CONTEXT_t vosContext )
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
    /**
    EVM issue is observed with 1.6Mhz freq for 1.3V supply in wlan standalone case.
@@ -1211,6 +1355,8 @@ VOS_STATUS vos_stop( v_CONTEXT_t vosContext )
         VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                "%s: Failed to set the freq to 1.6Mhz for 1.3V Supply", __func__ );
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1278,7 +1424,10 @@ VOS_STATUS vos_close( v_CONTEXT_t vosContext )
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( TRUE == WDA_needShutdown(vosContext ))
@@ -1288,7 +1437,11 @@ VOS_STATUS vos_close( v_CONTEXT_t vosContext )
      if (VOS_IS_STATUS_SUCCESS( vosStatus ) )
      {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hdd_set_ssr_required( VOS_TRUE );
+=======
+        hdd_set_ssr_required( HDD_SSR_REQUIRED );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hdd_set_ssr_required( HDD_SSR_REQUIRED );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1320,6 +1473,7 @@ VOS_STATUS vos_close( v_CONTEXT_t vosContext )
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
@@ -1336,10 +1490,15 @@ VOS_STATUS vos_close( v_CONTEXT_t vosContext )
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
   vos_mq_deinit(&((pVosContextType)vosContext)->freeVosMq);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vosStatus = vos_event_destroy(&gpVosContext->wdaCompleteEvent);
   if (!VOS_IS_STATUS_SUCCESS(vosStatus))
@@ -1349,7 +1508,10 @@ VOS_STATUS vos_close( v_CONTEXT_t vosContext )
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1392,7 +1554,11 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: vos context pointer is null", __FUNCTION__);
+=======
+        "%s: vos context pointer is null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: vos context pointer is null", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1403,7 +1569,11 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: pVosContext != gpVosContext", __FUNCTION__);
+=======
+        "%s: pVosContext != gpVosContext", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: pVosContext != gpVosContext", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1418,6 +1588,7 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
       break;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     case VOS_MODULE_ID_BAL:
@@ -1440,6 +1611,8 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_BTAMP_FEATURE
     case VOS_MODULE_ID_BAP:
     {
@@ -1449,7 +1622,10 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
 #endif //WLAN_BTAMP_FEATURE
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_SAP:
@@ -1464,7 +1640,10 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
       break;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1476,9 +1655,12 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
 
     case VOS_MODULE_ID_SME:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     case VOS_MODULE_ID_HAL:
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_PE:
@@ -1491,7 +1673,10 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_WDA:
@@ -1501,7 +1686,10 @@ v_VOID_t* vos_get_context( VOS_MODULE_ID moduleId,
       break;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1556,7 +1744,11 @@ v_CONTEXT_t vos_get_global_context( VOS_MODULE_ID moduleId,
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: global voss context is NULL", __FUNCTION__);
+=======
+        "%s: global voss context is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: global voss context is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1573,7 +1765,11 @@ v_U8_t vos_is_logp_in_progress(VOS_MODULE_ID moduleId, v_VOID_t *moduleContext)
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: global voss context is NULL", __FUNCTION__);
+=======
+        "%s: global voss context is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: global voss context is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1589,7 +1785,11 @@ void vos_set_logp_in_progress(VOS_MODULE_ID moduleId, v_U8_t value)
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: global voss context is NULL", __FUNCTION__);
+=======
+        "%s: global voss context is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: global voss context is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1605,7 +1805,11 @@ v_U8_t vos_is_load_unload_in_progress(VOS_MODULE_ID moduleId, v_VOID_t *moduleCo
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: global voss context is NULL", __FUNCTION__);
+=======
+        "%s: global voss context is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: global voss context is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1621,7 +1825,11 @@ void vos_set_load_unload_in_progress(VOS_MODULE_ID moduleId, v_U8_t value)
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: global voss context is NULL", __FUNCTION__);
+=======
+        "%s: global voss context is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: global voss context is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1677,7 +1885,11 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
   if ( pVosContext == NULL) {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: vos context is null", __FUNCTION__);
+=======
+        "%s: vos context is null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: vos context is null", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1687,7 +1899,11 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
   if (( gpVosContext != pVosContext) || ( ppModuleContext == NULL)) {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: context mismatch or null param passed", __FUNCTION__);
+=======
+        "%s: context mismatch or null param passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: context mismatch or null param passed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1702,6 +1918,7 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
       break;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     case VOS_MODULE_ID_BAL:
@@ -1724,6 +1941,8 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_BTAMP_FEATURE
     case VOS_MODULE_ID_BAP:
     {
@@ -1733,7 +1952,10 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
 #endif //WLAN_BTAMP_FEATURE
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_SAP:
@@ -1742,9 +1964,13 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
       break;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1753,6 +1979,7 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
       pGpModContext = &(gpVosContext->pWDAContext);
       break;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
     case VOS_MODULE_ID_SME:
@@ -1765,10 +1992,15 @@ VOS_STATUS vos_alloc_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
     case VOS_MODULE_ID_HDD_SOFTAP:
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_SME:
     case VOS_MODULE_ID_PE:
     case VOS_MODULE_ID_HDD:
     case VOS_MODULE_ID_HDD_SOFTAP:
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     default:
     {     
@@ -1872,6 +2104,7 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     case VOS_MODULE_ID_BAL:
     {
@@ -1893,6 +2126,8 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_BTAMP_FEATURE
     case VOS_MODULE_ID_BAP:
     {
@@ -1902,7 +2137,10 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
 #endif //WLAN_BTAMP_FEATURE
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_SAP:
@@ -1911,9 +2149,13 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
       break;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1922,6 +2164,7 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
       pGpModContext = &(gpVosContext->pWDAContext);
       break;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
     case VOS_MODULE_ID_HDD:
@@ -1934,10 +2177,15 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
     case VOS_MODULE_ID_HDD_SOFTAP:
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case VOS_MODULE_ID_HDD:
     case VOS_MODULE_ID_SME:
     case VOS_MODULE_ID_PE:
     case VOS_MODULE_ID_HDD_SOFTAP:
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     default:
     {     
@@ -1962,7 +2210,11 @@ VOS_STATUS vos_free_context( v_VOID_t *pVosContext, VOS_MODULE_ID moduleID,
   {
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s: pGpModContext != pModuleContext", __FUNCTION__);
+=======
+        "%s: pGpModContext != pModuleContext", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         "%s: pGpModContext != pModuleContext", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2046,6 +2298,7 @@ VOS_STATUS vos_mq_post_message( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     /// Message Queue ID for messages bound for HAL
     case VOS_MQ_ID_HAL: 
@@ -2054,6 +2307,8 @@ VOS_STATUS vos_mq_post_message( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
        break;
     }
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /// Message Queue ID for messages bound for WDA
@@ -2070,7 +2325,10 @@ VOS_STATUS vos_mq_post_message( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
        break;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2102,7 +2360,11 @@ VOS_STATUS vos_mq_post_message( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: pTargetMq == NULL", __FUNCTION__);
+=======
+         "%s: pTargetMq == NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: pTargetMq == NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2197,6 +2459,7 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     /// Message Queue ID for messages bound for SSC
     case VOS_MQ_ID_SSC:  
@@ -2207,6 +2470,8 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /// Message Queue ID for messages bound for SSC
     case VOS_MQ_ID_WDI:  
     {
@@ -2214,7 +2479,10 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
        break;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
@@ -2229,7 +2497,11 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
 
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "Trying to queue msg into unknown Tx Msg queue ID %d",
+=======
+              "%s: Trying to queue msg into unknown Tx Msg queue ID %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: Trying to queue msg into unknown Tx Msg queue ID %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2242,7 +2514,11 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: pTargetMq == NULL", __FUNCTION__);
+=======
+         "%s: pTargetMq == NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: pTargetMq == NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2279,7 +2555,10 @@ VOS_STATUS vos_tx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
 } /* vos_tx_mq_serialize()*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------------
@@ -2351,7 +2630,11 @@ VOS_STATUS vos_rx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
 
     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "Trying to queue msg into unknown Rx Msg queue ID %d",
+=======
+              "%s: Trying to queue msg into unknown Rx Msg queue ID %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: Trying to queue msg into unknown Rx Msg queue ID %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2364,7 +2647,11 @@ VOS_STATUS vos_rx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: pTargetMq == NULL", __FUNCTION__);
+=======
+         "%s: pTargetMq == NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: pTargetMq == NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2401,7 +2688,10 @@ VOS_STATUS vos_rx_mq_serialize( VOS_MQ_ID msgQueueId, vos_msg_t *pMsg )
 } /* vos_rx_mq_serialize()*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_VOID_t 
@@ -2414,7 +2704,11 @@ vos_sys_probe_thread_cback
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: gpVosContext != pUserData", __FUNCTION__);
+=======
+         "%s: gpVosContext != pUserData", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: gpVosContext != pUserData", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2425,7 +2719,11 @@ vos_sys_probe_thread_cback
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: vos_event_set failed", __FUNCTION__);
+=======
+         "%s: vos_event_set failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: vos_event_set failed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2434,6 +2732,7 @@ vos_sys_probe_thread_cback
 
 } /* vos_sys_probe_thread_cback() */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 v_VOID_t vos_sys_start_complete_cback
@@ -2460,6 +2759,8 @@ v_VOID_t vos_sys_start_complete_cback
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_VOID_t vos_WDAComplete_cback
 (
   v_VOID_t *pUserData
@@ -2470,7 +2771,11 @@ v_VOID_t vos_WDAComplete_cback
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: gpVosContext != pUserData", __FUNCTION__);
+=======
+         "%s: gpVosContext != pUserData", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: gpVosContext != pUserData", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2481,7 +2786,11 @@ v_VOID_t vos_WDAComplete_cback
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: vos_event_set failed", __FUNCTION__);
+=======
+         "%s: vos_event_set failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: vos_event_set failed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2490,7 +2799,10 @@ v_VOID_t vos_WDAComplete_cback
 
 } /* vos_WDAComplete_cback() */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2508,7 +2820,11 @@ v_VOID_t vos_core_return_msg
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: gpVosContext != pVosContext", __FUNCTION__);
+=======
+         "%s: gpVosContext != pVosContext", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: gpVosContext != pVosContext", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2521,7 +2837,11 @@ v_VOID_t vos_core_return_msg
   {
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: pMsgWrapper == NULL in function", __FUNCTION__);
+=======
+         "%s: pMsgWrapper == NULL in function", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: pMsgWrapper == NULL in function", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2557,7 +2877,11 @@ vos_fetch_tl_cfg_parms
   if (pTLConfig == NULL)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s NULL ptr passed in!", __FUNCTION__);
+=======
+   VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s NULL ptr passed in!", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s NULL ptr passed in!", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2570,9 +2894,13 @@ vos_fetch_tl_cfg_parms
   pTLConfig->ucAcWeights[3] = pConfig->WfqVoWeight;
   pTLConfig->uDelayedTriggerFrmInt = pConfig->DelayedTriggerFrmInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   pTLConfig->uMinFramesProcThres = pConfig->MinFramesProcThres;
 #endif
+=======
+  pTLConfig->uMinFramesProcThres = pConfig->MinFramesProcThres;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   pTLConfig->uMinFramesProcThres = pConfig->MinFramesProcThres;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2835,7 +3163,10 @@ VOS_STATUS vos_wlanRestart(void)
    return vstatus;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**
@@ -2883,4 +3214,7 @@ v_VOID_t vos_fwDumpReq(tANI_U32 cmd, tANI_U32 arg1, tANI_U32 arg2,
    return;
 
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

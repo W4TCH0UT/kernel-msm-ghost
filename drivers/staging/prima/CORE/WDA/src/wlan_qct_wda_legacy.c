@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,7 +49,10 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===========================================================================
@@ -133,6 +142,7 @@ wdaPostCfgMsg(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
    do
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_OS_TYPE_RTAI_LINUX
 
       // Posts message to the queue
@@ -149,13 +159,18 @@ wdaPostCfgMsg(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // For Windows based MAC, instead of posting message to different
       // queues we will call the handler routines directly
 
       cfgProcessMbMsg(pMac, (tSirMbMsg*)pMsg->bodyptr);
       rc = eSIR_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    } while (0);
@@ -163,6 +178,7 @@ wdaPostCfgMsg(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
    return rc;
 } // halMntPostMsg()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 #if defined(ANI_MANF_DIAG) || defined(ANI_PHY_DEBUG)
@@ -229,6 +245,8 @@ halNimPTTPostMsgApi(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
 #endif  //FEATURE_WLAN_INTEGRATED_SOC
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // -------------------------------------------------------------
 /**
@@ -260,6 +278,7 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
    tpAniSirGlobal pMac = (tpAniSirGlobal)pSirGlobal;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_OS_TYPE_RTAI_LINUX
 
    msg.type = pMb->type;
@@ -268,6 +287,8 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
    WDALOG3( wdaLog(pMac, LOG3, FL("msgType %d, msgLen %d\n" ),
         pMb->type, pMb->msgLen));
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -293,7 +314,10 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
    palCopyMemory(pMac, (void *)pMbLocal, (void *)pMb, pMb->msgLen);
    msg.bodyptr = pMbLocal;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -316,6 +340,7 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
       break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_MANF_DIAG) || defined(ANI_PHY_DEBUG)
    case SIR_PTT_MSG_TYPES_BEGIN:
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
@@ -324,6 +349,11 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
       break;
 
 #endif
+=======
+   case SIR_PTT_MSG_TYPES_BEGIN:
+      break;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    case SIR_PTT_MSG_TYPES_BEGIN:
       break;
@@ -365,7 +395,11 @@ tBssSystemRole wdaGetGlobalSystemRole(tpAniSirGlobal pMac)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:WDA context is NULL", __FUNCTION__); 
+=======
+                           "%s:WDA context is NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:WDA context is NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

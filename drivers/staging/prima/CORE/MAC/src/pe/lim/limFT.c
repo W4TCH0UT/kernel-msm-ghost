@@ -1,5 +1,6 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +22,8 @@
  */
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
   *
   * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -40,6 +43,9 @@
   * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
   * PERFORMANCE OF THIS SOFTWARE.
 */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
 /**=========================================================================
@@ -47,9 +53,15 @@
   \brief implementation for PE 11r VoWiFi FT Protocol 
   
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
    
    Qualcomm Confidential and Proprietary.
+=======
+   Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
+   
+   Qualcomm Technologies Confidential and Proprietary.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
    
@@ -79,6 +91,10 @@
 #define LIM_FT_RIC_BA_DIALOG_TOKEN_TID_0         248
 #define LIM_FT_RIC_DESCRIPTOR_RESOURCE_TYPE_BA  1
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define LIM_FT_RIC_DESCRIPTOR_MAX_VAR_DATA_LEN   255
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define LIM_FT_RIC_DESCRIPTOR_MAX_VAR_DATA_LEN   255
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -101,10 +117,13 @@ void limFTCleanup(tpAniSirGlobal pMac)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Freeing pFTPreAuthReq= %p\n", 
             __FUNCTION__, pMac->ft.ftPEContext.pFTPreAuthReq);) 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog( pMac, LOGE, "%s: Freeing pFTPreAuthReq= %p",
             __func__, pMac->ft.ftPEContext.pFTPreAuthReq);) 
 #endif
@@ -113,6 +132,9 @@ void limFTCleanup(tpAniSirGlobal pMac)
             vos_mem_free(pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription);
             pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription = NULL;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pMac->ft.ftPEContext.pFTPreAuthReq);
         pMac->ft.ftPEContext.pFTPreAuthReq = NULL;
@@ -124,8 +146,13 @@ void limFTCleanup(tpAniSirGlobal pMac)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL\n", 
             __FUNCTION__, pMac->ft.ftPEContext.psavedsessionEntry);) 
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL",
+            __func__, pMac->ft.ftPEContext.psavedsessionEntry);) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL",
             __func__, pMac->ft.ftPEContext.psavedsessionEntry);) 
@@ -142,7 +169,11 @@ void limFTCleanup(tpAniSirGlobal pMac)
             (((tpPESession)(pMac->ft.ftPEContext.pftSessionEntry))->limSmeState == eLIM_SME_WT_REASSOC_STATE))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, "%s: Deleting Preauth Session %d\n", __func__, ((tpPESession)pMac->ft.ftPEContext.pftSessionEntry)->peSessionId);)
+=======
+            PELOGE(limLog( pMac, LOGE, "%s: Deleting Preauth Session %d", __func__, ((tpPESession)pMac->ft.ftPEContext.pftSessionEntry)->peSessionId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, "%s: Deleting Preauth Session %d", __func__, ((tpPESession)pMac->ft.ftPEContext.pftSessionEntry)->peSessionId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -151,8 +182,13 @@ void limFTCleanup(tpAniSirGlobal pMac)
         pMac->ft.ftPEContext.pftSessionEntry = NULL;
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL\n", 
             __FUNCTION__, pMac->ft.ftPEContext.psavedsessionEntry);) 
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL",
+            __func__, pMac->ft.ftPEContext.psavedsessionEntry);) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL",
             __func__, pMac->ft.ftPEContext.psavedsessionEntry);) 
@@ -185,10 +221,13 @@ void limFTInit(tpAniSirGlobal pMac)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Freeing pFTPreAuthReq= %p\n", 
             __FUNCTION__, pMac->ft.ftPEContext.pFTPreAuthReq);) 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog( pMac, LOGE, "%s: Freeing pFTPreAuthReq= %p",
             __func__, pMac->ft.ftPEContext.pFTPreAuthReq);) 
 #endif
@@ -198,6 +237,9 @@ void limFTInit(tpAniSirGlobal pMac)
             pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription = NULL;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pMac->ft.ftPEContext.pFTPreAuthReq);
         pMac->ft.ftPEContext.pFTPreAuthReq = NULL;
@@ -209,8 +251,13 @@ void limFTInit(tpAniSirGlobal pMac)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL\n", 
             __FUNCTION__, pMac->ft.ftPEContext.psavedsessionEntry);) 
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL",
+            __func__, pMac->ft.ftPEContext.psavedsessionEntry);) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Setting psavedsessionEntry= %p to NULL",
             __func__, pMac->ft.ftPEContext.psavedsessionEntry);) 
@@ -226,8 +273,13 @@ void limFTInit(tpAniSirGlobal pMac)
         /* Cannot delete sessions across associations */
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Deleting session = %p \n", 
             __FUNCTION__, pMac->ft.ftPEContext.pftSessionEntry);) 
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Deleting session = %p ",
+            __func__, pMac->ft.ftPEContext.pftSessionEntry);) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Deleting session = %p ",
             __func__, pMac->ft.ftPEContext.pftSessionEntry);) 
@@ -240,8 +292,13 @@ void limFTInit(tpAniSirGlobal pMac)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Freeing AddBssReq = %p \n", 
             __FUNCTION__, pMac->ft.ftPEContext.pAddBssReq);) 
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Freeing AddBssReq = %p ",
+            __func__, pMac->ft.ftPEContext.pAddBssReq);) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Freeing AddBssReq = %p ",
             __func__, pMac->ft.ftPEContext.pAddBssReq);) 
@@ -256,8 +313,13 @@ void limFTInit(tpAniSirGlobal pMac)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Freeing AddStaReq = %p \n", 
             __FUNCTION__, pMac->ft.ftPEContext.pAddStaReq);) 
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Freeing AddStaReq = %p ",
+            __func__, pMac->ft.ftPEContext.pAddStaReq);) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Freeing AddStaReq = %p ",
             __func__, pMac->ft.ftPEContext.pAddStaReq);) 
@@ -285,7 +347,11 @@ void FTPreAuthSuspendLinkHandler(tpAniSirGlobal pMac, eHalStatus status, tANI_U3
     if (status != eHAL_STATUS_SUCCESS) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Returning \n", __FUNCTION__);)
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Returning ", __func__);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Returning ", __func__);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -331,8 +397,11 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
     // Now we are starting fresh make sure all's cleanup.
     limFTInit(pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
     pMac->ft.ftPEContext.ftPreAuthStatus = eSIR_FAILURE;  // Can set it only after sending auth
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Can set it only after sending auth
     pMac->ft.ftPEContext.ftPreAuthStatus = eSIR_FAILURE;
 
@@ -343,6 +412,9 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
                       pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription);
         pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription = NULL;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // We need information from the Pre-Auth Req. Lets save that
@@ -350,7 +422,11 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog( pMac, LOGE, "%s: PE Auth ft_ies_length=%02x%02x%02x\n", __FUNCTION__,
+=======
+    PELOGE(limLog( pMac, LOG1, "%s: PE Auth ft_ies_length=%02x%02x%02x", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog( pMac, LOG1, "%s: PE Auth ft_ies_length=%02x%02x%02x", __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -365,12 +441,15 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
     if (psessionEntry == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Unable to find session for the following bssid\n", 
             __FUNCTION__);)
         limPrintMacAddr( pMac, pMac->ft.ftPEContext.pFTPreAuthReq->currbssId, LOGE );
         // Post the FT Pre Auth Response to SME
         limPostFTPreAuthRsp(pMac, eSIR_FAILURE, NULL, 0, NULL); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog( pMac, LOGE, "%s: Unable to find session for the following bssid",
             __func__);)
         limPrintMacAddr( pMac, pMac->ft.ftPEContext.pFTPreAuthReq->currbssId, LOGE );
@@ -383,6 +462,9 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
             pMac->ft.ftPEContext.pFTPreAuthReq->pbssDescription = NULL;
         }
         pMac->ft.ftPEContext.pFTPreAuthReq = NULL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return TRUE;
     }
@@ -393,7 +475,11 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
         // Need to suspend link only if the channels are different
         PELOG2(limLog(pMac,LOG2,"%s: Performing pre-auth on different"
 <<<<<<< HEAD
+<<<<<<< HEAD
                " channel (session %p)\n", __FUNCTION__, psessionEntry);)
+=======
+               " channel (session %p)", __func__, psessionEntry);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                " channel (session %p)", __func__, psessionEntry);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -404,7 +490,11 @@ int limProcessFTPreAuthReq(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
     {
         PELOG2(limLog(pMac,LOG2,"%s: Performing pre-auth on same"
 <<<<<<< HEAD
+<<<<<<< HEAD
                " channel (session %p)\n", __FUNCTION__, psessionEntry);)
+=======
+               " channel (session %p)", __func__, psessionEntry);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                " channel (session %p)", __func__, psessionEntry);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -430,7 +520,11 @@ void limPerformFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data,
         if (pMac->ft.ftPEContext.pFTPreAuthReq->ft_ies == NULL) 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, "%s: FTIEs for Auth Req Seq 1 is absent\n");)
+=======
+            PELOGE(limLog( pMac, LOGE, "%s: FTIEs for Auth Req Seq 1 is absent");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, "%s: FTIEs for Auth Req Seq 1 is absent");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -440,7 +534,11 @@ void limPerformFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data,
     if (status != eHAL_STATUS_SUCCESS) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: Change channel not successful for FT pre-auth\n");)
+=======
+        PELOGE(limLog( pMac, LOGE, "%s: Change channel not successful for FT pre-auth");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "%s: Change channel not successful for FT pre-auth");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -451,7 +549,11 @@ void limPerformFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data,
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     PELOG2(limLog(pMac,LOG2,"Entered wait auth2 state for FT"
 <<<<<<< HEAD
+<<<<<<< HEAD
            " (old session %p)\n", 
+=======
+           " (old session %p)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            " (old session %p)",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -482,6 +584,7 @@ void limPerformFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data,
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "%s: FT Auth Rsp Timer Start Failed\n", __FUNCTION__);)
 #endif
     }
@@ -489,6 +592,8 @@ void limPerformFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data,
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     PELOGE(limLog( pMac, LOGE, "%s: FT Auth Rsp Timer Started\n", __FUNCTION__);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog( pMac, LOGE, "%s: FT Auth Rsp Timer Start Failed", __func__);)
 #endif
     }
@@ -496,6 +601,9 @@ MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLI
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     PELOGE(limLog( pMac, LOG1, "%s: FT Auth Rsp Timer Started", __func__);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -527,7 +635,11 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
                                                 (void **)&pBeaconStruct, sizeof(tSchBeaconStruct)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory for creating ADD_BSS\n") );
+=======
+        limLog(pMac, LOGE, FL("Unable to PAL allocate memory for creating ADD_BSS") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory for creating ADD_BSS") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -541,7 +653,11 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
         palFreeMemory(pMac->hHdd, pBeaconStruct);
         limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 FL( "Unable to PAL allocate memory for creating ADD_BSS\n" ));
+=======
+                FL( "Unable to PAL allocate memory for creating ADD_BSS" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 FL( "Unable to PAL allocate memory for creating ADD_BSS" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -603,11 +719,15 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
             pAddBssParams->dualCTSProtection = ( tANI_U8 ) pBeaconStruct->HTInfo.dualCTSProtection;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
             chanWidthSupp = limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET, pftSessionEntry);
 #else 
             chanWidthSupp = limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET);
 #endif
+=======
+            chanWidthSupp = limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET, pftSessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             chanWidthSupp = limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET, pftSessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -630,10 +750,13 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
 
     pAddBssParams->currentOperChannel = bssDescription->channelId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     limLog( pMac, LOGE, FL( "SIR_HAL_ADD_BSS_REQ with channel = %d..." ), 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pftSessionEntry->htSecondaryChannelOffset = pAddBssParams->currentExtChannel;
 
 #ifdef WLAN_FEATURE_11AC
@@ -655,6 +778,9 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     limLog( pMac, LOGE, FL( "SIR_HAL_ADD_BSS_REQ with channel = %d..." ),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pAddBssParams->currentOperChannel);
 #endif
@@ -693,7 +819,10 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
                 pAddBssParams->staContext.txChannelWidthSet = WNI_CFG_CHANNEL_BONDING_MODE_DISABLE;
             }                                                           
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
             if (pftSessionEntry->vhtCapability && pBeaconStruct->VHTCaps.present)
             {
@@ -723,6 +852,9 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
             {
                 pAddBssParams->staContext.txChannelWidthSet = WNI_CFG_CHANNEL_BONDING_MODE_DISABLE;
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pAddBssParams->staContext.mimoPS             = (tSirMacHTMIMOPowerSaveState)pBeaconStruct->HTCaps.mimoPowerSave;
             pAddBssParams->staContext.delBASupport       = ( tANI_U8 ) pBeaconStruct->HTCaps.delayedBA;
@@ -746,6 +878,7 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
         //Update the rates
 #ifdef WLAN_FEATURE_11AC
 <<<<<<< HEAD
+<<<<<<< HEAD
         limPopulateOwnRateSet(pMac, &pAddBssParams->staContext.supportedRates, 
                              pBeaconStruct->HTCaps.supportedMCSSet, 
                              false,pftSessionEntry,&pBeaconStruct->VHTCaps);
@@ -759,6 +892,8 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limPopulatePeerRateSet(pMac, &pAddBssParams->staContext.supportedRates,
                              pBeaconStruct->HTCaps.supportedMCSSet,
                              false,pftSessionEntry,&pBeaconStruct->VHTCaps);
@@ -785,6 +920,9 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
         }
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Disable BA. It will be set as part of ADDBA negotiation.
     for( i = 0; i < STACFG_MAX_TC; i++ )
@@ -809,7 +947,11 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
 
     pftSessionEntry->limMlmState = eLIM_MLM_WT_ADD_BSS_RSP_FT_REASSOC_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, pftSessionEntry->peSessionId, eLIM_MLM_WT_ADD_BSS_RSP_FT_REASSOC_STATE));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, pftSessionEntry->peSessionId, eLIM_MLM_WT_ADD_BSS_RSP_FT_REASSOC_STATE));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -819,7 +961,11 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     limLog( pMac, LOGE, FL( "Saving SIR_HAL_ADD_BSS_REQ for pre-auth ap..." ));
+=======
+    limLog( pMac, LOG1, FL( "Saving SIR_HAL_ADD_BSS_REQ for pre-auth ap..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limLog( pMac, LOG1, FL( "Saving SIR_HAL_ADD_BSS_REQ for pre-auth ap..." ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -841,21 +987,28 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
     tpPESession      pftSessionEntry;
     tANI_U8          currentBssUapsd;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8          sessionId;
     tPowerdBm        localPowerConstraint;
     tPowerdBm        regMax;
     tSchBeaconStruct *pBeaconStruct;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tPowerdBm        localPowerConstraint;
     tPowerdBm        regMax;
     tSchBeaconStruct *pBeaconStruct;
     uint32           selfDot11Mode;
     ePhyChanBondState cbMode;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, 
                                                 (void **)&pBeaconStruct, sizeof(tSchBeaconStruct)))
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory for creating limFillFTSession\n") );
 =======
@@ -885,12 +1038,22 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
     pftSessionEntry->htCapability = psessionEntry->htCapability;
 
 =======
+=======
+        limLog(pMac, LOGE, FL("Unable to PAL allocate memory for creating limFillFTSession") );
+        return NULL;
+    }
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        
     /* Retrieve the session that has already been created and update the entry */
     pftSessionEntry = pMac->ft.ftPEContext.pftSessionEntry;
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
     limPrintMacAddr(pMac, pbssDescription->bssId, LOGE);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pftSessionEntry->limWmeEnabled = psessionEntry->limWmeEnabled;
     pftSessionEntry->limQosEnabled = psessionEntry->limQosEnabled;
@@ -921,8 +1084,11 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
         pftSessionEntry->ssId.length);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wlan_cfgGetInt(pMac, WNI_CFG_DOT11_MODE, &selfDot11Mode);
     pftSessionEntry->dot11mode = selfDot11Mode;
     pftSessionEntry->vhtCapability = (IS_DOT11_MODE_VHT(pftSessionEntry->dot11mode)
@@ -941,6 +1107,9 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
        pftSessionEntry->vhtCapabilityPresentInBeacon = 0;
     }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Self Mac
     sirCopyMacAddr(pftSessionEntry->selfMacAddr, psessionEntry->selfMacAddr);
@@ -973,7 +1142,11 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
     {   
         /* Throw an error and return and make sure to delete the session.*/
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Invalid bss type\n"));
+=======
+        limLog(pMac, LOGE, FL("Invalid bss type"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Invalid bss type"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -982,12 +1155,18 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
     pftSessionEntry->limCurrentBssCaps = pbssDescription->capabilityInfo;
     pftSessionEntry->limReassocBssCaps = pbssDescription->capabilityInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pMac->roam.configParam.shortSlotTime &&
         SIR_MAC_GET_SHORT_SLOT_TIME(pftSessionEntry->limReassocBssCaps))
     {
         pftSessionEntry->shortSlotTimeSupported = TRUE;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     regMax = cfgGetRegulatoryMaxTransmitPower( pMac, pftSessionEntry->currentOperChannel ); 
@@ -997,7 +1176,11 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
         &pftSessionEntry->limCurrentBssQosCaps,
         &pftSessionEntry->limCurrentBssPropCap,
 <<<<<<< HEAD
+<<<<<<< HEAD
         &currentBssUapsd , &localPowerConstraint);
+=======
+        &currentBssUapsd , &localPowerConstraint, psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         &currentBssUapsd , &localPowerConstraint, psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1009,12 +1192,15 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     pftSessionEntry->maxTxPower = VOS_MIN( regMax , (localPowerConstraint) );
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     limLog( pMac, LOGE, "%s: Regulatory max = %d, local power constraint = %d, max tx = %d", 
         __FUNCTION__, regMax, localPowerConstraint, pftSessionEntry->maxTxPower );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_CCX
     pftSessionEntry->maxTxPower = limGetMaxTxPower(regMax, localPowerConstraint, pMac->roam.configParam.nTxPowerCap);
 #else
@@ -1024,6 +1210,9 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     limLog( pMac, LOG1, "%s: Regulatory max = %d, local power constraint = %d, ini tx power = %d, max tx = %d",
         __func__, regMax, localPowerConstraint, pMac->roam.configParam.nTxPowerCap, pftSessionEntry->maxTxPower );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -1031,6 +1220,7 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
 
     pftSessionEntry->limPrevSmeState = pftSessionEntry->limSmeState;
     pftSessionEntry->limSmeState = eLIM_SME_WT_REASSOC_STATE;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     pftSessionEntry->encryptType = psessionEntry->encryptType;
@@ -1040,6 +1230,8 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
        __FUNCTION__, pftSessionEntry, pftSessionEntry->peSessionId);)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     MTRACE(macTrace(pMac, TRACE_CODE_SME_STATE, pftSessionEntry->peSessionId, pftSessionEntry->limSmeState));
 
     pftSessionEntry->encryptType = psessionEntry->encryptType;
@@ -1056,6 +1248,9 @@ tpPESession limFillFTSession(tpAniSirGlobal pMac,
                cbMode && pBeaconStruct->HTCaps.supportedChannelWidthSet;
     pftSessionEntry->htRecommendedTxWidthSet =
                pftSessionEntry->htSupportedChannelWidthSet;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     palFreeMemory(pMac->hHdd, pBeaconStruct);
@@ -1130,6 +1325,11 @@ tSirRetStatus limCreateRICBlockAckIE(tpAniSirGlobal pMac, tANI_U8 tid, tCfgTraff
                                                                     tANI_U8 *ric_ies, tANI_U32 *ieLength)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    /* BlockACK + RIC is not supported now, TODO later to support this */
+#if 0
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     /* BlockACK + RIC is not supported now, TODO later to support this */
 #if 0
@@ -1157,6 +1357,7 @@ tSirRetStatus limCreateRICBlockAckIE(tpAniSirGlobal pMac, tANI_U8 tid, tCfgTraff
     baSsnControl.fragNumber = 0;
     baSsnControl.ssn = LIM_FT_RIC_BA_SSN;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     dot11fPackFfAddBAParameterSet(pMac, &baParamSet, &ricIe.RICDescriptor.variableData[ricIe.RICDescriptor.num_variableData]);
     //vos_mem_copy(&ricIe.RICDescriptor.variableData[ricIe.RICDescriptor.num_variableData], &baParamSet, sizeof(tDot11fFfAddBAParameterSet));
@@ -1172,6 +1373,8 @@ tSirRetStatus limCreateRICBlockAckIE(tpAniSirGlobal pMac, tANI_U8 tid, tCfgTraff
 
     return (tSirRetStatus) dot11fPackIeRICDataDesc(pMac, &ricIe, ric_ies, sizeof(tDot11fIERICDataDesc), ieLength);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (ricIe.RICDescriptor.num_variableData < sizeof (ricIe.RICDescriptor.variableData)) {
         dot11fPackFfAddBAParameterSet(pMac, &baParamSet, &ricIe.RICDescriptor.variableData[ricIe.RICDescriptor.num_variableData]);
         //vos_mem_copy(&ricIe.RICDescriptor.variableData[ricIe.RICDescriptor.num_variableData], &baParamSet, sizeof(tDot11fFfAddBAParameterSet));
@@ -1191,6 +1394,9 @@ tSirRetStatus limCreateRICBlockAckIE(tpAniSirGlobal pMac, tANI_U8 tid, tCfgTraff
 #endif
 
     return eSIR_FAILURE;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -1209,7 +1415,11 @@ tSirRetStatus limFTFillRICBlockAckInfo(tpAniSirGlobal pMac, tANI_U8 *ric_ies, tA
     {
         PELOGE(limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "STA context not found for saved session's BSSID %02x:%02x:%02x:%02x:%02x:%02x\n" ),
+=======
+            FL( "STA context not found for saved session's BSSID %02x:%02x:%02x:%02x:%02x:%02x" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "STA context not found for saved session's BSSID %02x:%02x:%02x:%02x:%02x:%02x" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1230,13 +1440,19 @@ tSirRetStatus limFTFillRICBlockAckInfo(tpAniSirGlobal pMac, tANI_U8 *ric_ies, tA
             if (eSIR_SUCCESS == status)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 // TODO RIC
                 if ( ieLength > MAX_FTIE_SIZE )
                 {
                     ieLength = 0;
                     return status;
                 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 offset += ieLength;
                 *ric_ies_length += ieLength;
@@ -1250,7 +1466,11 @@ tSirRetStatus limFTFillRICBlockAckInfo(tpAniSirGlobal pMac, tANI_U8 *ric_ies, tA
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("Number of BA RIC IEs created = %d: Total length = %d\n"), numBA, *ric_ies_length);)
+=======
+    PELOGE(limLog(pMac, LOGE, FL("Number of BA RIC IEs created = %d: Total length = %d"), numBA, *ric_ies_length);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog(pMac, LOGE, FL("Number of BA RIC IEs created = %d: Total length = %d"), numBA, *ric_ies_length);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1263,7 +1483,11 @@ tSirRetStatus limFTFillRICBlockAckInfo(tpAniSirGlobal pMac, tANI_U8 *ric_ies, tA
  *
  *------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 void limPostFTPreAuthRsp(tpAniSirGlobal pMac, eHalStatus status,
+=======
+void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1274,7 +1498,12 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
     tSirMsgQ          mmhMsg;
     tANI_U16 rspLen = sizeof(tSirFTPreAuthRsp);   
 <<<<<<< HEAD
+<<<<<<< HEAD
     tSirRetStatus   sirStatus = eSIR_SUCCESS;
+=======
+    // TODO: RIC Support
+    //tSirRetStatus   sirStatus = eSIR_SUCCESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     // TODO: RIC Support
     //tSirRetStatus   sirStatus = eSIR_SUCCESS;
@@ -1284,7 +1513,11 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
     if(NULL == pFTPreAuthRsp)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOGE(limLog( pMac, LOGE, "Failed to allocate memory\n");)
+=======
+       PELOGE(limLog( pMac, LOGE, "Failed to allocate memory");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        PELOGE(limLog( pMac, LOGE, "Failed to allocate memory");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1294,7 +1527,11 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
     vos_mem_zero( pFTPreAuthRsp, rspLen);
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog( pMac, LOGE, "%s: Auth Rsp = %p\n", pFTPreAuthRsp);)
+=======
+    PELOGE(limLog( pMac, LOG1, "%s: Auth Rsp = %p", pFTPreAuthRsp);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog( pMac, LOG1, "%s: Auth Rsp = %p", pFTPreAuthRsp);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1325,7 +1562,12 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
     if ((psessionEntry) && (psessionEntry->is11Rconnection))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* Fill in the Block Ack RIC IEs in the preAuthRsp */
+=======
+        /* TODO: RIC SUPPORT Fill in the Block Ack RIC IEs in the preAuthRsp */
+        /*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         /* TODO: RIC SUPPORT Fill in the Block Ack RIC IEs in the preAuthRsp */
         /*
@@ -1337,6 +1579,10 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
             PELOGE(limLog(pMac, LOGE, FL("Fill RIC BA Info failed with status %d"), sirStatus);)
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         */
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1349,9 +1595,14 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog( pMac, LOGE, "Posted Auth Rsp to SME\n");)
 #endif
     PELOGE(limLog( pMac, LOGE, "Posted Auth Rsp to SME with status of %d\n", status);)
+=======
+    PELOGE(limLog( pMac, LOGE, "Posted Auth Rsp to SME with status of 0x%x", status);)
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog( pMac, LOGE, "Posted Auth Rsp to SME with status of 0x%x", status);)
 #endif
@@ -1369,7 +1620,11 @@ void limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
  *
  *------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, eHalStatus status,
+=======
+void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1378,11 +1633,17 @@ void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpPESession      pftSessionEntry;
     tANI_U8 sessionId;
     tpSirBssDescription  pbssDescription;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Save the status of pre-auth
     pMac->ft.ftPEContext.ftPreAuthStatus = status; 
@@ -1398,7 +1659,10 @@ void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Create FT session for the re-association at this point */
     if (pMac->ft.ftPEContext.ftPreAuthStatus == eSIR_SUCCESS)
     {
@@ -1437,6 +1701,9 @@ void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
         limPrintMacAddr(pMac, psessionEntry->limReAssocbssId, LOGE);
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (psessionEntry->currentOperChannel != 
         pMac->ft.ftPEContext.pFTPreAuthReq->preAuthchannelNum) 
@@ -1449,7 +1716,11 @@ void limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
     {
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog( pMac, LOGE, "Pre auth on same channel as connected AP channel %d\n", 
+=======
+        PELOGE(limLog( pMac, LOGE, "Pre auth on same channel as connected AP channel %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog( pMac, LOGE, "Pre auth on same channel as connected AP channel %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1470,7 +1741,11 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     tANI_U8 smeSessionId = 0;
     tANI_U16 transactionId = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 chanNum = 0; 
+=======
+    tANI_U8 chanNum = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8 chanNum = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1482,7 +1757,11 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     tANI_U32 teleBcnEn = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     chanNum = psessionEntry->currentOperChannel; 
+=======
+    chanNum = psessionEntry->currentOperChannel;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     chanNum = psessionEntry->currentOperChannel;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1492,6 +1771,7 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pMlmReassocReq, 
         sizeof(tLimMlmReassocReq)))
@@ -1499,6 +1779,8 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
         // Log error
         limLog(pMac, LOGE, FL("call to palAllocateMemory failed for mlmReassocReq\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == pMac->ft.ftPEContext.pAddBssReq)
     {
         limLog(pMac, LOGE, FL("pAddBssReq is NULL"));
@@ -1509,6 +1791,9 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     {
         // Log error
         limLog(pMac, LOGE, FL("call to palAllocateMemory failed for mlmReassocReq"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
@@ -1526,7 +1811,12 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
          * from CFG. Log error.
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("could not retrieve ReassocFailureTimeout value\n"));
+=======
+        limLog(pMac, LOGE, FL("could not retrieve ReassocFailureTimeout value"));
+        palFreeMemory(pMac->hHdd, pMlmReassocReq);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("could not retrieve ReassocFailureTimeout value"));
         palFreeMemory(pMac->hHdd, pMlmReassocReq);
@@ -1541,23 +1831,30 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
          * from CFG. Log error.
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("could not retrieve Capabilities value\n"));
         return;
     }
     pMlmReassocReq->capabilityInfo = caps;
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGE, FL("could not retrieve Capabilities value"));
         palFreeMemory(pMac->hHdd, pMlmReassocReq);
         return;
     }
     pMlmReassocReq->capabilityInfo = caps;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Update PE sessionId*/
     pMlmReassocReq->sessionId = psessionEntry->peSessionId;
 
     /* If telescopic beaconing is enabled, set listen interval to WNI_CFG_TELE_BCN_MAX_LI */
+<<<<<<< HEAD
 <<<<<<< HEAD
     if(wlan_cfgGetInt(pMac, WNI_CFG_TELE_BCN_WAKEUP_EN, &teleBcnEn) != 
        eSIR_SUCCESS) 
@@ -1567,6 +1864,8 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     {
        if(wlan_cfgGetInt(pMac, WNI_CFG_TELE_BCN_MAX_LI, &val) != eSIR_SUCCESS)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (wlan_cfgGetInt(pMac, WNI_CFG_TELE_BCN_WAKEUP_EN, &teleBcnEn) !=
        eSIR_SUCCESS)
     {
@@ -1579,11 +1878,15 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     {
        if (wlan_cfgGetInt(pMac, WNI_CFG_TELE_BCN_MAX_LI, &val) != eSIR_SUCCESS)
        {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           /**
             * Could not get ListenInterval value
             * from CFG. Log error.
           */
+<<<<<<< HEAD
 <<<<<<< HEAD
           limLog(pMac, LOGE, FL("could not retrieve ListenInterval\n"));
           return;
@@ -1592,6 +1895,8 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     {
     if (wlan_cfgGetInt(pMac, WNI_CFG_LISTEN_INTERVAL, &val) != eSIR_SUCCESS)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           limLog(pMac, LOGE, FL("could not retrieve ListenInterval"));
           palFreeMemory(pMac->hHdd, pMlmReassocReq);
           return;
@@ -1600,6 +1905,9 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     else
     {
       if (wlan_cfgGetInt(pMac, WNI_CFG_LISTEN_INTERVAL, &val) != eSIR_SUCCESS)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       {
          /**
@@ -1607,7 +1915,12 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
             * from CFG. Log error.
             */
 <<<<<<< HEAD
+<<<<<<< HEAD
          limLog(pMac, LOGE, FL("could not retrieve ListenInterval\n"));
+=======
+         limLog(pMac, LOGE, FL("could not retrieve ListenInterval"));
+         palFreeMemory(pMac->hHdd, pMlmReassocReq);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          limLog(pMac, LOGE, FL("could not retrieve ListenInterval"));
          palFreeMemory(pMac->hHdd, pMlmReassocReq);
@@ -1616,6 +1929,7 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
       }
     }
     if (limSetLinkState(pMac, eSIR_LINK_PREASSOC_STATE, psessionEntry->bssId,
+<<<<<<< HEAD
 <<<<<<< HEAD
                         psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS) 
     {
@@ -1633,10 +1947,15 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     {
             return;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS)
     {
         palFreeMemory(pMac->hHdd, pMlmReassocReq);
         return;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -1648,7 +1967,11 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
     //we need to defer the message until we get the response back from HAL.
     SET_LIM_PROCESS_DEFD_MESGS(pMac, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1665,15 +1988,21 @@ void limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,
 
     retCode = wdaPostCtrlMsg( pMac, &msgQ );
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( eSIR_SUCCESS != retCode) 
     {
         vos_mem_free(pMac->ft.ftPEContext.pAddBssReq);
         limLog( pMac, LOGE, FL("Posting ADD_BSS_REQ to HAL failed, reason=%X\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eSIR_SUCCESS != retCode)
     {
         vos_mem_free(pMac->ft.ftPEContext.pAddBssReq);
         limLog( pMac, LOGE, FL("Posting ADD_BSS_REQ to HAL failed, reason=%X"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 retCode );
     }
@@ -1695,16 +2024,22 @@ void limProcessFTPreauthRspTimeout(tpAniSirGlobal pMac)
     // We have failed pre auth. We need to resume link and get back on
     // home channel.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if((psessionEntry = peFindSessionBySessionId(pMac, pMac->lim.limTimers.gLimFTPreAuthRspTimer.sessionId))== NULL) 
     {
         limLog(pMac, LOGE, FL("Session Does not exist for given sessionID\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limLog(pMac, LOG1, FL("FT Pre-Auth Time Out!!!!"));
 
     if((psessionEntry = peFindSessionBySessionId(pMac, pMac->lim.limTimers.gLimFTPreAuthRspTimer.sessionId))== NULL) 
     {
         limLog(pMac, LOGE, FL("Session Does not exist for given sessionID"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
@@ -1722,6 +2057,7 @@ void limProcessFTPreauthRspTimeout(tpAniSirGlobal pMac)
  *------------------------------------------------------------------*/
 tANI_BOOLEAN limProcessFTUpdateKey(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
    tAddBssParams * pAddBssParams;
    tSirFTUpdateKeyInfo * pKeyInfo;
@@ -1750,6 +2086,8 @@ tANI_BOOLEAN limProcessFTUpdateKey(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
 
   return TRUE;   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tAddBssParams * pAddBssParams;
     tSirFTUpdateKeyInfo * pKeyInfo;
     tANI_U32 val = 0;
@@ -1816,6 +2154,9 @@ tANI_BOOLEAN limProcessFTUpdateKey(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
     }
 
     return TRUE;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -1838,7 +2179,11 @@ limProcessFTAggrQosReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
                 sizeof(tAggrAddTsParams)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1849,7 +2194,12 @@ limProcessFTAggrQosReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
 
     if (psessionEntry == NULL) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("psession Entry Null for sessionId = %d\n"), aggrQosReq->sessionId);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("psession Entry Null for sessionId = %d"), aggrQosReq->sessionId);)
+        palFreeMemory(pMac->hHdd, (tANI_U8*)pAggrAddTsParam);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("psession Entry Null for sessionId = %d"), aggrQosReq->sessionId);)
         palFreeMemory(pMac->hHdd, (tANI_U8*)pAggrAddTsParam);
@@ -1861,7 +2211,12 @@ limProcessFTAggrQosReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
     if (pSta == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring AddTsRsp\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring AddTsRsp"));)
+        palFreeMemory(pMac->hHdd, (tANI_U8*)pAggrAddTsParam);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring AddTsRsp"));)
         palFreeMemory(pMac->hHdd, (tANI_U8*)pAggrAddTsParam);
@@ -1931,8 +2286,14 @@ limProcessFTAggrQosReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
             if(eSIR_SUCCESS != limTspecAdd(pMac, pSta->staAddr, pSta->assocId, pTspec,  0, &tspecInfo))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("Adding entry in lim Tspec Table failed \n"));)
                 pMac->lim.gLimAddtsSent = false;
+=======
+                PELOGE(limLog(pMac, LOGE, FL("Adding entry in lim Tspec Table failed "));)
+                pMac->lim.gLimAddtsSent = false;
+                palFreeMemory(pMac->hHdd, (tANI_U8*)pAggrAddTsParam);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("Adding entry in lim Tspec Table failed "));)
                 pMac->lim.gLimAddtsSent = false;
@@ -1959,7 +2320,11 @@ limProcessFTAggrQosReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf )
     if(eSIR_SUCCESS != wdaPostCtrlMsg(pMac, &msg))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed\n"));)
+=======
+       PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2023,7 +2388,11 @@ void limProcessFTAggrQoSRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     int i = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL(" Received AGGR_QOS_RSP from HAL\n"));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL(" Received AGGR_QOS_RSP from HAL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(limLog(pMac, LOG1, FL(" Received AGGR_QOS_RSP from HAL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2044,7 +2413,11 @@ void limProcessFTAggrQoSRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     {
         // Cant find session entry
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Cant find session entry for %s\n"), __FUNCTION__);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Cant find session entry for %s"), __func__);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Cant find session entry for %s"), __func__);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -97,10 +103,13 @@ when       who     what, where, why
 #include <vos_power.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_BUS_TYPE_SDIO
 #include <libra_sdioif.h>
 #endif
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef MSM_PLATFORM
@@ -630,6 +639,7 @@ VOS_STATUS vos_chipPowerDown
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_BUS_TYPE_SDIO
 #ifdef MSM_PLATFORM
    struct sdio_func *sdio_func_dev = NULL;
@@ -653,6 +663,8 @@ VOS_STATUS vos_chipPowerDown
 #endif
 #endif
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef MSM_PLATFORM_8660
@@ -1400,6 +1412,7 @@ VOS_STATUS vos_chipVoteXOCore
 )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     static v_BOOL_t is_vote_on;
 
@@ -1444,6 +1457,8 @@ success:
                 force_enable ? "enable" : "disable");
 
 #endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

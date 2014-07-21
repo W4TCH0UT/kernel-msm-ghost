@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -53,7 +59,11 @@ extern "C" {
   @file VossWrapper.h
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   @brief This header file contains the various structure definitions and 
+=======
+  @brief This header file contains the various structure definitions and
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   @brief This header file contains the various structure definitions and
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -64,6 +74,7 @@ extern "C" {
   Qualcomm Confidential and Proprietary
 ===========================================================================*/
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /*=========================================================================== 
     
@@ -79,6 +90,8 @@ extern "C" {
    
   when        who    what, where, why 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===========================================================================
 
                        EDIT HISTORY FOR FILE
@@ -92,6 +105,9 @@ extern "C" {
 
 
   when        who    what, where, why
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   --------    ---    --------------------------------------------------------
   12/15/08    sho    Resolved warnings and errors from AMSS compiler when
@@ -100,17 +116,23 @@ extern "C" {
                      on WM platform and allow this to work on all VOSS enabled
                      platforms
 <<<<<<< HEAD
+<<<<<<< HEAD
   06/24/08    tbh    Modified the file to remove the dependecy on HDD files as 
                      part of Gen6 bring up process. 
   10/29/02 Neelay Das Created file. 
      
 ===========================================================================*/ 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   06/24/08    tbh    Modified the file to remove the dependecy on HDD files as
                      part of Gen6 bring up process.
   10/29/02 Neelay Das Created file.
 
 ===========================================================================*/
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*---------------------------------------------------------------------------
@@ -121,9 +143,12 @@ extern "C" {
 #include "sirParams.h"
 #include "sysDef.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "aniDbgTest.h"
@@ -131,10 +156,15 @@ extern "C" {
 #include "palApi.h"
 #include "vos_types.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "vos_trace.h"
 #include "vos_memory.h"
 #endif
+=======
+#include "vos_trace.h"
+#include "vos_memory.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "vos_trace.h"
 #include "vos_memory.h"
@@ -182,6 +212,7 @@ extern "C" {
 #define TX_AIRGO_TMR_SIGNATURE   0xDEADBEEF
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /* Just #define out the thread and queue specific threadX calls, since the plan is to keep
    the Windows port of the MAC non-threaded */
@@ -215,12 +246,15 @@ extern "C" {
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef TIMER_MANAGER
 #define  tx_timer_create(a, b, c, d, e, f, g)   tx_timer_create_intern_debug((v_PVOID_t)pMac, a, b, c, d, e, f, g, __FILE__, __LINE__)
 #else
 #define  tx_timer_create(a, b, c, d, e, f, g)   tx_timer_create_intern((v_PVOID_t)pMac, a, b, c, d, e, f, g)
 #endif
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /*-------------------------------------------------------------------------*/
@@ -246,6 +280,8 @@ typedef v_PVOID_t TX_MUTEX;
 /*--------------------------------------------------------------------*/
 typedef v_SLONG_t TX_SEMAPHORE;
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------*/
@@ -277,6 +313,7 @@ typedef struct TX_TIMER_STRUCT
 #define TX_TIMER_VALID(timer) (timer.pMac != 0)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef struct sAniSirTxWrapper
 {
     // Back pointer to the pAdapter structure, needed for some of the internal routines
@@ -288,13 +325,19 @@ typedef struct sAniSirTxWrapper
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 extern v_ULONG_t tx_time_get(v_VOID_t);
 extern v_UINT_t  tx_timer_activate(TX_TIMER*);
 extern v_UINT_t  tx_timer_change(TX_TIMER*, v_ULONG_t, v_ULONG_t);
 extern v_UINT_t  tx_timer_change_context(TX_TIMER*, tANI_U32);
 #ifdef TIMER_MANAGER
 <<<<<<< HEAD
+<<<<<<< HEAD
 extern v_UINT_t  tx_timer_create_intern_debug(v_PVOID_t, TX_TIMER*, char *, v_VOID_t(*)(v_PVOID_t, tANI_U32), 
+=======
+extern v_UINT_t  tx_timer_create_intern_debug(v_PVOID_t, TX_TIMER*, char *, v_VOID_t(*)(v_PVOID_t, tANI_U32),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 extern v_UINT_t  tx_timer_create_intern_debug(v_PVOID_t, TX_TIMER*, char *, v_VOID_t(*)(v_PVOID_t, tANI_U32),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -306,6 +349,7 @@ extern v_UINT_t  tx_timer_deactivate(TX_TIMER*);
 extern v_UINT_t  tx_timer_delete(TX_TIMER*);
 extern v_BOOL_t  tx_timer_running(TX_TIMER*);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -324,6 +368,8 @@ extern int gHalBufCnt;
 extern v_U64_t utilGetCurrentTime(void);
 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef __cplusplus

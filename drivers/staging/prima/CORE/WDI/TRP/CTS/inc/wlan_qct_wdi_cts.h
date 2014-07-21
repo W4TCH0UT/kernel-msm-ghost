@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -260,7 +266,11 @@ WCTS_SendMessage
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  @brief    This helper function is used to clean up the pending 
+=======
+ @brief    This helper function is used to clean up the pending
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  @brief    This helper function is used to clean up the pending
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -112,14 +118,20 @@ when        who    what, where, why
  and SELF STA(staId 1) so total ASSOC stations which can connect to Prima
  SoftAP = 12 - 1(Self STa) - 1(Bcast Sta) = 10 Stations. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WDI_MAX_SUPPORTED_STAS    12 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
 #define WDI_MAX_SUPPORTED_STAS   41
 #else
 #define WDI_MAX_SUPPORTED_STAS   12
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WDI_MAX_SUPPORTED_BSS     5 
 
@@ -130,9 +142,13 @@ when        who    what, where, why
 #define WDI_BSS_INVALID_IDX 0xFF
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
 #define WDI_FTM_MAX_RECEIVE_BUFFER   6500
 #endif /* ANI_MANF_DIAG */
+=======
+#define WDI_FTM_MAX_RECEIVE_BUFFER   6500
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WDI_FTM_MAX_RECEIVE_BUFFER   6500
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -448,7 +464,10 @@ typedef enum
   WDI_FEATURE_CAPS_EXCHANGE_REQ                 = 79,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
   /* Send a capability exchange message to HAL */
   WDI_UPDATE_VHT_OP_MODE_REQ                    = 80,
@@ -460,6 +479,9 @@ typedef enum
   /*WLAN DAL Set Tx Power Request*/
   WDI_SET_TX_POWER_REQ                          = 82,
   WDI_ROAM_SCAN_OFFLOAD_REQ                     = 83,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_MAX_REQ,
 
@@ -467,6 +489,12 @@ typedef enum
   WDI_HOST_SUSPEND_IND          = WDI_MAX_REQ ,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  /* Send a traffic stats indication to HAL */
+  WDI_TRAFFIC_STATS_IND,
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   /* Send a traffic stats indication to HAL */
   WDI_TRAFFIC_STATS_IND,
@@ -719,7 +747,10 @@ typedef enum
   WDI_FEATURE_CAPS_EXCHANGE_RESP                = 78,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
   WDI_UPDATE_VHT_OP_MODE_RESP                   = 79,
 #endif
@@ -729,6 +760,9 @@ typedef enum
 
   WDI_SET_TX_POWER_RESP                         = 81,
   WDI_ROAM_SCAN_OFFLOAD_RESP                    = 82,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*-------------------------------------------------------------------------
     Indications
@@ -774,12 +808,18 @@ typedef enum
   /* Tx PER Hit Indication */
   WDI_HAL_TX_PER_HIT_IND              = WDI_HAL_IND_MIN + 11,
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /* NOA Start Indication from FW to Host */
   WDI_HAL_P2P_NOA_START_IND            = WDI_HAL_IND_MIN + 12,
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_MAX_RESP
 }WDI_ResponseEnumType; 
@@ -1092,10 +1132,15 @@ typedef struct
   tDriverType                 driverMode;  
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
   /* Statically allocated FTM Response Buffer */
   wpt_uint8                   ucFTMCommandRspBuffer[WDI_FTM_MAX_RECEIVE_BUFFER];
 #endif /* ANI_MANF_DIAG */
+=======
+  /* Statically allocated FTM Response Buffer */
+  wpt_uint8                   ucFTMCommandRspBuffer[WDI_FTM_MAX_RECEIVE_BUFFER];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   /* Statically allocated FTM Response Buffer */
   wpt_uint8                   ucFTMCommandRspBuffer[WDI_FTM_MAX_RECEIVE_BUFFER];
@@ -1107,7 +1152,10 @@ typedef struct
   /*version of the PNO implementation in RIVA*/
   wpt_uint8                   wdiPNOVersion;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*SSR timer*/
   wpt_timer                   ssrTimer;
@@ -1123,6 +1171,9 @@ typedef struct
 
   /* enable/disable SSR on WDI timeout */
   wpt_boolean                 bEnableSSR;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }WDI_ControlBlockType; 
 
@@ -2047,7 +2098,10 @@ WDI_ProcessGetStatsReq
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
 /**
  @brief Process Get Roam rssi Request function (called when Main FSM
@@ -2087,6 +2141,9 @@ WDI_ProcessGetRoamRssiRsp
 #endif
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process Update Cfg Request function (called when Main 
@@ -2223,8 +2280,11 @@ WDI_Status WDI_ProcessSetMaxTxPowerReq
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process Set Tx Power Request function (called when Main
         FSM allows it)
@@ -2241,6 +2301,9 @@ WDI_Status WDI_ProcessSetTxPowerReq
   WDI_EventInfoType*     pEventData
 );
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process P2P Notice Of Absence Request function (called when Main FSM
@@ -2259,7 +2322,10 @@ WDI_ProcessP2PGONOAReq
   WDI_EventInfoType*     pEventData
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2762,7 +2828,10 @@ WDI_ProcessHostSuspendInd
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process Traffic Stats Indications function (called when Main FSM allows it)
 
@@ -2778,6 +2847,9 @@ WDI_ProcessTrafficStatsInd
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*========================================================================
           Main DAL Control Path Response Processing API 
@@ -3417,7 +3489,10 @@ WDI_ProcessSetMaxTxPowerRsp
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /**
  @brief Process Set Tx Power Rsp function (called when a response
         is being received over the bus from HAL)
@@ -3435,6 +3510,9 @@ WDI_ProcessSetTxPowerRsp
   WDI_EventInfoType*             pEventData
 );
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process Nv download(called when a response
@@ -3454,7 +3532,10 @@ WDI_ProcessNvDownloadRsp
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -3474,7 +3555,10 @@ WDI_ProcessP2PGONOARsp
   WDI_EventInfoType*     pEventData
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -4107,8 +4191,11 @@ WDI_ProcessTxCompleteInd
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
 *@brief Process Noa Start Indication function (called when
         an indication of this kind is being received over the
@@ -4127,6 +4214,9 @@ WDI_ProcessP2pNoaStartInd
   WDI_EventInfoType*     pEventData
 );
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
 *@brief Process Noa Attr Indication function (called when
@@ -4146,7 +4236,10 @@ WDI_ProcessP2pNoaAttrInd
   WDI_EventInfoType*     pEventData
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -4206,7 +4299,10 @@ WDI_ProcessAggrAddTSpecRsp
 #endif /* WLAN_FEATURE_VOWIFI_11R */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -4243,7 +4339,10 @@ WDI_ProcessFTMCommandRsp
   WDI_EventInfoType*     pEventData
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -4292,7 +4391,11 @@ WDI_ProcessHALDumpCmdRsp
  @return Result of the function call
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPT_INLINE WDI_Status
+=======
+WDI_Status
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 WDI_Status
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4312,7 +4415,11 @@ WDI_CleanCB
  @return Result of the function call
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPT_INLINE WDI_Status
+=======
+WDI_Status
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 WDI_Status
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4491,7 +4598,11 @@ WDI_RXMsgCTSCB
  @return Result of the function call
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WDI_Status
+=======
+WPT_INLINE WDI_Status   // Motorola IKJB42MAIN-4103, are002, match instantiation
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 WPT_INLINE WDI_Status   // Motorola IKJB42MAIN-4103, are002, match instantiation
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4765,7 +4876,11 @@ WDI_FindAssocSessionByIdx
  @return 
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPT_INLINE void 
+=======
+void
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4785,7 +4900,11 @@ WDI_DS_AssignDatapathContext
  @return pointer to Datapath context
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPT_INLINE void * 
+=======
+void *
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void *
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4805,7 +4924,11 @@ WDI_DS_GetDatapathContext
  @return void
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPT_INLINE void  
+=======
+void
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4825,7 +4948,11 @@ WDT_AssignTransportDriverContext
  @return pointer to datapath context 
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPT_INLINE void * 
+=======
+void *
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void *
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4952,7 +5079,10 @@ WDI_ProcessUpdateScanParamsRsp
 #endif // FEATURE_WLAN_SCAN_PNO
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 /**
  @brief Process Start Roam Candidate Lookup Request function
@@ -4987,6 +5117,9 @@ WDI_ProcessRoamScanOffloadRsp
 );
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_PACKET_FILTERING
 /**
@@ -5227,7 +5360,10 @@ WDI_ProcessFeatureCapsExchangeRsp
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 WDI_Status
 WDI_ProcessUpdateVHTOpModeReq
@@ -5261,6 +5397,9 @@ WDI_wdiEdTypeEncToEdTypeEnc
 );
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /*WLAN_QCT_WDI_I_H*/
 

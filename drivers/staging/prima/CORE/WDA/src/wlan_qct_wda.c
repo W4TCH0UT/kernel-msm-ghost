@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -70,7 +76,10 @@
 2010-08-19    adwivedi    WLAN DAL AL(WDA) layer for Prima
 ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "vos_mq.h" 
@@ -95,10 +104,15 @@
 #include "btcApi.h"
 #include "vos_sched.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
 #include "pttMsgApi.h"
 #include "wlan_qct_sys.h"
 #endif /* ANI_MANF_DIAG */
+=======
+#include "pttMsgApi.h"
+#include "wlan_qct_sys.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "pttMsgApi.h"
 #include "wlan_qct_sys.h"
@@ -145,6 +159,10 @@
 #define WDA_NUM_PWR_SAVE_CFG       11
 #define WDA_TX_COMPLETE_TIME_OUT_VALUE 1000
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define WDA_TRAFFIC_STATS_TIME_OUT_VALUE 1000
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WDA_TRAFFIC_STATS_TIME_OUT_VALUE 1000
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -153,7 +171,10 @@
 
 #define WDA_WAIT_MSEC_TILL_RING_EMPTY    10    /* 10 msec wait per cycle */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WDA_IS_NULL_MAC_ADDRESS(mac_addr) \
    ((mac_addr[0] == 0x00) && (mac_addr[1] == 0x00) && (mac_addr[2] == 0x00) &&\
     (mac_addr[1] == 0x00) && (mac_addr[2] == 0x00) && (mac_addr[3] == 0x00))
@@ -162,6 +183,9 @@
 #define WDA_MAC_ADDRESS_STR "%02x:%02x:%02x:%02x:%02x:%02x"
 #define WDA_DUMPCMD_WAIT_TIMEOUT 10000
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* extern declarations */
 extern void vos_WDAComplete_cback(v_PVOID_t pVosContext);
@@ -187,6 +211,10 @@ static VOS_STATUS wdaCreateTimers(tWDA_CbContext *pWDA) ;
 static VOS_STATUS wdaDestroyTimers(tWDA_CbContext *pWDA);
 void WDA_BaCheckActivity(tWDA_CbContext *pWDA) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+void WDA_TimerTrafficStatsInd(tWDA_CbContext *pWDA);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void WDA_TimerTrafficStatsInd(tWDA_CbContext *pWDA);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -204,13 +232,19 @@ static VOS_STATUS WDA_ProcessSetRssiFilterReq(tWDA_CbContext *pWDA, tSirSetRSSIF
 static VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA, tSirUpdateScanParams *pUpdateScanParams);
 #endif // FEATURE_WLAN_SCAN_PNO
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 VOS_STATUS WDA_ProcessRoamScanOffloadReq(tWDA_CbContext *pWDA,tSirRoamOffloadScanReq *pRoamOffloadScanReqParams);
 void WDA_RoamOffloadScanReqCallback(WDI_Status status, void* pUserData);
 void WDA_ConvertSirAuthToWDIAuth(WDI_AuthType *AuthType, v_U8_t csrAuthType);
 void WDA_ConvertSirEncToWDIEnc(WDI_EdType *EncrType, v_U8_t csrEncrType);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_PACKET_FILTERING
 static VOS_STATUS WDA_Process8023MulticastListReq (
@@ -222,6 +256,12 @@ static VOS_STATUS WDA_ProcessReceiveFilterSetFilterReq (
                                    tSirRcvPktFilterCfgType *pRcvPktFilterCfg
                                                        );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+// IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+void WDA_ProcessReceiveFilterSetFilterMcReq(tSirInvokeV6Filter *invokeV6FilterConfig);
+// IKJB42MAIN-1244, Motorola, a19091 - END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
 void WDA_ProcessReceiveFilterSetFilterMcReq(tSirInvokeV6Filter *invokeV6FilterConfig);
@@ -252,11 +292,17 @@ static VOS_STATUS WDA_ProcessGTKOffloadGetInfoReq(tWDA_CbContext *pWDA, tpSirGtk
 VOS_STATUS WDA_ProcessSetTmLevelReq(tWDA_CbContext *pWDA,
                                     tAniSetTmLevelReq *setTmLevelReq);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 VOS_STATUS WDA_ProcessUpdateOpMode(tWDA_CbContext *pWDA, 
                                    tUpdateVHTOpMode *pData);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_open
@@ -290,7 +336,11 @@ VOS_STATUS WDA_open(v_PVOID_t pVosContext, v_PVOID_t pOSContext,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "WDI Sync Event init failed - status = %d\n", status);
 <<<<<<< HEAD
+<<<<<<< HEAD
       status = VOS_STATUS_E_FAILURE;
+=======
+      goto error;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto error;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -302,7 +352,11 @@ VOS_STATUS WDA_open(v_PVOID_t pVosContext, v_PVOID_t pOSContext,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "VOS Mgmt Frame Event init failed - status = %d\n", status);
 <<<<<<< HEAD
+<<<<<<< HEAD
       status = VOS_STATUS_E_FAILURE;
+=======
+      goto error;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto error;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -313,7 +367,11 @@ VOS_STATUS WDA_open(v_PVOID_t pVosContext, v_PVOID_t pOSContext,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
             "VOS suspend data tx Event init failed - status = %d\n", status);
 <<<<<<< HEAD
+<<<<<<< HEAD
       status = VOS_STATUS_E_FAILURE;
+=======
+      goto error;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto error;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -324,7 +382,11 @@ VOS_STATUS WDA_open(v_PVOID_t pVosContext, v_PVOID_t pOSContext,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
             "VOS wait On Wdi Ind Event init failed - status = %d\n", status);
 <<<<<<< HEAD
+<<<<<<< HEAD
       status = VOS_STATUS_E_FAILURE;
+=======
+      goto error;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto error;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -337,7 +399,11 @@ VOS_STATUS WDA_open(v_PVOID_t pVosContext, v_PVOID_t pOSContext,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                                   "WDI Init failed" );
 <<<<<<< HEAD
+<<<<<<< HEAD
       status = VOS_STATUS_E_FAILURE;
+=======
+      goto error;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto error;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -356,11 +422,17 @@ VOS_STATUS WDA_open(v_PVOID_t pVosContext, v_PVOID_t pOSContext,
    }
    return status;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 error:
       vos_free_context(pVosContext, VOS_MODULE_ID_WDA, wdaContext);
       return VOS_STATUS_E_FAILURE;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -400,7 +472,11 @@ void WDA_wdiStartCallback(WDI_StartRspParamsType *wdiRspParams,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid pVosContext", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid pVosContext", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid pVosContext", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -411,7 +487,11 @@ void WDA_wdiStartCallback(WDI_StartRspParamsType *wdiRspParams,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid wdaContext", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid wdaContext", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid wdaContext", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -421,7 +501,11 @@ void WDA_wdiStartCallback(WDI_StartRspParamsType *wdiRspParams,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: WDI_Start() failure reported", __FUNCTION__ );
+=======
+                 "%s: WDI_Start() failure reported", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: WDI_Start() failure reported", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -459,7 +543,11 @@ void WDA_wdiStartCallback(WDI_StartRspParamsType *wdiRspParams,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Unable to unblock WDA_start", __FUNCTION__ );
+=======
+                 "%s: Unable to unblock WDA_start", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Unable to unblock WDA_start", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -481,7 +569,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid pVosContext", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid pVosContext", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid pVosContext", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -492,7 +584,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid wdaContext", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid wdaContext", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid wdaContext", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -506,7 +602,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked from wrong state %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, wdaContext->wdaState );
+=======
+                 __func__, wdaContext->wdaState );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, wdaContext->wdaState );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -523,7 +623,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Unable to prepare Config TLV", __FUNCTION__ );
+=======
+                 "%s: Unable to prepare Config TLV", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Unable to prepare Config TLV", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -544,7 +648,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: WDI Start failed", __FUNCTION__ );
+=======
+                 "%s: WDI Start failed", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: WDI Start failed", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -553,9 +661,12 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    }
    /* wait for WDI start to invoke our callback */
 <<<<<<< HEAD
+<<<<<<< HEAD
    status = vos_wait_single_event( &wdaContext->wdaWdiEvent,
                                    WDA_WDI_START_TIMEOUT );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // IKHSS7-38339 - Motorola, a19091, -- START
    /*status = vos_wait_single_event( &wdaContext->wdaWdiEvent,
                                    WDA_WDI_START_TIMEOUT ); */
@@ -581,6 +692,9 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
        status = ( 0 >= ret ) ? VOS_STATUS_E_TIMEOUT : VOS_STATUS_SUCCESS;
    }
    // IKHSS7-38339 - Motorola, a19091, -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ( !VOS_IS_STATUS_SUCCESS(status) )
    {
@@ -588,7 +702,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: Timeout occurred during WDI_Start", __FUNCTION__ );
+=======
+                    "%s: Timeout occurred during WDI_Start", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: Timeout occurred during WDI_Start", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -598,7 +716,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                     "%s: Error %d while waiting for WDI_Start",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     __FUNCTION__, status);
+=======
+                    __func__, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     __func__, status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -614,7 +736,11 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: WDI_Start() failure detected", __FUNCTION__ );
+=======
+                 "%s: WDI_Start() failure detected", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: WDI_Start() failure detected", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -625,11 +751,17 @@ VOS_STATUS WDA_start(v_PVOID_t pVosContext)
    {
       status = wdaCreateTimers(wdaContext) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if(VOS_STATUS_SUCCESS == status)
       {
          wdaContext->wdaTimersCreated = VOS_TRUE;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return status;
@@ -656,7 +788,11 @@ VOS_STATUS WDA_prepareConfigTLV(v_PVOID_t pVosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid wdaContext or pMac", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid wdaContext or pMac", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid wdaContext or pMac", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -677,7 +813,11 @@ VOS_STATUS WDA_prepareConfigTLV(v_PVOID_t pVosContext,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:configParam is NULL", __FUNCTION__);
+=======
+                           "%s:configParam is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:configParam is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1562,7 +1702,10 @@ VOS_STATUS WDA_prepareConfigTLV(v_PVOID_t pVosContext,
                             + sizeof(tHalCfg) + tlvStruct->length) ; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION   */
    tlvStruct->type = QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION  ;
    tlvStruct->length = sizeof(tANI_U32);
@@ -1624,6 +1767,9 @@ VOS_STATUS WDA_prepareConfigTLV(v_PVOID_t pVosContext,
    tlvStruct = (tHalCfg *)( (tANI_U8 *) tlvStruct
                             + sizeof(tHalCfg) + tlvStruct->length) ;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiStartParams->usConfigBufferLen = (tANI_U8 *)tlvStruct - tlvStructStart ;
 #ifdef WLAN_DEBUG
@@ -1664,6 +1810,7 @@ handle_failure:
  * call the voss call back function
  */ 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void WDA_stopCallback(WDI_Status status, v_PVOID_t *pVosContext)
 {
    tWDA_CbContext *wdaContext= (tWDA_CbContext *)VOS_GET_WDA_CTXT(pVosContext);
@@ -1680,6 +1827,8 @@ void WDA_stopCallback(WDI_Status status, v_PVOID_t *pVosContext)
       wdaContext->wdaWdiApiMsgParam = NULL;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void WDA_stopCallback(WDI_Status status, void* pUserData)
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
@@ -1709,6 +1858,9 @@ void WDA_stopCallback(WDI_Status status, void* pUserData)
    }
    vos_mem_free(pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(WDI_STATUS_SUCCESS != status)
    {
@@ -1721,13 +1873,19 @@ void WDA_stopCallback(WDI_Status status, void* pUserData)
       wdaContext->wdaState = WDA_STOP_STATE;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    /* Indicate VOSS about the start complete */
    vos_WDAComplete_cback(pVosContext);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Indicate VOSS about the start complete */
    vos_WDAComplete_cback(wdaContext->pVosContext);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return ;
 }
@@ -1742,6 +1900,7 @@ VOS_STATUS WDA_stop(v_PVOID_t pVosContext, tANI_U8 reason)
    WDI_StopReqParamsType *wdiStopReq;
    tWDA_CbContext *pWDA = (tWDA_CbContext *)VOS_GET_WDA_CTXT(pVosContext);
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (NULL == pWDA)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
@@ -1750,6 +1909,8 @@ VOS_STATUS WDA_stop(v_PVOID_t pVosContext, tANI_U8 reason)
       return VOS_STATUS_E_FAILURE;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams ;
 
    if (NULL == pWDA)
@@ -1766,6 +1927,9 @@ VOS_STATUS WDA_stop(v_PVOID_t pVosContext, tANI_U8 reason)
       return VOS_STATUS_E_ALREADY;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* FTM mode stay START_STATE */
    if( (WDA_READY_STATE != pWDA->wdaState) &&
@@ -1779,6 +1943,7 @@ VOS_STATUS WDA_stop(v_PVOID_t pVosContext, tANI_U8 reason)
    if(NULL == wdiStopReq)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
 <<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
       VOS_ASSERT(0);
@@ -1803,6 +1968,8 @@ VOS_STATUS WDA_stop(v_PVOID_t pVosContext, tANI_U8 reason)
    wdiStatus = WDI_Stop(wdiStopReq,
                            (WDI_StopRspCb)WDA_stopCallback, pVosContext);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "%s: VOS MEM Alloc Failure", __func__);
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -1836,14 +2003,22 @@ VOS_STATUS WDA_stop(v_PVOID_t pVosContext, tANI_U8 reason)
    wdiStatus = WDI_Stop(wdiStopReq,
                            (WDI_StopRspCb)WDA_stopCallback, pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (IS_WDI_STATUS_FAILURE(wdiStatus) )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                                   "error in WDA Stop" );
 <<<<<<< HEAD
+<<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam);
       pWDA->wdaWdiApiMsgParam = NULL;
+=======
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
       vos_mem_free(pWdaParams);
@@ -1866,7 +2041,11 @@ VOS_STATUS WDA_close(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid wdaContext", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid wdaContext", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid wdaContext", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1971,6 +2150,7 @@ VOS_STATUS WDA_GetWcnssWlanCompiledVersion(v_PVOID_t pvosGCtx,
 {
    tWDA_CbContext *pWDA;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
              "%s: Entered", __FUNCTION__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
@@ -1978,12 +2158,17 @@ VOS_STATUS WDA_GetWcnssWlanCompiledVersion(v_PVOID_t pvosGCtx,
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO_LOW,
              "%s: Entered", __func__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -1993,7 +2178,11 @@ VOS_STATUS WDA_GetWcnssWlanCompiledVersion(v_PVOID_t pvosGCtx,
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Invalid WDA context", __FUNCTION__);
+=======
+                "%s: Invalid WDA context", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Invalid WDA context", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2013,6 +2202,7 @@ VOS_STATUS WDA_GetWcnssWlanReportedVersion(v_PVOID_t pvosGCtx,
 {
    tWDA_CbContext *pWDA;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
              "%s: Entered", __FUNCTION__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
@@ -2020,12 +2210,17 @@ VOS_STATUS WDA_GetWcnssWlanReportedVersion(v_PVOID_t pvosGCtx,
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO_LOW,
              "%s: Entered", __func__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -2035,7 +2230,11 @@ VOS_STATUS WDA_GetWcnssWlanReportedVersion(v_PVOID_t pvosGCtx,
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Invalid WDA context", __FUNCTION__);
+=======
+                "%s: Invalid WDA context", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Invalid WDA context", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2056,17 +2255,23 @@ VOS_STATUS WDA_GetWcnssSoftwareVersion(v_PVOID_t pvosGCtx,
    tWDA_CbContext *pWDA;
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
              "%s: Entered", __FUNCTION__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              "%s: Entered", __func__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -2076,7 +2281,11 @@ VOS_STATUS WDA_GetWcnssSoftwareVersion(v_PVOID_t pvosGCtx,
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Invalid WDA context", __FUNCTION__);
+=======
+                "%s: Invalid WDA context", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Invalid WDA context", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2097,17 +2306,23 @@ VOS_STATUS WDA_GetWcnssHardwareVersion(v_PVOID_t pvosGCtx,
    tWDA_CbContext *pWDA;
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
              "%s: Entered", __FUNCTION__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              "%s: Entered", __func__);
    if ((NULL == pvosGCtx) || (NULL == pVersion))
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid parameter", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -2117,7 +2332,11 @@ VOS_STATUS WDA_GetWcnssHardwareVersion(v_PVOID_t pvosGCtx,
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Invalid WDA context", __FUNCTION__);
+=======
+                "%s: Invalid WDA context", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Invalid WDA context", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2140,6 +2359,7 @@ VOS_STATUS WDA_WniCfgDnld(tWDA_CbContext *pWDA)
    v_VOID_t *pCfgBinary = NULL;
    v_SIZE_t cbCfgBinarySize = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
    
    v_BOOL_t bStatus = VOS_FALSE;
    if (NULL == pMac )
@@ -2147,12 +2367,17 @@ VOS_STATUS WDA_WniCfgDnld(tWDA_CbContext *pWDA)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked with invalid MAC context ", __FUNCTION__ );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_BOOL_t bStatus = VOS_FALSE;
 
    if (NULL == pMac )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked with invalid MAC context ", __func__ );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -2207,6 +2432,7 @@ VOS_STATUS WDA_WniCfgDnld(tWDA_CbContext *pWDA)
     */
    processCfgDownloadReq(pMac,cbCfgBinarySize,pCfgBinary);
 <<<<<<< HEAD
+<<<<<<< HEAD
    if( pFileImage != NULL )
    {
       vos_mem_free( pFileImage );
@@ -2218,12 +2444,17 @@ fail:
       vos_mem_free( pFileImage );
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vosStatus = VOS_STATUS_SUCCESS;
 
    /* fall through to clean up and return success */
    
 fail:
    vos_mem_free( pFileImage );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return vosStatus;
 }
@@ -2242,17 +2473,23 @@ VOS_STATUS WDA_SuspendDataTxCallback( v_PVOID_t      pvosGCtx,
    tWDA_CbContext *pWDA = (tWDA_CbContext *)VOS_GET_WDA_CTXT(pvosGCtx);
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: Entered " ,__FUNCTION__);
    if (NULL == pWDA )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked with invalid WDA context ", __FUNCTION__ );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       "%s: Entered " ,__func__);
    if (NULL == pWDA )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked with invalid WDA context ", __func__ );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -2293,10 +2530,16 @@ VOS_STATUS WDA_SuspendDataTx(tWDA_CbContext *pWDA)
    VOS_STATUS status = VOS_STATUS_E_FAILURE;
    tANI_U8 eventIdx = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
    tANI_U8 ucSTAId = 0;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                       "%s: Entered " ,__FUNCTION__);
+=======
+
+   VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
+                      "%s: Entered " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -2319,8 +2562,12 @@ VOS_STATUS WDA_SuspendDataTx(tWDA_CbContext *pWDA)
    }
    /*Indicate TL to suspend transmission for all Sta Id */
 <<<<<<< HEAD
+<<<<<<< HEAD
    ucSTAId = WLAN_ALL_STA;
    status = WLANTL_SuspendDataTx(pWDA->pVosContext, &ucSTAId,
+=======
+   status = WLANTL_SuspendDataTx(pWDA->pVosContext, NULL,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    status = WLANTL_SuspendDataTx(pWDA->pVosContext, NULL,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2339,7 +2586,11 @@ VOS_STATUS WDA_SuspendDataTx(tWDA_CbContext *pWDA)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR, 
                  "%s: Status %d when waiting for Suspend Data TX Event",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, status);
+=======
+                 __func__, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2366,6 +2617,7 @@ VOS_STATUS WDA_ResumeDataTx(tWDA_CbContext *pWDA)
 {
    VOS_STATUS status = VOS_STATUS_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
    tANI_U8 ucSTAId = 0;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -2373,11 +2625,16 @@ VOS_STATUS WDA_ResumeDataTx(tWDA_CbContext *pWDA)
    ucSTAId = WLAN_ALL_STA;
    status = WLANTL_ResumeDataTx(pWDA->pVosContext, &ucSTAId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                       "%s: Entered " ,__func__);
 
    status = WLANTL_ResumeDataTx(pWDA->pVosContext, NULL);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -2393,17 +2650,23 @@ void WDA_InitScanReqCallback(WDI_Status wdiStatus, void* pUserData)
    VOS_STATUS      status;      
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -2414,15 +2677,21 @@ void WDA_InitScanReqCallback(WDI_Status wdiStatus, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "%s: pWDA_ScanParam received NULL", __FUNCTION__);
       VOS_ASSERT(0);
 	  vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
 	  vos_mem_free(pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "%s: pWDA_ScanParam received NULL", __func__);
       VOS_ASSERT(0);
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
       vos_mem_free(pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return ;
    }
@@ -2433,7 +2702,11 @@ void WDA_InitScanReqCallback(WDI_Status wdiStatus, void* pUserData)
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   "%s error in Resume Tx ", __FUNCTION__ );
+=======
+                                  "%s error in Resume Tx ", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   "%s error in Resume Tx ", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2446,7 +2719,13 @@ void WDA_InitScanReqCallback(WDI_Status wdiStatus, void* pUserData)
    
    /* assign status to scan params */
 <<<<<<< HEAD
+<<<<<<< HEAD
    pWDA_ScanParam->status = CONVERT_WDI2SIR_STATUS(wdiStatus) ;
+=======
+   /* without converting the Status to Failure or Success Just
+      pass the same status to lim */
+   pWDA_ScanParam->status = wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* without converting the Status to Failure or Success Just
       pass the same status to lim */
@@ -2473,17 +2752,23 @@ VOS_STATUS  WDA_ProcessInitScanReq(tWDA_CbContext *pWDA,
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiInitScanParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiInitScanParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -2493,7 +2778,11 @@ VOS_STATUS  WDA_ProcessInitScanReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2510,6 +2799,7 @@ VOS_STATUS  WDA_ProcessInitScanReq(tWDA_CbContext *pWDA,
    wdiInitScanParam->wdiReqInfo.ucFrameType = initScanParams->frameType ;
    wdiInitScanParam->wdiReqInfo.ucFrameLength = initScanParams->frameLength ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
    wdiInitScanParam->wdiReqInfo.bUseNOA = initScanParams->useNoA;
    wdiInitScanParam->wdiReqInfo.scanDuration = initScanParams->scanDuration;
@@ -2517,6 +2807,10 @@ VOS_STATUS  WDA_ProcessInitScanReq(tWDA_CbContext *pWDA,
    wdiInitScanParam->wdiReqInfo.bUseNOA = 0;
    wdiInitScanParam->wdiReqInfo.scanDuration = 0;
 #endif
+=======
+   wdiInitScanParam->wdiReqInfo.bUseNOA = initScanParams->useNoA;
+   wdiInitScanParam->wdiReqInfo.scanDuration = initScanParams->scanDuration;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiInitScanParam->wdiReqInfo.bUseNOA = initScanParams->useNoA;
    wdiInitScanParam->wdiReqInfo.scanDuration = initScanParams->scanDuration;
@@ -2584,17 +2878,23 @@ void WDA_StartScanReqCallback(WDI_StartScanRspParamsType *pScanRsp,
    tStartScanParams *pWDA_ScanParam;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -2605,9 +2905,15 @@ void WDA_StartScanReqCallback(WDI_StartScanRspParamsType *pScanRsp,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: pWDA_ScanParam received NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
 	  vos_mem_free(pWdaParams);
+=======
+                   "%s: pWDA_ScanParam received NULL", __func__);
+      VOS_ASSERT(0) ;
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: pWDA_ScanParam received NULL", __func__);
       VOS_ASSERT(0) ;
@@ -2619,9 +2925,15 @@ void WDA_StartScanReqCallback(WDI_StartScanRspParamsType *pScanRsp,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "%s: wdaWdiApiMsgParam is NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
 	  vos_mem_free(pWdaParams);
+=======
+                  "%s: wdaWdiApiMsgParam is NULL", __func__);
+      VOS_ASSERT(0) ;
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "%s: wdaWdiApiMsgParam is NULL", __func__);
       VOS_ASSERT(0) ;
@@ -2635,7 +2947,11 @@ void WDA_StartScanReqCallback(WDI_StartScanRspParamsType *pScanRsp,
    
    /* assign status to scan params */
 <<<<<<< HEAD
+<<<<<<< HEAD
    pWDA_ScanParam->status = CONVERT_WDI2SIR_STATUS(pScanRsp->wdiStatus) ;
+=======
+   pWDA_ScanParam->status = pScanRsp->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pWDA_ScanParam->status = pScanRsp->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2658,17 +2974,23 @@ VOS_STATUS  WDA_ProcessStartScanReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiStartScanParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiStartScanParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -2678,7 +3000,11 @@ VOS_STATUS  WDA_ProcessStartScanReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2722,17 +3048,23 @@ void WDA_EndScanReqCallback(WDI_Status status, void* pUserData)
    tEndScanParams *endScanParam;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                              "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                    "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                              "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                    "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -2743,15 +3075,21 @@ void WDA_EndScanReqCallback(WDI_Status status, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: endScanParam received NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
 	  vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
 	  vos_mem_free(pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    "%s: endScanParam received NULL", __func__);
       VOS_ASSERT(0) ;
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
       vos_mem_free(pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return ;
    } 
@@ -2761,7 +3099,11 @@ void WDA_EndScanReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams) ;
    /* assign status to scan params */
 <<<<<<< HEAD
+<<<<<<< HEAD
    endScanParam->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   endScanParam->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    endScanParam->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2784,17 +3126,23 @@ VOS_STATUS  WDA_ProcessEndScanReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                              "------> %s " ,__FUNCTION__);
    if(NULL == wdiEndScanParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                              "------> %s " ,__func__);
    if(NULL == wdiEndScanParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -2804,7 +3152,11 @@ VOS_STATUS  WDA_ProcessEndScanReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2847,17 +3199,23 @@ void WDA_FinishScanReqCallback(WDI_Status wdiStatus, void* pUserData)
    VOS_STATUS      status;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -2869,15 +3227,21 @@ void WDA_FinishScanReqCallback(WDI_Status wdiStatus, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "%s: finishScanParam is NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
 	  vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
 	  vos_mem_free(pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "%s: finishScanParam is NULL", __func__);
       VOS_ASSERT(0) ;
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
       vos_mem_free(pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return ;
    }
@@ -2893,9 +3257,15 @@ void WDA_FinishScanReqCallback(WDI_Status wdiStatus, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   "%s error in Resume Tx ", __FUNCTION__ );
    }
    finishScanParam->status = CONVERT_WDI2SIR_STATUS(wdiStatus) ;
+=======
+                                  "%s error in Resume Tx ", __func__ );
+   }
+   finishScanParam->status = wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   "%s error in Resume Tx ", __func__ );
    }
@@ -2919,17 +3289,23 @@ VOS_STATUS  WDA_ProcessFinishScanReq(tWDA_CbContext *pWDA,
    tANI_U8 i = 0;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                              "------> %s " ,__FUNCTION__);
    if(NULL == wdiFinishScanParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                              "------> %s " ,__func__);
    if(NULL == wdiFinishScanParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -2939,7 +3315,11 @@ VOS_STATUS  WDA_ProcessFinishScanReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3014,17 +3394,23 @@ void WDA_JoinReqCallback(WDI_Status status, void* pUserData)
    tSwitchChannelParams *joinReqParam;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -3038,7 +3424,11 @@ void WDA_JoinReqCallback(WDI_Status status, void* pUserData)
    /* reset macSTASelf */
    vos_mem_set(pWDA->macSTASelf, sizeof(pWDA->macSTASelf),0 );
 <<<<<<< HEAD
+<<<<<<< HEAD
    joinReqParam->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   joinReqParam->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    joinReqParam->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3059,6 +3449,7 @@ VOS_STATUS WDA_ProcessJoinReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiJoinReqParam) 
    {
@@ -3066,6 +3457,8 @@ VOS_STATUS WDA_ProcessJoinReq(tWDA_CbContext *pWDA,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       VOS_ASSERT(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiJoinReqParam) 
    {
@@ -3073,6 +3466,9 @@ VOS_STATUS WDA_ProcessJoinReq(tWDA_CbContext *pWDA,
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
       vos_mem_free(joinReqParam);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_NOMEM;
    }
@@ -3081,12 +3477,15 @@ VOS_STATUS WDA_ProcessJoinReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiJoinReqParam);
       return VOS_STATUS_E_NOMEM;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiJoinReqParam);
@@ -3111,6 +3510,9 @@ VOS_STATUS WDA_ProcessJoinReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_INVAL;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* copy the BSSID for pWDA */
    vos_mem_copy(wdiJoinReqParam->wdiReqInfo.macBSSID, pWDA->macBSSID, 
@@ -3161,17 +3563,23 @@ void WDA_SwitchChannelReqCallback(
    tSwitchChannelParams *pSwitchChanParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                    "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                    "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -3186,7 +3594,11 @@ void WDA_SwitchChannelReqCallback(
    vos_mem_free(pWdaParams) ;
    pSwitchChanParams->status = 
 <<<<<<< HEAD
+<<<<<<< HEAD
                           CONVERT_WDI2SIR_STATUS(wdiSwitchChanRsp->wdiStatus) ;
+=======
+                          wdiSwitchChanRsp->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                           wdiSwitchChanRsp->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3207,17 +3619,23 @@ VOS_STATUS WDA_ProcessChannelSwitchReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiSwitchChanParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiSwitchChanParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -3227,7 +3645,11 @@ VOS_STATUS WDA_ProcessChannelSwitchReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3285,17 +3707,23 @@ void WDA_ConfigBssReqCallback(WDI_ConfigBSSRspParamsType *wdiConfigBssRsp
    tAddStaParams *staConfigBssParam;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -3305,7 +3733,11 @@ void WDA_ConfigBssReqCallback(WDI_ConfigBSSRspParamsType *wdiConfigBssRsp
    staConfigBssParam = &configBssReqParam->staContext ;
    configBssReqParam->status = 
 <<<<<<< HEAD
+<<<<<<< HEAD
                      CONVERT_WDI2SIR_STATUS(wdiConfigBssRsp->wdiStatus);
+=======
+                     wdiConfigBssRsp->wdiStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      wdiConfigBssRsp->wdiStatus;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3387,7 +3819,11 @@ void WDA_ConfigBssReqCallback(WDI_ConfigBSSRspParamsType *wdiConfigBssRsp
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: fail to set STA idx associated with BSS index", __FUNCTION__);
+=======
+                    "%s: fail to set STA idx associated with BSS index", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: fail to set STA idx associated with BSS index", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3397,7 +3833,11 @@ void WDA_ConfigBssReqCallback(WDI_ConfigBSSRspParamsType *wdiConfigBssRsp
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: add BSS into mempool fail", __FUNCTION__);
+=======
+                    "%s: add BSS into mempool fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: add BSS into mempool fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3436,6 +3876,7 @@ VOS_STATUS WDA_ProcessConfigBssReq(tWDA_CbContext *pWDA,
 {
    WDI_Status status = WDI_STATUS_SUCCESS ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    WDI_ConfigBSSReqParamsType *wdiConfigBssReqParam =
                              (WDI_ConfigBSSReqParamsType *)vos_mem_malloc(
                                    sizeof(WDI_ConfigBSSReqParamsType)) ;
@@ -3447,6 +3888,8 @@ VOS_STATUS WDA_ProcessConfigBssReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WDI_ConfigBSSReqParamsType *wdiConfigBssReqParam;
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -3465,6 +3908,9 @@ VOS_STATUS WDA_ProcessConfigBssReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -3474,7 +3920,11 @@ VOS_STATUS WDA_ProcessConfigBssReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3483,6 +3933,11 @@ VOS_STATUS WDA_ProcessConfigBssReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_NOMEM;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
+                           "%s: maxTxPower %d", __func__, configBssReqParam->maxTxPower);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                            "%s: maxTxPower %d", __func__, configBssReqParam->maxTxPower);
@@ -3527,9 +3982,15 @@ void WDA_PostAssocReqCallback(WDI_PostAssocRspParamsType *wdiPostAssocRsp,
       &postAssocReqParam->addStaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    postAssocReqParam->status = 
                    CONVERT_WDI2SIR_STATUS(wdiPostAssocRsp->wdiStatus) ;
+=======
+                                          "<------ %s " ,__func__);
+   postAssocReqParam->status = 
+                   wdiPostAssocRsp->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
    postAssocReqParam->status = 
@@ -3565,7 +4026,11 @@ VOS_STATUS WDA_ProcessPostAssocReq(tWDA_CbContext *pWDA,
                                    sizeof(WDI_PostAssocReqParamsType)) ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3574,7 +4039,11 @@ VOS_STATUS WDA_ProcessPostAssocReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3586,7 +4055,11 @@ VOS_STATUS WDA_ProcessPostAssocReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
              "%s: wdaMsgParam or wdaWdiApiMsgParam is not NULL", __FUNCTION__); 
+=======
+             "%s: wdaMsgParam or wdaWdiApiMsgParam is not NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "%s: wdaMsgParam or wdaWdiApiMsgParam is not NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3646,15 +4119,21 @@ void WDA_AddStaReqCallback(WDI_ConfigSTARspParamsType *wdiConfigStaRsp,
    tAddStaParams *addStaReqParam;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,"%s: pWdaParams is NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,"%s: pWdaParams is NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -3663,7 +4142,11 @@ void WDA_AddStaReqCallback(WDI_ConfigSTARspParamsType *wdiConfigStaRsp,
    addStaReqParam = (tAddStaParams *)pWdaParams->wdaMsgParam;
    addStaReqParam->status = 
 <<<<<<< HEAD
+<<<<<<< HEAD
                    CONVERT_WDI2SIR_STATUS(wdiConfigStaRsp->wdiStatus) ;
+=======
+                   wdiConfigStaRsp->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    wdiConfigStaRsp->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3678,14 +4161,20 @@ void WDA_AddStaReqCallback(WDI_ConfigSTARspParamsType *wdiConfigStaRsp,
       addStaReqParam->ucBcastSig = wdiConfigStaRsp->ucBcastSig;
       /* update staIndex as valid index for BA if STA is HT capable*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       if(addStaReqParam->staType == STA_ENTRY_PEER && addStaReqParam->htCapable)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS 
       if( (addStaReqParam->staType == STA_ENTRY_PEER ||
          addStaReqParam->staType == STA_ENTRY_TDLS_PEER) && addStaReqParam->htCapable)
 #else
       if(addStaReqParam->staType == STA_ENTRY_PEER && addStaReqParam->htCapable)
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       {
          pWDA->wdaStaInfo[addStaReqParam->staIdx].bssIdx = 
@@ -3697,7 +4186,11 @@ void WDA_AddStaReqCallback(WDI_ConfigSTARspParamsType *wdiConfigStaRsp,
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: add STA into mempool fail", __FUNCTION__);
+=======
+                    "%s: add STA into mempool fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: add STA into mempool fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3724,17 +4217,23 @@ VOS_STATUS WDA_ProcessAddStaReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiConfigStaReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiConfigStaReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -3744,7 +4243,11 @@ VOS_STATUS WDA_ProcessAddStaReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3787,17 +4290,23 @@ void WDA_DelBSSReqCallback(WDI_DelBSSRspParamsType *wdiDelBssRsp,
    tANI_U8  staIdx,tid;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
             "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
             "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -3805,7 +4314,11 @@ void WDA_DelBSSReqCallback(WDI_DelBSSRspParamsType *wdiDelBssRsp,
    pWDA = (tWDA_CbContext *)pWdaParams->pWdaContext;
    delBssReqParam = (tDeleteBssParams *)pWdaParams->wdaMsgParam;
 <<<<<<< HEAD
+<<<<<<< HEAD
    delBssReqParam->status = CONVERT_WDI2SIR_STATUS(wdiDelBssRsp->wdiStatus) ;
+=======
+   delBssReqParam->status = wdiDelBssRsp->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    delBssReqParam->status = wdiDelBssRsp->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3818,7 +4331,11 @@ void WDA_DelBSSReqCallback(WDI_DelBSSRspParamsType *wdiDelBssRsp,
    {
      VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Get STA index from BSS index Fail", __FUNCTION__);
+=======
+                 "%s: Get STA index from BSS index Fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Get STA index from BSS index Fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3828,7 +4345,11 @@ void WDA_DelBSSReqCallback(WDI_DelBSSRspParamsType *wdiDelBssRsp,
    {
      VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: DEL STA from MemPool Fail", __FUNCTION__);
+=======
+                 "%s: DEL STA from MemPool Fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: DEL STA from MemPool Fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3838,7 +4359,11 @@ void WDA_DelBSSReqCallback(WDI_DelBSSRspParamsType *wdiDelBssRsp,
    {
      VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Clear STA index form table Fail", __FUNCTION__);
+=======
+                 "%s: Clear STA index form table Fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Clear STA index form table Fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3881,17 +4406,23 @@ VOS_STATUS WDA_ProcessDelBssReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiDelBssReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiDelBssReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -3901,7 +4432,11 @@ VOS_STATUS WDA_ProcessDelBssReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3942,17 +4477,23 @@ void WDA_DelSTAReqCallback(WDI_DelSTARspParamsType *wdiDelStaRsp,
    tDeleteStaParams *delStaReqParam;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -3960,7 +4501,11 @@ void WDA_DelSTAReqCallback(WDI_DelSTARspParamsType *wdiDelStaRsp,
    pWDA = (tWDA_CbContext *)pWdaParams->pWdaContext;
    delStaReqParam = (tDeleteStaParams *)pWdaParams->wdaMsgParam;
 <<<<<<< HEAD
+<<<<<<< HEAD
    delStaReqParam->status = CONVERT_WDI2SIR_STATUS(wdiDelStaRsp->wdiStatus) ;
+=======
+   delStaReqParam->status = wdiDelStaRsp->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    delStaReqParam->status = wdiDelStaRsp->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3970,7 +4515,11 @@ void WDA_DelSTAReqCallback(WDI_DelSTARspParamsType *wdiDelStaRsp,
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "%s: DEL STA from MemPool Fail", __FUNCTION__);
+=======
+                    "%s: DEL STA from MemPool Fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "%s: DEL STA from MemPool Fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4002,17 +4551,23 @@ VOS_STATUS WDA_ProcessDelStaReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiDelStaReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiDelStaReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -4022,7 +4577,11 @@ VOS_STATUS WDA_ProcessDelStaReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4058,17 +4617,23 @@ void WDA_ProcessAddStaSelfRsp(WDI_AddSTASelfRspParamsType* pwdiAddSTASelfRsp, vo
    tAddStaSelfParams *pAddStaSelfRsp = NULL; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -4098,7 +4663,11 @@ VOS_STATUS WDA_ProcessAddStaSelfReq( tWDA_CbContext *pWDA, tpAddStaSelfParams pA
    tWDA_ReqParams *pWdaParams; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4107,7 +4676,11 @@ VOS_STATUS WDA_ProcessAddStaSelfReq( tWDA_CbContext *pWDA, tpAddStaSelfParams pA
       VOS_ASSERT( 0 );
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "%s: Unable to allocate memory " ,__FUNCTION__);
+=======
+                                          "%s: Unable to allocate memory " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "%s: Unable to allocate memory " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4119,7 +4692,11 @@ VOS_STATUS WDA_ProcessAddStaSelfReq( tWDA_CbContext *pWDA, tpAddStaSelfParams pA
       VOS_ASSERT( 0 );
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "%s: Unable to allocate memory " ,__FUNCTION__);
+=======
+                                          "%s: Unable to allocate memory " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "%s: Unable to allocate memory " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4160,17 +4737,23 @@ void WDA_DelSTASelfRespCallback(WDI_DelSTASelfRspParamsType *
    tDelStaSelfParams     *delStaSelfParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if (NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: Invalid pWdaParams pointer", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if (NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: Invalid pWdaParams pointer", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return;
@@ -4179,7 +4762,11 @@ void WDA_DelSTASelfRespCallback(WDI_DelSTASelfRspParamsType *
    delStaSelfParams = (tDelStaSelfParams *)pWdaParams->wdaMsgParam;
    delStaSelfParams->status = 
 <<<<<<< HEAD
+<<<<<<< HEAD
                CONVERT_WDI2SIR_STATUS(wdiDelStaSelfRspParams->wdiStatus) ;
+=======
+               wdiDelStaSelfRspParams->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                wdiDelStaSelfRspParams->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4203,8 +4790,13 @@ void WDA_DelSTASelfReqCallback(WDI_Status   wdiStatus,
    
    VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
              "<------ %s, wdiStatus: %d pWdaParams: 0x%x",
               __FUNCTION__, wdiStatus, pWdaParams); 
+=======
+             "<------ %s, wdiStatus: %d pWdaParams: %p",
+              __func__, wdiStatus, pWdaParams); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "<------ %s, wdiStatus: %d pWdaParams: %p",
               __func__, wdiStatus, pWdaParams); 
@@ -4214,7 +4806,11 @@ void WDA_DelSTASelfReqCallback(WDI_Status   wdiStatus,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: Invalid pWdaParams pointer", __FUNCTION__);
+=======
+              "%s: Invalid pWdaParams pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: Invalid pWdaParams pointer", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4226,7 +4822,11 @@ void WDA_DelSTASelfReqCallback(WDI_Status   wdiStatus,
    delStaSelfParams = (tDelStaSelfParams *)pWdaParams->wdaMsgParam;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    delStaSelfParams->status = CONVERT_WDI2SIR_STATUS(wdiStatus) ;
+=======
+   delStaSelfParams->status = wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    delStaSelfParams->status = wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4258,7 +4858,11 @@ VOS_STATUS WDA_ProcessDelSTASelfReq(tWDA_CbContext *pWDA,
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4267,7 +4871,11 @@ VOS_STATUS WDA_ProcessDelSTASelfReq(tWDA_CbContext *pWDA,
       VOS_ASSERT( 0 );
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "%s: Unable to allocate memory " ,__FUNCTION__);
+=======
+                                          "%s: Unable to allocate memory " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "%s: Unable to allocate memory " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4280,7 +4888,11 @@ VOS_STATUS WDA_ProcessDelSTASelfReq(tWDA_CbContext *pWDA,
       VOS_ASSERT( 0 );
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "%s: Unable to allocate memory " ,__FUNCTION__);
+=======
+                               "%s: Unable to allocate memory " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "%s: Unable to allocate memory " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4337,7 +4949,11 @@ void WDA_SendMsg(tWDA_CbContext *pWDA, tANI_U16 msgType,
       }
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: limPostMsgApi is failed " ,__FUNCTION__);
+=======
+                      "%s: limPostMsgApi is failed " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "%s: limPostMsgApi is failed " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4420,7 +5036,10 @@ void WDA_UpdateBSSParams(tWDA_CbContext *pWDA,
          else
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             for( keyIndex=0; keyIndex < SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS; 
@@ -4444,6 +5063,7 @@ void WDA_UpdateBSSParams(tWDA_CbContext *pWDA,
             wdiBssParams->wdiExtSetKeyParam.ucNumKeys = 
                SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
             wdiBssParams->wdiExtSetKeyParam.wdiKey[0].keyId =
                wdaBssParams->extSetStaKeyParam.key.keyId;
@@ -4462,6 +5082,8 @@ void WDA_UpdateBSSParams(tWDA_CbContext *pWDA,
                          SIR_MAC_MAX_KEY_LENGTH);
             wdiBssParams->wdiExtSetKeyParam.ucNumKeys = 1;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
@@ -4496,7 +5118,12 @@ void WDA_UpdateSTAParams(tWDA_CbContext *pWDA,
    wdiStaParams->usAssocId = wdaStaParams->assocId;
    wdiStaParams->wdiSTAType = wdaStaParams->staType;
 <<<<<<< HEAD
+<<<<<<< HEAD
    
+=======
+   wdiStaParams->staIdx = wdaStaParams->staIdx;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiStaParams->staIdx = wdaStaParams->staIdx;
 
@@ -4565,6 +5192,7 @@ void WDA_UpdateSTAParams(tWDA_CbContext *pWDA,
    wdiStaParams->ucDsssCckMode40Mhz = wdaStaParams->fDsssCckMode40Mhz;
    wdiStaParams->ucEncryptType = wdaStaParams->encryptType;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
    wdiStaParams->ucP2pCapableSta = wdaStaParams->p2pCapableSta;
 #endif
@@ -4573,6 +5201,8 @@ void WDA_UpdateSTAParams(tWDA_CbContext *pWDA,
    wdiStaParams->ucVhtTxChannelWidthSet = wdaStaParams->vhtTxChannelWidthSet;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiStaParams->ucP2pCapableSta = wdaStaParams->p2pCapableSta;
 #ifdef WLAN_FEATURE_11AC
    wdiStaParams->ucVhtCapableSta = wdaStaParams->vhtCapable;
@@ -4581,6 +5211,9 @@ void WDA_UpdateSTAParams(tWDA_CbContext *pWDA,
 #endif
    wdiStaParams->ucHtLdpcEnabled= wdaStaParams->htLdpcCapable;
    wdiStaParams->ucVhtLdpcEnabled = wdaStaParams->vhtLdpcCapable;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return ;
 }
@@ -4695,6 +5328,11 @@ static inline v_U8_t WDA_ConvertWniCfgIdToHALCfgId(v_U32_t wniCfgId)
       case WNI_CFG_ENABLE_CLOSE_LOOP:
          return QWLAN_HAL_CFG_ENABLE_CLOSE_LOOP;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      case WNI_CFG_ENABLE_LPWR_IMG_TRANSITION:
+         return QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       case WNI_CFG_ENABLE_LPWR_IMG_TRANSITION:
          return QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION;
@@ -4719,7 +5357,11 @@ void WDA_UpdateCfgCallback(WDI_Status   wdiStatus, void* pUserData)
                   (WDI_UpdateCfgReqParamsType *)pWDA->wdaWdiCfgApiMsgParam ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4731,7 +5373,11 @@ void WDA_UpdateCfgCallback(WDI_Status   wdiStatus, void* pUserData)
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "%s: CFG (%d) config failure \n", __FUNCTION__, 
+=======
+                  "%s: CFG (%d) config failure \n", __func__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "%s: CFG (%d) config failure \n", __func__, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4758,17 +5404,23 @@ VOS_STATUS WDA_UpdateCfg(tWDA_CbContext *pWDA, tSirMsgQ *cfgParam)
    tANI_U8        *configDataValue;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if (NULL == pMac )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked with invalid MAC context ", __FUNCTION__ );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if (NULL == pMac )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: Invoked with invalid MAC context ", __func__ );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
@@ -4781,7 +5433,11 @@ VOS_STATUS WDA_UpdateCfg(tWDA_CbContext *pWDA, tSirMsgQ *cfgParam)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:wdaWdiCfgApiMsgParam is not NULL", __FUNCTION__); 
+=======
+                           "%s:wdaWdiCfgApiMsgParam is not NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:wdaWdiCfgApiMsgParam is not NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4795,7 +5451,11 @@ VOS_STATUS WDA_UpdateCfg(tWDA_CbContext *pWDA, tSirMsgQ *cfgParam)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4808,7 +5468,11 @@ VOS_STATUS WDA_UpdateCfg(tWDA_CbContext *pWDA, tSirMsgQ *cfgParam)
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                              "%s: VOS MEM Alloc Failure \n", __FUNCTION__);
+=======
+                             "%s: VOS MEM Alloc Failure \n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              "%s: VOS MEM Alloc Failure \n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4873,7 +5537,11 @@ VOS_STATUS WDA_GetWepKeysFromCfg( tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invoked with invalid MAC context ", __FUNCTION__ );
+=======
+                 "%s: Invoked with invalid MAC context ", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invoked with invalid MAC context ", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4932,17 +5600,23 @@ void WDA_SetBssKeyReqCallback(WDI_Status status, void* pUserData)
    tSetBssKeyParams *setBssKeyParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -4952,7 +5626,11 @@ void WDA_SetBssKeyReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    setBssKeyParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   setBssKeyParams->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    setBssKeyParams->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4975,17 +5653,23 @@ VOS_STATUS WDA_ProcessSetBssKeyReq(tWDA_CbContext *pWDA,
    v_U8_t keyIndex;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiSetBssKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiSetBssKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -4995,7 +5679,11 @@ VOS_STATUS WDA_ProcessSetBssKeyReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5074,17 +5762,23 @@ void WDA_RemoveBssKeyReqCallback(WDI_Status status, void* pUserData)
    tRemoveBssKeyParams *removeBssKeyParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -5095,7 +5789,11 @@ void WDA_RemoveBssKeyReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams) ;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
    removeBssKeyParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   removeBssKeyParams->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    removeBssKeyParams->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5117,17 +5815,23 @@ VOS_STATUS WDA_ProcessRemoveBssKeyReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiRemoveBssKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiRemoveBssKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -5137,7 +5841,11 @@ VOS_STATUS WDA_ProcessRemoveBssKeyReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5180,17 +5888,23 @@ void WDA_SetStaKeyReqCallback(WDI_Status status, void* pUserData)
    tSetStaKeyParams *setStaKeyParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR
                 ,"%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR
                 ,"%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -5200,7 +5914,11 @@ void WDA_SetStaKeyReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    setStaKeyParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   setStaKeyParams->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    setStaKeyParams->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5223,17 +5941,23 @@ VOS_STATUS WDA_ProcessSetStaKeyReq(tWDA_CbContext *pWDA,
    v_U8_t keyIndex;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiSetStaKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiSetStaKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -5243,7 +5967,11 @@ VOS_STATUS WDA_ProcessSetStaKeyReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5272,7 +6000,10 @@ VOS_STATUS WDA_ProcessSetStaKeyReq(tWDA_CbContext *pWDA,
       else
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          for( keyIndex=0; keyIndex < SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS; 
@@ -5301,6 +6032,7 @@ VOS_STATUS WDA_ProcessSetStaKeyReq(tWDA_CbContext *pWDA,
          wdiSetStaKeyParam->wdiKeyInfo.ucNumKeys = 
                                           SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
          wdiSetStaKeyParam->wdiKeyInfo.wdiKey[0].keyId =
                                                 setStaKeyParams->key.keyId;
@@ -5319,6 +6051,8 @@ VOS_STATUS WDA_ProcessSetStaKeyReq(tWDA_CbContext *pWDA,
                                               SIR_MAC_MAX_KEY_LENGTH);
          wdiSetStaKeyParam->wdiKeyInfo.ucNumKeys = 1;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
@@ -5354,17 +6088,23 @@ void WDA_SetBcastStaKeyReqCallback(WDI_Status status, void* pUserData)
    tSetStaKeyParams *setStaKeyParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -5374,7 +6114,11 @@ void WDA_SetBcastStaKeyReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    setStaKeyParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   setStaKeyParams->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    setStaKeyParams->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5398,17 +6142,23 @@ VOS_STATUS WDA_ProcessSetBcastStaKeyReq(tWDA_CbContext *pWDA,
    v_U8_t keyIndex;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiSetStaKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiSetStaKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -5418,7 +6168,11 @@ VOS_STATUS WDA_ProcessSetBcastStaKeyReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5436,7 +6190,10 @@ VOS_STATUS WDA_ProcessSetBcastStaKeyReq(tWDA_CbContext *pWDA,
    if(setStaKeyParams->encType != eSIR_ED_NONE)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       for( keyIndex=0; keyIndex < SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS; 
@@ -5460,6 +6217,7 @@ VOS_STATUS WDA_ProcessSetBcastStaKeyReq(tWDA_CbContext *pWDA,
       wdiSetStaKeyParam->wdiKeyInfo.ucNumKeys = 
                                        SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
       wdiSetStaKeyParam->wdiKeyInfo.wdiKey[0].keyId =
                                              setStaKeyParams->key.keyId;
@@ -5478,6 +6236,8 @@ VOS_STATUS WDA_ProcessSetBcastStaKeyReq(tWDA_CbContext *pWDA,
                                            SIR_MAC_MAX_KEY_LENGTH);
       wdiSetStaKeyParam->wdiKeyInfo.ucNumKeys = 1;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
@@ -5511,17 +6271,23 @@ void WDA_RemoveStaKeyReqCallback(WDI_Status status, void* pUserData)
    tRemoveStaKeyParams *removeStaKeyParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -5531,7 +6297,11 @@ void WDA_RemoveStaKeyReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    removeStaKeyParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   removeStaKeyParams->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    removeStaKeyParams->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5553,17 +6323,23 @@ VOS_STATUS WDA_ProcessRemoveStaKeyReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiRemoveStaKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiRemoveStaKeyParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -5573,7 +6349,11 @@ VOS_STATUS WDA_ProcessRemoveStaKeyReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5624,11 +6404,14 @@ WDA_processSetLinkStateStatus WDA_IsHandleSetLinkStateReq(
          * No need to handle these messages.
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
          vos_mem_copy(pWDA->macBSSID,linkStateParams->bssid, 
                                                    sizeof(tSirMacAddr));
          vos_mem_copy(pWDA->macSTASelf,linkStateParams->selfMacAddr, 
                                                    sizeof(tSirMacAddr));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if( !WDA_IS_NULL_MAC_ADDRESS(linkStateParams->bssid) )
          {
             vos_mem_copy(pWDA->macBSSID,linkStateParams->bssid, 
@@ -5653,6 +6436,9 @@ WDA_processSetLinkStateStatus WDA_IsHandleSetLinkStateReq(
             VOS_ASSERT(0);
          }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          /* UMAC is issuing the setlink state with PREASSOC twice (before set 
          *channel and after ) so reset the WDA state to ready when the second 
@@ -5670,7 +6456,10 @@ WDA_processSetLinkStateStatus WDA_IsHandleSetLinkStateReq(
          //populate linkState info in WDACbCtxt
          pWDA->linkState = linkStateParams->state;
 <<<<<<< HEAD
+<<<<<<< HEAD
          status = WDA_IGNORE_SET_LINK_STATE;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
@@ -5686,11 +6475,14 @@ WDA_processSetLinkStateStatus WDA_IsHandleSetLinkStateReq(
             {
                pWDA->wdaState = WDA_READY_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
             VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                         "Set link state called when WDA is not in READY STATE " );
             status = WDA_IGNORE_SET_LINK_STATE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                /* Don't ignore the set link in this case*/
             }
             else
@@ -5699,6 +6491,9 @@ WDA_processSetLinkStateStatus WDA_IsHandleSetLinkStateReq(
                         "Set link state called when WDA is not in READY STATE " );
                status = WDA_IGNORE_SET_LINK_STATE;
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          break;
@@ -5717,17 +6512,23 @@ void WDA_SetLinkStateCallback(WDI_Status status, void* pUserData)
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
              "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
              "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -5777,7 +6578,11 @@ VOS_STATUS WDA_ProcessSetLinkState(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pMac is NULL", __FUNCTION__);
+=======
+                           "%s:pMac is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pMac is NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5788,17 +6593,23 @@ VOS_STATUS WDA_ProcessSetLinkState(tWDA_CbContext *pWDA,
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiSetLinkStateParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiSetLinkStateParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -5808,7 +6619,11 @@ VOS_STATUS WDA_ProcessSetLinkState(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5870,7 +6685,11 @@ void WDA_GetStatsReqParamsCallback(
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5882,7 +6701,11 @@ void WDA_GetStatsReqParamsCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5894,7 +6717,10 @@ void WDA_GetStatsReqParamsCallback(
    pGetPEStatsRspParams->msgLen = sizeof(tAniGetPEStatsRsp) + 
                    (wdiGetStatsRsp->usMsgLen - sizeof(WDI_GetStatsRspParamsType));
 <<<<<<< HEAD
+<<<<<<< HEAD
    pGetPEStatsRspParams->msgLen  = wdiGetStatsRsp->usMsgLen + sizeof(tANI_U8);
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -5902,7 +6728,11 @@ void WDA_GetStatsReqParamsCallback(
    pGetPEStatsRspParams->sessionId = 0;
    pGetPEStatsRspParams->rc = 
 <<<<<<< HEAD
+<<<<<<< HEAD
                       CONVERT_WDI2VOS_STATUS(wdiGetStatsRsp->wdiStatus);
+=======
+                      wdiGetStatsRsp->wdiStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       wdiGetStatsRsp->wdiStatus;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5929,7 +6759,11 @@ VOS_STATUS WDA_ProcessGetStatsReq(tWDA_CbContext *pWDA,
    tAniGetPEStatsRsp *pGetPEStatsRspParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5950,9 +6784,15 @@ VOS_STATUS WDA_ProcessGetStatsReq(tWDA_CbContext *pWDA,
       {
           VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
           VOS_ASSERT(0);
 		  vos_mem_free(pGetStatsParams);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+          VOS_ASSERT(0);
+          vos_mem_free(pGetStatsParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
           VOS_ASSERT(0);
@@ -5972,7 +6812,10 @@ VOS_STATUS WDA_ProcessGetStatsReq(tWDA_CbContext *pWDA,
    return CONVERT_WDI2VOS_STATUS(status);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
 /*
@@ -6103,6 +6946,9 @@ VOS_STATUS WDA_ProcessGetRoamRssiReq(tWDA_CbContext *pWDA,
 #endif
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_UpdateEDCAParamCallback
@@ -6115,17 +6961,23 @@ void WDA_UpdateEDCAParamCallback(WDI_Status status, void* pUserData)
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -6150,6 +7002,7 @@ VOS_STATUS WDA_ProcessUpdateEDCAParamReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiEdcaParam) 
    {
@@ -6158,6 +7011,8 @@ VOS_STATUS WDA_ProcessUpdateEDCAParamReq(tWDA_CbContext *pWDA,
       VOS_ASSERT(0);
 	  vos_mem_free(pEdcaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiEdcaParam) 
    {
@@ -6165,6 +7020,9 @@ VOS_STATUS WDA_ProcessUpdateEDCAParamReq(tWDA_CbContext *pWDA,
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
       vos_mem_free(pEdcaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_NOMEM;
    }
@@ -6173,15 +7031,21 @@ VOS_STATUS WDA_ProcessUpdateEDCAParamReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiEdcaParam);
 	  vos_mem_free(pEdcaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiEdcaParam);
       vos_mem_free(pEdcaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_NOMEM;
    }
@@ -6225,17 +7089,23 @@ void WDA_AddBAReqCallback(WDI_AddBARspinfoType *pAddBARspParams,
    tAddBAParams *pAddBAReqParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                 "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -6245,7 +7115,11 @@ void WDA_AddBAReqCallback(WDI_AddBARspinfoType *pAddBARspParams,
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
    vos_mem_free(pWdaParams);
 <<<<<<< HEAD
+<<<<<<< HEAD
    pAddBAReqParams->status = CONVERT_WDI2SIR_STATUS(pAddBARspParams->wdiStatus) ;
+=======
+   pAddBAReqParams->status = pAddBARspParams->wdiStatus ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pAddBAReqParams->status = pAddBARspParams->wdiStatus ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6267,17 +7141,23 @@ VOS_STATUS WDA_ProcessAddBAReq(tWDA_CbContext *pWDA, VOS_STATUS status,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiAddBAReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiAddBAReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -6287,7 +7167,11 @@ VOS_STATUS WDA_ProcessAddBAReq(tWDA_CbContext *pWDA, VOS_STATUS status,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6335,17 +7219,23 @@ void WDA_AddBASessionReqCallback(
    tAddBAParams *pAddBAReqParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -6356,17 +7246,23 @@ void WDA_AddBASessionReqCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "%s: pAddBAReqParams received NULL " ,__FUNCTION__);
       VOS_ASSERT( 0 );
 	  vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
 	  vos_mem_free(pWdaParams);
       return ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "%s: pAddBAReqParams received NULL " ,__func__);
       VOS_ASSERT( 0 );
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams);
       return ;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
@@ -6404,7 +7300,10 @@ void WDA_AddBASessionReqCallback(
          WDA_SET_BA_TXFLAG(pWDA, curSta, tid) ;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
       pWDA->wdaMsgParam = NULL;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDA_SendMsg(pWDA, WDA_ADDBA_RSP, (void *)pAddBAReqParams , 0) ;
@@ -6427,6 +7326,7 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
                           sizeof(WDI_AddBASessionReqParamsType)) ;
    tWDA_ReqParams *pWdaParams ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiAddBASessionReqParam) 
@@ -6434,6 +7334,8 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WLANTL_STAStateType tlSTAState = 0;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -6442,6 +7344,9 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -6451,7 +7356,11 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6493,7 +7402,10 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
    /* store Params pass it to WDI */
    pWdaParams->wdaWdiApiMsgParam = (void *)wdiAddBASessionReqParam ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* In TDLS case, there is a possibility that TL hasn't registered peer yet, but
       the peer thinks that we already setup TDLS link, and send us ADDBA request packet
@@ -6515,6 +7427,9 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
        return CONVERT_WDI2VOS_STATUS(status) ;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = WDI_AddBASessionReq(wdiAddBASessionReqParam, 
               (WDI_AddBASessionRspCb)WDA_AddBASessionReqCallback, pWdaParams);
@@ -6522,10 +7437,13 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
        "Failure in ADD BA Session REQ Params WDI API, free all the memory " );
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams->wdaMsgParam);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        "Failure in ADD BA Session REQ Params WDI API, free all the memory =%d\n", status);
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
        "Send ADD BA failure response to PE\n");
@@ -6535,6 +7453,9 @@ VOS_STATUS WDA_ProcessAddBASessionReq(tWDA_CbContext *pWDA,
       /*Reset the WDA state to READY */
       pWDA->wdaState = WDA_READY_STATE;
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_mem_free(pWdaParams);
    }
@@ -6555,7 +7476,11 @@ void WDA_DelBANotifyTL(tWDA_CbContext *pWDA,
    { 
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                   "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6587,17 +7512,23 @@ void WDA_DelBAReqCallback(WDI_Status status, void* pUserData)
    tDelBAParams *pDelBAReqParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -6636,17 +7567,23 @@ VOS_STATUS WDA_ProcessDelBAReq(tWDA_CbContext *pWDA,
    tANI_U8 tid = 0;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiDelBAReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiDelBAReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -6656,7 +7593,11 @@ VOS_STATUS WDA_ProcessDelBAReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6703,17 +7644,23 @@ void WDA_AddTSReqCallback(WDI_Status status, void* pUserData)
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -6724,7 +7671,11 @@ void WDA_AddTSReqCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams);
    
 <<<<<<< HEAD
+<<<<<<< HEAD
    pAddTsReqParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   pAddTsReqParams->status = status ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pAddTsReqParams->status = status ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6746,17 +7697,23 @@ VOS_STATUS WDA_ProcessAddTSReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiAddTSReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiAddTSReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -6766,7 +7723,11 @@ VOS_STATUS WDA_ProcessAddTSReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6872,7 +7833,11 @@ void WDA_DelTSReqCallback(WDI_Status status, void* pUserData)
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6900,6 +7865,7 @@ VOS_STATUS WDA_ProcessDelTSReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiDelTSReqParam) 
    {
@@ -6907,10 +7873,16 @@ VOS_STATUS WDA_ProcessDelTSReq(tWDA_CbContext *pWDA,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
                                           "------> %s " ,__func__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(NULL == wdiDelTSReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -6920,7 +7892,11 @@ VOS_STATUS WDA_ProcessDelTSReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6959,17 +7935,23 @@ void WDA_UpdateBeaconParamsCallback(WDI_Status status, void* pUserData)
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -6997,17 +7979,23 @@ VOS_STATUS WDA_ProcessUpdateBeaconParams(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiUpdateBeaconParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiUpdateBeaconParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -7017,7 +8005,11 @@ VOS_STATUS WDA_ProcessUpdateBeaconParams(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7082,17 +8074,23 @@ void WDA_TSMStatsReqCallback(WDI_TSMStatsRspParamsType *pwdiTSMStatsRspParams, v
  
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ Entering: %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ Entering: %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -7103,7 +8101,11 @@ void WDA_TSMStatsReqCallback(WDI_TSMStatsRspParamsType *pwdiTSMStatsRspParams, v
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "%s: pTsmRspParams received NULL " ,__FUNCTION__);
+=======
+                                          "%s: pTsmRspParams received NULL " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "%s: pTsmRspParams received NULL " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7140,6 +8142,7 @@ VOS_STATUS WDA_ProcessTsmStatsReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams = NULL;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> Entering: %s " ,__FUNCTION__);
    if((NULL != pWDA->wdaMsgParam) || (NULL != pWDA->wdaWdiApiMsgParam))
    {
@@ -7151,13 +8154,20 @@ VOS_STATUS WDA_ProcessTsmStatsReq(tWDA_CbContext *pWDA,
 =======
                                           "------> Entering: %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+                                          "------> Entering: %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiTSMReqParam = (WDI_TSMStatsReqParamsType *)vos_mem_malloc(
                                  sizeof(WDI_TSMStatsReqParamsType));
    if(NULL == wdiTSMReqParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7169,7 +8179,11 @@ VOS_STATUS WDA_ProcessTsmStatsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7197,6 +8211,10 @@ VOS_STATUS WDA_ProcessTsmStatsReq(tWDA_CbContext *pWDA,
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      WDA_SendMsg(pWDA, WDA_TSM_STATS_RSP, (void *)pTsmStats , 0) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       WDA_SendMsg(pWDA, WDA_TSM_STATS_RSP, (void *)pTsmStats , 0) ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7213,7 +8231,11 @@ void WDA_SendBeaconParamsCallback(WDI_Status status, void* pUserData)
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7231,7 +8253,11 @@ VOS_STATUS WDA_ProcessSendBeacon(tWDA_CbContext *pWDA,
    WDI_SendBeaconParamsType wdiSendBeaconReqParam; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7239,6 +8265,7 @@ VOS_STATUS WDA_ProcessSendBeacon(tWDA_CbContext *pWDA,
                               pSendbeaconParams->bssId, sizeof(tSirMacAddr));
    wdiSendBeaconReqParam.wdiSendBeaconParamsInfo.beaconLength = 
                               pSendbeaconParams->beaconLength;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    wdiSendBeaconReqParam.wdiSendBeaconParamsInfo.timIeOffset = 
@@ -7249,6 +8276,8 @@ VOS_STATUS WDA_ProcessSendBeacon(tWDA_CbContext *pWDA,
                               pSendbeaconParams->p2pIeOffset;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiSendBeaconReqParam.wdiSendBeaconParamsInfo.timIeOffset = 
                               pSendbeaconParams->timIeOffset;
    /* p2pIeOffset should be atleast greater than timIeOffset */
@@ -7263,6 +8292,9 @@ VOS_STATUS WDA_ProcessSendBeacon(tWDA_CbContext *pWDA,
    }
    wdiSendBeaconReqParam.wdiSendBeaconParamsInfo.usP2PIeOffset = 
                               pSendbeaconParams->p2pIeOffset;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Copy the beacon template to local buffer */
    vos_mem_copy(wdiSendBeaconReqParam.wdiSendBeaconParamsInfo.beacon, 
@@ -7287,7 +8319,11 @@ void WDA_UpdateProbeRspParamsCallback(WDI_Status status, void* pUserData)
 {
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7307,7 +8343,11 @@ VOS_STATUS WDA_ProcessUpdateProbeRspTemplate(tWDA_CbContext *pWDA,
          vos_mem_malloc(sizeof(WDI_UpdateProbeRspTemplateParamsType));
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7357,17 +8397,23 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -7378,15 +8424,21 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "%s: pMaxTxPowerParams received NULL " ,__FUNCTION__);
       VOS_ASSERT(0);
 	  vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
 	  vos_mem_free(pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "%s: pMaxTxPowerParams received NULL " ,__func__);
       VOS_ASSERT(0);
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
       vos_mem_free(pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return ;
    }
@@ -7406,7 +8458,11 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_SetMaxTxPowerCallBack
+=======
+ * FUNCTION: WDA_ProcessSetMaxTxPowerReq
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * FUNCTION: WDA_ProcessSetMaxTxPowerReq
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7419,6 +8475,7 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
    WDI_SetMaxTxPowerParamsType *wdiSetMaxTxPowerParams = NULL;
    tWDA_ReqParams *pWdaParams = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
    if((NULL != pWDA->wdaMsgParam) ||(NULL != pWDA->wdaWdiApiMsgParam))
@@ -7429,10 +8486,15 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
       return VOS_STATUS_E_FAILURE;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__func__);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiSetMaxTxPowerParams = (WDI_SetMaxTxPowerParamsType *)vos_mem_malloc(
                                  sizeof(WDI_SetMaxTxPowerParamsType));
@@ -7440,7 +8502,11 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7452,7 +8518,11 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7483,6 +8553,11 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      /* send response to UMAC*/
+       WDA_SendMsg(pWDA, WDA_SET_MAX_TX_POWER_RSP, MaxTxPowerParams , 0) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       /* send response to UMAC*/
        WDA_SendMsg(pWDA, WDA_SET_MAX_TX_POWER_RSP, MaxTxPowerParams , 0) ;
@@ -7493,8 +8568,11 @@ void WDA_SetMaxTxPowerCallBack(WDI_SetMaxTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
 }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
  * FUNCTION: WDA_SetTxPowerCallBack
@@ -7593,6 +8671,9 @@ void WDA_SetTxPowerCallBack(WDI_SetTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
    return CONVERT_WDI2VOS_STATUS(status);
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_SetP2PGONOAReqParamsCallback
@@ -7600,6 +8681,7 @@ void WDA_SetTxPowerCallBack(WDI_SetTxPowerRspMsg * pwdiSetMaxTxPowerRsp,
  */ 
 void WDA_SetP2PGONOAReqParamsCallback(WDI_Status status, void* pUserData)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
    tWDA_CbContext *pWDA = (tWDA_CbContext *)pUserData ; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -7609,6 +8691,8 @@ void WDA_SetP2PGONOAReqParamsCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWDA->wdaMsgParam) ;
    pWDA->wdaMsgParam = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData ; 
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -7626,6 +8710,9 @@ void WDA_SetP2PGONOAReqParamsCallback(WDI_Status status, void* pUserData)
    vos_mem_free(pWdaParams->wdaMsgParam) ;
    vos_mem_free(pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* 
     * No respone required for SIR_HAL_SET_P2P_GO_NOA_REQ 
@@ -7646,6 +8733,7 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
                 (WDI_SetP2PGONOAReqParamsType *)vos_mem_malloc(
                                    sizeof(WDI_SetP2PGONOAReqParamsType)) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiSetP2PGONOAReqParam) 
@@ -7656,6 +8744,8 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_NOMEM;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams = NULL;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -7679,6 +8769,9 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_NOMEM;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiSetP2PGONOAReqParam->wdiP2PGONOAInfo.ucOpp_ps = 
                                     pP2pPsConfigParams->opp_ps;
@@ -7694,6 +8787,7 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
                                     pP2pPsConfigParams->single_noa_duration;
    wdiSetP2PGONOAReqParam->wdiP2PGONOAInfo.ucPsSelection = 
                                     pP2pPsConfigParams->psSelection;
+<<<<<<< HEAD
 <<<<<<< HEAD
    if((NULL != pWDA->wdaMsgParam) ||
                              (NULL != pWDA->wdaWdiApiMsgParam))
@@ -7712,6 +8806,8 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
    status = WDI_SetP2PGONOAReq(wdiSetP2PGONOAReqParam, 
        (WDI_SetP2PGONOAReqParamsRspCb)WDA_SetP2PGONOAReqParamsCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    wdiSetP2PGONOAReqParam->wdiReqStatusCB = NULL ;
    /* Store msg pointer from PE, as this will be used for response */
@@ -7724,11 +8820,15 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
    status = WDI_SetP2PGONOAReq(wdiSetP2PGONOAReqParam, 
        (WDI_SetP2PGONOAReqParamsRspCb)WDA_SetP2PGONOAReqParamsCallback, pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(IS_WDI_STATUS_FAILURE(status))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
           "Failure in Set P2P GO NOA Req WDI API, free all the memory " );
+<<<<<<< HEAD
 <<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       vos_mem_free(pWDA->wdaMsgParam);
@@ -7739,12 +8839,20 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
       vos_mem_free(pWdaParams->wdaMsgParam);
       vos_mem_free(pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+      vos_mem_free(pWdaParams->wdaMsgParam);
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return CONVERT_WDI2VOS_STATUS(status);
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
@@ -7754,6 +8862,7 @@ VOS_STATUS WDA_ProcessSetP2PGONOAReq(tWDA_CbContext *pWDA,
  */ 
 void WDA_AggrAddTSReqCallback(WDI_Status status, void* pUserData)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
    tWDA_CbContext *pWDA = (tWDA_CbContext *)pUserData ; 
    tAggrAddTsParams *pAggrAddTsReqParams = 
@@ -7771,6 +8880,8 @@ void WDA_AggrAddTSReqCallback(WDI_Status status, void* pUserData)
    }
    WDA_SendMsg(pWDA, WDA_AGGR_QOS_RSP, (void *)pAggrAddTsReqParams , 0) ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData ; 
    tWDA_CbContext *pWDA;
    tAggrAddTsParams *pAggrAddTsReqParams;
@@ -7796,6 +8907,9 @@ void WDA_AggrAddTSReqCallback(WDI_Status status, void* pUserData)
 
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
    vos_mem_free(pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return ;
 }/* WLAN_FEATURE_VOWIFI_11R */
@@ -7809,6 +8923,7 @@ VOS_STATUS WDA_ProcessAggrAddTSReq(tWDA_CbContext *pWDA,
    WDI_Status status = WDI_STATUS_SUCCESS ;
    int i;
    WDI_AggrAddTSReqParamsType *wdiAggrAddTSReqParam;
+<<<<<<< HEAD
 <<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
@@ -7827,6 +8942,8 @@ VOS_STATUS WDA_ProcessAggrAddTSReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams = NULL;
 
 
@@ -7850,6 +8967,9 @@ VOS_STATUS WDA_ProcessAggrAddTSReq(tWDA_CbContext *pWDA,
                            "%s: VOS MEM Alloc Failure", __func__);
       vos_mem_free(pAggrAddTsReqParams);
       vos_mem_free(wdiAggrAddTSReqParam);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -7923,12 +9043,15 @@ VOS_STATUS WDA_ProcessAggrAddTSReq(tWDA_CbContext *pWDA,
    
    /* Store ADD TS pointer, as this will be used for response */
 <<<<<<< HEAD
+<<<<<<< HEAD
    pWDA->wdaMsgParam = (void *)pAggrAddTsReqParams ;
    /* store Params pass it to WDI */
    pWDA->wdaWdiApiMsgParam = (void *)wdiAggrAddTSReqParam ;
    status = WDI_AggrAddTSReq(wdiAggrAddTSReqParam, 
                              (WDI_AggrAddTsRspCb)WDA_AggrAddTSReqCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pWdaParams->wdaMsgParam = (void *)pAggrAddTsReqParams ;
    /* store Params pass it to WDI */
    pWdaParams->wdaWdiApiMsgParam = (void *)wdiAggrAddTSReqParam ;
@@ -7938,17 +9061,23 @@ VOS_STATUS WDA_ProcessAggrAddTSReq(tWDA_CbContext *pWDA,
    status = WDI_AggrAddTSReq(wdiAggrAddTSReqParam, 
                              (WDI_AggrAddTsRspCb)WDA_AggrAddTSReqCallback, pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(IS_WDI_STATUS_FAILURE(status))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in ADD TS REQ Params WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       vos_mem_free(pWDA->wdaMsgParam);
       pWDA->wdaWdiApiMsgParam = NULL;
       pWDA->wdaMsgParam = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams);
 
@@ -7960,6 +9089,9 @@ VOS_STATUS WDA_ProcessAggrAddTSReq(tWDA_CbContext *pWDA,
 
       WDA_SendMsg(pWdaParams->pWdaContext, WDA_AGGR_QOS_RSP, 
                         (void *)pAggrAddTsReqParams , 0) ;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return CONVERT_WDI2VOS_STATUS(status) ;
@@ -7974,8 +9106,13 @@ void WDA_EnterImpsReqCallback(WDI_Status status, void* pUserData)
    tWDA_CbContext *pWDA = (tWDA_CbContext *)pUserData ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    WDA_SendMsg(pWDA, WDA_ENTER_IMPS_RSP, NULL , CONVERT_WDI2SIR_STATUS(status)) ;
+=======
+                                          "<------ %s " ,__func__);
+   WDA_SendMsg(pWDA, WDA_ENTER_IMPS_RSP, NULL , status) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
    WDA_SendMsg(pWDA, WDA_ENTER_IMPS_RSP, NULL , status) ;
@@ -7991,7 +9128,11 @@ VOS_STATUS WDA_ProcessEnterImpsReq(tWDA_CbContext *pWDA)
    WDI_Status status = WDI_STATUS_SUCCESS ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8001,8 +9142,11 @@ VOS_STATUS WDA_ProcessEnterImpsReq(tWDA_CbContext *pWDA)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in Enter IMPS REQ WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       pWDA->wdaWdiApiMsgParam = NULL;
       pWDA->wdaMsgParam = NULL;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDA_SendMsg(pWDA, WDA_ENTER_IMPS_RSP, NULL , CONVERT_WDI2SIR_STATUS(status)) ;
@@ -8018,8 +9162,13 @@ void WDA_ExitImpsReqCallback(WDI_Status status, void* pUserData)
    tWDA_CbContext *pWDA = (tWDA_CbContext *)pUserData ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    WDA_SendMsg(pWDA, WDA_EXIT_IMPS_RSP, NULL , CONVERT_WDI2SIR_STATUS(status)) ;
+=======
+                                          "<------ %s " ,__func__);
+   WDA_SendMsg(pWDA, WDA_EXIT_IMPS_RSP, NULL , (status)) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
    WDA_SendMsg(pWDA, WDA_EXIT_IMPS_RSP, NULL , (status)) ;
@@ -8035,7 +9184,11 @@ VOS_STATUS WDA_ProcessExitImpsReq(tWDA_CbContext *pWDA)
    WDI_Status status = WDI_STATUS_SUCCESS ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8045,8 +9198,11 @@ VOS_STATUS WDA_ProcessExitImpsReq(tWDA_CbContext *pWDA)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in Exit IMPS REQ WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       pWDA->wdaWdiApiMsgParam = NULL;
       pWDA->wdaMsgParam = NULL;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDA_SendMsg(pWDA, WDA_EXIT_IMPS_RSP, NULL , CONVERT_WDI2SIR_STATUS(status)) ;
@@ -8054,6 +9210,7 @@ VOS_STATUS WDA_ProcessExitImpsReq(tWDA_CbContext *pWDA)
    return CONVERT_WDI2VOS_STATUS(status) ;
 }
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_EnterBmpsReqCallback
  * send Enter BMPS RSP back to PE
@@ -8079,6 +9236,8 @@ void WDA_EnterBmpsReqCallback(WDI_Status status, void* pUserData)
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_EnterBmpsRespCallback
  * send Enter BMPS RSP back to PE
  */ 
@@ -8146,6 +9305,9 @@ void WDA_EnterBmpsReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessEnterBmpsReq
  * Request to WDI to Enter BMPS power state.
@@ -8158,17 +9320,23 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if ((NULL == pWDA) || (NULL == pEnterBmpsReqParams))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: invalid param", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if ((NULL == pWDA) || (NULL == pEnterBmpsReqParams))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: invalid param", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_FAILURE;
@@ -8178,7 +9346,11 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8192,7 +9364,11 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8211,6 +9387,7 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
    wdiEnterBmpsReqParams->wdiEnterBmpsInfo.numBeaconPerRssiAverage = (wpt_uint32)pEnterBmpsReqParams->numBeaconPerRssiAverage;
    wdiEnterBmpsReqParams->wdiEnterBmpsInfo.bRssiFilterEnable = (wpt_uint8)pEnterBmpsReqParams->bRssiFilterEnable;
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiEnterBmpsReqParams->wdiReqStatusCB = NULL;
    // we are done with the input
    vos_mem_free(pEnterBmpsReqParams);
@@ -8222,6 +9399,8 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
    status = WDI_EnterBmpsReq(wdiEnterBmpsReqParams,
                     (WDI_EnterBmpsRspCb)WDA_EnterBmpsReqCallback, pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEnterBmpsReqParams->wdiReqStatusCB = WDA_EnterBmpsReqCallback;
    wdiEnterBmpsReqParams->pUserData = pWdaParams;
 
@@ -8232,6 +9411,9 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
    pWdaParams->pWdaContext = pWDA;
    status = WDI_EnterBmpsReq(wdiEnterBmpsReqParams,
                     (WDI_EnterBmpsRspCb)WDA_EnterBmpsRespCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (IS_WDI_STATUS_FAILURE(status))
    {
@@ -8239,6 +9421,10 @@ VOS_STATUS WDA_ProcessEnterBmpsReq(tWDA_CbContext *pWDA,
               "Failure in Enter BMPS REQ WDI API, free all the memory" );
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      vos_mem_free(pWdaParams->wdaMsgParam);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       vos_mem_free(pWdaParams->wdaMsgParam);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8261,6 +9447,7 @@ static void WDA_SendExitBmpsRsp(tWDA_CbContext *pWDA,
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_ExitBmpsReqCallback
  * send Exit BMPS RSP back to PE
  */ 
@@ -8281,6 +9468,8 @@ void WDA_ExitBmpsReqCallback(WDI_Status status, void* pUserData)
    pWDA = (tWDA_CbContext *)pWdaParams->pWdaContext ;
    pExitBmpsReqParams = (tExitBmpsParams *)pWdaParams->wdaMsgParam ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ExitBmpsRespCallback
  * send Exit BMPS RSP back to PE
  */ 
@@ -8305,11 +9494,15 @@ void WDA_ExitBmpsRespCallback(WDI_ExitBmpsRspParamsType *pwdiExitBmpsRsp, void* 
 
    pExitBmpsRspParams->bssIdx = pwdiExitBmpsRsp->bssIdx;
    pExitBmpsRspParams->status = (pwdiExitBmpsRsp->wdiStatus);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    pExitBmpsReqParams->status = CONVERT_WDI2SIR_STATUS(status) ;
    WDA_SendMsg(pWDA, WDA_EXIT_BMPS_RSP, (void *)pExitBmpsReqParams , 0) ;
@@ -8334,6 +9527,8 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WDA_SendMsg(pWDA, WDA_EXIT_BMPS_RSP, (void *)pExitBmpsRspParams , 0) ;
    return ;
 }
@@ -8390,6 +9585,9 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       WDA_SendExitBmpsRsp(pWDA, WDI_STATUS_MEM_FAILURE, pExitBmpsReqParams);
@@ -8400,7 +9598,11 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8413,8 +9615,14 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
    wdiExitBmpsReqParams->wdiExitBmpsInfo.bssIdx = pExitBmpsReqParams->bssIdx;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiExitBmpsReqParams->wdiReqStatusCB = NULL;
       
+=======
+   wdiExitBmpsReqParams->wdiReqStatusCB = WDA_ExitBmpsReqCallback;
+   wdiExitBmpsReqParams->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiExitBmpsReqParams->wdiReqStatusCB = WDA_ExitBmpsReqCallback;
    wdiExitBmpsReqParams->pUserData = pWdaParams;
@@ -8427,7 +9635,11 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pExitBmpsReqParams;
    status = WDI_ExitBmpsReq(wdiExitBmpsReqParams,
 <<<<<<< HEAD
+<<<<<<< HEAD
                              (WDI_ExitBmpsRspCb)WDA_ExitBmpsReqCallback, pWdaParams);
+=======
+                             (WDI_ExitBmpsRspCb)WDA_ExitBmpsRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              (WDI_ExitBmpsRspCb)WDA_ExitBmpsRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8436,7 +9648,10 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in Exit BMPS REQ WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       vos_mem_free(pWdaParams->wdaMsgParam) ;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
@@ -8446,6 +9661,7 @@ VOS_STATUS WDA_ProcessExitBmpsReq(tWDA_CbContext *pWDA,
    return CONVERT_WDI2VOS_STATUS(status) ;
 }
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_EnterUapsdReqCallback
  * send Enter UAPSD RSP back to PE
@@ -8474,6 +9690,8 @@ void WDA_EnterUapsdReqCallback(WDI_Status status, void* pUserData)
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_EnterUapsdRespCallback
  * send Enter UAPSD RSP back to PE
  */ 
@@ -8539,6 +9757,9 @@ void WDA_EnterUapsdReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessEnterUapsdReq
  * Request to WDI to Enter UAPSD power state.
@@ -8553,17 +9774,23 @@ VOS_STATUS WDA_ProcessEnterUapsdReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiEnterUapsdReqParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiEnterUapsdReqParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -8573,7 +9800,11 @@ VOS_STATUS WDA_ProcessEnterUapsdReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8600,7 +9831,12 @@ VOS_STATUS WDA_ProcessEnterUapsdReq(tWDA_CbContext *pWDA,
    wdiEnterUapsdReqParams->wdiEnterUapsdInfo.bssIdx = pEnterUapsdReqParams->bssIdx;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiEnterUapsdReqParams->wdiReqStatusCB = NULL; 
+=======
+   wdiEnterUapsdReqParams->wdiReqStatusCB = WDA_EnterUapsdReqCallback;
+   wdiEnterUapsdReqParams->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiEnterUapsdReqParams->wdiReqStatusCB = WDA_EnterUapsdReqCallback;
    wdiEnterUapsdReqParams->pUserData = pWdaParams;
@@ -8613,7 +9849,11 @@ VOS_STATUS WDA_ProcessEnterUapsdReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pEnterUapsdReqParams;
    status = WDI_EnterUapsdReq(wdiEnterUapsdReqParams,
 <<<<<<< HEAD
+<<<<<<< HEAD
                               (WDI_EnterUapsdRspCb)WDA_EnterUapsdReqCallback, pWdaParams);
+=======
+                              (WDI_EnterUapsdRspCb)WDA_EnterUapsdRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                               (WDI_EnterUapsdRspCb)WDA_EnterUapsdRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8628,6 +9868,7 @@ VOS_STATUS WDA_ProcessEnterUapsdReq(tWDA_CbContext *pWDA,
    return CONVERT_WDI2VOS_STATUS(status) ;
 }
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_ExitUapsdReqCallback
  * send Exit UAPSD RSP back to PE
@@ -8651,6 +9892,8 @@ VOS_STATUS WDA_ProcessExitUapsdReq(tWDA_CbContext *pWDA)
                                           "------> %s " ,__FUNCTION__);
    status = WDI_ExitUapsdReq((WDI_ExitUapsdRspCb)WDA_ExitUapsdReqCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ExitUapsdRespCallback
  * send Exit UAPSD RSP back to PE
  */ 
@@ -8762,19 +10005,28 @@ VOS_STATUS WDA_ProcessExitUapsdReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pExitUapsdParams;
 
    status = WDI_ExitUapsdReq(wdiExitUapsdReqParams, (WDI_ExitUapsdRspCb)WDA_ExitUapsdRespCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(IS_WDI_STATUS_FAILURE(status))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in Exit UAPSD REQ WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       pWDA->wdaWdiApiMsgParam = NULL;
       pWDA->wdaMsgParam = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_mem_free(pWdaParams->wdaMsgParam) ;
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
       vos_mem_free(pWdaParams) ;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return CONVERT_WDI2VOS_STATUS(status) ;
@@ -8789,17 +10041,23 @@ void WDA_SetPwrSaveCfgReqCallback(WDI_Status status, void* pUserData)
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -8835,6 +10093,7 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if ((NULL == pWDA) || (NULL == pPowerSaveCfg))
    {
@@ -8843,6 +10102,8 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
       VOS_ASSERT(0);
 	  vos_mem_free(pPowerSaveCfg);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if ((NULL == pWDA) || (NULL == pPowerSaveCfg))
    {
@@ -8850,6 +10111,9 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
                            "%s: invalid param", __func__);
       VOS_ASSERT(0);
       vos_mem_free(pPowerSaveCfg);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
@@ -8858,9 +10122,15 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
       VOS_ASSERT(0);
 	  vos_mem_free(pPowerSaveCfg);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__);
+      VOS_ASSERT(0);
+      vos_mem_free(pPowerSaveCfg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__);
       VOS_ASSERT(0);
@@ -8873,15 +10143,21 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiPowerSaveCfg);
 	  vos_mem_free(pPowerSaveCfg);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiPowerSaveCfg);
       vos_mem_free(pPowerSaveCfg);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_NOMEM;
    }
@@ -8891,17 +10167,23 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: VOS MEM Alloc Failure \n", __FUNCTION__);
 	  VOS_ASSERT(0);
       vos_mem_free(pWdaParams);
       vos_mem_free(wdiPowerSaveCfg);
 	  vos_mem_free(pPowerSaveCfg);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 "%s: VOS MEM Alloc Failure \n", __func__);
       VOS_ASSERT(0);
       vos_mem_free(pWdaParams);
       vos_mem_free(wdiPowerSaveCfg);
       vos_mem_free(pPowerSaveCfg);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_NOMEM;
    }
@@ -9007,6 +10289,7 @@ VOS_STATUS WDA_ProcessSetPwrSaveCfgReq(tWDA_CbContext *pWDA,
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_SetUapsdAcParamsReqCallback
  * 
  */ 
@@ -9017,6 +10300,8 @@ void WDA_SetUapsdAcParamsReqCallback(WDI_Status status, void* pUserData)
                                           "<------ %s " ,__FUNCTION__);
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetUapsdAcParamsRespCallback
  * 
  */ 
@@ -9036,6 +10321,9 @@ void WDA_SetUapsdAcParamsRespCallback(WDI_Status status, void* pUserData)
    }
 
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_mem_free(pWdaParams);
 
@@ -9043,7 +10331,10 @@ void WDA_SetUapsdAcParamsRespCallback(WDI_Status status, void* pUserData)
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetUapsdAcParamsReqCallback
  * Free memory.
  * Invoked when SetUAPSDACParams REQ failed in WDI and no RSP callback is generated.
@@ -9072,6 +10363,9 @@ void WDA_SetUapsdAcParamsReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetUapsdAcParamsReq
  * Request to WDI to set the UAPSD params for an ac (sta mode).
@@ -9087,17 +10381,23 @@ VOS_STATUS WDA_SetUapsdAcParamsReq(v_PVOID_t pVosContext, v_U8_t staIdx,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiUapsdParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiUapsdParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -9107,7 +10407,11 @@ VOS_STATUS WDA_SetUapsdAcParamsReq(v_PVOID_t pVosContext, v_U8_t staIdx,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9122,7 +10426,13 @@ VOS_STATUS WDA_SetUapsdAcParamsReq(v_PVOID_t pVosContext, v_U8_t staIdx,
    wdiUapsdParams->wdiUapsdInfo.uSusInterval = pUapsdInfo->susInterval;
    wdiUapsdParams->wdiUapsdInfo.ucUp = pUapsdInfo->up;
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiUapsdParams->wdiReqStatusCB = NULL;
+=======
+   wdiUapsdParams->wdiReqStatusCB = WDA_SetUapsdAcParamsReqCallback;
+   wdiUapsdParams->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiUapsdParams->wdiReqStatusCB = WDA_SetUapsdAcParamsReqCallback;
    wdiUapsdParams->pUserData = pWdaParams;
@@ -9136,7 +10446,11 @@ VOS_STATUS WDA_SetUapsdAcParamsReq(v_PVOID_t pVosContext, v_U8_t staIdx,
    pWdaParams->wdaWdiApiMsgParam = (void *)wdiUapsdParams;
    status = WDI_SetUapsdAcParamsReq(wdiUapsdParams, 
 <<<<<<< HEAD
+<<<<<<< HEAD
               (WDI_SetUapsdAcParamsCb)WDA_SetUapsdAcParamsReqCallback,
+=======
+              (WDI_SetUapsdAcParamsCb)WDA_SetUapsdAcParamsRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               (WDI_SetUapsdAcParamsCb)WDA_SetUapsdAcParamsRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9169,6 +10483,7 @@ VOS_STATUS WDA_ClearUapsdAcParamsReq(v_PVOID_t pVosContext, v_U8_t staIdx, wpt_u
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_UpdateUapsdParamsReqCallback
  * 
  */ 
@@ -9188,6 +10503,8 @@ void WDA_UpdateUapsdParamsReqCallback(WDI_Status status, void* pUserData)
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_UpdateUapsdParamsRespCallback
  * 
  */ 
@@ -9245,6 +10562,9 @@ void WDA_UpdateUapsdParamsReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_UpdateUapsdParamsReq
  * Request to WDI to update UAPSD params (in softAP mode) for a station.
@@ -9258,6 +10578,7 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
       (WDI_UpdateUapsdReqParamsType *)vos_mem_malloc(
          sizeof(WDI_UpdateUapsdReqParamsType)) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiUpdateUapsdParams) 
@@ -9265,6 +10586,8 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams = NULL;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -9273,6 +10596,9 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -9280,6 +10606,7 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
    wdiUpdateUapsdParams->wdiUpdateUapsdInfo.uMaxSpLen = pUpdateUapsdInfo->maxSpLen;
    wdiUpdateUapsdParams->wdiUpdateUapsdInfo.ucSTAIdx = pUpdateUapsdInfo->staIdx;
    wdiUpdateUapsdParams->wdiUpdateUapsdInfo.ucUapsdACMask = pUpdateUapsdInfo->uapsdACMask;
+<<<<<<< HEAD
 <<<<<<< HEAD
    if((NULL != pWDA->wdaMsgParam) ||
                   (NULL != pWDA->wdaWdiApiMsgParam))
@@ -9297,6 +10624,8 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
    wstatus = WDI_UpdateUapsdParamsReq(wdiUpdateUapsdParams, 
                                       (WDI_UpdateUapsdParamsCb)WDA_UpdateUapsdParamsReqCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiUpdateUapsdParams->wdiReqStatusCB = WDA_UpdateUapsdParamsReqCallback;
    wdiUpdateUapsdParams->pUserData = pWdaParams;
 
@@ -9319,6 +10648,9 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
    wstatus = WDI_UpdateUapsdParamsReq(wdiUpdateUapsdParams, 
                     (WDI_UpdateUapsdParamsCb)WDA_UpdateUapsdParamsRespCallback,
                     pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(IS_WDI_STATUS_FAILURE(wstatus))
@@ -9326,21 +10658,28 @@ VOS_STATUS WDA_UpdateUapsdParamsReq(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in Set UAPSD params REQ WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       status = CONVERT_WDI2VOS_STATUS(wstatus);
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       vos_mem_free(pWDA->wdaMsgParam);
       pWDA->wdaWdiApiMsgParam = NULL;
       pWDA->wdaMsgParam = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = CONVERT_WDI2VOS_STATUS(wstatus) ;
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams->wdaMsgParam);
       vos_mem_free(pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return status;
 }
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_ConfigureRxpFilterCallback
  * 
@@ -9355,6 +10694,8 @@ void WDA_ConfigureRxpFilterCallback(WDI_Status   wdiStatus, void* pUserData)
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: RXP config filter failure \n", __FUNCTION__ );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ConfigureRxpFilterRespCallback
  * 
  */ 
@@ -9367,13 +10708,20 @@ void WDA_ConfigureRxpFilterRespCallback(WDI_Status   wdiStatus, void* pUserData)
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                   "%s: RXP config filter failure \n", __func__ );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: pWdaParams received NULL", __FUNCTION__);
+=======
+              "%s: pWdaParams received NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: pWdaParams received NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9386,6 +10734,7 @@ void WDA_ConfigureRxpFilterRespCallback(WDI_Status   wdiStatus, void* pUserData)
    return ;
 }
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_ProcessConfigureRxpFilterReq
  * 
@@ -9409,6 +10758,8 @@ VOS_STATUS WDA_ProcessConfigureRxpFilterReq(tWDA_CbContext *pWDA,
       vos_mem_free(pWlanSuspendParam);
       return VOS_STATUS_E_NOMEM;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ConfigureRxpFilterReqCallback
  * Free memory.
  * Invoked when ConfigureRXPFilter REQ failed in WDI and no RSP callback is generated.
@@ -9459,6 +10810,9 @@ VOS_STATUS WDA_ProcessConfigureRxpFilterReq(tWDA_CbContext *pWDA,
       VOS_ASSERT(0);
       vos_mem_free(pWlanSuspendParam);
       return VOS_STATUS_E_NOMEM;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    pWdaParams = (tWDA_ReqParams *)vos_mem_malloc(sizeof(tWDA_ReqParams)) ;
@@ -9466,7 +10820,11 @@ VOS_STATUS WDA_ProcessConfigureRxpFilterReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9481,7 +10839,13 @@ VOS_STATUS WDA_ProcessConfigureRxpFilterReq(tWDA_CbContext *pWDA,
              pWlanSuspendParam->configuredMcstBcstFilterSetting;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiRxpFilterParams->wdiReqStatusCB = NULL;
+=======
+   wdiRxpFilterParams->wdiReqStatusCB = WDA_ConfigureRxpFilterReqCallback;
+   wdiRxpFilterParams->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiRxpFilterParams->wdiReqStatusCB = WDA_ConfigureRxpFilterReqCallback;
    wdiRxpFilterParams->pUserData = pWdaParams;
@@ -9492,7 +10856,11 @@ VOS_STATUS WDA_ProcessConfigureRxpFilterReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaWdiApiMsgParam = (void *)wdiRxpFilterParams;
    wstatus = WDI_ConfigureRxpFilterReq(wdiRxpFilterParams, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                       (WDI_ConfigureRxpFilterCb)WDA_ConfigureRxpFilterCallback,
+=======
+                      (WDI_ConfigureRxpFilterCb)WDA_ConfigureRxpFilterRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       (WDI_ConfigureRxpFilterCb)WDA_ConfigureRxpFilterRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9517,7 +10885,11 @@ void WDA_WdiIndicationCallback( WDI_Status   wdiStatus,
 {
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9533,7 +10905,11 @@ VOS_STATUS WDA_ProcessWlanSuspendInd(tWDA_CbContext *pWDA,
    WDI_SuspendParamsType wdiSuspendParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9542,7 +10918,11 @@ VOS_STATUS WDA_ProcessWlanSuspendInd(tWDA_CbContext *pWDA,
    wdiSuspendParams.wdiReqStatusCB = WDA_WdiIndicationCallback;
    wdiSuspendParams.pUserData = pWDA;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO, "%s: %d" ,__FUNCTION__, pWlanSuspendParam->configuredMcstBcstFilterSetting);
+=======
+   VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO, "%s: %d" ,__func__, pWlanSuspendParam->configuredMcstBcstFilterSetting);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO, "%s: %d" ,__func__, pWlanSuspendParam->configuredMcstBcstFilterSetting);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9551,7 +10931,11 @@ VOS_STATUS WDA_ProcessWlanSuspendInd(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "Pending received for %s:%d ",__FUNCTION__,__LINE__ );
+=======
+              "Pending received for %s:%d ",__func__,__LINE__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "Pending received for %s:%d ",__func__,__LINE__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9560,7 +10944,11 @@ VOS_STATUS WDA_ProcessWlanSuspendInd(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "Failure in %s:%d ",__FUNCTION__,__LINE__ );
+=======
+              "Failure in %s:%d ",__func__,__LINE__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "Failure in %s:%d ",__func__,__LINE__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9580,17 +10968,23 @@ void WDA_ProcessWlanResumeCallback(
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -9599,7 +10993,11 @@ void WDA_ProcessWlanResumeCallback(
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "%s: Process Wlan Resume failure \n", __FUNCTION__ );
+=======
+                  "%s: Process Wlan Resume failure \n", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "%s: Process Wlan Resume failure \n", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9623,17 +11021,23 @@ VOS_STATUS WDA_ProcessWlanResumeReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiResumeParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiResumeParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -9643,7 +11047,11 @@ VOS_STATUS WDA_ProcessWlanResumeReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9654,7 +11062,11 @@ VOS_STATUS WDA_ProcessWlanResumeReq(tWDA_CbContext *pWDA,
    wdiResumeParams->wdiResumeParams.ucConfiguredMcstBcstFilterSetting =
                           pWlanResumeParam->configuredMcstBcstFilterSetting;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO, "%s: %d" ,__FUNCTION__, pWlanResumeParam->configuredMcstBcstFilterSetting);
+=======
+   VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO, "%s: %d" ,__func__, pWlanResumeParam->configuredMcstBcstFilterSetting);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO, "%s: %d" ,__func__, pWlanResumeParam->configuredMcstBcstFilterSetting);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9679,6 +11091,7 @@ VOS_STATUS WDA_ProcessWlanResumeReq(tWDA_CbContext *pWDA,
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_SetBeaconFilterReqCallback
  * 
  */ 
@@ -9692,6 +11105,8 @@ void WDA_SetBeaconFilterReqCallback(WDI_Status status, void* pUserData)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetBeaconFilterRespCallback
  * 
  */ 
@@ -9704,6 +11119,9 @@ void WDA_SetBeaconFilterRespCallback(WDI_Status status, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -9721,7 +11139,10 @@ void WDA_SetBeaconFilterRespCallback(WDI_Status status, void* pUserData)
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetBeaconFilterReqCallback
  * Free memory.
  * Invoked when SetBeaconFilter REQ failed in WDI and no RSP callback is generated.
@@ -9751,6 +11172,9 @@ void WDA_SetBeaconFilterReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetBeaconFilterReq
  * Request to WDI to send the beacon filtering related information.
@@ -9767,17 +11191,23 @@ VOS_STATUS WDA_SetBeaconFilterReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiBeaconFilterInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiBeaconFilterInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -9787,7 +11217,11 @@ VOS_STATUS WDA_SetBeaconFilterReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9803,11 +11237,17 @@ VOS_STATUS WDA_SetBeaconFilterReq(tWDA_CbContext *pWDA,
       pBeaconFilterInfo->capabilityMask;
    wdiBeaconFilterInfo->wdiBeaconFilterInfo.usIeNum = pBeaconFilterInfo->ieNum;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    //Fill the BssIdx
    wdiBeaconFilterInfo->wdiBeaconFilterInfo.bssIdx = pBeaconFilterInfo->bssIdx;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //Fill structure with info contained in the beaconFilterTable
    dstPtr = (tANI_U8 *)wdiBeaconFilterInfo + sizeof(WDI_BeaconFilterInfoType);
@@ -9819,7 +11259,13 @@ VOS_STATUS WDA_SetBeaconFilterReq(tWDA_CbContext *pWDA,
    }
    vos_mem_copy(dstPtr, srcPtr, filterLength);
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiBeaconFilterInfo->wdiReqStatusCB = NULL;
+=======
+   wdiBeaconFilterInfo->wdiReqStatusCB = WDA_SetBeaconFilterReqCallback;
+   wdiBeaconFilterInfo->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiBeaconFilterInfo->wdiReqStatusCB = WDA_SetBeaconFilterReqCallback;
    wdiBeaconFilterInfo->pUserData = pWdaParams;
@@ -9832,6 +11278,7 @@ VOS_STATUS WDA_SetBeaconFilterReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pBeaconFilterInfo;
 
    status = WDI_SetBeaconFilterReq(wdiBeaconFilterInfo, 
+<<<<<<< HEAD
 <<<<<<< HEAD
                                    (WDI_SetBeaconFilterCb)WDA_SetBeaconFilterReqCallback, pWdaParams);
 =======
@@ -9867,6 +11314,20 @@ void WDA_RemBeaconFilterReqCallback(WDI_Status status, void* pUserData)
    return ;
 }
 =======
+=======
+                                   (WDI_SetBeaconFilterCb)WDA_SetBeaconFilterRespCallback, pWdaParams);
+   if(IS_WDI_STATUS_FAILURE(status))
+   {
+      VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
+              "Failure in Set Beacon Filter REQ WDI API, free all the memory " );
+      vos_mem_free(pWdaParams->wdaMsgParam) ;
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
+      vos_mem_free(pWdaParams) ;
+   }
+   return CONVERT_WDI2VOS_STATUS(status) ;
+}
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_RemBeaconFilterRespCallback
  * 
  */ 
@@ -9923,6 +11384,9 @@ void WDA_RemBeaconFilterReqCallback(WDI_Status wdiStatus, void* pUserData)
 
    return;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // TODO: PE does not have this feature for now implemented,
     // but the support for removing beacon filter exists between
@@ -9940,6 +11404,7 @@ VOS_STATUS WDA_RemBeaconFilterReq(tWDA_CbContext *pWDA,
    WDI_RemBeaconFilterReqParamsType *wdiBeaconFilterInfo = 
       (WDI_RemBeaconFilterReqParamsType *)vos_mem_malloc(
          sizeof(WDI_RemBeaconFilterReqParamsType) + pBeaconFilterInfo->ucIeCount) ;
+<<<<<<< HEAD
 <<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
@@ -9974,6 +11439,8 @@ VOS_STATUS WDA_RemBeaconFilterReq(tWDA_CbContext *pWDA,
    wstatus = WDI_RemBeaconFilterReq(wdiBeaconFilterInfo, 
                                    (WDI_RemBeaconFilterCb)WDA_RemBeaconFilterReqCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams ;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -10014,12 +11481,16 @@ VOS_STATUS WDA_RemBeaconFilterReq(tWDA_CbContext *pWDA,
 
    wstatus = WDI_RemBeaconFilterReq(wdiBeaconFilterInfo, 
                                    (WDI_RemBeaconFilterCb)WDA_RemBeaconFilterRespCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(IS_WDI_STATUS_FAILURE(wstatus))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "Failure in Remove Beacon Filter REQ WDI API, free all the memory " );
       status = CONVERT_WDI2VOS_STATUS(wstatus);
+<<<<<<< HEAD
 <<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       vos_mem_free(pWDA->wdaMsgParam);
@@ -10030,10 +11501,16 @@ VOS_STATUS WDA_RemBeaconFilterReq(tWDA_CbContext *pWDA,
       vos_mem_free(pWdaParams->wdaMsgParam);
       vos_mem_free(pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+      vos_mem_free(pWdaParams->wdaMsgParam);
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return status;
 }
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_SetRSSIThresholdsReqCallback
  * 
@@ -10048,6 +11525,8 @@ void WDA_SetRSSIThresholdsReqCallback(WDI_Status status, void* pUserData)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetRSSIThresholdsRespCallback
  * 
  */ 
@@ -10060,6 +11539,9 @@ void WDA_SetRSSIThresholdsRespCallback(WDI_Status status, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -10072,7 +11554,10 @@ void WDA_SetRSSIThresholdsRespCallback(WDI_Status status, void* pUserData)
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetRSSIThresholdsReqCallback
  * Free memory.
  * Invoked when SetRSSIThresholds REQ failed in WDI and no RSP callback is generated.
@@ -10101,6 +11586,9 @@ void WDA_SetRSSIThresholdsReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetRSSIThresholdsReq
  * Request to WDI to set the RSSI thresholds (sta mode).
@@ -10117,17 +11605,23 @@ VOS_STATUS WDA_SetRSSIThresholdsReq(tpAniSirGlobal pMac, tSirRSSIThresholds *pBm
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiRSSIThresholdsInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiRSSIThresholdsInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -10137,7 +11631,11 @@ VOS_STATUS WDA_SetRSSIThresholdsReq(tpAniSirGlobal pMac, tSirRSSIThresholds *pBm
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10156,7 +11654,12 @@ VOS_STATUS WDA_SetRSSIThresholdsReq(tpAniSirGlobal pMac, tSirRSSIThresholds *pBm
    wdiRSSIThresholdsInfo->wdiRSSIThresholdsInfo.bRssiThres2PosNotify = pBmpsThresholds->bRssiThres2PosNotify;
    wdiRSSIThresholdsInfo->wdiRSSIThresholdsInfo.bRssiThres3PosNotify = pBmpsThresholds->bRssiThres3PosNotify;
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiRSSIThresholdsInfo->wdiReqStatusCB = NULL;
+=======
+   wdiRSSIThresholdsInfo->wdiReqStatusCB = WDA_SetRSSIThresholdsReqCallback;
+   wdiRSSIThresholdsInfo->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiRSSIThresholdsInfo->wdiReqStatusCB = WDA_SetRSSIThresholdsReqCallback;
    wdiRSSIThresholdsInfo->pUserData = pWdaParams;
@@ -10171,7 +11674,11 @@ VOS_STATUS WDA_SetRSSIThresholdsReq(tpAniSirGlobal pMac, tSirRSSIThresholds *pBm
    pWdaParams->wdaMsgParam = pBmpsThresholds;
    wstatus = WDI_SetRSSIThresholdsReq(wdiRSSIThresholdsInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                      (WDI_SetRSSIThresholdsCb)WDA_SetRSSIThresholdsReqCallback, pWdaParams);
+=======
+                                     (WDI_SetRSSIThresholdsCb)WDA_SetRSSIThresholdsRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                      (WDI_SetRSSIThresholdsCb)WDA_SetRSSIThresholdsRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10188,20 +11695,27 @@ VOS_STATUS WDA_SetRSSIThresholdsReq(tpAniSirGlobal pMac, tSirRSSIThresholds *pBm
 }/*WDA_SetRSSIThresholdsReq*/
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_HostOffloadReqCallback
  * 
  */ 
 void WDA_HostOffloadReqCallback(WDI_Status status, void* pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_HostOffloadRespCallback
  * 
  */ 
 void WDA_HostOffloadRespCallback(WDI_Status status, void* pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData ; 
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
 <<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
@@ -10209,11 +11723,16 @@ void WDA_HostOffloadRespCallback(WDI_Status status, void* pUserData)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -10226,11 +11745,14 @@ void WDA_HostOffloadRespCallback(WDI_Status status, void* pUserData)
    //print a msg, nothing else to do
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WDA_HostOffloadReqCallback invoked " );
    return ;
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               "WDA_HostOffloadRespCallback invoked " );
    return ;
 }
@@ -10264,6 +11786,9 @@ void WDA_HostOffloadReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessHostOffloadReq
  * Request to WDI to set the filter to minimize unnecessary host wakeup due 
@@ -10281,7 +11806,11 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s: offloadType=%x" ,__FUNCTION__, pHostOffloadParams->offloadType);
+=======
+                                          "------> %s: offloadType=%x" ,__func__, pHostOffloadParams->offloadType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s: offloadType=%x" ,__func__, pHostOffloadParams->offloadType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10290,7 +11819,11 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10302,14 +11835,20 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiHostOffloadInfo);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
       vos_mem_free(wdiHostOffloadInfo);
       vos_mem_free(pHostOffloadParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_NOMEM;
    }
@@ -10320,8 +11859,14 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
       pHostOffloadParams->enableOrDisable;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiHostOffloadInfo->wdiHostOffloadInfo.bssIdx = 
                                     pHostOffloadParams->bssIdx;
+=======
+   vos_mem_copy(wdiHostOffloadInfo->wdiHostOffloadInfo.bssId,
+             pHostOffloadParams->bssId, sizeof(wpt_macAddr));
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    vos_mem_copy(wdiHostOffloadInfo->wdiHostOffloadInfo.bssId,
              pHostOffloadParams->bssId, sizeof(wpt_macAddr));
@@ -10399,6 +11944,7 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
       }
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiHostOffloadInfo->wdiReqStatusCB = NULL;
    if((NULL != pWDA->wdaMsgParam) ||
                   (NULL != pWDA->wdaWdiApiMsgParam))
@@ -10418,6 +11964,8 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
    wstatus = WDI_HostOffloadReq(wdiHostOffloadInfo, 
                                (WDI_HostOffloadCb)WDA_HostOffloadReqCallback, pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiHostOffloadInfo->wdiReqStatusCB = WDA_HostOffloadReqCallback;
    wdiHostOffloadInfo->pUserData = pWdaParams;
 
@@ -10430,6 +11978,9 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
 
    wstatus = WDI_HostOffloadReq(wdiHostOffloadInfo, 
                                (WDI_HostOffloadCb)WDA_HostOffloadRespCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(IS_WDI_STATUS_FAILURE(wstatus))
@@ -10445,6 +11996,7 @@ VOS_STATUS WDA_ProcessHostOffloadReq(tWDA_CbContext *pWDA,
 
 }/*WDA_HostOffloadReq*/
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_KeepAliveReqCallback
  * 
@@ -10466,6 +12018,8 @@ void WDA_KeepAliveReqCallback(WDI_Status status, void* pUserData)
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_KeepAliveRespCallback
  * 
  */ 
@@ -10523,6 +12077,9 @@ void WDA_KeepAliveReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessKeepAliveReq
  * Request to WDI to send Keep Alive packets to minimize unnecessary host 
@@ -10537,6 +12094,7 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
       (WDI_KeepAliveReqParamsType *)vos_mem_malloc(
          sizeof(WDI_KeepAliveReqParamsType)) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
     if(NULL == wdiKeepAliveInfo) 
@@ -10547,6 +12105,8 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
         return VOS_STATUS_E_NOMEM;
     }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams;
 
     VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -10571,19 +12131,28 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_NOMEM;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wdiKeepAliveInfo->wdiKeepAliveInfo.ucPacketType = 
       pKeepAliveParams->packetType;
     wdiKeepAliveInfo->wdiKeepAliveInfo.ucTimePeriod = 
       pKeepAliveParams->timePeriod;
 <<<<<<< HEAD
+<<<<<<< HEAD
     wdiKeepAliveInfo->wdiKeepAliveInfo.bssIdx = 
                                 pKeepAliveParams->bssIdx;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     vos_mem_copy(&wdiKeepAliveInfo->wdiKeepAliveInfo.bssId,
                  pKeepAliveParams->bssId,
                  sizeof(wpt_macAddr));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(pKeepAliveParams->packetType == SIR_KEEP_ALIVE_UNSOLICIT_ARP_RSP)
@@ -10611,6 +12180,7 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
                     0);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     wdiKeepAliveInfo->wdiReqStatusCB = NULL;
     if((NULL != pWDA->wdaMsgParam) ||
        (NULL != pWDA->wdaWdiApiMsgParam))
@@ -10626,6 +12196,8 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
     /* store Params pass it to WDI */
     pWDA->wdaWdiApiMsgParam = (void *)wdiKeepAliveInfo;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wdiKeepAliveInfo->wdiReqStatusCB = WDA_KeepAliveReqCallback;
     wdiKeepAliveInfo->pUserData = pWdaParams;
 
@@ -10635,6 +12207,9 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
     pWdaParams->wdaWdiApiMsgParam = (void *)wdiKeepAliveInfo;
     pWdaParams->pWdaContext = pWDA;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,"WDA HIP : %d.%d.%d.%d",
               wdiKeepAliveInfo->wdiKeepAliveInfo.aHostIpv4Addr[0],
@@ -10660,7 +12235,12 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
               wdiKeepAliveInfo->wdiKeepAliveInfo.ucPacketType); 
     wstatus = WDI_KeepAliveReq(wdiKeepAliveInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                              (WDI_KeepAliveCb)WDA_KeepAliveReqCallback, pWDA);
+=======
+                             (WDI_KeepAliveCb)WDA_KeepAliveRespCallback, pWdaParams);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              (WDI_KeepAliveCb)WDA_KeepAliveRespCallback, pWdaParams);
 
@@ -10671,10 +12251,16 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
                    "Failure in Keep Alive REQ WDI API, free all the memory " );
         status = CONVERT_WDI2VOS_STATUS(wstatus);
 <<<<<<< HEAD
+<<<<<<< HEAD
         vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
         vos_mem_free(pWDA->wdaMsgParam);
         pWDA->wdaWdiApiMsgParam = NULL;
         pWDA->wdaMsgParam = NULL;
+=======
+        vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+        vos_mem_free(pWdaParams->wdaMsgParam);
+        vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
         vos_mem_free(pWdaParams->wdaMsgParam);
@@ -10685,6 +12271,7 @@ VOS_STATUS WDA_ProcessKeepAliveReq(tWDA_CbContext *pWDA,
 
 }/*WDA_KeepAliveReq*/
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_WowlAddBcPtrnReqCallback
  * 
@@ -10699,6 +12286,8 @@ void WDA_WowlAddBcPtrnReqCallback(WDI_Status status, void* pUserData)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlAddBcPtrnRespCallback
  * 
  */ 
@@ -10713,6 +12302,9 @@ void WDA_WowlAddBcPtrnRespCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -10724,7 +12316,10 @@ void WDA_WowlAddBcPtrnRespCallback(
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlAddBcPtrnReqCallback
  * Free memory.
  * Invoked when WOWLAddBCPTRN REQ failed in WDI and no RSP callback is generated.
@@ -10755,6 +12350,9 @@ void WDA_WowlAddBcPtrnReqCallback(WDI_Status wdiStatus, void* pUserData)
 }
 
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessWowlAddBcPtrnReq
  * Request to WDI to add WOWL Bcast pattern
@@ -10770,17 +12368,23 @@ VOS_STATUS WDA_ProcessWowlAddBcPtrnReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiWowlAddBcPtrnInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiWowlAddBcPtrnInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -10790,7 +12394,11 @@ VOS_STATUS WDA_ProcessWowlAddBcPtrnReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10833,13 +12441,19 @@ VOS_STATUS WDA_ProcessWowlAddBcPtrnReq(tWDA_CbContext *pWDA,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiWowlAddBcPtrnInfo->wdiReqStatusCB = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_mem_copy(wdiWowlAddBcPtrnInfo->wdiWowlAddBcPtrnInfo.bssId,
                          pWowlAddBcPtrnParams->bssId, sizeof(wpt_macAddr));
 
    wdiWowlAddBcPtrnInfo->wdiReqStatusCB = WDA_WowlAddBcPtrnReqCallback;
    wdiWowlAddBcPtrnInfo->pUserData = pWdaParams;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Store param pointer as passed in by caller */
    /* store Params pass it to WDI */
@@ -10848,7 +12462,11 @@ VOS_STATUS WDA_ProcessWowlAddBcPtrnReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pWowlAddBcPtrnParams;
    wstatus = WDI_WowlAddBcPtrnReq(wdiWowlAddBcPtrnInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  (WDI_WowlAddBcPtrnCb)WDA_WowlAddBcPtrnReqCallback, pWdaParams);
+=======
+                                 (WDI_WowlAddBcPtrnCb)WDA_WowlAddBcPtrnRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  (WDI_WowlAddBcPtrnCb)WDA_WowlAddBcPtrnRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10866,6 +12484,7 @@ VOS_STATUS WDA_ProcessWowlAddBcPtrnReq(tWDA_CbContext *pWDA,
 }/*WDA_ProcessWowlAddBcPtrnReq*/
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_WowlDelBcPtrnReqCallback
  * 
  */ 
@@ -10879,6 +12498,8 @@ void WDA_WowlDelBcPtrnReqCallback(WDI_Status status, void* pUserData)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlDelBcPtrnRespCallback
  * 
  */ 
@@ -10893,6 +12514,9 @@ void WDA_WowlDelBcPtrnRespCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -10904,7 +12528,10 @@ void WDA_WowlDelBcPtrnRespCallback(
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlDelBcPtrnReqCallback
  * Free memory.
  * Invoked when WOWLDelBCPTRN REQ failed in WDI and no RSP callback is generated.
@@ -10934,6 +12561,9 @@ void WDA_WowlDelBcPtrnReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessWowlDelBcPtrnReq
  * Request to WDI to delete WOWL Bcast pattern
@@ -10949,17 +12579,23 @@ VOS_STATUS WDA_ProcessWowlDelBcPtrnReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiWowlDelBcPtrnInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiWowlDelBcPtrnInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -10969,7 +12605,11 @@ VOS_STATUS WDA_ProcessWowlDelBcPtrnReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -10980,14 +12620,20 @@ VOS_STATUS WDA_ProcessWowlDelBcPtrnReq(tWDA_CbContext *pWDA,
    wdiWowlDelBcPtrnInfo->wdiWowlDelBcPtrnInfo.ucPatternId = 
       pWowlDelBcPtrnParams->ucPatternId;
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiWowlDelBcPtrnInfo->wdiReqStatusCB = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
    vos_mem_copy(wdiWowlDelBcPtrnInfo->wdiWowlDelBcPtrnInfo.bssId,
                          pWowlDelBcPtrnParams->bssId, sizeof(wpt_macAddr));
 
    wdiWowlDelBcPtrnInfo->wdiReqStatusCB = WDA_WowlDelBcPtrnReqCallback;
    wdiWowlDelBcPtrnInfo->pUserData = pWdaParams;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Store param pointer as passed in by caller */
    /* store Params pass it to WDI */
@@ -10996,7 +12642,11 @@ VOS_STATUS WDA_ProcessWowlDelBcPtrnReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pWowlDelBcPtrnParams;
    wstatus = WDI_WowlDelBcPtrnReq(wdiWowlDelBcPtrnInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  (WDI_WowlDelBcPtrnCb)WDA_WowlDelBcPtrnReqCallback, pWdaParams);
+=======
+                                 (WDI_WowlDelBcPtrnCb)WDA_WowlDelBcPtrnRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  (WDI_WowlDelBcPtrnCb)WDA_WowlDelBcPtrnRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11014,15 +12664,21 @@ VOS_STATUS WDA_ProcessWowlDelBcPtrnReq(tWDA_CbContext *pWDA,
 }/*WDA_ProcessWowlDelBcPtrnReq*/
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_WowlEnterReqCallback
  * 
  */ 
 void WDA_WowlEnterReqCallback(WDI_Status status, void* pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlEnterRespCallback
  * 
  */ 
 void WDA_WowlEnterRespCallback(WDI_WowlEnterRspParamsType *pwdiWowlEnterRspParam, void* pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
@@ -11030,17 +12686,23 @@ void WDA_WowlEnterRespCallback(WDI_WowlEnterRspParamsType *pwdiWowlEnterRspParam
    tSirHalWowlEnterParams *pWowlEnterParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -11049,11 +12711,14 @@ void WDA_WowlEnterRespCallback(WDI_WowlEnterRspParamsType *pwdiWowlEnterRspParam
    pWowlEnterParams =  (tSirHalWowlEnterParams *)pWdaParams->wdaMsgParam ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 
    pWowlEnterParams->status = CONVERT_WDI2SIR_STATUS(status) ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pWowlEnterParams->bssIdx = pwdiWowlEnterRspParam->bssIdx;
 
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
@@ -11061,13 +12726,19 @@ void WDA_WowlEnterRespCallback(WDI_WowlEnterRspParamsType *pwdiWowlEnterRspParam
 
    pWowlEnterParams->status = 
                (pwdiWowlEnterRspParam->status);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WDA_SendMsg(pWDA, WDA_WOWL_ENTER_RSP, (void *)pWowlEnterParams , 0) ;
    return ;
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlEnterReqCallback
  * Free memory and send WOWL Enter RSP back to PE.
  * Invoked when WOWL Enter REQ failed in WDI and no RSP callback is generated.
@@ -11103,6 +12774,9 @@ void WDA_WowlEnterReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessWowlEnterReq
  * Request to WDI to enter WOWL 
@@ -11118,17 +12792,23 @@ VOS_STATUS WDA_ProcessWowlEnterReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiWowlEnterInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiWowlEnterInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -11138,7 +12818,11 @@ VOS_STATUS WDA_ProcessWowlEnterReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11183,13 +12867,19 @@ VOS_STATUS WDA_ProcessWowlEnterReq(tWDA_CbContext *pWDA,
 #endif // WLAN_WAKEUP_EVENTS
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiWowlEnterInfo->wdiReqStatusCB = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiWowlEnterInfo->wdiWowlEnterInfo.bssIdx = 
       pWowlEnterParams->bssIdx;
 
    wdiWowlEnterInfo->wdiReqStatusCB = WDA_WowlEnterReqCallback;
    wdiWowlEnterInfo->pUserData = pWdaParams;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Store param pointer as passed in by caller */
    /* store Params pass it to WDI */
@@ -11198,7 +12888,11 @@ VOS_STATUS WDA_ProcessWowlEnterReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pWowlEnterParams;
    wstatus = WDI_WowlEnterReq(wdiWowlEnterInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                              (WDI_WowlEnterReqCb)WDA_WowlEnterReqCallback, pWdaParams);
+=======
+                             (WDI_WowlEnterReqCb)WDA_WowlEnterRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              (WDI_WowlEnterReqCb)WDA_WowlEnterRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11215,6 +12909,7 @@ VOS_STATUS WDA_ProcessWowlEnterReq(tWDA_CbContext *pWDA,
 
 }/*WDA_ProcessWowlEnterReq*/
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_WowlExitReqCallback
  * 
@@ -11240,6 +12935,8 @@ VOS_STATUS WDA_ProcessWowlExitReq(tWDA_CbContext *pWDA)
                                           "------> %s " ,__FUNCTION__);
    wstatus = WDI_WowlExitReq((WDI_WowlExitReqCb)WDA_WowlExitReqCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_WowlExitRespCallback
  * 
  */ 
@@ -11352,6 +13049,9 @@ VOS_STATUS WDA_ProcessWowlExitReq(tWDA_CbContext *pWDA,
 
    wstatus = WDI_WowlExitReq(wdiWowlExitInfo,
                             (WDI_WowlExitReqCb)WDA_WowlExitRespCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(IS_WDI_STATUS_FAILURE(wstatus))
@@ -11360,10 +13060,16 @@ VOS_STATUS WDA_ProcessWowlExitReq(tWDA_CbContext *pWDA,
               "Failure in Wowl exit REQ WDI API, free all the memory " );
       status = CONVERT_WDI2VOS_STATUS(wstatus);
 <<<<<<< HEAD
+<<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       vos_mem_free(pWDA->wdaMsgParam);
       pWDA->wdaWdiApiMsgParam = NULL;
       pWDA->wdaMsgParam = NULL;
+=======
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+      vos_mem_free(pWdaParams->wdaMsgParam);
+      vos_mem_free(pWdaParams) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams->wdaMsgParam);
@@ -11390,6 +13096,7 @@ void WDA_NvDownloadReqCallback(WDI_NvDownloadRspInfoType *pNvDownloadRspParams,
                                                             void* pUserData)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    tWDA_CbContext *pWDA= ( tWDA_CbContext *)pUserData;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__FUNCTION__);
@@ -11398,6 +13105,8 @@ void WDA_NvDownloadReqCallback(WDI_NvDownloadRspInfoType *pNvDownloadRspParams,
    pWDA->wdaWdiApiMsgParam = NULL;
    pWDA->wdaMsgParam = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    tWDA_ReqParams *pWdaParams= ( tWDA_ReqParams *)pUserData;
    tWDA_CbContext *pWDA;
@@ -11419,6 +13128,9 @@ void WDA_NvDownloadReqCallback(WDI_NvDownloadRspInfoType *pNvDownloadRspParams,
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
    vos_mem_free(pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_WDAComplete_cback(pWDA->pVosContext);
    return ;
@@ -11436,6 +13148,7 @@ VOS_STATUS WDA_NVDownload_Start(v_PVOID_t pVosContext)
    WDI_Status status = WDI_STATUS_E_FAILURE;
    WDI_NvDownloadReqParamsType * wdiNvDownloadReqParam =NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pWDA) 
@@ -11449,6 +13162,8 @@ VOS_STATUS WDA_NVDownload_Start(v_PVOID_t pVosContext)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:wdaWdiApiMsgParam is not NULL", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams ;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -11458,6 +13173,9 @@ VOS_STATUS WDA_NVDownload_Start(v_PVOID_t pVosContext)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:pWDA is NULL", __func__); 
       VOS_ASSERT(0);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
@@ -11470,7 +13188,11 @@ VOS_STATUS WDA_NVDownload_Start(v_PVOID_t pVosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11481,12 +13203,15 @@ VOS_STATUS WDA_NVDownload_Start(v_PVOID_t pVosContext)
    wdiNvDownloadReqParam->wdiBlobInfo.pBlobAddress = pNvBuffer;
    wdiNvDownloadReqParam->wdiBlobInfo.uBlobSize = bufferSize;
 <<<<<<< HEAD
+<<<<<<< HEAD
    /* store Params pass it to WDI */
    pWDA->wdaWdiApiMsgParam = (void *)wdiNvDownloadReqParam ;
    wdiNvDownloadReqParam->wdiReqStatusCB = NULL ;
    status = WDI_NvDownloadReq(wdiNvDownloadReqParam, 
                     (WDI_NvDownloadRspCb)WDA_NvDownloadReqCallback,(void *)pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pWdaParams = (tWDA_ReqParams *)vos_mem_malloc(sizeof(tWDA_ReqParams)) ;
    if(NULL == pWdaParams)
@@ -11509,14 +13234,22 @@ VOS_STATUS WDA_NVDownload_Start(v_PVOID_t pVosContext)
    status = WDI_NvDownloadReq(wdiNvDownloadReqParam, 
                     (WDI_NvDownloadRspCb)WDA_NvDownloadReqCallback,(void *)pWdaParams);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(IS_WDI_STATUS_FAILURE(status))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
             "Failure in NV Download REQ Params WDI API, free all the memory " );
 <<<<<<< HEAD
+<<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       pWDA->wdaWdiApiMsgParam = NULL;
+=======
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
       vos_mem_free(pWdaParams);
@@ -11536,17 +13269,23 @@ void WDA_FlushAcReqCallback(WDI_Status status, void* pUserData)
    tFlushACRsp *pFlushACRspParams;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -11558,9 +13297,15 @@ void WDA_FlushAcReqCallback(WDI_Status status, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       VOS_ASSERT(0);
 	  vos_mem_free(pWdaParams);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+      VOS_ASSERT(0);
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
       VOS_ASSERT(0);
@@ -11574,7 +13319,11 @@ void WDA_FlushAcReqCallback(WDI_Status status, void* pUserData)
    pFlushACRspParams->ucSTAId = pFlushACReqParams->ucSTAId;
    pFlushACRspParams->ucTid = pFlushACReqParams->ucTid;
 <<<<<<< HEAD
+<<<<<<< HEAD
    pFlushACRspParams->status = CONVERT_WDI2SIR_STATUS(status) ;
+=======
+   pFlushACRspParams->status = (status) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pFlushACRspParams->status = (status) ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11604,7 +13353,11 @@ VOS_STATUS WDA_ProcessFlushAcReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11616,7 +13369,11 @@ VOS_STATUS WDA_ProcessFlushAcReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11626,7 +13383,11 @@ VOS_STATUS WDA_ProcessFlushAcReq(tWDA_CbContext *pWDA,
    }
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11654,15 +13415,21 @@ VOS_STATUS WDA_ProcessFlushAcReq(tWDA_CbContext *pWDA,
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_BtAmpEventReqCallback
  * 
  */ 
 void WDA_BtAmpEventReqCallback(WDI_Status status, void* pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_BtAmpEventRespCallback
  * 
  */ 
 void WDA_BtAmpEventRespCallback(WDI_Status status, void* pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData; 
@@ -11671,17 +13438,23 @@ void WDA_BtAmpEventRespCallback(WDI_Status status, void* pUserData)
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
               "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -11703,8 +13476,11 @@ void WDA_BtAmpEventRespCallback(WDI_Status status, void* pUserData)
    return ;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_BtAmpEventReqCallback
  * Free memory.
@@ -11745,6 +13521,9 @@ void WDA_BtAmpEventReqCallback(WDI_Status wdiStatus, void* pUserData)
 
    return;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_ProcessBtAmpEventReq
@@ -11760,17 +13539,23 @@ VOS_STATUS WDA_ProcessBtAmpEventReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiBtAmpEventParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiBtAmpEventParam) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -11780,7 +13565,11 @@ VOS_STATUS WDA_ProcessBtAmpEventReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11791,7 +13580,12 @@ VOS_STATUS WDA_ProcessBtAmpEventReq(tWDA_CbContext *pWDA,
    wdiBtAmpEventParam->wdiBtAmpEventInfo.ucBtAmpEventType = 
       pBtAmpEventParams->btAmpEventType;
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiBtAmpEventParam->wdiReqStatusCB = NULL;
+=======
+   wdiBtAmpEventParam->wdiReqStatusCB = WDA_BtAmpEventReqCallback;
+   wdiBtAmpEventParam->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiBtAmpEventParam->wdiReqStatusCB = WDA_BtAmpEventReqCallback;
    wdiBtAmpEventParam->pUserData = pWdaParams;
@@ -11803,7 +13597,11 @@ VOS_STATUS WDA_ProcessBtAmpEventReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaWdiApiMsgParam = wdiBtAmpEventParam;
    status = WDI_BtAmpEventReq(wdiBtAmpEventParam, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                               (WDI_BtAmpEventRspCb)WDA_BtAmpEventReqCallback, pWdaParams);
+=======
+                              (WDI_BtAmpEventRspCb)WDA_BtAmpEventRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                               (WDI_BtAmpEventRspCb)WDA_BtAmpEventRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11823,7 +13621,10 @@ VOS_STATUS WDA_ProcessBtAmpEventReq(tWDA_CbContext *pWDA,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -11839,7 +13640,11 @@ void WDA_FTMCommandReqCallback(void *ftmCmdRspData,
    {
       VOS_TRACE(VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s, invalid input 0x%x, 0x%x",__FUNCTION__,  pWDA, ftmCmdRspData);
+=======
+                "%s, invalid input %p, %p",__func__,  pWDA, ftmCmdRspData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s, invalid input %p, %p",__func__,  pWDA, ftmCmdRspData);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11849,10 +13654,15 @@ void WDA_FTMCommandReqCallback(void *ftmCmdRspData,
    vos_mem_free(pWDA->wdaFTMCmdReq);
    pWDA->wdaFTMCmdReq = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
    /* Post FTM Responce to HDD FTM */
    wlan_sys_ftm(ftmCmdRspData);
 #endif /* WLAN_FTM_STUB */
+=======
+   /* Post FTM Responce to HDD FTM */
+   wlan_sys_ftm(ftmCmdRspData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* Post FTM Responce to HDD FTM */
    wlan_sys_ftm(ftmCmdRspData);
@@ -11884,7 +13694,10 @@ VOS_STATUS WDA_ProcessFTMCommand(tWDA_CbContext *pWDA,
    return status;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_OEM_DATA_SUPPORT
@@ -11898,6 +13711,7 @@ void WDA_StartOemDataReqCallback(
 {
    VOS_STATUS status = VOS_STATUS_E_FAILURE;
 <<<<<<< HEAD
+<<<<<<< HEAD
    tWDA_CbContext *pWDA = (tWDA_CbContext *)pUserData ; 
    tStartOemDataRsp *pOemDataRspParams = NULL ;
 
@@ -11908,6 +13722,8 @@ void WDA_StartOemDataReqCallback(
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:pWDA is NULL", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
    tWDA_CbContext *pWDA; 
    tStartOemDataRsp *pOemDataRspParams = NULL ;
@@ -11928,6 +13744,9 @@ void WDA_StartOemDataReqCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:pWDA is NULL", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return ;
@@ -11947,6 +13766,7 @@ void WDA_StartOemDataReqCallback(
       return;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    // Free the memory allocated during request.
    vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
    vos_mem_free(pWDA->wdaMsgParam) ;
@@ -11955,6 +13775,8 @@ void WDA_StartOemDataReqCallback(
    /* 
     * Now go ahead and copy other stuff for PE in incase of sucess only 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // Free the memory allocated during request.
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
@@ -11963,6 +13785,9 @@ void WDA_StartOemDataReqCallback(
 
    /* 
     * Now go ahead and copy other stuff for PE in incase of success only 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     * Also, here success always means that we have atleast one BSSID.
     */
@@ -11987,6 +13812,10 @@ VOS_STATUS WDA_ProcessStartOemDataReq(tWDA_CbContext *pWDA,
    WDI_Status             status = WDI_STATUS_SUCCESS;
    WDI_oemDataReqParamsType     *wdiOemDataReqParams = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   tWDA_ReqParams *pWdaParams ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tWDA_ReqParams *pWdaParams ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -11997,7 +13826,11 @@ VOS_STATUS WDA_ProcessStartOemDataReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12005,6 +13838,7 @@ VOS_STATUS WDA_ProcessStartOemDataReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_NOMEM;
    }
    
+<<<<<<< HEAD
 <<<<<<< HEAD
    vos_mem_copy(wdiOemDataReqParams->wdiOemDataReqInfo.selfMacAddr, pOemDataReqParams->selfMacAddr, sizeof(tSirMacAddr));
    vos_mem_copy(wdiOemDataReqParams->wdiOemDataReqInfo.oemDataReq, pOemDataReqParams->oemDataReq, OEM_DATA_REQ_SIZE);
@@ -12025,6 +13859,8 @@ VOS_STATUS WDA_ProcessStartOemDataReq(tWDA_CbContext *pWDA,
 
    status = WDI_StartOemDataReq(wdiOemDataReqParams, (WDI_oemDataRspCb)WDA_StartOemDataReqCallback, pWDA);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_mem_copy(wdiOemDataReqParams->wdiOemDataReqInfo.selfMacAddr, 
       pOemDataReqParams->selfMacAddr, sizeof(tSirMacAddr));
    vos_mem_copy(wdiOemDataReqParams->wdiOemDataReqInfo.oemDataReq, 
@@ -12049,12 +13885,16 @@ VOS_STATUS WDA_ProcessStartOemDataReq(tWDA_CbContext *pWDA,
 
    status = WDI_StartOemDataReq(wdiOemDataReqParams, 
       (WDI_oemDataRspCb)WDA_StartOemDataReqCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(IS_WDI_STATUS_FAILURE(status))
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
          "Failure in Start OEM DATA REQ Params WDI API, free all the memory " );
+<<<<<<< HEAD
 <<<<<<< HEAD
       vos_mem_free(pWDA->wdaWdiApiMsgParam) ;
       vos_mem_free(pWDA->wdaMsgParam);
@@ -12065,11 +13905,17 @@ VOS_STATUS WDA_ProcessStartOemDataReq(tWDA_CbContext *pWDA,
       vos_mem_free(pWdaParams->wdaMsgParam);
       vos_mem_free(pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+      vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
+      vos_mem_free(pWdaParams->wdaMsgParam);
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    return CONVERT_WDI2VOS_STATUS(status) ;
 }
 #endif /* FEATURE_OEM_DATA_SUPPORT */
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
  * FUNCTION: WDA_SetTxPerTrackingReqCallback
  * 
@@ -12106,6 +13952,8 @@ void WDA_SetTxPerTrackingReqCallback(WDI_Status status, void* pUserData)
  */ 
 void WDA_GTKOffloadReqCallback(WDI_Status status, void* pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_SetTxPerTrackingRespCallback
  * 
  */ 
@@ -12164,13 +14012,20 @@ void WDA_SetTxPerTrackingReqCallback(WDI_Status wdiStatus, void* pUserData)
  */ 
 void WDA_GTKOffloadRespCallback( WDI_GtkOffloadRspParams  *pwdiGtkOffloadRsparams,
                                         void* pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12184,12 +14039,15 @@ void WDA_GTKOffloadRespCallback( WDI_GtkOffloadRspParams  *pwdiGtkOffloadRsparam
    //print a msg, nothing else to do
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WDA_GTKOffloadReqCallback invoked " );
 
    return ;
 }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               "WDA_GTKOffloadRespCallback invoked " );
 
    return ;
@@ -12223,6 +14081,9 @@ void WDA_GTKOffloadReqCallback(WDI_Status wdiStatus, void* pUserData)
 
    return;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_ProcessGTKOffloadReq
@@ -12233,7 +14094,11 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
                                     tpSirGtkOffloadParams pGtkOffloadParams)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_STATUS status = VOS_STATUS_SUCCESS;
+=======
+   WDI_Status status = WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WDI_Status status = WDI_STATUS_E_FAILURE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12244,7 +14109,11 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12253,7 +14122,11 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12266,7 +14139,11 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12279,11 +14156,17 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
    // Fill wdiGtkOffloadInfo from pGtkOffloadParams
    //
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    vos_mem_copy(wdiGtkOffloadReqMsg->gtkOffloadReqParams.bssId,
              pGtkOffloadParams->bssId, sizeof (wpt_macAddr));
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiGtkOffloadReqMsg->gtkOffloadReqParams.ulFlags = pGtkOffloadParams->ulFlags;
    // Copy KCK
@@ -12295,10 +14178,16 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
                 &(pGtkOffloadParams->ullKeyReplayCounter), sizeof(v_U64_t));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiGtkOffloadReqMsg->wdiReqStatusCB = NULL;
 
    VOS_ASSERT((NULL == pWDA->wdaMsgParam) && 
               (NULL == pWDA->wdaWdiApiMsgParam));
+=======
+   wdiGtkOffloadReqMsg->wdiReqStatusCB = WDA_GTKOffloadReqCallback;
+   wdiGtkOffloadReqMsg->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wdiGtkOffloadReqMsg->wdiReqStatusCB = WDA_GTKOffloadReqCallback;
    wdiGtkOffloadReqMsg->pUserData = pWdaParams;
@@ -12312,7 +14201,11 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pGtkOffloadParams;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    status = WDI_GTKOffloadReq(wdiGtkOffloadReqMsg, (WDI_GtkOffloadCb)WDA_GTKOffloadReqCallback, pWdaParams);
+=======
+   status = WDI_GTKOffloadReq(wdiGtkOffloadReqMsg, (WDI_GtkOffloadCb)WDA_GTKOffloadRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    status = WDI_GTKOffloadReq(wdiGtkOffloadReqMsg, (WDI_GtkOffloadCb)WDA_GTKOffloadRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12331,21 +14224,28 @@ VOS_STATUS WDA_ProcessGTKOffloadReq(tWDA_CbContext *pWDA,
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_GtkOffloadGetInfoCallback 
  * 
  */ 
 void WDA_GtkOffloadGetInfoCallback(WDI_Status status, void * pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_GtkOffloadGetInfoRespCallback
  * 
  */ 
 void WDA_GtkOffloadGetInfoRespCallback( WDI_GtkOffloadGetInfoRspParams *pwdiGtkOffloadGetInfoRsparams,
                                     void * pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
    tWDA_CbContext *pWDA;
    tpSirGtkOffloadGetInfoRspParams pGtkOffloadGetInfoReq;
+<<<<<<< HEAD
 <<<<<<< HEAD
    tpSirGtkOffloadGetInfoRspParams pGtkOffloadGetInfoRsp = vos_mem_malloc(sizeof(tpSirGtkOffloadGetInfoRspParams)) ;
    tANI_U8 i;
@@ -12354,11 +14254,16 @@ void WDA_GtkOffloadGetInfoRespCallback( WDI_GtkOffloadGetInfoRspParams *pwdiGtkO
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tpSirGtkOffloadGetInfoRspParams pGtkOffloadGetInfoRsp = vos_mem_malloc(sizeof(tSirGtkOffloadGetInfoRspParams)) ;
    vos_msg_t vosMsg;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    VOS_ASSERT(NULL != pWdaParams);
@@ -12372,6 +14277,7 @@ void WDA_GtkOffloadGetInfoRespCallback( WDI_GtkOffloadGetInfoRspParams *pwdiGtkO
    /* Message Header */
    pGtkOffloadGetInfoRsp->mesgType = eWNI_PMC_GTK_OFFLOAD_GETINFO_RSP;
 <<<<<<< HEAD
+<<<<<<< HEAD
    pGtkOffloadGetInfoRsp->mesgLen = sizeof(tpSirGtkOffloadGetInfoRspParams);
 
    pGtkOffloadGetInfoRsp->ulStatus            = pGtkOffloadGetInfoReq->ulStatus;
@@ -12381,6 +14287,8 @@ void WDA_GtkOffloadGetInfoRespCallback( WDI_GtkOffloadGetInfoRspParams *pwdiGtkO
    pGtkOffloadGetInfoRsp->ulIGTKRekeyCount    = pGtkOffloadGetInfoReq->ulIGTKRekeyCount;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pGtkOffloadGetInfoRsp->mesgLen = sizeof(tSirGtkOffloadGetInfoRspParams);
 
    pGtkOffloadGetInfoRsp->ulStatus            = pwdiGtkOffloadGetInfoRsparams->ulStatus;
@@ -12392,6 +14300,9 @@ void WDA_GtkOffloadGetInfoRespCallback( WDI_GtkOffloadGetInfoRspParams *pwdiGtkO
    vos_mem_copy( pGtkOffloadGetInfoRsp->bssId,
                        pwdiGtkOffloadGetInfoRsparams->bssId,
                        sizeof (wpt_macAddr));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* VOS message wrapper */
    vosMsg.type = eWNI_PMC_GTK_OFFLOAD_GETINFO_RSP;
@@ -12408,7 +14319,10 @@ void WDA_GtkOffloadGetInfoRespCallback( WDI_GtkOffloadGetInfoRspParams *pwdiGtkO
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return;
 }
@@ -12447,6 +14361,9 @@ void WDA_GtkOffloadGetInfoReqCallback(WDI_Status wdiStatus, void * pUserData)
    }
 
    return;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif
@@ -12465,17 +14382,23 @@ VOS_STATUS WDA_ProcessSetTxPerTrackingReq(tWDA_CbContext *pWDA, tSirTxPerTrackin
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiSetTxPerTrackingReqParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiSetTxPerTrackingReqParams) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_mem_free(pTxPerTrackingParams);
       VOS_ASSERT(0);
@@ -12486,7 +14409,11 @@ VOS_STATUS WDA_ProcessSetTxPerTrackingReq(tWDA_CbContext *pWDA, tSirTxPerTrackin
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12504,7 +14431,12 @@ VOS_STATUS WDA_ProcessSetTxPerTrackingReq(tWDA_CbContext *pWDA, tSirTxPerTrackin
    pwdiSetTxPerTrackingReqParams->wdiTxPerTrackingParam.uTxPerTrackingWatermark = 
       pTxPerTrackingParams->uTxPerTrackingWatermark;
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiSetTxPerTrackingReqParams->wdiReqStatusCB = NULL;
+=======
+   pwdiSetTxPerTrackingReqParams->wdiReqStatusCB = WDA_SetTxPerTrackingReqCallback;
+   pwdiSetTxPerTrackingReqParams->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pwdiSetTxPerTrackingReqParams->wdiReqStatusCB = WDA_SetTxPerTrackingReqCallback;
    pwdiSetTxPerTrackingReqParams->pUserData = pWdaParams;
@@ -12517,7 +14449,11 @@ VOS_STATUS WDA_ProcessSetTxPerTrackingReq(tWDA_CbContext *pWDA, tSirTxPerTrackin
    pWdaParams->wdaMsgParam = pTxPerTrackingParams;
    wstatus = WDI_SetTxPerTrackingReq(pwdiSetTxPerTrackingReqParams, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     (WDI_SetTxPerTrackingRspCb)WDA_SetTxPerTrackingReqCallback, pWdaParams);
+=======
+                                    (WDI_SetTxPerTrackingRspCb)WDA_SetTxPerTrackingRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                     (WDI_SetTxPerTrackingRspCb)WDA_SetTxPerTrackingRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12547,7 +14483,11 @@ void WDA_HALDumpCmdCallback(WDI_HALDumpCmdRspParamsType *wdiRspParams,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: pWdaParams received NULL", __FUNCTION__);
+=======
+                 "%s: pWdaParams received NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: pWdaParams received NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12592,7 +14532,11 @@ VOS_STATUS WDA_HALDumpCmdReq(tpAniSirGlobal   pMac, tANI_U32  cmd,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12626,7 +14570,11 @@ VOS_STATUS WDA_HALDumpCmdReq(tpAniSirGlobal   pMac, tANI_U32  cmd,
    /* Send command to WDI */
    status = WDI_HALDumpCmdReq(wdiHALDumpCmdReqParam, WDA_HALDumpCmdCallback, pWdaParams);
 <<<<<<< HEAD
+<<<<<<< HEAD
    vStatus = vos_wait_single_event( &(pVosContext->wdaCompleteEvent), 1000 );
+=======
+   vStatus = vos_wait_single_event( &(pVosContext->wdaCompleteEvent), WDA_DUMPCMD_WAIT_TIMEOUT );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    vStatus = vos_wait_single_event( &(pVosContext->wdaCompleteEvent), WDA_DUMPCMD_WAIT_TIMEOUT );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12636,7 +14584,11 @@ VOS_STATUS WDA_HALDumpCmdReq(tpAniSirGlobal   pMac, tANI_U32  cmd,
       {
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: Timeout occured before WDA_HALDUMP complete\n",__FUNCTION__);
+=======
+         "%s: Timeout occurred before WDA_HALDUMP complete\n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: Timeout occurred before WDA_HALDUMP complete\n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12645,7 +14597,11 @@ VOS_STATUS WDA_HALDumpCmdReq(tpAniSirGlobal   pMac, tANI_U32  cmd,
       {
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s: WDA_HALDUMP reporting  other error \n",__FUNCTION__);
+=======
+         "%s: WDA_HALDUMP reporting  other error \n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s: WDA_HALDUMP reporting  other error \n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12663,7 +14619,11 @@ VOS_STATUS WDA_ProcessGTKOffloadGetInfoReq(tWDA_CbContext *pWDA,
                                            tpSirGtkOffloadGetInfoRspParams pGtkOffloadGetInfoRsp)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_STATUS status = VOS_STATUS_SUCCESS;
+=======
+   WDI_Status status = WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WDI_Status status = WDI_STATUS_E_FAILURE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12675,7 +14635,11 @@ VOS_STATUS WDA_ProcessGTKOffloadGetInfoReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12688,7 +14652,11 @@ VOS_STATUS WDA_ProcessGTKOffloadGetInfoReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12698,10 +14666,15 @@ VOS_STATUS WDA_ProcessGTKOffloadGetInfoReq(tWDA_CbContext *pWDA,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiGtkOffloadGetInfoReqMsg->wdiReqStatusCB = NULL;
 
    VOS_ASSERT((NULL == pWDA->wdaMsgParam) && 
               (NULL == pWDA->wdaWdiApiMsgParam));
+=======
+   pwdiGtkOffloadGetInfoReqMsg->wdiReqStatusCB = WDA_GtkOffloadGetInfoReqCallback;
+   pwdiGtkOffloadGetInfoReqMsg->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pwdiGtkOffloadGetInfoReqMsg->wdiReqStatusCB = WDA_GtkOffloadGetInfoReqCallback;
    pwdiGtkOffloadGetInfoReqMsg->pUserData = pWdaParams;
@@ -12714,12 +14687,18 @@ VOS_STATUS WDA_ProcessGTKOffloadGetInfoReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pGtkOffloadGetInfoRsp;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    status = WDI_GTKOffloadGetInfoReq(pwdiGtkOffloadGetInfoReqMsg, (WDI_GtkOffloadGetInfoCb)WDA_GtkOffloadGetInfoCallback, pWdaParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_mem_copy(pwdiGtkOffloadGetInfoReqMsg->WDI_GtkOffloadGetInfoReqParams.bssId,
              pGtkOffloadGetInfoRsp->bssId, sizeof (wpt_macAddr));
 
    status = WDI_GTKOffloadGetInfoReq(pwdiGtkOffloadGetInfoReqMsg, (WDI_GtkOffloadGetInfoCb)WDA_GtkOffloadGetInfoRespCallback, pWdaParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(IS_WDI_STATUS_FAILURE(status))
@@ -12759,7 +14738,11 @@ VOS_STATUS WDA_TxComplete( v_PVOID_t pVosContext, vos_pkt_t *pData,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s:pWDA is NULL", 
 <<<<<<< HEAD
+<<<<<<< HEAD
                            __FUNCTION__); 
+=======
+                           __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12790,8 +14773,13 @@ VOS_STATUS WDA_TxComplete( v_PVOID_t pVosContext, vos_pkt_t *pData,
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_WARN,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:packet (0x%X) is already freed", 
                            __FUNCTION__, pData);
+=======
+                           "%s:packet (%p) is already freed",
+                           __func__, pData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:packet (%p) is already freed",
                            __func__, pData);
@@ -12841,8 +14829,13 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pWDA %x or pFrmBuf %x is NULL", 
                            __FUNCTION__,pWDA,pFrmBuf); 
+=======
+                           "%s:pWDA %p or pFrmBuf %p is NULL",
+                           __func__,pWDA,pFrmBuf); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pWDA %p or pFrmBuf %p is NULL",
                            __func__,pWDA,pFrmBuf); 
@@ -12853,7 +14846,11 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO_HIGH, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                "Tx Mgmt Frame Subtype: %d alloc(%x)\n", pFc->subType, pFrmBuf);
+=======
+               "Tx Mgmt Frame Subtype: %d alloc(%p)\n", pFc->subType, pFrmBuf);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "Tx Mgmt Frame Subtype: %d alloc(%p)\n", pFc->subType, pFrmBuf);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12862,7 +14859,11 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pMac is NULL", __FUNCTION__); 
+=======
+                           "%s:pMac is NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pMac is NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12895,7 +14896,11 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
            {
                VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "Tx Complete timeout Timer Stop Sucess ");
+=======
+                       "Tx Complete timeout Timer Stop Success ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "Tx Complete timeout Timer Stop Success ");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -12933,6 +14938,7 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_FAILURE;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    /* Get system role, use the self station if in unknown role or STA role */
    systemRole = wdaGetGlobalSystemRole(pMac);
    if (( eSYSTEM_UNKNOWN_ROLE == systemRole ) || 
@@ -12944,6 +14950,8 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
    {
        txFlag |= HAL_USE_SELF_STA_REQUESTED_MASK;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* If Peer Sta mask is set don't overwrite to self sta */
    if(txFlag & HAL_USE_PEER_STA_REQUESTED_MASK)
@@ -12963,6 +14971,9 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
       {
          txFlag |= HAL_USE_SELF_STA_REQUESTED_MASK;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
@@ -12971,9 +14982,13 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
    if ((pFc->type == SIR_MAC_MGMT_FRAME))
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        if ((pFc->subType == SIR_MAC_MGMT_DISASSOC) ||
                (pFc->subType == SIR_MAC_MGMT_DEAUTH) ||
                (pFc->subType == SIR_MAC_MGMT_REASSOC_RSP) ||
+=======
+       if ((pFc->subType == SIR_MAC_MGMT_REASSOC_RSP) ||
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        if ((pFc->subType == SIR_MAC_MGMT_REASSOC_RSP) ||
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13033,7 +15048,11 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR, 
                  "%s: Status %d when waiting for TX Frame Event",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, status);
+=======
+                 __func__, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13042,7 +15061,11 @@ VOS_STATUS WDA_TxPacket(tWDA_CbContext *pWDA,
 
       /* TX MGMT fail with COMP timeout, try to detect DXE stall */
 <<<<<<< HEAD
+<<<<<<< HEAD
       WDA_TransportChannelDebug(0, 1);
+=======
+      WDA_TransportChannelDebug(pMac, 1, 0);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       WDA_TransportChannelDebug(pMac, 1, 0);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13086,7 +15109,11 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pMsg is NULL", __FUNCTION__); 
+=======
+                           "%s:pMsg is NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pMsg is NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13096,7 +15123,11 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "=========> %s msgType: %x " ,__FUNCTION__, pMsg->type);
+=======
+                    "=========> %s msgType: %x " ,__func__, pMsg->type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     "=========> %s msgType: %x " ,__func__, pMsg->type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13106,9 +15137,15 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pWDA is NULL", __FUNCTION__); 
       VOS_ASSERT(0);
 	  vos_mem_free(pMsg->bodyptr);
+=======
+                           "%s:pWDA is NULL", __func__); 
+      VOS_ASSERT(0);
+      vos_mem_free(pMsg->bodyptr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pWDA is NULL", __func__); 
       VOS_ASSERT(0);
@@ -13277,7 +15314,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
       case WDA_GET_ROAM_RSSI_REQ:
       {
@@ -13285,6 +15325,9 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break;
       }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDA_PWR_SAVE_CFG:
       {
@@ -13373,7 +15416,11 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          if(pWDA->wdaState == WDA_READY_STATE)
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             WDA_ProcessExitUapsdReq(pWDA);
+=======
+            WDA_ProcessExitUapsdReq(pWDA, (tExitUapsdParams *)pMsg->bodyptr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             WDA_ProcessExitUapsdReq(pWDA, (tExitUapsdParams *)pMsg->bodyptr);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13501,7 +15548,11 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       case WDA_WOWL_EXIT_REQ:
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          WDA_ProcessWowlExitReq(pWDA);
+=======
+         WDA_ProcessWowlExitReq(pWDA, (tSirHalWowlExitParams *)pMsg->bodyptr);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          WDA_ProcessWowlExitReq(pWDA, (tSirHalWowlExitParams *)pMsg->bodyptr);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13550,14 +15601,20 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDA_SET_TX_POWER_REQ:
       {
          WDA_ProcessSetTxPowerReq(pWDA,
                                        (tSirSetTxPowerReq *)pMsg->bodyptr);
          break;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDA_SET_P2P_GO_NOA_REQ:
       {
@@ -13566,7 +15623,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* timer related messages */
@@ -13576,7 +15636,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break ;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       /* timer related messages */
       case WDA_TIMER_TRAFFIC_STATS_IND:
@@ -13584,6 +15647,9 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          WDA_TimerTrafficStatsInd(pWDA);
          break;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
       case WDA_AGGR_QOS_REQ:
@@ -13593,7 +15659,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       }
 #endif /* WLAN_FEATURE_VOWIFI_11R */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDA_FTM_CMD_REQ:
@@ -13602,7 +15671,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break ;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_OEM_DATA_SUPPORT
@@ -13655,7 +15727,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       }
 #endif // FEATURE_WLAN_SCAN_PNO
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
       case WDA_ROAM_SCAN_OFFLOAD_REQ:
       {
@@ -13663,6 +15738,9 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break;
       }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDA_SET_TX_PER_TRACKING_REQ:
       {
@@ -13682,7 +15760,10 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
       case WDA_RECEIVE_FILTER_SET_FILTER_MC_REQ:
       {
@@ -13690,6 +15771,9 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
           break;
       }
       // IKJB42MAIN-1244, Motorola, a19091 - END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDA_PACKET_COALESCING_FILTER_MATCH_COUNT_REQ:
       {
@@ -13734,8 +15818,11 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          break;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
       case WDA_UPDATE_OP_MODE:
       {
@@ -13753,6 +15840,9 @@ VOS_STATUS WDA_McProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
           break;
       }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       default:
       {
@@ -13785,7 +15875,11 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pWDA is NULL", __FUNCTION__); 
+=======
+                           "%s:pWDA is NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pWDA is NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13815,6 +15909,11 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          rssiNotification.bRssiThres3PosCross = 
             wdiLowLevelInd->wdiIndicationData.wdiLowRSSIInfo.bRssiThres3PosCross;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+         rssiNotification.avgRssi = (v_S7_t) 
+            ((-1)*wdiLowLevelInd->wdiIndicationData.wdiLowRSSIInfo.avgRssi);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          rssiNotification.avgRssi = (v_S7_t) 
             ((-1)*wdiLowLevelInd->wdiIndicationData.wdiLowRSSIInfo.avgRssi);
@@ -13828,11 +15927,14 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
       case WDI_MISSED_BEACON_IND:
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                      "Received WDI_MISSED_BEACON_IND from WDI ");
          /* send IND to PE */
          WDA_SendMsg(pWDA, WDA_MISSED_BEACON_IND, NULL, 0) ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          tpSirSmeMissedBeaconInd pMissBeacInd =
             (tpSirSmeMissedBeaconInd)vos_mem_malloc(sizeof(tSirSmeMissedBeaconInd));
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
@@ -13849,6 +15951,9 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          pMissBeacInd->bssIdx =
              wdiLowLevelInd->wdiIndicationData.wdiMissedBeaconInd.bssIdx;
          WDA_SendMsg(pWDA, WDA_MISSED_BEACON_IND, (void *)pMissBeacInd , 0) ;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break ;
       }
@@ -13869,7 +15974,11 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          {
             VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+                                  "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13909,6 +16018,10 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
       case WDI_FATAL_ERROR_IND:
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+         pWDA->wdiFailed = true;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pWDA->wdiFailed = true;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13928,7 +16041,11 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          {
             VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+                                  "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -13959,7 +16076,11 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          {
             VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                              "%s: VOS MEM Alloc Failure-pSmeCoexInd", __FUNCTION__);
+=======
+                             "%s: VOS MEM Alloc Failure-pSmeCoexInd", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              "%s: VOS MEM Alloc Failure-pSmeCoexInd", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14024,8 +16145,11 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          break;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDI_P2P_NOA_START_IND :
       {
           tSirP2PNoaStart   *pP2pNoaStart = 
@@ -14047,6 +16171,9 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
           break;
       }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case WDI_P2P_NOA_ATTR_IND :
       {
@@ -14089,7 +16216,10 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          break;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_SCAN_PNO
@@ -14097,13 +16227,19 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
       {
          vos_msg_t vosMsg;
 <<<<<<< HEAD
+<<<<<<< HEAD
          tSirPrefNetworkFoundInd *pPrefNetworkFoundInd = (tSirPrefNetworkFoundInd *)vos_mem_malloc(sizeof(tSirPrefNetworkFoundInd));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          v_U32_t size = sizeof(tSirPrefNetworkFoundInd) +
              wdiLowLevelInd->wdiIndicationData.wdiPrefNetworkFoundInd.frameLength;
          tSirPrefNetworkFoundInd *pPrefNetworkFoundInd =
              (tSirPrefNetworkFoundInd *)vos_mem_malloc(size);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                               "Received WDI_PREF_NETWORK_FOUND_IND from WDI");
@@ -14113,7 +16249,10 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
                        "Memory allocation failure, "
                        "WDI_PREF_NETWORK_FOUND_IND not forwarded");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             if (NULL != wdiLowLevelInd->wdiIndicationData.wdiPrefNetworkFoundInd.pData)
             {
@@ -14121,13 +16260,20 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
                 wdiLowLevelInd->wdiIndicationData.wdiPrefNetworkFoundInd.pData = NULL;
             }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
          }
          /* Message Header */
          pPrefNetworkFoundInd->mesgType = eWNI_SME_PREF_NETWORK_FOUND_IND;
 <<<<<<< HEAD
+<<<<<<< HEAD
          pPrefNetworkFoundInd->mesgLen = sizeof(*pPrefNetworkFoundInd);
+=======
+         pPrefNetworkFoundInd->mesgLen = size;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pPrefNetworkFoundInd->mesgLen = size;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14140,7 +16286,10 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
                   wdiLowLevelInd->wdiIndicationData.wdiPrefNetworkFoundInd.ssId.sSSID, 
                   pPrefNetworkFoundInd->ssId.length);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if (NULL !=
              wdiLowLevelInd->wdiIndicationData.wdiPrefNetworkFoundInd.pData)
          {
@@ -14156,6 +16305,9 @@ void WDA_lowLevelIndCallback(WDI_LowLevelIndType *wdiLowLevelInd,
          {
             pPrefNetworkFoundInd->frameLength = 0;
          }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pPrefNetworkFoundInd ->rssi = wdiLowLevelInd->wdiIndicationData.wdiPrefNetworkFoundInd.rssi; 
          /* VOS message wrapper */
@@ -14266,7 +16418,11 @@ void WDA_TriggerBaReqCallback(WDI_TriggerBARspParamsType *wdiTriggerBaRsp,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: pWdaParams received NULL", __FUNCTION__);
+=======
+              "%s: pWdaParams received NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: pWdaParams received NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14279,7 +16435,11 @@ void WDA_TriggerBaReqCallback(WDI_TriggerBARspParamsType *wdiTriggerBaRsp,
    vos_mem_free(pWdaParams) ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14297,7 +16457,11 @@ void WDA_TriggerBaReqCallback(WDI_TriggerBARspParamsType *wdiTriggerBaRsp,
       { 
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
            "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+           "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14336,7 +16500,10 @@ void WDA_TriggerBaReqCallback(WDI_TriggerBARspParamsType *wdiTriggerBaRsp,
    return ;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /*
@@ -14479,6 +16646,9 @@ void WDA_TimerTrafficStatsInd(tWDA_CbContext *pWDA)
    }
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * BA Activity check timer handler
@@ -14496,7 +16666,11 @@ void WDA_BaCheckActivity(tWDA_CbContext *pWDA)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:pWDA is NULL", __FUNCTION__); 
+=======
+                           "%s:pWDA is NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:pWDA is NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14513,9 +16687,12 @@ void WDA_BaCheckActivity(tWDA_CbContext *pWDA)
    for(curSta = 0 ; curSta < pWDA->wdaMaxSta ; curSta++)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       for(tid = 0 ; tid < STACFG_MAX_TC ; tid++)
       {
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
         // We can only do BA on "hard" STAs.  
          if (!(IS_HWSTA_IDX(curSta)))
@@ -14525,6 +16702,9 @@ void WDA_BaCheckActivity(tWDA_CbContext *pWDA)
 #endif //WLAN_SOFTAP_VSTA_FEATURE
     for(tid = 0 ; tid < STACFG_MAX_TC ; tid++)
     {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          WLANTL_STAStateType tlSTAState ;
          tANI_U32 txPktCount = 0 ;
@@ -14574,7 +16754,11 @@ void WDA_BaCheckActivity(tWDA_CbContext *pWDA)
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+            "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14587,7 +16771,11 @@ void WDA_BaCheckActivity(tWDA_CbContext *pWDA)
       {
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+            "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14609,7 +16797,11 @@ void WDA_BaCheckActivity(tWDA_CbContext *pWDA)
       wdiTriggerBaReq->wdiReqStatusCB = NULL ;
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14661,7 +16853,11 @@ static VOS_STATUS wdaCreateTimers(tWDA_CbContext *pWDA)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:MAC context is NULL", __FUNCTION__); 
+=======
+                           "%s:MAC context is NULL", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:MAC context is NULL", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14686,7 +16882,11 @@ static VOS_STATUS wdaCreateTimers(tWDA_CbContext *pWDA)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                                "Unable to create BA activity timer");
 <<<<<<< HEAD
+<<<<<<< HEAD
       return eSIR_FAILURE ;
+=======
+      return VOS_STATUS_E_FAILURE ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       return VOS_STATUS_E_FAILURE ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -14707,6 +16907,7 @@ static VOS_STATUS wdaCreateTimers(tWDA_CbContext *pWDA)
          VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                                   "Unable to Destroy BA activity timer");
 <<<<<<< HEAD
+<<<<<<< HEAD
          return eSIR_FAILURE ;
       } 
       return eSIR_FAILURE ;
@@ -14715,6 +16916,8 @@ static VOS_STATUS wdaCreateTimers(tWDA_CbContext *pWDA)
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAILURE ;
       } 
       return VOS_STATUS_E_FAILURE ;
@@ -14749,6 +16952,9 @@ static VOS_STATUS wdaCreateTimers(tWDA_CbContext *pWDA)
    return VOS_STATUS_SUCCESS ;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * WDA common routine to destroy timer used by WDA.
  */
@@ -14770,8 +16976,11 @@ static VOS_STATUS wdaDestroyTimers(tWDA_CbContext *pWDA)
       return eSIR_FAILURE ;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
                            
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = WDA_DESTROY_TIMER(&pWDA->wdaTimers.trafficStatsTimer);
    if(status != TX_SUCCESS)
    {
@@ -14779,6 +16988,9 @@ static VOS_STATUS wdaDestroyTimers(tWDA_CbContext *pWDA)
                                "Unable to Destroy traffic stats timer");
       return eSIR_FAILURE ;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return eSIR_SUCCESS ;
 }
@@ -14832,6 +17044,7 @@ eHalStatus WDA_SetRegDomain(void * clientCtxt, v_REGDOMAIN_t regId)
    }
    return eHAL_STATUS_SUCCESS;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif  /* FEATURE_WLAN_INTEGRATED_SOC */
 
@@ -14929,6 +17142,8 @@ void WDA_SetPowerParamsCallback(WDI_Status status, void* pUserData)
    }
    return ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_SCAN_PNO
 /*
@@ -15034,6 +17249,9 @@ void WDA_UpdateScanParamsReqCallback(WDI_Status wdiStatus, void* pUserData)
    }
 
    return;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 /*
@@ -15050,17 +17268,23 @@ VOS_STATUS WDA_ProcessSetPrefNetworkReq(tWDA_CbContext *pWDA,
    v_U8_t   i; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiPNOScanReqInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiPNOScanReqInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -15070,7 +17294,11 @@ VOS_STATUS WDA_ProcessSetPrefNetworkReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15111,6 +17339,7 @@ VOS_STATUS WDA_ProcessSetPrefNetworkReq(tWDA_CbContext *pWDA,
                 pPNOScanReqParams->p5GProbeTemplate,
                 pwdiPNOScanReqInfo->wdiPNOScanInfo.us5GProbeSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiPNOScanReqInfo->wdiReqStatusCB = NULL;
    if((NULL != pWDA->wdaMsgParam) || (NULL != pWDA->wdaWdiApiMsgParam))
    {
@@ -15127,6 +17356,11 @@ VOS_STATUS WDA_ProcessSetPrefNetworkReq(tWDA_CbContext *pWDA,
    pwdiPNOScanReqInfo->pUserData = pWdaParams;
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   pwdiPNOScanReqInfo->wdiReqStatusCB = WDA_PNOScanReqCallback;
+   pwdiPNOScanReqInfo->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Store Params pass it to WDI */
    pWdaParams->wdaWdiApiMsgParam = (void *)pwdiPNOScanReqInfo;
    pWdaParams->pWdaContext = pWDA;
@@ -15134,7 +17368,11 @@ VOS_STATUS WDA_ProcessSetPrefNetworkReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pPNOScanReqParams;
    status = WDI_SetPreferredNetworkReq(pwdiPNOScanReqInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                            (WDI_PNOScanCb)WDA_PNOScanReqCallback, pWdaParams);
+=======
+                           (WDI_PNOScanCb)WDA_PNOScanRespCallback, pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            (WDI_PNOScanCb)WDA_PNOScanRespCallback, pWdaParams);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15150,12 +17388,15 @@ VOS_STATUS WDA_ProcessSetPrefNetworkReq(tWDA_CbContext *pWDA,
    return CONVERT_WDI2VOS_STATUS(status) ;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * FUNCTION: WDA_RssiFilterCallback
  * 
  */ 
 void WDA_RssiFilterCallback(WDI_Status status, void* pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 
@@ -15397,17 +17638,23 @@ VOS_STATUS WDA_ProcessRoamScanOffloadReq(tWDA_CbContext *pWDA,
  * 
  */ 
 void WDA_RssiFilterRespCallback(WDI_Status status, void* pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
 
    VOS_ASSERT(NULL != pWdaParams);
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "<------ %s " ,__func__);
 
    if(NULL == pWdaParams)
@@ -15418,6 +17665,9 @@ void WDA_RssiFilterRespCallback(WDI_Status status, void* pUserData)
       return;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_mem_free(pWdaParams->wdaMsgParam) ;
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
@@ -15427,7 +17677,10 @@ void WDA_RssiFilterRespCallback(WDI_Status status, void* pUserData)
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_RssiFilterReqCallback
  * Free memory.
  * Invoked when RSSIFilter REQ failed in WDI and no RSP callback is generated.
@@ -15457,6 +17710,9 @@ void WDA_RssiFilterReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessSetPreferredNetworkList
  * Request to WDI to set Preferred Network List.Offload
@@ -15470,17 +17726,23 @@ VOS_STATUS WDA_ProcessSetRssiFilterReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiSetRssiFilterReqInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiSetRssiFilterReqInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -15490,7 +17752,11 @@ VOS_STATUS WDA_ProcessSetRssiFilterReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15499,6 +17765,7 @@ VOS_STATUS WDA_ProcessSetRssiFilterReq(tWDA_CbContext *pWDA,
       return VOS_STATUS_E_NOMEM;
    }
    pwdiSetRssiFilterReqInfo->rssiThreshold = pRssiFilterParams->rssiThreshold;
+<<<<<<< HEAD
 <<<<<<< HEAD
    pwdiSetRssiFilterReqInfo->wdiReqStatusCB = NULL;
    if((NULL != pWDA->wdaMsgParam) || (NULL != pWDA->wdaWdiApiMsgParam))
@@ -15515,6 +17782,11 @@ VOS_STATUS WDA_ProcessSetRssiFilterReq(tWDA_CbContext *pWDA,
    pwdiSetRssiFilterReqInfo->pUserData = pWdaParams;
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   pwdiSetRssiFilterReqInfo->wdiReqStatusCB = WDA_RssiFilterReqCallback;
+   pwdiSetRssiFilterReqInfo->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Store Params pass it to WDI */
    pWdaParams->wdaWdiApiMsgParam = (void *)pwdiSetRssiFilterReqInfo;
    pWdaParams->pWdaContext = pWDA;
@@ -15522,7 +17794,11 @@ VOS_STATUS WDA_ProcessSetRssiFilterReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pRssiFilterParams;
    status = WDI_SetRssiFilterReq( pwdiSetRssiFilterReqInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  (WDI_PNOScanCb)WDA_RssiFilterCallback, 
+=======
+                                 (WDI_PNOScanCb)WDA_RssiFilterRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  (WDI_PNOScanCb)WDA_RssiFilterRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15554,17 +17830,23 @@ VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA,
    v_U8_t i; 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == wdiUpdateScanParamsInfoType) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == wdiUpdateScanParamsInfoType) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -15574,7 +17856,11 @@ VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15617,8 +17903,13 @@ VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA,
 
    wdiUpdateScanParamsInfoType->wdiUpdateScanParamsInfo.ucChannelCount = 
 <<<<<<< HEAD
+<<<<<<< HEAD
       (pUpdateScanParams->ucChannelCount < WDI_PNO_MAX_NETW_CHANNELS)?
       pUpdateScanParams->ucChannelCount:WDI_PNO_MAX_NETW_CHANNELS;
+=======
+      (pUpdateScanParams->ucChannelCount < WDI_PNO_MAX_NETW_CHANNELS_EX)?
+      pUpdateScanParams->ucChannelCount:WDI_PNO_MAX_NETW_CHANNELS_EX;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       (pUpdateScanParams->ucChannelCount < WDI_PNO_MAX_NETW_CHANNELS_EX)?
       pUpdateScanParams->ucChannelCount:WDI_PNO_MAX_NETW_CHANNELS_EX;
@@ -15637,6 +17928,7 @@ VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wdiUpdateScanParamsInfoType->wdiReqStatusCB = NULL;
    if((NULL != pWDA->wdaMsgParam) || (NULL != pWDA->wdaWdiApiMsgParam))
    {
@@ -15652,6 +17944,11 @@ VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA,
    wdiUpdateScanParamsInfoType->pUserData = pWdaParams;
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   wdiUpdateScanParamsInfoType->wdiReqStatusCB = WDA_UpdateScanParamsReqCallback;
+   wdiUpdateScanParamsInfoType->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      /* Store Params pass it to WDI */
    pWdaParams->wdaWdiApiMsgParam = wdiUpdateScanParamsInfoType;
    pWdaParams->pWdaContext = pWDA;
@@ -15660,6 +17957,7 @@ VOS_STATUS WDA_ProcessUpdateScanParams(tWDA_CbContext *pWDA,
  
  
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    status = WDI_UpdateScanParamsReq(wdiUpdateScanParamsInfoType, 
                     (WDI_UpdateScanParamsCb)WDA_UpdateScanParamsCallback, 
@@ -15690,6 +17988,8 @@ void WDA_8023MulticastListReqCallback(WDI_Status status, void * pUserData)
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = WDI_UpdateScanParamsReq(wdiUpdateScanParamsInfoType, 
                     (WDI_UpdateScanParamsCb)WDA_UpdateScanParamsRespCallback,
                     pWdaParams);
@@ -15810,6 +18110,9 @@ void WDA_8023MulticastListRespCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                  "%s: pWdaParams received NULL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0) ;
       return ;
@@ -15821,11 +18124,14 @@ void WDA_8023MulticastListRespCallback(
    //print a msg, nothing else to do
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WDA_8023MulticastListReqCallback invoked " );
    return ;
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               "WDA_8023MulticastListRespCallback invoked " );
    return ;
 }
@@ -15859,6 +18165,9 @@ void WDA_8023MulticastListReqCallback(WDI_Status wdiStatus, void* pUserData)
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_Process8023MulticastListReq
  * Request to WDI to add 8023 Multicast List
@@ -15872,7 +18181,11 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
    tANI_U8         i;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15884,7 +18197,11 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15894,6 +18211,7 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
 <<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
       vos_mem_free(pwdiFltPktSetMcListReqParamsType);
@@ -15909,11 +18227,16 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
       return VOS_STATUS_E_FAILURE;
    }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "%s: VOS MEM Alloc Failure", __func__); 
       vos_mem_free(pwdiFltPktSetMcListReqParamsType);
       return VOS_STATUS_E_NOMEM;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //
    // Fill pwdiFltPktSetMcListReqParamsType from pRcvFltMcAddrList
@@ -15933,9 +18256,15 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
                    sizeof(tSirMacAddr));
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiFltPktSetMcListReqParamsType->wdiReqStatusCB = NULL;
   /* WDA_VOS_ASSERT((NULL == pWDA->wdaMsgParam) && 
                   (NULL == pWDA->wdaWdiApiMsgParam)); */
+=======
+   pwdiFltPktSetMcListReqParamsType->wdiReqStatusCB = WDA_8023MulticastListReqCallback;
+   pwdiFltPktSetMcListReqParamsType->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pwdiFltPktSetMcListReqParamsType->wdiReqStatusCB = WDA_8023MulticastListReqCallback;
    pwdiFltPktSetMcListReqParamsType->pUserData = pWdaParams;
@@ -15949,7 +18278,11 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
    status = WDI_8023MulticastListReq(
                         pwdiFltPktSetMcListReqParamsType, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                         (WDI_8023MulticastListCb)WDA_8023MulticastListReqCallback,
+=======
+                        (WDI_8023MulticastListCb)WDA_8023MulticastListRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         (WDI_8023MulticastListCb)WDA_8023MulticastListRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -15966,6 +18299,7 @@ VOS_STATUS WDA_Process8023MulticastListReq (tWDA_CbContext *pWDA,
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_ReceiveFilterSetFilterReqCallback
  * 
  */ 
@@ -15975,6 +18309,8 @@ void WDA_ReceiveFilterSetFilterReqCallback(WDI_Status status, void * pUserData)
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ReceiveFilterSetFilterRespCallback
  * 
  */ 
@@ -15985,11 +18321,15 @@ void WDA_ReceiveFilterSetFilterRespCallback(
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*WDA_VOS_ASSERT(NULL != pWdaParams);*/
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  "%s: pWdaParams received NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
@@ -15997,11 +18337,16 @@ void WDA_ReceiveFilterSetFilterRespCallback(
    }
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  "%s: pWdaParams received NULL", __func__);
       VOS_ASSERT(0) ;
       return ;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_mem_free(pWdaParams->wdaMsgParam) ;
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
@@ -16009,10 +18354,13 @@ void WDA_ReceiveFilterSetFilterRespCallback(
    //print a msg, nothing else to do
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WDA_ReceiveFilterSetFilterReqCallback invoked " );
    return ;
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               "WDA_ReceiveFilterSetFilterRespCallback invoked " );
    return ;
 }
@@ -16049,6 +18397,9 @@ void WDA_ReceiveFilterSetFilterReqCallback(WDI_Status   wdiStatus,
    return;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: WDA_ProcessReceiveFilterSetFilterReq
@@ -16066,17 +18417,23 @@ VOS_STATUS WDA_ProcessReceiveFilterSetFilterReq (tWDA_CbContext *pWDA,
    tANI_U8         i;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiSetRcvPktFilterReqParamsType) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiSetRcvPktFilterReqParamsType) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -16086,7 +18443,11 @@ VOS_STATUS WDA_ProcessReceiveFilterSetFilterReq (tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16157,7 +18518,12 @@ VOS_STATUS WDA_ProcessReceiveFilterSetFilterReq (tWDA_CbContext *pWDA,
                          wdiPktFilterCfg.paramsData[i].dataMask[5]);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiSetRcvPktFilterReqParamsType->wdiReqStatusCB = NULL;
+=======
+   pwdiSetRcvPktFilterReqParamsType->wdiReqStatusCB = WDA_ReceiveFilterSetFilterReqCallback;
+   pwdiSetRcvPktFilterReqParamsType->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pwdiSetRcvPktFilterReqParamsType->wdiReqStatusCB = WDA_ReceiveFilterSetFilterReqCallback;
    pwdiSetRcvPktFilterReqParamsType->pUserData = pWdaParams;
@@ -16169,7 +18535,11 @@ VOS_STATUS WDA_ProcessReceiveFilterSetFilterReq (tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pRcvPktFilterCfg;
    status = WDI_ReceiveFilterSetFilterReq(pwdiSetRcvPktFilterReqParamsType,
 <<<<<<< HEAD
+<<<<<<< HEAD
            (WDI_ReceiveFilterSetFilterCb)WDA_ReceiveFilterSetFilterReqCallback,
+=======
+           (WDI_ReceiveFilterSetFilterCb)WDA_ReceiveFilterSetFilterRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            (WDI_ReceiveFilterSetFilterCb)WDA_ReceiveFilterSetFilterRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16185,12 +18555,15 @@ VOS_STATUS WDA_ProcessReceiveFilterSetFilterReq (tWDA_CbContext *pWDA,
    return CONVERT_WDI2VOS_STATUS(status) ;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * FUNCTION: WDA_FilterMatchCountReqCallback
  * 
  */ 
 void WDA_FilterMatchCountReqCallback(WDI_Status status, void * pUserData)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
 /*
@@ -16214,6 +18587,9 @@ void WDA_ProcessReceiveFilterSetFilterMcReq(tSirInvokeV6Filter *invokeV6FilterCo
 void WDA_FilterMatchCountRespCallback(
                             WDI_RcvFltPktMatchCntRspParamsType *pwdiRcvFltPktMatchRspParams, 
                             void * pUserData)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
@@ -16226,7 +18602,11 @@ void WDA_FilterMatchCountRespCallback(
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16236,9 +18616,15 @@ void WDA_FilterMatchCountRespCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: pRcvFltPktMatchCntRsp is NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
 	  vos_mem_free(pWdaParams);
+=======
+                 "%s: pRcvFltPktMatchCntRsp is NULL", __func__);
+      VOS_ASSERT(0) ;
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: pRcvFltPktMatchCntRsp is NULL", __func__);
       VOS_ASSERT(0) ;
@@ -16251,9 +18637,15 @@ void WDA_FilterMatchCountRespCallback(
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: pWdaParams received NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
 	  vos_mem_free(pRcvFltPktMatchCntRsp);
+=======
+                 "%s: pWdaParams received NULL", __func__);
+      VOS_ASSERT(0) ;
+      vos_mem_free(pRcvFltPktMatchCntRsp);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: pWdaParams received NULL", __func__);
       VOS_ASSERT(0) ;
@@ -16271,7 +18663,11 @@ void WDA_FilterMatchCountRespCallback(
    pRcvFltPktMatchCntRsp->mesgLen = sizeof(tSirRcvFltPktMatchRsp);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    pRcvFltPktMatchCntRsp->status = pRcvFltPktMatchCntReq->status;
+=======
+   pRcvFltPktMatchCntRsp->status = pwdiRcvFltPktMatchRspParams->wdiStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pRcvFltPktMatchCntRsp->status = pwdiRcvFltPktMatchRspParams->wdiStatus;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16295,7 +18691,10 @@ void WDA_FilterMatchCountRespCallback(
    vos_mem_free(pWdaParams->wdaWdiApiMsgParam);
    vos_mem_free(pWdaParams) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return;
 }
@@ -16334,6 +18733,9 @@ void WDA_FilterMatchCountReqCallback(WDI_Status wdiStatus, void * pUserData)
    }
 
    return;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 /*
@@ -16348,17 +18750,23 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiRcvFltPktMatchCntReqParamsType) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiRcvFltPktMatchCntReqParamsType) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -16368,7 +18776,11 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16376,6 +18788,7 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
       vos_mem_free(pwdiRcvFltPktMatchCntReqParamsType);
       return VOS_STATUS_E_NOMEM;
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
    if((NULL != pWDA->wdaMsgParam) || (NULL != pWDA->wdaWdiApiMsgParam))
    {
@@ -16388,6 +18801,8 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
    }
    pwdiRcvFltPktMatchCntReqParamsType->wdiReqStatusCB = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pwdiRcvFltPktMatchCntReqParamsType->wdiReqStatusCB = WDA_FilterMatchCountReqCallback;
    pwdiRcvFltPktMatchCntReqParamsType->pUserData = pWdaParams;
@@ -16395,6 +18810,9 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
    vos_mem_copy( pwdiRcvFltPktMatchCntReqParamsType->bssId,
                  pRcvFltPktMatchRsp->bssId, 
                  sizeof(wpt_macAddr));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Store Params pass it to WDI */
@@ -16404,7 +18822,11 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
    pWdaParams->wdaMsgParam = pRcvFltPktMatchRsp;
    status = WDI_FilterMatchCountReq(pwdiRcvFltPktMatchCntReqParamsType, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                  (WDI_FilterMatchCountCb)WDA_FilterMatchCountReqCallback,
+=======
+                 (WDI_FilterMatchCountCb)WDA_FilterMatchCountRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  (WDI_FilterMatchCountCb)WDA_FilterMatchCountRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16423,6 +18845,7 @@ VOS_STATUS WDA_ProcessPacketFilterMatchCountReq (tWDA_CbContext *pWDA, tpSirRcvF
 }
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * FUNCTION: WDA_ReceiveFilterSetFilterReqCallback
  * 
  */ 
@@ -16432,6 +18855,8 @@ void WDA_ReceiveFilterClearFilterReqCallback(WDI_Status status, void * pUserData
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ReceiveFilterClearFilterRespCallback
  * 
  */ 
@@ -16442,11 +18867,15 @@ void WDA_ReceiveFilterClearFilterRespCallback(
    tWDA_ReqParams *pWdaParams = (tWDA_ReqParams *)pUserData;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
                                           "<------ %s " ,__func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*   WDA_VOS_ASSERT(NULL != pWdaParams); */
    if(NULL == pWdaParams)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  "%s: pWdaParams received NULL", __FUNCTION__);
       VOS_ASSERT(0) ;
@@ -16463,6 +18892,8 @@ void WDA_ReceiveFilterClearFilterRespCallback(
 }
 /*
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  "%s: pWdaParams received NULL", __func__);
       VOS_ASSERT(0) ;
       return ;
@@ -16506,6 +18937,9 @@ void WDA_ReceiveFilterClearFilterReqCallback(WDI_Status wdiStatus, void* pUserDa
    return;
 }
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: WDA_ProcessReceiveFilterClearFilterReq
  * Request to WDI to clear Receive Filters
@@ -16519,17 +18953,23 @@ VOS_STATUS WDA_ProcessReceiveFilterClearFilterReq (tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiRcvFltPktClearReqParamsType)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiRcvFltPktClearReqParamsType)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -16539,7 +18979,11 @@ VOS_STATUS WDA_ProcessReceiveFilterClearFilterReq (tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__);
+=======
+                           "%s: VOS MEM Alloc Failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16555,7 +18999,12 @@ VOS_STATUS WDA_ProcessReceiveFilterClearFilterReq (tWDA_CbContext *pWDA,
                          pRcvFltPktClearParam->bssId, sizeof(wpt_macAddr));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiRcvFltPktClearReqParamsType->wdiReqStatusCB = NULL;
+=======
+   pwdiRcvFltPktClearReqParamsType->wdiReqStatusCB = WDA_ReceiveFilterClearFilterReqCallback;
+   pwdiRcvFltPktClearReqParamsType->pUserData = pWdaParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pwdiRcvFltPktClearReqParamsType->wdiReqStatusCB = WDA_ReceiveFilterClearFilterReqCallback;
    pwdiRcvFltPktClearReqParamsType->pUserData = pWdaParams;
@@ -16567,7 +19016,11 @@ VOS_STATUS WDA_ProcessReceiveFilterClearFilterReq (tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pRcvFltPktClearParam;
    status = WDI_ReceiveFilterClearFilterReq(pwdiRcvFltPktClearReqParamsType,
 <<<<<<< HEAD
+<<<<<<< HEAD
        (WDI_ReceiveFilterClearFilterCb)WDA_ReceiveFilterClearFilterReqCallback,
+=======
+       (WDI_ReceiveFilterClearFilterCb)WDA_ReceiveFilterClearFilterRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        (WDI_ReceiveFilterClearFilterCb)WDA_ReceiveFilterClearFilterRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16578,6 +19031,11 @@ VOS_STATUS WDA_ProcessReceiveFilterClearFilterReq (tWDA_CbContext *pWDA,
               "Failure in WDA_ProcessReceiveFilterClearFilterReq(), free all the memory " );
       vos_mem_free(pWdaParams->wdaWdiApiMsgParam) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      vos_mem_free(pWdaParams->wdaMsgParam);
+      vos_mem_free(pWdaParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       vos_mem_free(pWdaParams->wdaMsgParam);
       vos_mem_free(pWdaParams);
@@ -16600,17 +19058,23 @@ VOS_STATUS WDA_ProcessSetPowerParamsReq(tWDA_CbContext *pWDA,
    tWDA_ReqParams *pWdaParams ;
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if(NULL == pwdiSetPowerParamsReqInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if(NULL == pwdiSetPowerParamsReqInfo) 
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: VOS MEM Alloc Failure", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return VOS_STATUS_E_NOMEM;
@@ -16620,7 +19084,11 @@ VOS_STATUS WDA_ProcessSetPowerParamsReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16643,6 +19111,7 @@ VOS_STATUS WDA_ProcessSetPowerParamsReq(tWDA_CbContext *pWDA,
    pwdiSetPowerParamsReqInfo->wdiSetPowerParamsInfo.uBETInterval      = 
       pPowerParams->uBETInterval; 
 <<<<<<< HEAD
+<<<<<<< HEAD
    pwdiSetPowerParamsReqInfo->wdiReqStatusCB = NULL;
    if((NULL != pWDA->wdaMsgParam) || (NULL != pWDA->wdaWdiApiMsgParam))
    {
@@ -16658,6 +19127,11 @@ VOS_STATUS WDA_ProcessSetPowerParamsReq(tWDA_CbContext *pWDA,
    pwdiSetPowerParamsReqInfo->pUserData = pWdaParams;
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   pwdiSetPowerParamsReqInfo->wdiReqStatusCB = WDA_SetPowerParamsReqCallback;
+   pwdiSetPowerParamsReqInfo->pUserData = pWdaParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Store Params pass it to WDI */
    pWdaParams->wdaWdiApiMsgParam = (void *)pwdiSetPowerParamsReqInfo;
    pWdaParams->pWdaContext = pWDA;
@@ -16665,7 +19139,11 @@ VOS_STATUS WDA_ProcessSetPowerParamsReq(tWDA_CbContext *pWDA,
    pWdaParams->wdaMsgParam = pPowerParams;
    status = WDI_SetPowerParamsReq( pwdiSetPowerParamsReqInfo, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  (WDI_SetPowerParamsCb)WDA_SetPowerParamsCallback, 
+=======
+                                 (WDI_SetPowerParamsCb)WDA_SetPowerParamsRespCallback,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  (WDI_SetPowerParamsCb)WDA_SetPowerParamsRespCallback,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16692,7 +19170,11 @@ void WDA_SetTmLevelRspCallback(WDI_Status status, void* pUserData)
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "<------ %s " ,__FUNCTION__);
+=======
+                                          "<------ %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "<------ %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16701,7 +19183,11 @@ void WDA_SetTmLevelRspCallback(WDI_Status status, void* pUserData)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s: pWdaParams received NULL", __FUNCTION__);
+=======
+              "%s: pWdaParams received NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s: pWdaParams received NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16738,7 +19224,11 @@ VOS_STATUS WDA_ProcessSetTmLevelReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16751,7 +19241,11 @@ VOS_STATUS WDA_ProcessSetTmLevelReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s: VOS MEM Alloc Failure", __FUNCTION__); 
+=======
+                           "%s: VOS MEM Alloc Failure", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s: VOS MEM Alloc Failure", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16762,7 +19256,11 @@ VOS_STATUS WDA_ProcessSetTmLevelReq(tWDA_CbContext *pWDA,
 
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
+=======
+                                          "------> %s " ,__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                           "------> %s " ,__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16781,7 +19279,11 @@ VOS_STATUS WDA_ProcessSetTmLevelReq(tWDA_CbContext *pWDA,
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "Failure set thernal mitigation level free all the memory " );
+=======
+                 "Failure setting thermal mitigation level, freeing memory" );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "Failure setting thermal mitigation level, freeing memory" );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16800,17 +19302,23 @@ VOS_STATUS WDA_ProcessTxControlInd(tWDA_CbContext *pWDA,
    
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                           "------> %s " ,__FUNCTION__);
    if( pTxCtrlParam == NULL )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: Input tpTxControlParams is NULL", __FUNCTION__); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           "------> %s " ,__func__);
    if( pTxCtrlParam == NULL )
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
                            "%s: Input tpTxControlParams is NULL", __func__); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
@@ -16832,11 +19340,14 @@ void WDA_featureCapsExchange(v_PVOID_t pVosContext)
 {
    VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "%s:enter", __FUNCTION__ );
    WDI_featureCapsExchangeReq( NULL, pVosContext);
 }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       "%s:enter", __func__ );
    WDI_featureCapsExchangeReq( NULL, pVosContext);
 }
@@ -16851,6 +19362,9 @@ void WDA_disableCapablityFeature(tANI_U8 feature_index)
    WDI_disableCapablityFeature(feature_index);
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  /*  FUNCTION    WDA_getHostWlanFeatCaps
   *  Wrapper for WDI API, that will return if the feature (enum value).passed
@@ -16891,7 +19405,11 @@ VOS_STATUS WDA_shutdown(v_PVOID_t pVosContext, wpt_boolean closeTransport)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s: Invoked with invalid pWDA", __FUNCTION__ );
+=======
+            "%s: Invoked with invalid pWDA", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s: Invoked with invalid pWDA", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -16905,6 +19423,7 @@ VOS_STATUS WDA_shutdown(v_PVOID_t pVosContext, wpt_boolean closeTransport)
    {
       VOS_ASSERT(0);
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
    if(NULL != pWDA->wdaWdiApiMsgParam)
    {
@@ -16921,6 +19440,8 @@ VOS_STATUS WDA_shutdown(v_PVOID_t pVosContext, wpt_boolean closeTransport)
    }
    pWDA->wdaWdiApiMsgParam = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if ( (eDRIVER_TYPE_MFG != pWDA->driverMode) &&
         (VOS_TRUE == pWDA->wdaTimersCreated))
@@ -16929,6 +19450,9 @@ VOS_STATUS WDA_shutdown(v_PVOID_t pVosContext, wpt_boolean closeTransport)
       pWDA->wdaTimersCreated = VOS_FALSE;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* call WDI shutdown */
    wdiStatus = WDI_Shutdown(closeTransport);
@@ -16975,6 +19499,7 @@ VOS_STATUS WDA_shutdown(v_PVOID_t pVosContext, wpt_boolean closeTransport)
    return status;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * FUNCTION: WDA_stopFailed
  * WDA stop failed
@@ -16984,6 +19509,8 @@ void WDA_stopFailed(v_PVOID_t pVosContext)
 {
    tWDA_CbContext *pWDA = (tWDA_CbContext *)VOS_GET_WDA_CTXT(pVosContext);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
  * FUNCTION: WDA_setNeedShutdown
@@ -16999,6 +19526,9 @@ void WDA_setNeedShutdown(v_PVOID_t pVosContext)
                          "Could not get the WDA Context pointer" );
        return;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pWDA->needShutdown  = TRUE;
 }
@@ -17011,11 +19541,14 @@ v_BOOL_t WDA_needShutdown(v_PVOID_t pVosContext)
 {
    tWDA_CbContext *pWDA = (tWDA_CbContext *)VOS_GET_WDA_CTXT(pVosContext);
 <<<<<<< HEAD
+<<<<<<< HEAD
    return pWDA->needShutdown;   
 }
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(pWDA == NULL)
    {
        VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
@@ -17100,6 +19633,9 @@ VOS_STATUS WDA_ProcessUpdateOpMode(tWDA_CbContext *pWDA,
    return CONVERT_WDI2VOS_STATUS(status) ;
 } 
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*==========================================================================
@@ -17112,7 +19648,12 @@ VOS_STATUS WDA_ProcessUpdateOpMode(tWDA_CbContext *pWDA,
 
   PARAMETERS
 <<<<<<< HEAD
+<<<<<<< HEAD
     displaySnapshot : Dispaly DXE snapshot option
+=======
+    pMac : upper MAC context pointer
+    displaySnapshot : Display DXE snapshot option
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pMac : upper MAC context pointer
     displaySnapshot : Display DXE snapshot option
@@ -17128,8 +19669,14 @@ VOS_STATUS WDA_ProcessUpdateOpMode(tWDA_CbContext *pWDA,
 void WDA_TransportChannelDebug
 (
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_BOOL_t   displaySnapshot,
    v_BOOL_t   toggleStallDetect
+=======
+  tpAniSirGlobal pMac,
+  v_BOOL_t       displaySnapshot,
+  v_BOOL_t       toggleStallDetect
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tpAniSirGlobal pMac,
   v_BOOL_t       displaySnapshot,
@@ -17141,7 +19688,10 @@ void WDA_TransportChannelDebug
    return;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*==========================================================================
   FUNCTION   WDA_SetEnableSSR
@@ -17160,4 +19710,7 @@ void WDA_SetEnableSSR(v_BOOL_t enableSSR)
 {
    WDI_SetEnableSSR(enableSSR);
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

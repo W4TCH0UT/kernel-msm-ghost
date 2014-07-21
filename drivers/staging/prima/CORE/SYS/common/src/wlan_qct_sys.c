@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -89,6 +95,7 @@ when        who         what, where, why
 #include "aniGlobal.h"
 #include "wlan_qct_wda.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include <halCommonApi.h>  // needed for halMmhPostMsgApi()
 #endif
@@ -100,11 +107,16 @@ VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message);
 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "sme_Api.h"
 #include "macInitApi.h"
 
 VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -112,10 +124,14 @@ VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message);
 // write the COOKIE in the reserved field of the message.  The SYS Module
 // relies on this COOKIE
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
 #define SYS_MSG_ID_FTM_RSP      11
 #define FTM_SYS_MSG_COOKIE      0xFACE
 #endif
+=======
+#define FTM_SYS_MSG_COOKIE      0xFACE
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define FTM_SYS_MSG_COOKIE      0xFACE
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -138,12 +154,15 @@ typedef struct
 } sysContextData;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 // keep some static global sys context for the time being... Should we move this
 // into 'context' data?  Probably not, it doesn't need to be persistent except
 // during this messaging sequence.
 static sysContextData gSysContext;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -164,6 +183,7 @@ VOS_STATUS sysOpen( v_CONTEXT_t pVosContext )
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 VOS_STATUS sysMcStart( v_CONTEXT_t pVosContext, sysResponseCback userCallback, v_VOID_t *pUserData )
@@ -189,6 +209,8 @@ VOS_STATUS sysMcStart( v_CONTEXT_t pVosContext, sysResponseCback userCallback, v
    return( vosStatus );
 }
 #endif  /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -252,6 +274,7 @@ VOS_STATUS sysClose( v_CONTEXT_t pVosContext )
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 static VOS_STATUS sys_PostMcThreadProbeMsg( v_CONTEXT_t pVosContext, sysResponseCback userCallback,
@@ -390,6 +413,11 @@ static VOS_STATUS sys_SendHalInitStartReqMsg( v_CONTEXT_t pVosContext )
 
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if defined(__ANI_COMPILER_PRAGMA_PACK_STACK)
 #pragma pack( push )
@@ -459,6 +487,7 @@ static unsigned short polFileChkSum( unsigned short *FileData, unsigned long Num
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 static v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    void **ppStaConfig, v_SIZE_t *pcbStaConfig )
@@ -466,6 +495,10 @@ static v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
 v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    void **ppStaConfig, v_SIZE_t *pcbStaConfig )
 #endif
+=======
+v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
+   void **ppStaConfig, v_SIZE_t *pcbStaConfig )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    void **ppStaConfig, v_SIZE_t *pcbStaConfig )
@@ -526,6 +559,7 @@ v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    return( fFound );
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 static v_U8_t _vImageArray[15000];
@@ -725,6 +759,16 @@ VOS_STATUS sys_SendSmeStartReq( v_CONTEXT_t pVosContext )
 
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+
+
+
+
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 {
@@ -746,6 +790,7 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          case SYS_MSG_ID_MC_START:
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
             // save the callback pointer and user data in the context
             // data
@@ -758,6 +803,8 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Handling for this message is not needed now so adding 
              *debug print and VOS_ASSERT*/
             VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
@@ -765,7 +812,10 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
                        pMsg->type, pMsg->type );
             VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
@@ -782,7 +832,11 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
             {
                VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                           "%s: Invalid hHal", __FUNCTION__ );
+=======
+                          "%s: Invalid hHal", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                           "%s: Invalid hHal", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -807,6 +861,7 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          case SYS_MSG_ID_MC_THR_PROBE:
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
             sysResponseCback callback;
 
@@ -819,6 +874,8 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Handling for this message is not needed now so adding 
              *debug print and VOS_ASSERT*/
             VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
@@ -826,7 +883,10 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
                        pMsg->type, pMsg->type );
             VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
@@ -847,7 +907,10 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
             break;
          }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          case SYS_MSG_ID_FTM_RSP:
@@ -856,7 +919,10 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
              break;
          }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -876,6 +942,7 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       // Process all 'legacy' messages
       switch( pMsg->type )
       {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
          /* Handling for these messages are not needed now. If a request comes for 
@@ -972,6 +1039,8 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 #endif  /* FEATURE_WLAN_NON_INTEGRATED_SOC */
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          default:
          {
@@ -1016,6 +1085,7 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          case SYS_MSG_ID_TX_THR_PROBE:
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
             sysResponseCback callback;
 
@@ -1028,6 +1098,8 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            /* Handling for this message is not needed now so adding 
             * debug print and VOS_ASSERT*/
             VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
@@ -1036,7 +1108,10 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
             VOS_ASSERT(0);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
@@ -1084,7 +1159,10 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS sysRxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
@@ -1144,7 +1222,10 @@ VOS_STATUS sysRxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1176,8 +1257,11 @@ SysProcessMmhMsg
   */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_ASSERT(NULL != pMsg);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if (NULL == pMsg)
   {
@@ -1186,6 +1270,9 @@ SysProcessMmhMsg
       VOS_ASSERT(0);
       return;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -1205,7 +1292,10 @@ SysProcessMmhMsg
       targetMQ = VOS_MQ_ID_SYS;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
@@ -1214,7 +1304,10 @@ SysProcessMmhMsg
 
       VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
@@ -1231,7 +1324,10 @@ SysProcessMmhMsg
       targetMQ = VOS_MQ_ID_WDA;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined ( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
@@ -1240,7 +1336,10 @@ SysProcessMmhMsg
 
       VOS_ASSERT(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
@@ -1316,7 +1415,10 @@ SysProcessMmhMsg
 } /* SysProcessMmhMsg() */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
@@ -1362,7 +1464,10 @@ void wlan_sys_ftm(void *pMsgPtr)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

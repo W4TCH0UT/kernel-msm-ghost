@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -129,7 +135,11 @@
 #elif defined(__GNUC__)
 #define __ani_attr_pre_packed 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define __ani_attr_packed                       __attribute__((packed))
+=======
+#define __ani_attr_packed                       __packed
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define __ani_attr_packed                       __packed
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -153,15 +163,21 @@
 
 #if defined(ANI_DATAPATH_SECTION)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define  __DP_SRC_RX                __attribute__  ((section(".dpsrcrx")))
 #define  __DP_SRC_TX                __attribute__  ((section(".dpsrctx")))
 #define  __DP_SRC                   __attribute__  ((section(".dpsrc")))
 #define  __ANIHDD_MODULE            __attribute__  ((section(".anihdd")))
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define  __DP_SRC_RX                __attribute__((section(".dpsrcrx")))
 #define  __DP_SRC_TX                __attribute__((section(".dpsrctx")))
 #define  __DP_SRC                   __attribute__((section(".dpsrc")))
 #define  __ANIHDD_MODULE            __attribute__((section(".anihdd")))
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #define  __DP_SRC_RX 

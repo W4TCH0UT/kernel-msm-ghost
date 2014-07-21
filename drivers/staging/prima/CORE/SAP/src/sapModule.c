@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -46,6 +52,7 @@
 
                       s a p M o d u l e . C
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                
   OVERVIEW:
   
@@ -58,6 +65,8 @@
   Are listed for each API below.
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   OVERVIEW:
 
@@ -69,6 +78,9 @@
 
   Are listed for each API below.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   Copyright (c) 2010 QUALCOMM Incorporated.
   All Rights Reserved.
@@ -89,7 +101,11 @@
 ----------       ---                --------------------------------------------------------
 03/15/10     SOFTAP team            Created module
 <<<<<<< HEAD
+<<<<<<< HEAD
 06/03/10     js                     Added support to hostapd driven 
+=======
+06/03/10     js                     Added support to hostapd driven
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 06/03/10     js                     Added support to hostapd driven
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -112,9 +128,12 @@
 
 #include "sapInternal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(FEATURE_WLAN_NON_INTEGRATED_SOC)
 #include "halInternal.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "smeInside.h"
@@ -135,17 +154,23 @@
 
 /*----------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  External declarations for global context 
  * -------------------------------------------------------------------------*/
 //  No!  Get this from VOS.
 //  The main per-Physical Link (per WLAN association) context.
 ptSapContext  gpSapCtx = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *  External declarations for global context
  * -------------------------------------------------------------------------*/
 //  No!  Get this from VOS.
 //  The main per-Physical Link (per WLAN association) context.
 ptSapContext  gpSapCtx;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*----------------------------------------------------------------------------
@@ -167,6 +192,7 @@ ptSapContext  gpSapCtx;
 /*==========================================================================
   FUNCTION    WLANSAP_Open
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     Called at driver initialization (vos_open). SAP will initialize 
@@ -192,6 +218,8 @@ ptSapContext  gpSapCtx;
 ============================================================================*/
 VOS_STATUS 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Called at driver initialization (vos_open). SAP will initialize
     all its internal resources and will wait for the call to start to
@@ -215,6 +243,9 @@ VOS_STATUS
   SIDE EFFECTS
 ============================================================================*/
 VOS_STATUS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 WLANSAP_Open
 (
@@ -227,7 +258,11 @@ WLANSAP_Open
     VOS_ASSERT(pvosGCtx);
     /*------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
     Allocate (and sanity check?!) SAP control block 
+=======
+    Allocate (and sanity check?!) SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     Allocate (and sanity check?!) SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -238,7 +273,11 @@ WLANSAP_Open
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -260,7 +299,11 @@ WLANSAP_Open
     // Store a pointer to the SAP context provided by VOSS
     gpSapCtx = pSapCtx;
 <<<<<<< HEAD
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -274,6 +317,7 @@ WLANSAP_Open
 /*==========================================================================
   FUNCTION    WLANSAP_Start
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     Called as part of the overall start procedure (vos_start). SAP will 
@@ -294,6 +338,8 @@ WLANSAP_Open
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page 
                          fault  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Called as part of the overall start procedure (vos_start). SAP will
     use this call to register with TL as the SAP entity for
@@ -312,12 +358,16 @@ WLANSAP_Open
 
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page
                          fault
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS_SUCCESS: Success
 
   SIDE EFFECTS
 ============================================================================*/
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 VOS_STATUS 
 WLANSAP_Start
@@ -327,12 +377,17 @@ WLANSAP_Start
 {
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS
 WLANSAP_Start
 (
     v_PVOID_t  pvosGCtx
 )
 {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext  pSapCtx = NULL;
 
@@ -343,6 +398,7 @@ WLANSAP_Start
     /*------------------------------------------------------------------------
         Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
         Extract SAP control block 
     ------------------------------------------------------------------------*/
     pSapCtx = VOS_GET_SAP_CB(pvosGCtx);
@@ -351,6 +407,8 @@ WLANSAP_Start
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         Extract SAP control block
     ------------------------------------------------------------------------*/
     pSapCtx = VOS_GET_SAP_CB(pvosGCtx);
@@ -358,6 +416,9 @@ WLANSAP_Start
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
@@ -372,9 +433,15 @@ WLANSAP_Start
         Now configure the roaming profile links. To SSID and bssid.
     ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
     // We have room for two SSIDs.  
     pSapCtx->csrRoamProfile.SSIDs.numOfSSIDs = 1; // This is true for now.  
     pSapCtx->csrRoamProfile.SSIDs.SSIDList = pSapCtx->SSIDList;  //Array of two  
+=======
+    // We have room for two SSIDs.
+    pSapCtx->csrRoamProfile.SSIDs.numOfSSIDs = 1; // This is true for now.
+    pSapCtx->csrRoamProfile.SSIDs.SSIDList = pSapCtx->SSIDList;  //Array of two
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     // We have room for two SSIDs.
     pSapCtx->csrRoamProfile.SSIDs.numOfSSIDs = 1; // This is true for now.
@@ -384,6 +451,7 @@ WLANSAP_Start
     pSapCtx->csrRoamProfile.SSIDs.SSIDList[0].handoffPermitted = VOS_FALSE;
     pSapCtx->csrRoamProfile.SSIDs.SSIDList[0].ssidHidden = pSapCtx->SSIDList[0].ssidHidden;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     pSapCtx->csrRoamProfile.BSSIDs.numOfBSSIDs = 1; // This is true for now.  
     pSapCtx->csrRoamProfile.BSSIDs.bssid = &pSapCtx->bssid;  
@@ -396,6 +464,8 @@ WLANSAP_Start
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                  "WLANSAP_Start failed init lock\n");        
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSapCtx->csrRoamProfile.BSSIDs.numOfBSSIDs = 1; // This is true for now.
     pSapCtx->csrRoamProfile.BSSIDs.bssid = &pSapCtx->bssid;
 
@@ -406,13 +476,19 @@ WLANSAP_Start
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                  "WLANSAP_Start failed init lock\n");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -423,6 +499,7 @@ WLANSAP_Start
 
   FUNCTION    WLANSAP_Stop
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     Called by vos_stop to stop operation in SAP, before close. SAP will suspend all 
@@ -443,6 +520,8 @@ WLANSAP_Start
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page 
                          fault  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Called by vos_stop to stop operation in SAP, before close. SAP will suspend all
     BT-AMP Protocol Adaption Layer operation and will wait for the close
@@ -461,11 +540,15 @@ WLANSAP_Start
 
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page
                          fault
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS_SUCCESS: Success
 
   SIDE EFFECTS
 ============================================================================*/
+<<<<<<< HEAD
 <<<<<<< HEAD
 VOS_STATUS 
 WLANSAP_Stop
@@ -476,6 +559,8 @@ WLANSAP_Stop
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS
 WLANSAP_Stop
 (
@@ -483,13 +568,20 @@ WLANSAP_Stop
 )
 {
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext  pSapCtx = NULL;
 
     /*------------------------------------------------------------------------
         Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
         Extract SAP control block 
+=======
+        Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -502,7 +594,11 @@ WLANSAP_Stop
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -510,6 +606,7 @@ WLANSAP_Stop
     }
 
     sapFreeRoamProfile(&pSapCtx->csrRoamProfile);
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     if( !VOS_IS_STATUS_SUCCESS( vos_lock_destroy( &pSapCtx->SapGlobalLock ) ) )
@@ -523,6 +620,8 @@ WLANSAP_Stop
     ------------------------------------------------------------------------*/
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if( !VOS_IS_STATUS_SUCCESS( vos_lock_destroy( &pSapCtx->SapGlobalLock ) ) )
     {
@@ -533,6 +632,9 @@ WLANSAP_Stop
     /*------------------------------------------------------------------------
         Stop SAP (de-register RSN handler!?)
     ------------------------------------------------------------------------*/
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return VOS_STATUS_SUCCESS;
@@ -541,6 +643,7 @@ WLANSAP_Stop
 /*==========================================================================
   FUNCTION    WLANSAP_Close
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     Called by vos_close during general driver close procedure. SAP will clean up 
@@ -560,6 +663,8 @@ WLANSAP_Stop
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page 
                          fault  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Called by vos_close during general driver close procedure. SAP will clean up
     all the internal resources.
@@ -577,11 +682,15 @@ WLANSAP_Stop
 
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page
                          fault
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS_SUCCESS: Success
 
   SIDE EFFECTS
 ============================================================================*/
+<<<<<<< HEAD
 <<<<<<< HEAD
 VOS_STATUS 
 WLANSAP_Close
@@ -591,12 +700,17 @@ WLANSAP_Close
 {
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS
 WLANSAP_Close
 (
     v_PVOID_t  pvosGCtx
 )
 {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext  pSapCtx = NULL;
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
@@ -604,7 +718,11 @@ WLANSAP_Close
     /*------------------------------------------------------------------------
         Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
         Extract SAP control block 
+=======
+        Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -617,7 +735,11 @@ WLANSAP_Close
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -626,7 +748,11 @@ WLANSAP_Close
 
     /*------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
         Cleanup SAP control block. 
+=======
+        Cleanup SAP control block.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         Cleanup SAP control block.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -636,23 +762,33 @@ WLANSAP_Close
 
     /*------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
         Free SAP context from VOSS global 
     ------------------------------------------------------------------------*/
     vos_free_context(pvosGCtx, VOS_MODULE_ID_SAP, pSapCtx);
 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         Free SAP context from VOSS global
     ------------------------------------------------------------------------*/
     vos_free_context(pvosGCtx, VOS_MODULE_ID_SAP, pSapCtx);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_SUCCESS;
 }/* WLANSAP_Close */
 
 /*----------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Utility Function implementations 
+=======
+ * Utility Function implementations
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Utility Function implementations
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -662,6 +798,7 @@ WLANSAP_Close
 
   FUNCTION    WLANSAP_CleanCB
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     Clear out all fields in the SAP context.
@@ -680,6 +817,8 @@ WLANSAP_Close
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page 
                          fault  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Clear out all fields in the SAP context.
 
@@ -696,15 +835,24 @@ WLANSAP_Close
 
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page
                          fault
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS_SUCCESS: Success
 
   SIDE EFFECTS
 ============================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 VOS_STATUS 
 WLANSAP_CleanCB
 ( 
+=======
+VOS_STATUS
+WLANSAP_CleanCB
+(
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS
 WLANSAP_CleanCB
@@ -715,9 +863,14 @@ WLANSAP_CleanCB
 )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     /*------------------------------------------------------------------------
         Sanity check SAP control block 
+=======
+    /*------------------------------------------------------------------------
+        Sanity check SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     /*------------------------------------------------------------------------
         Sanity check SAP control block
@@ -728,7 +881,11 @@ WLANSAP_CleanCB
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -747,6 +904,7 @@ WLANSAP_CleanCB
     pSapCtx->sapsMachine= eSAP_DISCONNECTED;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Initializing State: %d, sapContext value = %x",
             __FUNCTION__, pSapCtx->sapsMachine, pSapCtx);   
     pSapCtx->sessionId = 0;
@@ -754,11 +912,16 @@ WLANSAP_CleanCB
 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Initializing State: %d, sapContext value = %p",
             __func__, pSapCtx->sapsMachine, pSapCtx);
     pSapCtx->sessionId = 0;
     pSapCtx->channel = 0;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_SUCCESS;
 }// WLANSAP_CleanCB
@@ -766,6 +929,7 @@ WLANSAP_CleanCB
 /*==========================================================================
   FUNCTION    WLANSAP_pmcFullPwrReqCB
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     Callback provide to PMC in the pmcRequestFullPower API. 
@@ -778,6 +942,8 @@ WLANSAP_CleanCB
     callbackContext:  The user passed in a context to identify 
     status:           The halStatus 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Callback provide to PMC in the pmcRequestFullPower API.
 
@@ -788,6 +954,9 @@ WLANSAP_CleanCB
     IN
     callbackContext:  The user passed in a context to identify
     status:           The halStatus
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
@@ -809,7 +978,11 @@ WLANSAP_pmcFullPwrReqCB
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL, 
+=======
+        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -822,6 +995,7 @@ WLANSAP_pmcFullPwrReqCB
   FUNCTION    WLANSAP_getState
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api returns the current SAP state to the caller.
 
@@ -829,12 +1003,17 @@ WLANSAP_pmcFullPwrReqCB
 
   PARAMETERS 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api returns the current SAP state to the caller.
 
   DEPENDENCIES
 
   PARAMETERS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
@@ -842,15 +1021,21 @@ WLANSAP_pmcFullPwrReqCB
 
   RETURN VALUE
 <<<<<<< HEAD
+<<<<<<< HEAD
     Returns the SAP FSM state.  
 ============================================================================*/
 
 v_U8_t WLANSAP_getState 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     Returns the SAP FSM state.
 ============================================================================*/
 
 v_U8_t WLANSAP_getState
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 (
     v_PVOID_t  pvosGCtx
@@ -864,7 +1049,11 @@ v_U8_t WLANSAP_getState
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -877,6 +1066,7 @@ v_U8_t WLANSAP_getState
   FUNCTION    WLANSAP_StartBss
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides SAP FSM event eWLAN_SAP_PHYSICAL_LINK_CREATE for
     starting AP BSS
@@ -885,6 +1075,8 @@ v_U8_t WLANSAP_getState
 
   PARAMETERS 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides SAP FSM event eWLAN_SAP_PHYSICAL_LINK_CREATE for
     starting AP BSS
@@ -892,6 +1084,9 @@ v_U8_t WLANSAP_getState
   DEPENDENCIES
 
   PARAMETERS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
@@ -902,22 +1097,32 @@ v_U8_t WLANSAP_getState
 
   RETURN VALUE
 <<<<<<< HEAD
+<<<<<<< HEAD
     The result code associated with performing the operation  
 
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page 
                          fault  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     The result code associated with performing the operation
 
     VOS_STATUS_E_FAULT: Pointer to SAP cb is NULL ; access would cause a page
                          fault
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS_SUCCESS: Success
 
   SIDE EFFECTS
 ============================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 VOS_STATUS 
+=======
+VOS_STATUS
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -934,8 +1139,13 @@ WLANSAP_StartBss
     ptSapContext  pSapCtx = NULL;
     tANI_BOOLEAN restartNeeded;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tHalHandle hHal; 
     
+=======
+    tHalHandle hHal;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tHalHandle hHal;
 
@@ -945,7 +1155,11 @@ WLANSAP_StartBss
     /*------------------------------------------------------------------------
         Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
         Extract SAP control block 
+=======
+        Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -960,7 +1174,11 @@ WLANSAP_StartBss
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -975,6 +1193,7 @@ WLANSAP_StartBss
         //Set the BSSID to your "self MAC Addr" read the mac address from Configuation ITEM received from HDD
         pSapCtx->csrRoamProfile.BSSIDs.numOfBSSIDs = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
         vos_mem_copy(pSapCtx->csrRoamProfile.BSSIDs.bssid, 
                      pSapCtx->self_mac_addr,
                      sizeof( tCsrBssid ) ); 
@@ -982,12 +1201,17 @@ WLANSAP_StartBss
         //Save a copy to SAP context
         vos_mem_copy(pSapCtx->csrRoamProfile.BSSIDs.bssid, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_copy(pSapCtx->csrRoamProfile.BSSIDs.bssid,
                      pSapCtx->self_mac_addr,
                      sizeof( tCsrBssid ) );
 
         //Save a copy to SAP context
         vos_mem_copy(pSapCtx->csrRoamProfile.BSSIDs.bssid,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pConfig->self_macaddr.bytes, sizeof(v_MACADDR_t));
         vos_mem_copy(pSapCtx->self_mac_addr,
@@ -996,17 +1220,23 @@ WLANSAP_StartBss
         //copy the configuration items to csrProfile
         sapconvertToCsrProfile( pConfig, eCSR_BSS_TYPE_INFRA_AP, &pSapCtx->csrRoamProfile);
 <<<<<<< HEAD
+<<<<<<< HEAD
         hHal = (tHalHandle)VOS_GET_HAL_CB(pvosGCtx); 
         if (NULL == hHal)
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                        "%s: Invalid MAC context from pvosGCtx", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         hHal = (tHalHandle)VOS_GET_HAL_CB(pvosGCtx);
         if (NULL == hHal)
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                        "%s: Invalid MAC context from pvosGCtx", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
@@ -1053,6 +1283,7 @@ WLANSAP_StartBss
 
 /*==========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   FUNCTION    WLANSAP_StopBss
 
   DESCRIPTION 
@@ -1073,6 +1304,8 @@ WLANSAP_StartBss
     VOS_STATUS_E_FAULT: Pointer to VOSS GC is NULL ; access would cause a page 
                          fault  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FUNCTION    WLANSAP_SetMacACL
 
   DESCRIPTION
@@ -1168,13 +1401,20 @@ WLANSAP_SetMacACL
 
     VOS_STATUS_E_FAULT: Pointer to VOSS GC is NULL ; access would cause a page
                          fault
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS_SUCCESS: Success
 
   SIDE EFFECTS
 ============================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 VOS_STATUS 
+=======
+VOS_STATUS
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1191,7 +1431,11 @@ WLANSAP_StopBss
     /*------------------------------------------------------------------------
         Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
         Extract SAP control block 
+=======
+        Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1200,15 +1444,21 @@ WLANSAP_StopBss
                  "WLANSAP_StopBss");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( NULL == pvosGCtx ) 
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "%s: Invalid Global VOSS handle", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( NULL == pvosGCtx )
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "%s: Invalid Global VOSS handle", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
@@ -1219,7 +1469,11 @@ WLANSAP_StopBss
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1240,17 +1494,23 @@ WLANSAP_StopBss
   FUNCTION    WLANSAP_GetAssocStations
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function is used to probe the list of associated stations from various modules of CORE stack
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function is used to probe the list of associated stations from various modules of CORE stack
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -1284,7 +1544,11 @@ WLANSAP_GetAssocStations
     /*------------------------------------------------------------------------
       Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
       Extract SAP control block 
+=======
+      Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1293,7 +1557,11 @@ WLANSAP_GetAssocStations
     {
       VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                 "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1314,17 +1582,23 @@ WLANSAP_GetAssocStations
   FUNCTION    WLANSAP_RemoveWpsSessionOverlap
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to remove an entry from session session overlap info.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to remove an entry from session session overlap info.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -1332,6 +1606,7 @@ WLANSAP_GetAssocStations
     IN
     pvosGCtx: Pointer to vos global context structure
     pRemoveMac: pointer to v_MACADDR_t for session MAC address
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -1342,6 +1617,8 @@ WLANSAP_GetAssocStations
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -1350,6 +1627,9 @@ WLANSAP_GetAssocStations
     VOS_STATUS_E_FAULT:  Session is not dectected. The parameter is function not valid.
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
@@ -1365,7 +1645,11 @@ WLANSAP_RemoveWpsSessionOverlap
   /*------------------------------------------------------------------------
     Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
     Extract SAP control block 
+=======
+    Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1374,7 +1658,11 @@ WLANSAP_RemoveWpsSessionOverlap
   {
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+               "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1393,23 +1681,30 @@ WLANSAP_RemoveWpsSessionOverlap
   FUNCTION    WLANSAP_getWpsSessionOverlap
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to get WPS session overlap info.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to get WPS session overlap info.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
 
     IN
     pvosGCtx: Pointer to vos global context structure
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -1419,6 +1714,8 @@ WLANSAP_RemoveWpsSessionOverlap
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -1426,21 +1723,30 @@ WLANSAP_RemoveWpsSessionOverlap
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
 WLANSAP_getWpsSessionOverlap
 (
 <<<<<<< HEAD
+<<<<<<< HEAD
  v_PVOID_t pvosGCtx  
 )
 {
     v_MACADDR_t pRemoveMac = VOS_MAC_ADDR_ZERO_INITIALIZER; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  v_PVOID_t pvosGCtx
 )
 {
     v_MACADDR_t pRemoveMac = VOS_MAC_ADDR_ZERO_INITIALIZER;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ptSapContext  pSapCtx = VOS_GET_SAP_CB(pvosGCtx);
@@ -1448,7 +1754,11 @@ WLANSAP_getWpsSessionOverlap
     /*------------------------------------------------------------------------
       Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
       Extract SAP control block 
+=======
+      Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1457,15 +1767,21 @@ WLANSAP_getWpsSessionOverlap
     {
       VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
       return VOS_STATUS_E_FAULT;
     }
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  "%s: Invalid SAP pointer from pvosGCtx", __func__);
       return VOS_STATUS_E_FAULT;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     sme_RoamGetWpsSessionOverlap( VOS_GET_HAL_CB(pSapCtx->pvosGCtx), pSapCtx->sessionId,
                                 pSapCtx->pUsrContext,
@@ -1486,7 +1802,11 @@ WLANSAP_SetMode ( v_PVOID_t  pvosGCtx, v_U32_t mode)
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1500,7 +1820,11 @@ WLANSAP_SetMode ( v_PVOID_t  pvosGCtx, v_U32_t mode)
 /* This routine will clear all the entries in accept list as well as deny list  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 VOS_STATUS 
+=======
+VOS_STATUS
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1515,7 +1839,11 @@ WLANSAP_ClearACL( v_PVOID_t  pvosGCtx)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (pSapCtx->denyMacList != NULL) 
+=======
+    if (pSapCtx->denyMacList != NULL)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (pSapCtx->denyMacList != NULL)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1530,7 +1858,11 @@ WLANSAP_ClearACL( v_PVOID_t  pvosGCtx)
     pSapCtx->nDenyMac  = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (pSapCtx->acceptMacList!=NULL) 
+=======
+    if (pSapCtx->acceptMacList!=NULL)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (pSapCtx->acceptMacList!=NULL)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1544,17 +1876,23 @@ WLANSAP_ClearACL( v_PVOID_t  pvosGCtx)
     sapPrintACL(pSapCtx->acceptMacList, pSapCtx->nAcceptMac);
     pSapCtx->nAcceptMac = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     return VOS_STATUS_SUCCESS;
 }
 
 VOS_STATUS 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return VOS_STATUS_SUCCESS;
 }
 
 VOS_STATUS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 WLANSAP_ModifyACL
 (
@@ -1564,7 +1902,11 @@ WLANSAP_ModifyACL
     eSapACLCmdType cmd
 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 {   
+=======
+{
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1576,7 +1918,11 @@ WLANSAP_ModifyACL
     {
        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "%s: Invalid SAP Context", __FUNCTION__);
+=======
+                  "%s: Invalid SAP Context", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   "%s: Invalid SAP Context", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1602,7 +1948,11 @@ WLANSAP_ModifyACL
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                 "Peer mac %02x:%02x:%02x:%02x:%02x:%02x found in white and black lists."
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Initial lists passed incorrect. Cannot execute this command.", 
+=======
+                "Initial lists passed incorrect. Cannot execute this command.",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "Initial lists passed incorrect. Cannot execute this command.",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1615,7 +1965,11 @@ WLANSAP_ModifyACL
     switch(listType)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         case eSAP_WHITE_LIST:           
+=======
+        case eSAP_WHITE_LIST:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         case eSAP_WHITE_LIST:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1625,15 +1979,21 @@ WLANSAP_ModifyACL
                 //error check
                 // if list is already at max, return failure
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (pSapCtx->nAcceptMac == MAX_MAC_ADDRESS_ACCEPTED)
                 {
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                             "White list is already maxed out. Cannot accept %02x:%02x:%02x:%02x:%02x:%02x", 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (pSapCtx->nAcceptMac == MAX_ACL_MAC_ADDRESS)
                 {
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                             "White list is already maxed out. Cannot accept %02x:%02x:%02x:%02x:%02x:%02x",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             pPeerStaMac[0], pPeerStaMac[1], pPeerStaMac[2], pPeerStaMac[3],
                             pPeerStaMac[4], pPeerStaMac[5]);
@@ -1647,7 +2007,11 @@ WLANSAP_ModifyACL
                             pPeerStaMac[0], pPeerStaMac[1], pPeerStaMac[2], pPeerStaMac[3],
                             pPeerStaMac[4], pPeerStaMac[5]);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 } else 
+=======
+                } else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 } else
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1658,6 +2022,7 @@ WLANSAP_ModifyACL
                         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_WARN,
                                 "STA present in black list so first remove from it");
 <<<<<<< HEAD
+<<<<<<< HEAD
                         sapRemoveMacFromACL(pSapCtx->denyMacList, &pSapCtx->nDenyMac, staBLIndex);                      
                     }
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
@@ -1667,6 +2032,8 @@ WLANSAP_ModifyACL
                             pSapCtx->nAcceptMac, pSapCtx->nDenyMac);
                 }               
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         sapRemoveMacFromACL(pSapCtx->denyMacList, &pSapCtx->nDenyMac, staBLIndex);
                     }
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
@@ -1675,6 +2042,9 @@ WLANSAP_ModifyACL
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_LOW, "size of accept and deny lists %d %d",
                             pSapCtx->nAcceptMac, pSapCtx->nDenyMac);
                 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else if (cmd == DELETE_STA_FROM_ACL)
@@ -1682,8 +2052,13 @@ WLANSAP_ModifyACL
                 if (staInWhiteList)
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO, "Delete from white list");                                      
                     sapRemoveMacFromACL(pSapCtx->acceptMacList, &pSapCtx->nAcceptMac, staWLIndex);                                      
+=======
+                    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO, "Delete from white list");
+                    sapRemoveMacFromACL(pSapCtx->acceptMacList, &pSapCtx->nAcceptMac, staWLIndex);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO, "Delete from white list");
                     sapRemoveMacFromACL(pSapCtx->acceptMacList, &pSapCtx->nAcceptMac, staWLIndex);
@@ -1703,7 +2078,11 @@ WLANSAP_ModifyACL
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Invalid cmd type passed");                                                        
+=======
+                VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Invalid cmd type passed");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Invalid cmd type passed");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1712,7 +2091,11 @@ WLANSAP_ModifyACL
             break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         case eSAP_BLACK_LIST:           
+=======
+        case eSAP_BLACK_LIST:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         case eSAP_BLACK_LIST:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1723,7 +2106,11 @@ WLANSAP_ModifyACL
                 //error check
                 // if list is already at max, return failure
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (pSapCtx->nDenyMac == MAX_MAC_ADDRESS_ACCEPTED)
+=======
+                if (pSapCtx->nDenyMac == MAX_ACL_MAC_ADDRESS)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 if (pSapCtx->nDenyMac == MAX_ACL_MAC_ADDRESS)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1742,7 +2129,11 @@ WLANSAP_ModifyACL
                             pPeerStaMac[0], pPeerStaMac[1], pPeerStaMac[2], pPeerStaMac[3],
                             pPeerStaMac[4], pPeerStaMac[5]);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 } else 
+=======
+                } else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 } else
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1753,6 +2144,7 @@ WLANSAP_ModifyACL
                         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_WARN,
                                 "Present in white list so first remove from it");
 <<<<<<< HEAD
+<<<<<<< HEAD
                         sapRemoveMacFromACL(pSapCtx->acceptMacList, &pSapCtx->nAcceptMac, staWLIndex);                      
                     }
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
@@ -1762,6 +2154,8 @@ WLANSAP_ModifyACL
                             pSapCtx->nAcceptMac, pSapCtx->nDenyMac);
                 }                   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         sapRemoveMacFromACL(pSapCtx->acceptMacList, &pSapCtx->nAcceptMac, staWLIndex);
                     }
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
@@ -1770,6 +2164,9 @@ WLANSAP_ModifyACL
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_LOW,"size of accept and deny lists %d %d",
                             pSapCtx->nAcceptMac, pSapCtx->nDenyMac);
                 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else if (cmd == DELETE_STA_FROM_ACL)
@@ -1777,8 +2174,13 @@ WLANSAP_ModifyACL
                 if (staInBlackList)
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO, "Delete from black list");                                      
                     sapRemoveMacFromACL(pSapCtx->denyMacList, &pSapCtx->nDenyMac, staBLIndex);                                      
+=======
+                    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO, "Delete from black list");
+                    sapRemoveMacFromACL(pSapCtx->denyMacList, &pSapCtx->nDenyMac, staBLIndex);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO, "Delete from black list");
                     sapRemoveMacFromACL(pSapCtx->denyMacList, &pSapCtx->nDenyMac, staBLIndex);
@@ -1798,7 +2200,11 @@ WLANSAP_ModifyACL
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Invalid cmd type passed");                                                        
+=======
+                VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Invalid cmd type passed");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Invalid cmd type passed");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1825,17 +2231,23 @@ WLANSAP_ModifyACL
   FUNCTION    WLANSAP_DisassocSta
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD initiated disassociation of station
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD initiated disassociation of station
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -1843,6 +2255,7 @@ WLANSAP_ModifyACL
     IN
     pvosGCtx            : Pointer to vos global context structure
     pPeerStaMac         : Mac address of the station to disassociate
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -1854,6 +2267,8 @@ WLANSAP_ModifyACL
 ============================================================================*/
 VOS_STATUS 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -1863,6 +2278,9 @@ VOS_STATUS
   SIDE EFFECTS
 ============================================================================*/
 VOS_STATUS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 WLANSAP_DisassocSta
 (
@@ -1875,6 +2293,7 @@ WLANSAP_DisassocSta
     /*------------------------------------------------------------------------
       Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
       Extract SAP control block 
       ------------------------------------------------------------------------*/    
     if (NULL == pSapCtx)
@@ -1882,12 +2301,17 @@ WLANSAP_DisassocSta
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       Extract SAP control block
       ------------------------------------------------------------------------*/
     if (NULL == pSapCtx)
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
@@ -1899,6 +2323,7 @@ WLANSAP_DisassocSta
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 /*==========================================================================
   FUNCTION    WLANSAP_DeauthSta
@@ -1909,6 +2334,8 @@ WLANSAP_DisassocSta
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION    WLANSAP_DeauthSta
 
@@ -1917,6 +2344,9 @@ WLANSAP_DisassocSta
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -1924,6 +2354,7 @@ WLANSAP_DisassocSta
     IN
     pvosGCtx            : Pointer to vos global context structure
     pPeerStaMac         : Mac address of the station to deauthenticate
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -1935,6 +2366,8 @@ WLANSAP_DisassocSta
 ============================================================================*/
 VOS_STATUS 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -1944,6 +2377,9 @@ VOS_STATUS
   SIDE EFFECTS
 ============================================================================*/
 VOS_STATUS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 WLANSAP_DeauthSta
 (
@@ -1952,6 +2388,11 @@ WLANSAP_DeauthSta
 )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    eHalStatus halStatus = eHAL_STATUS_FAILURE;
+    VOS_STATUS vosStatus = VOS_STATUS_E_FAULT;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     eHalStatus halStatus = eHAL_STATUS_FAILURE;
     VOS_STATUS vosStatus = VOS_STATUS_E_FAULT;
@@ -1960,6 +2401,7 @@ WLANSAP_DeauthSta
 
     /*------------------------------------------------------------------------
       Sanity check
+<<<<<<< HEAD
 <<<<<<< HEAD
       Extract SAP control block 
       ------------------------------------------------------------------------*/    
@@ -1975,6 +2417,8 @@ WLANSAP_DeauthSta
 
     return VOS_STATUS_SUCCESS;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       Extract SAP control block
       ------------------------------------------------------------------------*/
     if (NULL == pSapCtx)
@@ -1992,11 +2436,15 @@ WLANSAP_DeauthSta
         vosStatus = VOS_STATUS_SUCCESS;
     }
     return vosStatus;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 /*==========================================================================
   FUNCTION    WLANSAP_SetChannelRange
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     This api function sets the range of channels for AP.
@@ -2004,11 +2452,16 @@ WLANSAP_DeauthSta
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function sets the range of channels for AP.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -2017,6 +2470,7 @@ WLANSAP_DeauthSta
     startChannel         : start channel
     endChannel           : End channel
     operatingBand        : Operating band (2.4GHz/5GHz)
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -2029,6 +2483,8 @@ WLANSAP_DeauthSta
 VOS_STATUS
 WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2039,6 +2495,9 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
 ============================================================================*/
 VOS_STATUS
 WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                               v_U8_t operatingBand)
 {
@@ -2048,7 +2507,11 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     v_U8_t    loopEndCount =0;
     v_U8_t    bandStartChannel =0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     v_U8_t    bandEndChannel =0;   
+=======
+    v_U8_t    bandEndChannel =0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     v_U8_t    bandEndChannel =0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2060,9 +2523,15 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     /*------------------------------------------------------------------------
       Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
       ------------------------------------------------------------------------*/    
     if (( WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND_APMIN > operatingBand)||
           (WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND_APMAX < operatingBand))
+=======
+      ------------------------------------------------------------------------*/
+    if (( WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND_STAMIN > operatingBand) ||
+          (WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND_STAMAX < operatingBand))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       ------------------------------------------------------------------------*/
     if (( WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND_STAMIN > operatingBand) ||
@@ -2074,8 +2543,13 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
         return VOS_STATUS_E_FAULT;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (( WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL_APMIN > startChannel)||
          (WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL_APMAX < startChannel))
+=======
+    if (( WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL_STAMIN > startChannel) ||
+         (WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL_STAMAX < startChannel))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (( WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL_STAMIN > startChannel) ||
          (WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL_STAMAX < startChannel))
@@ -2086,8 +2560,13 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
         return VOS_STATUS_E_FAULT;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (( WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL_APMIN > endChannel)||
          (WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL_APMAX < endChannel))
+=======
+    if (( WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL_STAMIN > endChannel) ||
+         (WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL_STAMAX < endChannel))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (( WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL_STAMIN > endChannel) ||
          (WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL_STAMAX < endChannel))
@@ -2104,7 +2583,11 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
           bandEndChannel = RF_CHAN_14;
           break;
 <<<<<<< HEAD
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2113,7 +2596,11 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
           bandEndChannel = RF_CHAN_64;
           break;
 <<<<<<< HEAD
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2122,7 +2609,11 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
           bandEndChannel = RF_CHAN_140;
           break;
 <<<<<<< HEAD
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2130,6 +2621,7 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
           bandStartChannel = RF_CHAN_149;
           bandEndChannel = RF_CHAN_165;
           break;
+<<<<<<< HEAD
 <<<<<<< HEAD
           
        case RF_SUBBAND_4_9_GHZ:
@@ -2139,10 +2631,14 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        default:
           VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                    "Invalid operatingBand value on WLANSAP_SetChannelRange");
           break;
+<<<<<<< HEAD
 <<<<<<< HEAD
     }      
  
@@ -2151,12 +2647,17 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     loopStartCount++)
     { 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* Validating the start channel is in range or not*/
     for(loopStartCount = bandStartChannel ; loopStartCount <= bandEndChannel ;
     loopStartCount++)
     {
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        if(rfChannels[loopStartCount].channelNum == startChannel )
        {
@@ -2166,9 +2667,15 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     }
     /* Validating the End channel is in range or not*/
 <<<<<<< HEAD
+<<<<<<< HEAD
     for(loopEndCount = bandStartChannel ; loopEndCount <= bandEndChannel ; 
     loopEndCount++)
     { 
+=======
+    for(loopEndCount = bandStartChannel ; loopEndCount <= bandEndChannel ;
+    loopEndCount++)
+    {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     for(loopEndCount = bandStartChannel ; loopEndCount <= bandEndChannel ;
     loopEndCount++)
@@ -2185,6 +2692,7 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                   "%s: Invalid startChannel-%d or EndChannel-%d for band -%d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                    __FUNCTION__,startChannel,endChannel,operatingBand);
        /* Supplied channels are nt in the operating band so set the default 
             channels for the given operating band */
@@ -2193,6 +2701,8 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     }
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    __func__,startChannel,endChannel,operatingBand);
        /* Supplied channels are nt in the operating band so set the default
             channels for the given operating band */
@@ -2200,6 +2710,9 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
        endChannel = rfChannels[bandEndChannel].channelNum;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*Search for the Active channels in the given range */
     for( loopStartCount = bandStartChannel; loopStartCount <= bandEndChannel; loopStartCount++ )
@@ -2216,6 +2729,7 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     }
     if(0 == validChannelFlag)
 <<<<<<< HEAD
+<<<<<<< HEAD
     { 
        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
          "%s-No active channels present in the given range for the current region",
@@ -2228,6 +2742,8 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
    
     if (ccmCfgSetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
          "%s-No active channels present in the given range for the current region",
@@ -2239,6 +2755,9 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     }
 
     if (ccmCfgSetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        operatingBand, NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
     {
@@ -2246,6 +2765,7 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
           "Could not pass on WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND to CCn");
          return VOS_STATUS_E_FAULT;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     if (ccmCfgSetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL, 
         startChannel, NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
@@ -2261,6 +2781,8 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     {
  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (ccmCfgSetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL,
         startChannel, NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
     {
@@ -2274,6 +2796,9 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
        endChannel, NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
     {
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
           "Could not pass on WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL to CCM");
@@ -2282,13 +2807,17 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
     return VOS_STATUS_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*==========================================================================
   FUNCTION    WLANSAP_SetCounterMeasure
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DESCRIPTION 
     This api function is used to disassociate all the stations and prevent 
@@ -2303,6 +2832,8 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function is used to disassociate all the stations and prevent
     association for any other station.Whenever Authenticator receives 2 mic failures
@@ -2315,6 +2846,9 @@ WLANSAP_SetChannelRange(tHalHandle hHal,v_U8_t startChannel, v_U8_t endChannel,
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -2324,6 +2858,7 @@ pvosGCtx: Pointer to vos global context structure
 bEnable: If TRUE than all stations will be disassociated and no more will be allowed to associate. If FALSE than CORE
 will come out of this state.
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation  
@@ -2332,6 +2867,8 @@ will come out of this state.
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2339,6 +2876,9 @@ will come out of this state.
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
@@ -2353,7 +2893,11 @@ WLANSAP_SetCounterMeasure
     /*------------------------------------------------------------------------
       Sanity check
 <<<<<<< HEAD
+<<<<<<< HEAD
       Extract SAP control block 
+=======
+      Extract SAP control block
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       Extract SAP control block
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2362,7 +2906,11 @@ WLANSAP_SetCounterMeasure
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2379,17 +2927,23 @@ WLANSAP_SetCounterMeasure
   FUNCTION    WLANSAP_SetKeysSta
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to set key for a station.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to set key for a station.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -2397,6 +2951,7 @@ WLANSAP_SetCounterMeasure
     IN
 pvosGCtx: Pointer to vos global context structure
 pSetKeyInfo: tCsrRoamSetKey structure for the station
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -2406,6 +2961,8 @@ pSetKeyInfo: tCsrRoamSetKey structure for the station
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2413,6 +2970,9 @@ pSetKeyInfo: tCsrRoamSetKey structure for the station
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
@@ -2434,7 +2994,11 @@ WLANSAP_SetKeySta
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2445,7 +3009,11 @@ WLANSAP_SetKeySta
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid HAL pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid HAL pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid HAL pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2471,17 +3039,23 @@ WLANSAP_SetKeySta
   FUNCTION    WLANSAP_DelKeySta
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to delete key for a station.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to delete key for a station.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -2489,6 +3063,7 @@ WLANSAP_SetKeySta
     IN
 pvosGCtx: Pointer to vos global context structure
 pSetKeyInfo: tCsrRoamRemoveKey structure for the station
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -2498,6 +3073,8 @@ pSetKeyInfo: tCsrRoamRemoveKey structure for the station
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2505,13 +3082,20 @@ pSetKeyInfo: tCsrRoamRemoveKey structure for the station
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
 WLANSAP_DelKeySta
 (
 <<<<<<< HEAD
+<<<<<<< HEAD
      v_PVOID_t pvosGCtx, 
+=======
+     v_PVOID_t pvosGCtx,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      v_PVOID_t pvosGCtx,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2530,9 +3114,15 @@ WLANSAP_DelKeySta
         pSapCtx = VOS_GET_SAP_CB(pvosGCtx);
         if (NULL == pSapCtx)
 <<<<<<< HEAD
+<<<<<<< HEAD
         { 
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+        {
+            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
@@ -2546,7 +3136,11 @@ WLANSAP_DelKeySta
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid HAL pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid HAL pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid HAL pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2556,7 +3150,11 @@ WLANSAP_DelKeySta
         vos_mem_zero(&RemoveKeyInfo, sizeof(RemoveKeyInfo));
         RemoveKeyInfo.encType = pRemoveKeyInfo->encType;
 <<<<<<< HEAD
+<<<<<<< HEAD
         vos_mem_copy(RemoveKeyInfo.peerMac, pRemoveKeyInfo->peerMac, WNI_CFG_BSSID_LEN); 
+=======
+        vos_mem_copy(RemoveKeyInfo.peerMac, pRemoveKeyInfo->peerMac, WNI_CFG_BSSID_LEN);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         vos_mem_copy(RemoveKeyInfo.peerMac, pRemoveKeyInfo->peerMac, WNI_CFG_BSSID_LEN);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2581,7 +3179,11 @@ WLANSAP_DelKeySta
 
 VOS_STATUS
 <<<<<<< HEAD
+<<<<<<< HEAD
 WLANSap_getstationIE_information(v_PVOID_t pvosGCtx, 
+=======
+WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2596,9 +3198,15 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
         pSapCtx = VOS_GET_SAP_CB(pvosGCtx);
         if (NULL == pSapCtx)
 <<<<<<< HEAD
+<<<<<<< HEAD
         { 
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+        {
+            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
@@ -2612,7 +3220,11 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
             *pLen = pSapCtx->nStaWPARSnReqIeLength;
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: WPAIE len : %x", __FUNCTION__, *pLen);
+=======
+                       "%s: WPAIE len : %x", __func__, *pLen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: WPAIE len : %x", __func__, *pLen);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2624,7 +3236,11 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
                     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
                                "%s: WPAIE: %02x:%02x:%02x:%02x:%02x:%02x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                                __FUNCTION__,
+=======
+                               __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2636,7 +3252,11 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2645,7 +3265,11 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                   "%s: Error unable to populate the RSNWPAIE",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__); 
+=======
+                  __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2659,17 +3283,23 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
   FUNCTION    WLANSAP_Set_WpsIe
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to set WPS IE.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to set WPS IE.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -2677,6 +3307,7 @@ WLANSap_getstationIE_information(v_PVOID_t pvosGCtx,
     IN
 pvosGCtx: Pointer to vos global context structure
 pWPSIE:  tSap_WPSIE structure that include WPS IEs
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -2686,6 +3317,8 @@ pWPSIE:  tSap_WPSIE structure that include WPS IEs
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2693,6 +3326,9 @@ pWPSIE:  tSap_WPSIE structure that include WPS IEs
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
@@ -2705,6 +3341,7 @@ WLANSAP_Set_WpsIe
     v_PVOID_t hHal = NULL;
 
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
 <<<<<<< HEAD
             "%s, %d", __FUNCTION__, __LINE__);    
             
@@ -2725,6 +3362,8 @@ WLANSAP_Set_WpsIe
         }
         
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             "%s, %d", __func__, __LINE__);
 
     if(VOS_STA_SAP_MODE == vos_get_conparam ( )) {
@@ -2743,15 +3382,24 @@ WLANSAP_Set_WpsIe
             return VOS_STATUS_E_FAULT;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ( sap_AcquireGlobalLock( pSapCtx ) == VOS_STATUS_SUCCESS )
         {
             if (pSap_WPSIe->sapWPSIECode == eSAP_WPS_BEACON_IE)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vos_mem_copy(&pSapCtx->APWPSIEs.SirWPSBeaconIE, &pSap_WPSIe->sapwpsie.sapWPSBeaconIE, sizeof(tSap_WPSBeaconIE));    
             }
             else if (pSap_WPSIe->sapWPSIECode == eSAP_WPS_PROBE_RSP_IE) 
+=======
+                vos_mem_copy(&pSapCtx->APWPSIEs.SirWPSBeaconIE, &pSap_WPSIe->sapwpsie.sapWPSBeaconIE, sizeof(tSap_WPSBeaconIE));
+            }
+            else if (pSap_WPSIe->sapWPSIECode == eSAP_WPS_PROBE_RSP_IE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 vos_mem_copy(&pSapCtx->APWPSIEs.SirWPSBeaconIE, &pSap_WPSIe->sapwpsie.sapWPSBeaconIE, sizeof(tSap_WPSBeaconIE));
             }
@@ -2779,23 +3427,30 @@ WLANSAP_Set_WpsIe
   FUNCTION   WLANSAP_Update_WpsIe
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to update WPS IEs.
 
   DEPENDENCIES
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to update WPS IEs.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
 
     IN
 pvosGCtx: Pointer to vos global context structure
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -2805,6 +3460,8 @@ pvosGCtx: Pointer to vos global context structure
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2812,6 +3469,9 @@ pvosGCtx: Pointer to vos global context structure
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
@@ -2827,6 +3487,7 @@ WLANSAP_Update_WpsIe
 
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s, %d", __FUNCTION__, __LINE__);    
     
     if(VOS_STA_SAP_MODE == vos_get_conparam ( )){
@@ -2836,6 +3497,8 @@ WLANSAP_Update_WpsIe
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             "%s, %d", __func__, __LINE__);
 
     if(VOS_STA_SAP_MODE == vos_get_conparam ( )){
@@ -2844,6 +3507,9 @@ WLANSAP_Update_WpsIe
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return VOS_STATUS_E_FAULT;
         }
@@ -2852,7 +3518,11 @@ WLANSAP_Update_WpsIe
         if ( NULL == hHal ){
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid HAL pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid HAL pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid HAL pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2877,17 +3547,23 @@ WLANSAP_Update_WpsIe
   FUNCTION    WLANSAP_Get_WPS_State
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to check if WPS session in process.
 
   DEPENDENCIES
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to check if WPS session in process.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -2898,6 +3574,7 @@ pvosGCtx: Pointer to vos global context structure
     OUT
 pbWPSState: Pointer to variable to indicate if it is in WPS Registration state
 <<<<<<< HEAD
+<<<<<<< HEAD
  
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation  
@@ -2906,6 +3583,8 @@ pbWPSState: Pointer to variable to indicate if it is in WPS Registration state
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -2913,6 +3592,9 @@ pbWPSState: Pointer to variable to indicate if it is in WPS Registration state
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
@@ -2926,6 +3608,7 @@ WLANSAP_Get_WPS_State
 
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "%s, %d", __FUNCTION__, __LINE__);    
           
     if(VOS_STA_SAP_MODE == vos_get_conparam ( )){
@@ -2936,6 +3619,8 @@ WLANSAP_Get_WPS_State
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         "%s, %d", __func__, __LINE__);
 
     if(VOS_STA_SAP_MODE == vos_get_conparam ( )){
@@ -2945,6 +3630,9 @@ WLANSAP_Get_WPS_State
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              return VOS_STATUS_E_FAULT;
         }
@@ -2953,15 +3641,21 @@ WLANSAP_Get_WPS_State
         if ( NULL == hHal ){
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid HAL pointer from pvosGCtx", __FUNCTION__);
             return VOS_STATUS_E_FAULT;
         }
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        "%s: Invalid HAL pointer from pvosGCtx", __func__);
             return VOS_STATUS_E_FAULT;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ( sap_AcquireGlobalLock(pSapCtx ) == VOS_STATUS_SUCCESS )
         {
@@ -2970,6 +3664,7 @@ WLANSAP_Get_WPS_State
             else
                 *bWPSState = eANI_BOOLEAN_FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
             
             sap_ReleaseGlobalLock( pSapCtx  );
             
@@ -2977,12 +3672,17 @@ WLANSAP_Get_WPS_State
         }
         else 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             sap_ReleaseGlobalLock( pSapCtx  );
 
             return VOS_STATUS_SUCCESS;
         }
         else
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return VOS_STATUS_E_FAULT;
     }
@@ -2995,7 +3695,11 @@ VOS_STATUS
 sap_AcquireGlobalLock
 (
 <<<<<<< HEAD
+<<<<<<< HEAD
     ptSapContext  pSapCtx 
+=======
+    ptSapContext  pSapCtx
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     ptSapContext  pSapCtx
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3015,7 +3719,11 @@ VOS_STATUS
 sap_ReleaseGlobalLock
 (
 <<<<<<< HEAD
+<<<<<<< HEAD
     ptSapContext  pSapCtx 
+=======
+    ptSapContext  pSapCtx
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     ptSapContext  pSapCtx
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3035,23 +3743,30 @@ sap_ReleaseGlobalLock
   FUNCTION    WLANSAP_Set_WPARSNIes
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides for Ap App/HDD to set AP WPA and RSN IE in its beacon and probe response.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides for Ap App/HDD to set AP WPA and RSN IE in its beacon and probe response.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
 
     IN
         pvosGCtx: Pointer to vos global context structure
+<<<<<<< HEAD
 <<<<<<< HEAD
         pWPARSNIEs: buffer to the WPA/RSN IEs 
         WPARSNIEsLen: length of WPA/RSN IEs
@@ -3067,6 +3782,8 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
 {
  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pWPARSNIEs: buffer to the WPA/RSN IEs
         WPARSNIEsLen: length of WPA/RSN IEs
 
@@ -3080,6 +3797,9 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
 VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t WPARSNIEsLen)
 {
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext  pSapCtx = NULL;
     eHalStatus halStatus = eHAL_STATUS_FAILURE;
@@ -3089,9 +3809,15 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
         pSapCtx = VOS_GET_SAP_CB(pvosGCtx);
         if ( NULL == pSapCtx )
 <<<<<<< HEAD
+<<<<<<< HEAD
         { 
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+        {
+            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
@@ -3104,6 +3830,7 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
         if ( NULL == hHal ){
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid HAL pointer from pvosGCtx", __FUNCTION__);
             return VOS_STATUS_E_FAULT;
         }
@@ -3112,6 +3839,8 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
         vos_mem_copy(pSapCtx->APWPARSNIEs.rsnIEdata, pWPARSNIEs, WPARSNIEsLen);
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        "%s: Invalid HAL pointer from pvosGCtx", __func__);
             return VOS_STATUS_E_FAULT;
         }
@@ -3119,6 +3848,9 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
         pSapCtx->APWPARSNIEs.length = (tANI_U16)WPARSNIEsLen;
         vos_mem_copy(pSapCtx->APWPARSNIEs.rsnIEdata, pWPARSNIEs, WPARSNIEsLen);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         halStatus = sme_RoamUpdateAPWPARSNIEs( hHal, pSapCtx->sessionId, &pSapCtx->APWPARSNIEs);
 
@@ -3131,7 +3863,11 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     return VOS_STATUS_E_FAULT;    
+=======
+    return VOS_STATUS_E_FAULT;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     return VOS_STATUS_E_FAULT;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3148,7 +3884,10 @@ VOS_STATUS WLANSAP_GetStatistics(v_PVOID_t pvosGCtx, tSap_SoftapStats *statBuf, 
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
@@ -3156,17 +3895,23 @@ VOS_STATUS WLANSAP_GetStatistics(v_PVOID_t pvosGCtx, tSap_SoftapStats *statBuf, 
   FUNCTION    WLANSAP_SendAction
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides to send action frame sent by upper layer.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides to send action frame sent by upper layer.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -3176,6 +3921,7 @@ VOS_STATUS WLANSAP_GetStatistics(v_PVOID_t pvosGCtx, tSap_SoftapStats *statBuf, 
     pBuf: Pointer of the action frame to be transmitted
     len: Length of the action frame
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation  
@@ -3184,6 +3930,8 @@ VOS_STATUS WLANSAP_GetStatistics(v_PVOID_t pvosGCtx, tSap_SoftapStats *statBuf, 
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -3191,6 +3939,9 @@ VOS_STATUS WLANSAP_GetStatistics(v_PVOID_t pvosGCtx, tSap_SoftapStats *statBuf, 
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
@@ -3207,7 +3958,11 @@ VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3219,7 +3974,11 @@ VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: HAL pointer (%p) NULL OR SME session is not open (%d)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, hHal, pSapCtx->isSapSessionOpen );
+=======
+                       __func__, hHal, pSapCtx->isSapSessionOpen );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, hHal, pSapCtx->isSapSessionOpen );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3245,6 +4004,7 @@ VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
   FUNCTION    WLANSAP_RemainOnChannel
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api function provides to set Remain On channel on specified channel
     for specified duration.
@@ -3252,18 +4012,24 @@ VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api function provides to set Remain On channel on specified channel
     for specified duration.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
 
   IN
     pvosGCtx: Pointer to vos global context structure
+<<<<<<< HEAD
 <<<<<<< HEAD
     channel: Channel on which driver has to listen 
     duration: Duration for which driver has to listen on specified channel
@@ -3277,6 +4043,8 @@ VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     channel: Channel on which driver has to listen
     duration: Duration for which driver has to listen on specified channel
     callback: Callback function to be called once Listen is done.
@@ -3288,6 +4056,9 @@ VOS_STATUS WLANSAP_SendAction( v_PVOID_t pvosGCtx, const tANI_U8 *pBuf,
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS WLANSAP_RemainOnChannel( v_PVOID_t pvosGCtx,
@@ -3306,7 +4077,11 @@ VOS_STATUS WLANSAP_RemainOnChannel( v_PVOID_t pvosGCtx,
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3318,7 +4093,11 @@ VOS_STATUS WLANSAP_RemainOnChannel( v_PVOID_t pvosGCtx,
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: HAL pointer (%p) NULL OR SME session is not open (%d)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, hHal, pSapCtx->isSapSessionOpen );
+=======
+                       __func__, hHal, pSapCtx->isSapSessionOpen );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, hHal, pSapCtx->isSapSessionOpen );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3345,23 +4124,30 @@ VOS_STATUS WLANSAP_RemainOnChannel( v_PVOID_t pvosGCtx,
   FUNCTION    WLANSAP_CancelRemainOnChannel
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     This api cancel previous remain on channel request.
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     This api cancel previous remain on channel request.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
 
   IN
     pvosGCtx: Pointer to vos global context structure
+<<<<<<< HEAD
 <<<<<<< HEAD
    
   RETURN VALUE
@@ -3371,6 +4157,8 @@ VOS_STATUS WLANSAP_RemainOnChannel( v_PVOID_t pvosGCtx,
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -3378,6 +4166,9 @@ VOS_STATUS WLANSAP_RemainOnChannel( v_PVOID_t pvosGCtx,
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
@@ -3393,7 +4184,11 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3405,7 +4200,11 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: HAL pointer (%p) NULL OR SME session is not open (%d)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, hHal, pSapCtx->isSapSessionOpen );
+=======
+                       __func__, hHal, pSapCtx->isSapSessionOpen );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, hHal, pSapCtx->isSapSessionOpen );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3431,6 +4230,7 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
   FUNCTION    WLANSAP_RegisterMgmtFrame
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
     HDD use this API to register specified type of frame with CORE stack.
     On receiving such kind of frame CORE stack should pass this frame to HDD
@@ -3438,12 +4238,17 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     HDD use this API to register specified type of frame with CORE stack.
     On receiving such kind of frame CORE stack should pass this frame to HDD
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -3454,6 +4259,7 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
     matchData: Data pointer which should be matched after frame type is matched.
     matchLen: Length of the matchData
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation  
@@ -3462,6 +4268,8 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -3469,6 +4277,9 @@ VOS_STATUS WLANSAP_CancelRemainOnChannel( v_PVOID_t pvosGCtx )
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
@@ -3485,7 +4296,11 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3497,7 +4312,11 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: HAL pointer (%p) NULL OR SME session is not open (%d)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, hHal, pSapCtx->isSapSessionOpen );
+=======
+                       __func__, hHal, pSapCtx->isSapSessionOpen );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, hHal, pSapCtx->isSapSessionOpen );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3524,17 +4343,23 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
   FUNCTION    WLANSAP_DeRegisterMgmtFrame
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DESCRIPTION 
    This API is used to deregister previously registered frame. 
 
   DEPENDENCIES 
     NA. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
    This API is used to deregister previously registered frame.
 
   DEPENDENCIES
     NA.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   PARAMETERS
@@ -3545,6 +4370,7 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
     matchData: Data pointer which should be matched after frame type is matched.
     matchLen: Length of the matchData
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation  
@@ -3553,6 +4379,8 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
   
   SIDE EFFECTS   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
@@ -3560,6 +4388,9 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
     VOS_STATUS_SUCCESS:  Success
 
   SIDE EFFECTS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS WLANSAP_DeRegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
@@ -3576,7 +4407,11 @@ VOS_STATUS WLANSAP_DeRegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s: Invalid SAP pointer from pvosGCtx", __FUNCTION__);
+=======
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s: Invalid SAP pointer from pvosGCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3588,7 +4423,11 @@ VOS_STATUS WLANSAP_DeRegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                        "%s: HAL pointer (%p) NULL OR SME session is not open (%d)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, hHal, pSapCtx->isSapSessionOpen );
+=======
+                       __func__, hHal, pSapCtx->isSapSessionOpen );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, hHal, pSapCtx->isSapSessionOpen );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3610,6 +4449,9 @@ VOS_STATUS WLANSAP_DeRegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
     return VOS_STATUS_E_FAULT;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

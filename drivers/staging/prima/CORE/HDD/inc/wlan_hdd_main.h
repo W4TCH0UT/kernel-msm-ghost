@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -62,9 +68,13 @@
 #include <linux/netdevice.h>
 #include <linux/skbuff.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
 #include <net/cfg80211.h>
 #endif
+=======
+#include <net/cfg80211.h>
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <net/cfg80211.h>
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -78,18 +88,24 @@
 #include <wlan_hdd_cfg.h>
 #include <linux/spinlock.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_HOLD_RX_WAKELOCK
 #include <linux/wakelock.h>
 #endif
 #ifdef ANI_MANF_DIAG
 #include <wlan_hdd_ftm.h>
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_OPEN_SOURCE
 #include <linux/wakelock.h>
 #endif
 #include <wlan_hdd_ftm.h>
 #ifdef FEATURE_WLAN_TDLS
 #include "wlan_hdd_tdls.h"
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 /*--------------------------------------------------------------------------- 
@@ -101,17 +117,23 @@
 /** Number of Tx Queues */  
 #define NUM_TX_QUEUES 4
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** Queue length specified to OS in the net_device */
 #define NET_DEV_TX_QUEUE_LEN 100
 /** HDD's internal Tx Queue Length. Needs to be a power of 2 */
 #define HDD_TX_QUEUE_MAX_LEN 128
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // BEGIN Motorola, IKHSS7-12524 Increase wlan Kernel/driver buffer for mobile hotspot
 /** Queue length specified to OS in the net_device */
 #define NET_DEV_TX_QUEUE_LEN 1000
 /** HDD's internal Tx Queue Length. Needs to be a power of 2 */
 #define HDD_TX_QUEUE_MAX_LEN 1024
 // END IKHSS7-12524
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** HDD internal Tx Queue Low Watermark. Net Device TX queue is disabled
  *  when HDD queue becomes full. This Low watermark is used to enable
@@ -128,6 +150,7 @@
 /** Hdd Default MTU */
 #define HDD_DEFAULT_MTU         (1500)
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**event flags registered net device*/
 #define NET_DEVICE_REGISTERED  1<<0
 #define SME_SESSION_OPENED     1<<1
@@ -136,6 +159,8 @@
 #define SOFTAP_BSS_STARTED     1<<4
 #define DEVICE_IFACE_OPENED    1<<5
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**event flags registered net device*/
 #define NET_DEVICE_REGISTERED  (0)
@@ -145,6 +170,9 @@
 #define SOFTAP_BSS_STARTED     (4)
 #define DEVICE_IFACE_OPENED    (5)
 #define TDLS_INIT_DONE         (6)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** Maximum time(ms)to wait for disconnect to complete **/
@@ -158,7 +186,10 @@
 #define WLAN_WAIT_TIME_ABORTSCAN  2000
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** Maximum time(ms) to wait for tdls add sta to complete **/
 #define WAIT_TIME_TDLS_ADD_STA      1500
 
@@ -173,6 +204,9 @@
 /* Maximum time to get crda entry settings */
 #define CRDA_WAIT_TIME 300
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Scan Req Timeout */
 #define WLAN_WAIT_TIME_SCAN_REQ 100
@@ -186,6 +220,7 @@
 #define MAC_ADDRESS_STR "%02x:%02x:%02x:%02x:%02x:%02x"
 #define MAX_GENIE_LEN 255
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(QC_WLAN_CHIPSET_PRIMA)
 #define WLAN_CHIP_VERSION   "WCNSS"
@@ -201,11 +236,16 @@
 #define ENTER() VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "Enter:%s", __FUNCTION__)
 #define EXIT()  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "Exit:%s", __FUNCTION__)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_CHIP_VERSION   "WCNSS"
 
 #define hddLog(level, args...) VOS_TRACE( VOS_MODULE_ID_HDD, level, ## args)
 #define ENTER() VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "Enter:%s", __func__)
 #define EXIT()  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "Exit:%s", __func__)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define WLAN_HDD_GET_PRIV_PTR(__dev__) (hdd_adapter_t*)(netdev_priv((__dev__)))
@@ -219,12 +259,15 @@
 #define WLAN_HDD_PUBLIC_ACTION_FRAME_TYPE_OFFSET 30
 #define WLAN_HDD_P2P_SOCIAL_CHANNELS 3
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #ifdef WLAN_FEATURE_HOLD_RX_WAKELOCK
 #define HDD_WAKE_LOCK_DURATION 50
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_HDD_P2P_SINGLE_CHANNEL_SCAN 1
 
 #define WLAN_HDD_IS_SOCIAL_CHANNEL(center_freq) \
@@ -255,6 +298,9 @@
 #define HDD_MAC_ADDR_LEN    6
 typedef v_U8_t tWlanHddMacAddr[HDD_MAC_ADDR_LEN];
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct hdd_tx_rx_stats_s
 {
@@ -337,13 +383,19 @@ typedef struct roaming_info_s
    HDD_ROAM_STATE roamingState;
    vos_event_t roamingEvent;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    tWlanHddMacAddr bssid;
    tWlanHddMacAddr peerMac;
    tANI_U32 roamId;
    eRoamCmdStatus roamStatus;
    v_BOOL_t deferKeyComplete;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
 } roaming_info_t;
@@ -358,8 +410,11 @@ typedef struct roaming_info_s
 #define MAX_NUM_UNI_SUITES    16
 #define MAX_NUM_BKIDS         16
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define HDD_PAIRWISE_WAPI_KEY 0
 #define HDD_GROUP_WAPI_KEY    1
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -370,7 +425,11 @@ enum _WAPIAuthMode
    WAPI_AUTH_MODE_PSK = 1,
    WAPI_AUTH_MODE_CERT
 <<<<<<< HEAD
+<<<<<<< HEAD
 } __attribute__((packed));
+=======
+} __packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 } __packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -384,7 +443,11 @@ struct _WAPI_FUNCTION_MODE
 {
    unsigned char wapiMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }__attribute__((packed));
+=======
+}__packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }__packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -411,7 +474,11 @@ struct _WAPI_AssocInfo
    v_U16_t     bkidCount;
    WAPI_BKID   bkidList[MAX_NUM_BKIDS];
 <<<<<<< HEAD
+<<<<<<< HEAD
 } __attribute__((packed));
+=======
+} __packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 } __packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -425,7 +492,11 @@ enum _WAPIKeyType
    PAIRWISE_KEY, //0
    GROUP_KEY     //1
 <<<<<<< HEAD
+<<<<<<< HEAD
 }__attribute__((packed));
+=======
+}__packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }__packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -439,7 +510,11 @@ enum _KEY_DIRECTION
    Tx,
    Rx_Tx
 <<<<<<< HEAD
+<<<<<<< HEAD
 }__attribute__((packed));
+=======
+}__packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }__packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -459,7 +534,11 @@ struct WLAN_WAPI_KEY
    v_U8_t          wpick[MAX_WPI_KEY_LENGTH];
    v_U8_t          pn[MAX_NUM_PN];        /*reserved for future use*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 }__attribute__((packed));
+=======
+}__packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }__packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -479,7 +558,11 @@ struct _WLAN_BKID_LIST
    v_U32_t          BKIDCount;
    WAPI_BKID        BKID[1];
 <<<<<<< HEAD
+<<<<<<< HEAD
 }__attribute__((packed));
+=======
+}__packed;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }__packed;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -496,16 +579,22 @@ struct hdd_wapi_info_s
    v_MACADDR_t cachedMacAddr;
    v_UCHAR_t   wapiAuthMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }__attribute__((packed));
 typedef struct hdd_wapi_info_s hdd_wapi_info_t;
 #endif /* FEATURE_WLAN_WAPI */
 
 #ifdef CONFIG_CFG80211
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }__packed;
 typedef struct hdd_wapi_info_s hdd_wapi_info_t;
 #endif /* FEATURE_WLAN_WAPI */
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct beacon_data_s {
     u8 *head, *tail;
@@ -513,7 +602,10 @@ typedef struct beacon_data_s {
     int dtim_period;
 } beacon_data_t;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -524,10 +616,15 @@ typedef enum device_mode
    WLAN_HDD_P2P_CLIENT,
    WLAN_HDD_P2P_GO,
 <<<<<<< HEAD
+<<<<<<< HEAD
    WLAN_HDD_MONITOR
 #ifdef ANI_MANF_DIAG
    ,WLAN_HDD_FTM,
 #endif
+=======
+   WLAN_HDD_MONITOR,
+   WLAN_HDD_FTM,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLAN_HDD_MONITOR,
    WLAN_HDD_FTM,
@@ -577,7 +674,10 @@ typedef struct
 } hdd_thermal_mitigation_info_t;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct hdd_remain_on_chan_ctx
@@ -621,8 +721,11 @@ typedef struct hdd_cfg80211_state_s
 }hdd_cfg80211_state_t;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef enum{
     HDD_SSR_NOT_REQUIRED,
@@ -638,6 +741,9 @@ typedef struct
 }hddGtkOffloadParams;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 struct hdd_station_ctx
 {
@@ -645,12 +751,18 @@ struct hdd_station_ctx
    hdd_wext_state_t WextState;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
    tdlsCtx_t *pHddTdlsCtx;
 #endif
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /**Connection information*/
    connection_info_t conn_info;
@@ -658,12 +770,15 @@ struct hdd_station_ctx
    roaming_info_t roam_info;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_BOOL_t bSendDisconnect;
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
    int     ft_carrier_on;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
    int     ft_carrier_on;
 #endif
@@ -672,6 +787,9 @@ struct hdd_station_ctx
    hddGtkOffloadParams gtkOffloadRequestParams;
 #endif
    v_BOOL_t hdd_ReassocScenario;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
@@ -718,6 +836,11 @@ typedef struct {
    v_BOOL_t isQosEnabled;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   /** The station entry for which Deauth is in progress  */
+   v_BOOL_t isDeauthInProgress;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /** The station entry for which Deauth is in progress  */
    v_BOOL_t isDeauthInProgress;
@@ -742,6 +865,7 @@ struct hdd_ap_ctx_s
 
    v_U8_t uPrivacy;  // The privacy bits of configuration
 <<<<<<< HEAD
+<<<<<<< HEAD
    
 #ifdef WLAN_SOFTAP_FEATURE   
    tSirWPSPBCProbeReq WPSPBCProbeReq;
@@ -750,11 +874,16 @@ struct hdd_ap_ctx_s
 #endif
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    tSirWPSPBCProbeReq WPSPBCProbeReq;
 
    tsap_Config_t sapConfig;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    struct semaphore semWpsPBCOverlapInd;
    
@@ -769,7 +898,10 @@ struct hdd_ap_ctx_s
    eCsrEncryptionType ucEncryptType;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211   
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //This will point to group key data, if it is received before start bss. 
@@ -779,10 +911,15 @@ struct hdd_ap_ctx_s
 
    beacon_data_t *beacon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 };
 
 #ifdef CONFIG_CFG80211   
+=======
+};
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 };
 
@@ -792,7 +929,10 @@ struct hdd_mon_ctx_s
    hdd_adapter_t *pAdapterForTx;
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -808,10 +948,13 @@ typedef struct hdd_scaninfo_s
    v_U32_t waitScanResult;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   v_BOOL_t flushP2pScanResults;
 #endif
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Additional IE for scan */
@@ -824,6 +967,12 @@ typedef struct hdd_scaninfo_s
    struct completion scan_req_completion_event;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   /* completion variable for abortscan */
+   struct completion abortscan_event_var;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* completion variable for abortscan */
    struct completion abortscan_event_var;
@@ -836,7 +985,10 @@ typedef struct hdd_scaninfo_s
 }hdd_scaninfo_t;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_HDD_MAX_MC_ADDR_LIST 10
 
 #ifdef WLAN_FEATURE_PACKET_FILTERING
@@ -849,6 +1001,9 @@ typedef struct multicast_addr_list
 } t_multicast_add_list;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_HDD_ADAPTER_MAGIC 0x574c414e //ASCII "WLAN"
 struct hdd_adapter_s
@@ -862,12 +1017,18 @@ struct hdd_adapter_s
     
    //TODO Move this to sta Ctx
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
    struct wireless_dev wdev ;
    struct cfg80211_scan_request *request ; 
 #endif
 
 #ifdef WLAN_FEATURE_P2P
+=======
+   struct wireless_dev wdev ;
+   struct cfg80211_scan_request *request ; 
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    struct wireless_dev wdev ;
    struct cfg80211_scan_request *request ; 
@@ -881,7 +1042,10 @@ struct hdd_adapter_s
     tANI_U8  ops;
     tANI_U32 ctw;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -917,10 +1081,13 @@ struct hdd_adapter_s
    struct completion linkup_event_var;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    /* completion variable for abortscan */
    struct completion abortscan_event_var;
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* completion variable for cancel remain on channel Event */
@@ -935,12 +1102,15 @@ struct hdd_adapter_s
    /* Completion variable for remain on channel ready */
    struct completion rem_on_chan_ready_event;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
    /* Track whether the linkup handling is needed  */
    v_BOOL_t isLinkUpSvcNeeded;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Completion variable for Upper Layer Authentication */
    struct completion ula_complete;
@@ -957,6 +1127,9 @@ struct hdd_adapter_s
    /* Mgmt Frames TX completion status code */
    tANI_U32 mgmtTxCompletionStatus;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*************************************************************
  *  Tx Queues
@@ -992,6 +1165,7 @@ struct hdd_adapter_s
    
    v_S7_t rssi;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
    struct work_struct  monTxWorkQueue;
    struct sk_buff *skb_to_tx;
@@ -1000,10 +1174,15 @@ struct hdd_adapter_s
    struct work_struct  monTxWorkQueue;
    struct sk_buff *skb_to_tx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   struct work_struct  monTxWorkQueue;
+   struct sk_buff *skb_to_tx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    union {
       hdd_station_ctx_t station;
       hdd_ap_ctx_t  ap;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef CONFIG_CFG80211   
       hdd_mon_ctx_t monitor;
@@ -1014,6 +1193,8 @@ struct hdd_adapter_s
 #ifdef CONFIG_CFG80211
    hdd_cfg80211_state_t cfg80211State;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       hdd_mon_ctx_t monitor;
    }sessionCtx;
 
@@ -1028,6 +1209,9 @@ struct hdd_adapter_s
    v_SCHAR_t filter_v6_index;
    // IKJB42MAIN-1244, Motorola, a19091 - END
    t_multicast_add_list mc_addr_list;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -1045,6 +1229,7 @@ typedef struct hdd_dynamic_mcbcfilter_s
 }hdd_dynamic_mcbcfilter_t;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WLAN_HDD_GET_STATION_CTX_PTR(pAdapter) &(pAdapter)->sessionCtx.station
 #define WLAN_HDD_GET_AP_CTX_PTR(pAdapter) &(pAdapter)->sessionCtx.ap
 #define WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter)  &(pAdapter)->sessionCtx.station.WextState
@@ -1054,6 +1239,8 @@ typedef struct hdd_dynamic_mcbcfilter_s
 #define WLAN_HDD_GET_CFG_STATE_PTR(pAdapter)  &(pAdapter)->cfg80211State
 #define WLAN_HDD_MAX_MC_ADDR_LIST 10
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_HDD_GET_STATION_CTX_PTR(pAdapter) (&(pAdapter)->sessionCtx.station)
 #define WLAN_HDD_GET_AP_CTX_PTR(pAdapter) (&(pAdapter)->sessionCtx.ap)
 #define WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter)  (&(pAdapter)->sessionCtx.station.WextState)
@@ -1069,6 +1256,9 @@ typedef struct hdd_dynamic_mcbcfilter_s
         ((WLAN_HDD_IS_TDLS_SUPPORTED_ADAPTER(pAdapter)) ? \
         (tdlsCtx_t*)(pAdapter)->sessionCtx.station.pHddTdlsCtx : NULL)
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct hdd_adapter_list_node
@@ -1085,6 +1275,7 @@ typedef struct hdd_priv_data_s
 }hdd_priv_data_t;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_PACKET_FILTERING
 typedef struct multicast_addr_list
 {
@@ -1094,6 +1285,8 @@ typedef struct multicast_addr_list
 } t_multicast_add_list;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct
 {
    vos_timer_t trafficTimer;
@@ -1102,6 +1295,9 @@ typedef struct
    vos_lock_t  trafficLock;
    v_TIME_t    lastFrameTs;
 }hdd_traffic_monitor_t;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** Adapter stucture definition */
@@ -1115,9 +1311,13 @@ struct hdd_context_s
    tHalHandle hHal;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
    struct wiphy *wiphy ;
 #endif
+=======
+   struct wiphy *wiphy ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    struct wiphy *wiphy ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1137,7 +1337,10 @@ struct hdd_context_s
    const struct firmware *nv;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  #ifdef WLAN_NV_OTA_UPGRADE
    /** Pointer for nv data cal */
    const struct firmware *nv_cal;
@@ -1146,6 +1349,9 @@ struct hdd_context_s
    const struct firmware *nv_reg;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /** Pointer to the parent device */
    struct device *parent_dev;
@@ -1156,9 +1362,13 @@ struct hdd_context_s
    /** Config values read from qcom_cfg.ini file */ 
    hdd_config_t *cfg_ini;
 <<<<<<< HEAD
+<<<<<<< HEAD
   #ifdef ANI_MANF_DIAG
    wlan_hdd_ftm_status_t ftm; 
   #endif
+=======
+   wlan_hdd_ftm_status_t ftm; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wlan_hdd_ftm_status_t ftm; 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1171,10 +1381,15 @@ struct hdd_context_s
    struct completion standby_comp_var;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    /* Completion  variable to indicate Rx Thread Suspended */
    struct completion rx_sus_event_var;
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+   /* Completion  variable to indicate Rx Thread Suspended */
+   struct completion rx_sus_event_var;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* Completion  variable to indicate Rx Thread Suspended */
    struct completion rx_sus_event_var;
@@ -1187,6 +1402,11 @@ struct hdd_context_s
    struct completion mc_sus_event_var;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   /* Completion  variable to wlan_hdd_get_crda_regd_entry  */
+   struct completion driver_crda_req;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* Completion  variable to wlan_hdd_get_crda_regd_entry  */
    struct completion driver_crda_req;
@@ -1199,9 +1419,13 @@ struct hdd_context_s
    v_BOOL_t isMcThreadSuspended;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    v_BOOL_t isRxThreadSuspended;
 #endif
+=======
+   v_BOOL_t isRxThreadSuspended;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_BOOL_t isRxThreadSuspended;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1249,6 +1473,7 @@ struct hdd_context_s
    v_BOOL_t isAmpAllowed;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
    /** P2P Device MAC Address for the adapter  */
    v_MACADDR_t p2pDeviceAddress;
@@ -1264,6 +1489,8 @@ struct hdd_context_s
    struct wake_lock rx_wake_lock;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /** P2P Device MAC Address for the adapter  */
    v_MACADDR_t p2pDeviceAddress;
 
@@ -1275,6 +1502,9 @@ struct hdd_context_s
    struct wake_lock rx_wake_lock;
 #endif
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* 
@@ -1289,7 +1519,10 @@ struct hdd_context_s
    u_int8_t hdd_restart_retries;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    hdd_scaninfo_t scan_info;
 
    /*is_dyanmic_channel_range_set is set to 1 when Softap_set_channel_range
@@ -1321,6 +1554,9 @@ struct hdd_context_s
 
     // Indicates about pending sched_scan results
     v_BOOL_t isSchedScanUpdatePending;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
@@ -1350,7 +1586,12 @@ VOS_STATUS hdd_add_adapter_front( hdd_context_t *pHddCtx,
 
 hdd_adapter_t* hdd_open_adapter( hdd_context_t *pHddCtx, tANI_U8 session_type,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  char* name, tSirMacAddr macAddr, tANI_U8 rtnl_held );
+=======
+                                 const char* name, tSirMacAddr macAddr,
+                                 tANI_U8 rtnl_held );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  const char* name, tSirMacAddr macAddr,
                                  tANI_U8 rtnl_held );
@@ -1362,6 +1603,10 @@ VOS_STATUS hdd_reset_all_adapters( hdd_context_t *pHddCtx );
 VOS_STATUS hdd_start_all_adapters( hdd_context_t *pHddCtx );
 VOS_STATUS hdd_reconnect_all_adapters( hdd_context_t *pHddCtx );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+void hdd_dump_concurrency_info(hdd_context_t *pHddCtx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void hdd_dump_concurrency_info(hdd_context_t *pHddCtx);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1378,6 +1623,7 @@ void wlan_hdd_release_intf_addr(hdd_context_t* pHddCtx, tANI_U8* releaseAddr);
 v_U8_t hdd_get_operating_channel( hdd_context_t *pHddCtx, device_mode_t mode );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #if defined(WLAN_SOFTAP_FEATURE) || defined(ANI_MANF_DIAG)
 void hdd_set_conparam ( v_UINT_t newParam );
@@ -1392,6 +1638,8 @@ void wlan_hdd_set_monitor_tx_adapter( hdd_context_t *pHddCtx, hdd_adapter_t *pAd
 void hdd_cleanup_actionframe( hdd_context_t *pHddCtx, hdd_adapter_t *pAdapter );
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void hdd_set_conparam ( v_UINT_t newParam );
 tVOS_CON_MODE hdd_get_conparam( void );
 
@@ -1403,6 +1651,9 @@ void wlan_hdd_set_monitor_tx_adapter( hdd_context_t *pHddCtx, hdd_adapter_t *pAd
 void hdd_cleanup_actionframe( hdd_context_t *pHddCtx, hdd_adapter_t *pAdapter );
 v_BOOL_t is_crda_regulatory_entry_valid(void);
 void crda_regulatory_entry_default(v_U8_t *countryCode, int domain_id);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void wlan_hdd_set_concurrency_mode(hdd_context_t *pHddCtx, tVOS_CON_MODE mode);
 void wlan_hdd_clear_concurrency_mode(hdd_context_t *pHddCtx, tVOS_CON_MODE mode);
@@ -1410,23 +1661,32 @@ void wlan_hdd_reset_prob_rspies(hdd_adapter_t* pHostapdAdapter);
 void hdd_prevent_suspend(void);
 void hdd_allow_suspend(void);
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_U8_t hdd_is_ssr_required(void);
 void hdd_set_ssr_required(v_U8_t value);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void hdd_prevent_suspend_after_scan(long hz); //Mot IKHSS7-28961 :Empty scan results
 void hdd_allow_suspend_timeout(v_U32_t timeout);
 bool hdd_is_ssr_required(void);
 void hdd_set_ssr_required(e_hdd_ssr_required value);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 VOS_STATUS hdd_enable_bmps_imps(hdd_context_t *pHddCtx);
 VOS_STATUS hdd_disable_bmps_imps(hdd_context_t *pHddCtx, tANI_U8 session_type);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus hdd_smeCloseSessionCallback(void *pContext);
 VOS_STATUS wlan_hdd_restart_driver(hdd_context_t *pHddCtx);
 void hdd_exchange_version_and_caps(hdd_context_t *pHddCtx);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void wlan_hdd_cfg80211_update_reg_info(struct wiphy *wiphy);
 VOS_STATUS wlan_hdd_restart_driver(hdd_context_t *pHddCtx);
 void hdd_exchange_version_and_caps(hdd_context_t *pHddCtx);
@@ -1438,5 +1698,8 @@ int wlan_hdd_setIPv6Filter(hdd_context_t *pHddCtx, tANI_U8 filterType, tANI_U8 s
 #endif
 VOS_STATUS hdd_issta_p2p_clientconnected(hdd_context_t *pHddCtx);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif    // end #if !defined( WLAN_HDD_MAIN_H )

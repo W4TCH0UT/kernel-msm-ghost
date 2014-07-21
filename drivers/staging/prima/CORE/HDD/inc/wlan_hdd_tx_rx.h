@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -47,6 +53,7 @@
 
 /**===========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   \file  wlan_hdd_tx_rx.h
   
@@ -61,6 +68,8 @@
   Include files
   -------------------------------------------------------------------------*/ 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \file  wlan_hdd_tx_rx.h
 
@@ -79,6 +88,9 @@
 /*---------------------------------------------------------------------------
   Include files
   -------------------------------------------------------------------------*/
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <wlan_hdd_includes.h>
 #include <vos_api.h>
@@ -86,9 +98,15 @@
 #include <wlan_qct_tl.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*--------------------------------------------------------------------------- 
   Preprocessor definitions and constants
   -------------------------------------------------------------------------*/ 
+=======
+/*---------------------------------------------------------------------------
+  Preprocessor definitions and constants
+  -------------------------------------------------------------------------*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /*---------------------------------------------------------------------------
   Preprocessor definitions and constants
@@ -135,9 +153,13 @@
 extern int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211   
 extern int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
 #endif
+=======
+extern int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 extern int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -261,7 +283,10 @@ extern VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
                                      WLANTL_RxMetaInfoType* pRxMetaInfo );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -274,9 +299,13 @@ extern VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
   ===========================================================================*/
 extern v_BOOL_t hdd_IsEAPOLPacket( vos_pkt_t *pVosPacket );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef CONFIG_CFG80211
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -285,7 +314,11 @@ extern v_BOOL_t hdd_IsEAPOLPacket( vos_pkt_t *pVosPacket );
                                  interface.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   @param pAdapter: [in] SAP/P2P GO adaptor. 
+=======
+  @param pAdapter: [in] SAP/P2P GO adapter.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   @param pAdapter: [in] SAP/P2P GO adapter.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -299,7 +332,10 @@ void hdd_mon_tx_mgmt_pkt(hdd_adapter_t* pAdapter);
   ===========================================================================*/
 void hdd_mon_tx_work_queue(struct work_struct *work);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

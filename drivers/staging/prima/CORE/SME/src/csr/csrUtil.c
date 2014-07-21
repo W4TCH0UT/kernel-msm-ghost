@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,12 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 
@@ -61,6 +73,7 @@
    ========================================================================== */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halInternal.h" //Check if the below include of aniGobal.h is sufficient for Volans too.
 #endif
@@ -68,6 +81,10 @@
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "aniGlobal.h"
 #endif
+=======
+
+#include "aniGlobal.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 #include "aniGlobal.h"
@@ -105,6 +122,7 @@ tANI_U8 csrRSNOui[][ CSR_RSN_OUI_SIZE ] = {
     { 0x00, 0x0F, 0xAC, 0x04 }, // AES-CCMP
     { 0x00, 0x0F, 0xAC, 0x05 }, // WEP-104
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11W
     { 0x00, 0x0F, 0xAC, 0x06 },  // BIP(encryption type) or (RSN-PSK-SHA256(authentication type)
 #endif
@@ -112,6 +130,10 @@ tANI_U8 csrRSNOui[][ CSR_RSN_OUI_SIZE ] = {
     { 0x00, 0x40, 0x96, 0x00 } // CCKM
 #endif /* FEATURE_WLAN_CCX */
     
+=======
+    { 0x00, 0x40, 0x96, 0x00 }, // CCKM
+    { 0x00, 0x0F, 0xAC, 0x06 }  // BIP (encryption type) or RSN-PSK-SHA256 (authentication type)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     { 0x00, 0x40, 0x96, 0x00 }, // CCKM
     { 0x00, 0x0F, 0xAC, 0x06 }  // BIP (encryption type) or RSN-PSK-SHA256 (authentication type)
@@ -1396,7 +1418,10 @@ tANI_BOOLEAN csrIsConnStateConnectedWds( tpAniSirGlobal pMac, tANI_U32 sessionId
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrIsConnStateConnectedInfraAp( tpAniSirGlobal pMac, tANI_U32 sessionId )
@@ -1405,7 +1430,10 @@ tANI_BOOLEAN csrIsConnStateConnectedInfraAp( tpAniSirGlobal pMac, tANI_U32 sessi
         (eCSR_ASSOC_STATE_TYPE_INFRA_DISCONNECTED == pMac->roam.roamSession[sessionId].connectState ) );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1536,7 +1564,10 @@ tANI_BOOLEAN csrIsAllSessionDisconnected( tpAniSirGlobal pMac )
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrIsStaSessionConnected( tpAniSirGlobal pMac )
 {
     tANI_U32 i;
@@ -1627,6 +1658,9 @@ tANI_BOOLEAN csrIsAnySessionConnected( tpAniSirGlobal pMac )
     }
     return( fRc );
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tANI_BOOLEAN csrIsInfraConnected( tpAniSirGlobal pMac )
@@ -1768,11 +1802,16 @@ tANI_BOOLEAN csrIsValidMcConcurrentSession(tpAniSirGlobal pMac, tANI_U32 session
 {
     tCsrRoamSession *pSession = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 Index = 0, ConnId = 0;
     eAniBoolean status = eANI_BOOLEAN_FALSE;
 
     tVOS_CON_MODE Mode[CSR_ROAM_SESSION_MAX];
 
+=======
+    eAniBoolean status = eANI_BOOLEAN_FALSE;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     eAniBoolean status = eANI_BOOLEAN_FALSE;
 
@@ -1783,6 +1822,7 @@ tANI_BOOLEAN csrIsValidMcConcurrentSession(tpAniSirGlobal pMac, tANI_U32 session
         return status;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     for( Index = 0; Index < CSR_ROAM_SESSION_MAX; Index++ )
     {
@@ -1828,12 +1868,15 @@ tANI_BOOLEAN csrIsValidMcConcurrentSession(tpAniSirGlobal pMac, tANI_U32 session
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Validate BeaconInterval
     if( CSR_IS_SESSION_VALID( pMac, sessionId ) )
     {
         pSession = CSR_GET_SESSION( pMac, sessionId );
         if (NULL != pSession->pCurRoamProfile)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if(csrIsconcurrentsessionValid (pMac, sessionId, 
                                        pSession->pCurRoamProfile->csrPersona) 
@@ -1843,6 +1886,8 @@ tANI_BOOLEAN csrIsValidMcConcurrentSession(tpAniSirGlobal pMac, tANI_U32 session
                                &pBssDesc->beaconInterval, sessionId, 
                                pSession->pCurRoamProfile->csrPersona) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (csrIsconcurrentsessionValid (pMac, sessionId,
                                        pSession->pCurRoamProfile->csrPersona)
                                        == eHAL_STATUS_SUCCESS )
@@ -1850,6 +1895,9 @@ tANI_BOOLEAN csrIsValidMcConcurrentSession(tpAniSirGlobal pMac, tANI_U32 session
                 if (csrValidateMCCBeaconInterval( pMac, pBssDesc->channelId,
                                &pBssDesc->beaconInterval, sessionId,
                                pSession->pCurRoamProfile->csrPersona)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                != eHAL_STATUS_SUCCESS)
                 {
@@ -1962,7 +2010,11 @@ tANI_BOOLEAN csrIsSsidEqual( tHalHandle hHal, tSirBssDescription *pSirBssDesc1,
         if( !pIesLocal && !HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, pSirBssDesc2, &pIesLocal)) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("  fail to parse IEs\n"));
+=======
+            smsLog(pMac, LOGE, FL("  fail to parse IEs"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("  fail to parse IEs"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2065,9 +2117,13 @@ eCsrMediaAccessType csrGetQoSFromBssDesc( tHalHandle hHal, tSirBssDescription *p
     eCsrMediaAccessType qosType = eCSR_MEDIUM_ACCESS_DCF;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(VOSS_ENABLED)
     VOS_ASSERT( pIes != NULL );
 #endif
+=======
+    VOS_ASSERT( pIes != NULL );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_ASSERT( pIes != NULL );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2156,7 +2212,11 @@ eHalStatus csrGetParsedBssDescriptionIEs(tHalHandle hHal, tSirBssDescription *pB
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" failed to allocate memory\n") );
+=======
+            smsLog( pMac, LOGE, FL(" failed to allocate memory") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" failed to allocate memory") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2273,7 +2333,11 @@ tANI_U32 csrTranslateToWNICfgDot11Mode(tpAniSirGlobal pMac, eCsrCfgDot11Mode csr
     {
     case eCSR_CFG_DOT11_MODE_AUTO:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("  Warning: sees eCSR_CFG_DOT11_MODE_AUTO \n"));
+=======
+        smsLog(pMac, LOGW, FL("  Warning: sees eCSR_CFG_DOT11_MODE_AUTO "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("  Warning: sees eCSR_CFG_DOT11_MODE_AUTO "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2285,7 +2349,11 @@ tANI_U32 csrTranslateToWNICfgDot11Mode(tpAniSirGlobal pMac, eCsrCfgDot11Mode csr
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             ret = WNI_CFG_DOT11_MODE_11N;
+=======
+            ret = WNI_CFG_DOT11_MODE_11AC;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             ret = WNI_CFG_DOT11_MODE_11AC;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2313,7 +2381,10 @@ tANI_U32 csrTranslateToWNICfgDot11Mode(tpAniSirGlobal pMac, eCsrCfgDot11Mode csr
         ret = WNI_CFG_DOT11_MODE_TITAN;
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case eCSR_CFG_DOT11_MODE_11G_ONLY:
@@ -2323,7 +2394,10 @@ tANI_U32 csrTranslateToWNICfgDot11Mode(tpAniSirGlobal pMac, eCsrCfgDot11Mode csr
        ret = WNI_CFG_DOT11_MODE_11N_ONLY;
        break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2337,7 +2411,11 @@ tANI_U32 csrTranslateToWNICfgDot11Mode(tpAniSirGlobal pMac, eCsrCfgDot11Mode csr
 #endif
     default:
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("doesn't expect %d as csrDo11Mode\n"), csrDot11Mode);
+=======
+        smsLog(pMac, LOGW, FL("doesn't expect %d as csrDo11Mode"), csrDot11Mode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("doesn't expect %d as csrDo11Mode"), csrDot11Mode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2589,7 +2667,11 @@ tANI_BOOLEAN csrGetPhyModeInUse( eCsrPhyMode phyModeIn, eCsrPhyMode bssPhyMode, 
     {
 #ifdef WLAN_FEATURE_11AC
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(cfgDot11Mode == eCSR_CFG_DOT11_MODE_11AC && !WDA_getFwWlanFeatCaps(DOT11AC))
+=======
+        if(cfgDot11Mode == eCSR_CFG_DOT11_MODE_11AC && (!IS_FEATURE_SUPPORTED_BY_FW(DOT11AC)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if(cfgDot11Mode == eCSR_CFG_DOT11_MODE_11AC && (!IS_FEATURE_SUPPORTED_BY_FW(DOT11AC)))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2727,6 +2809,7 @@ eCsrCfgDot11Mode csrFindBestPhyMode( tpAniSirGlobal pMac, tANI_U32 phyMode )
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC
     if ( (0 == phyMode) || (eCSR_DOT11_MODE_AUTO & phyMode) || (eCSR_DOT11_MODE_TAURUS & phyMode)
        ||(eCSR_DOT11_MODE_11ac & phyMode))
@@ -2740,6 +2823,8 @@ eCsrCfgDot11Mode csrFindBestPhyMode( tpAniSirGlobal pMac, tANI_U32 phyMode )
     {
         cfgDot11ModeToUse = eCSR_CFG_DOT11_MODE_11N;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((0 == phyMode) ||
 #ifdef WLAN_FEATURE_11AC
         (eCSR_DOT11_MODE_11ac & phyMode) ||
@@ -2759,6 +2844,9 @@ eCsrCfgDot11Mode csrFindBestPhyMode( tpAniSirGlobal pMac, tANI_U32 phyMode )
             */
            cfgDot11ModeToUse = eCSR_CFG_DOT11_MODE_11N;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
@@ -2917,21 +3005,28 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                 case VOS_STA_MODE:
                     if(pMac->roam.roamSession[sessionId].pCurRoamProfile &&
 <<<<<<< HEAD
+<<<<<<< HEAD
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona 
                                       == VOS_STA_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOGE, FL(" ****STA mode already exists ****\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona
                                       == VOS_STA_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOGE, FL(" ****STA mode already exists ****"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         return eHAL_STATUS_FAILURE;
                     }
                     break;
 
                 case VOS_STA_SAP_MODE:
+<<<<<<< HEAD
 <<<<<<< HEAD
                     if(pMac->roam.roamSession[sessionId].bssParams.bssPersona
                                       == VOS_STA_SAP_MODE)
@@ -2945,6 +3040,8 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                     {
                         smsLog(pMac, LOGE, FL(" ****Cannot start Multiple Beaconing Role ****\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if((pMac->roam.roamSession[sessionId].bssParams.bssPersona
                                       == VOS_STA_SAP_MODE)&&
                     (pMac->roam.roamSession[sessionId].connectState != eCSR_ASSOC_STATE_TYPE_NOT_CONNECTED))
@@ -2958,6 +3055,9 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                     (pMac->roam.roamSession[sessionId].connectState != eCSR_ASSOC_STATE_TYPE_NOT_CONNECTED))
                     {
                         smsLog(pMac, LOGE, FL(" ****Cannot start Multiple Beaconing Role ****"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         return eHAL_STATUS_FAILURE;
                     }
@@ -2966,21 +3066,28 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                 case VOS_P2P_CLIENT_MODE:
                     if(pMac->roam.roamSession[sessionId].pCurRoamProfile &&
 <<<<<<< HEAD
+<<<<<<< HEAD
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona 
                                                   == VOS_P2P_CLIENT_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOGE, FL(" ****CLIENT mode already exists ****\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona
                                                   == VOS_P2P_CLIENT_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOGE, FL(" ****CLIENT mode already exists ****"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         return eHAL_STATUS_FAILURE;
                     }
                     break;
 
                 case VOS_P2P_GO_MODE:
+<<<<<<< HEAD
 <<<<<<< HEAD
                     if(pMac->roam.roamSession[sessionId].bssParams.bssPersona
                                       == VOS_P2P_GO_MODE)
@@ -2993,6 +3100,8 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                     {
                         smsLog(pMac, LOGE, FL(" ****Cannot start Multiple Beaconing Role ****\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if((pMac->roam.roamSession[sessionId].bssParams.bssPersona
                                       == VOS_P2P_GO_MODE) &&
                     (pMac->roam.roamSession[sessionId].connectState != eCSR_ASSOC_STATE_TYPE_NOT_CONNECTED))
@@ -3005,6 +3114,9 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                     (pMac->roam.roamSession[sessionId].connectState != eCSR_ASSOC_STATE_TYPE_NOT_CONNECTED))
                     {
                         smsLog(pMac, LOGE, FL(" ****Cannot start Multiple Beaconing Role ****"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         return eHAL_STATUS_FAILURE;
                     }
@@ -3012,7 +3124,11 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
 
                 default :
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGE, FL("***Persona not handled = %d*****\n"),currBssPersona);
+=======
+                    smsLog(pMac, LOGE, FL("***Persona not handled = %d*****"),currBssPersona);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGE, FL("***Persona not handled = %d*****"),currBssPersona);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3025,9 +3141,13 @@ csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus csrValidateBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId, 
                                      tANI_U16 *beaconInterval, tANI_U32 cursessionId,
                                      tVOS_CON_MODE currBssPersona)
+=======
+eHalStatus csrUpdateMCCp2pBeaconInterval(tpAniSirGlobal pMac)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eHalStatus csrUpdateMCCp2pBeaconInterval(tpAniSirGlobal pMac)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3036,8 +3156,11 @@ eHalStatus csrUpdateMCCp2pBeaconInterval(tpAniSirGlobal pMac)
 
     //If MCC is not supported just break and return SUCCESS
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( !IS_MCC_SUPPORTED && !pMac->roam.configParam.fenableMCCMode){
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( !pMac->roam.configParam.fenableMCCMode){
         return eHAL_STATUS_FAILURE;
     }
@@ -3126,6 +3249,9 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
   
     //If MCC is not supported just break
     if (!pMac->roam.configParam.fenableMCCMode){
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
@@ -3143,17 +3269,23 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
             {
                 case VOS_STA_MODE:
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if(pMac->roam.roamSession[sessionId].pCurRoamProfile &&
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona 
                                       == VOS_P2P_CLIENT_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOG1, FL(" Beacon Interval Validation not required for STA/CLIENT\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if (pMac->roam.roamSession[sessionId].pCurRoamProfile &&
                        (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona
                                       == VOS_P2P_CLIENT_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOG1, FL(" Beacon Interval Validation not required for STA/CLIENT"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
                     //IF SAP has started and STA wants to connect on different channel MCC should
@@ -3164,6 +3296,7 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                         if (pMac->roam.roamSession[sessionId].bssParams.operationChn 
                                                         != channelId )
                         {
+<<<<<<< HEAD
 <<<<<<< HEAD
                             smsLog(pMac, LOGE, FL("***MCC is not enabled for SAP +STA****\n"));
                             return eHAL_STATUS_FAILURE;
@@ -3184,6 +3317,8 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                             smsLog(pMac, LOGE, FL("BeaconInteval is different cannot connect to prefered AP...\n"));
                             return eHAL_STATUS_FAILURE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             smsLog(pMac, LOGE, FL("***MCC is not enabled for SAP +STA****"));
                             return eHAL_STATUS_FAILURE;
                         }
@@ -3237,6 +3372,9 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                                smsLog(pMac, LOGE, FL("BeaconInterval is different cannot connect to preferred AP..."));
                                return eHAL_STATUS_FAILURE;
                            }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         }
                     }
@@ -3244,17 +3382,23 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
 
                 case VOS_P2P_CLIENT_MODE:
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if(pMac->roam.roamSession[sessionId].pCurRoamProfile &&
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona 
                                                                 == VOS_STA_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOG1, FL(" Ignore Beacon Interval Validation...\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if (pMac->roam.roamSession[sessionId].pCurRoamProfile &&
                       (pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona
                                                                 == VOS_STA_MODE)) //check for P2P client mode
                     {
                         smsLog(pMac, LOG1, FL(" Ignore Beacon Interval Validation..."));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
                     //IF SAP has started and STA wants to connect on different channel MCC should
@@ -3266,17 +3410,23 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                                                         != channelId )
                         {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             smsLog(pMac, LOGE, FL("***MCC is not enabled for SAP + CLIENT****\n"));
                             return eHAL_STATUS_FAILURE;
                         }
                     }
                     else if(pMac->roam.roamSession[sessionId].bssParams.bssPersona
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             smsLog(pMac, LOGE, FL("***MCC is not enabled for SAP + CLIENT****"));
                             return eHAL_STATUS_FAILURE;
                         }
                     }
                     else if (pMac->roam.roamSession[sessionId].bssParams.bssPersona
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     == VOS_P2P_GO_MODE) //Check for P2P go scenario
                     {
@@ -3286,7 +3436,11 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                                 != *beaconInterval))
                         {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             smsLog(pMac, LOGE, FL("BeaconInteval is different cannot connect to P2P_GO network ...\n"));
+=======
+                            smsLog(pMac, LOGE, FL("BeaconInterval is different cannot connect to P2P_GO network ..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             smsLog(pMac, LOGE, FL("BeaconInterval is different cannot connect to P2P_GO network ..."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3297,6 +3451,7 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
 
                 case VOS_P2P_GO_MODE :
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if(pMac->roam.roamSession[sessionId].pCurRoamProfile  && 
                       ((pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona 
                             == VOS_P2P_CLIENT_MODE)
@@ -3305,6 +3460,8 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                     {
                         if ((pMac->roam.roamSession[sessionId].connectedProfile.operationChannel 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     if (pMac->roam.roamSession[sessionId].pCurRoamProfile  &&
                       ((pMac->roam.roamSession[sessionId].pCurRoamProfile->csrPersona
@@ -3313,6 +3470,9 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                             == VOS_STA_MODE))) //check for P2P_client scenario
                     {
                         if ((pMac->roam.roamSession[sessionId].connectedProfile.operationChannel
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                == 0 )&&
                            (pMac->roam.roamSession[sessionId].connectedProfile.beaconInterval
@@ -3324,9 +3484,15 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                             
                         if (csrIsConnStateConnectedInfra(pMac, sessionId) &&
 <<<<<<< HEAD
+<<<<<<< HEAD
                            (pMac->roam.roamSession[sessionId].connectedProfile.operationChannel 
                                 != channelId ) &&
                            (pMac->roam.roamSession[sessionId].connectedProfile.beaconInterval 
+=======
+                           (pMac->roam.roamSession[sessionId].connectedProfile.operationChannel
+                                != channelId ) &&
+                           (pMac->roam.roamSession[sessionId].connectedProfile.beaconInterval
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            (pMac->roam.roamSession[sessionId].connectedProfile.operationChannel
                                 != channelId ) &&
@@ -3339,6 +3505,7 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                              * not incase of client or STA case
                              */
 <<<<<<< HEAD
+<<<<<<< HEAD
                             *beaconInterval = 
                                 pMac->roam.roamSession[sessionId].connectedProfile.beaconInterval;
                             return eHAL_STATUS_SUCCESS;
@@ -3349,6 +3516,8 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
                 default :
                     smsLog(pMac, LOG1, FL(" Persona not supported : %d\n"),currBssPersona);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             //Calculate beacon Interval for P2P-GO incase of MCC
                             new_beaconInterval = csrCalculateMCCBeaconInterval(pMac, 
                                                 pMac->roam.roamSession[sessionId].connectedProfile.beaconInterval,
@@ -3363,6 +3532,9 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
 
                 default :
                     smsLog(pMac, LOG1, FL(" Persona not supported : %d"),currBssPersona);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return eHAL_STATUS_FAILURE;
             }
@@ -3375,11 +3547,14 @@ eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
 #ifdef WLAN_FEATURE_VOWIFI_11R
 /* Function to return TRUE if the authtype is 11r */
 <<<<<<< HEAD
+<<<<<<< HEAD
 tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType )
 {
     switch ( AuthType )
     {
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType, tANI_U8 mdiePresent)
 {
     switch ( AuthType )
@@ -3388,6 +3563,9 @@ tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType, tANI_U8 mdiePresent)
             if(mdiePresent)
                 return TRUE;
             break; 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eCSR_AUTH_TYPE_FT_RSN_PSK:
         case eCSR_AUTH_TYPE_FT_RSN:
@@ -3403,7 +3581,11 @@ tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType, tANI_U8 mdiePresent)
 tANI_BOOLEAN csrIsProfile11r( tCsrRoamProfile *pProfile )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return csrIsAuthType11r( pProfile->negotiatedAuthType );
+=======
+    return csrIsAuthType11r( pProfile->negotiatedAuthType, pProfile->MDID.mdiePresent );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     return csrIsAuthType11r( pProfile->negotiatedAuthType, pProfile->MDID.mdiePresent );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3683,6 +3865,7 @@ static tANI_BOOLEAN csrIsAuthRSN( tpAniSirGlobal pMac, tANI_U8 AllSuites[][CSR_R
                                   tANI_U8 Oui[] )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11W
     return( csrIsOuiMatch( pMac, AllSuites, cAllSuites, csrRSNOui[01], Oui ) ||
             csrIsOuiMatch( pMac, AllSuites, cAllSuites, csrRSNOui[05], Oui ));
@@ -3692,11 +3875,15 @@ static tANI_BOOLEAN csrIsAuthRSN( tpAniSirGlobal pMac, tANI_U8 AllSuites[][CSR_R
 =======
     return( csrIsOuiMatch( pMac, AllSuites, cAllSuites, csrRSNOui[01], Oui ) );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+    return( csrIsOuiMatch( pMac, AllSuites, cAllSuites, csrRSNOui[01], Oui ) );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 static tANI_BOOLEAN csrIsAuthRSNPsk( tpAniSirGlobal pMac, tANI_U8 AllSuites[][CSR_RSN_OUI_SIZE],
                                       tANI_U8 cAllSuites,
                                       tANI_U8 Oui[] )
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_FEATURE_11W
     return( csrIsOuiMatch( pMac, AllSuites, cAllSuites, csrRSNOui[02], Oui ) ||
@@ -3707,6 +3894,8 @@ static tANI_BOOLEAN csrIsAuthRSNPsk( tpAniSirGlobal pMac, tANI_U8 AllSuites[][CS
 }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return( csrIsOuiMatch( pMac, AllSuites, cAllSuites, csrRSNOui[02], Oui ) );
 }
 
@@ -3719,6 +3908,9 @@ static tANI_BOOLEAN csrIsAuthRSNPskSha256( tpAniSirGlobal pMac, tANI_U8 AllSuite
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static tANI_BOOLEAN csrIsAuthWpa( tpAniSirGlobal pMac, tANI_U8 AllSuites[][CSR_WPA_OUI_SIZE],
                                 tANI_U8 cAllSuites,
@@ -3967,18 +4159,24 @@ tANI_BOOLEAN csrGetRSNInformation( tHalHandle hHal, tCsrAuthList *pAuthType, eCs
         if ( Capabilities )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             Capabilities->PreAuthSupported = pRSNIe->preauth;
             Capabilities->NoPairwise = pRSNIe->no_pwise;
             Capabilities->PTKSAReplayCounter = pRSNIe->PTKSA_replay_counter;
             Capabilities->GTKSAReplayCounter = pRSNIe->GTKSA_replay_counter;
             Capabilities->Reserved = pRSNIe->reserved;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             Capabilities->PreAuthSupported = (pRSNIe->RSN_Cap[0] >> 0) & 0x1 ; // Bit 0 PreAuthentication
             Capabilities->NoPairwise = (pRSNIe->RSN_Cap[0] >> 1) & 0x1 ; // Bit 1 No Pairwise
             Capabilities->PTKSAReplayCounter = (pRSNIe->RSN_Cap[0] >> 2) & 0x3 ; // Bit 2, 3 PTKSA Replay Counter
             Capabilities->GTKSAReplayCounter = (pRSNIe->RSN_Cap[0] >> 4) & 0x3 ; // Bit 4,5 GTKSA Replay Counter
             Capabilities->Reserved = (pRSNIe->RSN_Cap[0] >> 6) & 0x3 ; // remaining reserved
             Capabilities->Reserved = (Capabilities->Reserved >> 2) | (pRSNIe->RSN_Cap[1]  & 0xff) ; // remaining reserved
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
@@ -4011,8 +4209,11 @@ tANI_BOOLEAN csrLookupPMKID( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U8 *p
         return FALSE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* to force the AP initiate fresh 802.1x authentication after re-association should not 
     * fill the PMKID from cache  this is needed 
     * by the HS 2.0 passpoint certification 5.2.a and b testcases */ 
@@ -4023,13 +4224,20 @@ tANI_BOOLEAN csrLookupPMKID( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U8 *p
         return fRC;
     }
     
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     do
     {
         for( Index=0; Index < pSession->NumPmkidCache; Index++ )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, "match PMKID %02X-%02X-%02X-%02X-%02X-%02X to \n",
+=======
+            smsLog(pMac, LOGW, "match PMKID %02X-%02X-%02X-%02X-%02X-%02X to ",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, "match PMKID %02X-%02X-%02X-%02X-%02X-%02X to ",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4050,7 +4258,11 @@ tANI_BOOLEAN csrLookupPMKID( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U8 *p
     }
     while( 0 );
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog(pMac, LOGW, "csrLookupPMKID called return match = %d pMac->roam.NumPmkidCache = %d", 
+=======
+    smsLog(pMac, LOGW, "csrLookupPMKID called return match = %d pMac->roam.NumPmkidCache = %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog(pMac, LOGW, "csrLookupPMKID called return match = %d pMac->roam.NumPmkidCache = %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4074,16 +4286,22 @@ tANI_U8 csrConstructRSNIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile 
     tCsrRSNPMKIe        *pPMK;
     tANI_U8 PMKId[CSR_RSN_PMKID_SIZE];
 <<<<<<< HEAD
+<<<<<<< HEAD
     tDot11fBeaconIEs *pIesLocal = pIes;
 
     smsLog(pMac, LOGW, "%s called...", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11W
     tANI_U8 *pGroupMgmtCipherSuite;
 #endif
     tDot11fBeaconIEs *pIesLocal = pIes;
 
     smsLog(pMac, LOGW, "%s called...", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     do
@@ -4137,7 +4355,10 @@ tANI_U8 csrConstructRSNIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile 
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11W
         if ( pProfile->MFPEnabled )
         {
@@ -4147,12 +4368,19 @@ tANI_U8 csrConstructRSNIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile 
         }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Add in the fixed fields plus 1 Unicast cypher, less the IE Header length
         // Add in the size of the Auth suite (count plus a single OUI)
         // Add in the RSN caps field.
         // Add PMKID count and PMKID (if any)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        // Add group management cipher suite
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         // Add group management cipher suite
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4165,7 +4393,10 @@ tANI_U8 csrConstructRSNIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile 
                                         (pPMK->cPMKIDs * CSR_RSN_PMKID_SIZE));
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11W
         if ( pProfile->MFPEnabled )
         {
@@ -4175,6 +4406,9 @@ tANI_U8 csrConstructRSNIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile 
         }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // return the size of the IE header (total) constructed...
         cbRSNIe = pRSNIe->IeHeader.Length + sizeof( pRSNIe->IeHeader );
@@ -4332,7 +4566,11 @@ tANI_BOOLEAN csrLookupBKID( tpAniSirGlobal pMac, tANI_U32 sessionId, tANI_U8 *pB
         for( Index=0; Index < pSession->NumBkidCache; Index++ )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, "match BKID %02X-%02X-%02X-%02X-%02X-%02X to \n",
+=======
+            smsLog(pMac, LOGW, "match BKID %02X-%02X-%02X-%02X-%02X-%02X to ",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, "match BKID %02X-%02X-%02X-%02X-%02X-%02X to ",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4397,13 +4635,19 @@ tANI_U8 csrConstructWapiIe( tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamPro
         pWapi = (tANI_U8 *) (&pWapiIe->AuthOui[ 1 ]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         *pWapi = (tANI_U16)1; //cUnicastCyphers
         pWapi+=2;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         *pWapi = (tANI_U8)1; //cUnicastCyphers
         pWapi+=1;
         *pWapi = (tANI_U8)0; //cUnicastCyphers
         pWapi+=1;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palCopyMemory( pMac->hHdd, pWapi, UnicastCypher, sizeof( UnicastCypher ) );
         pWapi += sizeof( UnicastCypher );
@@ -4792,7 +5036,11 @@ tANI_U8 csrRetrieveWpaIe( tHalHandle hHal, tCsrRoamProfile *pProfile, tSirBssDes
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, "  csrRetrieveWpaIe detect invalid WPA IE length (%d) \n", pProfile->nWPAReqIELength);
+=======
+                smsLog(pMac, LOGW, "  csrRetrieveWpaIe detect invalid WPA IE length (%d) ", pProfile->nWPAReqIELength);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, "  csrRetrieveWpaIe detect invalid WPA IE length (%d) ", pProfile->nWPAReqIELength);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4821,7 +5069,11 @@ tANI_U8 csrRetrieveRsnIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile *
         if ( !csrIsProfileRSN( pProfile ) ) break;
 #ifdef FEATURE_WLAN_LFR
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (csrRoamIsFastRoamEnabled(pMac))
+=======
+        if (csrRoamIsFastRoamEnabled(pMac, sessionId))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if (csrRoamIsFastRoamEnabled(pMac, sessionId))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4843,7 +5095,11 @@ tANI_U8 csrRetrieveRsnIe( tHalHandle hHal, tANI_U32 sessionId, tCsrRoamProfile *
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, "  csrRetrieveRsnIe detect invalid RSN IE length (%d) \n", pProfile->nRSNReqIELength);
+=======
+                smsLog(pMac, LOGW, "  csrRetrieveRsnIe detect invalid RSN IE length (%d) ", pProfile->nRSNReqIELength);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, "  csrRetrieveRsnIe detect invalid RSN IE length (%d) ", pProfile->nRSNReqIELength);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4882,7 +5138,11 @@ tANI_U8 csrRetrieveWapiIe( tHalHandle hHal, tANI_U32 sessionId,
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, "  csrRetrieveWapiIe detect invalid WAPI IE length (%d) \n", pProfile->nWAPIReqIELength);
+=======
+                smsLog(pMac, LOGW, "  csrRetrieveWapiIe detect invalid WAPI IE length (%d) ", pProfile->nWAPIReqIELength);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, "  csrRetrieveWapiIe detect invalid WAPI IE length (%d) ", pProfile->nWAPIReqIELength);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5016,6 +5276,10 @@ tAniEdType csrTranslateEncryptTypeToEdType( eCsrEncryptionType EncryptType )
         case eCSR_ENCRYPT_TYPE_WPI:
             edType = eSIR_ED_WPI;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            break ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             break ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6158,10 +6422,13 @@ void csrReleaseProfile(tpAniSirGlobal pMac, tCsrRoamProfile *pProfile)
             pProfile->pAddIEAssoc = NULL;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         {
             palFreeMemory(pMac->hHdd, pProfile->pAddIEAssoc);
             pProfile->pAddIEAssoc = NULL;
         }
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -6172,7 +6439,10 @@ void csrReleaseProfile(tpAniSirGlobal pMac, tCsrRoamProfile *pProfile)
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palZeroMemory(pMac->hHdd, pProfile, sizeof(tCsrRoamProfile));
@@ -6321,11 +6591,17 @@ tSirBssType csrTranslateBsstypeToMacType(eCsrRoamBssType csrtype)
         ret = eSIR_BTAMP_STA_MODE;
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     case eCSR_BSS_TYPE_INFRA_AP:
         ret = eSIR_INFRA_AP_MODE;
         break;
 #endif
+=======
+    case eCSR_BSS_TYPE_INFRA_AP:
+        ret = eSIR_INFRA_AP_MODE;
+        break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     case eCSR_BSS_TYPE_INFRA_AP:
         ret = eSIR_INFRA_AP_MODE;
@@ -6345,11 +6621,15 @@ tSirBssType csrTranslateBsstypeToMacType(eCsrRoamBssType csrtype)
 //CSR never sets WNI_CFG_DOT11_MODE_ALL to the CFG
 //So PE should not see WNI_CFG_DOT11_MODE_ALL when it gets the CFG value
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCsrPhyMode phyMode, tANI_BOOLEAN fProprietary)
 #else
 eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(eCsrPhyMode phyMode, tANI_BOOLEAN fProprietary)
 #endif
+=======
+eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCsrPhyMode phyMode, tANI_BOOLEAN fProprietary)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCsrPhyMode phyMode, tANI_BOOLEAN fProprietary)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6369,11 +6649,17 @@ eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCs
     case eCSR_DOT11_MODE_11g:
     case eCSR_DOT11_MODE_11g_ONLY:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         if(pProfile && (CSR_IS_INFRA_AP(pProfile)) && (phyMode == eCSR_DOT11_MODE_11g_ONLY))
             cfgDot11Mode = eCSR_CFG_DOT11_MODE_11G_ONLY;
         else
 #endif
+=======
+        if(pProfile && (CSR_IS_INFRA_AP(pProfile)) && (phyMode == eCSR_DOT11_MODE_11g_ONLY))
+            cfgDot11Mode = eCSR_CFG_DOT11_MODE_11G_ONLY;
+        else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if(pProfile && (CSR_IS_INFRA_AP(pProfile)) && (phyMode == eCSR_DOT11_MODE_11g_ONLY))
             cfgDot11Mode = eCSR_CFG_DOT11_MODE_11G_ONLY;
@@ -6393,11 +6679,17 @@ eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCs
         break;
     case eCSR_DOT11_MODE_11n_ONLY:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
        if(pProfile && CSR_IS_INFRA_AP(pProfile))
            cfgDot11Mode = eCSR_CFG_DOT11_MODE_11N_ONLY;
        else
 #endif
+=======
+       if(pProfile && CSR_IS_INFRA_AP(pProfile))
+           cfgDot11Mode = eCSR_CFG_DOT11_MODE_11N_ONLY;
+       else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        if(pProfile && CSR_IS_INFRA_AP(pProfile))
            cfgDot11Mode = eCSR_CFG_DOT11_MODE_11N_ONLY;
@@ -6418,6 +6710,7 @@ eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCs
 #ifdef WLAN_FEATURE_11AC
     case eCSR_DOT11_MODE_11ac:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if (!WDA_getFwWlanFeatCaps(DOT11AC))
 	{
 		cfgDot11Mode = eCSR_CFG_DOT11_MODE_11N;
@@ -6427,6 +6720,8 @@ eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCs
 		cfgDot11Mode = eCSR_CFG_DOT11_MODE_11AC;
 	}
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (IS_FEATURE_SUPPORTED_BY_FW(DOT11AC))
         {
             cfgDot11Mode = eCSR_CFG_DOT11_MODE_11AC;
@@ -6435,6 +6730,9 @@ eCsrCfgDot11Mode csrGetCfgDot11ModeFromCsrPhyMode(tCsrRoamProfile *pProfile, eCs
         {
             cfgDot11Mode = eCSR_CFG_DOT11_MODE_11AC;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     case eCSR_DOT11_MODE_11ac_ONLY:
@@ -6509,7 +6807,11 @@ eHalStatus csrGetRegulatoryDomainForCountry(tpAniSirGlobal pMac, tANI_U8 *pCount
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("  doesn't match country %c%c\n"), pCountry[0], pCountry[1]);
+=======
+            smsLog(pMac, LOGW, FL("  doesn't match country %c%c"), pCountry[0], pCountry[1]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("  doesn't match country %c%c"), pCountry[0], pCountry[1]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6541,7 +6843,11 @@ tANI_BOOLEAN csrMatchCountryCode( tpAniSirGlobal pMac, tANI_U8 *pCountry, tDot11
         if( !pIes )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("  No IEs\n"));
+=======
+            smsLog(pMac, LOGE, FL("  No IEs"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("  No IEs"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6557,15 +6863,21 @@ tANI_BOOLEAN csrMatchCountryCode( tpAniSirGlobal pMac, tANI_U8 *pCountry, tDot11
                 if( !HAL_STATUS_SUCCESS( status ) )
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     fRet = eANI_BOOLEAN_FALSE;
                     break;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      status = csrGetRegulatoryDomainForCountry( pMac, pMac->scan.countryCode11d,(v_REGDOMAIN_t *) &domainId );
                      if( !HAL_STATUS_SUCCESS( status ) )
                      {
                            fRet = eANI_BOOLEAN_FALSE;
                            break;
                      }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
@@ -6846,7 +7158,11 @@ eHalStatus csrScanGetBaseChannels( tpAniSirGlobal pMac, tCsrChannelInfo * pChann
        if( !HAL_STATUS_SUCCESS( status ) )
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
           smsLog( pMac, LOGE, FL("csrScanGetBaseChannels: fail to allocate memory\n") );
+=======
+          smsLog( pMac, LOGE, FL("csrScanGetBaseChannels: fail to allocate memory") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           smsLog( pMac, LOGE, FL("csrScanGetBaseChannels: fail to allocate memory") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6870,7 +7186,10 @@ tANI_BOOLEAN csrIsSetKeyAllowed(tpAniSirGlobal pMac, tANI_U32 sessionId)
 {
     tANI_BOOLEAN fRet = eANI_BOOLEAN_TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrRoamSession *pSession;
@@ -6885,7 +7204,11 @@ tANI_BOOLEAN csrIsSetKeyAllowed(tpAniSirGlobal pMac, tANI_U32 sessionId)
     * state is.
     */
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG2, FL(" is not what it intends to. Must be revisit or removed\n") );
+=======
+    smsLog( pMac, LOG2, FL(" is not what it intends to. Must be revisit or removed") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG2, FL(" is not what it intends to. Must be revisit or removed") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6898,9 +7221,12 @@ tANI_BOOLEAN csrIsSetKeyAllowed(tpAniSirGlobal pMac, tANI_U32 sessionId)
         fRet = eANI_BOOLEAN_FALSE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
     fRet = !( csrIsConnStateDisconnected( pMac, sessionId ) );
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -6930,6 +7256,12 @@ tANI_U16 sme_ChnToFreq(tANI_U8 chanNum)
  * disconnect and auto connect back and enter BMPS this giving the same effect as resuming BMPS
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ 
+//Remove this code once SLM_Sessionization is supported 
+//BMPS_WORKAROUND_NOT_NEEDED
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  
 //Remove this code once SLM_Sessionization is supported 
@@ -6951,15 +7283,21 @@ void csrDisconnectAllActiveSessions(tpAniSirGlobal pMac)
 
 #ifdef FEATURE_WLAN_LFR
 <<<<<<< HEAD
+<<<<<<< HEAD
 tANI_BOOLEAN csrIsChannelPresentInList( 
         tANI_U8 *pChannelList,
         int  numChannels,
         tANI_U8   channel 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrIsChannelPresentInList(
         tANI_U8 *pChannelList,
         int  numChannels,
         tANI_U8   channel
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         )
 {
@@ -6967,19 +7305,29 @@ tANI_BOOLEAN csrIsChannelPresentInList(
 
     // Check for NULL pointer
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!pChannelList) return FALSE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (!pChannelList || (numChannels == 0))
     {
        return FALSE;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Look for the channel in the list
     for (i = 0; i < numChannels; i++)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (pChannelList[i] == channel) 
+=======
+        if (pChannelList[i] == channel)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if (pChannelList[i] == channel)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6990,15 +7338,21 @@ tANI_BOOLEAN csrIsChannelPresentInList(
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 VOS_STATUS csrAddToChannelListFront( 
         tANI_U8 *pChannelList,
         int  numChannels,
         tANI_U8   channel 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS csrAddToChannelListFront(
         tANI_U8 *pChannelList,
         int  numChannels,
         tANI_U8   channel
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         )
 {
@@ -7011,23 +7365,32 @@ VOS_STATUS csrAddToChannelListFront(
     for (i = numChannels; i > 0; i--)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pChannelList[i] = pChannelList[i-1]; 
     }
 
     // Now add the NEW channel...at the front
     pChannelList[0] = channel; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pChannelList[i] = pChannelList[i-1];
     }
 
     // Now add the NEW channel...at the front
     pChannelList[0] = channel;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return eHAL_STATUS_SUCCESS;
 }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

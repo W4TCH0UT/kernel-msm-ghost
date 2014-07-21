@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -60,7 +69,11 @@
  
 #include "palTypes.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -71,10 +84,13 @@
 #include "limApi.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halCommonApi.h"
 #include "halDataStruct.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -95,6 +111,7 @@
 const tANI_U8 P2pOui[] = {0x50, 0x6F, 0x9A, 0x9};
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 
 static void
@@ -102,6 +119,9 @@ specialBeaconProcessing(tpAniSirGlobal pMac, tANI_U32 beaconSize);
 #endif
 
 #if defined(WLAN_SOFTAP_FEATURE) && defined(WLAN_FEATURE_P2P)
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -124,7 +144,10 @@ tSirRetStatus schGetP2pIeOffset(tANI_U8 *pExtraIe, tANI_U32 extraIeLen, tANI_U16
             if(palEqualMemory(NULL, (void *)(pExtraIe+2), &P2pOui, sizeof(P2pOui)))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 (*pP2pIeOffset)++;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 status = eSIR_SUCCESS;
@@ -139,7 +162,10 @@ tSirRetStatus schGetP2pIeOffset(tANI_U8 *pExtraIe, tANI_U32 extraIeLen, tANI_U16
      return status;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -176,7 +202,10 @@ tSirRetStatus schAppendAddnIE(tpAniSirGlobal pMac, tpPESession psessionEntry,
                           == eSIR_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 tANI_U8* pP2pIe = limGetP2pIEPtr(pMac, &addIE[0], len);
@@ -203,7 +232,10 @@ tSirRetStatus schAppendAddnIE(tpAniSirGlobal pMac, tpPESession psessionEntry,
                     }
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 vos_mem_copy(pFrame, &addIE[0], len);
@@ -243,9 +275,13 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     tANI_U32        i, nStatus, nBytes;
     tANI_U32        wpsApEnable=0, tmp;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tDot11fIEWscProbeRes      *pWscProbeRes;
 #ifdef WLAN_FEATURE_P2P
+=======
+    tDot11fIEWscProbeRes      *pWscProbeRes;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tDot11fIEWscProbeRes      *pWscProbeRes;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -255,8 +291,11 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     tANI_U16 p2pIeOffset = 0;
     tSirRetStatus status = eSIR_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -264,7 +303,11 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     if(status != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog(pMac, LOGE, FL("Failed to allocate memory\n") );
+=======
+        schLog(pMac, LOGE, FL("Failed to allocate memory") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schLog(pMac, LOGE, FL("Failed to allocate memory") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -275,7 +318,11 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     if(status != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog(pMac, LOGE, FL("Failed to allocate memory\n") );
+=======
+        schLog(pMac, LOGE, FL("Failed to allocate memory") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schLog(pMac, LOGE, FL("Failed to allocate memory") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -283,6 +330,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
         return eSIR_FAILURE;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     status = palAllocateMemory(pMac->hHdd, (void **)&pWscProbeRes, sizeof(tDot11fIEWscProbeRes));
@@ -290,19 +338,29 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     {
         schLog(pMac, LOGE, FL("Failed to allocate memory\n") );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = palAllocateMemory(pMac->hHdd, (void **)&pWscProbeRes, sizeof(tDot11fIEWscProbeRes));
     if(status != eSIR_SUCCESS)
     {
         schLog(pMac, LOGE, FL("Failed to allocate memory") );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palFreeMemory(pMac->hHdd, pBcn1);
         palFreeMemory(pMac->hHdd, pBcn2);
         return eSIR_FAILURE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
     PELOG1(schLog(pMac, LOG1, FL("Setting fixed beacon fields\n"));)
+=======
+
+    PELOG1(schLog(pMac, LOG1, FL("Setting fixed beacon fields"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     PELOG1(schLog(pMac, LOG1, FL("Setting fixed beacon fields"));)
@@ -361,7 +419,10 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     ptr    = pMac->sch.schObject.gSchBeaconFrameBegin + offset;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((psessionEntry->limSystemRole == eLIM_AP_ROLE) 
@@ -378,7 +439,10 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
                                                 &psessionEntry->probeRespFrame);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -389,6 +453,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     {
       schLog( pMac, LOGE, FL("Failed to packed a tDot11fBeacon1 (0x%0"
 <<<<<<< HEAD
+<<<<<<< HEAD
                              "8x.).\n"), nStatus );
       palFreeMemory(pMac->hHdd, pBcn1);
       palFreeMemory(pMac->hHdd, pBcn2);
@@ -396,10 +461,15 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
       palFreeMemory(pMac->hHdd, pWscProbeRes);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              "8x.)."), nStatus );
       palFreeMemory(pMac->hHdd, pBcn1);
       palFreeMemory(pMac->hHdd, pBcn2);
       palFreeMemory(pMac->hHdd, pWscProbeRes);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eSIR_FAILURE;
     }
@@ -407,7 +477,11 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     {
       schLog( pMac, LOGE, FL("There were warnings while packing a tDo"
 <<<<<<< HEAD
+<<<<<<< HEAD
                              "t11fBeacon1 (0x%08x.).\n"), nStatus );
+=======
+                             "t11fBeacon1 (0x%08x.)."), nStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              "t11fBeacon1 (0x%08x.)."), nStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -416,7 +490,11 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     palZeroMemory( pMac->hHdd, ( tANI_U8*) pBcn2, sizeof( tDot11fBeacon2 ) );
     pMac->sch.schObject.gSchBeaconOffsetBegin = offset + ( tANI_U16 )nBytes;
 <<<<<<< HEAD
+<<<<<<< HEAD
     schLog( pMac, LOG1, FL("Initialized beacon begin, offset %d\n"), offset );
+=======
+    schLog( pMac, LOG1, FL("Initialized beacon begin, offset %d"), offset );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     schLog( pMac, LOG1, FL("Initialized beacon begin, offset %d"), offset );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -438,6 +516,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
       PopulateDot11fTPCReport( pMac, &pBcn2->TPCReport, psessionEntry);
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
     if( psessionEntry->lim11hEnable && (eLIM_QUIET_RUNNING == psessionEntry->gLimSpecMgmt.quietState))
@@ -462,6 +541,8 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (psessionEntry->dot11mode != WNI_CFG_DOT11_MODE_11B)
         PopulateDot11fERPInfo( pMac, &pBcn2->ERPInfo, psessionEntry );
@@ -469,6 +550,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     if(psessionEntry->htCapability)
     {
         PopulateDot11fHTCaps( pMac,psessionEntry, &pBcn2->HTCaps );
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         PopulateDot11fHTInfo( pMac, &pBcn2->HTInfo, psessionEntry );
@@ -478,12 +560,19 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
 =======
         PopulateDot11fHTInfo( pMac, &pBcn2->HTInfo, psessionEntry );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+        PopulateDot11fHTInfo( pMac, &pBcn2->HTInfo, psessionEntry );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #ifdef WLAN_FEATURE_11AC
     if(psessionEntry->vhtCapability)
     {        
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL("Populate VHT IEs in Beacon\n"));
+=======
+        limLog( pMac, LOGW, FL("Populate VHT IEs in Beacon"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGW, FL("Populate VHT IEs in Beacon"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -492,6 +581,12 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
         // we do not support multi users yet
         //PopulateDot11fVHTExtBssLoad( pMac, &bcn2.VHTExtBssLoad);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        PopulateDot11fExtCap( pMac, &pBcn2->ExtCap);
+        if(psessionEntry->gLimOperatingMode.present)
+            PopulateDot11fOperatingMode( pMac, &pBcn2->OperatingMode, psessionEntry );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PopulateDot11fExtCap( pMac, &pBcn2->ExtCap);
         if(psessionEntry->gLimOperatingMode.present)
@@ -516,7 +611,10 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
         PopulateDot11fWMM( pMac, &pBcn2->WMMInfoAp, &pBcn2->WMMParams, &pBcn2->WMMCaps, psessionEntry);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -528,6 +626,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     }
     else
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
     if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
@@ -557,6 +656,8 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
             limLog(pMac, LOGP,"Failed to cfg get id %d", WNI_CFG_WPS_ENABLE );
 
@@ -580,6 +681,9 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
         }
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((psessionEntry->limSystemRole == eLIM_AP_ROLE) 
         && (psessionEntry->proxyProbeRspEn))
@@ -612,7 +716,10 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
 
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -623,6 +730,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     {
       schLog( pMac, LOGE, FL("Failed to packed a tDot11fBeacon2 (0x%0"
 <<<<<<< HEAD
+<<<<<<< HEAD
                              "8x.).\n"), nStatus );
       palFreeMemory(pMac->hHdd, pBcn1);
       palFreeMemory(pMac->hHdd, pBcn2);
@@ -630,16 +738,22 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
       palFreeMemory(pMac->hHdd, pWscProbeRes);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              "8x.)."), nStatus );
       palFreeMemory(pMac->hHdd, pBcn1);
       palFreeMemory(pMac->hHdd, pBcn2);
       palFreeMemory(pMac->hHdd, pWscProbeRes);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eSIR_FAILURE;
     }
     else if ( DOT11F_WARNED( nStatus ) )
     {
       schLog( pMac, LOGE, FL("There were warnings while packing a tDo"
+<<<<<<< HEAD
 <<<<<<< HEAD
                              "t11fBeacon2 (0x%08x.).\n"), nStatus );
     }
@@ -649,11 +763,16 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     extraIeOffset = nBytes;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              "t11fBeacon2 (0x%08x.)."), nStatus );
     }
 
     pExtraIe = pMac->sch.schObject.gSchBeaconFrameEnd + nBytes;
     extraIeOffset = nBytes;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     //TODO: Append additional IE here.
@@ -664,7 +783,10 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     pMac->sch.schObject.gSchBeaconOffsetEnd = ( tANI_U16 )nBytes;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(WLAN_SOFTAP_FEATURE) && defined(WLAN_FEATURE_P2P)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     extraIeLen = nBytes - extraIeOffset;
@@ -684,9 +806,14 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
        pMac->sch.schObject.p2pIeOffset = 0;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
     schLog( pMac, LOG1, FL("Initialized beacon end, offset %d\n"),
+=======
+
+    schLog( pMac, LOG1, FL("Initialized beacon end, offset %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     schLog( pMac, LOG1, FL("Initialized beacon end, offset %d"),
@@ -697,6 +824,7 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
     palFreeMemory(pMac->hHdd, pBcn1);
     palFreeMemory(pMac->hHdd, pBcn2);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     palFreeMemory(pMac->hHdd, pWscProbeRes);
 #endif
@@ -704,6 +832,12 @@ tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEn
 }
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+    palFreeMemory(pMac->hHdd, pWscProbeRes);
+    return eSIR_SUCCESS;
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     palFreeMemory(pMac->hHdd, pWscProbeRes);
     return eSIR_SUCCESS;
@@ -915,6 +1049,7 @@ void SetProbeRspIeBitmap(tANI_U32* IeBitmap,tANI_U32 pos)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef ANI_PRODUCT_TYPE_AP
@@ -970,6 +1105,9 @@ __schUpdateCfpParam(tpAniSirGlobal pMac, tANI_U8 *ptr, tANI_U32 *pbeaconSize)
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // --------------------------------------------------------------------
 /**
@@ -1015,7 +1153,11 @@ void writeBeaconToMemory(tpAniSirGlobal pMac, tANI_U16 size, tANI_U16 length, tp
 
     // write size bytes from gSchBeaconFrameBegin
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG2(schLog(pMac, LOG2, FL("Beacon size - %d bytes\n"), size);)
+=======
+    PELOG2(schLog(pMac, LOG2, FL("Beacon size - %d bytes"), size);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG2(schLog(pMac, LOG2, FL("Beacon size - %d bytes"), size);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1037,7 +1179,11 @@ void writeBeaconToMemory(tpAniSirGlobal pMac, tANI_U16 size, tANI_U16 length, tp
         size = (size + 3) & (~3);
         if( eSIR_SUCCESS != schSendBeaconReq( pMac, pMac->sch.schObject.gSchBeaconFrameBegin, size , psessionEntry))
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(schLog(pMac, LOGE, FL("schSendBeaconReq() returned an error (zsize %d)\n"), size);)
+=======
+            PELOGE(schLog(pMac, LOGE, FL("schSendBeaconReq() returned an error (zsize %d)"), size);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(schLog(pMac, LOGE, FL("schSendBeaconReq() returned an error (zsize %d)"), size);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1075,7 +1221,11 @@ schProcessPreBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     if((psessionEntry = peFindSessionByBssid(pMac,pMsg->bssId, &sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOGE, FL("session lookup fails\n"));)
+=======
+        PELOGE(schLog(pMac, LOGE, FL("session lookup fails"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOGE, FL("session lookup fails"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1088,7 +1238,11 @@ schProcessPreBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     if (psessionEntry->limSmeState  != eLIM_SME_NORMAL_STATE)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOG1, FL("PreBeaconInd received in invalid state: %d\n"), psessionEntry->limSmeState);)
+=======
+        PELOGE(schLog(pMac, LOG1, FL("PreBeaconInd received in invalid state: %d"), psessionEntry->limSmeState);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOG1, FL("PreBeaconInd received in invalid state: %d"), psessionEntry->limSmeState);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1105,10 +1259,16 @@ schProcessPreBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
             writeBeaconToMemory(pMac, (tANI_U16) beaconSize, (tANI_U16)beaconSize, psessionEntry);
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOGE, FL("can not send beacon for PEER session entry\n"));)
         break;
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        PELOGE(schLog(pMac, LOGE, FL("can not send beacon for PEER session entry"));)
+        break;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOGE, FL("can not send beacon for PEER session entry"));)
         break;
@@ -1123,6 +1283,7 @@ schProcessPreBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
          writeBeaconToMemory(pMac, (tANI_U16) beaconSize, (tANI_U16)beaconSize, psessionEntry);
      }
      else
+<<<<<<< HEAD
 <<<<<<< HEAD
          PELOGE(schLog(pMac, LOGE, FL("can not send beacon for PEER session entry\n"));)
          }
@@ -1155,10 +1316,15 @@ schProcessPreBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     break;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          PELOGE(schLog(pMac, LOGE, FL("can not send beacon for PEER session entry"));)
          }
      break;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     default:
@@ -1170,6 +1336,7 @@ end:
     palFreeMemory(pMac->hHdd, (void*)pMsg);
 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /**-------------------------------------------------------------
@@ -1286,5 +1453,7 @@ specialBeaconProcessing( tpAniSirGlobal pMac, tANI_U32 beaconSize)
 #endif
 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

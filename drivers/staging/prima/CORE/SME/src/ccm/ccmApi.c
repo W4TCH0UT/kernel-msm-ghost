@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -46,9 +52,12 @@
 #include "wniApi.h"     /* WNI_CFG_SET_REQ */
 #include "sirParams.h"  /* tSirMbMsg */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halHddApis.h" /* palAllocateMemory */
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "smsDebug.h"   /* smsLog */
@@ -151,7 +160,11 @@ static eHalStatus sendCfg(tpAniSirGlobal pMac, tHddHandle hHdd, tCfgReq *req, tA
         if (status != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, FL("palSendMBMessage() failed\n"));
+=======
+            smsLog( pMac, LOGW, FL("palSendMBMessage() failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, FL("palSendMBMessage() failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -162,7 +175,11 @@ static eHalStatus sendCfg(tpAniSirGlobal pMac, tHddHandle hHdd, tCfgReq *req, tA
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGW, FL("palAllocateMemory(len=%d)\n"), msgLen );
+=======
+        smsLog( pMac, LOGW, FL("palAllocateMemory(len=%d)"), msgLen );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGW, FL("palAllocateMemory(len=%d)"), msgLen );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -229,7 +246,11 @@ static void purgeReqQ(tHalHandle hHal)
     {
         /* loop thru reqQ and invoke callback to return failure */
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("deleting cfgReq, cfgid=%d\n"), (int)req->cfgId);
+=======
+        smsLog(pMac, LOGW, FL("deleting cfgReq, cfgid=%d"), (int)req->cfgId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("deleting cfgReq, cfgid=%d"), (int)req->cfgId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -263,7 +284,11 @@ static void sendQueuedReqToMacSw(tpAniSirGlobal pMac, tHddHandle hHdd)
             if (sendCfg(pMac, hHdd, req, eANI_BOOLEAN_TRUE) != eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, FL("sendCfg() failed\n"));
+=======
+                smsLog( pMac, LOGW, FL("sendCfg() failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, FL("sendCfg() failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -277,7 +302,11 @@ static void sendQueuedReqToMacSw(tpAniSirGlobal pMac, tHddHandle hHdd)
 
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, FL("ccmComplete(%p)\n"), req->done);
+=======
+                smsLog(pMac, LOGW, FL("ccmComplete(%p)"), req->done);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, FL("ccmComplete(%p)"), req->done);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -290,7 +319,11 @@ static void sendQueuedReqToMacSw(tpAniSirGlobal pMac, tHddHandle hHdd)
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGW, FL("reqState is not eCCM_REQ_QUEUED, is %d\n"), req->state );
+=======
+            smsLog( pMac, LOGW, FL("reqState is not eCCM_REQ_QUEUED, is %d"), req->state );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGW, FL("reqState is not eCCM_REQ_QUEUED, is %d"), req->state );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -354,7 +387,11 @@ static eHalStatus cfgSetSub(tpAniSirGlobal pMac, tHddHandle hHdd, tANI_U32 cfgId
             if (status != eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, FL("sendCfg() failed\n"));
+=======
+                smsLog( pMac, LOGW, FL("sendCfg() failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog( pMac, LOGW, FL("sendCfg() failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -413,7 +450,11 @@ static eHalStatus cfgSet(tHalHandle hHal, tANI_U32 cfgId, tANI_U32 type, tANI_S3
         if (status != eHAL_STATUS_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGE, FL("mutex alloc failed\n"));
+=======
+            smsLog(pMac, LOGE, FL("mutex alloc failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGE, FL("mutex alloc failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -526,7 +567,11 @@ void ccmCfgCnfMsgHandler(tHalHandle hHal, void *m)
             /* Wake up the sleeping process */
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("ccmComplete(%p)\n"), pMac->ccm.replay.done);
+=======
+            smsLog(pMac, LOGW, FL("ccmComplete(%p)"), pMac->ccm.replay.done);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("ccmComplete(%p)"), pMac->ccm.replay.done);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -558,7 +603,11 @@ void ccmCfgCnfMsgHandler(tHalHandle hHal, void *m)
                 {
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
                     smsLog(pMac, LOGW, FL("need restart/reload, cfgId=%d\n"), req->cfgId) ;
+=======
+                    smsLog(pMac, LOGW, FL("need restart/reload, cfgId=%d"), req->cfgId) ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     smsLog(pMac, LOGW, FL("need restart/reload, cfgId=%d"), req->cfgId) ;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -579,7 +628,11 @@ void ccmCfgCnfMsgHandler(tHalHandle hHal, void *m)
                 /* Wake up the sleeping process */
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, FL("cfgId=%ld, calling ccmComplete(%p)\n"), cfgId, req->done);
+=======
+                smsLog(pMac, LOGW, FL("cfgId=%ld, calling ccmComplete(%p)"), cfgId, req->done);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, FL("cfgId=%ld, calling ccmComplete(%p)"), cfgId, req->done);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -590,12 +643,15 @@ void ccmCfgCnfMsgHandler(tHalHandle hHal, void *m)
                 if (req->toBeSaved && (CCM_IS_RESULT_SUCCESS(result)))
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if ((old = pMac->ccm.comp[cfgId]) != NULL)
                     {
                         freeCfgReq(hHdd, old) ;
                     }
                     pMac->ccm.comp[cfgId] = req ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if (cfgId < CFG_PARAM_MAX_NUM)
                     {
                         if ((old = pMac->ccm.comp[cfgId]) != NULL)
@@ -604,6 +660,9 @@ void ccmCfgCnfMsgHandler(tHalHandle hHal, void *m)
                         }
                         pMac->ccm.comp[cfgId] = req ;
                     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
                 else
@@ -615,17 +674,23 @@ void ccmCfgCnfMsgHandler(tHalHandle hHal, void *m)
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog( pMac, LOGW, FL("can not match RSP with REQ, rspcfgid=%d result=%d reqcfgid=%d reqstate=%d\n"),
                         (int)cfgId, (int)result, req->cfgId, req->state);
 
 #ifdef CCM_DEBUG
                 smsLog(pMac, LOGW, FL("ccmComplete(%p)\n"), req->done);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog( pMac, LOGW, FL("can not match RSP with REQ, rspcfgid=%d result=%d reqcfgid=%d reqstate=%d"),
                         (int)cfgId, (int)result, req->cfgId, req->state);
 
 #ifdef CCM_DEBUG
                 smsLog(pMac, LOGW, FL("ccmComplete(%p)"), req->done);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
             }
@@ -739,10 +804,13 @@ eHalStatus ccmCfgGetStr(tHalHandle hHal, tANI_U32 cfgId, tANI_U8 *pBuf, tANI_U32
 {
     tpAniSirGlobal pMac = PMAC_STRUCT( hHal );
 <<<<<<< HEAD
+<<<<<<< HEAD
     tHddHandle hHdd = halHandle2HddHandle(hHal);
     eHalStatus status = eHAL_STATUS_SUCCESS ;
     tCfgReq *req = pMac->ccm.comp[cfgId] ;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tHddHandle hHdd;
     eHalStatus status = eHAL_STATUS_SUCCESS ;
     tCfgReq *req;
@@ -752,6 +820,9 @@ eHalStatus ccmCfgGetStr(tHalHandle hHal, tANI_U32 cfgId, tANI_U8 *pBuf, tANI_U32
 
     hHdd = halHandle2HddHandle(hHal);
     req = pMac->ccm.comp[cfgId] ;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (req && req->state == eCCM_REQ_DONE && (tANI_U32)req->length <= *pLength)
@@ -807,7 +878,11 @@ static eHalStatus cfgUpdate(tpAniSirGlobal pMac, tHddHandle hHdd, tCcmCfgSetCall
             pMac->ccm.replay.nr_param += 1 ;
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog(pMac, LOGW, FL("cfgId=%d\n"), req->cfgId);
+=======
+            smsLog(pMac, LOGW, FL("cfgId=%d"), req->cfgId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog(pMac, LOGW, FL("cfgId=%d"), req->cfgId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -856,7 +931,11 @@ static eHalStatus cfgUpdate(tpAniSirGlobal pMac, tHddHandle hHdd, tCcmCfgSetCall
     if (status != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("palSendMBMessage() failed. status=%d\n"), status);
+=======
+        smsLog(pMac, LOGW, FL("palSendMBMessage() failed. status=%d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("palSendMBMessage() failed. status=%d"), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -894,7 +973,11 @@ eHalStatus ccmCfgUpdate(tHalHandle hHal, tCcmCfgSetCallback callback)
             if (status != eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGE, FL("mutex alloc failed\n"));
+=======
+                smsLog(pMac, LOGE, FL("mutex alloc failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGE, FL("mutex alloc failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -914,7 +997,11 @@ eHalStatus ccmCfgUpdate(tHalHandle hHal, tCcmCfgSetCallback callback)
     {
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("ccmWaitForCompletion(%p)\n"), pMac->ccm.replay.done);
+=======
+        smsLog(pMac, LOGW, FL("ccmWaitForCompletion(%p)"), pMac->ccm.replay.done);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("ccmWaitForCompletion(%p)"), pMac->ccm.replay.done);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -923,7 +1010,11 @@ eHalStatus ccmCfgUpdate(tHalHandle hHal, tCcmCfgSetCallback callback)
 
 #ifdef CCM_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog(pMac, LOGW, FL("free(%p)\n"), pMac->ccm.replay.done);
+=======
+        smsLog(pMac, LOGW, FL("free(%p)"), pMac->ccm.replay.done);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog(pMac, LOGW, FL("free(%p)"), pMac->ccm.replay.done);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -934,6 +1025,7 @@ eHalStatus ccmCfgUpdate(tHalHandle hHal, tCcmCfgSetCallback callback)
     return status ;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if 0
 ///////////////////////////////////////////////////////////////////
@@ -1244,5 +1336,7 @@ void ccm_test(void)
     smsLog(pMac, LOGW, "ccmCfgUpdate(): status=%d\n", status);
 }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

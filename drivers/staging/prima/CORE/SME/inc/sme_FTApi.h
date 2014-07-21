@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,11 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 
@@ -58,9 +69,15 @@
   \brief macros and prototype for SME APIs
   
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
    
    Qualcomm Confidential and Proprietary.
+=======
+   Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
+   
+   Qualcomm Technologies Confidential and Proprietary.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
    
@@ -97,16 +114,22 @@ typedef struct sFTSMEContext
     // Saved pFTPreAuthRsp
     tpSirFTPreAuthRsp psavedFTPreAuthRsp;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // Time to trigger reassoc once pre-auth is successful
     tPalTimerHandle   preAuthReassocIntvlTimer;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_BOOL_t          setFTPreAuthState;
     v_BOOL_t          setFTPTKState;
 
     // Time to trigger reassoc once pre-auth is successful
     tPalTimerHandle   preAuthReassocIntvlTimer;
     tCsrRoamSetKey    *pCsrFTKeyInfo;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 } tftSMEContext, *tpftSMEContext;
@@ -117,7 +140,11 @@ typedef struct sFTSMEContext
 void sme_FTOpen(tHalHandle hHal);
 void sme_FTClose(tHalHandle hHal);
 <<<<<<< HEAD
+<<<<<<< HEAD
 void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, tANI_U8 *ft_ies, tANI_U16 ft_ies_length );
+=======
+void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies, tANI_U16 ft_ies_length );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies, tANI_U16 ft_ies_length );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -127,11 +154,17 @@ void sme_GetFTPreAuthResponse( tHalHandle hHal, tANI_U8 *ft_ies, tANI_U32 ft_ies
 void sme_GetRICIEs( tHalHandle hHal, tANI_U8 *ric_ies, tANI_U32 ric_ies_ip_len, tANI_U32 *ric_ies_length );
 void sme_PreauthReassocIntvlTimerCallback(void *context);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void sme_SetFTPreAuthState(tHalHandle hHal, v_BOOL_t state);
 v_BOOL_t sme_GetFTPreAuthState(tHalHandle hHal);
 v_BOOL_t sme_GetFTPTKState(tHalHandle hHal);
 void sme_SetFTPTKState(tHalHandle hHal, v_BOOL_t state);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 

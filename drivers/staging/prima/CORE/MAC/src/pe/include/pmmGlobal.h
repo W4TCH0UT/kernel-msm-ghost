@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -96,7 +102,11 @@ typedef enum ePmmState
     ePMM_STATE_UAPSD_WT_SLEEP_RSP,
     ePMM_STATE_UAPSD_SLEEP,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ePMM_STATE_UAPSD_WT_WAKEUP_RSP, 
+=======
+    ePMM_STATE_UAPSD_WT_WAKEUP_RSP,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     ePMM_STATE_UAPSD_WT_WAKEUP_RSP,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -112,7 +122,11 @@ typedef struct sPmmStaInfo
 {
     tANI_U16 assocId;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U32 staTxAckCnt;   
+=======
+    tANI_U32 staTxAckCnt;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32 staTxAckCnt;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -198,7 +212,11 @@ typedef struct sAniSirPmm
     tANI_U8  gPmmPsPollUpdate:1; // set when any sta state is update due to PS-Poll
     tANI_U8  rsvd: 7;
 <<<<<<< HEAD
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -216,6 +234,7 @@ typedef struct sAniSirPmm
     tANI_U8 inMissedBeaconScenario;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
     tPmmStaState *gpPmmStaState; // Used for HCF - PS Poll 
     tANI_U8 *gpPmmPSState;          // To Store the PS States in AP
@@ -223,6 +242,9 @@ typedef struct sAniSirPmm
 #ifdef WLAN_SOFTAP_FEATURE
     tPmmTim gPmmTim;
 #endif
+=======
+    tPmmTim gPmmTim;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tPmmTim gPmmTim;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

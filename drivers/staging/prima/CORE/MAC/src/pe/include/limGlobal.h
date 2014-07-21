@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -67,16 +76,22 @@
 #include "sirCommon.h"
 #include "sirDebug.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
 #ifdef WLAN_SOFTAP_FEATURE
 #include "csrApi.h"
 #include "sapApi.h"
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wniCfgSta.h"
 #include "csrApi.h"
 #include "sapApi.h"
 #ifdef FEATURE_WLAN_TDLS
 #include "dot11f.h"
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -127,6 +142,7 @@ typedef enum eLimSystemRole
     eLIM_STA_ROLE,
     eLIM_BT_AMP_STA_ROLE,
 <<<<<<< HEAD
+<<<<<<< HEAD
     eLIM_BT_AMP_AP_ROLE
 #ifdef WLAN_FEATURE_P2P
     ,eLIM_P2P_DEVICE_ROLE
@@ -134,10 +150,15 @@ typedef enum eLimSystemRole
     ,eLIM_P2P_DEVICE_CLINET
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eLIM_BT_AMP_AP_ROLE,
     eLIM_P2P_DEVICE_ROLE,
     eLIM_P2P_DEVICE_GO,
     eLIM_P2P_DEVICE_CLIENT
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tLimSystemRole;
 
@@ -225,9 +246,13 @@ typedef enum eLimMlmStates
     eLIM_MLM_WT_FT_REASSOC_RSP_STATE,
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     eLIM_MLM_P2P_LISTEN_STATE,
 #endif
+=======
+    eLIM_MLM_P2P_LISTEN_STATE,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     eLIM_MLM_P2P_LISTEN_STATE,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -300,6 +325,7 @@ typedef enum eLimBAState
   eLIM_BA_STATE_WT_DEL_RSP //  We are waiting for Del response from HAL.
 } tLimBAState;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 typedef struct sLimMeasParams
@@ -381,6 +407,11 @@ typedef struct sLimAIDtbr
 
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // MLM Req/Cnf structure definitions
 typedef struct sLimMlmAuthReq
@@ -408,6 +439,11 @@ typedef struct sLimMlmScanReq
     tANI_U32           minChannelTime;
     tANI_U32           maxChannelTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tANI_U32           minChannelTimeBtc;
+    tANI_U32           maxChannelTimeBtc;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32           minChannelTimeBtc;
     tANI_U32           maxChannelTimeBtc;
@@ -418,10 +454,14 @@ typedef struct sLimMlmScanReq
     tANI_U8            numSsid;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     tANI_BOOLEAN   p2pSearch;
     tANI_BOOLEAN   skipDfsChnlInP2pSearch;
 #endif
+=======
+    tANI_BOOLEAN   p2pSearch;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_BOOLEAN   p2pSearch;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -460,15 +500,21 @@ struct tLimScanResultNode
 
 #ifndef OEM_DATA_REQ_SIZE 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define OEM_DATA_REQ_SIZE 70
 #endif
 #ifndef OEM_DATA_RSP_SIZE
 #define OEM_DATA_RSP_SIZE 968
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define OEM_DATA_REQ_SIZE 134
 #endif
 #ifndef OEM_DATA_RSP_SIZE
 #define OEM_DATA_RSP_SIZE 1968
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -594,6 +640,7 @@ typedef struct sCacheParams
 } tCacheParams, *tpCacheParams;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 #define LIM_PROT_STA_OVERLAP_CACHE_SIZE     10
 #define LIM_PROT_STA_CACHE_SIZE 256
@@ -606,6 +653,10 @@ typedef struct sCacheParams
 #define LIM_PROT_STA_CACHE_SIZE            5
 #endif
 #endif
+=======
+#define LIM_PROT_STA_OVERLAP_CACHE_SIZE    HAL_NUM_ASSOC_STA
+#define LIM_PROT_STA_CACHE_SIZE            HAL_NUM_ASSOC_STA
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define LIM_PROT_STA_OVERLAP_CACHE_SIZE    HAL_NUM_ASSOC_STA
 #define LIM_PROT_STA_CACHE_SIZE            HAL_NUM_ASSOC_STA
@@ -719,7 +770,10 @@ typedef struct sLimChannelSwitchInfo
 } tLimChannelSwitchInfo, *tpLimChannelSwitchInfo;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 typedef struct sLimOperatingModeInfo
 {
@@ -737,6 +791,9 @@ typedef struct sLimWiderBWChannelSwitch
     tANI_U8      newCenterChanFreq1;
 }tLimWiderBWChannelSwitchInfo, *tpLimWiderBWChannelSwitchInfo;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // Enums used when stopping the Tx.
 typedef enum eLimQuietTxMode
@@ -757,6 +814,7 @@ typedef enum eLimControlTx
 } tLimControlTx;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_AP_SDK
 typedef struct sLimScanDurationConvert
 {
@@ -766,6 +824,8 @@ typedef struct sLimScanDurationConvert
     tANI_U32 longChannelScanDuration_TU; /* Used by quietBSS duration.  Converted to TU once */
 } tLimScanDurationConvert, *tpLimScanDurationConvert;
 #endif /* ANI_AP_SDK */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -834,7 +894,10 @@ typedef struct sLimSpecMgmtInfo
     tANI_BOOLEAN       fRadarIntrConfigured; /* Whether radar interrupt has been configured */
 }tLimSpecMgmtInfo, *tpLimSpecMgmtInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
 typedef struct sLimDisResultList
@@ -890,5 +953,8 @@ typedef enum tdlsLinkMode
 } eLimTdlsLinkMode ;
 #endif  /* FEATURE_WLAN_TDLS */
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif

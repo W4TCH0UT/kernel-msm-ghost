@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -47,12 +53,18 @@
 #define __LIM_SESSION_UTILS_H
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
 * Copyright (c) 2012-2013 Qualcomm Atheros, Inc.
 * All Rights Reserved.
 * Qualcomm Atheros Confidential and Proprietary.
 */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**=========================================================================
@@ -92,6 +104,7 @@
 /*--------------------------------------------------------------------------
   
 <<<<<<< HEAD
+<<<<<<< HEAD
           \brief peGetVhtCapable() - Returns the Vht capable from a valid session.
  
           This function itrates the session Table and returns the VHT capable from first valid session
@@ -105,6 +118,8 @@
  --------------------------------------------------------------------------*/
    tANI_U8 peGetVhtCapable(tpAniSirGlobal pMac);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \brief peGetVhtCapable() - Returns the Vht capable from a valid session.
  
   This function iterates the session Table and returns the VHT capable from first valid session
@@ -117,6 +132,9 @@
 
  --------------------------------------------------------------------------*/
 tANI_U8 peGetVhtCapable(tpAniSirGlobal pMac);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -126,15 +144,21 @@ tANI_U8 peGetVhtCapable(tpAniSirGlobal pMac);
   This function is called to validate the Join Request for a BT-AMP station. If start BSS session is present
   this function returns TRUE else returns FALSE.
 <<<<<<< HEAD
+<<<<<<< HEAD
     
   \param pMac                   - pointer to global adapter context
   \return                           - return TRUE if start BSS session is present else return FALSE.
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \param pMac  - pointer to global adapter context
   \return      - return TRUE if start BSS session is present else return FALSE.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \sa
   --------------------------------------------------------------------------*/
@@ -261,7 +285,10 @@ limIsQuietBegin (tpAniSirGlobal pMac);
 tANI_U8
 limIsInMCC (tpAniSirGlobal pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------------
   \brief peGetCurrentSTAsCount() - Returns total stations associated on 
                                       all session.
@@ -289,6 +316,9 @@ limIsFastRoamEnabled(tpAniSirGlobal pMac, tANI_U8 sessionId);
 #endif
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //#if !defined( __LIM_SESSION_UTILS_H )
 

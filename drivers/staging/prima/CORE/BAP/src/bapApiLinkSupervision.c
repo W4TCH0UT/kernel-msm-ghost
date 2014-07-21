@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -155,7 +161,11 @@ WLANBAP_AcquireLSPacket( ptBtampContext pBtampCtx, vos_pkt_t **ppPacket, v_U16_t
        {
                 VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "%s: failed to reserve size = %d\n",__FUNCTION__, size );
+=======
+                 "%s: failed to reserve size = %d\n",__func__, size );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  "%s: failed to reserve size = %d\n",__func__, size );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -245,7 +255,11 @@ WLANBAP_InitLinkSupervision
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "Invalid BAP handle value in %s", __FUNCTION__);
+=======
+                     "Invalid BAP handle value in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "Invalid BAP handle value in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -275,7 +289,11 @@ WLANBAP_InitLinkSupervision
     {
          VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s:AcquireLSPacket failed\n",__FUNCTION__);
+=======
+                       "%s:AcquireLSPacket failed\n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s:AcquireLSPacket failed\n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -292,7 +310,11 @@ WLANBAP_InitLinkSupervision
     {
          VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s:AcquireLSPacket failed\n",__FUNCTION__);
+=======
+                       "%s:AcquireLSPacket failed\n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s:AcquireLSPacket failed\n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -306,7 +328,11 @@ WLANBAP_InitLinkSupervision
     {
          VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s:vos_pkt_get_length error",__FUNCTION__);
+=======
+                       "%s:vos_pkt_get_length error",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s:vos_pkt_get_length error",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -324,7 +350,11 @@ WLANBAP_InitLinkSupervision
     {
          VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s:No LS configured for infinite",__FUNCTION__);
+=======
+                       "%s:No LS configured for infinite",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s:No LS configured for infinite",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -369,17 +399,23 @@ WLANBAP_DeInitLinkSupervision
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "Invalid BAP handle value in %s", __FUNCTION__);
         return VOS_STATUS_E_FAULT;
     }
    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
                      "In: %s", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      "Invalid BAP handle value in %s", __func__);
         return VOS_STATUS_E_FAULT;
     }
    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
                      "In: %s", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    vosStatus = WLANBAP_StopLinkSupervisionTimer(pBtampCtx);
@@ -450,7 +486,11 @@ WLANBAP_RxProcLsPkt
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "Invalid BAP handle value in %s", __FUNCTION__);
+=======
+                     "Invalid BAP handle value in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "Invalid BAP handle value in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -459,7 +499,11 @@ WLANBAP_RxProcLsPkt
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "In %s Received RxProtoType=%x", __FUNCTION__,RxProtoType);
+=======
+               "In %s Received RxProtoType=%x", __func__,RxProtoType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "In %s Received RxProtoType=%x", __func__,RxProtoType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -471,7 +515,11 @@ WLANBAP_RxProcLsPkt
 
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "MAC address mismatch in %s", __FUNCTION__);
+=======
+                     "MAC address mismatch in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "MAC address mismatch in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -484,7 +532,11 @@ WLANBAP_RxProcLsPkt
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "Failed to free VOS packet in %s", __FUNCTION__);
+=======
+                     "Failed to free VOS packet in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "Failed to free VOS packet in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -568,7 +620,11 @@ static VOS_STATUS WLANBAP_TxLinkSupervisionCB
     {
          VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "%s:AcquireLSPacket failed\n",__FUNCTION__);
+=======
+                       "%s:AcquireLSPacket failed\n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "%s:AcquireLSPacket failed\n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -587,7 +643,11 @@ static VOS_STATUS WLANBAP_TxLinkSupervisionCB
         {
              VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s:AcquireLSPacket failed\n",__FUNCTION__);
+=======
+                           "%s:AcquireLSPacket failed\n",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s:AcquireLSPacket failed\n",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -597,7 +657,11 @@ static VOS_STATUS WLANBAP_TxLinkSupervisionCB
     }
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "%s:Returned Vos Packet:%x\n",__FUNCTION__, pPacket );
+=======
+               "%s:Returned Vos Packet:%p\n", __func__, pPacket );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "%s:Returned Vos Packet:%p\n", __func__, pPacket );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -652,7 +716,11 @@ WLANBAP_TxLinkSupervision
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                          "In  : %s protoType=%x", __FUNCTION__,protoType);
+=======
+                         "In  : %s protoType=%x", __func__,protoType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                          "In  : %s protoType=%x", __func__,protoType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

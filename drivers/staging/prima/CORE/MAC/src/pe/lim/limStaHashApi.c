@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -23,9 +27,13 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /*
  *
+=======
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /*
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -71,7 +79,11 @@ tSirRetStatus limGetStaHashBssidx(tpAniSirGlobal pMac, tANI_U16 assocId, tANI_U8
     if (pSta == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("invalid STA %d\n"),  assocId);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("invalid STA %d"),  assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("invalid STA %d"),  assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

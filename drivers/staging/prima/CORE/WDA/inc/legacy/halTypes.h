@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,10 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -66,6 +76,7 @@
 #define HALTYPES_H
 #ifndef WINXP_APPS_BUILD    //TODO: this header dependency does not belong in this file
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "wlan_qct_bal.h"
 
@@ -75,6 +86,8 @@
 #include "libraDefs.h"
 #endif
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -249,12 +262,18 @@ typedef enum
     eHAL_STATUS_SET_CHAN_ALREADY_ON_REQUESTED_CHAN,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
     eHAL_STATUS_FT_PREAUTH_KEY_SUCCESS,
     eHAL_STATUS_FT_PREAUTH_KEY_FAILED,
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // not a real status.  Just a way to mark the maximum in the enum.
     eHAL_STATUS_MAX
@@ -378,7 +397,10 @@ typedef enum
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HAL_MAX_TXPOWER_INVALID       127
@@ -409,7 +431,11 @@ typedef enum
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define HAL_INVALID_BSSIDX          HAL_NUM_BSSID+1
+=======
+#define HAL_INVALID_BSSIDX          (HAL_NUM_BSSID + 1)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define HAL_INVALID_BSSIDX          (HAL_NUM_BSSID + 1)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -421,6 +447,7 @@ typedef enum
 
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define HAL_NUM_ASSOC_STA           10
 #define HAL_NUM_STA                 14
 #define HAL_NUM_HW_STA              8
@@ -430,6 +457,8 @@ typedef enum
 #define QWLANFW_MAX_NUM_VSTA        HAL_NUM_VSTA
 #define QWLANFW_VSTA_INVALID_IDX    HAL_NUM_STA+1
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HAL_NUM_ASSOC_STA           32
 #define HAL_NUM_STA                 41
 #define HAL_NUM_HW_STA              16
@@ -438,6 +467,9 @@ typedef enum
 
 #define QWLANFW_MAX_NUM_VSTA        HAL_NUM_VSTA
 #define QWLANFW_VSTA_INVALID_IDX    (HAL_NUM_STA + 1)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_VSTA_MIN_IDX          HAL_NUM_HW_STA
 #define QWLANFW_NUM_GPSTA           HAL_NUM_GPSTA
@@ -488,7 +520,10 @@ typedef enum
 #define STACFG_MAX_TC   8
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

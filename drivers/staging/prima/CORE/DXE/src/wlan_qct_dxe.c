@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,10 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -54,9 +64,14 @@
                
    This file contains the external API exposed by the wlan data transfer abstraction layer module.
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2010-2011 QUALCOMM Incorporated.
    All Rights Reserved.
    Qualcomm Confidential and Proprietary
+=======
+   Copyright (c) 2010-2011 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    Copyright (c) 2010-2011 Qualcomm Technologies, Inc.
    All Rights Reserved.
@@ -110,17 +125,23 @@ when           who        what, where, why
 #define T_WLANDXE_MEMDUMP_BYTE_PER_LINE    16
 #define T_WLANDXE_MAX_RX_PACKET_WAIT       6000
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define T_WLANDXE_PERIODIC_HEALTH_M_TIME   1500
 #define T_WLANDXE_MAX_HW_ACCESS_WAIT       2000
 #define WLANDXE_MAX_REAPED_RX_FRAMES       512
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define T_WLANDXE_PERIODIC_HEALTH_M_TIME   2500
 #define T_WLANDXE_MAX_HW_ACCESS_WAIT       2000
 #define WLANDXE_MAX_REAPED_RX_FRAMES       512
 
 #define WLANPAL_RX_INTERRUPT_PRO_MASK      0x20
 #define WLANDXE_RX_INTERRUPT_PRO_UNMASK    0x5F
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* This is temporary fot the compile
  * WDI will release official version
@@ -128,6 +149,10 @@ when           who        what, where, why
 #define WDI_GET_PAL_CTX()                  NULL
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -136,7 +161,11 @@ when           who        what, where, why
   *-------------------------------------------------------------------------*/
 /* This is temp, someone have to allocate for me, and must be part of global context */
 <<<<<<< HEAD
+<<<<<<< HEAD
 static WLANDXE_CtrlBlkType    *tempDxeCtrlBlk                = NULL;
+=======
+static WLANDXE_CtrlBlkType    *tempDxeCtrlBlk;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static WLANDXE_CtrlBlkType    *tempDxeCtrlBlk;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -364,7 +393,10 @@ wpt_status dxeChannelRegisterDump
    wpt_uint32                regValue    = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(channelEntry->channelType > WDTS_CHANNEL_RX_HIGH_PRI)
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
@@ -372,6 +404,9 @@ wpt_status dxeChannelRegisterDump
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
             "%s Channel register dump for %s, base address 0x%x", 
@@ -476,11 +511,14 @@ void dxeChannelAllDescDump
 
 /*==========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   @  Function Name 
       dxeTxThreadChannelDebugHandler
 
   @  Description 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @  Function Name
       dxeErrChannelDebug
 
@@ -514,6 +552,9 @@ void dxeErrChannelDebug
       dxeTxThreadChannelDebugHandler
 
   @  Description
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       Dump TX channel information
 
@@ -533,7 +574,11 @@ void dxeTxThreadChannelDebugHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -557,7 +602,11 @@ void dxeTxThreadChannelDebugHandler
    wpalMemoryFree(msgPtr);
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -566,15 +615,21 @@ void dxeTxThreadChannelDebugHandler
 
 /*==========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   @  Function Name 
       dxeRxThreadChannelDebugHandler
 
   @  Description 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @  Function Name
       dxeRxThreadChannelDebugHandler
 
   @  Description
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       Dump RX channel information
 
@@ -595,7 +650,11 @@ void dxeRxThreadChannelDebugHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -626,7 +685,11 @@ void dxeRxThreadChannelDebugHandler
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "Tx thread Set power state req serialize fail status=%d",
+=======
+               "Tx thread state dump req serialize fail status=%d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "Tx thread state dump req serialize fail status=%d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -635,7 +698,11 @@ void dxeRxThreadChannelDebugHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -678,6 +745,10 @@ void dxeRXHealthMonitor
    dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
    dxeNotifySmsm(eWLAN_PAL_TRUE, eWLAN_PAL_FALSE);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -808,6 +879,10 @@ void dxeTXHealthMonitor
    dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
    dxeNotifySmsm(eWLAN_PAL_TRUE, eWLAN_PAL_FALSE);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -980,7 +1055,11 @@ static wpt_status dxeCtrlBlkAlloc
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1061,7 +1140,11 @@ static wpt_status dxeCtrlBlkAlloc
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,"%s Exit", __FUNCTION__);
+=======
+   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,"%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,"%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1106,7 +1189,11 @@ static wpt_status dxeDescAllocAndLink
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1275,7 +1362,11 @@ static wpt_status dxeDescAllocAndLink
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1305,7 +1396,11 @@ static wpt_status dxeSetInterruptPath
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1342,7 +1437,11 @@ static wpt_status dxeSetInterruptPath
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1374,7 +1473,11 @@ static wpt_status dxeEngineCoreStart
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1401,7 +1504,11 @@ static wpt_status dxeEngineCoreStart
    dxeSetInterruptPath(dxeCtrlBlk);
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1447,7 +1554,11 @@ static wpt_status dxeChannelInitProgram
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1550,7 +1661,11 @@ static wpt_status dxeChannelInitProgram
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1587,7 +1702,11 @@ static wpt_status dxeChannelStart
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1627,7 +1746,11 @@ static wpt_status dxeChannelStart
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1662,7 +1785,11 @@ static wpt_status dxeChannelStop
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1676,7 +1803,10 @@ static wpt_status dxeChannelStop
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ( (channelEntry->extraConfig.chEnabled != eWLAN_PAL_TRUE) ||
         (channelEntry->extraConfig.chConfigured != eWLAN_PAL_TRUE))
    {
@@ -1684,6 +1814,9 @@ static wpt_status dxeChannelStop
                "dxeChannelStop channels are not enabled ");
       return status; 
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Maskout interrupt */
    status = wpalReadRegister(WLANDXE_INT_MASK_REG_ADDRESS,
@@ -1709,7 +1842,11 @@ static wpt_status dxeChannelStop
    /* Stop Channel ??? */
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1751,7 +1888,11 @@ static wpt_status dxeChannelClose
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1813,13 +1954,19 @@ static wpt_status dxeChannelClose
          currentCtrlBlk    = nextCtrlBlk;
          currentDescriptor = nextDescriptor;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if(NULL == currentCtrlBlk)
          {
             /* Already reach last of the control block
              * Not need to process anymore, break */
             break;
          }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
    }
@@ -1834,7 +1981,11 @@ static wpt_status dxeChannelClose
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1870,7 +2021,11 @@ static wpt_status dxeChannelCleanInt
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1939,7 +2094,11 @@ static wpt_status dxeChannelCleanInt
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1949,7 +2108,10 @@ static wpt_status dxeChannelCleanInt
 /*==========================================================================
   @  Function Name 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       dxeRXResourceAvailableTimerExpHandler
 
   @  Description
@@ -1979,6 +2141,9 @@ void dxeRXResourceAvailableTimerExpHandler
 
 /*==========================================================================
   @  Function Name
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       dxeRXPacketAvailableCB
 
@@ -2112,7 +2277,10 @@ static wpt_status dxeRXFrameSingleBufferAlloc
       {
          dxeCtxt->rxPalPacketUnavailable = eWLAN_PAL_TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          /* Out of RX free buffer,
           * Start timer to recover from RX dead end */
          if(VOS_TIMER_STATE_RUNNING !=
@@ -2123,6 +2291,9 @@ static wpt_status dxeRXFrameSingleBufferAlloc
             wpalTimerStart(&dxeCtxt->rxResourceAvailableTimer,
                            T_WLANDXE_MAX_RX_PACKET_WAIT);
          }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
    }
@@ -2249,8 +2420,12 @@ static wpt_status dxeRXFrameRefillRing
 
       /* Kick off the DXE ring, if not in any power save mode */
 <<<<<<< HEAD
+<<<<<<< HEAD
       if((WLANDXE_POWER_STATE_IMPS != dxeCtxt->hostPowerState) &&
          (WLANDXE_POWER_STATE_DOWN != dxeCtxt->hostPowerState))
+=======
+      if(WLANDXE_POWER_STATE_FULL == dxeCtxt->hostPowerState)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if(WLANDXE_POWER_STATE_FULL == dxeCtxt->hostPowerState)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2282,7 +2457,11 @@ static wpt_status dxeRXFrameRefillRing
                                Channel specific control block
   @  Return
 <<<<<<< HEAD
+<<<<<<< HEAD
       -1 Any error happen
+=======
+      < 0 Any error happen
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       < 0 Any error happen
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2301,6 +2480,10 @@ static wpt_int32 dxeRXFrameRouteUpperLayer
    WLANDXE_DescType         *currentDesc    = NULL;
    wpt_uint32                descCtrl, frameCount = 0, i;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   wpt_int32                 ret_val = -1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wpt_int32                 ret_val = -1;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2332,7 +2515,11 @@ static wpt_int32 dxeRXFrameRouteUpperLayer
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                   "dxeRXFrameReady Prepare RX Frame fail");
 <<<<<<< HEAD
+<<<<<<< HEAD
          return -1;
+=======
+         return ret_val;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          return ret_val;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2343,7 +2530,11 @@ static wpt_int32 dxeRXFrameRouteUpperLayer
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                   "dxeRXFrameReady Free Shadow RX Frame fail");
 <<<<<<< HEAD
+<<<<<<< HEAD
          return -1;
+=======
+         return ret_val;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          return ret_val;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2356,7 +2547,11 @@ static wpt_int32 dxeRXFrameRouteUpperLayer
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                   "dxeRXFrameReady unable to unlock packet");
 <<<<<<< HEAD
+<<<<<<< HEAD
          return -1;
+=======
+         return ret_val;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          return ret_val;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2372,7 +2567,11 @@ static wpt_int32 dxeRXFrameRouteUpperLayer
 
       /* Now try to refill the ring with empty Rx buffers to keep DXE busy */
 <<<<<<< HEAD
+<<<<<<< HEAD
       dxeRXFrameRefillRing(dxeCtxt,channelEntry);
+=======
+      dxeRXFrameRefillRing(dxeCtxt, channelEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       dxeRXFrameRefillRing(dxeCtxt, channelEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2392,7 +2591,12 @@ static wpt_int32 dxeRXFrameRouteUpperLayer
    /* Deliver all the reaped RX frames to upper layers */
    i = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
    while(i < frameCount) {
+=======
+   while(i < frameCount)
+   {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    while(i < frameCount)
    {
@@ -2427,7 +2631,12 @@ static wpt_status dxeRXFrameReady
 (
    WLANDXE_CtrlBlkType     *dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
    WLANDXE_ChannelCBType   *channelEntry
+=======
+   WLANDXE_ChannelCBType   *channelEntry,
+   wpt_uint32               chStat
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANDXE_ChannelCBType   *channelEntry,
    wpt_uint32               chStat
@@ -2445,7 +2654,11 @@ static wpt_status dxeRXFrameReady
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2462,6 +2675,7 @@ static wpt_status dxeRXFrameReady
 
    if(0 > frameCount)
 <<<<<<< HEAD
+<<<<<<< HEAD
       {
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "dxeRXFrameReady RX frame route fail");
@@ -2473,6 +2687,8 @@ static wpt_status dxeRXFrameReady
        (WLANDXE_POWER_STATE_FULL == dxeCtxt->hostPowerState)))
    {
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "dxeRXFrameReady RX frame route fail");
@@ -2497,6 +2713,9 @@ static wpt_status dxeRXFrameReady
          return eWLAN_PAL_STATUS_E_RESOURCES;
       }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       currentCtrlBlk = channelEntry->headCtrlBlk;
       currentDesc    = currentCtrlBlk->linkedDesc;
@@ -2526,17 +2745,23 @@ static wpt_status dxeRXFrameReady
             if(!(WLANDXE_U32_SWAP_ENDIAN(descCtrl) & WLANDXE_DESC_CTRL_VALID))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                         "Found Invalidated Descriptor %d", (int)descLoop);
                if(eWLAN_PAL_STATUS_SUCCESS == wpalIsPacketLocked(currentCtrlBlk->xfrFrame))
                {
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
                         "Found Invalidated Descriptor %d", (int)descLoop);
                if(eWLAN_PAL_STATUS_SUCCESS == wpalIsPacketLocked(currentCtrlBlk->xfrFrame))
                {
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            "Packet locked, Resync Host and HW");
                   channelEntry->headCtrlBlk = currentCtrlBlk;
@@ -2546,7 +2771,11 @@ static wpt_status dxeRXFrameReady
                else
                {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
+=======
+                  HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2594,7 +2823,11 @@ static wpt_status dxeRXFrameReady
    channelEntry->numFragmentCurrentChain = frameCount;
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2753,6 +2986,10 @@ void dxeRXEventHandler
    wpt_uint32                chHighStat = 0;
    wpt_uint32                chLowStat  = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   wpt_uint32                regValue;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wpt_uint32                regValue;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2786,7 +3023,11 @@ void dxeRXEventHandler
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
          "%s Riva is in %d, Just Pull frames without any register touch ",
 <<<<<<< HEAD
+<<<<<<< HEAD
            __FUNCTION__, dxeCtxt->hostPowerState);
+=======
+           __func__, dxeCtxt->hostPowerState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            __func__, dxeCtxt->hostPowerState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2796,7 +3037,12 @@ void dxeRXEventHandler
       channelCb = &dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_HIGH_PRI];
       status = dxeRXFrameReady(dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                channelCb);
+=======
+                               channelCb,
+                               chHighStat);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                channelCb,
                                chHighStat);
@@ -2811,7 +3057,12 @@ void dxeRXEventHandler
       channelCb = &dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_LOW_PRI];
       status = dxeRXFrameReady(dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                channelCb);
+=======
+                               channelCb,
+                               chLowStat);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                channelCb,
                                chLowStat);
@@ -2857,7 +3108,10 @@ void dxeRXEventHandler
       {
          /* Error Happen during transaction, Handle it */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
                   "%11s : 0x%x Error Reported, Reload Driver",
                   channelType[channelCb->channelType], chHighStat);
@@ -2866,6 +3120,9 @@ void dxeRXEventHandler
 
          dxeCtxt->driverReloadInProcessing = eWLAN_PAL_TRUE;
          wpalWlanReload();
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else if((WLANDXE_CH_STAT_INT_DONE_MASK & chHighStat) ||
@@ -2874,7 +3131,12 @@ void dxeRXEventHandler
          /* Handle RX Ready for high priority channel */
          status = dxeRXFrameReady(dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   channelCb);
+=======
+                                  channelCb,
+                                  chHighStat);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   channelCb,
                                   chHighStat);
@@ -2884,7 +3146,12 @@ void dxeRXEventHandler
       {
          status = dxeRXFrameReady(dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   channelCb);
+=======
+                                  channelCb,
+                                  chHighStat);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   channelCb,
                                   chHighStat);
@@ -2920,7 +3187,10 @@ void dxeRXEventHandler
       {
          /* Error Happen during transaction, Handle it */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
                   "%11s : 0x%x Error Reported, Reload Driver",
                   channelType[channelCb->channelType], chStat);
@@ -2929,6 +3199,9 @@ void dxeRXEventHandler
 
          dxeCtxt->driverReloadInProcessing = eWLAN_PAL_TRUE;
          wpalWlanReload();
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else if(WLANDXE_CH_STAT_INT_ED_MASK & chStat)
@@ -2936,7 +3209,12 @@ void dxeRXEventHandler
          /* Handle RX Ready for high priority channel */
          status = dxeRXFrameReady(dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   channelCb);
+=======
+                                  channelCb,
+                                  chStat);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   channelCb,
                                   chStat);
@@ -2974,7 +3252,10 @@ void dxeRXEventHandler
       {
          /* Error Happen during transaction, Handle it */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
                   "%11s : 0x%x Error Reported, Reload Driver",
                   channelType[channelCb->channelType], chLowStat);
@@ -2983,6 +3264,9 @@ void dxeRXEventHandler
 
          dxeCtxt->driverReloadInProcessing = eWLAN_PAL_TRUE;
          wpalWlanReload();
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else if(WLANDXE_CH_STAT_INT_ED_MASK & chLowStat)
@@ -2990,7 +3274,12 @@ void dxeRXEventHandler
          /* Handle RX Ready for low priority channel */
          status = dxeRXFrameReady(dxeCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   channelCb);
+=======
+                                  channelCb,
+                                  chLowStat);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   channelCb,
                                   chLowStat);
@@ -3011,6 +3300,7 @@ void dxeRXEventHandler
                "RX LOW CH EVNT STAT 0x%x, %d frames handled", chLowStat, channelCb->numFragmentCurrentChain);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(eWLAN_PAL_STATUS_SUCCESS != status)
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
@@ -3026,12 +3316,17 @@ void dxeRXEventHandler
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "dxeRXEventHandler Enable RX Ready interrupt fail");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if((eWLAN_PAL_STATUS_SUCCESS != status) &&
       (eWLAN_PAL_STATUS_E_RESOURCES != status))
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "dxeRXEventHandler Handle Frame Ready Fail");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;         
    }
@@ -3041,6 +3336,7 @@ void dxeRXEventHandler
    {
       HDXE_ASSERT(0);
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
    if(!(WLANDXE_CH_STAT_INT_ED_MASK & chHighStat))
    {
@@ -3058,12 +3354,17 @@ void dxeRXEventHandler
    wpalWriteRegister(dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_HIGH_PRI].channelRegister.chDXECtrlRegAddr,
                      dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_HIGH_PRI].extraConfig.chan_mask);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   wpalWriteRegister(dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_HIGH_PRI].channelRegister.chDXECtrlRegAddr,
+                     dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_HIGH_PRI].extraConfig.chan_mask);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Prepare Control Register EN Channel */
    if(!(dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_LOW_PRI].extraConfig.chan_mask & WLANDXE_CH_CTRL_EN_MASK))
    {
       HDXE_ASSERT(0);
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
    if(!(WLANDXE_CH_STAT_INT_ED_MASK & chLowStat))
    {
@@ -3081,6 +3382,8 @@ void dxeRXEventHandler
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    wpalWriteRegister(dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_LOW_PRI].channelRegister.chDXECtrlRegAddr,
                      dxeCtxt->dxeChannel[WDTS_CHANNEL_RX_LOW_PRI].extraConfig.chan_mask);
@@ -3103,6 +3406,9 @@ void dxeRXEventHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return;
 }
@@ -3137,7 +3443,11 @@ void dxeRXPacketAvailableEventHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3153,7 +3463,10 @@ void dxeRXPacketAvailableEventHandler
    dxeCtxt    = (WLANDXE_CtrlBlkType *)(rxPktAvailMsg->pContext);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Available resource allocated
     * Stop timer not needed */
    if(VOS_TIMER_STATE_RUNNING ==
@@ -3162,6 +3475,9 @@ void dxeRXPacketAvailableEventHandler
       wpalTimerStop(&dxeCtxt->rxResourceAvailableTimer);
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    do
    {
@@ -3220,10 +3536,14 @@ static void dxeRXISR
    WLANDXE_CtrlBlkType      *dxeCtxt    = (WLANDXE_CtrlBlkType *)hostCtxt;
    wpt_status                status     = eWLAN_PAL_STATUS_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_R33D
    wpt_uint32                regValue;
 #endif /* FEATURE_R33D */
 
+=======
+   wpt_uint32                regValue;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wpt_uint32                regValue;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3248,13 +3568,19 @@ static void dxeRXISR
 #endif /* FEATURE_R33D */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Set Interrupt processing bit
     * During this bit set, WLAN HW may not power collapse */
    wpalReadRegister(WLANDXE_INT_MASK_REG_ADDRESS, &regValue);
    regValue |= WLANPAL_RX_INTERRUPT_PRO_MASK;
    wpalWriteRegister(WLANDXE_INT_MASK_REG_ADDRESS, regValue);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Disable interrupt at here
     * Disable RX Ready system level Interrupt at here
@@ -3319,6 +3645,7 @@ static wpt_status dxeTXPushFrame
    wpt_iterator                iterator;
 #endif /* FEATURE_R33D */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Enter", __FUNCTION__);
@@ -3328,6 +3655,8 @@ static wpt_status dxeTXPushFrame
       tempDxeCtrlBlk->rivaPowerState = WLANDXE_RIVA_POWER_STATE_BMPS_UNKNOWN;
       dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpt_uint32                  isEmpty = 0;
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
@@ -3338,6 +3667,9 @@ static wpt_status dxeTXPushFrame
       (0 == tempDxeCtrlBlk->dxeChannel[WDTS_CHANNEL_TX_HIGH_PRI].numRsvdDesc))
    {
       isEmpty = 1;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
@@ -3482,11 +3814,14 @@ static wpt_status dxeTXPushFrame
       /* Update channel head as next avaliable linked slot */
       channelEntry->headCtrlBlk = currentCtrlBlk;
 <<<<<<< HEAD
+<<<<<<< HEAD
       tempDxeCtrlBlk->ringNotEmpty = eWLAN_PAL_TRUE;
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW, "SMSM_ret LO=%d HI=%d", tempDxeCtrlBlk->dxeChannel[WDTS_CHANNEL_TX_LOW_PRI].numRsvdDesc,
                tempDxeCtrlBlk->dxeChannel[WDTS_CHANNEL_TX_HIGH_PRI].numRsvdDesc );
       dxeNotifySmsm(eWLAN_PAL_TRUE, eWLAN_PAL_FALSE);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if(isEmpty)
       {
          tempDxeCtrlBlk->ringNotEmpty = eWLAN_PAL_TRUE;
@@ -3497,6 +3832,9 @@ static wpt_status dxeTXPushFrame
          dxeNotifySmsm(eWLAN_PAL_TRUE, eWLAN_PAL_FALSE);
          tempDxeCtrlBlk->smsmToggled = eWLAN_PAL_TRUE;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
@@ -3529,7 +3867,11 @@ static wpt_status dxeTXPushFrame
 
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "%s Exit", __FUNCTION__);
+=======
+               "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3685,7 +4027,11 @@ static wpt_status dxeTXPushFrame
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3722,7 +4068,11 @@ static wpt_status dxeTXCompFrame
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3743,9 +4093,12 @@ static wpt_status dxeTXCompFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wpalMutexAcquire(&channelEntry->dxeChannelLock);
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = wpalMutexAcquire(&channelEntry->dxeChannelLock);
    if(eWLAN_PAL_STATUS_SUCCESS != status)
    {
@@ -3754,6 +4107,9 @@ static wpt_status dxeTXCompFrame
       return status;
    }
    
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    currentCtrlBlk = channelEntry->tailCtrlBlk;
    currentDesc    = currentCtrlBlk->linkedDesc;
@@ -3761,8 +4117,11 @@ static wpt_status dxeTXCompFrame
    if( currentCtrlBlk == channelEntry->headCtrlBlk )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       wpalMutexRelease(&channelEntry->dxeChannelLock);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = wpalMutexRelease(&channelEntry->dxeChannelLock);
       if(eWLAN_PAL_STATUS_SUCCESS != status)
       {
@@ -3770,6 +4129,9 @@ static wpt_status dxeTXCompFrame
                   "dxeTXCompFrame Mutex Release fail");
          return status;
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_SUCCESS;
    }
@@ -3804,14 +4166,20 @@ static wpt_status dxeTXCompFrame
             HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                      "dxeRXFrameReady unable to unlock packet");
 <<<<<<< HEAD
+<<<<<<< HEAD
             wpalMutexRelease(&channelEntry->dxeChannelLock);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = wpalMutexRelease(&channelEntry->dxeChannelLock);
             if(eWLAN_PAL_STATUS_SUCCESS != status)
             {
                HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                         "dxeTXCompFrame Mutex Release fail");
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return status;
          }
@@ -3865,11 +4233,14 @@ static wpt_status dxeTXCompFrame
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wpalMutexRelease(&channelEntry->dxeChannelLock);
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = wpalMutexRelease(&channelEntry->dxeChannelLock);
    if(eWLAN_PAL_STATUS_SUCCESS != status)
    {
@@ -3879,6 +4250,9 @@ static wpt_status dxeTXCompFrame
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -3914,15 +4288,21 @@ void dxeTXEventHandler
 
    wpt_uint8                 bEnableISR = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
    static wpt_uint8          successiveIntWithIMPS = 0;
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Enter", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    static wpt_uint8          successiveIntWithIMPS;
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Enter", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    dxeCtxt = (WLANDXE_CtrlBlkType *)(msgContent->pContext);
@@ -3948,7 +4328,11 @@ void dxeTXEventHandler
                   "dxeTXEventHandler IMPS HC COMP interrupt fail");
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3967,8 +4351,13 @@ void dxeTXEventHandler
          wpalEnableInterrupt(DXE_INTERRUPT_TX_COMPLE);
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "TX COMP INT Enabled, remain TX frame count on ring %d",
                   dxeCtxt->txCompletedFrames);
+=======
+                     "TX COMP INT Enabled, remain TX frame count on ring %d",
+                     dxeCtxt->txCompletedFrames);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "TX COMP INT Enabled, remain TX frame count on ring %d",
                      dxeCtxt->txCompletedFrames);
@@ -4025,9 +4414,12 @@ void dxeTXEventHandler
       {
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "dxeTXEventHandler TX HI status=%x", chStat);
          HDXE_ASSERT(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "%11s : 0x%x Error Reported, Reload Driver",
                   channelType[channelCb->channelType], chStat);
 
@@ -4035,6 +4427,9 @@ void dxeTXEventHandler
 
          dxeCtxt->driverReloadInProcessing = eWLAN_PAL_TRUE;
          wpalWlanReload();
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else if(WLANDXE_CH_STAT_INT_DONE_MASK & chStat)
@@ -4083,9 +4478,12 @@ void dxeTXEventHandler
       {
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "dxeTXEventHandler TX LO status=%x", chStat);
          HDXE_ASSERT(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "%11s : 0x%x Error Reported, Reload Driver",
                   channelType[channelCb->channelType], chStat);
 
@@ -4093,6 +4491,9 @@ void dxeTXEventHandler
 
          dxeCtxt->driverReloadInProcessing = eWLAN_PAL_TRUE;
          wpalWlanReload();
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else if(WLANDXE_CH_STAT_INT_DONE_MASK & chStat)
@@ -4143,9 +4544,12 @@ void dxeTXEventHandler
       {
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   "WLANDXE_CH_STAT_INT_ERR_MASK occurred");
          HDXE_ASSERT(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "%11s : 0x%x Error Reported, Reload Driver",
                   channelType[channelCb->channelType], chStat);
 
@@ -4153,6 +4557,9 @@ void dxeTXEventHandler
 
          dxeCtxt->driverReloadInProcessing = eWLAN_PAL_TRUE;
          wpalWlanReload();
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else if(WLANDXE_CH_STAT_INT_DONE_MASK & chStat)
@@ -4181,16 +4588,22 @@ void dxeTXEventHandler
       dxeCtxt->txIntEnable =  eWLAN_PAL_TRUE; 
       wpalEnableInterrupt(DXE_INTERRUPT_TX_COMPLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
                "TX COMP INT Enabled, remain TX frame count on ring %d",
                dxeCtxt->txCompletedFrames);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if(0 != dxeCtxt->txCompletedFrames)
       {
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
                   "TX COMP INT Enabled, remain TX frame count on ring %d",
                   dxeCtxt->txCompletedFrames);
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
@@ -4200,7 +4613,11 @@ void dxeTXEventHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4234,7 +4651,11 @@ void dxeTXCompleteProcessing
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4259,7 +4680,11 @@ void dxeTXCompleteProcessing
       wpalEnableInterrupt(DXE_INTERRUPT_TX_COMPLE);
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "%s %s : %d, %s : %d", __FUNCTION__,
+=======
+               "%s %s : %d, %s : %d", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "%s %s : %d, %s : %d", __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4268,7 +4693,10 @@ void dxeTXCompleteProcessing
                channelType[dxeCtxt->dxeChannel[WDTS_CHANNEL_TX_LOW_PRI].channelType],
                dxeCtxt->dxeChannel[WDTS_CHANNEL_TX_LOW_PRI].numRsvdDesc);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       if((WLANDXE_POWER_STATE_FULL != dxeCtxt->hostPowerState) &&
          (eWLAN_PAL_FALSE == tempDxeCtrlBlk->smsmToggled))
@@ -4281,6 +4709,9 @@ void dxeTXCompleteProcessing
          dxeNotifySmsm(eWLAN_PAL_FALSE, eWLAN_PAL_TRUE);
          dxeNotifySmsm(eWLAN_PAL_TRUE, eWLAN_PAL_FALSE);
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    
@@ -4290,7 +4721,11 @@ void dxeTXCompleteProcessing
    
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4299,15 +4734,21 @@ void dxeTXCompleteProcessing
 
 /*==========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   @  Function Name 
       dxeTXReSyncDesc
 
   @  Description 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @  Function Name
       dxeTXReSyncDesc
 
   @  Description
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       When STA comeout from IMPS, check DXE TX next transfer candidate descriptor
       And HW programmed descriptor.
@@ -4338,7 +4779,11 @@ void dxeTXReSyncDesc
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "dxeTXReSyncDesc Invalid Control Block");
 <<<<<<< HEAD
+<<<<<<< HEAD
       return;  
+=======
+      return;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       return;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4400,7 +4845,11 @@ void dxeTXReSyncDesc
                {
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "TX Async with not completed transfered frames, next descriptior must be head");
+=======
+                           "TX Async with not completed transferred frames, next descriptor must be head");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "TX Async with not completed transferred frames, next descriptor must be head");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4491,7 +4940,11 @@ static void dxeTXISR
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4512,7 +4965,11 @@ static void dxeTXISR
       dxeCtxt->txIntDisabledByIMPS = eWLAN_PAL_TRUE;
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
          "%s Riva is in %d, return from here ", __FUNCTION__, dxeCtxt->hostPowerState);
+=======
+         "%s Riva is in %d, return from here ", __func__, dxeCtxt->hostPowerState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          "%s Riva is in %d, return from here ", __func__, dxeCtxt->hostPowerState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4570,7 +5027,11 @@ static void dxeTXISR
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4590,7 +5051,11 @@ static void dxeTXISR
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
       pVoid      pAdaptor : Driver global control block pointer
+=======
+      pVoid      pAdapter : Driver global control block pointer
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pVoid      pAdapter : Driver global control block pointer
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4616,7 +5081,11 @@ void *WLANDXE_Open
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4774,6 +5243,10 @@ void *WLANDXE_Open
    tempDxeCtrlBlk->txIntDisabledByIMPS = eWLAN_PAL_FALSE;
    tempDxeCtrlBlk->driverReloadInProcessing = eWLAN_PAL_FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   tempDxeCtrlBlk->smsmToggled              = eWLAN_PAL_FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tempDxeCtrlBlk->smsmToggled              = eWLAN_PAL_FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4793,8 +5266,13 @@ void *WLANDXE_Open
          dxeChannelClose(tempDxeCtrlBlk, &tempDxeCtrlBlk->dxeChannel[idx]);
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
       wpalMemoryFree((void *)&tempDxeCtrlBlk->rxIsrMsg);
       wpalMemoryFree((void *)&tempDxeCtrlBlk->txIsrMsg);
+=======
+      wpalMemoryFree(tempDxeCtrlBlk->rxIsrMsg);
+      wpalMemoryFree(tempDxeCtrlBlk->txIsrMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       wpalMemoryFree(tempDxeCtrlBlk->rxIsrMsg);
       wpalMemoryFree(tempDxeCtrlBlk->txIsrMsg);
@@ -4804,11 +5282,14 @@ void *WLANDXE_Open
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
             "WLANDXE_Open Success");
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpalTimerInit(&tempDxeCtrlBlk->rxResourceAvailableTimer,
                  dxeRXResourceAvailableTimerExpHandler,
                  tempDxeCtrlBlk);
@@ -4817,6 +5298,9 @@ void *WLANDXE_Open
             "WLANDXE_Open Success");
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return (void *)tempDxeCtrlBlk;
 }
@@ -4852,7 +5336,11 @@ wpt_status WLANDXE_ClientRegistration
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4903,7 +5391,11 @@ wpt_status WLANDXE_ClientRegistration
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4935,7 +5427,11 @@ wpt_status WLANDXE_Start
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5035,7 +5531,11 @@ wpt_status WLANDXE_Start
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5071,7 +5571,11 @@ wpt_status WLANDXE_TxFrame
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5104,8 +5608,11 @@ wpt_status WLANDXE_TxFrame
    
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    wpalMutexAcquire(&currentChannel->dxeChannelLock);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = wpalMutexAcquire(&currentChannel->dxeChannelLock);
    if(eWLAN_PAL_STATUS_SUCCESS != status)
    {
@@ -5113,6 +5620,9 @@ wpt_status WLANDXE_TxFrame
                "WLANDXE_TxFrame Mutex Acquire fail");
       return status;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    lowThreshold = currentChannel->channelType == WDTS_CHANNEL_TX_LOW_PRI?
@@ -5135,7 +5645,11 @@ wpt_status WLANDXE_TxFrame
          break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       /* TX complete interrupt will be activated n number of frames transfered */
+=======
+      /* TX complete interrupt will be activated n number of frames transferred */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       /* TX complete interrupt will be activated n number of frames transferred */
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5161,14 +5675,20 @@ wpt_status WLANDXE_TxFrame
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "WLANDXE_TxFrame TX Push Frame fail");
 <<<<<<< HEAD
+<<<<<<< HEAD
       wpalMutexRelease(&currentChannel->dxeChannelLock);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = wpalMutexRelease(&currentChannel->dxeChannelLock);
       if(eWLAN_PAL_STATUS_SUCCESS != status)
       {
          HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                   "WLANDXE_TxFrame Mutex Release fail");
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
@@ -5191,11 +5711,14 @@ wpt_status WLANDXE_TxFrame
                      T_WLANDXE_PERIODIC_HEALTH_M_TIME);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    wpalMutexRelease(&currentChannel->dxeChannelLock);
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = wpalMutexRelease(&currentChannel->dxeChannelLock);
    if(eWLAN_PAL_STATUS_SUCCESS != status)
    {
@@ -5205,6 +5728,9 @@ wpt_status WLANDXE_TxFrame
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -5333,7 +5859,11 @@ wpt_status WLANDXE_Stop
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5350,12 +5880,18 @@ wpt_status WLANDXE_Stop
    for(idx = 0; idx < WDTS_CHANNEL_MAX; idx++)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if(VOS_TIMER_STATE_RUNNING == wpalTimerGetCurStatus(&dxeCtxt->dxeChannel[idx].healthMonitorTimer))
       {
          wpalTimerStop(&dxeCtxt->dxeChannel[idx].healthMonitorTimer);
       }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = dxeChannelStop(dxeCtxt, &dxeCtxt->dxeChannel[idx]);
       if(eWLAN_PAL_STATUS_SUCCESS != status)
@@ -5371,9 +5907,12 @@ wpt_status WLANDXE_Stop
    wpalUnRegisterInterrupt(DXE_INTERRUPT_RX_READY);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(VOS_TIMER_STATE_STOPPED !=
       wpalTimerGetCurStatus(&dxeCtxt->rxResourceAvailableTimer))
    {
@@ -5382,6 +5921,9 @@ wpt_status WLANDXE_Stop
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
@@ -5420,7 +5962,11 @@ wpt_status WLANDXE_Close
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5435,6 +5981,12 @@ wpt_status WLANDXE_Close
 
    dxeCtxt = (WLANDXE_CtrlBlkType *)pDXEContext;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+   wpalTimerDelete(&dxeCtxt->rxResourceAvailableTimer);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    wpalTimerDelete(&dxeCtxt->rxResourceAvailableTimer);
@@ -5482,7 +6034,11 @@ wpt_status WLANDXE_Close
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5511,7 +6067,11 @@ wpt_status WLANDXE_TriggerTX
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5520,7 +6080,11 @@ wpt_status WLANDXE_TriggerTX
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5554,7 +6118,11 @@ void dxeTxThreadSetPowerStateEventHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5611,11 +6179,14 @@ void dxeTxThreadSetPowerStateEventHandler
                                dxeCtxt->dxeChannel[WDTS_CHANNEL_TX_LOW_PRI].descBottomLocPhyAddr);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    /* Free MSG buffer */
    wpalMemoryFree(msgPtr);
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    else
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_FATAL,
@@ -5625,6 +6196,9 @@ void dxeTxThreadSetPowerStateEventHandler
    wpalMemoryFree(msgPtr);
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
             "%s Exit", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return;
 }
@@ -5654,7 +6228,11 @@ void dxeRxThreadSetPowerStateEventHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5674,7 +6252,11 @@ void dxeRxThreadSetPowerStateEventHandler
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5709,7 +6291,11 @@ wpt_status WLANDXE_SetPowerState
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5821,7 +6407,11 @@ wpt_status WLANDXE_SetPowerState
                {
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s Enable RX ready interrupt fail", __FUNCTION__);
+=======
+                           "%s Enable RX ready interrupt fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s Enable RX ready interrupt fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5838,7 +6428,11 @@ wpt_status WLANDXE_SetPowerState
                {
                   HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            "%s Enable TX comp interrupt fail", __FUNCTION__);
+=======
+                           "%s Enable TX comp interrupt fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            "%s Enable TX comp interrupt fail", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5862,7 +6456,11 @@ wpt_status WLANDXE_SetPowerState
 
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Exit", __FUNCTION__);
+=======
+            "%s Exit", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Exit", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5890,7 +6488,11 @@ wpt_uint32 WLANDXE_GetFreeTxDataResNumber
 {
    HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_INFO_LOW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "%s Enter", __FUNCTION__);
+=======
+            "%s Enter", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "%s Enter", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5908,15 +6510,21 @@ wpt_uint32 WLANDXE_GetFreeTxDataResNumber
 
 /*==========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   @  Function Name 
     WLANDXE_ChannelDebug
 
   @  Description 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @  Function Name
     WLANDXE_ChannelDebug
 
   @  Description
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     Display DXE Channel debugging information
     User may request to display DXE channel snapshot
@@ -5924,7 +6532,11 @@ wpt_uint32 WLANDXE_GetFreeTxDataResNumber
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
     displaySnapshot : Dispaly DXE snapshot option
+=======
+    displaySnapshot : Display DXE snapshot option
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     displaySnapshot : Display DXE snapshot option
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

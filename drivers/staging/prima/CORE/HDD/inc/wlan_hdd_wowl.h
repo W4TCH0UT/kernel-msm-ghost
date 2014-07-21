@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -143,7 +149,11 @@
               : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_add_wowl_ptrn (const char * ptrn);
+=======
+v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -157,7 +167,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn);
               : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_del_wowl_ptrn (const char * ptrn);
+=======
+v_BOOL_t hdd_del_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_BOOL_t hdd_del_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -181,7 +195,11 @@ v_BOOL_t hdd_enter_wowl (hdd_adapter_t *pAdapter, v_BOOL_t enable_mp, v_BOOL_t e
                     : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_exit_wowl (void);
+=======
+v_BOOL_t hdd_exit_wowl (hdd_adapter_t*pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_BOOL_t hdd_exit_wowl (hdd_adapter_t*pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -194,8 +212,11 @@ v_BOOL_t hdd_exit_wowl (hdd_adapter_t*pAdapter);
                     : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_init_wowl (void* pAdapter);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_BOOL_t hdd_init_wowl (hdd_adapter_t* pAdapter);
 
 /**============================================================================
@@ -204,6 +225,9 @@ v_BOOL_t hdd_init_wowl (hdd_adapter_t* pAdapter);
   @return           : integer equivalent of hexa decimal
   ===========================================================================*/
 int hdd_parse_hex(unsigned char c);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif /* #ifndef _WLAN_HDD_WOWL_H */

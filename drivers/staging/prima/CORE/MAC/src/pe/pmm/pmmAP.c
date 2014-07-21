@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -63,7 +69,11 @@
 #include "limApi.h"
 #include "cfgApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -71,6 +81,7 @@
 #include "pmmApi.h"
 #include "pmmDebug.h"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define PMM_TIM_BITS_LIMIT        10
 #define PMM_CF_POLLABLE_SCH_LIMIT 100
@@ -238,6 +249,8 @@ void pmmHandleTimBasedDisassociation (tpAniSirGlobal pMac, tpPESession psessionE
 #ifdef WLAN_SOFTAP_FEATURE
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * pmmGenerateTIM
  *
@@ -284,7 +297,11 @@ void pmmGenerateTIM(tpAniSirGlobal pMac, tANI_U8 **pPtr, tANI_U16 *timLength, tA
     *ptr++ = (tANI_U8)val;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     *ptr++ = 0xFF; // location for bitmap contorl. will be filled in by FW.
+=======
+    *ptr++ = 0xFF; // location for bitmap control. will be filled in by FW.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     *ptr++ = 0xFF; // location for bitmap control. will be filled in by FW.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -293,6 +310,7 @@ void pmmGenerateTIM(tpAniSirGlobal pMac, tANI_U8 **pPtr, tANI_U16 *timLength, tA
     PELOG2(sirDumpBuf(pMac, SIR_PMM_MODULE_ID, LOG2, *pPtr, (*timLength)+2);)
     *pPtr = ptr;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 #endif
@@ -712,5 +730,7 @@ void pmmUpdatePollablePMMode(tpAniSirGlobal pMac, tANI_U16 staId, tANI_U8 pmMode
 
 // --------------------------------------------------------------------
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

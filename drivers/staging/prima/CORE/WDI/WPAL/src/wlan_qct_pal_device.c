@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -109,7 +115,11 @@
  * -------------------------------------------------------------------------*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static struct wcnss_env {
+=======
+typedef struct {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 typedef struct {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -124,12 +134,18 @@ typedef struct {
    int              rx_registered;
    int              tx_registered;
 <<<<<<< HEAD
+<<<<<<< HEAD
 } *gpEnv = NULL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } wcnss_env;
 
 static wcnss_env  gEnv;
 static wcnss_env *gpEnv = NULL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*----------------------------------------------------------------------------
@@ -226,7 +242,11 @@ wpt_status wpalRegisterInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -237,7 +257,11 @@ wpt_status wpalRegisterInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked with NULL callback",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -252,7 +276,11 @@ wpt_status wpalRegisterInterrupt
          WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
                  "%s: TX interrupt handler already registered",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -268,7 +296,11 @@ wpt_status wpalRegisterInterrupt
          WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_WARN,
                  "%s: RX interrupt handler already registered",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -282,7 +314,11 @@ wpt_status wpalRegisterInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Unknown interrupt type [%u]",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, intType);
+=======
+                 __func__, intType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, intType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -312,7 +348,11 @@ void wpalUnRegisterInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -347,7 +387,11 @@ void wpalUnRegisterInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Unknown interrupt type [%u]",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, intType);
+=======
+                 __func__, intType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, intType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -391,7 +435,11 @@ wpt_status wpalEnableInterrupt
             WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                        "%s: RX IRQ request failure",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__);
+=======
+                       __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -404,7 +452,11 @@ wpt_status wpalEnableInterrupt
             WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                        "%s: enable_irq_wake failed for RX IRQ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__);
+=======
+                       __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -426,7 +478,11 @@ wpt_status wpalEnableInterrupt
             WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                        "%s: TX IRQ request failure",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__);
+=======
+                       __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -439,7 +495,11 @@ wpt_status wpalEnableInterrupt
             WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                        "%s: enable_irq_wake failed for TX IRQ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__);
+=======
+                       __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -455,7 +515,11 @@ wpt_status wpalEnableInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                     "%s: unknown interrupt: %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     __FUNCTION__, (int)intType);
+=======
+                    __func__, (int)intType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     __func__, (int)intType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -498,7 +562,11 @@ wpt_status wpalDisableInterrupt
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                     "%s: unknown interrupt: %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     __FUNCTION__, (int)intType);
+=======
+                    __func__, (int)intType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     __func__, (int)intType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -529,7 +597,11 @@ wpt_status wpalWriteRegister
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -541,7 +613,11 @@ wpt_status wpalWriteRegister
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Register address 0x%0x out of range 0x%0x - 0x%0x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, address,
+=======
+                 __func__, address,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, address,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -553,7 +629,11 @@ wpt_status wpalWriteRegister
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Register address 0x%0x is not word aligned",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, address);
+=======
+                 __func__, address);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, address);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -585,7 +665,11 @@ wpt_status wpalReadRegister
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -597,7 +681,11 @@ wpt_status wpalReadRegister
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Register address 0x%0x out of range 0x%0x - 0x%0x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, address,
+=======
+                 __func__, address,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, address,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -609,7 +697,11 @@ wpt_status wpalReadRegister
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Register address 0x%0x is not word aligned",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, address);
+=======
+                 __func__, address);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, address);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -644,7 +736,11 @@ wpt_status wpalWriteDeviceMemory
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -656,7 +752,11 @@ wpt_status wpalWriteDeviceMemory
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Memory address 0x%0x len %d out of range 0x%0x - 0x%0x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, address, len,
+=======
+                 __func__, address, len,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, address, len,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -692,7 +792,11 @@ wpt_status wpalReadDeviceMemory
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -704,7 +808,11 @@ wpt_status wpalReadDeviceMemory
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Memory address 0x%0x len %d out of range 0x%0x - 0x%0x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, address, len,
+=======
+                 __func__, address, len,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, address, len,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -743,7 +851,11 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked  after subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -754,7 +866,11 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invalid device",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -766,7 +882,11 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: WCNSS memory map unavailable",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -778,7 +898,11 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: WCNSS TX IRQ unavailable",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -790,6 +914,7 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: WCNSS RX IRQ unavailable",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
       return eWLAN_PAL_STATUS_E_FAILURE;
    }
@@ -800,6 +925,8 @@ wpt_status wpalDeviceInit
                  "%s: memory allocation failure",
                  __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  __func__);
       return eWLAN_PAL_STATUS_E_FAILURE;
    }
@@ -809,6 +936,9 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: memory allocation failure",
                  __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_NOMEM;
    }
@@ -829,7 +959,11 @@ wpt_status wpalDeviceInit
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: memory remap failure",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -844,7 +978,10 @@ wpt_status wpalDeviceInit
 
  err_ioremap:
 <<<<<<< HEAD
+<<<<<<< HEAD
    wpalMemoryFree(gpEnv);
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    gpEnv = NULL;
@@ -873,7 +1010,11 @@ wpt_status wpalDeviceClose
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: invoked before subsystem initialized",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -890,7 +1031,10 @@ wpt_status wpalDeviceClose
    }
    iounmap(gpEnv->mmio);
 <<<<<<< HEAD
+<<<<<<< HEAD
    wpalMemoryFree(gpEnv);
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    gpEnv = NULL;
@@ -921,7 +1065,11 @@ wpt_status wpalNotifySmsm
       WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: smsm_change_state failed",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

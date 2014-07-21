@@ -1,5 +1,6 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +22,8 @@
  */
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
   *
   * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -40,6 +43,9 @@
   * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
   * PERFORMANCE OF THIS SOFTWARE.
 */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**=========================================================================
 
@@ -48,7 +54,11 @@
   \author Sunit Bhatia
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
+=======
+  Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -276,7 +286,11 @@ isLimSessionOffChannel(tpAniSirGlobal pMac, tANI_U8 sessionId)
   \brief peGetActiveSessionChannel() - Gets the operating channel of first  
                                     valid session. Returns 0 if there is no
 <<<<<<< HEAD
+<<<<<<< HEAD
 									valid session.
+=======
+                                    valid session.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                     valid session.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -292,6 +306,10 @@ peGetActiveSessionChannel (tpAniSirGlobal pMac, tANI_U8* resumeChannel, ePhyChan
 {
     tANI_U8 i;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    ePhyChanBondState prevPhyCbState = PHY_SINGLE_CHANNEL_CENTERED;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     ePhyChanBondState prevPhyCbState = PHY_SINGLE_CHANNEL_CENTERED;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -313,10 +331,13 @@ peGetActiveSessionChannel (tpAniSirGlobal pMac, tANI_U8* resumeChannel, ePhyChan
                 *resumePhyCbState = limGet11ACPhyCBState(pMac, 
                                     pMac->lim.gpSession[i].currentOperChannel,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     pMac->lim.gpSession[i].htSecondaryChannelOffset);
             }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     pMac->lim.gpSession[i].htSecondaryChannelOffset,
                                     pMac->lim.gpSession[i].apCenterChan,
                                     &pMac->lim.gpSession[i]);
@@ -324,6 +345,9 @@ peGetActiveSessionChannel (tpAniSirGlobal pMac, tANI_U8* resumeChannel, ePhyChan
 #endif
             *resumePhyCbState = (*resumePhyCbState > prevPhyCbState )? *resumePhyCbState : prevPhyCbState;
             prevPhyCbState = *resumePhyCbState;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
@@ -444,7 +468,10 @@ limIsInMCC (tpAniSirGlobal pMac)
     return FALSE;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
   \brief peGetCurrentSTAsCount() - Returns total stations associated on 
@@ -499,4 +526,7 @@ tANI_U8 limIsFastRoamEnabled(tpAniSirGlobal pMac, tANI_U8 sessionId)
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

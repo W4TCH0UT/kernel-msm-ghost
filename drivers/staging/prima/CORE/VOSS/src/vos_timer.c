@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,6 +50,7 @@
 
 /**=========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   \file  vos_timer.c
   
@@ -51,6 +58,8 @@
                
    Definitions for vOSS Timer services
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \file  vos_timer.c
 
@@ -58,6 +67,9 @@
 
    Definitions for vOSS Timer services
 <<<<<<< HEAD:CORE/VOSS/src/vos_timer.c
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
    Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
@@ -65,7 +77,10 @@
    Qualcomm Confidential and Proprietary.
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
@@ -73,6 +88,9 @@
    Qualcomm Technologies Confidential and Proprietary.
 
 >>>>>>> f7413b6... wlan: voss: remove obsolete "INTEGRATED_SOC" featurization:prima/CORE/VOSS/src/vos_timer.c
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ========================================================================*/
 
@@ -103,7 +121,11 @@
  * Static Variable Definitions
  * -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 static unsigned int        persistentTimerCount = 0;
+=======
+static unsigned int        persistentTimerCount;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static unsigned int        persistentTimerCount;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -175,7 +197,11 @@ static void vos_linux_timer_callback ( v_U32_t data )
    if (timer == NULL)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s Null pointer passed in!",__FUNCTION__);
+=======
+     VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s Null pointer passed in!",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s Null pointer passed in!",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -247,7 +273,10 @@ static void vos_linux_timer_callback ( v_U32_t data )
          return;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    else if ( vos_sched_is_rx_thread( threadId ) )
@@ -264,7 +293,10 @@ static void vos_linux_timer_callback ( v_U32_t data )
          return;
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    else 
@@ -366,7 +398,11 @@ static void vos_timer_clean()
        VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                  "%s: List is not Empty. listSize %d ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, (int)listSize);
+=======
+                 __func__, (int)listSize);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, (int)listSize);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -466,7 +502,11 @@ VOS_STATUS vos_timer_init_debug( vos_timer_t *timer, VOS_TIMER_TYPE timerType,
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Null params being passed",__FUNCTION__);
+=======
+                "%s: Null params being passed",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Null params being passed",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -480,7 +520,11 @@ VOS_STATUS vos_timer_init_debug( vos_timer_t *timer, VOS_TIMER_TYPE timerType,
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Not able to allocate memory for timeNode",__FUNCTION__);
+=======
+                "%s: Not able to allocate memory for timeNode",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Not able to allocate memory for timeNode",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -501,7 +545,11 @@ VOS_STATUS vos_timer_init_debug( vos_timer_t *timer, VOS_TIMER_TYPE timerType,
     {
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
              "%s: Unable to insert node into List vosStatus %d\n", __FUNCTION__, vosStatus);
+=======
+             "%s: Unable to insert node into List vosStatus %d\n", __func__, vosStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "%s: Unable to insert node into List vosStatus %d\n", __func__, vosStatus);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -531,7 +579,11 @@ VOS_STATUS vos_timer_init( vos_timer_t *timer, VOS_TIMER_TYPE timerType,
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Null params being passed",__FUNCTION__);
+=======
+                "%s: Null params being passed",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Null params being passed",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -600,7 +652,11 @@ VOS_STATUS vos_timer_destroy ( vos_timer_t *timer )
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Null timer pointer being passed",__FUNCTION__);
+=======
+                "%s: Null timer pointer being passed",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Null timer pointer being passed",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -613,7 +669,11 @@ VOS_STATUS vos_timer_destroy ( vos_timer_t *timer )
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Cannot destroy uninitialized timer",__FUNCTION__);
+=======
+                "%s: Cannot destroy uninitialized timer",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Cannot destroy uninitialized timer",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -683,7 +743,11 @@ VOS_STATUS vos_timer_destroy ( vos_timer_t *timer )
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Null timer pointer being passed",__FUNCTION__);
+=======
+                "%s: Null timer pointer being passed",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Null timer pointer being passed",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -696,7 +760,11 @@ VOS_STATUS vos_timer_destroy ( vos_timer_t *timer )
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Cannot destroy uninitialized timer",__FUNCTION__);
+=======
+                "%s: Cannot destroy uninitialized timer",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "%s: Cannot destroy uninitialized timer",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -791,16 +859,22 @@ VOS_STATUS vos_timer_start( vos_timer_t *timer, v_U32_t expirationTime )
    if ( LINUX_TIMER_COOKIE != timer->platformInfo.cookie )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
                 "%s: Cannot start uninitialized timer",__FUNCTION__);
       VOS_ASSERT(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
           "%s: Cannot start uninitialized timer",__func__);
       if ( LINUX_INVALID_TIMER_COOKIE != timer->platformInfo.cookie )
       {
          VOS_ASSERT(0);
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_INVAL;
    }
@@ -897,14 +971,20 @@ VOS_STATUS vos_timer_stop ( vos_timer_t *timer )
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "%s: Cannot stop uninitialized timer",__FUNCTION__);
       VOS_ASSERT(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           "%s: Cannot stop uninitialized timer",__func__);
       if ( LINUX_INVALID_TIMER_COOKIE != timer->platformInfo.cookie )
       {
          VOS_ASSERT(0);
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_INVAL;
    }

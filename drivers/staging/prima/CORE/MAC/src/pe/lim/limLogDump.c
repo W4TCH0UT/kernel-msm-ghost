@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -74,7 +80,10 @@ Qualcomm Confidential and Proprietary
 #endif
 #include "smeInside.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wlan_qct_wda.h"
 
 void WDA_TimerTrafficStatsInd(tWDA_CbContext *pWDA);
@@ -82,6 +91,9 @@ void WDA_TimerTrafficStatsInd(tWDA_CbContext *pWDA);
 extern void WLANTLPrintPktsRcvdPerRssi(v_PVOID_t pAdapter, v_U8_t staId, v_BOOL_t flush);
 extern void WLANTLPrintPktsRcvdPerRateIdx(v_PVOID_t pAdapter, v_U8_t staId, v_BOOL_t flush);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static char *getRole( tLimSystemRole role )
@@ -106,6 +118,7 @@ static char *getRole( tLimSystemRole role )
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 static char *
 dumpMacAddr(tpAniSirGlobal pMac, char *p, tANI_U8 *addr)
@@ -115,6 +128,8 @@ dumpMacAddr(tpAniSirGlobal pMac, char *p, tANI_U8 *addr)
     return p;
 }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -159,7 +174,11 @@ char *dumpLim( tpAniSirGlobal pMac, char *p, tANI_U32 sessionId)
   {
       p += log_sprintf( pMac,p, "Num of STAs associated                     = %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                       pMac->lim.gLimNumOfCurrentSTAs);
+=======
+                      peGetCurrentSTAsCount(pMac));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       peGetCurrentSTAsCount(pMac));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -249,7 +268,10 @@ char *dumpLim( tpAniSirGlobal pMac, char *p, tANI_U32 sessionId)
                   pMac->lim.gLimProbeRespDisableFlag);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == WLAN_STA)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   p += log_sprintf( pMac,p, "Scan mode enable                = %d\n",
@@ -297,12 +319,15 @@ char *dumpLim( tpAniSirGlobal pMac, char *p, tANI_U32 sessionId)
       }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
   p += log_sprintf( pMac,p, "Measurements enabled            = %d\n",
                   pMac->sys.gSysEnableLearnMode);
   p += log_sprintf( pMac,p, "Scan Mode for Learn Mode enable = %d\n",
                   pMac->lim.gLimUseScanModeForLearnMode);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   p += log_sprintf( pMac,p, "System Scan/Learn Mode bit      = %d\n",
@@ -327,6 +352,7 @@ char *dumpLim( tpAniSirGlobal pMac, char *p, tANI_U32 sessionId)
   p += log_sprintf( pMac,p, "Protection %s\n", pMac->lim.gLimProtectionControl ? "Enabled" : "Disabled");
 
   p += log_sprintf( pMac,p, "OBSS MODE = %d\n", pMac->lim.gHTObssMode);
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 
@@ -392,6 +418,8 @@ char *dumpLim( tpAniSirGlobal pMac, char *p, tANI_U32 sessionId)
         }
     }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     p += log_sprintf( pMac, p, "HT operating Mode = %d, llbCoexist = %d, llgCoexist = %d, ht20Coexist = %d, nonGfPresent = %d, RifsMode = %d, lsigTxop = %d\n",
@@ -553,9 +581,13 @@ static char *sendSmeDisAssocReq(tpAniSirGlobal pMac, char *p,tANI_U32 arg1 ,tANI
     }
     if((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
        || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 #endif
+=======
+       || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1106,6 +1138,7 @@ dump_lim_add_sta( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 ar
     tpPESession psessionEntry = &pMac->lim.gpSession[0];  //TBD-RAJESH HOW TO GET sessionEntry?????
     tSirMacAddr staMac = {0};
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16 aid;
     if(arg2 > 5)
       goto addStaFail;
@@ -1116,6 +1149,8 @@ dump_lim_add_sta( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 ar
         staMac[5] = (tANI_U8) arg1;
         pStaDs = dphAddHashEntry(pMac, staMac, aid, &psessionEntry->dph.dphHashTable);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U16 peerIdx;
     if(arg2 > 5)
       goto addStaFail;
@@ -1125,6 +1160,9 @@ dump_lim_add_sta( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 ar
     {
         staMac[5] = (tANI_U8) arg1;
         pStaDs = dphAddHashEntry(pMac, staMac, peerIdx, &psessionEntry->dph.dphHashTable);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(NULL == pStaDs)
           goto addStaFail;
@@ -1249,9 +1287,12 @@ dump_lim_del_sta( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 ar
                                 (tANI_U8 *) pStaDs->staAddr, sizeof(tSirMacAddr));
     mlmDisassocInd.reasonCode = reasonCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     mlmDisassocInd.aid        = pStaDs->assocId;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     mlmDisassocInd.disassocTrigger = eLIM_PEER_ENTITY_DISASSOC;
@@ -1321,11 +1362,15 @@ dump_lim_set_protection_control( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 ar
 {
     dump_cfg_set(pMac, WNI_CFG_FORCE_POLICY_PROTECTION, arg1, arg2, arg3, p);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limSetCfgProtection(pMac, NULL);
 #else
     limSetCfgProtection(pMac);
 #endif
+=======
+    limSetCfgProtection(pMac, NULL);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limSetCfgProtection(pMac, NULL);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1341,7 +1386,11 @@ dump_lim_send_SM_Power_Mode( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, 
         tSirMacHTMIMOPowerSaveState state;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         p += log_sprintf( pMac,p, "%s: Verifying the Arguments\n", __FUNCTION__);
+=======
+        p += log_sprintf( pMac,p, "%s: Verifying the Arguments\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         p += log_sprintf( pMac,p, "%s: Verifying the Arguments\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1400,7 +1449,11 @@ tpDphHashNode pSta;
     p += log_sprintf( pMac, p,
         "\n%s: Could not find entry in DPH table for assocId = %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
         __FUNCTION__,
+=======
+        __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1412,7 +1465,11 @@ tpDphHashNode pSta;
     p += log_sprintf( pMac, p,
         "\n%s: Attempted to send an ADDBA Req to STA Index %d, for TID %d. Send Status = %s\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
         __FUNCTION__,
+=======
+        __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1438,7 +1495,11 @@ tpDphHashNode pSta;
     p += log_sprintf( pMac, p,
         "\n%s: Could not find entry in DPH table for assocId = %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
         __FUNCTION__,
+=======
+        __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1452,7 +1513,11 @@ tpDphHashNode pSta;
         "as the BA \"%s\" for TID %d, with Reason code %d. "
         "Send Status = %s\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
         __FUNCTION__,
+=======
+        __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1472,6 +1537,7 @@ dump_lim_ba_timeout( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32
 
 /* FIXME: NO HAL IN UMAC for PRIMA */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if !defined( FEATURE_WLAN_INTEGRATED_SOC ) 
   // Call HAL API to trigger deletion of BA due to timeout
   (void)halMsg_PostBADeleteInd( pMac, (tANI_U16) arg1, (tANI_U8) arg2, (tANI_U8) arg3,
@@ -1482,10 +1548,15 @@ dump_lim_ba_timeout( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32
       "\n%s: Attempted to trigger a BA Timeout Ind to STA Index %d, for TID %d, Direction %d\n",
       __FUNCTION__,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   p += log_sprintf( pMac, p,
       "\n%s: Attempted to trigger a BA Timeout Ind to STA Index %d, for TID %d, Direction %d\n",
       __func__,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       arg1, // STA index
       arg2, // TID
@@ -1513,7 +1584,11 @@ tpPESession psessionEntry = &pMac->lim.gpSession[0];  //TBD-RAJESH
     p += log_sprintf( pMac, p,
         "\n%s: Could not find entry in DPH table for assocId = %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
         __FUNCTION__,
+=======
+        __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1552,7 +1627,11 @@ dump_lim_AddBA_DeclineStat( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, t
 
     if (arg1 > 1) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         log_sprintf( pMac,p, "%s:Invalid Value is entered for Enable/Disable \n", __FUNCTION__ );
+=======
+        log_sprintf( pMac,p, "%s:Invalid Value is entered for Enable/Disable \n", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         log_sprintf( pMac,p, "%s:Invalid Value is entered for Enable/Disable \n", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1563,7 +1642,11 @@ dump_lim_AddBA_DeclineStat( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, t
     
     if (arg2 > 7) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         log_sprintf( pMac,p, "%s:Invalid Value is entered for Tid \n", __FUNCTION__ );
+=======
+        log_sprintf( pMac,p, "%s:Invalid Value is entered for Tid \n", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         log_sprintf( pMac,p, "%s:Invalid Value is entered for Tid \n", __func__ );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1579,9 +1662,15 @@ dump_lim_AddBA_DeclineStat( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, t
 
     if (cfgSetInt(pMac, (tANI_U16)WNI_CFG_ADDBA_REQ_DECLINE, (tANI_U32) val) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
              log_sprintf( pMac,p, "%s:Config Set for ADDBA REQ Decline has failed \n", __FUNCTION__ );
 
      log_sprintf( pMac,p, "%s:Decline value %d is being set for TID %d ,\n \tAddBA_Decline Cfg value is %d \n", __FUNCTION__ , arg1, Tid, (int) val);
+=======
+             log_sprintf( pMac,p, "%s:Config Set for ADDBA REQ Decline has failed \n", __func__ );
+
+     log_sprintf( pMac,p, "%s:Decline value %d is being set for TID %d ,\n \tAddBA_Decline Cfg value is %d \n", __func__ , arg1, Tid, (int) val);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              log_sprintf( pMac,p, "%s:Config Set for ADDBA REQ Decline has failed \n", __func__ );
 
@@ -1828,6 +1917,7 @@ static char *
 dump_lim_dot11h_stats( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 arg3, tANI_U32 arg4, char *p)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if 0
     unsigned int i;
     (void) arg1; (void) arg2; (void) arg3; (void) arg4;
@@ -1898,6 +1988,8 @@ dump_lim_dot11h_stats( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U
     p += log_sprintf(pMac, p, "\n");
     
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return p;
@@ -2308,6 +2400,7 @@ dump_lim_unpack_rrm_action( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, t
          {
 // FIXME.
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
             tDot11fLinkMeasurementRequest frm;
             tHalBufDesc Bd;
@@ -2321,6 +2414,8 @@ dump_lim_unpack_rrm_action( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, t
             else
                rrmProcessLinkMeasurementRequest( pMac, (tANI_U8*)&Bd, &frm, psessionEntry );
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
@@ -2421,6 +2516,7 @@ dump_lim_ft_event( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 a
 
                    p += log_sprintf( pMac,p, "\n ----- LIM Debug Information ----- \n");
 <<<<<<< HEAD
+<<<<<<< HEAD
                    p += log_sprintf( pMac, p, "%s: length = %d\n", __FUNCTION__, 
                             (int)pMac->ft.ftSmeContext.auth_ft_ies_length);
                    p += log_sprintf( pMac, p, "%s: length = %02x\n", __FUNCTION__, 
@@ -2434,6 +2530,8 @@ dump_lim_ft_event( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 a
                             psessionEntry->bssId[1], psessionEntry->bssId[2]);
                    p += log_sprintf( pMac, p, "%s: Session %02x %02x %02x %p\n", __FUNCTION__, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    p += log_sprintf( pMac, p, "%s: length = %d\n", __func__, 
                             (int)pMac->ft.ftSmeContext.auth_ft_ies_length);
                    p += log_sprintf( pMac, p, "%s: length = %02x\n", __func__, 
@@ -2446,6 +2544,9 @@ dump_lim_ft_event( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 a
                             psessionEntry->bssId[0],
                             psessionEntry->bssId[1], psessionEntry->bssId[2]);
                    p += log_sprintf( pMac, p, "%s: Session %02x %02x %02x %p\n", __func__, 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             pftPreAuthReq->currbssId[0],
                             pftPreAuthReq->currbssId[1], 
@@ -2484,7 +2585,11 @@ dump_lim_channel_switch_announcement( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U
         p += log_sprintf( pMac,
             p,"Session does not exist usage: 363 <0> sessionid channel \n");
 <<<<<<< HEAD
+<<<<<<< HEAD
         printk("Session Not found!!!!\n");
+=======
+        VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_WARN,"Session Not found!!!!");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_WARN,"Session Not found!!!!");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2505,7 +2610,10 @@ dump_lim_channel_switch_announcement( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 static char *
 dump_lim_vht_opmode_notification(tpAniSirGlobal pMac, tANI_U32 arg1,tANI_U32 arg2,tANI_U32 arg3, tANI_U32 arg4, char *p)
@@ -2568,6 +2676,9 @@ dump_lim_vht_channel_switch_notification(tpAniSirGlobal pMac, tANI_U32 arg1,tANI
 }
 
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static char *
 dump_lim_cancel_channel_switch_announcement( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 arg3, tANI_U32 arg4, char *p)
@@ -2579,7 +2690,11 @@ dump_lim_cancel_channel_switch_announcement( tpAniSirGlobal pMac, tANI_U32 arg1,
         p += log_sprintf( pMac,
             p,"Session does not exist usage: 363 <0> sessionid channel \n");
 <<<<<<< HEAD
+<<<<<<< HEAD
         printk("Session Not found!!!!\n");
+=======
+        VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_WARN,"Session Not found!!!!");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_WARN,"Session Not found!!!!");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2596,7 +2711,10 @@ dump_lim_cancel_channel_switch_announcement( tpAniSirGlobal pMac, tANI_U32 arg1,
   return p;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 static char *
@@ -2689,6 +2807,9 @@ dump_lim_get_pkts_rcvd_per_rssi_values( tpAniSirGlobal pMac, tANI_U32 arg1, tANI
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static tDumpFuncEntry limMenuDumpTable[] = {
     {0,     "PE (300-499)",                                          NULL},
@@ -2757,8 +2878,11 @@ static tDumpFuncEntry limMenuDumpTable[] = {
     {364,   "PE.LIM: Send a channel switch announcement",            dump_lim_channel_switch_announcement},
     {365,   "PE.LIM: Cancel channel switch announcement",            dump_lim_cancel_channel_switch_announcement},
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
     {366,   "PE.LIM: Send a VHT OPMode Action Frame",                dump_lim_vht_opmode_notification},
     {367,   "PE.LIM: Send a VHT Channel Switch Announcement",        dump_lim_vht_channel_switch_notification},
@@ -2768,6 +2892,9 @@ static tDumpFuncEntry limMenuDumpTable[] = {
     {369,   "PE.LIM: pkts/rateIdx: iwpriv wlan0 dump 368 <staId> <boolean to flush counter>",    dump_lim_get_pkts_rcvd_per_rate_idx},
     {370,   "PE.LIM: pkts/rssi: : iwpriv wlan0 dump 369 <staId> <boolean to flush counter>",    dump_lim_get_pkts_rcvd_per_rssi_values},
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 

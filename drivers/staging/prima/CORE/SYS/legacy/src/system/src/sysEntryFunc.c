@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -73,6 +82,7 @@
 #include "sysEntryFunc.h"
 #include "sysStartup.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halMacSecurityApi.h"
 #endif
@@ -88,6 +98,16 @@ postPTTMsgApi(tpAniSirGlobal pMac, tSirMsgQ *pMsg);
 #include "vos_types.h"
 #include "vos_packet.h"
 #endif
+=======
+#include "limTrace.h"
+#include "wlan_qct_wda.h"
+
+tSirRetStatus
+postPTTMsgApi(tpAniSirGlobal pMac, tSirMsgQ *pMsg);
+
+#include "vos_types.h"
+#include "vos_packet.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "limTrace.h"
 #include "wlan_qct_wda.h"
@@ -123,6 +143,7 @@ sysInitGlobals(tpAniSirGlobal pMac)
     palZeroMemory(pMac->hHdd, (tANI_U8 *) &pMac->sys, sizeof(pMac->sys));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_DEBUG)
     //FIXME : right now we want the reset to happen even in diag debug build.
     // later on we need to set this to true.
@@ -145,11 +166,16 @@ sysInitGlobals(tpAniSirGlobal pMac)
     pMac->sys.gSysEnableScanMode        = 1;
     pMac->sys.gSysEnableLinkMonitorMode = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+    pMac->sys.gSysEnableScanMode        = 1;
+    pMac->sys.gSysEnableLinkMonitorMode = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     schInitGlobals(pMac);
 
     return eSIR_SUCCESS;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 
@@ -181,6 +207,8 @@ sysIsLearnScanModeFrame(tpHalBufDesc pBd)
         return 0;
 }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // ---------------------------------------------------------------------------
@@ -244,10 +272,13 @@ sysBbtProcessMessageCore(tpAniSirGlobal pMac, tpSirMsgQ pMsg, tANI_U32 type,
             pMac->sys.gSysBbtPostedToLim++;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_CCX
     else if (type == SIR_MAC_DATA_FRAME)
     {
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else if (type == SIR_MAC_DATA_FRAME)
     {
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
@@ -298,6 +329,9 @@ sysBbtProcessMessageCore(tpAniSirGlobal pMac, tpSirMsgQ pMsg, tANI_U32 type,
        /* fall through if ethType != TDLS, which is error case */
 #endif
 #ifdef FEATURE_WLAN_CCX
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGW(sysLog(pMac, LOGW, FL("IAPP Frame...\n")););
         //Post the message to PE Queue
@@ -309,8 +343,13 @@ sysBbtProcessMessageCore(tpAniSirGlobal pMac, tpSirMsgQ pMsg, tANI_U32 type,
         }
         pMac->sys.gSysBbtPostedToLim++;
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 #endif
+=======
+#endif
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #endif
     }
@@ -354,6 +393,7 @@ void sysLog(tpAniSirGlobal pMac, tANI_U32 loglevel, const char *pString,...)
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined( ANI_OS_TYPE_WINDOWS )
 // ---------------------------------------------------------------------------
@@ -834,6 +874,10 @@ postPTTMsgApi(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
 #endif // eDRIVER_TYPE_MFG
 
 #endif // #if defined ANI_OS_TYPE_LINUX || defined ANI_OS_TYPE_OSX
+=======
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 

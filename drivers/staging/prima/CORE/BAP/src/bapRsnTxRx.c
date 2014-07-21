@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -66,8 +72,13 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static pnfTxCompleteHandler bapRsnFsmTxCmpHandler = NULL;
 static pnfRxFrameHandler bapRsnFsmRxFrameHandler = NULL;
+=======
+static pnfTxCompleteHandler bapRsnFsmTxCmpHandler;
+static pnfRxFrameHandler bapRsnFsmRxFrameHandler;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static pnfTxCompleteHandler bapRsnFsmTxCmpHandler;
 static pnfRxFrameHandler bapRsnFsmRxFrameHandler;
@@ -140,7 +151,11 @@ static VOS_STATUS bapRsnTxCompleteCallback( v_PVOID_t pvosGCtx, vos_pkt_t *pPack
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "pvosGCtx is NULL in %s", __FUNCTION__);
+=======
+                     "pvosGCtx is NULL in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "pvosGCtx is NULL in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -153,7 +168,11 @@ static VOS_STATUS bapRsnTxCompleteCallback( v_PVOID_t pvosGCtx, vos_pkt_t *pPack
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "btampContext is NULL in %s", __FUNCTION__);
+=======
+                     "btampContext is NULL in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "btampContext is NULL in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -166,7 +185,11 @@ static VOS_STATUS bapRsnTxCompleteCallback( v_PVOID_t pvosGCtx, vos_pkt_t *pPack
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "fsm is NULL in %s", __FUNCTION__);
+=======
+                     "fsm is NULL in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "fsm is NULL in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -244,7 +267,11 @@ VOS_STATUS bapRsnSendEapolFrame( v_PVOID_t pvosGCtx, tAniPacket *pAniPkt )
 {
     VOS_STATUS status;
 <<<<<<< HEAD
+<<<<<<< HEAD
     vos_pkt_t *pPacket;
+=======
+    vos_pkt_t *pPacket = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     vos_pkt_t *pPacket = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -257,7 +284,11 @@ VOS_STATUS bapRsnSendEapolFrame( v_PVOID_t pvosGCtx, tAniPacket *pAniPkt )
     }
     status = bapRsnAcquirePacket( &pPacket, &pData, pktLen );
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( VOS_IS_STATUS_SUCCESS( status ) )
+=======
+    if( VOS_IS_STATUS_SUCCESS( status ) && ( NULL != pPacket ))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if( VOS_IS_STATUS_SUCCESS( status ) && ( NULL != pPacket ))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

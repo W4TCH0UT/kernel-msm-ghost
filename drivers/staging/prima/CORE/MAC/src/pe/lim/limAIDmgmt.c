@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,7 +50,10 @@
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
@@ -66,6 +75,7 @@
 #include "limTimerUtils.h"
 #include "limSession.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #define LIM_START_AID   1
 
@@ -73,12 +83,17 @@
 /**
  * limInitAIDpool()
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "limSessionUtils.h"
 
 #define LIM_START_PEER_IDX   1
 
 /**
  * limInitPeerIdxpool()
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  *FUNCTION:
@@ -101,7 +116,11 @@
 
 void
 <<<<<<< HEAD
+<<<<<<< HEAD
 limInitAIDpool(tpAniSirGlobal pMac,tpPESession sessionEntry)
+=======
+limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -109,6 +128,7 @@ limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
     tANI_U8 i;
     tANI_U8 maxAssocSta = pMac->lim.gLimAssocStaLimit;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     pMac->lim.gpLimAIDpool[0]=0;
     pMac->lim.freeAidHead=LIM_START_AID;
@@ -121,6 +141,8 @@ limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
 
     pMac->lim.freeAidTail=i;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSessionEntry->gpLimPeerIdxpool[0]=0;
 
 #ifdef FEATURE_WLAN_TDLS
@@ -144,6 +166,9 @@ limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
     pSessionEntry->gpLimPeerIdxpool[i]         =  0;
 
     pSessionEntry->freePeerIdxTail=i;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 }
@@ -151,12 +176,15 @@ limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * limAssignAID()
  *
  *FUNCTION:
  * This function is called during Association/Reassociation
  * frame handling to assign association ID (aid) to a STA.
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * limAssignPeerIdx()
  *
  *FUNCTION:
@@ -164,6 +192,9 @@ limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
  * used during Association/Reassociation
  * frame handling to assign association ID (aid) to a STA.
  * In case of TDLS, this is used to assign a index into the Dph hash entry.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  *LOGIC:
@@ -174,6 +205,7 @@ limInitPeerIdxpool(tpAniSirGlobal pMac,tpPESession pSessionEntry)
  *NOTE:
  *
  * @param  pMac - Pointer to Global MAC structure
+<<<<<<< HEAD
 <<<<<<< HEAD
  * @return aid  - assigned Association ID for STA
  */
@@ -186,6 +218,8 @@ limAssignAID(tpAniSirGlobal pMac)
     // make sure we haven't exceeded the configurable limit on associations
     if (pMac->lim.gLimNumOfCurrentSTAs >= pMac->lim.gLimAssocStaLimit)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * @return peerIdx  - assigned peer Station IDx for STA
  */
 
@@ -197,6 +231,9 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
     // make sure we haven't exceeded the configurable limit on associations
     // This count is global to ensure that it doesnt exceed the hardware limits.
     if (peGetCurrentSTAsCount(pMac) >= pMac->lim.gLimAssocStaLimit)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         // too many associations already active
@@ -205,6 +242,7 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
 
     /* return head of free list */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if (pMac->lim.freeAidHead)
     {
@@ -219,6 +257,8 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
 
     return 0; /* no more free aids */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pSessionEntry->freePeerIdxHead)
     {
         peerId=pSessionEntry->freePeerIdxHead;
@@ -231,11 +271,15 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
     }
 
     return 0; /* no more free peer index */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
 /**
+<<<<<<< HEAD
 <<<<<<< HEAD
  * limReleaseAID()
  *
@@ -243,11 +287,16 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
  * This function is called when a STA context is removed
  * at AP (or at a STA in IBSS mode) to return association ID (aid)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * limReleasePeerIdx()
  *
  *FUNCTION:
  * This function is called when a STA context is removed
  * at AP (or at a STA in IBSS mode or TDLS) to return peer Index
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * to free pool.
  *
@@ -260,7 +309,11 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
  *
  * @param  pMac - Pointer to Global MAC structure
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param  aid - Association ID that need to return to free pool
+=======
+ * @param  peerIdx - peer station index that need to return to free pool
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * @param  peerIdx - peer station index that need to return to free pool
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -269,6 +322,7 @@ limAssignPeerIdx(tpAniSirGlobal pMac, tpPESession pSessionEntry)
  */
 
 void
+<<<<<<< HEAD
 <<<<<<< HEAD
 limReleaseAID(tpAniSirGlobal pMac, tANI_U16 aid)
 {
@@ -287,6 +341,8 @@ limReleaseAID(tpAniSirGlobal pMac, tANI_U16 aid)
     pMac->lim.gpLimAIDpool[(tANI_U8)aid]=0;
     //PELOG2(limLog(pMac, LOG2,FL("Release aid %d, numSta %d, head %d tail %d \n"),aid,pMac->lim.gLimNumOfCurrentSTAs,pMac->lim.freeAidHead,pMac->lim.freeAidTail);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 limReleasePeerIdx(tpAniSirGlobal pMac, tANI_U16 peerIdx, tpPESession pSessionEntry)
 {
     pSessionEntry->gLimNumOfCurrentSTAs--;
@@ -303,6 +359,9 @@ limReleasePeerIdx(tpAniSirGlobal pMac, tANI_U16 peerIdx, tpPESession pSessionEnt
     }
     pSessionEntry->gpLimPeerIdxpool[(tANI_U8)peerIdx]=0;
     //PELOG2(limLog(pMac, LOG2,FL("Release aid %d, numSta %d, head %d tail %d "),aid,pMac->lim.gLimNumOfCurrentSTAs,pMac->lim.freeAidHead,pMac->lim.freeAidTail);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 }

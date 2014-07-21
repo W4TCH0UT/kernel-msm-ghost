@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -66,9 +72,14 @@
 #include <vos_timer.h>
 #include <vos_trace.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 #include <wlan_hdd_main.h>   
 #endif
+=======
+#include <wlan_hdd_main.h>   
+#include <linux/wcnss_wlan.h>
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <wlan_hdd_main.h>   
 #include <linux/wcnss_wlan.h>
@@ -86,7 +97,11 @@
   Data definitions
   ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 static vos_pkt_context_t *gpVosPacketContext = NULL;
+=======
+static vos_pkt_context_t *gpVosPacketContext;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static vos_pkt_context_t *gpVosPacketContext;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -113,7 +128,11 @@ static VOS_STATUS vos_pkti_packet_init( struct vos_pkt_t *pPkt,
       // we preallocate a fixed-size skb and reserve the entire buffer
       // as headroom since that is what other components expect
 <<<<<<< HEAD
+<<<<<<< HEAD
       pPkt->pSkb = alloc_skb(VPKT_SIZE_BUFFER, GFP_ATOMIC);
+=======
+      pPkt->pSkb = alloc_skb(VPKT_SIZE_BUFFER , in_interrupt()? GFP_ATOMIC : GFP_KERNEL);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pPkt->pSkb = alloc_skb(VPKT_SIZE_BUFFER , in_interrupt()? GFP_ATOMIC : GFP_KERNEL);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -127,7 +146,10 @@ static VOS_STATUS vos_pkti_packet_init( struct vos_pkt_t *pPkt,
       }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* Init PAL Packet */
@@ -136,7 +158,10 @@ static VOS_STATUS vos_pkti_packet_init( struct vos_pkt_t *pPkt,
       WPAL_PACKET_SET_BD_LENGTH(&(pPkt->palPacket), 0);
       WPAL_PACKET_SET_OS_STRUCT_POINTER(&(pPkt->palPacket), NULL);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -221,9 +246,15 @@ static void vos_pkti_replenish_raw_pool(void)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if ((gpVosPacketContext->rxReplenishListCount < VPKT_RX_REPLENISH_THRESHOLD)
        &&
        (!list_empty(&gpVosPacketContext->rxRawFreeList)))
+=======
+   if ((gpVosPacketContext->rxReplenishListCount <
+        gpVosPacketContext->numOfRxRawPackets/4) &&
+         (!list_empty(&gpVosPacketContext->rxRawFreeList)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if ((gpVosPacketContext->rxReplenishListCount <
         gpVosPacketContext->numOfRxRawPackets/4) &&
@@ -262,6 +293,10 @@ static void vos_pkti_replenish_raw_pool(void)
       // add it to the Rx Raw Free Pool
       list_add_tail(&pVosPacket->node, &gpVosPacketContext->rxRawFreeList);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      gpVosPacketContext->rxRawFreeListCount++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       gpVosPacketContext->rxRawFreeListCount++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -284,6 +319,10 @@ static void vos_pkti_replenish_raw_pool(void)
                                     struct vos_pkt_t, node);
       list_del(&pVosPacket->node);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      gpVosPacketContext->rxRawFreeListCount--;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       gpVosPacketContext->rxRawFreeListCount--;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -385,7 +424,11 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
    struct list_head *pFreeList;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO, "Enter:%s",__FUNCTION__);
+=======
+   VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO, "Enter:%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO, "Enter:%s",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -438,11 +481,14 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
       // initialize the rxRaw free list pool
       pFreeList = &pVosPacketContext->rxRawFreeList;
 <<<<<<< HEAD
+<<<<<<< HEAD
       INIT_LIST_HEAD(pFreeList);
 
       // fill the rxRaw free list
       for (idx = 0; idx < VPKT_NUM_RX_RAW_PACKETS; idx++)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pVosPacketContext->rxRawFreeListCount = 0;
       INIT_LIST_HEAD(pFreeList);
 
@@ -450,13 +496,19 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
 
       // fill the rxRaw free list
       for (idx = 0; idx < pVosPacketContext->numOfRxRawPackets; idx++)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       {
          pPkt = &pVosPacketContext->vosPktBuffers[freePacketIndex++];
          vosStatus = vos_pkti_packet_init(pPkt, VOS_PKT_TYPE_RX_RAW);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          WPAL_PACKET_SET_METAINFO_POINTER(&(pPkt->palPacket),
@@ -464,7 +516,10 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          WPAL_PACKET_SET_TYPE(&(pPkt->palPacket), 
                               eWLAN_PAL_PKT_TYPE_RX_RAW);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -476,6 +531,10 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          }
          list_add_tail(&pPkt->node, pFreeList);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+         pVosPacketContext->rxRawFreeListCount++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pVosPacketContext->rxRawFreeListCount++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -497,7 +556,10 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          pPkt = &pVosPacketContext->vosPktBuffers[freePacketIndex++];
          vosStatus = vos_pkti_packet_init(pPkt, VOS_PKT_TYPE_TX_802_3_DATA);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          WPAL_PACKET_SET_METAINFO_POINTER(&(pPkt->palPacket),
@@ -505,7 +567,10 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          WPAL_PACKET_SET_TYPE(&(pPkt->palPacket), 
                               eWLAN_PAL_PKT_TYPE_TX_802_3_DATA);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if (VOS_STATUS_SUCCESS != vosStatus)
@@ -516,9 +581,13 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          }
          list_add_tail(&pPkt->node, pFreeList);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
          pVosPacketContext->uctxDataFreeListCount++;
 #endif
+=======
+         pVosPacketContext->uctxDataFreeListCount++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pVosPacketContext->uctxDataFreeListCount++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -543,7 +612,10 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          vosStatus = vos_pkti_packet_init(pPkt, VOS_PKT_TYPE_TX_802_11_MGMT);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          WPAL_PACKET_SET_METAINFO_POINTER(&(pPkt->palPacket),
@@ -551,7 +623,10 @@ VOS_STATUS vos_packet_open( v_VOID_t *pVosContext,
          WPAL_PACKET_SET_TYPE(&(pPkt->palPacket), 
                               eWLAN_PAL_PKT_TYPE_TX_802_11_MGMT);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -601,7 +676,11 @@ VOS_STATUS vos_packet_close( v_PVOID_t pVosContext )
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO, "Enter:%s",__FUNCTION__);
+=======
+   VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO, "Enter:%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO, "Enter:%s",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -626,12 +705,15 @@ VOS_STATUS vos_packet_close( v_PVOID_t pVosContext )
    (void) vos_pkti_list_destroy(&gpVosPacketContext->rxRawFreeList);
    (void) vos_pkti_list_destroy(&gpVosPacketContext->rxReplenishList);
 <<<<<<< HEAD
+<<<<<<< HEAD
    mutex_unlock(&gpVosPacketContext->mlock);
 
 #ifdef WLAN_SOFTAP_FEATURE
    gpVosPacketContext->uctxDataFreeListCount = 0;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    gpVosPacketContext->rxRawFreeListCount    = 0;
    gpVosPacketContext->rxReplenishListCount  = 0;
@@ -640,6 +722,9 @@ VOS_STATUS vos_packet_close( v_PVOID_t pVosContext )
    mutex_unlock(&gpVosPacketContext->mlock);
 
    gpVosPacketContext->uctxDataFreeListCount = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return VOS_STATUS_SUCCESS;
@@ -735,6 +820,10 @@ VOS_STATUS vos_pkt_get_packet( vos_pkt_t **ppPacket,
    vos_pkt_low_resource_info *pLowResourceInfo;
    struct vos_pkt_t *pVosPacket;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   v_SIZE_t *pCount = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_SIZE_t *pCount = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -775,6 +864,10 @@ VOS_STATUS vos_pkt_get_packet( vos_pkt_t **ppPacket,
       // see if we need to replenish the Rx Raw pool
       vos_pkti_replenish_raw_pool();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      pCount = &gpVosPacketContext->rxRawFreeListCount;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       pCount = &gpVosPacketContext->rxRawFreeListCount;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -836,11 +929,17 @@ VOS_STATUS vos_pkt_get_packet( vos_pkt_t **ppPacket,
    pVosPacket = list_first_entry(pPktFreeList, struct vos_pkt_t, node);
    list_del(&pVosPacket->node);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (NULL != pCount)
    {
       (*pCount)--;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    mutex_unlock(&gpVosPacketContext->mlock);
 
@@ -979,7 +1078,11 @@ VOS_STATUS vos_pkt_wrap_data_packet( vos_pkt_t **ppPacket,
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "VPKT [%d]: invalid pktType", __LINE__, pktType);
+=======
+                "VPKT [%d]: invalid pktType %d", __LINE__, pktType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "VPKT [%d]: invalid pktType %d", __LINE__, pktType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1028,9 +1131,13 @@ VOS_STATUS vos_pkt_wrap_data_packet( vos_pkt_t **ppPacket,
    pVosPacket = list_first_entry(pPktFreeList, struct vos_pkt_t, node);
    list_del(&pVosPacket->node);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    gpVosPacketContext->uctxDataFreeListCount --;
 #endif
+=======
+   gpVosPacketContext->uctxDataFreeListCount --;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    gpVosPacketContext->uctxDataFreeListCount --;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1387,6 +1494,10 @@ VOS_STATUS vos_pkt_return_packet( vos_pkt_t *pPacket )
    v_SIZE_t *pCount;
    VOS_PKT_TYPE packetType = VOS_PKT_TYPE_TX_802_3_DATA;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   v_BOOL_t lowResource = VOS_FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_BOOL_t lowResource = VOS_FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1434,6 +1545,10 @@ VOS_STATUS vos_pkt_return_packet( vos_pkt_t *pPacket )
             pPktFreeList = &gpVosPacketContext->rxRawFreeList;
             pLowResourceInfo = &gpVosPacketContext->rxRawLowResourceInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            pCount = &gpVosPacketContext->rxRawFreeListCount;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pCount = &gpVosPacketContext->rxRawFreeListCount;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1458,9 +1573,13 @@ VOS_STATUS vos_pkt_return_packet( vos_pkt_t *pPacket )
          pPktFreeList = &gpVosPacketContext->txDataFreeList;
          pLowResourceInfo = &gpVosPacketContext->txDataLowResourceInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
          gpVosPacketContext->uctxDataFreeListCount ++;
 #endif
+=======
+         gpVosPacketContext->uctxDataFreeListCount ++;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          gpVosPacketContext->uctxDataFreeListCount ++;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1479,6 +1598,7 @@ VOS_STATUS vos_pkt_return_packet( vos_pkt_t *pPacket )
       // is there a low resource condition pending for this packet type?
       if (pLowResourceInfo && pLowResourceInfo->callback)
       {
+<<<<<<< HEAD
 <<<<<<< HEAD
          // [DEBUG]
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,"VPKT [%d]: recycle %p",  __LINE__, pPacket);
@@ -1505,6 +1625,8 @@ VOS_STATUS vos_pkt_return_packet( vos_pkt_t *pPacket )
       }
       else
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          // pLowResourceInfo->callback is modified from threads (different CPU's). 
          // So a mutex is enough to protect is against a race condition.
          // mutex is SMP safe
@@ -1544,6 +1666,9 @@ VOS_STATUS vos_pkt_return_packet( vos_pkt_t *pPacket )
       
 
       if(!lowResource)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       {
          // this packet does not satisfy a low resource condition
@@ -3071,7 +3196,10 @@ VOS_STATUS vos_pkt_get_available_buffer_pool (VOS_PKT_TYPE  pktType,
    case VOS_PKT_TYPE_TX_802_11_DATA:
    case VOS_PKT_TYPE_TX_802_3_DATA:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if (VOS_STA_SAP_MODE == hdd_get_conparam())
@@ -3081,7 +3209,10 @@ VOS_STATUS vos_pkt_get_available_buffer_pool (VOS_PKT_TYPE  pktType,
       }
       else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pList = &gpVosPacketContext->txDataFreeList;
@@ -3093,7 +3224,13 @@ VOS_STATUS vos_pkt_get_available_buffer_pool (VOS_PKT_TYPE  pktType,
       // possible so replenish the raw pool
       vos_pkti_replenish_raw_pool();
 <<<<<<< HEAD
+<<<<<<< HEAD
       pList = &gpVosPacketContext->rxRawFreeList;
+=======
+      // Return the pre-calculated count 'rxRawFreeListCount'
+      *vosFreeBuffer = gpVosPacketContext->rxRawFreeListCount;
+      return VOS_STATUS_SUCCESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       // Return the pre-calculated count 'rxRawFreeListCount'
       *vosFreeBuffer = gpVosPacketContext->rxRawFreeListCount;
@@ -3117,7 +3254,10 @@ VOS_STATUS vos_pkt_get_available_buffer_pool (VOS_PKT_TYPE  pktType,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
   @brief vos_pkt_get_num_of_rx_raw_pkts() - Get the number of RX packets
                                        that should be allocated.
@@ -3144,6 +3284,9 @@ v_SIZE_t vos_pkt_get_num_of_rx_raw_pkts(void)
     return VPKT_NUM_RX_RAW_PACKETS;
 #endif
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef VOS_PACKET_UNIT_TEST

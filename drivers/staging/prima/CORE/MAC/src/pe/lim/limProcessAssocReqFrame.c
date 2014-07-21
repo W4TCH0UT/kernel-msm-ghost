@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -57,7 +63,11 @@
 #include "palTypes.h"
 #include "aniGlobal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -76,6 +86,10 @@
 #include "limAdmitControl.h"
 #include "palApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include "limSessionUtils.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "limSessionUtils.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -112,7 +126,11 @@ limConvertSupportedChannels(tpAniSirGlobal pMac,
     if(assocReq->supportedChannels.length >= SIR_MAX_SUPPORTED_CHANNEL_LIST)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOG1, FL("Number of supported channels:%d is more than MAX\n"),
+=======
+        limLog(pMac, LOG1, FL("Number of supported channels:%d is more than MAX"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOG1, FL("Number of supported channels:%d is more than MAX"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -136,7 +154,11 @@ limConvertSupportedChannels(tpAniSirGlobal pMac,
         // Get Number of Channels in a Subband
         numberOfChannel = assocReq->supportedChannels.supportedChannels[i];
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG2(limLog(pMac, LOG2, FL("Rcv AssocReq: chnl=%d, numOfChnl=%d \n"),
+=======
+        PELOG2(limLog(pMac, LOG2, FL("Rcv AssocReq: chnl=%d, numOfChnl=%d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG2(limLog(pMac, LOG2, FL("Rcv AssocReq: chnl=%d, numOfChnl=%d "),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -179,7 +201,11 @@ limConvertSupportedChannels(tpAniSirGlobal pMac,
     pMlmAssocInd->supportedChannels.numChnl = (tANI_U8) index;
    PELOG2(limLog(pMac, LOG2,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Send AssocInd to WSM: spectrum ON, minPwr %d, maxPwr %d, numChnl %d\n"),
+=======
+        FL("Send AssocInd to WSM: spectrum ON, minPwr %d, maxPwr %d, numChnl %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Send AssocInd to WSM: spectrum ON, minPwr %d, maxPwr %d, numChnl %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -193,7 +219,11 @@ limConvertSupportedChannels(tpAniSirGlobal pMac,
 \fn     limProcessAssocReqFrame
 \brief  This function is called by limProcessMessageQueue()
 <<<<<<< HEAD
+<<<<<<< HEAD
 \       upon Re/Association Request frame reception in 
+=======
+\       upon Re/Association Request frame reception in
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 \       upon Re/Association Request frame reception in
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -202,7 +232,11 @@ limConvertSupportedChannels(tpAniSirGlobal pMac,
 \param pMac
 \param *pRxPacketInfo    - A pointer to Buffer descriptor + associated PDUs
 <<<<<<< HEAD
+<<<<<<< HEAD
 \param subType - Indicates whether it is Association Request(=0) 
+=======
+\param subType - Indicates whether it is Association Request(=0)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 \param subType - Indicates whether it is Association Request(=0)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -216,7 +250,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     tANI_U8                 updateContext;
     tANI_U8                 *pBody;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16                aid, temp;
+=======
+    tANI_U16                peerIdx, temp;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16                peerIdx, temp;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -230,11 +268,17 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     tpDphHashNode           pStaDs = NULL;
     tpSirAssocReq           pAssocReq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tLimMlmStates           mlmPrevState;
     tDot11fIERSN            Dot11fIERSN;
     tDot11fIEWPA            Dot11fIEWPA;
 #endif
+=======
+    tLimMlmStates           mlmPrevState;
+    tDot11fIERSN            Dot11fIERSN;
+    tDot11fIEWPA            Dot11fIEWPA;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tLimMlmStates           mlmPrevState;
     tDot11fIERSN            Dot11fIERSN;
@@ -257,8 +301,13 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
    if (psessionEntry->limSystemRole == eLIM_STA_ROLE || psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("received unexpected ASSOC REQ subType=%d for role=%d, radioId=%d from \n"),
                                             subType, psessionEntry->limSystemRole, pMac->sys.gSirRadioId);
+=======
+        limLog(pMac, LOGE, FL("received unexpected ASSOC REQ subType=%d for role=%d"),
+               subType, psessionEntry->limSystemRole);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("received unexpected ASSOC REQ subType=%d for role=%d"),
                subType, psessionEntry->limSystemRole);
@@ -278,7 +327,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         // Log error and ignore it
         if (subType == LIM_ASSOC)
 <<<<<<< HEAD
+<<<<<<< HEAD
 			limLog(pMac, LOGW, FL("received Assoc frame from a BC/MC address "MAC_ADDRESS_STR),
+=======
+            limLog(pMac, LOGW, FL("received Assoc frame from a BC/MC address "MAC_ADDRESS_STR),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGW, FL("received Assoc frame from a BC/MC address "MAC_ADDRESS_STR),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -293,7 +346,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG2, (tANI_U8 *) pBody, framelen);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( palEqualMemory( pMac->hHdd,  (tANI_U8* ) pHdr->sa, (tANI_U8 *) pHdr->da, 
+=======
+    if( palEqualMemory( pMac->hHdd,  (tANI_U8* ) pHdr->sa, (tANI_U8 *) pHdr->da,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if( palEqualMemory( pMac->hHdd,  (tANI_U8* ) pHdr->sa, (tANI_U8 *) pHdr->da,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -305,16 +362,22 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                     pHdr->sa,
                     subType, 0,psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Rejected Assoc Req frame Since same mac as SAP/GO\n"));
         return ;
     }
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGE, FL("Rejected Assoc Req frame Since same mac as SAP/GO"));
         return ;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // If TKIP counter measures active send Assoc Rsp frame to station with eSIR_MAC_MIC_FAILURE_REASON
     if ((psessionEntry->bTkipCntrMeasActive) && (psessionEntry->limSystemRole == eLIM_AP_ROLE))
@@ -327,6 +390,7 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         return;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
     // Allocate memory for the Assoc Request frame
@@ -338,6 +402,8 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     palZeroMemory( pMac->hHdd, (void *)pAssocReq , sizeof(*pAssocReq));
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Allocate memory for the Assoc Request frame
     if ( palAllocateMemory(pMac->hHdd, (void **)&pAssocReq, sizeof(*pAssocReq)) != eHAL_STATUS_SUCCESS)
@@ -347,6 +413,9 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     }
     palZeroMemory( pMac->hHdd, (void *)pAssocReq , sizeof(*pAssocReq));
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Parse Assoc Request frame
     if (subType == LIM_ASSOC)
@@ -357,7 +426,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     if (status != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGW, FL("Parse error AssocRequest, length=%d from \n"),framelen);
+=======
+        limLog(pMac, LOGW, FL("Parse error AssocRequest, length=%d from "),framelen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGW, FL("Parse error AssocRequest, length=%d from "),framelen);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -369,7 +442,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     if ( palAllocateMemory(pMac->hHdd, (void **)&pAssocReq->assocReqFrame, framelen) != eHAL_STATUS_SUCCESS) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Unable to allocate memory for the assoc req, length=%d from \n"),framelen);
+=======
+        limLog(pMac, LOGE, FL("Unable to allocate memory for the assoc req, length=%d from "),framelen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Unable to allocate memory for the assoc req, length=%d from "),framelen);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -383,6 +460,7 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     if (cfgGetCapabilityInfo(pMac, &temp,psessionEntry) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not retrieve Capabilities\n"));
         goto error;
     }
@@ -392,10 +470,15 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     limCopyU16((tANI_U8 *) &localCapabilities, temp);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGP, FL("could not retrieve Capabilities"));
         goto error;
     }
     limCopyU16((tANI_U8 *) &localCapabilities, temp);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (limCompareCapabilities(pMac,
@@ -415,7 +498,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                         subType, 0,psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGW, FL("local caps 0x%x received 0x%x\n"), localCapabilities, pAssocReq->capabilityInfo);
+=======
+        limLog(pMac, LOGW, FL("local caps 0x%x received 0x%x"), localCapabilities, pAssocReq->capabilityInfo);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGW, FL("local caps 0x%x received 0x%x"), localCapabilities, pAssocReq->capabilityInfo);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -434,6 +521,7 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 
     updateContext = false;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     // Check if multiple SSID feature is not enabled
@@ -476,6 +564,8 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (limCmpSSid(pMac, &pAssocReq->ssId, psessionEntry) == false)
     {
         /**
@@ -494,6 +584,7 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         if (subType == LIM_ASSOC)
             limLog(pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("received Assoc req with unmatched SSID from \n"));
         else
             limLog(pMac, LOGW,
@@ -503,6 +594,8 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    FL("received Assoc req with unmatched SSID from "));
         else
             limLog(pMac, LOGW,
@@ -510,6 +603,9 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         limPrintMacAddr(pMac, pHdr->sa, LOGW);
         goto error;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /***************************************************************
@@ -520,7 +616,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     basicRates.numRates = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     for(i = 0; i < pAssocReq->supportedRates.numRates; i++)
+=======
+    for(i = 0; i < pAssocReq->supportedRates.numRates && (i < SIR_MAC_RATESET_EID_MAX); i++)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     for(i = 0; i < pAssocReq->supportedRates.numRates && (i < SIR_MAC_RATESET_EID_MAX); i++)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -552,22 +652,31 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         if (subType == LIM_ASSOC)
             limLog(pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received Assoc req with unsupported rates from \n"));
         else
             limLog(pMac, LOGW,
                FL("received ReAssoc req with unsupported rates from\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("received Assoc req with unsupported rates from "));
         else
             limLog(pMac, LOGW,
                FL("received ReAssoc req with unsupported rates from"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limPrintMacAddr(pMac, pHdr->sa, LOGW);
         goto error;
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -578,7 +687,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         limSendAssocRspMgmtFrame( pMac, eSIR_MAC_CAPABILITIES_NOT_SUPPORTED_STATUS, 
                                   1, pHdr->sa, subType, 0, psessionEntry );
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("SOFTAP was in 11G only mode, rejecting legacy STA's\n"));
+=======
+        limLog(pMac, LOGE, FL("SOFTAP was in 11G only mode, rejecting legacy STA's"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("SOFTAP was in 11G only mode, rejecting legacy STA's"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -593,16 +706,22 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         limSendAssocRspMgmtFrame( pMac, eSIR_MAC_CAPABILITIES_NOT_SUPPORTED_STATUS, 
                                   1, pHdr->sa, subType, 0, psessionEntry );
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("SOFTAP was in 11N only mode, rejecting legacy STA's\n"));
         goto error;
     }//end if PhyMode == 11N_only
 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog(pMac, LOGE, FL("SOFTAP was in 11N only mode, rejecting legacy STA's"));
         goto error;
     }//end if PhyMode == 11N_only
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Spectrum Management (11h) specific checks */
@@ -622,9 +741,15 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                 {
                     if(subType == LIM_ASSOC)
 <<<<<<< HEAD
+<<<<<<< HEAD
                        limLog(pMac, LOG1, FL("LIM Info: Missing Power capability IE in assoc request\n"));
                     else
                        limLog(pMac, LOG1, FL("LIM Info: Missing Power capability IE in Reassoc request\n"));
+=======
+                       limLog(pMac, LOG1, FL("LIM Info: Missing Power capability IE in assoc request"));
+                    else
+                       limLog(pMac, LOG1, FL("LIM Info: Missing Power capability IE in Reassoc request"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        limLog(pMac, LOG1, FL("LIM Info: Missing Power capability IE in assoc request"));
                     else
@@ -635,9 +760,15 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                 {
                     if(subType == LIM_ASSOC)
 <<<<<<< HEAD
+<<<<<<< HEAD
                         limLog(pMac, LOG1, FL("LIM Info: Missing Supported channel IE in assoc request\n"));
                     else
                         limLog(pMac, LOG1, FL("LIM Info: Missing Supported channel IE in Reassoc request\n"));
+=======
+                        limLog(pMac, LOG1, FL("LIM Info: Missing Supported channel IE in assoc request"));
+                    else
+                        limLog(pMac, LOG1, FL("LIM Info: Missing Supported channel IE in Reassoc request"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         limLog(pMac, LOG1, FL("LIM Info: Missing Supported channel IE in assoc request"));
                     else
@@ -654,9 +785,15 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                 {
                     if (subType == LIM_ASSOC)
 <<<<<<< HEAD
+<<<<<<< HEAD
                         limLog(pMac, LOGW, FL("LIM Info: Association MinTxPower(STA) > MaxTxPower(AP)\n"));
                     else
                         limLog(pMac, LOGW, FL("LIM Info: Reassociation MinTxPower(STA) > MaxTxPower(AP)\n"));
+=======
+                        limLog(pMac, LOGW, FL("LIM Info: Association MinTxPower(STA) > MaxTxPower(AP)"));
+                    else
+                        limLog(pMac, LOGW, FL("LIM Info: Reassociation MinTxPower(STA) > MaxTxPower(AP)"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         limLog(pMac, LOGW, FL("LIM Info: Association MinTxPower(STA) > MaxTxPower(AP)"));
                     else
@@ -669,9 +806,15 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                 {
                     if (subType == LIM_ASSOC)
 <<<<<<< HEAD
+<<<<<<< HEAD
                         limLog(pMac, LOGW, FL("LIM Info: Association wrong supported channels (STA)\n"));
                     else
                         limLog(pMac, LOGW, FL("LIM Info: Reassociation wrong supported channels (STA)\n"));
+=======
+                        limLog(pMac, LOGW, FL("LIM Info: Association wrong supported channels (STA)"));
+                    else
+                        limLog(pMac, LOGW, FL("LIM Info: Reassociation wrong supported channels (STA)"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         limLog(pMac, LOGW, FL("LIM Info: Association wrong supported channels (STA)"));
                     else
@@ -712,15 +855,21 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         if (subType == LIM_ASSOC)
             limLog(pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received Assoc req with unsupported MCS Rate Set from \n"));
         else
             limLog(pMac, LOGW,
                FL("received ReAssoc req with unsupported MCS Rate Set from\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("received Assoc req with unsupported MCS Rate Set from "));
         else
             limLog(pMac, LOGW,
                FL("received ReAssoc req with unsupported MCS Rate Set from"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limPrintMacAddr(pMac, pHdr->sa, LOGW);
         goto error;
@@ -733,7 +882,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         if (wlan_cfgGetInt(pMac, WNI_CFG_11G_ONLY_POLICY, &val) != eSIR_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not retrieve 11g-only flag\n"));
+=======
+            limLog(pMac, LOGP, FL("could not retrieve 11g-only flag"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("could not retrieve 11g-only flag"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -794,7 +947,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                    FL("Rejecting Re/Assoc req from STA: "));
             limPrintMacAddr(pMac, pHdr->sa, LOGW);
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGE, FL("APSD not enabled, qosInfo - 0x%x\n"), *qInfo);
+=======
+            limLog(pMac, LOGE, FL("APSD not enabled, qosInfo - 0x%x"), *qInfo);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGE, FL("APSD not enabled, qosInfo - 0x%x"), *qInfo);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -815,15 +972,21 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
             limLog( pMac, LOG1, FL( "AdvCodingCap:%d ChaWidthSet:%d "
                                     "PowerSave:%d greenField:%d "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     "shortGI20:%d shortGI40:%d\n"
                                     "txSTBC:%d rxSTBC:%d delayBA:%d"
                                     "maxAMSDUsize:%d DSSS/CCK:%d "
                                     "PSMP:%d stbcCntl:%d lsigTXProt:%d\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     "shortGI20:%d shortGI40:%d"
                                     "txSTBC:%d rxSTBC:%d delayBA:%d"
                                     "maxAMSDUsize:%d DSSS/CCK:%d "
                                     "PSMP:%d stbcCntl:%d lsigTXProt:%d"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pAssocReq->HTCaps.advCodingCap,
                     pAssocReq->HTCaps.supportedChannelWidthSet,
@@ -852,7 +1015,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                 statusCode = eSIR_MAC_DSSS_CCK_RATE_NOT_SUPPORT_STATUS;
                 limLog( pMac, LOGW, FL( "AP DSSS/CCK is disabled; "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         "STA rejected.\n" ) );
+=======
+                                        "STA rejected." ) );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                         "STA rejected." ) );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -865,7 +1032,10 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     } // End if on HT caps turned on in lim.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Clear the buffers so that frame parser knows that there isn't a previously decoded IE in these buffers */
@@ -885,7 +1055,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         {
             limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("AP supports RSN enabled authentication\n"));
+=======
+                   FL("AP supports RSN enabled authentication"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("AP supports RSN enabled authentication"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -999,7 +1173,10 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 
     } /* end of     if( ! pAssocReq->wscInfo.present ) */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif //WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1008,7 +1185,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
      * This is maintained by DPH and created by LIM.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     pStaDs = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable);
+=======
+    pStaDs = dphLookupHashEntry(pMac, pHdr->sa, &peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pStaDs = dphLookupHashEntry(pMac, pHdr->sa, &peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1020,7 +1201,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     {
         /// Requesting STA is not currently associated
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (pMac->lim.gLimNumOfCurrentSTAs == pMac->lim.maxStation)
+=======
+        if (peGetCurrentSTAsCount(pMac) == pMac->lim.maxStation)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if (peGetCurrentSTAsCount(pMac) == pMac->lim.maxStation)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1056,7 +1241,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                      pMac,
                      eSIR_MAC_STA_NOT_PRE_AUTHENTICATED_REASON, //=9
 <<<<<<< HEAD
+<<<<<<< HEAD
                      pHdr->sa,psessionEntry);
+=======
+                     pHdr->sa, psessionEntry, FALSE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      pHdr->sa, psessionEntry, FALSE);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1134,9 +1323,15 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         updateContext = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (dphInitStaState(pMac, pHdr->sa, aid, true, &psessionEntry->dph.dphHashTable) == NULL)   
         {
             limLog(pMac, LOGE, FL("could not Init STAid=%d\n"), aid);
+=======
+        if (dphInitStaState(pMac, pHdr->sa, peerIdx, true, &psessionEntry->dph.dphHashTable) == NULL)   
+        {
+            limLog(pMac, LOGE, FL("could not Init STAid=%d"), peerIdx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if (dphInitStaState(pMac, pHdr->sa, peerIdx, true, &psessionEntry->dph.dphHashTable) == NULL)   
         {
@@ -1166,7 +1361,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                                      &(pAssocReq->qosCapability), 0, false, NULL, &tspecIdx, psessionEntry) != eSIR_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGW, FL("AdmitControl: TSPEC rejected\n"));
+=======
+                limLog(pMac, LOGW, FL("AdmitControl: TSPEC rejected"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGW, FL("AdmitControl: TSPEC rejected"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1186,7 +1385,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
                                                != eSIR_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGW, FL("AdmitControl: Sta rejected\n"));
+=======
+            limLog(pMac, LOGW, FL("AdmitControl: Sta rejected"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGW, FL("AdmitControl: Sta rejected"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1204,7 +1407,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 
         // else all ok
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOG1, FL("AdmitControl: Sta OK!\n"));
+=======
+        limLog(pMac, LOG1, FL("AdmitControl: Sta OK!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOG1, FL("AdmitControl: Sta OK!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1222,6 +1429,7 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Assign unused/least recently used AID from perStaDs.
      * This will 12-bit STAid used by MAC HW.
      * NOTE: limAssignAID() assigns AID values ranging between 1 - 255
@@ -1231,6 +1439,8 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 
     if (!aid)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      * AID for this association will be same as the peer Index used in DPH table.
      * Assign unused/least recently used peer Index from perStaDs.
      * NOTE: limAssignPeerIdx() assigns AID values ranging 
@@ -1240,6 +1450,9 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     peerIdx = limAssignPeerIdx(pMac, psessionEntry);
 
     if (!peerIdx)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         // Could not assign AID
@@ -1247,7 +1460,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         limRejectAssociation(pMac, pHdr->sa,
                              subType, true, authType,
 <<<<<<< HEAD
+<<<<<<< HEAD
                              aid, false,
+=======
+                             peerIdx, false,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                              peerIdx, false,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1261,7 +1478,11 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
      */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     pStaDs = dphAddHashEntry(pMac, pHdr->sa, aid, &psessionEntry->dph.dphHashTable);
+=======
+    pStaDs = dphAddHashEntry(pMac, pHdr->sa, peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pStaDs = dphAddHashEntry(pMac, pHdr->sa, peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1270,6 +1491,7 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
     {
         // Could not add hash table entry at DPH
         limLog(pMac, LOGE,
+<<<<<<< HEAD
 <<<<<<< HEAD
            FL("could not add hash entry at DPH for aid=%d, MacAddr:\n"),
            aid);
@@ -1281,6 +1503,8 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
         limRejectAssociation(pMac, pHdr->sa,
                              subType, true, authType, aid, false,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            FL("could not add hash entry at DPH for aid=%d, MacAddr:"),
            peerIdx);
         limPrintMacAddr(pMac, pHdr->sa, LOGE);
@@ -1290,6 +1514,9 @@ limProcessAssocReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,
 
         limRejectAssociation(pMac, pHdr->sa,
                              subType, true, authType, peerIdx, false,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              (tSirResultCodes) eSIR_MAC_UNSPEC_FAILURE_STATUS, psessionEntry);
 
@@ -1366,6 +1593,7 @@ sendIndToSme:
         pStaDs->htSecondaryChannelOffset = (pStaDs->htSupportedChannelWidthSet)?psessionEntry->htSecondaryChannelOffset:0;
 #ifdef WLAN_FEATURE_11AC
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (pAssocReq->VHTCaps.present)
         {
             pStaDs->vhtSupportedChannelWidthSet = (tANI_U8)pAssocReq->VHTCaps.supportedChannelWidthSet; 
@@ -1375,6 +1603,8 @@ sendIndToSme:
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pAssocReq->operMode.present) 
         {
             pStaDs->vhtSupportedChannelWidthSet = (tANI_U8)((pAssocReq->operMode.chanWidth == eHT_CHANNEL_WIDTH_80MHZ) ? WNI_CFG_VHT_CHANNEL_WIDTH_80MHZ : WNI_CFG_VHT_CHANNEL_WIDTH_20_40MHZ);
@@ -1404,6 +1634,9 @@ sendIndToSme:
     {
         pStaDs->vhtLdpcCapable = (tANI_U8)pAssocReq->VHTCaps.ldpcCodingCap;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_11AC
@@ -1428,6 +1661,7 @@ if (limPopulateMatchingRateSet(pMac,
         // Could not update hash table entry at DPH with rateset
         limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("could not update hash entry at DPH for aid=%d, MacAddr:\n"),
            aid);
         limPrintMacAddr(pMac, pHdr->sa, LOGE);
@@ -1444,6 +1678,8 @@ if (limPopulateMatchingRateSet(pMac,
         return;
         //goto error;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            FL("could not update hash entry at DPH for aid=%d, MacAddr:"),
            peerIdx);
         limPrintMacAddr(pMac, pHdr->sa, LOGE);
@@ -1458,6 +1694,9 @@ if (limPopulateMatchingRateSet(pMac,
 
         pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
         goto error;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -1487,7 +1726,10 @@ if (limPopulateMatchingRateSet(pMac,
         /* WMM_APSD - WMM_SA related processing should be separate; WMM_SA and WMM_APSD
          can coexist */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if( pAssocReq->WMMInfoStation.present)
@@ -1505,6 +1747,7 @@ if (limPopulateMatchingRateSet(pMac,
                  * STA when UPASD is not supported.
                  */
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog( pMac, LOGE, FL( "AP do not support UPASD REASSOC Failed\n" ));
                 limRejectAssociation(pMac, pHdr->sa,
                                      subType, true, authType, aid, true,
@@ -1515,6 +1758,8 @@ if (limPopulateMatchingRateSet(pMac,
                 return;
                 //goto error;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limLog( pMac, LOGE, FL( "AP do not support UPASD REASSOC Failed" ));
                 /* During wlan fuzz tests for softAP when mal-formed assoc req is
                  * sent to AP due to delSTA is not done in firmnware UMAC is
@@ -1531,6 +1776,9 @@ if (limPopulateMatchingRateSet(pMac,
 
                 pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
                 goto error;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else
@@ -1544,7 +1792,10 @@ if (limPopulateMatchingRateSet(pMac,
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //if (assoc.wsmCapablePresent && pMac->dph.gDphWsmEnabled)
@@ -1578,9 +1829,15 @@ if (limPopulateMatchingRateSet(pMac,
 
         // BTAMP: Add STA context at HW - issue WDA_ADD_STA_REQ to HAL
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (limAddSta(pMac, pStaDs,psessionEntry) != eSIR_SUCCESS)
         {
             limLog(pMac, LOGE, FL("could not Add STA with assocId=%d\n"), pStaDs->assocId);
+=======
+        if (limAddSta(pMac, pStaDs, false, psessionEntry) != eSIR_SUCCESS)
+        {
+            limLog(pMac, LOGE, FL("could not Add STA with assocId=%d"), pStaDs->assocId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         if (limAddSta(pMac, pStaDs, false, psessionEntry) != eSIR_SUCCESS)
         {
@@ -1591,9 +1848,14 @@ if (limPopulateMatchingRateSet(pMac,
                                   (tSirResultCodes) eSIR_MAC_UNSPEC_FAILURE_STATUS, psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             /*return it from here rather than goto error statement.This is done as the memory is getting free twice*/
             return;
             //goto error;
+=======
+            pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
+            goto error;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
             goto error;
@@ -1605,7 +1867,10 @@ if (limPopulateMatchingRateSet(pMac,
         pStaDs->mlmStaContext.updateContext = 1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         mlmPrevState = pStaDs->mlmStaContext.mlmState;
@@ -1618,7 +1883,11 @@ if (limPopulateMatchingRateSet(pMac,
             if(limDelSta(pMac, pStaDs, true, psessionEntry) != eSIR_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGE, FL("could not DEL STA with assocId=%d staId %d\n"), pStaDs->assocId, pStaDs->staIndex);
+=======
+                limLog(pMac, LOGE, FL("could not DEL STA with assocId=%d staId %d"), pStaDs->assocId, pStaDs->staIndex);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGE, FL("could not DEL STA with assocId=%d staId %d"), pStaDs->assocId, pStaDs->staIndex);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1628,6 +1897,10 @@ if (limPopulateMatchingRateSet(pMac,
                 //Restoring the state back.
                 pStaDs->mlmStaContext.mlmState = mlmPrevState;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1639,9 +1912,15 @@ if (limPopulateMatchingRateSet(pMac,
             /* mlmState is changed in limAddSta context */
             /* use the same AID, already allocated */
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (limAddSta(pMac, pStaDs,psessionEntry) != eSIR_SUCCESS)
             {
                     limLog( pMac, LOGE, FL( "AP do not support UPASD REASSOC Failed\n" ));
+=======
+            if (limAddSta(pMac, pStaDs, false, psessionEntry) != eSIR_SUCCESS)
+            {
+                    limLog( pMac, LOGE, FL( "AP do not support UPASD REASSOC Failed" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             if (limAddSta(pMac, pStaDs, false, psessionEntry) != eSIR_SUCCESS)
             {
@@ -1653,6 +1932,10 @@ if (limPopulateMatchingRateSet(pMac,
                     //Restoring the state back.
                     pStaDs->mlmStaContext.mlmState = mlmPrevState;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                    pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     pAssocReq = psessionEntry->parsedAssocReq[pStaDs->assocId];
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1661,7 +1944,10 @@ if (limPopulateMatchingRateSet(pMac,
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1681,7 +1967,11 @@ error:
         if (palFreeMemory(pMac->hHdd, pAssocReq) != eHAL_STATUS_SUCCESS) 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("PalFree Memory failed \n"));
+=======
+            limLog(pMac, LOGP, FL("PalFree Memory failed "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("PalFree Memory failed "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1727,9 +2017,13 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
     tANI_U32                phyMode;
     tANI_U8                 subType;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tANI_U8                 *wpsIe = NULL;
 #endif
+=======
+    tANI_U8                 *wpsIe = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8                 *wpsIe = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1751,6 +2045,7 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
     else 
         subType = LIM_ASSOC;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if (subType == LIM_ASSOC || subType == LIM_REASSOC)
 #else
@@ -1767,6 +2062,8 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
             limReleaseAID(pMac, pStaDs->assocId);
             limLog(pMac, LOGP, FL("palAllocateMemory failed for pMlmAssocInd\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (subType == LIM_ASSOC || subType == LIM_REASSOC)
     {
         temp  = sizeof(tLimMlmAssocInd);
@@ -1775,6 +2072,9 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         {
             limReleasePeerIdx(pMac, pStaDs->assocId, psessionEntry);
             limLog(pMac, LOGP, FL("palAllocateMemory failed for pMlmAssocInd"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
@@ -1787,6 +2087,7 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         pMlmAssocInd->sessionId = psessionEntry->peSessionId;
         pMlmAssocInd->authType =  pStaDs->mlmStaContext.authType;
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
         // Note for BTAMP: no need to fill in pMlmAssocInd->seqNum
@@ -1820,12 +2121,17 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMlmAssocInd->capabilityInfo = pAssocReq->capabilityInfo;
 
         // Fill in RSN IE information
         pMlmAssocInd->rsnIE.length = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // if WPS IE is present, ignore RSN IE
@@ -1834,11 +2140,16 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         }
         if (pAssocReq->rsnPresent && (NULL == wpsIe))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
         if (pAssocReq->rsnPresent)
 #endif
         {
             limLog(pMac, LOG2, FL("Assoc Req RSN IE len = %d\n"), pAssocReq->rsn.length);
+=======
+        {
+            limLog(pMac, LOG2, FL("Assoc Req RSN IE len = %d"), pAssocReq->rsn.length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         {
             limLog(pMac, LOG2, FL("Assoc Req RSN IE len = %d"), pAssocReq->rsn.length);
@@ -1865,6 +2176,7 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         /* This check is to avoid extra Sec IEs present incase of WPS */
         if (pAssocReq->wpaPresent && (NULL == wpsIe))
@@ -1876,6 +2188,8 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
             {
                 PELOGE(limLog(pMac, LOGE, FL("rsnIEdata index out of bounds %d\n"), pMlmAssocInd->rsnIE.length);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* This check is to avoid extra Sec IEs present incase of WPS */
         if (pAssocReq->wpaPresent && (NULL == wpsIe))
         {
@@ -1883,6 +2197,9 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
             {
                 PELOGE(limLog(pMac, LOGE, FL("rsnIEdata index out of bounds %d"), pMlmAssocInd->rsnIE.length);)
                 palFreeMemory(pMac->hHdd, pMlmAssocInd);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return;
             }
@@ -1908,7 +2225,10 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
        }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pAssocReq->wmeInfoPresent)
@@ -1916,7 +2236,11 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
             if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WME_ENABLED, &tmp) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
                  limLog(pMac, LOGP, FL("wlan_cfgGetInt failed for id %d\n"), WNI_CFG_WME_ENABLED );
+=======
+                 limLog(pMac, LOGP, FL("wlan_cfgGetInt failed for id %d"), WNI_CFG_WME_ENABLED );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  limLog(pMac, LOGP, FL("wlan_cfgGetInt failed for id %d"), WNI_CFG_WME_ENABLED );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1934,7 +2258,10 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1954,6 +2281,7 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         temp  = sizeof(tLimMlmReassocInd);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
         temp += pAssocReq->propIEinfo.numBss * sizeof(tSirNeighborBssInfo);
 #endif
@@ -1962,10 +2290,15 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
             limLog(pMac, LOGP, FL("call to palAllocateMemory failed for pMlmReassocInd\n"));
             limReleaseAID(pMac, pStaDs->assocId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pMlmReassocInd, temp))
         {
             limLog(pMac, LOGP, FL("call to palAllocateMemory failed for pMlmReassocInd"));
             limReleasePeerIdx(pMac, pStaDs->assocId, psessionEntry);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
@@ -1977,6 +2310,7 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         pMlmReassocInd->authType = pStaDs->mlmStaContext.authType;
         palCopyMemory( pMac->hHdd,(tANI_U8 *)&pMlmReassocInd->ssId, (tANI_U8 *)&(pAssocReq->ssId), pAssocReq->ssId.length + 1);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
         // Note for BTAMP: no need to fill in pMlmAssocInd->seqNum
@@ -2014,6 +2348,8 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pAssocReq->propIEinfo.aniIndicator)
             pStaDs->aniPeer = 1;
 
@@ -2021,7 +2357,10 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         pMlmReassocInd->rsnIE.length = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pAssocReq->addIEPresent && pAssocReq->addIE.length )
@@ -2029,11 +2368,16 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
         if (pAssocReq->rsnPresent && (NULL == wpsIe))
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
         if (pAssocReq->rsnPresent)
 #endif
         {
             limLog(pMac, LOG2, FL("Assoc Req: RSN IE length = %d\n"), pAssocReq->rsn.length);
+=======
+        {
+            limLog(pMac, LOG2, FL("Assoc Req: RSN IE length = %d"), pAssocReq->rsn.length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         {
             limLog(pMac, LOG2, FL("Assoc Req: RSN IE length = %d"), pAssocReq->rsn.length);
@@ -2054,7 +2398,11 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
             limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 FL("Sending Reassoc Ind: spectrum ON, minPwr %d, maxPwr %d, numChnl %d\n"),
+=======
+                FL("Sending Reassoc Ind: spectrum ON, minPwr %d, maxPwr %d, numChnl %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 FL("Sending Reassoc Ind: spectrum ON, minPwr %d, maxPwr %d, numChnl %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2066,7 +2414,11 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
             {
                 pMlmReassocInd->supportedChannels.channelList[i] = pAssocReq->supportedChannels.supportedChannels[j];
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOG1, FL("Sending ReassocInd: chn[%d] = %d \n"),
+=======
+                limLog(pMac, LOG1, FL("Sending ReassocInd: chn[%d] = %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOG1, FL("Sending ReassocInd: chn[%d] = %d "),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2079,6 +2431,7 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         /* This check is to avoid extra Sec IEs present incase of WPS */
         if (pAssocReq->wpaPresent && (NULL == wpsIe))
@@ -2088,10 +2441,15 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
         {
             limLog(pMac, LOG2, FL("Received WPA IE length in Assoc Req is %d\n"), pAssocReq->wpa.length);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* This check is to avoid extra Sec IEs present incase of WPS */
         if (pAssocReq->wpaPresent && (NULL == wpsIe))
         {
             limLog(pMac, LOG2, FL("Received WPA IE length in Assoc Req is %d"), pAssocReq->wpa.length);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMlmReassocInd->rsnIE.rsnIEdata[pMlmReassocInd->rsnIE.length] = SIR_MAC_WPA_EID;
             pMlmReassocInd->rsnIE.rsnIEdata[pMlmReassocInd->rsnIE.length + 1] = pAssocReq->wpa.length;
@@ -2114,7 +2472,10 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
        }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pAssocReq->wmeInfoPresent)
@@ -2122,7 +2483,11 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
             if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WME_ENABLED, &tmp) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
                  limLog(pMac, LOGP, FL("wlan_cfgGetInt failed for id %d\n"), WNI_CFG_WME_ENABLED );
+=======
+                 limLog(pMac, LOGP, FL("wlan_cfgGetInt failed for id %d"), WNI_CFG_WME_ENABLED );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  limLog(pMac, LOGP, FL("wlan_cfgGetInt failed for id %d"), WNI_CFG_WME_ENABLED );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2140,7 +2505,10 @@ void limSendMlmAssocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession p
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -55,11 +61,15 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
 #include "wniCfgAp.h"
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -79,7 +89,10 @@ void limSendP2PProbeResponse(tpAniSirGlobal pMac, tANI_U8 *pBd,
                       tpPESession psessionEntry);
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void
@@ -151,7 +164,11 @@ void limGetWPSPBCSessions(tpAniSirGlobal pMac, tANI_U8 *addr,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("overlap = %d\n"), *overlap);)
+=======
+    PELOGE(limLog(pMac, LOGE, FL("overlap = %d"), *overlap);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog(pMac, LOGE, FL("overlap = %d"), *overlap);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -189,7 +206,11 @@ static void limRemoveTimeoutPBCsessions(tpAniSirGlobal pMac, tSirWPSPBCSession *
                 pbc = pbc->next;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG4(limLog(pMac, LOG4, FL("WPS PBC sessions remove\n"));)
+=======
+        PELOG4(limLog(pMac, LOG4, FL("WPS PBC sessions remove"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG4(limLog(pMac, LOG4, FL("WPS PBC sessions remove"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -255,7 +276,11 @@ static void limUpdatePBCSessionEntry(tpAniSirGlobal pMac,
     curTime = (tANI_TIMESTAMP)(palGetTickCount(pMac->hHdd) / PAL_TICKS_PER_SECOND);
             
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG4(limLog(pMac, LOG4, FL("Receive WPS probe reques curTime=%d\n"), curTime);)
+=======
+    PELOG4(limLog(pMac, LOG4, FL("Receive WPS probe reques curTime=%d"), curTime);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG4(limLog(pMac, LOG4, FL("Receive WPS probe reques curTime=%d"), curTime);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -282,7 +307,11 @@ static void limUpdatePBCSessionEntry(tpAniSirGlobal pMac,
             (void **) &pbc, sizeof(tSirWPSPBCSession)))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("memory allocate failed!\n"));)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("memory allocate failed!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("memory allocate failed!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -341,7 +370,11 @@ void limWPSPBCTimeout(tpAniSirGlobal pMac, tpPESession psessionEntry)
     curTime = (tANI_TIMESTAMP)(palGetTickCount(pMac->hHdd) / PAL_TICKS_PER_SECOND);
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG3(limLog(pMac, LOG3, FL("WPS PBC cleanup timeout curTime=%d\n"), curTime);)
+=======
+    PELOG3(limLog(pMac, LOG3, FL("WPS PBC cleanup timeout curTime=%d"), curTime);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG3(limLog(pMac, LOG3, FL("WPS PBC cleanup timeout curTime=%d"), curTime);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -399,7 +432,10 @@ void limWPSPBCClose(tpAniSirGlobal pMac, tpPESession psessionEntry)
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -478,7 +514,10 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
             break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Don't send probe response if P2P go is scanning till scan come to idle state. 
         if((psessionEntry->pePersona == VOS_P2P_GO_MODE) && ((pMac->lim.gpLimRemainOnChanReq )
                                   || (pMac->lim.gLimHalScanState != eLIM_HAL_IDLE_SCAN_STATE)))
@@ -488,6 +527,9 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
            break;
         }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
 
@@ -516,7 +558,10 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -558,8 +603,11 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                     }
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if ((psessionEntry->limSystemRole == eLIM_AP_ROLE))
@@ -589,9 +637,14 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
                     if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
                         limLog(pMac, LOGP,"Failed to cfg get id %d\n", WNI_CFG_WPS_ENABLE );
+=======
+                    if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
+                        limLog(pMac, LOGP,"Failed to cfg get id %d", WNI_CFG_WPS_ENABLE );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     if (wlan_cfgGetInt(pMac, (tANI_U16) WNI_CFG_WPS_ENABLE, &tmp) != eSIR_SUCCESS)
                         limLog(pMac, LOGP,"Failed to cfg get id %d", WNI_CFG_WPS_ENABLE );
@@ -609,7 +662,11 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                             // Log error
                             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                FL("call to palAllocateMemory failed for eWNI_SME_PROBE_REQ\n"));
+=======
+                               FL("call to palAllocateMemory failed for eWNI_SME_PROBE_REQ"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                FL("call to palAllocateMemory failed for eWNI_SME_PROBE_REQ"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -618,6 +675,7 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                         msgQ.type = eWNI_SME_PROBE_REQ;
                         msgQ.bodyval = 0;
                         msgQ.bodyptr = pSirSmeProbeReq;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP) && defined(ANI_LITTLE_BYTE_ENDIAN)
                         sirStoreU16N((tANI_U8*)&pSirSmeProbeReq->messageType, eWNI_SME_PROBE_REQ);
@@ -632,6 +690,11 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                         pSirSmeProbeReq->messageType = eWNI_SME_PROBE_REQ;
                         pSirSmeProbeReq->length = sizeof(tSirSmeProbeReq);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+                        pSirSmeProbeReq->messageType = eWNI_SME_PROBE_REQ;
+                        pSirSmeProbeReq->length = sizeof(tSirSmeProbeReq);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pSirSmeProbeReq->sessionId = psessionEntry->smeSessionId;
                         palCopyMemory( pMac->hHdd, pSirSmeProbeReq->peerMacAddr, pHdr->sa, sizeof(tSirMacAddr));
                         pSirSmeProbeReq->devicePasswdId = probeReq.probeReqWscIeInfo.DevicePasswordID.id;
@@ -641,9 +704,13 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                         }
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
                 }
 #endif
+=======
+                }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -671,7 +738,10 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                     break;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else if (psessionEntry->pePersona == VOS_P2P_GO_MODE)
@@ -688,7 +758,10 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                     }
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else
@@ -701,6 +774,7 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
             }
             else
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
                 tANI_U32    cfg;
@@ -732,6 +806,11 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                     // Broadcast SSID in the Probe Request.
                     // Reply with SSID we're configured with.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+                {
+                    // Broadcast SSID in the Probe Request.
+                    // Reply with SSID we're configured with.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     //Turn off the SSID length to 0 if hidden SSID feature is present
                     if(psessionEntry->ssidHidden)
                       /*We are returning from here as probe request contains the broadcast SSID.
@@ -739,7 +818,10 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                         //ssId.length = 0;
                            return;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limSendProbeRspMgmtFrame(pMac, pHdr->sa, &ssId, DPH_USE_MGMT_STAID,
@@ -749,6 +831,7 @@ limProcessProbeReqFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                 break;
             }
 multipleSSIDcheck:
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
             if (!psessionEntry->pLimStartBssReq->ssId.length)
@@ -783,6 +866,8 @@ multipleSSIDcheck:
             }
             else
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
@@ -824,7 +909,10 @@ multipleSSIDcheck:
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static void
@@ -844,7 +932,11 @@ limIndicateProbeReqToHDD(tpAniSirGlobal pMac, tANI_U8 *pBd,
                (tANI_U8*)pHdr, (frameLen + sizeof(tSirMacMgmtHdr)), 
                psessionEntry->smeSessionId, WDA_GET_RX_CH(pBd),
 <<<<<<< HEAD
+<<<<<<< HEAD
                psessionEntry);
+=======
+               psessionEntry, 0);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                psessionEntry, 0);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -853,7 +945,10 @@ limIndicateProbeReqToHDD(tpAniSirGlobal pMac, tANI_U8 *pBd,
 #endif
 } /*** end limIndicateProbeReqToHDD() ***/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -885,7 +980,10 @@ limProcessProbeReqFrame_multiple_BSS(tpAniSirGlobal pMac, tANI_U8 *pBd,  tpPESes
     if (psessionEntry != NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ((eLIM_AP_ROLE == psessionEntry->limSystemRole)
@@ -897,7 +995,10 @@ limProcessProbeReqFrame_multiple_BSS(tpAniSirGlobal pMac, tANI_U8 *pBd,  tpPESes
             limIndicateProbeReqToHDD(pMac, pBd, psessionEntry);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limProcessProbeReqFrame(pMac,pBd,psessionEntry);
@@ -910,7 +1011,10 @@ limProcessProbeReqFrame_multiple_BSS(tpAniSirGlobal pMac, tANI_U8 *pBd,  tpPESes
         if ( (psessionEntry != NULL) )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if ((eLIM_AP_ROLE == psessionEntry->limSystemRole)
@@ -922,7 +1026,10 @@ limProcessProbeReqFrame_multiple_BSS(tpAniSirGlobal pMac, tANI_U8 *pBd,  tpPESes
                 limIndicateProbeReqToHDD(pMac, pBd, psessionEntry);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if ( (eLIM_AP_ROLE == psessionEntry->limSystemRole) ||
@@ -939,7 +1046,10 @@ limProcessProbeReqFrame_multiple_BSS(tpAniSirGlobal pMac, tANI_U8 *pBd,  tpPESes
 } /*** end limProcessProbeReqFrame_multiple_BSS() ***/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
@@ -983,7 +1093,11 @@ limSendSmeProbeReqInd(tpAniSirGlobal pMac,
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL("call to palAllocateMemory failed for eWNI_SME_PROBE_REQ\n"));
+=======
+            FL("call to palAllocateMemory failed for eWNI_SME_PROBE_REQ"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL("call to palAllocateMemory failed for eWNI_SME_PROBE_REQ"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1011,7 +1125,10 @@ limSendSmeProbeReqInd(tpAniSirGlobal pMac,
         
 } /*** end limSendSmeProbeReqInd() ***/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_P2P_INTERNAL

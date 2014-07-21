@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,7 +50,13 @@
 
 /**=========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+* Copyright (c) 2013 Qualcomm Atheros, Inc.
+* All Rights Reserved.
+* Qualcomm Atheros Confidential and Proprietary.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 * Copyright (c) 2013 Qualcomm Atheros, Inc.
 * All Rights Reserved.
@@ -68,9 +80,13 @@
   ------------------------------------------------------------------------*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "aniGlobal.h" //for tpAniSirGlobal
 #endif
+=======
+#include "aniGlobal.h" //for tpAniSirGlobal
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "aniGlobal.h" //for tpAniSirGlobal
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -83,6 +99,10 @@
 tANI_U32 gMgmtFrameStats[14];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define LIM_TRACE_MAX_SUBTYPES 14
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define LIM_TRACE_MAX_SUBTYPES 14
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -103,9 +123,12 @@ static tANI_U8* __limTraceGetTimerString( tANI_U16 timerId )
         CASE_RETURN_STRING(eLIM_HEART_BEAT_TIMER);
         CASE_RETURN_STRING(eLIM_BACKGROUND_SCAN_TIMER);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
         CASE_RETURN_STRING(eLIM_LEARN_INTERVAL_TIMER);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         CASE_RETURN_STRING(eLIM_KEEPALIVE_TIMER);
@@ -119,7 +142,10 @@ static tANI_U8* __limTraceGetTimerString( tANI_U16 timerId )
         CASE_RETURN_STRING(eLIM_QUIET_TIMER);
         CASE_RETURN_STRING(eLIM_QUIET_BSS_TIMER);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         CASE_RETURN_STRING(eLIM_WPS_OVERLAP_TIMER);
 #ifdef WLAN_FEATURE_VOWIFI_11R
         CASE_RETURN_STRING(eLIM_FT_PREAUTH_RSP_TIMER);
@@ -134,6 +160,9 @@ static tANI_U8* __limTraceGetTimerString( tANI_U16 timerId )
         CASE_RETURN_STRING(eLIM_PERIODIC_JOIN_PROBE_REQ_TIMER);
         CASE_RETURN_STRING(eLIM_INSERT_SINGLESHOT_NOA_TIMER);
         CASE_RETURN_STRING(eLIM_CONVERT_ACTIVE_CHANNEL_TO_PASSIVE);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
             return( "UNKNOWN" );
@@ -174,7 +203,11 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     static char *frameSubtypeStr[14] =
+=======
+    static char *frameSubtypeStr[LIM_TRACE_MAX_SUBTYPES] =
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     static char *frameSubtypeStr[LIM_TRACE_MAX_SUBTYPES] =
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -196,6 +229,7 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
     };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     switch (pRecord->code) {
         case TRACE_CODE_MLM_STATE:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
@@ -208,6 +242,8 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
         case TRACE_CODE_TX_MGMT:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (pRecord->code) {
         case TRACE_CODE_MLM_STATE:
@@ -220,11 +256,15 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
             break;
         case TRACE_CODE_TX_MGMT:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             "TX Mgmt:", frameSubtypeStr[pRecord->data], pRecord->data );
             break;
 
         case TRACE_CODE_RX_MGMT:
+<<<<<<< HEAD
 <<<<<<< HEAD
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(%d)    SN: %d \n", recIndex, pRecord->time, pRecord->session,
                                             "RX Mgmt:", frameSubtypeStr[LIM_TRACE_GET_SUBTYPE(pRecord->data)],
@@ -240,6 +280,8 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
         case TRACE_CODE_RX_MGMT_TSF:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s0x%x(%d) \n", recIndex, pRecord->time, pRecord->session,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (LIM_TRACE_MAX_SUBTYPES <= LIM_TRACE_GET_SUBTYPE(pRecord->data))
             {
                 limLog(pMac, LOGE, "Wrong Subtype - %d", LIM_TRACE_GET_SUBTYPE(pRecord->data));
@@ -260,13 +302,20 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
 
         case TRACE_CODE_RX_MGMT_TSF:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s0x%x(%d) ", recIndex, pRecord->time, pRecord->session,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             "RX Mgmt TSF:", " ", pRecord->data, pRecord->data );
             break;
 
         case TRACE_CODE_TX_COMPLETE:
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  \n", recIndex, pRecord->time, pRecord->session,
+=======
+            limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  ", recIndex, pRecord->time, pRecord->session,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  ", recIndex, pRecord->time, pRecord->session,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -275,22 +324,29 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
 
         case TRACE_CODE_TX_SME_MSG:
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
                                             "TX SME Msg:", macTraceGetSmeMsgString((tANI_U16)pRecord->data), pRecord->data );
             break;
         case TRACE_CODE_RX_SME_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
                                             "TX SME Msg:", macTraceGetSmeMsgString((tANI_U16)pRecord->data), pRecord->data );
             break;
         case TRACE_CODE_RX_SME_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             LIM_TRACE_GET_DEFRD_OR_DROPPED(pRecord->data) ? "Def/Drp LIM Msg:": "RX Sme Msg:",
                                             macTraceGetSmeMsgString((tANI_U16)pRecord->data), pRecord->data );
             break;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         case TRACE_CODE_TX_HAL_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
@@ -310,6 +366,8 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
         case TRACE_CODE_RX_LIM_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case TRACE_CODE_TX_WDA_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
                                             "TX WDA Msg:", macTraceGetWdaMsgString((tANI_U16)pRecord->data), pRecord->data );
@@ -327,11 +385,15 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
             break;
         case TRACE_CODE_RX_LIM_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             LIM_TRACE_GET_DEFRD_OR_DROPPED(pRecord->data) ? "Def/Drp LIM Msg:": "RX LIM Msg",
                                             macTraceGetLimMsgString((tANI_U16)pRecord->data), pRecord->data );
             break;
         case TRACE_CODE_TX_CFG_MSG:
+<<<<<<< HEAD
 <<<<<<< HEAD
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
                                             "TX CFG Msg:", macTraceGetCfgMsgString((tANI_U16)pRecord->data), pRecord->data );
@@ -339,11 +401,16 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
         case TRACE_CODE_RX_CFG_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
                                             "TX CFG Msg:", macTraceGetCfgMsgString((tANI_U16)pRecord->data), pRecord->data );
             break;
         case TRACE_CODE_RX_CFG_MSG:
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             LIM_TRACE_GET_DEFRD_OR_DROPPED(pRecord->data) ? "Def/Drp LIM Msg:": "RX CFG Msg:",
                                             macTraceGetCfgMsgString((tANI_U16)MAC_TRACE_GET_MSG_ID(pRecord->data)),
@@ -351,6 +418,7 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
             break;
 
         case TRACE_CODE_TIMER_ACTIVATE:
+<<<<<<< HEAD
 <<<<<<< HEAD
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) \n", recIndex, pRecord->time, pRecord->session,
                                             "Timer Actvtd", __limTraceGetTimerString((tANI_U16)pRecord->data), pRecord->data );
@@ -363,6 +431,8 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
         default :
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s(%d) (0x%x) \n", recIndex, pRecord->time, pRecord->session,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s  %-30s(0x%x) ", recIndex, pRecord->time, pRecord->session,
                                             "Timer Actvtd", __limTraceGetTimerString((tANI_U16)pRecord->data), pRecord->data );
             break;
@@ -377,6 +447,9 @@ void limTraceDump(tpAniSirGlobal pMac, tpTraceRecord pRecord, tANI_U16 recIndex)
             break;
         default :
             limLog(pMac, LOGE, "%04d    %012u  S%d    %-14s(%d) (0x%x) ", recIndex, pRecord->time, pRecord->session,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                              "Unknown Code", pRecord->code, pRecord->data );
             break;
@@ -400,7 +473,11 @@ void macTraceMsgTx(tpAniSirGlobal pMac, tANI_U8 session, tANI_U32 data)
             break;
         case SIR_WDA_MODULE_ID:
 <<<<<<< HEAD
+<<<<<<< HEAD
             macTrace(pMac, TRACE_CODE_TX_HAL_MSG, session, data);
+=======
+            macTrace(pMac, TRACE_CODE_TX_WDA_MSG, session, data);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             macTrace(pMac, TRACE_CODE_TX_WDA_MSG, session, data);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -427,7 +504,11 @@ void macTraceMsgTxNew(tpAniSirGlobal pMac, tANI_U8 module, tANI_U8 session, tANI
             break;
         case SIR_WDA_MODULE_ID:
 <<<<<<< HEAD
+<<<<<<< HEAD
             macTraceNew(pMac, module, TRACE_CODE_TX_HAL_MSG, session, data);
+=======
+            macTraceNew(pMac, module, TRACE_CODE_TX_WDA_MSG, session, data);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             macTraceNew(pMac, module, TRACE_CODE_TX_WDA_MSG, session, data);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -458,7 +539,11 @@ void macTraceMsgRx(tpAniSirGlobal pMac, tANI_U8 session, tANI_U32 data)
             break;
         case SIR_WDA_MODULE_ID:
 <<<<<<< HEAD
+<<<<<<< HEAD
             macTrace(pMac, TRACE_CODE_RX_HAL_MSG, session, data);
+=======
+            macTrace(pMac, TRACE_CODE_RX_WDA_MSG, session, data);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             macTrace(pMac, TRACE_CODE_RX_WDA_MSG, session, data);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -491,7 +576,11 @@ void macTraceMsgRxNew(tpAniSirGlobal pMac, tANI_U8 module, tANI_U8 session, tANI
             break;
         case SIR_WDA_MODULE_ID:
 <<<<<<< HEAD
+<<<<<<< HEAD
             macTraceNew(pMac, module, TRACE_CODE_RX_HAL_MSG, session, data);
+=======
+            macTraceNew(pMac, module, TRACE_CODE_RX_WDA_MSG, session, data);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             macTraceNew(pMac, module, TRACE_CODE_RX_WDA_MSG, session, data);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -531,7 +620,11 @@ tANI_U8* limTraceGetMlmStateString( tANI_U32 mlmState )
         CASE_RETURN_STRING( eLIM_MLM_WT_DEL_BSS_RSP_STATE);
         CASE_RETURN_STRING( eLIM_MLM_WT_ADD_BSS_RSP_ASSOC_STATE);
 <<<<<<< HEAD
+<<<<<<< HEAD
         CASE_RETURN_STRING( eLIM_MLM_WT_ADD_BSS_RSP_PREASSOC_STATE);        
+=======
+        CASE_RETURN_STRING( eLIM_MLM_WT_ADD_BSS_RSP_PREASSOC_STATE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         CASE_RETURN_STRING( eLIM_MLM_WT_ADD_BSS_RSP_PREASSOC_STATE);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -57,7 +63,11 @@
   *
   * btampHCI.frms
 <<<<<<< HEAD
+<<<<<<< HEAD
   * 
+=======
+  *
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   *
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -67,11 +77,16 @@
   */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef ANI_OS_TYPE_OSX
 #include <memory.h> /* For memcpy */
 //#include <stdio.h>  /* For _vsnprintf */
 #include <stddef.h> /* For offsetof */
 #endif
+=======
+#include <memory.h> /* For memcpy */
+#include <stddef.h> /* For offsetof */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <memory.h> /* For memcpy */
 #include <stddef.h> /* For offsetof */
@@ -94,7 +109,11 @@
 #define WLAN_BAP_PAL_AMP_ASSOC_CONN_CH_TLV_MIN_LEN    3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Length of the value field expected in a TLV of type Prefered Channel in an 
+=======
+/*Length of the value field expected in a TLV of type Preferred Channel in an 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /*Length of the value field expected in a TLV of type Preferred Channel in an 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -416,6 +435,7 @@ static void framesDump(void * pCtx, int nSev, v_U8_t *pBuf, int nBuf)
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if ! defined(BTAMP_PARAMETER_CHECK)
 #   if defined (BTAMP_HAVE_WIN32_API)
 
@@ -442,6 +462,8 @@ static void framesDump(void * pCtx, int nSev, v_U8_t *pBuf, int nBuf)
         if (!pnConsumed) return BTAMP_BAD_OUTPUT_BUFFER \
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if ! defined(BTAMP_PARAMETER_CHECK2)
 #   if defined (BTAMP_HAVE_WIN32_API)
 
@@ -460,6 +482,9 @@ static void framesDump(void * pCtx, int nSev, v_U8_t *pBuf, int nBuf)
         if (!nBuf) return BTAMP_BAD_OUTPUT_BUFFER;                      \
         if (!pnConsumed) return BTAMP_BAD_OUTPUT_BUFFER;                \
     } while (0)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #   endif
 #endif
@@ -676,7 +701,11 @@ v_U32_t btampUnpackTlvAMP_Assoc_Connected_Channel(void * pCtx, v_U8_t *pBuf, v_U
 #ifdef WLAN_BAPHCI_ENABLE_LOGGING
       /*Log invalid len*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR, "Invalid TLV len on %s", __FUNCTION__); 
+=======
+      VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR, "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR, "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -733,7 +762,11 @@ v_U32_t btampUnpackTlvAMP_Assoc_MAC_Addr(void * pCtx, v_U8_t *pBuf, v_U16_t tlvl
 #ifdef WLAN_BAPHCI_ENABLE_LOGGING    
       /*Log invalid len*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __FUNCTION__); 
+=======
+      VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -770,7 +803,11 @@ v_U32_t btampUnpackTlvAMP_Assoc_PAL_Capabilities(void * pCtx, v_U8_t *pBuf, v_U1
 #ifdef WLAN_BAPHCI_ENABLE_LOGGING    
       /*Log invalid len*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __FUNCTION__); 
+=======
+      VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -808,7 +845,11 @@ v_U32_t btampUnpackTlvAMP_Assoc_PAL_Version(void * pCtx, v_U8_t *pBuf, v_U16_t t
 #ifdef WLAN_BAPHCI_ENABLE_LOGGING    
       /*Log invalid len*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __FUNCTION__); 
+=======
+      VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -851,7 +892,11 @@ v_U32_t btampUnpackTlvAMP_Assoc_Preferred_Channel_List(void * pCtx, v_U8_t *pBuf
 #ifdef WLAN_BAPHCI_ENABLE_LOGGING    
       /*Log invalid len*/
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __FUNCTION__); 
+=======
+      VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       VOS_TRACE(VOS_MODULE_ID_BAP,VOS_TRACE_LEVEL_ERROR,"Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -908,7 +953,11 @@ v_U32_t btampUnpackTlvFlow_Spec(void * pCtx, v_U8_t *pBuf, v_U16_t tlvlen, tBtam
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -962,7 +1011,11 @@ v_U32_t btampUnpackTlvHCI_Accept_Logical_Link_Cmd(void * pCtx, v_U8_t *pBuf, v_U
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1008,7 +1061,11 @@ v_U32_t btampUnpackTlvHCI_Accept_Physical_Link_Cmd(void * pCtx, v_U8_t *pBuf, v_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1429,7 +1486,11 @@ v_U32_t btampUnpackTlvHCI_Create_Logical_Link_Cmd(void * pCtx, v_U8_t *pBuf, v_U
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1473,7 +1534,11 @@ v_U32_t btampUnpackTlvHCI_Create_Physical_Link_Cmd(void * pCtx, v_U8_t *pBuf, v_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1542,7 +1607,11 @@ v_U32_t btampUnpackTlvHCI_Disconnect_Logical_Link_Cmd(void * pCtx, v_U8_t *pBuf,
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1604,7 +1673,11 @@ v_U32_t btampUnpackTlvHCI_Disconnect_Physical_Link_Cmd(void * pCtx, v_U8_t *pBuf
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1669,7 +1742,11 @@ v_U32_t btampUnpackTlvHCI_Flow_Spec_Modify_Cmd(void * pCtx, v_U8_t *pBuf, v_U16_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1736,7 +1813,11 @@ v_U32_t btampUnpackTlvHCI_Flush_Cmd(void * pCtx, v_U8_t *pBuf, v_U16_t tlvlen, t
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1831,7 +1912,11 @@ v_U32_t btampUnpackTlvHCI_Logical_Link_Cancel_Cmd(void * pCtx, v_U8_t *pBuf, v_U
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1986,7 +2071,11 @@ v_U32_t btampUnpackTlvHCI_Read_Best_Effort_Flush_Timeout_Cmd(void * pCtx, v_U8_t
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2066,7 +2155,11 @@ v_U32_t btampUnpackTlvHCI_Read_Failed_Contact_Counter_Cmd(void * pCtx, v_U8_t *p
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2118,7 +2211,11 @@ v_U32_t btampUnpackTlvHCI_Read_Link_Quality_Cmd(void * pCtx, v_U8_t *pBuf, v_U16
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2156,7 +2253,11 @@ v_U32_t btampUnpackTlvHCI_Read_Link_Supervision_Timeout_Cmd(void * pCtx, v_U8_t 
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2190,7 +2291,11 @@ v_U32_t btampUnpackTlvHCI_Read_Local_AMP_Assoc_Cmd(void * pCtx, v_U8_t *pBuf, v_
     -------------------------------------------------------------------------*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s. tlvlen=%d.", __FUNCTION__, tlvlen); 
+=======
+            "Invalid TLV len on %s. tlvlen=%d.", __func__, tlvlen); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s. tlvlen=%d.", __func__, tlvlen); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2202,7 +2307,11 @@ v_U32_t btampUnpackTlvHCI_Read_Local_AMP_Assoc_Cmd(void * pCtx, v_U8_t *pBuf, v_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2331,7 +2440,11 @@ v_U32_t btampUnpackTlvHCI_Read_RSSI_Cmd(void * pCtx, v_U8_t *pBuf, v_U16_t tlvle
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2383,7 +2496,11 @@ v_U32_t btampUnpackTlvHCI_Reset_Failed_Contact_Counter_Cmd(void * pCtx, v_U8_t *
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2421,7 +2538,11 @@ v_U32_t btampUnpackTlvHCI_Set_Event_Mask_Cmd(void * pCtx, v_U8_t *pBuf, v_U16_t 
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2456,7 +2577,11 @@ v_U32_t btampUnpackTlvHCI_Set_Event_Mask_Page_2_Cmd(void * pCtx, v_U8_t *pBuf, v
 
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s. tlvlen=%d.", __FUNCTION__, tlvlen); 
+=======
+            "Invalid TLV len on %s. tlvlen=%d.", __func__, tlvlen); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s. tlvlen=%d.", __func__, tlvlen); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2467,7 +2592,11 @@ v_U32_t btampUnpackTlvHCI_Set_Event_Mask_Page_2_Cmd(void * pCtx, v_U8_t *pBuf, v
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2506,7 +2635,11 @@ v_U32_t btampUnpackTlvHCI_Set_Short_Range_Mode_Cmd(void * pCtx, v_U8_t *pBuf, v_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2570,7 +2703,11 @@ v_U32_t btampUnpackTlvHCI_Write_Best_Effort_Flush_Timeout_Cmd(void * pCtx, v_U8_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2611,7 +2748,11 @@ v_U32_t btampUnpackTlvHCI_Write_Connection_Accept_Timeout_Cmd(void * pCtx, v_U8_
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2649,7 +2790,11 @@ v_U32_t btampUnpackTlvHCI_Write_Flow_Control_Mode_Cmd(void * pCtx, v_U8_t *pBuf,
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2686,7 +2831,11 @@ v_U32_t btampUnpackTlvHCI_Write_Link_Supervision_Timeout_Cmd(void * pCtx, v_U8_t
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2727,7 +2876,11 @@ v_U32_t btampUnpackTlvHCI_Write_Location_Data_Cmd(void * pCtx, v_U8_t *pBuf, v_U
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2771,7 +2924,11 @@ v_U32_t btampUnpackTlvHCI_Write_Logical_Link_Accept_Timeout_Cmd(void * pCtx, v_U
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2809,7 +2966,11 @@ v_U32_t btampUnpackTlvHCI_Write_Loopback_Mode_Cmd(void * pCtx, v_U8_t *pBuf, v_U
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2847,7 +3008,11 @@ v_U32_t btampUnpackTlvHCI_Write_Remote_AMP_ASSOC_Cmd(void * pCtx, v_U8_t *pBuf, 
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2898,7 +3063,11 @@ v_U32_t btampUnpackTlvHCI_Enhanced_Flush_Cmd(void * pCtx, v_U8_t *pBuf, v_U16_t 
       /*Log invalid len*/
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             "Invalid TLV len on %s", __FUNCTION__); 
+=======
+            "Invalid TLV len on %s", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             "Invalid TLV len on %s", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

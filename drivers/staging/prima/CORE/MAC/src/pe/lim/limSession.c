@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,8 +49,11 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**=========================================================================
@@ -138,7 +147,11 @@ tpPESession peCreateSession(tpAniSirGlobal pMac, tANI_U8 *bssid , tANI_U8* sessi
                      (void **) &pMac->lim.gpSession[i].dph.dphHashTable.pHashTable, sizeof(tpDphHashNode)*numSta))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGE, FL("memory allocate failed!\n"));
+=======
+                limLog(pMac, LOGE, FL("memory allocate failed!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGE, FL("memory allocate failed!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -149,7 +162,11 @@ tpPESession peCreateSession(tpAniSirGlobal pMac, tANI_U8 *bssid , tANI_U8* sessi
                   (void **) &pMac->lim.gpSession[i].dph.dphHashTable.pDphNodeArray, sizeof(tDphHashNode)*numSta))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGE, FL("memory allocate failed!\n"));
+=======
+                limLog(pMac, LOGE, FL("memory allocate failed!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGE, FL("memory allocate failed!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -162,7 +179,10 @@ tpPESession peCreateSession(tpAniSirGlobal pMac, tANI_U8 *bssid , tANI_U8* sessi
                            &pMac->lim.gpSession[i].dph.dphHashTable);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd,
                     (void **) &pMac->lim.gpSession[i].gpLimPeerIdxpool, 
                     sizeof(*pMac->lim.gpSession[i].gpLimPeerIdxpool) * (numSta+1)))
@@ -178,6 +198,9 @@ tpPESession peCreateSession(tpAniSirGlobal pMac, tANI_U8 *bssid , tANI_U8* sessi
             pMac->lim.gpSession[i].freePeerIdxTail = 0;
             pMac->lim.gpSession[i].gLimNumOfCurrentSTAs = 0;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Copy the BSSID to the session table */
             sirCopyMacAddr(pMac->lim.gpSession[i].bssId, bssid);
@@ -210,13 +233,19 @@ tpPESession peCreateSession(tpAniSirGlobal pMac, tANI_U8 *bssid , tANI_U8* sessi
             pMac->lim.gpSession[i].htRecommendedTxWidthSet = 0;
             pMac->lim.gpSession[i].htSecondaryChannelOffset = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
             palZeroMemory(pMac->hHdd, pMac->lim.gpSession[i].peerAIDBitmap,
                   sizeof(pMac->lim.gpSession[i].peerAIDBitmap));
 #endif
             pMac->lim.gpSession[i].fWaitForProbeRsp = 0;
             pMac->lim.gpSession[i].fIgnoreCapsChange = 0;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return(&pMac->lim.gpSession[i]);
         }
@@ -262,7 +291,10 @@ tpPESession peFindSessionByBssid(tpAniSirGlobal pMac,  tANI_U8*  bssid,    tANI_
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------------
   \brief peFindSessionByBssIdx() - looks up the PE session given the bssIdx.
 
@@ -287,6 +319,9 @@ tpPESession peFindSessionByBssIdx(tpAniSirGlobal pMac,  tANI_U8 bssIdx)
     limLog(pMac, LOG4, FL("Session lookup fails for bssIdx: %d"), bssIdx);
     return NULL;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
@@ -427,13 +462,19 @@ void peDeleteSession(tpAniSirGlobal pMac, tpPESession psessionEntry)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->gpLimPeerIdxpool != NULL)
     {
         palFreeMemory(pMac->hHdd, psessionEntry->gpLimPeerIdxpool);
         psessionEntry->gpLimPeerIdxpool = NULL;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->beacon != NULL)
     {
@@ -477,7 +518,10 @@ void peDeleteSession(tpAniSirGlobal pMac, tpPESession psessionEntry)
         psessionEntry->parsedAssocReq = NULL;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL != psessionEntry->limAssocResponseData)
     {
         palFreeMemory( pMac->hHdd, psessionEntry->limAssocResponseData);
@@ -497,6 +541,9 @@ void peDeleteSession(tpAniSirGlobal pMac, tpPESession psessionEntry)
         palFreeMemory( pMac->hHdd, psessionEntry->pLimMlmReassocReq);
         psessionEntry->pLimMlmReassocReq = NULL;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_CCX

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -61,7 +67,10 @@
 /* $HEADER$ */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -97,7 +106,10 @@
 #define RATE_MASK         0x7f
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_ENABLE_AGEIE_ON_SCAN_RESULTS
 /* GPS application requirement */
 #define QCOM_VENDOR_IE_ID 221
@@ -123,6 +135,9 @@ typedef struct {
 }__attribute__((packed)) qcom_ie_age ;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 struct cfg80211_bss* wlan_hdd_cfg80211_update_bss_db( hdd_adapter_t *pAdapter,
                                       tCsrRoamInfo *pRoamInfo
@@ -134,8 +149,11 @@ int wlan_hdd_cfg80211_pmksa_candidate_notify(
                     int index, bool preauth );
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
 #ifdef FEATURE_WLAN_LFR_METRICS
     eHalStatus wlan_hdd_cfg80211_roam_metrics_preauth(hdd_adapter_t *pAdapter, tCsrRoamInfo *pRoamInfo);
@@ -143,16 +161,22 @@ int wlan_hdd_cfg80211_pmksa_candidate_notify(
     eHalStatus wlan_hdd_cfg80211_roam_metrics_handover(hdd_adapter_t *pAdapter, tCsrRoamInfo *pRoamInfo);
 #endif
 //End fjdw67 Motorola, IKJB42MAIN-6385
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_WAPI
 void wlan_hdd_cfg80211_set_key_wapi(hdd_adapter_t* pAdapter,
               u8 key_index, const u8 *mac_addr, u8 *key , int key_Len);
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 struct wiphy *wlan_hdd_cfg80211_init(int priv_size);
 
 int wlan_hdd_cfg80211_register(struct device *dev,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 struct wiphy *wlan_hdd_cfg80211_wiphy_alloc(int priv_size);
 
 int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
@@ -162,12 +186,19 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
                             struct cfg80211_scan_request *request);
 
 int wlan_hdd_cfg80211_init(struct device *dev,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                struct wiphy *wiphy,
                                hdd_config_t *pCfg
                                          );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+int wlan_hdd_cfg80211_register( struct wiphy *wiphy);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 int wlan_hdd_cfg80211_register( struct wiphy *wiphy);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -176,9 +207,12 @@ void wlan_hdd_cfg80211_post_voss_start(hdd_adapter_t* pAdapter);
 void wlan_hdd_cfg80211_pre_voss_stop(hdd_adapter_t* pAdapter);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #endif // CONFIG_CFG80211
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int wlan_hdd_crda_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request);
 int wlan_hdd_get_crda_regd_entry(struct wiphy *wiphy, hdd_config_t *pCfg);
 extern v_VOID_t hdd_connSetConnectionState( hdd_station_ctx_t *pHddStaCtx,
@@ -193,6 +227,9 @@ extern void wlan_hdd_cfg80211_update_replayCounterCallback(void *callbackContext
                             tpSirGtkOffloadGetInfoRspParams pGtkOffloadGetInfoRsp);
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif

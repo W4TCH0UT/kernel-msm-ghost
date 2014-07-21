@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -88,8 +94,14 @@
 #include <wlan_hdd_wmm.h>
 #include "utilsApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 #include "wlan_hdd_p2p.h"
+=======
+#include "wlan_hdd_p2p.h"
+#ifdef FEATURE_WLAN_TDLS
+#include "wlan_hdd_tdls.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wlan_hdd_p2p.h"
 #ifdef FEATURE_WLAN_TDLS
@@ -110,6 +122,7 @@
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
 #include <linux/wireless.h>
 #include <net/cfg80211.h>
@@ -118,10 +131,15 @@
 #include "wlan_qct_pal_trace.h"
 #endif // FEATURE_WLAN_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <linux/wireless.h>
 #include <net/cfg80211.h>
 #include "wlan_qct_pal_trace.h"
 #include "wlan_qct_tl.h"
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "wlan_hdd_misc.h"
@@ -130,7 +148,11 @@
 #include "wlan_hdd_dev_pwr.h"
 #include "qc_sap_ioctl.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WE_MAX_STR_LEN 1024
+=======
+#include "sme_Api.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "sme_Api.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -142,7 +164,11 @@ extern void hdd_resume_wlan(struct early_suspend *wlan_suspend);
 
 #ifdef FEATURE_OEM_DATA_SUPPORT
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define MAX_OEM_DATA_RSP_LEN 1024
+=======
+#define MAX_OEM_DATA_RSP_LEN 2047
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define MAX_OEM_DATA_RSP_LEN 2047
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -154,7 +180,11 @@ extern int wlan_hdd_cfg80211_update_band(struct wiphy *wiphy, eCsrBand eBand);
 int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static int ioctl_debug = 0;
+=======
+static int ioctl_debug;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static int ioctl_debug;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -183,7 +213,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
         {5745, 149}, {5765, 153}, {5785, 157}, {5805, 161}, {5825, 165} };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FREQ_CHAN_MAP_TABLE_SIZE sizeof(freq_chan_map)/sizeof(freq_chan_map[0])
+=======
+#define FREQ_CHAN_MAP_TABLE_SIZE (sizeof(freq_chan_map)/sizeof(freq_chan_map[0]))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define FREQ_CHAN_MAP_TABLE_SIZE (sizeof(freq_chan_map)/sizeof(freq_chan_map[0]))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -200,6 +234,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_SET_HIGHER_DTIM_TRANSITION   8
 #define WE_SET_TM_LEVEL      9
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define WE_SET_CHANNEL_RANGE 10   // Motorola, IKJBREL1-4181
+#define WE_SET_IPV6_FILTER_STATE 11 // IKJB42MAIN-1244, Motorola, a19091
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WE_SET_CHANNEL_RANGE 10   // Motorola, IKJBREL1-4181
 #define WE_SET_IPV6_FILTER_STATE 11 // IKJB42MAIN-1244, Motorola, a19091
@@ -217,6 +256,10 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_GET_SAP_AUTO_CHANNEL_SELECTION 8
 #define WE_GET_CONCURRENCY_MODE 9
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define WE_GET_MCC_MODE      10 /* MOTOROLA IKJB42MAIN-274 */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WE_GET_MCC_MODE      10 /* MOTOROLA IKJB42MAIN-274 */
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -239,6 +282,12 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_SET_WDI_DBG       2
 #define WE_SET_SAP_CHANNELS  3
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
+#define WE_SET_WLAN_DBG_TILL_LEVEL 4
+//END IKJBXLINE-5577
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 //Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
 #define WE_SET_WLAN_DBG_TILL_LEVEL 4
@@ -256,11 +305,17 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_GET_RSSI          6
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WE_GET_ROAM_RSSI     7
 #ifdef FEATURE_WLAN_TDLS
 #define WE_GET_TDLS_PEERS    8
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls and their sub-ioctls */
@@ -273,6 +328,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_ENABLE_DXE_STALL_DETECT 6
 #define WE_DISPLAY_DXE_SNAP_SHOT   7
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define WE_DISPLAY_DATAPATH_SNAP_SHOT    9
+#define WE_SET_REASSOC_TRIGGER     8
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WE_DISPLAY_DATAPATH_SNAP_SHOT    9
 #define WE_SET_REASSOC_TRIGGER     8
@@ -283,12 +343,15 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_LOG_DUMP_CMD      1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 #define WE_P2P_NOA_CMD       2
 #endif
 
 #define MAX_VAR_ARGS         7
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WE_P2P_NOA_CMD       2
 //IOCTL to configure MCC params
 #define WE_MCC_CONFIG_CREDENTIAL 3
@@ -305,6 +368,9 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define MAX_VAR_ARGS         7
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls (with no sub-ioctls) */
@@ -358,6 +424,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WLAN_PRIV_SET_MCBC_FILTER    (SIOCIWFIRSTPRIV + 26)
 #define WLAN_PRIV_CLEAR_MCBC_FILTER  (SIOCIWFIRSTPRIV + 27)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/* Private ioctl to trigger reassociation */
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /* Private ioctl to trigger reassociation */
 
@@ -391,6 +462,7 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WLAN_STATS_TX_BC_BYTE_CNT     21
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FILL_TLV(__p, __type, __size, __val, __tlen) \
 {\
     if ((__tlen + __size + 2) < WE_MAX_STR_LEN) \
@@ -407,6 +479,8 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
     }                                                         \
 }while(0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define FILL_TLV(__p, __type, __size, __val, __tlen) do {           \
         if ((__tlen + __size + 2) < WE_MAX_STR_LEN)                 \
         {                                                           \
@@ -421,6 +495,9 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
             hddLog(VOS_TRACE_LEVEL_ERROR, "FILL_TLV Failed!!!\n");  \
         }                                                           \
     } while(0);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define VERSION_VALUE_MAX_LEN 32
@@ -430,11 +507,14 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define TX_PER_TRACKING_DEFAULT_WATERMARK         5
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define WLAN_HDD_UI_BAND_AUTO                     0
 #define WLAN_HDD_UI_BAND_5_GHZ                    1
 #define WLAN_HDD_UI_BAND_2_4_GHZ                  2
 #define WLAN_HDD_UI_SET_BAND_VALUE_OFFSET         8
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*MCC Configuration parameters */
 enum {
     MCC_SCHEDULE_TIME_SLICE_CFG_PARAM = 1,
@@ -450,11 +530,15 @@ enum {
 
 int hdd_validate_mcc_config(hdd_adapter_t *pAdapter, v_UINT_t staId,
                                 v_UINT_t arg1, v_UINT_t arg2, v_UINT_t arg3);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_PACKET_FILTERING
 int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest, 
                            v_U8_t sessionId);
+<<<<<<< HEAD
 <<<<<<< HEAD
 void wlan_hdd_set_mc_addr_list(hdd_context_t *pHddCtx, v_U8_t set, v_U8_t sessionId);
 #endif
@@ -464,12 +548,20 @@ void wlan_hdd_set_mc_addr_list(hdd_context_t *pHddCtx, v_U8_t set, v_U8_t sessio
 #endif
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------------
 
   \brief hdd_wlan_get_version() -
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    This function use to get Wlan Driver And Firmware Version.
+=======
+   This function use to get Wlan Driver, Firmware, & Hardware Version.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    This function use to get Wlan Driver, Firmware, & Hardware Version.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -478,6 +570,7 @@ void wlan_hdd_set_mc_addr_list(hdd_context_t *pHddCtx, v_U8_t set, v_U8_t sessio
             wrqu - Pointer to IOCTL REQUEST Data.
             extra - Pointer to char
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   \return - 0 for success, non zero for failure
 
@@ -520,6 +613,8 @@ int hdd_wlan_get_version(hdd_adapter_t *pAdapter, union iwreq_data *wrqu,
 
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \return - none
 
   --------------------------------------------------------------------------*/
@@ -564,6 +659,9 @@ void hdd_wlan_get_version(hdd_adapter_t *pAdapter, union iwreq_data *wrqu,
     return;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int hdd_wlan_get_rts_threshold(hdd_adapter_t *pAdapter, union iwreq_data *wrqu)
 {
@@ -690,7 +788,11 @@ hdd_IsAuthTypeRSN( tHalHandle halHandle, eCsrAuthType authType)
         default:
             hddLog(LOGE, FL("%s called with unknown authType - default to Open, None\n"),
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                                                       __FUNCTION__);
+=======
+                                                                                      __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                                                                       __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -699,7 +801,11 @@ hdd_IsAuthTypeRSN( tHalHandle halHandle, eCsrAuthType authType)
     }
     hddLog(LOGE, FL("%s called with authType: %d, returned: %d\n"),
 <<<<<<< HEAD
+<<<<<<< HEAD
                                              __FUNCTION__, authType, rsnType);
+=======
+                                             __func__, authType, rsnType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                              __func__, authType, rsnType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -715,7 +821,11 @@ static void hdd_GetRssiCB( v_S7_t rssi, tANI_U32 staId, void *pContext )
    {
       pr_info("%s: rssi [%d] STA [%d] pContext [%p]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, (int)rssi, (int)staId, pContext);
+=======
+              __func__, (int)rssi, (int)staId, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, (int)rssi, (int)staId, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -726,7 +836,11 @@ static void hdd_GetRssiCB( v_S7_t rssi, tANI_U32 staId, void *pContext )
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Bad param, pContext [%p]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, pContext);
+=======
+             __func__, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -746,17 +860,23 @@ static void hdd_GetRssiCB( v_S7_t rssi, tANI_U32 staId, void *pContext )
       hddLog(VOS_TRACE_LEVEL_WARN,
              "%s: Invalid context, pAdapter [%p] magic [%08x]",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __FUNCTION__, pAdapter, pStatsContext->magic);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __func__, pAdapter, pStatsContext->magic);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       return;
@@ -808,8 +928,11 @@ VOS_STATUS wlan_hdd_get_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
    {
        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: Unable to retrieve RSSI",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__);
        /* we'll returned a cached value below */
    }
@@ -937,6 +1060,9 @@ VOS_STATUS wlan_hdd_get_roam_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
    {
        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: Unable to retrieve RSSI",
               __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        /* we'll returned a cached value below */
    }
@@ -952,7 +1078,11 @@ VOS_STATUS wlan_hdd_get_roam_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
        {
           hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while retrieving RSSI ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                 __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, (0 == lrc) ? "timeout" : "interrupt");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -972,6 +1102,11 @@ VOS_STATUS wlan_hdd_get_roam_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
    return VOS_STATUS_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #endif
 
@@ -1023,7 +1158,11 @@ void hdd_StatisticsCB( void *pStats, void *pContext )
            {
               VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         "%s: vos_event_set failed", __FUNCTION__);
+=======
+                        "%s: vos_event_set failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         "%s: vos_event_set failed", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1051,7 +1190,11 @@ void ccmCfgSetCallback(tHalHandle halHandle, tANI_S32 result)
    if (NULL == pHddCtx)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid pHddCtx", __FUNCTION__);
+=======
+      hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid pHddCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid pHddCtx", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1134,10 +1277,13 @@ void wlan_hdd_ula_done_cb(v_VOID_t *callbackContext)
 {
     hdd_adapter_t *pAdapter = (hdd_adapter_t*)callbackContext;
 <<<<<<< HEAD
+<<<<<<< HEAD
     hdd_wext_state_t *pWextState= WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
 
     complete(&pWextState->completion_var);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (WLAN_HDD_ADAPTER_MAGIC != pAdapter->magic)
     {
@@ -1148,12 +1294,16 @@ void wlan_hdd_ula_done_cb(v_VOID_t *callbackContext)
     {
         complete(&pAdapter->ula_complete);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 VOS_STATUS wlan_hdd_check_ula_done(hdd_adapter_t *pAdapter)
 {
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+<<<<<<< HEAD
 <<<<<<< HEAD
     hdd_wext_state_t  *pWextState =  WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     VOS_STATUS vos_status;
@@ -1162,19 +1312,28 @@ VOS_STATUS wlan_hdd_check_ula_done(hdd_adapter_t *pAdapter)
     {
         INIT_COMPLETION(pWextState->completion_var);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS vos_status;
     unsigned long rc;
 
     if (VOS_FALSE == pHddStaCtx->conn_info.uIsAuthenticated)
     {
         INIT_COMPLETION(pAdapter->ula_complete);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /*To avoid race condition between the set key and the last EAPOL
           packet, notify TL to finish upper layer authentication incase if the
           last EAPOL packet pending in the TL queue.*/
 <<<<<<< HEAD
+<<<<<<< HEAD
         vos_status = WLANTL_Finish_ULA(wlan_hdd_ula_done_cb,pAdapter);
+=======
+        vos_status = WLANTL_Finish_ULA(wlan_hdd_ula_done_cb, pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         vos_status = WLANTL_Finish_ULA(wlan_hdd_ula_done_cb, pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1189,9 +1348,12 @@ VOS_STATUS wlan_hdd_check_ula_done(hdd_adapter_t *pAdapter)
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         wait_for_completion_timeout(&pWextState->completion_var,
                                     msecs_to_jiffies(HDD_FINISH_ULA_TIME_OUT));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         rc = wait_for_completion_timeout(&pAdapter->ula_complete,
                                     msecs_to_jiffies(HDD_FINISH_ULA_TIME_OUT));
         if (0 == rc)
@@ -1202,6 +1364,9 @@ VOS_STATUS wlan_hdd_check_ula_done(hdd_adapter_t *pAdapter)
              * connection may still get established but is just taking
              * too long for us to wait */
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return VOS_STATUS_SUCCESS;
@@ -1246,7 +1411,11 @@ static int iw_set_commit(struct net_device *dev, struct iw_request_info *info,
                          union iwreq_data *wrqu, char *extra)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog( LOG1, "In %s\n", __FUNCTION__);
+=======
+    hddLog( LOG1, "In %s\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hddLog( LOG1, "In %s\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1276,9 +1445,13 @@ static int iw_set_mode(struct net_device *dev,
     eMib_dot11DesiredBssType connectedBssType;
     hdd_config_t             *pConfig;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
     struct wireless_dev      *wdev;
 #endif
+=======
+    struct wireless_dev      *wdev;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     struct wireless_dev      *wdev;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1301,6 +1474,7 @@ static int iw_set_mode(struct net_device *dev,
     if (pWextState == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog (LOGE, "%s ERROR: Data Storage Corruption", __FUNCTION__);
         return -EINVAL;
     }
@@ -1313,6 +1487,8 @@ static int iw_set_mode(struct net_device *dev,
 
     hddLog( LOG1,"%s Old Bss type = %d", __FUNCTION__, LastBSSType);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         hddLog (LOGE, "%s ERROR: Data Storage Corruption", __func__);
         return -EINVAL;
     }
@@ -1322,13 +1498,20 @@ static int iw_set_mode(struct net_device *dev,
     LastBSSType = pRoamProfile->BSSType;
 
     hddLog( LOG1,"%s Old Bss type = %d", __func__, LastBSSType);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (wrqu->mode)
     {
     case IW_MODE_ADHOC:
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog( LOG1,"%s Setting AP Mode as IW_MODE_ADHOC", __FUNCTION__);
+=======
+        hddLog( LOG1,"%s Setting AP Mode as IW_MODE_ADHOC", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog( LOG1,"%s Setting AP Mode as IW_MODE_ADHOC", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1336,6 +1519,7 @@ static int iw_set_mode(struct net_device *dev,
         // Set the phymode correctly for IBSS.
         pConfig  = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini;
         pWextState->roamProfile.phyMode = hdd_cfg_xlate_to_csr_phy_mode(pConfig->dot11Mode);
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef CONFIG_CFG80211
         wdev->iftype = NL80211_IFTYPE_ADHOC;
@@ -1355,6 +1539,8 @@ static int iw_set_mode(struct net_device *dev,
     default:
         hddLog(LOG1,"%s Unknown AP Mode value", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         wdev->iftype = NL80211_IFTYPE_ADHOC;
         break;
     case IW_MODE_INFRA:
@@ -1368,6 +1554,9 @@ static int iw_set_mode(struct net_device *dev,
         break;
     default:
         hddLog(LOG1,"%s Unknown AP Mode value", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EOPNOTSUPP;
     }
@@ -1407,7 +1596,11 @@ static int iw_get_mode(struct net_device *dev,
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog (LOG1, "In %s",__FUNCTION__);
+=======
+    hddLog (LOG1, "In %s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hddLog (LOG1, "In %s",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1428,7 +1621,11 @@ static int iw_get_mode(struct net_device *dev,
     if (pWextState == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog (LOGE, "%s ERROR: Data Storage Corruption", __FUNCTION__);
+=======
+        hddLog (LOGE, "%s ERROR: Data Storage Corruption", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog (LOGE, "%s ERROR: Data Storage Corruption", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1439,7 +1636,11 @@ static int iw_get_mode(struct net_device *dev,
     {
     case eCSR_BSS_TYPE_INFRASTRUCTURE:
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog(LOG1, "%s returns IW_MODE_INFRA\n", __FUNCTION__);
+=======
+        hddLog(LOG1, "%s returns IW_MODE_INFRA\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog(LOG1, "%s returns IW_MODE_INFRA\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1447,6 +1648,7 @@ static int iw_get_mode(struct net_device *dev,
         break;
     case eCSR_BSS_TYPE_IBSS:
     case eCSR_BSS_TYPE_START_IBSS:
+<<<<<<< HEAD
 <<<<<<< HEAD
         hddLog( LOG1,"%s returns IW_MODE_ADHOC\n", __FUNCTION__);
         *uwrq= IW_MODE_ADHOC;
@@ -1458,6 +1660,8 @@ static int iw_get_mode(struct net_device *dev,
     default:
         hddLog( LOG1,"%s returns APMODE_UNKNOWN\n", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         hddLog( LOG1,"%s returns IW_MODE_ADHOC\n", __func__);
         *uwrq= IW_MODE_ADHOC;
         break;
@@ -1467,6 +1671,9 @@ static int iw_get_mode(struct net_device *dev,
         break;
     default:
         hddLog( LOG1,"%s returns APMODE_UNKNOWN\n", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     }
@@ -1531,7 +1738,11 @@ static int iw_set_freq(struct net_device *dev, struct iw_request_info *info,
         {
             hddLog(LOG1,"%s: Channel [%d] is outside valid range from %d to %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, wrqu->freq.m, WNI_CFG_CURRENT_CHANNEL_STAMIN,
+=======
+                __func__, wrqu->freq.m, WNI_CFG_CURRENT_CHANNEL_STAMIN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, wrqu->freq.m, WNI_CFG_CURRENT_CHANNEL_STAMIN,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1618,6 +1829,7 @@ static int iw_get_freq(struct net_device *dev, struct iw_request_info *info,
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        channel = pHddStaCtx->conn_info.operationChannel;
        status = hdd_wlan_get_freq(channel, &freq);
        if( TRUE == status )
@@ -1629,11 +1841,16 @@ static int iw_get_freq(struct net_device *dev, struct iw_request_info *info,
            fwrq->e = MHZ;
        }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        /* Set Exponent parameter as 6 (MHZ) in struct iw_freq
         * iwlist & iwconfig command shows frequency into proper
         * format (2.412 GHz instead of 246.2 MHz)*/
        fwrq->m = 0;
        fwrq->e = MHZ;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
    return 0;
@@ -1727,7 +1944,11 @@ static int iw_get_bitrate(struct net_device *dev,
          hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: Unable to retrieve statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__);
+=======
+                __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1743,7 +1964,11 @@ static int iw_get_bitrate(struct net_device *dev,
          hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: SME timeout while retrieving statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__);
+=======
+                __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1926,7 +2151,11 @@ static int iw_set_genie(struct net_device *dev,
               break;
          case DOT11F_EID_RSN:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hddLog (LOG1, "%s Set RSN IE (len %d)",__FUNCTION__, eLen+2);
+=======
+                hddLog (LOG1, "%s Set RSN IE (len %d)",__func__, eLen+2);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 hddLog (LOG1, "%s Set RSN IE (len %d)",__func__, eLen+2);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1938,7 +2167,11 @@ static int iw_set_genie(struct net_device *dev,
 
          default:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hddLog (LOGE, "%s Set UNKNOWN IE %X",__FUNCTION__, elementId);
+=======
+                hddLog (LOGE, "%s Set UNKNOWN IE %X",__func__, elementId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 hddLog (LOGE, "%s Set UNKNOWN IE %X",__func__, elementId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1997,7 +2230,11 @@ static int iw_get_genie(struct net_device *dev,
     vos_mem_copy( wrqu->data.pointer, (v_VOID_t*)genIeBytes, wrqu->data.length);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(LOG1,"%s: RSN IE of %d bytes returned\n", __FUNCTION__, wrqu->data.length );
+=======
+    hddLog(LOG1,"%s: RSN IE of %d bytes returned\n", __func__, wrqu->data.length );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hddLog(LOG1,"%s: RSN IE of %d bytes returned\n", __func__, wrqu->data.length );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2030,7 +2267,11 @@ static int iw_get_encode(struct net_device *dev,
     if(keyId < 0 || keyId >= MAX_WEP_KEYS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog(LOG1,"%s: Invalid keyId : %d\n",__FUNCTION__,keyId);
+=======
+        hddLog(LOG1,"%s: Invalid keyId : %d\n",__func__,keyId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog(LOG1,"%s: Invalid keyId : %d\n",__func__,keyId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2112,13 +2353,19 @@ static int iw_set_rts_threshold(struct net_device *dev,
     ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
             "%s:LOGP in Progress. Ignore!!!", __func__);
         return -EAGAIN;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( wrqu->rts.value < WNI_CFG_RTS_THRESHOLD_STAMIN || wrqu->rts.value > WNI_CFG_RTS_THRESHOLD_STAMAX )
     {
@@ -2157,13 +2404,19 @@ static int iw_set_frag_threshold(struct net_device *dev,
    ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
        return -EBUSY;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( wrqu->frag.value < WNI_CFG_FRAGMENTATION_THRESHOLD_STAMIN || wrqu->frag.value > WNI_CFG_FRAGMENTATION_THRESHOLD_STAMAX )
     {
@@ -2218,13 +2471,19 @@ static int iw_get_range(struct net_device *dev, struct iw_request_info *info,
    memset(range, 0, sizeof(struct iw_range));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
       return -EBUSY;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*Get the phy mode*/
@@ -2238,6 +2497,10 @@ static int iw_get_range(struct net_device *dev, struct iw_request_info *info,
       {
          /*Get the supported rates for 11G band*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+         a_len = WNI_CFG_SUPPORTED_RATES_11A_LEN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          a_len = WNI_CFG_SUPPORTED_RATES_11A_LEN;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2264,6 +2527,10 @@ static int iw_get_range(struct net_device *dev, struct iw_request_info *info,
       {
          /*Get the supported rates for 11B band*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+         b_len = WNI_CFG_SUPPORTED_RATES_11B_LEN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          b_len = WNI_CFG_SUPPORTED_RATES_11B_LEN;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2364,7 +2631,11 @@ static void iw_power_callback_fn (void *pContext, eHalStatus status)
        hddLog(VOS_TRACE_LEVEL_ERROR,
             "%s: Bad param, pContext [%p]",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pContext);
+=======
+              __func__, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2385,7 +2656,11 @@ static void iw_power_callback_fn (void *pContext, eHalStatus status)
        hddLog(VOS_TRACE_LEVEL_WARN,
            "%s: Invalid context, pAdapter [%p] magic [%08x]",
 <<<<<<< HEAD
+<<<<<<< HEAD
            __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+           __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            __func__, pAdapter, pStatsContext->magic);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2394,7 +2669,11 @@ static void iw_power_callback_fn (void *pContext, eHalStatus status)
        {
            pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+             __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, pAdapter, pStatsContext->magic);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2433,7 +2712,11 @@ void hdd_GetClassA_statisticsCB(void *pStats, void *pContext)
    {
       pr_info("%s: pStats [%p] pContext [%p]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pStats, pContext);
+=======
+              __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, pStats, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2444,7 +2727,11 @@ void hdd_GetClassA_statisticsCB(void *pStats, void *pContext)
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Bad param, pStats [%p] pContext [%p]",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pStats, pContext);
+=======
+              __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, pStats, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2465,17 +2752,23 @@ void hdd_GetClassA_statisticsCB(void *pStats, void *pContext)
       hddLog(VOS_TRACE_LEVEL_WARN,
              "%s: Invalid context, pAdapter [%p] magic [%08x]",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __FUNCTION__, pAdapter, pStatsContext->magic);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __func__, pAdapter, pStatsContext->magic);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       return;
@@ -2527,7 +2820,11 @@ VOS_STATUS  wlan_hdd_get_classAstats(hdd_adapter_t *pAdapter)
        hddLog(VOS_TRACE_LEVEL_ERROR,
                "%s: Unable to retrieve Class A statistics ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2546,7 +2843,11 @@ VOS_STATUS  wlan_hdd_get_classAstats(hdd_adapter_t *pAdapter)
           hddLog(VOS_TRACE_LEVEL_ERROR,
                  "%s: SME %s while retrieving Class A statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                 __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, (0 == lrc) ? "timeout" : "interrupt");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2574,7 +2875,11 @@ static void hdd_get_station_statisticsCB(void *pStats, void *pContext)
    {
       pr_info("%s: pStats [%p] pContext [%p]\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pStats, pContext);
+=======
+              __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, pStats, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2585,7 +2890,11 @@ static void hdd_get_station_statisticsCB(void *pStats, void *pContext)
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Bad param, pStats [%p] pContext [%p]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, pStats, pContext);
+=======
+             __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, pStats, pContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2607,17 +2916,23 @@ static void hdd_get_station_statisticsCB(void *pStats, void *pContext)
       hddLog(VOS_TRACE_LEVEL_WARN,
              "%s: Invalid context, pAdapter [%p] magic [%08x]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __FUNCTION__, pAdapter, pStatsContext->magic);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              __func__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __func__, pAdapter, pStatsContext->magic);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       return;
@@ -2667,7 +2982,11 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Unable to retrieve statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__);
+=======
+             __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2686,7 +3005,11 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
          hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: SME %s while retrieving statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, (0 == lrc) ? "timeout" : "interrupt");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2715,12 +3038,15 @@ static int iw_get_linkspeed(struct net_device *dev,
 {
    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 <<<<<<< HEAD
+<<<<<<< HEAD
    char *pLinkSpeed = (char*)extra;
    int len = sizeof(v_U16_t) + 1;
    v_U16_t link_speed;
    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
    int rc;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    hdd_context_t *pHddCtx;
    char *pLinkSpeed = (char*)extra;
    int len = sizeof(v_U32_t) + 1;
@@ -2738,6 +3064,9 @@ static int iw_get_linkspeed(struct net_device *dev,
        hddLog(VOS_TRACE_LEVEL_ERROR, FL("HDD context is not valid"));
        return valid;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (eConnectionState_Associated != pHddStaCtx->conn_info.connState)
@@ -2748,11 +3077,14 @@ static int iw_get_linkspeed(struct net_device *dev,
    else
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        wlan_hdd_get_classAstats(pAdapter);
        //The linkspeed returned by HAL is in units of 500kbps.
        //converting it to mbps
        link_speed = pAdapter->hdd_stats.ClassA_stat.tx_rate/2;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        status = wlan_hdd_get_classAstats(pAdapter);
 
        if (!VOS_IS_STATUS_SUCCESS(status ))
@@ -2778,11 +3110,15 @@ static int iw_get_linkspeed(struct net_device *dev,
            link_speed = pAdapter->hdd_stats.ClassA_stat.tx_rate/2;
        }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    wrqu->data.length = len;
    // return the linkspeed in the format required by the WiFi Framework
+<<<<<<< HEAD
 <<<<<<< HEAD
    rc = snprintf(pLinkSpeed, len, "%u", link_speed);
    if ((rc < 0) || (rc >= len))
@@ -2792,11 +3128,16 @@ static int iw_get_linkspeed(struct net_device *dev,
                 "%s: Unable to encode link speed, got [%s]",
                 __FUNCTION__,pLinkSpeed);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    rc = snprintf(pLinkSpeed, len, "%lu", link_speed);
    if ((rc < 0) || (rc >= len))
    {
        // encoding or length error?
        hddLog(VOS_TRACE_LEVEL_ERROR,FL("Unable to encode link speed"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return -EIO;
    }
@@ -2832,7 +3173,11 @@ static int iw_get_rssi(struct net_device *dev,
       /* we are not connected or our SSID is too long
          so we cannot report an rssi */
 <<<<<<< HEAD
+<<<<<<< HEAD
       rc = snprintf(cmd, len, "OK");
+=======
+      rc = scnprintf(cmd, len, "OK");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       rc = scnprintf(cmd, len, "OK");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2851,7 +3196,11 @@ static int iw_get_rssi(struct net_device *dev,
           /* append the rssi to the ssid in the format required by
              the WiFI Framework */
 <<<<<<< HEAD
+<<<<<<< HEAD
           rc = snprintf(&cmd[ssidlen], len - ssidlen, " rssi %d", s7Rssi);
+=======
+          rc = scnprintf(&cmd[ssidlen], len - ssidlen, " rssi %d", s7Rssi);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           rc = scnprintf(&cmd[ssidlen], len - ssidlen, " rssi %d", s7Rssi);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2869,7 +3218,11 @@ static int iw_get_rssi(struct net_device *dev,
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Unable to encode RSSI, got [%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, cmd);
+=======
+             __func__, cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, cmd);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2893,6 +3246,11 @@ static int iw_softap_set_channel_range( struct net_device *dev,
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
 
@@ -2904,6 +3262,10 @@ static int iw_softap_set_channel_range( struct net_device *dev,
         ret = -EINVAL;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    pHddCtx->is_dynamic_channel_range_set = 1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pHddCtx->is_dynamic_channel_range_set = 1;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2949,7 +3311,11 @@ VOS_STATUS  wlan_hdd_enter_bmps(hdd_adapter_t *pAdapter, int mode)
            {
                hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while requesting fullpower ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                  __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, (0 == lrc) ? "timeout" : "interrupt");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2987,7 +3353,11 @@ VOS_STATUS  wlan_hdd_enter_bmps(hdd_adapter_t *pAdapter, int mode)
                {
                    hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while requesting BMPS ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                       __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                      __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       __func__, (0 == lrc) ? "timeout" : "interrupt");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3102,8 +3472,13 @@ static int iw_set_priv(struct net_device *dev,
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 <<<<<<< HEAD
+<<<<<<< HEAD
     char *cmd = (char*)wrqu->data.pointer;
     int cmd_len = wrqu->data.length;
+=======
+    int cmd_len = wrqu->data.length;
+    char* cmd = (char *)kmalloc(cmd_len+1, GFP_KERNEL); //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     int cmd_len = wrqu->data.length;
     char* cmd = (char *)kmalloc(cmd_len+1, GFP_KERNEL); //IKHSS7-35965, a19091, Motorola
@@ -3115,10 +3490,13 @@ static int iw_set_priv(struct net_device *dev,
     ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ioctl_debug)
     {
        pr_info("%s: req [%s] len [%d]\n", __FUNCTION__, cmd, cmd_len);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //IKHSS7-35965, a19091, Motorola changes -- BEGIN
     if(cmd == NULL){
         hddLog(VOS_TRACE_LEVEL_FATAL, "%s Malloc failed for buff of size %d - ignoring ioctl!",
@@ -3138,6 +3516,9 @@ static int iw_set_priv(struct net_device *dev,
     if (ioctl_debug)
     {
        pr_info("%s: req [%s] len [%d]\n", __func__, cmd, cmd_len);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -3148,7 +3529,11 @@ static int iw_set_priv(struct net_device *dev,
        if (ioctl_debug)
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
           pr_info("%s: RESTART in progress\n", __FUNCTION__);
+=======
+          pr_info("%s: RESTART in progress\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           pr_info("%s: RESTART in progress\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3157,7 +3542,11 @@ static int iw_set_priv(struct net_device *dev,
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
                  "%s:LOGP in Progress. Ignore!!!",__func__);
 <<<<<<< HEAD
+<<<<<<< HEAD
        return status;
+=======
+       goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3187,7 +3576,11 @@ static int iw_set_priv(struct net_device *dev,
             hddLog(VOS_TRACE_LEVEL_FATAL, "%s: START CMD Status %d", __func__, status);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         goto done;
+=======
+        goto done; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3205,7 +3598,11 @@ static int iw_set_priv(struct net_device *dev,
         wireless_send_event(pAdapter->dev, IWEVCUSTOM, &wrqu, buf);
         status = VOS_STATUS_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
         goto done;
+=======
+        goto done; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3218,7 +3615,11 @@ static int iw_set_priv(struct net_device *dev,
     else if (strcasecmp(cmd, "scan-active") == 0)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pAdapter->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+=======
+        pHddCtx->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pHddCtx->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3227,7 +3628,11 @@ static int iw_set_priv(struct net_device *dev,
     else if (strcasecmp(cmd, "scan-passive") == 0)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         pAdapter->scan_info.scan_mode = eSIR_PASSIVE_SCAN;
+=======
+        pHddCtx->scan_info.scan_mode = eSIR_PASSIVE_SCAN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pHddCtx->scan_info.scan_mode = eSIR_PASSIVE_SCAN;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3236,7 +3641,11 @@ static int iw_set_priv(struct net_device *dev,
     else if( strcasecmp(cmd, "scan-mode") == 0 )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         ret = snprintf(cmd, cmd_len, "ScanMode = %u", pAdapter->scan_info.scan_mode);
+=======
+        ret = snprintf(cmd, cmd_len, "ScanMode = %u", pHddCtx->scan_info.scan_mode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         ret = snprintf(cmd, cmd_len, "ScanMode = %u", pHddCtx->scan_info.scan_mode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3267,7 +3676,11 @@ static int iw_set_priv(struct net_device *dev,
         {
             hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while setting country code ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, "Timed out");
+=======
+                 __func__, "Timed out");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, "Timed out");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3278,12 +3691,18 @@ static int iw_set_priv(struct net_device *dev,
             VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                        "%s: SME Change Country code fail \n",__func__);
 <<<<<<< HEAD
+<<<<<<< HEAD
             return VOS_STATUS_E_FAILURE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              //IKHSS7-35965, a19091, Motorola changes -- BEGIN
              status = VOS_STATUS_E_FAILURE;
              goto cleanup_and_return;
              //IKHSS7-35965, a19091, Motorola changes -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
@@ -3298,6 +3717,10 @@ static int iw_set_priv(struct net_device *dev,
         sscanf(ptr,"%d",&mode);
         wlan_hdd_enter_bmps(pAdapter, mode);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 		goto done;  //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3319,6 +3742,10 @@ static int iw_set_priv(struct net_device *dev,
     else if( strncasecmp(cmd, "btcoexmode", 10) == 0 ) {
         hddLog( VOS_TRACE_LEVEL_INFO, "btcoexmode\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done;  //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3328,6 +3755,10 @@ static int iw_set_priv(struct net_device *dev,
 
         hddLog(VOS_TRACE_LEVEL_INFO, "BtCoex Status\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done;  //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3337,6 +3768,10 @@ static int iw_set_priv(struct net_device *dev,
 
         hddLog(VOS_TRACE_LEVEL_INFO, "Rx Data Filter Start command\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done;  //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3347,7 +3782,12 @@ static int iw_set_priv(struct net_device *dev,
 
         hddLog(VOS_TRACE_LEVEL_INFO, "Rx Data Filter Stop command\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+		
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done;  //IKHSS7-35965, a19091, Motorola
 		
@@ -3358,6 +3798,10 @@ static int iw_set_priv(struct net_device *dev,
 
         hddLog( VOS_TRACE_LEVEL_INFO, "Rx Data Filter Statistics command\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 		goto done;  //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3367,6 +3811,10 @@ static int iw_set_priv(struct net_device *dev,
 
         hddLog( VOS_TRACE_LEVEL_INFO, "rxfilter-add\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola		
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done;  //IKHSS7-35965, a19091, Motorola		
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3376,6 +3824,10 @@ static int iw_set_priv(struct net_device *dev,
 
         hddLog( VOS_TRACE_LEVEL_INFO, "rxfilter-remove\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto done;  //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3385,6 +3837,10 @@ static int iw_set_priv(struct net_device *dev,
     else if( strncasecmp(cmd, "pnosetup", 8) == 0 ) {
         hddLog( VOS_TRACE_LEVEL_INFO, "pnosetup");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3393,6 +3849,10 @@ static int iw_set_priv(struct net_device *dev,
     else if( strncasecmp(cmd, "pnoforce", 8) == 0 ) {
         hddLog( VOS_TRACE_LEVEL_INFO, "pnoforce");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3403,7 +3863,11 @@ static int iw_set_priv(struct net_device *dev,
         hddLog( VOS_TRACE_LEVEL_INFO, "pno\n");
         status = iw_set_pno(dev, info, wrqu, extra, 3);
 <<<<<<< HEAD
+<<<<<<< HEAD
         return status;
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3413,7 +3877,11 @@ static int iw_set_priv(struct net_device *dev,
         hddLog( VOS_TRACE_LEVEL_INFO, "rssifilter\n");
         status = iw_set_rssi_filter(dev, info, wrqu, extra, 10);
 <<<<<<< HEAD
+<<<<<<< HEAD
         return status;
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3423,7 +3891,11 @@ static int iw_set_priv(struct net_device *dev,
       hddLog( VOS_TRACE_LEVEL_INFO, "powerparams\n");
       status = iw_set_power_params(dev, info, wrqu, extra, 11);
 <<<<<<< HEAD
+<<<<<<< HEAD
       return status;
+=======
+      goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3440,12 +3912,18 @@ static int iw_set_priv(struct net_device *dev,
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN, "Period input is not correct");
 <<<<<<< HEAD
+<<<<<<< HEAD
             return VOS_STATUS_E_FAILURE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //IKHSS7-35965, a19091, Motorola changes -- BEGIN
             status = VOS_STATUS_E_FAILURE;
             goto cleanup_and_return;
             //IKHSS7-35965, a19091, Motorola changes -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
@@ -3473,12 +3951,18 @@ static int iw_set_priv(struct net_device *dev,
                 __func__, cmd);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //IKHSS7-35965, a19091, Motorola changes -- BEGIN
     if(copy_to_user((char*)(wrqu->data.pointer), cmd, cmd_len)) {
         hddLog( VOS_TRACE_LEVEL_FATAL, "%s: COPY to user failed ... ignoring",__FUNCTION__);
     }
     //IKHSS7-35965, a19091, Motorola changes -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 done:
     /* many of the commands write information back into the command
@@ -3494,9 +3978,12 @@ done:
     {
        pr_info("%s: rsp [%s] len [%d] status %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, cmd, wrqu->data.length, status);
     }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                __func__, cmd, wrqu->data.length, status);
     }
     //IKHSS7-35965, a19091, Motorola changes -- BEGIN
@@ -3505,6 +3992,9 @@ cleanup_and_return:
         kfree(cmd);
     }
     //IKHSS7-35965, a19091, Motorola changes -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return status;
 
@@ -3620,7 +4110,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
    if(wrqu->data.length > 0)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_INFO, "%s : wrqu->data.length : %d",__FUNCTION__,wrqu->data.length);
+=======
+       hddLog(VOS_TRACE_LEVEL_INFO, "%s : wrqu->data.length : %d",__func__,wrqu->data.length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        hddLog(VOS_TRACE_LEVEL_INFO, "%s : wrqu->data.length : %d",__func__,wrqu->data.length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3632,7 +4126,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
        if(5 == key_length)
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
            hddLog(VOS_TRACE_LEVEL_INFO, "%s: Call with WEP40,key_len=%d",__FUNCTION__,key_length);
+=======
+           hddLog(VOS_TRACE_LEVEL_INFO, "%s: Call with WEP40,key_len=%d",__func__,key_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            hddLog(VOS_TRACE_LEVEL_INFO, "%s: Call with WEP40,key_len=%d",__func__,key_length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3649,7 +4147,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
        else if(13 == key_length)
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
            hddLog(VOS_TRACE_LEVEL_INFO, "%s:Call with WEP104,key_len:%d",__FUNCTION__,key_length);
+=======
+           hddLog(VOS_TRACE_LEVEL_INFO, "%s:Call with WEP104,key_len:%d",__func__,key_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            hddLog(VOS_TRACE_LEVEL_INFO, "%s:Call with WEP104,key_len:%d",__func__,key_length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3667,7 +4169,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
        {
            hddLog(VOS_TRACE_LEVEL_WARN, "%s: Invalid WEP key length :%d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, key_length);
+=======
+                  __func__, key_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, key_length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3714,7 +4220,10 @@ static int iw_get_encodeext(struct net_device *dev,
     ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -3722,13 +4231,20 @@ static int iw_get_encodeext(struct net_device *dev,
         return -EBUSY;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     keyId = pRoamProfile->Keys.defaultIndex;
 
     if(keyId < 0 || keyId >= MAX_WEP_KEYS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog(LOG1,"%s: Invalid keyId : %d\n",__FUNCTION__,keyId);
+=======
+        hddLog(LOG1,"%s: Invalid keyId : %d\n",__func__,keyId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog(LOG1,"%s: Invalid keyId : %d\n",__func__,keyId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3840,7 +4356,11 @@ static int iw_set_encodeext(struct net_device *dev,
        if(IW_AUTH_KEY_MGMT_802_1X == pWextState->authKeyMgmt) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,("Invalid Configuration:%s \n"),__FUNCTION__);
+=======
+          VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,("Invalid Configuration:%s \n"),__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,("Invalid Configuration:%s \n"),__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3947,6 +4467,7 @@ static int iw_set_encodeext(struct net_device *dev,
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
 <<<<<<< HEAD
+<<<<<<< HEAD
           ("%s:cipher_alg:%d key_len[%d] *pEncryptionType :%d \n"),__FUNCTION__,(int)ext->alg,(int)ext->key_len,setKey.encType);
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
@@ -3957,6 +4478,8 @@ static int iw_set_encodeext(struct net_device *dev,
     {
        return halStatus;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           ("%s:cipher_alg:%d key_len[%d] *pEncryptionType :%d \n"),__func__,(int)ext->alg,(int)ext->key_len,setKey.encType);
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
@@ -3975,6 +4498,9 @@ static int iw_set_encodeext(struct net_device *dev,
         hddLog(VOS_TRACE_LEVEL_ERROR,
                "%s: Update PreAuth Key failed", __func__);
         return -EINVAL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif /* WLAN_FEATURE_VOWIFI_11R */
@@ -4014,7 +4540,10 @@ static int iw_set_retry(struct net_device *dev, struct iw_request_info *info,
    ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -4022,6 +4551,9 @@ static int iw_set_retry(struct net_device *dev, struct iw_request_info *info,
       return -EBUSY;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(wrqu->retry.value < WNI_CFG_LONG_RETRY_LIMIT_STAMIN ||
        wrqu->retry.value > WNI_CFG_LONG_RETRY_LIMIT_STAMAX) {
@@ -4071,7 +4603,10 @@ static int iw_get_retry(struct net_device *dev, struct iw_request_info *info,
    ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -4079,6 +4614,9 @@ static int iw_get_retry(struct net_device *dev, struct iw_request_info *info,
       return -EBUSY;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if((wrqu->retry.flags & IW_RETRY_LONG))
    {
@@ -4153,7 +4691,11 @@ static int iw_set_mlme(struct net_device *dev,
                 else
                     hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate : csrRoamDisconnect failure returned %d \n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, (int)mlme->cmd, (int)status );
+=======
+                       __func__, (int)mlme->cmd, (int)status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, (int)mlme->cmd, (int)status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4168,17 +4710,23 @@ static int iw_set_mlme(struct net_device *dev,
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate called but station is not in associated state \n", __FUNCTION__, (int)mlme->cmd );
             }
             break;
         default:
             hddLog(LOGE,"%s %d Command should be Disassociate/Deauthenticate \n", __FUNCTION__, (int)mlme->cmd );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate called but station is not in associated state \n", __func__, (int)mlme->cmd );
             }
             break;
         default:
             hddLog(LOGE,"%s %d Command should be Disassociate/Deauthenticate \n", __func__, (int)mlme->cmd );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return -EINVAL;
     }//end of switch
@@ -4197,14 +4745,20 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
     hdd_wext_state_t  *pWextState =  WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
     int *value = (int *)extra;
     int sub_cmd = value[0];
     int set_value = value[1];
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int cmd_len = wrqu->data.length;
     int *value = (int *) kmalloc(cmd_len+1, GFP_KERNEL);  // Motorola, IKHSS7-39028
     int sub_cmd;
     int set_value;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int ret = 0; /* success */
     int enable_pbm, enable_mp;
@@ -4214,7 +4768,10 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
     INIT_COMPLETION(pWextState->completion_var);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -4236,13 +4793,20 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
     set_value = value[1];
     kfree(value);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(sub_cmd)
     {
         case WE_SET_11D_STATE:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             tSmeConfigParams smeConfig;;
+=======
+            tSmeConfigParams smeConfig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             tSmeConfigParams smeConfig;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4267,7 +4831,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
            {
               case 0x00:
 <<<<<<< HEAD
+<<<<<<< HEAD
                  hdd_exit_wowl();
+=======
+                 hdd_exit_wowl(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  hdd_exit_wowl(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4317,7 +4885,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while "
                                  "requesting fullpower ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  __FUNCTION__, (0 == lrc) ?
+=======
+                                 __func__, (0 == lrc) ?
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  __func__, (0 == lrc) ?
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4365,7 +4937,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while "
                                 "requesting BMPS",
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  __FUNCTION__, (0 == lrc) ? "timeout" :
+=======
+                                 __func__, (0 == lrc) ? "timeout" :
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                  __func__, (0 == lrc) ? "timeout" :
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4399,9 +4975,12 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
               case  8: //Request Standby
 #ifdef CONFIG_HAS_EARLYSUSPEND
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  (void)hdd_enter_standby(pAdapter->pHddCtx);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
@@ -4418,9 +4997,12 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                  nEnableSuspendOld = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend;
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  hdd_suspend_wlan(NULL);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = nEnableSuspendOld;
@@ -4431,9 +5013,12 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                  nEnableSuspendOld = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend;
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  hdd_suspend_wlan(NULL);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = nEnableSuspendOld;
@@ -4442,9 +5027,12 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
               case  13://resume from suspend
 #ifdef CONFIG_HAS_EARLYSUSPEND
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  hdd_resume_wlan(NULL);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
@@ -4542,7 +5130,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                 {
                     pAdapter->higherDtimTransition = set_value;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     hddLog(LOG1, "%s: higherDtimTransition set to :%d", __FUNCTION__, pAdapter->higherDtimTransition);
+=======
+                    hddLog(LOG1, "%s: higherDtimTransition set to :%d", __func__, pAdapter->higherDtimTransition);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     hddLog(LOG1, "%s: higherDtimTransition set to :%d", __func__, pAdapter->higherDtimTransition);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4561,8 +5153,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
            break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 		// Motorola, IKJBREL1-4181
         case WE_SET_CHANNEL_RANGE:
         {
@@ -4597,6 +5192,9 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
             break;
         }
         // IKJB42MAIN-1244, Motorola, a19091  -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
         {
@@ -4623,9 +5221,12 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
 #endif /* WLAN_FEATURE_VOWIFI */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __func__, wrqu->data.length);
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
 
@@ -4635,6 +5236,9 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
         return -EBUSY;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch(sub_cmd)
@@ -4642,17 +5246,23 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
        case WE_WOWL_ADD_PTRN:
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "ADD_PTRN\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
           hdd_add_wowl_ptrn((char*)wrqu->data.pointer);
           break;
        case WE_WOWL_DEL_PTRN:
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "DEL_PTRN\n");
           hdd_del_wowl_ptrn((char*)wrqu->data.pointer);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           hdd_add_wowl_ptrn(pAdapter, (char*)wrqu->data.pointer);
           break;
        case WE_WOWL_DEL_PTRN:
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "DEL_PTRN\n");
           hdd_del_wowl_ptrn(pAdapter, (char*)wrqu->data.pointer);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           break;
 #if defined WLAN_FEATURE_VOWIFI
@@ -4685,6 +5295,7 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
           break;
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        case WE_SET_AP_WPS_IE:
           hddLog( LOGE, "Received WE_SET_AP_WPS_IE" );
@@ -4694,10 +5305,15 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
           break;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        case WE_SET_AP_WPS_IE:
           hddLog( LOGE, "Received WE_SET_AP_WPS_IE" );
           sme_updateP2pIe( WLAN_HDD_GET_HAL_CTX(pAdapter), wrqu->data.pointer, wrqu->data.length );
           break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        case WE_SET_CONFIG:
           vstatus = hdd_execute_config_command(pHddCtx, wrqu->data.pointer);
@@ -4709,7 +5325,11 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
        default:
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
            hddLog(LOGE, "%s: Invalid sub command %d\n",__FUNCTION__, sub_cmd);
+=======
+           hddLog(LOGE, "%s: Invalid sub command %d\n",__func__, sub_cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            hddLog(LOGE, "%s: Invalid sub command %d\n",__func__, sub_cmd);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4730,13 +5350,19 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
     int ret = 0; /* success */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
         return -EBUSY;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (value[0])
@@ -4744,7 +5370,11 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
         case WE_GET_11D_STATE:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
            tSmeConfigParams smeConfig;;
+=======
+           tSmeConfigParams smeConfig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            tSmeConfigParams smeConfig;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4777,15 +5407,21 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
         case WE_MODULE_DOWN_IND:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: sending WLAN_MODULE_DOWN_IND", __FUNCTION__);
             send_btc_nlink_msg(WLAN_MODULE_DOWN_IND, 0);
 #ifdef WLAN_BTAMP_FEATURE
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: Take down AMP PAL", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: sending WLAN_MODULE_DOWN_IND", __func__);
             send_btc_nlink_msg(WLAN_MODULE_DOWN_IND, 0);
 #ifdef WLAN_BTAMP_FEATURE
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: Take down AMP PAL", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             BSL_Deinit(vos_get_global_context(VOS_MODULE_ID_HDD, NULL));
 #endif
@@ -4804,7 +5440,10 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_GET_WDI_DBG:
@@ -4814,7 +5453,10 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
            break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -4831,7 +5473,10 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
            break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // BEGIN MOTOROLA IKJB42MAIN-274, dpn473, 01/02/2013, Add flag to disable/enable MCC mode
         case WE_GET_MCC_MODE:
         {
@@ -4839,6 +5484,9 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
            break;
         }
         // IKJB42MAIN-274
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         default:
@@ -4856,6 +5504,10 @@ int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *in
                        union iwreq_data *wrqu, char *extra)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4864,7 +5516,10 @@ int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *in
     int ret = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -4872,21 +5527,30 @@ int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *in
         return -EBUSY;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(sub_cmd)
     {
         case WE_SET_WLAN_DBG:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             vos_trace_setValue( value[1], value[2], value[3]);
             break;
         }
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             vos_trace_setValue( value[1], value[2], value[3]);
             break;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_SET_WDI_DBG:
         {
@@ -4894,7 +5558,10 @@ int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *in
             break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_SET_SAP_CHANNELS:
@@ -4903,7 +5570,10 @@ int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *in
             break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
         case WE_SET_WLAN_DBG_TILL_LEVEL:
         {
@@ -4911,6 +5581,9 @@ int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *in
         }
         break;
         //END IKJBXLINE-5577
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         default:
@@ -4928,10 +5601,13 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     int sub_cmd = wrqu->data.flags;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     VOS_STATUS status;
 #endif // FEATURE_WLAN_NON_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
@@ -4940,11 +5616,15 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
         return -EBUSY;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(sub_cmd)
     {
         case WE_WLAN_VERSION:
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
             status = hdd_wlan_get_version(pAdapter, wrqu, extra);
@@ -4953,6 +5633,9 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             wrqu->data.length = snprintf(buf, WE_MAX_STR_LEN, "%s_",
                                          WLAN_CHIP_VERSION);
 #endif
+=======
+            hdd_wlan_get_version(pAdapter, wrqu, extra);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             hdd_wlan_get_version(pAdapter, wrqu, extra);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5073,7 +5756,10 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
 #endif
            
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
         case WE_GET_ROAM_RSSI:
         {
@@ -5084,6 +5770,9 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             break;
         }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_GET_WMM_STATUS:
         {
@@ -5120,8 +5809,13 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             v_U8_t i, len;
             char* buf ;
 <<<<<<< HEAD
+<<<<<<< HEAD
             tChannelListInfo channel_list;
 
+=======
+
+            tChannelListInfo channel_list;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
             tChannelListInfo channel_list;
@@ -5135,6 +5829,7 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             buf = extra;
 
             /**
+<<<<<<< HEAD
 <<<<<<< HEAD
                        * Maximum channels = WNI_CFG_VALID_CHANNEL_LIST_LEN. Maximum buffer
                        * needed = 5 * number of channels. Check if sufficient buffer is available and 
@@ -5153,6 +5848,8 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
                                "%u ", channel_list.channels[i]);
                 buf += len;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              * Maximum channels = WNI_CFG_VALID_CHANNEL_LIST_LEN. Maximum buffer
              * needed = 5 * number of channels. Check ifsufficient
              * buffer is available and then proceed to fill the buffer.
@@ -5170,6 +5867,9 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             {
                 len += scnprintf(buf + len, WE_MAX_STR_LEN - len,
                                "%u ", channel_list.channels[i]);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             wrqu->data.length = strlen(extra)+1;
@@ -5177,7 +5877,10 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
         case WE_GET_TDLS_PEERS:
         {
@@ -5185,6 +5888,9 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             break;
         }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:  
         {
@@ -5203,8 +5909,11 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     int sub_cmd = wrqu->data.flags;
 <<<<<<< HEAD
+<<<<<<< HEAD
     int ret = 0; /* sucess */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int ret = 0; /* success */
 
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
@@ -5213,6 +5922,9 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
         return -EBUSY;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (sub_cmd)
@@ -5220,7 +5932,11 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         case WE_CLEAR_STATS:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: clearing", __FUNCTION__);
+=======
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: clearing", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: clearing", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5229,7 +5945,10 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
             break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_INIT_AP:
@@ -5253,13 +5972,19 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
                pr_info("Stopping AP mode\n");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                if (TRUE == sme_IsPmcBmps(WLAN_HDD_GET_HAL_CTX(pAdapter)))
                {
                   /* EXIT BMPS as fw cannot handle DEL_STA when its in BMPS */
                   wlan_hdd_enter_bmps(pAdapter, DRIVER_POWER_MODE_ACTIVE);
                }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                /*Make sure that pAdapter cleaned properly*/
                hdd_stop_adapter( pHddCtx, pAdapter_to_stop );
@@ -5271,11 +5996,14 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
                hdd_close_adapter(WLAN_HDD_GET_CTX(pAdapter), pAdapter_to_stop,
                        TRUE);
 <<<<<<< HEAD
+<<<<<<< HEAD
            }
            else
            {
               printk(KERN_ERR"SAP adaptor not found to stop it!\n");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                if (FALSE == sme_IsPmcBmps(WLAN_HDD_GET_HAL_CTX(pAdapter)))
                {
@@ -5286,11 +6014,15 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
            else
            {
               printk(KERN_ERR"SAP adapter not found to stop it!\n");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            }
 
            break;
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 #ifdef WLAN_BTAMP_FEATURE
@@ -5298,10 +6030,15 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: enabling AMP", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_BTAMP_FEATURE
         case WE_ENABLE_AMP:
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: enabling AMP", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             WLANBAP_RegisterWithHCI(pAdapter);
             break;
@@ -5312,7 +6049,11 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
             VOS_STATUS status;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: disabling AMP", __FUNCTION__);
+=======
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: disabling AMP", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: disabling AMP", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5340,7 +6081,12 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         case WE_ENABLE_DXE_STALL_DETECT:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             sme_transportDebug(VOS_FALSE, VOS_TRUE);
+=======
+            tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+            sme_transportDebug(hHal, VOS_FALSE, VOS_TRUE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
             sme_transportDebug(hHal, VOS_FALSE, VOS_TRUE);
@@ -5350,6 +6096,7 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         case WE_DISPLAY_DXE_SNAP_SHOT:
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             sme_transportDebug(VOS_TRUE, VOS_FALSE);
             break;
         }
@@ -5358,6 +6105,8 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         {
             hddLog(LOGE, "%s: unknown ioctl %d", __FUNCTION__, sub_cmd);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
             sme_transportDebug(hHal, VOS_TRUE, VOS_FALSE);
             break;
@@ -5384,6 +6133,9 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         default:
         {
             hddLog(LOGE, "%s: unknown ioctl %d", __func__, sub_cmd);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
@@ -5393,7 +6145,10 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void hdd_wmm_tx_snapshot(hdd_adapter_t *pAdapter)
 {
     /*
@@ -5430,6 +6185,9 @@ void hdd_wmm_tx_snapshot(hdd_adapter_t *pAdapter)
     }
 
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
@@ -5441,9 +6199,12 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
     int apps_args[MAX_VAR_ARGS] = {0};
     int num_args = wrqu->data.length;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_station_ctx_t *pStaCtx = NULL ;
     hdd_ap_ctx_t  *pAPCtx = NULL;
     int cmd = 0;
@@ -5458,6 +6219,9 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
         return -EBUSY;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (num_args > MAX_VAR_ARGS)
     {
@@ -5466,7 +6230,10 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
     vos_mem_copy(apps_args, value, (sizeof(int)) * num_args);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(( sub_cmd == WE_MCC_CONFIG_CREDENTIAL ) ||
         (sub_cmd == WE_MCC_CONFIG_PARAMS ))
     {
@@ -5489,6 +6256,9 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
         }
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch (sub_cmd)
     {
@@ -5496,7 +6266,11 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
             {
                 hddLog(LOG1, "%s: LOG_DUMP %d arg1 %d arg2 %d arg3 %d arg4 %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                         __FUNCTION__, apps_args[0], apps_args[1], apps_args[2],
+=======
+                        __func__, apps_args[0], apps_args[1], apps_args[2],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         __func__, apps_args[0], apps_args[1], apps_args[2],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5509,7 +6283,10 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
             break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_P2P_NOA_CMD:
@@ -5527,7 +6304,11 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
                 hddLog(LOG1, "%s: P2P_NOA_ATTR:oppPS %d ctWindow %d duration %d "
                        "interval %d count %d single noa duration %d PsSelection %x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        __FUNCTION__, apps_args[0], apps_args[1], apps_args[2],
+=======
+                       __func__, apps_args[0], apps_args[1], apps_args[2],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        __func__, apps_args[0], apps_args[1], apps_args[2],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5538,9 +6319,12 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
             }
             break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case WE_MCC_CONFIG_CREDENTIAL :
             {
@@ -5586,6 +6370,9 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
             }
         break;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
             {
@@ -5618,7 +6405,10 @@ static int iw_add_tspec(struct net_device *dev, struct iw_request_info *info,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -5626,6 +6416,9 @@ static int iw_add_tspec(struct net_device *dev, struct iw_request_info *info,
       return -EBUSY;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // we must be associated in order to add a tspec
    if (eConnectionState_Associated != pHddStaCtx->conn_info.connState)
@@ -5750,7 +6543,10 @@ static int iw_del_tspec(struct net_device *dev, struct iw_request_info *info,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -5758,6 +6554,9 @@ static int iw_del_tspec(struct net_device *dev, struct iw_request_info *info,
       return -EBUSY;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // although we are defined to be a "get" ioctl, the params we require
    // will fit in the iwreq_data, therefore unlike iw_add_tspec() there
@@ -5799,7 +6598,10 @@ static int iw_get_tspec(struct net_device *dev, struct iw_request_info *info,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -5807,6 +6609,9 @@ static int iw_get_tspec(struct net_device *dev, struct iw_request_info *info,
       return -EBUSY;
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    *pStatus = hdd_wmm_checkts(pAdapter, handle);
    return 0;
@@ -5826,6 +6631,7 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
 
     hddLog(LOG1, "The function iw_qcom_set_wapi_mode called");
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     hddLog(LOG1, "%s: Input Data (wreq) WAPI Mode:%02d", __FUNCTION__, pWapiMode->wapiMode);
@@ -5834,6 +6640,8 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
     if(WZC_ORIGINAL == pWapiMode->wapiMode) {
         hddLog(LOG1, "%s: WAPI Mode Set to OFF", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
     hddLog(LOG1, "%s: Input Data (wreq) WAPI Mode:%02d", __func__, pWapiMode->wapiMode);
@@ -5847,6 +6655,9 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
 
     if(WZC_ORIGINAL == pWapiMode->wapiMode) {
         hddLog(LOG1, "%s: WAPI Mode Set to OFF", __func__);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          /* Set Encryption mode to defualt , this allows next successfull non-WAPI Association */
         pRoamProfile->EncryptionType.numEntries = 1;
@@ -5860,7 +6671,11 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
     }
     else if(WAPI_EXTENTION == pWapiMode->wapiMode) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog(LOG1, "%s: WAPI Mode Set to ON", __FUNCTION__);
+=======
+        hddLog(LOG1, "%s: WAPI Mode Set to ON", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog(LOG1, "%s: WAPI Mode Set to ON", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5880,11 +6695,14 @@ static int iw_qcom_get_wapi_mode(struct net_device *dev, struct iw_request_info 
     WAPI_FUNCTION_MODE *pWapiMode = (WAPI_FUNCTION_MODE *)(extra);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(LOG1, "The function iw_qcom_get_wapi_mode called");
 
     pWapiMode->wapiMode = pAdapter->wapi_info.nWapiMode;
     hddLog(LOG1, "%s: GET WAPI Mode Value:%02d", __FUNCTION__, pWapiMode->wapiMode);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -5895,6 +6713,9 @@ static int iw_qcom_get_wapi_mode(struct net_device *dev, struct iw_request_info 
 
     pWapiMode->wapiMode = pAdapter->wapi_info.nWapiMode;
     hddLog(LOG1, "%s: GET WAPI Mode Value:%02d", __func__, pWapiMode->wapiMode);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     printk("\nGET WAPI MODE:%d",pWapiMode->wapiMode);
     return 0;
@@ -5908,6 +6729,7 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
     WAPI_AssocInfo *pWapiAssocInfo = (WAPI_AssocInfo *)(extra);
     int i = 0, j = 0;
     hddLog(LOG1, "The function iw_qcom_set_wapi_assoc_info called");
+<<<<<<< HEAD
 <<<<<<< HEAD
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
@@ -5927,6 +6749,8 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
     hddLog(LOG1,"%s: Multicast suite:0x%08lx Wapi capa:0x%04x",__FUNCTION__,pWapiAssocInfo->multicastSuite,pWapiAssocInfo->wapiCability);
     hddLog(LOG1, "%s: BKID Cnt:0x%04x\n",__FUNCTION__,pWapiAssocInfo->bkidCount);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
     hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received data %s", __func__, (char*)extra);
@@ -5950,6 +6774,9 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
 
     hddLog(LOG1,"%s: Multicast suite:0x%08lx Wapi capa:0x%04x",__func__,pWapiAssocInfo->multicastSuite,pWapiAssocInfo->wapiCability);
     hddLog(LOG1, "%s: BKID Cnt:0x%04x\n",__func__,pWapiAssocInfo->bkidCount);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     for(i = 0 ; i < 16 ; i++) {
         hddLog(LOG1, "BKID List[%02d].bkid:0x",i);
@@ -5963,7 +6790,11 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
      * extracted here*/
     if ( pWapiAssocInfo->akmSuite[0] == WAPI_PSK_AKM_SUITE ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
        hddLog(LOG1, "%s: WAPI AUTH MODE SET TO PSK",__FUNCTION__);
+=======
+       hddLog(LOG1, "%s: WAPI AUTH MODE SET TO PSK",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        hddLog(LOG1, "%s: WAPI AUTH MODE SET TO PSK",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5972,7 +6803,11 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
 
     if ( pWapiAssocInfo->akmSuite[0] == WAPI_CERT_AKM_SUITE) {
 <<<<<<< HEAD
+<<<<<<< HEAD
        hddLog(LOG1, "%s: WAPI AUTH MODE SET TO CERTIFICATE",__FUNCTION__);
+=======
+       hddLog(LOG1, "%s: WAPI AUTH MODE SET TO CERTIFICATE",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        hddLog(LOG1, "%s: WAPI AUTH MODE SET TO CERTIFICATE",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5993,6 +6828,7 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
     tCsrRoamSetKey   setKey;
     int i = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //    WLAN_WAPI_KEY *pWapiKey = (WLAN_WAPI_KEY *)(wrqu->data.pointer);
     WLAN_WAPI_KEY *pWapiKey = (WLAN_WAPI_KEY *)(extra);
@@ -6004,6 +6840,8 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
 
     hddLog(LOG1,":s: INPUT DATA:\nKey Type:0x%02x Key Direction:0x%02x KEY ID:0x%02x\n", __FUNCTION__,pWapiKey->keyType,pWapiKey->keyDirection,pWapiKey->keyId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WLAN_WAPI_KEY *pWapiKey = (WLAN_WAPI_KEY *)(extra);
 
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
@@ -6019,13 +6857,20 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
     hddLog(LOG1, "%s: Received data %s", __func__, (char*)extra);
 
     hddLog(LOG1,":%s: INPUT DATA:\nKey Type:0x%02x Key Direction:0x%02x KEY ID:0x%02x\n", __func__, pWapiKey->keyType, pWapiKey->keyDirection, pWapiKey->keyId);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1,"Add Index:0x");
     for(i =0 ; i < 12 ; i++)
         hddLog(LOG1,"%02x",pWapiKey->addrIndex[i]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(LOG1,"\n%s: WAPI ENCRYPTION KEY LENGTH:0x%04x", __FUNCTION__,pWapiKey->wpiekLen);
+=======
+    hddLog(LOG1,"\n%s: WAPI ENCRYPTION KEY LENGTH:0x%04x", __func__,pWapiKey->wpiekLen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hddLog(LOG1,"\n%s: WAPI ENCRYPTION KEY LENGTH:0x%04x", __func__,pWapiKey->wpiekLen);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6034,7 +6879,11 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
         hddLog(LOG1,"%02x",pWapiKey->wpiek[i]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(LOG1,"\n%s: WAPI INTEGRITY CHECK KEY LENGTH:0x%04x", __FUNCTION__,pWapiKey->wpickLen);
+=======
+    hddLog(LOG1,"\n%s: WAPI INTEGRITY CHECK KEY LENGTH:0x%04x", __func__,pWapiKey->wpickLen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hddLog(LOG1,"\n%s: WAPI INTEGRITY CHECK KEY LENGTH:0x%04x", __func__,pWapiKey->wpickLen);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6060,7 +6909,11 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
     switch ( pWapiKey->keyType )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         case HDD_PAIRWISE_WAPI_KEY:
+=======
+        case PAIRWISE_KEY:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         case PAIRWISE_KEY:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6070,7 +6923,11 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
             break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         case HDD_GROUP_WAPI_KEY:
+=======
+        case GROUP_KEY:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         case GROUP_KEY:
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6083,9 +6940,15 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
             //Any other option is invalid.
             VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        "[%4d] %s() failed to Set Key. Invalid key type %d", __LINE__,__FUNCTION__ , -1 );
 
             hddLog(LOGE," %s: Error WAPI Key Add Type",__FUNCTION__);
+=======
+                       "[%4d] %s() failed to Set Key. Invalid key type %d", __LINE__,__func__ , -1 );
+
+            hddLog(LOGE," %s: Error WAPI Key Add Type",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        "[%4d] %s() failed to Set Key. Invalid key type %d", __LINE__,__func__ , -1 );
 
@@ -6137,6 +7000,10 @@ static int iw_qcom_set_wapi_bkid(struct net_device *dev, struct iw_request_info 
         union iwreq_data *wrqu, char *extra)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6147,6 +7014,7 @@ static int iw_qcom_set_wapi_bkid(struct net_device *dev, struct iw_request_info 
 
     hddLog(LOG1, "The function iw_qcom_set_wapi_bkid called");
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)extra);
@@ -6156,6 +7024,8 @@ static int iw_qcom_set_wapi_bkid(struct net_device *dev, struct iw_request_info 
 
     hddLog(LOG1,"BKID KEY LIST[0]:0x");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
     hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received data %s", __func__, (char*)extra);
@@ -6172,6 +7042,9 @@ static int iw_qcom_set_wapi_bkid(struct net_device *dev, struct iw_request_info 
        return -EBUSY;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_DEBUG
     for(i =0 ; i < 16 ; i++)
@@ -6206,10 +7079,13 @@ static int iw_set_fties(struct net_device *dev, struct iw_request_info *info,
     //v_CONTEXT_t pVosContext;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!wrqu->data.length)
     {
         hddLog(LOGE, FL("%s called with 0 length IEs\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -6219,13 +7095,20 @@ static int iw_set_fties(struct net_device *dev, struct iw_request_info *info,
     if (!wrqu->data.length)
     {
         hddLog(LOGE, FL("called with 0 length IEs\n"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
     if (wrqu->data.pointer == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         hddLog(LOGE, FL("%s called with NULL IE\n"));
+=======
+        hddLog(LOGE, FL("called with NULL IE\n"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         hddLog(LOGE, FL("called with NULL IE\n"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6252,6 +7135,7 @@ static int iw_set_fties(struct net_device *dev, struct iw_request_info *info,
 }
 #endif
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 static int iw_set_dynamic_mcbc_filter(struct net_device *dev, 
         struct iw_request_info *info,
@@ -6332,6 +7216,8 @@ static int iw_set_dynamic_mcbc_filter(struct net_device *dev,
       pHddCtx->dynamic_mcbc_filter.mcBcFilterSuspend = 
                          wlanRxpFilterParam->configuredMcstBcstFilterSetting;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int iw_set_dynamic_mcbc_filter(struct net_device *dev,
         struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
@@ -6463,6 +7349,9 @@ static int iw_set_dynamic_mcbc_filter(struct net_device *dev,
             pHddCtx->dynamic_mcbc_filter.mcBcFilterSuspend =
                 mcastBcastFilterSetting;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
@@ -6477,7 +7366,11 @@ static int iw_clear_dynamic_mcbc_filter(struct net_device *dev,
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: ", __FUNCTION__);
+=======
+    hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: ", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: ", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6495,7 +7388,10 @@ static int iw_set_host_offload(struct net_device *dev, struct iw_request_info *i
     tSirHostOffloadReq offloadRequest;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -6503,13 +7399,20 @@ static int iw_set_host_offload(struct net_device *dev, struct iw_request_info *i
        return -EBUSY;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Debug display of request components. */
     switch (pRequest->offloadType)
     {
         case WLAN_IPV4_ARP_REPLY_OFFLOAD:
 <<<<<<< HEAD
+<<<<<<< HEAD
             hddLog(VOS_TRACE_LEVEL_WARN, "%s: Host offload request: ARP reply", __FUNCTION__);
+=======
+            hddLog(VOS_TRACE_LEVEL_WARN, "%s: Host offload request: ARP reply", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             hddLog(VOS_TRACE_LEVEL_WARN, "%s: Host offload request: ARP reply", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6531,7 +7434,11 @@ static int iw_set_host_offload(struct net_device *dev, struct iw_request_info *i
     case WLAN_IPV6_NEIGHBOR_DISCOVERY_OFFLOAD:
         hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Host offload request: neighbor discovery\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6581,7 +7488,11 @@ static int iw_set_keepalive_params(struct net_device *dev, struct iw_request_inf
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   "%s:LOGP in Progress. Ignore!!!",__func__);
+=======
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6591,7 +7502,11 @@ static int iw_set_keepalive_params(struct net_device *dev, struct iw_request_inf
     /* Debug display of request components. */
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: Set Keep Alive Request : TimePeriod %d size %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
            __FUNCTION__,pRequest->timePeriod, sizeof(tKeepAliveRequest));
+=======
+           __func__,pRequest->timePeriod, sizeof(tKeepAliveRequest));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            __func__,pRequest->timePeriod, sizeof(tKeepAliveRequest));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6600,7 +7515,11 @@ static int iw_set_keepalive_params(struct net_device *dev, struct iw_request_inf
       {
         case WLAN_KEEP_ALIVE_NULL_PKT:
 <<<<<<< HEAD
+<<<<<<< HEAD
             hddLog(VOS_TRACE_LEVEL_WARN, "%s: Keep Alive Request: Tx NULL", __FUNCTION__);
+=======
+            hddLog(VOS_TRACE_LEVEL_WARN, "%s: Keep Alive Request: Tx NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             hddLog(VOS_TRACE_LEVEL_WARN, "%s: Keep Alive Request: Tx NULL", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6610,7 +7529,11 @@ static int iw_set_keepalive_params(struct net_device *dev, struct iw_request_inf
 
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Keep Alive Request: Tx UnSolicited ARP RSP\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6655,20 +7578,27 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
                             tANI_U8 sessionId)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tSirRcvPktFilterCfgType    packetFilterSetReq;
     tSirRcvFltPktClearParam    packetFilterClrReq;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSirRcvPktFilterCfgType    packetFilterSetReq = {0};
     tSirRcvFltPktClearParam    packetFilterClrReq = {0};
     //IKHSS7-35965, a19091, Motorola changes -- BEGIN
     int retVal=0;
     //IKHSS7-35965, a19091, Motorola changes -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int i=0;
 
     if (pHddCtx->cfg_ini->disablePacketFilter)
     {
         hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Packet Filtering Disabled. Returning ",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 __FUNCTION__ );
         return 0;
@@ -6678,6 +7608,8 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
     hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Packet Filter Request : FA %d params %d",
             __FUNCTION__, pRequest->filterAction, pRequest->numParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__ );
         return retVal;
     }
@@ -6690,6 +7622,9 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
     /* Debug display of request components. */
     hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Packet Filter Request : FA %d params %d",
             __func__, pRequest->filterAction, pRequest->numParams);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (pRequest->filterAction)
@@ -6697,7 +7632,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
         case HDD_RCV_FILTER_SET:
             hddLog(VOS_TRACE_LEVEL_INFO, "%s: Set Packet Filter Request for Id: %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     __FUNCTION__, pRequest->filterId);
+=======
+                    __func__, pRequest->filterId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     __func__, pRequest->filterId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6708,12 +7647,18 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Number of Params exceed Max limit %d\n",
                         __func__, pRequest->numParams);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return -EINVAL;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 				//IKHSS7-35965, a19091, Motorola changes -- BEGIN
 				retVal = -EINVAL;
 				break;
 				//IKHSS7-35965, a19091, Motorola changes -- END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             packetFilterSetReq.numFieldParams = pRequest->numParams;
@@ -6728,7 +7673,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
                 packetFilterSetReq.paramsData[i].reserved = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hddLog(VOS_TRACE_LEVEL_INFO, "Proto %d Comp Flag %d Filter Type\n",
+=======
+                hddLog(VOS_TRACE_LEVEL_INFO, "Proto %d Comp Flag %d Filter Type %d\n",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 hddLog(VOS_TRACE_LEVEL_INFO, "Proto %d Comp Flag %d Filter Type %d\n",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6759,7 +7708,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Failure to execute Set Filter\n",
                         __func__);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return -EINVAL;
+=======
+                retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6771,7 +7724,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
 
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Clear Packet Filter Request for Id: %d\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     __FUNCTION__, pRequest->filterId);
+=======
+                    __func__, pRequest->filterId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     __func__, pRequest->filterId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6781,7 +7738,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Failure to execute Clear Filter\n",
                         __func__);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return -EINVAL;
+=======
+                retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6790,6 +7751,7 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
 
         default :
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Packet Filter Request: Invalid %d\n",
+<<<<<<< HEAD
 <<<<<<< HEAD
                     __FUNCTION__, pRequest->filterAction);
             return -EINVAL;
@@ -6837,6 +7799,8 @@ void wlan_hdd_set_mc_addr_list(hdd_context_t *pHddCtx, v_U8_t set, v_U8_t sessio
     pHddCtx->mc_addr_list.isFilterApplied = set ? TRUE : FALSE;
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, pRequest->filterAction);
             retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
     }
@@ -7281,6 +8245,9 @@ int wlan_hdd_set_v6_filter(void *pAdapter, v_U8_t set, v_U8_t userSet) {
     return ret;
 }
 // IKJB42MAIN-1244, Motorola, a19091 - END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static int iw_set_packet_filter_params(struct net_device *dev, struct iw_request_info *info,
@@ -7288,9 +8255,12 @@ static int iw_set_packet_filter_params(struct net_device *dev, struct iw_request
 {   
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 <<<<<<< HEAD
+<<<<<<< HEAD
     tpPacketFilterCfg pRequest = (tpPacketFilterCfg)wrqu->data.pointer;
     return wlan_hdd_set_filter(WLAN_HDD_GET_CTX(pAdapter), pRequest, pAdapter->sessionId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     int retVal;
@@ -7344,6 +8314,9 @@ static int iw_set_packet_filter_params(struct net_device *dev, struct iw_request
 
     return retVal;
     // IKJB42MAIN-1244, Motorola, a19091 - END
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif
@@ -7391,7 +8364,11 @@ static int iw_get_statistics(struct net_device *dev,
        hddLog(VOS_TRACE_LEVEL_ERROR,
               "%s: Unable to retrieve SME statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__);
+=======
+              __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7406,7 +8383,11 @@ static int iw_get_statistics(struct net_device *dev,
        hddLog(VOS_TRACE_LEVEL_ERROR,
               "%s: SME timeout while retrieving statistics",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__);
+=======
+              __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7545,7 +8526,12 @@ void found_pref_network_cb (void *callbackContext,
   union iwreq_data wrqu;
   char buf[MAX_PNO_NOTIFY_LEN+1];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  int bp = 0;
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   int bp = 0;
   
@@ -7558,8 +8544,11 @@ void found_pref_network_cb (void *callbackContext,
   memset(buf, 0, sizeof(buf));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   snprintf(buf, MAX_PNO_NOTIFY_LEN, "QCOM: Found preferred network: %s with RSSI of -%u",
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // stop PNO
   bp = strlcpy(buf, "0 ", sizeof(buf));
   buf[bp++] = '\0';
@@ -7572,6 +8561,9 @@ void found_pref_network_cb (void *callbackContext,
   memset(&wrqu, 0, sizeof(wrqu));
   memset(buf, 0, sizeof(buf));
   snprintf(buf, MAX_PNO_NOTIFY_LEN, "PNOFOUND : Found preferred network: %s with RSSI of -%u",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pPrefNetworkFoundInd->ssId.ssId,
           (unsigned int)pPrefNetworkFoundInd->rssi);
@@ -7604,7 +8596,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
             "PNO data len %d data %s",
             wrqu->data.length,
 <<<<<<< HEAD
+<<<<<<< HEAD
             wrqu->data.pointer);
+=======
+            (char *)wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             (char *)wrqu->data.pointer);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7628,7 +8624,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
 
     e.g:
 <<<<<<< HEAD
+<<<<<<< HEAD
     1 2 4 test 0 0 3 1 6 11 2 40 5 test2 4 4 6 1 2 3 4 5 6 1 0 2 5 2 300 0 
+=======
+    1 2 4 test 0 0 3 1 6 11 2 40 5 test2 4 4 6 1 2 3 4 5 6 1 0 2 5 2 300 0
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     1 2 4 test 0 0 3 1 6 11 2 40 5 test2 4 4 6 1 2 3 4 5 6 1 0 2 5 2 300 0
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7648,7 +8648,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
     and must not meet any RSSI threshold
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     scan every 5 seconds 2 times, scan every 300 seconds until stopped 
+=======
+    scan every 5 seconds 2 times, scan every 300 seconds until stopped
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     scan every 5 seconds 2 times, scan every 300 seconds until stopped
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7708,6 +8712,7 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
     ptr += nOffset;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     ucParams = sscanf(ptr,"%32s %lu %lu %hhu %n",
            pnoRequest.aNetworks[i].ssId.ssId,
            &(pnoRequest.aNetworks[i].authentication),
@@ -7726,6 +8731,8 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
 
     if ( 4 != ucParams )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     memcpy(pnoRequest.aNetworks[i].ssId.ssId, ptr,
            pnoRequest.aNetworks[i].ssId.length);
     ptr += pnoRequest.aNetworks[i].ssId.length;
@@ -7754,6 +8761,9 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
               nOffset );
 
     if ( 3 != ucParams )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,
@@ -7809,6 +8819,7 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
 
   /*Read the scan timers*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (( 1 == ucParams )&&(  pnoRequest.scanTimers.ucScanTimersCount >= 0 ))
   {
      ptr += nOffset;
@@ -7816,12 +8827,17 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
         "Scan timer count %d offset %d", 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if (( 1 == ucParams ) && ( pnoRequest.scanTimers.ucScanTimersCount > 0 ))
   {
      ptr += nOffset;
 
      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
         "Scan timer count %d offset %d",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pnoRequest.scanTimers.ucScanTimersCount,
         nOffset );
@@ -7829,7 +8845,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
      if ( SIR_PNO_MAX_SCAN_TIMERS < pnoRequest.scanTimers.ucScanTimersCount )
      {
 <<<<<<< HEAD
+<<<<<<< HEAD
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
+=======
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7845,9 +8865,15 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
            &nOffset);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
             "PNO Timer value %d Timer repeat %d offset %d", 
             pnoRequest.scanTimers.aTimerValues[i].uTimerValue, 
+=======
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+            "PNO Timer value %d Timer repeat %d offset %d",
+            pnoRequest.scanTimers.aTimerValues[i].uTimerValue,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
             "PNO Timer value %d Timer repeat %d offset %d",
@@ -7859,7 +8885,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
         if ( 2 != ucParams )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
+=======
+          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -7874,8 +8904,13 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
   else
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
        "No scan timers provided param count %d scan timers %d", 
+=======
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+       "No scan timers provided param count %d scan timers %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
        "No scan timers provided param count %d scan timers %d",
@@ -7899,7 +8934,10 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // IKHSS7-5797: set PNO intervals
   /* A set value represents the amount of time that PNO will wait between
      two consecutive scan procedures.
@@ -7924,6 +8962,9 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
   pnoRequest.scanTimers.aTimerValues[1].uTimerRepeat = 0;
   pnoRequest.scanTimers.aTimerValues[1].uTimerValue = 480;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   sme_SetPreferredNetworkList(WLAN_HDD_GET_HAL_CTX(pAdapter), &pnoRequest,
                                 pAdapter->sessionId,
@@ -7959,10 +9000,13 @@ static int iw_set_pno_priv(struct net_device *dev,
                            union iwreq_data *wrqu, char *extra)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                 "Set PNO Private");
   return iw_set_pno(dev,info,wrqu,extra,0);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
@@ -7975,6 +9019,9 @@ static int iw_set_pno_priv(struct net_device *dev,
        return -EBUSY;
     }
     return iw_set_pno(dev,info,wrqu,extra,0);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif /*FEATURE_WLAN_SCAN_PNO*/
@@ -8007,7 +9054,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
 
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: change band to %u",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, band);
+=======
+                __func__, band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, band);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8017,7 +9068,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
         /* Received change band request with invalid band value */
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                "%s: Invalid band value %u", __FUNCTION__, band);
+=======
+               "%s: Invalid band value %u", __func__, band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "%s: Invalid band value %u", __func__, band);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8030,7 +9085,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
     {       
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
              "%s: band value %u violate INI settings %u", __FUNCTION__,
+=======
+             "%s: band value %u violate INI settings %u", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "%s: band value %u violate INI settings %u", __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8043,7 +9102,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
               "%s: Failed to get current band config",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8059,7 +9122,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                 "%s: Current band value = %u, new setting %u ",
 <<<<<<< HEAD
+<<<<<<< HEAD
                  __FUNCTION__, currBand, band);
+=======
+                 __func__, currBand, band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  __func__, currBand, band);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8096,15 +9163,21 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
                      msecs_to_jiffies(WLAN_WAIT_TIME_DISCONNECT));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
              if(lrc <= 0) {
 
                 hddLog(VOS_TRACE_LEVEL_ERROR,"%s: %s while while waiting for csrRoamDisconnect ",
                  __FUNCTION__, (0 == lrc) ? "Timeout" : "Interrupt");
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              if (lrc <= 0) {
 
                 hddLog(VOS_TRACE_LEVEL_ERROR,"%s: %s while waiting for csrRoamDisconnect ",
                  __func__, (0 == lrc) ? "Timeout" : "Interrupt");
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return (0 == lrc) ? -ETIMEDOUT : -EINTR;
@@ -8113,6 +9186,7 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
 
         hdd_abort_mac_scan(pHddCtx);
         sme_ScanFlushResult(hHal, pAdapter->sessionId);
+<<<<<<< HEAD
 <<<<<<< HEAD
         if(eHAL_STATUS_SUCCESS != sme_SetFreqBand(hHal, (eCsrBand)band))
         {
@@ -8125,6 +9199,8 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
         wlan_hdd_cfg80211_update_band(pHddCtx->wiphy, (eCsrBand)band);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
         sme_UpdateBgScanConfigIniChannelList(hHal, (eCsrBand) band);
 #endif
@@ -8136,6 +9212,9 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
              return -EINVAL;
         }
         wlan_hdd_cfg80211_update_band(pHddCtx->wiphy, (eCsrBand)band);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return 0;
@@ -8146,11 +9225,14 @@ static int iw_set_band_config(struct net_device *dev,
                            union iwreq_data *wrqu, char *extra)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 *ptr = (tANI_U8*)wrqu->data.pointer;
     int ret = 0;
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: ", __FUNCTION__);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     tANI_U8 *ptr = (tANI_U8*)wrqu->data.pointer;
     int ret = 0;
@@ -8163,6 +9245,9 @@ static int iw_set_band_config(struct net_device *dev,
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
         return -EBUSY;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (memcmp(ptr, "SETBAND ", 8) == 0)
@@ -8201,8 +9286,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
             "Power Params data len %d data %s",
             wrqu->data.length,
 <<<<<<< HEAD
+<<<<<<< HEAD
             wrqu->data.pointer);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             (char *)wrqu->data.pointer);
 
   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
@@ -8211,6 +9299,9 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
                                   "%s:LOGP in Progress. Ignore!!!", __func__);
     return -EBUSY;
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if (wrqu->data.length <= nOffset )
@@ -8258,7 +9349,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
     {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Invalid input parametery type : %d with no value at offset %d",
+=======
+                "Invalid input parameter type : %d with no value at offset %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "Invalid input parameter type : %d with no value at offset %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8293,7 +9388,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
       default:
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Invalid input parametery type : %d with value: %d at offset %d",
+=======
+                "Invalid input parameter type : %d with value: %d at offset %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 "Invalid input parameter type : %d with value: %d at offset %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8320,7 +9419,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
 
   /* Apply the power save params*/
 <<<<<<< HEAD
+<<<<<<< HEAD
   sme_SetPowerParams( WLAN_HDD_GET_HAL_CTX(pAdapter), &powerRequest);
+=======
+  sme_SetPowerParams( WLAN_HDD_GET_HAL_CTX(pAdapter), &powerRequest, FALSE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   sme_SetPowerParams( WLAN_HDD_GET_HAL_CTX(pAdapter), &powerRequest, FALSE);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8439,7 +9542,11 @@ static const iw_handler we_private[] = {
    [WLAN_PRIV_CLEAR_MCBC_FILTER         - SIOCIWFIRSTPRIV]   = iw_clear_dynamic_mcbc_filter,
    [WLAN_SET_POWER_PARAMS               - SIOCIWFIRSTPRIV]   = iw_set_power_params_priv,
 <<<<<<< HEAD
+<<<<<<< HEAD
    [WLAN_GET_LINK_SPEED                 - SIOCIWFIRSTPRIV]   = iw_get_linkspeed
+=======
+   [WLAN_GET_LINK_SPEED                 - SIOCIWFIRSTPRIV]   = iw_get_linkspeed,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    [WLAN_GET_LINK_SPEED                 - SIOCIWFIRSTPRIV]   = iw_get_linkspeed,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8503,7 +9610,10 @@ static const struct iw_priv_args we_private_args[] = {
         "setTmLevel" },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_SET_CHANNEL_RANGE,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
         0,
@@ -8516,6 +9626,9 @@ static const struct iw_priv_args we_private_args[] = {
         "setIPV6FilState" },
     // IKJB42MAIN-1244, Motorola, a19091 - END
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_NONE_GET_INT,
@@ -8555,7 +9668,10 @@ static const struct iw_priv_args we_private_args[] = {
         "getMaxAssoc" },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_GET_WDI_DBG,
@@ -8563,7 +9679,10 @@ static const struct iw_priv_args we_private_args[] = {
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
         "getwdidbg" },
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -8578,13 +9697,19 @@ static const struct iw_priv_args we_private_args[] = {
         "getconcurrency" },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* MOTOROLA IKJB42MAIN-274 */
     {   WE_GET_MCC_MODE,
         0,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
         "getMccMode" },
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_CHAR_GET_NONE,
@@ -8633,7 +9758,10 @@ static const struct iw_priv_args we_private_args[] = {
         "setwlandbg" },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_SET_WDI_DBG,
@@ -8641,7 +9769,10 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         "setwdidbg" },
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -8651,7 +9782,10 @@ static const struct iw_priv_args we_private_args[] = {
         "setsapchannels" },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
    {    WE_SET_WLAN_DBG_TILL_LEVEL,
          IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 3,
@@ -8659,6 +9793,9 @@ static const struct iw_priv_args we_private_args[] = {
          "setwlanloglevel" },
    //END IKJBXLINE-5577
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_GET_CHAR_SET_NONE,
@@ -8686,13 +9823,19 @@ static const struct iw_priv_args we_private_args[] = {
         "getRSSI" },
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
     {   WE_GET_ROAM_RSSI,
         0,
         IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
         "getRoamRSSI" },
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_GET_WMM_STATUS,
         0,
@@ -8704,8 +9847,11 @@ static const struct iw_priv_args we_private_args[] = {
         IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
         "getChannelList" },
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
     {
         WE_GET_TDLS_PEERS,
@@ -8713,6 +9859,9 @@ static const struct iw_priv_args we_private_args[] = {
         IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
         "getTdlsPeers" },
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_NONE_GET_NONE,
@@ -8734,6 +9883,10 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         "exitAP" },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#ifdef WLAN_BTAMP_FEATURE
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WLAN_BTAMP_FEATURE
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8746,6 +9899,10 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         "disableAMP" },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #endif
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8758,7 +9915,10 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         "dxeSnapshot" },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_DISPLAY_DATAPATH_SNAP_SHOT,
         0,
         0,
@@ -8768,6 +9928,9 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         0,
         "reassoc" },
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* handlers for main ioctl */
@@ -8783,7 +9946,10 @@ static const struct iw_priv_args we_private_args[] = {
         "dump" },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for sub ioctl */
    {
        WE_MCC_CONFIG_CREDENTIAL,
@@ -8807,6 +9973,9 @@ static const struct iw_priv_args we_private_args[] = {
        "setTdlsConfig" },
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_ADD_TSPEC,
@@ -8921,7 +10090,11 @@ static const struct iw_priv_args we_private_args[] = {
     {
         WLAN_PRIV_SET_MCBC_FILTER,
 <<<<<<< HEAD
+<<<<<<< HEAD
         IW_PRIV_TYPE_BYTE | sizeof(tMcBcFilterCfg),
+=======
+        IW_PRIV_TYPE_BYTE | sizeof(tRcvFltMcAddrList),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         IW_PRIV_TYPE_BYTE | sizeof(tRcvFltMcAddrList),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -8941,7 +10114,12 @@ static const struct iw_priv_args we_private_args[] = {
         WLAN_GET_LINK_SPEED,
         IW_PRIV_TYPE_CHAR | 18,
 <<<<<<< HEAD
+<<<<<<< HEAD
         IW_PRIV_TYPE_CHAR | 3, "getLinkSpeed" },
+=======
+        IW_PRIV_TYPE_CHAR | 5, "getLinkSpeed" },
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         IW_PRIV_TYPE_CHAR | 5, "getLinkSpeed" },
    
@@ -8962,7 +10140,10 @@ const struct iw_handler_def we_handler_def = {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int hdd_validate_mcc_config(hdd_adapter_t *pAdapter, v_UINT_t staId, v_UINT_t arg1, v_UINT_t arg2, v_UINT_t arg3)
 {
     v_U32_t  cmd = 288; //Command to RIVA
@@ -9138,12 +10319,19 @@ int hdd_validate_mcc_config(hdd_adapter_t *pAdapter, v_UINT_t staId, v_UINT_t ar
     return 0;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int hdd_set_wext(hdd_adapter_t *pAdapter)
 {
     hdd_wext_state_t *pwextBuf;
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -9179,7 +10367,11 @@ int hdd_set_wext(hdd_adapter_t *pAdapter)
 
     /*Set the default scan mode*/
 <<<<<<< HEAD
+<<<<<<< HEAD
     pAdapter->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+=======
+    pHddCtx->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pHddCtx->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

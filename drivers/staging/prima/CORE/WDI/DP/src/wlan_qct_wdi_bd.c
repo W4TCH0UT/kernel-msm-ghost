@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -217,6 +223,10 @@ WPT_STATIC WPT_INLINE int find_leading_zero_and_setbit(wpt_uint32 *bitmap, wpt_u
 {
   wpt_uint32 i,j, word;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  int ret_val = -1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   int ret_val = -1;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -233,7 +243,11 @@ WPT_STATIC WPT_INLINE int find_leading_zero_and_setbit(wpt_uint32 *bitmap, wpt_u
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   return -1;
+=======
+  return ret_val;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   return ret_val;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -264,7 +278,11 @@ void *WDI_DS_MemPoolAlloc(WDI_DS_BdMemPoolType *memPool, void **pPhysAddress,
   //Find the leading 0 in the allocation bitmap
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if((index = find_leading_zero_and_setbit(memPool->AllocationBitmap, maxNumPool)) == -1)
+=======
+  if((index = find_leading_zero_and_setbit(memPool->AllocationBitmap, maxNumPool)) == -EPERM)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   if((index = find_leading_zero_and_setbit(memPool->AllocationBitmap, maxNumPool)) == -EPERM)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

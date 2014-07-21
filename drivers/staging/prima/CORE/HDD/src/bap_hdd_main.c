@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -99,9 +105,13 @@
 #include <net/bluetooth/hci_core.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 #include <wlan_hdd_misc.h>
 #endif
+=======
+#include <wlan_hdd_misc.h>
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <wlan_hdd_misc.h>
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -209,6 +219,7 @@ if I exceed that.  ( Think 8-bit CPUs.  And the limitations of an 8-bit length
 //#define DUMPLOG
 #if defined DUMPLOG
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define DUMPLOG(n, name1, name2, aStr, size) \
     if (1) \
 {\
@@ -219,6 +230,8 @@ if I exceed that.  ( Think 8-bit CPUs.  And the limitations of an 8-bit length
     DBGLOG("\n"); \
 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define DUMPLOG(n, name1, name2, aStr, size) do {                       \
         int i;                                                          \
         DBGLOG("%d. %s: %s = \n", n, name1, name2);                     \
@@ -226,6 +239,9 @@ if I exceed that.  ( Think 8-bit CPUs.  And the limitations of an 8-bit length
             DBGLOG("%2.2x%s", ((unsigned char *)aStr)[i], i % 16 == 15 ? "\n" : " "); \
         DBGLOG("\n");                                                   \
     } while (0)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #define DUMPLOG(n, name1, name2, aStr, size)
@@ -523,7 +539,11 @@ static VOS_STATUS WLANBAP_STAFetchPktCB
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO, "%s: pVosPkt(vos_pkt_t *)=%p\n", __FUNCTION__,
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO, "%s: pVosPkt(vos_pkt_t *)=%p\n", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO, "%s: pVosPkt(vos_pkt_t *)=%p\n", __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -551,7 +571,11 @@ static VOS_STATUS WLANBAP_STAFetchPktCB
     *tlMetaInfo = TlMetaInfo;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: *vosDataBuff(vos_pkt_t *)=%p\n", __FUNCTION__, *vosDataBuff );
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: *vosDataBuff(vos_pkt_t *)=%p\n", __func__, *vosDataBuff );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: *vosDataBuff(vos_pkt_t *)=%p\n", __func__, *vosDataBuff );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -625,7 +649,11 @@ static VOS_STATUS WLANBAP_STARxCB
        if (!((VosStatus == VOS_STATUS_SUCCESS) || (VosStatus == VOS_STATUS_E_EMPTY)))
        {
 <<<<<<< HEAD
+<<<<<<< HEAD
            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: Failure walking packet chain", __FUNCTION__);
+=======
+           VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: Failure walking packet chain", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: Failure walking packet chain", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -653,7 +681,11 @@ static VOS_STATUS WLANBAP_STARxCB
        {
            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: Failure extracting skb from vos pkt. "
 <<<<<<< HEAD
+<<<<<<< HEAD
              "VosStatus = %d\n", __FUNCTION__, VosStatus );
+=======
+             "VosStatus = %d\n", __func__, VosStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "VosStatus = %d\n", __func__, VosStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -718,7 +750,11 @@ static VOS_STATUS WLANBAP_TxCompCB
     BslPhyLinkCtxType* pctx;
     BslClientCtxType* ppctx;
 <<<<<<< HEAD
+<<<<<<< HEAD
     static int num_packets = 0;
+=======
+    static int num_packets;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     static int num_packets;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -743,7 +779,11 @@ static VOS_STATUS WLANBAP_TxCompCB
     {
         //This is bad but still try to free the VOSS resources if we can
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -768,7 +808,11 @@ static VOS_STATUS WLANBAP_TxCompCB
     if (num_packets == 0 )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO, "%s: Sending up number of completed packets.  num_packets = %d.\n", __FUNCTION__, num_packets );
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO, "%s: Sending up number of completed packets.  num_packets = %d.\n", __func__, num_packets );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO, "%s: Sending up number of completed packets.  num_packets = %d.\n", __func__, num_packets );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -972,7 +1016,11 @@ static VOS_STATUS WLANBAP_EventCB
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "pctx is NULL in %s", __FUNCTION__);
+=======
+                     "pctx is NULL in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                      "pctx is NULL in %s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1543,7 +1591,11 @@ static VOS_STATUS WLANBAP_EventCB
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: Failure extracting skb from vos pkt. "
 <<<<<<< HEAD
+<<<<<<< HEAD
           "VosStatus = %d\n", __FUNCTION__, VosStatus );
+=======
+          "VosStatus = %d\n", __func__, VosStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "VosStatus = %d\n", __func__, VosStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1623,7 +1675,11 @@ static BOOL BslFindAndInitClientCtx
     if ( !VOS_IS_STATUS_SUCCESS( VosStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,"%s:BslClientLock already inited",__FUNCTION__);
+=======
+        VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,"%s:BslClientLock already inited",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,"%s:BslClientLock already inited",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1635,7 +1691,11 @@ static BOOL BslFindAndInitClientCtx
         if ( !BslClientCtx[i].used )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,"%s:BslClientCtx[%d] selected",__FUNCTION__, i);
+=======
+            VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,"%s:BslClientCtx[%d] selected",__func__, i);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,"%s:BslClientCtx[%d] selected",__func__, i);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1663,7 +1723,11 @@ static BOOL BslFindAndInitClientCtx
         pctx->used = FALSE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:WLAN_GetNewHndl Failed",__FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:WLAN_GetNewHndl Failed",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:WLAN_GetNewHndl Failed",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1682,7 +1746,11 @@ static BOOL BslFindAndInitClientCtx
         pctx->used = FALSE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:WLAN_BAPRegsiterBAPCallaback Failed",__FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:WLAN_BAPRegsiterBAPCallaback Failed",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:WLAN_BAPRegsiterBAPCallaback Failed",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2386,7 +2454,11 @@ static BOOL BslProcessHCICommand
         /* Flush the TX queue */
 //#ifdef BAP_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s:HCI Flush command  - will flush Tx Queue", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s:HCI Flush command  - will flush Tx Queue", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s:HCI Flush command  - will flush Tx Queue", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2424,7 +2496,11 @@ static BOOL BslProcessHCICommand
 
         /* Flush the TX queue */
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:HCI Flush command  - will flush Tx Queue for pkt type %d", __FUNCTION__, FlushCmd.packet_type);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:HCI Flush command  - will flush Tx Queue for pkt type %d", __func__, FlushCmd.packet_type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s:HCI Flush command  - will flush Tx Queue for pkt type %d", __func__, FlushCmd.packet_type);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3334,7 +3410,11 @@ static BOOL BslProcessHCICommand
 
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "BslProcessHCICommand: HCI_Write_Remote_AMP_ASSOC_Cmd Count = %d", Count);
 <<<<<<< HEAD
+<<<<<<< HEAD
         DUMPLOG(1, __FUNCTION__, "HCI_Write_Remote_AMP_ASSOC cmd",
+=======
+        DUMPLOG(1, __func__, "HCI_Write_Remote_AMP_ASSOC cmd",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         DUMPLOG(1, __func__, "HCI_Write_Remote_AMP_ASSOC cmd",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3629,7 +3709,11 @@ static BOOL BslProcessACLDataTx
 #endif
 #if 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     static int num_packets = 0;
+=======
+    static int num_packets;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     static int num_packets;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3810,7 +3894,10 @@ int BSL_Init ( v_PVOID_t  pvosGCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (VOS_STA_SAP_MODE == hdd_get_conparam())
@@ -3830,7 +3917,10 @@ int BSL_Init ( v_PVOID_t  pvosGCtx )
      }
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pAdapter = hdd_get_adapter(pHddCtx, WLAN_HDD_INFRA_STATION);
@@ -4143,7 +4233,11 @@ static int BSL_Flush(struct hci_dev *hdev)
 
     //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "BSL_Flush - will flush ALL Tx Queues");
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s - will flush ALL Tx Queues", __FUNCTION__);
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s - will flush ALL Tx Queues", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s - will flush ALL Tx Queues", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4199,7 +4293,11 @@ static int BSL_Write(struct sk_buff *skb)
     BslHciWorkStructure *pHciContext;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s", __FUNCTION__);
+=======
+    //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4208,7 +4306,11 @@ static int BSL_Write(struct sk_buff *skb)
     if ( skb == NULL )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is bad i/p", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is bad i/p", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is bad i/p", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4217,7 +4319,11 @@ static int BSL_Write(struct sk_buff *skb)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Count (skb->len)=%d", __FUNCTION__, skb->len);
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Count (skb->len)=%d", __func__, skb->len);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Count (skb->len)=%d", __func__, skb->len);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4226,7 +4332,11 @@ static int BSL_Write(struct sk_buff *skb)
     if ( 0 == skb->len )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is empty", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is empty", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is empty", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4240,7 +4350,11 @@ static int BSL_Write(struct sk_buff *skb)
     if ( hdev == NULL )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Frame for Unknown HCI device (hdev=NULL)", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Frame for Unknown HCI device (hdev=NULL)", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Frame for Unknown HCI device (hdev=NULL)", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4254,7 +4368,11 @@ static int BSL_Write(struct sk_buff *skb)
     if ( pctx == NULL )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx is bad i/p", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx is bad i/p", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx is bad i/p", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4272,7 +4390,11 @@ static int BSL_Write(struct sk_buff *skb)
         VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
                   "%s: HCI ACL data tx, skb=%p",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, skb);
+=======
+                  __func__, skb);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, skb);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4291,7 +4413,11 @@ static int BSL_Write(struct sk_buff *skb)
     case HCI_COMMAND_PKT:
         // Defer the HCI command writes
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: HCI command", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: HCI command", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: HCI command", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4304,7 +4430,11 @@ static int BSL_Write(struct sk_buff *skb)
             // no memory for HCI context.  Nothing we can do but drop
             VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "%s: Unable to allocate context", __FUNCTION__);
+=======
+                      "%s: Unable to allocate context", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "%s: Unable to allocate context", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4324,7 +4454,11 @@ static int BSL_Write(struct sk_buff *skb)
         VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
                   "%s: Scheduling work for skb %p, BT-AMP Client context %p, work %p",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, skb, pctx, pHciContext);
+=======
+                  __func__, skb, pctx, pHciContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, skb, pctx, pHciContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4335,7 +4469,11 @@ static int BSL_Write(struct sk_buff *skb)
         if ( 0 == status )
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: hciInterfaceProcessing work already queued. This should never happen.", __FUNCTION__);
+=======
+            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: hciInterfaceProcessing work already queued. This should never happen.", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: hciInterfaceProcessing work already queued. This should never happen.", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4348,7 +4486,11 @@ static int BSL_Write(struct sk_buff *skb)
         break;
     case HCI_SCODATA_PKT:
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: unknown type", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: unknown type", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: unknown type", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4400,7 +4542,11 @@ static void bslWriteFinish(struct work_struct *work)
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_LOW,
               "%s: Entered, context %p",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, pctx);
+=======
+              __func__, pctx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, pctx);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4409,7 +4555,11 @@ static void bslWriteFinish(struct work_struct *work)
     if ( pctx == NULL )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx is bad i/p", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx is bad i/p", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx is bad i/p", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4424,17 +4574,23 @@ static void bslWriteFinish(struct work_struct *work)
     if ( skb == NULL )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is bad i/p", __FUNCTION__);
         return; // -EFAULT; /* Bad address */
     }
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Count (skb->len)=%d", __FUNCTION__, skb->len);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: skb is bad i/p", __func__);
         return; // -EFAULT; /* Bad address */
     }
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Count (skb->len)=%d", __func__, skb->len);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     hdev = (struct hci_dev *)(skb->dev);
@@ -4443,7 +4599,11 @@ static void bslWriteFinish(struct work_struct *work)
     if ( hdev == NULL )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Frame for Unknown HCI device (hdev=NULL)", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Frame for Unknown HCI device (hdev=NULL)", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: Frame for Unknown HCI device (hdev=NULL)", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4455,7 +4615,11 @@ static void bslWriteFinish(struct work_struct *work)
     if ( pctx != (BslClientCtxType *)hci_get_drvdata(hdev));
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx and hdev not consistent - bad i/p", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx and hdev not consistent - bad i/p", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: pctx and hdev not consistent - bad i/p", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4469,7 +4633,11 @@ static void bslWriteFinish(struct work_struct *work)
     {
     case HCI_COMMAND_PKT:
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: HCI command", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: HCI command", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: HCI command", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4482,7 +4650,11 @@ static void bslWriteFinish(struct work_struct *work)
         break;
     case HCI_SCODATA_PKT:
 <<<<<<< HEAD
+<<<<<<< HEAD
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: unknown type", __FUNCTION__);
+=======
+        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: unknown type", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: unknown type", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4499,7 +4671,11 @@ static void bslWriteFinish(struct work_struct *work)
     VOS_TRACE(VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
               "%s: Freeing skb %p",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, skb);
+=======
+              __func__, skb);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, skb);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

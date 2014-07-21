@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -96,6 +102,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
     tLimMlmDeauthInd  mlmDeauthInd;
     tpDphHashNode     pStaDs;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tpPESession       pRoamSessionEntry=NULL;
+    tANI_U8           roamSessionId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tpPESession       pRoamSessionEntry=NULL;
     tANI_U8           roamSessionId;
@@ -110,8 +121,12 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
     if ((eLIM_STA_ROLE == psessionEntry->limSystemRole) && (eLIM_SME_WT_DEAUTH_STATE == psessionEntry->limSmeState))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOGE(limLog(pMac, LOGE,
         FL("received Deauth frame in DEAUTH_WT_STATE(already processing previously received DEAUTH frame).. Dropping this..\n "));)
+=======
+       MTRACE(macTrace(pMac, TRACE_CODE_INFO_LOG, 0, eLOG_PROC_DEAUTH_FRAME_SCENARIO));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        MTRACE(macTrace(pMac, TRACE_CODE_INFO_LOG, 0, eLOG_PROC_DEAUTH_FRAME_SCENARIO));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -124,7 +139,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
         // Log error and ignore it
         PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received Deauth frame from a BC/MC address\n"));)
+=======
+               FL("received Deauth frame from a BC/MC address"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received Deauth frame from a BC/MC address"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -138,7 +157,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
         // Log error and ignore it
         PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received Deauth frame for a MC address\n"));)
+=======
+               FL("received Deauth frame for a MC address"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received Deauth frame for a MC address"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -154,7 +177,10 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
     limPrintMacAddr(pMac, pHdr->sa, LOGE);)
       
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (limCheckDisassocDeauthAckPending(pMac, (tANI_U8*)pHdr->sa))
     {
         PELOGW(limLog(pMac, LOGW,
@@ -164,6 +190,9 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
     }
 
   
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( (psessionEntry->limSystemRole == eLIM_AP_ROLE )||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE) )
     {
@@ -179,7 +208,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
                 // Log error and ignore the frame
                 PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("received Deauth frame with invalid reasonCode %d from \n"),
+=======
+                   FL("received Deauth frame with invalid reasonCode %d from "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("received Deauth frame with invalid reasonCode %d from "),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -207,7 +240,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
                 // Log error and ignore the frame
                 PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("received Deauth frame with invalid reasonCode %d from \n"),
+=======
+                   FL("received Deauth frame with invalid reasonCode %d from "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("received Deauth frame with invalid reasonCode %d from "),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -221,17 +258,23 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
     {
         // Received Deauth frame in either IBSS
 <<<<<<< HEAD
+<<<<<<< HEAD
         // or un-known role. Log error and ignore it
         limLog(pMac, LOGE,
            FL("received Deauth frame with reasonCode %d in role %d from \n"),
            reasonCode, psessionEntry->limSystemRole);
           limPrintMacAddr(pMac, pHdr->sa, LOGE);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // or un-known role. Log and ignore it
         limLog(pMac, LOG1,
            FL("received Deauth frame with reasonCode %d in role %d from "),
            reasonCode, psessionEntry->limSystemRole);
           limPrintMacAddr(pMac, pHdr->sa, LOG1);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
@@ -256,10 +299,13 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
      *     with normal deauth processing. 
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (limIsReassocInProgress(pMac,psessionEntry)) {
         if (!IS_REASSOC_BSSID(pMac,pHdr->sa,psessionEntry)) {
             PELOGE(limLog(pMac, LOGE, FL("Rcv Deauth from unknown/different AP while ReAssoc. Ignore \n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( psessionEntry->limReAssocbssId!=NULL )
     {
         pRoamSessionEntry = peFindSessionByBssid(pMac, psessionEntry->limReAssocbssId, &roamSessionId);
@@ -267,6 +313,9 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
     if (limIsReassocInProgress(pMac,psessionEntry) || limIsReassocInProgress(pMac,pRoamSessionEntry)) {
         if (!IS_REASSOC_BSSID(pMac,pHdr->sa,psessionEntry)) {
             PELOGE(limLog(pMac, LOGE, FL("Rcv Deauth from unknown/different AP while ReAssoc. Ignore "));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limPrintMacAddr(pMac, pHdr->sa, LOGE);
             limPrintMacAddr(pMac, psessionEntry->limReAssocbssId, LOGE);
@@ -278,7 +327,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
          */
         if (!IS_CURRENT_BSSID(pMac, pHdr->sa,psessionEntry)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("received DeAuth from the New AP to which ReAssoc is sent \n"));)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("received DeAuth from the New AP to which ReAssoc is sent "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("received DeAuth from the New AP to which ReAssoc is sent "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -295,6 +348,7 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
      * nor associated with, then ignore deauth and delete Pre-auth entry.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry->limSystemRole != eLIM_AP_ROLE ){
 #endif
@@ -305,6 +359,8 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
             {
                 PELOGE(limLog(pMac, LOGE, FL("Preauth entry exist. Deleting... \n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->limSystemRole != eLIM_AP_ROLE ){
         if (!IS_CURRENT_BSSID(pMac, pHdr->bssId, psessionEntry))
         {
@@ -312,15 +368,24 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
             if (limSearchPreAuthList(pMac, pHdr->sa))
             {
                 PELOG1(limLog(pMac, LOG1, FL("Preauth entry exist. Deleting... "));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limDeletePreAuthNode(pMac, pHdr->sa);
             }
             return;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     }
 #endif
+=======
+    }
+
+        pStaDs = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     }
 
@@ -409,6 +474,7 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
                     case eLIM_MLM_IDLE_STATE:
                     case eLIM_MLM_LINK_ESTABLISHED_STATE:
 <<<<<<< HEAD
+<<<<<<< HEAD
                         /**
                          * This could be Deauthentication frame from
                          * a BSS with which pre-authentication was
@@ -418,6 +484,8 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
                            limDeletePreAuthNode(pMac, pHdr->sa);
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
                         if ((NULL != pStaDs) && (STA_ENTRY_TDLS_PEER == pStaDs->staType))
                         {
@@ -443,6 +511,9 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
 #ifdef FEATURE_WLAN_TDLS
                         }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         break;
 
@@ -468,6 +539,7 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
             case eLIM_STA_IN_IBSS_ROLE:
                 break;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
             case eLIM_AP_ROLE:
@@ -508,11 +580,16 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
                 }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             case eLIM_AP_ROLE:
                 break;
 
             default: // eLIM_AP_ROLE or eLIM_BT_AMP_AP_ROLE
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return;
@@ -525,7 +602,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
      * This is maintained by DPH and created by LIM.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( (pStaDs = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable)) == NULL)
+=======
+    if (NULL == pStaDs)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (NULL == pStaDs)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -553,9 +634,12 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
                   pStaDs->staAddr,
                   sizeof(tSirMacAddr));
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     mlmDeauthInd.aid           = pStaDs->assocId;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     mlmDeauthInd.reasonCode    = (tANI_U8) pStaDs->mlmStaContext.disassocReason;
@@ -583,7 +667,11 @@ limProcessDeauthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession p
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Rcv Deauth from ReAssoc AP. Issue REASSOC_CNF. \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Rcv Deauth from ReAssoc AP. Issue REASSOC_CNF. "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Rcv Deauth from ReAssoc AP. Issue REASSOC_CNF. "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

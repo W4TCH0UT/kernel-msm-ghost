@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -57,9 +63,14 @@
  */
 #include "palTypes.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "sirWrapper.h"
 #include "aniGlobal.h"
 #include "wniCfgAp.h"
+=======
+#include "aniGlobal.h"
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "aniGlobal.h"
 #include "wniCfgSta.h"
@@ -70,10 +81,13 @@
 #include "sirCommon.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #include "halCommonApi.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -88,9 +102,13 @@
 #include "schSysParams.h"
 #include "limTrace.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 #include "limTypes.h"
 #endif
+=======
+#include "limTypes.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "limTypes.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -250,6 +268,7 @@ tSirRetStatus
 schPostMessage(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
    PELOG3(schLog(pMac, LOG3, FL("Going to post message (%x) to SCH message queue\n"),
            pMsg->type);)
@@ -258,6 +277,9 @@ schPostMessage(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
 #else
     schProcessMessage(pMac, pMsg);
 #endif 
+=======
+    schProcessMessage(pMac, pMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     schProcessMessage(pMac, pMsg);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -292,17 +314,23 @@ schSendStartScanRsp(tpAniSirGlobal pMac)
     tANI_U32        retCode;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(schLog(pMac, LOG1, FL("Sending LIM message to go into scan\n"));)
     msgQ.type = SIR_SCH_START_SCAN_RSP;
     if ((retCode = limPostMsgApi(pMac, &msgQ)) != eSIR_SUCCESS)
         schLog(pMac, LOGE,
                FL("Posting START_SCAN_RSP to LIM failed, reason=%X\n"), retCode);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(schLog(pMac, LOG1, FL("Sending LIM message to go into scan"));)
     msgQ.type = SIR_SCH_START_SCAN_RSP;
     if ((retCode = limPostMsgApi(pMac, &msgQ)) != eSIR_SUCCESS)
         schLog(pMac, LOGE,
                FL("Posting START_SCAN_RSP to LIM failed, reason=%X"), retCode);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -339,7 +367,11 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
 
   schLog( pMac, LOG2,
 <<<<<<< HEAD
+<<<<<<< HEAD
       FL( "Indicating HAL to copy the beacon template [%d bytes] to memory\n" ),
+=======
+      FL( "Indicating HAL to copy the beacon template [%d bytes] to memory" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       FL( "Indicating HAL to copy the beacon template [%d bytes] to memory" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -361,6 +393,7 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
   palCopyMemory(pMac, beaconParams->bssId, psessionEntry->bssId, sizeof(psessionEntry->bssId));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   beaconParams->timIeOffset = pMac->sch.schObject.gSchBeaconOffsetBegin;
 #ifdef WLAN_FEATURE_P2P
@@ -370,6 +403,8 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
   schLog(pMac, LOGE,FL("TimIeOffset:[%d]\n"),beaconParams->TimIeOffset );
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   beaconParams->timIeOffset = pMac->sch.schObject.gSchBeaconOffsetBegin;
   /* p2pIeOffset should be atleast greater than timIeOffset */
   if ((pMac->sch.schObject.p2pIeOffset != 0) &&
@@ -384,6 +419,9 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
   beaconParams->p2pIeOffset = pMac->sch.schObject.p2pIeOffset;
 #ifdef WLAN_SOFTAP_FW_BEACON_TX_PRNT_LOG
   schLog(pMac, LOGE,FL("TimIeOffset:[%d]"),beaconParams->TimIeOffset );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -414,7 +452,11 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
   {
     schLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Posting SEND_BEACON_REQ to HAL failed, reason=%X\n"),
+=======
+        FL("Posting SEND_BEACON_REQ to HAL failed, reason=%X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Posting SEND_BEACON_REQ to HAL failed, reason=%X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -423,9 +465,14 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
   {
     schLog( pMac, LOG2,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Successfully posted WDA_SEND_BEACON_REQ to HAL\n"));
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        FL("Successfully posted WDA_SEND_BEACON_REQ to HAL"));
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Successfully posted WDA_SEND_BEACON_REQ to HAL"));
 
@@ -439,10 +486,16 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
         {
             /* check whether we have to free any memory */
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog(pMac, LOGE, FL("FAILED to send probe response template with retCode %d\n"), retCode);
         }
     }
 #endif
+=======
+            schLog(pMac, LOGE, FL("FAILED to send probe response template with retCode %d"), retCode);
+        }
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog(pMac, LOGE, FL("FAILED to send probe response template with retCode %d"), retCode);
         }
@@ -454,7 +507,10 @@ tSirRetStatus schSendBeaconReq( tpAniSirGlobal pMac, tANI_U8 *beaconPayload, tAN
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEntry
@@ -470,6 +526,10 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     tANI_U32             addnIELen=0;
     tSirRetStatus        nSirStatus;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tANI_U8              *addIE = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8              *addIE = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -479,7 +539,11 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     {
         schLog( pMac, LOGE, FL("Failed to calculate the packed size f"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "or a Probe Response (0x%08x).\n"),
+=======
+                               "or a Probe Response (0x%08x)."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                "or a Probe Response (0x%08x)."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -491,6 +555,7 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     {
         schLog( pMac, LOGE, FL("There were warnings while calculating"
                                "the packed size for a Probe Response "
+<<<<<<< HEAD
 <<<<<<< HEAD
                                "(0x%08x).\n"), nStatus );
     }
@@ -541,6 +606,8 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     }
        
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "(0x%08x)."), nStatus );
     }
 
@@ -598,6 +665,9 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
             addnIEPresent = false; //Dont include the IE.
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Paranoia:
     palZeroMemory( pMac->hHdd, pFrame2Hal, nBytes );
@@ -610,22 +680,34 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     {
         schLog( pMac, LOGE, FL("Failed to populate the buffer descrip"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "tor for a Probe Response (%d).\n"),
                 nSirStatus );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "tor for a Probe Response (%d)."),
                 nSirStatus );
 
         palFreeMemory(pMac->hHdd, addIE);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return retCode;
     }
 
     pMacHdr = ( tpSirMacMgmtHdr ) pFrame2Hal;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
     sirCopyMacAddr(pMacHdr->bssId,psessionEntry->bssId);
     
+=======
+
+    sirCopyMacAddr(pMacHdr->bssId,psessionEntry->bssId);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     sirCopyMacAddr(pMacHdr->bssId,psessionEntry->bssId);
@@ -638,13 +720,19 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     if ( DOT11F_FAILED( nStatus ) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog( pMac, LOGE, FL("Failed to pack a Probe Response (0x%08x).\n"),
                 nStatus );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         schLog( pMac, LOGE, FL("Failed to pack a Probe Response (0x%08x)."),
                 nStatus );
 
         palFreeMemory(pMac->hHdd, addIE);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return retCode;                 // allocated!
     }
@@ -652,10 +740,13 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     {
         schLog( pMac, LOGE, FL("There were warnings while packing a P"
 <<<<<<< HEAD
+<<<<<<< HEAD
                                "robe Response (0x%08x).\n") );
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                "robe Response (0x%08x).") );
     }
 
@@ -675,13 +766,20 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     /* free the allocated Memory */
     palFreeMemory(pMac->hHdd, addIE);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
                                                 (void **) &pprobeRespParams,
                                                 sizeof( tSendProbeRespParams )))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog( pMac, LOGE, FL("limSendProbeRspTemplateToHal: HAL probe response params malloc failed for bytes %d\n"), nBytes );
+=======
+        schLog( pMac, LOGE, FL("limSendProbeRspTemplateToHal: HAL probe response params malloc failed for bytes %d"), nBytes );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schLog( pMac, LOGE, FL("limSendProbeRspTemplateToHal: HAL probe response params malloc failed for bytes %d"), nBytes );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -700,7 +798,11 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
         palCopyMemory(pMac,pprobeRespParams->ucProxyProbeReqValidIEBmap,IeBitmap,
                             (sizeof(tANI_U32) * 8));
 <<<<<<< HEAD
+<<<<<<< HEAD
         msgQ.type     = WDA_UPDATE_PROBE_RSP_TEMPLATE_IND; 
+=======
+        msgQ.type     = WDA_UPDATE_PROBE_RSP_TEMPLATE_IND;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         msgQ.type     = WDA_UPDATE_PROBE_RSP_TEMPLATE_IND;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -712,7 +814,11 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
         {
             /* free the allocated Memory */
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog( pMac,LOGE, FL("limSendProbeRspTemplateToHal: FAIL bytes %d retcode[%X]\n"), nBytes , retCode );
+=======
+            schLog( pMac,LOGE, FL("limSendProbeRspTemplateToHal: FAIL bytes %d retcode[%X]"), nBytes , retCode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog( pMac,LOGE, FL("limSendProbeRspTemplateToHal: FAIL bytes %d retcode[%X]"), nBytes , retCode );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -727,7 +833,10 @@ tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal pMac,tpPESession psessionEn
     return retCode;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -74,9 +80,12 @@
 #include "vos_nvitem.h"
 #include "p2p_Api.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halFw.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -121,15 +130,21 @@ typedef struct _smeConfigParams
 #endif
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8   isFastTransitionEnabled;
     tANI_U8   RoamRssiDiff;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8       isFastTransitionEnabled;
     tANI_U8       RoamRssiDiff;
     tANI_BOOLEAN  isWESModeEnabled;
 #endif
     tANI_U8  isAmsduSupportInAMPDU;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSmeConfigParams, *tpSmeConfigParams;
 
@@ -239,7 +254,11 @@ eHalStatus sme_Stop(tHalHandle hHal, tANI_BOOLEAN pmcFlag);
   
   --------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus sme_OpenSession(tHalHandle hHal, csrRoamCompleteCallback callback, void *pContext, 
+=======
+eHalStatus sme_OpenSession(tHalHandle hHal, csrRoamCompleteCallback callback, void *pContext,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eHalStatus sme_OpenSession(tHalHandle hHal, csrRoamCompleteCallback callback, void *pContext,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -313,7 +332,10 @@ eHalStatus sme_UpdateChannelConfig(tHalHandle hHal);
 
 #endif // FEATURE_WLAN_SCAN_PNLO
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------------
@@ -356,7 +378,10 @@ eHalStatus sme_getSoftApDomain(tHalHandle hHal,  v_REGDOMAIN_t *domainIdSoftAp);
 eHalStatus sme_setRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -570,7 +595,11 @@ eHalStatus sme_RoamConnect(tHalHandle hHal, tANI_U8 sessionId, tCsrRoamProfile *
 eHalStatus sme_RoamReassoc(tHalHandle hHal, tANI_U8 sessionId, tCsrRoamProfile *pProfile,
                           tCsrRoamModifyProfileFields modProfileFields,
 <<<<<<< HEAD
+<<<<<<< HEAD
                           tANI_U32 *pRoamId);
+=======
+                          tANI_U32 *pRoamId, v_BOOL_t fForce);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                           tANI_U32 *pRoamId, v_BOOL_t fForce);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -593,7 +622,10 @@ eHalStatus sme_RoamConnectToLastProfile(tHalHandle hHal, tANI_U8 sessionId);
 eHalStatus sme_RoamDisconnect(tHalHandle hHal, tANI_U8 sessionId, eCsrRoamDisconnectReason reason);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
@@ -661,7 +693,10 @@ eHalStatus sme_RoamGetWpsSessionOverlap(tHalHandle hHal, tANI_U8 sessionId,
                                         void *pUsrContext, void *pfnSapEventCallback,
                                         v_MACADDR_t pRemoveMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -813,8 +848,11 @@ eHalStatus sme_GetRssi(tHalHandle hHal,
                              tCsrRssiCallback callback, 
                              tANI_U8 staId, tCsrBssid bssId, void *pContext, void* pVosContext);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
 eHalStatus sme_GetRoamRssi(tHalHandle hHal,
                            tCsrRssiCallback callback,
@@ -823,6 +861,9 @@ eHalStatus sme_GetRoamRssi(tHalHandle hHal,
                            void *pContext,
                            void* pVosContext);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
     \fn sme_CfgSetInt
@@ -941,7 +982,10 @@ extern eHalStatus sme_DisablePowerSave (
    tPmcPowerSavingMode psMode);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  /* ---------------------------------------------------------------------------
    \fn sme_SetHostPowerSave
     \brief   The BMPS logic is controlled by the User level Apps
@@ -953,6 +997,9 @@ extern eHalStatus sme_SetHostPowerSave (
    tHalHandle hHal,
    v_BOOL_t psMode);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
     \fn sme_StartAutoBmpsTimer
@@ -1186,7 +1233,12 @@ extern eHalStatus sme_DeregisterDeviceStateUpdateInd (
 extern eHalStatus sme_WowlAddBcastPattern (
    tHalHandle hHal, 
 <<<<<<< HEAD
+<<<<<<< HEAD
    tpSirWowlAddBcastPtrn pattern);
+=======
+   tpSirWowlAddBcastPtrn pattern,
+   tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tpSirWowlAddBcastPtrn pattern,
    tANI_U8 sessionId);
@@ -1204,7 +1256,12 @@ extern eHalStatus sme_WowlAddBcastPattern (
 extern eHalStatus sme_WowlDelBcastPattern (
    tHalHandle hHal, 
 <<<<<<< HEAD
+<<<<<<< HEAD
    tpSirWowlDelBcastPtrn pattern);
+=======
+   tpSirWowlDelBcastPtrn pattern,
+   tANI_U8   sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    tpSirWowlDelBcastPtrn pattern,
    tANI_U8   sessionId);
@@ -1253,7 +1310,11 @@ extern eHalStatus sme_EnterWowl (
     void *wakeReasonIndCBContext,
 #endif // WLAN_WAKEUP_EVENTS
 <<<<<<< HEAD
+<<<<<<< HEAD
     tpSirSmeWowlEnterParams wowlEnterParams);
+=======
+    tpSirSmeWowlEnterParams wowlEnterParams, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tpSirSmeWowlEnterParams wowlEnterParams, tANI_U8 sessionId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1562,11 +1623,14 @@ VOS_STATUS sme_DbgReadMemory(tHalHandle hHal, v_U32_t memAddr, v_U8_t *pBuf, v_U
 VOS_STATUS sme_DbgWriteMemory(tHalHandle hHal, v_U32_t memAddr, v_U8_t *pBuf, v_U32_t nLen);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 //sme_GetFwVersion
 VOS_STATUS sme_GetFwVersion (tHalHandle hHal,FwVersionInfo *pVersion);
 #endif
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS sme_GetWcnssWlanCompiledVersion(tHalHandle hHal,
@@ -1580,7 +1644,10 @@ VOS_STATUS sme_GetWcnssHardwareVersion(tHalHandle hHal,
                                        tANI_U8 *pVersion,
                                        tANI_U32 versionBufferSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus sme_RoamRegisterCallback(tHalHandle hHal,
@@ -1682,7 +1749,10 @@ eHalStatus sme_getOemDataRsp(tHalHandle hHal,
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1696,9 +1766,15 @@ eHalStatus sme_getOemDataRsp(tHalHandle hHal,
     \param pAPWPSIES - pointer to a caller allocated object of tCsrRoamAPWPSIES
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     \return eHalStatus  SUCCESS  Roam callback will be called indicate actually results
 
                          FAILURE or RESOURCES  The API finished and failed.
+=======
+    \return eHalStatus  SUCCESS  Roam callback will be called indicate actually results
+
+                         FAILURE or RESOURCES  The API finished and failed.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     \return eHalStatus  SUCCESS  Roam callback will be called indicate actually results
 
@@ -1718,9 +1794,15 @@ eHalStatus sme_RoamUpdateAPWPSIE(tHalHandle, tANI_U8 sessionId, tSirAPWPSIEs *pA
     \param pAPSirRSNie - pointer to a caller allocated object of tSirRSNie with WPS/RSN IEs
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     \return eHalStatus  SUCCESS  
 
                          FAILURE or RESOURCES  The API finished and failed.
+=======
+    \return eHalStatus  SUCCESS  
+
+                         FAILURE or RESOURCES  The API finished and failed.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     \return eHalStatus  SUCCESS  
 
@@ -1731,8 +1813,11 @@ eHalStatus sme_RoamUpdateAPWPSIE(tHalHandle, tANI_U8 sessionId, tSirAPWPSIEs *pA
 eHalStatus sme_RoamUpdateAPWPARSNIEs(tHalHandle hHal, tANI_U8 sessionId, tSirRSNie * pAPSirRSNie);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     sme_ChangeMCCBeaconInterval
@@ -1746,6 +1831,9 @@ eHalStatus sme_RoamUpdateAPWPARSNIEs(tHalHandle hHal, tANI_U8 sessionId, tSirRSN
 eHalStatus sme_ChangeMCCBeaconInterval(tHalHandle hHal, tANI_U8 sessionId);
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
@@ -1754,9 +1842,14 @@ eHalStatus sme_ChangeMCCBeaconInterval(tHalHandle hHal, tANI_U8 sessionId);
   \param  hHal - The handle returned by macOpen.
   \param  btAmpEvent -- btAMP event
 <<<<<<< HEAD
+<<<<<<< HEAD
   \return eHalStatus  SUCCESS 
 
                          FAILURE or RESOURCES  The API finished and failed.
+=======
+  \return eHalStatus  SUCCESS 
+                         FAILURE or RESOURCES  The API finished and failed.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   \return eHalStatus  SUCCESS 
                          FAILURE or RESOURCES  The API finished and failed.
@@ -1810,7 +1903,10 @@ eHalStatus sme_AbortMacScan(tHalHandle hHal);
 eHalStatus sme_GetOperationChannel(tHalHandle hHal, tANI_U32 *pChannel, tANI_U8 sessionId);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
@@ -1841,7 +1937,10 @@ eHalStatus sme_RegisterMgmtFrame(tHalHandle hHal, tANI_U8 sessionId,
 eHalStatus sme_DeregisterMgmtFrame(tHalHandle hHal, tANI_U8 sessionId, 
                      tANI_U16 frameType, tANI_U8* matchData, tANI_U16 matchLen);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1896,7 +1995,10 @@ eHalStatus sme_ConfigureRxpFilter( tHalHandle hHal,
 eHalStatus sme_ConfigureAppsCpuWakeupState( tHalHandle hHal, tANI_BOOLEAN  isAppsAwake);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
@@ -1944,7 +2046,10 @@ eHalStatus sme_ConfigureResumeReq( tHalHandle hHal,
                              tpSirWlanResumeParam  wlanResumeParam);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2054,16 +2159,22 @@ eHalStatus sme_PreferredNetworkFoundInd (tHalHandle hHal, void* pMsg);
     \param  hHal - The handle returned by macOpen.
     \param  pwParams -  Pointer to the power parameters requested.
 <<<<<<< HEAD
+<<<<<<< HEAD
     \return eHalStatus
   ---------------------------------------------------------------------------*/
 eHalStatus sme_SetPowerParams(tHalHandle hHal, tSirSetPowerParamsReq* pwParams);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \param  forced - if true, not to be dropped silently in host, it must reach
     FW; It is added to avoid a race condition scenario where LIM hasn't deleted
     the session yet before power params gets sent to PMC
     \return eHalStatus
   ---------------------------------------------------------------------------*/
 eHalStatus sme_SetPowerParams(tHalHandle hHal, tSirSetPowerParamsReq* pwParams, tANI_BOOLEAN forced);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
@@ -2088,7 +2199,11 @@ eHalStatus sme_SetTxPerTracking (
     \return eHalStatus   
   ---------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus sme_8023MulticastList(tHalHandle hHal, tpSirRcvFltMcAddrList pMulticastAddrs);
+=======
+eHalStatus sme_8023MulticastList(tHalHandle hHal, tANI_U8 sessionId, tpSirRcvFltMcAddrList pMulticastAddrs);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eHalStatus sme_8023MulticastList(tHalHandle hHal, tANI_U8 sessionId, tpSirRcvFltMcAddrList pMulticastAddrs);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2104,7 +2219,10 @@ eHalStatus sme_ReceiveFilterSetFilter(tHalHandle hHal, tpSirRcvPktFilterCfgType 
                                            tANI_U8 sessionId);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // IKJB42MAIN-1244, Motorola, a19091 -- BEGIN
 /* ---------------------------------------------------------------------------
     \fn sme_ReceiveSetMcFilter
@@ -2115,6 +2233,9 @@ eHalStatus sme_ReceiveFilterSetFilter(tHalHandle hHal, tpSirRcvPktFilterCfgType 
 eHalStatus sme_ReceiveSetMcFilter(tSirInvokeV6Filter *filterConfig);
 // IKJB42MAIN-1244, Motorola, a19091 -- END
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
     \fn sme_GetFilterMatchCount
@@ -2127,7 +2248,12 @@ eHalStatus sme_ReceiveSetMcFilter(tSirInvokeV6Filter *filterConfig);
 eHalStatus sme_GetFilterMatchCount(tHalHandle hHal, 
                                    FilterMatchCountCallback callbackRoutine, 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    void *callbackContext );
+=======
+                                   void *callbackContext,
+                                   tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    void *callbackContext,
                                    tANI_U8 sessionId);
@@ -2199,7 +2325,11 @@ eHalStatus sme_SetTxPerTracking (
     \return eHalStatus
   ---------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus sme_SetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pRequest);
+=======
+eHalStatus sme_SetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pRequest, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eHalStatus sme_SetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pRequest, tANI_U8 sessionId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2212,7 +2342,12 @@ eHalStatus sme_SetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pRequest, t
     \return eHalStatus
   ---------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus sme_GetGTKOffload (tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, void *callbackContext );
+=======
+eHalStatus sme_GetGTKOffload (tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, 
+                                    void *callbackContext, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eHalStatus sme_GetGTKOffload (tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, 
                                     void *callbackContext, tANI_U8 sessionId);
@@ -2274,8 +2409,11 @@ eHalStatus sme_SetMaxTxPower(tHalHandle hHal, tSirMacAddr pBssid,
                              tSirMacAddr pSelfMacAddress, v_S7_t dB);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     \fn sme_SetTxPower
@@ -2291,6 +2429,9 @@ eHalStatus sme_SetMaxTxPower(tHalHandle hHal, tSirMacAddr pBssid,
   -------------------------------------------------------------------------------*/
 eHalStatus sme_SetTxPower(tHalHandle hHal, v_U8_t sessionId, v_U8_t mW);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
@@ -2307,7 +2448,10 @@ eHalStatus sme_SetTxPower(tHalHandle hHal, v_U8_t sessionId, v_U8_t mW);
   -------------------------------------------------------------------------------*/
 eHalStatus sme_HideSSID(tHalHandle hHal, v_U8_t sessionId, v_U8_t ssidHidden);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2337,7 +2481,10 @@ void sme_featureCapsExchange(tHalHandle hHal);
 /*---------------------------------------------------------------------------
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \brief sme_disableActiveModeOffload() - SME interface to disable Active mode Offload capabilitu
   between in Host.
 
@@ -2350,6 +2497,9 @@ void sme_disableFeatureCapablity(tANI_U8 feature_index);
 
 /*---------------------------------------------------------------------------
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \brief sme_GetDefaultCountryCodeFrmNv() - SME interface to get the default 
          country code
@@ -2359,7 +2509,11 @@ void sme_disableFeatureCapablity(tANI_U8 feature_index);
   \param  pCountry - pointer to country code
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   \return Sucess or failure
+=======
+  \return Success or failure
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   \return Success or failure
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2385,7 +2539,12 @@ eHalStatus sme_GetCurrentCountryCode(tHalHandle hHal, tANI_U8 *pCountry);
     \brief  Dynamically monitoring Transport channels
             Private IOCTL will querry transport channel status if driver loaded
 <<<<<<< HEAD
+<<<<<<< HEAD
     \param  displaySnapshot Dispaly transport cahnnel snapshot option
+=======
+    \param  hHal Upper MAC context
+    \param  displaySnapshot Display transport channel snapshot option
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     \param  hHal Upper MAC context
     \param  displaySnapshot Display transport channel snapshot option
@@ -2396,12 +2555,15 @@ eHalStatus sme_GetCurrentCountryCode(tHalHandle hHal, tANI_U8 *pCountry);
     \- return NONE
     -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 void sme_transportDebug
 (
    v_BOOL_t  displaySnapshot,
    v_BOOL_t  toggleStallDetect
 );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void sme_transportDebug(tHalHandle hHal, v_BOOL_t displaySnapshot, v_BOOL_t toggleStallDetect);
 
 /* ---------------------------------------------------------------------------
@@ -3022,5 +3184,8 @@ tANI_U8 sme_isHostFeatSupported(tANI_U8 featCap);
 -----------------------------------------------------------------------------*/
 tANI_U8 sme_isFwFeatSupported(tANI_U8 featCap);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //#if !defined( __SME_API_H )

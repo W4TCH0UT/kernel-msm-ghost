@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -50,9 +56,15 @@
 Contains definitions of all PHY related structures that aree needed by FTM/PTT
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 2007 QUALCOMM Incorporated. 
 All Rights Reserved. 
 Qualcomm Confidential and Proprietary 
+=======
+Copyright (c) 2007 Qualcomm Technologies, Inc. All Rights Reserved. 
+Qualcomm Technologies Proprietary and Confidential
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 Copyright (c) 2007 Qualcomm Technologies, Inc. All Rights Reserved. 
 Qualcomm Technologies Proprietary and Confidential
@@ -114,13 +126,19 @@ typedef enum {
    PHYDBG_PREAMBLE_MIXED,
    PHYDBG_PREAMBLE_SHORTB,
 <<<<<<< HEAD
+<<<<<<< HEAD
    PHYDBG_PREAMBLE_LONGB
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    PHYDBG_PREAMBLE_LONGB,
 
    PHYDBG_LDPC_PREAMBLE_OFDM = 0x10,
    PHYDBG_LDPC_PREAMBLE_GREENFIELD = 0x11,
    PHYDBG_LDPC_PREAMBLE_MIXED = 0x12
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } ePhyDbgPreamble;
 
@@ -249,6 +267,11 @@ typedef tANI_U32 eGainSteps;
 #define DPD_RESPONSE_SIZE 128
 typedef PACKED_PRE struct PACKED_POST {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tANI_U8  dpdCalFailCnt;                     //Count for number of times DPD cal failed.
+    tANI_U8  dpdCalSuccessCnt;                  //Count for number of times DPD cal passed.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U8  dpdCalFailCnt;                     //Count for number of times DPD cal failed.
     tANI_U8  dpdCalSuccessCnt;                  //Count for number of times DPD cal passed.
@@ -933,7 +956,10 @@ typedef enum
 #define MIN_TPC_GAIN_LUT_DBM_2DEC_PLACES    (MIN_TPC_GAIN_LUT_DBM * 100)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef enum
 {
     RF_BANDWIDTH_20MHZ = 20,
@@ -944,5 +970,8 @@ typedef enum
     RF_BANDWIDTH_INVALID = 0x7FFFFFFF
 }eRfBandwidth;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* WLAN_PHY_H */

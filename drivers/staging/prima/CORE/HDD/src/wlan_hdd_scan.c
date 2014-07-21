@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -86,10 +92,15 @@
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
 #include <linux/wireless.h>
 #include <net/cfg80211.h>
 #endif
+=======
+#include <linux/wireless.h>
+#include <net/cfg80211.h>
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include <linux/wireless.h>
 #include <net/cfg80211.h>
@@ -294,7 +305,11 @@ static eHalStatus hdd_IndicateScanResult(hdd_scan_info_t *scanInfo, tCsrScanResu
    default:
        hddLog( LOGW, "%s: Unknown network type [%d]",
 <<<<<<< HEAD
+<<<<<<< HEAD
               __FUNCTION__, descriptor->nwType);
+=======
+              __func__, descriptor->nwType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               __func__, descriptor->nwType);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -422,7 +437,11 @@ static eHalStatus hdd_IndicateScanResult(hdd_scan_info_t *scanInfo, tCsrScanResu
           int i;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           numBasicRates = pDot11SuppRates->num_rates;;
+=======
+          numBasicRates = pDot11SuppRates->num_rates;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           numBasicRates = pDot11SuppRates->num_rates;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -553,7 +572,11 @@ static eHalStatus hdd_IndicateScanResult(hdd_scan_info_t *scanInfo, tCsrScanResu
    event.cmd = IWEVCUSTOM;
    p = custom;
 <<<<<<< HEAD
+<<<<<<< HEAD
    p += snprintf(p, MAX_CUSTOM_LEN, " Age: %lu",
+=======
+   p += scnprintf(p, MAX_CUSTOM_LEN, " Age: %lu",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    p += scnprintf(p, MAX_CUSTOM_LEN, " Age: %lu",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -593,6 +616,10 @@ static eHalStatus hdd_ScanRequestCallback(tHalHandle halHandle, void *pContext,
     struct net_device *dev = (struct net_device *) pContext;
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -604,7 +631,11 @@ static eHalStatus hdd_ScanRequestCallback(tHalHandle halHandle, void *pContext,
 
     hddLog(LOGW,"%s called with halHandle = %p, pContext = %p, scanID = %d,"
 <<<<<<< HEAD
+<<<<<<< HEAD
            " returned status = %d", __FUNCTION__, halHandle, pContext,
+=======
+           " returned status = %d", __func__, halHandle, pContext,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            " returned status = %d", __func__, halHandle, pContext,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -618,7 +649,11 @@ static eHalStatus hdd_ScanRequestCallback(tHalHandle halHandle, void *pContext,
     {
        hddLog(LOGW, "%s: device mismatch %p vs %p",
 <<<<<<< HEAD
+<<<<<<< HEAD
                __FUNCTION__, pAdapter->dev, dev);
+=======
+               __func__, pAdapter->dev, dev);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                __func__, pAdapter->dev, dev);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -627,22 +662,32 @@ static eHalStatus hdd_ScanRequestCallback(tHalHandle halHandle, void *pContext,
 
     /* Check the scanId */
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (pAdapter->scan_info.scanId != scanId)
     {
         hddLog(LOGW, "%s called with mismatched scanId pAdapter->scan_info.scanId = %d "
                "scanId = %d ", __FUNCTION__, (int) pAdapter->scan_info.scanId,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pHddCtx->scan_info.scanId != scanId)
     {
         hddLog(LOGW, "%s called with mismatched scanId pHddCtx->scan_info.scanId = %d "
                "scanId = %d ", __func__, (int) pHddCtx->scan_info.scanId,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 (int) scanId);
     }
 
     /* Scan is no longer pending */
 <<<<<<< HEAD
+<<<<<<< HEAD
     pAdapter->scan_info.mScanPending = VOS_FALSE;
+=======
+    pHddCtx->scan_info.mScanPending = VOS_FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pHddCtx->scan_info.mScanPending = VOS_FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -681,6 +726,10 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
 {
    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -703,7 +752,11 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
    }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(pAdapter->scan_info.mScanPending == TRUE)
+=======
+   if(pHddCtx->scan_info.mScanPending == TRUE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if(pHddCtx->scan_info.mScanPending == TRUE)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -722,7 +775,11 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
    {
        /* set scanType, active or passive */
 <<<<<<< HEAD
+<<<<<<< HEAD
        if ((IW_SCAN_TYPE_ACTIVE ==  scanReq->scan_type) || (eSIR_ACTIVE_SCAN == pAdapter->scan_info.scan_mode))
+=======
+       if ((IW_SCAN_TYPE_ACTIVE ==  scanReq->scan_type) || (eSIR_ACTIVE_SCAN == pHddCtx->scan_info.scan_mode))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        if ((IW_SCAN_TYPE_ACTIVE ==  scanReq->scan_type) || (eSIR_ACTIVE_SCAN == pHddCtx->scan_info.scan_mode))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -751,7 +808,11 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
               {
                 scanRequest.SSIDs.numOfSSIDs = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, "%s: Unable to allocate memory",__FUNCTION__);
+=======
+                VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, "%s: Unable to allocate memory",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, "%s: Unable to allocate memory",__func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -768,7 +829,11 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
    else
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        if(pAdapter->scan_info.scan_mode == eSIR_ACTIVE_SCAN) {
+=======
+       if(pHddCtx->scan_info.scan_mode == eSIR_ACTIVE_SCAN) {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        if(pHddCtx->scan_info.scan_mode == eSIR_ACTIVE_SCAN) {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -800,6 +865,7 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
    if (0 != pwextBuf->genIE.length)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
        memset( &pAdapter->scan_info.scanAddIE, 0, sizeof(pAdapter->scan_info.scanAddIE) );
        memcpy( pAdapter->scan_info.scanAddIE.addIEdata, pwextBuf->genIE.addIEdata, 
            pwextBuf->genIE.length );
@@ -808,6 +874,8 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
        pwextBuf->roamProfile.pAddIEScan = pAdapter->scan_info.scanAddIE.addIEdata;
        pwextBuf->roamProfile.nAddIEScanLength = pAdapter->scan_info.scanAddIE.length;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        memset( &pHddCtx->scan_info.scanAddIE, 0, sizeof(pHddCtx->scan_info.scanAddIE) );
        memcpy( pHddCtx->scan_info.scanAddIE.addIEdata, pwextBuf->genIE.addIEdata, 
            pwextBuf->genIE.length );
@@ -815,6 +883,9 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
 
        pwextBuf->roamProfile.pAddIEScan = pHddCtx->scan_info.scanAddIE.addIEdata;
        pwextBuf->roamProfile.nAddIEScanLength = pHddCtx->scan_info.scanAddIE.length;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
        /* clear previous genIE after use it */
@@ -823,17 +894,23 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
 
    /* push addIEScan in scanRequset if exist */
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (pAdapter->scan_info.scanAddIE.addIEdata && 
        pAdapter->scan_info.scanAddIE.length)
    { 
        scanRequest.uIEFieldLen = pAdapter->scan_info.scanAddIE.length;
        scanRequest.pIEField = pAdapter->scan_info.scanAddIE.addIEdata;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (pHddCtx->scan_info.scanAddIE.addIEdata && 
        pHddCtx->scan_info.scanAddIE.length)
    { 
        scanRequest.uIEFieldLen = pHddCtx->scan_info.scanAddIE.length;
        scanRequest.pIEField = pHddCtx->scan_info.scanAddIE.addIEdata;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
@@ -845,9 +922,15 @@ int iw_set_scan(struct net_device *dev, struct iw_request_info *info,
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    pAdapter->scan_info.mScanPending = TRUE;
 
    pAdapter->scan_info.scanId = scanId;
+=======
+   pHddCtx->scan_info.mScanPending = TRUE;
+
+   pHddCtx->scan_info.scanId = scanId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pHddCtx->scan_info.mScanPending = TRUE;
 
@@ -885,6 +968,10 @@ int iw_get_scan(struct net_device *dev,
 {
    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -900,7 +987,11 @@ int iw_get_scan(struct net_device *dev,
    ENTER();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (TRUE == pAdapter->scan_info.mScanPending)
+=======
+   if (TRUE == pHddCtx->scan_info.mScanPending)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (TRUE == pHddCtx->scan_info.mScanPending)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -971,7 +1062,11 @@ static eHalStatus hdd_CscanRequestCallback(tHalHandle halHandle, void *pContext,
 
     hddLog(LOG1,"%s called with halHandle = %p, pContext = %p, scanID = %d,"
 <<<<<<< HEAD
+<<<<<<< HEAD
            " returned status = %d", __FUNCTION__, halHandle, pContext,
+=======
+           " returned status = %d", __func__, halHandle, pContext,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            " returned status = %d", __func__, halHandle, pContext,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -982,7 +1077,11 @@ static eHalStatus hdd_CscanRequestCallback(tHalHandle halHandle, void *pContext,
     {
         hddLog(LOGW, "%s called with mismatched scanId pWextState->scanId = %d "
 <<<<<<< HEAD
+<<<<<<< HEAD
                "scanId = %d ", __FUNCTION__, (int) pwextBuf->scanId,
+=======
+               "scanId = %d ", __func__, (int) pwextBuf->scanId,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                "scanId = %d ", __func__, (int) pwextBuf->scanId,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1018,6 +1117,10 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1065,9 +1168,15 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
             ++i;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         pAdapter->scan_info.scan_pending_option = scanPendingOption;
 
         if(pAdapter->scan_info.mScanPending == TRUE)
+=======
+        pHddCtx->scan_info.scan_pending_option = scanPendingOption;
+
+        if(pHddCtx->scan_info.mScanPending == TRUE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pHddCtx->scan_info.scan_pending_option = scanPendingOption;
 
@@ -1079,7 +1188,11 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
             if(WEXT_SCAN_PENDING_GIVEUP == scanPendingOption)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pAdapter->scan_info.waitScanResult = FALSE;
+=======
+                pHddCtx->scan_info.waitScanResult = FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 pHddCtx->scan_info.waitScanResult = FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1090,9 +1203,15 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
             else if(WEXT_SCAN_PENDING_DELAY == scanPendingOption)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pAdapter->scan_info.waitScanResult = TRUE;
                 vos_event_reset(&pAdapter->scan_info.scan_finished_event);
                 if(vos_wait_single_event(&pAdapter->scan_info.scan_finished_event,
+=======
+                pHddCtx->scan_info.waitScanResult = TRUE;
+                vos_event_reset(&pHddCtx->scan_info.scan_finished_event);
+                if(vos_wait_single_event(&pHddCtx->scan_info.scan_finished_event,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 pHddCtx->scan_info.waitScanResult = TRUE;
                 vos_event_reset(&pHddCtx->scan_info.scan_finished_event);
@@ -1108,17 +1227,23 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
             else if(WEXT_SCAN_PENDING_PIGGYBACK == scanPendingOption)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pAdapter->scan_info.waitScanResult = TRUE;
                 return eHAL_STATUS_SUCCESS; 
             }
         }
         pAdapter->scan_info.waitScanResult = FALSE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pHddCtx->scan_info.waitScanResult = TRUE;
                 return eHAL_STATUS_SUCCESS; 
             }
         }
         pHddCtx->scan_info.waitScanResult = FALSE;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Check for scan IE */
@@ -1211,7 +1336,11 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
         {
             /* No SSID specified, num_ssid == 0, then start paasive scan */
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (!num_ssid || (eSIR_PASSIVE_SCAN == pAdapter->scan_info.scan_mode))
+=======
+            if (!num_ssid || (eSIR_PASSIVE_SCAN == pHddCtx->scan_info.scan_mode))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             if (!num_ssid || (eSIR_PASSIVE_SCAN == pHddCtx->scan_info.scan_mode))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1231,7 +1360,11 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
         if( WEXT_CSCAN_HOME_DWELL_SECTION == (str_ptr[i]) ) 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (num_ssid || (eSIR_ACTIVE_SCAN == pAdapter->scan_info.scan_mode))
+=======
+            if (num_ssid || (eSIR_ACTIVE_SCAN == pHddCtx->scan_info.scan_mode))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             if (num_ssid || (eSIR_ACTIVE_SCAN == pHddCtx->scan_info.scan_mode))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1250,7 +1383,11 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
         /* set requestType to full scan */
         scanRequest.requestType = eCSR_SCAN_REQUEST_FULL_SCAN;
 <<<<<<< HEAD
+<<<<<<< HEAD
         pAdapter->scan_info.mScanPending = TRUE;
+=======
+        pHddCtx->scan_info.mScanPending = TRUE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pHddCtx->scan_info.mScanPending = TRUE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1258,6 +1395,7 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
         /* if previous genIE is not NULL, update ScanIE */
         if(0 != pwextBuf->genIE.length)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             memset( &pAdapter->scan_info.scanAddIE, 0, sizeof(pAdapter->scan_info.scanAddIE) );
             memcpy( pAdapter->scan_info.scanAddIE.addIEdata, pwextBuf->genIE.addIEdata, 
@@ -1267,6 +1405,8 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
             pwextBuf->roamProfile.pAddIEScan = pAdapter->scan_info.scanAddIE.addIEdata;
             pwextBuf->roamProfile.nAddIEScanLength = pAdapter->scan_info.scanAddIE.length;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             memset( &pHddCtx->scan_info.scanAddIE, 0, sizeof(pHddCtx->scan_info.scanAddIE) );
             memcpy( pHddCtx->scan_info.scanAddIE.addIEdata, pwextBuf->genIE.addIEdata, 
                 pwextBuf->genIE.length );
@@ -1274,6 +1414,9 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
 
             pwextBuf->roamProfile.pAddIEScan = pHddCtx->scan_info.scanAddIE.addIEdata;
             pwextBuf->roamProfile.nAddIEScanLength = pHddCtx->scan_info.scanAddIE.length;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* clear previous genIE after use it */
@@ -1282,17 +1425,23 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
 
         /* push addIEScan in scanRequset if exist */
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (pAdapter->scan_info.scanAddIE.addIEdata && 
             pAdapter->scan_info.scanAddIE.length)
         {
             scanRequest.uIEFieldLen = pAdapter->scan_info.scanAddIE.length;
             scanRequest.pIEField = pAdapter->scan_info.scanAddIE.addIEdata;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pHddCtx->scan_info.scanAddIE.addIEdata && 
             pHddCtx->scan_info.scanAddIE.length)
         {
             scanRequest.uIEFieldLen = pHddCtx->scan_info.scanAddIE.length;
             scanRequest.pIEField = pHddCtx->scan_info.scanAddIE.addIEdata;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
@@ -1302,7 +1451,11 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s: SME scan fail status %d !!!",__func__, status);
 <<<<<<< HEAD
+<<<<<<< HEAD
             pAdapter->scan_info.mScanPending = FALSE;
+=======
+            pHddCtx->scan_info.mScanPending = FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pHddCtx->scan_info.mScanPending = FALSE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1311,7 +1464,11 @@ int iw_set_cscan(struct net_device *dev, struct iw_request_info *info,
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         pAdapter->scan_info.scanId = scanId;
+=======
+        pHddCtx->scan_info.scanId = scanId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pHddCtx->scan_info.scanId = scanId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -126,11 +132,17 @@ VOS_STATUS vos_preOpen ( v_CONTEXT_t *pVosContext );
 VOS_STATUS vos_preClose( v_CONTEXT_t *pVosContext );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 
 VOS_STATUS vos_preStart( v_CONTEXT_t vosContext );
 
 #endif
+=======
+
+VOS_STATUS vos_preStart( v_CONTEXT_t vosContext );
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 VOS_STATUS vos_preStart( v_CONTEXT_t vosContext );
@@ -332,7 +344,10 @@ VOS_STATUS vos_wlanReInit(void);
 VOS_STATUS vos_wlanRestart(void);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
   @brief vos_fwDumpReq()
 
@@ -349,5 +364,8 @@ VOS_STATUS vos_wlanRestart(void);
 */
 v_VOID_t vos_fwDumpReq(tANI_U32 cmd, tANI_U32 arg1, tANI_U32 arg2,
                         tANI_U32 arg3, tANI_U32 arg4);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // if !defined __VOS_NVITEM_H

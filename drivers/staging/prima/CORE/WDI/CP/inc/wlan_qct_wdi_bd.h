@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -313,6 +319,7 @@ typedef struct
         /* 0x10 */
 #ifdef WPT_BIG_BYTE_ENDIAN
 <<<<<<< HEAD
+<<<<<<< HEAD
     
         /** This is the length (in number of bytes) of the entire MPDU 
         (header and data). Note that the length does not include FCS field. */
@@ -327,6 +334,8 @@ typedef struct
     
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /** This is the length (in number of bytes) of the entire MPDU
         (header and data). Note that the length does not include FCS field. */
@@ -347,13 +356,20 @@ typedef struct
 #endif //WCN_PRONTO
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /** Traffic Identifier
         Indicates the traffic class the frame belongs to. For non QoS frames,
         this field is set to zero. */
         wpt_uint32 tid:4;
 <<<<<<< HEAD
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -362,6 +378,7 @@ typedef struct
         wpt_uint32 reserved4:8;
         wpt_uint32 tid:4;
 #ifdef WCN_PRONTO
+<<<<<<< HEAD
 <<<<<<< HEAD
         wpt_uint32 rxDXEPriorityRouting:1; 
         wpt_uint32 reserved3: 3;
@@ -373,6 +390,8 @@ typedef struct
 #endif
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         wpt_uint32 rxDXEPriorityRouting:1;
         wpt_uint32 reserved3: 1;
 #else
@@ -388,6 +407,9 @@ typedef struct
         wpt_uint32 mpduLength:16;
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* 0x14 */
 #ifdef WPT_BIG_BYTE_ENDIAN

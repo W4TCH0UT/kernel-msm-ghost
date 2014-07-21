@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -32,7 +36,11 @@
  *  @author:   Kumar Anand
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *             Copyright (C) 2010, Qualcomm, Inc. 
+=======
+ *             Copyright (C) 2010, Qualcomm Technologies, Inc. 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  *             Copyright (C) 2010, Qualcomm Technologies, Inc. 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -47,7 +55,11 @@
   Include Files
 -------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <wlan_defs.h>
+=======
+#include "qwlanfw_defs.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "qwlanfw_defs.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -161,12 +173,15 @@
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_A2DP              95
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO               96
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define QWLAN_HAL_CFG_MAX_PARAMS                         97
 
 
 /* Total number of Integer CFGs. This is used while allocating the memory for TLV */
 #define QWLAN_HAL_CFG_INTEGER_PARAM                      93
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER              97
 #define QWLAN_HAL_CFG_MAX_ASSOC_LIMIT                    98
 #define QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION         99
@@ -181,6 +196,9 @@
 
 /* Total number of Integer CFGs. This is used while allocating the memory for TLV */
 #define QWLAN_HAL_CFG_INTEGER_PARAM                      100
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -299,7 +317,11 @@
  */
 #define QWLAN_HAL_CFG_FIXED_RATE_STAMIN                        0
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define QWLAN_HAL_CFG_FIXED_RATE_STAMAX                        44
+=======
+#define QWLAN_HAL_CFG_FIXED_RATE_STAMAX                        226
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define QWLAN_HAL_CFG_FIXED_RATE_STAMAX                        226
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -745,6 +767,7 @@
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO_DEF 0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef struct 
 {
    uint8    cfgStaId[QCOM_WLAN_CFG_STA_ID_LEN]; //QWLAN_HAL_CFG_STA_ID
@@ -847,6 +870,8 @@ typedef struct
    uint32   cfgBtcDhcpProtOnSco;              //QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO
 }tAniHalCfg, *tpAniHalCfg;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER */
 #define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER_MIN  0
 #define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER_MAX  1
@@ -883,6 +908,9 @@ typedef struct
 #define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER_MIN    0
 #define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER_MAX    300
 #define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER_DEF    300
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif //__WLAN_HAL_CFG_H__

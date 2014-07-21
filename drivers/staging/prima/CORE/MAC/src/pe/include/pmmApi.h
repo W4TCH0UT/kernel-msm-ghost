@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -74,9 +80,12 @@ extern void pmmResetStats(void *pvMac);
 extern void pmmProcessMessage(tpAniSirGlobal, tpSirMsgQ);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /// Process the PM message queue
 extern void pmmProcessMessageQueue(tpAniSirGlobal pMac);
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 extern void pmmProcessPSPoll(tpAniSirGlobal, tANI_U8 *);
@@ -84,11 +93,15 @@ extern void pmmUpdatePSPollState(tpAniSirGlobal);
 extern void pmmProcessRxActivity(tpAniSirGlobal, tANI_U16, tANI_U8);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 extern void pmmGenerateTIM(tpAniSirGlobal, tANI_U8 **, tANI_U16 *, tANI_U8);
 #else
 extern void pmmGenerateTIM(tpAniSirGlobal, tANI_U8 **, tANI_U16 *);
 #endif
+=======
+extern void pmmGenerateTIM(tpAniSirGlobal, tANI_U8 **, tANI_U16 *, tANI_U8);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 extern void pmmGenerateTIM(tpAniSirGlobal, tANI_U8 **, tANI_U16 *, tANI_U8);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -110,7 +123,11 @@ void pmmHandleTimBasedDisassociation(tpAniSirGlobal pMac, tpPESession psessionEn
 void pmmInitBmpsPwrSave(tpAniSirGlobal pMac);
 tSirRetStatus  pmmSendInitPowerSaveMsg(tpAniSirGlobal pMac,tpPESession);
 <<<<<<< HEAD
+<<<<<<< HEAD
 void pmmInitBmpsResponseHandler(tpAniSirGlobal pMac, eHalStatus rspStatus);
+=======
+void pmmInitBmpsResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void pmmInitBmpsResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -127,7 +144,11 @@ void pmmEnterUapsdRequestHandler (tpAniSirGlobal pMac);
 void pmmEnterUapsdResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
 void pmmExitUapsdRequestHandler (tpAniSirGlobal pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 void pmmExitUapsdResponseHandler(tpAniSirGlobal pMac, eHalStatus rspStatus);
+=======
+void pmmExitUapsdResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void pmmExitUapsdResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -146,9 +167,15 @@ void pmmEnterWowlRequestHandler(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
 tSirRetStatus pmmSendWowlEnterRequest(tpAniSirGlobal pMac, tpSirHalWowlEnterParams pHalWowlParams);
 void pmmEnterWowlanResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
 <<<<<<< HEAD
+<<<<<<< HEAD
 tSirRetStatus  pmmSendExitWowlReq(tpAniSirGlobal pMac);
 void pmmExitWowlanRequestHandler(tpAniSirGlobal pMac);
 void pmmExitWowlanResponseHandler(tpAniSirGlobal pMac, eHalStatus rspStatus);
+=======
+tSirRetStatus  pmmSendExitWowlReq(tpAniSirGlobal pMac, tpSirHalWowlExitParams pHalWowlParams);
+void pmmExitWowlanRequestHandler(tpAniSirGlobal pMac);
+void pmmExitWowlanResponseHandler(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus  pmmSendExitWowlReq(tpAniSirGlobal pMac, tpSirHalWowlExitParams pHalWowlParams);
 void pmmExitWowlanRequestHandler(tpAniSirGlobal pMac);

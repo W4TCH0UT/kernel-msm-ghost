@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -88,12 +94,18 @@ typedef struct sCsrNeighborRoamCfgParams
     tANI_U32        maxChannelScanTime;
     tANI_U16        neighborResultsRefreshPeriod;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     tCsrCountryChannelInfo countryChannelInfo;
 #endif
     tANI_U16        emptyScanRefreshPeriod;
     tANI_U32        emptyScanMaxPeriod;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tCsrNeighborRoamCfgParams, *tpCsrNeighborRoamCfgParams;
 
@@ -141,8 +153,11 @@ typedef struct sCsr11rAssocNeighborInfo
     tANI_BOOLEAN                neighborRptPending;
     tANI_U8                     currentNeighborRptRetryNum;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tPalTimerHandle             preAuthRspWaitTimer; //This timer is used for preauth response
     tCsrTimerInfo               preAuthRspWaitTimerInfo;
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrPreauthFailListInfo     preAuthFailList;
@@ -162,6 +177,7 @@ typedef struct sCsr11rAssocNeighborInfo
 #define NEIGHBOR_LOOKUP_THRESHOLD_INCREMENT_CONSTANT    5
 #define LOOKUP_THRESHOLD_INCREMENT_MULTIPLIER_MAX       4
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* 
  * For every scan that results in no candidates, double the scan periodicity 
  * (initialized to NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MIN) until we hit 
@@ -172,6 +188,8 @@ typedef struct sCsr11rAssocNeighborInfo
 #define NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MIN (1000)
 #define NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MAX (60000)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Set lookup UP threshold 5 dB higher than the configured
  * lookup DOWN threshold to minimize thrashing between
@@ -196,6 +214,9 @@ typedef enum
     SPLIT_SCAN_OCCUPIED_LIST=1,
 } eNeighborRoamScanMode;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Complete control information for neighbor roam algorithm */
@@ -209,6 +230,10 @@ typedef struct sCsrNeighborRoamControlInfo
     tPalTimerHandle             neighborScanTimer;
     tPalTimerHandle             neighborResultsRefreshTimer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    tPalTimerHandle             emptyScanRefreshTimer;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tPalTimerHandle             emptyScanRefreshTimer;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -230,8 +255,11 @@ typedef struct sCsrNeighborRoamControlInfo
     tANI_U32                    MinQBssLoadRequired;
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16                    currentScanResultsRefreshPeriod;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
     tANI_U8                     uEmptyScanCount; /* Consecutive number of times scan
                                                     yielded no results. */
@@ -243,6 +271,9 @@ typedef struct sCsrNeighborRoamControlInfo
     tANI_U8                     uEmptyScanRefreshTimerCount;
     tANI_U32                    emptyScanTotalTime;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tCsrNeighborRoamControlInfo, *tpCsrNeighborRoamControlInfo;
 
@@ -260,7 +291,11 @@ VOS_STATUS csrNeighborRoamTransitionToPreauthDone(tpAniSirGlobal pMac);
 eHalStatus csrNeighborRoamPrepareScanProfileFilter(tpAniSirGlobal pMac, tCsrScanResultFilter *pScanFilter);
 void csrNeighborRoamGetHandoffAPInfo(tpAniSirGlobal pMac, tpCsrNeighborRoamBSSInfo pHandoffNode);
 <<<<<<< HEAD
+<<<<<<< HEAD
 eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, VOS_STATUS vosStatus);
+=======
+eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus limStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus limStatus);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -271,8 +306,11 @@ VOS_STATUS csrNeighborRoamCreateChanListFromNeighborReport(tpAniSirGlobal pMac);
 void csrNeighborRoamTranistionPreauthDoneToDisconnected(tpAniSirGlobal pMac);
 tANI_BOOLEAN csrNeighborRoamStatePreauthDone(tpAniSirGlobal pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrNeighborRoamScanRspPending(tHalHandle hHal);
 tANI_BOOLEAN csrNeighborMiddleOfRoaming(tHalHandle hHal);
 VOS_STATUS csrNeighborRoamSetLookupRssiThreshold(tpAniSirGlobal pMac, v_U8_t neighborLookupRssiThreshold);
@@ -308,6 +346,9 @@ VOS_STATUS csrNeighborRoamChannelsFilterByCurrentBand(
 eHalStatus csrRoamOffloadScan(tpAniSirGlobal pMac, tANI_U8 command, tANI_U8 reason);
 eHalStatus csrNeighborRoamCandidateFoundIndHdlr(tpAniSirGlobal pMac, void* pMsg);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 

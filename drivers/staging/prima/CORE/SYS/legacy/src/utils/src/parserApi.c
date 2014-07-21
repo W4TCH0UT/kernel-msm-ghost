@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -75,7 +84,11 @@
 
 ////////////////////////////////////////////////////////////////////////
 <<<<<<< HEAD
+<<<<<<< HEAD
 void dot11fLog(tpAniSirGlobal pMac, int loglevel, const char *pString,...)
+=======
+void dot11fLog(tpAniSirGlobal pMac, int loglevel, const char *pString,...) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void dot11fLog(tpAniSirGlobal pMac, int loglevel, const char *pString,...) 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -194,6 +207,10 @@ int FindIELocation( tpAniSirGlobal pMac,
 {
     int idx, ieLen, bytesLeft;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    int ret_val = -1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     int ret_val = -1;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -217,7 +234,11 @@ int FindIELocation( tpAniSirGlobal pMac,
     // whether we have the WPA IE, and where it is if we *do* have it.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //Save the first IE length
+=======
+    //Save the first IE length 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     //Save the first IE length 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -234,17 +255,23 @@ int FindIELocation( tpAniSirGlobal pMac,
         }
         else if ( EID != pRsnIe->rsnIEdata[ idx ] &&
 <<<<<<< HEAD
+<<<<<<< HEAD
              // & if no more IE,
              bytesLeft <= (tANI_U16)( ieLen ) )
         {
             dot11fLog( pMac, LOG3, FL("No IE (%d) in FindIELocation.\n"), EID );
             return (-1);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              // & if no more IE, 
              bytesLeft <= (tANI_U16)( ieLen ) )
         {
             dot11fLog( pMac, LOG3, FL("No IE (%d) in FindIELocation.\n"), EID );
             return ret_val;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         bytesLeft -= ieLen;
@@ -253,7 +280,11 @@ int FindIELocation( tpAniSirGlobal pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     return (-1);
+=======
+    return ret_val;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     return ret_val;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -291,7 +322,11 @@ tSirRetStatus
 PopulateDot11fCapabilities2(tpAniSirGlobal         pMac,
                             tDot11fFfCapabilities *pDot11f,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tpDphHashNode          pSta,
+=======
+                            tpDphHashNode          pSta, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             tpDphHashNode          pSta, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -338,7 +373,11 @@ PopulateDot11fExtChanSwitchAnn(tpAniSirGlobal pMac,
 {
     //Has to be updated on the cb state basis
 <<<<<<< HEAD
+<<<<<<< HEAD
     pDot11f->secondaryChannelOffset =
+=======
+    pDot11f->secondaryChannelOffset = 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pDot11f->secondaryChannelOffset = 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -348,7 +387,10 @@ PopulateDot11fExtChanSwitchAnn(tpAniSirGlobal pMac,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 void
 PopulateDot11fWiderBWChanSwitchAnn(tpAniSirGlobal pMac,
@@ -362,6 +404,9 @@ PopulateDot11fWiderBWChanSwitchAnn(tpAniSirGlobal pMac,
 }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 PopulateDot11fCountry(tpAniSirGlobal    pMac,
@@ -423,6 +468,7 @@ PopulateDot11fDSParams(tpAniSirGlobal     pMac,
                        tpPESession psessionEntry)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 //    tSirRetStatus       nSirStatus;
     tANI_U32            nPhyMode;
 
@@ -435,6 +481,11 @@ PopulateDot11fDSParams(tpAniSirGlobal     pMac,
         #if 0
         CFG_GET_INT( nSirStatus, pMac, WNI_CFG_CURRENT_CHANNEL, cfg );
         #endif //TO SUPPORT BT-AMP
+=======
+    if ((IS_24G_CH(channel)) || pMac->rrm.rrmPEContext.rrmEnable)
+    {
+        // .11b/g mode PHY => Include the DS Parameter Set IE:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if ((IS_24G_CH(channel)) || pMac->rrm.rrmPEContext.rrmEnable)
     {
@@ -453,7 +504,11 @@ PopulateDot11fDSParams(tpAniSirGlobal     pMac,
 void
 PopulateDot11fEDCAParamSet(tpAniSirGlobal         pMac,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            tDot11fIEEDCAParamSet *pDot11f,
+=======
+                           tDot11fIEEDCAParamSet *pDot11f, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            tDot11fIEEDCAParamSet *pDot11f, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -534,15 +589,21 @@ PopulateDot11fERPInfo(tpAniSirGlobal    pMac,
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if((psessionEntry->gLimNoShortParams.numNonShortPreambleSta)
                  || !psessionEntry->beaconParams.fShortPreamble){
                 pDot11f->barker_preamble = 1;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if((psessionEntry->gLimNoShortParams.numNonShortPreambleSta) 
                  || !psessionEntry->beaconParams.fShortPreamble){ 
                 pDot11f->barker_preamble = 1;
          
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         // if protection always flag is set, advertise protection enabled
@@ -561,7 +622,11 @@ PopulateDot11fERPInfo(tpAniSirGlobal    pMac,
 tSirRetStatus
 PopulateDot11fExtSuppRates(tpAniSirGlobal pMac, tANI_U8 nChannelNum,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            tDot11fIEExtSuppRates *pDot11f,
+=======
+                           tDot11fIEExtSuppRates *pDot11f, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            tDot11fIEExtSuppRates *pDot11f, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -581,7 +646,11 @@ PopulateDot11fExtSuppRates(tpAniSirGlobal pMac, tANI_U8 nChannelNum,
         {
             nRates = psessionEntry->extRateSet.numRates;
 <<<<<<< HEAD
+<<<<<<< HEAD
             palCopyMemory(pMac->hHdd, rates, psessionEntry->extRateSet.rate,
+=======
+            palCopyMemory(pMac->hHdd, rates, psessionEntry->extRateSet.rate, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             palCopyMemory(pMac->hHdd, rates, psessionEntry->extRateSet.rate, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -651,7 +720,10 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     tSirRetStatus                    nSirStatus;
     tSirMacHTParametersInfo         *pHTParametersInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE // this is added for fixing CRs on MDM9K platform - 257951, 259577
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     union {
@@ -660,11 +732,14 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
         tSirMacExtendedHTCapabilityInfo extHtCapInfo;
     } uHTCapabilityInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
     tANI_U16                         nCfgValue16;
     tSirMacHTCapabilityInfo         *pHTCapabilityInfo;
     tSirMacExtendedHTCapabilityInfo *pExtendedHTCapabilityInfo;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -674,6 +749,7 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     CFG_GET_INT( nSirStatus, pMac, WNI_CFG_HT_CAP_INFO, nCfgValue );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  // this is added for fixing CRs on MDM9K platform - 257951, 259577
     uHTCapabilityInfo.nCfgValue16 = nCfgValue & 0xFFFF;
 #else
@@ -682,6 +758,10 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE  // this is added for fixing CRs on MDM9K platform - 257951, 259577
+=======
+    uHTCapabilityInfo.nCfgValue16 = nCfgValue & 0xFFFF;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     uHTCapabilityInfo.nCfgValue16 = nCfgValue & 0xFFFF;
 
@@ -700,6 +780,7 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     pDot11f->stbcControlFrame         = uHTCapabilityInfo.htCapInfo.stbcControlFrame;
     pDot11f->lsigTXOPProtection       = uHTCapabilityInfo.htCapInfo.lsigTXOPProtection;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
     pDot11f->advCodingCap             = pHTCapabilityInfo->advCodingCap;
     pDot11f->mimoPowerSave            = pHTCapabilityInfo->mimoPowerSave;
@@ -715,6 +796,8 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     pDot11f->stbcControlFrame         = pHTCapabilityInfo->stbcControlFrame;
     pDot11f->lsigTXOPProtection       = pHTCapabilityInfo->lsigTXOPProtection;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -760,7 +843,10 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     CFG_GET_INT( nSirStatus, pMac, WNI_CFG_EXT_HT_CAP_INFO, nCfgValue );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  // this is added for fixing CRs on MDM9K platform - 257951, 259577
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uHTCapabilityInfo.nCfgValue16 = nCfgValue & 0xFFFF;
@@ -770,6 +856,7 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     pDot11f->mcsFeedback    = uHTCapabilityInfo.extHtCapInfo.mcsFeedback;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
     nCfgValue16 = ( tANI_U16 ) nCfgValue ;
     pExtendedHTCapabilityInfo = ( tSirMacExtendedHTCapabilityInfo* ) &nCfgValue16;
@@ -777,6 +864,8 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
     pDot11f->transitionTime = pExtendedHTCapabilityInfo->transitionTime;
     pDot11f->mcsFeedback    = pExtendedHTCapabilityInfo->mcsFeedback;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -876,7 +965,10 @@ void limLogVHTExtBssLoad(tpAniSirGlobal pMac,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void limLogOperatingMode( tpAniSirGlobal pMac, 
                                tDot11fIEOperatingMode *pDot11f)
@@ -890,6 +982,9 @@ void limLogOperatingMode( tpAniSirGlobal pMac,
 }
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 PopulateDot11fVHTCaps(tpAniSirGlobal           pMac,
@@ -1076,10 +1171,13 @@ PopulateDot11fVHTExtBssLoad(tpAniSirGlobal      pMac,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #endif
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 PopulateDot11fExtCap(tpAniSirGlobal      pMac,
                            tDot11fIEExtCap  *pDot11f)
@@ -1105,17 +1203,23 @@ PopulateDot11fOperatingMode(tpAniSirGlobal      pMac,
 }
 
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
                      tDot11fIEHTInfo *pDot11f,
                      tpPESession      psessionEntry )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
 tSirRetStatus
 PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
                      tDot11fIEHTInfo *pDot11f)
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
@@ -1126,7 +1230,10 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     tSirMacHTInfoField1 *pHTInfoField1;
     tSirMacHTInfoField2 *pHTInfoField2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  // this is added for fixing CRs on MDM9K platform - 257951, 259577
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     union {
@@ -1137,6 +1244,7 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
         tANI_U16         nCfgValue16;
         tSirMacHTInfoField2 infoField2;
     }uHTInfoField2={0};
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
     tANI_U16            htInfoField3;
@@ -1149,13 +1257,19 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     #if 0
     CFG_GET_INT( nSirStatus, pMac, WNI_CFG_CURRENT_CHANNEL, nCfgValue );
     #endif // TO SUPPORT BT-AMP
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == psessionEntry)
     {
         PELOGE(limLog(pMac, LOG1,
@@ -1163,6 +1277,9 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
         return eSIR_FAILURE;
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pDot11f->primaryChannel = psessionEntry->currentOperChannel;
 
@@ -1186,8 +1303,12 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE ){
+=======
+    if((psessionEntry) && (psessionEntry->limSystemRole == eLIM_AP_ROLE)){
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if((psessionEntry) && (psessionEntry->limSystemRole == eLIM_AP_ROLE)){
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1203,7 +1324,10 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
 
    }else{
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         CFG_GET_INT( nSirStatus, pMac, WNI_CFG_HT_INFO_FIELD2, nCfgValue );
@@ -1217,9 +1341,13 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
 
         pHTInfoField2->reserved = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     }
 #endif
+=======
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1228,7 +1356,10 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  // this is added for fixing CRs on MDM9K platform - 257951, 259577
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uHTInfoField.nCfgValue16 = nCfgValue & 0xFFFF;
@@ -1242,6 +1373,7 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     uHTInfoField.infoField3.pcoPhase                      = pMac->lim.gHTPCOPhase;
     uHTInfoField.infoField3.reserved                      = 0;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
     htInfoField3 = (tANI_U16) nCfgValue;
@@ -1257,6 +1389,8 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pDot11f->secondaryChannelOffset        = pHTInfoField1->secondaryChannelOffset;
     pDot11f->recommendedTxWidthSet         = pHTInfoField1->recommendedTxWidthSet;
@@ -1265,7 +1399,10 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     pDot11f->serviceIntervalGranularity    = pHTInfoField1->serviceIntervalGranularity;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  // this is added for fixing CRs on MDM9K platform - 257951, 259577
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pDot11f->opMode                        = uHTInfoField2.infoField2.opMode;
@@ -1273,6 +1410,7 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     pDot11f->obssNonHTStaPresent           = uHTInfoField2.infoField2.obssNonHTStaPresent;
     pDot11f->reserved                      = uHTInfoField2.infoField2.reserved;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
     pDot11f->opMode                        = pHTInfoField2->opMode;
@@ -1285,6 +1423,9 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pDot11f->basicSTBCMCS                  = uHTInfoField.infoField3.basicSTBCMCS;
     pDot11f->dualCTSProtection             = uHTInfoField.infoField3.dualCTSProtection;
     pDot11f->secondaryBeacon               = uHTInfoField.infoField3.secondaryBeacon;
@@ -1292,6 +1433,7 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     pDot11f->pcoActive                     = uHTInfoField.infoField3.pcoActive;
     pDot11f->pcoPhase                      = uHTInfoField.infoField3.pcoPhase;
     pDot11f->reserved2                     = uHTInfoField.infoField3.reserved;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
     pDot11f->basicSTBCMCS                  = pHTInfoField3->basicSTBCMCS;
@@ -1302,6 +1444,8 @@ PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
     pDot11f->pcoPhase                      = pHTInfoField3->pcoPhase;
     pDot11f->reserved2                     = pHTInfoField3->reserved;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     CFG_GET_STR( nSirStatus, pMac, WNI_CFG_BASIC_MCS_SET,
@@ -1398,7 +1542,11 @@ PopulateDot11fPowerCaps(tpAniSirGlobal      pMac,
 
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1439,9 +1587,15 @@ PopulateDot11fQOSCapsStation(tpAniSirGlobal    pMac,
     tANI_U32  val = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(wlan_cfgGetInt(pMac, WNI_CFG_MAX_SP_LENGTH, &val) != eSIR_SUCCESS)
         PELOGE(limLog(pMac, LOGE, FL("could not retrieve Max SP Length \n"));)
 
+=======
+    if(wlan_cfgGetInt(pMac, WNI_CFG_MAX_SP_LENGTH, &val) != eSIR_SUCCESS) 
+        PELOGE(limLog(pMac, LOGE, FL("could not retrieve Max SP Length \n"));)
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(wlan_cfgGetInt(pMac, WNI_CFG_MAX_SP_LENGTH, &val) != eSIR_SUCCESS) 
         PELOGE(limLog(pMac, LOGE, FL("could not retrieve Max SP Length \n"));)
@@ -1458,7 +1612,11 @@ PopulateDot11fQOSCapsStation(tpAniSirGlobal    pMac,
         pDot11f->acvi_uapsd = LIM_UAPSD_GET(ACVI, pMac->lim.gUapsdPerAcBitmask);
         pDot11f->acvo_uapsd = LIM_UAPSD_GET(ACVO, pMac->lim.gUapsdPerAcBitmask);
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
+=======
+    }   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     }   
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1672,7 +1830,11 @@ PopulateDot11fSuppRates(tpAniSirGlobal      pMac,
         {
             nRates = psessionEntry->rateSet.numRates;
 <<<<<<< HEAD
+<<<<<<< HEAD
             palCopyMemory(pMac->hHdd, rates, psessionEntry->rateSet.rate,
+=======
+            palCopyMemory(pMac->hHdd, rates, psessionEntry->rateSet.rate, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             palCopyMemory(pMac->hHdd, rates, psessionEntry->rateSet.rate, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1805,9 +1967,15 @@ void PopulateDot11fReAssocTspec(tpAniSirGlobal pMac, tDot11fReAssocRequest *pRea
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 void PopulateDot11fWMMInfoAp(tpAniSirGlobal pMac, tDot11fIEWMMInfoAp *pInfo,
+=======
+#endif 
+
+void PopulateDot11fWMMInfoAp(tpAniSirGlobal pMac, tDot11fIEWMMInfoAp *pInfo, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #endif 
 
@@ -1829,7 +1997,10 @@ void PopulateDot11fWMMInfoAp(tpAniSirGlobal pMac, tDot11fIEWMMInfoAp *pInfo,
     {
         pInfo->param_set_count = ( 0xf & psessionEntry->gLimEdcaParamSetCount );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(psessionEntry->limSystemRole == eLIM_AP_ROLE ){
@@ -1837,7 +2008,10 @@ void PopulateDot11fWMMInfoAp(tpAniSirGlobal pMac, tDot11fIEWMMInfoAp *pInfo,
         }
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pInfo->uapsd = ( 0x1 & pMac->lim.gUapsdEnable );
@@ -1856,7 +2030,11 @@ void PopulateDot11fWMMInfoStation(tpAniSirGlobal pMac, tDot11fIEWMMInfoStation *
     pInfo->acbe_uapsd = LIM_UAPSD_GET(ACBE, pMac->lim.gUapsdPerAcBitmask);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(wlan_cfgGetInt(pMac, WNI_CFG_MAX_SP_LENGTH, &val) != eSIR_SUCCESS)
+=======
+    if(wlan_cfgGetInt(pMac, WNI_CFG_MAX_SP_LENGTH, &val) != eSIR_SUCCESS) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(wlan_cfgGetInt(pMac, WNI_CFG_MAX_SP_LENGTH, &val) != eSIR_SUCCESS) 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1866,6 +2044,7 @@ void PopulateDot11fWMMInfoStation(tpAniSirGlobal pMac, tDot11fIEWMMInfoStation *
     pInfo->present = 1;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
@@ -1885,6 +2064,8 @@ void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
     else
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
                              tDot11fIEWMMParams *pParams,
                              tpPESession        psessionEntry)
@@ -1895,6 +2076,9 @@ void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
        pParams->qosInfo =
            (psessionEntry->apUapsdEnable << 7) | ((tANI_U8)(0x0f & psessionEntry->gLimEdcaParamSetCount));
     else 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        pParams->qosInfo =
            (pMac->lim.gUapsdEnable << 7) | ((tANI_U8)(0x0f & psessionEntry->gLimEdcaParamSetCount));
@@ -1915,11 +2099,17 @@ void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
     pParams->acbk_txoplimit = psessionEntry->gLimEdcaParamsBC[1].txoplimit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
         pParams->acvi_aifsn     = ( 0xf & psessionEntry->gLimEdcaParamsBC[2].aci.aifsn );
     else
 #endif
+=======
+    if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
+        pParams->acvi_aifsn     = ( 0xf & psessionEntry->gLimEdcaParamsBC[2].aci.aifsn );
+    else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
         pParams->acvi_aifsn     = ( 0xf & psessionEntry->gLimEdcaParamsBC[2].aci.aifsn );
@@ -1936,11 +2126,17 @@ void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
     pParams->acvi_txoplimit = psessionEntry->gLimEdcaParamsBC[2].txoplimit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
         pParams->acvo_aifsn     = ( 0xf & psessionEntry->gLimEdcaParamsBC[3].aci.aifsn );
     else
 #endif
+=======
+    if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
+        pParams->acvo_aifsn     = ( 0xf & psessionEntry->gLimEdcaParamsBC[3].aci.aifsn );
+    else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
         pParams->acvo_aifsn     = ( 0xf & psessionEntry->gLimEdcaParamsBC[3].aci.aifsn );
@@ -2355,7 +2551,10 @@ tSirRetStatus sirConvertProbeFrame2Struct(tpAniSirGlobal       pMac,
     }
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pr->P2PProbeRes.present)
@@ -2364,7 +2563,10 @@ tSirRetStatus sirConvertProbeFrame2Struct(tpAniSirGlobal       pMac,
                                                 sizeof(tDot11fIEP2PProbeRes) );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
@@ -2497,9 +2699,14 @@ sirConvertAssocReqFrame2Struct(tpAniSirGlobal pMac,
         ConvertWscOpaque(pMac, &pAssocReq->addIE, &ar->WscIEOpaque);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 #ifdef WLAN_FEATURE_P2P
+=======
+    
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 
@@ -2510,7 +2717,10 @@ sirConvertAssocReqFrame2Struct(tpAniSirGlobal pMac,
         ConvertP2POpaque( pMac, &pAssocReq->addIE, &ar->P2PIEOpaque);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_WFD
@@ -2544,9 +2754,13 @@ sirConvertAssocReqFrame2Struct(tpAniSirGlobal pMac,
     {
         pAssocReq->wmeInfoPresent = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         palCopyMemory( pMac, &pAssocReq->WMMInfoStation, &ar->WMMInfoStation, sizeof( tDot11fIEWMMInfoStation ) );
 #endif
+=======
+        palCopyMemory( pMac, &pAssocReq->WMMInfoStation, &ar->WMMInfoStation, sizeof( tDot11fIEWMMInfoStation ) );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         palCopyMemory( pMac, &pAssocReq->WMMInfoStation, &ar->WMMInfoStation, sizeof( tDot11fIEWMMInfoStation ) );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2578,13 +2792,19 @@ sirConvertAssocReqFrame2Struct(tpAniSirGlobal pMac,
         limLogVHTCap( pMac, &pAssocReq->VHTCaps);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( ar->OperatingMode.present )
     {
         palCopyMemory( pMac, &pAssocReq->operMode, &ar->OperatingMode, sizeof (tDot11fIEOperatingMode));
         limLog( pMac, LOGW, FL("Received Assoc Req with Operating Mode IE\n"));
         limLogOperatingMode( pMac, &pAssocReq->operMode);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     palFreeMemory(pMac->hHdd, ar);
@@ -2722,7 +2942,11 @@ sirConvertAssocRespFrame2Struct(tpAniSirGlobal pMac,
         pAssocRsp->ricPresent = TRUE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+#endif    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #endif    
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2736,7 +2960,11 @@ sirConvertAssocRespFrame2Struct(tpAniSirGlobal pMac,
         pAssocRsp->tspecPresent = TRUE;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2746,7 +2974,11 @@ sirConvertAssocRespFrame2Struct(tpAniSirGlobal pMac,
         palCopyMemory(pMac->hHdd,&pAssocRsp->tsmIE.tsid,
                 &ar.CCXTrafStrmMet.tsid,sizeof(tSirMacCCXTSMIE));
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
+=======
+    }    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     }    
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2892,9 +3124,13 @@ sirConvertReassocReqFrame2Struct(tpAniSirGlobal pMac,
     {
         pAssocReq->wmeInfoPresent = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         palCopyMemory( pMac, &pAssocReq->WMMInfoStation, &ar.WMMInfoStation, sizeof( tDot11fIEWMMInfoStation ) );
 #endif
+=======
+        palCopyMemory( pMac, &pAssocReq->WMMInfoStation, &ar.WMMInfoStation, sizeof( tDot11fIEWMMInfoStation ) );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         palCopyMemory( pMac, &pAssocReq->WMMInfoStation, &ar.WMMInfoStation, sizeof( tDot11fIEWMMInfoStation ) );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2920,7 +3156,11 @@ sirConvertReassocReqFrame2Struct(tpAniSirGlobal pMac,
 
     // WSC IE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ar.WscIEOpaque.present)
+=======
+    if (ar.WscIEOpaque.present) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (ar.WscIEOpaque.present) 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2929,8 +3169,12 @@ sirConvertReassocReqFrame2Struct(tpAniSirGlobal pMac,
         ConvertWscOpaque(pMac, &pAssocReq->addIE, &ar.WscIEOpaque);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #ifdef WLAN_FEATURE_P2P
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2940,7 +3184,10 @@ sirConvertReassocReqFrame2Struct(tpAniSirGlobal pMac,
         ConvertP2POpaque( pMac, &pAssocReq->addIE, &ar.P2PIEOpaque);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2958,13 +3205,19 @@ sirConvertReassocReqFrame2Struct(tpAniSirGlobal pMac,
         palCopyMemory( pMac, &pAssocReq->VHTCaps, &ar.VHTCaps, sizeof( tDot11fIEVHTCaps ) );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( ar.OperatingMode.present )
     {
         palCopyMemory( pMac, &pAssocReq->operMode, &ar.OperatingMode, sizeof( tDot11fIEOperatingMode  ) );
         limLog( pMac, LOGW, FL("Received Assoc Req with Operating Mode IE\n"));
         limLogOperatingMode( pMac, &pAssocReq->operMode);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     return eSIR_SUCCESS;
@@ -3137,7 +3390,11 @@ sirParseBeaconIE(tpAniSirGlobal        pMac,
         pBeaconStruct->channelNumber = pBies->HTInfo.primaryChannel;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3193,13 +3450,19 @@ sirParseBeaconIE(tpAniSirGlobal        pMac,
          palCopyMemory( pMac, &pBeaconStruct->VHTExtBssLoad, &pBies->VHTExtBssLoad, sizeof( tDot11fIEVHTExtBssLoad) );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pBies->OperatingMode.present)
     {
         pBeaconStruct->OperatingMode.present = 1;
         palCopyMemory( pMac, &pBeaconStruct->OperatingMode, &pBies->OperatingMode, sizeof( tDot11fIEOperatingMode) );
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     palFreeMemory(pMac->hHdd, pBies);
@@ -3225,15 +3488,21 @@ sirConvertBeaconFrame2Struct(tpAniSirGlobal       pMac,
     pHdr     = WDA_GET_RX_MAC_HEADER( pFrame );
     mappedRXCh = WDA_GET_RX_CH( pFrame );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // Zero-init our [out] parameter,
     palZeroMemory( pMac->hHdd, ( tANI_U8* )pBeaconStruct, sizeof(tSirProbeRespBeacon) );
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     // Zero-init our [out] parameter,
     palZeroMemory( pMac->hHdd, ( tANI_U8* )pBeaconStruct, sizeof(tSirProbeRespBeacon) );
     
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = palAllocateMemory(pMac->hHdd, (void **)&pBeacon, sizeof(tDot11fBeacon));
     if(!HAL_STATUS_SUCCESS(status))
@@ -3289,7 +3558,11 @@ sirConvertBeaconFrame2Struct(tpAniSirGlobal       pMac,
     pBeaconStruct->capabilityInfo.delayedBA     = pBeacon->Capabilities.delayedBA;
     pBeaconStruct->capabilityInfo.immediateBA    = pBeacon->Capabilities.immediateBA;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3459,7 +3732,10 @@ sirConvertBeaconFrame2Struct(tpAniSirGlobal       pMac,
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_CCX
     if (pBeacon->CCXTxmitPower.present)
     {
@@ -3471,6 +3747,9 @@ sirConvertBeaconFrame2Struct(tpAniSirGlobal       pMac,
     }
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
     if ( pBeacon->VHTCaps.present )
@@ -3486,7 +3765,10 @@ sirConvertBeaconFrame2Struct(tpAniSirGlobal       pMac,
         palCopyMemory( pMac, &pBeaconStruct->VHTExtBssLoad, &pBeacon->VHTExtBssLoad, sizeof( tDot11fIEVHTExtBssLoad) );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pBeacon->OperatingMode.present)
     {
         palCopyMemory( pMac, &pBeaconStruct->OperatingMode, &pBeacon->OperatingMode, sizeof( tDot11fIEOperatingMode) );
@@ -3496,6 +3778,9 @@ sirConvertBeaconFrame2Struct(tpAniSirGlobal       pMac,
         pBeaconStruct->WiderBWChanSwitchAnnPresent = 1;
         palCopyMemory( pMac, &pBeaconStruct->WiderBWChanSwitchAnn, &pBeacon->WiderBWChanSwitchAnn, sizeof( tDot11fIEWiderBWChanSwitchAnn));
     }      
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -4328,6 +4613,7 @@ PopulateDot11fWMMTCLAS(tpAniSirGlobal     pMac,
 } // End PopulateDot11fWMMTCLAS.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if ( WNI_POLARIS_FW_PRODUCT == AP )
 
 tSirRetStatus
@@ -4466,6 +4752,8 @@ PopulateDot11fWDS(tpAniSirGlobal  pMac,
 #endif // WNI_POLARIS_FW_PRODUCT == AP
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tSirRetStatus PopulateDot11fWsc(tpAniSirGlobal pMac,
                                 tDot11fIEWscBeacon *pDot11f)
@@ -4537,6 +4825,7 @@ tSirRetStatus DePopulateDot11fWscRegistrarInfo(tpAniSirGlobal pMac,
     return eSIR_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProbeRes *pDot11f, tpPESession psessionEntry)
 {
@@ -4547,6 +4836,8 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProbeRes *pDot11f, tpPESession psessionEntry)
 {
  
@@ -4555,6 +4846,9 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
    pSirWPSProbeRspIE = &psessionEntry->APWPSIEs.SirWPSProbeRspIE;
    
     
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pSirWPSProbeRspIE->FieldPresent & SIR_WPS_PROBRSP_VER_PRESENT)
     {
@@ -4572,7 +4866,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     if(pSirWPSProbeRspIE->FieldPresent & SIR_WPS_PROBRSP_STATE_PRESENT)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4582,7 +4880,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->WPSState.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4594,7 +4896,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->APSetupLocked.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4606,7 +4912,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
          pDot11f->SelectedRegistrar.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4618,7 +4928,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->DevicePasswordID.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4630,7 +4944,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->SelectedRegistrarConfigMethods.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4642,7 +4960,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->ResponseType.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4654,7 +4976,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->UUID_E.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4664,15 +4990,21 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
         pDot11f->Manufacturer.num_name = pSirWPSProbeRspIE->Manufacture.num_name;
         palCopyMemory(pMac->hHdd, pDot11f->Manufacturer.name, pSirWPSProbeRspIE->Manufacture.name, pSirWPSProbeRspIE->Manufacture.num_name);
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
     else
         pDot11f->Manufacturer.present = 0;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     } 
     else
         pDot11f->Manufacturer.present = 0;
         
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pSirWPSProbeRspIE->FieldPresent & SIR_WPS_PROBRSP_MODELNUMBER_PRESENT)
     {
@@ -4683,7 +5015,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
       pDot11f->ModelName.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4696,7 +5032,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->ModelNumber.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4709,17 +5049,23 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->SerialNumber.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if(pSirWPSProbeRspIE->FieldPresent & SIR_WPS_PROBRSP_PRIMARYDEVICETYPE_PRESENT)
     {
         pDot11f->PrimaryDeviceType.present = 1;
         palCopyMemory(pMac->hHdd, pDot11f->PrimaryDeviceType.oui, pSirWPSProbeRspIE->PrimaryDeviceOUI, sizeof(pSirWPSProbeRspIE->PrimaryDeviceOUI));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     if(pSirWPSProbeRspIE->FieldPresent & SIR_WPS_PROBRSP_PRIMARYDEVICETYPE_PRESENT)
     {
         pDot11f->PrimaryDeviceType.present = 1;
         palCopyMemory(pMac->hHdd, pDot11f->PrimaryDeviceType.oui, pSirWPSProbeRspIE->PrimaryDeviceOUI, sizeof(pSirWPSProbeRspIE->PrimaryDeviceOUI)); 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pDot11f->PrimaryDeviceType.primary_category = (tANI_U16)pSirWPSProbeRspIE->PrimaryDeviceCategory;
         pDot11f->PrimaryDeviceType.sub_category = (tANI_U16)pSirWPSProbeRspIE->DeviceSubCategory;
@@ -4727,7 +5073,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->PrimaryDeviceType.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4740,7 +5090,11 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->DeviceName.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4752,8 +5106,13 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     else
         pDot11f->ConfigMethods.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+    
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
     
@@ -4765,8 +5124,13 @@ tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProb
     }
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
        pDot11f->RFBands.present = 0;
 
+=======
+       pDot11f->RFBands.present = 0;      
+       
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        pDot11f->RFBands.present = 0;      
        
@@ -4779,7 +5143,11 @@ tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAsso
 
    pSirWPSProbeRspIE = &psessionEntry->APWPSIEs.SirWPSProbeRspIE;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4796,7 +5164,11 @@ tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAsso
         pDot11f->Version.present = 0;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4807,7 +5179,11 @@ tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAsso
     }
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
         pDot11f->ResponseType.present = 0;
+=======
+        pDot11f->ResponseType.present = 0;    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pDot11f->ResponseType.present = 0;    
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4818,6 +5194,7 @@ tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAsso
 tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon *pDot11f, tpPESession psessionEntry)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    tSirWPSBeaconIE *pSirWPSBeaconIE;
 
@@ -4825,12 +5202,17 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  
    tSirWPSBeaconIE *pSirWPSBeaconIE;
 
    pSirWPSBeaconIE = &psessionEntry->APWPSIEs.SirWPSBeaconIE;
    
     
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pSirWPSBeaconIE->FieldPresent & SIR_WPS_PROBRSP_VER_PRESENT)
     {
@@ -4845,15 +5227,21 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
         pDot11f->Version.present = 0;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if(pSirWPSBeaconIE->FieldPresent & SIR_WPS_BEACON_STATE_PRESENT)
     {
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     if(pSirWPSBeaconIE->FieldPresent & SIR_WPS_BEACON_STATE_PRESENT)
     {
         
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pDot11f->WPSState.present = 1;
         pDot11f->WPSState.state = (tANI_U8)pSirWPSBeaconIE->wpsState;
@@ -4861,7 +5249,11 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     else
         pDot11f->WPSState.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4873,7 +5265,11 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     else
         pDot11f->APSetupLocked.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4885,7 +5281,11 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     else
          pDot11f->SelectedRegistrar.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4897,7 +5297,11 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     else
         pDot11f->DevicePasswordID.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4909,7 +5313,11 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     else
         pDot11f->SelectedRegistrarConfigMethods.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4921,8 +5329,13 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     else
         pDot11f->UUID_E.present = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+    
+       
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
        
@@ -4934,16 +5347,22 @@ tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon
     }
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
        pDot11f->RFBands.present = 0;
 
     return eSIR_SUCCESS;
 }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        pDot11f->RFBands.present = 0;      
        
     return eSIR_SUCCESS;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus PopulateDot11fWscInProbeRes(tpAniSirGlobal pMac,
                                           tDot11fIEWscProbeRes *pDot11f)
@@ -5160,8 +5579,13 @@ tSirRetStatus DePopulateDot11fWscRegistrarInfoInProbeRes(tpAniSirGlobal pMac,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
                                           tDot11fIEWscAssocRes *pDot11f,
+=======
+tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac, 
+                                          tDot11fIEWscAssocRes *pDot11f, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac, 
                                           tDot11fIEWscAssocRes *pDot11f, 
@@ -5171,7 +5595,11 @@ tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
     tDot11fIEWscAssocReq parsedWscAssocReq = { 0, };
     tANI_U8         *wscIe;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5180,7 +5608,11 @@ tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
     if(wscIe != NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // retreive WSC IE from given AssocReq
+=======
+        // retreive WSC IE from given AssocReq 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         // retreive WSC IE from given AssocReq 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5196,7 +5628,11 @@ tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
 
         pDot11f->ResponseType.present = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5214,7 +5650,11 @@ tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
         if(parsedWscAssocReq.VendorExtension.present &&
            parsedWscAssocReq.VendorExtension.Version2.present)
 <<<<<<< HEAD
+<<<<<<< HEAD
         {
+=======
+        {   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         {   
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5231,9 +5671,14 @@ tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac,
                                        tDot11fIEP2PAssocRes *pDot11f,
+=======
+tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac, 
+                                       tDot11fIEP2PAssocRes *pDot11f, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac, 
                                        tDot11fIEP2PAssocRes *pDot11f, 
@@ -5253,7 +5698,10 @@ tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac,
     return eSIR_SUCCESS;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -5297,7 +5745,11 @@ tSirRetStatus PopulateDot11fBeaconReport( tpAniSirGlobal pMac, tDot11fIEMeasurem
 
 tSirRetStatus PopulateDot11fRRMIe( tpAniSirGlobal pMac, tDot11fIERRMEnabledCap *pDot11f, tpPESession    psessionEntry )
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
+=======
+{  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 {  
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5350,7 +5802,11 @@ void PopulateMDIE( tpAniSirGlobal        pMac,
    pDot11f->overDSCap =   (mdie[2] & 0x01);
    pDot11f->resourceReqCap = ((mdie[2] >> 1) & 0x01);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5367,7 +5823,11 @@ void PopulateFTInfo( tpAniSirGlobal      pMac,
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void PopulateDot11fAssocRspRates ( tpAniSirGlobal pMac, tDot11fIESuppRates *pSupp,
+=======
+void PopulateDot11fAssocRspRates ( tpAniSirGlobal pMac, tDot11fIESuppRates *pSupp, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void PopulateDot11fAssocRspRates ( tpAniSirGlobal pMac, tDot11fIESuppRates *pSupp, 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5380,7 +5840,11 @@ void PopulateDot11fAssocRspRates ( tpAniSirGlobal pMac, tDot11fIESuppRates *pSup
   {
       pSupp->rates[num_supp] = (tANI_U8)_11bRates[i];
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
+=======
+  }  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   }  
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5390,8 +5854,13 @@ void PopulateDot11fAssocRspRates ( tpAniSirGlobal pMac, tDot11fIESuppRates *pSup
          pSupp->rates[num_supp++] = (tANI_U8)_11aRates[j];
      else
 <<<<<<< HEAD
+<<<<<<< HEAD
          pExt->rates[num_ext++] =  (tANI_U8)_11aRates[j];
   }
+=======
+         pExt->rates[num_ext++] =  (tANI_U8)_11aRates[j]; 
+  }  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          pExt->rates[num_ext++] =  (tANI_U8)_11aRates[j]; 
   }  
@@ -5408,7 +5877,11 @@ void PopulateDot11fAssocRspRates ( tpAniSirGlobal pMac, tDot11fIESuppRates *pSup
      pExt->present = 1;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 } 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

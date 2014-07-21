@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -58,6 +64,7 @@
 
 #include "sirCommon.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
 #include "wniCfgAp.h"
 #else
@@ -69,6 +76,11 @@
 #include "halDataStruct.h"
 #include "halCommonApi.h"
 #endif
+=======
+#include "wniCfgSta.h"
+#include "cfgApi.h"
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 #include "cfgApi.h"
@@ -108,6 +120,7 @@
  * @return true if passed authType is enabled else false
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 tANI_U8
 limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession psessionEntry)
@@ -119,6 +132,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType)
 tANI_U8
 limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession psessionEntry)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+tANI_U8
+limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession psessionEntry)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tANI_U32 algoEnable, privacyOptImp;
 
@@ -126,7 +143,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -137,7 +157,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
               return false; 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -150,7 +173,11 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
                */
             limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AuthAlgo1 Enable value\n"));
+=======
+                   FL("could not retrieve AuthAlgo1 Enable value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AuthAlgo1 Enable value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -164,7 +191,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -177,7 +207,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
         }
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -190,7 +223,11 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
              */
             limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AuthAlgo2 Enable value\n"));
+=======
+                   FL("could not retrieve AuthAlgo2 Enable value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AuthAlgo2 Enable value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -199,7 +236,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -208,7 +248,10 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
         }
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -221,7 +264,11 @@ limIsAuthAlgoSupported(tpAniSirGlobal pMac, tAniAuthType authType, tpPESession p
              */
             limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("could not retrieve PrivacyOptImplemented value\n"));
+=======
+               FL("could not retrieve PrivacyOptImplemented value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("could not retrieve PrivacyOptImplemented value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -258,6 +305,7 @@ limInitPreAuthList(tpAniSirGlobal pMac)
 {
     pMac->lim.pLimPreAuthList = NULL;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (pMac->lim.gLimSystemRole == eLIM_AP_ROLE )
@@ -305,6 +353,8 @@ limInitPreAuthList(tpAniSirGlobal pMac)
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limInitPreAuthList() ***/
 
 
@@ -337,7 +387,11 @@ limDeletePreAuthList(tpAniSirGlobal pMac)
         pTempNode = pCurrNode->next;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthList \n"));)
+=======
+        PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthList "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthList "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -494,6 +548,7 @@ limDeletePreAuthNode(tpAniSirGlobal pMac, tSirMacAddr macAddr)
         pMac->lim.pLimPreAuthList = pTempNode->next;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
         // Delete the auth response timer if running
         if (pTempNode->fTimerStarted)
@@ -505,6 +560,11 @@ limDeletePreAuthNode(tpAniSirGlobal pMac, tSirMacAddr macAddr)
 
         PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthNode : first node to delete\n"));)
         PELOG1(limLog(pMac, LOG1, FL("Release data entry: %x id %d peer \n"),
+=======
+
+        PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthNode : first node to delete"));)
+        PELOG1(limLog(pMac, LOG1, FL("Release data entry: %x id %d peer "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
         PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthNode : first node to delete"));)
@@ -530,6 +590,7 @@ limDeletePreAuthNode(tpAniSirGlobal pMac, tSirMacAddr macAddr)
             pPrevNode->next = pTempNode->next;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             // Delete the auth response timer if running
             if (pTempNode->fTimerStarted)
@@ -539,6 +600,10 @@ limDeletePreAuthNode(tpAniSirGlobal pMac, tSirMacAddr macAddr)
 #endif
             PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthNode : subsequent node to delete\n"));
             limLog(pMac, LOG1, FL("Release data entry: %x id %d peer \n"),
+=======
+            PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthNode : subsequent node to delete"));
+            limLog(pMac, LOG1, FL("Release data entry: %x id %d peer "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOG1(limLog(pMac, LOG1, FL("=====> limDeletePreAuthNode : subsequent node to delete"));
             limLog(pMac, LOG1, FL("Release data entry: %x id %d peer "),
@@ -562,6 +627,7 @@ limDeletePreAuthNode(tpAniSirGlobal pMac, tSirMacAddr macAddr)
 } /*** end limDeletePreAuthNode() ***/
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
 /**
@@ -678,6 +744,8 @@ limPreAuthClnupHandler(tpAniSirGlobal pMac)
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -738,7 +806,11 @@ limRestoreFromAuthState(tpAniSirGlobal pMac, tSirResultCodes resultCode, tANI_U1
     {
         /// Could not get BSSID from CFG. Log error.
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not retrieve BSSID\n"));
+=======
+        limLog(pMac, LOGP, FL("could not retrieve BSSID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not retrieve BSSID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -943,8 +1015,13 @@ limRC4(tANI_U8 *pDest, tANI_U8 *pSrc, tANI_U8 *seed, tANI_U32 keyLength, tANI_U1
         {
             tANI_U8 temp;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             j = (tANI_U8)(j + ctx.sbox[i] + seed[k]);
+=======
+            if ( k < LIM_SEED_LENGTH )
+                j = (tANI_U8)(j + ctx.sbox[i] + seed[k]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             if ( k < LIM_SEED_LENGTH )
                 j = (tANI_U8)(j + ctx.sbox[i] + seed[k]);
@@ -1038,7 +1115,11 @@ limDecryptAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pKey, tANI_U8 *pEncrBody,
            frameLen);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG4(limLog(pMac, LOG4, FL("plainbody is \n"));
+=======
+    PELOG4(limLog(pMac, LOG4, FL("plainbody is "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG4(limLog(pMac, LOG4, FL("plainbody is "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1053,7 +1134,11 @@ limDecryptAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pKey, tANI_U8 *pEncrBody,
     for (i = 0; i < SIR_MAC_WEP_ICV_LENGTH; i++)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOG4(limLog(pMac, LOG4, FL(" computed ICV%d[%x], rxed ICV%d[%x]\n"),
+=======
+       PELOG4(limLog(pMac, LOG4, FL(" computed ICV%d[%x], rxed ICV%d[%x]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        PELOG4(limLog(pMac, LOG4, FL(" computed ICV%d[%x], rxed ICV%d[%x]"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1084,9 +1169,12 @@ void limPostSmeSetKeysCnf( tpAniSirGlobal pMac,
                 sizeof(tSirMacAddr));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
   mlmSetKeysCnf->aid = pMlmSetKeysReq->aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1160,7 +1248,11 @@ tANI_U32 val = 0;
   {
       limLog( pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
           FL( "numKeys = %d is more than SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS\n" ), pMlmSetKeysReq->numKeys);
+=======
+          FL( "numKeys = %d is more than SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS" ), pMlmSetKeysReq->numKeys);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           FL( "numKeys = %d is more than SIR_MAC_MAX_NUM_OF_DEFAULT_KEYS" ), pMlmSetKeysReq->numKeys);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1178,7 +1270,11 @@ tANI_U32 val = 0;
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Unable to PAL allocate memory during SET_BSSKEY\n" ));
+=======
+        FL( "Unable to PAL allocate memory during SET_BSSKEY" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Unable to PAL allocate memory during SET_BSSKEY" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1200,7 +1296,11 @@ tANI_U32 val = 0;
   if(eSIR_SUCCESS != wlan_cfgGetInt(pMac, WNI_CFG_SINGLE_TID_RC, &val))
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
      limLog( pMac, LOGP, FL( "Unable to read WNI_CFG_SINGLE_TID_RC\n" ));
+=======
+     limLog( pMac, LOGP, FL( "Unable to read WNI_CFG_SINGLE_TID_RC" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      limLog( pMac, LOGP, FL( "Unable to read WNI_CFG_SINGLE_TID_RC" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1246,7 +1346,11 @@ tANI_U32 val = 0;
 
   limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
       FL( "Sending WDA_SET_BSSKEY_REQ...\n" ));
+=======
+      FL( "Sending WDA_SET_BSSKEY_REQ..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       FL( "Sending WDA_SET_BSSKEY_REQ..." ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1255,7 +1359,11 @@ tANI_U32 val = 0;
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Posting SET_BSSKEY to HAL failed, reason=%X\n"),
+=======
+        FL("Posting SET_BSSKEY to HAL failed, reason=%X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Posting SET_BSSKEY to HAL failed, reason=%X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1311,7 +1419,11 @@ tANI_U32 val = 0;
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **) &pSetStaKeyParams,
                                                                                                  sizeof( tSetStaKeyParams ))) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "Unable to PAL allocate memory during SET_BSSKEY\n" ));
+=======
+        limLog( pMac, LOGP, FL( "Unable to PAL allocate memory during SET_BSSKEY" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGP, FL( "Unable to PAL allocate memory during SET_BSSKEY" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1327,7 +1439,11 @@ tANI_U32 val = 0;
   if(eSIR_SUCCESS != wlan_cfgGetInt(pMac, WNI_CFG_SINGLE_TID_RC, &val))
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
      limLog( pMac, LOGP, FL( "Unable to read WNI_CFG_SINGLE_TID_RC\n" ));
+=======
+     limLog( pMac, LOGP, FL( "Unable to read WNI_CFG_SINGLE_TID_RC" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      limLog( pMac, LOGP, FL( "Unable to read WNI_CFG_SINGLE_TID_RC" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1372,7 +1488,10 @@ tANI_U32 val = 0;
       // FIXME! Is this OK?
       if( 0 == pMlmSetKeysReq->numKeys ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           tANI_U32 i;
@@ -1384,7 +1503,10 @@ tANI_U32 val = 0;
                              (tANI_U8 *) &pMlmSetKeysReq->key[i], sizeof( tSirKeys ));
           }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           pSetStaKeyParams->wepType = eSIR_WEP_STATIC;
@@ -1424,15 +1546,21 @@ tANI_U32 val = 0;
   msgQ.bodyval = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   limLog( pMac, LOG1, FL( "Sending WDA_SET_STAKEY_REQ...\n" ));
   MTRACE(macTraceMsgTx(pMac, sessionEntry->peSessionId, msgQ.type));
   if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ ))) {
       limLog( pMac, LOGE, FL("Posting SET_STAKEY to HAL failed, reason=%X\n"), retCode );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   limLog( pMac, LOG1, FL( "Sending WDA_SET_STAKEY_REQ..." ));
   MTRACE(macTraceMsgTx(pMac, sessionEntry->peSessionId, msgQ.type));
   if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ ))) {
       limLog( pMac, LOGE, FL("Posting SET_STAKEY to HAL failed, reason=%X"), retCode );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // Respond to SME with LIM_MLM_SETKEYS_CNF
       mlmSetKeysCnf.resultCode = eSIR_SME_HAL_SEND_MESSAGE_FAIL;
@@ -1479,7 +1607,11 @@ tSirRetStatus      retCode;
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Unable to PAL allocate memory during REMOVE_BSSKEY\n" ));
+=======
+        FL( "Unable to PAL allocate memory during REMOVE_BSSKEY" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Unable to PAL allocate memory during REMOVE_BSSKEY" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1515,7 +1647,11 @@ tSirRetStatus      retCode;
 
   limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
       FL( "Sending WDA_REMOVE_BSSKEY_REQ...\n" ));
+=======
+      FL( "Sending WDA_REMOVE_BSSKEY_REQ..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       FL( "Sending WDA_REMOVE_BSSKEY_REQ..." ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1525,7 +1661,11 @@ tSirRetStatus      retCode;
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Posting REMOVE_BSSKEY to HAL failed, reason=%X\n"),
+=======
+        FL("Posting REMOVE_BSSKEY to HAL failed, reason=%X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Posting REMOVE_BSSKEY to HAL failed, reason=%X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1584,7 +1724,11 @@ tSirRetStatus      retCode;
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Unable to PAL allocate memory during REMOVE_STAKEY\n" ));
+=======
+        FL( "Unable to PAL allocate memory during REMOVE_STAKEY" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Unable to PAL allocate memory during REMOVE_STAKEY" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1602,17 +1746,23 @@ tSirRetStatus      retCode;
         pMlmRemoveKeyReq->wepType == eSIR_WEP_STATIC )
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Request to remove static WEP keys through station interface\n Should use BSS interface\n"));)
         mlmRemoveKeyCnf.resultCode = eSIR_SME_INVALID_PARAMETERS;
         goto end;
   }
  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog(pMac, LOGE, FL("Request to remove static WEP keys through station interface\n Should use BSS interface"));)
         mlmRemoveKeyCnf.resultCode = eSIR_SME_INVALID_PARAMETERS;
         goto end;
   }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // Update the WDA_REMOVEKEY_REQ parameters
   pRemoveStaKeyParams->staIdx = staIdx;
@@ -1625,7 +1775,11 @@ tSirRetStatus      retCode;
 
   SET_LIM_PROCESS_DEFD_MESGS(pMac, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1641,6 +1795,7 @@ tSirRetStatus      retCode;
 
   limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
       FL( "Sending WDA_REMOVE_STAKEY_REQ...\n" ));
   MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, msgQ.type));
   if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ )))
@@ -1649,6 +1804,8 @@ tSirRetStatus      retCode;
         FL("Posting REMOVE_STAKEY to HAL failed, reason=%X\n"),
         retCode );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       FL( "Sending WDA_REMOVE_STAKEY_REQ..." ));
   MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, msgQ.type));
   retCode = wdaPostCtrlMsg( pMac, &msgQ );
@@ -1659,6 +1816,9 @@ tSirRetStatus      retCode;
         retCode );
     palFreeMemory(pMac->hHdd, pRemoveStaKeyParams);
     pRemoveStaKeyParams = NULL;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Respond to SME with LIM_MLM_REMOVEKEY_CNF
@@ -1666,10 +1826,13 @@ tSirRetStatus      retCode;
   }
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     return; 
 
 end:
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return;
 
 end:
@@ -1677,6 +1840,9 @@ end:
   {
     palFreeMemory(pMac->hHdd, pRemoveStaKeyParams);
   }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   limPostSmeRemoveKeyCnf( pMac,
       psessionEntry,

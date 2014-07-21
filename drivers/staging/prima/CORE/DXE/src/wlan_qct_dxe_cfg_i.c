@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -200,7 +206,11 @@ WLANDXE_ChannelConfigType chanRXLowPriConfig =
 
    /* Number of Descriptor, NOT CLEAR YET !!! */
 <<<<<<< HEAD
+<<<<<<< HEAD
    512,
+=======
+   256,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    256,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -244,7 +254,11 @@ WLANDXE_ChannelConfigType chanRXHighPriConfig =
 
    /* Number of Descriptor, NOT CLEAR YET !!! */
 <<<<<<< HEAD
+<<<<<<< HEAD
    40,
+=======
+   256,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    256,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -398,7 +412,11 @@ wpt_status dxeCommonDefaultConfig
 
   @  Parameters
 <<<<<<< HEAD
+<<<<<<< HEAD
       WLANDXE_CtrlBlkType     *dxeCtrlBlk,
+=======
+      WLANDXE_CtrlBlkType:    *dxeCtrlBlk,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       WLANDXE_CtrlBlkType:    *dxeCtrlBlk,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -425,6 +443,10 @@ wpt_status dxeChannelDefaultConfig
    wpt_uint32                  dxeControlWriteEopInt = 0;
    wpt_uint32                  idx;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   wpt_uint32                  rxResourceCount = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    wpt_uint32                  rxResourceCount = 0;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -451,7 +473,11 @@ wpt_status dxeChannelDefaultConfig
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "%s Failed to map channel", __FUNCTION__);
+=======
+              "%s Failed to map channel", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               "%s Failed to map channel", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -645,8 +671,11 @@ wpt_status dxeChannelDefaultConfig
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    channelEntry->numDesc            = mappedChannel->channelConfig->nDescs;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpalGetNumRxRawPacket(&rxResourceCount);
    if((WDTS_CHANNEL_TX_LOW_PRI == channelEntry->channelType) ||
       (0 == rxResourceCount))
@@ -657,6 +686,9 @@ wpt_status dxeChannelDefaultConfig
    {
       channelEntry->numDesc         = rxResourceCount / 4;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    channelEntry->assignedDMAChannel = mappedChannel->DMAChannel;
    channelEntry->numFreeDesc             = 0;

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -56,11 +62,15 @@
 #include "aniGlobal.h"
 #include "sirCommon.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
 #include "wniCfgAp.h"
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -251,7 +261,11 @@ ibss_sta_caps_update(
     tpPESession       psessionEntry)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16      aid;
+=======
+    tANI_U16      peerIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16      peerIdx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -261,7 +275,11 @@ ibss_sta_caps_update(
 
     // if the peer node exists, update its qos capabilities
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ((pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &aid, &psessionEntry->dph.dphHashTable)) == NULL)
+=======
+    if ((pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable)) == NULL)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if ((pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable)) == NULL)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -438,7 +456,11 @@ ibss_coalesce_save(
     if (status != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("ibbs-save: Failed malloc pHdr\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("ibbs-save: Failed malloc pHdr"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("ibbs-save: Failed malloc pHdr"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -449,7 +471,11 @@ ibss_coalesce_save(
     if (status != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("ibbs-save: Failed malloc pBeacon\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("ibbs-save: Failed malloc pBeacon"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("ibbs-save: Failed malloc pBeacon"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -473,7 +499,11 @@ ibss_dph_entry_add(
     tpPESession     psessionEntry)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16      aid;
+=======
+    tANI_U16      peerIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16      peerIdx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -482,7 +512,11 @@ ibss_dph_entry_add(
     *ppSta = NULL;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     pStaDs = dphLookupHashEntry(pMac, peerAddr, &aid, &psessionEntry->dph.dphHashTable);
+=======
+    pStaDs = dphLookupHashEntry(pMac, peerAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pStaDs = dphLookupHashEntry(pMac, peerAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -500,6 +534,7 @@ ibss_dph_entry_add(
      * by DPH module.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     aid = limAssignAID(pMac);
 
     pStaDs = dphGetHashEntry(pMac, aid, &psessionEntry->dph.dphHashTable);
@@ -515,6 +550,8 @@ ibss_dph_entry_add(
         // Could not add hash table entry
         PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for aid=%d MACaddr:\n"), aid);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     peerIdx = limAssignPeerIdx(pMac, psessionEntry);
 
     pStaDs = dphGetHashEntry(pMac, peerIdx, &psessionEntry->dph.dphHashTable);
@@ -529,6 +566,9 @@ ibss_dph_entry_add(
     {
         // Could not add hash table entry
         PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for peerIdx/aid=%d MACaddr:"), peerIdx);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limPrintMacAddr(pMac, peerAddr, LOGE);
         return eSIR_FAILURE;
@@ -589,7 +629,11 @@ ibss_bss_add(
     if ((pHdr == NULL) || (pBeacon == NULL))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Unable to add BSS (no cached BSS info)\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Unable to add BSS (no cached BSS info)"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Unable to add BSS (no cached BSS info)"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -603,7 +647,11 @@ ibss_bss_add(
     if (cfgSetStr(pMac, WNI_CFG_BSSID, (tANI_U8 *) pHdr->bssId, sizeof(tSirMacAddr))
         != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not update BSSID at CFG\n"));
+=======
+        limLog(pMac, LOGP, FL("could not update BSSID at CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not update BSSID at CFG"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -616,7 +664,11 @@ ibss_bss_add(
 #if 0
     if (wlan_cfgGetInt(pMac, WNI_CFG_BEACON_INTERVAL, &cfg) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("Can't read beacon interval\n"));
+=======
+        limLog(pMac, LOGP, FL("Can't read beacon interval"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("Can't read beacon interval"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -628,7 +680,11 @@ ibss_bss_add(
         if (cfgSetInt(pMac, WNI_CFG_BEACON_INTERVAL, pBeacon->beaconInterval)
             != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Can't update beacon interval\n"));
+=======
+            limLog(pMac, LOGP, FL("Can't update beacon interval"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("Can't update beacon interval"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -656,7 +712,11 @@ ibss_bss_add(
            pMac->lim.gpLimStartBssReq->operationalRateSet.numRates)
         != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not update OperRateset at CFG\n"));
+=======
+        limLog(pMac, LOGP, FL("could not update OperRateset at CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not update OperRateset at CFG"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -678,7 +738,11 @@ ibss_bss_add(
            (tANI_U8 *) &pBeacon->extendedRates.rate, numExtRates) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not update ExtendedOperRateset at CFG\n"));
+=======
+            limLog(pMac, LOGP, FL("could not update ExtendedOperRateset at CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("could not update ExtendedOperRateset at CFG"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -711,7 +775,11 @@ ibss_bss_add(
     #if 0
     if (wlan_cfgGetInt(pMac, WNI_CFG_CURRENT_CHANNEL, &cfg) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("CurrentChannel CFG get fialed!\n"));
+=======
+        limLog(pMac, LOGP, FL("CurrentChannel CFG get fialed!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("CurrentChannel CFG get fialed!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -730,15 +798,21 @@ ibss_bss_add(
         psessionEntry->pLimStartBssReq->ssId.length + 1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("invoking ADD_BSS as part of coalescing!\n"));)
     if (limMlmAddBss(pMac, &mlmStartReq,psessionEntry) != eSIR_SME_SUCCESS)
     {
         PELOGE(limLog(pMac, LOGE, FL("AddBss failure\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(limLog(pMac, LOG1, FL("invoking ADD_BSS as part of coalescing!"));)
     if (limMlmAddBss(pMac, &mlmStartReq,psessionEntry) != eSIR_SME_SUCCESS)
     {
         PELOGE(limLog(pMac, LOGE, FL("AddBss failure"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
@@ -747,7 +821,11 @@ ibss_bss_add(
     if (schSetFixedBeaconFields(pMac,psessionEntry) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("*** Unable to set fixed Beacon fields ***\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("*** Unable to set fixed Beacon fields ***"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("*** Unable to set fixed Beacon fields ***"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -766,15 +844,21 @@ ibss_bss_delete(
 {
     tSirRetStatus status;
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGW(limLog(pMac, LOGW, FL("Initiating IBSS Delete BSS\n"));) 
     if (psessionEntry->limMlmState != eLIM_MLM_BSS_STARTED_STATE)
     {
         limLog(pMac, LOGW, FL("Incorrect LIM MLM state for delBss (%d)\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOGW(limLog(pMac, LOGW, FL("Initiating IBSS Delete BSS"));)
     if (psessionEntry->limMlmState != eLIM_MLM_BSS_STARTED_STATE)
     {
         limLog(pMac, LOGW, FL("Incorrect LIM MLM state for delBss (%d)"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                psessionEntry->limMlmState);
         return;
@@ -782,7 +866,11 @@ ibss_bss_delete(
     status = limDelBss(pMac, NULL, psessionEntry->bssIdx, psessionEntry);
     if (status != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("delBss failed for bss %d\n"), psessionEntry->bssIdx);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("delBss failed for bss %d"), psessionEntry->bssIdx);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("delBss failed for bss %d"), psessionEntry->bssIdx);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -839,7 +927,11 @@ void limIbssDeleteAllPeers( tpAniSirGlobal pMac ,tpPESession psessionEntry)
     tLimIbssPeerNode    *pCurrNode, *pTempNode;
     tpDphHashNode pStaDs;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16 aid;
+=======
+    tANI_U16 peerIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16 peerIdx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -859,7 +951,11 @@ void limIbssDeleteAllPeers( tpAniSirGlobal pMac ,tpPESession psessionEntry)
               * no need to do any beacon related params i.e., dont call limDeleteDphHashEntry
               */
 <<<<<<< HEAD
+<<<<<<< HEAD
         pStaDs = dphLookupHashEntry(pMac, pCurrNode->peerMacAddr, &aid, &psessionEntry->dph.dphHashTable);
+=======
+        pStaDs = dphLookupHashEntry(pMac, pCurrNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pStaDs = dphLookupHashEntry(pMac, pCurrNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -870,7 +966,11 @@ void limIbssDeleteAllPeers( tpAniSirGlobal pMac ,tpPESession psessionEntry)
                                     pStaDs->ucUcastSig, pStaDs->ucBcastSig,
                                     eWNI_SME_IBSS_PEER_DEPARTED_IND, psessionEntry->smeSessionId );
 <<<<<<< HEAD
+<<<<<<< HEAD
             dphDeleteHashEntry(pMac, pStaDs->staAddr, aid, &psessionEntry->dph.dphHashTable);
+=======
+            dphDeleteHashEntry(pMac, pStaDs->staAddr, peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             dphDeleteHashEntry(pMac, pStaDs->staAddr, peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1012,7 +1112,11 @@ limIbssSetProtection(tpAniSirGlobal pMac, tANI_U8 enable, tpUpdateBeaconParams p
     if(!pMac->lim.cfgProtection.fromllb)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled\n"));)
+=======
+        PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1025,7 +1129,11 @@ limIbssSetProtection(tpAniSirGlobal pMac, tANI_U8 enable, tpUpdateBeaconParams p
         if(false == psessionEntry->beaconParams.llbCoexist/*pMac->lim.llbCoexist*/)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("=> IBSS: Enable Protection \n"));)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("=> IBSS: Enable Protection "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("=> IBSS: Enable Protection "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1037,7 +1145,11 @@ limIbssSetProtection(tpAniSirGlobal pMac, tANI_U8 enable, tpUpdateBeaconParams p
     {
         psessionEntry->gLim11bParams.protectionEnabled = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("===> IBSS: Disable protection \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("===> IBSS: Disable protection "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("===> IBSS: Disable protection "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1080,7 +1192,11 @@ limIbssUpdateProtectionParams(tpAniSirGlobal pMac,
               peerMacAddr, sizeof(tSirMacAddr)))
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
               PELOG1(limLog(pMac, LOG1, FL("matching cache entry at %d already active.\n"), i);)
+=======
+              PELOG1(limLog(pMac, LOG1, FL("matching cache entry at %d already active."), i);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               PELOG1(limLog(pMac, LOG1, FL("matching cache entry at %d already active."), i);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1098,7 +1214,11 @@ limIbssUpdateProtectionParams(tpAniSirGlobal pMac,
   if (i >= LIM_PROT_STA_CACHE_SIZE)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("No space in ProtStaCache\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE, FL("No space in ProtStaCache"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE, FL("No space in ProtStaCache"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1143,7 +1263,11 @@ limIbssDecideProtection(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpUpdateBeaco
     if(NULL == pStaDs)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("pStaDs is NULL\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE, FL("pStaDs is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE, FL("pStaDs is NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1167,7 +1291,11 @@ limIbssDecideProtection(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpUpdateBeaco
             {
                 protStaCacheType = eLIM_PROT_STA_CACHE_TYPE_llB;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("Enable protection from 11B\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("Enable protection from 11B"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("Enable protection from 11B"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1220,6 +1348,7 @@ limIbssStaAdd(
     if (pBody == 0)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Invalid IBSS AddSta\n"));)
         return eSIR_FAILURE;
     }
@@ -1232,6 +1361,8 @@ limIbssStaAdd(
     {
         retCode = ibss_dph_entry_add(pMac, *pPeerAddr, &pStaDs,psessionEntry);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog(pMac, LOGE, FL("Invalid IBSS AddSta"));)
         return eSIR_FAILURE;
     }
@@ -1243,12 +1374,16 @@ limIbssStaAdd(
     if (NULL != pPeerNode)
     {
         retCode = ibss_dph_entry_add(pMac, *pPeerAddr, &pStaDs, psessionEntry);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (eSIR_SUCCESS == retCode)
         {
             prevState = pStaDs->mlmStaContext.mlmState;
             pStaDs->erpEnabled = pPeerNode->erpIePresent;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             ibss_sta_info_update(pMac, pStaDs, pPeerNode,psessionEntry);
             PELOGW(limLog(pMac, LOGW, FL("initiating ADD STA for the IBSS peer.\n"));)
@@ -1263,6 +1398,8 @@ limIbssStaAdd(
                     dphDeleteHashEntry(pMac, pStaDs->staAddr, pStaDs->assocId, &psessionEntry->dph.dphHashTable);
                 }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             ibss_sta_info_update(pMac, pStaDs, pPeerNode, psessionEntry);
             PELOGW(limLog(pMac, LOGW, FL("initiating ADD STA for the IBSS peer."));)
             retCode = limAddSta(pMac, pStaDs, false, psessionEntry);
@@ -1274,6 +1411,9 @@ limIbssStaAdd(
                 pStaDs->mlmStaContext.mlmState = prevState;
                 dphDeleteHashEntry(pMac, pStaDs->staAddr, pStaDs->assocId,
                                    &psessionEntry->dph.dphHashTable);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else
@@ -1284,8 +1424,14 @@ limIbssStaAdd(
                 if(beaconParams.paramChangeBitmap)
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     PELOGE(limLog(pMac, LOGE, FL("---> Update Beacon Params \n"));)
                     schSetFixedBeaconFields(pMac, psessionEntry);    
+=======
+                    PELOGE(limLog(pMac, LOGE, FL("---> Update Beacon Params "));)
+                    schSetFixedBeaconFields(pMac, psessionEntry);
+                    beaconParams.bssIdx = psessionEntry->bssIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     PELOGE(limLog(pMac, LOGE, FL("---> Update Beacon Params "));)
                     schSetFixedBeaconFields(pMac, psessionEntry);
@@ -1298,7 +1444,11 @@ limIbssStaAdd(
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("hashTblAdd failed (reason %x)\n"), retCode);)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("hashTblAdd failed (reason %x)"), retCode);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("hashTblAdd failed (reason %x)"), retCode);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1321,7 +1471,11 @@ limIbssAddStaRsp(
 {
     tpDphHashNode   pStaDs;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16        aid;
+=======
+    tANI_U16        peerIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16        peerIdx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1331,17 +1485,23 @@ limIbssAddStaRsp(
     if (pAddStaParams == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("IBSS: ADD_STA_RSP with no body!\n"));)
         return eSIR_FAILURE;
     }
 
     pStaDs = dphLookupHashEntry(pMac, pAddStaParams->staMac, &aid, &psessionEntry->dph.dphHashTable);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog(pMac, LOGE, FL("IBSS: ADD_STA_RSP with no body!"));)
         return eSIR_FAILURE;
     }
 
     pStaDs = dphLookupHashEntry(pMac, pAddStaParams->staMac, &peerIdx, &psessionEntry->dph.dphHashTable);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pStaDs == NULL)
     {
@@ -1367,7 +1527,11 @@ limIbssAddStaRsp(
     pStaDs->mlmStaContext.mlmState = eLIM_MLM_LINK_ESTABLISHED_STATE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGW(limLog(pMac, LOGW, FL("IBSS: sending IBSS_NEW_PEER msg to SME!\n"));)
+=======
+    PELOGW(limLog(pMac, LOGW, FL("IBSS: sending IBSS_NEW_PEER msg to SME!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGW(limLog(pMac, LOGW, FL("IBSS: sending IBSS_NEW_PEER msg to SME!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1388,17 +1552,23 @@ void limIbssDelBssRspWhenCoalescing(tpAniSirGlobal  pMac,  void *msg,tpPESession
    tpDeleteBssParams pDelBss = (tpDeleteBssParams) msg;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGW(limLog(pMac, LOGW, FL("IBSS: DEL_BSS_RSP Rcvd during coalescing!\n"));)
 
     if (pDelBss == NULL)
     {
         PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP(coalesce) with no body!\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOGW(limLog(pMac, LOGW, FL("IBSS: DEL_BSS_RSP Rcvd during coalescing!"));)
 
     if (pDelBss == NULL)
     {
         PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP(coalesce) with no body!"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         goto end;
     }
@@ -1435,7 +1605,11 @@ void limIbssAddBssRspWhenCoalescing(tpAniSirGlobal  pMac, void *msg, tpPESession
     if ((pHdr == NULL) || (pBeacon == NULL))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Unable to handle AddBssRspWhenCoalescing (no cached BSS info)\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Unable to handle AddBssRspWhenCoalescing (no cached BSS info)"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Unable to handle AddBssRspWhenCoalescing (no cached BSS info)"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1453,7 +1627,11 @@ void limIbssAddBssRspWhenCoalescing(tpAniSirGlobal  pMac, void *msg, tpPESession
                   (tANI_U8 *) &pBeacon->ssId, pBeacon->ssId.length + 1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGW(limLog(pMac, LOGW, FL("Sending JOINED_NEW_BSS notification to SME.\n"));)
+=======
+    PELOGW(limLog(pMac, LOGW, FL("Sending JOINED_NEW_BSS notification to SME."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGW(limLog(pMac, LOGW, FL("Sending JOINED_NEW_BSS notification to SME."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1462,7 +1640,10 @@ void limIbssAddBssRspWhenCoalescing(tpAniSirGlobal  pMac, void *msg, tpPESession
                                 (tANI_U32 *) &newBssInfo,
                                 infoLen,pSessionEntry->smeSessionId);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
@@ -1470,10 +1651,15 @@ void limIbssAddBssRspWhenCoalescing(tpAniSirGlobal  pMac, void *msg, tpPESession
         limSendBeaconInd(pMac, pSessionEntry);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
     
 
     end:
+=======
+
+ end:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
  end:
@@ -1497,7 +1683,11 @@ limIbssDelBssRsp(
     if (pDelBss == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP with no body!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP with no body!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP with no body!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1508,7 +1698,11 @@ limIbssDelBssRsp(
     if((psessionEntry = peFindSessionBySessionId(pMac,pDelBss->sessionId))==NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+           limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1545,7 +1739,11 @@ limIbssDelBssRsp(
         psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP setLinkState failed\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP setLinkState failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("IBSS: DEL_BSS_RSP setLinkState failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1610,7 +1808,11 @@ limIbssCoalesce(
     tpPESession         psessionEntry)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16            aid;
+=======
+    tANI_U16            peerIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16            peerIdx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1635,7 +1837,11 @@ limIbssCoalesce(
          */
         pMac->lim.gLimIbssCoalescingHappened = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("IBSS Coalescing happened\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("IBSS Coalescing happened"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGW(limLog(pMac, LOGW, FL("IBSS Coalescing happened"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1652,7 +1858,11 @@ limIbssCoalesce(
         tANI_U32      frameLen;
         tSirRetStatus retCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("IBSS Peer node does not exist, adding it***\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("IBSS Peer node does not exist, adding it***"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGW(limLog(pMac, LOGW, FL("IBSS Peer node does not exist, adding it***"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1669,7 +1879,11 @@ limIbssCoalesce(
             palAllocateMemory(pMac->hHdd, (void **) &pPeerNode, (tANI_U16)frameLen))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("alloc fail (%d bytes) storing IBSS peer info\n"),
+=======
+            limLog(pMac, LOGP, FL("alloc fail (%d bytes) storing IBSS peer info"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("alloc fail (%d bytes) storing IBSS peer info"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1694,17 +1908,23 @@ limIbssCoalesce(
         ibss_peer_add(pMac, pPeerNode);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &aid, &psessionEntry->dph.dphHashTable);
         if (pStaDs != NULL)
         {
             /// DPH node already exists for the peer
             PELOGW(limLog(pMac, LOGW, FL("DPH Node present for just learned peer\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
         if (pStaDs != NULL)
         {
             /// DPH node already exists for the peer
             PELOGW(limLog(pMac, LOGW, FL("DPH Node present for just learned peer"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PELOG1(limPrintMacAddr(pMac, pPeerNode->peerMacAddr, LOG1);)
             ibss_sta_info_update(pMac, pStaDs, pPeerNode,psessionEntry);
@@ -1713,7 +1933,11 @@ limIbssCoalesce(
         if (retCode != eSIR_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("lim-ibss-sta-add failed (reason %x)\n"), retCode);)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("lim-ibss-sta-add failed (reason %x)"), retCode);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("lim-ibss-sta-add failed (reason %x)"), retCode);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1723,7 +1947,11 @@ limIbssCoalesce(
 
         // Decide protection mode
 <<<<<<< HEAD
+<<<<<<< HEAD
         pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &aid, &psessionEntry->dph.dphHashTable);
+=======
+        pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         pStaDs = dphLookupHashEntry(pMac, pPeerNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1733,8 +1961,14 @@ limIbssCoalesce(
         if(beaconParams.paramChangeBitmap)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("beaconParams.paramChangeBitmap=1 ---> Update Beacon Params \n"));)
             schSetFixedBeaconFields(pMac, psessionEntry);    
+=======
+            PELOGE(limLog(pMac, LOGE, FL("beaconParams.paramChangeBitmap=1 ---> Update Beacon Params "));)
+            schSetFixedBeaconFields(pMac, psessionEntry);
+            beaconParams.bssIdx = psessionEntry->bssIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("beaconParams.paramChangeBitmap=1 ---> Update Beacon Params "));)
             schSetFixedBeaconFields(pMac, psessionEntry);
@@ -1756,7 +1990,11 @@ limIbssCoalesce(
     {
         limResetHBPktCount(psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Partner joined our IBSS, Sending IBSS_ACTIVE Notification to SME\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Partner joined our IBSS, Sending IBSS_ACTIVE Notification to SME"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGW(limLog(pMac, LOGW, FL("Partner joined our IBSS, Sending IBSS_ACTIVE Notification to SME"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1766,7 +2004,11 @@ limIbssCoalesce(
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_HEART_BEAT_TIMER));
         if (limActivateHearBeatTimer(pMac) != TX_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not activate Heartbeat timer\n"));
+=======
+            limLog(pMac, LOGP, FL("could not activate Heartbeat timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("could not activate Heartbeat timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1781,7 +2023,11 @@ void limIbssHeartBeatHandle(tpAniSirGlobal pMac,tpPESession psessionEntry)
     tLimIbssPeerNode *pTempNode, *pPrevNode;
     tLimIbssPeerNode *pTempNextNode = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16      aid;
+=======
+    tANI_U16      peerIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U16      peerIdx;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1829,7 +2075,11 @@ void limIbssHeartBeatHandle(tpAniSirGlobal pMac,tpPESession psessionEntry)
             {
                 //Remove this entry from the list.
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pStaDs = dphLookupHashEntry(pMac, pTempNode->peerMacAddr, &aid, &psessionEntry->dph.dphHashTable);
+=======
+                pStaDs = dphLookupHashEntry(pMac, pTempNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 pStaDs = dphLookupHashEntry(pMac, pTempNode->peerMacAddr, &peerIdx, &psessionEntry->dph.dphHashTable);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1841,7 +2091,11 @@ void limIbssHeartBeatHandle(tpAniSirGlobal pMac,tpPESession psessionEntry)
 
                     (void) limDelSta(pMac, pStaDs, false /*asynchronous*/,psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
                     limDeleteDphHashEntry(pMac, pStaDs->staAddr, aid,psessionEntry);
+=======
+                    limDeleteDphHashEntry(pMac, pStaDs->staAddr, peerIdx,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     limDeleteDphHashEntry(pMac, pStaDs->staAddr, peerIdx,psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1890,7 +2144,11 @@ void limIbssHeartBeatHandle(tpAniSirGlobal pMac,tpPESession psessionEntry)
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1902,7 +2160,11 @@ void limIbssHeartBeatHandle(tpAniSirGlobal pMac,tpPESession psessionEntry)
             // other STA in IBSS. Announce IBSS inactive
             // to Roaming algorithm
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("Alone in IBSS\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("Alone in IBSS"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGW(limLog(pMac, LOGW, FL("Alone in IBSS"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1968,7 +2230,11 @@ limIbssDecideProtectionOnDelete(tpAniSirGlobal pMac,
             if (psessionEntry->gLim11bParams.numSta == 0)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("No more 11B STA exists. Disable protection. \n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("No more 11B STA exists. Disable protection. "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("No more 11B STA exists. Disable protection. "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,5 +1,6 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -20,10 +21,15 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 * Copyright (c) 2012 Qualcomm Atheros, Inc.
 * All Rights Reserved.
 * Qualcomm Atheros Confidential and Proprietary.
 */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** ------------------------------------------------------------------------- *
@@ -62,6 +68,11 @@ typedef enum
     NV_COMMON_WLAN_NV_REV_ID,           // 6
     NV_COMMON_COUPLER_TYPE,             // 7
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    NV_COMMON_NV_VERSION,               // 8
+    NV_COMMON_RESERVED,                 // 9
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     NV_COMMON_NV_VERSION,               // 8
     NV_COMMON_RESERVED,                 // 9
@@ -86,7 +97,10 @@ typedef enum
 }eNvProductBands;           //NV_COMMON_PRODUCT_BANDS
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define EXTERNAL_PA         1
 #define INTERNAL_PA         0
 
@@ -133,11 +147,15 @@ typedef PACKED_PRE struct PACKED_POST
     uint8   macAddr4[NV_FIELD_MAC_ADDR_SIZE];
 }sMacAddr;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef PACKED_PRE union PACKED_POST
 {
     //common NV fields
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_U16  productId;
     tANI_U8   productBands;
@@ -156,6 +174,8 @@ typedef PACKED_PRE union PACKED_POST
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uint16  productId;
     uint8   productBands;
     uint8   wlanNvRevId;
@@ -168,11 +188,15 @@ typedef PACKED_PRE union PACKED_POST
 } uNvFields;
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //format of common part of nv
 typedef PACKED_PRE struct PACKED_POST
 {
     //always ensure fields are aligned to 32-bit boundaries
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_U16  productId;
     tANI_U8   productBands;
@@ -188,6 +212,8 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_U8   couplerType;                       /* 0 : Internal coupler, 1 : External coupler */
     tANI_U8   reserved;                          /* Make Byte alignment */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uint16  productId;
     uint8   productBands;
     uint8   wlanNvRevId; //0: WCN1312, 1: WCN1314, 2: WCN3660
@@ -201,12 +227,16 @@ typedef PACKED_PRE struct PACKED_POST
     uint8   mfgSN[NV_FIELD_MFG_SN_SIZE];
     uint8   couplerType;
     uint8   nvVersion;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } sNvFields;
 
 
 //From wlanfw/inc/halPhyTypes.h
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 typedef tANI_S8 tPowerdBm;   //power in signed 8-bit integer, no decimal places
 
@@ -215,12 +245,17 @@ typedef PACKED_PRE union PACKED_POST
     tANI_U32 measurement;      //measured values can be passed to pttApi, but are maintained to 2 decimal places internally
     tANI_S16 reported;         //used internally only - reported values only maintain 2 decimals places
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef int8 tPowerdBm;   //power in signed 8-bit integer, no decimal places
 
 typedef PACKED_PRE union PACKED_POST
 {
     uint32 measurement;      //measured values can be passed to pttApi, but are maintained to 2 decimal places internally
     int16  reported;         //used internally only - reported values only maintain 2 decimals places
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }uAbsPwrPrecision;
 
@@ -408,7 +443,11 @@ enum
    NV_CHANNEL_INVALID
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef tANI_U8 eNVChannelEnabledType;
+=======
+typedef uint8 eNVChannelEnabledType;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 typedef uint8 eNVChannelEnabledType;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -430,8 +469,13 @@ typedef PACKED_PRE struct PACKED_POST
 typedef PACKED_PRE struct PACKED_POST
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_S16 bRssiOffset[NUM_RF_CHANNELS];
     tANI_S16 gnRssiOffset[NUM_RF_CHANNELS];
+=======
+    int16 bRssiOffset[NUM_RF_CHANNELS];
+    int16 gnRssiOffset[NUM_RF_CHANNELS];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     int16 bRssiOffset[NUM_RF_CHANNELS];
     int16 gnRssiOffset[NUM_RF_CHANNELS];
@@ -441,8 +485,13 @@ typedef PACKED_PRE struct PACKED_POST
 typedef PACKED_PRE struct PACKED_POST
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16 targetFreq;           //number in MHz
     tANI_U16 channelNum;           //channel number as in the eRfChannels enumeration
+=======
+    uint16 targetFreq;           //number in MHz
+    uint16 channelNum;           //channel number as in the eRfChannels enumeration
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     uint16 targetFreq;           //number in MHz
     uint16 channelNum;           //channel number as in the eRfChannels enumeration
@@ -460,7 +509,10 @@ typedef enum
 } e80211Modes;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HW_CAL_VALUES_VALID_BMAP_UNUSED                             0   //Value
 //Bit mask
 #define HW_VAL_VALUES_VALID_BMAP_SLEEP_TIME_OVERHEAD_2G_MASK        0x1
@@ -475,11 +527,15 @@ typedef enum
 #define HAL_PWR_SAVE_FW_BMPS_SLEEP_TIME_OVERHEADS_5GHZ_US           1400 //(5Ghz operation)
 #define HAL_PWR_SAVE_FW_BMPS_SLEEP_TIME_OVERHEADS_XPA_US            1600  //(xLNA operation)
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 //From wlanfw/inc/halPhyCalMemory.h
 typedef PACKED_PRE struct PACKED_POST
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_U16    process_monitor;
     tANI_U8     hdet_cal_code;
@@ -536,6 +592,8 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_U8     reserved2;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uint16    psSlpTimeOvrHd2G;
     uint16    psSlpTimeOvrHd5G;
 
@@ -556,11 +614,15 @@ typedef PACKED_PRE struct PACKED_POST
     uint32    hwParam9;
     uint32    hwParam10;
     uint32    hwParam11;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }sCalData;
 
 typedef PACKED_PRE struct PACKED_POST
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_U32 calStatus;  //use eNvCalID
     sCalData calData;
@@ -570,6 +632,8 @@ typedef PACKED_PRE struct PACKED_POST
 {
     tANI_U32 txFirFilterMode;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uint32 validBmap;  //use eNvCalID
     sCalData calData;
 }sHwCalValues;
@@ -577,11 +641,15 @@ typedef PACKED_PRE struct PACKED_POST
 typedef PACKED_PRE struct PACKED_POST
 {
     uint32 txFirFilterMode;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }sTxBbFilterMode;
 
 typedef PACKED_PRE struct PACKED_POST
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_S16 ofdmPwrOffset;
     tANI_S16 rsvd;
@@ -594,6 +662,8 @@ typedef tANI_U8 tTpcLutValue;
 
 typedef tANI_U8 tPowerDetect;        //7-bit power detect reading
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int16 ofdmPwrOffset;
     int16 rsvd;
 }sOfdmCmdPwrOffset;
@@ -604,6 +674,9 @@ typedef uint8 tTpcLutValue;
 #define MAX_TPC_CAL_POINTS      (8)
 
 typedef uint8 tPowerDetect;        //7-bit power detect reading
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef PACKED_PRE struct PACKED_POST
@@ -723,6 +796,12 @@ typedef enum
     HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_65_MBPS,
     HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_78_MBPS,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#ifdef WCN_PRONTO
+    HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WCN_PRONTO
     HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
@@ -740,6 +819,12 @@ typedef enum
     HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_72_2_MBPS,
     HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_86_6_MBPS,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#ifdef WCN_PRONTO
+    HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WCN_PRONTO
     HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
@@ -803,7 +888,10 @@ typedef enum
 }eHalPhyRates;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define NUM_RATE_POWER_GROUPS           NUM_HAL_PHY_RATES  //total number of rate power groups including the CB_RATE_POWER_OFFSET
@@ -814,8 +902,13 @@ typedef uAbsPwrPrecision tRateGroupPwr[NUM_RATE_POWER_GROUPS];
 typedef PACKED_PRE struct PACKED_POST
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 regDomain;                                  //from eRegDomainId
     tANI_U8 countryCode[NV_FIELD_COUNTRY_CODE_SIZE];    // string identifier
+=======
+    uint8 regDomain;                                  //from eRegDomainId
+    uint8 countryCode[NV_FIELD_COUNTRY_CODE_SIZE];    // string identifier
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     uint8 regDomain;                                  //from eRegDomainId
     uint8 countryCode[NV_FIELD_COUNTRY_CODE_SIZE];    // string identifier
@@ -824,6 +917,7 @@ typedef PACKED_PRE struct PACKED_POST
 
 typedef PACKED_PRE struct PACKED_POST
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     tANI_U8     overall;
     tANI_U8     fwInit;
@@ -860,6 +954,8 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_U8     unused[6];
 }sCalStatus;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     uint8 skuID; 
     uint8 tpcMode2G;
     uint8 tpcMode5G;
@@ -890,6 +986,9 @@ typedef PACKED_PRE struct PACKED_POST
     uint32 resreved4;
 }sFwConfig;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define NUM_RF_VR_RATE   13
@@ -902,6 +1001,7 @@ typedef PACKED_PRE union PACKED_POST
     sDefaultCountry      defaultCountryTable;                                 // NV_TABLE_DEFAULT_COUNTRY
     tTpcPowerTable       plutCharacterized[NUM_RF_CHANNELS];                  // NV_TABLE_TPC_POWER_TABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_S16             plutPdadcOffset[NUM_RF_CHANNELS];                    // NV_TABLE_TPC_PDADC_OFFSETS
     tRateGroupPwrVR      pwrOptimum_virtualRate[NUM_RF_SUBBANDS];             // NV_TABLE_VIRTUAL_RATE
     //sCalFlashMemory    calFlashMemory;                                      // NV_TABLE_CAL_MEMORY
@@ -911,6 +1011,8 @@ typedef PACKED_PRE union PACKED_POST
     tANI_S16             antennaPathLoss[NUM_RF_CHANNELS];                    // NV_TABLE_ANTENNA_PATH_LOSS
     tANI_S16             pktTypePwrLimits[NUM_802_11_MODES][NUM_RF_CHANNELS]; // NV_TABLE_PACKET_TYPE_POWER_LIMITS
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int16             plutPdadcOffset[NUM_RF_CHANNELS];                       // NV_TABLE_TPC_PDADC_OFFSETS
     tRateGroupPwrVR      pwrOptimum_virtualRate[NUM_RF_SUBBANDS];             // NV_TABLE_VIRTUAL_RATE
     sFwConfig            fwConfig;                                             // NV_TABLE_FW_CONFIG
@@ -918,6 +1020,9 @@ typedef PACKED_PRE union PACKED_POST
     sHwCalValues         hwCalValues;                                         // NV_TABLE_HW_CAL_VALUES
     int16             antennaPathLoss[NUM_RF_CHANNELS];                    // NV_TABLE_ANTENNA_PATH_LOSS
     int16             pktTypePwrLimits[NUM_802_11_MODES][NUM_RF_CHANNELS]; // NV_TABLE_PACKET_TYPE_POWER_LIMITS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     sOfdmCmdPwrOffset    ofdmCmdPwrOffset;                                    // NV_TABLE_OFDM_CMD_PWR_OFFSET
     sTxBbFilterMode      txbbFilterMode;                                      // NV_TABLE_TX_BB_FILTER_MODE
@@ -929,7 +1034,11 @@ typedef tPowerdBm tChannelPwrLimit;
 typedef PACKED_PRE struct PACKED_POST
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U8 chanId;
+=======
+    uint8 chanId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     uint8 chanId;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -947,15 +1056,21 @@ typedef enum
     NV_TABLE_TPC_POWER_TABLE        = 5,
     NV_TABLE_TPC_PDADC_OFFSETS      = 6,
 <<<<<<< HEAD
+<<<<<<< HEAD
     NV_TABLE_RF_CAL_VALUES          = 7,
     NV_TABLE_RSSI_CHANNEL_OFFSETS   = 9,
     NV_TABLE_CAL_MEMORY             = 10,    //cal memory structure from halPhyCalMemory.h preceded by status
     NV_TABLE_CAL_STATUS             = 11,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     NV_TABLE_HW_CAL_VALUES          = 7,
     NV_TABLE_RSSI_CHANNEL_OFFSETS   = 9,
     NV_TABLE_CAL_MEMORY             = 10,    //cal memory structure from halPhyCalMemory.h preceded by status
     NV_TABLE_FW_CONFIG              = 11,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     NV_TABLE_ANTENNA_PATH_LOSS          = 12,
     NV_TABLE_PACKET_TYPE_POWER_LIMITS   = 13,
@@ -976,6 +1091,7 @@ typedef PACKED_PRE struct PACKED_POST
     sDefaultCountry      defaultCountryTable;                                 // NV_TABLE_DEFAULT_COUNTRY
     tTpcPowerTable       plutCharacterized[NUM_RF_CHANNELS];                  // NV_TABLE_TPC_POWER_TABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_S16             plutPdadcOffset[NUM_RF_CHANNELS];                    // NV_TABLE_TPC_PDADC_OFFSETS
     tRateGroupPwrVR      pwrOptimum_virtualRate[NUM_RF_SUBBANDS];             // NV_TABLE_VIRTUAL_RATE
     //sCalFlashMemory    calFlashMemory;                                      // NV_TABLE_CAL_MEMORY
@@ -985,6 +1101,8 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_S16             antennaPathLoss[NUM_RF_CHANNELS];                    // NV_TABLE_ANTENNA_PATH_LOSS
     tANI_S16             pktTypePwrLimits[NUM_802_11_MODES][NUM_RF_CHANNELS]; // NV_TABLE_PACKET_TYPE_POWER_LIMITS
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int16             plutPdadcOffset[NUM_RF_CHANNELS];                    // NV_TABLE_TPC_PDADC_OFFSETS
     tRateGroupPwrVR      pwrOptimum_virtualRate[NUM_RF_SUBBANDS];             // NV_TABLE_VIRTUAL_RATE
     sFwConfig           fwConfig;                                              // NV_TABLE_FW_CONFIG
@@ -992,6 +1110,9 @@ typedef PACKED_PRE struct PACKED_POST
     sHwCalValues         hwCalValues;                                         // NV_TABLE_HW_CAL_VALUES
     int16             antennaPathLoss[NUM_RF_CHANNELS];                    // NV_TABLE_ANTENNA_PATH_LOSS
     int16             pktTypePwrLimits[NUM_802_11_MODES][NUM_RF_CHANNELS]; // NV_TABLE_PACKET_TYPE_POWER_LIMITS
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     sOfdmCmdPwrOffset    ofdmCmdPwrOffset;                                    // NV_TABLE_OFDM_CMD_PWR_OFFSET
     sTxBbFilterMode      txbbFilterMode;                                      // NV_TABLE_TX_BB_FILTER_MODE

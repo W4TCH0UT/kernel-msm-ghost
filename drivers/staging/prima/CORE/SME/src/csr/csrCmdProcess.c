@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -45,6 +51,7 @@
 /** ------------------------------------------------------------------------- * 
     ------------------------------------------------------------------------- *  
 <<<<<<< HEAD
+<<<<<<< HEAD
     \file csrCmdProcess.c
   
     Implementation for processing various commands.
@@ -62,6 +69,8 @@
 #include "aniGlobal.h"
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  
     Copyright (C) 2006 Airgo Networks, Incorporated
 
@@ -69,6 +78,9 @@
 */
 
 #include "aniGlobal.h"
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "palApi.h"
@@ -85,7 +97,11 @@ eHalStatus csrMsgProcessor( tpAniSirGlobal pMac,  void *pMsgBuf )
     tSirSmeRsp *pSmeRsp = (tSirSmeRsp *)pMsgBuf;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOG2, "  Message %d[0x%04X] received in curState %d and substate %d\n",
+=======
+    smsLog( pMac, LOG2, "  Message %d[0x%04X] received in curState %d and substate %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOG2, "  Message %d[0x%04X] received in curState %d and substate %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -139,7 +155,11 @@ eHalStatus csrMsgProcessor( tpAniSirGlobal pMac,  void *pMsgBuf )
                 (eWNI_SME_REMOVEKEY_RSP == pSmeRsp->messageType) )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, FL(" handling msg 0x%X CSR state is %d\n"), pSmeRsp->messageType, pMac->roam.curState[pSmeRsp->sessionId]);
+=======
+                smsLog(pMac, LOGW, FL(" handling msg 0x%X CSR state is %d"), pSmeRsp->messageType, pMac->roam.curState[pSmeRsp->sessionId]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, FL(" handling msg 0x%X CSR state is %d"), pSmeRsp->messageType, pMac->roam.curState[pSmeRsp->sessionId]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -148,7 +168,11 @@ eHalStatus csrMsgProcessor( tpAniSirGlobal pMac,  void *pMsgBuf )
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 smsLog(pMac, LOGW, "  Message 0x%04X is not handled by CSR. CSR state is %d \n", pSmeRsp->messageType, pMac->roam.curState[pSmeRsp->sessionId]);
+=======
+                smsLog(pMac, LOGW, "  Message 0x%04X is not handled by CSR. CSR state is %d ", pSmeRsp->messageType, pMac->roam.curState[pSmeRsp->sessionId]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 smsLog(pMac, LOGW, "  Message 0x%04X is not handled by CSR. CSR state is %d ", pSmeRsp->messageType, pMac->roam.curState[pSmeRsp->sessionId]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

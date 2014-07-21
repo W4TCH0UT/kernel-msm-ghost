@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -79,6 +85,7 @@ void            limStatSerDes(tpAniSirGlobal, tpAniStaStatStruct, tANI_U8 *);
 void            limGetSessionInfo(tpAniSirGlobal pMac, tANI_U8 *, tANI_U8 *, tANI_U16 *);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 tSirRetStatus   limMeasurementReqSerDes(tpAniSirGlobal, tpSirSmeMeasurementReq, tANI_U8 *);
 void            limMeasurementIndSerDes(tpAniSirGlobal, tANI_U8 *);
@@ -90,10 +97,13 @@ tSirRetStatus   nonTitanBssFoundSerDes( tpAniSirGlobal, tpSirNeighborBssWdsInfo,
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void            limPackBkgndScanFailNotify(tpAniSirGlobal, tSirSmeStatusChangeCode, 
                                            tpSirBackgroundScanInfo, tSirSmeWmStatusChangeNtf *, tANI_U8);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 tANI_U32 limCopyNeighborBssInfo(tpAniSirGlobal, tANI_U8 *, tpSirNeighborBssInfo);
@@ -108,11 +118,17 @@ tSirRetStatus limRemoveKeyReqSerDes(tpAniSirGlobal pMac, tpSirSmeRemoveKeyReq pR
 tSirRetStatus limRemoveKeyReqSerDes(tpAniSirGlobal pMac, tpSirSmeRemoveKeyReq pRemoveKeyReq, tANI_U8 * pBuf);
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+tSirRetStatus limRemoveKeyReqSerDes(tpAniSirGlobal pMac, tpSirSmeRemoveKeyReq pRemoveKeyReq, tANI_U8 * pBuf);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN    limIsSmeGetAssocSTAsReqValid(tpAniSirGlobal pMac, tpSirSmeGetAssocSTAsReq pGetAssocSTAsReq, tANI_U8 *pBuf);
 tSirRetStatus   limTkipCntrMeasReqSerDes(tpAniSirGlobal pMac, tpSirSmeTkipCntrMeasReq  ptkipCntrMeasReq, tANI_U8 *pBuf);
 
 tSirRetStatus limUpdateAPWPSIEsReqSerDes(tpAniSirGlobal pMac, tpSirUpdateAPWPSIEsReq pUpdateAPWPSIEsReq, tANI_U8 *pBuf);
 tSirRetStatus limUpdateAPWPARSNIEsReqSerDes(tpAniSirGlobal pMac, tpSirUpdateAPWPARSNIEsReq pUpdateAPWPARSNIEsReq, tANI_U8 *pBuf);
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 
@@ -122,10 +138,14 @@ tANI_BOOLEAN limIsSmeSwitchChannelReqValid(tpAniSirGlobal, tANI_U8 *, tpSirSmeSw
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // Byte String <--> tANI_U16/tANI_U32 copy functions
 static inline void limCopyU16(tANI_U8 *ptr, tANI_U16 u16Val)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     *ptr++ = (tANI_U8) ((u16Val >> 8) & 0xff);    
@@ -134,6 +154,10 @@ static inline void limCopyU16(tANI_U8 *ptr, tANI_U16 u16Val)
        (defined(ANI_OS_TYPE_WINDOWS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_AMSS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+=======
+#if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
+     (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
      (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
@@ -148,6 +172,7 @@ static inline void limCopyU16(tANI_U8 *ptr, tANI_U16 u16Val)
 static inline tANI_U16 limGetU16(tANI_U8 *ptr)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     return (((tANI_U16) (*ptr << 8)) |
             ((tANI_U16) (*(ptr+1))));
@@ -155,6 +180,10 @@ static inline tANI_U16 limGetU16(tANI_U8 *ptr)
        (defined(ANI_OS_TYPE_WINDOWS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_AMSS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+=======
+#if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
+     (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
      (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
@@ -169,6 +198,7 @@ static inline tANI_U16 limGetU16(tANI_U8 *ptr)
 static inline void limCopyU32(tANI_U8 *ptr, tANI_U32 u32Val)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     *ptr++ = (tANI_U8) ((u32Val >> 24) & 0xff);
     *ptr++ = (tANI_U8) ((u32Val >> 16) & 0xff);
@@ -178,6 +208,10 @@ static inline void limCopyU32(tANI_U8 *ptr, tANI_U32 u32Val)
        (defined(ANI_OS_TYPE_WINDOWS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_AMSS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+=======
+#if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
+     (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
      (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
@@ -194,6 +228,7 @@ static inline void limCopyU32(tANI_U8 *ptr, tANI_U32 u32Val)
 static inline tANI_U32 limGetU32(tANI_U8 *ptr)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     return ((*(ptr) << 24) |
             (*(ptr+1) << 16) |
@@ -203,6 +238,10 @@ static inline tANI_U32 limGetU32(tANI_U8 *ptr)
        (defined(ANI_OS_TYPE_WINDOWS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_AMSS) && defined(ANI_LITTLE_BYTE_ENDIAN)) || \
        (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+=======
+#if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
+     (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #if ((defined(ANI_OS_TYPE_QNX) && defined(ANI_LITTLE_BYTE_ENDIAN)) ||   \
      (defined(ANI_OS_TYPE_ANDROID) && defined(ANI_LITTLE_BYTE_ENDIAN)))

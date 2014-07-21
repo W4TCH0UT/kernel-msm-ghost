@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -115,8 +121,13 @@
 #elif defined _MSC_VER
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    #define WPT_PACK_START  __pragma (pack(push,1))
    #define WPT_PACK_END  __pragma (pack(pop))
+=======
+#define WPT_PACK_START  __pragma(pack(push,1))
+#define WPT_PACK_END  __pragma(pack(pop))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define WPT_PACK_START  __pragma(pack(push,1))
 #define WPT_PACK_END  __pragma(pack(pop))

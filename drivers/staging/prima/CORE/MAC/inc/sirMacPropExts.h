@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -53,7 +59,11 @@
  * Date           Modified by    Modification Information
  * --------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
  * 
+=======
+ *
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  *
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -73,12 +83,15 @@
 #define SIR_MAC_PROP_EXT_RATES_TYPE     0
 #define SIR_MAC_PROP_AP_NAME_TYPE       1
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 #define SIR_MAC_PROP_HCF_TYPE           2
 #define SIR_MAC_PROP_WDS_TYPE           3
 #define SIR_MAC_PROP_BP_IND_TYPE        4
 #define SIR_MAC_PROP_NEIGHBOR_BSS_TYPE  5
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIR_MAC_PROP_LOAD_INFO_TYPE     6
@@ -130,15 +143,21 @@
 // macro to set/get a capability bit, bitname is one of HCF/11EQOS/etc...
 #define PROP_CAPABILITY_SET(bitname, value) \
 <<<<<<< HEAD
+<<<<<<< HEAD
         (value) = (value) | ((tANI_U16)(1 << SIR_MAC_PROP_CAPABILITY_ ## bitname))
 
 #define PROP_CAPABILITY_RESET(bitname, value) \
         (value) = (value) & ~((tANI_U16)(1 << SIR_MAC_PROP_CAPABILITY_ ## bitname))
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ((value) = (value) | ((tANI_U16)(1 << SIR_MAC_PROP_CAPABILITY_ ## bitname)))
 
 #define PROP_CAPABILITY_RESET(bitname, value) \
   ((value) = (value) & ~((tANI_U16)(1 << SIR_MAC_PROP_CAPABILITY_ ## bitname)))
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         
 #define PROP_CAPABILITY_GET(bitname, value) \
@@ -152,7 +171,10 @@
           (dot11Mode == WNI_CFG_DOT11_MODE_ALL)) ? TRUE: FALSE)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define IS_DOT11_MODE_HT(dot11Mode) \
@@ -163,6 +185,7 @@
           (dot11Mode ==  WNI_CFG_DOT11_MODE_TAURUS) || \
           (dot11Mode ==  WNI_CFG_DOT11_MODE_ALL)) ? TRUE: FALSE)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #else
 #define IS_DOT11_MODE_HT(dot11Mode) \
         (((dot11Mode == WNI_CFG_DOT11_MODE_11N) || \
@@ -170,6 +193,8 @@
           (dot11Mode ==  WNI_CFG_DOT11_MODE_11AC) || \
           (dot11Mode ==  WNI_CFG_DOT11_MODE_ALL)) ? TRUE: FALSE)
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -357,6 +382,7 @@ typedef struct sSirPropIEStruct
     tANI_U8                    rsvd:5;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U8                    hcfPresent:1;
     tANI_U8                    wdsPresent:1;
@@ -367,6 +393,8 @@ typedef struct sSirPropIEStruct
     tANI_U8                    assocTypePresent:1;
     tANI_U8                    rsvd1:1;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -380,6 +408,7 @@ typedef struct sSirPropIEStruct
     tQuietBssIEStruct     quietBss;
     tANI_U8               triggerStaScanEnable;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U8                    hcfEnabled;
@@ -395,6 +424,8 @@ typedef struct sSirPropIEStruct
     tANI_U8                    assocType;
     tpSirNeighborBssInfo  pBssList;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

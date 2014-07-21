@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -57,6 +63,7 @@
 
 #include "aniGlobal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
 #include "cfgApi.h"
 
@@ -64,6 +71,11 @@
 #include "halDataStruct.h"
 #include "halCommonApi.h"
 #endif
+=======
+#include "wniCfgSta.h"
+#include "cfgApi.h"
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 #include "cfgApi.h"
@@ -106,6 +118,7 @@ void
 limSendKeepAliveToPeer(tpAniSirGlobal pMac)
 {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP   //oct 3rd review
 
@@ -168,6 +181,8 @@ limSendKeepAliveToPeer(tpAniSirGlobal pMac)
     #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** limSendKeepAliveToPeer() ***/
 
 
@@ -189,6 +204,7 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     tpPESession psessionEntry ;
     tANI_U8     sessionId;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if((psessionEntry = peFindSessionByBssid(pMac,pMsg->bssId,&sessionId))== NULL)
     {
@@ -246,6 +262,8 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
                     PELOGW(limLog(pMac, LOGW, FL("lim Delete Station Context (staId: %d, assocId: %d) \n"),
                                   pMsg->staId, pMsg->assocId);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(NULL == pMsg)
     {
         PELOGE(limLog(pMac, LOGE,FL("Invalid body pointer in message"));)
@@ -308,6 +326,9 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
                     tLimMlmDeauthInd  mlmDeauthInd;
                     PELOGW(limLog(pMac, LOGW, FL("lim Delete Station Context (staId: %d, assocId: %d) "),
                                 pMsg->staId, pMsg->assocId);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                     pStaDs->mlmStaContext.disassocReason = eSIR_MAC_UNSPEC_FAILURE_REASON;
@@ -315,6 +336,7 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
                     // Issue Deauth Indication to SME.
                     palCopyMemory( pMac->hHdd, (tANI_U8 *) &mlmDeauthInd.peerMacAddr,
+<<<<<<< HEAD
 <<<<<<< HEAD
                                    pStaDs->staAddr, sizeof(tSirMacAddr));
                     mlmDeauthInd.reasonCode    = (tANI_U8) pStaDs->mlmStaContext.disassocReason;
@@ -343,6 +365,8 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             pStaDs->staAddr, sizeof(tSirMacAddr));
                     mlmDeauthInd.reasonCode    = (tANI_U8) pStaDs->mlmStaContext.disassocReason;
                     mlmDeauthInd.deauthTrigger =  pStaDs->mlmStaContext.cleanupTrigger;
@@ -371,6 +395,9 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
              break;
 
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palFreeMemory(pMac->hHdd, pMsg);
     return;
@@ -405,7 +432,11 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
     if (! pStaDs)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Skip STA deletion (invalid STA)\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Skip STA deletion (invalid STA)"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGW(limLog(pMac, LOGW, FL("Skip STA deletion (invalid STA)"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -420,7 +451,11 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSmeDeauthReq, sizeof(tSirSmeDeauthReq)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_REQ \n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_REQ "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_REQ "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -431,11 +466,15 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
 
     //messageType
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limCopyU16((tANI_U8*)pBuf, eWNI_SME_DISASSOC_REQ);
 #else
     limCopyU16((tANI_U8*)pBuf, eWNI_SME_DEAUTH_REQ);
 #endif
+=======
+    limCopyU16((tANI_U8*)pBuf, eWNI_SME_DISASSOC_REQ);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limCopyU16((tANI_U8*)pBuf, eWNI_SME_DISASSOC_REQ);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -469,11 +508,15 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
 
     //reasonCode 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DISASSOC);
 #else
     limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DEAUTH);
 #endif
+=======
+    limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DISASSOC);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DISASSOC);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -488,6 +531,7 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
     msgLength += sizeof(tANI_U8);
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     //aid
@@ -505,11 +549,16 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
     limPostSmeMessage(pMac, eWNI_SME_DEAUTH_REQ, (tANI_U32 *) pSmeDeauthReq);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
     //Fill in length
     limCopyU16((tANI_U8*)pLen , msgLength);
 
     limPostSmeMessage(pMac, eWNI_SME_DISASSOC_REQ, (tANI_U32 *) pSmeDeauthReq);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palFreeMemory( pMac->hHdd, pSmeDeauthReq );
 
@@ -545,7 +594,11 @@ limTearDownLinkWithAp(tpAniSirGlobal pMac, tANI_U8 sessionId, tSirMacReasonCodes
     if((psessionEntry = peFindSessionBySessionId(pMac, sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -560,7 +613,11 @@ limTearDownLinkWithAp(tpAniSirGlobal pMac, tANI_U8 sessionId, tSirMacReasonCodes
     pMac->pmm.inMissedBeaconScenario = FALSE;
     limLog(pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
        FL("No ProbeRsp from AP after HB failure. Tearing down link\n"));
+=======
+       FL("No ProbeRsp from AP after HB failure. Tearing down link"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        FL("No ProbeRsp from AP after HB failure. Tearing down link"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -579,12 +636,18 @@ limTearDownLinkWithAp(tpAniSirGlobal pMac, tANI_U8 sessionId, tSirMacReasonCodes
         tLimMlmDeauthInd  mlmDeauthInd;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
         /* Delete all TDLS peers connected before leaving BSS*/
         limDeleteTDLSPeers(pMac, psessionEntry);
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pStaDs->mlmStaContext.disassocReason = reasonCode;
         pStaDs->mlmStaContext.cleanupTrigger = eLIM_LINK_MONITORING_DEAUTH;
@@ -636,9 +699,14 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
      * So just return from heartbeatfailure handler
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if(!limIsSystemInActiveState(pMac))
         return;
+=======
+    if(!IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE && (!limIsSystemInActiveState(pMac)))
+       return;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(!IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE && (!limIsSystemInActiveState(pMac)))
        return;
@@ -688,7 +756,11 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
          * Beacon frame not received within heartbeat timeout.
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -708,7 +780,11 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
              * timeout for Probe Response from AP.
              */
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("Heart Beat missed from AP. Sending Probe Req\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("Heart Beat missed from AP. Sending Probe Req"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGW(limLog(pMac, LOGW, FL("Heart Beat missed from AP. Sending Probe Req"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -733,7 +809,11 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
             * Log error.
             */
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("received heartbeat timeout in state %X\n"),
+=======
+        PELOG1(limLog(pMac, LOG1, FL("received heartbeat timeout in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(limLog(pMac, LOG1, FL("received heartbeat timeout in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

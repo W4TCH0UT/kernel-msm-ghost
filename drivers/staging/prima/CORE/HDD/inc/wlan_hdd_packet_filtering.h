@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -30,8 +34,13 @@
 * Description: Packet Filter Definitions.
 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Copyright (c) 2011 QUALCOMM Incorporated. All Rights Reserved.
 * QUALCOMM Proprietary and Confidential.
+=======
+* Copyright (c) 2011 Qualcomm Technologies, Inc. All Rights Reserved.
+* Qualcomm Technologies Proprietary and Confidential.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 * Copyright (c) 2011 Qualcomm Technologies, Inc. All Rights Reserved.
 * Qualcomm Technologies Proprietary and Confidential.
@@ -43,6 +52,7 @@
 #define __WLAN_HDD_PACKET_FILTERING_H__
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef struct
 {
     v_U8_t       mcastBcastFilterSetting;
@@ -52,6 +62,8 @@ typedef struct
 #ifdef WLAN_FEATURE_PACKET_FILTERING
 #define HDD_MAX_CMP_PER_PACKET_FILTER     5     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 #ifdef WLAN_FEATURE_PACKET_FILTERING
@@ -69,6 +81,9 @@ typedef struct
 
 #define HDD_WLAN_MAC_ADDR_LEN             6
 #define HDD_MAX_NUM_MULTICAST_ADDRESS     10
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef enum
@@ -91,7 +106,11 @@ typedef enum
 }eFilterAction;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef enum 
+=======
+typedef enum
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 typedef enum
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -108,7 +127,11 @@ struct PacketFilterParamsCfg
 {
     v_U8_t              protocolLayer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     v_U8_t              cmpFlag;   
+=======
+    v_U8_t              cmpFlag;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     v_U8_t              cmpFlag;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -121,6 +144,7 @@ struct PacketFilterParamsCfg
 typedef struct
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     v_U8_t            filterAction;    
     v_U8_t            filterId;
     v_U8_t            numParams;
@@ -129,6 +153,8 @@ typedef struct
 }tPacketFilterCfg, *tpPacketFilterCfg;
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U8_t            filterAction;
     v_U8_t            filterId;
     v_U8_t            numParams;
@@ -144,6 +170,9 @@ typedef struct
     tHddMacAddr    multicastAddr[HDD_MAX_NUM_MULTICAST_ADDRESS];
 } tRcvFltMcAddrList, *tpRcvFltMcAddrList;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 #endif // __WLAN_HDD_PACKET_FILTERING_H__

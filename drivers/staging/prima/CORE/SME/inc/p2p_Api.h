@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -83,7 +89,10 @@ typedef struct sRemainOnChn{
 }tRemainOnChn, tpRemainOnChn;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define SIZE_OF_NOA_DESCRIPTOR 13
 #define MAX_NOA_PERIOD_IN_MICROSECS 3000000
 
@@ -92,6 +101,9 @@ typedef struct sRemainOnChn{
 #define P2P_PERIODIC_NOA 2
 #define P2P_SINGLE_NOA 4
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_P2P_INTERNAL
 
@@ -110,12 +122,15 @@ typedef struct sRemainOnChn{
 #define P2P_COUNTRY_CODE_LEN 3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define P2P_CLEAR_POWERSAVE 0
 #define P2P_OPPORTUNISTIC_PS 1
 #define P2P_PERIODIC_NOA 2
 #define P2P_SINGLE_NOA 4
 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Wi-Fi Direct Device Discovery Type */
@@ -536,6 +551,10 @@ eHalStatus p2pSendAction( tHalHandle hHal, tANI_U8 sessionId,
 eHalStatus p2pCancelRemainOnChannel( tHalHandle hHal, tANI_U8 sessionId );
 eHalStatus p2pSetPs( tHalHandle hHal, tP2pPsConfig *pNoA );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+tSirRFBand GetRFBand(tANI_U8 channel);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRFBand GetRFBand(tANI_U8 channel);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

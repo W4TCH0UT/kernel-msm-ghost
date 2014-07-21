@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -298,7 +304,12 @@ VOS_STATUS WLANTL_HSSerializeTlIndication
    v_U8_t      rssiNotification,
    v_PVOID_t   pUserCtxt,
 <<<<<<< HEAD
+<<<<<<< HEAD
    WLANTL_RSSICrossThresholdCBType cbFunction
+=======
+   WLANTL_RSSICrossThresholdCBType cbFunction,
+   v_U8_t      avgRssi
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    WLANTL_RSSICrossThresholdCBType cbFunction,
    v_U8_t      avgRssi
@@ -322,10 +333,15 @@ VOS_STATUS WLANTL_StatHandleTXFrame
    v_U8_t           STAid,
    vos_pkt_t       *dataBuffer,
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_PVOID_t        pBDHeader
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
   ,WLANTL_MetaInfoType *txMetaInfo
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+   v_PVOID_t        pBDHeader,
+   WLANTL_MetaInfoType *txMetaInfo
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_PVOID_t        pBDHeader,
    WLANTL_MetaInfoType *txMetaInfo

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -55,11 +61,15 @@
  */
 #include "wniApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 #include "wniCfgAp.h"
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -139,7 +149,11 @@ limProcessMlmRspMessages(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
    if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+           PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -254,7 +268,11 @@ limProcessMlmScanCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
              */
             PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received unexpected MLM_SCAN_CNF in state %X\n"),
+=======
+               FL("received unexpected MLM_SCAN_CNF in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received unexpected MLM_SCAN_CNF in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -307,7 +325,11 @@ limProcessMlmScanCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             // Log error
             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL("could not activate background scan timer\n"));
+=======
+            FL("could not activate background scan timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL("could not activate background scan timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -387,7 +409,11 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+           PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -397,7 +423,11 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pLimMlmStartCnf->sessionId))==NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("Session does Not exist with given sessionId \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("Session does Not exist with given sessionId "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("Session does Not exist with given sessionId "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -415,7 +445,11 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
          */
         PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("received unexpected MLM_START_CNF in state %X\n"),
+=======
+           FL("received unexpected MLM_START_CNF in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("received unexpected MLM_START_CNF in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -436,6 +470,7 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         if(psessionEntry->bssType == eSIR_BTAMP_STA_MODE)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
              limLog(pMac, LOG1, FL("*** Started BSS in BT_AMP STA SIDE***\n"));
         }
         else if(psessionEntry->bssType == eSIR_BTAMP_AP_MODE)
@@ -451,6 +486,8 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         else
             PELOG1(limLog(pMac, LOG1, FL("*** Started BSS ***\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              limLog(pMac, LOG1, FL("*** Started BSS in BT_AMP STA SIDE***"));
         }
         else if(psessionEntry->bssType == eSIR_BTAMP_AP_MODE)
@@ -463,6 +500,9 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         }
         else
             PELOG1(limLog(pMac, LOG1, FL("*** Started BSS ***"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
@@ -476,7 +516,10 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                           ((tLimMlmStartCnf *) pMsgBuf)->resultCode,psessionEntry,
                           smesessionId,smetransactionId);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (((tLimMlmStartCnf *) pMsgBuf)->resultCode == eSIR_SME_SUCCESS)
@@ -485,7 +528,10 @@ limProcessMlmStartCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         limSendBeaconInd(pMac, psessionEntry);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
@@ -520,7 +566,11 @@ limProcessMlmJoinCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if( (psessionEntry = peFindSessionBySessionId(pMac,pLimMlmJoinCnf->sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("Session does not exist for given sessionId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("Session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("Session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -531,7 +581,11 @@ limProcessMlmJoinCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     {
         PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received unexpected MLM_JOIN_CNF in state %X\n"),
+=======
+               FL("received unexpected MLM_JOIN_CNF in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received unexpected MLM_JOIN_CNF in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -594,7 +648,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+           PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -604,7 +662,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pMlmAuthCnf->sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("session does not exist for given sessionId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -622,7 +684,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
          */
         PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received unexpected MLM_AUTH_CNF in state %X\n"),
+=======
+               FL("received unexpected MLM_AUTH_CNF in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received unexpected MLM_AUTH_CNF in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -643,7 +709,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("could not retrieve AuthType value\n"));
+=======
+                       FL("could not retrieve AuthType value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("could not retrieve AuthType value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -667,7 +737,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for mlmAuthReq\n"));
+=======
+                   FL("call to palAllocateMemory failed for mlmAuthReq"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("call to palAllocateMemory failed for mlmAuthReq"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -696,7 +770,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AuthFailureTimeout value\n"));
+=======
+                   FL("could not retrieve AuthFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AuthFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -712,7 +790,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             if (psessionEntry->limSmeState == eLIM_SME_WT_AUTH_STATE)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("Auth Failure occurred.\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("Auth Failure occurred."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("Auth Failure occurred."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -721,6 +803,7 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                 psessionEntry->limMlmState = eLIM_MLM_IDLE_STATE;
                 MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_AP_CLIENT_SDK)
                 if (psessionEntry->limSystemRole == eLIM_STA_ROLE)
@@ -734,6 +817,8 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                     }
                 }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /**
@@ -770,7 +855,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
              */
             PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("*** Authenticated with BSS ***\n"));)
+=======
+                   FL("*** Authenticated with BSS ***"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("*** Authenticated with BSS ***"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -779,7 +868,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for mlmAssocReq\n"));
+=======
+                   FL("call to palAllocateMemory failed for mlmAssocReq"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("call to palAllocateMemory failed for mlmAssocReq"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -793,7 +886,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             {
                 /// Could not get BSSID from CFG. Log error.
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("could not retrieve BSSID\n"));
+=======
+                limLog(pMac, LOGP, FL("could not retrieve BSSID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("could not retrieve BSSID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -810,7 +907,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AssocFailureTimeout value\n"));
+=======
+                   FL("could not retrieve AssocFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AssocFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -823,7 +924,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("could not retrieve Capabilities value\n"));
+=======
+                       FL("could not retrieve Capabilities value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("could not retrieve Capabilities value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -838,7 +943,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             pMlmAssocReq->capabilityInfo = caps;
            PELOG3(limLog(pMac, LOG3,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("Capabilities to be used in AssocReq=0x%X, privacy bit=%x shortSlotTime %x\n"),
+=======
+               FL("Capabilities to be used in AssocReq=0x%X, privacy bit=%x shortSlotTime %x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("Capabilities to be used in AssocReq=0x%X, privacy bit=%x shortSlotTime %x"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -851,7 +960,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             if(wlan_cfgGetInt(pMac, WNI_CFG_TELE_BCN_WAKEUP_EN, &teleBcnEn) !=
                eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
                limLog(pMac, LOGP, FL("Couldn't get WNI_CFG_TELE_BCN_WAKEUP_EN\n"));
+=======
+               limLog(pMac, LOGP, FL("Couldn't get WNI_CFG_TELE_BCN_WAKEUP_EN"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                limLog(pMac, LOGP, FL("Couldn't get WNI_CFG_TELE_BCN_WAKEUP_EN"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -868,7 +981,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                   * from CFG. Log error.
                   */
 <<<<<<< HEAD
+<<<<<<< HEAD
                   limLog(pMac, LOGP, FL("could not retrieve ListenInterval\n"));
+=======
+                  limLog(pMac, LOGP, FL("could not retrieve ListenInterval"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   limLog(pMac, LOGP, FL("could not retrieve ListenInterval"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -883,7 +1000,11 @@ limProcessMlmAuthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                  * from CFG. Log error.
                  */
 <<<<<<< HEAD
+<<<<<<< HEAD
                   limLog(pMac, LOGP, FL("could not retrieve ListenInterval\n"));
+=======
+                  limLog(pMac, LOGP, FL("could not retrieve ListenInterval"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   limLog(pMac, LOGP, FL("could not retrieve ListenInterval"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -945,7 +1066,11 @@ limProcessMlmAssocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));
+=======
+           limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -955,7 +1080,11 @@ limProcessMlmAssocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pLimMlmAssocCnf->sessionId)) == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
          PELOGE(limLog(pMac, LOGE,FL("Session does not exist for given sessionId\n"));)
+=======
+         PELOGE(limLog(pMac, LOGE,FL("Session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          PELOGE(limLog(pMac, LOGE,FL("Session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -971,7 +1100,11 @@ limProcessMlmAssocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
          */
         PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("received unexpected MLM_ASSOC_CNF in state %X\n"),
+=======
+               FL("received unexpected MLM_ASSOC_CNF in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received unexpected MLM_ASSOC_CNF in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -981,6 +1114,7 @@ limProcessMlmAssocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if (((tLimMlmAssocCnf *) pMsgBuf)->resultCode != eSIR_SME_SUCCESS)
     {
         // Association failure
+<<<<<<< HEAD
 <<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("*** Association failure ***\n"));)
         psessionEntry->limSmeState = eLIM_SME_JOIN_FAILURE_STATE;
@@ -1001,6 +1135,11 @@ limProcessMlmAssocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         psessionEntry->limSmeState = eLIM_SME_JOIN_FAILURE_STATE;
         MTRACE(macTrace(pMac, TRACE_CODE_SME_STATE, psessionEntry->peSessionId, pMac->lim.gLimSmeState));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+        PELOG1(limLog(pMac, LOG1, FL("*** Association failure ***"));)
+        psessionEntry->limSmeState = eLIM_SME_JOIN_FAILURE_STATE;
+        MTRACE(macTrace(pMac, TRACE_CODE_SME_STATE, psessionEntry->peSessionId, pMac->lim.gLimSmeState));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /**
          * Need to send Join response with
          * Association failure to Host.
@@ -1013,7 +1152,11 @@ limProcessMlmAssocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     {
         // Successful Association
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("*** Associated with BSS ***\n"));)
+=======
+        PELOG1(limLog(pMac, LOG1, FL("*** Associated with BSS ***"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG1(limLog(pMac, LOG1, FL("*** Associated with BSS ***"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1056,7 +1199,11 @@ limProcessMlmReassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+           PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1066,7 +1213,11 @@ limProcessMlmReassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pLimMlmReassocCnf->sessionId))==NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
          PELOGE(limLog(pMac, LOGE, FL("session Does not exist for given session Id\n"));)
+=======
+         PELOGE(limLog(pMac, LOGE, FL("session Does not exist for given session Id"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          PELOGE(limLog(pMac, LOGE, FL("session Does not exist for given session Id"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1082,7 +1233,11 @@ limProcessMlmReassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
          */
         PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("Rcv unexpected MLM_REASSOC_CNF in role %d, sme state 0x%X\n"),
+=======
+                   FL("Rcv unexpected MLM_REASSOC_CNF in role %d, sme state 0x%X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("Rcv unexpected MLM_REASSOC_CNF in role %d, sme state 0x%X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1095,15 +1250,21 @@ limProcessMlmReassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("Rcv MLM_REASSOC_CNF with result code %d\n"), pLimMlmReassocCnf->resultCode);)
     if (pLimMlmReassocCnf->resultCode == eSIR_SME_SUCCESS) {
         // Successful Reassociation
         PELOG1(limLog(pMac, LOG1, FL("*** Reassociated with new BSS ***\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOGE(limLog(pMac, LOGE, FL("Rcv MLM_REASSOC_CNF with result code %d"), pLimMlmReassocCnf->resultCode);)
     if (pLimMlmReassocCnf->resultCode == eSIR_SME_SUCCESS) {
         // Successful Reassociation
         PELOG1(limLog(pMac, LOG1, FL("*** Reassociated with new BSS ***"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         psessionEntry->limSmeState = eLIM_SME_LINK_EST_STATE;
@@ -1173,7 +1334,11 @@ limProcessMlmReassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1181,6 +1346,7 @@ limProcessMlmReassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     }
     if((psessionEntry = peFindSessionByBssid(pMac,((tpLimMlmReassocInd)pMsgBuf)->peerMacAddr, &sessionId))== NULL)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId\n"));)
         return;
@@ -1197,18 +1363,27 @@ limProcessMlmReassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     len = sizeof(tSirSmeReassocInd);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
         return;
     }
     /// Inform Host of STA reassociation
     len = sizeof(tSirSmeReassocInd);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeReassocInd, len))
     {
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("call to palAllocateMemory failed for eWNI_SME_REASSOC_IND\n"));
+=======
+           FL("call to palAllocateMemory failed for eWNI_SME_REASSOC_IND"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("call to palAllocateMemory failed for eWNI_SME_REASSOC_IND"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1237,7 +1412,11 @@ limProcessMlmReassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if (! pStaDs)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL("MLM ReAssocInd: Station context no longer valid (aid %d)\n"),
+=======
+        limLog( pMac, LOGP, FL("MLM ReAssocInd: Station context no longer valid (aid %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGP, FL("MLM ReAssocInd: Station context no longer valid (aid %d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1249,7 +1428,11 @@ limProcessMlmReassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     limSysProcessMmhMsgApi(pMac, &msgQ,  ePROT);
     PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
        FL("Create CNF_WAIT_TIMER after received LIM_MLM_REASSOC_IND\n"));)
+=======
+       FL("Create CNF_WAIT_TIMER after received LIM_MLM_REASSOC_IND"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        FL("Create CNF_WAIT_TIMER after received LIM_MLM_REASSOC_IND"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1287,7 +1470,11 @@ limProcessMlmAuthInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+           PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1298,7 +1485,11 @@ limProcessMlmAuthInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("call to palAllocateMemory failed for eWNI_SME_AUTH_IND\n"));
+=======
+           FL("call to palAllocateMemory failed for eWNI_SME_AUTH_IND"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("call to palAllocateMemory failed for eWNI_SME_AUTH_IND"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1369,10 +1560,15 @@ limFillAssocIndParams(tpAniSirGlobal pMac, tpLimMlmAssocInd pAssocInd,
                      pAssocInd->supportedChannels.numChnl);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     // Fill in WmmInfo
     pSirSmeAssocInd->wmmEnabledSta = pAssocInd->WmmStaInfoPresent;
 #endif
+=======
+    // Fill in WmmInfo
+    pSirSmeAssocInd->wmmEnabledSta = pAssocInd->WmmStaInfoPresent;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     // Fill in WmmInfo
     pSirSmeAssocInd->wmmEnabledSta = pAssocInd->WmmStaInfoPresent;
@@ -1410,7 +1606,11 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+           PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1418,6 +1618,7 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     }
     if((psessionEntry = peFindSessionBySessionId(pMac,((tpLimMlmAssocInd) pMsgBuf)->sessionId))== NULL)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Session Does not exist for given sessionId\n" ));
         return;
@@ -1434,16 +1635,22 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     len = sizeof(tSirSmeAssocInd);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog( pMac, LOGE, FL( "Session Does not exist for given sessionId" ));
         return;
     }
     /// Inform Host of STA association
     len = sizeof(tSirSmeAssocInd);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeAssocInd, len))
     {
         // Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
 <<<<<<< HEAD
                FL("call to palAllocateMemory failed for eWNI_SME_ASSOC_IND\n"));
         return;
@@ -1459,12 +1666,17 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     limFillAssocIndParams(pMac, (tpLimMlmAssocInd) pMsgBuf, pSirSmeAssocInd, psessionEntry);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("call to palAllocateMemory failed for eWNI_SME_ASSOC_IND"));
         return;
     }
 
     pSirSmeAssocInd->messageType = eWNI_SME_ASSOC_IND;
     limFillAssocIndParams(pMac, (tpLimMlmAssocInd) pMsgBuf, pSirSmeAssocInd, psessionEntry);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msgQ.type = eWNI_SME_ASSOC_IND;
     msgQ.bodyptr = pSirSmeAssocInd;
@@ -1474,7 +1686,11 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if (! pStaDs)
     {   // good time to panic...
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("MLM AssocInd: Station context no longer valid (aid %d)\n"),
+=======
+        limLog(pMac, LOGE, FL("MLM AssocInd: Station context no longer valid (aid %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("MLM AssocInd: Station context no longer valid (aid %d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1485,9 +1701,13 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     }
     pSirSmeAssocInd->staId = pStaDs->staIndex;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    pSirSmeAssocInd->reassocReq = pStaDs->mlmStaContext.subType;
 #endif
+=======
+   pSirSmeAssocInd->reassocReq = pStaDs->mlmStaContext.subType;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    pSirSmeAssocInd->reassocReq = pStaDs->mlmStaContext.subType;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1499,7 +1719,11 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
 
     PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
        FL("Create CNF_WAIT_TIMER after received LIM_MLM_ASSOC_IND\n"));)
+=======
+       FL("Create CNF_WAIT_TIMER after received LIM_MLM_ASSOC_IND"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        FL("Create CNF_WAIT_TIMER after received LIM_MLM_ASSOC_IND"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1515,7 +1739,11 @@ limProcessMlmAssocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     tpSirSmeAssocCnf     pSmeAssoccnf;
     if(!palAllocateMemory(pMac->hHdd,(void **)&pSmeAssoccnf,sizeof(tSirSmeAssocCnf)))
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed for pSmeAssoccnf \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed for pSmeAssoccnf "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed for pSmeAssoccnf "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1566,7 +1794,11 @@ limProcessMlmDisassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if( (psessionEntry = peFindSessionBySessionId(pMac,pMlmDisassocInd->sessionId) )== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1584,7 +1816,11 @@ limProcessMlmDisassocInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         default: // eLIM_AP_ROLE //eLIM_BT_AMP_AP_ROLE
                 PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("*** Peer staId=%d Disassociated ***\n"),
+=======
+                       FL("*** Peer staId=%d Disassociated ***"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("*** Peer staId=%d Disassociated ***"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1623,7 +1859,11 @@ limProcessMlmDisassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pMlmDisassocCnf->sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session Does not exist for given session Id\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session Does not exist for given session Id"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session Does not exist for given session Id"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1637,9 +1877,12 @@ limProcessMlmDisassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if ((psessionEntry->limSystemRole == eLIM_STA_ROLE)|| (psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_AP_CLIENT_SDK)
         tSirMacAddr         nullMacAddr = {0, 0, 0, 0, 0, 0};
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Disassociate Confirm from MLM
@@ -1653,6 +1896,7 @@ limProcessMlmDisassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
              * Log error
              */
             PELOGE(limLog(pMac, LOGE,
+<<<<<<< HEAD
 <<<<<<< HEAD
                FL("received unexpected MLM_DISASSOC_CNF in state %X\n"),psessionEntry->limSmeState);)
             return;
@@ -1668,6 +1912,11 @@ limProcessMlmDisassocCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             limLog(pMac, LOGP, FL("Could not update BSSID on CFG"));
         }
 #endif
+=======
+               FL("received unexpected MLM_DISASSOC_CNF in state %X"),psessionEntry->limSmeState);)
+            return;
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("received unexpected MLM_DISASSOC_CNF in state %X"),psessionEntry->limSmeState);)
             return;
@@ -1736,7 +1985,11 @@ limProcessMlmDeauthInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionByBssid(pMac,pMlmDeauthInd->peerMacAddr,&sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
          PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId\n"));)
+=======
+         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1755,7 +2008,11 @@ limProcessMlmDeauthInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             {
                 PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("*** Received Deauthentication from staId=%d ***\n"),
+=======
+                   FL("*** Received Deauthentication from staId=%d ***"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("*** Received Deauthentication from staId=%d ***"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1796,7 +2053,11 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1806,7 +2067,11 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pMlmDeauthCnf->sessionId))==NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
          PELOGE(limLog(pMac, LOGE,FL("session does not exist for given session Id \n"));)
+=======
+         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given session Id "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          PELOGE(limLog(pMac, LOGE,FL("session does not exist for given session Id "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1823,9 +2088,12 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if ((psessionEntry->limSystemRole == eLIM_STA_ROLE)|| (psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         #if defined(ANI_AP_CLIENT_SDK)
         tSirMacAddr         nullMacAddr = {0, 0, 0, 0, 0, 0};
         #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Deauth Confirm from MLM
@@ -1837,6 +2105,7 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
              * Log error
              */
             PELOGE(limLog(pMac, LOGE,
+<<<<<<< HEAD
 <<<<<<< HEAD
                FL("received unexpected MLM_DEAUTH_CNF in state %X\n"),
                psessionEntry->limSmeState);)
@@ -1854,17 +2123,26 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
         }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                FL("received unexpected MLM_DEAUTH_CNF in state %X"),
                psessionEntry->limSmeState);)
             return;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pMlmDeauthCnf->resultCode == eSIR_SME_SUCCESS)
         {
             psessionEntry->limSmeState = eLIM_SME_IDLE_STATE;
             PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("*** Deauthenticated with BSS ***\n"));)
+=======
+                   FL("*** Deauthenticated with BSS ***"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("*** Deauthenticated with BSS ***"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1877,6 +2155,7 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             pMac->lim.gLimRspReqd = false;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
     // BP deauthenticated by AP or vice versa
     // Send SME_DISASSOC_RSP to host.
@@ -1887,13 +2166,18 @@ limProcessMlmDeauthCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // On STA or on BASIC AP, send SME_DEAUTH_RSP to host
     limSendSmeDeauthNtf(pMac, pMlmDeauthCnf->peerMacAddr,
                         resultCode,
                         pMlmDeauthCnf->deauthTrigger,
                         aid,psessionEntry->smeSessionId,psessionEntry->transactionId);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limProcessMlmDeauthCnf() ***/
@@ -1923,6 +2207,7 @@ limProcessMlmPurgeStaInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     tpLimMlmPurgeStaInd  pMlmPurgeStaInd;
     tpPESession          psessionEntry;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_AP_CLIENT_SDK)
     tSirMacAddr         nullMacAddr = {0, 0, 0, 0, 0, 0};
 #endif
@@ -1934,13 +2219,22 @@ limProcessMlmPurgeStaInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     {
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+    if(pMsgBuf == NULL)
+    {
+        PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     pMlmPurgeStaInd = (tpLimMlmPurgeStaInd) pMsgBuf;
     if((psessionEntry = peFindSessionBySessionId(pMac,pMlmPurgeStaInd->sessionId))==NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given bssId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1968,7 +2262,11 @@ limProcessMlmPurgeStaInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                  */
                 PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("received unexpected MLM_PURGE_STA_IND in state %X\n"),
+=======
+                   FL("received unexpected MLM_PURGE_STA_IND in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("received unexpected MLM_PURGE_STA_IND in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1977,7 +2275,11 @@ limProcessMlmPurgeStaInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             }
             PELOG1(limLog(pMac, LOG1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                FL("*** Polaris cleanup completed for staId=%d ***\n"),
+=======
+               FL("*** Polaris cleanup completed for staId=%d ***"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                FL("*** Polaris cleanup completed for staId=%d ***"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1987,6 +2289,7 @@ limProcessMlmPurgeStaInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                 psessionEntry->limSmeState = eLIM_SME_IDLE_STATE;
                 MTRACE(macTrace(pMac, TRACE_CODE_SME_STATE, psessionEntry->peSessionId, psessionEntry->limSmeState));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_AP_CLIENT_SDK)
                 // Whenever there is a disassoc notification, make sure the bssId is cleared so that
@@ -2016,13 +2319,21 @@ limProcessMlmPurgeStaInd(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
             if (pMlmPurgeStaInd->purgeTrigger == eLIM_PEER_ENTITY_DEAUTH)
             {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+            }
+            if (pMlmPurgeStaInd->purgeTrigger == eLIM_PEER_ENTITY_DEAUTH)
+            {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limSendSmeDeauthNtf(pMac,
                             pMlmPurgeStaInd->peerMacAddr,
                             resultCode,
                             pMlmPurgeStaInd->purgeTrigger,
                             pMlmPurgeStaInd->aid,psessionEntry->smeSessionId,psessionEntry->transactionId);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
@@ -2063,7 +2374,11 @@ limProcessMlmSetKeysCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2072,6 +2387,7 @@ limProcessMlmSetKeysCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     pMlmSetKeysCnf = (tLimMlmSetKeysCnf *) pMsgBuf;
     if ((psessionEntry = peFindSessionBySessionId(pMac, pMlmSetKeysCnf->sessionId))== NULL)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId \n"));)
         return;
@@ -2087,6 +2403,8 @@ limProcessMlmSetKeysCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                             1,
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId "));)
         return;
     }
@@ -2096,6 +2414,9 @@ limProcessMlmSetKeysCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     limSendSmeSetContextRsp(pMac,
                             pMlmSetKeysCnf->peerMacAddr,
                             1,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             (tSirResultCodes) pMlmSetKeysCnf->resultCode,psessionEntry,psessionEntry->smeSessionId,
                             psessionEntry->transactionId);
@@ -2128,7 +2449,11 @@ limProcessMlmRemoveKeyCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2138,17 +2463,23 @@ limProcessMlmRemoveKeyCnf(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     if((psessionEntry = peFindSessionBySessionId(pMac,pMlmRemoveKeyCnf->sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session Does not exist for given session Id\n"));)
         return;
     }
     limLog( pMac, LOG1,
         FL("Received MLM_REMOVEKEYS_CNF with resultCode = %d\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PELOGE(limLog(pMac, LOGE,FL("session Does not exist for given session Id"));)
         return;
     }
     limLog( pMac, LOG1,
         FL("Received MLM_REMOVEKEYS_CNF with resultCode = %d"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMlmRemoveKeyCnf->resultCode );
     limSendSmeRemoveKeyRsp(pMac,
@@ -2190,7 +2521,11 @@ limHandleSmeJoinResult(tpAniSirGlobal pMac, tSirResultCodes resultCode, tANI_U16
     if(psessionEntry == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("psessionEntry is NULL \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("psessionEntry is NULL "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("psessionEntry is NULL "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2226,7 +2561,11 @@ limHandleSmeJoinResult(tpAniSirGlobal pMac, tSirResultCodes resultCode, tANI_U16
            if(limSetLinkState(pMac, eSIR_LINK_IDLE_STATE,psessionEntry->bssId,
                 psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
                PELOGE(limLog(pMac, LOGE,  FL("Failed to set the LinkState.\n"));)
+=======
+               PELOGE(limLog(pMac, LOGE,  FL("Failed to set the LinkState."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                PELOGE(limLog(pMac, LOGE,  FL("Failed to set the LinkState."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2268,7 +2607,11 @@ limHandleSmeReaasocResult(tpAniSirGlobal pMac, tSirResultCodes resultCode, tANI_
     if(psessionEntry == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("psessionEntry is NULL \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("psessionEntry is NULL "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("psessionEntry is NULL "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2330,9 +2673,13 @@ void limProcessMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession 
     SET_LIM_PROCESS_DEFD_MESGS(pMac, true);
     if ((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 #endif
+=======
+    || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2342,9 +2689,13 @@ void limProcessMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession 
         return;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
     limProcessStaMlmAddStaRsp(pMac, limMsgQ,psessionEntry);
 #endif
+=======
+    limProcessStaMlmAddStaRsp(pMac, limMsgQ,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limProcessStaMlmAddStaRsp(pMac, limMsgQ,psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2359,7 +2710,11 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
     if(NULL == pAddStaParams )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer\n" ));
+=======
+        limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2372,7 +2727,11 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
             //TODO: any response to be sent out here ?
             limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 FL( "Received unexpected WDA_ADD_STA_RSP in state %X\n" ),
+=======
+                FL( "Received unexpected WDA_ADD_STA_RSP in state %X" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 FL( "Received unexpected WDA_ADD_STA_RSP in state %X" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2392,7 +2751,11 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
         else
             limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Unable to get the DPH Hash Entry for AID - %d\n" ),
+=======
+            FL( "Unable to get the DPH Hash Entry for AID - %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Unable to get the DPH Hash Entry for AID - %d" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2408,14 +2771,20 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
         psessionEntry->staId = pAddStaParams->staIdx;
         //if the AssocRsp frame is not acknowledged, then keep alive timer will take care of the state
 <<<<<<< HEAD
+<<<<<<< HEAD
         limReactivateHeartBeatTimer(pMac, psessionEntry);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
         if(!IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE)
 #endif
         {
            limReactivateHeartBeatTimer(pMac, psessionEntry);
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_KEEPALIVE_TIMER));
 
@@ -2423,11 +2792,14 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
         pMac->lim.limTimers.gLimKeepaliveTimer.sessionId = psessionEntry->peSessionId;
         if (tx_timer_activate(&pMac->lim.limTimers.gLimKeepaliveTimer) != TX_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Cannot activate keepalive timer.\n"));
 #ifdef WLAN_DEBUG
         pMac->lim.gLimNumLinkEsts++;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, LOGP, FL("Cannot activate keepalive timer."));
 #ifdef WLAN_DEBUG
         pMac->lim.gLimNumLinkEsts++;
@@ -2436,6 +2808,9 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
        /* initialize TDLS peer related data */
        limInitTdlsData(pMac,psessionEntry);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Return Assoc confirm to SME with success
         // FIXME_GEN4 - Need the correct ASSOC RSP code to
@@ -2446,7 +2821,11 @@ void limProcessStaMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESess
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL( "ADD_STA failed!\n"));
+=======
+        limLog( pMac, LOGE, FL( "ADD_STA failed!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "ADD_STA failed!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2472,7 +2851,11 @@ void limProcessMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession 
    // if((psessionEntry = peFindSessionBySessionId(pMac,pDeleteBssParams->sessionId)) == NULL)
   //  {
 <<<<<<< HEAD
+<<<<<<< HEAD
    //     limLog( pMac, LOGE, FL( "Session deos not exist with given sessionId\n" ));
+=======
+   //     limLog( pMac, LOGE, FL( "Session deos not exist with given sessionId" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    //     limLog( pMac, LOGE, FL( "Session deos not exist with given sessionId" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2483,9 +2866,13 @@ void limProcessMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession 
     if (((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)  ||
          (psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
          || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 #endif
+=======
+         || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2496,16 +2883,22 @@ void limProcessMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession 
         return;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
     limProcessStaMlmDelBssRsp(pMac, limMsgQ,psessionEntry);
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limProcessStaMlmDelBssRsp(pMac, limMsgQ,psessionEntry);
 
    if(!limIsInMCC(pMac))
    {
       WDA_TrafficStatsTimerActivate(FALSE);
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
@@ -2515,11 +2908,14 @@ void limProcessStaMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
     tpDphHashNode pStaDs =              dphGetHashEntry(pMac, DPH_STA_HASH_INDEX_PEER, &psessionEntry->dph.dphHashTable);
     tSirResultCodes statusCode =        eSIR_SME_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( eHAL_STATUS_SUCCESS == pDelBssParams->status )
     {
         PELOGW(limLog( pMac, LOGW,
                       FL( "STA received the DEL_BSS_RSP for BSSID: %X.\n"),pDelBssParams->bssIdx);)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (NULL == pDelBssParams)
     {
@@ -2530,13 +2926,20 @@ void limProcessStaMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
     {
         PELOGW(limLog( pMac, LOGW,
                       FL( "STA received the DEL_BSS_RSP for BSSID: %X."),pDelBssParams->bssIdx);)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (limSetLinkState(pMac, eSIR_LINK_IDLE_STATE, psessionEntry->bssId,
              psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS)
 
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, FL( "Failure in setting link state to IDLE\n"));)
+=======
+            PELOGE(limLog( pMac, LOGE, FL( "Failure in setting link state to IDLE"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, FL( "Failure in setting link state to IDLE"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2546,7 +2949,11 @@ void limProcessStaMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
         if(pStaDs == NULL)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGE, FL( "DPH Entry for STA 1 missing.\n"));
+=======
+            limLog( pMac, LOGE, FL( "DPH Entry for STA 1 missing."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGE, FL( "DPH Entry for STA 1 missing."));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2556,7 +2963,11 @@ void limProcessStaMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
          if( eLIM_MLM_WT_DEL_BSS_RSP_STATE != pStaDs->mlmStaContext.mlmState)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, FL( "Received unexpected WDA_DEL_BSS_RSP in state %X\n" ),
+=======
+            PELOGE(limLog( pMac, LOGE, FL( "Received unexpected WDA_DEL_BSS_RSP in state %X" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, FL( "Received unexpected WDA_DEL_BSS_RSP in state %X" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2570,11 +2981,16 @@ void limProcessStaMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "DEL BSS failed!\n" ) );
         if( NULL != pDelBssParams )
         {
             palFreeMemory( pMac->hHdd, (void *) pDelBssParams );
     	}
+=======
+        limLog( pMac, LOGE, FL( "DEL BSS failed!" ) );
+        palFreeMemory( pMac->hHdd, (void *) pDelBssParams );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "DEL BSS failed!" ) );
         palFreeMemory( pMac->hHdd, (void *) pDelBssParams );
@@ -2614,7 +3030,11 @@ void limProcessBtAmpApMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     if(psessionEntry == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE,FL("Session entry passed is NULL\n"));
+=======
+        limLog(pMac, LOGE,FL("Session entry passed is NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE,FL("Session entry passed is NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2626,7 +3046,11 @@ void limProcessBtAmpApMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     if (pDelBss == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("BSS: DEL_BSS_RSP with no body!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("BSS: DEL_BSS_RSP with no body!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("BSS: DEL_BSS_RSP with no body!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2635,6 +3059,11 @@ void limProcessBtAmpApMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     }
     pMac->lim.gLimMlmState = eLIM_MLM_IDLE_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, NO_SESSION, pMac->lim.gLimMlmState));
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, NO_SESSION, pMac->lim.gLimMlmState));
 
@@ -2675,10 +3104,15 @@ void limProcessBtAmpApMlmDelBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     dphHashTableClassInit(pMac, &psessionEntry->dph.dphHashTable);//TBD-RAJESH is it needed ?
     limDeletePreAuthList(pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     //Initialize number of associated stations during cleanup
     pMac->lim.gLimNumOfCurrentSTAs = 0;
 #endif
+=======
+    //Initialize number of associated stations during cleanup
+    psessionEntry->gLimNumOfCurrentSTAs = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     //Initialize number of associated stations during cleanup
     psessionEntry->gLimNumOfCurrentSTAs = 0;
@@ -2702,15 +3136,21 @@ void limProcessMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     pDeleteStaParams = (tpDeleteStaParams)limMsgQ->bodyptr;
     SET_LIM_PROCESS_DEFD_MESGS(pMac, true);
 <<<<<<< HEAD
+<<<<<<< HEAD
     if((psessionEntry = peFindSessionBySessionId(pMac,pDeleteStaParams->sessionId))==NULL)
     {
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(NULL == pDeleteStaParams ||
        NULL == (psessionEntry = peFindSessionBySessionId(pMac, pDeleteStaParams->sessionId)))
     {
         limLog(pMac, LOGP,FL("Session Does not exist or invalid body pointer in message"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pDeleteStaParams != NULL)
             palFreeMemory( pMac->hHdd, (void *) pDeleteStaParams );
@@ -2719,9 +3159,13 @@ void limProcessMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
 
     if ((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
       || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 #endif
+=======
+      || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2731,9 +3175,13 @@ void limProcessMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
         return;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
     limProcessStaMlmDelStaRsp(pMac, limMsgQ,psessionEntry);
 #endif
+=======
+    limProcessStaMlmDelStaRsp(pMac, limMsgQ,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limProcessStaMlmDelStaRsp(pMac, limMsgQ,psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2754,7 +3202,11 @@ void limProcessBtAmpApMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
              FL( "DPH Entry for STA %X missing.\n"), pDelStaParams->assocId);
+=======
+             FL( "DPH Entry for STA %X missing."), pDelStaParams->assocId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              FL( "DPH Entry for STA %X missing."), pDelStaParams->assocId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2767,7 +3219,11 @@ void limProcessBtAmpApMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     {
         limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL( "AP received the DEL_STA_RSP for assocID: %X.\n"), pDelStaParams->assocId);
+=======
+                   FL( "AP received the DEL_STA_RSP for assocID: %X."), pDelStaParams->assocId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL( "AP received the DEL_STA_RSP for assocID: %X."), pDelStaParams->assocId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2777,7 +3233,11 @@ void limProcessBtAmpApMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
         {
             limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
               FL( "Received unexpected WDA_DEL_STA_RSP in state %s for staId %d assocId %d \n" ),
+=======
+              FL( "Received unexpected WDA_DEL_STA_RSP in state %s for staId %d assocId %d " ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
               FL( "Received unexpected WDA_DEL_STA_RSP in state %s for staId %d assocId %d " ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2794,15 +3254,21 @@ void limProcessBtAmpApMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
        {
             palFreeMemory( pMac->hHdd, (void *) pDelStaParams );
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (limAddSta(pMac, pStaDs,psessionEntry) != eSIR_SUCCESS)
             {
                 PELOGE(limLog(pMac, LOGE,
                        FL("could not Add STA with assocId=%d\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (limAddSta(pMac, pStaDs, false, psessionEntry) != eSIR_SUCCESS)
             {
                 PELOGE(limLog(pMac, LOGE,
                        FL("could not Add STA with assocId=%d"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        pStaDs->assocId);)
               // delete the TS if it has already been added.
@@ -2832,7 +3298,11 @@ void limProcessBtAmpApMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     {
         limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
              FL( "DEL STA failed!\n" ));
+=======
+             FL( "DEL STA failed!" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              FL( "DEL STA failed!" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2855,7 +3325,11 @@ void limProcessStaMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
     if(NULL == pDelStaParams )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer\n" ));
+=======
+        limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2868,7 +3342,11 @@ void limProcessStaMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
         {
             //TODO: any response to be sent out here ?
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGE, FL( "DPH Entry for STA %X missing.\n"),
+=======
+            limLog( pMac, LOGE, FL( "DPH Entry for STA %X missing."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGE, FL( "DPH Entry for STA %X missing."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2880,7 +3358,11 @@ void limProcessStaMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
         {
             //TODO: any response to be sent out here ?
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGE, FL( "Received unexpected WDA_DELETE_STA_RSP in state %s\n" ),
+=======
+            limLog( pMac, LOGE, FL( "Received unexpected WDA_DELETE_STA_RSP in state %s" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGE, FL( "Received unexpected WDA_DELETE_STA_RSP in state %s" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2891,7 +3373,11 @@ void limProcessStaMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
         PELOG1(limLog( pMac, LOG1, FL("STA AssocID %d MAC "), pStaDs->assocId );
         limPrintMacAddr(pMac, pStaDs->staAddr, LOG1);)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL( "DEL_STA_RSP received for assocID: %X\n"), pDelStaParams->assocId);
+=======
+        limLog( pMac, LOGW, FL( "DEL_STA_RSP received for assocID: %X"), pDelStaParams->assocId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGW, FL( "DEL_STA_RSP received for assocID: %X"), pDelStaParams->assocId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2906,7 +3392,11 @@ void limProcessStaMlmDelStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESessi
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL( "DEL_STA failed!\n" ));
+=======
+        limLog( pMac, LOGE, FL( "DEL_STA failed for sta Id %d" ), pDelStaParams->staIdx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "DEL_STA failed for sta Id %d" ), pDelStaParams->staIdx);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2924,12 +3414,15 @@ void limProcessBtAmpApMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
 {
     tpAddStaParams pAddStaParams = (tpAddStaParams) limMsgQ->bodyptr;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tpDphHashNode pStaDs = dphGetHashEntry(pMac, pAddStaParams->assocId, &psessionEntry->dph.dphHashTable);
     if(pStaDs == NULL)
     {
         //TODO: any response to be sent out here ?
         limLog( pMac, LOGE, FL( "DPH Entry for STA %X missing.\n"), pAddStaParams->assocId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpDphHashNode pStaDs = NULL;
 
     if (NULL == pAddStaParams)
@@ -2943,6 +3436,9 @@ void limProcessBtAmpApMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     {
         //TODO: any response to be sent out here ?
         limLog( pMac, LOGE, FL( "DPH Entry for STA %X missing."), pAddStaParams->assocId);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         goto end;
     }
@@ -2956,7 +3452,11 @@ void limProcessBtAmpApMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
         //TODO: any response to be sent out here ?
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 FL( "Received unexpected WDA_ADD_STA_RSP in state %X\n" ),
+=======
+                FL( "Received unexpected WDA_ADD_STA_RSP in state %X" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 FL( "Received unexpected WDA_ADD_STA_RSP in state %X" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2966,7 +3466,11 @@ void limProcessBtAmpApMlmAddStaRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPES
     if(eHAL_STATUS_SUCCESS != pAddStaParams->status)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Error! rcvd delSta rsp from HAL with status %d\n"),pAddStaParams->status);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Error! rcvd delSta rsp from HAL with status %d"),pAddStaParams->status);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Error! rcvd delSta rsp from HAL with status %d"),pAddStaParams->status);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3048,7 +3552,11 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
     if(NULL == pAddBssParams )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer\n" ));
+=======
+        limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3058,7 +3566,11 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
     if((psessionEntry = peFindSessionBySessionId(pMac,pAddBssParams->sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3071,7 +3583,11 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOG2(limLog(pMac, LOG2, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS\n"));)
+=======
+        PELOG2(limLog(pMac, LOG2, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOG2(limLog(pMac, LOG2, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3094,6 +3610,7 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
             MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_HEART_BEAT_TIMER));
             if (limActivateHearBeatTimer(pMac) != TX_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("could not activate Heartbeat timer\n"));
         }
         psessionEntry->bssIdx     = (tANI_U8) pAddBssParams->bssIdx;
@@ -3106,22 +3623,33 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
 
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limLog(pMac, LOGP, FL("could not activate Heartbeat timer"));
         }
         psessionEntry->bssIdx     = (tANI_U8) pAddBssParams->bssIdx;
 
         psessionEntry->limSystemRole = eLIM_STA_IN_IBSS_ROLE;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ( eSIR_INFRA_AP_MODE == pAddBssParams->bssType )
             psessionEntry->limSystemRole = eLIM_AP_ROLE;
         else
             psessionEntry->limSystemRole = eLIM_STA_IN_IBSS_ROLE;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
         schEdcaProfileUpdate(pMac, psessionEntry);
         limInitPreAuthList(pMac);
         limInitAIDpool(pMac,psessionEntry);
+=======
+        schEdcaProfileUpdate(pMac, psessionEntry);
+        limInitPreAuthList(pMac);
+        limInitPeerIdxpool(pMac,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schEdcaProfileUpdate(pMac, psessionEntry);
         limInitPreAuthList(pMac);
@@ -3135,7 +3663,11 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
         if (tx_timer_activate(&pMac->lim.limTimers.gLimUpdateOlbcCacheTimer) != TX_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGE, FL("tx_timer_activate failed\n"));
+=======
+            limLog(pMac, LOGE, FL("tx_timer_activate failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGE, FL("tx_timer_activate failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3144,7 +3676,11 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
         /* Update the lim global gLimTriggerBackgroundScanDuringQuietBss */
         if( eSIR_SUCCESS != wlan_cfgGetInt( pMac, WNI_CFG_TRIG_STA_BK_SCAN, &val ))
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!\n"));
+=======
+            limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3157,7 +3693,11 @@ limProcessApMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ)
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d\n" ),pAddBssParams->status );
+=======
+        limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d" ),pAddBssParams->status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d" ),pAddBssParams->status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3210,10 +3750,13 @@ limProcessIbssMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession 
     tpAddBssParams pAddBssParams = (tpAddBssParams) limMsgQ->bodyptr;
     tANI_U32 val;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
         PELOG1(limLog(pMac, LOG1, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (NULL == pAddBssParams)
     {
@@ -3223,6 +3766,9 @@ limProcessIbssMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession 
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
         PELOG1(limLog(pMac, LOG1, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (limSetLinkState(pMac, eSIR_LINK_IBSS_STATE,psessionEntry->bssId,
              psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS )
@@ -3241,7 +3787,11 @@ limProcessIbssMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession 
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_HEART_BEAT_TIMER));
         if (limActivateHearBeatTimer(pMac) != TX_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not activate Heartbeat timer\n"));
+=======
+            limLog(pMac, LOGP, FL("could not activate Heartbeat timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("could not activate Heartbeat timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3252,7 +3802,11 @@ limProcessIbssMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession 
         //TBD-RAJESH limInitPreauthList should re removed for IBSS also ?????
        //limInitPreAuthList(pMac);
 <<<<<<< HEAD
+<<<<<<< HEAD
         limInitAIDpool(pMac,psessionEntry);
+=======
+        limInitPeerIdxpool(pMac,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limInitPeerIdxpool(pMac,psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3264,7 +3818,11 @@ limProcessIbssMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession 
         /* Update the lim global gLimTriggerBackgroundScanDuringQuietBss */
         if( eSIR_SUCCESS != wlan_cfgGetInt( pMac, WNI_CFG_TRIG_STA_BK_SCAN, &val ))
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!\n"));
+=======
+            limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3283,7 +3841,11 @@ limProcessIbssMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession 
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d\n" ),
+=======
+        limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3308,13 +3870,19 @@ limProcessStaMlmAddBssRspPreAssoc( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPES
     tLimMlmAuthReq     *pMlmAuthReq;
     tpDphHashNode pStaDs = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (NULL == pAddBssParams)
     {
         limLog( pMac, LOGE, FL( "Invalid body pointer in message"));
         goto joinFailure;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
@@ -3322,7 +3890,11 @@ limProcessStaMlmAddBssRspPreAssoc( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPES
             {
                 // Could not add hash table entry
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for \n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3344,7 +3916,11 @@ limProcessStaMlmAddBssRspPreAssoc( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPES
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("could not retrieve AuthType\n"));
+=======
+                       FL("could not retrieve AuthType"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("could not retrieve AuthType"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3360,7 +3936,11 @@ limProcessStaMlmAddBssRspPreAssoc( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPES
                 // Log error
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("call to palAllocateMemory failed for mlmAuthReq\n"));
+=======
+                       FL("call to palAllocateMemory failed for mlmAuthReq"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("call to palAllocateMemory failed for mlmAuthReq"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3374,7 +3954,11 @@ limProcessStaMlmAddBssRspPreAssoc( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPES
             {
                 /// Could not get BSSID from CFG. Log error.
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("could not retrieve BSSID\n"));
+=======
+                limLog(pMac, LOGP, FL("could not retrieve BSSID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGP, FL("could not retrieve BSSID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3393,7 +3977,11 @@ limProcessStaMlmAddBssRspPreAssoc( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPES
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("could not retrieve AuthFailureTimeout value\n"));
+=======
+                   FL("could not retrieve AuthFailureTimeout value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                    FL("could not retrieve AuthFailureTimeout value"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3431,7 +4019,11 @@ joinFailure:
 /*------------------------------------------------------------------------------------------
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Function to handle WDA_ADD_BSS_RSP, in FT reassoc state.
+=======
+ * Function to handle callback after setting link state to post assoc.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Function to handle callback after setting link state to post assoc.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3439,6 +4031,7 @@ joinFailure:
  *
  *------------------------------------------------------------------------------------------
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 static inline void
 limProcessStaMlmAddBssRspFT(tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPESession psessionEntry)
@@ -3476,6 +4069,8 @@ limProcessStaMlmAddBssRspFT(tpAniSirGlobal pMac, tpSirMsgQ limMsgQ, tpPESession 
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
 {
     tLimMlmReassocCnf       mlmReassocCnf; // keep sme 
@@ -3521,6 +4116,9 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
         limPrintMacAddr(pMac, pAddBssParams->staContext.staMac, LOGE);
         goto end;
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Prepare and send Reassociation request frame
     // start reassoc timer.
@@ -3534,7 +4132,11 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("could not start Reassociation failure timer\n"));
+=======
+           FL("could not start Reassociation failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("could not start Reassociation failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3545,11 +4147,14 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
         goto end;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     limSendReassocReqWithFTIEsMgmtFrame(pMac, psessionEntry->pLimMlmReassocReq, psessionEntry);
     psessionEntry->limPrevMlmState = psessionEntry->limMlmState;
     psessionEntry->limMlmState = eLIM_MLM_WT_FT_REASSOC_RSP_STATE;
     PELOGE(limLog(pMac, LOGE,  FL("Set the mlm state to %d session=%d\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     pMac->lim.pSessionEntry = psessionEntry;
     if(NULL == pMac->lim.pSessionEntry->pLimMlmReassocRetryReq)
@@ -3567,6 +4172,9 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
     psessionEntry->limMlmState = eLIM_MLM_WT_FT_REASSOC_RSP_STATE;
     MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, eLIM_MLM_WT_FT_REASSOC_RSP_STATE));
     PELOGE(limLog(pMac, LOG1,  FL("Set the mlm state to %d session=%d"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         psessionEntry->limMlmState, psessionEntry->peSessionId);)
 
@@ -3579,6 +4187,7 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
     pStaDs->ucUcastSig   = pAddBssParams->staContext.ucUcastSig;
     pStaDs->ucBcastSig   = pAddBssParams->staContext.ucBcastSig;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Downgrade the EDCA parameters if needed
     limSetActiveEdcaParams(pMac, psessionEntry->gLimEdcaParams, psessionEntry);
@@ -3595,6 +4204,8 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI
     rrmCacheMgmtTxPower( pMac, pAddBssParams->txMgmtPower, psessionEntry );
 #endif
@@ -3603,8 +4214,13 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
         palAllocateMemory( pMac->hHdd, (void **) &pAddStaParams, sizeof( tAddStaParams )))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "Unable to PAL allocate memory during ADD_STA\n" ));
         return;
+=======
+        limLog( pMac, LOGP, FL( "Unable to PAL allocate memory during ADD_STA" ));
+        goto end;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGP, FL( "Unable to PAL allocate memory during ADD_STA" ));
         goto end;
@@ -3636,9 +4252,15 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
     pAddStaParams->shortPreambleSupported = (tANI_U8)psessionEntry->beaconParams.fShortPreamble;
 #ifdef WLAN_FEATURE_11AC
 <<<<<<< HEAD
+<<<<<<< HEAD
     limPopulateOwnRateSet(pMac, &pAddStaParams->supportedRates, NULL, false,psessionEntry, NULL);
 #else
     limPopulateOwnRateSet(pMac, &pAddStaParams->supportedRates, NULL, false,psessionEntry);
+=======
+    limPopulatePeerRateSet(pMac, &pAddStaParams->supportedRates, NULL, false,psessionEntry, NULL);
+#else
+    limPopulatePeerRateSet(pMac, &pAddStaParams->supportedRates, NULL, false,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limPopulatePeerRateSet(pMac, &pAddStaParams->supportedRates, NULL, false,psessionEntry, NULL);
 #else
@@ -3650,11 +4272,17 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
     {
         pAddStaParams->htCapable = psessionEntry->htCapability;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
         pAddStaParams->vhtCapable = psessionEntry->vhtCapability;
         pAddStaParams->vhtTxChannelWidthSet = psessionEntry->vhtTxChannelWidthSet;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef DISABLE_GF_FOR_INTEROP
         /*
@@ -3672,10 +4300,13 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         pAddStaParams->greenFieldCapable = limGetHTCapability( pMac, eHT_GREENFIELD, psessionEntry);
         pAddStaParams->txChannelWidthSet = limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET, psessionEntry);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pAddStaParams->greenFieldCapable = limGetHTCapability( pMac, eHT_GREENFIELD, psessionEntry);
         if (psessionEntry->limRFBand == SIR_BAND_2_4_GHZ)
         {
@@ -3687,6 +4318,9 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
             pAddStaParams->txChannelWidthSet =
                      pMac->roam.configParam.channelBondingMode5GHz;
         }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pAddStaParams->mimoPS            = limGetHTCapability( pMac, eHT_MIMO_POWER_SAVE, psessionEntry );
         pAddStaParams->rifsMode          = limGetHTCapability( pMac, eHT_RIFS_MODE, psessionEntry );
@@ -3698,6 +4332,7 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
         pAddStaParams->fDsssCckMode40Mhz = limGetHTCapability( pMac, eHT_DSSS_CCK_MODE_40MHZ, psessionEntry);
         pAddStaParams->fShortGI20Mhz     = limGetHTCapability( pMac, eHT_SHORT_GI_20MHZ, psessionEntry);
         pAddStaParams->fShortGI40Mhz     = limGetHTCapability( pMac, eHT_SHORT_GI_40MHZ, psessionEntry);
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
         pAddStaParams->greenFieldCapable = limGetHTCapability( pMac, eHT_GREENFIELD );
@@ -3724,6 +4359,8 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
     // Lets save this for when we receive the Reassoc Rsp
     pMac->ft.ftPEContext.pAddStaReq = pAddStaParams;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_LISTEN_INTERVAL, &listenInterval) != eSIR_SUCCESS)
@@ -3742,6 +4379,9 @@ void limSetLinkStateForPostAssocCallback(tpAniSirGlobal pMac, void *msgParam )
         }
         palFreeMemory( pMac->hHdd, (tANI_U8 *) pCbackParams);        
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return;
 
@@ -3752,7 +4392,10 @@ end:
         palFreeMemory( pMac->hHdd, (tANI_U8 *) pMlmReassocReq);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (pCbackParams != NULL)
     {
@@ -3832,6 +4475,9 @@ end:
         palFreeMemory( pMac->hHdd, (tANI_U8 *) pCbackParam);        
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     mlmReassocCnf.resultCode = eSIR_SME_FT_REASSOC_FAILURE;
     mlmReassocCnf.protStatusCode = eSIR_MAC_UNSPEC_FAILURE_STATUS;
@@ -3901,11 +4547,17 @@ limProcessStaMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession ps
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(pAddBssParams == 0)
         goto end;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
@@ -3914,7 +4566,11 @@ limProcessStaMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession ps
         {
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("Mlm=%d %d\n"),
+=======
+            PELOGE(limLog(pMac, LOG1, FL("Mlm=%d %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOG1, FL("Mlm=%d %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3932,17 +4588,23 @@ limProcessStaMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession ps
         psessionEntry->statypeForBss = STA_ENTRY_PEER; //to know the session  started for self or for  peer oct6th
         // Now, send WDA_ADD_STA_REQ
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL( "On STA: ADD_BSS was successful\n" ));
         pStaDs = dphGetHashEntry(pMac, DPH_STA_HASH_INDEX_PEER, &psessionEntry->dph.dphHashTable);
         if (pStaDs == NULL)
         {
             PELOGE(limLog(pMac, LOGE, FL("could not Add Self Entry for the station\n"));)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limLog( pMac, LOGW, FL( "On STA: ADD_BSS was successful" ));
         pStaDs = dphGetHashEntry(pMac, DPH_STA_HASH_INDEX_PEER, &psessionEntry->dph.dphHashTable);
         if (pStaDs == NULL)
         {
             PELOGE(limLog(pMac, LOGE, FL("could not Add Self Entry for the station"));)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             mlmAssocCnf.resultCode = (tSirResultCodes) eSIR_SME_REFUSED;
         }
@@ -3973,7 +4635,11 @@ limProcessStaMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession ps
             {
                 // Add STA context at HW
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("could not Add Self Entry for the station\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("could not Add Self Entry for the station"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("could not Add Self Entry for the station"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3984,7 +4650,11 @@ limProcessStaMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ,tpPESession ps
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "ADD_BSS failed!\n" ));
+=======
+        limLog( pMac, LOGP, FL( "ADD_BSS failed!" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGP, FL( "ADD_BSS failed!" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4040,7 +4710,11 @@ void limProcessMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if(NULL == pAddBssParams )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer\n" ));
+=======
+        limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "Encountered NULL Pointer" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4060,7 +4734,11 @@ void limProcessMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if((psessionEntry = peFindSessionBySessionId(pMac,pAddBssParams->sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Session Does not exist for given sessionId\n" ));
+=======
+        limLog( pMac, LOGE, FL( "Session Does not exist for given sessionId" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "Session Does not exist for given sessionId" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4081,7 +4759,11 @@ void limProcessMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
                 // Mesg received from HAL in Invalid state!
                 limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   FL( "Received unexpected WDA_ADD_BSS_RSP in state %X\n" ),
+=======
+                  FL( "Received unexpected WDA_ADD_BSS_RSP in state %X" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   FL( "Received unexpected WDA_ADD_BSS_RSP in state %X" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4103,12 +4785,18 @@ void limProcessMlmAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
             limProcessStaMlmAddBssRsp( pMac, limMsgQ,psessionEntry);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(limIsInMCC(pMac))
     {
        WDA_TrafficStatsTimerActivate(TRUE);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 /**
@@ -4158,7 +4846,11 @@ void limProcessMlmSetStaKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if( NULL == limMsgQ->bodyptr )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is NULL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4168,7 +4860,11 @@ void limProcessMlmSetStaKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if((psessionEntry = peFindSessionBySessionId(pMac, sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4179,7 +4875,11 @@ void limProcessMlmSetStaKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     {
         // Mesg received from HAL in Invalid state!
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL( "Received unexpected [Mesg Id - %d] in state %X\n" ), limMsgQ->type, psessionEntry->limMlmState );
+=======
+        limLog( pMac, LOGW, FL( "Received unexpected [Mesg Id - %d] in state %X" ), limMsgQ->type, psessionEntry->limMlmState );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGW, FL( "Received unexpected [Mesg Id - %d] in state %X" ), limMsgQ->type, psessionEntry->limMlmState );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4201,9 +4901,12 @@ void limProcessMlmSetStaKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
         {
             palCopyMemory( pMac->hHdd, (tANI_U8 *) &mlmSetKeysCnf.peerMacAddr, (tANI_U8 *) lpLimMlmSetKeysReq->peerMacAddr, sizeof(tSirMacAddr) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
             mlmSetKeysCnf.aid = lpLimMlmSetKeysReq->aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // Free the buffer cached for the global pMac->lim.gpLimMlmSetKeysReq
@@ -4227,7 +4930,11 @@ void limProcessMlmSetBssKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if( NULL == limMsgQ->bodyptr )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is null\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is null"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is null"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4237,7 +4944,11 @@ void limProcessMlmSetBssKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if((psessionEntry = peFindSessionBySessionId(pMac, sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4262,7 +4973,11 @@ void limProcessMlmSetBssKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     {
         // Mesg received from HAL in Invalid state!
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL( "Received unexpected [Mesg Id - %d] in state %X\n" ), limMsgQ->type, psessionEntry->limMlmState );
+=======
+        limLog( pMac, LOGW, FL( "Received unexpected [Mesg Id - %d] in state %X" ), limMsgQ->type, psessionEntry->limMlmState );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGW, FL( "Received unexpected [Mesg Id - %d] in state %X" ), limMsgQ->type, psessionEntry->limMlmState );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4287,9 +5002,12 @@ void limProcessMlmSetBssKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
         {
             palCopyMemory( pMac->hHdd, (tANI_U8 *) &mlmSetKeysCnf.peerMacAddr, (tANI_U8 *) lpLimMlmSetKeysReq->peerMacAddr, sizeof(tSirMacAddr) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
             mlmSetKeysCnf.aid = lpLimMlmSetKeysReq->aid;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // Free the buffer cached for the global pMac->lim.gpLimMlmSetKeysReq
@@ -4328,7 +5046,11 @@ void limProcessMlmRemoveKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if( NULL == limMsgQ->bodyptr )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is NULL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("limMsgQ bodyptr is NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4343,7 +5065,11 @@ void limProcessMlmRemoveKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     if((psessionEntry = peFindSessionBySessionId(pMac, sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4362,7 +5088,11 @@ void limProcessMlmRemoveKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
         // Mesg received from HAL in Invalid state!
         limLog(pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL("Received unexpected [Mesg Id - %d] in state %X\n"),
+=======
+            FL("Received unexpected [Mesg Id - %d] in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL("Received unexpected [Mesg Id - %d] in state %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4402,6 +5132,7 @@ void limProcessMlmRemoveKeyRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ )
     }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 /**----------------------------------------------------
@@ -4476,6 +5207,8 @@ static void __limProcessFinishLearnRsp(tpAniSirGlobal pMac)
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** ---------------------------------------------------------------------
 \fn      limProcessInitScanRsp
@@ -4491,9 +5224,12 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
     tpInitScanParams    pInitScanParam;
     eHalStatus          status;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U8             channelNum;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     SET_LIM_PROCESS_DEFD_MESGS(pMac, true);
@@ -4506,7 +5242,11 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
        (eLIM_HAL_INIT_SCAN_WAIT_STATE == pMac->lim.gLimHalScanState) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL(" finish scan\n") );
+=======
+        limLog( pMac, LOGW, FL(" finish scan") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGW, FL(" finish scan") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4524,7 +5264,11 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
             if (status != (tANI_U32) eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                PELOGW(limLog(pMac, LOGW, FL("InitScanRsp with failed status= %d\n"), status);)
+=======
+               PELOGW(limLog(pMac, LOGW, FL("InitScanRsp with failed status= %d"), status);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                PELOGW(limLog(pMac, LOGW, FL("InitScanRsp with failed status= %d"), status);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4539,6 +5283,7 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
                 */
                limCompleteMlmScan(pMac, eSIR_SME_HAL_SCAN_INIT_FAILED);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
                 /* For handling the measurement request from WSM as scan request in LIM*/
 #if 0
@@ -4550,6 +5295,8 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
                 }
 #endif
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return;
@@ -4564,6 +5311,7 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
             }
             limContinueChannelScan(pMac);
             break;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
         case eLIM_HAL_INIT_LEARN_WAIT_STATE:
@@ -4583,6 +5331,8 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //WLAN_SUSPEND_LINK Related
         case eLIM_HAL_SUSPEND_LINK_WAIT_STATE:
             if( pMac->lim.gpLimSuspendCallback )
@@ -4599,7 +5349,11 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                limLog( pMac, LOGP, "No suspend link callback set but station is in suspend state\n");
+=======
+               limLog( pMac, LOGP, "No suspend link callback set but station is in suspend state");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                limLog( pMac, LOGP, "No suspend link callback set but station is in suspend state");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4609,7 +5363,11 @@ void limProcessInitScanRsp(tpAniSirGlobal pMac,  void *body)
 //end WLAN_SUSPEND_LINK Related
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGW, FL("limProcessInitScanRsp: Rcvd InitScanRsp not in WAIT State, state %d\n"),
+=======
+            limLog(pMac, LOGW, FL("limProcessInitScanRsp: Rcvd InitScanRsp not in WAIT State, state %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGW, FL("limProcessInitScanRsp: Rcvd InitScanRsp not in WAIT State, state %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4647,7 +5405,11 @@ static void limProcessSwitchChannelReAssocReq(tpAniSirGlobal pMac, tpPESession p
     if(pMlmReassocReq == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("pLimMlmReassocReq does not exist for given switchChanSession\n"));
+=======
+        limLog(pMac, LOGP, FL("pLimMlmReassocReq does not exist for given switchChanSession"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("pLimMlmReassocReq does not exist for given switchChanSession"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4658,7 +5420,11 @@ static void limProcessSwitchChannelReAssocReq(tpAniSirGlobal pMac, tpPESession p
     if(status != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Change channel failed!!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Change channel failed!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Change channel failed!!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4674,7 +5440,11 @@ static void limProcessSwitchChannelReAssocReq(tpAniSirGlobal pMac, tpPESession p
         // Log error
         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("could not start Reassociation failure timer\n"));
+=======
+           FL("could not start Reassociation failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("could not start Reassociation failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4734,7 +5504,11 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
     if(status != eHAL_STATUS_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Change channel failed!!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Change channel failed!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Change channel failed!!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4744,7 +5518,11 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
     if ( (NULL == psessionEntry ) || (NULL == psessionEntry->pLimMlmJoinReq) )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("invalid pointer!!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("invalid pointer!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("invalid pointer!!"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4759,6 +5537,7 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
              psessionEntry->selfMacAddr, NULL, NULL) != eSIR_SUCCESS )
             goto error;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     else
     {
@@ -4779,15 +5558,21 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
     if(wlan_cfgGetInt(pMac, WNI_CFG_TRIG_STA_BK_SCAN, &val) != eSIR_SUCCESS)
         limLog(pMac, LOGP, FL("failed to get WNI_CFG_TRIG_STA_BK_SCAN cfg value!\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Update the lim global gLimTriggerBackgroundScanDuringQuietBss */
     if(wlan_cfgGetInt(pMac, WNI_CFG_TRIG_STA_BK_SCAN, &val) != eSIR_SUCCESS)
         limLog(pMac, LOGP, FL("failed to get WNI_CFG_TRIG_STA_BK_SCAN cfg value!"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->lim.gLimTriggerBackgroundScanDuringQuietBss = (val) ? 1 : 0;
     // Apply previously set configuration at HW
     limApplyConfiguration(pMac, psessionEntry);
     /// Wait for Beacon to announce join success
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if 0
     if (cfgGetStr(pMac, WNI_CFG_SSID, ssId.ssId, &cfgLen) != eSIR_SUCCESS)
@@ -4795,17 +5580,25 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
 #endif //To SUPPORT BT-AMP
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palCopyMemory( pMac->hHdd, ssId.ssId,
                           psessionEntry->ssId.ssId,
                           psessionEntry->ssId.length);
     ssId.length = psessionEntry->ssId.length;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     limDeactivateAndChangeTimer(pMac, eLIM_PERIODIC_JOIN_PROBE_REQ_TIMER);
 
     //assign appropriate sessionId to the timer object
     pMac->lim.limTimers.gLimPeriodicJoinProbeReqTimer.sessionId = psessionEntry->peSessionId;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // include additional IE if there is
     limSendProbeReqMgmtFrame( pMac, &ssId,
@@ -4818,7 +5611,11 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
     if (tx_timer_activate(&pMac->lim.limTimers.gLimJoinFailureTimer) != TX_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not activate Join failure timer\n"));
+=======
+        limLog(pMac, LOGP, FL("could not activate Join failure timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not activate Join failure timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4830,7 +5627,10 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( psessionEntry->pePersona == VOS_P2P_CLIENT_MODE )
     {
         // Activate Join Periodic Probe Req timer
@@ -4841,6 +5641,9 @@ static void limProcessSwitchChannelJoinReq(tpAniSirGlobal pMac, tpPESession pses
         }
     }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return;
 error:  
@@ -4896,7 +5699,11 @@ void limProcessSwitchChannelRsp(tpAniSirGlobal pMac,  void *body)
     {
         palFreeMemory( pMac->hHdd, (tANI_U8 *)body);
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("session does not exist for given sessionId\n"));
+=======
+        limLog(pMac, LOGP, FL("session does not exist for given sessionId"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("session does not exist for given sessionId"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4930,7 +5737,11 @@ void limProcessSwitchChannelRsp(tpAniSirGlobal pMac,  void *body)
             if (pMac->lim.gpchangeChannelCallback)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOG1(limLog( pMac, LOG1, "Channel changed hence invoke registered call back\n");)
+=======
+                PELOG1(limLog( pMac, LOG1, "Channel changed hence invoke registered call back");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOG1(limLog( pMac, LOG1, "Channel changed hence invoke registered call back");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4980,7 +5791,11 @@ void limProcessStartScanRsp(tpAniSirGlobal pMac,  void *body)
     if( pMac->lim.abortScan )
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGW, FL(" finish scan\n") );
+=======
+        limLog( pMac, LOGW, FL(" finish scan") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGW, FL(" finish scan") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4998,7 +5813,11 @@ void limProcessStartScanRsp(tpAniSirGlobal pMac,  void *body)
             if (status != (tANI_U32) eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                PELOGW(limLog(pMac, LOGW, FL("StartScanRsp with failed status= %d\n"), status);)
+=======
+               PELOGW(limLog(pMac, LOGW, FL("StartScanRsp with failed status= %d"), status);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                PELOGW(limLog(pMac, LOGW, FL("StartScanRsp with failed status= %d"), status);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5019,6 +5838,7 @@ void limProcessStartScanRsp(tpAniSirGlobal pMac,  void *body)
                limContinuePostChannelScan(pMac);
             }
             break;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
         case eLIM_HAL_START_LEARN_WAIT_STATE:
@@ -5044,6 +5864,10 @@ void limProcessStartScanRsp(tpAniSirGlobal pMac,  void *body)
         default:
             limLog(pMac, LOGW, FL("Rcvd StartScanRsp not in WAIT State, state %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+        default:
+            limLog(pMac, LOGW, FL("Rcvd StartScanRsp not in WAIT State, state %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      pMac->lim.gLimHalScanState);
             break;
     }
@@ -5054,9 +5878,12 @@ void limProcessEndScanRsp(tpAniSirGlobal pMac,  void *body)
     tpEndScanParams     pEndScanParam;
     eHalStatus          status;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U8             channelNum;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     SET_LIM_PROCESS_DEFD_MESGS(pMac, true);
@@ -5069,7 +5896,11 @@ void limProcessEndScanRsp(tpAniSirGlobal pMac,  void *body)
             if (status != (tANI_U32) eHAL_STATUS_SUCCESS)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                PELOGW(limLog(pMac, LOGW, FL("EndScanRsp with failed status= %d\n"), status);)
+=======
+               PELOGW(limLog(pMac, LOGW, FL("EndScanRsp with failed status= %d"), status);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                PELOGW(limLog(pMac, LOGW, FL("EndScanRsp with failed status= %d"), status);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5078,6 +5909,7 @@ void limProcessEndScanRsp(tpAniSirGlobal pMac,  void *body)
             }
             else
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                //Skip Dfs Channel in case of P2P Search
                //If skipDfsChnlInP2pSearch is set in ini
@@ -5135,12 +5967,17 @@ void limProcessEndScanRsp(tpAniSirGlobal pMac,  void *body)
         default:
             limLog(pMac, LOGW, FL("Rcvd endScanRsp not in WAIT State, state %d\n"),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->lim.gLimCurrentScanChannelId++;
                limContinueChannelScan(pMac);
             }
             break;
         default:
             limLog(pMac, LOGW, FL("Rcvd endScanRsp not in WAIT State, state %d"),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pMac->lim.gLimHalScanState);
             break;
@@ -5237,6 +6074,7 @@ void limProcessFinishScanRsp(tpAniSirGlobal pMac,  void *body)
                 limStartQuietOnSession(pMac);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
             /* For handling the measurement request from WSM as scan request in LIM*/
 #if 0
@@ -5260,11 +6098,16 @@ void limProcessFinishScanRsp(tpAniSirGlobal pMac,  void *body)
             break;
 #endif //#if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (status != (tANI_U32) eHAL_STATUS_SUCCESS)
             {
                PELOGW(limLog(pMac, LOGW, FL("EndScanRsp with failed status= %d"), status);)
             }
             break;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //WLAN_SUSPEND_LINK Related
         case eLIM_HAL_RESUME_LINK_WAIT_STATE:
@@ -5279,7 +6122,11 @@ void limProcessFinishScanRsp(tpAniSirGlobal pMac,  void *body)
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                limLog( pMac, LOGP, "No Resume link callback set but station is in suspend state\n");
+=======
+               limLog( pMac, LOGP, "No Resume link callback set but station is in suspend state");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                limLog( pMac, LOGP, "No Resume link callback set but station is in suspend state");
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5290,7 +6137,11 @@ void limProcessFinishScanRsp(tpAniSirGlobal pMac,  void *body)
 
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGW, FL("Rcvd FinishScanRsp not in WAIT State, state %d\n"),
+=======
+            limLog(pMac, LOGW, FL("Rcvd FinishScanRsp not in WAIT State, state %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGW, FL("Rcvd FinishScanRsp not in WAIT State, state %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5325,7 +6176,11 @@ void limProcessMlmHalAddBARsp( tpAniSirGlobal pMac,
     SET_LIM_PROCESS_DEFD_MESGS(pMac, true);
     if (pAddBAParams == NULL) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("NULL ADD BA Response from HAL\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("NULL ADD BA Response from HAL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("NULL ADD BA Response from HAL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5334,7 +6189,11 @@ void limProcessMlmHalAddBARsp( tpAniSirGlobal pMac,
     if((psessionEntry = peFindSessionBySessionId(pMac, pAddBAParams->sessionId))==NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionID: %d\n"),pAddBAParams->sessionId );)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionID: %d"),pAddBAParams->sessionId );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given sessionID: %d"),pAddBAParams->sessionId );)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5349,7 +6208,11 @@ void limProcessMlmHalAddBARsp( tpAniSirGlobal pMac,
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
           (void **) &pMlmAddBACnf, sizeof( tLimMlmAddBACnf ))) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL(" palAllocateMemory failed with error code %d\n"));
+=======
+        limLog( pMac, LOGP, FL(" palAllocateMemory failed with error code %d"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGP, FL(" palAllocateMemory failed with error code %d"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5398,7 +6261,11 @@ tpPESession psessionEntry = NULL;
 if(pMsgBuf == NULL)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+    PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5408,7 +6275,11 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
   if((psessionEntry = peFindSessionBySessionId(pMac,pMlmAddBACnf->sessionId))== NULL)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5421,7 +6292,11 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
   {
     PELOGE(limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "STA context not found - ignoring ADDBA CNF from HAL\n" ));)
+=======
+        FL( "STA context not found - ignoring ADDBA CNF from HAL" ));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "STA context not found - ignoring ADDBA CNF from HAL" ));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5434,7 +6309,11 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
   {
     PELOGE(limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Received unexpected ADDBA CNF when STA BA state is %d\n" ),
+=======
+        FL( "Received unexpected ADDBA CNF when STA BA state is %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Received unexpected ADDBA CNF when STA BA state is %d" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5455,7 +6334,10 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
       pSta->tcCfg[pMlmAddBACnf->baTID].rxBufSize = pMlmAddBACnf->baBufferSize;
       pSta->tcCfg[pMlmAddBACnf->baTID].tuRxBAWaitTimeout = pMlmAddBACnf->baTimeout;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // Package LIM_MLM_ADDBA_RSP to MLME, with proper
       // status code. MLME will then send an ADDBA RSP
       // over the air to the peer MAC entity
@@ -5472,6 +6354,9 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
             FL( "Failed to post LIM_MLM_ADDBA_RSP to " ));
         limPrintMacAddr( pMac, pMlmAddBACnf->peerMacAddr, LOGW );)
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
@@ -5483,6 +6368,7 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
       pSta->tcCfg[pMlmAddBACnf->baTID].tuTxBAWaitTimeout = pMlmAddBACnf->baTimeout;
     }
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   if( eBA_RECIPIENT == pMlmAddBACnf->baDirection )
   {
@@ -5505,6 +6391,8 @@ pMlmAddBACnf = (tpLimMlmAddBACnf) pMsgBuf;
       limPrintMacAddr( pMac, pMlmAddBACnf->peerMacAddr, LOGW );)
     }
   }
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // Free the memory allocated for LIM_MLM_ADDBA_CNF
@@ -5534,7 +6422,11 @@ void limProcessMlmDelBACnf( tpAniSirGlobal pMac,
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
          PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL\n"));)
+=======
+         PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          PELOGE(limLog(pMac, LOGE,FL("Buffer is Pointing to NULL"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5544,7 +6436,11 @@ void limProcessMlmDelBACnf( tpAniSirGlobal pMac,
     if((psessionEntry = peFindSessionBySessionId(pMac, pMlmDelBACnf->sessionId))== NULL)
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5557,7 +6453,11 @@ void limProcessMlmDelBACnf( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "STA context not found - ignoring DELBA CNF from HAL\n" ));
+=======
+            FL( "STA context not found - ignoring DELBA CNF from HAL" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "STA context not found - ignoring DELBA CNF from HAL" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5568,7 +6468,11 @@ void limProcessMlmDelBACnf( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "pMlmDelBACnf is NULL - ignoring DELBA CNF from HAL\n" ));
+=======
+        FL( "pMlmDelBACnf is NULL - ignoring DELBA CNF from HAL" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "pMlmDelBACnf is NULL - ignoring DELBA CNF from HAL" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5580,7 +6484,11 @@ void limProcessMlmDelBACnf( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Received unexpected DELBA CNF when STA BA state is %d\n" ),
+=======
+        FL( "Received unexpected DELBA CNF when STA BA state is %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Received unexpected DELBA CNF when STA BA state is %d" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5620,7 +6528,11 @@ void limProcessMlmHalBADeleteInd( tpAniSirGlobal pMac,
     if((psessionEntry = peFindSessionByBssid(pMac,pBADeleteParams->bssId,&sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5633,7 +6545,11 @@ void limProcessMlmHalBADeleteInd( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "STA context not found - ignoring BA Delete IND from HAL\n" ));
+=======
+        FL( "STA context not found - ignoring BA Delete IND from HAL" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "STA context not found - ignoring BA Delete IND from HAL" ));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5646,7 +6562,11 @@ void limProcessMlmHalBADeleteInd( tpAniSirGlobal pMac,
   {
     limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL( "Received unexpected BA Delete IND when STA BA state is %d\n" ),
+=======
+        FL( "Received unexpected BA Delete IND when STA BA state is %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL( "Received unexpected BA Delete IND when STA BA state is %d" ),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5670,7 +6590,11 @@ void limProcessMlmHalBADeleteInd( tpAniSirGlobal pMac,
     {
         limLog( pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
         FL("Received an INVALID DELBA Delete Ind for TID %d...\n"),
+=======
+        FL("Received an INVALID DELBA Delete Ind for TID %d..."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         FL("Received an INVALID DELBA Delete Ind for TID %d..."),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5688,7 +6612,11 @@ void limProcessMlmHalBADeleteInd( tpAniSirGlobal pMac,
         {
             limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
             FL( "Attempt to post LIM_MLM_DELBA_REQ failed with status %d\n" ), status);
+=======
+            FL( "Attempt to post LIM_MLM_DELBA_REQ failed with status %d" ), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             FL( "Attempt to post LIM_MLM_DELBA_REQ failed with status %d" ), status);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5743,7 +6671,11 @@ limProcessSetMimoRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
         /** If Updation of the HAL Fail's*/
         if (pMIMO_PSParams->status != eSIR_SUCCESS) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Update HAL / SW Mac for MIMO State has Failed\n"));
+=======
+            limLog(pMac, LOGP, FL("Update HAL / SW Mac for MIMO State has Failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("Update HAL / SW Mac for MIMO State has Failed"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5771,7 +6703,11 @@ limProcessSetMimoRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
             retStatus = limSendSMPowerStateFrame(pMac, macAddr, pMIMO_PSParams->htMIMOPSState);
             if (retStatus != eSIR_SUCCESS) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("Sending Action Frame has failed\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("Sending Action Frame has failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("Sending Action Frame has failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5808,11 +6744,17 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
     /** Set the MlmState to IDLE*/
     psessionEntry->limMlmState = eLIM_MLM_IDLE_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
     MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
    /* Update PE session Id*/
     mlmReassocCnf.sessionId = psessionEntry->peSessionId;
     switch (psessionEntry->limMlmState) {
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+   /* Update PE session Id*/
+    mlmReassocCnf.sessionId = psessionEntry->peSessionId;
+    switch (psessionEntry->limMlmState) {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* Update PE session Id*/
     mlmReassocCnf.sessionId = psessionEntry->peSessionId;
@@ -5824,9 +6766,13 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
             tpDphHashNode   pStaDs;
             tSirRetStatus       retStatus = eSIR_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_CLIENT
             tSchBeaconStruct beaconStruct;
 #endif
+=======
+            tSchBeaconStruct beaconStruct;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             tSchBeaconStruct beaconStruct;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5840,7 +6786,11 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
             {
                 // Could not add hash table entry
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for \n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("could not add hash entry at DPH for "));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5856,7 +6806,10 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
             limUpdateAssocStaDatas(pMac, pStaDs, assocRsp,psessionEntry);
             limUpdateReAssocGlobals(pMac, assocRsp,psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_CLIENT
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limExtractApCapabilities( pMac,
@@ -5875,6 +6828,7 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
             if (eSIR_SUCCESS != limStaSendAddBss( pMac, assocRsp, &beaconStruct,
                                                     &psessionEntry->pLimReAssocReq->bssDescription, false, psessionEntry))  {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog( pMac, LOGE, FL( "Posting ADDBSS in the ReAssocContext has Failed \n"));
                 retStatus = eSIR_FAILURE;
             }
@@ -5885,6 +6839,11 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
                 retStatus = eSIR_FAILURE;
             }
 #endif
+=======
+                limLog( pMac, LOGE, FL( "Posting ADDBSS in the ReAssocContext has Failed "));
+                retStatus = eSIR_FAILURE;
+            }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog( pMac, LOGE, FL( "Posting ADDBSS in the ReAssocContext has Failed "));
                 retStatus = eSIR_FAILURE;
@@ -5912,7 +6871,10 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
             /** Set the SME State back to WT_Reassoc State*/
             psessionEntry->limSmeState = eLIM_SME_WT_REASSOC_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
             MTRACE(macTrace(pMac, TRACE_CODE_SME_STATE, psessionEntry->peSessionId, psessionEntry->limSmeState));
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limDeleteDphHashEntry(pMac, pStaDs->staAddr, pStaDs->assocId,psessionEntry);
@@ -5921,7 +6883,10 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
             {
                psessionEntry->limMlmState = eLIM_MLM_IDLE_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
                MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
@@ -5929,9 +6894,14 @@ limHandleDelBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESe
         }
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
         default:
             PELOGE(limLog(pMac, LOGE, FL("DelBss is being invoked in the wrong system Role /unhandled  SME State\n"));)
+=======
+        default:
+            PELOGE(limLog(pMac, LOGE, FL("DelBss is being invoked in the wrong system Role /unhandled  SME State"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         default:
             PELOGE(limLog(pMac, LOGE, FL("DelBss is being invoked in the wrong system Role /unhandled  SME State"));)
@@ -5954,10 +6924,13 @@ limProcessBtampAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession ps
     tpAddBssParams pAddBssParams = (tpAddBssParams) limMsgQ->bodyptr;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
         limLog(pMac, LOG2, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS\n"));
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == pAddBssParams)
     {
         limLog( pMac, LOGE, FL( "Invalid body pointer in message"));
@@ -5966,6 +6939,9 @@ limProcessBtampAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession ps
     if( eHAL_STATUS_SUCCESS == pAddBssParams->status )
     {
         limLog(pMac, LOG2, FL("WDA_ADD_BSS_RSP returned with eHAL_STATUS_SUCCESS"));
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if (psessionEntry->bssType == eSIR_BTAMP_AP_MODE)
          {
@@ -5984,7 +6960,11 @@ limProcessBtampAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession ps
         psessionEntry->bssIdx = (tANI_U8) pAddBssParams->bssIdx;
         schEdcaProfileUpdate(pMac, psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
         limInitAIDpool(pMac,psessionEntry);
+=======
+        limInitPeerIdxpool(pMac,psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limInitPeerIdxpool(pMac,psessionEntry);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5994,7 +6974,11 @@ limProcessBtampAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession ps
       /* Update the lim global gLimTriggerBackgroundScanDuringQuietBss */
         if( eSIR_SUCCESS != wlan_cfgGetInt( pMac, WNI_CFG_TRIG_STA_BK_SCAN, &val ))
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!\n"));
+=======
+            limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog( pMac, LOGP, FL("Failed to get WNI_CFG_TRIG_STA_BK_SCAN!"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6007,7 +6991,11 @@ limProcessBtampAddBssRsp( tpAniSirGlobal pMac, tpSirMsgQ limMsgQ ,tpPESession ps
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d\n" ),pAddBssParams->status );
+=======
+        limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d" ),pAddBssParams->status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog( pMac, LOGE, FL( "WDA_ADD_BSS_REQ failed with status %d" ),pAddBssParams->status );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6046,7 +7034,10 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
     MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
     switch (psessionEntry->limSmeState) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eLIM_SME_WT_REASSOC_STATE : {
@@ -6054,7 +7045,10 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
             tpDphHashNode   pStaDs;
             tSirRetStatus       retStatus = eSIR_SUCCESS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_CLIENT
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             tSchBeaconStruct *pBeaconStruct;
@@ -6062,7 +7056,11 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
                                                         (void **)&pBeaconStruct, sizeof(tSchBeaconStruct)))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limHandleAddBssInReAssocContext\n") );
+=======
+                limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limHandleAddBssInReAssocContext") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limHandleAddBssInReAssocContext") );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6072,7 +7070,10 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // Get the AP entry from DPH hash table
@@ -6080,7 +7081,11 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
             if (pStaDs == NULL )
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("Fail to get STA PEER entry from hash\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("Fail to get STA PEER entry from hash"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOGE(limLog(pMac, LOGE, FL("Fail to get STA PEER entry from hash"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6096,7 +7101,10 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
             limUpdateAssocStaDatas(pMac, pStaDs, assocRsp, psessionEntry);
             limUpdateReAssocGlobals(pMac, assocRsp, psessionEntry);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_CLIENT
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limExtractApCapabilities( pMac,
@@ -6117,6 +7125,7 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
             if (eSIR_SUCCESS != limStaSendAddBss( pMac, assocRsp, pBeaconStruct,
                                                     &psessionEntry->pLimReAssocReq->bssDescription, true, psessionEntry))  {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 limLog( pMac, LOGE, FL( "Posting ADDBSS in the ReAssocContext has Failed \n"));
                 retStatus = eSIR_FAILURE;
             }
@@ -6126,6 +7135,11 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
                 retStatus = eSIR_FAILURE;
             }
 #endif
+=======
+                limLog( pMac, LOGE, FL( "Posting ADDBSS in the ReAssocContext has Failed "));
+                retStatus = eSIR_FAILURE;
+            }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 limLog( pMac, LOGE, FL( "Posting ADDBSS in the ReAssocContext has Failed "));
                 retStatus = eSIR_FAILURE;
@@ -6155,21 +7169,32 @@ limHandleAddBssInReAssocContext(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPES
             limDeleteDphHashEntry(pMac, pStaDs->staAddr, pStaDs->assocId, psessionEntry);
             if(psessionEntry->limSystemRole == eLIM_STA_ROLE)
 <<<<<<< HEAD
+<<<<<<< HEAD
               psessionEntry->limMlmState = eLIM_MLM_IDLE_STATE;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
               psessionEntry->limMlmState = eLIM_MLM_IDLE_STATE;
                MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, psessionEntry->peSessionId, psessionEntry->limMlmState));
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             limPostSmeMessage(pMac, LIM_MLM_REASSOC_CNF, (tANI_U32 *) &mlmReassocCnf);
         }
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
         default:
             PELOGE(limLog(pMac, LOGE, FL("DelBss is being invoked in the wrong system Role /unhandled  SME State\n"));)
+=======
+        default:
+            PELOGE(limLog(pMac, LOGE, FL("DelBss is being invoked in the wrong system Role /unhandled  SME State"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         default:
             PELOGE(limLog(pMac, LOGE, FL("DelBss is being invoked in the wrong system Role /unhandled  SME State"));)
@@ -6195,7 +7220,11 @@ limProcessSmeAssocCnfNew(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
     if(pMsgBuf == NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("pMsgBuf is NULL \n"));
+=======
+        limLog(pMac, LOGE, FL("pMsgBuf is NULL "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("pMsgBuf is NULL "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6205,7 +7234,11 @@ limProcessSmeAssocCnfNew(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
         !__limIsSmeAssocCnfValid(&assocCnf))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Received invalid SME_RE(ASSOC)_CNF message \n"));
+=======
+        limLog(pMac, LOGE, FL("Received invalid SME_RE(ASSOC)_CNF message "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Received invalid SME_RE(ASSOC)_CNF message "));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6214,7 +7247,11 @@ limProcessSmeAssocCnfNew(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
     if((psessionEntry = peFindSessionByBssid(pMac, assocCnf.bssId, &sessionId))== NULL)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("session does not exist for given bssId\n"));
+=======
+        limLog(pMac, LOGE, FL("session does not exist for given bssId"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("session does not exist for given bssId"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6224,7 +7261,11 @@ limProcessSmeAssocCnfNew(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
          ((psessionEntry->limSmeState != eLIM_SME_NORMAL_STATE) && (psessionEntry->limSmeState != eLIM_SME_NORMAL_CHANNEL_SCAN_STATE)))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Received unexpected message %X in state %X, in role %X\n"),
+=======
+        limLog(pMac, LOGE, FL("Received unexpected message %X in state %X, in role %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("Received unexpected message %X in state %X, in role %X"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6267,7 +7308,11 @@ limProcessSmeAssocCnfNew(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
     ** has been received
     **/
 <<<<<<< HEAD
+<<<<<<< HEAD
     limLog(pMac, LOG1, FL("Received SME_ASSOC_CNF. Delete Timer\n"));
+=======
+    limLog(pMac, LOG1, FL("Received SME_ASSOC_CNF. Delete Timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limLog(pMac, LOG1, FL("Received SME_ASSOC_CNF. Delete Timer"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6280,7 +7325,11 @@ limProcessSmeAssocCnfNew(tpAniSirGlobal pMac, tANI_U32 msgType, tANI_U32 *pMsgBu
          */
         pStaDs->mlmStaContext.mlmState = eLIM_MLM_LINK_ESTABLISHED_STATE;
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOG1, FL("sending Assoc Rsp frame to STA (assoc id=%d) \n"), pStaDs->assocId);
+=======
+        limLog(pMac, LOG1, FL("sending Assoc Rsp frame to STA (assoc id=%d) "), pStaDs->assocId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOG1, FL("sending Assoc Rsp frame to STA (assoc id=%d) "), pStaDs->assocId);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6314,7 +7363,10 @@ end:
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void
@@ -6325,7 +7377,11 @@ limSendBeaconInd(tpAniSirGlobal pMac, tpPESession psessionEntry){
     if(psessionEntry == NULL ){
        PELOGE( limLog( pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         FL( "Error:Unable to get the PESessionEntry\n" ));)
+=======
+                        FL( "Error:Unable to get the PESessionEntry" ));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         FL( "Error:Unable to get the PESessionEntry" ));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6336,7 +7392,11 @@ limSendBeaconInd(tpAniSirGlobal pMac, tpPESession psessionEntry){
     {
         PELOGE( limLog( pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         FL( "Unable to PAL allocate memory during sending beaconPreMessage\n" ));)
+=======
+                        FL( "Unable to PAL allocate memory during sending beaconPreMessage" ));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         FL( "Unable to PAL allocate memory during sending beaconPreMessage" ));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6351,6 +7411,9 @@ limSendBeaconInd(tpAniSirGlobal pMac, tpPESession psessionEntry){
     return;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

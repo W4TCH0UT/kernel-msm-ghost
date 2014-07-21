@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -142,9 +148,13 @@ typedef enum eAniKeyDirection
     eSIR_RX_ONLY,
     eSIR_TX_RX,
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     eSIR_TX_DEFAULT,
 #endif
+=======
+    eSIR_TX_DEFAULT,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     eSIR_TX_DEFAULT,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -189,6 +199,7 @@ typedef struct sSirAddie
 #ifdef FEATURE_WLAN_CCX
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // The CCKM IE needs to be in the 
 // Join and Reassoc Req. 
 typedef struct sSirCCKMie
@@ -196,12 +207,17 @@ typedef struct sSirCCKMie
     tANI_U16       length;
     tANI_U8        cckmIEdata[SIR_MAC_MAX_IE_LENGTH+2];  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // The CCKM IE needs to be in the
 // Join and Reassoc Req.
 typedef struct sSirCCKMie
 {
     tANI_U16       length;
     tANI_U8        cckmIEdata[SIR_MAC_MAX_IE_LENGTH+2];
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSirCCKMie, *tpSirCCKMie;
 

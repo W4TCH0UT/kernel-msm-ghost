@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -43,6 +49,7 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**========================================================================= 
 
                        EDIT HISTORY FOR FILE 
@@ -59,6 +66,8 @@
   --------    ---    --------------------------------------------------------
   07/27/09    kanand Created module. 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**=========================================================================
 
                        EDIT HISTORY FOR FILE
@@ -74,6 +83,9 @@
   when        who    what, where, why
   --------    ---    --------------------------------------------------------
   07/27/09    kanand Created module.
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   ==========================================================================*/
@@ -96,7 +108,10 @@
 #include <wlan_hdd_misc.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 static void cbNotifySetRoamPrefer5GHz(hdd_context_t *pHddCtx, unsigned long NotifyId)
 {
@@ -225,11 +240,15 @@ static void cbNotifyUpdateRoamScanOffloadEnabled(hdd_context_t *pHddCtx, unsigne
     sme_UpdateRoamScanOffloadEnabled((tHalHandle)(pHddCtx->hHal), pHddCtx->cfg_ini->isRoamOffloadScanEnabled);
 }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 REG_TABLE_ENTRY g_registry_table[] =
 {
    REG_VARIABLE( CFG_RTS_THRESHOLD_NAME, WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  hdd_config_t, RTSThreshold, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -341,6 +360,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_GENERIC_ID5_DEFAULT, 
                  CFG_GENERIC_ID5_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, RTSThreshold,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_RTS_THRESHOLD_DEFAULT,
@@ -457,11 +478,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_GENERIC_ID5_DEFAULT,
                  CFG_GENERIC_ID5_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_GENERIC_ID5_MAX ),
 
    REG_VARIABLE( CFG_GENERIC_VALUE1_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, Cfg1Value,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_GENERIC_VALUE1_DEFAULT, 
@@ -506,6 +531,8 @@ REG_TABLE_ENTRY g_registry_table[] =
    REG_VARIABLE_STRING( CFG_POWER_USAGE_NAME, WLAN_PARAM_String,
                         hdd_config_t, PowerUsageControl, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_GENERIC_VALUE1_DEFAULT,
                  CFG_GENERIC_VALUE1_MIN,
@@ -548,11 +575,15 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE_STRING( CFG_POWER_USAGE_NAME, WLAN_PARAM_String,
                         hdd_config_t, PowerUsageControl,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         VAR_FLAGS_OPTIONAL,
                         (void *)CFG_POWER_USAGE_DEFAULT ),
 
    REG_VARIABLE( CFG_ENABLE_SUSPEND_NAME, WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  hdd_config_t, nEnableSuspend, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -594,6 +625,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_IMPS_MAXIMUM_SLEEP_TIME_DEFAULT, 
                  CFG_IMPS_MAXIMUM_SLEEP_TIME_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, nEnableSuspend,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_ENABLE_SUSPEND_DEFAULT,
@@ -633,11 +666,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_IMPS_MAXIMUM_SLEEP_TIME_DEFAULT,
                  CFG_IMPS_MAXIMUM_SLEEP_TIME_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_IMPS_MAXIMUM_SLEEP_TIME_MAX ),
 
    REG_VARIABLE( CFG_IMPS_MODERATE_SLEEP_TIME_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nImpsModSleepTime,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_IMPS_MODERATE_SLEEP_TIME_DEFAULT, 
@@ -664,6 +701,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_BMPS_MAXIMUM_LI_DEFAULT, 
                  CFG_BMPS_MAXIMUM_LI_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_IMPS_MODERATE_SLEEP_TIME_DEFAULT,
                  CFG_IMPS_MODERATE_SLEEP_TIME_MIN,
@@ -688,11 +727,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_BMPS_MAXIMUM_LI_DEFAULT,
                  CFG_BMPS_MAXIMUM_LI_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_BMPS_MAXIMUM_LI_MAX ),
 
    REG_VARIABLE( CFG_BMPS_MODERATE_LI_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nBmpsModListenInterval,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_BMPS_MODERATE_LI_DEFAULT, 
@@ -828,6 +871,8 @@ REG_TABLE_ENTRY g_registry_table[] =
    REG_VARIABLE_STRING( CFG_IBSS_BSSID_NAME, WLAN_PARAM_MacAddr,
                         hdd_config_t, IbssBssid, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_BMPS_MODERATE_LI_DEFAULT,
                  CFG_BMPS_MODERATE_LI_MIN,
@@ -961,13 +1006,20 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE_STRING( CFG_IBSS_BSSID_NAME, WLAN_PARAM_MacAddr,
                         hdd_config_t, IbssBssid,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         VAR_FLAGS_OPTIONAL,
                         (void *)CFG_IBSS_BSSID_DEFAULT ),
 
    REG_VARIABLE_STRING( CFG_INTF0_MAC_ADDR_NAME, WLAN_PARAM_MacAddr,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         hdd_config_t, intfMacAddr[0], 
+=======
+                        hdd_config_t, intfMacAddr[0],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         hdd_config_t, intfMacAddr[0],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -976,7 +1028,11 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE_STRING( CFG_INTF1_MAC_ADDR_NAME, WLAN_PARAM_MacAddr,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         hdd_config_t, intfMacAddr[1], 
+=======
+                        hdd_config_t, intfMacAddr[1],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         hdd_config_t, intfMacAddr[1],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -985,7 +1041,11 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE_STRING( CFG_INTF2_MAC_ADDR_NAME, WLAN_PARAM_MacAddr,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         hdd_config_t, intfMacAddr[2], 
+=======
+                        hdd_config_t, intfMacAddr[2],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         hdd_config_t, intfMacAddr[2],
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -993,6 +1053,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                         (void *)CFG_INTF2_MAC_ADDR_DEFAULT ),
 
    REG_VARIABLE_STRING( CFG_INTF3_MAC_ADDR_NAME, WLAN_PARAM_MacAddr,
+<<<<<<< HEAD
 <<<<<<< HEAD
                         hdd_config_t, intfMacAddr[3], 
                         VAR_FLAGS_OPTIONAL,
@@ -1009,6 +1070,8 @@ REG_TABLE_ENTRY g_registry_table[] =
    REG_VARIABLE_STRING( CFG_AP_COUNTRY_CODE, WLAN_PARAM_String,
                         hdd_config_t, apCntryCode, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         hdd_config_t, intfMacAddr[3],
                         VAR_FLAGS_OPTIONAL,
                         (void *)CFG_INTF3_MAC_ADDR_DEFAULT ),
@@ -1027,6 +1090,9 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE_STRING( CFG_AP_COUNTRY_CODE, WLAN_PARAM_String,
                         hdd_config_t, apCntryCode,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         VAR_FLAGS_OPTIONAL,
                         (void *)CFG_AP_COUNTRY_CODE_DEFAULT ),
@@ -1040,7 +1106,11 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE( CFG_AP_ENABLE_PROTECTION_MODE_NAME, WLAN_PARAM_Integer,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         hdd_config_t, apProtEnabled, 
+=======
+                        hdd_config_t, apProtEnabled,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         hdd_config_t, apProtEnabled,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1056,9 +1126,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                         CFG_AP_PROTECTION_MODE_MIN,
                         CFG_AP_PROTECTION_MODE_MAX ),
 <<<<<<< HEAD
+<<<<<<< HEAD
                         
    REG_VARIABLE( CFG_AP_OBSS_PROTECTION_MODE_NAME, WLAN_PARAM_Integer,
                         hdd_config_t, apOBSSProtEnabled, 
+=======
+
+   REG_VARIABLE( CFG_AP_OBSS_PROTECTION_MODE_NAME, WLAN_PARAM_Integer,
+                        hdd_config_t, apOBSSProtEnabled,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    REG_VARIABLE( CFG_AP_OBSS_PROTECTION_MODE_NAME, WLAN_PARAM_Integer,
@@ -1069,9 +1145,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                         CFG_AP_OBSS_PROTECTION_MODE_MIN,
                         CFG_AP_OBSS_PROTECTION_MODE_MAX ),
 <<<<<<< HEAD
+<<<<<<< HEAD
                         
    REG_VARIABLE( CFG_AP_STA_SECURITY_SEPERATION_NAME, WLAN_PARAM_Integer,
                         hdd_config_t, apDisableIntraBssFwd, 
+=======
+
+   REG_VARIABLE( CFG_AP_STA_SECURITY_SEPERATION_NAME, WLAN_PARAM_Integer,
+                        hdd_config_t, apDisableIntraBssFwd,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    REG_VARIABLE( CFG_AP_STA_SECURITY_SEPERATION_NAME, WLAN_PARAM_Integer,
@@ -1084,7 +1166,11 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE( CFG_FRAMES_PROCESSING_TH_MODE_NAME, WLAN_PARAM_Integer,
 <<<<<<< HEAD
+<<<<<<< HEAD
                         hdd_config_t, MinFramesProcThres, 
+=======
+                        hdd_config_t, MinFramesProcThres,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         hdd_config_t, MinFramesProcThres,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1121,7 +1207,11 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_SAP_AUTO_CHANNEL_SELECTION_MIN,
                  CFG_SAP_AUTO_CHANNEL_SELECTION_MAX ),
 <<<<<<< HEAD
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1147,8 +1237,11 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_GO_KEEP_ALIVE_PERIOD_MAX),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    REG_VARIABLE( CFG_AP_LINK_MONITOR_PERIOD_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, apLinkMonitorPeriod,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
@@ -1156,6 +1249,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_AP_LINK_MONITOR_PERIOD_MIN,
                  CFG_AP_LINK_MONITOR_PERIOD_MAX),
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    REG_VARIABLE(CFG_DISABLE_PACKET_FILTER , WLAN_PARAM_Integer,
                  hdd_config_t, disablePacketFilter,
@@ -1165,6 +1261,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_DISABLE_PACKET_FILTER_MAX ),
 
    REG_VARIABLE( CFG_BEACON_INTERVAL_NAME, WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  hdd_config_t, nBeaconInterval, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK, 
@@ -1178,6 +1275,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_ENABLE_HANDOFF_DEFAULT, 
                  CFG_ENABLE_HANDOFF_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, nBeaconInterval,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK,
                  CFG_BEACON_INTERVAL_DEFAULT,
@@ -1189,11 +1288,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_ENABLE_HANDOFF_DEFAULT,
                  CFG_ENABLE_HANDOFF_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_ENABLE_HANDOFF_MAX ),
 
 
    REG_VARIABLE( CFG_ENABLE_IDLE_SCAN_NAME , WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  hdd_config_t, nEnableIdleScan, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -1263,6 +1366,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_MAX_TX_POWER_DEFAULT, 
                  CFG_MAX_TX_POWER_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, nEnableIdleScan,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_ENABLE_IDLE_SCAN_DEFAULT,
@@ -1423,15 +1528,24 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_MAX_TX_POWER_DEFAULT,
                  CFG_MAX_TX_POWER_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_MAX_TX_POWER_MAX ),
 
    REG_VARIABLE( CFG_LOW_GAIN_OVERRIDE_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, fIsLowGainOverride,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_LOW_GAIN_OVERRIDE_DEFAULT, 
                  CFG_LOW_GAIN_OVERRIDE_MIN, 
+=======
+                 VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
+                 CFG_LOW_GAIN_OVERRIDE_DEFAULT,
+                 CFG_LOW_GAIN_OVERRIDE_MIN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_LOW_GAIN_OVERRIDE_DEFAULT,
@@ -1442,9 +1556,15 @@ REG_TABLE_ENTRY g_registry_table[] =
    REG_VARIABLE( CFG_RSSI_FILTER_PERIOD_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nRssiFilterPeriod,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_RSSI_FILTER_PERIOD_DEFAULT, 
                  CFG_RSSI_FILTER_PERIOD_MIN, 
+=======
+                 VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
+                 CFG_RSSI_FILTER_PERIOD_DEFAULT,
+                 CFG_RSSI_FILTER_PERIOD_MIN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_RSSI_FILTER_PERIOD_DEFAULT,
@@ -1454,6 +1574,7 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE( CFG_IGNORE_DTIM_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, fIgnoreDtim,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_IGNORE_DTIM_DEFAULT, 
@@ -1585,6 +1706,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_QOS_WMM_INFRA_UAPSD_BK_SUS_INTV_DEFAULT, 
                  CFG_QOS_WMM_INFRA_UAPSD_BK_SUS_INTV_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_IGNORE_DTIM_DEFAULT,
                  CFG_IGNORE_DTIM_MIN,
@@ -1715,6 +1838,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_QOS_WMM_INFRA_UAPSD_BK_SUS_INTV_DEFAULT,
                  CFG_QOS_WMM_INFRA_UAPSD_BK_SUS_INTV_MIN,
+<<<<<<< HEAD
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_QOS_WMM_INFRA_UAPSD_BK_SUS_INTV_MAX ),
 
@@ -1971,6 +2095,28 @@ REG_TABLE_ENTRY g_registry_table[] =
    REG_VARIABLE_STRING( CFG_WOWL_PATTERN_NAME, WLAN_PARAM_String,
                         hdd_config_t, wowlPattern, 
 =======
+=======
+                 CFG_QOS_WMM_INFRA_UAPSD_BK_SUS_INTV_MAX ),
+
+#ifdef FEATURE_WLAN_CCX
+   REG_VARIABLE( CFG_QOS_WMM_INFRA_INACTIVITY_INTERVAL_NAME, WLAN_PARAM_Integer,
+                 hdd_config_t, InfraInactivityInterval,
+                 VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
+                 CFG_QOS_WMM_INFRA_INACTIVITY_INTERVAL_DEFAULT,
+                 CFG_QOS_WMM_INFRA_INACTIVITY_INTERVAL_MIN,
+                 CFG_QOS_WMM_INFRA_INACTIVITY_INTERVAL_MAX),
+   REG_DYNAMIC_VARIABLE( CFG_CCX_FEATURE_ENABLED_NAME, WLAN_PARAM_Integer,
+                 hdd_config_t, isCcxIniFeatureEnabled,
+                 VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
+                 CFG_CCX_FEATURE_ENABLED_DEFAULT,
+                 CFG_CCX_FEATURE_ENABLED_MIN,
+                 CFG_CCX_FEATURE_ENABLED_MAX,
+                 cbNotifySetCcxFeatureEnabled, 0 ),
+#endif // FEATURE_WLAN_CCX
+
+#ifdef FEATURE_WLAN_LFR
+   // flag to turn ON/OFF Legacy Fast Roaming
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    REG_DYNAMIC_VARIABLE( CFG_LFR_FEATURE_ENABLED_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, isFastRoamIniFeatureEnabled,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
@@ -2218,11 +2364,15 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE_STRING( CFG_WOWL_PATTERN_NAME, WLAN_PARAM_String,
                         hdd_config_t, wowlPattern,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         VAR_FLAGS_OPTIONAL,
                         (void *)CFG_WOWL_PATTERN_DEFAULT ),
 
    REG_VARIABLE( CFG_QOS_IMPLICIT_SETUP_ENABLED_NAME , WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  hdd_config_t, bImplicitQosEnabled, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -2243,6 +2393,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_BTC_EXECUTION_MODE_DEFAULT, 
                  CFG_BTC_EXECUTION_MODE_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, bImplicitQosEnabled,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_QOS_IMPLICIT_SETUP_ENABLED_DEFAULT,
@@ -2261,6 +2413,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_BTC_EXECUTION_MODE_DEFAULT,
                  CFG_BTC_EXECUTION_MODE_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_BTC_EXECUTION_MODE_MAX ),
 
@@ -2370,6 +2525,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_BTC_DHCP_PROT_ON_SCO_MAX ),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    REG_VARIABLE( CFG_AP_LISTEN_MODE_NAME , WLAN_PARAM_Integer,
                  hdd_config_t, nEnableListenMode, 
@@ -2378,12 +2534,17 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_AP_LISTEN_MODE_MIN, 
                  CFG_AP_LISTEN_MODE_MAX ),                     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    REG_VARIABLE( CFG_AP_LISTEN_MODE_NAME , WLAN_PARAM_Integer,
                  hdd_config_t, nEnableListenMode,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_AP_LISTEN_MODE_DEFAULT,
                  CFG_AP_LISTEN_MODE_MIN,
                  CFG_AP_LISTEN_MODE_MAX ),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    REG_VARIABLE( CFG_AP_AUTO_SHUT_OFF , WLAN_PARAM_Integer,
@@ -2392,6 +2553,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_AP_AUTO_SHUT_OFF_DEFAULT,
                  CFG_AP_AUTO_SHUT_OFF_MIN,
                  CFG_AP_AUTO_SHUT_OFF_MAX ),
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 
@@ -2439,6 +2601,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_FT_RESOURCE_REQ_DEFAULT, 
                  CFG_FT_RESOURCE_REQ_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if defined WLAN_FEATURE_VOWIFI
    REG_VARIABLE( CFG_RRM_ENABLE_NAME, WLAN_PARAM_Integer,
@@ -2483,11 +2647,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_FT_RESOURCE_REQ_DEFAULT,
                  CFG_FT_RESOURCE_REQ_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_FT_RESOURCE_REQ_MAX ),
 #endif
 
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
+<<<<<<< HEAD
 <<<<<<< HEAD
    REG_VARIABLE( CFG_NEIGHBOR_SCAN_TIMER_PERIOD_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nNeighborScanPeriod, 
@@ -2517,6 +2685,8 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE( CFG_NEIGHBOR_SCAN_MIN_CHAN_TIME_NAME, WLAN_PARAM_Integer,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    REG_DYNAMIC_VARIABLE( CFG_NEIGHBOR_SCAN_TIMER_PERIOD_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nNeighborScanPeriod,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
@@ -2546,11 +2716,15 @@ REG_TABLE_ENTRY g_registry_table[] =
                         (void *)CFG_NEIGHBOR_SCAN_CHAN_LIST_DEFAULT ),
 
    REG_DYNAMIC_VARIABLE( CFG_NEIGHBOR_SCAN_MIN_CHAN_TIME_NAME, WLAN_PARAM_Integer,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, nNeighborScanMinChanTime,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_NEIGHBOR_SCAN_MIN_CHAN_TIME_DEFAULT,
                  CFG_NEIGHBOR_SCAN_MIN_CHAN_TIME_MIN,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  CFG_NEIGHBOR_SCAN_MIN_CHAN_TIME_MAX ),
 
@@ -2561,6 +2735,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_NEIGHBOR_SCAN_MAX_CHAN_TIME_MIN, 
                  CFG_NEIGHBOR_SCAN_MAX_CHAN_TIME_MAX ),
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_NEIGHBOR_SCAN_MIN_CHAN_TIME_MAX,
                  cbNotifySetNeighborScanMinChanTime, 0 ),
 
@@ -2571,6 +2747,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_NEIGHBOR_SCAN_MAX_CHAN_TIME_MIN,
                  CFG_NEIGHBOR_SCAN_MAX_CHAN_TIME_MAX,
                  cbNotifySetNeighborScanMaxChanTime, 0 ),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    REG_VARIABLE( CFG_11R_NEIGHBOR_REQ_MAX_TRIES_NAME, WLAN_PARAM_Integer,
@@ -2580,6 +2759,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_11R_NEIGHBOR_REQ_MAX_TRIES_MIN,
                  CFG_11R_NEIGHBOR_REQ_MAX_TRIES_MAX),
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    REG_VARIABLE( CFG_NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nNeighborResultsRefreshPeriod, 
@@ -2595,6 +2775,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_QOS_WMM_BURST_SIZE_DEFN_DEFAULT, 
                  CFG_QOS_WMM_BURST_SIZE_DEFN_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    REG_DYNAMIC_VARIABLE( CFG_NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_NAME, WLAN_PARAM_Integer,
                  hdd_config_t, nNeighborResultsRefreshPeriod,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
@@ -2627,6 +2809,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_QOS_WMM_BURST_SIZE_DEFN_DEFAULT,
                  CFG_QOS_WMM_BURST_SIZE_DEFN_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_QOS_WMM_BURST_SIZE_DEFN_MAX ),
 
@@ -2646,15 +2831,21 @@ REG_TABLE_ENTRY g_registry_table[] =
 
    REG_VARIABLE( CFG_QOS_WMM_TS_INFO_ACK_POLICY_NAME , WLAN_PARAM_HexInteger,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  hdd_config_t, tsInfoAckPolicy, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                  CFG_QOS_WMM_TS_INFO_ACK_POLICY_DEFAULT, 
                  CFG_QOS_WMM_TS_INFO_ACK_POLICY_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, tsInfoAckPolicy,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_QOS_WMM_TS_INFO_ACK_POLICY_DEFAULT,
                  CFG_QOS_WMM_TS_INFO_ACK_POLICY_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_QOS_WMM_TS_INFO_ACK_POLICY_MAX ),
 
@@ -2688,20 +2879,27 @@ REG_TABLE_ENTRY g_registry_table[] =
 
     REG_VARIABLE( CFG_QOS_ADDTS_WHEN_ACM_IS_OFF_NAME , WLAN_PARAM_Integer,
 <<<<<<< HEAD
+<<<<<<< HEAD
                   hdd_config_t, AddTSWhenACMIsOff, 
                   VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
                   CFG_QOS_ADDTS_WHEN_ACM_IS_OFF_DEFAULT, 
                   CFG_QOS_ADDTS_WHEN_ACM_IS_OFF_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   hdd_config_t, AddTSWhenACMIsOff,
                   VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                   CFG_QOS_ADDTS_WHEN_ACM_IS_OFF_DEFAULT,
                   CFG_QOS_ADDTS_WHEN_ACM_IS_OFF_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   CFG_QOS_ADDTS_WHEN_ACM_IS_OFF_MAX ),
 
 
     REG_VARIABLE( CFG_VALIDATE_SCAN_LIST_NAME , WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                   hdd_config_t, fValidateScanList, 
                   VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -2729,6 +2927,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_ENABLE_BTAMP_DEFAULT, 
                  CFG_ENABLE_BTAMP_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   hdd_config_t, fValidateScanList,
                   VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                   CFG_VALIDATE_SCAN_LIST_DEFAULT,
@@ -2754,13 +2954,20 @@ REG_TABLE_ENTRY g_registry_table[] =
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_ENABLE_BTAMP_DEFAULT,
                  CFG_ENABLE_BTAMP_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  CFG_ENABLE_BTAMP_MAX ),
 
 #ifdef WLAN_BTAMP_FEATURE
    REG_VARIABLE( CFG_BT_AMP_PREFERRED_CHANNEL_NAME, WLAN_PARAM_Integer,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  hdd_config_t, preferredChannel, 
+=======
+                 hdd_config_t, preferredChannel,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                  hdd_config_t, preferredChannel,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2770,6 +2977,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                  CFG_BT_AMP_PREFERRED_CHANNEL_MAX ),
 #endif //WLAN_BTAMP_FEATURE
    REG_VARIABLE( CFG_BAND_CAPABILITY_NAME, WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
                  hdd_config_t, nBandCapability, 
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -2786,6 +2994,8 @@ REG_TABLE_ENTRY g_registry_table[] =
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  hdd_config_t, nBandCapability,
                  VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                  CFG_BAND_CAPABILITY_DEFAULT,
@@ -2876,6 +3086,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                 CFG_VOS_TRACE_ENABLE_MIN,
                 CFG_VOS_TRACE_ENABLE_MAX ),
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* note that since the default value is out of range we cannot
       enable range check, otherwise we get a system log message */
@@ -2906,6 +3119,7 @@ REG_TABLE_ENTRY g_registry_table[] =
                 CFG_WDI_TRACE_ENABLE_DEFAULT,
                 CFG_WDI_TRACE_ENABLE_MIN,
                 CFG_WDI_TRACE_ENABLE_MAX ),
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 
@@ -2999,6 +3213,8 @@ REG_TABLE_ENTRY g_registry_table[] =
                        CFG_REPORT_MAX_LINK_SPEED_DEFAULT, 
                        CFG_REPORT_MAX_LINK_SPEED_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   REG_VARIABLE( CFG_TELE_BCN_TRANS_LI_NAME, WLAN_PARAM_Integer,
                hdd_config_t, nTeleBcnTransListenInterval,
@@ -3089,6 +3305,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                        VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
                        CFG_REPORT_MAX_LINK_SPEED_DEFAULT,
                        CFG_REPORT_MAX_LINK_SPEED_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        CFG_REPORT_MAX_LINK_SPEED_MAX,
                        NULL, 0 ),
@@ -3102,7 +3321,10 @@ REG_TABLE_ENTRY g_registry_table[] =
                        NULL, 0 ),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  REG_DYNAMIC_VARIABLE( CFG_LINK_SPEED_RSSI_MID, WLAN_PARAM_SignedInteger,
                        hdd_config_t, linkSpeedRssiMid,
                        VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
@@ -3111,6 +3333,9 @@ REG_TABLE_ENTRY g_registry_table[] =
                        CFG_LINK_SPEED_RSSI_MID_MAX,
                        NULL, 0 ),
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  REG_DYNAMIC_VARIABLE( CFG_LINK_SPEED_RSSI_LOW, WLAN_PARAM_SignedInteger,
                        hdd_config_t, linkSpeedRssiLow,
@@ -3121,8 +3346,11 @@ REG_TABLE_ENTRY g_registry_table[] =
                        NULL, 0 ),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
  REG_DYNAMIC_VARIABLE( CFG_ROAM_PREFER_5GHZ, WLAN_PARAM_Integer,
                        hdd_config_t, nRoamPrefer5GHz,
@@ -3158,6 +3386,9 @@ REG_TABLE_ENTRY g_registry_table[] =
 
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  REG_VARIABLE( CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_NAME, WLAN_PARAM_Integer,
               hdd_config_t, isP2pDeviceAddrAdministrated,
@@ -3165,6 +3396,7 @@ REG_TABLE_ENTRY g_registry_table[] =
               CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_DEFAULT,
               CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_MIN,
               CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_MAX ),
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 
@@ -3188,6 +3420,8 @@ REG_VARIABLE( CFG_ALLOW_MCC_GO_DIFF_BI_NAME, WLAN_PARAM_Integer,
               CFG_THERMAL_MIGRATION_ENABLE_DEFAULT, 
               CFG_THERMAL_MIGRATION_ENABLE_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 REG_VARIABLE( CFG_ENABLE_MCC_ENABLED_NAME, WLAN_PARAM_Integer,
              hdd_config_t, enableMCC,
@@ -3208,6 +3442,9 @@ REG_VARIABLE( CFG_THERMAL_MIGRATION_ENABLE_NAME, WLAN_PARAM_Integer,
               VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
               CFG_THERMAL_MIGRATION_ENABLE_DEFAULT,
               CFG_THERMAL_MIGRATION_ENABLE_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               CFG_THERMAL_MIGRATION_ENABLE_MAX ),
 #ifdef WLAN_FEATURE_PACKET_FILTERING
@@ -3219,6 +3456,7 @@ REG_VARIABLE( CFG_THERMAL_MIGRATION_ENABLE_NAME, WLAN_PARAM_Integer,
               CFG_MC_ADDR_LIST_FILTER_MAX ),
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 REG_VARIABLE( CFG_ENABLE_MODULATED_DTIM_NAME, WLAN_PARAM_Integer,
               hdd_config_t, enableModulatedDTIM, 
@@ -3226,12 +3464,17 @@ REG_VARIABLE( CFG_ENABLE_MODULATED_DTIM_NAME, WLAN_PARAM_Integer,
               CFG_ENABLE_MODULATED_DTIM_DEFAULT, 
               CFG_ENABLE_MODULATED_DTIM_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 REG_VARIABLE( CFG_ENABLE_MODULATED_DTIM_NAME, WLAN_PARAM_Integer,
               hdd_config_t, enableModulatedDTIM,
               VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
               CFG_ENABLE_MODULATED_DTIM_DEFAULT,
               CFG_ENABLE_MODULATED_DTIM_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               CFG_ENABLE_MODULATED_DTIM_MAX ),
 
@@ -3242,6 +3485,7 @@ REG_VARIABLE( CFG_ENABLE_MODULATED_DTIM_NAME, WLAN_PARAM_Integer,
               CFG_MC_ADDR_LIST_ENABLE_MIN,
               CFG_MC_ADDR_LIST_ENABLE_MAX ),
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC              
 REG_VARIABLE( CFG_VHT_CHANNEL_WIDTH, WLAN_PARAM_Integer,
@@ -3264,6 +3508,8 @@ REG_VARIABLE( CFG_VHT_ENABLE_TX_MCS_8_9, WLAN_PARAM_Integer,
               CFG_VHT_ENABLE_TX_MCS_8_9_DEFAULT, 
               CFG_VHT_ENABLE_TX_MCS_8_9_MIN, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 REG_VARIABLE( CFG_VHT_CHANNEL_WIDTH, WLAN_PARAM_Integer,
               hdd_config_t, vhtChannelWidth,
@@ -3284,11 +3530,15 @@ REG_VARIABLE( CFG_VHT_ENABLE_TX_MCS_8_9, WLAN_PARAM_Integer,
               VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK,
               CFG_VHT_ENABLE_TX_MCS_8_9_DEFAULT,
               CFG_VHT_ENABLE_TX_MCS_8_9_MIN,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               CFG_VHT_ENABLE_TX_MCS_8_9_MAX),
 #endif
 
 REG_VARIABLE( CFG_ENABLE_FIRST_SCAN_2G_ONLY_NAME, WLAN_PARAM_Integer,
+<<<<<<< HEAD
 <<<<<<< HEAD
               hdd_config_t, enableFirstScan2GOnly, 
               VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT, 
@@ -3318,6 +3568,8 @@ REG_VARIABLE( CFG_IGNORE_DYNAMIC_DTIM_IN_P2P_MODE_NAME, WLAN_PARAM_Integer,
               CFG_ENABLE_IGNORE_CHAN165_MIN, 
               CFG_ENABLE_IGNORE_CHAN165_MAX ),              
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               hdd_config_t, enableFirstScan2GOnly,
               VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
               CFG_ENABLE_FIRST_SCAN_2G_ONLY_DEFAULT,
@@ -3572,6 +3824,9 @@ REG_VARIABLE(CFG_MAX_MEDIUM_TIME, WLAN_PARAM_Integer,
                  CFG_AMSDU_SUPPORT_IN_AMPDU_DEFAULT,
                  CFG_AMSDU_SUPPORT_IN_AMPDU_MIN,
                  CFG_AMSDU_SUPPORT_IN_AMPDU_MAX ),
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
@@ -3592,7 +3847,11 @@ static char* get_next_line(char* str)
 
   c = *str;
 <<<<<<< HEAD
+<<<<<<< HEAD
   while(c != '\n'  && c != '\0' && c != 0xd)  { 
+=======
+  while(c != '\n'  && c != '\0' && c != 0xd)  {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   while(c != '\n'  && c != '\0' && c != 0xd)  {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3606,7 +3865,11 @@ static char* get_next_line(char* str)
   else
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     *str = '\0'; 
+=======
+    *str = '\0';
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     *str = '\0';
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3649,7 +3912,11 @@ static char *i_trim(char *str)
       /* Null terminate the following character */
       ptr[1] = '\0';
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3665,22 +3932,29 @@ typedef struct
 }tCfgIniEntry;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t * pHddCtx, 
     tCfgIniEntry* iniTable, unsigned long entries);
 
 #ifdef WLAN_CFG_DEBUG
 void dump_cfg_ini (tCfgIniEntry* iniTable, unsigned long entries) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t * pHddCtx,
     tCfgIniEntry* iniTable, unsigned long entries);
 
 #ifdef WLAN_CFG_DEBUG
 void dump_cfg_ini (tCfgIniEntry* iniTable, unsigned long entries)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    unsigned long i;
 
    for (i = 0; i < entries; i++) {
+<<<<<<< HEAD
 <<<<<<< HEAD
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "%s entry Name=[%s] value=[%s]", 
            WLAN_INI_FILE, iniTable[i].name, iniTable[i].value);
@@ -3688,11 +3962,16 @@ void dump_cfg_ini (tCfgIniEntry* iniTable, unsigned long entries)
 }
 #endif 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "%s entry Name=[%s] value=[%s]",
            WLAN_INI_FILE, iniTable[i].name, iniTable[i].value);
      }
 }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
@@ -3705,7 +3984,11 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
    /** Pointer for firmware image data */
    const struct firmware *fw = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
    char *buffer, *line,*pTemp;
+=======
+   char *buffer, *line, *pTemp = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    char *buffer, *line, *pTemp = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3718,6 +4001,7 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
    memset(cfgIniTable, 0, sizeof(cfgIniTable));
 
    status = request_firmware(&fw, WLAN_INI_FILE, pHddCtx->parent_dev);
+<<<<<<< HEAD
 <<<<<<< HEAD
    
    if(status)
@@ -3742,6 +4026,8 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
       return VOS_STATUS_E_FAILURE;
    } 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(status)
    {
@@ -3766,13 +4052,20 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
       release_firmware(fw);
       return VOS_STATUS_E_FAILURE;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pTemp = buffer;
 
    vos_mem_copy((void*)buffer,(void *)fw->data, fw->size);
    size = fw->size;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3794,7 +4087,11 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
       {
          name = buffer;
 <<<<<<< HEAD
+<<<<<<< HEAD
          while(*buffer != '=' && *buffer != '\0') 
+=======
+         while(*buffer != '=' && *buffer != '\0')
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          while(*buffer != '=' && *buffer != '\0')
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3807,7 +4104,11 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
                if(strlen(buffer)>0) {
                   value = buffer;
 <<<<<<< HEAD
+<<<<<<< HEAD
                   while(!i_isspace(*buffer) && *buffer != '\0') 
+=======
+                  while(!i_isspace(*buffer) && *buffer != '\0')
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   while(!i_isspace(*buffer) && *buffer != '\0')
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3818,7 +4119,11 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
                   if(i >= MAX_CFG_INI_ITEMS) {
                      hddLog(LOGE,"%s: Number of items in %s > %d \n",
 <<<<<<< HEAD
+<<<<<<< HEAD
                         __FUNCTION__, WLAN_INI_FILE, MAX_CFG_INI_ITEMS);
+=======
+                        __func__, WLAN_INI_FILE, MAX_CFG_INI_ITEMS);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         __func__, WLAN_INI_FILE, MAX_CFG_INI_ITEMS);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3835,16 +4140,22 @@ VOS_STATUS hdd_parse_config_ini(hdd_context_t* pHddCtx)
    vos_status = hdd_apply_cfg_ini(pHddCtx, cfgIniTable, i);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    release_firmware(fw);
    vos_mem_free(pTemp);
    return vos_status;
 } 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 config_exit:
    release_firmware(fw);
    vos_mem_free(pTemp);
    return vos_status;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -3864,7 +4175,11 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
       pHddCtx->cfg_ini->IbssBssid.bytes[4],pHddCtx->cfg_ini->IbssBssid.bytes[5]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, 
+=======
+  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3878,7 +4193,11 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, 
+=======
+  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3891,7 +4210,11 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
                                   pHddCtx->cfg_ini->intfMacAddr[1].bytes[5]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, 
+=======
+  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3904,7 +4227,11 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
                                   pHddCtx->cfg_ini->intfMacAddr[2].bytes[5]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, 
+=======
+  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -3917,7 +4244,10 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
                                   pHddCtx->cfg_ini->intfMacAddr[3].bytes[5]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -3930,6 +4260,7 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gAPAutoShutOff] Value = [%u]\n", pHddCtx->cfg_ini->nAPAutoShutOff);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableListenMode] Value = [%u]\n", pHddCtx->cfg_ini->nEnableListenMode);  
   VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gApProtection] value = [%u]\n",pHddCtx->cfg_ini->apProtection);
   VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableApOBSSProt] value = [%u]\n",pHddCtx->cfg_ini->apOBSSProtEnabled);
@@ -3937,11 +4268,16 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
 #endif
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableListenMode] Value = [%u]\n", pHddCtx->cfg_ini->nEnableListenMode);
   VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gApProtection] value = [%u]\n",pHddCtx->cfg_ini->apProtection);
   VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableApOBSSProt] value = [%u]\n",pHddCtx->cfg_ini->apOBSSProtEnabled);
   VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gApAutoChannelSelection] value = [%u]\n",pHddCtx->cfg_ini->apAutoChannelSelection);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [ChannelBondingMode] Value = [%lu]",pHddCtx->cfg_ini->nChannelBondingMode24GHz);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [ChannelBondingMode] Value = [%lu]",pHddCtx->cfg_ini->nChannelBondingMode5GHz);
@@ -3968,6 +4304,7 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [FastTransitionEnabled] Value = [%lu] ",pHddCtx->cfg_ini->isFastTransitionEnabled);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gTxPowerCap] Value = [%lu] dBm ",pHddCtx->cfg_ini->nTxPowerCap);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif 
 #ifdef FEATURE_WLAN_LFR
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [FastRoamEnabled] Value = [%lu] ",pHddCtx->cfg_ini->isFastRoamIniFeatureEnabled);
@@ -3975,6 +4312,8 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [RoamRssiDiff] Value = [%lu] ",pHddCtx->cfg_ini->RoamRssiDiff);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 #ifdef FEATURE_WLAN_LFR
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [FastRoamEnabled] Value = [%lu] ",pHddCtx->cfg_ini->isFastRoamIniFeatureEnabled);
@@ -3986,6 +4325,9 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
 #endif
 #ifdef FEATURE_WLAN_OKC
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [OkcEnabled] Value = [%lu] ",pHddCtx->cfg_ini->isOkcIniFeatureEnabled);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [InfraDirAcVo] Value = [%u] ",pHddCtx->cfg_ini->InfraDirAcVo);
@@ -4020,7 +4362,11 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [mcastBcastFilterSetting] Value = [%u] ",pHddCtx->cfg_ini->mcastBcastFilterSetting);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [fhostArpOffload] Value = [%u] ",pHddCtx->cfg_ini->fhostArpOffload);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_VOWIFI_11R  
+=======
+#ifdef WLAN_FEATURE_VOWIFI_11R
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #ifdef WLAN_FEATURE_VOWIFI_11R
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4037,6 +4383,11 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [nNeighborScanPeriod] Value = [%lu] ",pHddCtx->cfg_ini->nNeighborScanPeriod);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [nNeighborScanResultsRefreshPeriod] Value = [%lu] ",pHddCtx->cfg_ini->nNeighborResultsRefreshPeriod);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [nEmptyScanRefreshPeriod] Value = [%lu] ",pHddCtx->cfg_ini->nEmptyScanRefreshPeriod);
+  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [nEmptyScanMaxPeriod] Value = [%u] " ,pHddCtx->cfg_ini->nEmptyScanMaxPeriod);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [nEmptyScanRefreshPeriod] Value = [%lu] ",pHddCtx->cfg_ini->nEmptyScanRefreshPeriod);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [nEmptyScanMaxPeriod] Value = [%u] " ,pHddCtx->cfg_ini->nEmptyScanMaxPeriod);
@@ -4076,11 +4427,14 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [skipDfsChnlInP2pSearch] Value = [%u] ",pHddCtx->cfg_ini->skipDfsChnlInP2pSearch);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [ignoreDynamicDtimInP2pMode] Value = [%u] ",pHddCtx->cfg_ini->ignoreDynamicDtimInP2pMode);
 <<<<<<< HEAD
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gIgnore_Chan165] Value = [%u] ",pHddCtx->cfg_ini->ignore_chan165);
 }
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [enableRxSTBC] Value = [%u] ",pHddCtx->cfg_ini->enableRxSTBC);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableLpwrImgTransition] Value = [%u] ",pHddCtx->cfg_ini->enableLpwrImgTransition);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableSSR] Value = [%u] ",pHddCtx->cfg_ini->enableSSR);
@@ -4092,6 +4446,9 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
 
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_VALUE_MAX_LEN 256
 #define CFG_ENTRY_MAX_LEN (32+CFG_VALUE_MAX_LEN)
@@ -4113,7 +4470,11 @@ VOS_STATUS hdd_cfg_get_config(hdd_context_t *pHddCtx, char *pBuf, int buflen)
    *pCur = '\0';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    for ( idx = 0; idx < cRegTableEntries; idx++, pRegEntry++ ) 
+=======
+   for ( idx = 0; idx < cRegTableEntries; idx++, pRegEntry++ )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    for ( idx = 0; idx < cRegTableEntries; idx++, pRegEntry++ )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4123,7 +4484,11 @@ VOS_STATUS hdd_cfg_get_config(hdd_context_t *pHddCtx, char *pBuf, int buflen)
       if ( ( WLAN_PARAM_Integer       == pRegEntry->RegType ) ||
            ( WLAN_PARAM_SignedInteger == pRegEntry->RegType ) ||
 <<<<<<< HEAD
+<<<<<<< HEAD
            ( WLAN_PARAM_HexInteger    == pRegEntry->RegType ) ) 
+=======
+           ( WLAN_PARAM_HexInteger    == pRegEntry->RegType ) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            ( WLAN_PARAM_HexInteger    == pRegEntry->RegType ) )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4165,7 +4530,11 @@ VOS_STATUS hdd_cfg_get_config(hdd_context_t *pHddCtx, char *pBuf, int buflen)
          snprintf(valueStr, CFG_VALUE_MAX_LEN, "(unhandled)");
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
       curlen = snprintf(configStr, CFG_ENTRY_MAX_LEN,
+=======
+      curlen = scnprintf(configStr, CFG_ENTRY_MAX_LEN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       curlen = scnprintf(configStr, CFG_ENTRY_MAX_LEN,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4208,7 +4577,11 @@ VOS_STATUS hdd_cfg_get_config(hdd_context_t *pHddCtx, char *pBuf, int buflen)
 
 static VOS_STATUS find_cfg_item (tCfgIniEntry* iniTable, unsigned long entries,
 <<<<<<< HEAD
+<<<<<<< HEAD
     char *name, char** value) 
+=======
+    char *name, char** value)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     char *name, char** value)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4258,6 +4631,10 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
    v_U32_t cbOutString;
    int i;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   int rv;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    int rv;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4267,7 +4644,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
    {
       hddLog(LOGE, "%s: MAX_CFG_INI_ITEMS too small, must be at least %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, cRegTableEntries);
+=======
+             __func__, cRegTableEntries);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, cRegTableEntries);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4285,7 +4666,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
          // If we could not read the cfg item and it is required, this is an error.
          hddLog(LOGE, "%s: Failed to read required config parameter %s",
 <<<<<<< HEAD
+<<<<<<< HEAD
             __FUNCTION__, pRegEntry->RegName);
+=======
+            __func__, pRegEntry->RegName);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             __func__, pRegEntry->RegName);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4300,11 +4685,14 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
          // If not, use the default value.
          if ( match_status == VOS_STATUS_SUCCESS && (WLAN_PARAM_Integer == pRegEntry->RegType)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             value = simple_strtoul(value_str, NULL, 10);
          }
          else if ( match_status == VOS_STATUS_SUCCESS && (WLAN_PARAM_HexInteger == pRegEntry->RegType)) {
             value = simple_strtoul(value_str, NULL, 16);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             rv = kstrtoul(value_str, 10, &value);
             if (rv < 0) {
                 hddLog(LOGE, "%s: Reg Parameter %s invalid. Enforcing default",
@@ -4319,6 +4707,9 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
                        __func__, pRegEntry->RegName);
                 value = pRegEntry->VarDefault;
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          else {
@@ -4332,7 +4723,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             {
                hddLog(LOGE, "%s: Reg Parameter %s > allowed Maximum [%lu > %lu]. Enforcing Maximum",
 <<<<<<< HEAD
+<<<<<<< HEAD
                       __FUNCTION__, pRegEntry->RegName, value, pRegEntry->VarMax );
+=======
+                      __func__, pRegEntry->RegName, value, pRegEntry->VarMax );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       __func__, pRegEntry->RegName, value, pRegEntry->VarMax );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4343,7 +4738,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             {
                hddLog(LOGE, "%s: Reg Parameter %s < allowed Minimum [%lu < %lu]. Enforcing Minimum",
 <<<<<<< HEAD
+<<<<<<< HEAD
                       __FUNCTION__, pRegEntry->RegName, value, pRegEntry->VarMin);
+=======
+                      __func__, pRegEntry->RegName, value, pRegEntry->VarMin);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       __func__, pRegEntry->RegName, value, pRegEntry->VarMin);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4357,7 +4756,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             {
                hddLog(LOGE, "%s: Reg Parameter %s > allowed Maximum [%lu > %lu]. Enforcing Default= %lu",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, pRegEntry->RegName, value, pRegEntry->VarMax, pRegEntry->VarDefault  );
+=======
+                  __func__, pRegEntry->RegName, value, pRegEntry->VarMax, pRegEntry->VarDefault  );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, pRegEntry->RegName, value, pRegEntry->VarMax, pRegEntry->VarDefault  );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4368,7 +4771,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             {
                hddLog(LOGE, "%s: Reg Parameter %s < allowed Minimum [%lu < %lu]. Enforcing Default= %lu",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   __FUNCTION__, pRegEntry->RegName, value, pRegEntry->VarMin, pRegEntry->VarDefault  );
+=======
+                  __func__, pRegEntry->RegName, value, pRegEntry->VarMin, pRegEntry->VarDefault  );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                   __func__, pRegEntry->RegName, value, pRegEntry->VarMin, pRegEntry->VarDefault  );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4386,14 +4793,20 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
          if (VOS_STATUS_SUCCESS == match_status)
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             svalue = simple_strtol(value_str, NULL, 10);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             rv = kstrtol(value_str, 10, &svalue);
             if (rv < 0) {
                 hddLog(VOS_TRACE_LEVEL_WARN, "%s: Reg Parameter %s invalid. Enforcing Default",
                        __func__, pRegEntry->RegName);
                 svalue = (v_S31_t)pRegEntry->VarDefault;
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          else
@@ -4408,7 +4821,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             {
                hddLog(LOGE, "%s: Reg Parameter %s > allowed Maximum "
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "[%ld > %ld]. Enforcing Maximum", __FUNCTION__,
+=======
+                      "[%ld > %ld]. Enforcing Maximum", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "[%ld > %ld]. Enforcing Maximum", __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4420,7 +4837,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             {
                hddLog(LOGE, "%s: Reg Parameter %s < allowed Minimum "
 <<<<<<< HEAD
+<<<<<<< HEAD
                       "[%ld < %ld]. Enforcing Minimum",  __FUNCTION__,
+=======
+                      "[%ld < %ld]. Enforcing Minimum",  __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       "[%ld < %ld]. Enforcing Minimum",  __func__,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4436,7 +4857,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
                hddLog(LOGE, "%s: Reg Parameter %s > allowed Maximum "
                       "[%ld > %ld]. Enforcing Default= %ld",
 <<<<<<< HEAD
+<<<<<<< HEAD
                       __FUNCTION__, pRegEntry->RegName, svalue,
+=======
+                      __func__, pRegEntry->RegName, svalue,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       __func__, pRegEntry->RegName, svalue,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4450,7 +4875,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
                hddLog(LOGE, "%s: Reg Parameter %s < allowed Minimum "
                       "[%ld < %ld]. Enforcing Default= %ld",
 <<<<<<< HEAD
+<<<<<<< HEAD
                       __FUNCTION__, pRegEntry->RegName, svalue,
+=======
+                      __func__, pRegEntry->RegName, svalue,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                       __func__, pRegEntry->RegName, svalue,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4469,23 +4898,34 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
 #ifdef WLAN_CFG_DEBUG
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "RegName = %s, VarOffset %u VarSize %u VarDefault %s\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
             pRegEntry->RegName, pRegEntry->VarOffset, pRegEntry->VarSize, (char*)pRegEntry->VarDefault); 
 #endif
 
          if ( match_status == VOS_STATUS_SUCCESS) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pRegEntry->RegName, pRegEntry->VarOffset, pRegEntry->VarSize, (char*)pRegEntry->VarDefault);
 #endif
 
          if ( match_status == VOS_STATUS_SUCCESS)
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          {
             len_value_str = strlen(value_str);
 
             if(len_value_str > (pRegEntry->VarSize - 1)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                hddLog(LOGE, "%s: Invalid Value=[%s] specified for Name=[%s] in %s\n", 
                   __FUNCTION__, value_str, pRegEntry->RegName, WLAN_INI_FILE);
+=======
+               hddLog(LOGE, "%s: Invalid Value=[%s] specified for Name=[%s] in %s\n",
+                  __func__, value_str, pRegEntry->RegName, WLAN_INI_FILE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                hddLog(LOGE, "%s: Invalid Value=[%s] specified for Name=[%s] in %s\n",
                   __func__, value_str, pRegEntry->RegName, WLAN_INI_FILE);
@@ -4501,7 +4941,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             }
          }
 <<<<<<< HEAD
+<<<<<<< HEAD
          else 
+=======
+         else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          else
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4510,7 +4954,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             cbOutString = utilMin( strlen( (char *)pRegEntry->VarDefault ), pRegEntry->VarSize - 1 );
             memcpy( pField, (void *)(pRegEntry->VarDefault), cbOutString );
 <<<<<<< HEAD
+<<<<<<< HEAD
             ( (v_U8_t *)pField )[ cbOutString ] = '\0';                 
+=======
+            ( (v_U8_t *)pField )[ cbOutString ] = '\0';
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             ( (v_U8_t *)pField )[ cbOutString ] = '\0';
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4520,8 +4968,13 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
       {
          if(pRegEntry->VarSize != VOS_MAC_ADDR_SIZE) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                hddLog(LOGE, "%s: Invalid VarSize %u for Name=[%s]\n", 
                    __FUNCTION__, pRegEntry->VarSize, pRegEntry->RegName); 
+=======
+               hddLog(LOGE, "%s: Invalid VarSize %u for Name=[%s]\n",
+                   __func__, pRegEntry->VarSize, pRegEntry->RegName);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                hddLog(LOGE, "%s: Invalid VarSize %u for Name=[%s]\n",
                    __func__, pRegEntry->VarSize, pRegEntry->RegName);
@@ -4533,8 +4986,13 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
             len_value_str = strlen(value_str);
             if(len_value_str != (VOS_MAC_ADDR_SIZE*2)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                hddLog(LOGE, "%s: Invalid MAC addr [%s] specified for Name=[%s] in %s\n", 
                   __FUNCTION__, value_str, pRegEntry->RegName, WLAN_INI_FILE);
+=======
+               hddLog(LOGE, "%s: Invalid MAC addr [%s] specified for Name=[%s] in %s\n",
+                  __func__, value_str, pRegEntry->RegName, WLAN_INI_FILE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                hddLog(LOGE, "%s: Invalid MAC addr [%s] specified for Name=[%s] in %s\n",
                   __func__, value_str, pRegEntry->RegName, WLAN_INI_FILE);
@@ -4547,8 +5005,13 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
          for(i=0; i<VOS_MAC_ADDR_SIZE; i++)
          {
 <<<<<<< HEAD
+<<<<<<< HEAD
             ((char*)pField)[i] = 
               (char)(parseHexDigit(candidate[i*2])*16 + parseHexDigit(candidate[i*2+1])); 
+=======
+            ((char*)pField)[i] =
+              (char)(parseHexDigit(candidate[i*2])*16 + parseHexDigit(candidate[i*2+1]));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             ((char*)pField)[i] =
               (char)(parseHexDigit(candidate[i*2])*16 + parseHexDigit(candidate[i*2+1]));
@@ -4558,8 +5021,13 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
       else
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
          hddLog(LOGE, "%s: Unknown param type for name[%s] in registry table\n", 
             __FUNCTION__, pRegEntry->RegName);
+=======
+         hddLog(LOGE, "%s: Unknown param type for name[%s] in registry table\n",
+            __func__, pRegEntry->RegName);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
          hddLog(LOGE, "%s: Unknown param type for name[%s] in registry table\n",
             __func__, pRegEntry->RegName);
@@ -4582,7 +5050,11 @@ static VOS_STATUS hdd_apply_cfg_ini( hdd_context_t *pHddCtx, tCfgIniEntry* iniTa
 eCsrPhyMode hdd_cfg_xlate_to_csr_phy_mode( eHddDot11Mode dot11Mode )
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    switch (dot11Mode) 
+=======
+   switch (dot11Mode)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    switch (dot11Mode)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4615,17 +5087,23 @@ eCsrPhyMode hdd_cfg_xlate_to_csr_phy_mode( eHddDot11Mode dot11Mode )
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static void hdd_set_btc_config(hdd_context_t *pHddCtx) 
 {
    hdd_config_t *pConfig = pHddCtx->cfg_ini;
    tSmeBtcConfig btcParams;
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static void hdd_set_btc_config(hdd_context_t *pHddCtx)
 {
    hdd_config_t *pConfig = pHddCtx->cfg_ini;
    tSmeBtcConfig btcParams;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    sme_BtcGetConfig(pHddCtx->hHal, &btcParams);
 
@@ -4651,7 +5129,11 @@ static void hdd_set_btc_config(hdd_context_t *pHddCtx)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *smeConfig) 
+=======
+static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *smeConfig)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *smeConfig)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4660,9 +5142,15 @@ static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *
 
    tPmcBmpsConfigParams bmpsParams;
 <<<<<<< HEAD
+<<<<<<< HEAD
    
    sme_GetConfigPowerSave(pHddCtx->hHal, ePMC_BEACON_MODE_POWER_SAVE, &bmpsParams);
    
+=======
+
+   sme_GetConfigPowerSave(pHddCtx->hHal, ePMC_BEACON_MODE_POWER_SAVE, &bmpsParams);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    sme_GetConfigPowerSave(pHddCtx->hHal, ePMC_BEACON_MODE_POWER_SAVE, &bmpsParams);
@@ -4700,11 +5188,17 @@ static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*If isAndroidPsEn is 1 then Host driver and above layers control the PS mechanism
     If Value set to 0 Driver/Core Stack internally control the Power saving mechanism */
    sme_SetHostPowerSave (pHddCtx->hHal, pConfig->isAndroidPsEn);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (pConfig->fIsBmpsEnabled)
    {
@@ -4722,7 +5216,11 @@ static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *
       hddLog(LOGE, "SetConfigPowerSave failed to set BMPS params\n");
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4731,9 +5229,13 @@ static void hdd_set_power_save_config(hdd_context_t *pHddCtx, tSmeConfigParams *
       sme_StartAutoBmpsTimer(pHddCtx->hHal);
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 
+=======
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4742,7 +5244,10 @@ static VOS_STATUS hdd_string_to_u8_array( char *str, tANI_U8 *intArray, tANI_U8 
 {
    char *s = str;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if( str == NULL || intArray == NULL || len == NULL )
@@ -4752,7 +5257,10 @@ static VOS_STATUS hdd_string_to_u8_array( char *str, tANI_U8 *intArray, tANI_U8 
    *len = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef VERSION_USING_STRPBRK
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    while ( (s != NULL) && (*len < intArrayMaxLen) )
@@ -4769,6 +5277,7 @@ static VOS_STATUS hdd_string_to_u8_array( char *str, tANI_U8 *intArray, tANI_U8 
       if( s )
          s++;
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
    while( (*s != '\0')  && (*len < intArrayMaxLen) )
@@ -4800,6 +5309,8 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SHORT_GI_20MHZ, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return VOS_STATUS_SUCCESS;
 }
 #endif
@@ -4815,6 +5326,9 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
 
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SHORT_GI_20MHZ,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pConfig->ShortGI20MhzEnable, NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
    {
@@ -4822,8 +5336,13 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
       hddLog(LOGE, "Could not pass on WNI_CFG_SHORT_GI_20MHZ to CCM\n");
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
        
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_CAL_CONTROL, pConfig->Calibration, 
+=======
+
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_CAL_CONTROL, pConfig->Calibration,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_CAL_CONTROL, pConfig->Calibration,
@@ -4844,7 +5363,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    if ( 0 != pConfig->Cfg1Id )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg1Id, pConfig->Cfg1Value, NULL, 
+=======
+      if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg1Id, pConfig->Cfg1Value, NULL,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg1Id, pConfig->Cfg1Value, NULL,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4854,7 +5377,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
          hddLog(LOGE, "Could not pass on Cfg1Id to CCM\n");
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4863,7 +5390,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    if ( 0 != pConfig->Cfg2Id )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg2Id, pConfig->Cfg2Value, 
+=======
+      if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg2Id, pConfig->Cfg2Value,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg2Id, pConfig->Cfg2Value,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4877,7 +5408,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    if ( 0 != pConfig->Cfg3Id )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg3Id, pConfig->Cfg3Value, 
+=======
+      if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg3Id, pConfig->Cfg3Value,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg3Id, pConfig->Cfg3Value,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4891,7 +5426,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    if ( 0 != pConfig->Cfg4Id )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg4Id, pConfig->Cfg4Value, 
+=======
+      if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg4Id, pConfig->Cfg4Value,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg4Id, pConfig->Cfg4Value,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4905,7 +5444,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    if ( 0 != pConfig->Cfg5Id )
    {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg5Id, pConfig->Cfg5Value, 
+=======
+      if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg5Id, pConfig->Cfg5Value,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       if (ccmCfgSetInt(pHddCtx->hHal, pConfig->Cfg5Id, pConfig->Cfg5Value,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4917,7 +5460,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_BA_AUTO_SETUP, pConfig->BlockAckAutoSetup, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_BA_AUTO_SETUP, pConfig->BlockAckAutoSetup,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_BA_AUTO_SETUP, pConfig->BlockAckAutoSetup,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4927,8 +5474,13 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
       hddLog(LOGE, "Could not pass on WNI_CFG_BA_AUTO_SETUP to CCM\n");
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
        
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_FIXED_RATE, pConfig->TxRate, 
+=======
+
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_FIXED_RATE, pConfig->TxRate,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_FIXED_RATE, pConfig->TxRate,
@@ -4940,7 +5492,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MAX_RX_AMPDU_FACTOR, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MAX_RX_AMPDU_FACTOR,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MAX_RX_AMPDU_FACTOR,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4958,9 +5514,15 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (pConfig->fIsAutoIbssBssid) 
    {
       if (ccmCfgSetStr(pHddCtx->hHal, WNI_CFG_BSSID, (v_U8_t *)"000000000000", 
+=======
+   if (pConfig->fIsAutoIbssBssid)
+   {
+      if (ccmCfgSetStr(pHddCtx->hHal, WNI_CFG_BSSID, (v_U8_t *)"000000000000",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (pConfig->fIsAutoIbssBssid)
    {
@@ -4974,7 +5536,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
    else
 <<<<<<< HEAD
+<<<<<<< HEAD
    { 
+=======
+   {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    {
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -4983,9 +5549,15 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
                     "MAC Addr (IBSS BSSID) read from Registry is: %02x-%02x-%02x-%02x-%02x-%02x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     pConfig->IbssBssid.bytes[0], pConfig->IbssBssid.bytes[1], pConfig->IbssBssid.bytes[2], 
                     pConfig->IbssBssid.bytes[3], pConfig->IbssBssid.bytes[4], pConfig->IbssBssid.bytes[5]);
          if (ccmCfgSetStr(pHddCtx->hHal, WNI_CFG_BSSID, pConfig->IbssBssid.bytes, 
+=======
+                    pConfig->IbssBssid.bytes[0], pConfig->IbssBssid.bytes[1], pConfig->IbssBssid.bytes[2],
+                    pConfig->IbssBssid.bytes[3], pConfig->IbssBssid.bytes[4], pConfig->IbssBssid.bytes[5]);
+         if (ccmCfgSetStr(pHddCtx->hHal, WNI_CFG_BSSID, pConfig->IbssBssid.bytes,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     pConfig->IbssBssid.bytes[0], pConfig->IbssBssid.bytes[1], pConfig->IbssBssid.bytes[2],
                     pConfig->IbssBssid.bytes[3], pConfig->IbssBssid.bytes[4], pConfig->IbssBssid.bytes[5]);
@@ -5005,7 +5577,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_BEACON_INTERVAL, pConfig->nBeaconInterval, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_BEACON_INTERVAL, pConfig->nBeaconInterval,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_BEACON_INTERVAL, pConfig->nBeaconInterval,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5016,7 +5592,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MAX_PS_POLL, pConfig->nMaxPsPoll, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MAX_PS_POLL, pConfig->nMaxPsPoll,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MAX_PS_POLL, pConfig->nMaxPsPoll,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5033,7 +5613,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_LOW_GAIN_OVERRIDE, pConfig->fIsLowGainOverride, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_LOW_GAIN_OVERRIDE, pConfig->fIsLowGainOverride,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_LOW_GAIN_OVERRIDE, pConfig->fIsLowGainOverride,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5043,7 +5627,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
       hddLog(LOGE, "Could not pass on WNI_CFG_LOW_GAIN_OVERRIDE to HAL\n");
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5054,6 +5642,7 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
       hddLog(LOGE, "Could not pass on WNI_CFG_RSSI_FILTER_PERIOD to CCM\n");
    }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_FT_RSSI_FILTER_PERIOD, pConfig->FTRssiFilterPeriod,
@@ -5066,6 +5655,8 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_IGNORE_DTIM, pConfig->fIgnoreDtim,
          NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
    {
@@ -5074,7 +5665,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_HEART_BEAT, pConfig->fEnableFwHeartBeatMonitoring, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_HEART_BEAT, pConfig->fEnableFwHeartBeatMonitoring,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_HEART_BEAT, pConfig->fEnableFwHeartBeatMonitoring,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5085,7 +5680,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_BCN_FILTER, pConfig->fEnableFwBeaconFiltering, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_BCN_FILTER, pConfig->fEnableFwBeaconFiltering,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_BCN_FILTER, pConfig->fEnableFwBeaconFiltering,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5096,8 +5695,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_RSSI_MONITOR, pConfig->fEnableFwRssiMonitoring, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
    if (pConfig->isFastRoamIniFeatureEnabled)
    {
@@ -5111,6 +5713,9 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 #endif
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_ENABLE_RSSI_MONITOR, pConfig->fEnableFwRssiMonitoring,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
    {
@@ -5119,7 +5724,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_DATA_INACTIVITY_TIMEOUT, pConfig->nDataInactivityTimeout, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_DATA_INACTIVITY_TIMEOUT, pConfig->nDataInactivityTimeout,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_PS_DATA_INACTIVITY_TIMEOUT, pConfig->nDataInactivityTimeout,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5130,7 +5739,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_NTH_BEACON_FILTER, pConfig->nthBeaconFilter, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_NTH_BEACON_FILTER, pConfig->nthBeaconFilter,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_NTH_BEACON_FILTER, pConfig->nthBeaconFilter,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5141,8 +5754,12 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_LTE_COEX, pConfig->enableLTECoex, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_LTE_COEX, pConfig->enableLTECoex,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_LTE_COEX, pConfig->enableLTECoex,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5153,7 +5770,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
      }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_PHY_AGC_LISTEN_MODE, pConfig->nEnableListenMode, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_PHY_AGC_LISTEN_MODE, pConfig->nEnableListenMode,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_PHY_AGC_LISTEN_MODE, pConfig->nEnableListenMode,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5164,9 +5785,13 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
      }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      WLANSAP_SetChannelRange(pHddCtx->hHal, pConfig->apStartChannelNum, pConfig->apEndChannelNum, pConfig->apOperatingBand);
 
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_KEEP_ALIVE_TIMEOUT, pConfig->apKeepAlivePeriod, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_KEEP_ALIVE_TIMEOUT, pConfig->apKeepAlivePeriod,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_KEEP_ALIVE_TIMEOUT, pConfig->apKeepAlivePeriod,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5175,9 +5800,15 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
         fStatus = FALSE;
         hddLog(LOGE, "Could not pass on WNI_CFG_AP_KEEP_ALIVE_TIMEOUT to CCM\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
      } 
 
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_GO_KEEP_ALIVE_TIMEOUT, pConfig->goKeepAlivePeriod, 
+=======
+     }
+
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_GO_KEEP_ALIVE_TIMEOUT, pConfig->goKeepAlivePeriod,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      }
 
@@ -5189,11 +5820,14 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
         hddLog(LOGE, "Could not pass on WNI_CFG_GO_KEEP_ALIVE_TIMEOUT to CCM\n");
      }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
    
 #if defined WLAN_FEATURE_VOWIFI
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_ENABLED, pConfig->fRrmEnable, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_LINK_MONITOR_TIMEOUT, pConfig->apLinkMonitorPeriod,
         NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
@@ -5204,6 +5838,9 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
 #if defined WLAN_FEATURE_VOWIFI
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_ENABLED, pConfig->fRrmEnable,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
     {
@@ -5212,7 +5849,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_OPERATING_CHAN_MAX, pConfig->nInChanMeasMaxDuration, 
+=======
+    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_OPERATING_CHAN_MAX, pConfig->nInChanMeasMaxDuration,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_OPERATING_CHAN_MAX, pConfig->nInChanMeasMaxDuration,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5223,7 +5864,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_NON_OPERATING_CHAN_MAX, pConfig->nOutChanMeasMaxDuration, 
+=======
+    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_NON_OPERATING_CHAN_MAX, pConfig->nOutChanMeasMaxDuration,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RRM_NON_OPERATING_CHAN_MAX, pConfig->nOutChanMeasMaxDuration,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5234,17 +5879,23 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MCAST_BCAST_FILTER_SETTING, pConfig->mcastBcastFilterSetting, 
                      NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
 #endif
 
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SINGLE_TID_RC, pConfig->bSingleTidRc, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_MCAST_BCAST_FILTER_SETTING, pConfig->mcastBcastFilterSetting,
                      NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
 #endif
 
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SINGLE_TID_RC, pConfig->bSingleTidRc,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
      {
@@ -5253,7 +5904,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
      }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_WAKEUP_EN, pConfig->teleBcnWakeupEn, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_WAKEUP_EN, pConfig->teleBcnWakeupEn,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_WAKEUP_EN, pConfig->teleBcnWakeupEn,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5264,7 +5919,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
      }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_TRANS_LI, pConfig->nTeleBcnTransListenInterval, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_TRANS_LI, pConfig->nTeleBcnTransListenInterval,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_TRANS_LI, pConfig->nTeleBcnTransListenInterval,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5275,7 +5934,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_MAX_LI, pConfig->nTeleBcnMaxListenInterval, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_MAX_LI, pConfig->nTeleBcnMaxListenInterval,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_MAX_LI, pConfig->nTeleBcnMaxListenInterval,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5286,7 +5949,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_TRANS_LI_IDLE_BCNS, pConfig->nTeleBcnTransLiNumIdleBeacons, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_TRANS_LI_IDLE_BCNS, pConfig->nTeleBcnTransLiNumIdleBeacons,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_TRANS_LI_IDLE_BCNS, pConfig->nTeleBcnTransLiNumIdleBeacons,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5297,7 +5964,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_MAX_LI_IDLE_BCNS, pConfig->nTeleBcnMaxLiNumIdleBeacons, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_MAX_LI_IDLE_BCNS, pConfig->nTeleBcnMaxLiNumIdleBeacons,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TELE_BCN_MAX_LI_IDLE_BCNS, pConfig->nTeleBcnMaxLiNumIdleBeacons,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5315,7 +5986,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_INFRA_STA_KEEP_ALIVE_PERIOD, pConfig->infraStaKeepAlivePeriod, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_INFRA_STA_KEEP_ALIVE_PERIOD, pConfig->infraStaKeepAlivePeriod,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_INFRA_STA_KEEP_ALIVE_PERIOD, pConfig->infraStaKeepAlivePeriod,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5325,7 +6000,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
         hddLog(LOGE,"Failure: Could not pass on WNI_CFG_INFRA_STA_KEEP_ALIVE_PERIOD configuration info to CCM\n"  );
      }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_DYNAMIC_PS_POLL_VALUE, pConfig->dynamicPsPollValue, 
+=======
+    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_DYNAMIC_PS_POLL_VALUE, pConfig->dynamicPsPollValue,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_DYNAMIC_PS_POLL_VALUE, pConfig->dynamicPsPollValue,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5341,6 +6020,7 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
        fStatus = FALSE;
        hddLog(LOGE,"Failure: Could not pass on WNI_CFG_PS_NULLDATA_DELAY_TIMEOUT configuration info to CCM\n"  );
 <<<<<<< HEAD
+<<<<<<< HEAD
     } 
 
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_DATA_AVAIL_POLL_PERIOD, pConfig->apDataAvailPollPeriodInMs,
@@ -5352,6 +6032,8 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_FRAGMENTATION_THRESHOLD, pConfig->FragmentationThreshold, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_DATA_AVAIL_POLL_PERIOD, pConfig->apDataAvailPollPeriodInMs,
@@ -5361,6 +6043,9 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
         hddLog(LOGE,"Failure: Could not pass on WNI_CFG_AP_DATA_AVAIL_POLL_PERIOD configuration info to CCM\n"  );
     }
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_FRAGMENTATION_THRESHOLD, pConfig->FragmentationThreshold,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    NULL, eANI_BOOLEAN_FALSE) == eHAL_STATUS_FAILURE)
     {
@@ -5368,7 +6053,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
         hddLog(LOGE,"Failure: Could not pass on WNI_CFG_FRAGMENTATION_THRESHOLD configuration info to CCM\n"  );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RTS_THRESHOLD, pConfig->RTSThreshold, 
+=======
+    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RTS_THRESHOLD, pConfig->RTSThreshold,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_RTS_THRESHOLD, pConfig->RTSThreshold,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5379,7 +6068,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_11D_ENABLED, pConfig->Is11dSupportEnabled, 
+=======
+    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_11D_ENABLED, pConfig->Is11dSupportEnabled,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_11D_ENABLED, pConfig->Is11dSupportEnabled,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5389,7 +6082,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
         hddLog(LOGE,"Failure: Could not pass on WNI_CFG_11D_ENABLED configuration info to CCM\n"  );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_HEART_BEAT_THRESHOLD, pConfig->HeartbeatThresh24, 
+=======
+    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_HEART_BEAT_THRESHOLD, pConfig->HeartbeatThresh24,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_HEART_BEAT_THRESHOLD, pConfig->HeartbeatThresh24,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5400,7 +6097,10 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_AP_DATA_AVAIL_POLL_PERIOD, pConfig->apDataAvailPollPeriodInMs,
@@ -5411,7 +6111,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_CLOSE_LOOP, 
+=======
+   if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_CLOSE_LOOP,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_CLOSE_LOOP,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5423,7 +6127,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TX_PWR_CTRL_ENABLE, 
+=======
+   if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TX_PWR_CTRL_ENABLE,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_TX_PWR_CTRL_ENABLE,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5435,7 +6143,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SHORT_GI_40MHZ, 
+=======
+   if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SHORT_GI_40MHZ,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_SHORT_GI_40MHZ,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5447,7 +6159,11 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_MC_ADDR_LIST, pConfig->fEnableMCAddrList, 
+=======
+     if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_MC_ADDR_LIST, pConfig->fEnableMCAddrList,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_ENABLE_MC_ADDR_LIST, pConfig->fEnableMCAddrList,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5470,9 +6186,15 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
            ccmCfgGetInt(pHddCtx->hHal, WNI_CFG_VHT_BASIC_MCS_SET, &temp);
 <<<<<<< HEAD
+<<<<<<< HEAD
            temp = (temp & 0xFFFC) | pConfig->vhtRxMCS; 
 
            if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_VHT_BASIC_MCS_SET, 
+=======
+           temp = (temp & 0xFFFC) | pConfig->vhtRxMCS;
+
+           if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_VHT_BASIC_MCS_SET,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            temp = (temp & 0xFFFC) | pConfig->vhtRxMCS;
 
@@ -5487,9 +6209,15 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
            ccmCfgGetInt(pHddCtx->hHal, WNI_CFG_VHT_RX_MCS_MAP, &temp);
 <<<<<<< HEAD
+<<<<<<< HEAD
            temp = (temp & 0xFFFC) | pConfig->vhtRxMCS; 
 
            if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_VHT_RX_MCS_MAP, 
+=======
+           temp = (temp & 0xFFFC) | pConfig->vhtRxMCS;
+
+           if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_VHT_RX_MCS_MAP,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            temp = (temp & 0xFFFC) | pConfig->vhtRxMCS;
 
@@ -5504,9 +6232,15 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
            ccmCfgGetInt(pHddCtx->hHal, WNI_CFG_VHT_TX_MCS_MAP, &temp);
 <<<<<<< HEAD
+<<<<<<< HEAD
            temp = (temp & 0xFFFC) | pConfig->vhtTxMCS; 
 
            if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_VHT_TX_MCS_MAP, 
+=======
+           temp = (temp & 0xFFFC) | pConfig->vhtTxMCS;
+
+           if(ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_VHT_TX_MCS_MAP,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            temp = (temp & 0xFFFC) | pConfig->vhtTxMCS;
 
@@ -5523,7 +6257,10 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      if (ccmCfgSetInt(pHddCtx->hHal, WNI_CFG_NUM_BUFF_ADVERT,pConfig->numBuffAdvert,
         NULL, eANI_BOOLEAN_FALSE)==eHAL_STATUS_FAILURE)
      {
@@ -5625,6 +6362,9 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
       hddLog(LOGE, "Could not pass on WNI_CFG_MAX_MEDIUM_TIME to CCM");
    }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return fStatus;
 }
@@ -5632,6 +6372,7 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
 /**---------------------------------------------------------------------------
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   \brief hdd_init_set_sme_config() - 
 
@@ -5642,6 +6383,8 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
   \return - 0 for success, non zero for failure
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \brief hdd_init_set_sme_config() -
 
    This function initializes the sme configuration parameters
@@ -5650,6 +6393,9 @@ v_BOOL_t hdd_update_config_dat( hdd_context_t *pHddCtx )
 
   \return - 0 for success, non zero for failure
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   --------------------------------------------------------------------------*/
 
@@ -5664,7 +6410,11 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    vos_mem_zero( &smeConfig, sizeof( smeConfig ) );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, 
+=======
+   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5673,6 +6423,11 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
 
    // Config params obtained from the registry
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   if (is_crda_regulatory_entry_valid() == VOS_TRUE)
+       sme_setRegInfo(pHddCtx->hHal, pConfig->crdaDefaultCountryCode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    if (is_crda_regulatory_entry_valid() == VOS_TRUE)
        sme_setRegInfo(pHddCtx->hHal, pConfig->crdaDefaultCountryCode);
@@ -5703,7 +6458,11 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    smeConfig.csrConfig.vccUlMacLossThreshold    = pConfig->nVccUlMacLossThreshold;
    smeConfig.csrConfig.nRoamingTime             = pConfig->nRoamingTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
    smeConfig.csrConfig.IsIdleScanEnabled        = pConfig->nEnableIdleScan; 
+=======
+   smeConfig.csrConfig.IsIdleScanEnabled        = pConfig->nEnableIdleScan;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    smeConfig.csrConfig.IsIdleScanEnabled        = pConfig->nEnableIdleScan;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5712,7 +6471,10 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    smeConfig.csrConfig.nPassiveMaxChnTime       = pConfig->nPassiveMaxChnTime;
    smeConfig.csrConfig.nPassiveMinChnTime       = pConfig->nPassiveMinChnTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smeConfig.csrConfig.nActiveMaxChnTimeBtc     = pConfig->nActiveMaxChnTimeBtc;
    smeConfig.csrConfig.nActiveMinChnTimeBtc     = pConfig->nActiveMinChnTimeBtc;
    smeConfig.csrConfig.disableAggWithBtc        = pConfig->disableAggWithBtc;
@@ -5726,6 +6488,9 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    smeConfig.csrConfig.nNumP2PChanCombinedConc  = pConfig->nNumP2PChanCombinedConc;
 
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smeConfig.csrConfig.Is11eSupportEnabled      = pConfig->b80211eIsEnabled;
    smeConfig.csrConfig.WMMSupportMode           = pConfig->WmmMode;
@@ -5738,6 +6503,7 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    // On RF EVB beacon using channel 1.
 #ifdef WLAN_FEATURE_11AC
     smeConfig.csrConfig.nVhtChannelWidth = pConfig->vhtChannelWidth;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
    smeConfig.csrConfig.AdHocChannel5G            = 44; 
@@ -5781,6 +6547,8 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
 
 #ifdef WLAN_FEATURE_VOWIFI_11R   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smeConfig.csrConfig.enableTxBF = pConfig->enableTxBF;
     smeConfig.csrConfig.txBFCsnValue = pConfig->txBFCsnValue;
 #endif
@@ -5831,16 +6599,22 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    hdd_set_btc_config(pHddCtx);
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smeConfig.csrConfig.csr11rConfig.IsFTResourceReqSupported = pConfig->fFTResourceReqSupported;
 #endif
 #ifdef FEATURE_WLAN_LFR
    smeConfig.csrConfig.isFastRoamIniFeatureEnabled = pConfig->isFastRoamIniFeatureEnabled;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 #ifdef FEATURE_WLAN_CCX
    smeConfig.csrConfig.isCcxIniFeatureEnabled = pConfig->isCcxIniFeatureEnabled;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if( pConfig->isFastRoamIniFeatureEnabled )
    {
        pConfig->isFastTransitionEnabled = TRUE;
@@ -5852,11 +6626,15 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    {
        pConfig->isFastTransitionEnabled = TRUE;
    }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
    smeConfig.csrConfig.isFastTransitionEnabled = pConfig->isFastTransitionEnabled;
    smeConfig.csrConfig.RoamRssiDiff = pConfig->RoamRssiDiff;
+<<<<<<< HEAD
 <<<<<<< HEAD
 #endif
 
@@ -5883,6 +6661,8 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
 
    halStatus = sme_UpdateConfig( pHddCtx->hHal, &smeConfig);    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    smeConfig.csrConfig.nImmediateRoamRssiDiff = pConfig->nImmediateRoamRssiDiff;
    smeConfig.csrConfig.isWESModeEnabled = pConfig->isWESModeEnabled;
 #endif
@@ -5923,11 +6703,15 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
    sme_UpdateEnableSSR((tHalHandle)(pHddCtx->hHal), pHddCtx->cfg_ini->enableSSR);
 
    halStatus = sme_UpdateConfig( pHddCtx->hHal, &smeConfig);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if ( !HAL_STATUS_SUCCESS( halStatus ) )
    {
       status = VOS_STATUS_E_FAILURE;
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
    
@@ -5935,6 +6719,10 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
 }
 
 
+=======
+   return status;
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    return status;
 }
@@ -5969,6 +6757,10 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
    unsigned int i;
    VOS_STATUS vstatus;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   int rv;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    int rv;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -5982,7 +6774,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
    {
       hddLog(LOGE, "%s: memory allocation failure, unable to process [%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, command);
+=======
+             __func__, command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6000,7 +6796,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
       // only whitespace
       hddLog(LOGE, "%s: invalid command, only whitespace:[%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, command);
+=======
+             __func__, command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6018,7 +6818,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
       // did not find '='
       hddLog(LOGE, "%s: invalid command, no '=':[%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, command);
+=======
+             __func__, command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6033,7 +6837,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
       // did not find a name
       hddLog(LOGE, "%s: invalid command, no <name>:[%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, command);
+=======
+             __func__, command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6046,7 +6854,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
       // did not find a value
       hddLog(LOGE, "%s: invalid command, no <value>:[%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, command);
+=======
+             __func__, command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6067,7 +6879,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
       // did not match the name
       hddLog(LOGE, "%s: invalid command, unknown configuration item:[%s]",
 <<<<<<< HEAD
+<<<<<<< HEAD
              __FUNCTION__, command);
+=======
+             __func__, command);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              __func__, command);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6080,7 +6896,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
       // does not support dynamic configuration
       hddLog(LOGE, "%s: invalid command, %s does not support "
 <<<<<<< HEAD
+<<<<<<< HEAD
              "dynamic configuration", __FUNCTION__, name);
+=======
+             "dynamic configuration", __func__, name);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
              "dynamic configuration", __func__, name);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6093,7 +6913,13 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
    {
    case WLAN_PARAM_Integer:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value = simple_strtoul(value_str, NULL, 10);
+=======
+      rv = kstrtoul(value_str, 10, &value);
+      if (rv < 0)
+          goto done;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       rv = kstrtoul(value_str, 10, &value);
       if (rv < 0)
@@ -6104,7 +6930,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
          // out of range
          hddLog(LOGE, "%s: invalid command, value %u < min value %u",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, value, pRegEntry->VarMin);
+=======
+                __func__, value, pRegEntry->VarMin);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, value, pRegEntry->VarMin);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6115,7 +6945,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
          // out of range
          hddLog(LOGE, "%s: invalid command, value %u > max value %u",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, value, pRegEntry->VarMax);
+=======
+                __func__, value, pRegEntry->VarMax);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, value, pRegEntry->VarMax);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6126,7 +6960,13 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
 
    case WLAN_PARAM_HexInteger:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value = simple_strtoul(value_str, NULL, 16);
+=======
+      rv = kstrtoul(value_str, 16, &value);
+      if (rv < 0)
+         goto done;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       rv = kstrtoul(value_str, 16, &value);
       if (rv < 0)
@@ -6137,7 +6977,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
          // out of range
          hddLog(LOGE, "%s: invalid command, value %x < min value %x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, value, pRegEntry->VarMin);
+=======
+                __func__, value, pRegEntry->VarMin);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, value, pRegEntry->VarMin);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6148,7 +6992,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
          // out of range
          hddLog(LOGE, "%s: invalid command, value %x > max value %x",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, value, pRegEntry->VarMax);
+=======
+                __func__, value, pRegEntry->VarMax);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, value, pRegEntry->VarMax);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6159,7 +7007,13 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
 
    case WLAN_PARAM_SignedInteger:
 <<<<<<< HEAD
+<<<<<<< HEAD
       svalue = simple_strtol(value_str, NULL, 10);
+=======
+      rv = kstrtol(value_str, 10, &svalue);
+      if (rv < 0)
+         goto done;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       rv = kstrtol(value_str, 10, &svalue);
       if (rv < 0)
@@ -6170,7 +7024,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
          // out of range
          hddLog(LOGE, "%s: invalid command, value %d < min value %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, svalue, (int)pRegEntry->VarMin);
+=======
+                __func__, svalue, (int)pRegEntry->VarMin);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, svalue, (int)pRegEntry->VarMin);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6181,7 +7039,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
          // out of range
          hddLog(LOGE, "%s: invalid command, value %d > max value %d",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, svalue, (int)pRegEntry->VarMax);
+=======
+                __func__, svalue, (int)pRegEntry->VarMax);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, svalue, (int)pRegEntry->VarMax);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6199,7 +7061,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
                 "%s: invalid command, string [%s] length "
                 "%u exceeds maximum length %u",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, value_str,
+=======
+                __func__, value_str,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, value_str,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6219,7 +7085,11 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
                 "%s: invalid command, MAC address [%s] length "
                 "%u is not expected length %u",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __FUNCTION__, value_str,
+=======
+                __func__, value_str,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 __func__, value_str,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -6258,7 +7128,10 @@ VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command)
    return vstatus;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**---------------------------------------------------------------------------
 
@@ -6286,4 +7159,7 @@ tANI_BOOLEAN hdd_is_okc_mode_enabled(hdd_context_t *pHddCtx)
     return eANI_BOOLEAN_FALSE;
 #endif
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

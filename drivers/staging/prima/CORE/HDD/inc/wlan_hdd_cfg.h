@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -69,7 +75,11 @@
 
 //Number of items that can be configured
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define MAX_CFG_INI_ITEMS   256
+=======
+#define MAX_CFG_INI_ITEMS   320
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define MAX_CFG_INI_ITEMS   320
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -114,12 +124,18 @@
 #define CFG_11D_SUPPORT_ENABLED_DEFAULT        WNI_CFG_11D_ENABLED_STADEF    // Default is ON 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_11H_SUPPORT_ENABLED_NAME           "g11hSupportEnabled"
 #define CFG_11H_SUPPORT_ENABLED_MIN            ( 0 )
 #define CFG_11H_SUPPORT_ENABLED_MAX            ( 1 )
 #define CFG_11H_SUPPORT_ENABLED_DEFAULT        ( 1 ) // Default is ON 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_ENFORCE_11D_CHANNELS_NAME          "gEnforce11dChannel"
 #define CFG_ENFORCE_11D_CHANNELS_MIN           ( 0 )
@@ -367,8 +383,11 @@ typedef enum
 #define CFG_RSSI_CATEGORY_GAP_MIN              ( 5 )  
 #define CFG_RSSI_CATEGORY_GAP_MAX              ( 100 )  
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_RSSI_CATEGORY_GAP_DEFAULT          ( 30 )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_RSSI_CATEGORY_GAP_DEFAULT          ( 5 )
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
@@ -382,6 +401,9 @@ typedef enum
 #define CFG_ROAM_INTRA_BAND_MAX               ( 1 )
 #define CFG_ROAM_INTRA_BAND_DEFAULT           ( 0 )
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define CFG_STAT_TIMER_INTERVAL_NAME           "gStatTimerInterval"
@@ -425,13 +447,19 @@ typedef enum
 #define CFG_INTF3_MAC_ADDR_DEFAULT               "000AF5898983"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_CRDA_DEFAULT_COUNTRY_CODE            "gCrdaDefaultCountryCode"
 #define CFG_CRDA_DEFAULT_COUNTRY_CODE_MIN        "00"
 #define CFG_CRDA_DEFAULT_COUNTRY_CODE_MAX        "ZZ"
 #define CFG_CRDA_DEFAULT_COUNTRY_CODE_DEFAULT    "ZZ"
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_AP_QOS_UAPSD_MODE_NAME             "gEnableApUapsd" // ACs to setup U-APSD for at assoc
 #define CFG_AP_QOS_UAPSD_MODE_MIN              ( 0 )
@@ -527,12 +555,18 @@ typedef enum
 #define CFG_GO_KEEP_ALIVE_PERIOD_DEFAULT       ( 20 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_AP_LINK_MONITOR_PERIOD_NAME          "gApLinkMonitorPeriod"
 #define CFG_AP_LINK_MONITOR_PERIOD_MIN           ( 0 )
 #define CFG_AP_LINK_MONITOR_PERIOD_MAX           ( 255)
 #define CFG_AP_LINK_MONITOR_PERIOD_DEFAULT       ( 3 )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define CFG_BEACON_INTERVAL_NAME               "gBeaconInterval"
@@ -589,7 +623,10 @@ typedef enum
 #define CFG_ACTIVE_MIN_CHANNEL_TIME_DEFAULT    ( 20 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_ACTIVE_MAX_CHANNEL_TIME_BTC_NAME       "gActiveMaxChannelTimeBtc"
 #define CFG_ACTIVE_MAX_CHANNEL_TIME_BTC_MIN        ( 0 )
 #define CFG_ACTIVE_MAX_CHANNEL_TIME_BTC_MAX        ( 10000 )
@@ -659,6 +696,9 @@ typedef enum
 
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_MAX_PS_POLL_NAME                   "gMaxPsPoll"
 #define CFG_MAX_PS_POLL_MIN                    WNI_CFG_MAX_PS_POLL_STAMIN
@@ -812,11 +852,14 @@ typedef enum
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_FT_RSSI_FILTER_PERIOD_NAME                     "FTRssiFilterPeriod"
 #define CFG_FT_RSSI_FILTER_PERIOD_MIN                      WNI_CFG_FT_RSSI_FILTER_PERIOD_STAMIN
 #define CFG_FT_RSSI_FILTER_PERIOD_MAX                      WNI_CFG_FT_RSSI_FILTER_PERIOD_STAMAX
 #define CFG_FT_RSSI_FILTER_PERIOD_DEFAULT                  WNI_CFG_FT_RSSI_FILTER_PERIOD_STADEF 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // This flag will control fasttransition in case of 11r and ccx.
@@ -839,11 +882,14 @@ typedef enum
 #define CFG_ROAM_RSSI_DIFF_NAME                             "RoamRssiDiff"
 #define CFG_ROAM_RSSI_DIFF_MIN                              (0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_ROAM_RSSI_DIFF_MAX                              (125)
 #define CFG_ROAM_RSSI_DIFF_DEFAULT                          (0)
 #endif /* (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR) */
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_ROAM_RSSI_DIFF_MAX                              (30)
 #define CFG_ROAM_RSSI_DIFF_DEFAULT                          (0)
 
@@ -891,6 +937,9 @@ typedef enum
 #define CFG_ROAM_SCAN_OFFLOAD_ENABLED_DEFAULT               (1)
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_QOS_WMM_PKT_CLASSIFY_BASIS_NAME                "PktClassificationBasis" // DSCP or 802.1Q
 #define CFG_QOS_WMM_PKT_CLASSIFY_BASIS_MIN                  (0)
@@ -1221,7 +1270,10 @@ typedef enum
 #define CFG_NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MAX          (60000)
 #define CFG_NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_DEFAULT      (20000)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_EMPTY_SCAN_REFRESH_PERIOD_NAME         "gEmptyScanRefreshPeriod"
 #define CFG_EMPTY_SCAN_REFRESH_PERIOD_MIN          (1000)
 #define CFG_EMPTY_SCAN_REFRESH_PERIOD_MAX          (60000)
@@ -1232,6 +1284,9 @@ typedef enum
 #define CFG_EMPTY_SCAN_MAX_PERIOD_DEFAULT      (600000)
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* WLAN_FEATURE_NEIGHBOR_ROAMING */
 
@@ -1328,11 +1383,14 @@ typedef enum
 #define CFG_ENABLE_DFS_CHNL_SCAN_DEFAULT           ( 1 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_ENABLE_IGNORE_CHAN165                   "gIgnore_Chan165"
 #define CFG_ENABLE_IGNORE_CHAN165_MIN               ( 0 )
 #define CFG_ENABLE_IGNORE_CHAN165_MAX               ( 1 )
 #define CFG_ENABLE_IGNORE_CHAN165_DEFAULT           ( 0 )
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef enum
@@ -1363,7 +1421,11 @@ typedef enum
 #define CFG_REPORT_MAX_LINK_SPEED_MIN              ( eHDD_LINK_SPEED_REPORT_ACTUAL )
 #define CFG_REPORT_MAX_LINK_SPEED_MAX              ( eHDD_LINK_SPEED_REPORT_MAX_SCALED )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_REPORT_MAX_LINK_SPEED_DEFAULT          ( eHDD_LINK_SPEED_REPORT_ACTUAL )
+=======
+#define CFG_REPORT_MAX_LINK_SPEED_DEFAULT          ( eHDD_LINK_SPEED_REPORT_MAX_SCALED )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define CFG_REPORT_MAX_LINK_SPEED_DEFAULT          ( eHDD_LINK_SPEED_REPORT_MAX_SCALED )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1378,6 +1440,7 @@ typedef enum
 #define CFG_LINK_SPEED_RSSI_HIGH_DEFAULT           ( -55 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_LINK_SPEED_RSSI_LOW                    "gLinkSpeedRssiLow"
 #define CFG_LINK_SPEED_RSSI_LOW_MIN                ( -127 )
 #define CFG_LINK_SPEED_RSSI_LOW_MAX                (  0 )
@@ -1385,6 +1448,8 @@ typedef enum
 
 #ifdef WLAN_FEATURE_P2P
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_LINK_SPEED_RSSI_MID                    "gLinkSpeedRssiMed"
 #define CFG_LINK_SPEED_RSSI_MID_MIN                ( -127 )
 #define CFG_LINK_SPEED_RSSI_MID_MAX                (  0 )
@@ -1395,13 +1460,19 @@ typedef enum
 #define CFG_LINK_SPEED_RSSI_LOW_MAX                (  0 )
 #define CFG_LINK_SPEED_RSSI_LOW_DEFAULT            ( -80 )
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_NAME                "isP2pDeviceAddrAdministrated"
 #define CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_MIN                 ( 0 )
 #define CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_MAX                 ( 1 )
 #define CFG_P2P_DEVICE_ADDRESS_ADMINISTRATED_DEFAULT             ( 0 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -1413,7 +1484,10 @@ typedef enum
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_ENABLE_SSR                      "gEnableSSR"
 #define CFG_ENABLE_SSR_MIN                  ( 0 )
 #define CFG_ENABLE_SSR_MAX                  ( 1 )
@@ -1456,6 +1530,9 @@ typedef enum
 #define CFG_VOS_TRACE_ENABLE_MAX          (0xff)
 #define CFG_VOS_TRACE_ENABLE_DEFAULT      (0xffff)
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * WDI Trace Enable Control
@@ -1489,6 +1566,10 @@ typedef enum
 #define HDD_MCASTBCASTFILTER_FILTER_ALL_BROADCAST              0x02
 #define HDD_MCASTBCASTFILTER_FILTER_ALL_MULTICAST_BROADCAST    0x03
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define HDD_MULTICAST_FILTER_LIST                              0x04
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define HDD_MULTICAST_FILTER_LIST                              0x04
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1512,7 +1593,10 @@ typedef enum
 #define CFG_SAP_AUTO_CHANNEL_SELECTION_DEFAULT    ( 0 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*BMPS Logic
  * Notes:
  * 1 - Then Host driver and above layers control the PS mechanism
@@ -1523,6 +1607,9 @@ typedef enum
 #define CFG_ANDRIOD_POWER_SAVE_MAX       ( 1 )
 #define CFG_ANDRIOD_POWER_SAVE_DEFAULT   ( 0 )
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
@@ -1557,7 +1644,11 @@ typedef enum
 #define CFG_ENABLE_SKIP_DFS_IN_P2P_SEARCH_MIN        ( 0 )
 #define CFG_ENABLE_SKIP_DFS_IN_P2P_SEARCH_MAX        ( 1 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_ENABLE_SKIP_DFS_IN_P2P_SEARCH_DEFAULT    ( 0 )
+=======
+#define CFG_ENABLE_SKIP_DFS_IN_P2P_SEARCH_DEFAULT    ( 1 )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define CFG_ENABLE_SKIP_DFS_IN_P2P_SEARCH_DEFAULT    ( 1 )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1589,20 +1680,27 @@ typedef enum
  * Default: Enable
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CFG_ENABLE_MCC_ENABLED_NAME             "gEnableMCCMode"      
 #define CFG_ENABLE_MCC_ENABLED_MIN              ( 0 )
 #define CFG_ENABLE_MCC_ENABLED_MAX              ( 1 )
 #define CFG_ENABLE_MCC_ENABLED_DEFAULT          ( 0 ) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_ENABLE_MCC_ENABLED_NAME             "gEnableMCCMode"
 #define CFG_ENABLE_MCC_ENABLED_MIN              ( 0 )
 #define CFG_ENABLE_MCC_ENABLED_MAX              ( 1 )
 #define CFG_ENABLE_MCC_ENABLED_DEFAULT          ( 1 )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
  * Allow GO in MCC mode to accept different beacon interval than STA's.
  * Added for Wi-Fi Cert. 5.1.12
+<<<<<<< HEAD
 <<<<<<< HEAD
  * Default: Disable
  */
@@ -1611,6 +1709,8 @@ typedef enum
 #define CFG_ALLOW_MCC_GO_DIFF_BI_MAX            ( 1 )
 #define CFG_ALLOW_MCC_GO_DIFF_BI_DEFAULT        ( 0 ) 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Default: gAllowMCCGODiffBI = 2
  * If gAllowMCCGODiffBI = 1  // Set to 1 for WFA certification. GO Beacon
  *                              interval is not changed. MCC GO
@@ -1629,6 +1729,9 @@ typedef enum
 #define CFG_ALLOW_MCC_GO_DIFF_BI_MIN            ( 0 )
 #define CFG_ALLOW_MCC_GO_DIFF_BI_MAX            ( 4 )
 #define CFG_ALLOW_MCC_GO_DIFF_BI_DEFAULT        ( 4 )
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
@@ -1659,7 +1762,10 @@ typedef enum
 #define CFG_MC_ADDR_LIST_ENABLE_DEFAULT       ( 0 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Set number of buffers to be advertised during ADDBA negotiation*/
 #define CFG_NUM_BUFF_ADVERT_NAME              "gNumBuffAdvert"
 #define CFG_NUM_BUFF_ADVERT_MIN               ( 0 )
@@ -1874,6 +1980,9 @@ typedef enum
 #define CFG_AMSDU_SUPPORT_IN_AMPDU_MAX                 (1)
 #define CFG_AMSDU_SUPPORT_IN_AMPDU_DEFAULT             (0) //disabled
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------------- 
   Type declarations
@@ -1894,6 +2003,10 @@ typedef struct
    v_BOOL_t      ShortSlotTimeEnabled;
    v_BOOL_t      Is11dSupportEnabled;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   v_BOOL_t      Is11hSupportEnabled;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_BOOL_t      Is11hSupportEnabled;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1965,8 +2078,13 @@ typedef struct
    v_U8_t        intfAddrMask;
    v_MACADDR_t   intfMacAddr[VOS_MAX_CONCURRENCY_PERSONA];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+   v_U8_t        crdaDefaultCountryCode [3];
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_U8_t        crdaDefaultCountryCode [3];
 
@@ -1989,7 +2107,11 @@ typedef struct
    v_U32_t       apKeepAlivePeriod;
    v_U32_t       goKeepAlivePeriod;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+   v_U32_t       apLinkMonitorPeriod;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_U32_t       apLinkMonitorPeriod;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2013,6 +2135,7 @@ typedef struct
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
    v_U16_t       nNeighborScanPeriod;
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_U16_t       nNeighborReassocRssiThreshold;
    v_U16_t       nNeighborLookupRssiThreshold;
    char          neighborScanChanList[100];         
@@ -2021,6 +2144,8 @@ typedef struct
    v_U16_t       nMaxNeighborReqTries;
    v_U16_t       nNeighborResultsRefreshPeriod; 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U8_t        nNeighborReassocRssiThreshold;
    v_U8_t        nNeighborLookupRssiThreshold;
    v_U8_t        neighborScanChanList[WNI_CFG_VALID_CHANNEL_LIST_LEN];
@@ -2030,6 +2155,9 @@ typedef struct
    v_U16_t       nNeighborResultsRefreshPeriod;
    v_U16_t       nEmptyScanRefreshPeriod;
    v_U32_t       nEmptyScanMaxPeriod;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
@@ -2048,7 +2176,10 @@ typedef struct
    v_U32_t        nActiveMaxChnTime;     //in units of milliseconds
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U32_t        nActiveMinChnTimeBtc;     //in units of milliseconds
    v_U32_t        nActiveMaxChnTimeBtc;     //in units of milliseconds
 #ifdef WLAN_AP_STA_CONCURRENCY
@@ -2063,12 +2194,19 @@ typedef struct
                                              //P2P in each split scan operation
 #endif
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U8_t         nMaxPsPoll;
 
    v_U8_t         nRssiFilterPeriod;
    v_BOOL_t       fIgnoreDtim;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   v_U8_t         fMaxLIModulatedDTIM;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_U8_t         fMaxLIModulatedDTIM;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2077,7 +2215,11 @@ typedef struct
    v_U8_t         fEnableFwHeartBeatMonitoring;
    v_U8_t         fEnableFwBeaconFiltering;
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_U8_t         fEnableFwRssiMonitoring;
+=======
+   v_BOOL_t       fEnableFwRssiMonitoring;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_BOOL_t       fEnableFwRssiMonitoring;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -2106,12 +2248,15 @@ typedef struct
 #endif
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_U8_t                       FTRssiFilterPeriod;
    v_BOOL_t                     isFastTransitionEnabled;
    v_U8_t                       RoamRssiDiff;
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_BOOL_t                     isFastTransitionEnabled;
    v_U8_t                       RoamRssiDiff;
    v_U8_t                       nImmediateRoamRssiDiff;
@@ -2123,6 +2268,9 @@ typedef struct
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
    v_BOOL_t                     isRoamOffloadScanEnabled;
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    hdd_wmm_classification_t     PktClassificationBasis; // DSCP or 802.1Q
    v_BOOL_t                     bImplicitQosEnabled;
@@ -2194,8 +2342,11 @@ typedef struct
    v_BOOL_t                    teleBcnWakeupEn;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* VOS Trace Control*/
    v_U16_t                     vosTraceEnableBAP;
    v_U16_t                     vosTraceEnableTL;
@@ -2209,6 +2360,9 @@ typedef struct
    v_U16_t                     vosTraceEnableSAP;
    v_U16_t                     vosTraceEnableHDDSAP;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* WDI Trace Control */
    v_U32_t                     wdiTraceEnableDAL;
@@ -2216,7 +2370,10 @@ typedef struct
    v_U32_t                     wdiTraceEnableDAT;
    v_U32_t                     wdiTraceEnablePAL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U16_t                     nTeleBcnTransListenInterval;
@@ -2233,6 +2390,7 @@ typedef struct
    eHddLinkSpeedReportType     reportMaxLinkSpeed;
    v_S31_t                     linkSpeedRssiHigh;
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_S31_t                     linkSpeedRssiLow;
    v_U8_t                      enableMCC;
    v_U8_t                      allowMCCGODiffBI;
@@ -2240,6 +2398,8 @@ typedef struct
    v_BOOL_t                    isP2pDeviceAddrAdministrated;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
    v_BOOL_t                    nRoamPrefer5GHz;
    v_BOOL_t                    nRoamIntraBand;
@@ -2251,6 +2411,9 @@ typedef struct
    v_U8_t                      enableMCC;
    v_U8_t                      allowMCCGODiffBI;
    v_BOOL_t                    isP2pDeviceAddrAdministrated;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U8_t                      thermalMitigationEnable;
 #ifdef WLAN_FEATURE_PACKET_FILTERING
@@ -2261,6 +2424,11 @@ typedef struct
    v_U8_t                      vhtRxMCS;
    v_U8_t                      vhtTxMCS;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   v_BOOL_t                    enableTxBF;
+   v_U8_t                      txBFCsnValue;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_BOOL_t                    enableTxBF;
    v_U8_t                      txBFCsnValue;
@@ -2272,8 +2440,11 @@ typedef struct
    v_BOOL_t                    skipDfsChnlInP2pSearch;
    v_BOOL_t                    ignoreDynamicDtimInP2pMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_U8_t                      ignore_chan165;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U16_t                     configMccParam;
    v_U32_t                     numBuffAdvert;
    v_BOOL_t                    enableRxSTBC;
@@ -2314,6 +2485,9 @@ typedef struct
    v_U8_t                      enableTrafficMonitor;
    v_U32_t                     trafficIdleTimeout;
    v_U8_t                      isAmsduSupportInAMPDU;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } hdd_config_t;
 /*--------------------------------------------------------------------------- 
@@ -2326,6 +2500,10 @@ VOS_STATUS hdd_cfg_get_config(hdd_context_t *pHddCtx, char *pBuf, int buflen);
 eCsrPhyMode hdd_cfg_xlate_to_csr_phy_mode( eHddDot11Mode dot11Mode );
 VOS_STATUS hdd_execute_config_command(hdd_context_t *pHddCtx, char *command);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+tANI_BOOLEAN hdd_is_okc_mode_enabled(hdd_context_t *pHddCtx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tANI_BOOLEAN hdd_is_okc_mode_enabled(hdd_context_t *pHddCtx);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

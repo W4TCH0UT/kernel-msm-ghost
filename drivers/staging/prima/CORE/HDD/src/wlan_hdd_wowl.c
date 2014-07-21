@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -73,11 +79,17 @@
  * -------------------------------------------------------------------------*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static struct hdd_context_s *pAdapterHandle = NULL;
 
 char *g_hdd_wowl_ptrns[WOWL_MAX_PTRNS_ALLOWED]; //Patterns 0-7 
 
 static int parse_hex(unsigned char c)
+=======
+char *g_hdd_wowl_ptrns[WOWL_MAX_PTRNS_ALLOWED]; //Patterns 0-7 
+
+int hdd_parse_hex(unsigned char c)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 char *g_hdd_wowl_ptrns[WOWL_MAX_PTRNS_ALLOWED]; //Patterns 0-7 
 
@@ -108,7 +120,11 @@ static void hdd_wowl_callback( void *pContext, eHalStatus halStatus )
 {
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
 <<<<<<< HEAD
+<<<<<<< HEAD
     "%s: Return code = (%ld)\n", __FUNCTION__, halStatus );
+=======
+    "%s: Return code = (%ld)\n", __func__, halStatus );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     "%s: Return code = (%ld)\n", __func__, halStatus );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -145,7 +161,11 @@ static void dump_hdd_wowl_ptrn(tSirWowlAddBcastPtrn *ptrn)
               : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_add_wowl_ptrn (const char * ptrn) 
+=======
+v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn) 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -155,6 +175,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
   eHalStatus halStatus;
   const char *temp;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+  v_U8_t sessionId = pAdapter->sessionId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
   v_U8_t sessionId = pAdapter->sessionId;
@@ -182,7 +207,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
           "%s: Cannot add anymore patterns. No free slot!", __FUNCTION__);
+=======
+          "%s: Cannot add anymore patterns. No free slot!", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "%s: Cannot add anymore patterns. No free slot!", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -210,7 +239,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
           "%s: Malformed pattern string. Skip!\n", __FUNCTION__);
+=======
+          "%s: Malformed pattern string. Skip!\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "%s: Malformed pattern string. Skip!\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -221,17 +254,23 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     // Extract the pattern size
     localPattern.ucPatternSize = 
 <<<<<<< HEAD
+<<<<<<< HEAD
       ( parse_hex( ptrn[0] ) * 0x10 ) + parse_hex( ptrn[1] );
 
     // Extract the pattern mask size
     localPattern.ucPatternMaskSize = 
       ( parse_hex( ptrn[3] ) * 0x10 ) + parse_hex( ptrn[4] );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       ( hdd_parse_hex( ptrn[0] ) * 0x10 ) + hdd_parse_hex( ptrn[1] );
 
     // Extract the pattern mask size
     localPattern.ucPatternMaskSize = 
       ( hdd_parse_hex( ptrn[3] ) * 0x10 ) + hdd_parse_hex( ptrn[4] );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(localPattern.ucPatternSize > WOWL_PTRN_MAX_SIZE ||
@@ -239,7 +278,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
           "%s: Invalid length specified. Skip!\n", __FUNCTION__);
+=======
+          "%s: Invalid length specified. Skip!\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "%s: Invalid length specified. Skip!\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -253,7 +296,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
           "%s: Malformed pattern string..skip!\n", __FUNCTION__);
+=======
+          "%s: Malformed pattern string..skip!\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "%s: Malformed pattern string..skip!\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -267,7 +314,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
           "%s: Malformed pattern string...skip!\n", __FUNCTION__);
+=======
+          "%s: Malformed pattern string...skip!\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "%s: Malformed pattern string...skip!\n", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -285,7 +336,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       localPattern.ucPattern[i] = 
 <<<<<<< HEAD
+<<<<<<< HEAD
         (parse_hex( ptrn[0] ) * 0x10 ) + parse_hex( ptrn[1] );
+=======
+        (hdd_parse_hex( ptrn[0] ) * 0x10 ) + hdd_parse_hex( ptrn[1] );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         (hdd_parse_hex( ptrn[0] ) * 0x10 ) + hdd_parse_hex( ptrn[1] );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -299,7 +354,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       localPattern.ucPatternMask[i] = 
 <<<<<<< HEAD
+<<<<<<< HEAD
         (parse_hex( ptrn[0] ) * 0x10 ) + parse_hex( ptrn[1] );
+=======
+        (hdd_parse_hex( ptrn[0] ) * 0x10 ) + hdd_parse_hex( ptrn[1] );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         (hdd_parse_hex( ptrn[0] ) * 0x10 ) + hdd_parse_hex( ptrn[1] );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -312,7 +371,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
     {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
 <<<<<<< HEAD
+<<<<<<< HEAD
           "%s: kmalloc failure", __FUNCTION__);
+=======
+          "%s: kmalloc failure", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
           "%s: kmalloc failure", __func__);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -326,7 +389,11 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
 
     // Register the pattern downstream
 <<<<<<< HEAD
+<<<<<<< HEAD
     halStatus = sme_WowlAddBcastPattern( pAdapterHandle->hHal, &localPattern );
+=======
+    halStatus = sme_WowlAddBcastPattern( hHal, &localPattern, sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     halStatus = sme_WowlAddBcastPattern( hHal, &localPattern, sessionId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -364,6 +431,7 @@ v_BOOL_t hdd_add_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
               : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_del_wowl_ptrn (const char * ptrn) 
 {
   tSirWowlDelBcastPtrn delPattern;
@@ -371,6 +439,8 @@ v_BOOL_t hdd_del_wowl_ptrn (const char * ptrn)
   v_BOOL_t patternFound = VOS_FALSE;
   eHalStatus halStatus;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_BOOL_t hdd_del_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn) 
 {
   tSirWowlDelBcastPtrn delPattern;
@@ -379,6 +449,9 @@ v_BOOL_t hdd_del_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
   v_BOOL_t patternFound = VOS_FALSE;
   eHalStatus halStatus;
   v_U8_t sessionId = pAdapter->sessionId;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   // Detect pattern
@@ -396,7 +469,11 @@ v_BOOL_t hdd_del_wowl_ptrn (hdd_adapter_t *pAdapter, const char * ptrn)
   {
     delPattern.ucPatternId = id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     halStatus = sme_WowlDelBcastPattern( pAdapterHandle->hHal, &delPattern );
+=======
+    halStatus = sme_WowlDelBcastPattern( hHal, &delPattern, sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     halStatus = sme_WowlDelBcastPattern( hHal, &delPattern, sessionId );
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -429,6 +506,10 @@ v_BOOL_t hdd_enter_wowl (hdd_adapter_t *pAdapter, v_BOOL_t enable_mp, v_BOOL_t e
   tSirSmeWowlEnterParams wowParams;
   eHalStatus halStatus;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -443,8 +524,13 @@ v_BOOL_t hdd_enter_wowl (hdd_adapter_t *pAdapter, v_BOOL_t enable_mp, v_BOOL_t e
 
   // Request to put Libra into WoWL
 <<<<<<< HEAD
+<<<<<<< HEAD
   halStatus = sme_EnterWowl( pAdapterHandle->hHal, hdd_wowl_callback, 
       pAdapterHandle, &wowParams );
+=======
+  halStatus = sme_EnterWowl( hHal, hdd_wowl_callback, 
+                             pAdapter, &wowParams, pAdapter->sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   halStatus = sme_EnterWowl( hHal, hdd_wowl_callback, 
                              pAdapter, &wowParams, pAdapter->sessionId);
@@ -470,18 +556,24 @@ v_BOOL_t hdd_enter_wowl (hdd_adapter_t *pAdapter, v_BOOL_t enable_mp, v_BOOL_t e
                     : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_exit_wowl (void) 
 {
   eHalStatus halStatus;
 
   halStatus = sme_ExitWowl( pAdapterHandle->hHal );
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_BOOL_t hdd_exit_wowl (hdd_adapter_t*pAdapter) 
 {
   tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
   eHalStatus halStatus;
 
   halStatus = sme_ExitWowl( hHal );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if ( !HAL_STATUS_SUCCESS( halStatus ) )
   {
@@ -501,21 +593,31 @@ v_BOOL_t hdd_exit_wowl (hdd_adapter_t*pAdapter)
                     : TRUE otherwise
   ===========================================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 v_BOOL_t hdd_init_wowl (void *pAdapter) 
 {
   pAdapterHandle = (struct hdd_context_s*)pAdapter;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_BOOL_t hdd_init_wowl (hdd_adapter_t*pAdapter) 
 {
   hdd_context_t *pHddCtx = NULL;
   pHddCtx = pAdapter->pHddCtx;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   memset(g_hdd_wowl_ptrns, 0, sizeof(g_hdd_wowl_ptrns));
 
   //Add any statically configured patterns 
 <<<<<<< HEAD
+<<<<<<< HEAD
   hdd_add_wowl_ptrn(pAdapterHandle->cfg_ini->wowlPattern); 
+=======
+  hdd_add_wowl_ptrn(pAdapter, pHddCtx->cfg_ini->wowlPattern); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   hdd_add_wowl_ptrn(pAdapter, pHddCtx->cfg_ini->wowlPattern); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

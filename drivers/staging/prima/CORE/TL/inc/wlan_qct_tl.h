@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -23,10 +27,13 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /*
  * */
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -47,6 +54,9 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifndef WLAN_QCT_WLANTL_H
@@ -54,6 +64,7 @@
 
 /*===========================================================================
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                W L A N   T R A N S P O R T   L A Y E R 
                        E X T E R N A L  A P I
@@ -67,6 +78,8 @@ DESCRIPTION
   Copyright (c) 2008 QUALCOMM Incorporated. All Rights Reserved.
   Qualcomm Confidential and Proprietary
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                W L A N   T R A N S P O R T   L A Y E R
                        E X T E R N A L  A P I
 
@@ -77,6 +90,9 @@ DESCRIPTION
       
   Copyright (c) 2008 Qualcomm Technologies, Inc. All Rights Reserved.
   Qualcomm Technologies Confidential and Proprietary
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ===========================================================================*/
 
@@ -122,11 +138,16 @@ when        who    what, where, why
 #include "vos_packet.h" 
 #include "sirApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 #include "csrApi.h"
 #include "sapApi.h"
 #endif
 
+=======
+#include "csrApi.h"
+#include "sapApi.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "csrApi.h"
 #include "sapApi.h"
@@ -158,6 +179,7 @@ when        who    what, where, why
 #define WLANTL_MAX_AC                         4
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 
 /* Bit Mask to represent All Stations */
@@ -166,6 +188,11 @@ when        who    what, where, why
 /* Maximum number of station supported by TL, including BC. */
 #define WLAN_MAX_STA_COUNT  (HAL_NUM_STA)
 
+=======
+/* Maximum number of station supported by TL, including BC. */
+#define WLAN_MAX_STA_COUNT  (HAL_NUM_STA)
+#define WLAN_NON32_STA_COUNT   14
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 /* Maximum number of station supported by TL, including BC. */
 #define WLAN_MAX_STA_COUNT  (HAL_NUM_STA)
@@ -186,18 +213,24 @@ when        who    what, where, why
 //#define WLANTL_BC_STA_ID  0x00
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
 
 #ifdef ANI_CHIPSET_VOLANS
 #define WLANTL_MAX_TID                        15
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define WLANTL_MAX_TID                        15
 /* Default RSSI average Alpha */
 #define WLANTL_HO_DEFAULT_ALPHA               5
 #define WLANTL_HO_TDLS_ALPHA                  7
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------------
   Access category enum used by TL
@@ -226,12 +259,15 @@ typedef enum
   WLAN_STA_BT_AMP,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   /* SoftAP station */
   WLAN_STA_SOFTAP,
 #endif
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* SoftAP station */
   WLAN_STA_SOFTAP,
 
@@ -241,6 +277,9 @@ typedef enum
 #endif
 
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* Invalid link*/
   WLAN_STA_MAX
@@ -273,7 +312,10 @@ typedef enum
 } WLANTL_BAPFrameEnumType;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Type used to specify LWM threshold unit */
@@ -283,7 +325,10 @@ typedef enum  {
     WLAN_LWM_THRESHOLD_PACKET
 } WLAN_LWM_Threshold_Type;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -360,11 +405,17 @@ typedef struct
   /*Initial state at which the STA should be brought up to*/
   WLANTL_STAStateType ucInitState;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_CHIPSET_VOLANS
  /* 1 means replay check is needed for the station,
     0 means replay check is not needed for the station*/ 
   v_BOOL_t      ucIsReplayCheckValid; 
 #endif
+=======
+ /* 1 means replay check is needed for the station,
+    0 means replay check is not needed for the station*/ 
+  v_BOOL_t      ucIsReplayCheckValid; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  /* 1 means replay check is needed for the station,
     0 means replay check is not needed for the station*/ 
@@ -385,10 +436,15 @@ typedef struct
   v_U32_t  uDelayedTriggerFrmInt;  
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   /* Min Threshold for Processing Frames in TL */
   v_U8_t   uMinFramesProcThres;
 #endif
+=======
+  /* Min Threshold for Processing Frames in TL */
+  v_U8_t   uMinFramesProcThres;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   /* Min Threshold for Processing Frames in TL */
   v_U8_t   uMinFramesProcThres;
@@ -510,13 +566,19 @@ typedef struct
   /* Address 3 Index of the received packet */
   v_U16_t   ucDesSTAId;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  /*Rssi based on the received packet */
   v_S7_t    rssiAvg;
  #ifdef FEATURE_WLAN_TDLS
  /* Packet received on direct link/AP link */
   v_U8_t    isStaTdls;
  #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }WLANTL_RxMetaInfoType;
 
@@ -574,6 +636,7 @@ typedef struct
 } WLANTL_HO_TRAFFIC_STATUS_TYPE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
 typedef tSap_SoftapStats WLANTL_TRANSFER_STA_TYPE;
 #else
@@ -596,6 +659,9 @@ typedef struct
    v_U32_t rxRate;
 }WLANTL_TRANSFER_STA_TYPE;
 #endif
+=======
+typedef tSap_SoftapStats WLANTL_TRANSFER_STA_TYPE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 typedef tSap_SoftapStats WLANTL_TRANSFER_STA_TYPE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -875,7 +941,12 @@ typedef VOS_STATUS (*WLANTL_RSSICrossThresholdCBType)
    v_PVOID_t                       pAdapter,
    v_U8_t                          rssiNotification,
 <<<<<<< HEAD
+<<<<<<< HEAD
    v_PVOID_t                       pUserCtxt
+=======
+   v_PVOID_t                       pUserCtxt,
+   v_S7_t                          avgRssi
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    v_PVOID_t                       pUserCtxt,
    v_S7_t                          avgRssi
@@ -890,6 +961,10 @@ typedef struct
     v_U8_t                          sessionId; //sme Session Id
     v_U8_t                          rssiNotification;    
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    v_U8_t                          avgRssi;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     v_U8_t                          avgRssi;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1217,7 +1292,10 @@ WLANTL_ChangeSTAState
 /*===========================================================================
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FUNCTION    WLANTL_STAPtkInstalled
 
   DESCRIPTION
@@ -1256,6 +1334,9 @@ WLANTL_STAPtkInstalled
 );
 /*===========================================================================
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FUNCTION    WLANTL_GetSTAState
 
@@ -2440,7 +2521,10 @@ VOS_STATUS WLANTL_ResetSpecStatistic
    v_U8_t                       STAid
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_CHIPSET_VOLANS
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===============================================================================
@@ -2485,7 +2569,10 @@ WLANTL_GetReplayCounterFromRxBD
    v_U8_t *pucRxBDHeader
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif /*End of #ifdef ANI_CHIPSET_VOLANS*/
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2530,7 +2617,10 @@ WLANTL_SetACWeights
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
@@ -2551,7 +2641,10 @@ WLANTL_SetACWeights
 ============================================================================*/
 VOS_STATUS WLANTL_GetSoftAPStatistics(v_PVOID_t pAdapter, WLANTL_TRANSFER_STA_TYPE *statsSum, v_BOOL_t bReset);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -2665,7 +2758,10 @@ VOS_STATUS WLANTL_Finish_ULA( void (*callbackRoutine) (void *callbackContext),
 void WLANTL_UpdateRssiBmps(v_PVOID_t pvosGCtx, v_U8_t staId, v_S7_t rssi);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION   WLANTL_SetTxXmitPending
 
@@ -2922,5 +3018,8 @@ WLANTL_TLDebugMessage
   v_BOOL_t displaySnapshot
 );
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* #ifndef WLAN_QCT_WLANTL_H */

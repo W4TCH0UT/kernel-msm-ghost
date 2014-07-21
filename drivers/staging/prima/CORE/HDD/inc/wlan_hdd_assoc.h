@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,10 +50,13 @@
 
 #if !defined( HDD_CONNECTION_H__ ) 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define HDD_CONNECTION_H__ 
 #include <wlan_hdd_mib.h>
 #define HDD_MAX_NUM_IBSS_STA ( 4 )
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HDD_CONNECTION_H__
 #include <wlan_hdd_mib.h>
 #define HDD_MAX_NUM_IBSS_STA ( 9 )
@@ -56,6 +65,9 @@
 #define TDLS_STA_INDEX_VALID(staId) \
                           (((staId) >= 4) && ((staId) < 0xFF))
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define TKIP_COUNTER_MEASURE_STARTED 1
 #define TKIP_COUNTER_MEASURE_STOPED  0 
@@ -66,11 +78,17 @@ typedef enum
    /** Not associated in Infra or participating in an IBSS / Ad-hoc network.*/
    eConnectionState_NotConnected,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /** While connection in progress */
    eConnectionState_Connecting,
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /** Associated in an Infrastructure network.*/
    eConnectionState_Associated,
@@ -85,7 +103,11 @@ typedef enum
    /** Disconnecting in an Infrastructure network.*/
    eConnectionState_Disconnecting
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -129,6 +151,12 @@ typedef struct connection_info_s
     /** Remembers authenticated state */
    v_U8_t uIsAuthenticated;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+   /** Dot11Mode */
+   tANI_U32 dot11Mode;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    /** Dot11Mode */
@@ -142,9 +170,13 @@ typedef struct hdd_context_s hdd_context_t;
 typedef struct hdd_station_ctx hdd_station_ctx_t;
 typedef struct hdd_ap_ctx_s  hdd_ap_ctx_t;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211   
 typedef struct hdd_mon_ctx_s  hdd_mon_ctx_t;
 #endif
+=======
+typedef struct hdd_mon_ctx_s  hdd_mon_ctx_t;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 typedef struct hdd_mon_ctx_s  hdd_mon_ctx_t;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -157,7 +189,11 @@ extern eHalStatus hdd_smeRoamCallback( void *pContext, tCsrRoamInfo *pRoamInfo, 
 extern v_VOID_t hdd_connSaveConnectInfo( hdd_adapter_t *pAdapter, tCsrRoamInfo *pRoamInfo, eCsrRoamBssType eBssType );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 inline v_BOOL_t hdd_connGetConnectedBssType( hdd_station_ctx_t *pHddCtx, 
+=======
+v_BOOL_t hdd_connGetConnectedBssType( hdd_station_ctx_t *pHddCtx,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 v_BOOL_t hdd_connGetConnectedBssType( hdd_station_ctx_t *pHddCtx,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -167,6 +203,12 @@ int hdd_SetGENIEToCsr( hdd_adapter_t *pAdapter, eCsrAuthType *RSNAuthType );
 
 int hdd_set_csr_auth_type( hdd_adapter_t *pAdapter, eCsrAuthType RSNAuthType );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+VOS_STATUS hdd_roamRegisterTDLSSTA( hdd_adapter_t *pAdapter,
+                                    tANI_U8 *peerMac, tANI_U16 staId, tANI_U8 ucastSig);
+void hdd_PerformRoamSetKeyComplete(hdd_adapter_t *pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 VOS_STATUS hdd_roamRegisterTDLSSTA( hdd_adapter_t *pAdapter,
                                     tANI_U8 *peerMac, tANI_U16 staId, tANI_U8 ucastSig);

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -99,6 +105,7 @@
 #define MC_POST_EVENT_MASK               0x001
 #define MC_SUSPEND_EVENT_MASK            0x002
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #define RX_POST_EVENT_MASK               0x001
 #define RX_SUSPEND_EVENT_MASK            0x002
@@ -108,6 +115,13 @@
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #define RX_SHUTDOWN_EVENT_MASK           0x010
 #endif
+=======
+#define RX_POST_EVENT_MASK               0x001
+#define RX_SUSPEND_EVENT_MASK            0x002
+#define TX_SHUTDOWN_EVENT_MASK           0x010
+#define MC_SHUTDOWN_EVENT_MASK           0x010
+#define RX_SHUTDOWN_EVENT_MASK           0x010
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define RX_POST_EVENT_MASK               0x001
 #define RX_SUSPEND_EVENT_MASK            0x002
@@ -161,6 +175,7 @@ typedef struct _VosSchedContext
   /* Place holder to the VOSS Context */ 
    v_PVOID_t           pVContext; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
   /* HAL Message queue on the Main thread*/
    VosMqType           halMcMq;
@@ -168,6 +183,10 @@ typedef struct _VosSchedContext
   /* WDA Message queue on the Main thread*/
    VosMqType           wdaMcMq;
 #endif
+=======
+  /* WDA Message queue on the Main thread*/
+   VosMqType           wdaMcMq;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   /* WDA Message queue on the Main thread*/
    VosMqType           wdaMcMq;
@@ -188,10 +207,13 @@ typedef struct _VosSchedContext
    VosMqType           sysMcMq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
    /* SSC Message queue on the Tx */
    VosMqType           sscTxMq;
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* WDI Message queue on the Main thread*/
@@ -203,7 +225,10 @@ typedef struct _VosSchedContext
    /* WDI Message queue on the Rx Thread*/
    VosMqType           wdiRxMq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -214,9 +239,13 @@ typedef struct _VosSchedContext
    VosMqType           sysTxMq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    VosMqType           sysRxMq;
 #endif
+=======
+   VosMqType           sysRxMq;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    VosMqType           sysRxMq;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -228,10 +257,15 @@ typedef struct _VosSchedContext
    struct completion   TxStartEvent;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    /* Handle of Event for Rx thread to signal startup */
    struct completion   RxStartEvent;
 #endif
+=======
+   /* Handle of Event for Rx thread to signal startup */
+   struct completion   RxStartEvent;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* Handle of Event for Rx thread to signal startup */
    struct completion   RxStartEvent;
@@ -244,10 +278,15 @@ typedef struct _VosSchedContext
    struct task_struct*   TxThread;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    /* RX Thread handle */
    struct task_struct*   RxThread;
 #endif
+=======
+   /* RX Thread handle */
+   struct task_struct*   RxThread;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* RX Thread handle */
    struct task_struct*   RxThread;
@@ -261,10 +300,15 @@ typedef struct _VosSchedContext
    struct completion   TxShutdown; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    /* completion object for Rx thread shutdown */
    struct completion   RxShutdown;
 #endif
+=======
+   /* completion object for Rx thread shutdown */
+   struct completion   RxShutdown;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* completion object for Rx thread shutdown */
    struct completion   RxShutdown;
@@ -281,7 +325,10 @@ typedef struct _VosSchedContext
    unsigned long     txEventFlag;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Wait queue for Rx thread */
@@ -289,7 +336,10 @@ typedef struct _VosSchedContext
 
    unsigned long     rxEventFlag;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
@@ -300,10 +350,15 @@ typedef struct _VosSchedContext
    struct completion ResumeTxEvent;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    /* Completion object to resume Rx thread */
    struct completion ResumeRxEvent;
 #endif
+=======
+   /* Completion object to resume Rx thread */
+   struct completion ResumeRxEvent;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* Completion object to resume Rx thread */
    struct completion ResumeRxEvent;
@@ -391,10 +446,15 @@ typedef struct _VosContextType
    v_VOID_t           *pHDDContext;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    /* HDD SoftAP Module Context  */
    v_VOID_t           *pHDDSoftAPContext;
 #endif
+=======
+   /* HDD SoftAP Module Context  */
+   v_VOID_t           *pHDDSoftAPContext;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
    /* HDD SoftAP Module Context  */
    v_VOID_t           *pHDDSoftAPContext;
@@ -406,6 +466,7 @@ typedef struct _VosContextType
    /* MAC Module Context  */
    v_VOID_t           *pMACContext;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC   /* BAL  Context  */
 
@@ -431,6 +492,13 @@ typedef struct _VosContextType
    /* SAP Context */
    v_VOID_t           *pSAPContext;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+   /* BAP Context */
+   v_VOID_t           *pBAPContext;
+
+   /* SAP Context */
+   v_VOID_t           *pSAPContext;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
    /* VOS Packet Context */
    vos_pkt_context_t   vosPacket; 
@@ -440,7 +508,10 @@ typedef struct _VosContextType
    volatile v_U8_t     isLogpInProgress;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_event_t         wdaCompleteEvent;
@@ -448,7 +519,10 @@ typedef struct _VosContextType
    /* WDA Context */
    v_VOID_t            *pWDAContext;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
@@ -464,9 +538,13 @@ typedef struct _VosContextType
  
 int vos_sched_is_tx_thread(int threadID);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 int vos_sched_is_rx_thread(int threadID);
 #endif
+=======
+int vos_sched_is_rx_thread(int threadID);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 int vos_sched_is_rx_thread(int threadID);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -617,9 +695,13 @@ void vos_sched_deinit_mqs (pVosSchedContext pSchedContext);
 void vos_sched_flush_mc_mqs  (pVosSchedContext pSchedContext);
 void vos_sched_flush_tx_mqs  (pVosSchedContext pSchedContext);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 void vos_sched_flush_rx_mqs  (pVosSchedContext pSchedContext);
 #endif
+=======
+void vos_sched_flush_rx_mqs  (pVosSchedContext pSchedContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void vos_sched_flush_rx_mqs  (pVosSchedContext pSchedContext);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -22,6 +25,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -44,9 +50,14 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  *
  * Airgo Networks, Inc proprietary. All rights reserved.
+=======
+
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 /*
@@ -64,6 +75,7 @@
 
 #include "wniApi.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #endif
@@ -72,6 +84,9 @@
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -191,10 +206,15 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
     tANI_U32                key_length=8;
     tANI_U8                 challengeTextArray[SIR_MAC_AUTH_CHALLENGE_LENGTH];
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     tpDphHashNode           pStaDs = NULL;
     tANI_U16                assocId = 0;
 #endif
+=======
+    tpDphHashNode           pStaDs = NULL;
+    tANI_U16                assocId = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tpDphHashNode           pStaDs = NULL;
     tANI_U16                assocId = 0;
@@ -229,26 +249,38 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG,
               FL("Auth Frame Received: BSSID " MAC_ADDRESS_STR " (RSSI %d)"),
               MAC_ADDR_ARRAY(pHdr->bssId),
               (uint)abs((tANI_S8)WDA_GET_RX_RSSI_DB(pRxPacketInfo)));
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pBody = WDA_GET_RX_MPDU_DATA(pRxPacketInfo);
 
     //PELOG3(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG3, (tANI_U8*)pBd, ((tpHalBufDesc) pBd)->mpduDataOffset + frameLen);)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Restore default failure timeout
     if (VOS_P2P_CLIENT_MODE == psessionEntry->pePersona && psessionEntry->defaultAuthFailureTimeout)
     {
         ccmCfgSetInt(pMac,WNI_CFG_AUTHENTICATE_FAILURE_TIMEOUT ,
                           psessionEntry->defaultAuthFailureTimeout, NULL, eANI_BOOLEAN_FALSE);
     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
     /// Determine if WEP bit is set in the FC or received MAC header
@@ -259,7 +291,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
          */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // If TKIP counter measures enabled issue Deauth frame to station
@@ -271,10 +306,16 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
 
             limSendDeauthMgmtFrame( pMac, eSIR_MAC_MIC_FAILURE_REASON,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     pHdr->sa, psessionEntry );
             return;
         }
 #endif
+=======
+                                    pHdr->sa, psessionEntry, FALSE );
+            return;
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                     pHdr->sa, psessionEntry, FALSE );
             return;
@@ -322,7 +363,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
             return;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -331,7 +375,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
         } 
         else 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Accept Authentication frame only if Privacy is implemented
@@ -343,7 +390,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
              * from CFG. Log error.
              */
 <<<<<<< HEAD
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not retrieve Privacy option\n"));
+=======
+            limLog(pMac, LOGP, FL("could not retrieve Privacy option"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             limLog(pMac, LOGP, FL("could not retrieve Privacy option"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -500,7 +551,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                 val = SIR_MAC_KEY_LENGTH;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -512,7 +566,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                 }                   
                 else                              
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif                                    
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (wlan_cfgGetStr(pMac, (tANI_U16) (WNI_CFG_WEP_DEFAULT_KEY_1 + keyId),
@@ -522,7 +579,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     //Log error.
                     limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            FL("could not retrieve Default key\n"));
+=======
+                           FL("could not retrieve Default key"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                            FL("could not retrieve Default key"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -555,7 +616,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     if (decryptResult == LIM_DECRYPT_ICV_FAIL)
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOGW(limLog(pMac, LOGW, FL("=====> decryptResult == LIM_DECRYPT_ICV_FAIL ...\n"));)
+=======
+                        PELOGW(limLog(pMac, LOGW, FL("=====> decryptResult == LIM_DECRYPT_ICV_FAIL ..."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOGW(limLog(pMac, LOGW, FL("=====> decryptResult == LIM_DECRYPT_ICV_FAIL ..."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -627,7 +692,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
 
    PELOGW(limLog(pMac, LOGW,
 <<<<<<< HEAD
+<<<<<<< HEAD
            FL("Received Auth frame with type=%d seqnum=%d, status=%d (%d)\n"),
+=======
+           FL("Received Auth frame with type=%d seqnum=%d, status=%d (%d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
            FL("Received Auth frame with type=%d seqnum=%d, status=%d (%d)"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -640,7 +709,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
         case SIR_MAC_AUTH_FRAME_1:
             // AuthFrame 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             
             pStaDs = dphLookupHashEntry(pMac, pHdr->sa,
                     &assocId, &psessionEntry->dph.dphHashTable);
@@ -680,6 +752,9 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                                 );)
                 }
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /// Check if there exists pre-auth context for this STA
@@ -702,10 +777,16 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                                                     pAuthNode->authNodeIdx);
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     PELOGE(limLog(pMac, LOGE, FL("STA is initiating brand-new Authentication ...\n"));)
                     limDeletePreAuthNode(pMac,
                                          pHdr->sa);
 #ifdef WLAN_SOFTAP_FEATURE                    
+=======
+                    PELOGE(limLog(pMac, LOGE, FL("STA is initiating brand-new Authentication ..."));)
+                    limDeletePreAuthNode(pMac,
+                                         pHdr->sa);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     PELOGE(limLog(pMac, LOGE, FL("STA is initiating brand-new Authentication ..."));)
                     limDeletePreAuthNode(pMac,
@@ -736,6 +817,7 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     if (NULL != pStaDs)
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOGE(limLog(pMac, LOGE, FL("lim Delete Station Context (staId: %d, assocId: %d) \n"),pStaDs->staIndex, assocId);)
                         limSendDeauthMgmtFrame(pMac,
                                eSIR_MAC_UNSPEC_FAILURE_REASON, (tANI_U8 *) pAuthNode->peerMacAddr,psessionEntry);
@@ -744,12 +826,17 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     }
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         PELOGE(limLog(pMac, LOGE, FL("lim Delete Station Context (staId: %d, assocId: %d) "),pStaDs->staIndex, assocId);)
                         limSendDeauthMgmtFrame(pMac,
                                eSIR_MAC_UNSPEC_FAILURE_REASON, (tANI_U8 *) pAuthNode->peerMacAddr, psessionEntry, FALSE);
                         limTriggerSTAdeletion(pMac, pStaDs, psessionEntry);
                         return;
                     }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
                 else
@@ -760,7 +847,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                      * in transmission queue
                      * */
 <<<<<<< HEAD
+<<<<<<< HEAD
                     PELOGE(limLog(pMac, LOGE, FL("STA is initiating Authentication after ACK lost...\n"));)
+=======
+                    PELOGE(limLog(pMac, LOGE, FL("STA is initiating Authentication after ACK lost..."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     PELOGE(limLog(pMac, LOGE, FL("STA is initiating Authentication after ACK lost..."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -776,12 +867,17 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                  */
                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                        FL("could not retrieve MaxNumPreAuth\n"));
             }
 #ifdef ANI_AP_SDK_OPT
             if(maxNumPreAuth > SIR_SDK_OPT_MAX_NUM_PRE_AUTH)
                 maxNumPreAuth = SIR_SDK_OPT_MAX_NUM_PRE_AUTH;
 #endif // ANI_AP_SDK_OPT
+=======
+                       FL("could not retrieve MaxNumPreAuth"));
+            }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                        FL("could not retrieve MaxNumPreAuth"));
             }
@@ -808,13 +904,17 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
             }
             /// No Pre-auth context exists for the STA.
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (limIsAuthAlgoSupported(
                                       pMac,
                                       (tAniAuthType)
                                       pRxAuthFrameBody->authAlgoNumber, psessionEntry))
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
             if (limIsAuthAlgoSupported(
@@ -825,12 +925,18 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
 #endif
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 switch (pRxAuthFrameBody->authAlgoNumber)
                 {
                     case eSIR_OPEN_SYSTEM:
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOGW(limLog(pMac, LOGW, FL("=======> eSIR_OPEN_SYSTEM  ...\n"));)
+=======
+                        PELOGW(limLog(pMac, LOGW, FL("=======> eSIR_OPEN_SYSTEM  ..."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOGW(limLog(pMac, LOGW, FL("=======> eSIR_OPEN_SYSTEM  ..."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -847,7 +953,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer \n"), pAuthNode);
+=======
+                        PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer "), pAuthNode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer "), pAuthNode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -898,8 +1008,12 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
 
                     case eSIR_SHARED_KEY:
 <<<<<<< HEAD
+<<<<<<< HEAD
                         PELOGW(limLog(pMac, LOGW, FL("=======> eSIR_SHARED_KEY  ...\n"));)
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+                        PELOGW(limLog(pMac, LOGW, FL("=======> eSIR_SHARED_KEY  ..."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         PELOGW(limLog(pMac, LOGW, FL("=======> eSIR_SHARED_KEY  ..."));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -909,7 +1023,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                         }
                         else   
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         if (wlan_cfgGetInt(pMac, WNI_CFG_PRIVACY_ENABLED,
@@ -921,7 +1038,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                              */
                             limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    FL("could not retrieve Privacy option\n"));
+=======
+                                   FL("could not retrieve Privacy option"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    FL("could not retrieve Privacy option"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -987,7 +1108,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                             limAddPreAuthNode(pMac, pAuthNode);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                             PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x id %d peer \n"),
+=======
+                            PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x id %d peer "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                             PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x id %d peer "),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1218,7 +1343,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer \n"), pAuthNode);)
+=======
+                    PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer "), pAuthNode);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer "), pAuthNode);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1240,7 +1369,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     // Shared key authentication
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -1249,7 +1381,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     }
                     else   
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if (wlan_cfgGetInt(pMac, WNI_CFG_PRIVACY_ENABLED,
@@ -1261,7 +1396,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                          */
                         limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                FL("could not retrieve Privacy option\n"));
+=======
+                               FL("could not retrieve Privacy option"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                FL("could not retrieve Privacy option"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1302,7 +1441,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                             // Log error
                             PELOGE(limLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    FL("received Auth frame with invalid challenge text IE\n"));)
+=======
+                                   FL("received Auth frame with invalid challenge text IE"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                    FL("received Auth frame with invalid challenge text IE"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1387,7 +1530,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                                  */
                                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                        FL("could not retrieve Default keyId\n"));
+=======
+                                       FL("could not retrieve Default keyId"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                        FL("could not retrieve Default keyId"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1397,7 +1544,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                             val = SIR_MAC_KEY_LENGTH;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE  
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             if(psessionEntry->limSystemRole == eLIM_AP_ROLE)
@@ -1408,7 +1558,10 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                             }
                             else
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             if (wlan_cfgGetStr(pMac, (tANI_U16) (WNI_CFG_WEP_DEFAULT_KEY_1 + keyId),
@@ -1420,7 +1573,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                                 //Log error.
                                 limLog(pMac, LOGP,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                        FL("could not retrieve Default key\n"));
+=======
+                                       FL("could not retrieve Default key"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                        FL("could not retrieve Default key"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1651,7 +1808,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     authFrame.authAlgoNumber = eSIR_SHARED_KEY;
                     authFrame.authTransactionSeqNumber =
 <<<<<<< HEAD
+<<<<<<< HEAD
                     SIR_MAC_AUTH_FRAME_4;
+=======
+                        SIR_MAC_AUTH_FRAME_4;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                         SIR_MAC_AUTH_FRAME_4;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1687,17 +1848,23 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
 
                     authFrame.authAlgoNumber =
 <<<<<<< HEAD
+<<<<<<< HEAD
                     pRxAuthFrameBody->authAlgoNumber;
                     authFrame.authTransactionSeqNumber =
                     SIR_MAC_AUTH_FRAME_4;
                     authFrame.authStatusCode =
                     eSIR_MAC_CHALLENGE_FAILURE_STATUS;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pRxAuthFrameBody->authAlgoNumber;
                     authFrame.authTransactionSeqNumber =
                         SIR_MAC_AUTH_FRAME_4;
                     authFrame.authStatusCode =
                         eSIR_MAC_CHALLENGE_FAILURE_STATUS;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                     limSendAuthMgmtFrame(pMac, &authFrame,
@@ -1706,9 +1873,15 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
 
                     // Log error
 <<<<<<< HEAD
+<<<<<<< HEAD
                    PELOGE( limLog(pMac, LOGW,
                            FL("Challenge failure for peer "MAC_ADDRESS_STR), 
 						   MAC_ADDR_ARRAY(pHdr->sa));)
+=======
+                    PELOGE( limLog(pMac, LOGW,
+                                   FL("Challenge failure for peer "MAC_ADDRESS_STR),
+                                   MAC_ADDR_ARRAY(pHdr->sa));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     PELOGE( limLog(pMac, LOGW,
                                    FL("Challenge failure for peer "MAC_ADDRESS_STR),
@@ -1811,7 +1984,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
                     return;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer \n"), pAuthNode);
+=======
+                PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer "), pAuthNode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 PELOG1(limLog(pMac, LOG1, FL("Alloc new data: %x peer "), pAuthNode);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1877,7 +2054,11 @@ limProcessAuthFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession pse
  *----------------------------------------------------------------------
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 int limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, void *body)
+=======
+tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, void *body)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, void *body)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1889,7 +2070,11 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
     tSirMacAuthFrameBody rxAuthFrame;
     tSirMacAuthFrameBody *pRxAuthFrameBody = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     int ret_status = eSIR_FAILURE;
+=======
+    tSirRetStatus ret_status = eSIR_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tSirRetStatus ret_status = eSIR_FAILURE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1899,12 +2084,18 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
     frameLen = WDA_GET_RX_PAYLOAD_LEN(pBd);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG,
               FL("Auth Frame Received: BSSID " MAC_ADDRESS_STR " (RSSI %d)"),
               MAC_ADDR_ARRAY(pHdr->bssId),
               (uint)abs((tANI_S8)WDA_GET_RX_RSSI_DB(pBd)));
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Check for the operating channel and see what needs to be done next.
     psessionEntry = pMac->ft.ftPEContext.psavedsessionEntry;
@@ -1926,9 +2117,15 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
     }
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     limPrintMacAddr(pMac, pHdr->bssId, LOGE);
     limPrintMacAddr(pMac, pMac->ft.ftPEContext.pFTPreAuthReq->preAuthbssId, LOGE);
     limLog(pMac,LOG2,FL("seqControl 0x%X\n"), 
+=======
+    limPrintMacAddr(pMac, pHdr->bssId, LOG2);
+    limPrintMacAddr(pMac, pMac->ft.ftPEContext.pFTPreAuthReq->preAuthbssId, LOG2);
+    limLog(pMac,LOG2,FL("seqControl 0x%X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limPrintMacAddr(pMac, pHdr->bssId, LOG2);
     limPrintMacAddr(pMac, pMac->ft.ftPEContext.pFTPreAuthReq->preAuthbssId, LOG2);
@@ -1969,8 +2166,13 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
          * pre-auth.
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac,LOGE,"Auth rsp already posted to SME"
                " (session %p, FT session %p)\n", psessionEntry,
+=======
+        PELOGE(limLog(pMac,LOG1,"Auth rsp already posted to SME"
+               " (session %p, FT session %p)", psessionEntry,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac,LOG1,"Auth rsp already posted to SME"
                " (session %p, FT session %p)", psessionEntry,
@@ -1981,8 +2183,13 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
     else
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac,LOGE,"Auth rsp not yet posted to SME"
                " (session %p, FT session %p)\n", psessionEntry,
+=======
+        PELOGE(limLog(pMac,LOGW,"Auth rsp not yet posted to SME"
+               " (session %p, FT session %p)", psessionEntry,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac,LOGW,"Auth rsp not yet posted to SME"
                " (session %p, FT session %p)", psessionEntry,
@@ -1994,8 +2201,13 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
 
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     limLog(pMac, LOGE, FL("Pre-Auth response received from neighbor"));
     limLog(pMac, LOGE, FL("Pre-Auth done state"));
+=======
+    limLog(pMac, LOG1, FL("Pre-Auth response received from neighbor"));
+    limLog(pMac, LOG1, FL("Pre-Auth done state"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limLog(pMac, LOG1, FL("Pre-Auth response received from neighbor"));
     limLog(pMac, LOG1, FL("Pre-Auth done state"));
@@ -2016,8 +2228,13 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
 
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE,
            FL("Received Auth frame with type=%d seqnum=%d, status=%d (%d)\n"),
+=======
+    PELOGE(limLog(pMac, LOG1,
+           FL("Received Auth frame with type=%d seqnum=%d, status=%d (%d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOGE(limLog(pMac, LOG1,
            FL("Received Auth frame with type=%d seqnum=%d, status=%d (%d)"),
@@ -2034,15 +2251,21 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
             {
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
                 PELOGE(limLog( pMac, LOGE, "Auth status code received is  %d\n", 
                     (tANI_U32) pRxAuthFrameBody->authStatusCode);)
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 PELOGE(limLog( pMac, LOGE, "Auth status code received is %d",
                     (tANI_U32) pRxAuthFrameBody->authStatusCode););
 #endif
                 if (eSIR_MAC_MAX_ASSOC_STA_REACHED_STATUS == pRxAuthFrameBody->authStatusCode)
                     ret_status = eSIR_LIM_MAX_STA_REACHED_ERROR;
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else 
@@ -2054,7 +2277,11 @@ tSirRetStatus limProcessAuthFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd, vo
         default:
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog( pMac, LOGE, "Seq. no incorrect expected 2 received %d\n", 
+=======
+            PELOGE(limLog( pMac, LOGE, "Seq. no incorrect expected 2 received %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog( pMac, LOGE, "Seq. no incorrect expected 2 received %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

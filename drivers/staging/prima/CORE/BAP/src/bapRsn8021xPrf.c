@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -76,9 +82,15 @@
 #define AAG_PTK_PRF_HM_POS 6
 #define AAG_PTK_PRF_LN_POS 12
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define AAG_PTK_PRF_HN_POS AAG_PTK_PRF_LN_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE
 
 #define AAG_PTK_PRF_TEXT_LEN AAG_PTK_PRF_HN_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE
+=======
+#define AAG_PTK_PRF_HN_POS (AAG_PTK_PRF_LN_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE)
+
+#define AAG_PTK_PRF_TEXT_LEN (AAG_PTK_PRF_HN_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define AAG_PTK_PRF_HN_POS (AAG_PTK_PRF_LN_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE)
 
@@ -92,7 +104,11 @@
 #define AAG_GTK_PRF_NONCE_POS 6
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define AAG_GTK_PRF_TEXT_LEN AAG_GTK_PRF_NONCE_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE
+=======
+#define AAG_GTK_PRF_TEXT_LEN (AAG_GTK_PRF_NONCE_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define AAG_GTK_PRF_TEXT_LEN (AAG_GTK_PRF_NONCE_POS + ANI_EAPOL_KEY_RSN_NONCE_SIZE)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -257,7 +273,11 @@ aagPrf(v_U32_t cryptHandle,
        v_U32_t prfLen)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     static v_U8_t y = 0;
+=======
+    static v_U8_t y;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     static v_U8_t y;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

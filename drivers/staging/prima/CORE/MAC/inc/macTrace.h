@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -76,7 +82,11 @@
 typedef struct  sTraceRecord
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     tANI_U16 time;
+=======
+    tANI_U32 time;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     tANI_U32 time;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -87,18 +97,24 @@ typedef struct  sTraceRecord
 }tTraceRecord, *tpTraceRecord;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 #define MAX_TRACE_RECORDS 500
 #define INVALID_TRACE_ADDR 0xffffffff
 #define DEFAULT_TRACE_DUMP_COUNT 200
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define eLOG_NODROP_MISSED_BEACON_SCENARIO 0
 #define eLOG_PROC_DEAUTH_FRAME_SCENARIO 1
 
 #define MAX_TRACE_RECORDS 2000
 #define INVALID_TRACE_ADDR 0xffffffff
 #define DEFAULT_TRACE_DUMP_COUNT 0
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -133,16 +149,22 @@ void macTraceRegister( tpAniSirGlobal pMac, VOS_MODULE_ID moduleId,    tpTraceCb
 tANI_U8* macTraceGetCfgMsgString( tANI_U16 cfgMsg );
 tANI_U8* macTraceGetLimMsgString( tANI_U16 limMsg );
 <<<<<<< HEAD
+<<<<<<< HEAD
 tANI_U8* macTraceGetHalMsgString( tANI_U16 halMsg );
 tANI_U8* macTraceGetSmeMsgString( tANI_U16 smeMsg );
 tANI_U8* macTraceGetModuleString( tANI_U8 moduleId);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_U8* macTraceGetWdaMsgString( tANI_U16 wdaMsg );
 tANI_U8* macTraceGetSmeMsgString( tANI_U16 smeMsg );
 tANI_U8* macTraceGetModuleString( tANI_U8 moduleId);
 tANI_U8* macTraceGetInfoLogString( tANI_U16 infoLog );
 eHalStatus pe_AcquireGlobalLock( tAniSirLim *psPe);
 eHalStatus pe_ReleaseGlobalLock( tAniSirLim *psPe);
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 

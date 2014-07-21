@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -23,6 +27,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /** ------------------------------------------------------------------------- * 
     ------------------------------------------------------------------------- *  
@@ -40,6 +45,8 @@
     the PAL interfaces.
   
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** ------------------------------------------------------------------------- *
     ------------------------------------------------------------------------- *
 
@@ -55,12 +62,16 @@
     functions.  It is intended to be included in all modules that are using
     the PAL interfaces.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ========================================================================== */
 #ifndef PALAPI_H__
 #define PALAPI_H__
 
 #include "halTypes.h"
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include "palPipes.h"
 //#include "palErrIsr.h"
@@ -83,6 +94,8 @@
     \todo
     - palReadRegister:  register read 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
     \mainpage Platform Abstraction Layer (PAL)
@@ -100,6 +113,9 @@
 
     \todo
     - palReadRegister:  register read
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         -# add an Open/Close abstraction to accomodate the PAL before the entire MAC is loaded.
         -# Review with Linux folks to see this basic scructure works for them.
@@ -110,15 +126,21 @@
     - palRx: an abstracion for receiving frames from a chip across any of the supported buses
     - palInterrupt: abstract the interrupts into the HAL
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
     \section impl_notes Implementation Notes
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     \section impl_notes Implementation Notes
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \subsection subsection_codeStructure Code strucure
 
@@ -131,6 +153,7 @@
 
     \brief chip and bus agnostic funtion to read a register value
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     \param hHdd - HDD context handle
     
@@ -144,6 +167,8 @@
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -156,6 +181,9 @@
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palReadRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 *pRegValue );
@@ -166,6 +194,7 @@ eHalStatus palReadRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 *pReg
     \fn palWriteRegister
 
     \brief chip and bus agnostic funtion to write a register value
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -180,6 +209,8 @@ eHalStatus palReadRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 *pReg
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -192,6 +223,9 @@ eHalStatus palReadRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 *pReg
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 regValue );
@@ -201,6 +235,7 @@ eHalStatus palWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 regV
     \fn palAsyncWriteRegister
 
     \brief chip and bus agnostic async funtion to write a register value
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -215,6 +250,8 @@ eHalStatus palWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 regV
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -227,6 +264,9 @@ eHalStatus palWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32 regV
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 
@@ -238,6 +278,7 @@ eHalStatus palAsyncWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32
     \fn palReadDeviceMemory
 
     \brief chip and bus agnostic funtion to read memory from the chip
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -255,6 +296,8 @@ eHalStatus palAsyncWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -270,6 +313,9 @@ eHalStatus palAsyncWriteRegister( tHddHandle hHdd, tANI_U32 regAddress, tANI_U32
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palReadDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuffer, tANI_U32 numBytes );
@@ -279,6 +325,7 @@ eHalStatus palReadDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pB
     \fn palWriteDeviceMemory
 
     \brief chip and bus agnostic funtion to write memory to the chip
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -298,6 +345,8 @@ eHalStatus palReadDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pB
   -------------------------------------------------------------------------------*/
 eHalStatus palWriteDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuffer, tANI_U32 numBytes );  
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -315,6 +364,9 @@ eHalStatus palWriteDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *p
 
   -------------------------------------------------------------------------------*/
 eHalStatus palWriteDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuffer, tANI_U32 numBytes );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
@@ -322,6 +374,7 @@ eHalStatus palWriteDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *p
 
     \fn palAllocateMemory
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     \brief OS agnostic funtion to allocate host memory.   
     
@@ -342,6 +395,8 @@ eHalStatus palWriteDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *p
     try to use it unless the status returns success).
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \brief OS agnostic funtion to allocate host memory.
 
     \note  Host memory that needs to be shared between the host and the
@@ -360,6 +415,9 @@ eHalStatus palWriteDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *p
     returned and no memory will be allocated (the *ppMemory will be NULL so don't
     try to use it unless the status returns success).
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 #ifdef MEMORY_DEBUG
@@ -374,6 +432,7 @@ eHalStatus palAllocateMemory( tHddHandle hHdd, void **ppMemory, tANI_U32 numByte
 
     \fn palFreeMemory
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     \brief OS agnostic funtion to free host memory that was allocated with 
     palAllcoateMemory() calls.
@@ -392,6 +451,8 @@ eHalStatus palAllocateMemory( tHddHandle hHdd, void **ppMemory, tANI_U32 numByte
     try to use it unless the status returns success).
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \brief OS agnostic funtion to free host memory that was allocated with
     palAllcoateMemory() calls.
 
@@ -408,6 +469,9 @@ eHalStatus palAllocateMemory( tHddHandle hHdd, void **ppMemory, tANI_U32 numByte
     returned and no memory will be allocated (the *ppMemory will be NULL so don't
     try to use it unless the status returns success).
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palFreeMemory( tHddHandle hHdd, void *pMemory );
@@ -419,6 +483,7 @@ eHalStatus palFreeMemory( tHddHandle hHdd, void *pMemory );
     \fn palFillMemory
 
     \brief OS agnostic funtion to fill host memory with a specified byte value
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -435,6 +500,8 @@ eHalStatus palFreeMemory( tHddHandle hHdd, void *pMemory );
     try to use it unless the status returns success).
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -449,6 +516,9 @@ eHalStatus palFreeMemory( tHddHandle hHdd, void *pMemory );
     returned and no memory will be allocated (the *ppMemory will be NULL so don't
     try to use it unless the status returns success).
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palFillMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes, tANI_BYTE fillValue );
@@ -458,6 +528,7 @@ eHalStatus palFillMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes, tAN
     \fn palCopyMemory
 
     \brief OS agnostic funtion to copy host memory from one location to another
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -471,6 +542,8 @@ eHalStatus palFillMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes, tAN
     \return eHalStatus - status of the memory copy 
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -482,6 +555,9 @@ eHalStatus palFillMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes, tAN
 
     \return eHalStatus - status of the memory copy
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palCopyMemory( tHddHandle hHdd, void *pDst, const void *pSrc, tANI_U32 numBytes );
@@ -491,6 +567,7 @@ eHalStatus palCopyMemory( tHddHandle hHdd, void *pDst, const void *pSrc, tANI_U3
     \fn palFillMemory
 
     \brief OS agnostic funtion to fill host memory with a specified byte value
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -507,6 +584,8 @@ eHalStatus palCopyMemory( tHddHandle hHdd, void *pDst, const void *pSrc, tANI_U3
     try to use it unless the status returns success).
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -521,6 +600,9 @@ eHalStatus palCopyMemory( tHddHandle hHdd, void *pDst, const void *pSrc, tANI_U3
     returned and no memory will be allocated (the *ppMemory will be NULL so don't
     try to use it unless the status returns success).
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 ANI_INLINE_FUNCTION
@@ -528,7 +610,11 @@ eHalStatus palZeroMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes )
 {
     return( palFillMemory( hHdd, pMemory, numBytes, 0 ) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -538,6 +624,7 @@ eHalStatus palZeroMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes )
 
     \fn palEqualMemory
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     \brief OS agnostic funtion to compare two pieces of memory, similar to 
     memcmp function in standard C.
@@ -556,6 +643,8 @@ eHalStatus palZeroMemory( tHddHandle hHdd, void *pMemory, tANI_U32 numBytes )
   -------------------------------------------------------------------------------*/
 tANI_BOOLEAN palEqualMemory( tHddHandle hHdd, void *pMemory1, void *pMemory2, tANI_U32 numBytes ); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \brief OS agnostic funtion to compare two pieces of memory, similar to
     memcmp function in standard C.
 
@@ -572,12 +661,16 @@ tANI_BOOLEAN palEqualMemory( tHddHandle hHdd, void *pMemory1, void *pMemory2, tA
 
   -------------------------------------------------------------------------------*/
 tANI_BOOLEAN palEqualMemory( tHddHandle hHdd, void *pMemory1, void *pMemory2, tANI_U32 numBytes );
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** ---------------------------------------------------------------------------
 
     \fn palFillDeviceMemory
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     \brief OS agnostic funtion to fill device memory with a specified 
     32bit value
@@ -603,6 +696,8 @@ tANI_BOOLEAN palEqualMemory( tHddHandle hHdd, void *pMemory1, void *pMemory2, tA
     multiple of 4 bytes (the device does not support anything else).
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \brief OS agnostic funtion to fill device memory with a specified
     32bit value
 
@@ -626,6 +721,9 @@ tANI_BOOLEAN palEqualMemory( tHddHandle hHdd, void *pMemory1, void *pMemory2, tA
     \note return failure if the memOffset is not 32bit aligned and not a
     multiple of 4 bytes (the device does not support anything else).
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palFillDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 numBytes, tANI_BYTE fillValue );
@@ -636,6 +734,7 @@ eHalStatus palFillDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 nu
     \fn palZeroDeviceMemory
 
     \brief OS agnostic funtion to fill device memory with a specified byte value
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -659,6 +758,8 @@ eHalStatus palFillDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 nu
     multiple of 4 bytes (the device does not support anything else).
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -680,6 +781,9 @@ eHalStatus palFillDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 nu
     \note return failure if the memOffset is not 32bit aligned and not a
     multiple of 4 bytes (the device does not support anything else).
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 ANI_INLINE_FUNCTION
@@ -687,7 +791,11 @@ eHalStatus palZeroDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 nu
 {
     return( palFillDeviceMemory( hHdd, memOffset, numBytes, 0 ) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 }
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -698,9 +806,15 @@ eHalStatus palZeroDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 nu
 
     \param hHdd - HDD context handle
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     \param frmType - Frame type
     
+=======
+
+    \param frmType - Frame type
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     \param frmType - Frame type
@@ -711,9 +825,15 @@ eHalStatus palZeroDeviceMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U32 nu
     \param data -
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     \param ppPacket  - 
 
     \return eHalStatus -     
+=======
+    \param ppPacket  -
+
+    \return eHalStatus -
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     \param ppPacket  -
 
@@ -741,7 +861,11 @@ eHalStatus palSpinLockGive( tHddHandle hHdd, tPalSpinLockHandle hSpinLock );
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //This function send a message to MAC, 
+=======
+//This function send a message to MAC,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 //This function send a message to MAC,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -759,8 +883,13 @@ extern void palGetUnicastStats(tHddHandle hHdd, tANI_U32 *tx, tANI_U32 *rx);
 
     \param hHdd - HDD context handle
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     \return tick count. 
+=======
+
+    \return tick count.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
     \return tick count.
@@ -774,6 +903,7 @@ tANI_U32 palGetTickCount(tHddHandle hHdd);
 
     \brief chip and bus agnostic function to read memory from the PHY register space as memory
     i.e. to read more than 4 bytes from the contiguous register space
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param hHdd - HDD context handle
@@ -791,6 +921,8 @@ tANI_U32 palGetTickCount(tHddHandle hHdd);
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param hHdd - HDD context handle
 
@@ -806,6 +938,9 @@ tANI_U32 palGetTickCount(tHddHandle hHdd);
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palReadRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuffer, tANI_U32 numBytes );
@@ -819,6 +954,7 @@ eHalStatus palReadRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuff
     API does the write asynchronously.
 
     \param hHdd - HDD context handle
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \param memOffset - address (offset) of the memory from the top of the on-chip 
@@ -834,6 +970,8 @@ eHalStatus palReadRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuff
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param memOffset - address (offset) of the memory from the top of the on-chip
     memory that will be written.
@@ -847,6 +985,9 @@ eHalStatus palReadRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuff
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palAsyncWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuffer, tANI_U32 numBytes );
@@ -856,6 +997,7 @@ eHalStatus palAsyncWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 
     \fn palWriteRegMemory
     \brief chip and bus agnostic function to write memory to the PHY register space as memory
     i.e. to write more than 4 bytes from the contiguous register space. The difference from the
+<<<<<<< HEAD
 <<<<<<< HEAD
     above routine is, in USB interface, this routine performs the write synchronously where as 
     the above routine performs it asynchronously.
@@ -875,6 +1017,8 @@ eHalStatus palAsyncWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     above routine is, in USB interface, this routine performs the write synchronously where as
     the above routine performs it asynchronously.
 
@@ -892,6 +1036,9 @@ eHalStatus palAsyncWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuffer, tANI_U32 numBytes );
@@ -901,6 +1048,7 @@ eHalStatus palWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuf
 
     \fn palWaitRegVal
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     \brief is a blocking function which reads the register and waits for the given number of iterations 
     until the read value matches the waitRegVal. The delay between is perIterWaitInNanoSec(in nanoseconds)
@@ -912,6 +1060,8 @@ eHalStatus palWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuf
     \param mask - mask to be applied for the read value
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \brief is a blocking function which reads the register and waits for the given number of iterations
     until the read value matches the waitRegVal. The delay between is perIterWaitInNanoSec(in nanoseconds)
 
@@ -921,6 +1071,9 @@ eHalStatus palWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuf
 
     \param mask - mask to be applied for the read value
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \param waitRegVal - expected value from the register after applying the mask.
 
@@ -929,6 +1082,7 @@ eHalStatus palWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuf
     \param numIter - max number of reads before the timeout
 
     \param pReadRegVal - the value read from the register
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     \return eHalStatus - status of the memory read.  Note that this function 
@@ -939,6 +1093,8 @@ eHalStatus palWriteRegMemory( tHddHandle hHdd, tANI_U32 memOffset, tANI_U8 *pBuf
 eHalStatus palWaitRegVal( tHddHandle hHdd, tANI_U32 reg, tANI_U32 mask, 
                              tANI_U32 waitRegVal, tANI_U32 perIterWaitInNanoSec, 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \return eHalStatus - status of the memory read.  Note that this function
     can fail.  In particular, when the card is removed, this function will return
@@ -947,6 +1103,9 @@ eHalStatus palWaitRegVal( tHddHandle hHdd, tANI_U32 reg, tANI_U32 mask,
   -------------------------------------------------------------------------------*/
 eHalStatus palWaitRegVal( tHddHandle hHdd, tANI_U32 reg, tANI_U32 mask,
                              tANI_U32 waitRegVal, tANI_U32 perIterWaitInNanoSec,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              tANI_U32 numIter, tANI_U32 *pReadRegVal );
 
@@ -959,6 +1118,7 @@ eHalStatus palWaitRegVal( tHddHandle hHdd, tANI_U32 reg, tANI_U32 mask,
 
     \param hHdd - HDD context handle
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     \param reg - address of the register to be modified.
     
@@ -971,6 +1131,8 @@ eHalStatus palWaitRegVal( tHddHandle hHdd, tANI_U32 reg, tANI_U32 mask,
     a failure.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param reg - address of the register to be modified.
 
@@ -982,6 +1144,9 @@ eHalStatus palWaitRegVal( tHddHandle hHdd, tANI_U32 reg, tANI_U32 mask,
     can fail.  In particular, when the card is removed, this function will return
     a failure.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus palReadModifyWriteReg( tHddHandle hHdd, tANI_U32 reg, tANI_U32 andMask, tANI_U32 orMask );
@@ -1010,7 +1175,11 @@ tANI_U16 pal_cpu_to_be16(tANI_U16 x) ;
 
 // Need to eliminate these and use the ani_cpu_to_le, etc. macros....
 <<<<<<< HEAD
+<<<<<<< HEAD
 ANI_INLINE_FUNCTION unsigned long i_htonl( unsigned long ul ) 
+=======
+ANI_INLINE_FUNCTION unsigned long i_htonl( unsigned long ul )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 ANI_INLINE_FUNCTION unsigned long i_htonl( unsigned long ul )
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -1047,6 +1216,7 @@ ANI_INLINE_FUNCTION unsigned long i_ntohl( unsigned long ul )
 
     \note Caller must validate the byte array has enough space to hold the vlaue
 <<<<<<< HEAD
+<<<<<<< HEAD
         
     \param ptr - Starting address of a byte array
     
@@ -1056,6 +1226,8 @@ ANI_INLINE_FUNCTION unsigned long i_ntohl( unsigned long ul )
     be valid. Caller to verify.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param ptr - Starting address of a byte array
 
@@ -1064,6 +1236,9 @@ ANI_INLINE_FUNCTION unsigned long i_ntohl( unsigned long ul )
     \return - The address to the byte after the assignment. This may or may not
     be valid. Caller to verify.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 ANI_INLINE_FUNCTION tANI_U8 * pal_set_U32(tANI_U8 *ptr, tANI_U32 value)
@@ -1092,6 +1267,7 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_set_U32(tANI_U8 *ptr, tANI_U32 value)
 
     \note Caller must validate the byte array has enough space to hold the vlaue
 <<<<<<< HEAD
+<<<<<<< HEAD
         
     \param ptr - Starting address of a byte array
     
@@ -1101,6 +1277,8 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_set_U32(tANI_U8 *ptr, tANI_U32 value)
     be valid. Caller to verify.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param ptr - Starting address of a byte array
 
@@ -1109,6 +1287,9 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_set_U32(tANI_U8 *ptr, tANI_U32 value)
     \return - The address to the byte after the assignment. This may or may not
     be valid. Caller to verify.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 ANI_INLINE_FUNCTION tANI_U8 * pal_set_U16(tANI_U8 *ptr, tANI_U16 value)
@@ -1133,6 +1314,7 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_set_U16(tANI_U8 *ptr, tANI_U16 value)
 
     \note Caller must validate the byte array has enough space to hold the vlaue
 <<<<<<< HEAD
+<<<<<<< HEAD
         
     \param ptr - Starting address of a byte array
     
@@ -1143,6 +1325,8 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_set_U16(tANI_U8 *ptr, tANI_U16 value)
     be valid. Caller to verify.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param ptr - Starting address of a byte array
 
@@ -1152,6 +1336,9 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_set_U16(tANI_U8 *ptr, tANI_U16 value)
     \return - The address to the byte after the assignment. This may or may not
     be valid. Caller to verify.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 ANI_INLINE_FUNCTION tANI_U8 * pal_get_U16(tANI_U8 *ptr, tANI_U16 *pValue)
@@ -1176,6 +1363,7 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_get_U16(tANI_U8 *ptr, tANI_U16 *pValue)
 
     \note Caller must validate the byte array has enough space to hold the vlaue
 <<<<<<< HEAD
+<<<<<<< HEAD
         
     \param ptr - Starting address of a byte array
     
@@ -1186,6 +1374,8 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_get_U16(tANI_U8 *ptr, tANI_U16 *pValue)
     be valid. Caller to verify.
     
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param ptr - Starting address of a byte array
 
@@ -1195,6 +1385,9 @@ ANI_INLINE_FUNCTION tANI_U8 * pal_get_U16(tANI_U8 *ptr, tANI_U16 *pValue)
     \return - The address to the byte after the assignment. This may or may not
     be valid. Caller to verify.
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 ANI_INLINE_FUNCTION tANI_U8 * pal_get_U32(tANI_U8 *ptr, tANI_U32 *pValue)

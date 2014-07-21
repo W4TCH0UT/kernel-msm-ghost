@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -74,7 +80,12 @@ void sme_FTOpen(tHalHandle hHal)
     pMac->ft.ftSmeContext.reassoc_ft_ies = NULL;                        
     pMac->ft.ftSmeContext.reassoc_ft_ies_length = 0;       
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    pMac->ft.ftSmeContext.setFTPreAuthState = FALSE;
+    pMac->ft.ftSmeContext.setFTPTKState = FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pMac->ft.ftSmeContext.setFTPreAuthState = FALSE;
     pMac->ft.ftSmeContext.setFTPTKState = FALSE;
@@ -90,6 +101,10 @@ void sme_FTOpen(tHalHandle hHal)
 
     pMac->ft.ftSmeContext.psavedFTPreAuthRsp = NULL;                        
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    pMac->ft.ftSmeContext.pCsrFTKeyInfo = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     pMac->ft.ftSmeContext.pCsrFTKeyInfo = NULL;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -108,7 +123,11 @@ void sme_FTClose(tHalHandle hHal)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" Freeing %p and setting to NULL\n"), 
+=======
+        smsLog( pMac, LOGE, FL(" Freeing %p and setting to NULL"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" Freeing %p and setting to NULL"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -123,7 +142,11 @@ void sme_FTClose(tHalHandle hHal)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" Freeing %p and setting to NULL\n"), 
+=======
+        smsLog( pMac, LOGE, FL(" Freeing %p and setting to NULL"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" Freeing %p and setting to NULL"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -141,7 +164,11 @@ void sme_FTClose(tHalHandle hHal)
     {
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL("%s: Freeing %p and setting to NULL\n"), 
+=======
+        smsLog( pMac, LOGE, FL("%s: Freeing %p and setting to NULL"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL("%s: Freeing %p and setting to NULL"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -155,7 +182,10 @@ void sme_FTClose(tHalHandle hHal)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void sme_SetFTPreAuthState(tHalHandle hHal, v_BOOL_t state)
 {
   tpAniSirGlobal pMac = PMAC_STRUCT( hHal );
@@ -167,6 +197,9 @@ v_BOOL_t sme_GetFTPreAuthState(tHalHandle hHal)
   tpAniSirGlobal pMac = PMAC_STRUCT( hHal );
   return pMac->ft.ftSmeContext.setFTPreAuthState;
 }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
@@ -175,7 +208,11 @@ v_BOOL_t sme_GetFTPreAuthState(tHalHandle hHal)
   the FT IEs to PE.
   ------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, tANI_U8 *ft_ies, 
+=======
+void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -190,7 +227,11 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
     if (ft_ies == NULL) 
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         smsLog( pMac, LOGE, FL(" ft ies is NULL\n"));
+=======
+        smsLog( pMac, LOGE, FL(" ft ies is NULL"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         smsLog( pMac, LOGE, FL(" ft ies is NULL"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -200,7 +241,11 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOGE, "FT IEs Req is received in state %d\n", 
+=======
+    smsLog( pMac, LOGE, "FT IEs Req is received in state %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOGE, "FT IEs Req is received in state %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -226,7 +271,11 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
             {
                smsLog( pMac, LOGE, FL("Memory allocation failed for "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       "auth_ft_ies\n"));
+=======
+                                      "auth_ft_ies"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                       "auth_ft_ies"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -241,6 +290,7 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, "ft_ies_length=%d\n", ft_ies_length);
             /*
             smsLog( pMac, LOGE, "%d: New Auth ft_ies_length=%02x%02x%02x\n", 
@@ -248,6 +298,9 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
                 pMac->ft.ftSmeContext.auth_ft_ies[1],
                 pMac->ft.ftSmeContext.auth_ft_ies[2]);
                 */
+=======
+            smsLog( pMac, LOG1, "ft_ies_length=%d", ft_ies_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOG1, "ft_ies_length=%d", ft_ies_length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -264,15 +317,21 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
             // TBD
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, 
                 "Pre-auth done and now receiving---> AUTH REQ <---- in state %d\n", 
                 pMac->ft.ftSmeContext.FTState);
             smsLog( pMac, LOGE, "Unhandled reception of FT IES in state %d\n", 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOGE,
                 "Pre-auth done and now receiving---> AUTH REQ <---- in state %d",
                 pMac->ft.ftSmeContext.FTState);
             smsLog( pMac, LOGE, "Unhandled reception of FT IES in state %d",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pMac->ft.ftSmeContext.FTState);
 #endif
@@ -285,7 +344,11 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
             // At this juncture we are ready to start sending Re-Assoc Req.
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, "New Reassoc Req=%p in state %d\n", 
+=======
+            smsLog( pMac, LOGE, "New Reassoc Req=%p in state %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, "New Reassoc Req=%p in state %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -305,7 +368,11 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
             {
                smsLog( pMac, LOGE, FL("Memory allocation failed for "
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       "reassoc_ft_ies\n"));
+=======
+                                      "reassoc_ft_ies"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                                       "reassoc_ft_ies"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -319,6 +386,7 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
             pMac->ft.ftSmeContext.FTState = eFT_SET_KEY_WAIT;
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, "ft_ies_length=%d state=%d\n", ft_ies_length,
                 pMac->ft.ftSmeContext.FTState);
             /*
@@ -331,13 +399,21 @@ void sme_SetFTIEs( tHalHandle hHal, tANI_U8 sessionId, const tANI_U8 *ft_ies,
             smsLog( pMac, LOG1, "ft_ies_length=%d state=%d", ft_ies_length,
                 pMac->ft.ftSmeContext.FTState);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+            smsLog( pMac, LOG1, "ft_ies_length=%d state=%d", ft_ies_length,
+                pMac->ft.ftSmeContext.FTState);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
             
             break;
 
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             smsLog( pMac, LOGE, FL(" Unhandled state=%d\n"),
+=======
+            smsLog( pMac, LOGE, FL(" Unhandled state=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             smsLog( pMac, LOGE, FL(" Unhandled state=%d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -354,6 +430,7 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
     eHalStatus status = eHAL_STATUS_FAILURE;
     tAniEdType tmpEdType;
 <<<<<<< HEAD
+<<<<<<< HEAD
     tAniKeyDirection tmpDirection;
     //tANI_U8 *pBuf;
     tANI_U8 *p = NULL;
@@ -366,6 +443,8 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
       for(i=0; i<pFTKeyInfo->keyLength; i++)
           smsLog(pMac, LOGE, FL("%02x"), pFTKeyInfo->Key[i]); 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSirKeyMaterial *keymaterial = NULL;
     tAniEdType edType;
     tpAniSirGlobal pMac = PMAC_STRUCT( hHal );
@@ -377,6 +456,9 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
     for (i=0; i<pFTKeyInfo->keyLength; i++)
       smsLog(pMac, LOG1, FL("%02x"), pFTKeyInfo->Key[i]);
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     msgLen  = sizeof( tANI_U16) + sizeof( tANI_U16 ) + 
@@ -393,6 +475,7 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
     pMsg->messageType = pal_cpu_to_be16((tANI_U16)eWNI_SME_FT_UPDATE_KEY);
     pMsg->length = pal_cpu_to_be16(msgLen);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     p = (tANI_U8 *)&pMsg->keyMaterial;
 
@@ -450,6 +533,8 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
     }
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     keymaterial = &pMsg->keyMaterial;
 
     keymaterial->length = pFTKeyInfo->keyLength;
@@ -505,6 +590,9 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
            pMsg->bssId[0], pMsg->bssId[1], pMsg->bssId[2],
            pMsg->bssId[3], pMsg->bssId[4], pMsg->bssId[5]);
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = palSendMBMessage(pMac->hHdd, pMsg);
 
@@ -512,7 +600,10 @@ eHalStatus sme_FTSendUpdateKeyInd(tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_BOOL_t sme_GetFTPTKState(tHalHandle hHal)
 {
   tpAniSirGlobal pMac = PMAC_STRUCT( hHal );
@@ -525,6 +616,9 @@ void sme_SetFTPTKState(tHalHandle hHal, v_BOOL_t state)
   pMac->ft.ftSmeContext.setFTPTKState = state;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
 {
@@ -538,6 +632,7 @@ eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (pFTKeyInfo == NULL) 
     {
         smsLog( pMac, LOGE, "%s: pFTKeyInfo is NULL\n", __FUNCTION__);
@@ -548,6 +643,8 @@ eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     smsLog( pMac, LOG1, "sme_FTUpdateKey is received in state %d", 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pFTKeyInfo == NULL)
     {
         smsLog( pMac, LOGE, "%s: pFTKeyInfo is NULL", __func__);
@@ -557,6 +654,9 @@ eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
 
 #if defined WLAN_FEATURE_VOWIFI_11R_DEBUG
     smsLog( pMac, LOG1, "sme_FTUpdateKey is received in state %d",
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->ft.ftSmeContext.FTState);
 #endif
@@ -566,6 +666,7 @@ eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
     {
     case eFT_SET_KEY_WAIT:
 <<<<<<< HEAD
+<<<<<<< HEAD
        status = sme_FTSendUpdateKeyInd( hHal, pFTKeyInfo );
        pMac->ft.ftSmeContext.FTState = eFT_START_READY;
        break;
@@ -573,6 +674,8 @@ eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
     default:
        smsLog( pMac, LOGE, "%s: Unhandled state=%d\n", __FUNCTION__,
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (sme_GetFTPreAuthState (hHal) == TRUE)
       {
           status = sme_FTSendUpdateKeyInd(pMac, pFTKeyInfo);
@@ -600,6 +703,9 @@ eHalStatus sme_FTUpdateKey( tHalHandle hHal, tCsrRoamSetKey * pFTKeyInfo )
           
     default:
        smsLog( pMac, LOGE, "%s: Unhandled state=%d", __func__,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->ft.ftSmeContext.FTState);
        status = eHAL_STATUS_FAILURE;
@@ -652,7 +758,11 @@ void sme_GetFTPreAuthResponse( tHalHandle hHal, tANI_U8 *ft_ies,
 
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOGE, FL(" Filled auth resp = %d\n"), *ft_ies_length);
+=======
+    smsLog( pMac, LOGE, FL(" Filled auth resp = %d"), *ft_ies_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOGE, FL(" Filled auth resp = %d"), *ft_ies_length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -695,7 +805,11 @@ void sme_GetRICIEs( tHalHandle hHal, tANI_U8 *ric_ies, tANI_U32 ric_ies_ip_len,
 
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
 <<<<<<< HEAD
+<<<<<<< HEAD
     smsLog( pMac, LOGE, FL(" Filled ric ies = %d\n"), *ric_ies_length);
+=======
+    smsLog( pMac, LOGE, FL(" Filled ric ies = %d"), *ric_ies_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     smsLog( pMac, LOGE, FL(" Filled ric ies = %d"), *ric_ies_length);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

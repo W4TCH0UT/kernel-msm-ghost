@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -42,7 +48,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
@@ -60,11 +69,16 @@
 #include "sirCommon.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
 #include "aniGlobal.h"
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halCommonApi.h"
 #endif
+=======
+#include "wniCfgSta.h"
+#include "aniGlobal.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 #include "aniGlobal.h"
@@ -116,7 +130,11 @@ void schSetBeaconInterval(tpAniSirGlobal pMac,tpPESession psessionEntry)
     if (bi < SCH_BEACON_INTERVAL_MIN || bi > SCH_BEACON_INTERVAL_MAX)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog(pMac, LOGE, FL("Invalid beacon interval %d (should be [%d,%d]\n"),
+=======
+        schLog(pMac, LOGE, FL("Invalid beacon interval %d (should be [%d,%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schLog(pMac, LOGE, FL("Invalid beacon interval %d (should be [%d,%d]"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -130,6 +148,7 @@ void schSetBeaconInterval(tpAniSirGlobal pMac,tpPESession psessionEntry)
 
 // --------------------------------------------------------------------
 /**
+<<<<<<< HEAD
 <<<<<<< HEAD
  * schSetInitParams
  *
@@ -163,6 +182,8 @@ schSetInitParams(tpAniSirGlobal pMac)
 /**
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * schProcessMessage
  *
  * FUNCTION:
@@ -188,7 +209,11 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
 
     tpPESession psessionEntry = &pMac->lim.gpSession[0];  //TBD-RAJESH HOW TO GET sessionEntry?????
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG3(schLog(pMac, LOG3, FL("Received message (%x) \n"), pSchMsg->type);)
+=======
+    PELOG3(schLog(pMac, LOG3, FL("Received message (%x) "), pSchMsg->type);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG3(schLog(pMac, LOG3, FL("Received message (%x) "), pSchMsg->type);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -201,6 +226,7 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined (ANI_OS_TYPE_LINUX) || defined (ANI_OS_TYPE_OSX)
             {
                 palGetPacketDataPtr( pMac->hHdd, HAL_TXRX_FRM_802_11_MGMT, pSchMsg->bodyptr, (void **) &(pBD) );
@@ -208,6 +234,9 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
 #else
             pBD = (tANI_U32 *) pSchMsg->bodyptr;
 #endif
+=======
+            pBD = (tANI_U32 *) pSchMsg->bodyptr;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             pBD = (tANI_U32 *) pSchMsg->bodyptr;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -221,6 +250,7 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
             else
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 schLog(pMac, LOGE, FL("Unexpected message (%d,%d) rcvd\n"),
                        mh->fc.type, mh->fc.subType);
                 pMac->sch.gSchUnknownRcvCnt++;
@@ -231,10 +261,15 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
         palPktFree( pMac->hHdd, HAL_TXRX_FRM_802_11_MGMT, pBD, (void *) pSchMsg->bodyptr) ;
 #endif
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 schLog(pMac, LOGE, FL("Unexpected message (%d,%d) rcvd"),
                        mh->fc.type, mh->fc.subType);
                 pMac->sch.gSchUnknownRcvCnt++;
             }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 #endif
@@ -242,16 +277,22 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
         case SIR_SCH_CHANNEL_SWITCH_REQUEST:
             schLog(pMac, LOGE,
 <<<<<<< HEAD
+<<<<<<< HEAD
                    FL("Channel switch request not handled\n"));
             break;
 
         case SIR_SCH_START_SCAN_REQ:
             SIR_SCHED_LOCK();
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    FL("Channel switch request not handled"));
             break;
 
         case SIR_SCH_START_SCAN_REQ:
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->sch.gSchScanReqRcvd = true;
             if (pMac->sch.gSchHcfEnabled)
@@ -263,7 +304,11 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
                    PELOG1(schLog(pMac, LOG1,
                            FL("Waiting for TFP to halt before sending "
 <<<<<<< HEAD
+<<<<<<< HEAD
                               "start scan response\n"));)
+=======
+                              "start scan response"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                               "start scan response"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -277,13 +322,17 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
                 schSendStartScanRsp(pMac);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
             SIR_SCHED_UNLOCK();
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case SIR_SCH_END_SCAN_NTF:
            PELOG3(schLog(pMac, LOG3,
+<<<<<<< HEAD
 <<<<<<< HEAD
                    FL("Received STOP_SCAN_NTF from LIM\n"));)
             pMac->sch.gSchScanReqRcvd = false;
@@ -297,13 +346,21 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
                    FL("Received STOP_SCAN_NTF from LIM"));)
             pMac->sch.gSchScanReqRcvd = false;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+                   FL("Received STOP_SCAN_NTF from LIM"));)
+            pMac->sch.gSchScanReqRcvd = false;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case SIR_CFG_PARAM_UPDATE_IND:
 
             if (wlan_cfgGetInt(pMac, (tANI_U16) pSchMsg->bodyval, &val) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
                 schLog(pMac, LOGP, FL("failed to cfg get id %d\n"), pSchMsg->bodyval);
+=======
+                schLog(pMac, LOGP, FL("failed to cfg get id %d"), pSchMsg->bodyval);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 schLog(pMac, LOGP, FL("failed to cfg get id %d"), pSchMsg->bodyval);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -358,7 +415,11 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
 
                 default:
 <<<<<<< HEAD
+<<<<<<< HEAD
                     schLog(pMac, LOGE, FL("Cfg param %d indication not handled\n"),
+=======
+                    schLog(pMac, LOGE, FL("Cfg param %d indication not handled"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                     schLog(pMac, LOGE, FL("Cfg param %d indication not handled"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -368,7 +429,11 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
 
         default:
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog(pMac, LOGE, FL("Unknown message in schMsgQ type %d\n"),
+=======
+            schLog(pMac, LOGE, FL("Unknown message in schMsgQ type %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog(pMac, LOGE, FL("Unknown message in schMsgQ type %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -378,6 +443,7 @@ void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg)
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // --------------------------------------------------------------------
 /**
@@ -447,6 +513,8 @@ schUpdateQosInfo( tpAniSirGlobal pMac)
 
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // get the local or broadcast parameters based on the profile sepcified in the config
 // params are delivered in this order: BK, BE, VI, VO
 tSirRetStatus
@@ -475,7 +543,11 @@ schGetParams(
     if (wlan_cfgGetInt(pMac, WNI_CFG_EDCA_PROFILE, &val) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog(pMac, LOGP, FL("failed to cfg get EDCA_PROFILE id %d\n"),
+=======
+        schLog(pMac, LOGP, FL("failed to cfg get EDCA_PROFILE id %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schLog(pMac, LOGP, FL("failed to cfg get EDCA_PROFILE id %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -486,7 +558,11 @@ schGetParams(
     if (val >= WNI_CFG_EDCA_PROFILE_MAX)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         schLog(pMac, LOGE, FL("Invalid EDCA_PROFILE %d, using %d instead\n"),
+=======
+        schLog(pMac, LOGE, FL("Invalid EDCA_PROFILE %d, using %d instead"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         schLog(pMac, LOGE, FL("Invalid EDCA_PROFILE %d, using %d instead"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -495,7 +571,11 @@ schGetParams(
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     schLog(pMac, LOGW, FL("EdcaProfile: Using %d (%s)\n"),  val,
+=======
+    schLog(pMac, LOGW, FL("EdcaProfile: Using %d (%s)"),  val,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     schLog(pMac, LOGW, FL("EdcaProfile: Using %d (%s)"),  val,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -542,7 +622,11 @@ schGetParams(
         if (wlan_cfgGetStr(pMac, (tANI_U16) prf[i], (tANI_U8 *) &data[0], &len) != eSIR_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog(pMac, LOGP, FL("cfgGet failed for %d\n"), prf[i]);
+=======
+            schLog(pMac, LOGP, FL("cfgGet failed for %d"), prf[i]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog(pMac, LOGP, FL("cfgGet failed for %d"), prf[i]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -551,7 +635,11 @@ schGetParams(
         if (len > WNI_CFG_EDCA_ANI_ACBK_LOCAL_LEN)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog(pMac, LOGE, FL("cfgGet for %d: length is %d instead of %d\n"),
+=======
+            schLog(pMac, LOGE, FL("cfgGet for %d: length is %d instead of %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog(pMac, LOGE, FL("cfgGet for %d: length is %d instead of %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -562,7 +650,11 @@ schGetParams(
             params[i][idx] = (tANI_U32) data[idx];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(schLog(pMac, LOG1, FL("GetParams: local=%d, profile = %d Done\n"), local, val);)
+=======
+    PELOG1(schLog(pMac, LOG1, FL("GetParams: local=%d, profile = %d Done"), local, val);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(schLog(pMac, LOG1, FL("GetParams: local=%d, profile = %d Done"), local, val);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -593,7 +685,11 @@ static void broadcastWMMOfConcurrentSTASession(tpAniSirGlobal pMac, tpPESession 
                 psessionEntry->gLimEdcaParamsBC[j].txoplimit=  pConcurrentStaSessionEntry->gLimEdcaParams[j].txoplimit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                PELOG1(schLog(pMac, LOG1, "QoSUpdateBCast changed again due to concurrent INFRA STA session: AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d\n",
+=======
+               PELOG1(schLog(pMac, LOG1, "QoSUpdateBCast changed again due to concurrent INFRA STA session: AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                PELOG1(schLog(pMac, LOG1, "QoSUpdateBCast changed again due to concurrent INFRA STA session: AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -622,7 +718,11 @@ schQosUpdateBroadcast(tpAniSirGlobal pMac, tpPESession psessionEntry)
     if (schGetParams(pMac, params, false) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOGE, FL("QosUpdateBroadcast: failed\n"));)
+=======
+        PELOGE(schLog(pMac, LOGE, FL("QosUpdateBroadcast: failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOGE, FL("QosUpdateBroadcast: failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -631,7 +731,11 @@ schQosUpdateBroadcast(tpAniSirGlobal pMac, tpPESession psessionEntry)
     limGetPhyMode(pMac, &phyMode, psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(schLog(pMac, LOG1, "QosUpdBcast: mode %d\n", phyMode);)
+=======
+    PELOG1(schLog(pMac, LOG1, "QosUpdBcast: mode %d", phyMode);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(schLog(pMac, LOG1, "QosUpdBcast: mode %d", phyMode);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -665,7 +769,11 @@ schQosUpdateBroadcast(tpAniSirGlobal pMac, tpPESession psessionEntry)
         psessionEntry->gLimEdcaParamsBC[i].txoplimit=  (tANI_U16) params[i][txopidx];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOG1(schLog(pMac, LOG1, "QoSUpdateBCast: AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d\n", i,
+=======
+       PELOG1(schLog(pMac, LOG1, "QoSUpdateBCast: AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d", i,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        PELOG1(schLog(pMac, LOG1, "QoSUpdateBCast: AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d", i,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -682,7 +790,11 @@ schQosUpdateBroadcast(tpAniSirGlobal pMac, tpPESession psessionEntry)
 
     if (schSetFixedBeaconFields(pMac,psessionEntry) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOGE, "Unable to set beacon fields!\n");)
+=======
+        PELOGE(schLog(pMac, LOGE, "Unable to set beacon fields!");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOGE, "Unable to set beacon fields!");)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -698,7 +810,11 @@ schQosUpdateLocal(tpAniSirGlobal pMac, tpPESession psessionEntry)
     if (schGetParams(pMac, params, true /*local*/) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOGE, FL("schGetParams(local) failed\n"));)
+=======
+        PELOGE(schLog(pMac, LOGE, FL("schGetParams(local) failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOGE, FL("schGetParams(local) failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -738,7 +854,11 @@ schSetDefaultEdcaParams(tpAniSirGlobal pMac, tpPESession psessionEntry)
     if (getWmmLocalParams(pMac, params) != eSIR_SUCCESS)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(schLog(pMac, LOGE, FL("getWmmLocalParams() failed\n"));)
+=======
+        PELOGE(schLog(pMac, LOGE, FL("getWmmLocalParams() failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(schLog(pMac, LOGE, FL("getWmmLocalParams() failed"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -767,7 +887,11 @@ setSchEdcaParams(tpAniSirGlobal pMac, tANI_U32 params[][WNI_CFG_EDCA_ANI_ACBK_LO
     limGetPhyMode(pMac, &phyMode, psessionEntry);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(schLog(pMac, LOG1, FL("limGetPhyMode() = %d\n"), phyMode);)
+=======
+    PELOG1(schLog(pMac, LOG1, FL("limGetPhyMode() = %d"), phyMode);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(schLog(pMac, LOG1, FL("limGetPhyMode() = %d"), phyMode);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -802,7 +926,11 @@ setSchEdcaParams(tpAniSirGlobal pMac, tANI_U32 params[][WNI_CFG_EDCA_ANI_ACBK_LO
         psessionEntry->gLimEdcaParams[i].txoplimit=  (tANI_U16) params[i][txopidx];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        PELOG1(schLog(pMac, LOG1, FL("AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d\n"), i,
+=======
+       PELOG1(schLog(pMac, LOG1, FL("AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d"), i,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
        PELOG1(schLog(pMac, LOG1, FL("AC :%d: AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d"), i,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -839,7 +967,11 @@ getWmmLocalParams(tpAniSirGlobal  pMac,  tANI_U32 params[][WNI_CFG_EDCA_ANI_ACBK
         if (wlan_cfgGetStr(pMac, (tANI_U16) prf[i], (tANI_U8 *) &data[0], &len) != eSIR_SUCCESS)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog(pMac, LOGP, FL("cfgGet failed for %d\n"), prf[i]);
+=======
+            schLog(pMac, LOGP, FL("cfgGet failed for %d"), prf[i]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog(pMac, LOGP, FL("cfgGet failed for %d"), prf[i]);
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -848,7 +980,11 @@ getWmmLocalParams(tpAniSirGlobal  pMac,  tANI_U32 params[][WNI_CFG_EDCA_ANI_ACBK
         if (len > WNI_CFG_EDCA_ANI_ACBK_LOCAL_LEN)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             schLog(pMac, LOGE, FL("cfgGet for %d: length is %d instead of %d\n"),
+=======
+            schLog(pMac, LOGE, FL("cfgGet for %d: length is %d instead of %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             schLog(pMac, LOGE, FL("cfgGet for %d: length is %d instead of %d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

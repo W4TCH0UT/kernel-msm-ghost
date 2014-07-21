@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -58,6 +64,7 @@
 #define __SYSDEF_H
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /// Sirius system level defitions
 // NOTE: Do not program system timer tick duration to less than 1msec
 
@@ -87,6 +94,8 @@
 /// Clocks in a milisecond
 #define SYS_CLOCKS_PER_MS   120000 // 120 MHz 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Sirius system level definitions
 // NOTE: Do not program system timer tick duration to less than 1msec
 
@@ -99,6 +108,9 @@
 
 /// Clocks in a millisecond
 #define SYS_CLOCKS_PER_MS   120000 // 120 MHz
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // In Milliseconds
@@ -124,7 +136,11 @@
 
 /// MS to Time Units
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define SYS_MS_TO_TU(x)      (x * 1000) >> 10;
+=======
+#define SYS_MS_TO_TU(x)      ((x * 1000) >> 10)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define SYS_MS_TO_TU(x)      ((x * 1000) >> 10)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

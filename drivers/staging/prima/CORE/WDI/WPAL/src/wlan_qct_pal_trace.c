@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -121,7 +127,11 @@ static void wpalOutput(wpt_tracelevel level, char *strBuffer)
    {
    default:
 <<<<<<< HEAD
+<<<<<<< HEAD
       printk(KERN_CRIT "%s: Unknown trace level passed in!\n", __FUNCTION__); 
+=======
+      printk(KERN_CRIT "%s: Unknown trace level passed in!\n", __func__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       printk(KERN_CRIT "%s: Unknown trace level passed in!\n", __func__); 
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -284,8 +294,12 @@ void wpalTrace( wpt_moduleid module, wpt_tracelevel level, char *strFormat, ... 
 
       // print the prefix string into the string buffer...
 <<<<<<< HEAD
+<<<<<<< HEAD
       n = snprintf(strBuffer, WPAL_TRACE_BUFFER_SIZE, "[%d:%d:%2s:%3s] ",
                    smp_processor_id(),
+=======
+      n = snprintf(strBuffer, WPAL_TRACE_BUFFER_SIZE, "wlan: [%d:%2s:%3s] ",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       n = snprintf(strBuffer, WPAL_TRACE_BUFFER_SIZE, "wlan: [%d:%2s:%3s] ",
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -297,14 +311,20 @@ void wpalTrace( wpt_moduleid module, wpt_tracelevel level, char *strFormat, ... 
       // print the formatted log message after the prefix string.
       // note we reserve space for the terminating NUL
 <<<<<<< HEAD
+<<<<<<< HEAD
       vsnprintf(strBuffer + n, WPAL_TRACE_BUFFER_SIZE - n - 1, strFormat, val);
       wpalOutput(level, strBuffer);
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if ((n >= 0) && (n < WPAL_TRACE_BUFFER_SIZE))
       {
          vsnprintf(strBuffer + n, WPAL_TRACE_BUFFER_SIZE - n - 1, strFormat, val);
          wpalOutput(level, strBuffer);
       }
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       va_end(val);
    }

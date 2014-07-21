@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -156,6 +162,10 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
   wpt_uint8      ucBdPoolType;
   wpt_uint8      staId;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  WDI_Status wdiStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   WDI_Status wdiStatus;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -189,10 +199,13 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
   {
     case WDI_MAC_DATA_FRAME:
 <<<<<<< HEAD
+<<<<<<< HEAD
        pMemPool = &(pClientData->dataMemPool);
        ucBdPoolType = WDI_DATA_POOL_ID;
     break;
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
        /* I utilizes TDLS mgmt frame always sent at BD_RATE2. (See limProcessTdls.c)
           Assumption here is data frame sent by WDA_TxPacket() <- HalTxFrame/HalTxFrameWithComplete()
@@ -210,6 +223,9 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
        break;
        }
     // intentional fall-through to handle eapol packet as mgmt
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case WDI_MAC_MGMT_FRAME:
        pMemPool = &(pClientData->mgmtMemPool);
@@ -217,7 +233,11 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
     break;
     default:
 <<<<<<< HEAD
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;;
+=======
+      return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       return WDI_STATUS_E_FAILURE;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -234,6 +254,7 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
   WDI_DS_PrepareBDHeader(pFrame, ucSwFrameTXXlation, alignment);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(WDI_STATUS_SUCCESS != 
       WDI_FillTxBd( pContext, ucTypeSubtype, pSTAMACAddress, pAddr2MACAddress, 
         &ucUP, 1, pvBDHeader, ucTxFlag /* No ACK */, 0, &staId)){
@@ -241,6 +262,8 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
     return WDI_STATUS_E_FAILURE;
   }
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wdiStatus = WDI_FillTxBd(pContext, ucTypeSubtype, pSTAMACAddress, pAddr2MACAddress,
     &ucUP, 1, pvBDHeader, ucTxFlag /* No ACK */, 0, &staId);
 
@@ -252,6 +275,9 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
 
   pTxMetadata->staIdx = staId;
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // Send packet to transport layer.
   if(eWLAN_PAL_STATUS_SUCCESS !=WDTS_TxPacket(pContext, pFrame)){
@@ -261,8 +287,11 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
 
   /* resource count only for data packet */
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(WDI_MAC_DATA_FRAME == ucType)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // EAPOL packet doesn't use data mem pool if being treated as higher priority
 #ifdef FEATURE_WLAN_TDLS
   /* I utilizes TDLS mgmt frame always sent at BD_RATE2. (See limProcessTdls.c)
@@ -274,6 +303,9 @@ WDI_Status WDI_DS_TxPacket(void *pContext,
 #else
   if(WDI_MAC_DATA_FRAME == ucType && (!pTxMetadata->isEapol))
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     WDI_DS_MemPoolIncreaseReserveCount(pMemPool, staId);
@@ -547,7 +579,10 @@ WDI_Status WDI_DS_ClearStaIdxPerBssIdx(void *pContext, wpt_uint8 bssIdx, wpt_uin
   return WDI_STATUS_E_FAILURE;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* @brief: WDI_DS_GetTrafficStats
  * This function should be invoked to fetch the current stats
@@ -591,4 +626,7 @@ void WDI_DS_ClearTrafficStats(void)
    return WDTS_ClearTrafficStats();
 }
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

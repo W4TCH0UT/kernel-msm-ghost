@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -62,6 +68,7 @@
 #include "limDebug.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halCommonApi.h"
 #endif
@@ -69,6 +76,10 @@
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "halMsgApi.h" 
 #endif
+=======
+
+#include "halMsgApi.h" 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
 #include "halMsgApi.h" 
@@ -192,6 +203,7 @@ tpDphHashNode dphLookupHashEntry(tpAniSirGlobal pMac, tANI_U8 staAddr[], tANI_U1
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 tpDphHashNode dphGetHashEntry(tpAniSirGlobal pMac, tANI_U16 assocId, dphHashTableClass* pDphHashTable)
 {
     if (assocId < pDphHashTable->size)
@@ -199,12 +211,17 @@ tpDphHashNode dphGetHashEntry(tpAniSirGlobal pMac, tANI_U16 assocId, dphHashTabl
         if (pDphHashTable->pDphNodeArray[assocId].added)
           return &pDphHashTable->pDphNodeArray[assocId];
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tpDphHashNode dphGetHashEntry(tpAniSirGlobal pMac, tANI_U16 peerIdx, dphHashTableClass* pDphHashTable)
 {
     if (peerIdx < pDphHashTable->size)
     {
         if (pDphHashTable->pDphNodeArray[peerIdx].added)
           return &pDphHashTable->pDphNodeArray[peerIdx];
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         else
             return NULL;
@@ -286,7 +303,11 @@ tpDphHashNode dphInitStaState(tpAniSirGlobal pMac, tSirMacAddr staAddr,
     if (assocId >= pDphHashTable->size)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Invalid Assoc Id %d\n"), assocId);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Invalid Assoc Id %d"), assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Invalid Assoc Id %d"), assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -297,7 +318,11 @@ tpDphHashNode dphInitStaState(tpAniSirGlobal pMac, tSirMacAddr staAddr,
     staIdx = pStaDs->staIndex;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Assoc Id %d, Addr %08X\n"), assocId, pStaDs);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Assoc Id %d, Addr %08X"), assocId, pStaDs);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(limLog(pMac, LOG1, FL("Assoc Id %d, Addr %08X"), assocId, pStaDs);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -318,7 +343,11 @@ tpDphHashNode dphInitStaState(tpAniSirGlobal pMac, tSirMacAddr staAddr,
     // Initialize fragmentation threshold
     if (wlan_cfgGetInt(pMac, WNI_CFG_FRAGMENTATION_THRESHOLD, &val) != eSIR_SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not retrieve fragmentation threshold\n"));
+=======
+        limLog(pMac, LOGP, FL("could not retrieve fragmentation threshold"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGP, FL("could not retrieve fragmentation threshold"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -329,10 +358,13 @@ tpDphHashNode dphInitStaState(tpAniSirGlobal pMac, tSirMacAddr staAddr,
     pStaDs->encPolicy = HAL_ENC_POLICY_NULL;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined( PLM_WDS)&&defined(LX5280)
     pStaDs->wdsIndex=pStaDs->wdsPeerBeaconSeen=0;
 #endif
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WMM_APSD
@@ -369,7 +401,11 @@ tpDphHashNode dphAddHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_U16
     tANI_U16 index = hashFunction(pMac, staAddr, pDphHashTable->size);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("assocId %d index %d STA addr\n"),
+=======
+    PELOG1(limLog(pMac, LOG1, FL("assocId %d index %d STA addr"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     PELOG1(limLog(pMac, LOG1, FL("assocId %d index %d STA addr"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -379,7 +415,11 @@ tpDphHashNode dphAddHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_U16
     if (assocId >= pDphHashTable->size)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("invalid STA id %d\n"), assocId);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("invalid STA id %d"), assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("invalid STA id %d"), assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -389,7 +429,11 @@ tpDphHashNode dphAddHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_U16
     if (pDphHashTable->pDphNodeArray[assocId].added)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("already added STA %d\n"), assocId);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("already added STA %d"), assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("already added STA %d"), assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -401,7 +445,11 @@ tpDphHashNode dphAddHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_U16
         if (ptr == ptr->next)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("Infinite Loop\n"));)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("Infinite Loop"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("Infinite Loop"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -416,7 +464,11 @@ tpDphHashNode dphAddHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_U16
     {
         // Duplicate entry
 <<<<<<< HEAD
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("assocId %d hashIndex %d entry exists\n"),
+=======
+        limLog(pMac, LOGE, FL("assocId %d hashIndex %d entry exists"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         limLog(pMac, LOGE, FL("assocId %d hashIndex %d entry exists"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -428,7 +480,11 @@ tpDphHashNode dphAddHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_U16
         if (dphInitStaState(pMac, staAddr, assocId, false, pDphHashTable) == NULL)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("could not Init STAid=%d\n"), assocId);)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("could not Init STAid=%d"), assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
             PELOGE(limLog(pMac, LOGE, FL("could not Init STAid=%d"), assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -470,7 +526,11 @@ tSirRetStatus dphDeleteHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   PELOG1(limLog(pMac, LOG1, FL("assocId %d index %d STA addr\n"),
+=======
+  PELOG1(limLog(pMac, LOG1, FL("assocId %d index %d STA addr"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   PELOG1(limLog(pMac, LOG1, FL("assocId %d index %d STA addr"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -480,7 +540,11 @@ tSirRetStatus dphDeleteHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_
   if (assocId >= pDphHashTable->size)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("invalid STA id %d\n"), assocId);)
+=======
+      PELOGE(limLog(pMac, LOGE, FL("invalid STA id %d"), assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE, FL("invalid STA id %d"), assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -490,7 +554,11 @@ tSirRetStatus dphDeleteHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_
   if (pDphHashTable->pDphNodeArray[assocId].added == 0)
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("STA %d never added\n"), assocId);)
+=======
+      PELOGE(limLog(pMac, LOGE, FL("STA %d never added"), assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE, FL("STA %d never added"), assocId);)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -507,7 +575,11 @@ tSirRetStatus dphDeleteHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_
     if (prev == ptr)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Infinite Loop\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Infinite Loop"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
         PELOGE(limLog(pMac, LOGE, FL("Infinite Loop"));)
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -520,6 +592,10 @@ tSirRetStatus dphDeleteHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_
       /// Delete the entry after invalidating it
       ptr->valid = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      memset(ptr->staAddr, 0, sizeof(ptr->staAddr));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       memset(ptr->staAddr, 0, sizeof(ptr->staAddr));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -534,7 +610,11 @@ tSirRetStatus dphDeleteHashEntry(tpAniSirGlobal pMac, tSirMacAddr staAddr, tANI_
     {
       /// Entry not present
 <<<<<<< HEAD
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("Entry not present STA addr\n"));
+=======
+      PELOGE(limLog(pMac, LOGE, FL("Entry not present STA addr"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
       PELOGE(limLog(pMac, LOGE, FL("Entry not present STA addr"));
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -566,7 +646,11 @@ void
 dphPrintMacAddr(tpAniSirGlobal pMac, tANI_U8 addr[], tANI_U32 level)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     limLog(pMac, (tANI_U16) level, FL("MAC ADDR = %d:%d:%d:%d:%d:%d\n"),
+=======
+    limLog(pMac, (tANI_U16) level, FL("MAC ADDR = %d:%d:%d:%d:%d:%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     limLog(pMac, (tANI_U16) level, FL("MAC ADDR = %d:%d:%d:%d:%d:%d"),
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

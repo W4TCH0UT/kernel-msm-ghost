@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -96,6 +102,11 @@
 
 #include "wlan_qct_dev_defs.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define MAC_ADDR_ARRAY(a) (a)[0], (a)[1], (a)[2], (a)[3], (a)[4], (a)[5]
+#define MAC_ADDRESS_STR "%02x:%02x:%02x:%02x:%02x:%02x"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define MAC_ADDR_ARRAY(a) (a)[0], (a)[1], (a)[2], (a)[3], (a)[4], (a)[5]
 #define MAC_ADDRESS_STR "%02x:%02x:%02x:%02x:%02x:%02x"
@@ -144,10 +155,15 @@ WDI_DP_UtilsInit
   WDI_RxBdType*  pAmsduRxBdFixMask; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
     // WQ to be used for filling the TxBD
   pWDICtx->ucDpuRF = BMUWQ_BTQM_TX_MGMT; 
 #endif //FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
+=======
+    // WQ to be used for filling the TxBD
+  pWDICtx->ucDpuRF = BMUWQ_BTQM_TX_MGMT; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     // WQ to be used for filling the TxBD
   pWDICtx->ucDpuRF = BMUWQ_BTQM_TX_MGMT; 
@@ -470,7 +486,10 @@ WDI_FillTxBd
     pBd->bdt   = HWBD_TYPE_GENERIC; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Route all trigger enabled frames to FW WQ, for FW to suspend trigger frame generation 
@@ -479,7 +498,10 @@ WDI_FillTxBd
         pBd->dpuRF = pWDICtx->ucDpuRF; 
     } else 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif //FEATURE_WLAN_UAPSD_FW_TRG_FRAMES
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
@@ -563,13 +585,19 @@ WDI_FillTxBd
             pBd->bdRate = (ucUnicastDst)? WDI_TXBD_BDRATE_DEFAULT : WDI_BDRATE_BCDATA_FRAME;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
         if ( ucTxFlag & WDI_USE_BD_RATE2_FOR_MANAGEMENT_FRAME)
         {
            pBd->bdRate = WDI_BDRATE_CTRL_FRAME;
         }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pBd->rmf    = WDI_RMF_DISABLED;     
 
@@ -702,7 +730,11 @@ WDI_FillTxBd
            {
                 WPAL_TRACE(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR, "WDI_STATableFindStaidByAddr failed");
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return WDI_STATUS_E_FAILURE;
+=======
+                return WDI_STATUS_E_NOT_ALLOWED;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 return WDI_STATUS_E_NOT_ALLOWED;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -820,7 +852,11 @@ WDI_FillTxBd
               if (WDI_STATUS_SUCCESS != wdiStatus)
               {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return WDI_STATUS_E_FAILURE;
+=======
+                return WDI_STATUS_E_NOT_ALLOWED;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
                 return WDI_STATUS_E_NOT_ALLOWED;
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -931,7 +967,10 @@ WDI_FillTxBd
             return VOS_STATUS_E_FAILURE;
         } */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
        // if this is a Virtual Station then change the DPU Routing Flag so
        // that the frame will be routed to Firmware for queuing & transmit
@@ -940,6 +979,9 @@ WDI_FillTxBd
            pBd->dpuRF = BMUWQ_FW_DPU_TX;
        }
 #endif
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     } 

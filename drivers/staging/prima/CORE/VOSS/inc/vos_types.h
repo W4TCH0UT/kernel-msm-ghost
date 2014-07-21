@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -21,6 +24,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -45,6 +51,7 @@
 #if !defined( __VOS_TYPES_H )
 #define __VOS_TYPES_H
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**=========================================================================
   
@@ -52,6 +59,8 @@
   
   \brief virtual Operating System Servies (vOS)
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
 * Copyright (c) 2013 Qualcomm Atheros, Inc.
 * All Rights Reserved.
@@ -64,6 +73,9 @@
 
   \brief virtual Operating System Servies (vOS)
 <<<<<<< HEAD:CORE/VOSS/inc/vos_types.h
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                
    Basic type definitions 
@@ -73,7 +85,10 @@
    Qualcomm Confidential and Proprietary.
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    Basic type definitions
@@ -82,6 +97,9 @@
    All Rights Reserved.
    Qualcomm Confidential and Proprietary.
 >>>>>>> b682f18... wlan: qnx awareness to corestack:prima/CORE/VOSS/inc/vos_types.h
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ========================================================================*/
 
@@ -104,7 +122,11 @@
 
 // macro to get the ceiling of an integer division operation...
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define VOS_CEIL_DIV( _a, _b ) ( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ) 
+=======
+#define VOS_CEIL_DIV( _a, _b ) (( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #define VOS_CEIL_DIV( _a, _b ) (( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ))
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
@@ -117,8 +139,13 @@
 
 #define VOS_SWAP_U32(_x) \
 <<<<<<< HEAD
+<<<<<<< HEAD
    ( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
    ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) )
+=======
+  (( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
+   ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) ))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
   (( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
    ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) ))
@@ -152,16 +179,22 @@
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*-------------------------------------------------------------------------- 
   Type declarations
   ------------------------------------------------------------------------*/
    
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
   Type declarations
   ------------------------------------------------------------------------*/
 
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Module IDs.  These are generic IDs that identify the various modules
 /// in the software system.
@@ -169,6 +202,7 @@ typedef enum
 {
    VOS_MODULE_ID_BAP        = 0,
    VOS_MODULE_ID_TL         = 1,
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
@@ -200,6 +234,8 @@ typedef enum
 
 
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    VOS_MODULE_ID_WDI        = 2,
    // 3 & 4 are unused for historical purposes
    VOS_MODULE_ID_HDD        = 5,
@@ -210,6 +246,9 @@ typedef enum
    VOS_MODULE_ID_VOSS       = 10,
    VOS_MODULE_ID_SAP        = 11,
    VOS_MODULE_ID_HDD_SOFTAP = 12,
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // not a real module ID.  This is used to identify the maxiumum
@@ -231,9 +270,13 @@ typedef enum
     VOS_P2P_GO_MODE,
     VOS_MONITOR_MODE,
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
     VOS_FTM_MODE = 5,
 #endif
+=======
+    VOS_FTM_MODE = 5,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
     VOS_FTM_MODE = 5,
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

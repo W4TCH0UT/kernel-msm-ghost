@@ -1,6 +1,9 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
@@ -22,6 +25,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
+<<<<<<< HEAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -60,6 +66,7 @@
 #include "sirCommon.h"
 #include "sirTypes.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "wniCfgAp.h"
 
 #if (WNI_POLARIS_FW_PRODUCT == AP)
@@ -67,6 +74,11 @@
 #else
 #define CFG_MAX_NUM_STA      SIR_MAX_NUM_STA_IN_IBSS
 #endif
+=======
+#include "wniCfgSta.h"
+
+#define CFG_MAX_NUM_STA      SIR_MAX_NUM_STA_IN_IBSS
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 #include "wniCfgSta.h"
 
@@ -91,6 +103,7 @@ typedef struct sAniSirCfg
 
     tCfgCtl    *gCfgEntry;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U32   gCfgIBufMin[CFG_AP_IBUF_MAX_SIZE];
     tANI_U32   gCfgIBufMax[CFG_AP_IBUF_MAX_SIZE];
@@ -99,12 +112,17 @@ typedef struct sAniSirCfg
 #else
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32   *gCfgIBufMin;
     tANI_U32   *gCfgIBufMax;
     tANI_U32   *gCfgIBuf;
     tANI_U8    *gCfgSBuf;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 >>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
