@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -19,8 +42,11 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+<<<<<<< HEAD
 /*
  * */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if !defined( PALTYPES_H__ )
 #define PALTYPES_H__
 
@@ -46,6 +72,7 @@
 #include "vos_api.h"
 #endif /* WINXP_APPS_BUILD */
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "halLegacyPalTypes.h"
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
@@ -73,18 +100,28 @@
 
 #endif
 
+=======
+#include "halLegacyPalTypes.h"
+
+#ifndef MK_IMAGE_HDR
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 //
 // Validate the Bus type being built....
 //
 #if defined(ANI_BUS_TYPE_PCI)
 
+<<<<<<< HEAD
 #if defined( ANI_BUS_TYPE_PCIe ) || defined( ANI_BUS_TYPE_USB ) || defined(ANI_BUS_TYPE_SDIO) || defined( ANI_BUS_TYPE_PLATFORM )
+=======
+#if defined( ANI_BUS_TYPE_PCIe ) || defined( ANI_BUS_TYPE_PLATFORM )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #error "more than one ANI_BUS_TYPE_xxx is defined for this build"
 #endif //
 
 #elif defined( ANI_BUS_TYPE_PCIe )
 
+<<<<<<< HEAD
 #if defined( ANI_BUS_TYPE_PCI ) || defined( ANI_BUS_TYPE_USB ) || defined(ANI_BUS_TYPE_SDIO) || defined( ANI_BUS_TYPE_PLATFORM )
 #error "more than one ANI_BUS_TYPE_xxx is defined for this build"
 #endif
@@ -98,16 +135,27 @@
 #elif defined( ANI_BUS_TYPE_SDIO )
 
 #if defined( ANI_BUS_TYPE_PCIe ) || defined( ANI_BUS_TYPE_USB ) || defined(ANI_BUS_TYPE_PCI) || defined( ANI_BUS_TYPE_PLATFORM )
+=======
+#if defined( ANI_BUS_TYPE_PCI ) || defined( ANI_BUS_TYPE_PLATFORM )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #error "more than one ANI_BUS_TYPE_xxx is defined for this build"
 #endif
 
 #elif defined( ANI_BUS_TYPE_PLATFORM )
 
+<<<<<<< HEAD
 #if defined( ANI_BUS_TYPE_PCIe ) || defined( ANI_BUS_TYPE_USB ) || defined(ANI_BUS_TYPE_PCI) || defined( ANI_BUS_TYPE_SDIO )
 #error "more than one ANI_BUS_TYPE_xxx is defined for this build"
 #endif
 
 #elif !( defined( ANI_BUS_TYPE_PCIe ) || defined( ANI_BUS_TYPE_USB ) || defined(ANI_BUS_TYPE_PCI) || defined(ANI_BUS_TYPE_SDIO) || defined( ANI_BUS_TYPE_PLATFORM ) )
+=======
+#if defined( ANI_BUS_TYPE_PCIe ) || defined(ANI_BUS_TYPE_PCI)
+#error "more than one ANI_BUS_TYPE_xxx is defined for this build"
+#endif
+
+#elif !( defined( ANI_BUS_TYPE_PCIe ) || defined(ANI_BUS_TYPE_PCI) || defined( ANI_BUS_TYPE_PLATFORM ) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #error "NONE of the ANI_BUS_TYPE_xxx are defined for this build"
 
@@ -117,6 +165,7 @@
 //
 // Validate the OS Type being built...
 //
+<<<<<<< HEAD
 #if ( defined( ANI_OS_TYPE_WINDOWS ) && defined( ANI_OS_TYPE_LINUX ) && defined(ANI_OS_TYPE_OSX) && defined(ANI_OS_TYPE_AMSS) && \
       defined( ANI_OS_TYPE_ANDROID ) )
 #error "more than one ANI_OS_TYPE_xxx is defined for this build"
@@ -125,6 +174,24 @@
          || defined (ANI_OS_TYPE_ANDROID) )
 #error "NONE of the ANI_OS_TYPE_xxx are defined for this build"
 
+=======
+
+#if defined(ANI_OS_TYPE_ANDROID) // ANDROID
+
+#if defined(ANI_OS_TYPE_QNX)
+#error "more than one ANI_OS_TYPE_xxx is defined for this build"
+#endif
+
+#elif defined( ANI_OS_TYPE_QNX )    // QNX
+
+#if defined(ANI_OS_TYPE_ANDROID)
+#error "more than one ANI_OS_TYPE_xxx is defined for this build"
+#endif
+
+
+#elif !defined(ANI_OS_TYPE_ANDROID) && !defined(ANI_OS_TYPE_QNX)  // NONE
+#error "NONE of the ANI_OS_TYPE_xxx are defined for this build"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 
@@ -166,6 +233,7 @@
 
 // Common type definitions...
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 typedef unsigned char  tANI_U8;
 typedef   signed char  tANI_S8;
@@ -194,13 +262,20 @@ typedef tANI_U8 tANI_BYTE;
 #else
 typedef tANI_U32     tANI_U32_OR_PTR;
 #endif
+=======
+
+typedef tANI_U32     tANI_U32_OR_PTR;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // Buffer address; could be virt or phys; could be 32- or 64-bit depending on compile option
 typedef tANI_U32_OR_PTR    tANI_BUFFER_ADDR;
 // which boolean is the most usefule...or both ?
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 typedef tANI_U8 tANI_BOOLEAN;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef enum tagAniBoolean 
 {
@@ -253,6 +328,7 @@ typedef void *tHddHandle;
 #define PAL_PKT_FLD_DSCP_MASK     PAL_BIT_MASK(PAL_PKT_FLD_DSCP_OFFSET)
 #define PAL_PKT_FLD_8021P_MASK    PAL_BIT_MASK(PAL_PKT_FLD_8021P_OFFSET)
 
+<<<<<<< HEAD
 #if defined( ANI_OS_TYPE_WINDOWS ) || defined (ANI_OS_TYPE_OSX)
     #define PAL_PKT_FLD_8021P_BIT_OFFSET 0
 #elif defined( ANI_OS_TYPE_LINUX )
@@ -260,6 +336,8 @@ typedef void *tHddHandle;
 #elif defined( ANI_OS_TYPE_AMSS )
     #define PAL_PKT_FLD_8021P_BIT_OFFSET 0
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /*
@@ -278,7 +356,10 @@ typedef void * tPalSemaphoreHandle;
 
 #define PAL_TICKS_PER_SECOND        100
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 typedef tANI_U32 tANI_TIMESTAMP;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif

@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -339,7 +362,12 @@ extern eHalStatus pmcRegisterPowerSaveCheck (tHalHandle hHal, tANI_BOOLEAN (*che
 extern eHalStatus pmcDeregisterPowerSaveCheck (tHalHandle hHal, tANI_BOOLEAN (*checkRoutine) (void *checkContext));
 
 extern void pmcMessageProcessor (tHalHandle hHal, tSirSmeRsp *pMsg);
+<<<<<<< HEAD
 
+=======
+extern void pmcResetImpsFailStatus (tHalHandle hHal);
+extern v_BOOL_t IsPmcImpsReqFailed (tHalHandle hHal);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 extern eHalStatus pmcRequestBmps (
 
@@ -390,6 +418,7 @@ void pmcDumpInit(tHalHandle hHal);
 
 
 extern eHalStatus pmcWowlAddBcastPattern (
+<<<<<<< HEAD
 
    tHalHandle hHal, 
 
@@ -401,6 +430,17 @@ extern eHalStatus pmcWowlDelBcastPattern (
    tHalHandle hHal, 
 
    tpSirWowlDelBcastPtrn pattern);
+=======
+   tHalHandle hHal, 
+   tpSirWowlAddBcastPtrn pattern, 
+   tANI_U8  sessionId);
+
+
+extern eHalStatus pmcWowlDelBcastPattern (
+   tHalHandle hHal, 
+   tpSirWowlDelBcastPtrn pattern,
+   tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 extern eHalStatus pmcEnterWowl ( 
@@ -415,13 +455,21 @@ extern eHalStatus pmcEnterWowl (
 
     void *wakeReasonIndCBContext,
 #endif // WLAN_WAKEUP_EVENTS
+<<<<<<< HEAD
     tpSirSmeWowlEnterParams wowlEnterParams);
+=======
+    tpSirSmeWowlEnterParams wowlEnterParams, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 extern eHalStatus pmcExitWowl (tHalHandle hHal);
 
 
 extern eHalStatus pmcSetHostOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest,
+<<<<<<< HEAD
                                           tANI_U8 *bssId);
+=======
+                                          tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
     \fn pmcSetKeepAlive
@@ -432,7 +480,11 @@ extern eHalStatus pmcSetHostOffload (tHalHandle hHal, tpSirHostOffloadReq pReque
             eHAL_STATUS_FAILURE  Cannot set the keepalive.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 extern eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8 *bssId);
+=======
+extern eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 extern tANI_BOOLEAN pmcValidateConnectState( tHalHandle hHal );
 
@@ -451,7 +503,12 @@ extern eHalStatus pmcSetRssiFilter(tHalHandle hHal, v_U8_t rssiThreshold);
 // Packet Coalescing Filter Match Count Callback declaration
 typedef void(*FilterMatchCountCallback)(void *callbackContext,
                                         tpSirRcvFltPktMatchRsp pRcvFltPktMatchRsp);
+<<<<<<< HEAD
 extern eHalStatus pmcGetFilterMatchCount(tHalHandle hHal, FilterMatchCountCallback callbackRoutine, void *callbackContext);
+=======
+extern eHalStatus pmcGetFilterMatchCount(tHalHandle hHal, FilterMatchCountCallback callbackRoutine, 
+                                                void *callbackContext, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // WLAN_FEATURE_PACKET_FILTERING
 
 #ifdef WLAN_FEATURE_GTK_OFFLOAD
@@ -467,7 +524,11 @@ typedef void(*GTKOffloadGetInfoCallback)(void *callbackContext, tpSirGtkOffloadG
             eHAL_STATUS_FAILURE  Cannot set the offload.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 extern eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload);
+=======
+extern eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
     \fn pmcGetGTKOffload
@@ -478,7 +539,13 @@ extern eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkO
             eHAL_STATUS_FAILURE  Cannot set the offload.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 extern eHalStatus pmcGetGTKOffload (tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, void *callbackContext);
+=======
+extern eHalStatus pmcGetGTKOffload(tHalHandle hHal,
+                                   GTKOffloadGetInfoCallback callbackRoutine,
+                                   void *callbackContext, tANI_U8 sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // WLAN_FEATURE_GTK_OFFLOAD
 
 #endif

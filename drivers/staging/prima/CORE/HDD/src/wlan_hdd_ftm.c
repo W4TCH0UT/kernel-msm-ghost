@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -59,10 +82,13 @@
 #include "sirMacProtDef.h"
 #include "sme_Api.h"
 #include "macInitApi.h"
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 #include "wlan_qct_sal.h"
 #include "wlan_qct_bal.h"
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wlan_qct_sys.h"
 #include "wlan_qct_tl.h"
 #include "wlan_hdd_misc.h"
@@ -70,6 +96,7 @@
 #include "vos_nvitem.h"
 #include "wlan_hdd_main.h"
 #include "vos_power.h"
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 #include "ani_assert.h"
 #include "sys_api.h"
@@ -78,14 +105,22 @@
 #include "qwlan_version.h"
 
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+#include "qwlan_version.h"
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wlan_nv.h"
 #include "wlan_qct_wda.h"
 #include "cfgApi.h"
 #include "pttMsgApi.h"
 #include "wlan_qct_pal_device.h"
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 
 #ifdef ANI_MANF_DIAG
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define RXMODE_DISABLE_ALL 0
 #define RXMODE_ENABLE_ALL  1
 #define RXMODE_ENABLE_11GN 2
@@ -97,13 +132,20 @@
 #define FTM_CHAIN_SEL_R0_T0_ON      3
 #define FTM_CHAIN_SEL_MAX           3
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifndef QWLAN_PHYDBG_BASE
 #define QWLAN_PHYDBG_BASE                   0x03004000
 #endif /* QWLAN_PHYDBG_BASE */
 
 #ifndef QWLAN_PHYDBG_TXPKT_CNT_REG
+<<<<<<< HEAD
 #define QWLAN_PHYDBG_TXPKT_CNT_REG          QWLAN_PHYDBG_BASE + 0x6C
+=======
+#define QWLAN_PHYDBG_TXPKT_CNT_REG          (QWLAN_PHYDBG_BASE + 0x6C)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_PHYDBG_TXPKT_CNT_CNT_MASK     0xFFFF
 #endif
 
@@ -112,12 +154,20 @@
 #endif /* QWLAN_AGC_BASE */
 
 #ifndef QWLAN_AGC_CHANNEL_FREQ_REG
+<<<<<<< HEAD
 #define QWLAN_AGC_CHANNEL_FREQ_REG          QWLAN_AGC_BASE + 0x34
+=======
+#define QWLAN_AGC_CHANNEL_FREQ_REG          (QWLAN_AGC_BASE + 0x34)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_AGC_CHANNEL_FREQ_FREQ_MASK    0x1FFF
 #endif /* QWLAN_AGC_CHANNEL_FREQ_REG */
 
 #ifndef QWLAN_AGC_SUBBAND_CONFIG_REG
+<<<<<<< HEAD
 #define QWLAN_AGC_SUBBAND_CONFIG_REG        QWLAN_AGC_BASE + 0x30
+=======
+#define QWLAN_AGC_SUBBAND_CONFIG_REG        (QWLAN_AGC_BASE + 0x30)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_AGC_SUBBAND_CONFIG_STG2_SUBBAND_MASK  0x03
 #endif /* QWLAN_AGC_SUBBAND_CONFIG_REG */
 
@@ -126,7 +176,11 @@
 #endif /* QWLAN_RFAPB_BASE */
 
 #ifndef QWLAN_RFAPB_REV_ID_REG
+<<<<<<< HEAD
 #define QWLAN_RFAPB_REV_ID_REG              QWLAN_RFAPB_BASE + 0x00
+=======
+#define QWLAN_RFAPB_REV_ID_REG              (QWLAN_RFAPB_BASE + 0x00)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* QWLAN_RFAPB_REV_ID_REG */
 
 #ifndef QWLAN_TXCTL_BASE
@@ -134,7 +188,11 @@
 #endif /* QWLAN_TXCTL_BASE */
 
 #ifndef QWLAN_TXCTL_FSHIFT_REG
+<<<<<<< HEAD
 #define QWLAN_TXCTL_FSHIFT_REG              QWLAN_TXCTL_BASE + 0x20
+=======
+#define QWLAN_TXCTL_FSHIFT_REG              (QWLAN_TXCTL_BASE + 0x20)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_TXCTL_FSHIFT_BW14_OFFSET      0x02
 #define QWLAN_TXCTL_FSHIFT_BW14_MASK        0x1C
 #define QWLAN_TXCTL_FSHIFT_BW12_OFFSET      0x00
@@ -159,6 +217,7 @@ typedef struct {
    tANI_U8  tableData; 
 } pttSetNvTable;
 
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 
 extern const sHalNv nvDefaults;
@@ -166,6 +225,12 @@ static int wlan_ftm_register_wext(hdd_adapter_t *pAdapter);
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 static v_VOID_t ftm_vos_sys_probe_thread_cback( v_VOID_t *pUserData );
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+
+extern const sHalNv nvDefaults;
+static int wlan_ftm_register_wext(hdd_adapter_t *pAdapter);
+static int wlan_ftm_stop(hdd_context_t *pHddCtx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* for PRIMA: all the available frequency, channal pair i the table are defined for channel frequency @ RF center frequency 
    Since it is associated to agc.channel_freq register for mapping.
@@ -218,11 +283,14 @@ static rateIndex2Preamble_t rate_index_2_preamble_table[] =
    { HAL_PHY_RATE_11B_SHORT_5_5_MBPS,    PHYDBG_PREAMBLE_SHORTB},
    { HAL_PHY_RATE_11B_SHORT_11_MBPS,     PHYDBG_PREAMBLE_SHORTB},
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     //SLR Rates
    { HAL_PHY_RATE_SLR_0_25_MBPS,        PHYDBG_PREAMBLE_NOT_SUPPORTED},
    { HAL_PHY_RATE_SLR_0_5_MBPS,         PHYDBG_PREAMBLE_NOT_SUPPORTED},
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    //Spica_Virgo 11A 20MHz Rates
    { HAL_PHY_RATE_11A_6_MBPS,           PHYDBG_PREAMBLE_OFDM},
@@ -317,16 +385,21 @@ static v_U32_t wlan_ftm_postmsg(v_U8_t *cmd_ptr, v_U16_t cmd_len)
 
     ftmReqMsg = (vos_msg_t *) cmd_ptr;
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
     ftmMsg.type = WDA_FTM_CMD_REQ;
 #else
     ftmMsg.type = ftmReqMsg->type;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+    ftmMsg.type = WDA_FTM_CMD_REQ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ftmMsg.reserved = 0;
     ftmMsg.bodyptr = (v_U8_t*)cmd_ptr;
     ftmMsg.bodyval = 0;
 
     /* Use Vos messaging mechanism to send the command to halPhy */
+<<<<<<< HEAD
     /*
        Note that VOS_MODULE_ID_HAL corresponds to VOS_MODULE_ID_WDA
        for INTEGRATED_SOC. SO this code is left as it is.
@@ -337,6 +410,10 @@ static v_U32_t wlan_ftm_postmsg(v_U8_t *cmd_ptr, v_U16_t cmd_len)
 #else
         VOS_MODULE_ID_WDA,
 #endif
+=======
+    if (VOS_STATUS_SUCCESS != vos_mq_post_message(
+        VOS_MODULE_ID_WDA,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     (vos_msg_t *)&ftmMsg)) {
         hddLog(VOS_TRACE_LEVEL_ERROR,"%s: : Failed to post Msg to HAL\n",__func__);
 
@@ -405,7 +482,10 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
       return VOS_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(vos_event_init(&(gpVosContext->wdaCompleteEvent)) != VOS_STATUS_SUCCESS )
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
@@ -414,7 +494,10 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
     
       goto err_probe_event;
    }
+<<<<<<< HEAD
 #endif /*FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Initialize the free message queue */
    vStatus = vos_mq_init(&gpVosContext->freeVosMq);
@@ -425,11 +508,15 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                 "%s: Failed to initialize VOS free message queue",__func__);
       VOS_ASSERT(0);
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
       goto err_wda_complete_event;
 #else
       goto err_probe_event;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+      goto err_wda_complete_event;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    for (iter = 0; iter < VOS_CORE_MAX_MESSAGES; iter++)
@@ -465,7 +552,10 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
       goto err_sched_close;
    }
 
+<<<<<<< HEAD
  #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*Open the WDA module */
    vos_mem_set(&macOpenParms, sizeof(macOpenParms), 0);
    macOpenParms.driverType = eDRIVER_TYPE_MFG;
@@ -478,7 +568,10 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
       VOS_ASSERT(0);
       goto err_sys_close;
    }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* initialize the NV module */
    vStatus = vos_nv_open();
@@ -491,6 +584,7 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
      goto err_wda_close;
    }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
    /* Probe the MC thread */
    sysMcThreadProbe(gpVosContext,
@@ -506,6 +600,8 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
       goto err_nv_close;
    }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* If we arrive here, both threads dispacthing messages correctly */
 
    /* Now proceed to open the MAC */
@@ -525,6 +621,7 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
      goto err_nv_close;
    }
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
    vStatus = WLANBAL_Open(gpVosContext);
    if(!VOS_IS_STATUS_SUCCESS(vStatus))
@@ -534,6 +631,8 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
      goto err_mac_close;
    }
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Now proceed to open the SME */
    vStatus = sme_Open(gpVosContext->pMACContext);
    if (!VOS_IS_STATUS_SUCCESS(vStatus))
@@ -545,7 +644,10 @@ static VOS_STATUS wlan_ftm_vos_open( v_CONTEXT_t pVosContext, v_SIZE_t hddContex
    }
    return VOS_STATUS_SUCCESS;
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO_HIGH,
                "%s: VOSS successfully Opened",__func__);
@@ -558,11 +660,17 @@ err_nv_close:
    vos_nv_close();
 
 err_wda_close:
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
    WDA_close(gpVosContext);
 
 err_sys_close:
 #endif
+=======
+   WDA_close(gpVosContext);
+
+err_sys_close:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    sysClose(gpVosContext);
 
 err_sched_close:
@@ -570,10 +678,15 @@ err_sched_close:
 err_msg_queue:
    vos_mq_deinit(&gpVosContext->freeVosMq);
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 err_wda_complete_event:
    vos_event_destroy(&gpVosContext->wdaCompleteEvent);
 #endif
+=======
+err_wda_complete_event:
+   vos_event_destroy(&gpVosContext->wdaCompleteEvent);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 err_probe_event:
    vos_event_destroy(&gpVosContext->ProbeEvent);
@@ -601,6 +714,7 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
   VOS_STATUS vosStatus;
   pVosContextType gpVosContext = (pVosContextType)vosContext;
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
   vosStatus = WLANBAL_Close(vosContext);
   if (!VOS_IS_STATUS_SUCCESS(vosStatus))
@@ -610,6 +724,8 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vosStatus = sme_Close(((pVosContextType)vosContext)->pMACContext);
   if (!VOS_IS_STATUS_SUCCESS(vosStatus))
   {
@@ -617,7 +733,10 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
          "%s: Failed to close BAL",__func__);
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   vosStatus = macClose( ((pVosContextType)vosContext)->pMACContext);
   if (!VOS_IS_STATUS_SUCCESS(vosStatus))
@@ -646,7 +765,10 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vosStatus = WDA_close( vosContext );
   if (!VOS_IS_STATUS_SUCCESS(vosStatus))
   {
@@ -654,7 +776,10 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
          "%s: Failed to close WDA",__func__);
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   vos_mq_deinit(&((pVosContextType)vosContext)->freeVosMq);
 
@@ -666,7 +791,10 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vosStatus = vos_event_destroy(&gpVosContext->wdaCompleteEvent);
   if (!VOS_IS_STATUS_SUCCESS(vosStatus))
   {
@@ -674,7 +802,10 @@ static VOS_STATUS wlan_ftm_vos_close( v_CONTEXT_t vosContext )
          "%s: Failed to destroy wdaCompleteEvent",__func__);
      VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
   }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return VOS_STATUS_SUCCESS;
 }
@@ -950,6 +1081,7 @@ static VOS_STATUS wlan_ftm_priv_get_status(hdd_adapter_t *pAdapter,char *buf)
     return VOS_STATUS_SUCCESS;
 }
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 v_VOID_t
 static ftm_vos_sys_probe_thread_cback
@@ -966,6 +1098,8 @@ static ftm_vos_sys_probe_thread_cback
     }
 } /* vos_sys_probe_thread_cback() */
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void HEXDUMP(char *s0, char *s1, int len)
 {
@@ -978,7 +1112,10 @@ void HEXDUMP(char *s0, char *s1, int len)
     printk("\n");
 }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
 
   \brief vos_ftm_preStart() -
@@ -1064,7 +1201,10 @@ VOS_STATUS vos_ftm_preStart( v_CONTEXT_t vosContext )
 
    return VOS_STATUS_SUCCESS;
 }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**---------------------------------------------------------------------------
 
@@ -1092,7 +1232,11 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
     if (NULL == pVosContext)
     {
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                     "%s: Trying to open VOSS without a PreOpen",__func__);
+=======
+                    "%s: Trying to open VOSS without a PreOpen", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         VOS_ASSERT(0);
         goto err_vos_status_failure;
     }
@@ -1102,6 +1246,7 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
 
    if ( !VOS_IS_STATUS_SUCCESS( vStatus ))
    {
+<<<<<<< HEAD
       hddLog(VOS_TRACE_LEVEL_FATAL,"%s: vos_open failed",__func__);
       goto err_vos_status_failure;
    }
@@ -1119,16 +1264,29 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
        /* Save the hal context in Adapter */
     pHddCtx->hHal = (tHalHandle)vos_get_context( VOS_MODULE_ID_HAL, pVosContext );
 #else
+=======
+      hddLog(VOS_TRACE_LEVEL_FATAL,"%s: vos_open failed", __func__);
+      goto err_vos_status_failure;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*
      For Integrated SOC, only needed to start WDA, whihc happens in wlan_hdd_ftm_start()
     */
     /* Save the hal context in Adapter */
     pHddCtx->hHal = (tHalHandle)vos_get_context(VOS_MODULE_ID_SME, pVosContext );
+<<<<<<< HEAD
 #endif
 
     if ( NULL == pHddCtx->hHal )
     {
        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: HAL context is null",__func__);
+=======
+
+    if ( NULL == pHddCtx->hHal )
+    {
+       hddLog(VOS_TRACE_LEVEL_ERROR,"%s: HAL context is null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        goto err_sal_close;
     }
 
@@ -1136,20 +1294,32 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
                 wlan_hdd_get_intf_addr(pHddCtx), FALSE);
     if( NULL == pAdapter )
     {
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: hdd_open_adapter failed",__func__);
+=======
+       hddLog(VOS_TRACE_LEVEL_ERROR,"%s: hdd_open_adapter failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                goto err_adapter_open_failure;
     }
 
     if( wlan_ftm_register_wext(pAdapter)!= 0 )
     {
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_ERROR,"%S: hdd_register_wext failed",__func__);
+=======
+       hddLog(VOS_TRACE_LEVEL_ERROR,"%s: hdd_register_wext failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        goto err_sal_close;
     }
 
        //Initialize the nlink service
     if(nl_srv_init() != 0)
     {
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_ERROR,"%S: nl_srv_init failed",__func__);
+=======
+       hddLog(VOS_TRACE_LEVEL_ERROR,"%s: nl_srv_init failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        goto err_ftm_register_wext_close;
     }
 
@@ -1157,7 +1327,11 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
     //Initialize the PTT service
     if(ptt_sock_activate_svc(pHddCtx) != 0)
     {
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: ptt_sock_activate_svc failed",__func__);
+=======
+       hddLog(VOS_TRACE_LEVEL_ERROR,"%s: ptt_sock_activate_svc failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        goto err_nl_srv_init;
     }
 #endif
@@ -1174,7 +1348,10 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
     netif_tx_disable(pAdapter->dev);
 #endif
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pHddCtx->ftm.processingNVTable    = NV_MAX_TABLE;
    pHddCtx->ftm.targetNVTableSize    = 0;
    pHddCtx->ftm.targetNVTablePointer = NULL;
@@ -1183,19 +1360,30 @@ int wlan_hdd_ftm_open(hdd_context_t *pHddCtx)
    if(NULL == pHddCtx->ftm.tempNVTableBuffer)
    {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                  "%s: NV Table Buffer Alloc Fail",__func__);
+=======
+                 "%s: NV Table Buffer Alloc Fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       goto err_nl_srv_init; 
    }
    vos_mem_zero((v_VOID_t *)pHddCtx->ftm.tempNVTableBuffer, MAX_NV_TABLE_SIZE);
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     _ftm_status_init();
     /* Initialize the ftm vos event */
     if (vos_event_init(&pHddCtx->ftm.ftm_vos_event) != VOS_STATUS_SUCCESS)
     {
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                     "%s: Unable to init probeEvent",__func__);
+=======
+                    "%s: Unable to init probeEvent", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         VOS_ASSERT(0);
         vos_mem_free(pHddCtx->ftm.tempNVTableBuffer);
         goto err_nl_srv_init;
@@ -1215,12 +1403,15 @@ err_adapter_open_failure:
 hdd_close_all_adapters( pHddCtx );
 
 err_sal_close:
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 WLANSAL_Stop(pVosContext);
 
 err_vos_open_failure:
 wlan_ftm_vos_close(pVosContext);
 #endif 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 err_vos_status_failure:
 
@@ -1242,6 +1433,7 @@ int wlan_hdd_ftm_close(hdd_context_t *pHddCtx)
         return VOS_STATUS_E_NOMEM;
     }
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     vosStatus = WLANBAL_SuspendChip( pHddCtx->pvosContext );
        VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
@@ -1249,6 +1441,14 @@ int wlan_hdd_ftm_close(hdd_context_t *pHddCtx)
     vosStatus = WLANSAL_Stop(pHddCtx->pvosContext);
        VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+    if(WLAN_FTM_STARTED == pHddCtx->ftm.ftm_state)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                  "%s: Ftm has been started. stopping ftm", __func__);
+        wlan_ftm_stop(pHddCtx);
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     //Assert Deep sleep signal now to put Libra HW in lowest power state
     vosStatus = vos_chipAssertDeepSleep( NULL, NULL, NULL );
@@ -1293,9 +1493,13 @@ int wlan_hdd_ftm_close(hdd_context_t *pHddCtx)
          "%s: Failed to destroy ftm_vos Event",__func__);
         VOS_ASSERT( VOS_IS_STATUS_SUCCESS( vosStatus ) );
     }
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
     vos_mem_free(pHddCtx->ftm.tempNVTableBuffer);
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+    vos_mem_free(pHddCtx->ftm.tempNVTableBuffer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     //Free up dynamically allocated members inside HDD Adapter
     kfree(pHddCtx->cfg_ini);
@@ -1363,6 +1567,7 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
     if (pVosContext == NULL)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
            "%s: mismatch in context",__FUNCTION__);
         goto err_status_failure;
     }
@@ -1375,10 +1580,17 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
         goto err_status_failure;
     }
 #endif
+=======
+           "%s: mismatch in context",__func__);
+        goto err_status_failure;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
     if (pVosContext->pMACContext == NULL)
     {    
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "%s: MAC NULL context",__FUNCTION__);
         goto err_status_failure;
     }
@@ -1397,6 +1609,12 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
              "%s: BAL correctly started",__func__);
 #else
+=======
+               "%s: MAC NULL context",__func__);
+        goto err_status_failure;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*
       Prima needs to start the WDA correctly instead of BAL and SAL
     */
@@ -1443,12 +1661,16 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
                  "%s: Failed to start WDA",__func__);
        goto err_status_failure;
     }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
 
     /* Start the MAC */
     vos_mem_zero((v_PVOID_t)&halStartParams, sizeof(tHalMacStartParameters));
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     /* Attempt to get the firmware binary through VOS.  We need to pass this
            to the MAC when starting. */
@@ -1466,12 +1688,15 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
              "%s: Firmware binary file found",__func__);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     halStartParams.driverType = eDRIVER_TYPE_MFG;
 
     /* Start the MAC */
     sirStatus = macStart(pVosContext->pMACContext,(v_PVOID_t)&halStartParams);
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     /* Free uo the FW image no matter what */
     if( NULL != halStartParams.FW.pImage )
@@ -1481,22 +1706,29 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
         halStartParams.FW.cbImage = 0;
     }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (eSIR_SUCCESS != sirStatus)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
               "%s: Failed to start MAC", __func__);
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
         goto err_bal_stop;
 #else
         goto err_wda_stop;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+        goto err_wda_stop;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
             "%s: MAC correctly started",__func__);
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 
    /**
@@ -1526,11 +1758,14 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
     /* START SYS. This will trigger the CFG download */
     sysMcStart(pVosContext, ftm_vos_sys_probe_thread_cback, pVosContext);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pHddCtx->ftm.ftm_state = WLAN_FTM_STARTED;
 
     return VOS_STATUS_SUCCESS;
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
 err_bal_stop:
 WLANBAL_Stop(pVosContext);
@@ -1539,6 +1774,8 @@ err_sal_stop:
 WLANSAL_Stop(pVosContext);
 
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 err_wda_stop:   
    vos_event_reset(&(pVosContext->wdaCompleteEvent));
    WDA_stop(pVosContext, HAL_STOP_TYPE_RF_KILL);
@@ -1558,7 +1795,10 @@ err_wda_stop:
       }
       VOS_ASSERT(0);
    }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 err_status_failure:
 
@@ -1598,6 +1838,7 @@ static int wlan_ftm_stop(hdd_context_t *pHddCtx)
            }
        }
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
        vosStatus = WLANBAL_Stop( pHddCtx->pvosContext );
        if (!VOS_IS_STATUS_SUCCESS(vosStatus))
@@ -1623,12 +1864,19 @@ static int wlan_ftm_stop(hdd_context_t *pHddCtx)
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
        WDA_stop(pHddCtx->pvosContext, HAL_STOP_TYPE_RF_KILL);
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+
+       WDA_stop(pHddCtx->pvosContext, HAL_STOP_TYPE_RF_KILL);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     }
    return WLAN_FTM_SUCCESS;
 }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------------
 
   \brief wlan_hdd_ftm_get_nv_table() -
@@ -1652,11 +1900,19 @@ int wlan_hdd_ftm_get_nv_table
    v_SIZE_t            nvSize;
    sHalNv             *nvContents = NULL;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (NULL == pHddCtx)
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
                 "Not valid driver context");
+<<<<<<< HEAD
       return -1;
+=======
+      return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Test first chunk of NV table */
@@ -1668,7 +1924,11 @@ int wlan_hdd_ftm_get_nv_table
       {
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
                     "Fail to get cached NV value Status %d", nvStatus);
+<<<<<<< HEAD
          return -1;
+=======
+         return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
 
       switch (nvTable->nvTable)
@@ -1708,9 +1968,20 @@ int wlan_hdd_ftm_get_nv_table
             pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.rssiChanOffsets[0];
             break;
 
+<<<<<<< HEAD
          case NV_TABLE_RF_CAL_VALUES:
             pHddCtx->ftm.targetNVTableSize = sizeof(nvContents->tables.rFCalValues);
             pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.rFCalValues;
+=======
+         case NV_TABLE_HW_CAL_VALUES:
+            pHddCtx->ftm.targetNVTableSize = sizeof(nvContents->tables.hwCalValues);
+            pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.hwCalValues;
+            break;
+
+         case NV_TABLE_FW_CONFIG:
+            pHddCtx->ftm.targetNVTableSize = sizeof(nvContents->tables.fwConfig);
+            pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.fwConfig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
          case NV_TABLE_ANTENNA_PATH_LOSS:
@@ -1726,7 +1997,11 @@ int wlan_hdd_ftm_get_nv_table
          default:
             VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                        "Not Valid NV Table %d", nvTable->nvTable);
+<<<<<<< HEAD
             return -1;
+=======
+            return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
       }
 
@@ -1734,12 +2009,22 @@ int wlan_hdd_ftm_get_nv_table
       {
          /* Invalid table size, discard and initialize data */
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                     "Invalid Table Size %d", nvTable->tableSize);
+=======
+                    "Invalid Table Size %d for Table %d"
+                    " expected size %d\n", nvTable->tableSize, nvTable->nvTable,
+                    pHddCtx->ftm.targetNVTableSize);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pHddCtx->ftm.processingNVTable    = NV_MAX_TABLE;
          pHddCtx->ftm.targetNVTableSize    = 0;
          pHddCtx->ftm.processedNVTableSize = 0;
          vos_mem_zero(pHddCtx->ftm.tempNVTableBuffer, MAX_NV_TABLE_SIZE);
+<<<<<<< HEAD
          return -1;
+=======
+         return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
 
       /* Set Current Processing NV table type */
@@ -1762,7 +2047,11 @@ int wlan_hdd_ftm_get_nv_table
       pHddCtx->ftm.processedNVTableSize = 0;
       vos_mem_zero(pHddCtx->ftm.tempNVTableBuffer, MAX_NV_TABLE_SIZE);
  
+<<<<<<< HEAD
       return -1;
+=======
+      return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Copy next chunk of NV table value into response buffer */
@@ -1811,7 +2100,11 @@ int wlan_hdd_ftm_set_nv_table
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
                 "Not valid driver context");
+<<<<<<< HEAD
       return -1;
+=======
+      return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Test first chunk of NV table */
@@ -1823,7 +2116,11 @@ int wlan_hdd_ftm_set_nv_table
       {
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
                     "Fail to get cached NV value Status %d", nvStatus);
+<<<<<<< HEAD
          return -1;
+=======
+         return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
 
       switch (nvTable->nvTable)
@@ -1863,9 +2160,20 @@ int wlan_hdd_ftm_set_nv_table
             pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.rssiChanOffsets[0];
             break;
 
+<<<<<<< HEAD
          case NV_TABLE_RF_CAL_VALUES:
             pHddCtx->ftm.targetNVTableSize    = sizeof(nvContents->tables.rFCalValues);
             pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.rFCalValues;
+=======
+         case NV_TABLE_HW_CAL_VALUES:
+            pHddCtx->ftm.targetNVTableSize    = sizeof(nvContents->tables.hwCalValues);
+            pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.hwCalValues;
+            break;
+
+         case NV_TABLE_FW_CONFIG:
+            pHddCtx->ftm.targetNVTableSize    = sizeof(nvContents->tables.fwConfig);
+            pHddCtx->ftm.targetNVTablePointer = (v_U8_t *)&nvContents->tables.fwConfig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
          case NV_TABLE_ANTENNA_PATH_LOSS:
@@ -1881,7 +2189,11 @@ int wlan_hdd_ftm_set_nv_table
          default:
             VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                        "Not Valid NV Table %d", nvTable->nvTable);
+<<<<<<< HEAD
             return -1;
+=======
+            return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
       }
 
@@ -1895,7 +2207,11 @@ int wlan_hdd_ftm_set_nv_table
          pHddCtx->ftm.targetNVTableSize    = 0;
          pHddCtx->ftm.processedNVTableSize = 0;
          vos_mem_zero(pHddCtx->ftm.tempNVTableBuffer, MAX_NV_TABLE_SIZE);
+<<<<<<< HEAD
          return -1;
+=======
+         return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
    }
 
@@ -1908,7 +2224,11 @@ int wlan_hdd_ftm_set_nv_table
       pHddCtx->ftm.targetNVTableSize    = 0;
       pHddCtx->ftm.processedNVTableSize = 0;
       vos_mem_zero(pHddCtx->ftm.tempNVTableBuffer, MAX_NV_TABLE_SIZE);
+<<<<<<< HEAD
       return -1;
+=======
+      return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    vos_mem_copy(pHddCtx->ftm.tempNVTableBuffer + pHddCtx->ftm.processedNVTableSize,
                 &nvTable->tableData, 
@@ -1956,7 +2276,11 @@ int wlan_hdd_ftm_blank_nv_table
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
                  "Fail to get cached NV value Status %d", nvStatus);
+<<<<<<< HEAD
       return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    itemSize = sizeof(nvContents->tables.pwrOptimum);
@@ -1994,9 +2318,15 @@ int wlan_hdd_ftm_blank_nv_table
           &nvDefaults.tables.rssiChanOffsets[0],
           itemSize);
 
+<<<<<<< HEAD
    itemSize = sizeof(nvContents->tables.rFCalValues);
    memcpy(&nvContents->tables.rFCalValues,
           &nvDefaults.tables.rFCalValues,
+=======
+   itemSize = sizeof(nvContents->tables.hwCalValues);
+   memcpy(&nvContents->tables.hwCalValues,
+          &nvDefaults.tables.hwCalValues,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           itemSize);
 
    itemSize = sizeof(nvContents->tables.antennaPathLoss);
@@ -2040,7 +2370,11 @@ int wlan_hdd_ftm_delete_nv_table
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
                  "Fail to get cached NV value Status %d", nvStatus);
+<<<<<<< HEAD
       return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    switch (nvTable->nvTable)
@@ -2094,10 +2428,24 @@ int wlan_hdd_ftm_delete_nv_table
                 itemSize);
          break;
 
+<<<<<<< HEAD
       case NV_TABLE_RF_CAL_VALUES:
          itemSize = sizeof(nvContents->tables.rFCalValues);
          memcpy(&nvContents->tables.rFCalValues,
                 &nvDefaults.tables.rFCalValues,
+=======
+      case NV_TABLE_HW_CAL_VALUES:
+         itemSize = sizeof(nvContents->tables.hwCalValues);
+         memcpy(&nvContents->tables.hwCalValues,
+                &nvDefaults.tables.hwCalValues,
+                itemSize);
+         break;
+
+      case NV_TABLE_FW_CONFIG:
+         itemSize = sizeof(nvContents->tables.fwConfig);
+         memcpy(&nvContents->tables.fwConfig,
+                &nvDefaults.tables.fwConfig,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 itemSize);
          break;
 
@@ -2118,7 +2466,11 @@ int wlan_hdd_ftm_delete_nv_table
       default:
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                     "Not Valid NV Table %d", nvTable->nvTable);
+<<<<<<< HEAD
          return -1;
+=======
+         return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
    }
 
@@ -2153,7 +2505,11 @@ int wlan_hdd_ftm_get_nv_field
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
                  "Fail to get cached NV value Status %d", nvStatus);
+<<<<<<< HEAD
       return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    memcpy(&nvFieldDataBuffer, &nvContents->fields, sizeof(sNvFields));
 
@@ -2186,7 +2542,11 @@ int wlan_hdd_ftm_get_nv_field
       case NV_COMMON_MAC_ADDR:
          memcpy((void *)&nvField->fieldData,
              &nvFieldDataBuffer.macAddr[0],
+<<<<<<< HEAD
              NV_FIELD_MAC_ADDR_SIZE);
+=======
+             NV_FIELD_MAC_ADDR_SIZE * VOS_MAX_CONCURRENCY_PERSONA); // Motorola, IKLOCSEN-984 Return all MACs
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
 
       case NV_COMMON_MFG_SERIAL_NUMBER:
@@ -2195,16 +2555,38 @@ int wlan_hdd_ftm_get_nv_field
              NV_FIELD_MFG_SN_SIZE);
          break;
 
+<<<<<<< HEAD
+=======
+      case NV_COMMON_WLAN_NV_REV_ID:
+         memcpy((void *)&nvField->fieldData,
+             &nvFieldDataBuffer.wlanNvRevId,
+             sizeof(nvFieldDataBuffer.wlanNvRevId));
+         break;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case NV_COMMON_COUPLER_TYPE:
          memcpy((void *)&nvField->fieldData,
                 &nvFieldDataBuffer.couplerType,
                 sizeof(nvFieldDataBuffer.couplerType));
          break;
 
+<<<<<<< HEAD
       default:
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                     "Not Valid NV field %d", nvField->nvField);
          return -1;
+=======
+      case NV_COMMON_NV_VERSION:
+         memcpy((void *)&nvField->fieldData,
+                &nvFieldDataBuffer.nvVersion,
+                sizeof(nvFieldDataBuffer.nvVersion));
+         break;
+
+      default:
+         VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
+                    "Not Valid NV field %d", nvField->nvField);
+         return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
    }
 
@@ -2233,15 +2615,28 @@ int wlan_hdd_ftm_set_nv_field
    v_SIZE_t           nvSize;
    sHalNv            *nvContents = NULL;
    v_U8_t             macLoop;
+<<<<<<< HEAD
    v_U8_t            *pNVMac;
    v_U8_t             lastByteMAC;
 
+=======
+   /* IKLOCSEN-715 START Support WLAN Multi MAC Programming */
+   v_U8_t             macOctet;
+   v_BOOL_t           isBlankMac = VOS_FALSE;
+   /* IKLOCSEN-715 STOP Support WLAN Multi MAC Programming */
+
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    nvStatus = vos_nv_getNVBuffer((void **)&nvContents, &nvSize);
    if((VOS_STATUS_SUCCESS != nvStatus) || (NULL == nvContents))
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,
                  "Fail to get cached NV value Status %d", nvStatus);
+<<<<<<< HEAD
       return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    switch (nvField->nvField)
@@ -2271,6 +2666,7 @@ int wlan_hdd_ftm_set_nv_field
          break;
 
       case NV_COMMON_MAC_ADDR:
+<<<<<<< HEAD
          /* If Last byte is larger than 252 (0xFC), return Error,
           * Since 3MACs should be derived from first MAC */
          if(QWLAN_MAX_MAC_LAST_BYTE_VALUE <
@@ -2292,6 +2688,55 @@ int wlan_hdd_ftm_set_nv_field
                          &nvField->fieldData.macAddr[0],
                          NV_FIELD_MAC_ADDR_SIZE);
          }
+=======
+         /* IKLOCSEN-715 START Support WLAN Multi MAC Programming */
+        /* IKJB42MAIN-7853 START, gvx468 */
+        VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
+                        "MAC = %02x:%02x:%02x:%02x:%02x:%02x, MAC2 = %02x:%02x:%02x:%02x:%02x:%02x, MAC3 =                                               %02x:%02x:%02x:%02x:%02x:%02x, MAC4 = %02x:%02x:%02x:%02x:%02x:%02x",
+                        nvField->fieldData.macAddr.macAddr1[0], nvField->fieldData.macAddr.macAddr1[1],
+                        nvField->fieldData.macAddr.macAddr1[2], nvField->fieldData.macAddr.macAddr1[3],
+                        nvField->fieldData.macAddr.macAddr1[4], nvField->fieldData.macAddr.macAddr1[5],
+                        nvField->fieldData.macAddr.macAddr2[0], nvField->fieldData.macAddr.macAddr2[1],
+                        nvField->fieldData.macAddr.macAddr2[2], nvField->fieldData.macAddr.macAddr2[3],
+                        nvField->fieldData.macAddr.macAddr2[4], nvField->fieldData.macAddr.macAddr2[5],
+                        nvField->fieldData.macAddr.macAddr3[0], nvField->fieldData.macAddr.macAddr3[1],
+                        nvField->fieldData.macAddr.macAddr3[2], nvField->fieldData.macAddr.macAddr3[3],
+                        nvField->fieldData.macAddr.macAddr3[4], nvField->fieldData.macAddr.macAddr3[5],
+                        nvField->fieldData.macAddr.macAddr4[0], nvField->fieldData.macAddr.macAddr4[1],
+                        nvField->fieldData.macAddr.macAddr4[2], nvField->fieldData.macAddr.macAddr4[3],
+                        nvField->fieldData.macAddr.macAddr4[4], nvField->fieldData.macAddr.macAddr4[5]);
+         /* IKJB42MAIN-7853 STOP, gvx468 */
+
+	 for(macLoop = 0; macLoop < VOS_MAX_CONCURRENCY_PERSONA; macLoop++)
+         {
+            v_U8_t *pNVMac =
+                macLoop == 0 ? (v_U8_t *)nvContents->fields.macAddr  :
+                macLoop == 1 ? (v_U8_t *)nvContents->fields.macAddr2 :
+                macLoop == 2 ? (v_U8_t *)nvContents->fields.macAddr3 :
+                               (v_U8_t *)nvContents->fields.macAddr4;
+            v_U8_t *macPtr =
+                macLoop == 0 ? (v_U8_t *)nvField->fieldData.macAddr.macAddr1 :
+                macLoop == 1 ? (v_U8_t *)nvField->fieldData.macAddr.macAddr2 :
+                macLoop == 2 ? (v_U8_t *)nvField->fieldData.macAddr.macAddr3 :
+                               (v_U8_t *)nvField->fieldData.macAddr.macAddr4;
+            isBlankMac = VOS_TRUE;
+            for(macOctet = 0; macOctet < VOS_MAC_ADDRESS_LEN ; macOctet++) {
+                if(macPtr[macOctet] !=0){
+                    isBlankMac = VOS_FALSE;
+                    break;
+                }
+            }
+            if(isBlankMac == VOS_FALSE) {
+                // MAC to be programmed!
+                VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
+                        "Writing MAC #%x, MAC = %02x:%02x:%02x:%02x:%02x:%02x",
+                        macLoop, macPtr[0], macPtr[1], macPtr[2], macPtr[3], macPtr[4], macPtr[5]);
+                vos_mem_copy(pNVMac, macPtr, NV_FIELD_MAC_ADDR_SIZE);
+
+            }
+         }
+         /* IKLOCSEN-715 STOP Support WLAN Multi MAC Programming */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
 
       case NV_COMMON_MFG_SERIAL_NUMBER:
@@ -2300,16 +2745,38 @@ int wlan_hdd_ftm_set_nv_field
              NV_FIELD_MFG_SN_SIZE);
          break;
 
+<<<<<<< HEAD
+=======
+     case NV_COMMON_WLAN_NV_REV_ID:
+        memcpy(&nvContents->fields.wlanNvRevId,
+               &nvField->fieldData,
+               sizeof(nvContents->fields.wlanNvRevId));
+        break;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case NV_COMMON_COUPLER_TYPE:
          memcpy(&nvContents->fields.couplerType,
                 &nvField->fieldData,
                 sizeof(nvContents->fields.couplerType));
          break;
 
+<<<<<<< HEAD
       default:
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                     "Not Valid NV field %d", nvField->nvField);
          return -1;
+=======
+      case NV_COMMON_NV_VERSION:
+         VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
+                    "Cannot modify NV version field %d", nvField->nvField);
+         return -EIO;
+         break;
+
+      default:
+         VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
+                    "Not Valid NV field %d", nvField->nvField);
+         return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
    }
 
@@ -2344,7 +2811,11 @@ int wlan_hdd_ftm_store_nv_table
    nvStatus = vos_nv_getNVBuffer((void **)&nvContents, &nvSize);
    if((VOS_STATUS_SUCCESS != nvStatus) || (NULL == nvContents))
    {
+<<<<<<< HEAD
       return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Set Platform type as PRIMA */
@@ -2400,12 +2871,27 @@ int wlan_hdd_ftm_store_nv_table
          tableVNVType = VNV_RSSI_CHANNEL_OFFSETS;
          break;
 
+<<<<<<< HEAD
       case NV_TABLE_RF_CAL_VALUES:
          tablePtr     = (void *)&nvContents->tables.rFCalValues;
          tableSize    = sizeof(nvContents->tables.rFCalValues);
          tableVNVType = VNV_RF_CAL_VALUES;
          break;
 
+=======
+      case NV_TABLE_HW_CAL_VALUES:
+         tablePtr     = (void *)&nvContents->tables.hwCalValues;
+         tableSize    = sizeof(nvContents->tables.hwCalValues);
+         tableVNVType = VNV_HW_CAL_VALUES;
+         break;
+
+      case NV_TABLE_FW_CONFIG:
+         tablePtr     = (void *)&nvContents->tables.fwConfig;
+         tableSize    = sizeof(nvContents->tables.fwConfig);
+         tableVNVType = VNV_FW_CONFIG;
+         break;         
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       case NV_TABLE_ANTENNA_PATH_LOSS:
          tablePtr     = (void *)&nvContents->tables.antennaPathLoss[0];
          tableSize    = sizeof(nvContents->tables.antennaPathLoss);
@@ -2421,7 +2907,11 @@ int wlan_hdd_ftm_store_nv_table
       default:
          VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                     "Not Supported Table Type %d", nvTable->nvTable);
+<<<<<<< HEAD
          return -1;
+=======
+         return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
          
    }
@@ -2431,7 +2921,11 @@ int wlan_hdd_ftm_store_nv_table
                            tableSize);
    if(VOS_STATUS_SUCCESS != nvStatus)
    {
+<<<<<<< HEAD
       return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return 1;
@@ -2475,7 +2969,11 @@ int wlan_hdd_ftm_temp_get_rel_num
   \param  - ftmCmd - Pointer FTM Commad Buffer
 
   \return - int
+<<<<<<< HEAD
             -1, Process Host command fail, vail out
+=======
+            < 0, Process Host command fail, bail out
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              0, Process Host command success, not need to send CMD to HAL
              1, Process Host command success, need to send CMD to HAL
 
@@ -2565,16 +3063,27 @@ int wlan_hdd_process_ftm_host_cmd
          break;
    }
 
+<<<<<<< HEAD
    if(-1 == hostState)
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                  "Host Command Handle Fail, Bailout");
       return -1;
+=======
+   if( 0 > hostState)
+   {
+      VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
+                 "Host Command Handle Fail, Bailout");
+      return hostState;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return needToRouteHal;
 }
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**---------------------------------------------------------------------------
 
@@ -2600,10 +3109,15 @@ void wlan_hdd_process_ftm_cmd
     v_U16_t   cmd_len;
     v_U8_t *pftm_data;
     pVosContextType pVosContext = (pVosContextType)(pHddCtx->pvosContext);
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
     int hostState;
     tPttMsgbuffer *tempRspBuffer = NULL;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */        
+=======
+    int hostState;
+    tPttMsgbuffer *tempRspBuffer = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
@@ -2703,7 +3217,10 @@ void wlan_hdd_process_ftm_cmd
         cmd_len -= (sizeof(wlan_hdd_ftm_request_t)- sizeof(pRequestBuf->ftmpkt.ftm_cmd_type));
         pftm_data = pRequestBuf->ftmpkt.pFtmCmd;
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         hostState = wlan_hdd_process_ftm_host_cmd(pHddCtx, pftm_data);
         if (0 == hostState)
         {
@@ -2726,14 +3243,21 @@ void wlan_hdd_process_ftm_cmd
            vos_mem_free(tempRspBuffer);
            return;
         }
+<<<<<<< HEAD
         else if (-1 == hostState)
+=======
+        else if (0 > hostState)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
            hddLog(VOS_TRACE_LEVEL_ERROR, "*** Host Command Handle Fail ***");
            pHddCtx->ftm.pResponseBuf->ftm_err_code = WLAN_FTM_FAILURE;
            wlan_ftm_send_response(pHddCtx);
            return;
         }
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         //HEXDUMP("Request:",(char*)pftm_data,cmd_len);
 
@@ -3148,6 +3672,7 @@ done:
 }
 
 
+<<<<<<< HEAD
 static VOS_STATUS wlan_ftm_priv_set_rssi_offset(hdd_adapter_t *pAdapter,v_S15_t *phyRxChains)
 {
 #ifndef ANI_CHIPSET_VOLANS
@@ -3222,6 +3747,8 @@ done:
 }
 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------------
 
   \brief wlan_ftm_rx_mode() -
@@ -3550,9 +4077,12 @@ VOS_STATUS wlan_ftm_priv_get_ftm_version(hdd_adapter_t *pAdapter,char *pftmVer)
     VOS_STATUS status;
     v_U32_t reg_val;
     char *buf = pftmVer;
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     FwVersionInfo *pFwVersion;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_context_t *pHddCtx = (hdd_context_t *)pAdapter->pHddCtx;
     int lenRes = 0;
     int lenBuf = WE_FTM_MAX_STR_LEN;
@@ -3645,6 +4175,7 @@ VOS_STATUS wlan_ftm_priv_get_ftm_version(hdd_adapter_t *pAdapter,char *pftmVer)
     buf += lenRes;
     lenBuf -= lenRes;
 
+<<<<<<< HEAD
 #ifndef FEATURE_WLAN_INTEGRATED_SOC
     pFwVersion = &pMsgBody->GetBuildReleaseNumber.relParams.fwVer;
     lenRes = snprintf(buf, lenBuf, "%ld.%ld.%ld.%ld", pFwVersion->uMj,pFwVersion->uMn,pFwVersion->uPatch,pFwVersion->uBuild ) ;
@@ -3658,6 +4189,8 @@ VOS_STATUS wlan_ftm_priv_get_ftm_version(hdd_adapter_t *pAdapter,char *pftmVer)
     lenBuf -= lenRes;
 
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 done:
     vos_mem_free((v_VOID_t * )pMsgBuf);
@@ -3895,7 +4428,16 @@ done:
 static VOS_STATUS wlan_ftm_priv_get_mac_address(hdd_adapter_t *pAdapter,char *buf)
 {
     v_BOOL_t itemIsValid = VOS_FALSE;
+<<<<<<< HEAD
     v_U8_t macAddr[VOS_MAC_ADDRESS_LEN] = {0, 0x0a, 0xf5, 4,5, 6};
+=======
+
+    /* Motorola, BEGIN IKLOCSEN-984 Return all MACs */
+    v_MACADDR_t macAddr[VOS_MAX_CONCURRENCY_PERSONA];
+    v_U8_t      macLoop;
+    /* Motorola, END IKLOCSEN-984 Return all MACs */
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int ret;
    
     hdd_context_t *pHddCtx = (hdd_context_t *)pAdapter->pHddCtx;
@@ -3910,6 +4452,7 @@ static VOS_STATUS wlan_ftm_priv_get_mac_address(hdd_adapter_t *pAdapter,char *bu
     {
        if (itemIsValid == VOS_TRUE) 
        {
+<<<<<<< HEAD
             vos_nv_readMacAddress(macAddr);
 
          ret = snprintf(buf, WE_FTM_MAX_STR_LEN, 
@@ -3932,6 +4475,39 @@ static VOS_STATUS wlan_ftm_priv_get_mac_address(hdd_adapter_t *pAdapter,char *bu
       {
           return VOS_STATUS_E_FAILURE;
       }
+=======
+          /* Motorola, BEGIN IKLOCSEN-984 Return all MACs */
+          vos_nv_readMultiMacAddress((v_U8_t *)&macAddr[0].bytes[0], VOS_MAX_CONCURRENCY_PERSONA);
+
+         for(macLoop = 0; macLoop < VOS_MAX_CONCURRENCY_PERSONA; macLoop++)
+         {
+             ret = snprintf(buf, WE_FTM_MAX_STR_LEN,
+                            "%02x:%02x:%02x:%02x:%02x:%02x",
+                            MAC_ADDR_ARRAY(&macAddr[macLoop].bytes[0]));
+
+             if( ret < 0 || ret >= WE_FTM_MAX_STR_LEN )
+             {
+                return VOS_STATUS_E_FAILURE;
+             }
+         }
+      }
+   }
+   else 
+   {
+      /* Return Hard coded mac address */
+      for(macLoop = 0; macLoop < VOS_MAX_CONCURRENCY_PERSONA; macLoop++)
+      {
+          ret = snprintf(buf, WE_FTM_MAX_STR_LEN,
+                         "%02x:%02x:%02x:%02x:%02x:%02x",
+                         MAC_ADDR_ARRAY(&macAddr[macLoop].bytes[0]));
+
+          if( ret < 0 || ret >= WE_FTM_MAX_STR_LEN )
+          {
+              return VOS_STATUS_E_FAILURE;
+          }
+      }
+      /* Motorola, END IKLOCSEN-984 Return all MACs */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
     return VOS_STATUS_SUCCESS;
 }
@@ -3956,9 +4532,17 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
     tPttMsgbuffer *pMsgBuf;
     uPttMsgs *pMsgBody;
     VOS_STATUS status;
+<<<<<<< HEAD
     int macAddr[VOS_MAC_ADDRESS_LEN];
     v_U8_t *pMacAddress;
     v_U8_t  ii;
+=======
+    int macAddr[VOS_MAC_ADDRESS_LEN * VOS_MAX_CONCURRENCY_PERSONA]; // Motorola, IKLOCSEN-984 Set all MACs
+    v_U8_t *pMacAddress;
+    v_U8_t  ii;
+    v_U8_t  macLoop; // Motorola, IKLOCSEN-984 Set all MACs
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_context_t *pHddCtx = (hdd_context_t *)pAdapter->pHddCtx;
 
     if(pHddCtx->ftm.ftm_state != WLAN_FTM_STARTED)
@@ -3972,13 +4556,20 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s:pMsgBuf is NULL",__func__);
         return VOS_STATUS_E_NOMEM;
     }
+<<<<<<< HEAD
     init_completion(&pHddCtx->ftm.ftm_comp_var);
+=======
+#if 0 // Motorola, IKLOCSEN-984 Set all MACs
+    init_completion(&pHddCtx->ftm.ftm_comp_var);
+#endif // Motorola, IKLOCSEN-984 Set all MACs
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMsgBuf->msgId = PTT_MSG_SET_NV_FIELD;
     pMsgBuf->msgBodyLength = sizeof(tMsgPttSetNvField) + PTT_HEADER_LENGTH;
 
     pMsgBody = &pMsgBuf->msgBody;
     pMsgBody->SetNvField.nvField = NV_COMMON_MAC_ADDR;
 
+<<<<<<< HEAD
     /*We get the mac address in string format "XX:XX:XX:XX:XX:XX" convert to hex*/
     sscanf(buf,"%02x:%02x:%02x:%02x:%02x:%02x",&macAddr[0],(int*)&macAddr[1],(int*)&macAddr[2],(int*)&macAddr[3],(int*)&macAddr[4],(int*)&macAddr[5]);
 
@@ -3992,6 +4583,54 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
 
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "pMacAddress = %02x:%02x:%02x:%02x:%02x:%02x",MAC_ADDR_ARRAY(pMacAddress));
+=======
+    /* Motorola, BEGIN IKLOCSEN-984 Set all MACS */
+    for(macLoop = 0; macLoop < VOS_MAX_CONCURRENCY_PERSONA; macLoop++) {
+       /*We get the mac address in string format "XX:XX:XX:XX:XX:XX" convert to hex*/
+       sscanf(buf,"%02x:%02x:%02x:%02x:%02x:%02x",\
+              (int*)&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + 0],\
+              (int*)&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + 1],\
+              (int*)&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + 2],\
+              (int*)&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + 3],\
+              (int*)&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + 4],\
+              (int*)&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + 5]);
+
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,\
+                 "MacAddress[%d] = %02x:%02x:%02x:%02x:%02x:%02x",\
+                 macLoop,\
+                 MAC_ADDR_ARRAY(&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA]));
+
+       printk(KERN_INFO "MacAddress[%d] = %02x:%02x:%02x:%02x:%02x:%02x\n",\
+              macLoop,\
+              MAC_ADDR_ARRAY(&macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA]));
+
+       pMacAddress = &pMsgBody->SetNvField.fieldData.macAddr.macAddr1[macLoop * VOS_MAX_CONCURRENCY_PERSONA];
+
+       for(ii = 0; ii < VOS_MAC_ADDRESS_LEN; ii++) {
+          pMacAddress[macLoop * VOS_MAX_CONCURRENCY_PERSONA + ii] =\
+          (v_U8_t)macAddr[macLoop * VOS_MAX_CONCURRENCY_PERSONA + ii];
+       }
+
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,\
+                 "pMacAddress[%d] = %02x:%02x:%02x:%02x:%02x:%02x",\
+                 macLoop,\
+                 MAC_ADDR_ARRAY(&pMacAddress[macLoop * VOS_MAX_CONCURRENCY_PERSONA]));
+
+       printk(KERN_INFO "pMacAddress[%d] = %02x:%02x:%02x:%02x:%02x:%02x\n",\
+              macLoop,\
+              MAC_ADDR_ARRAY(&pMacAddress[macLoop * VOS_MAX_CONCURRENCY_PERSONA]));
+    }
+
+    if (wlan_hdd_process_ftm_host_cmd(pHddCtx, pMsgBuf) < 0)
+    {
+        printk(KERN_INFO "wlan_hdd_process_ftm_host_cmd PTT_MSG_SET_NV_FIELD failed\n");
+        status = VOS_STATUS_E_FAILURE;
+        goto done;
+    }
+#if 0
+   /* Motorola, END IKLOCSEN-984 Set all MACS */
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = wlan_ftm_postmsg((v_U8_t*)pMsgBuf,pMsgBuf->msgBodyLength);
 
     if(status != VOS_STATUS_SUCCESS)
@@ -4012,6 +4651,10 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "NV_COMMON_MAC_ADDR Success!!!\n");
 
     init_completion(&pHddCtx->ftm.ftm_comp_var);
+<<<<<<< HEAD
+=======
+#endif // Motorola, IKLOCSEN-984 Set all MACs
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     memset( pMsgBuf,0,sizeof(tPttMsgbuffer));
 
     pMsgBuf->msgId = PTT_MSG_STORE_NV_TABLE;
@@ -4021,6 +4664,20 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
 
     pMsgBody->StoreNvTable.nvTable = NV_FIELDS_IMAGE;
 
+<<<<<<< HEAD
+=======
+    /* Motorola, BEGIN IKLOCSEN-984 Set all MACs */
+    if (wlan_hdd_process_ftm_host_cmd(pHddCtx, pMsgBuf) < 0)
+    {
+        printk(KERN_INFO "wlan_hdd_process_ftm_host_cmd PTT_MSG_STORE_NV_TABLE failed\n");
+        status = VOS_STATUS_E_FAILURE;
+        goto done;
+    }
+
+#if 0
+    /* Motorola, END IKLOCSEN-984 Set all MACs */
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = wlan_ftm_postmsg((v_U8_t*)pMsgBuf,pMsgBuf->msgBodyLength);
 
     if(status != VOS_STATUS_SUCCESS)
@@ -4031,6 +4688,10 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
     }
 
     wait_for_completion_interruptible_timeout(&pHddCtx->ftm.ftm_comp_var, msecs_to_jiffies(WLAN_FTM_COMMAND_TIME_OUT));
+<<<<<<< HEAD
+=======
+#endif // Motorola, IKLOCSEN-984 Set all MACs
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 done:
     vos_mem_free((v_VOID_t * )pMsgBuf);
 
@@ -4042,12 +4703,21 @@ static int iw_ftm_setchar_getnone(struct net_device *dev, struct iw_request_info
                        union iwreq_data *wrqu, char *extra)
 {
     int sub_cmd = wrqu->data.flags;
+<<<<<<< HEAD
     int ret = 0; /* sucess */
     VOS_STATUS status;
     hdd_adapter_t *pAdapter = (netdev_priv(dev));
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
+=======
+    int ret = 0; /* success */
+    VOS_STATUS status;
+    hdd_adapter_t *pAdapter = (netdev_priv(dev));
+
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __func__, wrqu->data.length);
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch(sub_cmd)
     {
@@ -4080,7 +4750,11 @@ static int iw_ftm_setchar_getnone(struct net_device *dev, struct iw_request_info
         }
        default:
        {
+<<<<<<< HEAD
            hddLog(LOGE, "%s: Invalid sub command %d\n",__FUNCTION__, sub_cmd);
+=======
+           hddLog(LOGE, "%s: Invalid sub command %d\n",__func__, sub_cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            ret = -EINVAL;
            break;
        }
@@ -4106,7 +4780,11 @@ static int iw_ftm_setint_getnone(struct net_device *dev, struct iw_request_info 
 
             if(status != VOS_STATUS_SUCCESS)
             {
+<<<<<<< HEAD
                hddLog(VOS_TRACE_LEVEL_FATAL,"%s Failed =%d\n",__FUNCTION__, status);
+=======
+               hddLog(VOS_TRACE_LEVEL_FATAL,"%s Failed =%d\n",__func__, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                ret = -EINVAL;
             }
 
@@ -4226,7 +4904,11 @@ static int iw_ftm_setnone_getint(struct net_device *dev, struct iw_request_info 
 {
     hdd_adapter_t *pAdapter = (netdev_priv(dev));
     int *value = (int *)extra;
+<<<<<<< HEAD
     int ret = 0; /* sucess */
+=======
+    int ret = 0; /* success */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS status;
 
     switch (value[0])
@@ -4355,11 +5037,18 @@ static int iw_ftm_get_char_setnone(struct net_device *dev, struct iw_request_inf
 
     return 0;
 }
+<<<<<<< HEAD
 #endif//ANI_MANF_DIAG
 
 VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len)
 {
 #if defined(ANI_MANF_DIAG) && defined(MSM_PLATFORM)
+=======
+
+VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len, v_U16_t table)
+{
+#if defined(MSM_PLATFORM)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tAniHdr *wmsg = NULL;
     v_U8_t *pBuf;
     hdd_context_t *pHddCtx = NULL;
@@ -4389,6 +5078,18 @@ VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len)
 
     pBuf += sizeof(v_U32_t);
 
+<<<<<<< HEAD
+=======
+	    if(table == 1)
+    {
+           pData[7] = 8;
+    }
+    else if(table == 2)
+    {
+    	   pData[7] = 9;
+    }
+	
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     memcpy(pBuf, pData,data_len);
 
    if(pHddCtx->ftm.cmd_iwpriv == TRUE) {
@@ -4414,13 +5115,20 @@ VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len)
     return VOS_STATUS_SUCCESS;
 }
 
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*  action sub-ioctls */
 static int iw_ftm_setnone_getnone(struct net_device *dev, struct iw_request_info *info,
                        union iwreq_data *wrqu, char *extra)
 {
     int sub_cmd = wrqu->data.flags;
+<<<<<<< HEAD
     int ret = 0; /* sucess */
+=======
+    int ret = 0; /* success */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (sub_cmd)
     {
@@ -4441,13 +5149,21 @@ static int iw_ftm_setnone_getnone(struct net_device *dev, struct iw_request_info
             pTempBuf += sizeof(v_U32_t);
             memcpy(pTempBuf,&nvDefaults,sizeof(sHalNv));
 
+<<<<<<< HEAD
             wlan_write_to_efs(pu8buf,size);
+=======
+            wlan_write_to_efs(pu8buf,size,0);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             vos_mem_free(pu8buf);
         }
 
         default:
         {
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: unknown ioctl %d", __FUNCTION__, sub_cmd);
+=======
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: unknown ioctl %d", __func__, sub_cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(LOGE, "Invalid IOCTL action command %d ", sub_cmd);
             break;
         }
@@ -4456,6 +5172,7 @@ static int iw_ftm_setnone_getnone(struct net_device *dev, struct iw_request_info
     return ret;
 }
 
+<<<<<<< HEAD
 static int iw_ftm_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
 {
@@ -4491,6 +5208,8 @@ static int iw_ftm_set_var_ints_getnone(struct net_device *dev, struct iw_request
     return 0;
 }
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static const iw_handler we_ftm_private[] = {
 
    [WLAN_FTM_PRIV_SET_INT_GET_NONE      - SIOCIWFIRSTPRIV]   = iw_ftm_setint_getnone,  //set priv ioctl
@@ -4498,7 +5217,10 @@ static const iw_handler we_ftm_private[] = {
    [WLAN_FTM_PRIV_SET_CHAR_GET_NONE     - SIOCIWFIRSTPRIV]   = iw_ftm_setchar_getnone, //get priv ioctl
    [WLAN_FTM_PRIV_GET_CHAR_SET_NONE     - SIOCIWFIRSTPRIV]   = iw_ftm_get_char_setnone,
    [WLAN_FTM_PRIV_SET_NONE_GET_NONE     - SIOCIWFIRSTPRIV]   = iw_ftm_setnone_getnone, //action priv ioctl
+<<<<<<< HEAD
    [WLAN_FTM_PRIV_SET_VAR_INT_GET_NONE  - SIOCIWFIRSTPRIV]   = iw_ftm_set_var_ints_getnone,
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 /*Maximum command length can be only 15 */
@@ -4628,6 +5350,7 @@ static const struct iw_priv_args we_ftm_private_args[] = {
         IW_PRIV_TYPE_CHAR| WE_FTM_MAX_STR_LEN,
         "get_rx_rssi" },
 
+<<<<<<< HEAD
     {   WLAN_FTM_PRIV_SET_VAR_INT_GET_NONE,
         IW_PRIV_TYPE_INT | MAX_FTM_VAR_ARGS,
         0,
@@ -4638,6 +5361,8 @@ static const struct iw_priv_args we_ftm_private_args[] = {
         0,
         "set_rssi_offset" },
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_FTM_PRIV_SET_NONE_GET_NONE,
         0,
@@ -4676,11 +5401,17 @@ static int wlan_ftm_register_wext(hdd_adapter_t *pAdapter)
     return 0;
 }
 
+<<<<<<< HEAD
 #endif //ANI_MANF_DIAG
 
 VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message)
 {
 #ifdef ANI_MANF_DIAG
+=======
+
+VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message)
+{
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ftm_rsp_msg_t   *pFtmMsgRsp;
 
     VOS_STATUS vos_status = VOS_STATUS_SUCCESS;
@@ -4733,7 +5464,10 @@ VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message)
     }
     }
     EXIT();
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_SUCCESS;
 
 }

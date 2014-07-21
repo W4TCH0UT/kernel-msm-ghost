@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -42,7 +65,11 @@
 #include "dot11f.h"
 #include "wmmApsd.h"
 #include "limTrace.h"
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_DIAG_SUPPORT 
+=======
+#ifdef FEATURE_WLAN_DIAG_SUPPORT
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "vos_diag_core_event.h"
 #endif //FEATURE_WLAN_DIAG_SUPPORT
 #include "limIbssPeerMgmt.h"
@@ -60,6 +87,14 @@ static tAniBool glimTriggerBackgroundScanDuringQuietBss_Status = eSIR_TRUE;
 static const tANI_U8 abChannel[]= {36,40,44,48,52,56,60,64,100,104,108,112,116,
             120,124,128,132,136,140,149,153,157,161,165};
 
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+static const tANI_U8 aUnsortedChannelList[]= {52,56,60,64,100,104,108,112,116,
+            120,124,128,132,136,140,36,40,44,48,149,153,157,161,165};
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //#define LIM_MAX_ACTIVE_SESSIONS 3  //defined temporarily for BT-AMP SUPPORT 
 #define SUCCESS 1                   //defined temporarily for BT-AMP
 
@@ -73,12 +108,20 @@ static const tANI_U8 abChannel[]= {36,40,44,48,52,56,60,64,100,104,108,112,116,
 tpDialogueToken
 limAssignDialogueToken(tpAniSirGlobal pMac)
 {
+<<<<<<< HEAD
     static tANI_U8 token = 0;
+=======
+    static tANI_U8 token;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpDialogueToken pCurrNode;
     if(eHAL_STATUS_SUCCESS !=
           palAllocateMemory(pMac->hHdd, (void **) &pCurrNode, sizeof(tDialogueToken)))
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return NULL;
     }
 
@@ -96,7 +139,11 @@ limAssignDialogueToken(tpAniSirGlobal pMac)
     //assocId and tid of the node will be filled in by caller.
     pCurrNode->next = NULL;
     pCurrNode->token = token++;
+<<<<<<< HEAD
     PELOG4(limLog(pMac, LOG4, FL("token assigned = %d\n"), token);)    
+=======
+    PELOG4(limLog(pMac, LOG4, FL("token assigned = %d"), token);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return pCurrNode;
 }
 
@@ -155,10 +202,18 @@ limSearchAndDeleteDialogueToken(tpAniSirGlobal pMac, tANI_U8 token, tANI_U16 ass
         //if the node being deleted is the last one then we also need to move the tail pointer to the prevNode.
         if(NULL == pCurrNode->next)
               pMac->lim.pDialogueTokenTail = pPrevNode;
+<<<<<<< HEAD
         return eSIR_SUCCESS;
     }
 
     PELOGW(limLog(pMac, LOGW, FL("LIM does not have matching dialogue token node\n"));)
+=======
+        palFreeMemory(pMac->hHdd, (void *) pCurrNode);
+        return eSIR_SUCCESS;
+    }
+
+    PELOGW(limLog(pMac, LOGW, FL("LIM does not have matching dialogue token node"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return eSIR_FAILURE;
 
 }
@@ -219,6 +274,7 @@ limMlmStateStr(tLimMlmStates state)
     switch (state)
     {
         case eLIM_MLM_OFFLINE_STATE:
+<<<<<<< HEAD
             return "eLIM_MLM_OFFLINE_STATE\n";
         case eLIM_MLM_IDLE_STATE:
             return "eLIM_MLM_IDLE_STATE\n";
@@ -276,6 +332,65 @@ limMlmStateStr(tLimMlmStates state)
             return "eLIM_MLM_WT_SET_STA_KEY_STATE\n";
         default:
             return "INVALID MLM state\n";
+=======
+            return "eLIM_MLM_OFFLINE_STATE";
+        case eLIM_MLM_IDLE_STATE:
+            return "eLIM_MLM_IDLE_STATE";
+        case eLIM_MLM_WT_PROBE_RESP_STATE:
+            return "eLIM_MLM_WT_PROBE_RESP_STATE";
+        case eLIM_MLM_PASSIVE_SCAN_STATE:
+            return "eLIM_MLM_PASSIVE_SCAN_STATE";
+        case eLIM_MLM_WT_JOIN_BEACON_STATE:
+            return "eLIM_MLM_WT_JOIN_BEACON_STATE";
+        case eLIM_MLM_JOINED_STATE:
+            return "eLIM_MLM_JOINED_STATE";
+        case eLIM_MLM_BSS_STARTED_STATE:
+            return "eLIM_MLM_BSS_STARTED_STATE";
+        case eLIM_MLM_WT_AUTH_FRAME2_STATE:
+            return "eLIM_MLM_WT_AUTH_FRAME2_STATE";
+        case eLIM_MLM_WT_AUTH_FRAME3_STATE:
+            return "eLIM_MLM_WT_AUTH_FRAME3_STATE";
+        case eLIM_MLM_WT_AUTH_FRAME4_STATE:
+            return "eLIM_MLM_WT_AUTH_FRAME4_STATE";
+        case eLIM_MLM_AUTH_RSP_TIMEOUT_STATE:
+            return "eLIM_MLM_AUTH_RSP_TIMEOUT_STATE";
+        case eLIM_MLM_AUTHENTICATED_STATE:
+            return "eLIM_MLM_AUTHENTICATED_STATE";
+        case eLIM_MLM_WT_ASSOC_RSP_STATE:
+            return "eLIM_MLM_WT_ASSOC_RSP_STATE";
+        case eLIM_MLM_WT_REASSOC_RSP_STATE:
+            return "eLIM_MLM_WT_REASSOC_RSP_STATE";
+        case eLIM_MLM_WT_FT_REASSOC_RSP_STATE:
+            return "eLIM_MLM_WT_FT_REASSOC_RSP_STATE";
+        case eLIM_MLM_WT_DEL_STA_RSP_STATE:
+            return "eLIM_MLM_WT_DEL_STA_RSP_STATE";
+        case eLIM_MLM_WT_DEL_BSS_RSP_STATE:
+            return "eLIM_MLM_WT_DEL_BSS_RSP_STATE";
+        case eLIM_MLM_WT_ADD_STA_RSP_STATE:
+            return "eLIM_MLM_WT_ADD_STA_RSP_STATE";
+        case eLIM_MLM_WT_ADD_BSS_RSP_STATE:
+            return "eLIM_MLM_WT_ADD_BSS_RSP_STATE";
+        case eLIM_MLM_REASSOCIATED_STATE:
+            return "eLIM_MLM_REASSOCIATED_STATE";
+        case eLIM_MLM_LINK_ESTABLISHED_STATE:
+            return "eLIM_MLM_LINK_ESTABLISHED_STATE";
+        case eLIM_MLM_WT_ASSOC_CNF_STATE:
+            return "eLIM_MLM_WT_ASSOC_CNF_STATE";
+        case eLIM_MLM_WT_ADD_BSS_RSP_ASSOC_STATE:
+            return "eLIM_MLM_WT_ADD_BSS_RSP_ASSOC_STATE";
+        case eLIM_MLM_WT_ADD_BSS_RSP_REASSOC_STATE:
+            return "eLIM_MLM_WT_ADD_BSS_RSP_REASSOC_STATE";
+        case eLIM_MLM_WT_ADD_BSS_RSP_FT_REASSOC_STATE:
+            return "eLIM_MLM_WT_ADD_BSS_RSP_FT_REASSOC_STATE";
+        case eLIM_MLM_WT_ASSOC_DEL_STA_RSP_STATE:
+            return "eLIM_MLM_WT_ASSOC_DEL_STA_RSP_STATE";
+        case eLIM_MLM_WT_SET_BSS_KEY_STATE:
+            return "eLIM_MLM_WT_SET_BSS_KEY_STATE";
+        case eLIM_MLM_WT_SET_STA_KEY_STATE:
+            return "eLIM_MLM_WT_SET_STA_KEY_STATE";
+        default:
+            return "INVALID MLM state";
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 }
 
@@ -292,6 +407,7 @@ limSmeStateStr(tLimSmeStates state)
     switch (state)
     {
         case eLIM_SME_OFFLINE_STATE:
+<<<<<<< HEAD
             return "eLIM_SME_OFFLINE_STATE\n";
         case eLIM_SME_IDLE_STATE:
             return "eLIM_SME_IDLE_STATE\n";
@@ -337,6 +453,53 @@ limSmeStateStr(tLimSmeStates state)
             return "eLIM_SME_NORMAL_CHANNEL_SCAN_STATE\n";
         default:
             return "INVALID SME state\n";
+=======
+            return "eLIM_SME_OFFLINE_STATE";
+        case eLIM_SME_IDLE_STATE:
+            return "eLIM_SME_IDLE_STATE";
+        case eLIM_SME_SUSPEND_STATE:
+            return "eLIM_SME_SUSPEND_STATE";
+        case eLIM_SME_WT_SCAN_STATE:
+            return "eLIM_SME_WT_SCAN_STATE";
+        case eLIM_SME_WT_JOIN_STATE:
+            return "eLIM_SME_WT_JOIN_STATE";
+        case eLIM_SME_WT_AUTH_STATE:
+            return "eLIM_SME_WT_AUTH_STATE";
+        case eLIM_SME_WT_ASSOC_STATE:
+            return "eLIM_SME_WT_ASSOC_STATE";
+        case eLIM_SME_WT_REASSOC_STATE:
+            return "eLIM_SME_WT_REASSOC_STATE";
+        case eLIM_SME_WT_REASSOC_LINK_FAIL_STATE:
+            return "eLIM_SME_WT_REASSOC_LINK_FAIL_STATE";
+        case eLIM_SME_JOIN_FAILURE_STATE:
+            return "eLIM_SME_JOIN_FAILURE_STATE";
+        case eLIM_SME_ASSOCIATED_STATE:
+            return "eLIM_SME_ASSOCIATED_STATE";
+        case eLIM_SME_REASSOCIATED_STATE:
+            return "eLIM_SME_REASSOCIATED_STATE";
+        case eLIM_SME_LINK_EST_STATE:
+            return "eLIM_SME_LINK_EST_STATE";
+        case eLIM_SME_LINK_EST_WT_SCAN_STATE:
+            return "eLIM_SME_LINK_EST_WT_SCAN_STATE";
+        case eLIM_SME_WT_PRE_AUTH_STATE:
+            return "eLIM_SME_WT_PRE_AUTH_STATE";
+        case eLIM_SME_WT_DISASSOC_STATE:
+            return "eLIM_SME_WT_DISASSOC_STATE";
+        case eLIM_SME_WT_DEAUTH_STATE:
+            return "eLIM_SME_WT_DEAUTH_STATE";
+        case eLIM_SME_WT_START_BSS_STATE:
+            return "eLIM_SME_WT_START_BSS_STATE";
+        case eLIM_SME_WT_STOP_BSS_STATE:
+            return "eLIM_SME_WT_STOP_BSS_STATE";
+        case eLIM_SME_NORMAL_STATE:
+            return "eLIM_SME_NORMAL_STATE";
+        case eLIM_SME_CHANNEL_SCAN_STATE:
+            return "eLIM_SME_CHANNEL_SCAN_STATE";
+        case eLIM_SME_NORMAL_CHANNEL_SCAN_STATE:
+            return "eLIM_SME_NORMAL_CHANNEL_SCAN_STATE";
+        default:
+            return "INVALID SME state";
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
 return "";
@@ -350,6 +513,7 @@ char* limDot11ModeStr(tpAniSirGlobal pMac, tANI_U8 dot11Mode)
     switch(dot11Mode)
         {
             case WNI_CFG_DOT11_MODE_ALL:
+<<<<<<< HEAD
                 return "ALL\n";
             case WNI_CFG_DOT11_MODE_11A:
                 return "11A\n";
@@ -367,6 +531,25 @@ char* limDot11ModeStr(tpAniSirGlobal pMac, tANI_U8 dot11Mode)
                 return "Taurus\n";
             default:
                 return "Invalid Dot11 Mode\n";
+=======
+                return "ALL";
+            case WNI_CFG_DOT11_MODE_11A:
+                return "11A";
+            case WNI_CFG_DOT11_MODE_11B:
+                return "11B";
+            case WNI_CFG_DOT11_MODE_11G:
+                return "11G";
+            case WNI_CFG_DOT11_MODE_11N:
+                return "11N";
+            case WNI_CFG_DOT11_MODE_POLARIS:
+                return "Polaris";
+            case WNI_CFG_DOT11_MODE_TITAN:
+                return "Titan";
+            case WNI_CFG_DOT11_MODE_TAURUS:
+                return "Taurus";
+            default:
+                return "Invalid Dot11 Mode";
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 #endif
 return "";
@@ -380,6 +563,7 @@ char* limStaOpRateModeStr(tStaRateMode opRateMode)
     switch(opRateMode)
         {
             case eSTA_TAURUS:
+<<<<<<< HEAD
                 return "Taurus\n";
             case eSTA_11a:
                 return "11A\n";
@@ -395,6 +579,23 @@ char* limStaOpRateModeStr(tStaRateMode opRateMode)
                 return "Titan\n";
             default:
                 return "Invalid Dot11 Mode\n";
+=======
+                return "Taurus";
+            case eSTA_11a:
+                return "11A";
+            case eSTA_11b:
+                return "11B";
+            case eSTA_11bg:
+                return "11G";
+            case eSTA_11n:
+                return "11N";
+            case eSTA_POLARIS:
+                return "Polaris";
+            case eSTA_TITAN:
+                return "Titan";
+            default:
+                return "Invalid Dot11 Mode";
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 #endif
 return "";
@@ -408,11 +609,19 @@ char* limBssTypeStr(tSirBssType bssType)
             return "eSIR_INFRASTRUCTURE_MODE";
         case eSIR_IBSS_MODE:
             return "eSIR_IBSS_MODE";
+<<<<<<< HEAD
         case eSIR_BTAMP_STA_MODE:  
             return "eSIR_BTAMP_STA_MODE";
         case eSIR_BTAMP_AP_MODE:  
             return "eSIR_BTAMP_AP_MODE";
         case eSIR_AUTO_MODE:  
+=======
+        case eSIR_BTAMP_STA_MODE:
+            return "eSIR_BTAMP_STA_MODE";
+        case eSIR_BTAMP_AP_MODE:
+            return "eSIR_BTAMP_AP_MODE";
+        case eSIR_AUTO_MODE:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return "eSIR_AUTO_MODE";
         default:
             return "Invalid BSS Type";
@@ -431,6 +640,7 @@ char *limMsgStr(tANI_U32 msgType)
     switch (msgType)
     {
         case eWNI_SME_START_REQ:
+<<<<<<< HEAD
             return "eWNI_SME_START_REQ\n";
         case eWNI_SME_START_RSP:
             return "eWNI_SME_START_RSP\n";
@@ -653,6 +863,238 @@ char *limMsgStr(tANI_U32 msgType)
             return "eWNI_PMC_EXIT_BMPS_IND\n";
         default:
             return "INVALID SME message\n";
+=======
+            return "eWNI_SME_START_REQ";
+        case eWNI_SME_START_RSP:
+            return "eWNI_SME_START_RSP";
+        case eWNI_SME_SYS_READY_IND:
+            return "eWNI_SME_SYS_READY_IND";
+        case eWNI_SME_SCAN_REQ:
+            return "eWNI_SME_SCAN_REQ";
+#ifdef FEATURE_OEM_DATA_SUPPORT
+        case eWNI_SME_OEM_DATA_REQ:
+            return "eWNI_SME_OEM_DATA_REQ";
+        case eWNI_SME_OEM_DATA_RSP:
+            return "eWNI_SME_OEM_DATA_RSP";
+#endif
+        case eWNI_SME_SCAN_RSP:
+            return "eWNI_SME_SCAN_RSP";
+        case eWNI_SME_JOIN_REQ:
+            return "eWNI_SME_JOIN_REQ";
+        case eWNI_SME_JOIN_RSP:
+            return "eWNI_SME_JOIN_RSP";
+        case eWNI_SME_SETCONTEXT_REQ:
+            return "eWNI_SME_SETCONTEXT_REQ";
+        case eWNI_SME_SETCONTEXT_RSP:
+            return "eWNI_SME_SETCONTEXT_RSP";
+        case eWNI_SME_REASSOC_REQ:
+            return "eWNI_SME_REASSOC_REQ";
+        case eWNI_SME_REASSOC_RSP:
+            return "eWNI_SME_REASSOC_RSP";
+        case eWNI_SME_AUTH_REQ:
+            return "eWNI_SME_AUTH_REQ";
+        case eWNI_SME_AUTH_RSP:
+            return "eWNI_SME_AUTH_RSP";
+        case eWNI_SME_DISASSOC_REQ:
+            return "eWNI_SME_DISASSOC_REQ";
+        case eWNI_SME_DISASSOC_RSP:
+            return "eWNI_SME_DISASSOC_RSP";
+        case eWNI_SME_DISASSOC_IND:
+            return "eWNI_SME_DISASSOC_IND";
+        case eWNI_SME_DISASSOC_CNF:
+            return "eWNI_SME_DISASSOC_CNF";
+        case eWNI_SME_DEAUTH_REQ:
+            return "eWNI_SME_DEAUTH_REQ";
+        case eWNI_SME_DEAUTH_RSP:
+            return "eWNI_SME_DEAUTH_RSP";
+        case eWNI_SME_DEAUTH_IND:
+            return "eWNI_SME_DEAUTH_IND";
+        case eWNI_SME_WM_STATUS_CHANGE_NTF:
+            return "eWNI_SME_WM_STATUS_CHANGE_NTF";
+        case eWNI_SME_START_BSS_REQ:
+            return "eWNI_SME_START_BSS_REQ";
+        case eWNI_SME_START_BSS_RSP:
+            return "eWNI_SME_START_BSS_RSP";
+        case eWNI_SME_AUTH_IND:
+            return "eWNI_SME_AUTH_IND";
+        case eWNI_SME_ASSOC_IND:
+            return "eWNI_SME_ASSOC_IND";
+        case eWNI_SME_ASSOC_CNF:
+            return "eWNI_SME_ASSOC_CNF";
+        case eWNI_SME_REASSOC_IND:
+            return "eWNI_SME_REASSOC_IND";
+        case eWNI_SME_REASSOC_CNF:
+            return "eWNI_SME_REASSOC_CNF";
+        case eWNI_SME_SWITCH_CHL_REQ:
+            return "eWNI_SME_SWITCH_CHL_REQ";
+        case eWNI_SME_SWITCH_CHL_RSP:
+            return "eWNI_SME_SWITCH_CHL_RSP";
+        case eWNI_SME_SWITCH_CHL_CB_PRIMARY_REQ:
+            return "eWNI_SME_SWITCH_CHL_CB_PRIMARY_REQ";
+        case eWNI_SME_SWITCH_CHL_CB_SECONDARY_REQ:
+            return "eWNI_SME_SWITCH_CHL_CB_SECONDARY_REQ";
+        case eWNI_SME_STOP_BSS_REQ:
+            return "eWNI_SME_STOP_BSS_REQ";
+        case eWNI_SME_STOP_BSS_RSP:
+            return "eWNI_SME_STOP_BSS_RSP";
+        case eWNI_SME_PROMISCUOUS_MODE_REQ:
+            return "eWNI_SME_PROMISCUOUS_MODE_REQ";
+        case eWNI_SME_PROMISCUOUS_MODE_RSP:
+            return "eWNI_SME_PROMISCUOUS_MODE_RSP";
+        case eWNI_SME_NEIGHBOR_BSS_IND:
+            return "eWNI_SME_NEIGHBOR_BSS_IND";
+        case eWNI_SME_MEASUREMENT_REQ:
+            return "eWNI_SME_MEASUREMENT_REQ";
+        case eWNI_SME_MEASUREMENT_RSP:
+            return "eWNI_SME_MEASUREMENT_RSP";
+        case eWNI_SME_MEASUREMENT_IND:
+            return "eWNI_SME_MEASUREMENT_IND";
+        case eWNI_SME_SET_WDS_INFO_REQ:
+            return "eWNI_SME_SET_WDS_INFO_REQ";
+        case eWNI_SME_SET_WDS_INFO_RSP:
+            return "eWNI_SME_SET_WDS_INFO_RSP";
+        case eWNI_SME_WDS_INFO_IND:
+            return "eWNI_SME_WDS_INFO_IND";
+        case eWNI_SME_DEAUTH_CNF:
+            return "eWNI_SME_DEAUTH_CNF";
+        case eWNI_SME_MIC_FAILURE_IND:
+            return "eWNI_SME_MIC_FAILURE_IND";
+        case eWNI_SME_ADDTS_REQ:
+            return "eWNI_SME_ADDTS_REQ";
+        case eWNI_SME_ADDTS_RSP:
+            return "eWNI_SME_ADDTS_RSP";
+        case eWNI_SME_ADDTS_CNF:
+            return "eWNI_SME_ADDTS_CNF";
+        case eWNI_SME_ADDTS_IND:
+            return "eWNI_SME_ADDTS_IND";
+        case eWNI_SME_DELTS_REQ:
+            return "eWNI_SME_DELTS_REQ";
+        case eWNI_SME_DELTS_RSP:
+            return "eWNI_SME_DELTS_RSP";
+        case eWNI_SME_DELTS_IND:
+            return "eWNI_SME_DELTS_IND";
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+        case eWNI_SME_GET_ROAM_RSSI_REQ:
+            return "eWNI_SME_GET_ROAM_RSSI_REQ";
+        case eWNI_SME_GET_ROAM_RSSI_RSP:
+            return "eWNI_SME_GET_ROAM_RSSI_RSP";
+#endif
+
+        case WDA_SUSPEND_ACTIVITY_RSP:
+            return "WDA_SUSPEND_ACTIVITY_RSP";
+        case SIR_LIM_RETRY_INTERRUPT_MSG:
+            return "SIR_LIM_RETRY_INTERRUPT_MSG";
+        case SIR_BB_XPORT_MGMT_MSG:
+            return "SIR_BB_XPORT_MGMT_MSG";
+        case SIR_LIM_INV_KEY_INTERRUPT_MSG:
+            return "SIR_LIM_INV_KEY_INTERRUPT_MSG";
+        case SIR_LIM_KEY_ID_INTERRUPT_MSG:
+            return "SIR_LIM_KEY_ID_INTERRUPT_MSG";
+        case SIR_LIM_REPLAY_THRES_INTERRUPT_MSG:
+            return "SIR_LIM_REPLAY_THRES_INTERRUPT_MSG";
+        case SIR_LIM_MIN_CHANNEL_TIMEOUT:
+            return "SIR_LIM_MIN_CHANNEL_TIMEOUT";
+        case SIR_LIM_MAX_CHANNEL_TIMEOUT:
+            return "SIR_LIM_MAX_CHANNEL_TIMEOUT";
+        case SIR_LIM_JOIN_FAIL_TIMEOUT:
+            return "SIR_LIM_JOIN_FAIL_TIMEOUT";
+        case SIR_LIM_AUTH_FAIL_TIMEOUT:
+            return "SIR_LIM_AUTH_FAIL_TIMEOUT";
+        case SIR_LIM_AUTH_RSP_TIMEOUT:
+            return "SIR_LIM_AUTH_RSP_TIMEOUT";
+        case SIR_LIM_ASSOC_FAIL_TIMEOUT:
+            return "SIR_LIM_ASSOC_FAIL_TIMEOUT";
+        case SIR_LIM_REASSOC_FAIL_TIMEOUT:
+            return "SIR_LIM_REASSOC_FAIL_TIMEOUT";
+        case SIR_LIM_HEART_BEAT_TIMEOUT:
+            return "SIR_LIM_HEART_BEAT_TIMEOUT";
+        case SIR_LIM_ADDTS_RSP_TIMEOUT:
+            return "SIR_LIM_ADDTS_RSP_TIMEOUT";
+        case SIR_LIM_CHANNEL_SCAN_TIMEOUT:
+            return "SIR_LIM_CHANNEL_SCAN_TIMEOUT";
+        case SIR_LIM_LINK_TEST_DURATION_TIMEOUT:
+            return "SIR_LIM_LINK_TEST_DURATION_TIMEOUT";
+        case SIR_LIM_HASH_MISS_THRES_TIMEOUT:
+            return "SIR_LIM_HASH_MISS_THRES_TIMEOUT";
+        case SIR_LIM_KEEPALIVE_TIMEOUT:
+            return "SIR_LIM_KEEPALIVE_TIMEOUT";
+        case SIR_LIM_UPDATE_OLBC_CACHEL_TIMEOUT:
+            return "SIR_LIM_UPDATE_OLBC_CACHEL_TIMEOUT";
+        case SIR_LIM_CNF_WAIT_TIMEOUT:
+            return "SIR_LIM_CNF_WAIT_TIMEOUT";
+        case SIR_LIM_RADAR_DETECT_IND:
+            return "SIR_LIM_RADAR_DETECT_IND";
+#ifdef WLAN_FEATURE_VOWIFI_11R
+        case SIR_LIM_FT_PREAUTH_RSP_TIMEOUT:
+            return "SIR_LIM_FT_PREAUTH_RSP_TIMEOUT";
+#endif
+
+        case SIR_HAL_APP_SETUP_NTF:
+            return "SIR_HAL_APP_SETUP_NTF";
+        case SIR_HAL_INITIAL_CAL_FAILED_NTF:
+            return "SIR_HAL_INITIAL_CAL_FAILED_NTF";
+        case SIR_HAL_NIC_OPER_NTF:
+            return "SIR_HAL_NIC_OPER_NTF";
+        case SIR_HAL_INIT_START_REQ:
+            return "SIR_HAL_INIT_START_REQ";
+        case SIR_HAL_SHUTDOWN_REQ:
+            return "SIR_HAL_SHUTDOWN_REQ";
+        case SIR_HAL_SHUTDOWN_CNF:
+            return "SIR_HAL_SHUTDOWN_CNF";
+        case SIR_HAL_RESET_REQ:
+            return "SIR_HAL_RESET_REQ";
+        case SIR_HAL_RESET_CNF:
+            return "SIR_HAL_RESET_CNF";
+        case SIR_WRITE_TO_TD:
+            return "SIR_WRITE_TO_TD";
+
+        case WNI_CFG_PARAM_UPDATE_IND:
+            return "WNI_CFG_PARAM_UPDATE_IND";
+        case WNI_CFG_DNLD_REQ:
+            return "WNI_CFG_DNLD_REQ";
+        case WNI_CFG_DNLD_CNF:
+            return "WNI_CFG_DNLD_CNF";
+        case WNI_CFG_GET_RSP:
+            return "WNI_CFG_GET_RSP";
+        case WNI_CFG_SET_CNF:
+            return "WNI_CFG_SET_CNF";
+        case WNI_CFG_GET_ATTRIB_RSP:
+            return "WNI_CFG_GET_ATTRIB_RSP";
+        case WNI_CFG_ADD_GRP_ADDR_CNF:
+            return "WNI_CFG_ADD_GRP_ADDR_CNF";
+        case WNI_CFG_DEL_GRP_ADDR_CNF:
+            return "WNI_CFG_DEL_GRP_ADDR_CNF";
+        case ANI_CFG_GET_RADIO_STAT_RSP:
+            return "ANI_CFG_GET_RADIO_STAT_RSP";
+        case ANI_CFG_GET_PER_STA_STAT_RSP:
+            return "ANI_CFG_GET_PER_STA_STAT_RSP";
+        case ANI_CFG_GET_AGG_STA_STAT_RSP:
+            return "ANI_CFG_GET_AGG_STA_STAT_RSP";
+        case ANI_CFG_CLEAR_STAT_RSP:
+            return "ANI_CFG_CLEAR_STAT_RSP";
+        case WNI_CFG_DNLD_RSP:
+            return "WNI_CFG_DNLD_RSP";
+        case WNI_CFG_GET_REQ:
+            return "WNI_CFG_GET_REQ";
+        case WNI_CFG_SET_REQ:
+            return "WNI_CFG_SET_REQ";
+        case WNI_CFG_SET_REQ_NO_RSP:
+            return "WNI_CFG_SET_REQ_NO_RSP";
+        case eWNI_PMC_ENTER_IMPS_RSP:
+            return "eWNI_PMC_ENTER_IMPS_RSP";
+        case eWNI_PMC_EXIT_IMPS_RSP:
+            return "eWNI_PMC_EXIT_IMPS_RSP";
+        case eWNI_PMC_ENTER_BMPS_RSP:
+            return "eWNI_PMC_ENTER_BMPS_RSP";
+        case eWNI_PMC_EXIT_BMPS_RSP:
+            return "eWNI_PMC_EXIT_BMPS_RSP";
+        case eWNI_PMC_EXIT_BMPS_IND:
+            return "eWNI_PMC_EXIT_BMPS_IND";
+        case eWNI_SME_SET_BCN_FILTER_REQ:
+            return "eWNI_SME_SET_BCN_FILTER_REQ";
+        default:
+            return "INVALID SME message";
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
 return "";
@@ -662,6 +1104,7 @@ return "";
 
 char *limResultCodeStr(tSirResultCodes resultCode)
 {
+<<<<<<< HEAD
 #ifdef FIXME_GEN6
     switch (resultCode)
     {
@@ -816,6 +1259,159 @@ char *limResultCodeStr(tSirResultCodes resultCode)
     }
 #endif
 return "";
+=======
+    switch (resultCode)
+    {
+      case eSIR_SME_SUCCESS:
+            return "eSIR_SME_SUCCESS";
+      case eSIR_EOF_SOF_EXCEPTION:
+            return "eSIR_EOF_SOF_EXCEPTION";
+      case eSIR_BMU_EXCEPTION:
+            return "eSIR_BMU_EXCEPTION";
+      case eSIR_LOW_PDU_EXCEPTION:
+            return "eSIR_LOW_PDU_EXCEPTION";
+      case eSIR_USER_TRIG_RESET:
+            return"eSIR_USER_TRIG_RESET";
+      case eSIR_LOGP_EXCEPTION:
+            return "eSIR_LOGP_EXCEPTION";
+      case eSIR_CP_EXCEPTION:
+            return "eSIR_CP_EXCEPTION";
+      case eSIR_STOP_BSS:
+            return "eSIR_STOP_BSS";
+      case eSIR_AHB_HANG_EXCEPTION:
+            return "eSIR_AHB_HANG_EXCEPTION";
+      case eSIR_DPU_EXCEPTION:
+            return "eSIR_DPU_EXCEPTION";
+      case eSIR_RXP_EXCEPTION:
+            return "eSIR_RXP_EXCEPTION";
+      case eSIR_MCPU_EXCEPTION:
+            return "eSIR_MCPU_EXCEPTION";
+      case eSIR_MCU_EXCEPTION:
+            return "eSIR_MCU_EXCEPTION";
+      case eSIR_MTU_EXCEPTION:
+            return "eSIR_MTU_EXCEPTION";
+      case eSIR_MIF_EXCEPTION:
+            return "eSIR_MIF_EXCEPTION";
+      case eSIR_FW_EXCEPTION:
+            return "eSIR_FW_EXCEPTION";
+      case eSIR_MAILBOX_SANITY_CHK_FAILED:
+            return "eSIR_MAILBOX_SANITY_CHK_FAILED";
+      case eSIR_RADIO_HW_SWITCH_STATUS_IS_OFF:
+            return "eSIR_RADIO_HW_SWITCH_STATUS_IS_OFF";
+      case eSIR_CFB_FLAG_STUCK_EXCEPTION:
+            return "eSIR_CFB_FLAG_STUCK_EXCEPTION";
+      case eSIR_SME_BASIC_RATES_NOT_SUPPORTED_STATUS:
+            return "eSIR_SME_BASIC_RATES_NOT_SUPPORTED_STATUS";
+      case eSIR_SME_INVALID_PARAMETERS:
+            return "eSIR_SME_INVALID_PARAMETERS";
+      case eSIR_SME_UNEXPECTED_REQ_RESULT_CODE:
+            return "eSIR_SME_UNEXPECTED_REQ_RESULT_CODE";
+      case eSIR_SME_RESOURCES_UNAVAILABLE:
+            return "eSIR_SME_RESOURCES_UNAVAILABLE";
+      case eSIR_SME_SCAN_FAILED:
+            return "eSIR_SME_SCAN_FAILED";
+      case eSIR_SME_BSS_ALREADY_STARTED_OR_JOINED:
+            return "eSIR_SME_BSS_ALREADY_STARTED_OR_JOINED";
+      case eSIR_SME_LOST_LINK_WITH_PEER_RESULT_CODE:
+            return "eSIR_SME_LOST_LINK_WITH_PEER_RESULT_CODE";
+      case eSIR_SME_REFUSED:
+            return "eSIR_SME_REFUSED";
+      case eSIR_SME_JOIN_TIMEOUT_RESULT_CODE:
+            return "eSIR_SME_JOIN_TIMEOUT_RESULT_CODE";
+      case eSIR_SME_AUTH_TIMEOUT_RESULT_CODE:
+            return "eSIR_SME_AUTH_TIMEOUT_RESULT_CODE";
+      case eSIR_SME_ASSOC_TIMEOUT_RESULT_CODE:
+            return "eSIR_SME_ASSOC_TIMEOUT_RESULT_CODE";
+      case eSIR_SME_REASSOC_TIMEOUT_RESULT_CODE:
+            return "eSIR_SME_REASSOC_TIMEOUT_RESULT_CODE";
+      case eSIR_SME_MAX_NUM_OF_PRE_AUTH_REACHED:
+            return "eSIR_SME_MAX_NUM_OF_PRE_AUTH_REACHED";
+      case eSIR_SME_AUTH_REFUSED:
+            return "eSIR_SME_AUTH_REFUSED";
+      case eSIR_SME_INVALID_WEP_DEFAULT_KEY:
+            return "eSIR_SME_INVALID_WEP_DEFAULT_KEY";
+      case eSIR_SME_ASSOC_REFUSED:
+            return "eSIR_SME_ASSOC_REFUSED";
+      case eSIR_SME_REASSOC_REFUSED:
+            return "eSIR_SME_REASSOC_REFUSED";
+      case eSIR_SME_STA_NOT_AUTHENTICATED:
+            return "eSIR_SME_STA_NOT_AUTHENTICATED";
+      case eSIR_SME_STA_NOT_ASSOCIATED:
+            return "eSIR_SME_STA_NOT_ASSOCIATED";
+      case eSIR_SME_STA_DISASSOCIATED:
+            return "eSIR_SME_STA_DISASSOCIATED";
+      case eSIR_SME_ALREADY_JOINED_A_BSS:
+            return "eSIR_SME_ALREADY_JOINED_A_BSS";
+      case eSIR_ULA_COMPLETED:
+            return "eSIR_ULA_COMPLETED";
+      case eSIR_ULA_FAILURE:
+            return "eSIR_ULA_FAILURE";
+      case eSIR_SME_LINK_ESTABLISHED:
+            return "eSIR_SME_LINK_ESTABLISHED";
+      case eSIR_SME_UNABLE_TO_PERFORM_MEASUREMENTS:
+            return "eSIR_SME_UNABLE_TO_PERFORM_MEASUREMENTS";
+      case eSIR_SME_UNABLE_TO_PERFORM_DFS:
+            return "eSIR_SME_UNABLE_TO_PERFORM_DFS";
+      case eSIR_SME_DFS_FAILED:
+            return "eSIR_SME_DFS_FAILED";
+      case eSIR_SME_TRANSFER_STA:
+            return "eSIR_SME_TRANSFER_STA";
+      case eSIR_SME_INVALID_LINK_TEST_PARAMETERS:
+            return "eSIR_SME_INVALID_LINK_TEST_PARAMETERS";
+      case eSIR_SME_LINK_TEST_MAX_EXCEEDED:
+            return "eSIR_SME_LINK_TEST_MAX_EXCEEDED";
+      case eSIR_SME_UNSUPPORTED_RATE:
+            return "eSIR_SME_UNSUPPORTED_RATE";
+      case eSIR_SME_LINK_TEST_TIMEOUT:
+            return "eSIR_SME_LINK_TEST_TIMEOUT";
+      case eSIR_SME_LINK_TEST_COMPLETE:
+            return "eSIR_SME_LINK_TEST_COMPLETE";
+      case eSIR_SME_LINK_TEST_INVALID_STATE:
+            return "eSIR_SME_LINK_TEST_INVALID_STATE";
+      case eSIR_SME_LINK_TEST_INVALID_ADDRESS:
+            return "eSIR_SME_LINK_TEST_INVALID_ADDRESS";
+      case eSIR_SME_POLARIS_RESET:
+            return "eSIR_SME_POLARIS_RESET";
+      case eSIR_SME_SETCONTEXT_FAILED:
+            return "eSIR_SME_SETCONTEXT_FAILED";
+      case eSIR_SME_BSS_RESTART:
+            return "eSIR_SME_BSS_RESTART";
+      case eSIR_SME_MORE_SCAN_RESULTS_FOLLOW:
+            return "eSIR_SME_MORE_SCAN_RESULTS_FOLLOW";
+      case eSIR_SME_INVALID_ASSOC_RSP_RXED:
+            return "eSIR_SME_INVALID_ASSOC_RSP_RXED";
+      case eSIR_SME_MIC_COUNTER_MEASURES:
+            return "eSIR_SME_MIC_COUNTER_MEASURES";
+      case eSIR_SME_ADDTS_RSP_TIMEOUT:
+            return "eSIR_SME_ADDTS_RSP_TIMEOUT";
+      case eSIR_SME_RECEIVED:
+            return "eSIR_SME_RECEIVED";
+      case eSIR_SME_CHANNEL_SWITCH_FAIL:
+            return "eSIR_SME_CHANNEL_SWITCH_FAIL";
+#ifdef GEN4_SCAN
+      case eSIR_SME_CHANNEL_SWITCH_DISABLED:
+            return "eSIR_SME_CHANNEL_SWITCH_DISABLED";
+      case eSIR_SME_HAL_SCAN_INIT_FAILED:
+            return "eSIR_SME_HAL_SCAN_INIT_FAILED";
+      case eSIR_SME_HAL_SCAN_START_FAILED:
+            return "eSIR_SME_HAL_SCAN_START_FAILED";
+      case eSIR_SME_HAL_SCAN_END_FAILED:
+            return "eSIR_SME_HAL_SCAN_END_FAILED";
+      case eSIR_SME_HAL_SCAN_FINISH_FAILED:
+            return "eSIR_SME_HAL_SCAN_FINISH_FAILED";
+      case eSIR_SME_HAL_SEND_MESSAGE_FAIL:
+            return "eSIR_SME_HAL_SEND_MESSAGE_FAIL";
+#else // GEN4_SCAN
+      case eSIR_SME_CHANNEL_SWITCH_DISABLED:
+            return "eSIR_SME_CHANNEL_SWITCH_DISABLED";
+      case eSIR_SME_HAL_SEND_MESSAGE_FAIL:
+            return "eSIR_SME_HAL_SEND_MESSAGE_FAIL";
+#endif // GEN4_SCAN
+
+        default:
+            return "INVALID resultCode";
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 void
@@ -824,6 +1420,7 @@ limPrintMsgName(tpAniSirGlobal pMac, tANI_U16 logLevel, tANI_U32 msgType)
     limLog(pMac, logLevel, limMsgStr(msgType));
 }
 
+<<<<<<< HEAD
 
 #if defined(ANI_MIPS) || defined(ANI_ARM)
 #define LINK 0
@@ -838,11 +1435,17 @@ limPrintMsgInfo(tpAniSirGlobal pMac, tANI_U16 logLevel, tSirMsgQ *msg)
 #if defined (ANI_OS_TYPE_LINUX) || defined (ANI_OS_TYPE_OSX)
     tANI_U32              *pRxPacketInfo;
 #endif
+=======
+void
+limPrintMsgInfo(tpAniSirGlobal pMac, tANI_U16 logLevel, tSirMsgQ *msg)
+{
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (logLevel <= pMac->utils.gLogDbgLevel[SIR_LIM_MODULE_ID - LOG_FIRST_MODULE_ID])
     {
         switch (msg->type)
         {
             case SIR_BB_XPORT_MGMT_MSG:
+<<<<<<< HEAD
 #if defined (ANI_OS_TYPE_LINUX) || defined (ANI_OS_TYPE_OSX)
 #ifndef GEN6_ONWARDS //PAL does not provide this API GEN6 onwards.
                 palGetPacketDataPtr( pMac->hHdd, HAL_TXRX_FRM_802_11_MGMT, (void *) msg->bodyptr, (void **) &pRxPacketInfo );
@@ -850,6 +1453,9 @@ limPrintMsgInfo(tpAniSirGlobal pMac, tANI_U16 logLevel, tSirMsgQ *msg)
 #else
                 limPrintMsgName(pMac, logLevel,msg->type);
 #endif
+=======
+                limPrintMsgName(pMac, logLevel,msg->type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             default:
                 limPrintMsgName(pMac, logLevel,msg->type);
@@ -881,11 +1487,28 @@ limPrintMsgInfo(tpAniSirGlobal pMac, tANI_U16 logLevel, tSirMsgQ *msg)
 void
 limInitMlm(tpAniSirGlobal pMac)
 {
+<<<<<<< HEAD
+=======
+    tANI_U32 retVal;
+
+    pMac->lim.gLimTimersCreated = 0;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     MTRACE(macTrace(pMac, TRACE_CODE_MLM_STATE, NO_SESSION, pMac->lim.gLimMlmState));
 
     /// Initialize scan result hash table
     limReInitScanResults(pMac); //sep26th review
 
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+    /// Initialize lfr scan result hash table
+    // Could there be a problem in multisession with SAP/P2P GO, when in the
+    // middle of FW bg scan, SAP started; Again that could be a problem even on
+    // infra + SAP/P2P GO too - TBD
+    limReInitLfrScanResults(pMac);
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
     /// Initialize number of pre-auth contexts
     pMac->lim.gLimNumPreAuthContexts = 0;
@@ -899,9 +1522,21 @@ limInitMlm(tpAniSirGlobal pMac)
         return;
 
     // Create timers used by LIM
+<<<<<<< HEAD
     limCreateTimers(pMac);
 
     pMac->lim.gLimTimersCreated = 1;
+=======
+    retVal = limCreateTimers(pMac);
+    if(retVal == TX_SUCCESS)
+    {
+        pMac->lim.gLimTimersCreated = 1;
+    }
+    else
+    {
+        limLog(pMac, LOGP, FL(" limCreateTimers Failed to create lim timers "));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limInitMlm() ***/
 
 
@@ -958,6 +1593,13 @@ limCleanupMlm(tpAniSirGlobal pMac)
         tx_timer_deactivate(&pMac->lim.limTimers.gLimJoinFailureTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimJoinFailureTimer);
 
+<<<<<<< HEAD
+=======
+        // Deactivate and delete Periodic Join Probe Request timer.
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimPeriodicJoinProbeReqTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimPeriodicJoinProbeReqTimer);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Deactivate and delete Association failure timer.
         tx_timer_deactivate(&pMac->lim.limTimers.gLimAssocFailureTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimAssocFailureTimer);
@@ -986,11 +1628,17 @@ limCleanupMlm(tpAniSirGlobal pMac)
         tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietBssTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimQuietBssTimer);
 
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
         // Deactivate and delete LIM background scan timer.
         tx_timer_deactivate(&pMac->lim.limTimers.gLimBackgroundScanTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimBackgroundScanTimer);
 #endif
+=======
+        // Deactivate and delete LIM background scan timer.
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimBackgroundScanTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimBackgroundScanTimer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
         // Deactivate and delete cnf wait timer
@@ -1016,6 +1664,7 @@ limCleanupMlm(tpAniSirGlobal pMac)
             tx_timer_delete(&pAuthNode->timer);
         }
 
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
 
         if (pMac->lim.gLimSystemRole == eLIM_AP_ROLE)
@@ -1032,13 +1681,18 @@ limCleanupMlm(tpAniSirGlobal pMac)
 
         }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
         // Deactivate and delete Hash Miss throttle timer
         tx_timer_deactivate(&pMac->lim.limTimers.gLimSendDisassocFrameThresholdTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimSendDisassocFrameThresholdTimer);
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tx_timer_deactivate(&pMac->lim.limTimers.gLimUpdateOlbcCacheTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimUpdateOlbcCacheTimer);
         tx_timer_deactivate(&pMac->lim.limTimers.gLimPreAuthClnupTimer);
@@ -1055,18 +1709,27 @@ limCleanupMlm(tpAniSirGlobal pMac)
             }
         }
 #endif
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
         // Deactivate and delete FT Preauth response timer
         tx_timer_deactivate(&pMac->lim.limTimers.gLimFTPreAuthRspTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimFTPreAuthRspTimer);
 #endif
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
         // Deactivate and delete remain on channel timer
         tx_timer_deactivate(&pMac->lim.limTimers.gLimRemainOnChannelTimer);
         tx_timer_delete(&pMac->lim.limTimers.gLimRemainOnChannelTimer);
 #endif
+=======
+        // Deactivate and delete remain on channel timer
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimRemainOnChannelTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimRemainOnChannelTimer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_CCX
         // Deactivate and delete TSM
@@ -1074,11 +1737,33 @@ limCleanupMlm(tpAniSirGlobal pMac)
         tx_timer_delete(&pMac->lim.limTimers.gLimCcxTsmTimer);
 #endif
 
+<<<<<<< HEAD
+=======
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimDisassocAckTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimDisassocAckTimer);
+
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimDeauthAckTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimDeauthAckTimer);
+
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimP2pSingleShotNoaInsertTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimP2pSingleShotNoaInsertTimer);
+
+        tx_timer_deactivate(&pMac->lim.limTimers.gLimActiveToPassiveChannelTimer);
+        tx_timer_delete(&pMac->lim.limTimers.gLimActiveToPassiveChannelTimer);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->lim.gLimTimersCreated = 0;
     }
 
     /// Cleanup cached scan list
     limReInitScanResults(pMac);
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+    /// Cleanup cached scan list
+    limReInitLfrScanResults(pMac);
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 } /*** end limCleanupMlm() ***/
 
@@ -1108,10 +1793,13 @@ limCleanupMlm(tpAniSirGlobal pMac)
 void
 limCleanupLmm(tpAniSirGlobal pMac)
 {
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined (ANI_PRODUCT_TYPE_AP)
     limCleanupMeasResources(pMac);
     pMac->sys.gSysEnableLearnMode = eANI_BOOLEAN_FALSE;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limCleanupLmm() ***/
 
 
@@ -1208,6 +1896,7 @@ limIsGroupAddr(tSirMacAddr macAddr)
 tANI_U32
 limPostMsgApiNoWait(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
 {
+<<<<<<< HEAD
 #ifdef ANI_OS_TYPE_WINDOWS
     tANI_U32 retCode;
 
@@ -1228,6 +1917,10 @@ limPostMsgApiNoWait(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
     limProcessMessages(pMac, pMsg);
     return TX_SUCCESS;
 #endif
+=======
+    limProcessMessages(pMac, pMsg);
+    return TX_SUCCESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limPostMsgApiNoWait() ***/
 
 
@@ -1255,7 +1948,11 @@ void
 limPrintMacAddr(tpAniSirGlobal pMac, tSirMacAddr macAddr, tANI_U8 logLevel)
 {
     limLog(pMac, logLevel,
+<<<<<<< HEAD
            FL("%X:%X:%X:%X:%X:%X\n"),
+=======
+           FL("%X:%X:%X:%X:%X:%X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4],
            macAddr[5]);
 } /****** end limPrintMacAddr() ******/
@@ -1324,7 +2021,11 @@ void limResetDeferredMsgQ(tpAniSirGlobal pMac)
 tANI_U8 limWriteDeferredMsgQ(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 {
     PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
            FL("**  Queue a deferred message (size %d, write %d) - type 0x%x  **\n"),
+=======
+           FL("**  Queue a deferred message (size %d, write %d) - type 0x%x  **"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pMac->lim.gLimDeferredMsgQ.size, pMac->lim.gLimDeferredMsgQ.write,
            limMsg->type);)
 
@@ -1333,7 +2034,18 @@ tANI_U8 limWriteDeferredMsgQ(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
          **/
     if (pMac->lim.gLimDeferredMsgQ.size >= MAX_DEFERRED_QUEUE_LEN)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Deferred Message Queue is full. Msg: %d\n"), limMsg->type);)
+=======
+        if(!(pMac->lim.deferredMsgCnt & 0xF))
+        {
+            PELOGE(limLog(pMac, LOGE, FL("Deferred Message Queue is full. Msg:%d Messages Failed:%d"), limMsg->type, ++pMac->lim.deferredMsgCnt);)
+        }
+        else
+        {
+            pMac->lim.deferredMsgCnt++;
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return TX_QUEUE_FULL;
     }
 
@@ -1344,7 +2056,11 @@ tANI_U8 limWriteDeferredMsgQ(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     **/
     if (pMac->lim.gLimDeferredMsgQ.size > 0)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("%d Deferred messages (type 0x%x, scan %d, global sme %d, global mlme %d, addts %d)\n"),
+=======
+        PELOGW(limLog(pMac, LOGW, FL("%d Deferred messages (type 0x%x, scan %d, global sme %d, global mlme %d, addts %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->lim.gLimDeferredMsgQ.size, limMsg->type,
                limIsSystemInScanState(pMac),
                pMac->lim.gLimSmeState, pMac->lim.gLimMlmState,
@@ -1369,7 +2085,11 @@ tANI_U8 limWriteDeferredMsgQ(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
             if( LIM_MAX_NUM_MGMT_FRAME_DEFERRED < count )
             {
                 //We reach the quota for management frames, drop this one
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("Cannot deferred. Msg: %d Too many (count=%d) already\n"), limMsg->type, count);)
+=======
+                PELOGW(limLog(pMac, LOGW, FL("Cannot deferred. Msg: %d Too many (count=%d) already"), limMsg->type, count);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //Return error, caller knows what to do
                 return TX_QUEUE_FULL;
             }
@@ -1378,6 +2098,15 @@ tANI_U8 limWriteDeferredMsgQ(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
     ++pMac->lim.gLimDeferredMsgQ.size;
 
+<<<<<<< HEAD
+=======
+    /* reset the count here since we are able to defer the message */
+    if(pMac->lim.deferredMsgCnt != 0)
+    {
+        pMac->lim.deferredMsgCnt = 0;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*
     ** if the write pointer hits the end of the queue, rewind it
     **/
@@ -1449,11 +2178,19 @@ tSirMsgQ* limReadDeferredMsgQ(tpAniSirGlobal pMac)
         pMac->lim.gLimDeferredMsgQ.read = 0;
 
    PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
            FL("**  DeQueue a deferred message (size %d read %d) - type 0x%x  **\n"),
            pMac->lim.gLimDeferredMsgQ.size, pMac->lim.gLimDeferredMsgQ.read,
            msg->type);)
 
    PELOG1(limLog(pMac, LOG1, FL("DQ msg -- scan %d, global sme %d, global mlme %d, addts %d\n"),
+=======
+           FL("**  DeQueue a deferred message (size %d read %d) - type 0x%x  **"),
+           pMac->lim.gLimDeferredMsgQ.size, pMac->lim.gLimDeferredMsgQ.read,
+           msg->type);)
+
+   PELOG1(limLog(pMac, LOG1, FL("DQ msg -- scan %d, global sme %d, global mlme %d, addts %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            limIsSystemInScanState(pMac),
            pMac->lim.gLimSmeState, pMac->lim.gLimMlmState,
            pMac->lim.gLimAddtsSent);)
@@ -1467,12 +2204,17 @@ limSysProcessMmhMsgApi(tpAniSirGlobal pMac,
                     tANI_U8 qType)
 {
 // FIXME
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
    SysProcessMmhMsg(pMac, pMsg);
    return eSIR_SUCCESS;
 #else
    return(halMmhPostMsgApi(pMac, pMsg, qType));
 #endif
+=======
+   SysProcessMmhMsg(pMac, pMsg);
+   return eSIR_SUCCESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 char *limFrameStr(tANI_U32 type, tANI_U32 subType)
@@ -1587,7 +2329,10 @@ char *limFrameStr(tANI_U32 type, tANI_U32 subType)
 return "";
 }
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
 {
     int i;
@@ -1598,9 +2343,18 @@ void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
 
     if (psessionEntry == NULL)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL(" Session not found\n"));)
         return;
     }
+=======
+        PELOGE(limLog(pMac, LOGE, FL(" Session not found"));)
+        return;
+    }
+
+    palZeroMemory( pMac->hHdd, ( tANI_U8* )&beaconParams, sizeof( tUpdateBeaconParams) );
+    beaconParams.bssIdx = psessionEntry->bssIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     beaconParams.paramChangeBitmap = 0;
     /*
@@ -1611,7 +2365,11 @@ void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
     if (!enable)
     {
 
+<<<<<<< HEAD
             PELOG2(limLog(pMac, LOG2, FL("Resetting OLBC cache\n"));)
+=======
+            PELOG2(limLog(pMac, LOG2, FL("Resetting OLBC cache"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->gLimOlbcParams.numSta = 0;
             psessionEntry->gLimOverlap11gParams.numSta = 0;
             psessionEntry->gLimOverlapHt20Params.numSta = 0;
@@ -1632,7 +2390,11 @@ void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
             {
                 if (!psessionEntry->gLim11bParams.protectionEnabled)
                 {
+<<<<<<< HEAD
                     PELOG1(limLog(pMac, LOG1, FL("Overlap cache all clear and no 11B STA detected\n"));)
+=======
+                    PELOG1(limLog(pMac, LOG1, FL("Overlap cache all clear and no 11B STA detected"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limEnable11gProtection(pMac, false, true, &beaconParams, psessionEntry);
                 }
             }
@@ -1644,7 +2406,11 @@ void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
             {
                 if (!psessionEntry->gLim11gParams.protectionEnabled)
                 {
+<<<<<<< HEAD
                     PELOG1(limLog(pMac, LOG1, FL("Overlap cache all clear and no 11G STA detected\n"));)
+=======
+                    PELOG1(limLog(pMac, LOG1, FL("Overlap cache all clear and no 11G STA detected"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limEnableHtProtectionFrom11g(pMac, false, true, &beaconParams,psessionEntry);
                 }
             }
@@ -1656,7 +2422,11 @@ void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
             {
                 if (!psessionEntry->gLimHt20Params.protectionEnabled)
                 {
+<<<<<<< HEAD
                     PELOG1(limLog(pMac, LOG1, FL("Overlap cache all clear and no HT20 STA detected\n"));)
+=======
+                    PELOG1(limLog(pMac, LOG1, FL("Overlap cache all clear and no HT20 STA detected"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limEnable11gProtection(pMac, false, true, &beaconParams,psessionEntry);
                 }
             }
@@ -1674,10 +2444,16 @@ void limHandleUpdateOlbcCache(tpAniSirGlobal pMac)
     // Start OLBC timer
     if (tx_timer_activate(&pMac->lim.limTimers.gLimUpdateOlbcCacheTimer) != TX_SUCCESS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("tx_timer_activate failed\n"));
     }
 }
 #endif
+=======
+        limLog(pMac, LOGE, FL("tx_timer_activate failed"));
+    }
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * limIsNullSsid()
@@ -1767,7 +2543,10 @@ limIsNullSsid( tSirMacSSid *pSsid )
 
 
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** -------------------------------------------------------------
 \fn limUpdateProtStaParams
@@ -1802,7 +2581,11 @@ tpPESession psessionEntry)
               psessionEntry->protStaCache[i].addr,
               peerMacAddr, sizeof(tSirMacAddr)))
           {
+<<<<<<< HEAD
               PELOG1(limLog(pMac, LOG1, FL("matching cache entry at %d already active.\n"), i);)
+=======
+              PELOG1(limLog(pMac, LOG1, FL("matching cache entry at %d already active."), i);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               return;
           }
       }
@@ -1816,7 +2599,11 @@ tpPESession psessionEntry)
 
   if (i >= LIM_PROT_STA_CACHE_SIZE)
   {
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("No space in ProtStaCache\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE, FL("No space in ProtStaCache"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
   }
 
@@ -1850,7 +2637,11 @@ tpPESession psessionEntry)
   if(!lsigTxopSupported)
   {
       psessionEntry->gLimLsigTxopParams.numSta++;
+<<<<<<< HEAD
       limLog(pMac,LOG1, FL("!lsigTxopSupported\n"));
+=======
+      limLog(pMac,LOG1, FL("!lsigTxopSupported"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 }// ---------------------------------------------------------------------
 
@@ -1878,7 +2669,11 @@ limDecideApProtection(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tpUpdateBeac
     pStaDs = dphLookupHashEntry(pMac, peerMacAddr, &tmpAid, &psessionEntry->dph.dphHashTable);
     if(NULL == pStaDs)
     {
+<<<<<<< HEAD
       PELOG1(limLog(pMac, LOG1, FL("pStaDs is NULL\n"));)
+=======
+      PELOG1(limLog(pMac, LOG1, FL("pStaDs is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
     }
     limGetRfBand(pMac, &rfBand, psessionEntry);
@@ -1911,7 +2706,11 @@ limDecideApProtection(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tpUpdateBeac
             {
                 protStaCacheType = eLIM_PROT_STA_CACHE_TYPE_llB;
                 // enable protection
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL("Enabling protection from 11B\n"));)
+=======
+                PELOG3(limLog(pMac, LOG3, FL("Enabling protection from 11B"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limEnable11gProtection(pMac, true, false, pBeaconParams,psessionEntry);
             }
         }
@@ -1925,7 +2724,11 @@ limDecideApProtection(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tpUpdateBeac
             {
                 protStaCacheType = eLIM_PROT_STA_CACHE_TYPE_llB;
                 // enable protection
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL("Enabling protection from 11B\n"));)
+=======
+                PELOG3(limLog(pMac, LOG3, FL("Enabling protection from 11B"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limEnable11gProtection(pMac, true, false, pBeaconParams, psessionEntry);
             }
             //station being joined is non-11b and non-ht ==> 11g device
@@ -1969,7 +2772,10 @@ limDecideApProtection(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tpUpdateBeac
 
     return;
 }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /** -------------------------------------------------------------
@@ -1990,7 +2796,11 @@ tpUpdateBeaconParams pBeaconParams, tpSirMacMgmtHdr pMh,tpPESession psessionEntr
         !psessionEntry->gLimOlbcParams.protectionEnabled)
     {
         // enable protection
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("OLBC happens!!!\n"));)
+=======
+        PELOG1(limLog(pMac, LOG1, FL("OLBC happens!!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limEnable11gProtection(pMac, true, true, pBeaconParams,psessionEntry);
     }
 }
@@ -2028,7 +2838,10 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
 
                 for (i=0; i<LIM_PROT_STA_CACHE_SIZE; i++)
                 {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE                                
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if ((psessionEntry->limSystemRole == eLIM_AP_ROLE )  &&
                      psessionEntry->gLimNoShortParams.staNoShortCache[i].active)
                     {
@@ -2037,7 +2850,10 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
                                     peerMacAddr, sizeof(tSirMacAddr)))
                             return;
                 }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     if (pMac->lim.gLimNoShortParams.staNoShortCache[i].active)
                      {
@@ -2052,12 +2868,18 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
 
             for (i=0; i<LIM_PROT_STA_CACHE_SIZE; i++)
             {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE                                
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if ( (psessionEntry->limSystemRole == eLIM_AP_ROLE )  &&
                       !psessionEntry->gLimNoShortParams.staNoShortCache[i].active)
                      break;
                 else        
+<<<<<<< HEAD
 #endif        
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     if (!pMac->lim.gLimNoShortParams.staNoShortCache[i].active)
                     break;
@@ -2066,7 +2888,10 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
 
             if (i >= LIM_PROT_STA_CACHE_SIZE)
             {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
                     limLog(pMac, LOGE, FL("No space in Short cache (#active %d, #sta %d) for sta "),
                             i, psessionEntry->gLimNoShortParams.numNonShortPreambleSta);
@@ -2074,7 +2899,10 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
                     return;
                 }
                 else
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     limLog(pMac, LOGE, FL("No space in Short cache (#active %d, #sta %d) for sta "),
                             i, pMac->lim.gLimNoShortParams.numNonShortPreambleSta);
@@ -2085,14 +2913,20 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
             }
 
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
                 palCopyMemory( pMac->hHdd, psessionEntry->gLimNoShortParams.staNoShortCache[i].addr,
                         peerMacAddr,  sizeof(tSirMacAddr));
                 psessionEntry->gLimNoShortParams.staNoShortCache[i].active = true;
                 psessionEntry->gLimNoShortParams.numNonShortPreambleSta++;
             }else
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 palCopyMemory( pMac->hHdd, pMac->lim.gLimNoShortParams.staNoShortCache[i].addr,
                                peerMacAddr,  sizeof(tSirMacAddr));
@@ -2102,6 +2936,7 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
 
 
             // enable long preamble
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("Disabling short preamble\n"));)
 
 #ifdef WLAN_SOFTAP_FEATURE
@@ -2112,6 +2947,12 @@ limUpdateShortPreamble(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
                 PELOGE(limLog(pMac, LOGE, FL("Cannot enable long preamble\n"));)
 
 #endif
+=======
+            PELOG1(limLog(pMac, LOG1, FL("Disabling short preamble"));)
+
+            if (limEnableShortPreamble(pMac, false, pBeaconParams, psessionEntry) != eSIR_SUCCESS)
+                PELOGE(limLog(pMac, LOGE, FL("Cannot enable long preamble"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 }
@@ -2154,7 +2995,10 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
             limPrintMacAddr(pMac, peerMacAddr, LOG1);)
             for (i=0; i<LIM_PROT_STA_CACHE_SIZE; i++)
             {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if ((psessionEntry->limSystemRole == eLIM_AP_ROLE ) &&
                      psessionEntry->gLimNoShortSlotParams.staNoShortSlotCache[i].active)
                 {
@@ -2164,7 +3008,10 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
                         return;
                 }
                 else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     if (pMac->lim.gLimNoShortSlotParams.staNoShortSlotCache[i].active)
                     {
@@ -2178,12 +3025,18 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
 
             for (i=0; i<LIM_PROT_STA_CACHE_SIZE; i++)
             {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if ((psessionEntry->limSystemRole == eLIM_AP_ROLE ) &&
                      !psessionEntry->gLimNoShortSlotParams.staNoShortSlotCache[i].active)
                     break;
                  else
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  {
                      if (!pMac->lim.gLimNoShortSlotParams.staNoShortSlotCache[i].active)
                           break;
@@ -2192,14 +3045,20 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
 
             if (i >= LIM_PROT_STA_CACHE_SIZE)
             {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
                     limLog(pMac, LOGE, FL("No space in ShortSlot cache (#active %d, #sta %d) for sta "),
                             i, psessionEntry->gLimNoShortSlotParams.numNonShortSlotSta);
                     limPrintMacAddr(pMac, peerMacAddr, LOGE);
                     return;
                 }else
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     limLog(pMac, LOGE, FL("No space in ShortSlot cache (#active %d, #sta %d) for sta "),
                            i, pMac->lim.gLimNoShortSlotParams.numNonShortSlotSta);
@@ -2209,14 +3068,20 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
             }
 
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
                 palCopyMemory( pMac->hHdd, psessionEntry->gLimNoShortSlotParams.staNoShortSlotCache[i].addr,
                                peerMacAddr, sizeof(tSirMacAddr));
                 psessionEntry->gLimNoShortSlotParams.staNoShortSlotCache[i].active = true;
                 psessionEntry->gLimNoShortSlotParams.numNonShortSlotSta++;
             }else
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 palCopyMemory( pMac->hHdd, pMac->lim.gLimNoShortSlotParams.staNoShortSlotCache[i].addr,
                           peerMacAddr, sizeof(tSirMacAddr));
@@ -2225,7 +3090,10 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
             }
             wlan_cfgGetInt(pMac, WNI_CFG_11G_SHORT_SLOT_TIME_ENABLED, &val);
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Here we check if we are AP role and short slot enabled (both admin and oper modes) but we have atleast one STA connected with
              * only long slot enabled, we need to change our beacon/pb rsp to broadcast short slot disabled
              */
@@ -2235,18 +3103,29 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
                 // enable long slot time
                 pBeaconParams->fShortSlotTime = false;
                 pBeaconParams->paramChangeBitmap |= PARAM_SHORT_SLOT_TIME_CHANGED;
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("Disable short slot time. Enable long slot time.\n"));)
                 psessionEntry->shortSlotTimeSupported = false;
             }
             else if ( psessionEntry->limSystemRole != eLIM_AP_ROLE)
 #endif            
+=======
+                PELOG1(limLog(pMac, LOG1, FL("Disable short slot time. Enable long slot time."));)
+                psessionEntry->shortSlotTimeSupported = false;
+            }
+            else if ( psessionEntry->limSystemRole != eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 if (val && pMac->lim.gLimNoShortSlotParams.numNonShortSlotSta && psessionEntry->shortSlotTimeSupported)
                 {
                     // enable long slot time
                     pBeaconParams->fShortSlotTime = false;
                     pBeaconParams->paramChangeBitmap |= PARAM_SHORT_SLOT_TIME_CHANGED;
+<<<<<<< HEAD
                     PELOG1(limLog(pMac, LOG1, FL("Disable short slot time. Enable long slot time.\n"));)
+=======
+                    PELOG1(limLog(pMac, LOG1, FL("Disable short slot time. Enable long slot time."));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     psessionEntry->shortSlotTimeSupported = false;
                  }
             }
@@ -2254,6 +3133,7 @@ limUpdateShortSlotTime(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
     }
 }
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined (ANI_PRODUCT_TYPE_AP)
 /**
  * limDetectRadar()
@@ -2346,6 +3226,8 @@ limDecideApProtection(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tpUpdateBeac
 
 #endif
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** -------------------------------------------------------------
 \fn limDecideStaProtectionOnAssoc
@@ -2640,18 +3522,29 @@ limDecideStaProtection(tpAniSirGlobal pMac,
 void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
 {
     tpPESession psessionEntry = NULL;
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8    channel; // This is received and stored from channelSwitch Action frame
    
     if((psessionEntry = peFindSessionBySessionId(pMac, pMac->lim.limTimers.gLimChannelSwitchTimer.sessionId))== NULL) 
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, "Channel switch can be done only in STA role, Current Role = %d\n", psessionEntry->limSystemRole);)
+=======
+        PELOGW(limLog(pMac, LOGW, "Channel switch can be done only in STA role, Current Role = %d", psessionEntry->limSystemRole);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     channel = psessionEntry->gLimChannelSwitch.primaryChannel;
@@ -2662,7 +3555,11 @@ void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
      */
     if(!limIsSystemInActiveState(pMac))
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Device is not in active state, cannot switch channel\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Device is not in active state, cannot switch channel"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
          
@@ -2681,7 +3578,11 @@ void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
         /* We need to restore pre-channelSwitch state on the STA */
         if(limRestorePreChannelSwitchState(pMac, psessionEntry) != eSIR_SUCCESS)
         {
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("Could not restore pre-channelSwitch (11h) state, resetting the system\n"));
+=======
+            limLog(pMac, LOGP, FL("Could not restore pre-channelSwitch (11h) state, resetting the system"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
 
@@ -2697,13 +3598,21 @@ void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
     switch(psessionEntry->gLimChannelSwitch.state)
     {
         case eLIM_CHANNEL_SWITCH_PRIMARY_ONLY:
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("CHANNEL_SWITCH_PRIMARY_ONLY \n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("CHANNEL_SWITCH_PRIMARY_ONLY "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limSwitchPrimaryChannel(pMac, psessionEntry->gLimChannelSwitch.primaryChannel,psessionEntry);
             psessionEntry->gLimChannelSwitch.state = eLIM_CHANNEL_SWITCH_IDLE;
             break;
 
         case eLIM_CHANNEL_SWITCH_SECONDARY_ONLY:
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("CHANNEL_SWITCH_SECONDARY_ONLY \n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("CHANNEL_SWITCH_SECONDARY_ONLY "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limSwitchPrimarySecondaryChannel(pMac, psessionEntry,
                                              psessionEntry->currentOperChannel,
                                              psessionEntry->gLimChannelSwitch.secondarySubBand);
@@ -2711,7 +3620,11 @@ void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
             break;
 
         case eLIM_CHANNEL_SWITCH_PRIMARY_AND_SECONDARY:
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("CHANNEL_SWITCH_PRIMARY_AND_SECONDARY\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("CHANNEL_SWITCH_PRIMARY_AND_SECONDARY"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limSwitchPrimarySecondaryChannel(pMac, psessionEntry,
                                              psessionEntry->gLimChannelSwitch.primaryChannel,
                                              psessionEntry->gLimChannelSwitch.secondarySubBand);
@@ -2720,6 +3633,7 @@ void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
 
         case eLIM_CHANNEL_SWITCH_IDLE:
         default:
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("incorrect state \n"));)
             if(limRestorePreChannelSwitchState(pMac, psessionEntry) != eSIR_SUCCESS)
             {
@@ -2728,6 +3642,15 @@ void limProcessChannelSwitchTimeout(tpAniSirGlobal pMac)
             return;  /* Please note, this is 'return' and not 'break' */
     }
 #endif
+=======
+            PELOGE(limLog(pMac, LOGE, FL("incorrect state "));)
+            if(limRestorePreChannelSwitchState(pMac, psessionEntry) != eSIR_SUCCESS)
+            {
+                limLog(pMac, LOGP, FL("Could not restore pre-channelSwitch (11h) state, resetting the system"));
+            }
+            return;  /* Please note, this is 'return' and not 'break' */
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
@@ -2750,8 +3673,15 @@ limUpdateChannelSwitch(struct sAniSirGlobal *pMac,  tpSirProbeRespBeacon pBeacon
     tANI_U16                         beaconPeriod;
     tChannelSwitchPropIEStruct       *pPropChnlSwitch;
     tDot11fIEChanSwitchAnn           *pChnlSwitch;
+<<<<<<< HEAD
 
  
+=======
+#ifdef WLAN_FEATURE_11AC
+    tDot11fIEWiderBWChanSwitchAnn    *pWiderChnlSwitch;
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     beaconPeriod = psessionEntry->beaconParams.beaconInterval;
 
     /* STA either received proprietary channel switch IE or 802.11h
@@ -2779,6 +3709,18 @@ limUpdateChannelSwitch(struct sAniSirGlobal *pMac,  tpSirProbeRespBeacon pBeacon
        psessionEntry->gLimChannelSwitch.switchTimeoutValue =
                  SYS_MS_TO_TICKS(beaconPeriod)* (pChnlSwitch->switchCount);
        psessionEntry->gLimChannelSwitch.switchMode = pChnlSwitch->switchMode; 
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_11AC
+       pWiderChnlSwitch = &(pBeacon->WiderBWChanSwitchAnn);
+       if(pBeacon->WiderBWChanSwitchAnnPresent) 
+       {
+           psessionEntry->gLimWiderBWChannelSwitch.newChanWidth = pWiderChnlSwitch->newChanWidth;
+           psessionEntry->gLimWiderBWChannelSwitch.newCenterChanFreq0 = pWiderChnlSwitch->newCenterChanFreq0;
+           psessionEntry->gLimWiderBWChannelSwitch.newCenterChanFreq1 = pWiderChnlSwitch->newCenterChanFreq1;
+       }
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Only primary channel switch element is present */
         psessionEntry->gLimChannelSwitch.state = eLIM_CHANNEL_SWITCH_PRIMARY_ONLY;
@@ -2797,6 +3739,7 @@ limUpdateChannelSwitch(struct sAniSirGlobal *pMac,  tpSirProbeRespBeacon pBeacon
                     psessionEntry->gLimChannelSwitch.state = eLIM_CHANNEL_SWITCH_PRIMARY_AND_SECONDARY;
                     psessionEntry->gLimChannelSwitch.secondarySubBand = pBeacon->extChannelSwitchIE.secondaryChannelOffset;
                 }
+<<<<<<< HEAD
             }
         }
     }
@@ -2808,6 +3751,39 @@ limUpdateChannelSwitch(struct sAniSirGlobal *pMac,  tpSirProbeRespBeacon pBeacon
 
     limLog(pMac, LOGW,
         FL("session %d primary chl %d, subband %d, count  %d (%d ticks) \n"),
+=======
+#ifdef WLAN_FEATURE_11AC
+                if(psessionEntry->vhtCapability && pBeacon->WiderBWChanSwitchAnnPresent)
+                {
+                    if (pWiderChnlSwitch->newChanWidth == WNI_CFG_VHT_CHANNEL_WIDTH_80MHZ)
+                    {
+                        if(pBeacon->extChannelSwitchPresent)
+                        {
+                            if ((pBeacon->extChannelSwitchIE.secondaryChannelOffset == PHY_DOUBLE_CHANNEL_LOW_PRIMARY) ||
+                                (pBeacon->extChannelSwitchIE.secondaryChannelOffset == PHY_DOUBLE_CHANNEL_HIGH_PRIMARY))
+                            {
+                                psessionEntry->gLimChannelSwitch.state = eLIM_CHANNEL_SWITCH_PRIMARY_AND_SECONDARY;
+                                psessionEntry->gLimChannelSwitch.secondarySubBand = limGet11ACPhyCBState(pMac, 
+                                                                                                         psessionEntry->gLimChannelSwitch.primaryChannel,
+                                                                                                         pBeacon->extChannelSwitchIE.secondaryChannelOffset,
+                                                                                                         pWiderChnlSwitch->newCenterChanFreq0,
+                                                                                                         psessionEntry);
+                            }
+                        }
+                    }
+                }
+#endif
+            }
+        }
+     }
+    if (eSIR_SUCCESS != limStartChannelSwitch(pMac, psessionEntry))
+    {
+        PELOGW(limLog(pMac, LOGW, FL("Could not start Channel Switch"));)
+    }
+
+    limLog(pMac, LOGW,
+        FL("session %d primary chl %d, subband %d, count  %d (%d ticks) "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         psessionEntry->peSessionId,
         psessionEntry->gLimChannelSwitch.primaryChannel,
         psessionEntry->gLimChannelSwitch.secondarySubBand,
@@ -2836,25 +3812,42 @@ limUpdateChannelSwitch(struct sAniSirGlobal *pMac,  tpSirProbeRespBeacon pBeacon
  */
 void limCancelDot11hChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEntry)
 {
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
     if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
         return;
         
     PELOGW(limLog(pMac, LOGW, FL("Received a beacon without channel switch IE\n"));)
+=======
+    if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
+        return;
+        
+    PELOGW(limLog(pMac, LOGW, FL("Received a beacon without channel switch IE"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_CHANNEL_SWITCH_TIMER));
 
     if (tx_timer_deactivate(&pMac->lim.limTimers.gLimChannelSwitchTimer) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("tx_timer_deactivate failed!\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("tx_timer_deactivate failed!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* We need to restore pre-channelSwitch state on the STA */
     if (limRestorePreChannelSwitchState(pMac, psessionEntry) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("LIM: Could not restore pre-channelSwitch (11h) state, reseting the system\n"));)
                 
     }
 #endif
+=======
+        PELOGE(limLog(pMac, LOGE, FL("LIM: Could not restore pre-channelSwitch (11h) state, resetting the system"));)
+                
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**----------------------------------------------
@@ -2867,7 +3860,10 @@ void limCancelDot11hChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEntry
 -----------------------------------------------*/
 void limCancelDot11hQuiet(tpAniSirGlobal pMac, tpPESession psessionEntry)
 {
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
         return;
 
@@ -2876,7 +3872,11 @@ void limCancelDot11hQuiet(tpAniSirGlobal pMac, tpPESession psessionEntry)
          MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_QUIET_TIMER));
         if (tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietTimer) != TX_SUCCESS)
         {
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("tx_timer_deactivate failed\n"));)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("tx_timer_deactivate failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
     else if (psessionEntry->gLimSpecMgmt.quietState == eLIM_QUIET_RUNNING)
@@ -2884,7 +3884,11 @@ void limCancelDot11hQuiet(tpAniSirGlobal pMac, tpPESession psessionEntry)
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_QUIET_BSS_TIMER));
         if (tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietBssTimer) != TX_SUCCESS)
         {
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("tx_timer_deactivate failed\n"));)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("tx_timer_deactivate failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         /**
          * If the channel switch is already running in silent mode, dont resume the
@@ -2898,7 +3902,10 @@ void limCancelDot11hQuiet(tpAniSirGlobal pMac, tpPESession psessionEntry)
         }
     }
     psessionEntry->gLimSpecMgmt.quietState = eLIM_QUIET_INIT;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
@@ -2938,11 +3945,19 @@ void limProcessQuietTimeout(tpAniSirGlobal pMac)
 
     if((psessionEntry = peFindSessionBySessionId(pMac, pMac->lim.limTimers.gLimQuietTimer.sessionId))== NULL) 
     {
+<<<<<<< HEAD
         limLog(pMac, LOGE,FL("Session Does not exist for given sessionID\n"));
         return;
     }
 
   PELOG1(limLog(pMac, LOG1, FL("quietState = %d\n"), psessionEntry->gLimSpecMgmt.quietState);)
+=======
+        limLog(pMac, LOGE,FL("Session Does not exist for given sessionID"));
+        return;
+    }
+
+  PELOG1(limLog(pMac, LOG1, FL("quietState = %d"), psessionEntry->gLimSpecMgmt.quietState);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   switch( psessionEntry->gLimSpecMgmt.quietState )
   {
     case eLIM_QUIET_BEGIN:
@@ -2952,7 +3967,11 @@ void limProcessQuietTimeout(tpAniSirGlobal pMac)
       tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietBssTimer))
       {
           limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL("Unable to de-activate gLimQuietBssTimer! Will attempt to activate anyway...\n"));
+=======
+            FL("Unable to de-activate gLimQuietBssTimer! Will attempt to activate anyway..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
 
       // gLimQuietDuration appears to be in units of ticks
@@ -2963,9 +3982,15 @@ void limProcessQuietTimeout(tpAniSirGlobal pMac)
             0))
       {
           limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL("Unable to change gLimQuietBssTimer! Will still attempt to activate anyway...\n"));
       }
       MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, NO_SESSION, eLIM_QUIET_BSS_TIMER));
+=======
+            FL("Unable to change gLimQuietBssTimer! Will still attempt to activate anyway..."));
+      }
+      MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, pMac->lim.limTimers.gLimQuietTimer.sessionId, eLIM_QUIET_BSS_TIMER));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef GEN6_TODO
         /* revisit this piece of code to assign the appropriate sessionId below
          * priority - HIGH
@@ -2976,7 +4001,11 @@ void limProcessQuietTimeout(tpAniSirGlobal pMac)
           tx_timer_activate( &pMac->lim.limTimers.gLimQuietBssTimer ))
       {
         limLog( pMac, LOGW,
+<<<<<<< HEAD
             FL("Unable to activate gLimQuietBssTimer! The STA will be unable to honor Quiet BSS...\n"));
+=======
+            FL("Unable to activate gLimQuietBssTimer! The STA will be unable to honor Quiet BSS..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else
       {
@@ -2989,7 +4018,11 @@ void limProcessQuietTimeout(tpAniSirGlobal pMac)
           (eSIR_TRUE == (glimTriggerBackgroundScanDuringQuietBss_Status = limTriggerBackgroundScanDuringQuietBss( pMac ))) )
         {
            limLog( pMac, LOG2,
+<<<<<<< HEAD
                FL("Attempting to trigger a background scan...\n"));
+=======
+               FL("Attempting to trigger a background scan..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
@@ -2998,7 +4031,11 @@ void limProcessQuietTimeout(tpAniSirGlobal pMac)
            limFrameTransmissionControl(pMac, eLIM_TX_ALL, eLIM_STOP_TX);
 
            limLog( pMac, LOG2,
+<<<<<<< HEAD
                 FL("Quiet BSS: STA shutting down for %d ticks\n"),
+=======
+                FL("Quiet BSS: STA shutting down for %d ticks"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 psessionEntry->gLimSpecMgmt.quietDuration );
         }
       }
@@ -3059,6 +4096,7 @@ void limProcessQuietBssTimeout( tpAniSirGlobal pMac )
 
     if((psessionEntry = peFindSessionBySessionId(pMac, pMac->lim.limTimers.gLimQuietBssTimer.sessionId))== NULL) 
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
         return;
     }
@@ -3088,6 +4126,15 @@ void limProcessQuietBssTimeout( tpAniSirGlobal pMac )
         psessionEntry->gLimSpecMgmt.quietState = eLIM_QUIET_BEGIN;
     }
 #endif
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+        return;
+    }
+
+  PELOG1(limLog(pMac, LOG1, FL("quietState = %d"), psessionEntry->gLimSpecMgmt.quietState);)
+  if (eLIM_AP_ROLE == psessionEntry->limSystemRole)
+  {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
   else
   {
@@ -3113,7 +4160,11 @@ void limProcessQuietBssTimeout( tpAniSirGlobal pMac )
               glimTriggerBackgroundScanDuringQuietBss_Status = eSIR_TRUE;
 
           limLog( pMac, LOG2,
+<<<<<<< HEAD
               FL("Quiet BSS: Resuming traffic...\n"));
+=======
+              FL("Quiet BSS: Resuming traffic..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
@@ -3123,14 +4174,22 @@ void limProcessQuietBssTimeout( tpAniSirGlobal pMac )
           // SIR_LIM_QUIET_TIMEOUT will complete on its own
           //
           limLog( pMac, LOG2,
+<<<<<<< HEAD
               FL("Background scan should be complete now...\n"));
+=======
+              FL("Background scan should be complete now..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         break;
 
       case eLIM_QUIET_INIT:
       case eLIM_QUIET_BEGIN:
       case eLIM_QUIET_END:
+<<<<<<< HEAD
         PELOG2(limLog(pMac, LOG2, FL("Quiet state not in RUNNING\n"));)
+=======
+        PELOG2(limLog(pMac, LOG2, FL("Quiet state not in RUNNING"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* If the quiet period has ended, then resume the frame transmission */
         limFrameTransmissionControl(pMac, eLIM_TX_ALL, eLIM_RESUME_TX);
         limRestorePreQuietState(pMac, psessionEntry);
@@ -3145,7 +4204,10 @@ void limProcessQuietBssTimeout( tpAniSirGlobal pMac )
     }
   }
 }
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limProcessWPSOverlapTimeout
  *
@@ -3170,22 +4232,35 @@ void limProcessWPSOverlapTimeout(tpAniSirGlobal pMac)
     
     if (tx_timer_activate(&pMac->lim.limTimers.gLimWPSOverlapTimerObj.gLimWPSOverlapTimer) != TX_SUCCESS)
     {
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("tx_timer_activate failed\n"));
+=======
+            limLog(pMac, LOGP, FL("tx_timer_activate failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     sessionId = pMac->lim.limTimers.gLimWPSOverlapTimerObj.sessionId;
 
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("WPS overlap timeout, sessionId=%d\n"), sessionId);)
 
     if((psessionEntry = peFindSessionBySessionId(pMac, sessionId)) == NULL) 
     {
         PELOGE(limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));)
+=======
+    PELOGE(limLog(pMac, LOGE, FL("WPS overlap timeout, sessionId=%d"), sessionId);)
+
+    if((psessionEntry = peFindSessionBySessionId(pMac, sessionId)) == NULL) 
+    {
+        PELOGE(limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     
     limWPSPBCTimeout(pMac, psessionEntry);
 }
 #endif
+<<<<<<< HEAD
 #endif
 
 /**
@@ -3315,6 +4390,8 @@ void limUpdateQuietIEFromBeacon( struct sAniSirGlobal *pMac,
 #endif
 }
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**----------------------------------------------
 \fn        limStartQuietTimer
@@ -3329,11 +4406,18 @@ void limStartQuietTimer(tpAniSirGlobal pMac, tANI_U8 sessionId)
     psessionEntry = peFindSessionBySessionId(pMac , sessionId);
 
     if(psessionEntry == NULL) {
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
         return;
     }
 
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+        return;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
         return;
@@ -3344,7 +4428,11 @@ void limStartQuietTimer(tpAniSirGlobal pMac, tANI_U8 sessionId)
     if( TX_SUCCESS != tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietTimer))
     {
         limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL( "Unable to deactivate gLimQuietTimer! Will still attempt to re-activate anyway...\n" ));
+=======
+            FL( "Unable to deactivate gLimQuietTimer! Will still attempt to re-activate anyway..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     // Set the NEW timeout value, in ticks
@@ -3352,19 +4440,28 @@ void limStartQuietTimer(tpAniSirGlobal pMac, tANI_U8 sessionId)
                       SYS_MS_TO_TICKS(psessionEntry->gLimSpecMgmt.quietTimeoutValue), 0))
     {
         limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL( "Unable to change gLimQuietTimer! Will still attempt to re-activate anyway...\n" ));
+=======
+            FL( "Unable to change gLimQuietTimer! Will still attempt to re-activate anyway..." ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     
     pMac->lim.limTimers.gLimQuietTimer.sessionId = sessionId;
     if( TX_SUCCESS != tx_timer_activate(&pMac->lim.limTimers.gLimQuietTimer))
     {
         limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL("Unable to activate gLimQuietTimer! STA cannot honor Quiet BSS!\n"));
+=======
+            FL("Unable to activate gLimQuietTimer! STA cannot honor Quiet BSS!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limRestorePreQuietState(pMac, psessionEntry);
 
         psessionEntry->gLimSpecMgmt.quietState = eLIM_QUIET_INIT;
         return;
     }
+<<<<<<< HEAD
 #endif
 }
 
@@ -3409,6 +4506,10 @@ tANI_U32 computeChannelSwitchCount(tpAniSirGlobal pMac, tANI_U32 dtimFactor)
         return (((dtimFactor -1)*dtimPeriod) + 1 + dtimCount);
 }
 #endif
+=======
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** ------------------------------------------------------------------------ **/
 /**
@@ -3458,7 +4559,11 @@ limUtilCountStaDel(
 
     if (pMac->lim.gLimNumOfAniSTAs <= 0)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("CountStaDel: ignoring Delete Req when AniPeer count is %d\n"),
+=======
+        limLog(pMac, LOGE, FL("CountStaDel: ignoring Delete Req when AniPeer count is %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->lim.gLimNumOfAniSTAs);
         return;
     }
@@ -3497,14 +4602,22 @@ void limSwitchChannelCback(tpAniSirGlobal pMac, eHalStatus status,
    /* We need to restore pre-channelSwitch state on the STA */
    if (limRestorePreChannelSwitchState(pMac, psessionEntry) != eSIR_SUCCESS)
    {
+<<<<<<< HEAD
       limLog(pMac, LOGP, FL("Could not restore pre-channelSwitch (11h) state, resetting the system\n"));
+=======
+      limLog(pMac, LOGP, FL("Could not restore pre-channelSwitch (11h) state, resetting the system"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
    
    mmhMsg.type = eWNI_SME_SWITCH_CHL_REQ;
    if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeSwitchChInd, sizeof(tSirSmeSwitchChannelInd)))
    {
+<<<<<<< HEAD
       limLog(pMac, LOGP, FL("Failed to allocate buffer for buffer descriptor\n"));
+=======
+      limLog(pMac, LOGP, FL("Failed to allocate buffer for buffer descriptor"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
   
@@ -3519,6 +4632,7 @@ void limSwitchChannelCback(tpAniSirGlobal pMac, eHalStatus status,
    
    MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
    
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
    SysProcessMmhMsg(pMac, &mmhMsg);
 #else
@@ -3528,6 +4642,9 @@ void limSwitchChannelCback(tpAniSirGlobal pMac, eHalStatus status,
       limLog(pMac, LOGP, FL("Message posting to HAL failed\n"));
    }
 #endif
+=======
+   SysProcessMmhMsg(pMac, &mmhMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
@@ -3548,7 +4665,11 @@ void limSwitchPrimaryChannel(tpAniSirGlobal pMac, tANI_U8 newChannel,tpPESession
     tANI_U32 localPwrConstraint;
 #endif
     
+<<<<<<< HEAD
     PELOG3(limLog(pMac, LOG3, FL("limSwitchPrimaryChannel: old chnl %d --> new chnl %d \n"),
+=======
+    PELOG3(limLog(pMac, LOG3, FL("limSwitchPrimaryChannel: old chnl %d --> new chnl %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            psessionEntry->currentOperChannel, newChannel);)
     psessionEntry->currentReqChannel = newChannel;
     psessionEntry->limRFBand = limGetRFBand(newChannel);
@@ -3564,7 +4685,11 @@ void limSwitchPrimaryChannel(tpAniSirGlobal pMac, tANI_U8 newChannel,tpPESession
 #else
     if(wlan_cfgGetInt(pMac, WNI_CFG_LOCAL_POWER_CONSTRAINT, &localPwrConstraint) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "Unable to read Local Power Constraint from cfg\n" ));
+=======
+        limLog( pMac, LOGP, FL( "Unable to read Local Power Constraint from cfg" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     limSendSwitchChnlParams(pMac, newChannel, PHY_SINGLE_CHANNEL_CENTERED,
@@ -3600,7 +4725,11 @@ void limSwitchPrimarySecondaryChannel(tpAniSirGlobal pMac, tpPESession psessionE
 
 #if !defined WLAN_FEATURE_VOWIFI  
     if(wlan_cfgGetInt(pMac, WNI_CFG_LOCAL_POWER_CONSTRAINT, &localPwrConstraint) != eSIR_SUCCESS) {
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "Unable to get Local Power Constraint from cfg\n" ));
+=======
+        limLog( pMac, LOGP, FL( "Unable to get Local Power Constraint from cfg" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 #endif
@@ -3615,14 +4744,22 @@ void limSwitchPrimarySecondaryChannel(tpAniSirGlobal pMac, tpPESession psessionE
     if (psessionEntry->currentOperChannel != newChannel)
     {
         limLog(pMac, LOGW,
+<<<<<<< HEAD
             FL("switch old chnl %d --> new chnl %d \n"),
+=======
+            FL("switch old chnl %d --> new chnl %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->currentOperChannel, newChannel);
         psessionEntry->currentOperChannel = newChannel;
     }
     if (psessionEntry->htSecondaryChannelOffset != subband)
     {
         limLog(pMac, LOGW,
+<<<<<<< HEAD
             FL("switch old sec chnl %d --> new sec chnl %d \n"),
+=======
+            FL("switch old sec chnl %d --> new sec chnl %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->htSecondaryChannelOffset, subband);
         psessionEntry->htSecondaryChannelOffset = subband;
         if (psessionEntry->htSecondaryChannelOffset == PHY_SINGLE_CHANNEL_CENTERED)
@@ -3670,13 +4807,21 @@ tANI_U8 limActiveScanAllowed(
     if (wlan_cfgGetStr(pMac, WNI_CFG_SCAN_CONTROL_LIST, channelPair, &len)
         != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Unable to get scan control list\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Unable to get scan control list"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return false;
     }
 
     if (len > WNI_CFG_SCAN_CONTROL_LIST_LEN)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Invalid scan control list length:%d\n"),
+=======
+        limLog(pMac, LOGE, FL("Invalid scan control list length:%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                len);
         return false;
     }
@@ -3725,7 +4870,10 @@ tANI_U8 limActiveScanAllowed(
 tAniBool limTriggerBackgroundScanDuringQuietBss( tpAniSirGlobal pMac )
 {
     tAniBool bScanTriggered = eSIR_FALSE;
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     
 
@@ -3763,16 +4911,26 @@ tAniBool limTriggerBackgroundScanDuringQuietBss( tpAniSirGlobal pMac )
         else
         {
             limLog( pMac, LOGW,
+<<<<<<< HEAD
                 FL("The next SCAN channel is the current operating channel on which a Quiet BSS is requested.! A background scan will not be triggered during this Quiet BSS period...\n"));
+=======
+                FL("The next SCAN channel is the current operating channel on which a Quiet BSS is requested.! A background scan will not be triggered during this Quiet BSS period..."));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
     else
     {
       limLog( pMac, LOGW,
+<<<<<<< HEAD
           FL("Unable to retrieve WNI_CFG_VALID_CHANNEL_LIST from CFG! A background scan will not be triggered during this Quiet BSS period...\n"));
     }
   }
 #endif
+=======
+          FL("Unable to retrieve WNI_CFG_VALID_CHANNEL_LIST from CFG! A background scan will not be triggered during this Quiet BSS period..."));
+    }
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return bScanTriggered;
 }
 
@@ -3804,6 +4962,7 @@ tAniBool limTriggerBackgroundScanDuringQuietBss( tpAniSirGlobal pMac )
  *            tANI_U8 variable
  */
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE 
 tANI_U8 limGetHTCapability( tpAniSirGlobal pMac,
         tANI_U32 htCap, tpPESession psessionEntry)
@@ -3811,6 +4970,10 @@ tANI_U8 limGetHTCapability( tpAniSirGlobal pMac,
 tANI_U8 limGetHTCapability( tpAniSirGlobal pMac,
         tANI_U32 htCap )
 #endif
+=======
+tANI_U8 limGetHTCapability( tpAniSirGlobal pMac,
+        tANI_U32 htCap, tpPESession psessionEntry)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
 tANI_U8 retVal = 0;
 tANI_U8 *ptr;
@@ -3979,11 +5142,17 @@ tSirMacASCapabilityInfo macASCapabilityInfo = {0};
       break;
 
     case eHT_OP_MODE:
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
       if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
           retVal = psessionEntry->htOperMode;
       else
 #endif
+=======
+      if(psessionEntry->limSystemRole == eLIM_AP_ROLE )
+          retVal = psessionEntry->htOperMode;
+      else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           retVal = pMac->lim.gHTOperMode;
       break;
 
@@ -4035,6 +5204,7 @@ tSirRetStatus
 limEnable11aProtection(tpAniSirGlobal pMac, tANI_U8 enable,
     tANI_U8 overlap, tpUpdateBeaconParams pBeaconParams,tpPESession psessionEntry)
 {
+<<<<<<< HEAD
 
         //overlapping protection configuration check.
         if(overlap)
@@ -4047,15 +5217,33 @@ limEnable11aProtection(tpAniSirGlobal pMac, tANI_U8 enable,
                 return eSIR_SUCCESS;
             }
 #endif
+=======
+    if(NULL == psessionEntry)
+    {
+        PELOG3(limLog(pMac, LOG3, FL("psessionEntry is NULL"));)
+        return eSIR_FAILURE;
+    }        
+        //overlapping protection configuration check.
+        if(overlap)
+        {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
             //normal protection config check
+<<<<<<< HEAD
             if (( psessionEntry != NULL ) && (psessionEntry->limSystemRole == eLIM_AP_ROLE) &&
                 (!psessionEntry->cfgProtection.fromlla))
             {
                 // protection disabled.
                 PELOG3(limLog(pMac, LOG3, FL("protection from 11a is disabled\n"));)
+=======
+            if ((psessionEntry->limSystemRole == eLIM_AP_ROLE) &&
+                (!psessionEntry->cfgProtection.fromlla))
+            {
+                // protection disabled.
+                PELOG3(limLog(pMac, LOG3, FL("protection from 11a is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return eSIR_SUCCESS;
             }
         }
@@ -4096,7 +5284,11 @@ limEnable11aProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //This part is common for staiton as well.
         if(false == psessionEntry->beaconParams.llaCoexist)
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL(" => protection from 11A Enabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL(" => protection from 11A Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llaCoexist = psessionEntry->beaconParams.llaCoexist = true;
             pBeaconParams->paramChangeBitmap |= PARAM_llACOEXIST_CHANGED;
         }
@@ -4172,7 +5364,11 @@ limEnable11aProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         if(!pMac->lim.gLimOverlap11aParams.protectionEnabled &&
            !psessionEntry->gLim11aParams.protectionEnabled)
             {
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11A Disabled\n"));)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11A Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBeaconParams->llaCoexist = psessionEntry->beaconParams.llaCoexist = false;
                 pBeaconParams->paramChangeBitmap |= PARAM_llACOEXIST_CHANGED;
             }
@@ -4180,7 +5376,11 @@ limEnable11aProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //for station role
         else
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11A Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11A Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llaCoexist = psessionEntry->beaconParams.llaCoexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_llACOEXIST_CHANGED;
         }
@@ -4206,6 +5406,7 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
     //overlapping protection configuration check.
     if(overlap)
     {
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if(((psessionEntry->limSystemRole == eLIM_AP_ROLE) ||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE ))  && !pMac->lim.cfgProtection.overlapFromllb)
         {
@@ -4214,24 +5415,39 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             return eSIR_SUCCESS;
         }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
     {
         //normal protection config check
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) &&
                 !psessionEntry->cfgProtection.fromllb)
         {
             // protection disabled.
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled\n"));)
             return eSIR_SUCCESS;
         }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
 #endif
+=======
+            PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled"));)
+            return eSIR_SUCCESS;
+        }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {   
             if(!pMac->lim.cfgProtection.fromllb)
             {
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled\n"));)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("protection from 11b is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return eSIR_SUCCESS;
             }
         }
@@ -4241,13 +5457,20 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
     {
         //If we are AP and HT capable, we need to set the HT OP mode
         //appropriately.
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eLIM_AP_ROLE == psessionEntry->limSystemRole)
         {
             if(overlap)
             {
                 psessionEntry->gLimOlbcParams.protectionEnabled = true;
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("protection from olbc is enabled\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("protection from olbc is enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(true == psessionEntry->htCapability)
                 {
                     if((eSIR_HT_OP_MODE_OVERLAP_LEGACY != psessionEntry->htOperMode) &&
@@ -4266,7 +5489,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             else
             {
                 psessionEntry->gLim11bParams.protectionEnabled = true;
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("protection from 11b is enabled\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("protection from 11b is enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(true == psessionEntry->htCapability)
                 {
                     if(eSIR_HT_OP_MODE_MIXED != psessionEntry->htOperMode)
@@ -4279,10 +5506,13 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             }
         }else if ((eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole) &&
                 (true == psessionEntry->htCapability))
+<<<<<<< HEAD
 #else
             if(((eLIM_AP_ROLE == psessionEntry->limSystemRole)|| (eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)) &&
                     (true == psessionEntry->htCapability))
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 if(overlap)
                 {
@@ -4314,7 +5544,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //This part is common for staiton as well.
         if(false == psessionEntry->beaconParams.llbCoexist)
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("=> 11G Protection Enabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("=> 11G Protection Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llbCoexist = psessionEntry->beaconParams.llbCoexist = true;
             pBeaconParams->paramChangeBitmap |= PARAM_llBCOEXIST_CHANGED;
         }
@@ -4324,7 +5558,10 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //for AP role.
         //we need to take care of HT OP mode change if needed.
         //We need to take care of Overlap cases.
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eLIM_AP_ROLE == psessionEntry->limSystemRole)
         {
             if(overlap)
@@ -4360,7 +5597,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             {
                 //Disable protection from 11B stations.
                 psessionEntry->gLim11bParams.protectionEnabled = false;
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("===> 11B Protection Disabled\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("===> 11B Protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     //Check if any other non-HT protection enabled.
                 if(!psessionEntry->gLim11gParams.protectionEnabled)
                 {
@@ -4375,7 +5616,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
                             psessionEntry->gLimOverlapNonGfParams.protectionEnabled)
                     {
                         psessionEntry->htOperMode = eSIR_HT_OP_MODE_OVERLAP_LEGACY;
+<<<<<<< HEAD
                         PELOGE(limLog(pMac, LOGE, FL("===> 11G Protection Disabled\n"));)
+=======
+                        PELOGE(limLog(pMac, LOGE, FL("===> 11G Protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         limEnableHtRifsProtection(pMac, true, overlap, pBeaconParams,psessionEntry);
                     }
                     else if(psessionEntry->gLimHt20Params.protectionEnabled)
@@ -4383,7 +5628,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
                         //Commenting because of CR 258588 WFA cert
                         //psessionEntry->htOperMode = eSIR_HT_OP_MODE_NO_LEGACY_20MHZ_HT;
                         psessionEntry->htOperMode = eSIR_HT_OP_MODE_PURE;
+<<<<<<< HEAD
                         PELOGE(limLog(pMac, LOGE, FL("===> 11G Protection Disabled\n"));)
+=======
+                        PELOGE(limLog(pMac, LOGE, FL("===> 11G Protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         limEnableHtRifsProtection(pMac, false, overlap, pBeaconParams,psessionEntry);
                     }
                     else
@@ -4396,14 +5645,21 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             if(!psessionEntry->gLimOlbcParams.protectionEnabled &&
                     !psessionEntry->gLim11bParams.protectionEnabled)
             {
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("===> 11G Protection Disabled\n"));)
+=======
+                PELOGE(limLog(pMac, LOGE, FL("===> 11G Protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBeaconParams->llbCoexist = psessionEntry->beaconParams.llbCoexist = false;
                 pBeaconParams->paramChangeBitmap |= PARAM_llBCOEXIST_CHANGED;
             }
         }else if(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)
+<<<<<<< HEAD
 #else
             if((eLIM_AP_ROLE == psessionEntry->limSystemRole)||((eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)))
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 if(overlap)
                 {
@@ -4468,7 +5724,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             if(!psessionEntry->gLimOlbcParams.protectionEnabled &&
                   !psessionEntry->gLim11bParams.protectionEnabled)
                 {
+<<<<<<< HEAD
                     PELOG1(limLog(pMac, LOG1, FL("===> 11G Protection Disabled\n"));)
+=======
+                    PELOG1(limLog(pMac, LOG1, FL("===> 11G Protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBeaconParams->llbCoexist = psessionEntry->beaconParams.llbCoexist = false;
                     pBeaconParams->paramChangeBitmap |= PARAM_llBCOEXIST_CHANGED;
                 }
@@ -4476,7 +5736,11 @@ limEnable11gProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //for station role
             else
             {
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("===> 11G Protection Disabled\n"));)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("===> 11G Protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llbCoexist = psessionEntry->beaconParams.llbCoexist = false;
                 pBeaconParams->paramChangeBitmap |= PARAM_llBCOEXIST_CHANGED;
             }
@@ -4502,6 +5766,7 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
     //overlapping protection configuration check.
     if(overlap)
     {
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) && (!psessionEntry->cfgProtection.overlapFromllg))
         {
@@ -4515,12 +5780,24 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
         {
             // protection disabled.
             PELOG3(limLog(pMac, LOG3, FL("overlap protection from 11g is disabled\n")););
+=======
+        if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) && (!psessionEntry->cfgProtection.overlapFromllg))
+        {
+            // protection disabled.
+            PELOG3(limLog(pMac, LOG3, FL("overlap protection from 11g is disabled")););
+            return eSIR_SUCCESS;
+        }else if ((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE) && (!pMac->lim.cfgProtection.overlapFromllg))
+        {
+            // protection disabled.
+            PELOG3(limLog(pMac, LOG3, FL("overlap protection from 11g is disabled")););
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eSIR_SUCCESS;
         }
         }
     else
     {
         //normal protection config check
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
        if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) && 
            !psessionEntry->cfgProtection.fromllg){
@@ -4529,11 +5806,23 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
             return eSIR_SUCCESS;
          }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
 #endif
+=======
+       if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) && 
+           !psessionEntry->cfgProtection.fromllg){
+            // protection disabled.
+            PELOG3(limLog(pMac, LOG3, FL("protection from 11g is disabled"));)
+            return eSIR_SUCCESS;
+         }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        {
           if(!pMac->lim.cfgProtection.fromllg)
            {
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL("protection from 11g is disabled\n"));)
+=======
+                PELOG3(limLog(pMac, LOG3, FL("protection from 11g is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return eSIR_SUCCESS;
             }
         }
@@ -4543,7 +5832,10 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
         //If we are AP and HT capable, we need to set the HT OP mode
         //appropriately.
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eLIM_AP_ROLE == psessionEntry->limSystemRole)
         {
             if(overlap)
@@ -4573,9 +5865,12 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
                 }
             }
         }else if(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)
+<<<<<<< HEAD
 #else
         if((eLIM_AP_ROLE == psessionEntry->limSystemRole)||(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole))
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if(overlap)
             {
@@ -4610,7 +5905,10 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
             pBeaconParams->llgCoexist = psessionEntry->beaconParams.llgCoexist = true;
             pBeaconParams->paramChangeBitmap |= PARAM_llGCOEXIST_CHANGED;
         }
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         else if (true == psessionEntry->gLimOverlap11gParams.protectionEnabled)
         {
             // As operating mode changed after G station assoc some way to update beacon
@@ -4618,7 +5916,10 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
             //pMac->sch.schObject.fBeaconChanged = 1;
             pBeaconParams->paramChangeBitmap |= PARAM_llGCOEXIST_CHANGED;
         }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else if (true == psessionEntry->beaconParams.llgCoexist)
     {
@@ -4626,7 +5927,10 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
         //we need to take care of HT OP mode change if needed.
         //We need to take care of Overlap cases.
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eLIM_AP_ROLE == psessionEntry->limSystemRole)
         {
             if(overlap)
@@ -4695,14 +5999,21 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
             if(!psessionEntry->gLimOverlap11gParams.protectionEnabled &&
                   !psessionEntry->gLim11gParams.protectionEnabled)
             {
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11G Disabled\n"));)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11G Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBeaconParams->llgCoexist = psessionEntry->beaconParams.llgCoexist = false;
                 pBeaconParams->paramChangeBitmap |= PARAM_llGCOEXIST_CHANGED;
             }
         }else if(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)
+<<<<<<< HEAD
 #else
         if((eLIM_AP_ROLE == psessionEntry->limSystemRole)||(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole))
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if(overlap)
             {
@@ -4764,7 +6075,11 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
             if(!pMac->lim.gLimOverlap11gParams.protectionEnabled &&
                   !psessionEntry->gLim11gParams.protectionEnabled)
             {
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11G Disabled\n"));)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11G Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBeaconParams->llgCoexist = psessionEntry->beaconParams.llgCoexist = false;
                 pBeaconParams->paramChangeBitmap |= PARAM_llGCOEXIST_CHANGED;
             }
@@ -4772,7 +6087,11 @@ limEnableHtProtectionFrom11g(tpAniSirGlobal pMac, tANI_U8 enable,
         //for station role
         else
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11G Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from 11G Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llgCoexist = psessionEntry->beaconParams.llgCoexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_llGCOEXIST_CHANGED;
         }
@@ -4803,6 +6122,7 @@ limEnableHtOBSSProtection(tpAniSirGlobal pMac, tANI_U8 enable,
     if(overlap)
     {
         //overlapping protection configuration check.
+<<<<<<< HEAD
     #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if((psessionEntry->limSystemRole == eLIM_AP_ROLE)||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)) && !pMac->lim.cfgProtection.overlapOBSS) 
         { // ToDo Update this field
@@ -4811,10 +6131,13 @@ limEnableHtOBSSProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             return eSIR_SUCCESS;
         }
     #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     } 
     else 
     {
         //normal protection config check
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         if((psessionEntry->limSystemRole == eLIM_AP_ROLE) && !psessionEntry->cfgProtection.obss) 
         { //ToDo Update this field
@@ -4823,29 +6146,52 @@ limEnableHtOBSSProtection(tpAniSirGlobal pMac, tANI_U8 enable,
             return eSIR_SUCCESS;
         }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
 #endif
+=======
+        if((psessionEntry->limSystemRole == eLIM_AP_ROLE) && !psessionEntry->cfgProtection.obss) 
+        { //ToDo Update this field
+            // protection disabled.
+            PELOG1(limLog(pMac, LOG1, FL("protection from Obss is disabled"));)
+            return eSIR_SUCCESS;
+        }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if(!pMac->lim.cfgProtection.obss) 
             { //ToDo Update this field
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("protection from Obss is disabled\n"));)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("protection from Obss is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return eSIR_SUCCESS;
             }
         }
     }
 
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if (eLIM_AP_ROLE == psessionEntry->limSystemRole){
         if ((enable) && (false == psessionEntry->beaconParams.gHTObssMode) )
         {
             PELOG1(limLog(pMac, LOG1, FL("=>obss protection enabled\n"));)
+=======
+    if (eLIM_AP_ROLE == psessionEntry->limSystemRole){
+        if ((enable) && (false == psessionEntry->beaconParams.gHTObssMode) )
+        {
+            PELOG1(limLog(pMac, LOG1, FL("=>obss protection enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->beaconParams.gHTObssMode = true;
             pBeaconParams->paramChangeBitmap |= PARAM_OBSS_MODE_CHANGED; // UPDATE AN ENUM FOR OBSS MODE <todo>
         
          }
          else if (!enable && (true == psessionEntry->beaconParams.gHTObssMode)) 
          {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> obss Protection disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> obss Protection disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->beaconParams.gHTObssMode = false;
             pBeaconParams->paramChangeBitmap |= PARAM_OBSS_MODE_CHANGED;
 
@@ -4856,11 +6202,18 @@ limEnableHtOBSSProtection(tpAniSirGlobal pMac, tANI_U8 enable,
              psessionEntry->gLimOverlap11gParams.protectionEnabled = false;
          }
     } else
+<<<<<<< HEAD
 #endif
     {
         if ((enable) && (false == psessionEntry->beaconParams.gHTObssMode) )
         {
             PELOG1(limLog(pMac, LOG1, FL("=>obss protection enabled\n"));)
+=======
+    {
+        if ((enable) && (false == psessionEntry->beaconParams.gHTObssMode) )
+        {
+            PELOG1(limLog(pMac, LOG1, FL("=>obss protection enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->beaconParams.gHTObssMode = true;
             pBeaconParams->paramChangeBitmap |= PARAM_OBSS_MODE_CHANGED; // UPDATE AN ENUM FOR OBSS MODE <todo>
 
@@ -4868,7 +6221,11 @@ limEnableHtOBSSProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         else if (!enable && (true == psessionEntry->beaconParams.gHTObssMode)) 
         {
 
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> obss Protection disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> obss Protection disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->beaconParams.gHTObssMode = false;
             pBeaconParams->paramChangeBitmap |= PARAM_OBSS_MODE_CHANGED;
 
@@ -4894,6 +6251,7 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
         //overlapping protection configuration check.
         if(overlap)
         {
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if(((psessionEntry->limSystemRole == eLIM_AP_ROLE )||(psessionEntry->limSystemRoleS == eLIM_BT_AMP_AP_ROLE ))&& !pMac->lim.cfgProtection.overlapHt20)
             {
@@ -4902,24 +6260,39 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
                 return eSIR_SUCCESS;
             }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
             //normal protection config check
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) &&
                 !psessionEntry->cfgProtection.ht20)
             {
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL("protection from HT20 is disabled\n"));)
                 return eSIR_SUCCESS;
             }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
 #endif
+=======
+                PELOG3(limLog(pMac, LOG3, FL("protection from HT20 is disabled"));)
+                return eSIR_SUCCESS;
+            }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 if(!pMac->lim.cfgProtection.ht20)
                 {
                     // protection disabled.
+<<<<<<< HEAD
                     PELOG3(limLog(pMac, LOG3, FL("protection from HT20 is disabled\n"));)
+=======
+                    PELOG3(limLog(pMac, LOG3, FL("protection from HT20 is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return eSIR_SUCCESS;
                 }
             }
@@ -4930,7 +6303,10 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
         //If we are AP and HT capable, we need to set the HT OP mode
         //appropriately.
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eLIM_AP_ROLE == psessionEntry->limSystemRole){
             if(overlap)
             {
@@ -4955,9 +6331,12 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
                 }
             }
         }else if(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)
+<<<<<<< HEAD
 #else
         if((eLIM_AP_ROLE == psessionEntry->limSystemRole)||(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole))
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if(overlap)
             {
@@ -4984,7 +6363,11 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
         //This part is common for staiton as well.
         if(false == psessionEntry->beaconParams.ht20Coexist)
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("=> Prtection from HT20 Enabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("=> Prtection from HT20 Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->ht20MhzCoexist = psessionEntry->beaconParams.ht20Coexist = true;
             pBeaconParams->paramChangeBitmap |= PARAM_HT20MHZCOEXIST_CHANGED;
         }
@@ -4994,7 +6377,10 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
         //for AP role.
         //we need to take care of HT OP mode change if needed.
         //We need to take care of Overlap cases.
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(eLIM_AP_ROLE == psessionEntry->limSystemRole){
             if(overlap)
             {
@@ -5039,6 +6425,7 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
                     limEnableHtOBSSProtection(pMac,  false, overlap, pBeaconParams,psessionEntry);        
                 }
             }
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from HT 20 Disabled\n"));)
             pBeaconParams->ht20MhzCoexist = psessionEntry->beaconParams.ht20Coexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_HT20MHZCOEXIST_CHANGED;
@@ -5046,6 +6433,12 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
 #else
         if((eLIM_AP_ROLE == psessionEntry->limSystemRole)||(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole))
 #endif
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from HT 20 Disabled"));)
+            pBeaconParams->ht20MhzCoexist = psessionEntry->beaconParams.ht20Coexist = false;
+            pBeaconParams->paramChangeBitmap |= PARAM_HT20MHZCOEXIST_CHANGED;
+        }else if(eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if(overlap)
             {
@@ -5088,14 +6481,22 @@ limEnableHT20Protection(tpAniSirGlobal pMac, tANI_U8 enable,
                     limEnableHtOBSSProtection(pMac,  false, overlap, pBeaconParams,psessionEntry);        
                 }
             }
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from HT 20 Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from HT 20 Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->ht20MhzCoexist = psessionEntry->beaconParams.ht20Coexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_HT20MHZCOEXIST_CHANGED;
         }
         //for station role
         else
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from HT20 Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from HT20 Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->ht20MhzCoexist = psessionEntry->beaconParams.ht20Coexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_HT20MHZCOEXIST_CHANGED;
         }
@@ -5122,6 +6523,7 @@ limEnableHTNonGfProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //overlapping protection configuration check.
         if(overlap)
         {
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if(((psessionEntry->limSystemRole == eLIM_AP_ROLE)||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)) && !pMac->lim.cfgProtection.overlapNonGf)
             {
@@ -5134,51 +6536,88 @@ limEnableHTNonGfProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         else
         {
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        }
+        else
+        {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //normal protection config check
             if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) &&
                 !psessionEntry->cfgProtection.nonGf)
             {
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL("protection from NonGf is disabled\n"));)
                 return eSIR_SUCCESS;
             }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
 #endif
+=======
+                PELOG3(limLog(pMac, LOG3, FL("protection from NonGf is disabled"));)
+                return eSIR_SUCCESS;
+            }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 //normal protection config check
                 if(!pMac->lim.cfgProtection.nonGf)
                 {
                     // protection disabled.
+<<<<<<< HEAD
                     PELOG3(limLog(pMac, LOG3, FL("protection from NonGf is disabled\n"));)
+=======
+                    PELOG3(limLog(pMac, LOG3, FL("protection from NonGf is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return eSIR_SUCCESS;
                  }
             }
         }
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
         if ((enable) && (false == psessionEntry->beaconParams.llnNonGFCoexist))
         {
             PELOG1(limLog(pMac, LOG1, FL(" => Prtection from non GF Enabled\n"));)
+=======
+    if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
+        if ((enable) && (false == psessionEntry->beaconParams.llnNonGFCoexist))
+        {
+            PELOG1(limLog(pMac, LOG1, FL(" => Prtection from non GF Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llnNonGFCoexist = psessionEntry->beaconParams.llnNonGFCoexist = true;
             pBeaconParams->paramChangeBitmap |= PARAM_NON_GF_DEVICES_PRESENT_CHANGED;
         }
         else if (!enable && (true == psessionEntry->beaconParams.llnNonGFCoexist))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from Non GF Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from Non GF Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llnNonGFCoexist = psessionEntry->beaconParams.llnNonGFCoexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_NON_GF_DEVICES_PRESENT_CHANGED;
         }
     }else
+<<<<<<< HEAD
 #endif
     {
         if ((enable) && (false == psessionEntry->beaconParams.llnNonGFCoexist))
         {
             PELOG1(limLog(pMac, LOG1, FL(" => Prtection from non GF Enabled\n"));)
+=======
+    {
+        if ((enable) && (false == psessionEntry->beaconParams.llnNonGFCoexist))
+        {
+            PELOG1(limLog(pMac, LOG1, FL(" => Prtection from non GF Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llnNonGFCoexist = psessionEntry->beaconParams.llnNonGFCoexist = true;
             pBeaconParams->paramChangeBitmap |= PARAM_NON_GF_DEVICES_PRESENT_CHANGED;
         }
         else if (!enable && (true == psessionEntry->beaconParams.llnNonGFCoexist))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from Non GF Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from Non GF Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->llnNonGFCoexist = psessionEntry->beaconParams.llnNonGFCoexist = false;
             pBeaconParams->paramChangeBitmap |= PARAM_NON_GF_DEVICES_PRESENT_CHANGED;
         }
@@ -5205,6 +6644,7 @@ limEnableHTLsigTxopProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //overlapping protection configuration check.
         if(overlap)
         {
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if(((psessionEntry->limSystemRole == eLIM_AP_ROLE)||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)) && !pMac->lim.cfgProtection.overlapLsigTxop)
             {
@@ -5217,53 +6657,90 @@ limEnableHTLsigTxopProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         else
         {
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        }
+        else
+        {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //normal protection config check
             if((psessionEntry->limSystemRole == eLIM_AP_ROLE ) &&
                !psessionEntry->cfgProtection.lsigTxop)
             {
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL(" protection from LsigTxop not supported is disabled\n"));)
                 return eSIR_SUCCESS;
             }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
 #endif
+=======
+                PELOG3(limLog(pMac, LOG3, FL(" protection from LsigTxop not supported is disabled"));)
+                return eSIR_SUCCESS;
+            }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 //normal protection config check
                 if(!pMac->lim.cfgProtection.lsigTxop)
                 {
                     // protection disabled.
+<<<<<<< HEAD
                     PELOG3(limLog(pMac, LOG3, FL(" protection from LsigTxop not supported is disabled\n"));)
+=======
+                    PELOG3(limLog(pMac, LOG3, FL(" protection from LsigTxop not supported is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return eSIR_SUCCESS;
                 }
             }
         }
 
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
         if ((enable) && (false == psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport))
         {
             PELOG1(limLog(pMac, LOG1, FL(" => Prtection from LsigTxop Enabled\n"));)
+=======
+    if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
+        if ((enable) && (false == psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport))
+        {
+            PELOG1(limLog(pMac, LOG1, FL(" => Prtection from LsigTxop Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fLsigTXOPProtectionFullSupport = psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport = true;
             pBeaconParams->paramChangeBitmap |= PARAM_LSIG_TXOP_FULL_SUPPORT_CHANGED;
         }
         else if (!enable && (true == psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from LsigTxop Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from LsigTxop Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fLsigTXOPProtectionFullSupport= psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport = false;
             pBeaconParams->paramChangeBitmap |= PARAM_LSIG_TXOP_FULL_SUPPORT_CHANGED;
         }
     }else
+<<<<<<< HEAD
 #endif
     {
         if ((enable) && (false == psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport))
         {
             PELOG1(limLog(pMac, LOG1, FL(" => Prtection from LsigTxop Enabled\n"));)
+=======
+    {
+        if ((enable) && (false == psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport))
+        {
+            PELOG1(limLog(pMac, LOG1, FL(" => Prtection from LsigTxop Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fLsigTXOPProtectionFullSupport = psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport = true;
             pBeaconParams->paramChangeBitmap |= PARAM_LSIG_TXOP_FULL_SUPPORT_CHANGED;
         }
         else if (!enable && (true == psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Protection from LsigTxop Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Protection from LsigTxop Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fLsigTXOPProtectionFullSupport= psessionEntry->beaconParams.fLsigTXOPProtectionFullSupport = false;
             pBeaconParams->paramChangeBitmap |= PARAM_LSIG_TXOP_FULL_SUPPORT_CHANGED;
         }
@@ -5291,6 +6768,7 @@ limEnableHtRifsProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         //overlapping protection configuration check.
         if(overlap)
         {
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if(((psessionEntry->limSystemRole == eLIM_AP_ROLE) ||(psessionEntry == eLIM_BT_AMP_AP_ROLE))&& !pMac->lim.cfgProtection.overlapRifs)
             {
@@ -5303,56 +6781,93 @@ limEnableHtRifsProtection(tpAniSirGlobal pMac, tANI_U8 enable,
         else
         {
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        }
+        else
+        {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              //normal protection config check
             if((psessionEntry->limSystemRole == eLIM_AP_ROLE) &&
                !psessionEntry->cfgProtection.rifs)
             {
                 // protection disabled.
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL(" protection from Rifs is disabled\n"));)
                 return eSIR_SUCCESS;
             }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
 #endif
+=======
+                PELOG3(limLog(pMac, LOG3, FL(" protection from Rifs is disabled"));)
+                return eSIR_SUCCESS;
+            }else if(psessionEntry->limSystemRole != eLIM_AP_ROLE )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                //normal protection config check
                if(!pMac->lim.cfgProtection.rifs)
                {
                   // protection disabled.
+<<<<<<< HEAD
                   PELOG3(limLog(pMac, LOG3, FL(" protection from Rifs is disabled\n"));)
+=======
+                  PELOG3(limLog(pMac, LOG3, FL(" protection from Rifs is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   return eSIR_SUCCESS;
                }
             }
         }
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(psessionEntry->limSystemRole == eLIM_AP_ROLE){
         // Disabling the RIFS Protection means Enable the RIFS mode of operation in the BSS
         if ((!enable) && (false == psessionEntry->beaconParams.fRIFSMode))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL(" => Rifs protection Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL(" => Rifs protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fRIFSMode = psessionEntry->beaconParams.fRIFSMode = true;
             pBeaconParams->paramChangeBitmap |= PARAM_RIFS_MODE_CHANGED;
         }
         // Enabling the RIFS Protection means Disable the RIFS mode of operation in the BSS
         else if (enable && (true == psessionEntry->beaconParams.fRIFSMode))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Rifs Protection Enabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Rifs Protection Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fRIFSMode = psessionEntry->beaconParams.fRIFSMode = false;
             pBeaconParams->paramChangeBitmap |= PARAM_RIFS_MODE_CHANGED;
         }
     }else
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         // Disabling the RIFS Protection means Enable the RIFS mode of operation in the BSS
         if ((!enable) && (false == psessionEntry->beaconParams.fRIFSMode))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL(" => Rifs protection Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL(" => Rifs protection Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fRIFSMode = psessionEntry->beaconParams.fRIFSMode = true;
             pBeaconParams->paramChangeBitmap |= PARAM_RIFS_MODE_CHANGED;
         }
     // Enabling the RIFS Protection means Disable the RIFS mode of operation in the BSS
         else if (enable && (true == psessionEntry->beaconParams.fRIFSMode))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Rifs Protection Enabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Rifs Protection Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBeaconParams->fRIFSMode = psessionEntry->beaconParams.fRIFSMode = false;
             pBeaconParams->paramChangeBitmap |= PARAM_RIFS_MODE_CHANGED;
         }
@@ -5385,7 +6900,11 @@ limEnableShortPreamble(tpAniSirGlobal pMac, tANI_U8 enable, tpUpdateBeaconParams
     if (wlan_cfgGetInt(pMac, WNI_CFG_SHORT_PREAMBLE, &val) != eSIR_SUCCESS)
     {
         /* Could not get short preamble enabled flag from CFG. Log error. */
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not retrieve short preamble flag\n"));
+=======
+        limLog(pMac, LOGP, FL("could not retrieve short preamble flag"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -5394,7 +6913,11 @@ limEnableShortPreamble(tpAniSirGlobal pMac, tANI_U8 enable, tpUpdateBeaconParams
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_11G_SHORT_PREAMBLE_ENABLED, &val) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not retrieve 11G short preamble switching  enabled flag\n"));
+=======
+        limLog(pMac, LOGP, FL("could not retrieve 11G short preamble switching  enabled flag"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -5405,14 +6928,22 @@ limEnableShortPreamble(tpAniSirGlobal pMac, tANI_U8 enable, tpUpdateBeaconParams
     {
         if (enable && (psessionEntry->beaconParams.fShortPreamble == 0))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Short Preamble Enabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Short Preamble Enabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->beaconParams.fShortPreamble = true;
             pBeaconParams->fShortPreamble = (tANI_U8) psessionEntry->beaconParams.fShortPreamble;
             pBeaconParams->paramChangeBitmap |= PARAM_SHORT_PREAMBLE_CHANGED;
         }
         else if (!enable && (psessionEntry->beaconParams.fShortPreamble == 1))
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("===> Short Preamble Disabled\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("===> Short Preamble Disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             psessionEntry->beaconParams.fShortPreamble = false;
             pBeaconParams->fShortPreamble = (tANI_U8) psessionEntry->beaconParams.fShortPreamble;
             pBeaconParams->paramChangeBitmap |= PARAM_SHORT_PREAMBLE_CHANGED;
@@ -5520,16 +7051,24 @@ void limUpdateStaRunTimeHTSwitchChnlParams( tpAniSirGlobal   pMac,
 #endif
     
    //If self capability is set to '20Mhz only', then do not change the CB mode.
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
    if( !limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET, psessionEntry ))
 #else
    if( !limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET ))
 #endif
+=======
+   if( !limGetHTCapability( pMac, eHT_SUPPORTED_CHANNEL_WIDTH_SET, psessionEntry ))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
 
 #if !defined WLAN_FEATURE_VOWIFI  
     if(wlan_cfgGetInt(pMac, WNI_CFG_LOCAL_POWER_CONSTRAINT, &localPwrConstraint) != eSIR_SUCCESS) {
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL( "Unable to get Local Power Constraint from cfg\n" ));
+=======
+        limLog( pMac, LOGP, FL( "Unable to get Local Power Constraint from cfg" ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 #endif
@@ -5544,9 +7083,15 @@ void limUpdateStaRunTimeHTSwitchChnlParams( tpAniSirGlobal   pMac,
 
         // Notify HAL
         limLog( pMac, LOGW,  FL( "Channel Information in HT IE change"
+<<<<<<< HEAD
                                  "d; sending notification to HAL.\n" ) );
         limLog( pMac, LOGW,  FL( "Primary Channel: %d, Secondary Chan"
                                  "nel Offset: %d, Channel Width: %d\n" ),
+=======
+                                 "d; sending notification to HAL." ) );
+        limLog( pMac, LOGW,  FL( "Primary Channel: %d, Secondary Chan"
+                                 "nel Offset: %d, Channel Width: %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pHTInfo->primaryChannel, secondaryChnlOffset,
                 psessionEntry->htRecommendedTxWidthSet );
         psessionEntry->channelChangeReasonCode=LIM_SWITCH_CHANNEL_OPERATION;
@@ -5721,7 +7266,11 @@ tSirRetStatus limProcessHalIndMessages(tpAniSirGlobal pMac, tANI_U32 msgId, void
 
     default:
       palFreeMemory(pMac->hHdd, msgParam);
+<<<<<<< HEAD
       limLog(pMac, LOGP, FL("invalid message id = %d received\n"), msgId);
+=======
+      limLog(pMac, LOGP, FL("invalid message id = %d received"), msgId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eSIR_FAILURE;
   }
 
@@ -5760,7 +7309,11 @@ limValidateDeltsReq(tpAniSirGlobal pMac, tpSirDeltsReq pDeltsReq, tSirMacAddr pe
      */
     if(pDeltsReq == NULL)
     {
+<<<<<<< HEAD
       PELOGE(limLog(pMac, LOGE, FL("Delete TS request pointer is NULL\n"));)
+=======
+      PELOGE(limLog(pMac, LOGE, FL("Delete TS request pointer is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eSIR_FAILURE;
     }
 
@@ -5776,7 +7329,11 @@ limValidateDeltsReq(tpAniSirGlobal pMac, tpSirDeltsReq pDeltsReq, tSirMacAddr pe
         if (wlan_cfgGetStr(pMac, WNI_CFG_BSSID, peerMacAddr, &val) != eSIR_SUCCESS)
         {
             /// Could not get BSSID from CFG. Log error.
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not retrieve BSSID\n"));
+=======
+            limLog(pMac, LOGP, FL("could not retrieve BSSID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eSIR_FAILURE;
         }
        #endif// TO SUPPORT BT-AMP
@@ -5802,14 +7359,22 @@ limValidateDeltsReq(tpAniSirGlobal pMac, tpSirDeltsReq pDeltsReq, tSirMacAddr pe
 
     if (pSta == NULL)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, "Cannot find station context for delts req\n");)
+=======
+        PELOGE(limLog(pMac, LOGE, "Cannot find station context for delts req");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     if ((! pSta->valid) ||
         (pSta->mlmStaContext.mlmState != eLIM_MLM_LINK_ESTABLISHED_STATE))
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, "Invalid Sta (or state) for DelTsReq\n");)
+=======
+        PELOGE(limLog(pMac, LOGE, "Invalid Sta (or state) for DelTsReq");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -5826,18 +7391,27 @@ limValidateDeltsReq(tpAniSirGlobal pMac, tpSirDeltsReq pDeltsReq, tSirMacAddr pe
         pDeltsReq->req.lleTspecPresent = 1;
     else
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("DELTS_REQ ignore - qos is disabled\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("DELTS_REQ ignore - qos is disabled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     tsinfo = pDeltsReq->req.wmeTspecPresent ? &pDeltsReq->req.tspec.tsinfo
                                             : &pDeltsReq->req.tsinfo;
    PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
            FL("received DELTS_REQ message (wmeTspecPresent = %d, lleTspecPresent = %d, wsmTspecPresent = %d, tsid %d,  up %d, direction = %d)\n"),
+=======
+           FL("received DELTS_REQ message (wmeTspecPresent = %d, lleTspecPresent = %d, wsmTspecPresent = %d, tsid %d,  up %d, direction = %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pDeltsReq->req.wmeTspecPresent, pDeltsReq->req.lleTspecPresent, pDeltsReq->req.wsmTspecPresent,
            tsinfo->traffic.tsid, tsinfo->traffic.userPrio, tsinfo->traffic.direction);)
 
        // if no Access Control, ignore the request
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
        if ((tsinfo->traffic.accessPolicy == SIR_MAC_ACCESSPOLICY_EDCA))
            if (((psessionEntry->limSystemRole == eLIM_AP_ROLE) || (psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE))&& 
@@ -5850,11 +7424,17 @@ limValidateDeltsReq(tpAniSirGlobal pMac, tpSirDeltsReq pDeltsReq, tSirMacAddr pe
            return eSIR_FAILURE;
        }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (limAdmitControlDeleteTS(pMac, pSta->assocId, tsinfo, &tsStatus, &tspecIdx)
         != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
        PELOGE(limLog(pMac, LOGE, "ERROR DELTS request for sta assocId %d (tsid %d, up %d)\n",
+=======
+       PELOGE(limLog(pMac, LOGE, "ERROR DELTS request for sta assocId %d (tsid %d, up %d)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pSta->assocId, tsinfo->traffic.tsid, tsinfo->traffic.userPrio);)
         return eSIR_FAILURE;
     }
@@ -5871,7 +7451,11 @@ limValidateDeltsReq(tpAniSirGlobal pMac, tpSirDeltsReq pDeltsReq, tSirMacAddr pe
         //send message to HAL to delete TS
         if(eSIR_SUCCESS != limSendHalMsgDelTs(pMac, pSta->staIndex, tspecIdx, pDeltsReq->req, psessionEntry->peSessionId))
         {
+<<<<<<< HEAD
           limLog(pMac, LOGW, FL("DelTs with UP %d failed in limSendHalMsgDelTs - ignoring request\n"),
+=======
+          limLog(pMac, LOGW, FL("DelTs with UP %d failed in limSendHalMsgDelTs - ignoring request"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            tsinfo->traffic.userPrio);
            return eSIR_FAILURE;
         }
@@ -5894,7 +7478,11 @@ limRegisterHalIndCallBack(tpAniSirGlobal pMac)
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pHalCB, sizeof(tHalIndCB)))
     {
+<<<<<<< HEAD
        limLog(pMac, LOGP, FL("palAllocateMemory() failed\n"));
+=======
+       limLog(pMac, LOGP, FL("palAllocateMemory() failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return;
     }
 
@@ -5908,7 +7496,11 @@ limRegisterHalIndCallBack(tpAniSirGlobal pMac)
     if(eSIR_SUCCESS != wdaPostCtrlMsg(pMac, &msg))
     {
         palFreeMemory(pMac->hHdd, pHalCB);
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("wdaPostCtrlMsg() failed\n"));
+=======
+        limLog(pMac, LOGP, FL("wdaPostCtrlMsg() failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     
     return;
@@ -5936,33 +7528,86 @@ limProcessAddBaInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     tpBaActivityInd     pBaActivityInd;
     tpPESession         psessionEntry;
     tANI_U8             sessionId;
+<<<<<<< HEAD
 
     
 
     if(limMsg->bodyptr == NULL)
+=======
+#ifdef FEATURE_WLAN_TDLS
+    boolean             htCapable = FALSE;
+#endif
+    
+
+    if (limMsg->bodyptr == NULL)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     
     pBaActivityInd = (tpBaActivityInd)limMsg->bodyptr;
     baCandidateCnt = pBaActivityInd->baCandidateCnt;
 
+<<<<<<< HEAD
     if((psessionEntry = peFindSessionByBssid(pMac,pBaActivityInd->bssId,&sessionId))== NULL)
     {
         limLog(pMac, LOGE,FL("session does not exist for given BSSId\n"));
+=======
+    if ((psessionEntry = peFindSessionByBssid(pMac,pBaActivityInd->bssId,&sessionId))== NULL)
+    {
+        limLog(pMac, LOGE,FL("session does not exist for given BSSId"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palFreeMemory(pMac->hHdd, limMsg->bodyptr);
         return;
     }
        
     //if we are not HT capable we don't need to handle BA timeout indication from HAL.
+<<<<<<< HEAD
     if( (baCandidateCnt  > pMac->lim.maxStation) || !psessionEntry->htCapability )
+=======
+#ifdef FEATURE_WLAN_TDLS
+    if ((baCandidateCnt  > pMac->lim.maxStation))
+#else
+    if ((baCandidateCnt  > pMac->lim.maxStation) || !psessionEntry->htCapability )
+#endif
     {
         palFreeMemory(pMac->hHdd, limMsg->bodyptr);
         return;
     }
+
+#ifdef FEATURE_WLAN_TDLS
+    //if we have TDLS peers, we should look at peers HT capability, which can be different than
+    //AP capability
+    pBaCandidate =  (tpAddBaCandidate) (((tANI_U8*)pBaActivityInd) + sizeof(tBaActivityInd));
+
+    for (i=0; i<baCandidateCnt; i++, pBaCandidate++)
+    {
+       pSta = dphLookupHashEntry(pMac, pBaCandidate->staAddr, &assocId, &psessionEntry->dph.dphHashTable);
+       if ((NULL == pSta) || (!pSta->valid))
+           continue;
+
+       if (STA_ENTRY_TDLS_PEER == pSta->staType)
+           htCapable = pSta->mlmStaContext.htCapability;
+       else
+           htCapable = psessionEntry->htCapability;
+
+       if (htCapable)
+           break;
+    }
+    if (!htCapable)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+    {
+        palFreeMemory(pMac->hHdd, limMsg->bodyptr);
+        return;
+    }
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
     //delete the complete dialoguetoken linked list
     limDeleteDialogueTokenList(pMac);
     pBaCandidate =  (tpAddBaCandidate) (((tANI_U8*)pBaActivityInd) + sizeof(tBaActivityInd));
 
+<<<<<<< HEAD
     for(i=0; i<baCandidateCnt; i++, pBaCandidate++) 
     {
        pSta = dphLookupHashEntry(pMac, pBaCandidate->staAddr, &assocId, &psessionEntry->dph.dphHashTable);
@@ -5975,6 +7620,20 @@ limProcessAddBaInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
                  (pBaCandidate->baInfo[tid].fBaEnable))
             {
                PELOG2(limLog(pMac, LOG2, FL("BA setup for staId = %d, TID: %d, SSN:%d.\n"),
+=======
+    for (i=0; i<baCandidateCnt; i++, pBaCandidate++)
+    {
+       pSta = dphLookupHashEntry(pMac, pBaCandidate->staAddr, &assocId, &psessionEntry->dph.dphHashTable);
+       if ((NULL == pSta) || (!pSta->valid))
+           continue;
+
+        for (tid=0; tid<STACFG_MAX_TC; tid++)
+        {
+            if((eBA_DISABLE == pSta->tcCfg[tid].fUseBATx) &&
+                 (pBaCandidate->baInfo[tid].fBaEnable))
+            {
+               PELOG2(limLog(pMac, LOG2, FL("BA setup for staId = %d, TID: %d, SSN: %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pSta->staIndex, tid, pBaCandidate->baInfo[tid].startingSeqNum);)
                 limPostMlmAddBAReq(pMac, pSta, tid, pBaCandidate->baInfo[tid].startingSeqNum,psessionEntry);  
             }
@@ -5986,6 +7645,7 @@ limProcessAddBaInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
 
 /** -------------------------------------------------------------
+<<<<<<< HEAD
 \fn limDelAllBASessions
 \brief Deletes all the exisitng BA sessions.
 \        Note : This API is provided for Mac OSx only. The reason for this is that Mac OSx may not
@@ -5996,11 +7656,26 @@ limProcessAddBaInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
 void 
 limDelAllBASessions(tpAniSirGlobal pMac)
+=======
+\fn      limDeleteBASessions
+\brief   Deletes all the exisitng BA sessions for given session
+         and BA direction.
+\param   tpAniSirGlobal pMac
+\param   tpPESession pSessionEntry
+\param   tANI_U32 baDirection
+\return  None
+-------------------------------------------------------------*/
+
+void 
+limDeleteBASessions(tpAniSirGlobal pMac, tpPESession pSessionEntry,
+                    tANI_U32 baDirection)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tANI_U32 i;
     tANI_U8 tid;
     tpDphHashNode pSta;
 
+<<<<<<< HEAD
     tpPESession psessionEntry =  &pMac->lim.gpSession[0]; //TBD-RAJESH HOW TO GET sessionEntry?????
     for(tid = 0; tid < STACFG_MAX_TC; tid++)
     {
@@ -6019,10 +7694,69 @@ limDelAllBASessions(tpAniSirGlobal pMac)
                     else if(eBA_ENABLE == pSta->tcCfg[tid].fUseBARx)
                     {
                         limPostMlmDelBAReq(pMac, pSta, eBA_RECIPIENT, tid, eSIR_MAC_UNSPEC_FAILURE_REASON,psessionEntry);
+=======
+    if (NULL == pSessionEntry)
+    {
+        limLog(pMac, LOGE, FL("Session does not exist"));
+    }
+    else
+    {
+        for(tid = 0; tid < STACFG_MAX_TC; tid++)
+        {
+            if ((eLIM_AP_ROLE == pSessionEntry->limSystemRole) ||
+                (pSessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE) ||
+                (eLIM_STA_IN_IBSS_ROLE == pSessionEntry->limSystemRole) ||
+                (pSessionEntry->limSystemRole == eLIM_P2P_DEVICE_GO))
+            {
+                for (i = 0; i < pMac->lim.maxStation; i++)
+                {
+                    pSta = pSessionEntry->dph.dphHashTable.pDphNodeArray + i;
+                    if (pSta && pSta->added)
+                    {
+                        if ((eBA_ENABLE == pSta->tcCfg[tid].fUseBATx) &&
+                                       (baDirection & BA_INITIATOR))
+                        {
+                            limPostMlmDelBAReq(pMac, pSta, eBA_INITIATOR, tid,
+                                               eSIR_MAC_UNSPEC_FAILURE_REASON,
+                                               pSessionEntry);
+                        }
+                        if ((eBA_ENABLE == pSta->tcCfg[tid].fUseBARx) &&
+                                        (baDirection & BA_RECIPIENT))
+                        {
+                            limPostMlmDelBAReq(pMac, pSta, eBA_RECIPIENT, tid,
+                                               eSIR_MAC_UNSPEC_FAILURE_REASON,
+                                               pSessionEntry);
+                        }
+                    }
+                }
+            }
+            else if ((eLIM_STA_ROLE == pSessionEntry->limSystemRole) ||
+                     (eLIM_BT_AMP_STA_ROLE == pSessionEntry->limSystemRole) ||
+                     (eLIM_P2P_DEVICE_ROLE == pSessionEntry->limSystemRole))
+            {
+                pSta = dphGetHashEntry(pMac, DPH_STA_HASH_INDEX_PEER,
+                                       &pSessionEntry->dph.dphHashTable);
+                if (pSta && pSta->added)
+                {
+                    if ((eBA_ENABLE == pSta->tcCfg[tid].fUseBATx) &&
+                                    (baDirection & BA_INITIATOR))
+                    {
+                        limPostMlmDelBAReq(pMac, pSta, eBA_INITIATOR, tid,
+                                           eSIR_MAC_UNSPEC_FAILURE_REASON,
+                                           pSessionEntry);
+                    }
+                    if ((eBA_ENABLE == pSta->tcCfg[tid].fUseBARx) &&
+                                    (baDirection & BA_RECIPIENT))
+                    {
+                        limPostMlmDelBAReq(pMac, pSta, eBA_RECIPIENT, tid,
+                                           eSIR_MAC_UNSPEC_FAILURE_REASON,
+                                           pSessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
                 }
             }
         }
+<<<<<<< HEAD
         else if((eLIM_STA_ROLE == psessionEntry->limSystemRole)||(eLIM_BT_AMP_STA_ROLE == psessionEntry->limSystemRole))
         {
             pSta = dphGetHashEntry(pMac, DPH_STA_HASH_INDEX_PEER, &psessionEntry->dph.dphHashTable);
@@ -6036,10 +7770,63 @@ limDelAllBASessions(tpAniSirGlobal pMac)
                 {
                     limPostMlmDelBAReq(pMac, pSta, eBA_RECIPIENT, tid, eSIR_MAC_UNSPEC_FAILURE_REASON,psessionEntry);
                 }
+=======
+    }
+}
+
+/** -------------------------------------------------------------
+\fn     limDelAllBASessions
+\brief  Deletes all the exisitng BA sessions.
+\param  tpAniSirGlobal pMac
+\return None
+-------------------------------------------------------------*/
+
+void limDelAllBASessions(tpAniSirGlobal pMac)
+{
+    tANI_U32 i;
+    tpPESession pSessionEntry;
+
+    for (i = 0; i < pMac->lim.maxBssId; i++)
+    {
+        pSessionEntry = peFindSessionBySessionId(pMac, i);
+        if (pSessionEntry)
+        {
+            limDeleteBASessions(pMac, pSessionEntry, BA_BOTH_DIRECTIONS);
+        }
+    }
+}
+
+/** -------------------------------------------------------------
+\fn     limDelAllBASessionsBtc
+\brief  Deletes all the exisitng BA receipent sessions in 2.4GHz
+        band.
+\param  tpAniSirGlobal pMac
+\return None
+-------------------------------------------------------------*/
+
+void limDelAllBASessionsBtc(tpAniSirGlobal pMac)
+{
+    tANI_U32 i;
+    tpPESession pSessionEntry;
+
+    for (i = 0; i < pMac->lim.maxBssId; i++)
+    {
+        pSessionEntry = peFindSessionBySessionId(pMac, i);
+        if (pSessionEntry)
+        {
+            if (SIR_BAND_2_4_GHZ ==
+                limGetRFBand(pSessionEntry->currentOperChannel))
+            {
+                limDeleteBASessions(pMac, pSessionEntry, BA_RECIPIENT);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** -------------------------------------------------------------
 \fn limProcessDelTsInd
 \brief handles the DeleteTS indication coming from HAL or generated by PE itself in some error cases.
@@ -6062,7 +7849,11 @@ limProcessDelTsInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
 if((psessionEntry = peFindSessionByBssid(pMac,pDelTsParam->bssId,&sessionId))== NULL)
     {
+<<<<<<< HEAD
          limLog(pMac, LOGE,FL("session does not exist for given BssId\n"));
+=======
+         limLog(pMac, LOGE,FL("session does not exist for given BssId"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          palFreeMemory(pMac->hHdd, (void *)(limMsg->bodyptr));
          return;
     }
@@ -6070,21 +7861,33 @@ if((psessionEntry = peFindSessionByBssid(pMac,pDelTsParam->bssId,&sessionId))== 
   pTspecInfo = &(pMac->lim.tspecInfo[pDelTsParam->tspecIdx]);
   if(pTspecInfo->inuse == false)
   {
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("tspec entry with index %d is not in use\n"), pDelTsParam->tspecIdx);)
+=======
+    PELOGE(limLog(pMac, LOGE, FL("tspec entry with index %d is not in use"), pDelTsParam->tspecIdx);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto error1;
   }
 
   pSta = dphGetHashEntry(pMac, pTspecInfo->assocId, &psessionEntry->dph.dphHashTable);
   if(pSta == NULL)
   {
+<<<<<<< HEAD
     limLog(pMac, LOGE, FL("Could not find entry in DPH table for assocId = %d\n"),
+=======
+    limLog(pMac, LOGE, FL("Could not find entry in DPH table for assocId = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pTspecInfo->assocId);
     goto error1;
   }
 
   if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pDelTsReq, sizeof(tSirDeltsReq)))
   {
+<<<<<<< HEAD
      PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed\n"));)
+=======
+     PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      goto error1;
   }
 
@@ -6099,10 +7902,17 @@ if((psessionEntry = peFindSessionByBssid(pMac,pDelTsParam->bssId,&sessionId))== 
   //validate the req
   if (eSIR_SUCCESS != limValidateDeltsReq(pMac, pDelTsReq, peerMacAddr,psessionEntry))
   {
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOGE, FL("limValidateDeltsReq failed\n"));)
     goto error2;
   }
  PELOG1(limLog(pMac, LOG1, "Sent DELTS request to station with assocId = %d MacAddr = %x:%x:%x:%x:%x:%x\n",
+=======
+    PELOGE(limLog(pMac, LOGE, FL("limValidateDeltsReq failed"));)
+    goto error2;
+  }
+ PELOG1(limLog(pMac, LOG1, "Sent DELTS request to station with assocId = %d MacAddr = %x:%x:%x:%x:%x:%x",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pDelTsReq->aid, peerMacAddr[0], peerMacAddr[1], peerMacAddr[2],
             peerMacAddr[3], peerMacAddr[4], peerMacAddr[5]);)
 
@@ -6112,7 +7922,11 @@ if((psessionEntry = peFindSessionByBssid(pMac,pDelTsParam->bssId,&sessionId))== 
   // prepare and send an sme indication to HDD
   if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pDelTsReqInfo, sizeof(tSirDeltsReqInfo)))
   {
+<<<<<<< HEAD
      PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed\n"));)
+=======
+     PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory() failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      goto error3;
   }
   palZeroMemory( pMac->hHdd, (tANI_U8 *)pDelTsReqInfo, sizeof(tSirDeltsReqInfo));
@@ -6154,10 +7968,17 @@ tSirRetStatus limPostMlmAddBAReq( tpAniSirGlobal pMac,
     tANI_U8 tid, tANI_U16 startingSeqNum,tpPESession psessionEntry)
 {
     tSirRetStatus status = eSIR_SUCCESS;
+<<<<<<< HEAD
     tpLimMlmAddBAReq pMlmAddBAReq;
     tpDialogueToken dialogueTokenNode;
     tANI_U32        val = 0;
   
+=======
+    tpLimMlmAddBAReq pMlmAddBAReq = NULL;
+    tpDialogueToken dialogueTokenNode;
+    tANI_U32        val = 0;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // Check if the peer is a 11n capable STA
   // FIXME - Need a 11n peer indication in DPH.
   // For now, using the taurusPeer attribute
@@ -6169,7 +7990,11 @@ tSirRetStatus limPostMlmAddBAReq( tpAniSirGlobal pMac,
                                    (void **) &pMlmAddBAReq,
                                    sizeof( tLimMlmAddBAReq )))
   {
+<<<<<<< HEAD
     limLog( pMac, LOGP, FL("palAllocateMemory failed\n"));
+=======
+    limLog( pMac, LOGP, FL("palAllocateMemory failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = eSIR_MEM_ALLOC_FAILED;
     goto returnFailure;
   }
@@ -6196,23 +8021,37 @@ tSirRetStatus limPostMlmAddBAReq( tpAniSirGlobal pMac,
   pMlmAddBAReq->baBufferSize = 0;
 
   limLog( pMac, LOGW,
+<<<<<<< HEAD
       FL( "Requesting an ADDBA to setup a %s BA session with STA %d for TID %d\n" ),
+=======
+      FL( "Requesting an ADDBA to setup a %s BA session with STA %d for TID %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       (pMlmAddBAReq->baPolicy ? "Immediate": "Delayed"),
       pStaDs->staIndex,
       tid );
 
   // BA Timeout
+<<<<<<< HEAD
   // pMlmAddBAReq->baTimeout = pMac->hal.halMac.baTimeout; // In TU's
   if (wlan_cfgGetInt(pMac, WNI_CFG_BA_TIMEOUT, &val) != eSIR_SUCCESS) 
   {
      limLog(pMac, LOGE, FL("could not retrieve BA TIME OUT Param CFG\n"));
+=======
+  if (wlan_cfgGetInt(pMac, WNI_CFG_BA_TIMEOUT, &val) != eSIR_SUCCESS)
+  {
+     limLog(pMac, LOGE, FL("could not retrieve BA TIME OUT Param CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      status = eSIR_FAILURE;
      goto returnFailure;
   }
   pMlmAddBAReq->baTimeout = val; // In TU's
 
   // ADDBA Failure Timeout
+<<<<<<< HEAD
   // FIXME_AMPDU - Need to retrieve this from CFG. 
+=======
+  // FIXME_AMPDU - Need to retrieve this from CFG.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   //right now we are not checking for response timeout. so this field is dummy just to be compliant with the spec.
   pMlmAddBAReq->addBAFailureTimeout = 2000; // In TU's
 
@@ -6224,20 +8063,40 @@ tSirRetStatus limPostMlmAddBAReq( tpAniSirGlobal pMac,
 
   LIM_SET_STA_BA_STATE(pStaDs, tid, eLIM_BA_STATE_WT_ADD_RSP);
 
+<<<<<<< HEAD
   if( NULL == (dialogueTokenNode =  limAssignDialogueToken(pMac)))
       goto returnFailure;
   
   pMlmAddBAReq->baDialogToken = dialogueTokenNode->token;
   //set assocId and tid information in the lim linked list 
+=======
+  dialogueTokenNode = limAssignDialogueToken(pMac);
+  if (NULL == dialogueTokenNode)
+  {
+     limLog(pMac, LOGE, FL("could not assign dialogue token"));
+     status = eSIR_FAILURE;
+     goto returnFailure;
+  }
+
+  pMlmAddBAReq->baDialogToken = dialogueTokenNode->token;
+  //set assocId and tid information in the lim linked list
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   dialogueTokenNode->assocId = pStaDs->assocId;
   dialogueTokenNode->tid = tid;
   // Send ADDBA Req to MLME
   limPostMlmMessage( pMac,
       LIM_MLM_ADDBA_REQ,
       (tANI_U32 *) pMlmAddBAReq );
+<<<<<<< HEAD
 
 returnFailure:
 
+=======
+  return eSIR_SUCCESS;
+
+returnFailure:
+  palFreeMemory(pMac->hHdd, pMlmAddBAReq);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return status;
 }
 
@@ -6287,7 +8146,11 @@ tpLimMlmAddBARsp pMlmAddBARsp;
         sizeof( tLimMlmAddBARsp )))
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL("palAllocateMemory failed with error code %d\n"),
+=======
+        FL("palAllocateMemory failed with error code %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status );
 
     status = eSIR_MEM_ALLOC_FAILED;
@@ -6363,7 +8226,11 @@ LIM_GET_STA_BA_STATE(pSta, baTID, &curBaState);
   if( eLIM_BA_STATE_IDLE != curBaState)
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL( "Received unexpected DELBA REQ when STA BA state for tid = %d is %d\n" ),
+=======
+        FL( "Received unexpected DELBA REQ when STA BA state for tid = %d is %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         baTID,
         curBaState);
 
@@ -6377,7 +8244,11 @@ LIM_GET_STA_BA_STATE(pSta, baTID, &curBaState);
         sizeof( tLimMlmDelBAReq )))
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL("palAllocateMemory failed with error code %d\n"),
+=======
+        FL("palAllocateMemory failed with error code %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status );
 
     status = eSIR_MEM_ALLOC_FAILED;
@@ -6488,7 +8359,11 @@ tSirMsgQ msgQ;
                                    sizeof( tAddBAParams ))))
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL("palAllocateMemory failed with error code %d\n"),
+=======
+        FL("palAllocateMemory failed with error code %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status );
 
     retCode = eSIR_MEM_ALLOC_FAILED;
@@ -6541,7 +8416,11 @@ tSirMsgQ msgQ;
   
   if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ )))
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL("Posting WDA_ADDBA_REQ to HAL failed! Reason = %d\n"),
+=======
+        FL("Posting WDA_ADDBA_REQ to HAL failed! Reason = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode );
   else
     return retCode;
@@ -6593,7 +8472,11 @@ tSirMsgQ msgQ;
                                    sizeof( tDelBAParams ))))
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL("palAllocateMemory failed with error code %d\n"),
+=======
+        FL("palAllocateMemory failed with error code %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status );
 
     retCode = eSIR_MEM_ALLOC_FAILED;
@@ -6634,7 +8517,11 @@ tSirMsgQ msgQ;
 
   if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ )))
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL("Posting WDA_DELBA_IND to HAL failed! Reason = %d\n"),
+=======
+        FL("Posting WDA_DELBA_IND to HAL failed! Reason = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode );
   else
   {
@@ -6695,7 +8582,11 @@ limPostSMStateUpdate(tpAniSirGlobal pMac,
     // Allocate for WDA_SET_MIMOPS_REQ
     status = palAllocateMemory( pMac->hHdd, (void **) &pMIMO_PSParams, sizeof( tSetMIMOPS));
     if( eHAL_STATUS_SUCCESS !=  status) {
+<<<<<<< HEAD
         limLog( pMac, LOGP,FL(" palAllocateMemory failed with error code %d\n"), status );
+=======
+        limLog( pMac, LOGP,FL(" palAllocateMemory failed with error code %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_MEM_ALLOC_FAILED;
     }
 
@@ -6711,7 +8602,11 @@ limPostSMStateUpdate(tpAniSirGlobal pMac,
     retCode = wdaPostCtrlMsg( pMac, &msgQ );
     if (eSIR_SUCCESS != retCode)
     {
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL("Posting WDA_SET_MIMOPS_REQ to HAL failed! Reason = %d\n"), retCode );
+=======
+        limLog( pMac, LOGP, FL("Posting WDA_SET_MIMOPS_REQ to HAL failed! Reason = %d"), retCode );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palFreeMemory(pMac->hHdd, (void *) pMIMO_PSParams);
         return retCode;
     }
@@ -6726,10 +8621,13 @@ void limPktFree (
     void            *pBody)
 {
     (void) pMac; (void) frmType; (void) pRxPacketInfo; (void) pBody;
+<<<<<<< HEAD
 #if defined ANI_OS_TYPE_LINUX || defined ANI_OS_TYPE_OSX
     // Free up allocated SK BUF
     palPktFree( pMac->hHdd, frmType, pRxPacketInfo, pBody) ;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
@@ -6757,6 +8655,7 @@ void limPktFree (
 void
 limGetBDfromRxPacket(tpAniSirGlobal pMac, void *body, tANI_U32 **pRxPacketInfo)
 {
+<<<<<<< HEAD
 #if defined (ANI_OS_TYPE_LINUX) || defined (ANI_OS_TYPE_OSX)
 #ifndef GEN6_ONWARDS
     palGetPacketDataPtr( pMac->hHdd, HAL_TXRX_FRM_802_11_MGMT, (void *) body, (void **) pRxPacketInfo );
@@ -6764,6 +8663,9 @@ limGetBDfromRxPacket(tpAniSirGlobal pMac, void *body, tANI_U32 **pRxPacketInfo)
 #else
     *pRxPacketInfo = (tANI_U32 *) body;
 #endif
+=======
+    *pRxPacketInfo = (tANI_U32 *) body;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limGetBDfromRxPacket() ***/
 
 
@@ -6799,7 +8701,11 @@ void limAddScanChannelInfo(tpAniSirGlobal pMac, tANI_U8 channelId)
         }
         else
         {
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL(" -- number of channels exceed mac\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL(" -- number of channels exceed mac"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 }
@@ -6833,7 +8739,11 @@ limIsChannelValidForChannelSwitch(tpAniSirGlobal pMac, tANI_U8 channel)
           (tANI_U8 *)validChannelList,
           (tANI_U32 *)&validChannelListLen) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("could not retrieve valid channel list\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("could not retrieve valid channel list"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return (eSIR_FALSE);
     }
 
@@ -6892,7 +8802,11 @@ __limFillTxControlParams(tpAniSirGlobal pMac, tpTxControlParams  pTxCtrlMsg,
         case eLIM_TX_BSS:
             //Fall thru...
         default:
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("Invalid case: Not Handled\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("Invalid case: Not Handled"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eHAL_STATUS_FAILURE;
     }
 
@@ -6933,7 +8847,11 @@ void limFrameTransmissionControl(tpAniSirGlobal pMac, tLimQuietTxMode type, tLim
                                     (sizeof(*pTxCtrlMsg) + nBytes));
     if (status != eHAL_STATUS_SUCCESS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory() failed\n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory() failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -6942,7 +8860,11 @@ void limFrameTransmissionControl(tpAniSirGlobal pMac, tLimQuietTxMode type, tLim
     if (status != eHAL_STATUS_SUCCESS)
     {
         palFreeMemory(pMac->hHdd, (void *) pTxCtrlMsg);
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palZeroMemory() failed, status = %d\n"), status);
+=======
+        limLog(pMac, LOGP, FL("palZeroMemory() failed, status = %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     
@@ -6950,7 +8872,11 @@ void limFrameTransmissionControl(tpAniSirGlobal pMac, tLimQuietTxMode type, tLim
     if (status != eHAL_STATUS_SUCCESS)
     {
         palFreeMemory(pMac->hHdd, (void *) pTxCtrlMsg);
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("__limFillTxControlParams failed, status = %d\n"), status);
+=======
+        limLog(pMac, LOGP, FL("__limFillTxControlParams failed, status = %d"), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     
@@ -6963,17 +8889,29 @@ void limFrameTransmissionControl(tpAniSirGlobal pMac, tLimQuietTxMode type, tLim
     if(wdaPostCtrlMsg( pMac, &msgQ) != eSIR_SUCCESS)
     {
         palFreeMemory(pMac->hHdd, (void *) pTxCtrlMsg);
+<<<<<<< HEAD
         limLog( pMac, LOGP, FL("Posting Message to HAL failed\n"));
+=======
+        limLog( pMac, LOGP, FL("Posting Message to HAL failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     if (mode == eLIM_STOP_TX)
         {
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("Stopping the transmission of all packets, indicated softmac\n"));)
         }
     else
         {
             PELOG1(limLog(pMac, LOG1, FL("Resuming the transmission of all packets, indicated softmac\n"));)
+=======
+            PELOG1(limLog(pMac, LOG1, FL("Stopping the transmission of all packets, indicated softmac"));)
+        }
+    else
+        {
+            PELOG1(limLog(pMac, LOG1, FL("Resuming the transmission of all packets, indicated softmac"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     return;
 }
@@ -7002,7 +8940,10 @@ limRestorePreChannelSwitchState(tpAniSirGlobal pMac, tpPESession psessionEntry)
 {
 
     tSirRetStatus retCode = eSIR_SUCCESS;
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32      val = 0;
 
     if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
@@ -7025,7 +8966,11 @@ limRestorePreChannelSwitchState(tpAniSirGlobal pMac, tpPESession psessionEntry)
                       &val)) != eSIR_SUCCESS)
 
         {
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not retrieve Background scan period value\n"));
+=======
+            limLog(pMac, LOGP, FL("could not retrieve Background scan period value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return (retCode);   
         }
 
@@ -7045,13 +8990,20 @@ limRestorePreChannelSwitchState(tpAniSirGlobal pMac, tpPESession psessionEntry)
     if (TX_TIMER_VALID(pMac->lim.limTimers.gLimHeartBeatTimer))
     {
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_HEART_BEAT_TIMER));
+<<<<<<< HEAD
         if(limActivateHearBeatTimer(pMac) != TX_SUCCESS)
+=======
+        if((limActivateHearBeatTimer(pMac) != TX_SUCCESS) && (!IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             limLog(pMac, LOGP, FL("Could not restart heartbeat timer, doing LOGP"));
             return (eSIR_FAILURE);
         }
     }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (retCode);
 }
 
@@ -7067,7 +9019,10 @@ tSirRetStatus limRestorePreQuietState(tpAniSirGlobal pMac, tpPESession psessionE
 {
 
     tSirRetStatus retCode = eSIR_SUCCESS;
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32      val = 0;
  
     if (pMac->lim.gLimSystemRole != eLIM_STA_ROLE)
@@ -7089,13 +9044,21 @@ tSirRetStatus limRestorePreQuietState(tpAniSirGlobal pMac, tpPESession psessionE
                       &val)) != eSIR_SUCCESS)
 
         {
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not retrieve Background scan period value\n"));
+=======
+            limLog(pMac, LOGP, FL("could not retrieve Background scan period value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return (retCode);   
         }
 
         if (val > 0 && TX_TIMER_VALID(pMac->lim.limTimers.gLimBackgroundScanTimer))
         {
+<<<<<<< HEAD
             MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, NO_SESSION, eLIM_BACKGROUND_SCAN_TIMER));
+=======
+            MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_BACKGROUND_SCAN_TIMER));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(tx_timer_activate(&pMac->lim.limTimers.gLimBackgroundScanTimer) != TX_SUCCESS)
             {
                 limLog(pMac, LOGP, FL("Could not restart background scan timer, doing LOGP"));
@@ -7108,14 +9071,21 @@ tSirRetStatus limRestorePreQuietState(tpAniSirGlobal pMac, tpPESession psessionE
     /* Enable heartbeat timer */
     if (TX_TIMER_VALID(pMac->lim.limTimers.gLimHeartBeatTimer))
     {
+<<<<<<< HEAD
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, NO_SESSION, eLIM_HEART_BEAT_TIMER));
+=======
+        MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, psessionEntry->peSessionId, eLIM_HEART_BEAT_TIMER));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(limActivateHearBeatTimer(pMac) != TX_SUCCESS)
         {
             limLog(pMac, LOGP, FL("Could not restart heartbeat timer, doing LOGP"));
             return (eSIR_FAILURE);
         }
     }
+<<<<<<< HEAD
 #endif    
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (retCode);
 }
 
@@ -7142,7 +9112,10 @@ tSirRetStatus limRestorePreQuietState(tpAniSirGlobal pMac, tpPESession psessionE
 void 
 limPrepareFor11hChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEntry)
 {
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (psessionEntry->limSystemRole != eLIM_STA_ROLE)
         return;
      
@@ -7158,7 +9131,11 @@ limPrepareFor11hChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEntry)
     if(pMac->lim.gLimSmeState == eLIM_SME_LINK_EST_WT_SCAN_STATE ||
         pMac->lim.gLimSmeState == eLIM_SME_CHANNEL_SCAN_STATE)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Posting finish scan as we are in scan state\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Posting finish scan as we are in scan state"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Stop ongoing scanning if any */
         if (GET_LIM_PROCESS_DEFD_MESGS(pMac))
         {
@@ -7175,11 +9152,18 @@ limPrepareFor11hChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEntry)
     }
     else
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Not in scan state, start channel switch timer\n"));)
         /** We are safe to switch channel at this point */
         limStopTxAndSwitchChannel(pMac, psessionEntry->peSessionId);
     }
 #endif
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Not in scan state, start channel switch timer"));)
+        /** We are safe to switch channel at this point */
+        limStopTxAndSwitchChannel(pMac, psessionEntry->peSessionId);
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -7228,14 +9212,22 @@ tSirNwType limGetNwType(tpAniSirGlobal pMac, tANI_U8 channelNum, tANI_U32 type, 
             }
             if (pBeacon->extendedRatesPresent)
             {
+<<<<<<< HEAD
                 PELOG3(limLog(pMac, LOG3, FL("Beacon, nwtype=G\n"));)
+=======
+                PELOG3(limLog(pMac, LOG3, FL("Beacon, nwtype=G"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 nwType = eSIR_11G_NW_TYPE;
             }
         }
         else
         {
             // 11a packet
+<<<<<<< HEAD
             PELOG3(limLog(pMac, LOG3,FL("Beacon, nwtype=A\n"));)
+=======
+            PELOG3(limLog(pMac, LOG3,FL("Beacon, nwtype=A"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nwType = eSIR_11A_NW_TYPE;
         }
     }
@@ -7290,7 +9282,11 @@ void limSetTspecUapsdMask(tpAniSirGlobal pMac, tSirMacTSInfo *pTsInfo, tANI_U32 
     tANI_U16  direction = pTsInfo->traffic.direction;  
     tANI_U8   ac = upToAc(userPrio);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL(" Set UAPSD mask for AC %d, direction %d, action=%d (1=set,0=clear) \n"),ac, direction, action );)
+=======
+    PELOG1(limLog(pMac, LOG1, FL(" Set UAPSD mask for AC %d, direction %d, action=%d (1=set,0=clear) "),ac, direction, action );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Converting AC to appropriate Uapsd Bit Mask
      * AC_BE(0) --> UAPSD_BITOFFSET_ACVO(3)
@@ -7325,8 +9321,13 @@ void limSetTspecUapsdMask(tpAniSirGlobal pMac, tSirMacTSInfo *pTsInfo, tANI_U32 
         }
     }
 
+<<<<<<< HEAD
     limLog(pMac, LOGE, FL("New pMac->lim.gUapsdPerAcTriggerEnableMask = 0x%x \n"), pMac->lim.gUapsdPerAcTriggerEnableMask );
     limLog(pMac, LOGE, FL("New pMac->lim.gUapsdPerAcDeliveryEnableMask = 0x%x \n"), pMac->lim.gUapsdPerAcDeliveryEnableMask );
+=======
+    limLog(pMac, LOGE, FL("New pMac->lim.gUapsdPerAcTriggerEnableMask = 0x%x "), pMac->lim.gUapsdPerAcTriggerEnableMask );
+    limLog(pMac, LOGE, FL("New pMac->lim.gUapsdPerAcDeliveryEnableMask = 0x%x "), pMac->lim.gUapsdPerAcDeliveryEnableMask );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return;
 }
@@ -7364,13 +9365,21 @@ void limHandleHeartBeatTimeout(tpAniSirGlobal pMac )
                 if(pMac->lim.gpSession[i].LimHBFailureStatus == eANI_BOOLEAN_TRUE)
                 {
                     /* Activate Probe After HeartBeat Timer incase HB Failure detected */
+<<<<<<< HEAD
                     PELOGW(limLog(pMac, LOGW,FL("Sending Probe for Session: %d\n"),
+=======
+                    PELOGW(limLog(pMac, LOGW,FL("Sending Probe for Session: %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             i);)
                     limDeactivateAndChangeTimer(pMac, eLIM_PROBE_AFTER_HB_TIMER);
                     MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, 0, eLIM_PROBE_AFTER_HB_TIMER));
                     if (tx_timer_activate(&pMac->lim.limTimers.gLimProbeAfterHBTimer) != TX_SUCCESS)
                     {
+<<<<<<< HEAD
                         limLog(pMac, LOGP, FL("Fail to re-activate Probe-after-heartbeat timer\n"));
+=======
+                        limLog(pMac, LOGP, FL("Fail to re-activate Probe-after-heartbeat timer"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         limReactivateHeartBeatTimer(pMac, &pMac->lim.gpSession[i]);
                     }
                     break;
@@ -7380,6 +9389,48 @@ void limHandleHeartBeatTimeout(tpAniSirGlobal pMac )
     }
 }
 
+<<<<<<< HEAD
+=======
+void limHandleHeartBeatTimeoutForSession(tpAniSirGlobal pMac, tpPESession psessionEntry)
+{
+    if(psessionEntry->valid == TRUE )
+    {
+        if(psessionEntry->bssType == eSIR_IBSS_MODE)
+        {
+            limIbssHeartBeatHandle(pMac,psessionEntry);
+        }
+        if((psessionEntry->bssType == eSIR_INFRASTRUCTURE_MODE) &&
+             (psessionEntry->limSystemRole == eLIM_STA_ROLE))
+        {
+            limHandleHeartBeatFailure(pMac,psessionEntry);
+        }
+    }
+    /* In the function limHandleHeartBeatFailure things can change so check for the session entry  valid
+     and the other things again */
+    if(psessionEntry->valid == TRUE )
+    {
+        if((psessionEntry->bssType == eSIR_INFRASTRUCTURE_MODE) &&
+            (psessionEntry->limSystemRole == eLIM_STA_ROLE))
+        {
+            if(psessionEntry->LimHBFailureStatus == eANI_BOOLEAN_TRUE)
+            {
+                /* Activate Probe After HeartBeat Timer incase HB Failure detected */
+                PELOGW(limLog(pMac, LOGW,FL("Sending Probe for Session: %d"),
+                       psessionEntry->bssIdx);)
+                limDeactivateAndChangeTimer(pMac, eLIM_PROBE_AFTER_HB_TIMER);
+                MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, 0, eLIM_PROBE_AFTER_HB_TIMER));
+                if (tx_timer_activate(&pMac->lim.limTimers.gLimProbeAfterHBTimer) != TX_SUCCESS)
+                {
+                    limLog(pMac, LOGP, FL("Fail to re-activate Probe-after-heartbeat timer"));
+                    limReactivateHeartBeatTimer(pMac, psessionEntry);
+                }
+            }
+        }
+    }
+}
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_U8 limGetCurrentOperatingChannel(tpAniSirGlobal pMac)
 {
     tANI_U8 i;
@@ -7408,13 +9459,27 @@ void limProcessAddStaRsp(tpAniSirGlobal pMac,tpSirMsgQ limMsgQ)
     
     if((psessionEntry = peFindSessionBySessionId(pMac,pAddStaParams->sessionId))==NULL)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palFreeMemory(pMac, pAddStaParams);
         return;
     }
     if (psessionEntry->limSystemRole == eLIM_STA_IN_IBSS_ROLE)
         (void) limIbssAddStaRsp(pMac, limMsgQ->bodyptr,psessionEntry);
+<<<<<<< HEAD
     
+=======
+#ifdef FEATURE_WLAN_TDLS
+    else if(pMac->lim.gLimAddStaTdls)
+    {
+        limProcessTdlsAddStaRsp(pMac, limMsgQ->bodyptr, psessionEntry) ;
+        pMac->lim.gLimAddStaTdls = FALSE ;
+    }    
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else
         limProcessMlmAddStaRsp(pMac, limMsgQ,psessionEntry);
                 
@@ -7465,6 +9530,7 @@ void limHandleHeartBeatFailureTimeout(tpAniSirGlobal pMac)
             psessionEntry = &pMac->lim.gpSession[i];
             if(psessionEntry->LimHBFailureStatus == eANI_BOOLEAN_TRUE)
             {
+<<<<<<< HEAD
                 limLog(pMac, LOGE, FL("Probe_hb_failure: SME %d, MLME %d, HB-Count %d\n"),psessionEntry->limSmeState,
                         psessionEntry->limMlmState, psessionEntry->LimRxedBeaconCntDuringHB);
                 if (psessionEntry->limMlmState == eLIM_MLM_LINK_ESTABLISHED_STATE)
@@ -7472,6 +9538,16 @@ void limHandleHeartBeatFailureTimeout(tpAniSirGlobal pMac)
                     if (!LIM_IS_CONNECTION_ACTIVE(psessionEntry))
                     {
                         limLog(pMac, LOGE, FL("Probe_hb_failure: for session:%d \n" ),psessionEntry->peSessionId);
+=======
+                limLog(pMac, LOGE, FL("Probe_hb_failure: SME %d, MLME %d, HB-Count %d"),psessionEntry->limSmeState,
+                        psessionEntry->limMlmState, psessionEntry->LimRxedBeaconCntDuringHB);
+                if (psessionEntry->limMlmState == eLIM_MLM_LINK_ESTABLISHED_STATE)
+                {
+                    if ((!LIM_IS_CONNECTION_ACTIVE(psessionEntry))&&
+                                                  (psessionEntry->limSmeState != eLIM_SME_WT_DISASSOC_STATE))
+                    {
+                        limLog(pMac, LOGE, FL("Probe_hb_failure: for session:%d " ),psessionEntry->peSessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         /* AP did not respond to Probe Request. Tear down link with it.*/
                         limTearDownLinkWithAp(pMac,
                                               psessionEntry->peSessionId,
@@ -7485,7 +9561,11 @@ void limHandleHeartBeatFailureTimeout(tpAniSirGlobal pMac)
                 }
                 else
                 {
+<<<<<<< HEAD
                     limLog(pMac, LOGE, FL("Unexpected wt-probe-timeout in state \n"));
+=======
+                    limLog(pMac, LOGE, FL("Unexpected wt-probe-timeout in state "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limPrintMlmState(pMac, LOGE, psessionEntry->limMlmState);
                     limReactivateHeartBeatTimer(pMac, psessionEntry);
                 }
@@ -7604,7 +9684,11 @@ void limProcessAddStaSelfRsp(tpAniSirGlobal pMac,tpSirMsgQ limMsgQ)
    if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pRsp, sizeof(tSirSmeAddStaSelfRsp)))
    {
       /// Buffer not available. Log error
+<<<<<<< HEAD
       limLog(pMac, LOGP, FL("call to palAllocateMemory failed for Add Sta self RSP\n"));
+=======
+      limLog(pMac, LOGP, FL("call to palAllocateMemory failed for Add Sta self RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       palFreeMemory( pMac->hHdd, (tANI_U8 *)pAddStaSelfParams);
       return;
    }
@@ -7640,7 +9724,11 @@ void limProcessDelStaSelfRsp(tpAniSirGlobal pMac,tpSirMsgQ limMsgQ)
    if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pRsp, sizeof(tSirSmeDelStaSelfRsp)))
    {
       /// Buffer not available. Log error
+<<<<<<< HEAD
       limLog(pMac, LOGP, FL("call to palAllocateMemory failed for Add Sta self RSP\n"));
+=======
+      limLog(pMac, LOGP, FL("call to palAllocateMemory failed for Add Sta self RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       palFreeMemory( pMac->hHdd, (tANI_U8 *)pDelStaSelfParams);
       return;
    }
@@ -7672,6 +9760,14 @@ void limProcessDelStaSelfRsp(tpAniSirGlobal pMac,tpSirMsgQ limMsgQ)
 tANI_U8 limUnmapChannel(tANI_U8 mapChannel)
 {
    if( mapChannel > 0 && mapChannel < 25 )
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+       if (IS_ROAM_SCAN_OFFLOAD_FEATURE_ENABLE)
+           return aUnsortedChannelList[mapChannel -1];
+       else
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return abChannel[mapChannel -1];
    else
      return 0;
@@ -7734,7 +9830,11 @@ v_U8_t* limGetVendorIEOuiPtr(tpAniSirGlobal pMac, tANI_U8 *oui, tANI_U8 oui_size
         if(elem_len > left)
         {
             limLog( pMac, LOGE, 
+<<<<<<< HEAD
                FL("****Invalid IEs eid = %d elem_len=%d left=%d*****\n"), 
+=======
+               FL("****Invalid IEs eid = %d elem_len=%d left=%d*****"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                elem_id,elem_len,left);
             return NULL;
         }
@@ -7750,7 +9850,10 @@ v_U8_t* limGetVendorIEOuiPtr(tpAniSirGlobal pMac, tANI_U8 *oui, tANI_U8 oui_size
     return NULL;
 }
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Returns length of P2P stream and Pointer ie passed to this function is filled with noa stream
 
 v_U8_t limBuildP2pIe(tpAniSirGlobal pMac, tANI_U8 *ie, tANI_U8 *data, tANI_U8 ie_len)
@@ -7770,12 +9873,30 @@ v_U8_t limBuildP2pIe(tpAniSirGlobal pMac, tANI_U8 *ie, tANI_U8 *data, tANI_U8 ie
 v_U8_t limGetNoaAttrStreamInMultP2pIes(tpAniSirGlobal pMac,v_U8_t* noaStream,v_U8_t noaLen,v_U8_t overFlowLen)
 {
    v_U8_t overFlowP2pStream[SIR_MAX_NOA_ATTR_LEN];
+<<<<<<< HEAD
    palCopyMemory( pMac->hHdd, overFlowP2pStream, noaStream + noaLen - overFlowLen, overFlowLen); 
    noaStream[noaLen - overFlowLen] = SIR_MAC_EID_VENDOR;
    noaStream[noaLen - overFlowLen+1] = overFlowLen + SIR_MAC_P2P_OUI_SIZE;
    palCopyMemory( pMac->hHdd, noaStream+ noaLen - overFlowLen+2,SIR_MAC_P2P_OUI,SIR_MAC_P2P_OUI_SIZE);
    
    palCopyMemory( pMac->hHdd, noaStream+ noaLen - overFlowLen+2+SIR_MAC_P2P_OUI_SIZE,overFlowP2pStream,overFlowLen);
+=======
+
+   if ((noaLen <= (SIR_MAX_NOA_ATTR_LEN+SIR_P2P_IE_HEADER_LEN)) &&
+       (noaLen >= overFlowLen) && (overFlowLen <= SIR_MAX_NOA_ATTR_LEN))
+   {
+       palCopyMemory( pMac->hHdd, overFlowP2pStream,
+                     noaStream + noaLen - overFlowLen, overFlowLen);
+       noaStream[noaLen - overFlowLen] = SIR_MAC_EID_VENDOR;
+       noaStream[noaLen - overFlowLen + 1] = overFlowLen + SIR_MAC_P2P_OUI_SIZE;
+       palCopyMemory( pMac->hHdd, noaStream+noaLen-overFlowLen + 2,
+                     SIR_MAC_P2P_OUI, SIR_MAC_P2P_OUI_SIZE);
+       palCopyMemory( pMac->hHdd,
+                     noaStream+noaLen + 2 + SIR_MAC_P2P_OUI_SIZE - overFlowLen,
+                     overFlowP2pStream, overFlowLen);
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return (noaLen + SIR_P2P_IE_HEADER_LEN);
 
 }
@@ -7897,8 +10018,29 @@ void peGetResumeChannel(tpAniSirGlobal pMac, tANI_U8* resumeChannel, ePhyChanBon
     return;
 }
 
+<<<<<<< HEAD
 
 #endif
+=======
+tANI_BOOLEAN limIsNOAInsertReqd(tpAniSirGlobal pMac)
+{
+    tANI_U8 i;
+    for(i =0; i < pMac->lim.maxBssId; i++)
+    {
+        if(pMac->lim.gpSession[i].valid == TRUE)
+        {
+            if( (eLIM_AP_ROLE == pMac->lim.gpSession[i].limSystemRole ) 
+                    && ( VOS_P2P_GO_MODE == pMac->lim.gpSession[i].pePersona )
+                   )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tANI_BOOLEAN limIsconnectedOnDFSChannel(tANI_U8 currentChannel)
 {
@@ -7911,3 +10053,56 @@ tANI_BOOLEAN limIsconnectedOnDFSChannel(tANI_U8 currentChannel)
         return eANI_BOOLEAN_FALSE;
     }
 }
+<<<<<<< HEAD
+=======
+
+#ifdef WLAN_FEATURE_11AC
+tANI_BOOLEAN limCheckVHTOpModeChange( tpAniSirGlobal pMac, tpPESession psessionEntry, tANI_U8 chanWidth, tANI_U8 staId)
+{
+    tUpdateVHTOpMode tempParam;
+    
+    tempParam.opMode = chanWidth;
+    tempParam.staId  = staId;
+
+    limSendModeUpdate( pMac, &tempParam, psessionEntry );
+
+    return eANI_BOOLEAN_TRUE;
+}
+#endif
+
+tANI_U8 limGetShortSlotFromPhyMode(tpAniSirGlobal pMac, tpPESession psessionEntry, tANI_U32 phyMode)
+{
+    tANI_U8 val=0;
+
+    if (phyMode == WNI_CFG_PHY_MODE_11A)
+    {
+        // 11a mode always uses short slot
+        // Check this since some APs in 11a mode broadcast long slot in their beacons. As per standard, always use what PHY mandates.
+        val = true;
+    }
+    else if (phyMode == WNI_CFG_PHY_MODE_11G)
+    {
+        if ((psessionEntry->pePersona == VOS_STA_SAP_MODE) ||
+            (psessionEntry->pePersona == VOS_P2P_GO_MODE))
+        {
+            val = true;
+        }
+
+        // Program Polaris based on AP capability
+
+        if (psessionEntry->limMlmState == eLIM_MLM_WT_JOIN_BEACON_STATE)
+            // Joining BSS.
+            val = SIR_MAC_GET_SHORT_SLOT_TIME( psessionEntry->limCurrentBssCaps);
+        else if (psessionEntry->limMlmState == eLIM_MLM_WT_REASSOC_RSP_STATE)
+            // Reassociating with AP.
+            val = SIR_MAC_GET_SHORT_SLOT_TIME( psessionEntry->limReassocBssCaps);
+    }
+    else // if (phyMode == WNI_CFG_PHY_MODE_11B) - use this if another phymode is added later ON
+    {
+        // Will reach here in 11b case
+        val = false;
+    }
+    limLog(pMac, LOG1, FL("phyMode = %u shortslotsupported = %u"), phyMode, val);
+    return val;
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

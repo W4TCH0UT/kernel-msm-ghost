@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -62,7 +85,11 @@ typedef struct
 }wpt_iterator_info;
 
 /* Storage for DXE CB function pointer */
+<<<<<<< HEAD
 static wpalPacketLowPacketCB wpalPacketAvailableCB = NULL;
+=======
+static wpalPacketLowPacketCB wpalPacketAvailableCB;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
    wpalPacketInit is no-op for VOSS-support wpt_packet
@@ -117,6 +144,12 @@ VOS_STATUS wpalPacketRXLowResourceCB(vos_pkt_t *pPacket, v_VOID_t *userData)
    }
 
    wpalPacketAvailableCB( (wpt_packet *)pPacket, userData );
+<<<<<<< HEAD
+=======
+
+   wpalPacketAvailableCB = NULL;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return VOS_STATUS_SUCCESS;
 }
 
@@ -135,10 +168,16 @@ wpt_packet * wpalPacketAlloc(wpt_packet_type pktType, wpt_uint32 nPktSize,
    wpt_packet*  pPkt      = NULL;
    vos_pkt_t*   pVosPkt   = NULL;
    void*        pData     = NULL;
+<<<<<<< HEAD
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /* Initialize DXE CB function pointer storage */
    wpalPacketAvailableCB = NULL;
+=======
+   v_U16_t      allocLen;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    switch (pktType)
    {
    case eWLAN_PAL_PKT_TYPE_TX_802_11_MGMT:
@@ -163,6 +202,20 @@ wpt_packet * wpalPacketAlloc(wpt_packet_type pktType, wpt_uint32 nPktSize,
         wpalPacketAvailableCB = rxLowCB;
       }
 #endif /* FEATURE_R33D */
+<<<<<<< HEAD
+=======
+      if((NULL != pVosPkt) && (VOS_STATUS_E_RESOURCES != vosStatus))
+      {
+         vos_pkt_get_packet_length(pVosPkt, &allocLen);
+         if (nPktSize != allocLen)
+         {
+            WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                       "RX packet alloc has problem, discard this frame, Len %d", allocLen);
+            vos_pkt_return_packet(pVosPkt);
+            return NULL;
+         }
+      }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
 
    default:
@@ -222,7 +275,11 @@ wpt_uint32 wpalPacketGetLength(wpt_packet *pPkt)
    if (unlikely(NULL == pPkt))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL packet pointer", __FUNCTION__);
+=======
+                "%s : NULL packet pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -238,7 +295,11 @@ wpt_uint32 wpalPacketGetLength(wpt_packet *pPkt)
    else
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, "%s  failed\n",
+<<<<<<< HEAD
          __FUNCTION__);
+=======
+         __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return ((wpt_uint32)len);
@@ -264,7 +325,11 @@ wpt_status wpalPacketRawTrimHead(wpt_packet *pPkt, wpt_uint32 size)
    if (unlikely(NULL == pPkt))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL packet pointer", __FUNCTION__);
+=======
+                "%s : NULL packet pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -274,7 +339,11 @@ wpt_status wpalPacketRawTrimHead(wpt_packet *pPkt, wpt_uint32 size)
    if( !VOS_IS_STATUS_SUCCESS(vos_pkt_trim_head(WPAL_TO_VOS_PKT(pPkt), (v_SIZE_t)size)) )
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, "%s  Invalid trim(%d)\n",
+<<<<<<< HEAD
          __FUNCTION__, size);
+=======
+         __func__, size);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -297,7 +366,11 @@ wpt_status wpalPacketRawTrimTail(wpt_packet *pPkt, wpt_uint32 size)
    if (unlikely(NULL == pPkt))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL packet pointer", __FUNCTION__);
+=======
+                "%s : NULL packet pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -306,7 +379,11 @@ wpt_status wpalPacketRawTrimTail(wpt_packet *pPkt, wpt_uint32 size)
    if( !VOS_IS_STATUS_SUCCESS(vos_pkt_trim_tail(WPAL_TO_VOS_PKT(pPkt), (v_SIZE_t)size)) )
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, "%s  Invalid trim(%d)\n",
+<<<<<<< HEAD
          __FUNCTION__, size);
+=======
+         __func__, size);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -332,7 +409,11 @@ wpt_uint8 *wpalPacketGetRawBuf(wpt_packet *pPkt)
    if (unlikely(NULL == pPkt))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL packet pointer", __FUNCTION__);
+=======
+                "%s : NULL packet pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return NULL;
    }
 
@@ -364,7 +445,11 @@ wpt_status wpalPacketSetRxLength(wpt_packet *pPkt, wpt_uint32 len)
    if (unlikely(NULL == pPkt))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL packet pointer", __FUNCTION__);
+=======
+                "%s : NULL packet pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -372,7 +457,11 @@ wpt_status wpalPacketSetRxLength(wpt_packet *pPkt, wpt_uint32 len)
    if( (eWLAN_PAL_PKT_TYPE_RX_RAW != WPAL_PACKET_GET_TYPE(pPkt)))
    {
      WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                 "%s  Invalid packet type(%d)\n",  __FUNCTION__, 
+=======
+                "%s  Invalid packet type(%d)\n",  __func__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 WPAL_PACKET_GET_TYPE(pPkt));
      return eWLAN_PAL_STATUS_E_INVAL;
    }
@@ -465,7 +554,11 @@ wpt_status wpalIteratorInit(wpt_iterator *pIter, wpt_packet *pPacket)
    if (unlikely((NULL == pPacket)||(NULL==pIter)))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL input pointers %x %x", __FUNCTION__, pPacket, pIter);
+=======
+                "%s : NULL input pointers %x %x", __func__, pPacket, pIter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -473,7 +566,11 @@ wpt_status wpalIteratorInit(wpt_iterator *pIter, wpt_packet *pPacket)
    if (unlikely(NULL == pPktInfo))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : Invalid Packet Info", __FUNCTION__);
+=======
+                "%s : Invalid Packet Info", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -493,7 +590,11 @@ wpt_status wpalIteratorInit(wpt_iterator *pIter, wpt_packet *pPacket)
      if (unlikely(NULL == pCurInfo))
      {
         WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                   "%s : Failed to allocate memory ", __FUNCTION__);
+=======
+                  "%s : Failed to allocate memory ", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eWLAN_PAL_STATUS_E_INVAL;
      }
 
@@ -533,7 +634,11 @@ wpt_status wpalIteratorNext(wpt_iterator *pIter, wpt_packet *pPacket, void **ppA
       ( NULL == ppAddr ) || ( NULL == pLen )))
    {
      WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                 "%s  Invalid input parameters \n",  __FUNCTION__ );
+=======
+                "%s  Invalid input parameters \n",  __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -593,7 +698,11 @@ wpt_status wpalLockPacketForTransfer( wpt_packet *pPacket)
    if (unlikely(NULL == pPacket))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL input pointer", __FUNCTION__);
+=======
+                "%s : NULL input pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -632,7 +741,11 @@ wpt_status wpalLockPacketForTransfer( wpt_packet *pPacket)
    default:
       {
          WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                     " WLAN_PAL: %s: Invalid packet type %d!",  __FUNCTION__, 
+=======
+                    " WLAN_PAL: %s: Invalid packet type %d!",  __func__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     WPAL_PACKET_GET_TYPE(pPacket) ); 
          WPAL_ASSERT(0); 
          return eWLAN_PAL_STATUS_E_FAILURE;
@@ -649,7 +762,11 @@ wpt_status wpalLockPacketForTransfer( wpt_packet *pPacket)
    if (unlikely(NULL == pInfo))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : Failed to allocate memory ", __FUNCTION__);
+=======
+                "%s : Failed to allocate memory ", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -678,7 +795,11 @@ wpt_status wpalUnlockPacket( wpt_packet *pPacket)
    if (unlikely(NULL == pPacket))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s : NULL input pointer pPacket", __FUNCTION__);
+=======
+                "%s : NULL input pointer pPacket", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -688,7 +809,11 @@ wpt_status wpalUnlockPacket( wpt_packet *pPacket)
    if (unlikely(NULL == pInfo))
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                 "%s : NULL input pointer pInfo", __FUNCTION__);
+=======
+                "%s : NULL input pointer pInfo", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -720,14 +845,30 @@ wpt_status wpalUnlockPacket( wpt_packet *pPacket)
       {
          /*RX Packets need to be DMA-ed from the device, perform DMA mapping 
            accordingly */
+<<<<<<< HEAD
          itReturnOSPktAddrFromDevice(pPacket, pInfo->pPhyAddr, pInfo->uLen);   
+=======
+         if(NULL == pInfo->pPhyAddr)
+         {
+            WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+                       " WLAN_PAL: %s: RX frame was not locked properly",  __func__); 
+         }
+         else
+         {
+            itReturnOSPktAddrFromDevice(pPacket, pInfo->pPhyAddr, pInfo->uLen);   
+         }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       break;
 
    default:
       {
          WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                     " WLAN_PAL: %s: Invalid packet type %d!",  __FUNCTION__, 
+=======
+                    " WLAN_PAL: %s: Invalid packet type %d!",  __func__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     WPAL_PACKET_GET_TYPE(pPacket) ); 
          WPAL_ASSERT(0); 
          return eWLAN_PAL_STATUS_E_FAILURE;
@@ -757,8 +898,13 @@ wpt_status wpalIsPacketLocked( wpt_packet *pPacket)
    /* Validate the parameter pointers */
    if (NULL == pPacket)
    {
+<<<<<<< HEAD
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                 "%s : NULL input pointer", __FUNCTION__);
+=======
+      WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                "%s : NULL input pointer", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -768,3 +914,20 @@ wpt_status wpalIsPacketLocked( wpt_packet *pPacket)
                     eWLAN_PAL_STATUS_SUCCESS;
 }/*wpalIsPacketLocked*/
 
+<<<<<<< HEAD
+=======
+/*---------------------------------------------------------------------------
+   wpalGetNumRxRawPacket   Query available RX RAW total buffer count
+   param:
+       numRxResource  pointer of queried value
+
+   return:
+       eWLAN_PAL_STATUS_SUCCESS
+---------------------------------------------------------------------------*/
+wpt_status wpalGetNumRxRawPacket(wpt_uint32 *numRxResource)
+{
+   *numRxResource = (wpt_uint32)vos_pkt_get_num_of_rx_raw_pkts();
+
+   return eWLAN_PAL_STATUS_SUCCESS;
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

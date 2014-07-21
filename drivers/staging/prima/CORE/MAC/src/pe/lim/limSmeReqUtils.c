@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -30,6 +53,7 @@
  * Date           Modified by    Modification Information
  * --------------------------------------------------------------------
  * 05/26/10       js             WPA handling in (Re)Assoc frames
+<<<<<<< HEAD
  * 
  */
 
@@ -39,6 +63,13 @@
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+ *
+ */
+
+#include "wniApi.h"
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "cfgApi.h"
 #include "sirApi.h"
 #include "schApi.h"
@@ -81,14 +112,22 @@ limIsRSNieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirRSNie pRSNie)
                   &privacy) != eSIR_SUCCESS)
     {
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("Unable to retrieve POI from CFG\n"));
+=======
+               FL("Unable to retrieve POI from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_RSN_ENABLED,
                   &val) != eSIR_SUCCESS)
     {
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("Unable to retrieve RSN_ENABLED from CFG\n"));
+=======
+               FL("Unable to retrieve RSN_ENABLED from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (pRSNie->length && (!privacy || !val))
@@ -99,7 +138,11 @@ limIsRSNieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirRSNie pRSNie)
          * allow BSS creation/join with no Privacy capability
          * yet advertising WPA IE
          */
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("RSN ie len %d but PRIVACY %d RSN %d\n"), 
+=======
+        PELOG1(limLog(pMac, LOG1, FL("RSN ie len %d but PRIVACY %d RSN %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pRSNie->length, privacy, val);)
     }
 
@@ -112,7 +155,11 @@ limIsRSNieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirRSNie pRSNie)
 #endif
             )
         {
+<<<<<<< HEAD
             limLog(pMac, LOGE, FL("RSN/WPA/WAPI EID %d not [%d || %d]\n"), 
+=======
+            limLog(pMac, LOGE, FL("RSN/WPA/WAPI EID %d not [%d || %d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pRSNie->rsnIEdata[0], DOT11F_EID_RSN, 
                    DOT11F_EID_WPA);
             return false;
@@ -127,6 +174,7 @@ limIsRSNieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirRSNie pRSNie)
             {
                 if((pRSNie->rsnIEdata[startPos+1] > DOT11F_IE_RSN_MAX_LEN) ||
                     (pRSNie->rsnIEdata[startPos+1] < DOT11F_IE_RSN_MIN_LEN))
+<<<<<<< HEAD
         {
             limLog(pMac, LOGE, FL("RSN IE len %d not [%d,%d]\n"), 
                            pRSNie->rsnIEdata[startPos+1], DOT11F_IE_RSN_MIN_LEN, 
@@ -150,19 +198,55 @@ limIsRSNieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirRSNie pRSNie)
                 return false;
             }
         }
+=======
+                {
+                   limLog(pMac, LOGE, FL("RSN IE len %d not [%d,%d]"),
+                          pRSNie->rsnIEdata[startPos+1], DOT11F_IE_RSN_MIN_LEN,
+                          DOT11F_IE_RSN_MAX_LEN);
+                   return false;
+                }
+            }
+            else if(pRSNie->rsnIEdata[startPos] == DOT11F_EID_WPA)
+            {
+                // Check validity of WPA IE
+                if (SIR_MAC_MAX_IE_LENGTH > startPos)
+                {
+                    if (startPos <= (SIR_MAC_MAX_IE_LENGTH - sizeof(tANI_U32)))
+                        val = sirReadU32((tANI_U8 *) &pRSNie->rsnIEdata[startPos + 2]);
+                    if((pRSNie->rsnIEdata[startPos + 1] < DOT11F_IE_WPA_MIN_LEN) ||
+                        (pRSNie->rsnIEdata[startPos + 1] > DOT11F_IE_WPA_MAX_LEN) ||
+                        (SIR_MAC_WPA_OUI != val))
+                    {
+                       limLog(pMac, LOGE,
+                              FL("WPA IE len %d not [%d,%d] OR data 0x%x not 0x%x"),
+                              pRSNie->rsnIEdata[startPos+1], DOT11F_IE_WPA_MIN_LEN,
+                              DOT11F_IE_WPA_MAX_LEN, val, SIR_MAC_WPA_OUI);
+
+                       return false;
+                    }
+                }
+            }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_WAPI
             else if(pRSNie->rsnIEdata[startPos] == DOT11F_EID_WAPI)
             {
                 if((pRSNie->rsnIEdata[startPos+1] > DOT11F_IE_WAPI_MAX_LEN) ||
                  (pRSNie->rsnIEdata[startPos+1] < DOT11F_IE_WAPI_MIN_LEN))
+<<<<<<< HEAD
         {
                     limLog(pMac, LOGE,
                            FL("WAPI IE len %d not [%d,%d]\n"),
+=======
+                {
+                    limLog(pMac, LOGE,
+                           FL("WAPI IE len %d not [%d,%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            pRSNie->rsnIEdata[startPos+1], DOT11F_IE_WAPI_MIN_LEN, 
                            DOT11F_IE_WAPI_MAX_LEN);
 
                     return false;
                 }
+<<<<<<< HEAD
         }
 #endif
             else
@@ -170,6 +254,15 @@ limIsRSNieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirRSNie pRSNie)
                 //we will never be here, simply for completeness
             return false;
         }
+=======
+            }
+#endif
+            else
+            {
+                //we will never be here, simply for completeness
+                return false;
+            }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             startPos += 2 + pRSNie->rsnIEdata[startPos+1];  //EID + length field + length
             len -= startPos;
         }//while
@@ -216,7 +309,11 @@ limIsAddieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirAddie pAddie)
         if(elem_len > left)
         {
             limLog( pMac, LOGE, 
+<<<<<<< HEAD
                FL("****Invalid Add IEs eid = %d elem_len=%d left=%d*****\n"), 
+=======
+               FL("****Invalid Add IEs eid = %d elem_len=%d left=%d*****"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                elem_id,elem_len,left);
             return false;
         }
@@ -230,7 +327,10 @@ limIsAddieValidInSmeReqMessage(tpAniSirGlobal pMac, tpSirAddie pAddie)
     return true;
 } /*** end limIsAddieValidInSmeReqMessage() ***/
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limSetRSNieWPAiefromSmeStartBSSReqMessage()
  *
@@ -262,14 +362,22 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
                   &privacy) != eSIR_SUCCESS)
     {
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("Unable to retrieve POI from CFG\n"));
+=======
+               FL("Unable to retrieve POI from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_RSN_ENABLED,
                   &val) != eSIR_SUCCESS)
     {
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("Unable to retrieve RSN_ENABLED from CFG\n"));
+=======
+               FL("Unable to retrieve RSN_ENABLED from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (pRSNie->length && (!privacy || !val))
@@ -280,7 +388,11 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
          * allow BSS creation/join with no Privacy capability
          * yet advertising WPA IE
          */
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("RSN ie len %d but PRIVACY %d RSN %d\n"), 
+=======
+        PELOG1(limLog(pMac, LOG1, FL("RSN ie len %d but PRIVACY %d RSN %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pRSNie->length, privacy, val);)
     }
 
@@ -289,7 +401,11 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
         if ((pRSNie->rsnIEdata[0] != SIR_MAC_RSN_EID) &&
             (pRSNie->rsnIEdata[0] != SIR_MAC_WPA_EID))
         {
+<<<<<<< HEAD
             limLog(pMac, LOGE, FL("RSN/WPA EID %d not [%d || %d]\n"), 
+=======
+            limLog(pMac, LOGE, FL("RSN/WPA EID %d not [%d || %d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pRSNie->rsnIEdata[0], SIR_MAC_RSN_EID, 
                    SIR_MAC_WPA_EID);
             return false;
@@ -302,7 +418,11 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
 #endif
              (pRSNie->rsnIEdata[1] < SIR_MAC_RSN_IE_MIN_LENGTH))
         {
+<<<<<<< HEAD
             limLog(pMac, LOGE, FL("RSN IE len %d not [%d,%d]\n"), 
+=======
+            limLog(pMac, LOGE, FL("RSN IE len %d not [%d,%d]"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pRSNie->rsnIEdata[1], SIR_MAC_RSN_IE_MIN_LENGTH, 
                    SIR_MAC_RSN_IE_MAX_LENGTH);
             return false;
@@ -314,14 +434,22 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
             {
                 limLog(pMac,
                        LOGE,
+<<<<<<< HEAD
                        FL("First byte[%d] in rsnIEdata is not RSN_EID\n"), 
+=======
+                       FL("First byte[%d] in rsnIEdata is not RSN_EID"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        pRSNie->rsnIEdata[1]);
                 return false;
             }
 
             limLog(pMac,
                    LOG1,
+<<<<<<< HEAD
                    FL("WPA IE is present along with WPA2 IE\n"));
+=======
+                   FL("WPA IE is present along with WPA2 IE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             wpaIndex = 2 + pRSNie->rsnIEdata[1];
         }
         else if ((pRSNie->length == pRSNie->rsnIEdata[1] + 2) &&
@@ -329,7 +457,11 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
         {
             limLog(pMac,
                    LOG1,
+<<<<<<< HEAD
                    FL("Only RSN IE is present\n"));
+=======
+                   FL("Only RSN IE is present"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             dot11fUnpackIeRSN(pMac,&pRSNie->rsnIEdata[2],
                               (tANI_U8)pRSNie->length,&pSessionEntry->gStartBssRSNIe);
         }
@@ -338,13 +470,18 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
         {
             limLog(pMac,
                    LOG1,
+<<<<<<< HEAD
                    FL("Only WPA IE is present\n"));
+=======
+                   FL("Only WPA IE is present"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             dot11fUnpackIeWPA(pMac,&pRSNie->rsnIEdata[6],(tANI_U8)pRSNie->length-4,
                                 &pSessionEntry->gStartBssWPAIe);
         }
 
         // Check validity of WPA IE
+<<<<<<< HEAD
         val = sirReadU32((tANI_U8 *) &pRSNie->rsnIEdata[wpaIndex + 2]);
 
         if ((pRSNie->rsnIEdata[wpaIndex] == SIR_MAC_WPA_EID) &&
@@ -371,11 +508,47 @@ limSetRSNieWPAiefromSmeStartBSSReqMessage(tpAniSirGlobal pMac,
                               pRSNie->rsnIEdata[wpaIndex + 1]-4,
                                 &pSessionEntry->gStartBssWPAIe);
 
+=======
+        if(wpaIndex +4 < SIR_MAC_MAX_IE_LENGTH )
+        {
+            val = sirReadU32((tANI_U8 *) &pRSNie->rsnIEdata[wpaIndex + 2]);
+
+            if ((pRSNie->rsnIEdata[wpaIndex] == SIR_MAC_WPA_EID) &&
+#if 0 // Comparison always false
+                (pRSNie->rsnIEdata[wpaIndex + 1] > SIR_MAC_WPA_IE_MAX_LENGTH) ||
+#endif
+                ((pRSNie->rsnIEdata[wpaIndex + 1] < SIR_MAC_WPA_IE_MIN_LENGTH) ||
+                (SIR_MAC_WPA_OUI != val)))
+            {
+                limLog(pMac, LOGE,
+                  FL("WPA IE len %d not [%d,%d] OR data 0x%x not 0x%x"),
+                  pRSNie->rsnIEdata[1], SIR_MAC_RSN_IE_MIN_LENGTH,
+                  SIR_MAC_RSN_IE_MAX_LENGTH, val, SIR_MAC_WPA_OUI);
+
+                return false;
+            }
+            else
+            {
+                /* Both RSN and WPA IEs are present */
+                dot11fUnpackIeRSN(pMac,&pRSNie->rsnIEdata[2],
+                      (tANI_U8)pRSNie->length,&pSessionEntry->gStartBssRSNIe);
+
+                dot11fUnpackIeWPA(pMac,&pRSNie->rsnIEdata[wpaIndex + 6],
+                                 pRSNie->rsnIEdata[wpaIndex + 1]-4,
+                                    &pSessionEntry->gStartBssWPAIe);
+
+            }
+        }
+        else
+        {
+            return false;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
     return true;
 } /*** end limSetRSNieWPAiefromSmeStartBSSReqMessage() ***/
+<<<<<<< HEAD
 #endif
 
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
@@ -419,6 +592,9 @@ end:
     return valid;
 } /*** end limIsBssInfoValidInSmeReqMessage() ***/
 #else
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -457,7 +633,10 @@ limIsBssDescrValidInSmeReqMessage(tpAniSirGlobal pMac,
 end:
     return valid;
 } /*** end limIsBssDescrValidInSmeReqMessage() ***/
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -492,7 +671,11 @@ limIsSmeStartReqValid(tpAniSirGlobal pMac, tANI_U32 *pMsg)
          * Log error.
          */
         limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid length %d in eWNI_SME_START_REQ\n"),
+=======
+               FL("Invalid length %d in eWNI_SME_START_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                ((tpSirSmeStartReq) pMsg)->length);
 
         valid = false;
@@ -533,7 +716,11 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
     tANI_U8 valid = true;
 
     PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
            FL("Parsed START_BSS_REQ fields are bssType=%d, channelId=%d, SSID len=%d, rsnIE len=%d, nwType=%d, rateset len=%d\n"),
+=======
+           FL("Parsed START_BSS_REQ fields are bssType=%d, channelId=%d, SSID len=%d, rsnIE len=%d, nwType=%d, rateset len=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pStartBssReq->bssType,
            pStartBssReq->channelId,
            pStartBssReq->ssId.length,
@@ -544,20 +731,33 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
     switch (pStartBssReq->bssType)
     {
         case eSIR_INFRASTRUCTURE_MODE:
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             /* Check for the AP Role/Station role here and act accordingly. 
              * Currently assuming this as AP and breaks TODO */
                 break;
 #endif
                 /**
+=======
+            /**
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              * Should not have received start BSS req with bssType
              * Infrastructure on STA.
              * Log error.
              */
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Invalid bssType %d in eWNI_SME_START_BSS_REQ\n"),pStartBssReq->bssType);
         valid = false;
         goto end;
         break;
+=======
+            limLog(pMac, LOGE,
+                   FL("Invalid bssType %d in eWNI_SME_START_BSS_REQ"),
+                   pStartBssReq->bssType);
+            valid = false;
+            goto end;
+            break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case eSIR_IBSS_MODE:
             break;
@@ -570,11 +770,17 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
         case eSIR_BTAMP_AP_MODE:
             break;
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
         /* Added for SoftAP support */
         case eSIR_INFRA_AP_MODE:
             break;
 #endif
+=======
+        /* Added for SoftAP support */
+        case eSIR_INFRA_AP_MODE:
+            break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         
         default:
             /**
@@ -583,13 +789,18 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
              * Log error
              */
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid bssType %d in eWNI_SME_START_BSS_REQ\n"),
+=======
+               FL("Invalid bssType %d in eWNI_SME_START_BSS_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pStartBssReq->bssType);
 
             valid = false;
             goto end;
     }
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 
     /* Assumed as AP again, need to check the role and change accordingly */
@@ -631,6 +842,8 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
     }
 #endif
 #if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* This below code is client specific code. TODO */
     if (pStartBssReq->bssType == eSIR_IBSS_MODE)
     {
@@ -640,12 +853,17 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
             // Invalid length for SSID.  
             // Reject START_BSS_REQ
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                 FL("Invalid SSID length in eWNI_SME_START_BSS_REQ\n"));
+=======
+                FL("Invalid SSID length in eWNI_SME_START_BSS_REQ"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             valid = false;
             goto end;
         }
     }
+<<<<<<< HEAD
 #endif
 
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
@@ -681,6 +899,9 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
         }
     }
 #endif
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (!limIsRSNieValidInSmeReqMessage(pMac, &pStartBssReq->rsnIE))
     {
@@ -704,7 +925,11 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
             // Invalid Operational rates
             // Reject START_BSS_REQ
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid operational rates in eWNI_SME_START_BSS_REQ\n"));
+=======
+                   FL("Invalid operational rates in eWNI_SME_START_BSS_REQ"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG2,
                        pStartBssReq->operationalRateSet.rate,
                        pStartBssReq->operationalRateSet.numRates);
@@ -722,7 +947,11 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
             // Invalid Operational rates
             // Reject START_BSS_REQ
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid operational rates in eWNI_SME_START_BSS_REQ\n"));
+=======
+                   FL("Invalid operational rates in eWNI_SME_START_BSS_REQ"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG2,
                        pStartBssReq->operationalRateSet.rate,
                        pStartBssReq->operationalRateSet.numRates);
@@ -731,7 +960,11 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
             goto end;
         }
     }
+<<<<<<< HEAD
     else 
+=======
+    else
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         for (i = 0; i < pStartBssReq->operationalRateSet.numRates; i++)
             if (!sirIsBrate(pStartBssReq->operationalRateSet.rate[i] & 0x7F))
@@ -739,7 +972,11 @@ limIsSmeStartBssReqValid(tpAniSirGlobal pMac,
             // Invalid Operational rates
             // Reject START_BSS_REQ
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid operational rates in eWNI_SME_START_BSS_REQ\n"));
+=======
+                   FL("Invalid operational rates in eWNI_SME_START_BSS_REQ"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG2,
                        pStartBssReq->operationalRateSet.rate,
                        pStartBssReq->operationalRateSet.numRates);
@@ -780,6 +1017,7 @@ limIsSmeJoinReqValid(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq)
 {
     tANI_U8 valid = true;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     if (pJoinReq->assocType > eSIR_TRANSFERRED)
     {
@@ -792,11 +1030,17 @@ limIsSmeJoinReqValid(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq)
         goto end;
     }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (!limIsRSNieValidInSmeReqMessage(pMac, &pJoinReq->rsnIE))
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
                FL("received SME_JOIN_REQ with invalid RSNIE\n"));
+=======
+               FL("received SME_JOIN_REQ with invalid RSNIE"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         valid = false;
         goto end;
     }
@@ -804,7 +1048,11 @@ limIsSmeJoinReqValid(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq)
     if (!limIsAddieValidInSmeReqMessage(pMac, &pJoinReq->addIEScan))
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
                FL("received SME_JOIN_REQ with invalid additional IE for scan\n"));
+=======
+               FL("received SME_JOIN_REQ with invalid additional IE for scan"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         valid = false;
         goto end;
     }
@@ -812,12 +1060,17 @@ limIsSmeJoinReqValid(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq)
     if (!limIsAddieValidInSmeReqMessage(pMac, &pJoinReq->addIEAssoc))
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
                FL("received SME_JOIN_REQ with invalid additional IE for assoc\n"));
+=======
+               FL("received SME_JOIN_REQ with invalid additional IE for assoc"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         valid = false;
         goto end;
     }
 
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     if (!limIsBssInfoValidInSmeReqMessage(
                      pMac,
@@ -826,11 +1079,19 @@ limIsSmeJoinReqValid(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq)
     if (!limIsBssDescrValidInSmeReqMessage(pMac,
                                            &pJoinReq->bssDescription))
 #endif
+=======
+    if (!limIsBssDescrValidInSmeReqMessage(pMac,
+                                           &pJoinReq->bssDescription))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         /// Received eWNI_SME_JOIN_REQ with invalid BSS Info
         // Log the event
         limLog(pMac, LOGE,
+<<<<<<< HEAD
                FL("received SME_JOIN_REQ with invalid bssInfo\n"));
+=======
+               FL("received SME_JOIN_REQ with invalid bssInfo"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         valid = false;
         goto end;
@@ -846,7 +1107,11 @@ limIsSmeJoinReqValid(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq)
     {
         // Log the event
         limLog(pMac, LOGE,
+<<<<<<< HEAD
                FL("received SME_JOIN_REQ with Self Mac and BSSID Same\n"));
+=======
+               FL("received SME_JOIN_REQ with Self Mac and BSSID Same"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         valid = false;
         goto end;
@@ -887,6 +1152,7 @@ limIsSmeDisassocReqValid(tpAniSirGlobal pMac,
          !limIsAddrBC(pDisassocReq->peerMacAddr))
         return false;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (((psessionEntry->limSystemRole == eLIM_AP_ROLE) &&
          ((pDisassocReq->aid < 2) || (pDisassocReq->aid > 2007))) ||
@@ -894,6 +1160,8 @@ limIsSmeDisassocReqValid(tpAniSirGlobal pMac,
          (pDisassocReq->aid != 1)))
         return false;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return true;
 } /*** end limIsSmeDisassocReqValid() ***/
@@ -928,6 +1196,7 @@ limIsSmeDisassocCnfValid(tpAniSirGlobal pMac,
     if (limIsGroupAddr(pDisassocCnf->peerMacAddr))
         return false;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (((psessionEntry->limSystemRole == eLIM_AP_ROLE) &&
          ((pDisassocCnf->aid < 2) || (pDisassocCnf->aid > 2007))) ||
@@ -935,6 +1204,8 @@ limIsSmeDisassocCnfValid(tpAniSirGlobal pMac,
          (pDisassocCnf->aid != 1)))
         return false;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return true;
 } /*** end limIsSmeDisassocCnfValid() ***/
 
@@ -967,6 +1238,7 @@ limIsSmeDeauthReqValid(tpAniSirGlobal pMac, tpSirSmeDeauthReq pDeauthReq, tpPESe
          !limIsAddrBC(pDeauthReq->peerMacAddr))
         return false;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (((psessionEntryp->limSystemRole == eLIM_AP_ROLE) &&
          ((pDeauthReq->aid < 2) || (pDeauthReq->aid > 2007))) ||
@@ -974,6 +1246,8 @@ limIsSmeDeauthReqValid(tpAniSirGlobal pMac, tpSirSmeDeauthReq pDeauthReq, tpPESe
          (pDeauthReq->aid != 1)))
         return false;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return true;
 } /*** end limIsSmeDeauthReqValid() ***/
 
@@ -1028,7 +1302,11 @@ limIsSmeScanReqValid(tpAniSirGlobal pMac, tpSirSmeScanReq pScanReq)
     if ((pScanReq->scanType == eSIR_ACTIVE_SCAN) && 
         (pScanReq->maxChannelTime < pScanReq->minChannelTime))
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Max Channel Time < Min Channel Time\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Max Channel Time < Min Channel Time"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         valid = false;
         goto end;
     }
@@ -1116,7 +1394,11 @@ limIsSmeSetContextReqValid(tpAniSirGlobal pMac, tpSirSmeSetContextReq  pSetConte
          * Log error.
          */
         limLog(pMac, LOGW,
+<<<<<<< HEAD
            FL("No keys present in SME_SETCONTEXT_REQ for edType=%d\n"),
+=======
+           FL("No keys present in SME_SETCONTEXT_REQ for edType=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pSetContextReq->keyMaterial.edType);
 
         valid = false;
@@ -1131,7 +1413,11 @@ limIsSmeSetContextReqValid(tpAniSirGlobal pMac, tpSirSmeSetContextReq  pSetConte
          * Log error.
          */
         limLog(pMac, LOGW,
+<<<<<<< HEAD
            FL("Keys present in SME_SETCONTEXT_REQ for edType=%d\n"),
+=======
+           FL("Keys present in SME_SETCONTEXT_REQ for edType=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pSetContextReq->keyMaterial.edType);
 
         valid = false;
@@ -1145,7 +1431,11 @@ limIsSmeSetContextReqValid(tpAniSirGlobal pMac, tpSirSmeSetContextReq  pSetConte
          * Log error.
          */
         limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid edType=%d in SME_SETCONTEXT_REQ\n"),
+=======
+               FL("Invalid edType=%d in SME_SETCONTEXT_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pSetContextReq->keyMaterial.edType);
 
         valid = false;
@@ -1159,7 +1449,11 @@ limIsSmeSetContextReqValid(tpAniSirGlobal pMac, tpSirSmeSetContextReq  pSetConte
                       &poi) != eSIR_SUCCESS)
         {
             limLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("Unable to retrieve POI from CFG\n"));
+=======
+                   FL("Unable to retrieve POI from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
         if (!poi)
@@ -1171,7 +1465,11 @@ limIsSmeSetContextReqValid(tpAniSirGlobal pMac, tpSirSmeSetContextReq  pSetConte
              * yet advertising WPA IE
              */
             PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
                FL("Privacy is not enabled, yet non-None EDtype=%d in SME_SETCONTEXT_REQ\n"),
+=======
+               FL("Privacy is not enabled, yet non-None EDtype=%d in SME_SETCONTEXT_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pSetContextReq->keyMaterial.edType);)
         }
     }
@@ -1196,7 +1494,11 @@ limIsSmeSetContextReqValid(tpAniSirGlobal pMac, tpSirSmeSetContextReq  pSetConte
              * Log error.
              */
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid keyLength =%d for edType=%d in SME_SETCONTEXT_REQ\n"),
+=======
+               FL("Invalid keyLength =%d for edType=%d in SME_SETCONTEXT_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pKey->keyLength, pSetContextReq->keyMaterial.edType);
 
             valid = false;
@@ -1270,6 +1572,7 @@ limGetBssIdFromSmeJoinReqMsg(tANI_U8 *pBuf)
 
     pBuf += sizeof(tANI_U32); // skip message header
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     pBuf += sizeof(tSirAssocType); // skip assocType
 #endif
@@ -1283,6 +1586,12 @@ limGetBssIdFromSmeJoinReqMsg(tANI_U8 *pBuf)
 #else
     pBuf  += sizeof(tANI_U16);                 // skip length of BSS description
 #endif
+=======
+
+    pBuf += limGetU16(pBuf) + sizeof(tANI_U16); // skip RSN IE
+
+    pBuf  += sizeof(tANI_U16);                 // skip length of BSS description
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return (pBuf);
 } /*** end limGetBssIdFromSmeJoinReqMsg() ***/

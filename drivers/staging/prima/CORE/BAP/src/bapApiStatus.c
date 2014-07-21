@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -243,14 +266,22 @@ WLAN_BAPReadLinkQuality
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
                "%s: btampHandle value: %x", __FUNCTION__,  btampHandle);
+=======
+               "%s: btampHandle value: %p", __func__,  btampHandle);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Validate params */ 
     if ((NULL == btampHandle) || (NULL == pBapHCIReadLinkQuality) ||
         (NULL == pBapHCIEvent))
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
                    "Invalid input parameters in %s", __FUNCTION__);
+=======
+                   "Invalid input parameters in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -266,7 +297,11 @@ WLAN_BAPReadLinkQuality
     if (phyLinkHandle != btampContext->phy_link_handle)
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
                    "Invalid Physical link handle in %s", __FUNCTION__);
+=======
+                   "Invalid Physical link handle in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pBapHCIEvent->u.btampCommandCompleteEvent.cc_event.Read_Link_Quality.status
             = WLANBAP_ERROR_INVALID_HCI_CMND_PARAM;
     }
@@ -340,14 +375,22 @@ WLAN_BAPReadRSSI
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
                "%s: btampHandle value: %x", __FUNCTION__,  btampHandle);
+=======
+               "%s: btampHandle value: %p", __func__,  btampHandle);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Validate params */ 
     if ((NULL == btampHandle) || (NULL == pBapHCIReadRSSI) ||
         (NULL == pBapHCIEvent))
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
                    "Invalid input parameters in %s", __FUNCTION__);
+=======
+                   "Invalid input parameters in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -363,7 +406,11 @@ WLAN_BAPReadRSSI
     if (phyLinkHandle != btampContext->phy_link_handle)
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
                    "Invalid Physical link handle in %s", __FUNCTION__);
+=======
+                   "Invalid Physical link handle in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pBapHCIEvent->u.btampCommandCompleteEvent.cc_event.Read_RSSI.status
             = WLANBAP_ERROR_INVALID_HCI_CMND_PARAM;
     }
@@ -449,7 +496,11 @@ WLAN_BAPReadLocalAMPInfo
       return VOS_STATUS_E_FAULT;
     }
 
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     /* Format the command complete event to return... */ 
@@ -549,7 +600,11 @@ WLAN_BAPReadLocalAMPAssoc
     if ((pBapHCIReadLocalAMPAssoc == NULL) || (NULL == btampHandle))
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                      "param is NULL in %s", __FUNCTION__);
+=======
+                     "param is NULL in %s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return VOS_STATUS_E_FAULT;
     }
@@ -557,6 +612,7 @@ WLAN_BAPReadLocalAMPAssoc
     if (NULL == hHal) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                      "hHal is NULL in %s", __FUNCTION__);
       return VOS_STATUS_E_FAULT;
     }
@@ -565,6 +621,16 @@ WLAN_BAPReadLocalAMPAssoc
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, 
             "In %s, phy_link_handle = %d", __FUNCTION__, 
+=======
+                     "hHal is NULL in %s", __func__);
+      return VOS_STATUS_E_FAULT;
+    }
+
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
+
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, 
+            "In %s, phy_link_handle = %d", __func__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBapHCIReadLocalAMPAssoc->phy_link_handle); 
 
     /* Update the MAC address and SSID if in case the Read Local AMP Assoc
@@ -713,7 +779,11 @@ AMP ASSOC Pal Capabilities: Size: 4 Octets
             248, 
             &nConsumed);
 
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: nConsumed value: %d", __FUNCTION__,  nConsumed); 
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: nConsumed value: %d", __func__,  nConsumed); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Format the command complete event to return... */ 
     pBapHCIEvent->bapHCIEventCode = BTAMP_TLV_HCI_COMMAND_COMPLETE_EVENT;
@@ -725,7 +795,11 @@ AMP ASSOC Pal Capabilities: Size: 4 Octets
     if(pBapHCIReadLocalAMPAssoc->phy_link_handle != 
        btampContext->phy_link_handle) { 
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, 
+<<<<<<< HEAD
                 "%s: Wrong Physical Link handle in Read Local AMP Assoc cmd: current: %x, new: %x", __FUNCTION__,  
+=======
+                "%s: Wrong Physical Link handle in Read Local AMP Assoc cmd: current: %x, new: %x", __func__,  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 btampContext->phy_link_handle, 
                 pBapHCIReadLocalAMPAssoc->phy_link_handle);
 
@@ -798,13 +872,21 @@ WLAN_BAPWriteRemoteAMPAssoc
       return VOS_STATUS_E_FAULT;
     }
 
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Fill in the event structure */ 
     bapEvent.event = eWLAN_BAP_HCI_WRITE_REMOTE_AMP_ASSOC;
     bapEvent.params = pBapHCIWriteRemoteAMPAssoc;
 
+<<<<<<< HEAD
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %x", __FUNCTION__,  btampContext); 
+=======
+    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Handle event */ 
     vosStatus = btampFsm(btampContext, &bapEvent, &status);

@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -165,7 +188,11 @@ typedef struct
 static WCTS_ControlBlockType  *ctsCB;
 
 /* If port open once, not try to actual open next time */
+<<<<<<< HEAD
 static int                     port_open = 0;
+=======
+static int                     port_open;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* FEATURE_R33D */
 /*----------------------------------------------------------------------------
  * Static Function Declarations and Definitions
@@ -503,7 +530,11 @@ WCTS_NotifyCallback
    if (WCTS_CB_MAGIC != pWCTSCb->wctsMagic) {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Received unexpected SMD event %u",
+<<<<<<< HEAD
                  __FUNCTION__, event);
+=======
+                 __func__, event);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       /* TODO_PRIMA what error recovery options do we have? */
       return;
@@ -513,7 +544,11 @@ WCTS_NotifyCallback
    switch (event) {
    case SMD_EVENT_OPEN:
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                  "%s: received SMD_EVENT_OPEN from SMD", __FUNCTION__);
+=======
+                 "%s: received SMD_EVENT_OPEN from SMD", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* If the prev state was 'remote closed' then it is a Riva 'restart',
        * subsystem restart re-init
        */
@@ -521,7 +556,11 @@ WCTS_NotifyCallback
       {
            WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
                  "%s: received SMD_EVENT_OPEN in WCTS_STATE_REM_CLOSED state",
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            /* call subsystem restart re-init function */
            wpalDriverReInit();
            return;
@@ -534,37 +573,61 @@ WCTS_NotifyCallback
       {
            WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: received SMD data when the state is remote closed ",
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            /* we should not be getting any data now */
            return;
       }
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                  "%s: received SMD_EVENT_DATA from SMD", __FUNCTION__);
+=======
+                 "%s: received SMD_EVENT_DATA from SMD", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       palMsg = &pWCTSCb->wctsDataMsg;
       break;
 
    case SMD_EVENT_CLOSE:
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                  "%s: received SMD_EVENT_CLOSE from SMD", __FUNCTION__);
+=======
+                 "%s: received SMD_EVENT_CLOSE from SMD", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* SMD channel was closed from the remote side,
        * this would happen only when Riva crashed and SMD is
        * closing the channel on behalf of Riva */
       pWCTSCb->wctsState = WCTS_STATE_REM_CLOSED;
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
                  "%s: received SMD_EVENT_CLOSE WLAN driver going down now",
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* subsystem restart: shutdown */
       wpalDriverShutdown();
       return;
 
    case SMD_EVENT_STATUS:
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                  "%s: received SMD_EVENT_STATUS from SMD", __FUNCTION__);
+=======
+                 "%s: received SMD_EVENT_STATUS from SMD", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
 
    case SMD_EVENT_REOPEN_READY:
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                  "%s: received SMD_EVENT_REOPEN_READY from SMD", __FUNCTION__);
+=======
+                 "%s: received SMD_EVENT_REOPEN_READY from SMD", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       /* unlike other events which occur when our kernel threads are
          running, this one is received when the threads are closed and
@@ -575,7 +638,11 @@ WCTS_NotifyCallback
    default:
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: Unexpected event %u received from SMD",
+<<<<<<< HEAD
                  __FUNCTION__, event);
+=======
+                 __func__, event);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       return;
    }
@@ -731,7 +798,11 @@ WCTS_OpenTransport
    if (0 != smdstatus) {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: smd_named_open_on_edge failed with status %d",
+<<<<<<< HEAD
                  __FUNCTION__, smdstatus);
+=======
+                 __func__, smdstatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       goto fail;
    }
 
@@ -740,13 +811,21 @@ WCTS_OpenTransport
    if (eWLAN_PAL_STATUS_SUCCESS != status) {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: failed to receive SMD_EVENT_OPEN",
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* since we opened one end of the channel, close it */
       smdstatus = smd_close(pWCTSCb->wctsChannel);
       if (0 != smdstatus) {
          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                     "%s: smd_close failed with status %d",
+<<<<<<< HEAD
                     __FUNCTION__, smdstatus);
+=======
+                    __func__, smdstatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       goto fail;
    }
@@ -832,7 +911,11 @@ WCTS_CloseTransport
    if (0 != smdstatus) {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  "%s: smd_close failed with status %d",
+<<<<<<< HEAD
                  __FUNCTION__, smdstatus);
+=======
+                 __func__, smdstatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* SMD did not successfully close the channel, therefore we
          won't receive an asynchronous close notification so don't
          bother to wait for an event that won't come */
@@ -843,7 +926,11 @@ WCTS_CloseTransport
       if (eWLAN_PAL_STATUS_SUCCESS != status) {
          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                     "%s: failed to receive SMD_EVENT_REOPEN_READY",
+<<<<<<< HEAD
                     __FUNCTION__);
+=======
+                    __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
 
       /* During the close sequence we deregistered from SMD.  As part
@@ -979,6 +1066,12 @@ WCTS_SendMessage
 
          smd_enable_read_intr(pWCTSCb->wctsChannel);
       }
+<<<<<<< HEAD
+=======
+
+      /*indicate to client that message was placed in deferred queue*/
+      return eWLAN_PAL_STATUS_E_RESOURCES;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return eWLAN_PAL_STATUS_SUCCESS;

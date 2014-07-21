@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -23,7 +46,11 @@
   vos_getBin.c
   \brief
   Description...
+<<<<<<< HEAD
    Copyright (c) 2012 Qualcomm Atheros, Inc.
+=======
+   Copyright (c) 2012-2013 Qualcomm Atheros, Inc.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    All Rights Reserved.
    Qualcomm Atheros Confidential and Proprietary.
   ==============================================================================*/
@@ -44,7 +71,11 @@
   Type declarations
   ----------------------------------------------------------------------------*/
 extern tVOS_CONCURRENCY_MODE hdd_get_concurrency_mode ( void );
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**-----------------------------------------------------------------------------
   Function declarations and documenation
   ----------------------------------------------------------------------------*/
@@ -116,6 +147,7 @@ VOS_STATUS vos_get_binary_blob( VOS_BINARY_ID binaryId,
        else {
              VosSts = VOS_STATUS_E_FAILURE;
        }
+<<<<<<< HEAD
     }       
     
     return VosSts;                                  
@@ -149,6 +181,23 @@ tVOS_CON_MODE vos_get_conparam( void )
 tVOS_CONCURRENCY_MODE vos_get_concurrency_mode( void )
 {
     tVOS_CONCURRENCY_MODE con_mode; 
+=======
+    }
+
+    return VosSts;
+}
+
+
+tVOS_CON_MODE vos_get_conparam( void )
+{
+    tVOS_CON_MODE con_mode;
+    con_mode = hdd_get_conparam ( );
+    return con_mode;
+}
+tVOS_CONCURRENCY_MODE vos_get_concurrency_mode( void )
+{
+    tVOS_CONCURRENCY_MODE con_mode;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     con_mode = hdd_get_concurrency_mode ( );
     return con_mode;
 }
@@ -158,7 +207,11 @@ v_BOOL_t vos_concurrent_sessions_running(void)
     v_U8_t i=0;
     v_U8_t j=0;
     hdd_context_t *pHddCtx;
+<<<<<<< HEAD
     v_CONTEXT_t pVosContext = vos_get_global_context( VOS_MODULE_ID_HDD, NULL );    
+=======
+    v_CONTEXT_t pVosContext = vos_get_global_context( VOS_MODULE_ID_HDD, NULL );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (NULL != pVosContext)
     {

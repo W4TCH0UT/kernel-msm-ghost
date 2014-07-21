@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -36,6 +59,7 @@
 #include "sirCommon.h"
 #include "aniGlobal.h"
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
 #include "wniCfgAp.h"
 #else
@@ -48,6 +72,12 @@
 #include "halDataStruct.h"
 #include "halCommonApi.h"
 #endif
+=======
+#include "wniCfgSta.h"
+#include "sysDef.h"
+#include "cfgApi.h"
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "schApi.h"
 #include "utilsApi.h"
@@ -94,18 +124,27 @@ limSendSmeRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
     tSirSmeRsp  *pSirSmeRsp;
 
     PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
            FL("Sending message %s with reasonCode %s\n"),
+=======
+           FL("Sending message %s with reasonCode %s"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            limMsgStr(msgType), limResultCodeStr(resultCode));)
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeRsp, sizeof(tSirSmeRsp)))
     {
         /// Buffer not available. Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("call to palAllocateMemory failed for eWNI_SME_*_RSP\n"));
+=======
+               FL("call to palAllocateMemory failed for eWNI_SME_*_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
   
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*)&pSirSmeRsp->messageType, msgType);
     sirStoreU16N((tANI_U8*)&pSirSmeRsp->length, sizeof(tSirSmeRsp));
@@ -113,6 +152,10 @@ limSendSmeRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
     pSirSmeRsp->messageType = msgType;
     pSirSmeRsp->length      = sizeof(tSirSmeRsp);
 #endif
+=======
+    pSirSmeRsp->messageType = msgType;
+    pSirSmeRsp->length      = sizeof(tSirSmeRsp);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSirSmeRsp->statusCode  = resultCode;
 
     /* Update SME session Id and Transaction Id */
@@ -123,7 +166,11 @@ limSendSmeRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
     mmhMsg.type = msgType;
     mmhMsg.bodyptr = pSirSmeRsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+=======
+    MTRACE(macTraceMsgTx(pMac, smesessionId , mmhMsg.type));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
    {
@@ -249,7 +296,11 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
 #endif //FEATURE_WLAN_DIAG_SUPPORT
 
     PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
            FL("Sending message %s with reasonCode %s\n"),
+=======
+           FL("Sending message %s with reasonCode %s"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            limMsgStr(msgType), limResultCodeStr(resultCode));)
 
     if(psessionEntry == NULL)
@@ -260,7 +311,11 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
         if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeJoinRsp, rspLen))
         {
             /// Buffer not available. Log error
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("call to palAllocateMemory failed for JOIN/REASSOC_RSP\n"));
+=======
+            limLog(pMac, LOGP, FL("call to palAllocateMemory failed for JOIN/REASSOC_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
          
@@ -288,24 +343,32 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
         {
             /// Buffer not available. Log error
             limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("call to palAllocateMemory failed for JOIN/REASSOC_RSP\n"));
+=======
+               FL("call to palAllocateMemory failed for JOIN/REASSOC_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             return;
         }
 
         palZeroMemory(pMac, (tANI_U8*)pSirSmeJoinRsp, rspLen);
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
         sirStoreU16N((tANI_U8*)&pSirSmeJoinRsp->messageType, msgType);
         sirStoreU16N((tANI_U8*)&pSirSmeJoinRsp->length, rspLen);
 #endif    
         
 #if (WNI_POLARIS_FW_PRODUCT == WLAN_STA)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (resultCode == eSIR_SME_SUCCESS)
         {
             pStaDs = dphGetHashEntry(pMac, DPH_STA_HASH_INDEX_PEER, &psessionEntry->dph.dphHashTable);
             if (pStaDs == NULL)
             {
+<<<<<<< HEAD
                 PELOGE(limLog(pMac, LOGE, FL("could not Get Self Entry for the station\n"));)
             }
             else
@@ -328,6 +391,18 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
                                pMac->lim.gLimAlternateRadio.channelId;
         }
 #endif
+=======
+                PELOGE(limLog(pMac, LOGE, FL("could not Get Self Entry for the station"));)
+            }
+            else
+            {
+                //Pass the peer's staId
+                pSirSmeJoinRsp->staId = pStaDs->staIndex;
+                pSirSmeJoinRsp->ucastSig   = pStaDs->ucUcastSig;
+                pSirSmeJoinRsp->bcastSig   = pStaDs->ucBcastSig;
+            }
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         pSirSmeJoinRsp->beaconLength = 0;
         pSirSmeJoinRsp->assocReqLength = 0;
@@ -349,7 +424,11 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
                 palFreeMemory(pMac->hHdd, psessionEntry->beacon);
                 psessionEntry->beacon = NULL;
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("Beacon=%d\n"), psessionEntry->bcnLen);)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("Beacon=%d"), psessionEntry->bcnLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
             }
         
@@ -360,7 +439,11 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
                 palFreeMemory(pMac->hHdd, psessionEntry->assocReq);
                 psessionEntry->assocReq = NULL;
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("AssocReq=%d\n"), psessionEntry->assocReqLen);)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("AssocReq=%d"), psessionEntry->assocReqLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
             }
             if(psessionEntry->assocRsp != NULL)
@@ -377,7 +460,11 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
                 palCopyMemory(pMac->hHdd, pSirSmeJoinRsp->frames + psessionEntry->bcnLen + psessionEntry->assocReqLen + psessionEntry->assocRspLen, psessionEntry->ricData, pSirSmeJoinRsp->parsedRicRspLen);
                 palFreeMemory(pMac->hHdd, psessionEntry->ricData);
                 psessionEntry->ricData = NULL;
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("RicLength=%d\n"), pSirSmeJoinRsp->parsedRicRspLen);)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("RicLength=%d"), pSirSmeJoinRsp->parsedRicRspLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 #endif
 #ifdef FEATURE_WLAN_CCX            
@@ -387,14 +474,46 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
                 palCopyMemory(pMac->hHdd, pSirSmeJoinRsp->frames + psessionEntry->bcnLen + psessionEntry->assocReqLen + psessionEntry->assocRspLen + psessionEntry->RICDataLen, psessionEntry->tspecIes, pSirSmeJoinRsp->tspecIeLen);
                 palFreeMemory(pMac->hHdd, psessionEntry->tspecIes);
                 psessionEntry->tspecIes = NULL;
+<<<<<<< HEAD
                 PELOG1(limLog(pMac, LOG1, FL("CCX-TspecLen=%d\n"), psessionEntry->tspecLen);)
+=======
+                PELOG1(limLog(pMac, LOG1, FL("CCX-TspecLen=%d"), psessionEntry->tspecLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 #endif            
             pSirSmeJoinRsp->aid = psessionEntry->limAID;
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("AssocRsp=%d\n"), psessionEntry->assocRspLen);)
 #endif
         }
+=======
+            PELOG1(limLog(pMac, LOG1, FL("AssocRsp=%d"), psessionEntry->assocRspLen);)
+#endif
+        }
+        else
+        {
+
+            if(psessionEntry->beacon != NULL)
+            {
+                palFreeMemory(pMac->hHdd, psessionEntry->beacon);
+                psessionEntry->beacon = NULL;
+            }
+
+            if(psessionEntry->assocReq != NULL)
+            {
+                palFreeMemory(pMac->hHdd, psessionEntry->assocReq);
+                psessionEntry->assocReq = NULL;
+            }
+
+            if(psessionEntry->assocRsp != NULL)
+            {
+                palFreeMemory(pMac->hHdd, psessionEntry->assocRsp);
+                psessionEntry->assocRsp = NULL;
+            }
+
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
 
@@ -419,7 +538,13 @@ limSendSmeJoinReassocRsp(tpAniSirGlobal pMac, tANI_U16 msgType,
                /*Get 11ac cbState from 11n cbState*/
                  htSecondaryChannelOffset = limGet11ACPhyCBState(pMac, 
                                     psessionEntry->currentOperChannel,
+<<<<<<< HEAD
                                     psessionEntry->htSecondaryChannelOffset);
+=======
+                                    psessionEntry->htSecondaryChannelOffset,
+                                    psessionEntry->apCenterChan,
+                                    psessionEntry);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 peSetResumeChannel( pMac, psessionEntry->currentOperChannel, htSecondaryChannelOffset);
             }
             else 
@@ -480,7 +605,11 @@ limSendSmeStartBssRsp(tpAniSirGlobal pMac,
     tANI_U16            ieLen;
     tANI_U16            ieOffset, curLen;
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Sending message %s with reasonCode %s\n"),
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Sending message %s with reasonCode %s"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            limMsgStr(msgType), limResultCodeStr(resultCode));)
 
     size = sizeof(tSirSmeStartBssRsp);
@@ -491,7 +620,11 @@ limSendSmeStartBssRsp(tpAniSirGlobal pMac,
          if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeRsp, size))
          {
             /// Buffer not available. Log error
+<<<<<<< HEAD
             limLog(pMac, LOGP,FL("call to palAllocateMemory failed for eWNI_SME_START_BSS_RSP\n"));
+=======
+            limLog(pMac, LOGP,FL("call to palAllocateMemory failed for eWNI_SME_START_BSS_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
          }
          palZeroMemory(pMac, (tANI_U8*)pSirSmeRsp, size);
@@ -509,7 +642,11 @@ limSendSmeStartBssRsp(tpAniSirGlobal pMac,
         {
             /// Buffer not available. Log error
             limLog(pMac, LOGP,
+<<<<<<< HEAD
             FL("call to palAllocateMemory failed for eWNI_SME_START_BSS_RSP\n"));
+=======
+            FL("call to palAllocateMemory failed for eWNI_SME_START_BSS_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             return;
         }
@@ -526,13 +663,21 @@ limSendSmeStartBssRsp(tpAniSirGlobal pMac,
 
                 if (cfgGetCapabilityInfo( pMac, &pSirSmeRsp->bssDescription.capabilityInfo,psessionEntry)
                 != eSIR_SUCCESS)
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("could not retrieve Capabilities value\n"));
+=======
+                limLog(pMac, LOGP, FL("could not retrieve Capabilities value"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 limGetPhyMode(pMac, (tANI_U32 *)&pSirSmeRsp->bssDescription.nwType, psessionEntry);
 
 #if 0
             if (wlan_cfgGetInt(pMac, WNI_CFG_CURRENT_CHANNEL, &len) != eSIR_SUCCESS)
+<<<<<<< HEAD
                 limLog(pMac, LOGP, FL("could not retrieve CURRENT_CHANNEL from CFG\n"));
+=======
+                limLog(pMac, LOGP, FL("could not retrieve CURRENT_CHANNEL from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            
 #endif// TO SUPPORT BT-AMP 
             
@@ -560,11 +705,14 @@ limSendSmeStartBssRsp(tpAniSirGlobal pMac,
 
             
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
         sirStoreU16N((tANI_U8*)&pSirSmeRsp->messageType, msgType);
         sirStoreU16N((tANI_U8*)&pSirSmeRsp->length, size);
        
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         
     }
 
@@ -575,17 +723,34 @@ limSendSmeStartBssRsp(tpAniSirGlobal pMac,
     pSirSmeRsp->sessionId       = smesessionId;
     pSirSmeRsp->transactionId   = smetransactionId;
     pSirSmeRsp->statusCode      = resultCode;
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     if(psessionEntry != NULL )
     pSirSmeRsp->staId           = psessionEntry->staId; //else it will be always zero smeRsp StaID = 0 
       
 #endif
+=======
+    if(psessionEntry != NULL )
+    pSirSmeRsp->staId           = psessionEntry->staId; //else it will be always zero smeRsp StaID = 0 
+      
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     mmhMsg.type = msgType;
     mmhMsg.bodyptr = pSirSmeRsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
 
+=======
+    if(psessionEntry == NULL)
+    {
+        MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+    }
+    else
+    {
+        MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
     limDiagEventReport(pMac, WLAN_PE_DIAG_START_BSS_RSP_EVENT, psessionEntry, (tANI_U16)resultCode, 0);
 #endif //FEATURE_WLAN_DIAG_SUPPORT
@@ -640,7 +805,11 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
     tSirBssDescription    *pDesc;
 
     PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
        FL("Sending message SME_SCAN_RSP with length=%d reasonCode %s\n"),
+=======
+       FL("Sending message SME_SCAN_RSP with length=%d reasonCode %s"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        length, limResultCodeStr(resultCode));)
 
     if (resultCode != eSIR_SME_SUCCESS)
@@ -658,7 +827,11 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
     {
         // Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for eWNI_SME_SCAN_RSP\n"));
+=======
+                   FL("call to palAllocateMemory failed for eWNI_SME_SCAN_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -688,6 +861,7 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
             {
                 pSirSmeScanRsp->statusCode  =
                     eSIR_SME_MORE_SCAN_RESULTS_FOLLOW;
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
                 sirStoreU16N((tANI_U8*)&pSirSmeScanRsp->messageType,
                              eWNI_SME_SCAN_RSP);
@@ -696,6 +870,10 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
                 pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
                 pSirSmeScanRsp->length      = curMsgLen;
 #endif
+=======
+                pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
+                pSirSmeScanRsp->length      = curMsgLen;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 mmhMsg.bodyptr = pSirSmeScanRsp;
                 mmhMsg.bodyval = 0;
                 MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
@@ -704,7 +882,11 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
                 {
                     // Log error
                     limLog(pMac, LOGP,
+<<<<<<< HEAD
                                  FL("call to palAllocateMemory failed for eWNI_SME_SCAN_RSP\n"));
+=======
+                                 FL("call to palAllocateMemory failed for eWNI_SME_SCAN_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return;
                 }
                 msgLen = sizeof(tSirSmeScanRsp) -
@@ -716,6 +898,7 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
             }
             curMsgLen = msgLen;
 
+<<<<<<< HEAD
             PELOG2(limLog(pMac, LOG2, FL("ScanRsp : msgLen %d, bssDescr Len=%d\n"),
                           msgLen, ptemp->bssDescription.length);)
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
@@ -725,6 +908,12 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
             pDesc->length
                     = ptemp->bssDescription.length;
 #endif
+=======
+            PELOG2(limLog(pMac, LOG2, FL("ScanRsp : msgLen %d, bssDescr Len=%d"),
+                          msgLen, ptemp->bssDescription.length);)
+            pDesc->length
+                    = ptemp->bssDescription.length;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             palCopyMemory( pMac->hHdd, (tANI_U8 *) &pDesc->bssId,
                               (tANI_U8 *) &ptemp->bssDescription.bssId,
                               ptemp->bssDescription.length);
@@ -752,6 +941,7 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
     {
         // send last message
         pSirSmeScanRsp->statusCode  = eSIR_SME_SUCCESS;
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
         sirStoreU16N((tANI_U8*)&pSirSmeScanRsp->messageType,
                              eWNI_SME_SCAN_RSP);
@@ -760,6 +950,179 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
         pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
         pSirSmeScanRsp->length = curMsgLen;
 #endif
+=======
+        pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
+        pSirSmeScanRsp->length = curMsgLen;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+
+        /* Update SME session Id and SME transcation Id */
+        pSirSmeScanRsp->sessionId   = smesessionId;
+        pSirSmeScanRsp->transcationId = smetranscationId;
+
+        mmhMsg.type = eWNI_SME_SCAN_RSP;
+        mmhMsg.bodyptr = pSirSmeScanRsp;
+        mmhMsg.bodyval = 0;
+        MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+        limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+<<<<<<< HEAD
+        PELOG2(limLog(pMac, LOG2, FL("statusCode : eSIR_SME_SUCCESS\n"));)
+=======
+        PELOG2(limLog(pMac, LOG2, FL("statusCode : eSIR_SME_SUCCESS"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+    }
+
+    return;
+
+} /*** end limSendSmeScanRsp() ***/
+
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+/**
+ * limSendSmeLfrScanRsp()
+ *
+ *FUNCTION:
+ * This function is called by limProcessSmeReqMessages() to send
+ * eWNI_SME_SCAN_RSP message to applications above MAC Software
+ * only for sending up the roam candidates.
+ *
+ *PARAMS:
+ *
+ *LOGIC:
+ *
+ *ASSUMPTIONS:
+ * NA
+ *
+ *NOTE:
+ * NA
+ *
+ * @param pMac         Pointer to Global MAC structure
+ * @param length       Indicates length of message
+ * @param resultCode   Indicates the result of previously issued
+ *                     eWNI_SME_SCAN_REQ message
+ *
+ * @return None
+ */
+
+void
+limSendSmeLfrScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
+                     tSirResultCodes resultCode,tANI_U8  smesessionId,tANI_U16 smetranscationId)
+{
+    tSirMsgQ              mmhMsg;
+    tpSirSmeScanRsp       pSirSmeScanRsp=NULL;
+    tLimScanResultNode    *ptemp = NULL;
+    tANI_U16              msgLen, allocLength, curMsgLen = 0;
+    tANI_U16              i, bssCount;
+    tANI_U8               *pbBuf;
+    tSirBssDescription    *pDesc;
+
+    PELOG1(limLog(pMac, LOG1,
+       FL("Sending message SME_SCAN_RSP with length=%d reasonCode %s\n"),
+       length, limResultCodeStr(resultCode));)
+
+    if (resultCode != eSIR_SME_SUCCESS)
+    {
+        limPostSmeScanRspMessage(pMac, length, resultCode,smesessionId,smetranscationId);
+        return;
+    }
+
+    mmhMsg.type = eWNI_SME_SCAN_RSP;
+    i = 0;
+    bssCount = 0;
+    msgLen = 0;
+    allocLength = LIM_MAX_NUM_OF_SCAN_RESULTS_REPORTED * LIM_SIZE_OF_EACH_BSS;
+    if ( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
+                                (void **)&pSirSmeScanRsp, allocLength))
+    {
+        // Log error
+        limLog(pMac, LOGP,
+                   FL("call to palAllocateMemory failed for eWNI_SME_SCAN_RSP\n"));
+
+        return;
+    }
+    for (i = 0; i < LIM_MAX_NUM_OF_SCAN_RESULTS; i++)
+    {
+        //when ptemp is not NULL it is a left over
+        ptemp = pMac->lim.gLimCachedLfrScanHashTable[i];
+        while(ptemp)
+        {
+            pbBuf = ((tANI_U8 *)pSirSmeScanRsp) + msgLen;
+            if(0 == bssCount)
+            {
+                msgLen = sizeof(tSirSmeScanRsp) -
+                           sizeof(tSirBssDescription) +
+                           ptemp->bssDescription.length +
+                           sizeof(ptemp->bssDescription.length);
+                pDesc = pSirSmeScanRsp->bssDescription;
+            }
+            else
+            {
+                msgLen += ptemp->bssDescription.length +
+                          sizeof(ptemp->bssDescription.length);
+                pDesc = (tSirBssDescription *)pbBuf;
+            }
+            if ( (allocLength < msgLen) ||
+                 (LIM_MAX_NUM_OF_SCAN_RESULTS_REPORTED <= bssCount++) )
+            {
+                pSirSmeScanRsp->statusCode  =
+                    eSIR_SME_MORE_SCAN_RESULTS_FOLLOW;
+                pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
+                pSirSmeScanRsp->length      = curMsgLen;
+                mmhMsg.bodyptr = pSirSmeScanRsp;
+                mmhMsg.bodyval = 0;
+                MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+                limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+                if (eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd,
+                                                   (void **)&pSirSmeScanRsp,
+                                                   allocLength))
+                {
+                    // Log error
+                    limLog(pMac, LOGP,
+                                 FL("call to palAllocateMemory failed for eWNI_SME_SCAN_RSP\n"));
+                    return;
+                }
+                msgLen = sizeof(tSirSmeScanRsp) -
+                           sizeof(tSirBssDescription) +
+                           ptemp->bssDescription.length +
+                           sizeof(ptemp->bssDescription.length);
+                pDesc = pSirSmeScanRsp->bssDescription;
+                bssCount = 1;
+            }
+            curMsgLen = msgLen;
+
+            PELOG2(limLog(pMac, LOG2, FL("ScanRsp : msgLen %d, bssDescr Len=%d\n"),
+                          msgLen, ptemp->bssDescription.length);)
+            pDesc->length
+                    = ptemp->bssDescription.length;
+            palCopyMemory( pMac->hHdd, (tANI_U8 *) &pDesc->bssId,
+                              (tANI_U8 *) &ptemp->bssDescription.bssId,
+                              ptemp->bssDescription.length);
+
+            PELOG2(limLog(pMac, LOG2, FL("BssId "));
+            limPrintMacAddr(pMac, ptemp->bssDescription.bssId, LOG2);)
+
+            pSirSmeScanRsp->sessionId   = smesessionId;
+            pSirSmeScanRsp->transcationId = smetranscationId;
+
+            ptemp = ptemp->next;
+        } //while(ptemp)
+    } //for (i = 0; i < LIM_MAX_NUM_OF_SCAN_RESULTS; i++)
+
+    if (0 == bssCount)
+    {
+       limPostSmeScanRspMessage(pMac, length, resultCode, smesessionId, smetranscationId);
+       if (NULL != pSirSmeScanRsp)
+       {
+           palFreeMemory( pMac->hHdd, pSirSmeScanRsp);
+           pSirSmeScanRsp = NULL;
+       }
+    }
+    else
+    {
+        // send last message
+        pSirSmeScanRsp->statusCode  = eSIR_SME_SUCCESS;
+        pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
+        pSirSmeScanRsp->length = curMsgLen;
 
         /* Update SME session Id and SME transcation Id */
         pSirSmeScanRsp->sessionId   = smesessionId;
@@ -775,8 +1138,9 @@ limSendSmeScanRsp(tpAniSirGlobal pMac, tANI_U16 length,
 
     return;
 
-} /*** end limSendSmeScanRsp() ***/
-
+} /*** end limSendSmeLfrScanRsp() ***/
+#endif //WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * limPostSmeScanRspMessage()
@@ -804,16 +1168,25 @@ limPostSmeScanRspMessage(tpAniSirGlobal    pMac,
     tSirMsgQ          mmhMsg;
 
     PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
        FL("limPostSmeScanRspMessage: send SME_SCAN_RSP (len %d, reasonCode %s). \n"),
+=======
+       FL("limPostSmeScanRspMessage: send SME_SCAN_RSP (len %d, reasonCode %s). "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        length, limResultCodeStr(resultCode));)
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeScanRsp, length))
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_SCAN_RSP\n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_SCAN_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     palZeroMemory(pMac->hHdd, (void*)pSirSmeScanRsp, length);
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*)&pSirSmeScanRsp->messageType, eWNI_SME_SCAN_RSP);
     sirStoreU16N((tANI_U8*)&pSirSmeScanRsp->length, length);
@@ -821,6 +1194,10 @@ limPostSmeScanRspMessage(tpAniSirGlobal    pMac,
     pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
     pSirSmeScanRsp->length      = length;
 #endif
+=======
+    pSirSmeScanRsp->messageType = eWNI_SME_SCAN_RSP;
+    pSirSmeScanRsp->length      = length;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(sizeof(tSirSmeScanRsp) <= length)
     {
@@ -891,7 +1268,11 @@ void limSendSmeOemDataRsp(tpAniSirGlobal pMac, tANI_U32* pMsgBuf, tSirResultCode
     //now allocate memory for the char buffer
     if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, (void**)&pSirSmeOemDataRsp, msgLength))
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("call to palAllocateMemory failed for pSirSmeOemDataRsp\n"));
+=======
+        limLog(pMac, LOGP, FL("call to palAllocateMemory failed for pSirSmeOemDataRsp"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -961,16 +1342,23 @@ limSendSmeAuthRsp(tpAniSirGlobal pMac,
     {
         // Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("call to palAllocateMemory failed for eWNI_SME_AUTH_RSP\n"));
+=======
+               FL("call to palAllocateMemory failed for eWNI_SME_AUTH_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*)&pSirSmeAuthRsp->messageType, eWNI_SME_AUTH_RSP);
     sirStoreU16N((tANI_U8*)&pSirSmeAuthRsp->length, sizeof(tSirSmeAuthRsp));
  
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    
 
     if(psessionEntry != NULL)
@@ -999,7 +1387,11 @@ limSendSmeAuthRsp(tpAniSirGlobal pMac,
 } /*** end limSendSmeAuthRsp() ***/
 
 
+<<<<<<< HEAD
 void limSendSmeDisassocDeauthNtfPostResume( tpAniSirGlobal pMac,
+=======
+void limSendSmeDisassocDeauthNtf( tpAniSirGlobal pMac,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 eHalStatus status, tANI_U32 *pCtx )
 {
     tSirMsgQ                mmhMsg;
@@ -1072,11 +1464,16 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             {
                 // Log error
                 limLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for eWNI_SME_DISASSOC_RSP\n"));
+=======
+                   FL("call to palAllocateMemory failed for eWNI_SME_DISASSOC_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return;
             }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
             sirStoreU16N((tANI_U8*)&pSirSmeDisassocRsp->messageType,
                          eWNI_SME_DISASSOC_RSP);
@@ -1086,6 +1483,10 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             pSirSmeDisassocRsp->messageType = eWNI_SME_DISASSOC_RSP;
             pSirSmeDisassocRsp->length      = sizeof(tSirSmeDisassocRsp);
 #endif
+=======
+            pSirSmeDisassocRsp->messageType = eWNI_SME_DISASSOC_RSP;
+            pSirSmeDisassocRsp->length      = sizeof(tSirSmeDisassocRsp);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //sessionId
             pBuf = (tANI_U8 *) &pSirSmeDisassocRsp->sessionId;
             *pBuf = smesessionId;
@@ -1103,6 +1504,7 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             palCopyMemory( pMac->hHdd, pBuf, peerMacAddr, sizeof(tSirMacAddr));
             pBuf += sizeof(tSirMacAddr);
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             limCopyU16(pBuf, aid);
             pBuf += sizeof(tANI_U16);
@@ -1114,6 +1516,11 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             //for sta, it is always 1, IBSS is handled at halInitSta
 
 #endif//#if (WNI_POLARIS_FW_PRODUCT == AP)
+=======
+            // Clear Station Stats
+            //for sta, it is always 1, IBSS is handled at halInitSta
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
           
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
@@ -1133,17 +1540,24 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             {
                 // Log error
                 limLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for eWNI_SME_DISASSOC_IND\n"));
+=======
+                   FL("call to palAllocateMemory failed for eWNI_SME_DISASSOC_IND"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return;
             }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
             sirStoreU16N((tANI_U8*)&pSirSmeDisassocInd->messageType,
                          eWNI_SME_DISASSOC_IND);
             sirStoreU16N((tANI_U8*)&pSirSmeDisassocInd->length,
                          sizeof(tSirSmeDisassocInd));
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pSirSmeDisassocInd->messageType = eWNI_SME_DISASSOC_IND;
             pSirSmeDisassocInd->length      = sizeof(tSirSmeDisassocInd);
             
@@ -1151,7 +1565,10 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             pSirSmeDisassocInd->sessionId = smesessionId;
             pSirSmeDisassocInd->transactionId = smetransactionId;
             pSirSmeDisassocInd->reasonCode = reasonCode;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pBuf = (tANI_U8 *) &pSirSmeDisassocInd->statusCode;
 
             limCopyU32(pBuf, reasonCode);
@@ -1161,6 +1578,7 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             pBuf += sizeof(tSirMacAddr);
 
             palCopyMemory( pMac->hHdd, pBuf, peerMacAddr, sizeof(tSirMacAddr));
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             pBuf += sizeof(tSirMacAddr);
             limCopyU16(pBuf, aid);
@@ -1169,6 +1587,8 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
             limStatSerDes(pMac, &pMac->hal.halMac.macStats.pPerStaStats[aid].staStat, pBuf);
 
 #endif//#if (WNI_POLARIS_FW_PRODUCT == AP)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
@@ -1176,11 +1596,14 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
                                               psessionEntry, (tANI_U16)reasonCode, 0);
 #endif
             pMsg = (tANI_U32*) pSirSmeDisassocInd;
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             PELOG1(limLog(pMac, LOG1,
                FL("*** Sending DisAssocInd staId=%d, reasonCode=%d ***\n"),
                aid, reasonCode);)
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             break;
     }
@@ -1192,6 +1615,7 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
         peDeleteSession(pMac,psessionEntry);
     }
         
+<<<<<<< HEAD
     if( IS_MCC_SUPPORTED && limIsLinkSuspended( pMac ) )
     {
         //Resume on the first active session channel.
@@ -1208,6 +1632,10 @@ limSendSmeDisassocNtf(tpAniSirGlobal pMac,
         limSendSmeDisassocDeauthNtfPostResume( pMac, eHAL_STATUS_SUCCESS,
                                               (tANI_U32*) pMsg );
     }
+=======
+    limSendSmeDisassocDeauthNtf( pMac, eHAL_STATUS_SUCCESS,
+                                              (tANI_U32*) pMsg );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limSendSmeDisassocNtf() ***/
 
 
@@ -1231,6 +1659,7 @@ limSendSmeDisassocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESession pses
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeDisassocInd, sizeof(tSirSmeDisassocInd)))
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DISASSOC_IND\n"));
         return;
     }
@@ -1263,6 +1692,15 @@ limSendSmeDisassocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESession pses
     limStatSerDes(pMac, &pMac->hal.halMac.macStats.pPerStaStats[pStaDs->assocId].staStat, pBuf);
 #endif
 #endif
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DISASSOC_IND"));
+        return;
+    }
+
+    pSirSmeDisassocInd->messageType = eWNI_SME_DISASSOC_IND;
+    pSirSmeDisassocInd->length = sizeof(tSirSmeDisassocInd);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSirSmeDisassocInd->sessionId     =  psessionEntry->smeSessionId;
     pSirSmeDisassocInd->transactionId =  psessionEntry->transactionId;
     pSirSmeDisassocInd->statusCode    =  pStaDs->mlmStaContext.disassocReason;
@@ -1272,6 +1710,7 @@ limSendSmeDisassocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESession pses
  
     palCopyMemory( pMac->hHdd, pSirSmeDisassocInd->peerMacAddr , pStaDs->staAddr, sizeof(tSirMacAddr));
 
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP
     pSirSmeDisassocInd->aid =  pStaDs->assocId;
     limStatSerDes(pMac, &pMac->hal.halMac.macStats.pPerStaStats[pStaDs->assocId].staStat,(tANI_U8*)&pSirSmeDisassocInd-> perStaStats ); 
@@ -1279,6 +1718,9 @@ limSendSmeDisassocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESession pses
 #ifdef WLAN_SOFTAP_FEATURE
     pSirSmeDisassocInd->staId = pStaDs->staIndex;
 #endif  
+=======
+    pSirSmeDisassocInd->staId = pStaDs->staIndex;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  
     mmhMsg.type = eWNI_SME_DISASSOC_IND;
     mmhMsg.bodyptr = pSirSmeDisassocInd;
@@ -1309,14 +1751,18 @@ limSendSmeDisassocInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs,tpPESession pses
 void
 limSendSmeDeauthInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psessionEntry)                   
 {
+<<<<<<< HEAD
 #ifndef WLAN_SOFTAP_FEATURE
     tANI_U8  *pBuf;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSirMsgQ  mmhMsg;
     tSirSmeDeauthInd  *pSirSmeDeauthInd;
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirSmeDeauthInd, sizeof(tSirSmeDeauthInd)))
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_IND \n"));
         return;
     }
@@ -1330,6 +1776,15 @@ limSendSmeDeauthInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psess
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_IND "));
+        return;
+    }
+
+    pSirSmeDeauthInd->messageType = eWNI_SME_DEAUTH_IND;
+    pSirSmeDeauthInd->length = sizeof(tSirSmeDeauthInd);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSirSmeDeauthInd->sessionId = psessionEntry->smeSessionId;
     pSirSmeDeauthInd->transactionId = psessionEntry->transactionId;
     if(eSIR_INFRA_AP_MODE == psessionEntry->bssType)
@@ -1346,6 +1801,7 @@ limSendSmeDeauthInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psess
     //peerMacAddr
     palCopyMemory( pMac->hHdd, pSirSmeDeauthInd->peerMacAddr, pStaDs->staAddr, sizeof(tSirMacAddr));
     pSirSmeDeauthInd->reasonCode = pStaDs->mlmStaContext.disassocReason;
+<<<<<<< HEAD
 #else
 
     //sessionId
@@ -1376,6 +1832,11 @@ limSendSmeDeauthInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psess
 #ifdef WLAN_SOFTAP_FEATURE
     pSirSmeDeauthInd->staId = pStaDs->staIndex;
 #endif
+=======
+
+
+    pSirSmeDeauthInd->staId = pStaDs->staIndex;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     mmhMsg.type = eWNI_SME_DEAUTH_IND;
     mmhMsg.bodyptr = pSirSmeDeauthInd;
@@ -1390,6 +1851,164 @@ limSendSmeDeauthInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psess
     return;
 } /*** end limSendSmeDeauthInd() ***/
 
+<<<<<<< HEAD
+=======
+#ifdef FEATURE_WLAN_TDLS
+/**
+ * limSendSmeTDLSDelStaInd()
+ *
+ *FUNCTION:
+ * This function is called to send the TDLS STA context deletion to SME.
+ *
+ *LOGIC:
+ *
+ *ASSUMPTIONS:
+ *
+ *NOTE:
+ * NA
+ *
+ * @param  pMac   - Pointer to global MAC structure
+ * @param  pStaDs - Pointer to internal STA Datastructure
+ * @param  psessionEntry - Pointer to the session entry
+ * @param  reasonCode - Reason for TDLS sta deletion
+ * @return None
+ */
+void
+limSendSmeTDLSDelStaInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psessionEntry, tANI_U16 reasonCode)
+{
+    tSirMsgQ  mmhMsg;
+    tSirTdlsDelStaInd  *pSirTdlsDelStaInd;
+
+    if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirTdlsDelStaInd, sizeof(tSirTdlsDelStaInd)))
+    {
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_TDLS_DEL_STA_IND "));
+        return;
+    }
+
+    //messageType
+    pSirTdlsDelStaInd->messageType = eWNI_SME_TDLS_DEL_STA_IND;
+    pSirTdlsDelStaInd->length = sizeof(tSirTdlsDelStaInd);
+
+    //sessionId
+    pSirTdlsDelStaInd->sessionId = psessionEntry->smeSessionId;
+
+    //peerMacAddr
+    palCopyMemory( pMac->hHdd, pSirTdlsDelStaInd->peerMac, pStaDs->staAddr, sizeof(tSirMacAddr));
+
+    //staId
+    limCopyU16((tANI_U8*)(&pSirTdlsDelStaInd->staId), (tANI_U16)pStaDs->staIndex);
+
+    //reasonCode
+    limCopyU16((tANI_U8*)(&pSirTdlsDelStaInd->reasonCode), reasonCode);
+
+    mmhMsg.type = eWNI_SME_TDLS_DEL_STA_IND;
+    mmhMsg.bodyptr = pSirTdlsDelStaInd;
+    mmhMsg.bodyval = 0;
+
+
+    limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+    return;
+}/*** end limSendSmeTDLSDelStaInd() ***/
+
+/**
+ * limSendSmeTDLSDeleteAllPeerInd()
+ *
+ *FUNCTION:
+ * This function is called to send the eWNI_SME_TDLS_DEL_ALL_PEER_IND
+ * message to SME.
+ *
+ *LOGIC:
+ *
+ *ASSUMPTIONS:
+ *
+ *NOTE:
+ * NA
+ *
+ * @param  pMac   - Pointer to global MAC structure
+ * @param  psessionEntry - Pointer to the session entry
+ * @return None
+ */
+void
+limSendSmeTDLSDeleteAllPeerInd(tpAniSirGlobal pMac, tpPESession psessionEntry)
+{
+    tSirMsgQ  mmhMsg;
+    tSirTdlsDelAllPeerInd  *pSirTdlsDelAllPeerInd;
+
+    if ( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirTdlsDelAllPeerInd, sizeof(tSirTdlsDelAllPeerInd)))
+    {
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_TDLS_DEL_ALL_PEER_IND"));
+        return;
+    }
+
+    //messageType
+    pSirTdlsDelAllPeerInd->messageType = eWNI_SME_TDLS_DEL_ALL_PEER_IND;
+    pSirTdlsDelAllPeerInd->length = sizeof(tSirTdlsDelAllPeerInd);
+
+    //sessionId
+    pSirTdlsDelAllPeerInd->sessionId = psessionEntry->smeSessionId;
+
+    mmhMsg.type = eWNI_SME_TDLS_DEL_ALL_PEER_IND;
+    mmhMsg.bodyptr = pSirTdlsDelAllPeerInd;
+    mmhMsg.bodyval = 0;
+
+
+    limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+    return;
+}/*** end limSendSmeTDLSDeleteAllPeerInd() ***/
+
+/**
+ * limSendSmeMgmtTXCompletion()
+ *
+ *FUNCTION:
+ * This function is called to send the eWNI_SME_MGMT_FRM_TX_COMPLETION_IND
+ * message to SME.
+ *
+ *LOGIC:
+ *
+ *ASSUMPTIONS:
+ *
+ *NOTE:
+ * NA
+ *
+ * @param  pMac   - Pointer to global MAC structure
+ * @param  psessionEntry - Pointer to the session entry
+ * @param  txCompleteStatus - TX Complete Status of Mgmt Frames
+ * @return None
+ */
+void
+limSendSmeMgmtTXCompletion(tpAniSirGlobal pMac,
+                           tpPESession psessionEntry,
+                           tANI_U32 txCompleteStatus)
+{
+    tSirMsgQ  mmhMsg;
+    tSirMgmtTxCompletionInd  *pSirMgmtTxCompletionInd;
+
+    if ( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSirMgmtTxCompletionInd, sizeof(tSirMgmtTxCompletionInd)))
+    {
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_MGMT_FRM_TX_COMPLETION_IND"));
+        return;
+    }
+
+    //messageType
+    pSirMgmtTxCompletionInd->messageType = eWNI_SME_MGMT_FRM_TX_COMPLETION_IND;
+    pSirMgmtTxCompletionInd->length = sizeof(tSirMgmtTxCompletionInd);
+
+    //sessionId
+    pSirMgmtTxCompletionInd->sessionId = psessionEntry->smeSessionId;
+
+    pSirMgmtTxCompletionInd->txCompleteStatus = txCompleteStatus;
+
+    mmhMsg.type = eWNI_SME_MGMT_FRM_TX_COMPLETION_IND;
+    mmhMsg.bodyptr = pSirMgmtTxCompletionInd;
+    mmhMsg.bodyval = 0;
+
+
+    limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+    return;
+}/*** end limSendSmeTDLSDeleteAllPeerInd() ***/
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * limSendSmeDeauthNtf()
@@ -1444,11 +2063,16 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
             {
                 // Log error
                 limLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for eWNI_SME_DEAUTH_RSP\n"));
+=======
+                   FL("call to palAllocateMemory failed for eWNI_SME_DEAUTH_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return;
             }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
             sirStoreU16N((tANI_U8*) &(pSirSmeDeauthRsp->messageType),
                          eWNI_SME_DEAUTH_RSP);
@@ -1458,6 +2082,10 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
             pSirSmeDeauthRsp->messageType = eWNI_SME_DEAUTH_RSP;
             pSirSmeDeauthRsp->length      = sizeof(tSirSmeDeauthRsp);
 #endif
+=======
+            pSirSmeDeauthRsp->messageType = eWNI_SME_DEAUTH_RSP;
+            pSirSmeDeauthRsp->length      = sizeof(tSirSmeDeauthRsp);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pSirSmeDeauthRsp->statusCode = reasonCode;
             pSirSmeDeauthRsp->sessionId = smesessionId;
             pSirSmeDeauthRsp->transactionId = smetransactionId;  
@@ -1465,10 +2093,13 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
             pBuf  = (tANI_U8 *) pSirSmeDeauthRsp->peerMacAddr;
             palCopyMemory( pMac->hHdd, pBuf, peerMacAddr, sizeof(tSirMacAddr));
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             pBuf += sizeof(tSirMacAddr);
             limCopyU16(pBuf, aid);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
             limDiagEventReport(pMac, WLAN_PE_DIAG_DEAUTH_RSP_EVENT,
                                       psessionEntry, 0, (tANI_U16)reasonCode);
@@ -1487,11 +2118,16 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
             {
                 // Log error
                 limLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("call to palAllocateMemory failed for eWNI_SME_DEAUTH_Ind\n"));
+=======
+                   FL("call to palAllocateMemory failed for eWNI_SME_DEAUTH_Ind"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return;
             }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
             sirStoreU16N((tANI_U8*)&pSirSmeDeauthInd->messageType,
                          eWNI_SME_DEAUTH_IND);
@@ -1502,6 +2138,11 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
             pSirSmeDeauthInd->length      = sizeof(tSirSmeDeauthInd);
             pSirSmeDeauthInd->reasonCode = eSIR_MAC_UNSPEC_FAILURE_REASON;
 #endif
+=======
+            pSirSmeDeauthInd->messageType = eWNI_SME_DEAUTH_IND;
+            pSirSmeDeauthInd->length      = sizeof(tSirSmeDeauthInd);
+            pSirSmeDeauthInd->reasonCode = eSIR_MAC_UNSPEC_FAILURE_REASON;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             // sessionId
             pBuf = (tANI_U8*) &pSirSmeDeauthInd->sessionId;
@@ -1522,10 +2163,13 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
             //peerMacAddr
             palCopyMemory( pMac->hHdd, pSirSmeDeauthInd->peerMacAddr, peerMacAddr, sizeof(tSirMacAddr));
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
             pBuf += sizeof(tSirMacAddr);
             limCopyU16(pBuf, aid);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
             limDiagEventReport(pMac, WLAN_PE_DIAG_DEAUTH_IND_EVENT,
                                         psessionEntry, 0, (tANI_U16)reasonCode);
@@ -1541,6 +2185,7 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
         peDeleteSession(pMac,psessionEntry);
     }   
 
+<<<<<<< HEAD
     if( IS_MCC_SUPPORTED && limIsLinkSuspended( pMac ) )
     {
         //Resume on the first active session channel.
@@ -1557,6 +2202,11 @@ limSendSmeDeauthNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr, tSirResultCode
         limSendSmeDisassocDeauthNtfPostResume( pMac, eHAL_STATUS_SUCCESS,
                                               (tANI_U32*) pMsg );
     }
+=======
+    limSendSmeDisassocDeauthNtf( pMac, eHAL_STATUS_SUCCESS,
+                                              (tANI_U32*) pMsg );
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limSendSmeDeauthNtf() ***/
 
 
@@ -1591,11 +2241,14 @@ limSendSmeWmStatusChangeNtf(tpAniSirGlobal pMac, tSirSmeStatusChangeCode statusC
     tSirMsgQ                  mmhMsg;
     tSirSmeWmStatusChangeNtf  *pSirSmeWmStatusChangeNtf;
     eHalStatus                status;
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     tANI_U32                  bufLen;
     tANI_U16                  length=0;
     tANI_U8                   *pBuf;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -1604,14 +2257,21 @@ limSendSmeWmStatusChangeNtf(tpAniSirGlobal pMac, tSirSmeStatusChangeCode statusC
     if (status != eHAL_STATUS_SUCCESS)
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
           FL("call to palAllocateMemory failed for eWNI_SME_WM_STATUS_CHANGE_NTF, status = %d\n"),
+=======
+          FL("call to palAllocateMemory failed for eWNI_SME_WM_STATUS_CHANGE_NTF, status = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           status);
           return;
     }
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
     pBuf = (tANI_U8 *)pSirSmeWmStatusChangeNtf;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     mmhMsg.type = eWNI_SME_WM_STATUS_CHANGE_NTF;
     mmhMsg.bodyval = 0;
@@ -1621,6 +2281,7 @@ limSendSmeWmStatusChangeNtf(tpAniSirGlobal pMac, tSirSmeStatusChangeCode statusC
     {
         case eSIR_SME_RADAR_DETECTED:
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
             bufLen = sizeof(tSirSmeWmStatusChangeNtf);
             if ((limSmeWmStatusChangeHeaderSerDes(pMac,
@@ -1668,6 +2329,11 @@ limSendSmeWmStatusChangeNtf(tpAniSirGlobal pMac, tSirSmeStatusChangeCode statusC
                 return;
             }
 #endif
+=======
+            break;
+
+        case eSIR_SME_CB_LEGACY_BSS_FOUND_BY_AP:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case eSIR_SME_BACKGROUND_SCAN_FAIL:
@@ -1678,6 +2344,7 @@ limSendSmeWmStatusChangeNtf(tpAniSirGlobal pMac, tSirSmeStatusChangeCode statusC
             break;
 
         default:
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
         sirStoreU16N((tANI_U8*)&pSirSmeWmStatusChangeNtf->messageType,
                     eWNI_SME_WM_STATUS_CHANGE_NTF );
@@ -1687,26 +2354,43 @@ limSendSmeWmStatusChangeNtf(tpAniSirGlobal pMac, tSirSmeStatusChangeCode statusC
         sirStoreU32N((tANI_U8*)&pSirSmeWmStatusChangeNtf->statusChangeCode,
                     statusChangeCode);
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pSirSmeWmStatusChangeNtf->messageType = eWNI_SME_WM_STATUS_CHANGE_NTF;
         pSirSmeWmStatusChangeNtf->statusChangeCode = statusChangeCode;
         pSirSmeWmStatusChangeNtf->length = sizeof(tSirSmeWmStatusChangeNtf);
         pSirSmeWmStatusChangeNtf->sessionId = sessionId;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(sizeof(pSirSmeWmStatusChangeNtf->statusChangeInfo) >= infoLen)
         {
             palCopyMemory( pMac->hHdd, (tANI_U8 *)&pSirSmeWmStatusChangeNtf->statusChangeInfo, (tANI_U8 *)pStatusChangeInfo, infoLen);
         }
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("***---*** StatusChg: code 0x%x, length %d ***---***\n"),
+=======
+        limLog(pMac, LOGE, FL("***---*** StatusChg: code 0x%x, length %d ***---***"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                statusChangeCode, infoLen);
         break;
     }
 
 
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
     if (eSIR_SUCCESS != limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT))
     {
         palFreeMemory(pMac->hHdd, (void *) pSirSmeWmStatusChangeNtf);
         limLog( pMac, LOGP, FL("limSysProcessMmhMsgApi failed\n"));
+=======
+    MTRACE(macTraceMsgTx(pMac, sessionId, mmhMsg.type));
+    if (eSIR_SUCCESS != limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT))
+    {
+        palFreeMemory(pMac->hHdd, (void *) pSirSmeWmStatusChangeNtf);
+        limLog( pMac, LOGP, FL("limSysProcessMmhMsgApi failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
 } /*** end limSendSmeWmStatusChangeNtf() ***/
@@ -1753,11 +2437,16 @@ limSendSmeSetContextRsp(tpAniSirGlobal pMac,
     {
         // Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("call to palAllocateMemory failed for SmeSetContextRsp\n"));
+=======
+               FL("call to palAllocateMemory failed for SmeSetContextRsp"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*)&pSirSmeSetContextRsp->messageType,
                  eWNI_SME_SETCONTEXT_RSP);
@@ -1767,6 +2456,10 @@ limSendSmeSetContextRsp(tpAniSirGlobal pMac,
     pSirSmeSetContextRsp->messageType = eWNI_SME_SETCONTEXT_RSP;
     pSirSmeSetContextRsp->length      = sizeof(tSirSmeSetContextRsp);
 #endif
+=======
+    pSirSmeSetContextRsp->messageType = eWNI_SME_SETCONTEXT_RSP;
+    pSirSmeSetContextRsp->length      = sizeof(tSirSmeSetContextRsp);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSirSmeSetContextRsp->statusCode  = resultCode;
 
     pBuf = pSirSmeSetContextRsp->peerMacAddr;
@@ -1774,10 +2467,13 @@ limSendSmeSetContextRsp(tpAniSirGlobal pMac,
     palCopyMemory( pMac->hHdd, pBuf, (tANI_U8 *) peerMacAddr, sizeof(tSirMacAddr));
     pBuf += sizeof(tSirMacAddr);
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     limCopyU16(pBuf, aid);
     pBuf += sizeof(tANI_U16);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Update SME session and transaction Id*/
     pSirSmeSetContextRsp->sessionId = smesessionId;
@@ -1786,7 +2482,18 @@ limSendSmeSetContextRsp(tpAniSirGlobal pMac,
     mmhMsg.type = eWNI_SME_SETCONTEXT_RSP;
     mmhMsg.bodyptr = pSirSmeSetContextRsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+=======
+    if(NULL == psessionEntry)
+    {
+        MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+    }
+    else
+    {
+        MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
     limDiagEventReport(pMac, WLAN_PE_DIAG_SETCONTEXT_RSP_EVENT, psessionEntry, (tANI_U16)resultCode, 0);
@@ -1836,11 +2543,16 @@ limSendSmeRemoveKeyRsp(tpAniSirGlobal pMac,
     {
         // Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
                FL("call to palAllocateMemory failed for SmeRemoveKeyRsp\n"));
+=======
+               FL("call to palAllocateMemory failed for SmeRemoveKeyRsp"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined(ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*)&pSirSmeRemoveKeyRsp->messageType,
                  eWNI_SME_REMOVEKEY_RSP);
@@ -1848,6 +2560,8 @@ limSendSmeRemoveKeyRsp(tpAniSirGlobal pMac,
                  sizeof(tSirSmeRemoveKeyRsp));
   
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
 
     if(psessionEntry != NULL)
@@ -1869,7 +2583,18 @@ limSendSmeRemoveKeyRsp(tpAniSirGlobal pMac,
     mmhMsg.type = eWNI_SME_REMOVEKEY_RSP;
     mmhMsg.bodyptr = pSirSmeRemoveKeyRsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+=======
+    if(NULL == psessionEntry)
+    {
+        MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+    }
+    else
+    {
+        MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
 } /*** end limSendSmeSetContextRsp() ***/
 
@@ -1905,7 +2630,11 @@ limSendSmePromiscuousModeRsp(tpAniSirGlobal pMac)
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pMbMsg, sizeof(tSirMbMsg)))
     {
         // Log error
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("call to palAllocateMemory failed\n"));
+=======
+        limLog(pMac, LOGP, FL("call to palAllocateMemory failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -1966,7 +2695,11 @@ limSendSmeNeighborBssInd(tpAniSirGlobal pMac,
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_NEW_BSS_FOUND_IND, &val) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("could not get NEIGHBOR_BSS_IND from CFG\n"));
+=======
+        limLog(pMac, LOGP, FL("could not get NEIGHBOR_BSS_IND from CFG"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -1986,11 +2719,16 @@ limSendSmeNeighborBssInd(tpAniSirGlobal pMac,
     {
         // Log error
         limLog(pMac, LOGP,
+<<<<<<< HEAD
            FL("call to palAllocateMemory failed for eWNI_SME_NEIGHBOR_BSS_IND\n"));
+=======
+           FL("call to palAllocateMemory failed for eWNI_SME_NEIGHBOR_BSS_IND"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*) &pNewBssInd->messageType,
                  eWNI_SME_NEIGHBOR_BSS_IND);
@@ -2006,6 +2744,15 @@ limSendSmeNeighborBssInd(tpAniSirGlobal pMac,
                   (tANI_U8 *) &pBssDescr->bssDescription,
                   pBssDescr->bssDescription.length + sizeof(tANI_U16));
 #endif
+=======
+    pNewBssInd->messageType = eWNI_SME_NEIGHBOR_BSS_IND;
+    pNewBssInd->length      = (tANI_U16) val;
+    pNewBssInd->sessionId = 0;
+
+    palCopyMemory( pMac->hHdd, (tANI_U8 *) pNewBssInd->bssDescription,
+                  (tANI_U8 *) &pBssDescr->bssDescription,
+                  pBssDescr->bssDescription.length + sizeof(tANI_U16));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     msgQ.type = eWNI_SME_NEIGHBOR_BSS_IND;
     msgQ.bodyptr = pNewBssInd;
@@ -2054,7 +2801,18 @@ limSendSmeAddtsRsp(tpAniSirGlobal pMac, tANI_U8 rspReqd, tANI_U32 status, tpPESe
     mmhMsg.type = eWNI_SME_ADDTS_RSP;
     mmhMsg.bodyptr = rsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+=======
+    if(NULL == psessionEntry)
+    {
+        MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+    }
+    else
+    {
+        MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
     limDiagEventReport(pMac, WLAN_PE_DIAG_ADDTS_RSP_EVENT, psessionEntry, 0, 0);
 #endif //FEATURE_WLAN_DIAG_SUPPORT
@@ -2069,7 +2827,11 @@ limSendSmeAddtsInd(tpAniSirGlobal pMac, tpSirAddtsReqInfo addts)
     tpSirAddtsRsp rsp;
     tSirMsgQ      mmhMsg;
 
+<<<<<<< HEAD
     limLog(pMac, LOGW, "SendSmeAddtsInd (token %d, tsid %d, up %d)\n",
+=======
+    limLog(pMac, LOGW, "SendSmeAddtsInd (token %d, tsid %d, up %d)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            addts->dialogToken,
            addts->tspec.tsinfo.traffic.tsid,
            addts->tspec.tsinfo.traffic.userPrio);
@@ -2077,7 +2839,11 @@ limSendSmeAddtsInd(tpAniSirGlobal pMac, tpSirAddtsReqInfo addts)
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&rsp, sizeof(tSirAddtsRsp)))
     {
         // Log error
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for ADDTS_IND\n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for ADDTS_IND"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     palZeroMemory( pMac->hHdd, (tANI_U8 *) rsp, sizeof(*rsp));
@@ -2099,7 +2865,11 @@ limSendSmeDeltsRsp(tpAniSirGlobal pMac, tpSirDeltsReq delts, tANI_U32 status,tpP
     tpSirDeltsRsp rsp;
     tSirMsgQ      mmhMsg;
 
+<<<<<<< HEAD
     limLog(pMac, LOGW, "SendSmeDeltsRsp (aid %d, tsid %d, up %d) status %d\n",
+=======
+    limLog(pMac, LOGW, "SendSmeDeltsRsp (aid %d, tsid %d, up %d) status %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            delts->aid,
            delts->req.tsinfo.traffic.tsid,
            delts->req.tsinfo.traffic.userPrio,
@@ -2110,7 +2880,11 @@ limSendSmeDeltsRsp(tpAniSirGlobal pMac, tpSirDeltsReq delts, tANI_U32 status,tpP
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&rsp, sizeof(tSirDeltsRsp)))
     {
         // Log error
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for DELTS_RSP\n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for DELTS_RSP"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     palZeroMemory( pMac->hHdd, (tANI_U8 *) rsp, sizeof(*rsp));
@@ -2134,7 +2908,18 @@ limSendSmeDeltsRsp(tpAniSirGlobal pMac, tpSirDeltsReq delts, tANI_U32 status,tpP
     mmhMsg.type = eWNI_SME_DELTS_RSP;
     mmhMsg.bodyptr = rsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+=======
+    if(NULL == psessionEntry)
+    {
+        MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+    }
+    else
+    {
+        MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, mmhMsg.type));
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
     limDiagEventReport(pMac, WLAN_PE_DIAG_DELTS_RSP_EVENT, psessionEntry, (tANI_U16)status, 0);
 #endif //FEATURE_WLAN_DIAG_SUPPORT
@@ -2148,7 +2933,11 @@ limSendSmeDeltsInd(tpAniSirGlobal pMac, tpSirDeltsReqInfo delts, tANI_U16 aid,tp
     tpSirDeltsRsp rsp;
     tSirMsgQ      mmhMsg;
 
+<<<<<<< HEAD
     limLog(pMac, LOGW, "SendSmeDeltsInd (aid %d, tsid %d, up %d)\n",
+=======
+    limLog(pMac, LOGW, "SendSmeDeltsInd (aid %d, tsid %d, up %d)",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            aid,
            delts->tsinfo.traffic.tsid,
            delts->tsinfo.traffic.userPrio);
@@ -2156,7 +2945,11 @@ limSendSmeDeltsInd(tpAniSirGlobal pMac, tpSirDeltsReqInfo delts, tANI_U16 aid,tp
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&rsp, sizeof(tSirDeltsRsp)))
     {
         // Log error
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for DELTS_IND\n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for DELTS_IND"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     palZeroMemory( pMac->hHdd, (tANI_U8 *) rsp, sizeof(*rsp));
@@ -2303,6 +3096,70 @@ limSendSmePEStatisticsRsp(tpAniSirGlobal pMac, tANI_U16 msgType, void* stats)
 
 } /*** end limSendSmePEStatisticsRsp() ***/
 
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+/**
+ * limSendSmePEGetRoamRssiRsp()
+ *
+ *FUNCTION:
+ * This function is called to send roam rssi response to HDD.
+ * This function posts the result back to HDD. This is a response to
+ * HDD's request to get roam rssi.
+ *
+ *PARAMS:
+ *
+ *LOGIC:
+ *
+ *ASSUMPTIONS:
+ * NA
+ *
+ *NOTE:
+ * NA
+ *
+ * @param pMac         Pointer to Global MAC structure
+ * @param p80211Stats  Statistics sent in response
+ * @param resultCode   TODO:
+ *
+ *
+ * @return none
+ */
+
+void
+limSendSmePEGetRoamRssiRsp(tpAniSirGlobal pMac, tANI_U16 msgType, void* stats)
+{
+    tSirMsgQ              mmhMsg;
+    tANI_U8 sessionId;
+    tAniGetRoamRssiRsp *pPeStats = (tAniGetRoamRssiRsp *) stats;
+    tpPESession pPeSessionEntry = NULL;
+
+    //Get the Session Id based on Sta Id
+    pPeSessionEntry = peFindSessionByStaId(pMac, pPeStats->staId, &sessionId);
+
+    //Fill the Session Id
+    if(NULL != pPeSessionEntry)
+    {
+      //Fill the Session Id
+      pPeStats->sessionId = pPeSessionEntry->smeSessionId;
+    }
+
+    pPeStats->msgType = eWNI_SME_GET_ROAM_RSSI_RSP;
+
+    //msgType should be WDA_GET_STATISTICS_RSP
+    mmhMsg.type = eWNI_SME_GET_ROAM_RSSI_RSP;
+
+    mmhMsg.bodyptr = stats;
+    mmhMsg.bodyval = 0;
+    MTRACE(macTraceMsgTx(pMac, sessionId, mmhMsg.type));
+    limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+
+    return;
+
+} /*** end limSendSmePEGetRoamRssiRsp() ***/
+
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void
 limSendSmeIBSSPeerInd(
@@ -2345,7 +3202,11 @@ limSendSmeIBSSPeerInd(
     mmhMsg.type    = msgType;
 //    mmhMsg.bodyval = (tANI_U32) pNewPeerInd;
     mmhMsg.bodyptr = pNewPeerInd;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+=======
+    MTRACE(macTraceMsgTx(pMac, sessionId, mmhMsg.type));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
     
 }
@@ -2371,11 +3232,16 @@ void limSendExitBmpsInd(tpAniSirGlobal pMac, tExitBmpsReason reasonCode)
     msgLen = sizeof(tSirSmeExitBmpsInd);
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pExitBmpsInd, msgLen ))
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for PMC_EXIT_BMPS_IND \n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for PMC_EXIT_BMPS_IND "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     palZeroMemory(pMac->hHdd, pExitBmpsInd, msgLen);
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined (ANI_LITTLE_BYTE_ENDIAN)
     sirStoreU16N((tANI_U8*)&pExitBmpsInd->mesgType, eWNI_PMC_EXIT_BMPS_IND);
     sirStoreU16N((tANI_U8*)&pExitBmpsInd->mesgLen, msgLen);
@@ -2383,6 +3249,10 @@ void limSendExitBmpsInd(tpAniSirGlobal pMac, tExitBmpsReason reasonCode)
     pExitBmpsInd->mesgType = eWNI_PMC_EXIT_BMPS_IND;
     pExitBmpsInd->mesgLen = msgLen;
 #endif
+=======
+    pExitBmpsInd->mesgType = eWNI_PMC_EXIT_BMPS_IND;
+    pExitBmpsInd->mesgLen = msgLen;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pExitBmpsInd->exitBmpsReason = reasonCode;
     pExitBmpsInd->statusCode = eSIR_SME_SUCCESS;
 
@@ -2390,7 +3260,11 @@ void limSendExitBmpsInd(tpAniSirGlobal pMac, tExitBmpsReason reasonCode)
     mmhMsg.bodyptr = pExitBmpsInd;
     mmhMsg.bodyval = 0;
   
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Sending eWNI_PMC_EXIT_BMPS_IND to SME. \n"));)        
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Sending eWNI_PMC_EXIT_BMPS_IND to SME. "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT 
     limDiagEventReport(pMac, WLAN_PE_DIAG_EXIT_BMPS_IND_EVENT, peGetValidPowerSaveSession(pMac), 0, (tANI_U16)reasonCode);
@@ -2420,7 +3294,11 @@ void limHandleDeleteBssRsp(tpAniSirGlobal pMac,tpSirMsgQ MsgQ)
     tpDeleteBssParams pDelBss = (tpDeleteBssParams)(MsgQ->bodyptr);
     if((psessionEntry = peFindSessionBySessionId(pMac,pDelBss->sessionId))==NULL)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     if (psessionEntry->limSystemRole == eLIM_STA_IN_IBSS_ROLE)
@@ -2457,7 +3335,11 @@ limSendSmeAggrQosRsp(tpAniSirGlobal pMac, tpSirAggrQosRsp aggrQosRsp,
     mmhMsg.type = eWNI_SME_FT_AGGR_QOS_RSP;
     mmhMsg.bodyptr = aggrQosRsp;
     mmhMsg.bodyval = 0;
+<<<<<<< HEAD
     MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+=======
+    MTRACE(macTraceMsgTx(pMac, smesessionId , mmhMsg.type));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
 
     return;
@@ -2533,10 +3415,62 @@ void limSendSmeMaxAssocExceededNtf(tpAniSirGlobal pMac, tSirMacAddr peerMacAddr,
     mmhMsg.type = pSmeMaxAssocInd->mesgType;
     mmhMsg.bodyptr = pSmeMaxAssocInd;
     PELOG1(limLog(pMac, LOG1, FL("msgType %s peerMacAddr %02x-%02x-%02x-%02x-%02x-%02x"
+<<<<<<< HEAD
                 "sme session id %d\n"),"eWNI_SME_MAX_ASSOC_EXCEEDED", peerMacAddr[0], peerMacAddr[1],
                 peerMacAddr[2], peerMacAddr[3], peerMacAddr[4], peerMacAddr[5], smesessionId);)
     MTRACE(macTraceMsgTx(pMac, NO_SESSION, mmhMsg.type));
+=======
+                "sme session id %d"),"eWNI_SME_MAX_ASSOC_EXCEEDED", peerMacAddr[0], peerMacAddr[1],
+                peerMacAddr[2], peerMacAddr[3], peerMacAddr[4], peerMacAddr[5], smesessionId);)
+    MTRACE(macTraceMsgTx(pMac, smesessionId, mmhMsg.type));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
 
     return;
 }
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+/** -----------------------------------------------------------------
+  \brief limSendSmeCandidateFoundInd() - sends
+         eWNI_SME_CANDIDATE_FOUND_IND
+
+  After receiving candidate found indication frame from FW, this
+  function sends a eWNI_SME_CANDIDATE_FOUND_IND to SME to notify
+  roam candidate(s) are available.
+
+  \param pMac - global mac structure
+  \param psessionEntry - session info
+  \return none
+  \sa
+  ----------------------------------------------------------------- */
+void
+limSendSmeCandidateFoundInd(tpAniSirGlobal pMac, tANI_U8  sessionId)
+{
+    tSirMsgQ  mmhMsg;
+    tSirSmeCandidateFoundInd *pSirSmeCandidateFoundInd;
+
+    if ( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
+                                             (void **)&pSirSmeCandidateFoundInd,
+                                             sizeof(tSirSmeCandidateFoundInd)))
+    {
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_CANDIDATE_FOUND_IND\n"));
+        return;
+    }
+
+    pSirSmeCandidateFoundInd->messageType = eWNI_SME_CANDIDATE_FOUND_IND;
+    pSirSmeCandidateFoundInd->length = sizeof(tSirSmeDisassocInd);
+
+    pSirSmeCandidateFoundInd->sessionId     =  sessionId;
+
+
+    limLog( pMac, LOGE, FL("posting candidate ind to SME"));
+    mmhMsg.type = eWNI_SME_CANDIDATE_FOUND_IND;
+    mmhMsg.bodyptr = pSirSmeCandidateFoundInd;
+    mmhMsg.bodyval = 0;
+
+    limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
+
+} /*** end limSendSmeCandidateFoundInd() ***/
+#endif //WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

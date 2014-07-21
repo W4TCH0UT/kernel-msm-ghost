@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -21,7 +25,11 @@
 
 #ifndef __TL_DEBUG_H__
 #define __TL_DEBUG_H__
+<<<<<<< HEAD
 #if (!defined ANI_OS_TYPE_OSX && !defined (ANI_OS_TYPE_ANDROID))
+=======
+#if  !defined (ANI_OS_TYPE_ANDROID)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <stdio.h>
 #endif
 #include <stdarg.h>

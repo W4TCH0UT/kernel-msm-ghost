@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -177,10 +200,17 @@
  * The range -2149 to -2999 is reserved for use by the SSM library.
  */
 #define ANI_E_RANGE_START_SSM -2149
+<<<<<<< HEAD
 #define ANI_E_SSM_CERT_UNPARSEABLE          ANI_E_RANGE_START_SSM - 1
 #define ANI_E_SSM_CERT_EXPIRED              ANI_E_RANGE_START_SSM - 2
 #define ANI_E_SSM_CERT_THUMBPRINT_MISMATCH  ANI_E_RANGE_START_SSM - 3
 #define ANI_E_SSM_CERT_NEW_ID               ANI_E_RANGE_START_SSM - 4
+=======
+#define ANI_E_SSM_CERT_UNPARSEABLE          (ANI_E_RANGE_START_SSM - 1)
+#define ANI_E_SSM_CERT_EXPIRED              (ANI_E_RANGE_START_SSM - 2)
+#define ANI_E_SSM_CERT_THUMBPRINT_MISMATCH  (ANI_E_RANGE_START_SSM - 3)
+#define ANI_E_SSM_CERT_NEW_ID               (ANI_E_RANGE_START_SSM - 4)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ANI_E_RANGE_END_SSM   -2999
 
 /*
@@ -229,10 +259,17 @@
  * HTTPS components.
  */
 #define ANI_E_RANGE_START_HTTPS -4701
+<<<<<<< HEAD
 #define ANI_E_HTTPS_UNREACHABLE      ANI_E_RANGE_START_HTTPS - 0
 #define ANI_E_HTTPS_UNTRUSTED_CERT   ANI_E_RANGE_START_HTTPS - 1
 #define ANI_E_HTTPS_RECVD_ALERT      ANI_E_RANGE_START_HTTPS - 2
 #define ANI_E_HTTPS_FAILED           ANI_E_RANGE_START_HTTPS - 3
+=======
+#define ANI_E_HTTPS_UNREACHABLE      (ANI_E_RANGE_START_HTTPS - 0)
+#define ANI_E_HTTPS_UNTRUSTED_CERT   (ANI_E_RANGE_START_HTTPS - 1)
+#define ANI_E_HTTPS_RECVD_ALERT      (ANI_E_RANGE_START_HTTPS - 2)
+#define ANI_E_HTTPS_FAILED           (ANI_E_RANGE_START_HTTPS - 3)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ANI_E_RANGE_END_HTTPS   -4800
 
 /*
@@ -240,12 +277,21 @@
  * enrollment components.
  */
 #define ANI_E_RANGE_START_ENROLLMENT -4801
+<<<<<<< HEAD
 #define ANI_E_ENROLL_TP_AVAILABLE     ANI_E_RANGE_START_ENROLLMENT - 0
 #define ANI_E_ENROLL_ALREADY_TRUSTED  ANI_E_RANGE_START_ENROLLMENT - 1
 #define ANI_E_ENROLL_NOT_FOUND        ANI_E_RANGE_START_ENROLLMENT - 2
 #define ANI_E_ENROLL_PWD_FAILED       ANI_E_RANGE_START_ENROLLMENT - 3
 #define ANI_E_ENROLL_FAILED           ANI_E_RANGE_START_ENROLLMENT - 4
 #define ANI_E_ENROLL_NOT_PRISTINE     ANI_E_RANGE_START_ENROLLMENT - 5
+=======
+#define ANI_E_ENROLL_TP_AVAILABLE     (ANI_E_RANGE_START_ENROLLMENT - 0)
+#define ANI_E_ENROLL_ALREADY_TRUSTED  (ANI_E_RANGE_START_ENROLLMENT - 1)
+#define ANI_E_ENROLL_NOT_FOUND        (ANI_E_RANGE_START_ENROLLMENT - 2)
+#define ANI_E_ENROLL_PWD_FAILED       (ANI_E_RANGE_START_ENROLLMENT - 3)
+#define ANI_E_ENROLL_FAILED           (ANI_E_RANGE_START_ENROLLMENT - 4)
+#define ANI_E_ENROLL_NOT_PRISTINE     (ANI_E_RANGE_START_ENROLLMENT - 5)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ANI_E_RANGE_END_ENROLLMENT   -4900
 
 
@@ -253,7 +299,11 @@
  * The range -4901 to -5000 is reserved for use by NSM.
  */
 #define ANI_E_RANGE_START_NSM -4901
+<<<<<<< HEAD
 #define ANI_E_NSM_IPADDR_ASSIGNED     ANI_E_RANGE_START_NSM - 0
+=======
+#define ANI_E_NSM_IPADDR_ASSIGNED     (ANI_E_RANGE_START_NSM - 0)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ANI_E_RANGE_END_NSM   -5000
 
 /*
@@ -261,15 +311,24 @@
  * validation library.
  */
 #define ANI_E_RANGE_START_IMAGE -5001
+<<<<<<< HEAD
 #define ANI_E_IMAGE_INVALID         ANI_E_RANGE_START_IMAGE - 0
 #define ANI_E_IMAGE_UNSUPPORTED     ANI_E_RANGE_START_IMAGE - 1
+=======
+#define ANI_E_IMAGE_INVALID         (ANI_E_RANGE_START_IMAGE - 0)
+#define ANI_E_IMAGE_UNSUPPORTED     (ANI_E_RANGE_START_IMAGE - 1)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ANI_E_RANGE_END_IMAGE   -5100
 
 /*
  * The range -5101 to -5200 is reserved for use by CM
  */
 #define ANI_E_RANGE_START_CM -5101
+<<<<<<< HEAD
 #define ANI_E_MESG_UNAVAILABLE      ANI_E_RANGE_START_IMAGE - 0
+=======
+#define ANI_E_MESG_UNAVAILABLE      (ANI_E_RANGE_START_IMAGE - 0)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ANI_E_RANGE_END_CM   -5200
 
 

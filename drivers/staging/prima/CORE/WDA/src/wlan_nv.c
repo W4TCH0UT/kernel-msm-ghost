@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -3797,6 +3798,63 @@ const sHalNv nvDefaults =
 };
 
 #else
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+ * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+/** ------------------------------------------------------------------------- *
+    ------------------------------------------------------------------------- *
+
+
+    \file wlan_nv.c
+
+   \brief Contains collection of table default values to use in
+          case a table is not found in NV
+
+    $Id$
+
+   ========================================================================== */
+
+#ifndef WLAN_NV_C
+#define WLAN_NV_C
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "palTypes.h"
 #include "wlan_nv.h"
@@ -3815,18 +3873,32 @@ const sHalNv nvDefaults =
         { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },                         // tANI_U8   macAddr[NV_FIELD_MAC_ADDR_SIZE];
         { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },                         // tANI_U8   macAddr[NV_FIELD_MAC_ADDR_SIZE];
         { "\0" },
+<<<<<<< HEAD
         0,                                                              // tANI_U8   0 : Internal coupler, 1 : External coupler
         0                                                               // Reserved Byte to make alignment
+=======
+        0,                                                              // tANI_U8   couplerType;
+        WLAN_NV_VERSION,                                                // tANI_U8   nvVersion;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }, //fields
 
     {
         // NV_TABLE_RATE_POWER_SETTINGS
         {
+<<<<<<< HEAD
             // typedef tANI_S8 tPowerdBm;
             //typedef tPowerdBm tRateGroupPwr[NUM_HAL_PHY_RATES];
             //tRateGroupPwr       pwrOptimum[NUM_RF_SUBBANDS];
             {
                     //802.11b Rates
+=======
+            // typedef tANI_S16 tPowerdBm;
+            //typedef tPowerdBm tRateGroupPwr[NUM_HAL_PHY_RATES];
+            //tRateGroupPwr       pwrOptimum[NUM_RF_SUBBANDS];
+            //2.4G
+            {
+                //802.11b Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1900},    // HAL_PHY_RATE_11B_LONG_1_MBPS,
                 {1900},    // HAL_PHY_RATE_11B_LONG_2_MBPS,
                 {1900},    // HAL_PHY_RATE_11B_LONG_5_5_MBPS,
@@ -3854,7 +3926,11 @@ const sHalNv nvDefaults =
                 {1550},    // HAL_PHY_RATE_11A_DUP_36_MBPS,
                 {1550},    // HAL_PHY_RATE_11A_DUP_48_MBPS,
                 {1500},    // HAL_PHY_RATE_11A_DUP_54_MBPS,
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //MCS Index #0-7(20/40MHz)
                 {1700},    // HAL_PHY_RATE_MCS_1NSS_6_5_MBPS,
                 {1700},    // HAL_PHY_RATE_MCS_1NSS_13_MBPS,
@@ -3889,7 +3965,12 @@ const sHalNv nvDefaults =
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_90_MBPS,
                 {1500},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS,
                 {1400},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS,
+<<<<<<< HEAD
                 {1350},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS,
+=======
+                {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS,
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
                 //11AC rates
                //11A duplicate 80MHz Rates
@@ -3912,6 +3993,12 @@ const sHalNv nvDefaults =
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+<<<<<<< HEAD
+=======
+#ifdef WCN_PRONTO
+                {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_7_2_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_14_4_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_21_6_MBPS,
@@ -3921,7 +4008,13 @@ const sHalNv nvDefaults =
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_72_2_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
+<<<<<<< HEAD
 
+=======
+#ifdef WCN_PRONTO
+                {0000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                //11ac 40MHZ NG, SG
                 {0000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS,
@@ -3945,7 +4038,10 @@ const sHalNv nvDefaults =
                 {0000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                //11ac 80MHZ NG, SG
                 {0000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_29_3_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
@@ -3967,10 +4063,17 @@ const sHalNv nvDefaults =
                 {0000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
                 {0000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
+<<<<<<< HEAD
 #endif //WLAN_FEATURE_11AC
                 },  //    RF_SUBBAND_2_4_GHZ
 
                 {
+=======
+#endif
+            },  //    RF_SUBBAND_2_4_GHZ
+            // 5G Low
+            {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //802.11b Rates
                 {0},    // HAL_PHY_RATE_11B_LONG_1_MBPS,
                 {0},    // HAL_PHY_RATE_11B_LONG_2_MBPS,
@@ -3980,7 +4083,11 @@ const sHalNv nvDefaults =
                 {0},    // HAL_PHY_RATE_11B_SHORT_5_5_MBPS,
                 {0},    // HAL_PHY_RATE_11B_SHORT_11_MBPS,
 
+<<<<<<< HEAD
                 //11A 20MHz Rates
+=======
+                ///11A 20MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_12_MBPS,
@@ -3990,7 +4097,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_54_MBPS,
 
+<<<<<<< HEAD
                 //DUP 11A 40MHz Rates
+=======
+                ///DUP 11A 40MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_DUP_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_12_MBPS,
@@ -4000,7 +4111,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_DUP_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_DUP_54_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #0-7(20/40MHz)
+=======
+                ///MCS Index #0-7(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_6_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_13_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_19_5_MBPS,
@@ -4018,7 +4133,11 @@ const sHalNv nvDefaults =
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_65_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_72_2_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #8-15(20/40MHz)
+=======
+                ///MCS Index #8-15(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_13_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_27_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_CB_40_5_MBPS,
@@ -4035,9 +4154,16 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS,
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS,
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC
                 //11AC rates
                //11A duplicate 80MHz Rates
+=======
+
+#ifdef WLAN_FEATUURE_11AC
+                ///11AC rates
+               ///11A duplicate 80MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1700},    // HAL_PHY_RATE_11AC_DUP_6_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_9_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_12_MBPS,
@@ -4047,16 +4173,30 @@ const sHalNv nvDefaults =
                 {1550},    // HAL_PHY_RATE_11AC_DUP_48_MBPS,
                 {1500},    // HAL_PHY_RATE_11AC_DUP_54_MBPS,
 
+<<<<<<< HEAD
                //11ac 20MHZ NG, SG
+=======
+               ///11ac 20MHZ NG, SG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_6_5_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_13_MBPS,
                 {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_19_5_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_26_MBPS,
                 {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_39_MBPS,
+<<<<<<< HEAD
                 {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+=======
+                {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
+                {1000,    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_7_2_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_14_4_MBPS,
                 {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_21_6_MBPS,
@@ -4065,9 +4205,16 @@ const sHalNv nvDefaults =
                 {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_57_7_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_72_2_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
 
 
+=======
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                //11ac 40MHZ NG, SG
                 {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_27_MBPS,
@@ -4077,18 +4224,32 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_108_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_121_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_135_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
                 {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
+                {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_90_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_120_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_135_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_150_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
                //11ac 80MHZ NG, SG
@@ -4100,8 +4261,13 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_234_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_263_3_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_292_5_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_32_5_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_97_5_MBPS,
@@ -4110,6 +4276,7 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_260_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_292_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
 #endif //WLAN_FEATURE_11AC
@@ -4117,6 +4284,14 @@ const sHalNv nvDefaults =
 
                 // 5G Mid
                 {
+=======
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
+#endif
+            },  //    RF_SUBBAND_5_LOW_GHZ
+            // 5G Mid
+            {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //802.11b Rates
                 {0},    // HAL_PHY_RATE_11B_LONG_1_MBPS,
                 {0},    // HAL_PHY_RATE_11B_LONG_2_MBPS,
@@ -4126,7 +4301,11 @@ const sHalNv nvDefaults =
                 {0},    // HAL_PHY_RATE_11B_SHORT_5_5_MBPS,
                 {0},    // HAL_PHY_RATE_11B_SHORT_11_MBPS,
 
+<<<<<<< HEAD
                 //11A 20MHz Rates
+=======
+                ///11A 20MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_12_MBPS,
@@ -4136,7 +4315,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_54_MBPS,
 
+<<<<<<< HEAD
                 //DUP 11A 40MHz Rates
+=======
+                ///DU P 11A 40MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_DUP_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_12_MBPS,
@@ -4146,7 +4329,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_DUP_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_DUP_54_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #0-7(20/40MHz)
+=======
+                ///MCSS Index #0-7(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_6_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_13_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_19_5_MBPS,
@@ -4164,7 +4351,11 @@ const sHalNv nvDefaults =
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_65_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_72_2_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #8-15(20/40MHz)
+=======
+                ///MCSS Index #8-15(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_13_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_27_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_CB_40_5_MBPS,
@@ -4181,9 +4372,16 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS,
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS,
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC
                 //11AC rates
                //11A duplicate 80MHz Rates
+=======
+
+#ifdef WLAN_FEATUURE_111AC
+                ///11CAC rates
+               ///11Ad duplicate 80MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1700},    // HAL_PHY_RATE_11AC_DUP_6_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_9_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_12_MBPS,
@@ -4193,16 +4391,30 @@ const sHalNv nvDefaults =
                 {1550},    // HAL_PHY_RATE_11AC_DUP_48_MBPS,
                 {1500},    // HAL_PHY_RATE_11AC_DUP_54_MBPS,
 
+<<<<<<< HEAD
                //11ac 20MHZ NG, SG
+=======
+               ///11a c 20MHZ NG, SG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_6_5_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_13_MBPS,
                 {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_19_5_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_26_MBPS,
                 {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_39_MBPS,
+<<<<<<< HEAD
                 {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+=======
+                {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_7_2_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_14_4_MBPS,
                 {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_21_6_MBPS,
@@ -4211,9 +4423,16 @@ const sHalNv nvDefaults =
                 {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_57_7_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_72_2_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
 
 
+=======
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                //11ac 40MHZ NG, SG
                 {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_27_MBPS,
@@ -4223,21 +4442,38 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_108_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_121_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_135_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
                 {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
+                {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_90_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_120_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_135_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_150_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
 
 
                //11ac 80MHZ NG, SG
+=======
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
+
+
+               ///11a c 80MHZ NG, SG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_29_3_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_87_8_MBPS,
@@ -4246,8 +4482,13 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_234_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_263_3_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_292_5_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_32_5_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_97_5_MBPS,
@@ -4256,12 +4497,21 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_260_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_292_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
 #endif //WLAN_FEATURE_11AC
                 },  //    //     RF_SUBBAND_5_MID_GHZ
                 // 5G High
                 {
+=======
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
+#endif
+            },  //    //     RF_SUBBAND_5_MID_GHZ
+            // 5G High
+            {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //802.11b Rates
                 {0},    // HAL_PHY_RATE_11B_LONG_1_MBPS,
                 {0},    // HAL_PHY_RATE_11B_LONG_2_MBPS,
@@ -4271,7 +4521,11 @@ const sHalNv nvDefaults =
                 {0},    // HAL_PHY_RATE_11B_SHORT_5_5_MBPS,
                 {0},    // HAL_PHY_RATE_11B_SHORT_11_MBPS,
 
+<<<<<<< HEAD
                 //11A 20MHz Rates
+=======
+                ///11A 20MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_12_MBPS,
@@ -4281,7 +4535,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_54_MBPS,
 
+<<<<<<< HEAD
                 //DUP 11A 40MHz Rates
+=======
+                ///DU P 11A 40MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_DUP_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_12_MBPS,
@@ -4291,7 +4549,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_DUP_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_DUP_54_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #0-7(20/40MHz)
+=======
+                ///MCSS Index #0-7(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_6_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_13_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_19_5_MBPS,
@@ -4309,7 +4571,11 @@ const sHalNv nvDefaults =
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_65_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_72_2_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #8-15(20/40MHz)
+=======
+                ///MCSS Index #8-15(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_13_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_27_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_CB_40_5_MBPS,
@@ -4326,9 +4592,16 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS,
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS,
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC
                 //11AC rates
                //11A duplicate 80MHz Rates
+=======
+
+#ifdef WLAN_FEATUURE_11AC
+                ///11CAC rates
+               ///11Ad duplicate 80MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1700},    // HAL_PHY_RATE_11AC_DUP_6_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_9_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_12_MBPS,
@@ -4338,16 +4611,30 @@ const sHalNv nvDefaults =
                 {1550},    // HAL_PHY_RATE_11AC_DUP_48_MBPS,
                 {1500},    // HAL_PHY_RATE_11AC_DUP_54_MBPS,
 
+<<<<<<< HEAD
                //11ac 20MHZ NG, SG
+=======
+               ///11a c 20MHZ NG, SG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_6_5_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_13_MBPS,
                 {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_19_5_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_26_MBPS,
                 {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_39_MBPS,
+<<<<<<< HEAD
                 {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+=======
+                {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_7_2_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_14_4_MBPS,
                 {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_21_6_MBPS,
@@ -4356,9 +4643,16 @@ const sHalNv nvDefaults =
                 {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_57_7_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_72_2_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
 
 
+=======
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                //11ac 40MHZ NG, SG
                 {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_27_MBPS,
@@ -4368,21 +4662,38 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_108_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_121_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_135_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
                 {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
                 {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
                 {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
+                {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_90_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_120_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_135_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_150_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
 
 
                //11ac 80MHZ NG, SG
+=======
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
+
+
+               ///11a c 80MHZ NG, SG
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_29_3_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_87_8_MBPS,
@@ -4391,8 +4702,13 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_234_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_263_3_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_292_5_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+=======
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_32_5_MBPS,
                 {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_65_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_97_5_MBPS,
@@ -4401,6 +4717,7 @@ const sHalNv nvDefaults =
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_260_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_292_5_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,
+<<<<<<< HEAD
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
                 {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
 #endif //WLAN_FEATURE_11AC
@@ -4408,6 +4725,15 @@ const sHalNv nvDefaults =
                 // 4.9G
 
                 {
+=======
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
+#endif
+            },  //    RF_SUBBAND_5_HIGH_GHZ,
+            // 4.9G
+
+            {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //802.11b Rates
                 {0},    // HAL_PHY_RATE_11B_LONG_1_MBPS,
                 {0},    // HAL_PHY_RATE_11B_LONG_2_MBPS,
@@ -4417,7 +4743,11 @@ const sHalNv nvDefaults =
                 {0},    // HAL_PHY_RATE_11B_SHORT_5_5_MBPS,
                 {0},    // HAL_PHY_RATE_11B_SHORT_11_MBPS,
 
+<<<<<<< HEAD
                 //11A 20MHz Rates
+=======
+                ///11A 20MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_12_MBPS,
@@ -4427,7 +4757,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_54_MBPS,
 
+<<<<<<< HEAD
                 //DUP 11A 40MHz Rates
+=======
+                ///DU P 11A 40MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_11A_DUP_6_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_9_MBPS,
                 {1600},    // HAL_PHY_RATE_11A_DUP_12_MBPS,
@@ -4437,7 +4771,11 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_11A_DUP_48_MBPS,
                 {1400},    // HAL_PHY_RATE_11A_DUP_54_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #0-7(20/40MHz)
+=======
+                ///MCSS Index #0-7(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_6_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_13_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_19_5_MBPS,
@@ -4455,7 +4793,11 @@ const sHalNv nvDefaults =
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_65_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_72_2_MBPS,
 
+<<<<<<< HEAD
                 //MCS Index #8-15(20/40MHz)
+=======
+                ///MCSS Index #8-15(20/40MHz)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_13_5_MBPS,
                 {1600},    // HAL_PHY_RATE_MCS_1NSS_CB_27_MBPS,
                 {1550},    // HAL_PHY_RATE_MCS_1NSS_CB_40_5_MBPS,
@@ -4472,9 +4814,16 @@ const sHalNv nvDefaults =
                 {1400},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS,
                 {1300},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS,
                 {1200},    // HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS,
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_11AC
                 //11AC rates
                //11A duplicate 80MHz Rates
+=======
+
+#ifdef WLAN_FEATUURE_11AC
+                ///11CAC rates
+               ///11Ad duplicate 80MHz Rates
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {1700},    // HAL_PHY_RATE_11AC_DUP_6_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_9_MBPS,
                 {1700},    // HAL_PHY_RATE_11AC_DUP_12_MBPS,
@@ -4482,6 +4831,7 @@ const sHalNv nvDefaults =
                 {1600},    // HAL_PHY_RATE_11AC_DUP_24_MBPS,
                 {1550},    // HAL_PHY_RATE_11AC_DUP_36_MBPS,
                 {1550},    // HAL_PHY_RATE_11AC_DUP_48_MBPS,
+<<<<<<< HEAD
                 {1500},    // HAL_PHY_RATE_11AC_DUP_54_MBPS,
 
                //11ac 20MHZ NG, SG
@@ -4551,6 +4901,81 @@ const sHalNv nvDefaults =
                 {0000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
 #endif //WLAN_FEATURE_11AC
                 },  //    RF_SUBBAND_4_9_GHZ
+=======
+                {1500,,    // HAL_PHY_RATE_11AC_DUP_54_MBPS,
+
+               ///11a c 20MHZ NG, SG
+                {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_6_5_MBPS,
+                {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_13_MBPS,
+                {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_19_5_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_26_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_39_MBPS,
+                {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_52_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_65_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_NGI_78_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,
+#endif
+                {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_7_2_MBPS,
+                {1400},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_14_4_MBPS,
+                {1350},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_21_6_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_28_8_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_43_3_MBPS,
+                {1200},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_57_7_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_65_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_72_2_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_CB_SGI_86_6_MBPS,
+#ifdef WCN_PRONTO
+                { 800},     // HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,
+#endif
+               //11ac 40MHZ NG, SG
+                {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_27_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_40_5_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_54_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_81_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_108_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_121_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_135_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
+                {1400},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
+                {1250},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_90_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_120_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_135_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_150_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
+
+
+               ///11a c 80MHZ NG, SG
+                {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_29_3_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_87_8_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_117_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_175_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_234_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_263_3_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_292_5_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
+                {1300},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_32_5_MBPS,
+                {1100},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_65_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_97_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_130_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_195_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_260_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_292_5_MBPS,
+                {1000},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,
+                { 900},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
+                { 800},    // HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
+#endif
+            },  //    RF_SUBBAND_4_9_GHZ
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         },
 
         // NV_TABLE_REGULATORY_DOMAINS
@@ -8919,6 +9344,7 @@ const sHalNv nvDefaults =
 
         }, //NV_TABLE_CAL_MEMORY
 #endif
+<<<<<<< HEAD
         //NV_TABLE_CAL_STATUS
         {
             0xFF,        // tANI_U8     overall;
@@ -8957,6 +9383,41 @@ const sHalNv nvDefaults =
             }        // tANI_U8     unused[9];
         },
 
+=======
+        //NV_TABLE_FW_CONFIG
+        {
+            0,   //skuID
+            0,   //tpcMode2G
+            0,   //tpcMode5G
+            0,   //reserved1
+
+            0,   //xPA2G
+            0,   //xPA5G;
+            0,   //paPolarityTx;
+            0,   //paPolarityRx;
+                
+            0,   //xLNA2G;
+            0,   //xLNA5G;
+            0,   //xCoupler2G;
+            0,   //xCoupler5G;
+                
+            0,   //xPdet2G;
+            0,   //xPdet5G;
+            0,   //enableDPD2G;
+            1,   //enableDPD5G;
+                
+            1,   //pdadcSelect2G;
+            1,   //pdadcSelect5GLow;
+            1,   //pdadcSelect5GMid;
+            1,   //pdadcSelect5GHigh;
+
+            0,   //reserved2
+            0,   //reserved3
+            0,   //reserved4
+        },
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //NV_TABLE_RSSI_CHANNEL_OFFSETS
         {
             //PHY_RX_CHAIN_0
@@ -8977,6 +9438,7 @@ const sHalNv nvDefaults =
             }
         },
 
+<<<<<<< HEAD
         //NV_TABLE_RF_CAL_VALUES
         {
             //typedef struct
@@ -9044,6 +9506,36 @@ const sHalNv nvDefaults =
             }
         },
 
+=======
+        //NV_TABLE_HW_CAL_VALUES
+        {
+            0x0,             //validBmap
+            {
+                1400,        //psSlpTimeOvrHd2G;
+                1400,        //psSlpTimeOvrHd5G;
+                
+                1600,        //psSlpTimeOvrHdxLNA5G;
+                0,           //nv_TxBBFSel9MHz 
+                0,           //hwParam1
+                0,           //hwParam2
+
+                0x1B,        //custom_tcxo_reg8
+                0xFF,        //custom_tcxo_reg9
+
+                0,           //hwParam3;
+                0,           //hwParam4;
+                0,           //hwParam5;
+                0,           //hwParam6;
+                0,           //hwParam7;
+                0,           //hwParam8;
+                0,           //hwParam9;
+                0,           //hwParam10;
+                0,           //hwParam11;
+            }
+        },
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //NV_TABLE_ANTENNA_PATH_LOSS
         {
             280,  // RF_CHAN_1
@@ -9150,6 +9642,9 @@ const sHalNv nvDefaults =
 };
 
 #endif
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 

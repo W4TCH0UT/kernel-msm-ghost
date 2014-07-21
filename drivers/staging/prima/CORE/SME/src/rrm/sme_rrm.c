@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -19,8 +42,11 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+<<<<<<< HEAD
 /*
  * */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**=========================================================================
   
   \file  sme_Rrm.c
@@ -39,9 +65,12 @@
 /*--------------------------------------------------------------------------
   Include Files
   ------------------------------------------------------------------------*/
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halInternal.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "aniGlobal.h"
 #include "smeInside.h"
 #include "sme_Api.h"
@@ -130,7 +159,11 @@ void rrmIndicateNeighborReportResult(tpAniSirGlobal pMac, VOS_STATUS vosStatus)
     /* Stop the timer if it is already running. The timer should be running only in the SUCCESS case. */
     if (VOS_TIMER_STATE_RUNNING == vos_timer_getCurrentState(&pMac->rrm.rrmSmeContext.neighborReqControlInfo.neighborRspWaitTimer))
     {
+<<<<<<< HEAD
         VOS_ASSERT(VOS_STATUS_SUCCESS == vosStatus);
+=======
+        smsLog( pMac, LOG1, FL("No entry in neighbor report cache"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_timer_stop(&pMac->rrm.rrmSmeContext.neighborReqControlInfo.neighborRspWaitTimer);
     }
     callback = pMac->rrm.rrmSmeContext.neighborReqControlInfo.neighborRspCallbackInfo.neighborRspCallback;
@@ -183,12 +216,20 @@ static eHalStatus sme_RrmSendBeaconReportXmitInd( tpAniSirGlobal pMac, tCsrScanR
 
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Beacon report xmit Ind to PE\n");
+=======
+   smsLog( pMac, LOGE, "Beacon report xmit Ind to PE");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    if( NULL == pResultArr && !measurementDone )
    {
+<<<<<<< HEAD
       smsLog( pMac, LOGE, "Beacon report xmit Ind to PE Failed\n");
+=======
+      smsLog( pMac, LOGE, "Beacon report xmit Ind to PE Failed");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -206,7 +247,11 @@ static eHalStatus sme_RrmSendBeaconReportXmitInd( tpAniSirGlobal pMac, tCsrScanR
        }
        vos_mem_zero( pBeaconRep, length );
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
        smsLog( pMac, LOGE, FL("Allocated memory for pBeaconRep\n"));
+=======
+       smsLog( pMac, LOGE, FL("Allocated memory for pBeaconRep"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
        pBeaconRep->messageType = eWNI_SME_BEACON_REPORT_RESP_XMIT_IND;
        pBeaconRep->length = length;
@@ -221,6 +266,11 @@ static eHalStatus sme_RrmSendBeaconReportXmitInd( tpAniSirGlobal pMac, tCsrScanR
            pBssDesc = &pCurResult->BssDescriptor;
            ie_len = GET_IE_LEN_IN_BSS( pBssDesc->length );
            pBeaconRep->pBssDescription[msgCounter] = vos_mem_malloc ( ie_len+sizeof(tSirBssDescription) );
+<<<<<<< HEAD
+=======
+           if (NULL == pBeaconRep->pBssDescription[msgCounter])
+               break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            vos_mem_copy( pBeaconRep->pBssDescription[msgCounter], pBssDesc, sizeof(tSirBssDescription) );
            vos_mem_copy( &pBeaconRep->pBssDescription[msgCounter]->ieFields[0], pBssDesc->ieFields, ie_len  );
 
@@ -244,9 +294,16 @@ static eHalStatus sme_RrmSendBeaconReportXmitInd( tpAniSirGlobal pMac, tCsrScanR
 
        pBeaconRep->fMeasureDone = (pCurResult)?false:measurementDone;
 
+<<<<<<< HEAD
        status = palSendMBMessage(pMac->hHdd, pBeaconRep);
 
        smsLog( pMac, LOGW, "SME Sent BcnRepXmit to PE numBss %d\n", pBeaconRep->numBssDesc);
+=======
+       smsLog(pMac, LOGW, "SME Sending BcnRepXmit to PE numBss %d",
+              pBeaconRep->numBssDesc);
+
+       status = palSendMBMessage(pMac->hHdd, pBeaconRep);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    } while (pCurResult);
 
@@ -279,7 +336,11 @@ static eHalStatus sme_RrmSendScanResult( tpAniSirGlobal pMac, tANI_U8 num_chan, 
    tANI_U32 sessionId;
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Send scan result to PE \n");
+=======
+   smsLog( pMac, LOGE, "Send scan result to PE ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    vos_mem_zero( &filter, sizeof(filter) );
@@ -297,7 +358,11 @@ static eHalStatus sme_RrmSendScanResult( tpAniSirGlobal pMac, tANI_U8 num_chan, 
          return eHAL_STATUS_FAILURE;
       }
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Allocated memory for SSIDList\n"));
+=======
+      smsLog( pMac, LOGE, FL("Allocated memory for SSIDList"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       vos_mem_zero( filter.SSIDs.SSIDList, sizeof(tCsrSSIDInfo) );
 
@@ -323,7 +388,11 @@ static eHalStatus sme_RrmSendScanResult( tpAniSirGlobal pMac, tANI_U8 num_chan, 
       //Free the memory allocated for SSIDList.
       vos_mem_free( filter.SSIDs.SSIDList );
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Free memory for SSIDList\n") );
+=======
+      smsLog( pMac, LOGE, FL("Free memory for SSIDList") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    }
 
@@ -395,7 +464,11 @@ static eHalStatus sme_RrmScanRequestCallback(tHalHandle halHandle, void *pContex
 
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Scan Request callback \n");
+=======
+   smsLog( pMac, LOGE, "Scan Request callback ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    //if any more channels are pending, start a timer of a random value within randomization interval.
    //
@@ -411,7 +484,11 @@ static eHalStatus sme_RrmScanRequestCallback(tHalHandle halHandle, void *pContex
       interval = time_tick % (pSmeRrmContext->randnIntvl - 10 + 1) + 10;
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, "Set timer for interval %d \n", interval);
+=======
+      smsLog( pMac, LOGE, "Set timer for interval %d ", interval);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       vos_timer_start( &pSmeRrmContext->IterMeasTimer, interval );
 
@@ -422,7 +499,11 @@ static eHalStatus sme_RrmScanRequestCallback(tHalHandle halHandle, void *pContex
       sme_RrmSendScanResult( pMac, 1, &pSmeRrmContext->channelList.ChannelList[pSmeRrmContext->currentIndex], true );
       vos_mem_free( pSmeRrmContext->channelList.ChannelList );
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Free memory for ChannelList\n") );
+=======
+      smsLog( pMac, LOGE, FL("Free memory for ChannelList") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    }
 
@@ -450,7 +531,11 @@ eHalStatus sme_RrmIssueScanReq( tpAniSirGlobal pMac )
    tANI_U32 sessionId;
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Issue scan request \n" );
+=======
+   smsLog( pMac, LOGE, "Issue scan request " );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    vos_mem_zero( &scanRequest, sizeof(scanRequest));
@@ -472,7 +557,11 @@ eHalStatus sme_RrmIssueScanReq( tpAniSirGlobal pMac )
          return eHAL_STATUS_FAILURE;
       }
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Allocated memory for pSSIDList\n"));
+=======
+      smsLog( pMac, LOGE, FL("Allocated memory for pSSIDList"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       vos_mem_zero( scanRequest.SSIDs.SSIDList, sizeof(tCsrSSIDInfo) );
       scanRequest.SSIDs.SSIDList->SSID.length = pSmeRrmContext->ssId.length;
@@ -483,7 +572,11 @@ eHalStatus sme_RrmIssueScanReq( tpAniSirGlobal pMac )
    scanRequest.minChnTime = 0; //pSmeRrmContext->duration; Dont use min timeout.
    scanRequest.maxChnTime = pSmeRrmContext->duration;
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "For Duration %d \n", pSmeRrmContext->duration );
+=======
+   smsLog( pMac, LOGE, "For Duration %d ", pSmeRrmContext->duration );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    /* set BSSType to default type */
@@ -494,7 +587,11 @@ eHalStatus sme_RrmIssueScanReq( tpAniSirGlobal pMac )
 
    scanRequest.ChannelInfo.ChannelList = &pSmeRrmContext->channelList.ChannelList[pSmeRrmContext->currentIndex];
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "On channel %d \n", pSmeRrmContext->channelList.ChannelList[pSmeRrmContext->currentIndex] );
+=======
+   smsLog( pMac, LOGE, "On channel %d ", pSmeRrmContext->channelList.ChannelList[pSmeRrmContext->currentIndex] );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    /* set requestType to full scan */
@@ -507,7 +604,11 @@ eHalStatus sme_RrmIssueScanReq( tpAniSirGlobal pMac )
    {
       vos_mem_free(scanRequest.SSIDs.SSIDList);
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Free memory for SSIDList\n"));
+=======
+      smsLog( pMac, LOGE, FL("Free memory for SSIDList"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    }
 
@@ -534,7 +635,11 @@ void sme_RrmProcessBeaconReportReqInd(tpAniSirGlobal pMac, void *pMsgBuf)
    tANI_U32 len,i;  
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Received Beacon report request ind Channel = %d\n", pBeaconReq->channelInfo.channelNum );
+=======
+   smsLog( pMac, LOGE, "Received Beacon report request ind Channel = %d", pBeaconReq->channelInfo.channelNum );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    //section 11.10.8.1 (IEEE Std 802.11k-2008) 
    //channel 0 and 255 has special meaning.
@@ -550,12 +655,20 @@ void sme_RrmProcessBeaconReportReqInd(tpAniSirGlobal pMac, void *pMsgBuf)
          return;
       }
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Allocated memory for ChannelList\n") );
+=======
+      smsLog( pMac, LOGE, FL("Allocated memory for ChannelList") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       csrGetCfgValidChannels( pMac, pSmeRrmContext->channelList.ChannelList, &len );
       pSmeRrmContext->channelList.numOfChannels = (tANI_U8)len;
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, "channel == 0 perfoming on all channels \n");
+=======
+      smsLog( pMac, LOGE, "channel == 0 performing on all channels");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
    }
    else
@@ -569,7 +682,11 @@ void sme_RrmProcessBeaconReportReqInd(tpAniSirGlobal pMac, void *pMsgBuf)
          len = 1;
 #if defined WLAN_VOWIFI_DEBUG
       else
+<<<<<<< HEAD
          smsLog( pMac, LOGE, "channel == 255  \n");
+=======
+         smsLog( pMac, LOGE, "channel == 255");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
       len += pBeaconReq->channelList.numChannels;
@@ -581,19 +698,31 @@ void sme_RrmProcessBeaconReportReqInd(tpAniSirGlobal pMac, void *pMsgBuf)
          return;
       }
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
       smsLog( pMac, LOGE, FL("Allocated memory for ChannelList\n") );
+=======
+      smsLog( pMac, LOGE, FL("Allocated memory for ChannelList") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
       if ( pBeaconReq->channelInfo.channelNum != 255 )
       {
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
          smsLog( pMac, LOGE, "channel == %d  \n", pBeaconReq->channelInfo.channelNum );
+=======
+         smsLog( pMac, LOGE, "channel == %d  ", pBeaconReq->channelInfo.channelNum );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
          if(csrRoamIsChannelValid( pMac, pBeaconReq->channelInfo.channelNum ))
             pSmeRrmContext->channelList.ChannelList[pSmeRrmContext->channelList.numOfChannels++] = pBeaconReq->channelInfo.channelNum;
 #if defined WLAN_VOWIFI_DEBUG
          else
+<<<<<<< HEAD
             smsLog( pMac, LOGE, "is Invalid channel, Ignoring this channel\n" ); 
+=======
+            smsLog( pMac, LOGE, "is Invalid channel, Ignoring this channel" );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       }
 
@@ -628,24 +757,40 @@ void sme_RrmProcessBeaconReportReqInd(tpAniSirGlobal pMac, void *pMsgBuf)
          pSmeRrmContext->randnIntvl = VOS_MAX( pBeaconReq->randomizationInterval, pSmeRrmContext->rrmConfig.maxRandnInterval );
          pSmeRrmContext->currentIndex = 0;
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
          smsLog( pMac, LOGE, "Send beacon report after scan \n" );
+=======
+         smsLog( pMac, LOGE, "Send beacon report after scan " );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
          sme_RrmIssueScanReq( pMac ); 
          break;
       case 2: //Table
          //Get the current scan results for the given channel and send it.
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
          smsLog( pMac, LOGE, "Send beacon report from table \n" );
+=======
+         smsLog( pMac, LOGE, "Send beacon report from table " );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
          sme_RrmSendScanResult( pMac, pSmeRrmContext->channelList.numOfChannels, pSmeRrmContext->channelList.ChannelList, true );
          vos_mem_free( pSmeRrmContext->channelList.ChannelList );
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
          smsLog( pMac, LOGE, FL("Free memory for ChannelList\n") );
+=======
+         smsLog( pMac, LOGE, FL("Free memory for ChannelList") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
          break;
       default:
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
          smsLog( pMac, LOGE, "Unknown beacon report request mode\n");
+=======
+         smsLog( pMac, LOGE, "Unknown beacon report request mode");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
          /* Indicate measurement completion to PE */
          /* If this is not done, pCurrentReq pointer will not be freed and 
@@ -678,11 +823,19 @@ VOS_STATUS sme_RrmNeighborReportRequest(tpAniSirGlobal pMac, tANI_U8 sessionId,
    tCsrRoamSession *pSession;
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, FL("Request to send Neighbor report request received \n"));
 #endif
    if( !CSR_IS_SESSION_VALID( pMac, sessionId ) )
    {  
       smsLog( pMac, LOGE, FL("Invalid session %d\n"), sessionId );
+=======
+   smsLog( pMac, LOGE, FL("Request to send Neighbor report request received "));
+#endif
+   if( !CSR_IS_SESSION_VALID( pMac, sessionId ) )
+   {  
+      smsLog( pMac, LOGE, FL("Invalid session %d"), sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_INVAL;
    }
    pSession = CSR_GET_SESSION( pMac, sessionId );
@@ -704,13 +857,21 @@ VOS_STATUS sme_RrmNeighborReportRequest(tpAniSirGlobal pMac, tANI_U8 sessionId,
    
    vos_mem_zero( pMsg, sizeof(tSirNeighborReportReqInd) );
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, FL(" Allocated memory for Neighbor request\n") );
+=======
+   smsLog( pMac, LOGE, FL(" Allocated memory for Neighbor request") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    rrmLLPurgeNeighborCache(pMac, &pMac->rrm.rrmSmeContext.neighborReportCache);
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, FL("Purged the neighbor cache before sending Neighbor request: Status = %d\n"), status );
+=======
+   smsLog( pMac, LOGE, FL("Purged the neighbor cache before sending Neighbor request: Status = %d"), status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
    pMsg->messageType = eWNI_SME_NEIGHBOR_REPORT_REQ_IND;
@@ -752,8 +913,21 @@ static void rrmCalculateNeighborAPRoamScore(tpAniSirGlobal pMac, tpRrmNeighborRe
     tpSirNeighborBssDescripton  pNeighborBssDesc;
     tANI_U32    roamScore = 0;
     
+<<<<<<< HEAD
     VOS_ASSERT(pNeighborReportDesc != NULL);
     VOS_ASSERT(pNeighborReportDesc->pNeighborBssDescription != NULL);
+=======
+    if (NULL == pNeighborReportDesc)
+    {
+        VOS_ASSERT(0);
+        return;
+    }
+    if (NULL == pNeighborReportDesc->pNeighborBssDescription)
+    {
+        VOS_ASSERT(0);
+        return;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pNeighborBssDesc = pNeighborReportDesc->pNeighborBssDescription;
 
@@ -817,12 +991,29 @@ void rrmStoreNeighborRptByRoamScore(tpAniSirGlobal pMac, tpRrmNeighborReportDesc
    tListElem       *pEntry;
    tRrmNeighborReportDesc  *pTempNeighborReportDesc;
 
+<<<<<<< HEAD
    VOS_ASSERT(pNeighborReportDesc != NULL);
    VOS_ASSERT(pNeighborReportDesc->pNeighborBssDescription != NULL);
 
    if (csrLLIsListEmpty(&pSmeRrmContext->neighborReportCache, LL_ACCESS_LOCK))
    {
        smsLog(pMac, LOGE, FL("Neighbor report cache is empty.. Adding a entry now\n"));
+=======
+   if (NULL == pNeighborReportDesc)
+   {
+       VOS_ASSERT(0);
+       return;
+   }
+   if (NULL == pNeighborReportDesc->pNeighborBssDescription)
+   {
+       VOS_ASSERT(0);
+       return;
+   }
+
+   if (csrLLIsListEmpty(&pSmeRrmContext->neighborReportCache, LL_ACCESS_LOCK))
+   {
+       smsLog(pMac, LOGE, FL("Neighbor report cache is empty.. Adding a entry now"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Neighbor list cache is empty. Insert this entry in the tail */
        csrLLInsertTail(&pSmeRrmContext->neighborReportCache, &pNeighborReportDesc->List, LL_ACCESS_LOCK);
        return;
@@ -885,7 +1076,11 @@ eHalStatus sme_RrmProcessNeighborReport(tpAniSirGlobal pMac, void *pMsgBuf)
        pNeighborReportDesc = vos_mem_malloc(sizeof(tRrmNeighborReportDesc));
        if (NULL == pNeighborReportDesc)
        {
+<<<<<<< HEAD
            smsLog( pMac, LOGE, "Failed to allocate memory for RRM Neighbor report desc\n");
+=======
+           smsLog( pMac, LOGE, "Failed to allocate memory for RRM Neighbor report desc");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            status = eHAL_STATUS_FAILED_ALLOC;
            goto end;
             
@@ -895,7 +1090,12 @@ eHalStatus sme_RrmProcessNeighborReport(tpAniSirGlobal pMac, void *pMsgBuf)
        pNeighborReportDesc->pNeighborBssDescription = vos_mem_malloc(sizeof(tSirNeighborBssDescription));
        if (NULL == pNeighborReportDesc->pNeighborBssDescription)
        {
+<<<<<<< HEAD
            smsLog( pMac, LOGE, "Failed to allocate memory for RRM Neighbor report BSS Description\n");
+=======
+           smsLog( pMac, LOGE, "Failed to allocate memory for RRM Neighbor report BSS Description");
+           vos_mem_free(pNeighborReportDesc);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            status = eHAL_STATUS_FAILED_ALLOC;
            goto end;
        }
@@ -904,7 +1104,11 @@ eHalStatus sme_RrmProcessNeighborReport(tpAniSirGlobal pMac, void *pMsgBuf)
                                                 sizeof(tSirNeighborBssDescription));
 
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
        smsLog( pMac, LOGE, "Received neighbor report with Neighbor BSSID: %02x:%02x:%02x:%02x:%02x:%02x \n",
+=======
+       smsLog( pMac, LOGE, "Received neighbor report with Neighbor BSSID: %02x:%02x:%02x:%02x:%02x:%02x ",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pNeighborRpt->sNeighborBssDescription[i].bssId[0], 
                     pNeighborRpt->sNeighborBssDescription[i].bssId[1], 
                     pNeighborRpt->sNeighborBssDescription[i].bssId[2], 
@@ -923,7 +1127,11 @@ eHalStatus sme_RrmProcessNeighborReport(tpAniSirGlobal pMac, void *pMsgBuf)
        }
        else
        {
+<<<<<<< HEAD
            smsLog(pMac, LOGE, FL("Roam score of BSSID  %02x:%02x:%02x:%02x:%02x:%02x is 0, Ignoring.."), 
+=======
+           smsLog(pMac, LOGE, FL("Roam score of BSSID  %02x:%02x:%02x:%02x:%02x:%02x is 0, Ignoring.."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pNeighborRpt->sNeighborBssDescription[i].bssId[0],
                         pNeighborRpt->sNeighborBssDescription[i].bssId[1],
                         pNeighborRpt->sNeighborBssDescription[i].bssId[2],
@@ -964,7 +1172,11 @@ eHalStatus sme_RrmMsgProcessor( tpAniSirGlobal pMac,  v_U16_t msg_type,
                                 void *pMsgBuf)
 {
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
+<<<<<<< HEAD
          FL(" Msg = %d for RRM measurement\n") , msg_type );
+=======
+         FL(" Msg = %d for RRM measurement") , msg_type );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    //switch on the msg type & make the state transition accordingly
    switch(msg_type)
@@ -980,7 +1192,11 @@ eHalStatus sme_RrmMsgProcessor( tpAniSirGlobal pMac,  v_U16_t msg_type,
       default:
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                FL("sme_RrmMsgProcessor:unknown msg type = %d\n"), msg_type);
+=======
+               FL("sme_RrmMsgProcessor:unknown msg type = %d"), msg_type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          break;
    }
@@ -1008,7 +1224,11 @@ void rrmIterMeasTimerHandle( v_PVOID_t userData )
 {
    tpAniSirGlobal pMac = (tpAniSirGlobal) userData;
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Randomization timer expired...send on next channel \n");
+=======
+   smsLog( pMac, LOGE, "Randomization timer expired...send on next channel ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     //Issue a scan req for next channel.
     sme_RrmIssueScanReq( pMac ); 
@@ -1032,7 +1252,11 @@ void rrmNeighborRspTimeoutHandler
 {
    tpAniSirGlobal pMac = (tpAniSirGlobal) userData;
 #if defined WLAN_VOWIFI_DEBUG
+<<<<<<< HEAD
    smsLog( pMac, LOGE, "Neighbor Response timed out \n");
+=======
+   smsLog( pMac, LOGE, "Neighbor Response timed out ");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     rrmIndicateNeighborReportResult(pMac, VOS_STATUS_E_FAILURE);
     return;
@@ -1235,7 +1459,11 @@ tRrmNeighborReportDesc* smeRrmGetFirstBssEntryFromNeighborCache( tpAniSirGlobal 
    if(!pEntry || !csrLLCount(&pSmeRrmContext->neighborReportCache))
    {
       //list empty
+<<<<<<< HEAD
       smsLog(pMac, LOGW, FL("List empty\n"));
+=======
+      smsLog(pMac, LOGW, FL("List empty"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return NULL;
    }
 
@@ -1267,7 +1495,11 @@ tRrmNeighborReportDesc* smeRrmGetNextBssEntryFromNeighborCache( tpAniSirGlobal p
    if(!pEntry)
    {
       //list empty
+<<<<<<< HEAD
       smsLog(pMac, LOGW, FL("List empty\n"));
+=======
+      smsLog(pMac, LOGW, FL("List empty"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return NULL;
    }
 
@@ -1283,7 +1515,11 @@ void csrCcxSendAdjacentApRepMsg(tpAniSirGlobal pMac, tCsrRoamSession *pSession)
    tANI_U16 length;
    tANI_U32 roamTS2;
    
+<<<<<<< HEAD
    smsLog( pMac, LOG1, "Adjacent AP Report Msg to PE\n");
+=======
+   smsLog( pMac, LOG1, "Adjacent AP Report Msg to PE");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    length = sizeof(tSirAdjacentApRepInd );
    pAdjRep = vos_mem_malloc ( length );

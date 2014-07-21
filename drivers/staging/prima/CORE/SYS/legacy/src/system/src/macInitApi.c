@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -33,6 +56,7 @@
  *
  */
 /* Standard include files */
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 
 /* Application Specific include files */
@@ -46,6 +70,8 @@
 //#ifdef ANI_OS_TYPE_LINUX
 #include "halCommonApi.h"   // halCleanup
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "cfgApi.h"         // cfgCleanup
 #include "limApi.h"         // limCleanup
 #include "sirTypes.h"
@@ -68,7 +94,10 @@ extern tSirRetStatus halProcessStartEvent(tpAniSirGlobal pMac);
 
 tSirRetStatus macReset(tpAniSirGlobal pMac, tANI_U32 rc);
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus macPreStart(tHalHandle hHal)
 {
    tSirRetStatus status = eSIR_SUCCESS;
@@ -154,6 +183,7 @@ tSirRetStatus macStart(tHalHandle hHal, void* pHalMacStartParams)
    return status;
 }
 
+<<<<<<< HEAD
 #else /* FEATURE_WLAN_INTEGRATED_SOC */
 tSirRetStatus macStart(tHalHandle hHal, void* pHalMacStartParams)
 {
@@ -240,6 +270,8 @@ tSirRetStatus macStart(tHalHandle hHal, void* pHalMacStartParams)
     return status;
 }
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /** -------------------------------------------------------------
 \fn macStop
@@ -254,9 +286,12 @@ tSirRetStatus macStop(tHalHandle hHal, tHalStopType stopType)
 {
     tANI_U8 i;
     tpAniSirGlobal pMac = (tpAniSirGlobal) hHal;
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     halStop(hHal, stopType);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     peStop(pMac);
     cfgCleanup( pMac );
     // need to free memory if not called in reset context.
@@ -293,7 +328,11 @@ tSirRetStatus macOpen(tHalHandle *pHalHandle, tHddHandle hHdd, tMacOpenParameter
         return eSIR_FAILURE;
 
     /*
+<<<<<<< HEAD
      * Make sure this adapter is not already opened. (Compare pAdaptor pointer in already
+=======
+     * Make sure this adapter is not already opened. (Compare pAdapter pointer in already
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      * allocated pMac structures.)
      * If it is opened just return pointer to previously allocated pMac pointer.
      * Or should this result in error?
@@ -309,6 +348,7 @@ tSirRetStatus macOpen(tHalHandle *pHalHandle, tHddHandle hHdd, tMacOpenParameter
     /** Store the Driver type in pMac Global.*/
     //pMac->gDriverType = pMacOpenParms->driverType;
 
+<<<<<<< HEAD
 #ifndef GEN6_ONWARDS
 #ifdef RTL8652
     {
@@ -329,6 +369,8 @@ tSirRetStatus macOpen(tHalHandle *pHalHandle, tHddHandle hHdd, tMacOpenParameter
     palZeroMemory(hHdd, pMac->hal.pHalDxe, sizeof(tAniHalDxe));
 #endif //GEN6_ONWARDS
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*
      * Set various global fields of pMac here
      * (Could be platform dependant as some variables in pMac are platform
@@ -342,12 +384,17 @@ tSirRetStatus macOpen(tHalHandle *pHalHandle, tHddHandle hHdd, tMacOpenParameter
         /* Call various PE (and other layer init here) */
         if( eSIR_SUCCESS != logInit(pMac))
            return eSIR_FAILURE;
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Call routine to initialize CFG data structures */
         if( eSIR_SUCCESS != cfgInit(pMac) )
             return eSIR_FAILURE;
 
         sysInitGlobals(pMac);
+<<<<<<< HEAD
 
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
         // This decides whether HW needs to translate the 802.3 frames
@@ -370,6 +417,10 @@ tSirRetStatus macOpen(tHalHandle *pHalHandle, tHddHandle hHdd, tMacOpenParameter
     if (eHAL_STATUS_SUCCESS != halOpen(pMac, pHalHandle, hHdd, pMacOpenParms))
         return eSIR_FAILURE;
 #endif
+=======
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return peOpen(pMac, pMacOpenParms);
 }
@@ -387,6 +438,7 @@ tSirRetStatus macClose(tHalHandle hHal)
 
     tpAniSirGlobal pMac = (tpAniSirGlobal) hHal;
 
+<<<<<<< HEAD
 #ifndef GEN6_ONWARDS
     if(pMac->hal.pHalDxe){
 #ifdef RTL8652
@@ -403,6 +455,9 @@ tSirRetStatus macClose(tHalHandle hHal)
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     halClose(hHal);
 #endif
+=======
+    peClose(pMac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Call routine to free-up all CFG data structures */
     cfgDeInit(pMac);
@@ -426,12 +481,16 @@ tSirRetStatus macClose(tHalHandle hHal)
 tSirRetStatus macReset(tpAniSirGlobal pMac, tANI_U32 rc)
 {
     tSirRetStatus status = eSIR_SUCCESS;
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     if(eHAL_STATUS_SUCCESS != halReset((tHalHandle)pMac, rc))
           status = eSIR_FAILURE;
 #else
     sysLog(pMac, LOGE, FL("*************No-op. Need to call WDA reset function \n"));
 #endif
+=======
+    sysLog(pMac, LOGE, FL("*************No-op. Need to call WDA reset function \n"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return status;
 }
 

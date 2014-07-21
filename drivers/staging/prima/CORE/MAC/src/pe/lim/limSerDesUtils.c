@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -68,14 +91,21 @@ limCheckRemainingLength(tpAniSirGlobal pMac, tANI_S16 len)
     else
     {
         limLog(pMac, LOGW,
+<<<<<<< HEAD
            FL("Received SME message with invalid rem length=%d\n"),
+=======
+           FL("Received SME message with invalid rem length=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            len);
         return eSIR_FAILURE;
     }
 } /*** end limCheckRemainingLength(pMac, ) ***/
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limGetBssDescription()
  *
@@ -219,7 +249,11 @@ limGetBssDescription( tpAniSirGlobal pMac, tSirBssDescription *pBssDescription,
     pBssDescription->mdie[2] = *pBuf++;
     len --;
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
+<<<<<<< HEAD
     PELOGE(limLog(pMac, LOG1, FL("mdie=%02x %02x %02x\n"), 
+=======
+    PELOGE(limLog(pMac, LOG1, FL("mdie=%02x %02x %02x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pBssDescription->mdie[0],
         pBssDescription->mdie[1],
         pBssDescription->mdie[2]);)
@@ -269,7 +303,11 @@ limGetBssDescription( tpAniSirGlobal pMac, tSirBssDescription *pBssDescription,
     else
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
                      FL("remaining bytes len %d is less than WSCIE_PROBE_RSP_LEN\n"),
+=======
+                     FL("remaining bytes len %d is less than WSCIE_PROBE_RSP_LEN"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      pBssDescription->WscIeLen);
         return eSIR_FAILURE;
     }
@@ -287,14 +325,21 @@ limGetBssDescription( tpAniSirGlobal pMac, tSirBssDescription *pBssDescription,
     else if (len < 0)
     {
         limLog(pMac, LOGE, 
+<<<<<<< HEAD
                      FL("remaining length is negative. len = %d, actual length = %d\n"), 
+=======
+                     FL("remaining length is negative. len = %d, actual length = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      len, pBssDescription->length);
         return eSIR_FAILURE;
     }    
 
     return eSIR_SUCCESS;
 } /*** end limGetBssDescription() ***/
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -384,6 +429,7 @@ limCopyBssDescription(tpAniSirGlobal pMac, tANI_U8 *pBuf, tSirBssDescription *pB
 
 
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 /**
  * limCopyLoad()
@@ -1187,6 +1233,8 @@ limCopyNeighborWdsList(tpAniSirGlobal pMac, tANI_U8 *pBuf)
 } /*** end limCopyNeighborWdsList() ***/
 #endif
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**
@@ -1238,7 +1286,11 @@ limGetKeysInfo(tpAniSirGlobal pMac, tpSirKeys pKeyInfo, tANI_U8 *pBuf)
     len  += pKeyInfo->keyLength;
 
    PELOG3(limLog(pMac, LOG3,
+<<<<<<< HEAD
            FL("Extracted keyId=%d, keyLength=%d, Key is :\n"),
+=======
+           FL("Extracted keyId=%d, keyLength=%d, Key is :"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pKeyInfo->keyId, pKeyInfo->keyLength);
     sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG3,
                pKeyInfo->key, pKeyInfo->keyLength);)
@@ -1276,9 +1328,12 @@ tSirRetStatus
 limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI_U8 *pBuf)
 {
     tANI_S16 len = 0;
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
     tANI_U8 i;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef PE_DEBUG_LOG1
     tANI_U8  *pTemp = pBuf;
@@ -1293,7 +1348,11 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     len = pStartBssReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_START_BSS_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_START_BSS_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -1354,7 +1413,11 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (*pBuf > SIR_MAC_MAX_SSID_LENGTH)
     {
         // SSID length is more than max allowed 32 bytes
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Invalid SSID length, len=%d\n"), *pBuf);)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Invalid SSID length, len=%d"), *pBuf);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1363,7 +1426,11 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (len < pStartBssReq->ssId.length)
     {
         limLog(pMac, LOGW,
+<<<<<<< HEAD
            FL("SSID length is longer that the remaining length. SSID len=%d, remaining len=%d\n"),
+=======
+           FL("SSID length is longer that the remaining length. SSID len=%d, remaining len=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pStartBssReq->ssId.length, len);
         return eSIR_FAILURE;
     }
@@ -1388,6 +1455,7 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
     tANI_U16 paramLen = 0;
 
@@ -1422,6 +1490,9 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Extract privacy setting
     pStartBssReq->privacy = *pBuf++;
     len--;
@@ -1483,13 +1554,27 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Extract bssPersona
     pStartBssReq->bssPersona = *pBuf++;
     len--;
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
+=======
+
+    // Extract txLdpcIniFeatureEnabled
+    pStartBssReq->txLdpcIniFeatureEnabled = *pBuf++;
+    len--;
+    if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
+        return eSIR_FAILURE;
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Extract rsnIe
     pStartBssReq->rsnIE.length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
@@ -1498,7 +1583,11 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (pStartBssReq->rsnIE.length > SIR_MAC_MAX_IE_LENGTH + 2)
     {
         limLog(pMac, LOGW,
+<<<<<<< HEAD
                FL("Invalid RSN IE length %d in SME_START_BSS_REQ\n"),
+=======
+               FL("Invalid RSN IE length %d in SME_START_BSS_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pStartBssReq->rsnIE.length);
         return eSIR_FAILURE;
     }
@@ -1525,7 +1614,11 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (pStartBssReq->operationalRateSet.numRates >
         SIR_MAC_MAX_NUMBER_OF_RATES)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGW, FL("Invalid numRates %d in SME_START_BSS_REQ\n"),
+=======
+        limLog(pMac, LOGW, FL("Invalid numRates %d in SME_START_BSS_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pStartBssReq->operationalRateSet.numRates);
         return eSIR_FAILURE;
     }
@@ -1546,6 +1639,7 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     {
         pStartBssReq->extendedRateSet.numRates = *pBuf++;
         len--;
+<<<<<<< HEAD
         palCopyMemory( pMac->hHdd, pStartBssReq->extendedRateSet.rate,
                        pBuf, pStartBssReq->extendedRateSet.numRates);
         pBuf += pStartBssReq->extendedRateSet.numRates;
@@ -1606,6 +1700,18 @@ limStartBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStartBssReq pStartBssReq, tANI
     if (len)
     {
         limLog(pMac, LOGW, FL("Extra bytes left in SME_START_BSS_REQ, len=%d\n"), len);
+=======
+        palCopyMemory( pMac->hHdd, pStartBssReq->extendedRateSet.rate,
+                       pBuf, pStartBssReq->extendedRateSet.numRates);
+        pBuf += pStartBssReq->extendedRateSet.numRates;
+        len  -= pStartBssReq->extendedRateSet.numRates;
+    }
+
+
+    if (len)
+    {
+        limLog(pMac, LOGW, FL("Extra bytes left in SME_START_BSS_REQ, len=%d"), len);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     return eSIR_SUCCESS;
@@ -1652,7 +1758,11 @@ limStopBssReqSerDes(tpAniSirGlobal pMac, tpSirSmeStopBssReq pStopBssReq, tANI_U8
     len = pStopBssReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_STOP_BSS_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_STOP_BSS_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -1727,7 +1837,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
 
     if (!pJoinReq || !pBuf)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("NULL ptr received\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("NULL ptr received"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1740,15 +1854,25 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     pBuf += sizeof(tANI_U16);
 
     if (pJoinReq->messageType == eWNI_SME_JOIN_REQ)
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG3, FL("SME_JOIN_REQ length %d bytes is:\n"), len);)
     else
         PELOG1(limLog(pMac, LOG3, FL("SME_REASSOC_REQ length %d bytes is:\n"), len);)
+=======
+        PELOG1(limLog(pMac, LOG3, FL("SME_JOIN_REQ length %d bytes is:"), len);)
+    else
+        PELOG1(limLog(pMac, LOG3, FL("SME_REASSOC_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG3, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("len too short %d\n"), len);)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("len too short %d"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1816,6 +1940,7 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     // Extract assocType
     pJoinReq->assocType = (tSirAssocType) limGetU32(pBuf);
@@ -1824,6 +1949,8 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Extract operationalRateSet
     pJoinReq->operationalRateSet.numRates= *pBuf++;
@@ -1861,7 +1988,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
              (pJoinReq->rsnIE.length != 2 + *(pBuf + 1)))
         {
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                    FL("Invalid RSN IE length %d in SME_JOIN_REQ\n"),
+=======
+                   FL("Invalid RSN IE length %d in SME_JOIN_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pJoinReq->rsnIE.length);
             return eSIR_FAILURE;
         }
@@ -1885,7 +2016,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
              (pJoinReq->cckmIE.length != (2 + *(pBuf + 1))))
         {
             limLog(pMac, LOGW,
+<<<<<<< HEAD
                    FL("Invalid CCKM IE length %d/%d in SME_JOIN/REASSOC_REQ\n"),
+=======
+                   FL("Invalid CCKM IE length %d/%d in SME_JOIN/REASSOC_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pJoinReq->cckmIE.length, 2 + *(pBuf + 1));
             return eSIR_FAILURE;
         }
@@ -1909,7 +2044,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
         if (pJoinReq->addIEScan.length > SIR_MAC_MAX_IE_LENGTH + 2)
         {
             limLog(pMac, LOGE,
+<<<<<<< HEAD
                    FL("Invalid addIE Scan length %d in SME_JOIN_REQ\n"),
+=======
+                   FL("Invalid addIE Scan length %d in SME_JOIN_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pJoinReq->addIEScan.length);
             return eSIR_FAILURE;
         }
@@ -1933,7 +2072,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
         if (pJoinReq->addIEAssoc.length > SIR_MAC_MAX_IE_LENGTH + 2)
         {
             limLog(pMac, LOGE,
+<<<<<<< HEAD
                    FL("Invalid addIE Assoc length %d in SME_JOIN_REQ\n"),
+=======
+                   FL("Invalid addIE Assoc length %d in SME_JOIN_REQ"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pJoinReq->addIEAssoc.length);
             return eSIR_FAILURE;
         }
@@ -1946,13 +2089,21 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
             return eSIR_FAILURE;
     }
 
+<<<<<<< HEAD
     pJoinReq->MCEncryptionType = limGetU32(pBuf);
+=======
+    pJoinReq->UCEncryptionType = limGetU32(pBuf);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pBuf += sizeof(tANI_U32);
     len -= sizeof(tANI_U32);
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;    
     
+<<<<<<< HEAD
     pJoinReq->UCEncryptionType = limGetU32(pBuf);
+=======
+    pJoinReq->MCEncryptionType = limGetU32(pBuf);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pBuf += sizeof(tANI_U32);
     len -= sizeof(tANI_U32);
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
@@ -1968,6 +2119,16 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
 #endif
 
 #ifdef FEATURE_WLAN_CCX
+<<<<<<< HEAD
+=======
+    //CCX version IE
+    pJoinReq->isCCXFeatureIniEnabled = (tAniBool)limGetU32(pBuf);
+    pBuf += sizeof(tAniBool);
+    len -= sizeof(tAniBool);
+    if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
+       return eSIR_FAILURE;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //isCCXconnection;
     pJoinReq->isCCXconnection = (tAniBool)limGetU32(pBuf);
     pBuf += sizeof(tAniBool);
@@ -2003,6 +2164,7 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
         return eSIR_FAILURE;    
 #endif
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
     // Extract BP Indicator
     pJoinReq->bpIndicator = (tAniBool) limGetU32(pBuf);
@@ -2031,6 +2193,30 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
            pJoinReq->assocType, pJoinReq->rsnIE.length, pJoinReq->bpIndicator,
            pJoinReq->bpType, pJoinReq->neighborBssList.bssList->rsnIE.length);)
 #endif
+=======
+    //txLdpcIniFeatureEnabled
+    pJoinReq->txLdpcIniFeatureEnabled= *pBuf++;
+    len--;
+    if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
+        return eSIR_FAILURE;
+
+    //txBFIniFeatureEnabled
+    pJoinReq->txBFIniFeatureEnabled= *pBuf++;
+    len--;
+    if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
+        return eSIR_FAILURE;
+
+    //txBFCsnValue
+    pJoinReq->txBFCsnValue= *pBuf++;
+    len--;
+    if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
+        return eSIR_FAILURE;
+
+    pJoinReq->isAmsduSupportInAMPDU= *pBuf++;
+    len--;
+    if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
+        return eSIR_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Extract Titan CB Neighbor BSS info
     pJoinReq->cbNeighbors.cbBssFoundPri = *pBuf;
@@ -2049,7 +2235,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     pJoinReq->powerCap.minTxPower = *pBuf++;
     pJoinReq->powerCap.maxTxPower = *pBuf++;
     len -=2;
+<<<<<<< HEAD
     limLog(pMac, LOG1, FL("Power Caps: Min power = %d, Max power = %d\n"), pJoinReq->powerCap.minTxPower, pJoinReq->powerCap.maxTxPower);
+=======
+    limLog(pMac, LOG1, FL("Power Caps: Min power = %d, Max power = %d"), pJoinReq->powerCap.minTxPower, pJoinReq->powerCap.maxTxPower);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pJoinReq->supportedChannels.numChnl = *pBuf++;
     len--;
@@ -2059,7 +2249,11 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     len-= pJoinReq->supportedChannels.numChnl;
 
     PELOG2(limLog(pMac, LOG2,
+<<<<<<< HEAD
             FL("spectrumInd ON: minPower %d, maxPower %d , numChnls %d\n"),
+=======
+            FL("spectrumInd ON: minPower %d, maxPower %d , numChnls %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pJoinReq->powerCap.minTxPower,
             pJoinReq->powerCap.maxTxPower,
             pJoinReq->supportedChannels.numChnl);)
@@ -2070,7 +2264,10 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == WLAN_STA)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //
     // NOTE - tSirBssDescription is now moved to the end
     // of tSirSmeJoinReq structure. This is to accomodate
@@ -2079,13 +2276,20 @@ limJoinReqSerDes(tpAniSirGlobal pMac, tpSirSmeJoinReq pJoinReq, tANI_U8 *pBuf)
     if (limGetBssDescription( pMac, &pJoinReq->bssDescription,
                              len, &lenUsed, pBuf) == eSIR_FAILURE)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("get bss description failed\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("get bss description failed"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     PELOG3(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG3, (tANI_U8 *) &(pJoinReq->bssDescription), pJoinReq->bssDescription.length + 2);)
     pBuf += lenUsed;
     len -= lenUsed;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return eSIR_SUCCESS;
 } /*** end limJoinReqSerDes() ***/
@@ -2114,9 +2318,12 @@ limAssocIndSerDes(tpAniSirGlobal pMac, tpLimMlmAssocInd pAssocInd, tANI_U8 *pBuf
     tANI_U8  *pTemp = pBuf;
 #endif
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U32 len = 0;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     mLen   = sizeof(tANI_U32);
     mLen   += sizeof(tANI_U8);
@@ -2163,6 +2370,7 @@ limAssocIndSerDes(tpAniSirGlobal pMac, tpLimMlmAssocInd pAssocInd, tANI_U8 *pBuf
     pBuf += pAssocInd->rsnIE.length;
     mLen += pAssocInd->rsnIE.length;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 
     limCopyU16(pBuf, pAssocInd->seqNum);
@@ -2213,6 +2421,8 @@ limAssocIndSerDes(tpAniSirGlobal pMac, tpLimMlmAssocInd pAssocInd, tANI_U8 *pBuf
     mLen += sizeof(tANI_U32);
 
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     limCopyU32(pBuf, pAssocInd->spectrumMgtIndicator);
     pBuf += sizeof(tAniBool);
@@ -2238,6 +2448,7 @@ limAssocIndSerDes(tpAniSirGlobal pMac, tpLimMlmAssocInd pAssocInd, tANI_U8 *pBuf
         pBuf += pAssocInd->supportedChannels.numChnl;
         mLen += pAssocInd->supportedChannels.numChnl;
     }
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limCopyU32(pBuf, pAssocInd->WmmStaInfoPresent);
     pBuf += sizeof(tANI_U32);
@@ -2247,6 +2458,15 @@ limAssocIndSerDes(tpAniSirGlobal pMac, tpLimMlmAssocInd pAssocInd, tANI_U8 *pBuf
     limCopyU16(pLen, mLen);
 
     PELOG1(limLog(pMac, LOG1, FL("Sending SME_ASSOC_IND length %d bytes:\n"), mLen);)
+=======
+    limCopyU32(pBuf, pAssocInd->WmmStaInfoPresent);
+    pBuf += sizeof(tANI_U32);
+    mLen += sizeof(tANI_U32);
+     // Fill in length of SME_ASSOC_IND message
+    limCopyU16(pLen, mLen);
+
+    PELOG1(limLog(pMac, LOG1, FL("Sending SME_ASSOC_IND length %d bytes:"), mLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, mLen);)
 } /*** end limAssocIndSerDes() ***/
 
@@ -2295,11 +2515,19 @@ limAssocCnfSerDes(tpAniSirGlobal pMac, tpSirSmeAssocCnf pAssocCnf, tANI_U8 *pBuf
 
     if (pAssocCnf->messageType == eWNI_SME_ASSOC_CNF)
     {
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("SME_ASSOC_CNF length %d bytes is:\n"), pAssocCnf->length);)
     }
     else
     {
         PELOG1(limLog(pMac, LOG1, FL("SME_REASSOC_CNF length %d bytes is:\n"), pAssocCnf->length);)
+=======
+        PELOG1(limLog(pMac, LOG1, FL("SME_ASSOC_CNF length %d bytes is:"), pAssocCnf->length);)
+    }
+    else
+    {
+        PELOG1(limLog(pMac, LOG1, FL("SME_REASSOC_CNF length %d bytes is:"), pAssocCnf->length);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, pAssocCnf->length);)
 
@@ -2350,6 +2578,7 @@ limAssocCnfSerDes(tpAniSirGlobal pMac, tpSirSmeAssocCnf pAssocCnf, tANI_U8 *pBuf
  *
  * @param  pDisassocCnf  Pointer to tSirSmeDisassocCnf being
  *                       extracted into
+<<<<<<< HEAD
  * @param  pBuf          Pointer to serialized buffer
  * @return retCode       Indicates whether message is successfully
  *                       de-serialized (eSIR_SUCCESS) or
@@ -2645,6 +2874,47 @@ limMeasurementIndSerDes(tpAniSirGlobal pMac, tANI_U8 *pBuf)
     sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG3, pTemp, len);)
 } /*** end limMeasurementIndSerDes() ***/
 #endif
+=======
+ * @param  pBuf          Pointer to serialized buffer
+ * @return retCode       Indicates whether message is successfully
+ *                       de-serialized (eSIR_SUCCESS) or
+ *                       not (eSIR_FAILURE)
+ */
+
+tSirRetStatus
+limDisassocCnfSerDes(tpAniSirGlobal pMac, tpSirSmeDisassocCnf pDisassocCnf, tANI_U8 *pBuf)
+{
+#ifdef  PE_DEBUG_LOG1
+    tANI_U8  *pTemp = pBuf;
+#endif
+
+    if (!pDisassocCnf || !pBuf)
+        return eSIR_FAILURE;
+
+    pDisassocCnf->messageType = limGetU16(pBuf);
+    pBuf += sizeof(tANI_U16);
+
+    pDisassocCnf->length = limGetU16(pBuf);
+    pBuf += sizeof(tANI_U16);
+
+    PELOG1(limLog(pMac, LOG1, FL("SME_DISASSOC_CNF length %d bytes is:"), pDisassocCnf->length);)
+    PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, pDisassocCnf->length);)
+
+    pDisassocCnf->statusCode = (tSirResultCodes) limGetU32(pBuf);
+    pBuf += sizeof(tSirResultCodes);
+
+    palCopyMemory( pMac->hHdd, pDisassocCnf->bssId, pBuf, sizeof(tSirMacAddr));
+    pBuf += sizeof(tSirMacAddr);
+
+    palCopyMemory( pMac->hHdd, pDisassocCnf->peerMacAddr, pBuf, sizeof(tSirMacAddr));
+
+
+    return eSIR_SUCCESS;
+} /*** end limDisassocCnfSerDes() ***/
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**---------------------------------------------------------------
@@ -2670,9 +2940,12 @@ limReassocIndSerDes(tpAniSirGlobal pMac, tpLimMlmReassocInd pReassocInd, tANI_U8
     tANI_U8  *pTemp = pBuf;
 #endif
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
     tANI_U32 len = 0;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     mLen   = sizeof(tANI_U32);
     pBuf  += sizeof(tANI_U16);
@@ -2733,6 +3006,7 @@ limReassocIndSerDes(tpAniSirGlobal pMac, tpLimMlmReassocInd pReassocInd, tANI_U8
     pBuf += pReassocInd->addIE.length;
     mLen += pReassocInd->addIE.length;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 
     limCopyU16(pBuf, pReassocInd->seqNum);
@@ -2781,6 +3055,8 @@ limReassocIndSerDes(tpAniSirGlobal pMac, tpLimMlmReassocInd pReassocInd, tANI_U8
     pBuf += sizeof(tANI_U32); // nwType
     mLen += sizeof(tANI_U32);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     limCopyU32(pBuf, pReassocInd->spectrumMgtIndicator);
     pBuf += sizeof(tAniBool);
@@ -2805,16 +3081,26 @@ limReassocIndSerDes(tpAniSirGlobal pMac, tpLimMlmReassocInd pReassocInd, tANI_U8
         pBuf += pReassocInd->supportedChannels.numChnl;
         mLen += pReassocInd->supportedChannels.numChnl;
     }
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limCopyU32(pBuf, pReassocInd->WmmStaInfoPresent);
     pBuf += sizeof(tANI_U32);
     mLen += sizeof(tANI_U32);
 #endif
+=======
+    limCopyU32(pBuf, pReassocInd->WmmStaInfoPresent);
+    pBuf += sizeof(tANI_U32);
+    mLen += sizeof(tANI_U32);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Fill in length of SME_REASSOC_IND message
     limCopyU16(pLen, mLen);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Sending SME_REASSOC_IND length %d bytes:\n"), mLen);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Sending SME_REASSOC_IND length %d bytes:"), mLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, mLen);)
 } /*** end limReassocIndSerDes() ***/
 
@@ -2872,7 +3158,11 @@ limAuthIndSerDes(tpAniSirGlobal pMac, tpLimMlmAuthInd pAuthInd, tANI_U8 *pBuf)
   
     limCopyU16(pLen, mLen);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Sending SME_AUTH_IND length %d bytes:\n"), mLen);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Sending SME_AUTH_IND length %d bytes:"), mLen);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, mLen);)
 } /*** end limAuthIndSerDes() ***/
 
@@ -2924,7 +3214,11 @@ limSetContextReqSerDes(tpAniSirGlobal pMac, tpSirSmeSetContextReq pSetContextReq
     len = pSetContextReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_SETCONTEXT_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_SETCONTEXT_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG3, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -2958,6 +3252,7 @@ limSetContextReqSerDes(tpAniSirGlobal pMac, tpSirSmeSetContextReq pSetContextReq
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     pSetContextReq->aid = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
@@ -2965,6 +3260,8 @@ limSetContextReqSerDes(tpAniSirGlobal pMac, tpSirSmeSetContextReq pSetContextReq
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 //    pSetContextReq->qosInfoPresent = limGetU32(pBuf);
 //    pBuf += sizeof(tAniBool);
@@ -3064,7 +3361,11 @@ limRemoveKeyReqSerDes(tpAniSirGlobal pMac, tpSirSmeRemoveKeyReq pRemoveKeyReq, t
     len = pRemoveKeyReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_REMOVEKEY_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_REMOVEKEY_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -3081,6 +3382,7 @@ limRemoveKeyReqSerDes(tpAniSirGlobal pMac, tpSirSmeRemoveKeyReq pRemoveKeyReq, t
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     pRemoveKeyReq->aid = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
@@ -3088,6 +3390,8 @@ limRemoveKeyReqSerDes(tpAniSirGlobal pMac, tpSirSmeRemoveKeyReq pRemoveKeyReq, t
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pRemoveKeyReq->edType = *pBuf;
     pBuf += sizeof(tANI_U8);
@@ -3181,7 +3485,11 @@ limDisassocReqSerDes(tpAniSirGlobal pMac, tSirSmeDisassocReq *pDisassocReq, tANI
     len = pDisassocReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_DISASSOC_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_DISASSOC_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -3230,6 +3538,7 @@ limDisassocReqSerDes(tpAniSirGlobal pMac, tSirSmeDisassocReq *pDisassocReq, tANI
     pBuf += sizeof(tANI_U8);
     len -= sizeof(tANI_U8);
 
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     pDisassocReq->aid = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
@@ -3241,6 +3550,8 @@ limDisassocReqSerDes(tpAniSirGlobal pMac, tSirSmeDisassocReq *pDisassocReq, tANI
     pDisassocReq->seqNum = limGetU16(pBuf);
 #endif
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return eSIR_SUCCESS;
 } /*** end limDisassocReqSerDes() ***/
@@ -3289,7 +3600,11 @@ limDeauthReqSerDes(tpAniSirGlobal pMac, tSirSmeDeauthReq *pDeauthReq, tANI_U8 *p
     len = pDeauthReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_DEAUTH_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_DEAUTH_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -3331,11 +3646,14 @@ limDeauthReqSerDes(tpAniSirGlobal pMac, tSirSmeDeauthReq *pDeauthReq, tANI_U8 *p
     pBuf += sizeof(tANI_U16);
     len  -= sizeof(tANI_U16);
 
+<<<<<<< HEAD
 #if defined(ANI_PRODUCT_TYPE_AP)
     if (limCheckRemainingLength(pMac, len) == eSIR_FAILURE)
         return eSIR_FAILURE;
     pDeauthReq->aid = limGetU16(pBuf);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     return eSIR_SUCCESS;
 } /*** end limDisassocReqSerDes() ***/
@@ -3343,6 +3661,7 @@ limDeauthReqSerDes(tpAniSirGlobal pMac, tSirSmeDeauthReq *pDeauthReq, tANI_U8 *p
 
 
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
 /**
  * limCopyNeighborInfoToCfg()
@@ -3446,6 +3765,8 @@ limCopyNeighborInfoToCfg(tpAniSirGlobal pMac, tSirNeighborBssInfo neighborBssInf
     }
 } /*** end limCopyNeighborInfoToCfg() ***/
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**
@@ -3553,12 +3874,17 @@ limStatSerDes(tpAniSirGlobal pMac, tpAniStaStatStruct pStat, tANI_U8 *pBuf)
     limCopyU32(pBuf, pStat->nXmitBytes);
     pBuf += sizeof(tANI_U32);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("STAT: length %d bytes is:\n"), sizeof(tAniStaStatStruct));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("STAT: length %d bytes is:"), sizeof(tAniStaStatStruct));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp,  sizeof(tAniStaStatStruct));)
 
 } /*** end limStatSerDes() ***/
 
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
 /**
  * limSmeWmStatusChangeNtfSerDes()
@@ -3672,6 +3998,8 @@ limRadioInfoSerDes(tpAniSirGlobal pMac, tpSirRadarInfo pRadarInfo,
     return eSIR_SUCCESS;
 } /*** end limRadioInfoSerDes() ***/
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**
@@ -3694,6 +4022,7 @@ limPackBkgndScanFailNotify(tpAniSirGlobal pMac,
                     sizeof(tSirSmeStatusChangeCode) +
                     sizeof(tSirBackgroundScanInfo);
 
+<<<<<<< HEAD
 #if defined (ANI_PRODUCT_TYPE_AP) && defined(ANI_LITTLE_BYTE_ENDIAN)
         sirStoreU16N((tANI_U8*)&pSmeNtf->messageType, eWNI_SME_WM_STATUS_CHANGE_NTF );
         sirStoreU16N((tANI_U8*)&pSmeNtf->length, length);
@@ -3707,6 +4036,8 @@ limPackBkgndScanFailNotify(tpAniSirGlobal pMac,
         sirStoreU32N((tANI_U8*)&pSmeNtf->statusChangeInfo.bkgndScanInfo.reserved,
                      pScanInfo->reserved);
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pSmeNtf->messageType = eWNI_SME_WM_STATUS_CHANGE_NTF;
         pSmeNtf->statusChangeCode = statusChangeCode;
         pSmeNtf->length = length;
@@ -3714,6 +4045,7 @@ limPackBkgndScanFailNotify(tpAniSirGlobal pMac,
         pSmeNtf->statusChangeInfo.bkgndScanInfo.numOfScanSuccess = pScanInfo->numOfScanSuccess;
         pSmeNtf->statusChangeInfo.bkgndScanInfo.numOfScanFailure = pScanInfo->numOfScanFailure;
         pSmeNtf->statusChangeInfo.bkgndScanInfo.reserved = pScanInfo->reserved;
+<<<<<<< HEAD
 #endif
 }
 
@@ -3852,6 +4184,11 @@ limIsSmeSwitchChannelReqValid(tpAniSirGlobal pMac,
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+}
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limIsSmeGetAssocSTAsReqValid()
  *
@@ -3922,11 +4259,19 @@ limIsSmeGetAssocSTAsReqValid(tpAniSirGlobal pMac, tpSirSmeGetAssocSTAsReq pGetAs
     pBuf += sizeof(tANI_U32);
     len  -= sizeof(tANI_U32);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_GET_ASSOC_STAS_REQ length consumed %d bytes \n"), len);)
 
     if (len < 0)
     {
         PELOGE(limLog(pMac, LOGE, FL("SME_GET_ASSOC_STAS_REQ invalid length\n"));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_GET_ASSOC_STAS_REQ length consumed %d bytes "), len);)
+
+    if (len < 0)
+    {
+        PELOGE(limLog(pMac, LOGE, FL("SME_GET_ASSOC_STAS_REQ invalid length"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eANI_BOOLEAN_FALSE;
     }
 
@@ -3971,7 +4316,11 @@ limTkipCntrMeasReqSerDes(tpAniSirGlobal pMac, tpSirSmeTkipCntrMeasReq  pTkipCntr
     len = pTkipCntrMeasReq->length = limGetU16(pBuf);
     pBuf += sizeof(tANI_U16);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_TKIP_CNTR_MEAS_REQ length %d bytes is:\n"), len);)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_TKIP_CNTR_MEAS_REQ length %d bytes is:"), len);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     PELOG1(sirDumpBuf(pMac, SIR_LIM_MODULE_ID, LOG1, pTemp, len);)
 
     if (len < (tANI_S16) sizeof(tANI_U32))
@@ -4005,11 +4354,19 @@ limTkipCntrMeasReqSerDes(tpAniSirGlobal pMac, tpSirSmeTkipCntrMeasReq  pTkipCntr
     pTkipCntrMeasReq->bEnable = *pBuf++;
     len --;
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_TKIP_CNTR_MEAS_REQ length consumed %d bytes \n"), len);)
     
     if (len)
     {
         PELOGE(limLog(pMac, LOGE, FL("SME_TKIP_CNTR_MEAS_REQ invalid \n"));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_TKIP_CNTR_MEAS_REQ length consumed %d bytes "), len);)
+    
+    if (len)
+    {
+        PELOGE(limLog(pMac, LOGE, FL("SME_TKIP_CNTR_MEAS_REQ invalid "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     else
@@ -4080,18 +4437,29 @@ limIsSmeGetWPSPBCSessionsReqValid(tpAniSirGlobal pMac, tSirSmeGetWPSPBCSessionsR
     pBuf += sizeof(tSirMacAddr);
     len  -= sizeof(tSirMacAddr);
     
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_GET_ASSOC_STAS_REQ length consumed %d bytes \n"), len);)
 
     if (len < 0)
     {
         PELOGE(limLog(pMac, LOGE, FL("SME_GET_WPSPBC_SESSION_REQ invalid length\n"));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_GET_ASSOC_STAS_REQ length consumed %d bytes "), len);)
+
+    if (len < 0)
+    {
+        PELOGE(limLog(pMac, LOGE, FL("SME_GET_WPSPBC_SESSION_REQ invalid length"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     return eSIR_SUCCESS;
 }
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**---------------------------------------------------------------
 \fn     limGetSessionInfo
@@ -4113,7 +4481,11 @@ limGetSessionInfo(tpAniSirGlobal pMac, tANI_U8 *pBuf, tANI_U8 *sessionId, tANI_U
 {
     if (!pBuf)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("NULL ptr received. \n"));
+=======
+        limLog(pMac, LOGE, FL("NULL ptr received. "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -4127,7 +4499,10 @@ limGetSessionInfo(tpAniSirGlobal pMac, tANI_U8 *pBuf, tANI_U8 *sessionId, tANI_U
     return;
 }
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * limUpdateAPWPSIEsReqSerDes()
@@ -4202,11 +4577,19 @@ limUpdateAPWPSIEsReqSerDes(tpAniSirGlobal pMac, tpSirUpdateAPWPSIEsReq pUpdateAP
     pBuf += sizeof(tSirAPWPSIEs);
     len  -= sizeof(tSirAPWPSIEs);
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("SME_UPDATE_APWPSIE_REQ length consumed %d bytes \n"), len);)
 
     if (len < 0)
     {
         PELOGE(limLog(pMac, LOGE, FL("SME_UPDATE_APWPSIE_REQ invalid length\n"));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("SME_UPDATE_APWPSIE_REQ length consumed %d bytes "), len);)
+
+    if (len < 0)
+    {
+        PELOGE(limLog(pMac, LOGE, FL("SME_UPDATE_APWPSIE_REQ invalid length"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -4288,11 +4671,18 @@ limUpdateAPWPARSNIEsReqSerDes(tpAniSirGlobal pMac, tpSirUpdateAPWPARSNIEsReq pUp
 
     if (len < 0)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("SME_GET_WPSPBC_SESSION_REQ invalid length\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("SME_GET_WPSPBC_SESSION_REQ invalid length"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     return eSIR_SUCCESS;
 } /*** end limUpdateAPWPARSNIEsReqSerDes() ***/
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

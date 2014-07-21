@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -61,6 +84,7 @@ when        who          what, where, why
 #include "wlan_qct_tl.h"
 #include "wlan_qct_tli.h"
 #include "tlDebug.h"
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 #include "wlan_bal_misc.h"
 #endif
@@ -70,6 +94,18 @@ when        who          what, where, why
 #define VOS_TO_WPAL_PKT(_vos_pkt) ((wpt_packet*)_vos_pkt)
 
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+
+#define WDA_DS_DXE_RES_COUNT   (WDA_TLI_MIN_RES_DATA + 20)
+
+#define VOS_TO_WPAL_PKT(_vos_pkt) ((wpt_packet*)_vos_pkt)
+
+/* macro's for acessing TL API/data structures */
+#define WDA_TL_SET_TX_XMIT_PENDING(a) WLANTL_SetTxXmitPending(a)
+#define WDA_TL_IS_TX_XMIT_PENDING(a) WLANTL_IsTxXmitPending(a)
+#define WDA_TL_CLEAR_TX_XMIT_PENDING(a) WLANTL_ClearTxXmitPending(a)
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WDA_HI_FLOW_MASK 0xF0
 #define WDA_LO_FLOW_MASK 0x0F
 
@@ -79,6 +115,7 @@ WDA_DS_TxCompleteCB
  v_PVOID_t pvosGCtx, 
  v_PVOID_t pFrameDataBuff
 );
+<<<<<<< HEAD
 #endif
 
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
@@ -232,6 +269,9 @@ WDA_DS_PrepareBDHeader
 
 }/* WLANTL_PrepareBDHeader */
 #endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_PERF
 /*==========================================================================
@@ -280,6 +320,7 @@ void WDA_TLI_FastHwFwdDataFrame
   WLAN_STADescType*  pStaInfo
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
   /* FIXME WDI/WDA should support this function
      once HAL supports it
@@ -360,6 +401,11 @@ void WDA_TLI_FastHwFwdDataFrame
    *pvosStatus = VOS_STATUS_SUCCESS;
    return;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+  /* FIXME WDI/WDA should support this function
+     once HAL supports it
+   */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif /*WLAN_PERF*/
 
@@ -415,7 +461,10 @@ VOS_STATUS WDA_DS_Register
   v_U32_t                   *uAvailableTxBuf
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   tWDA_CbContext      *wdaContext = NULL;
   WDI_Status          wdiStatus;
 
@@ -474,6 +523,7 @@ VOS_STATUS WDA_DS_Register
   *uAvailableTxBuf = WDA_DS_DXE_RES_COUNT; 
 
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else /* FEATURE_WLAN_INTEGRATED_SOC */
   VOS_STATUS          vosStatus;
   WLANBAL_TlRegType   tlReg;
@@ -529,6 +579,8 @@ VOS_STATUS WDA_DS_Register
 
   return vosStatus;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /*==========================================================================
@@ -562,8 +614,13 @@ WDA_DS_StartXmit
   v_PVOID_t pvosGCtx
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
   vos_msg_t                    sMessage;
+=======
+  vos_msg_t                    sMessage;
+  VOS_STATUS                   status;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   if ( NULL == pvosGCtx )
@@ -573,6 +630,14 @@ WDA_DS_StartXmit
     return VOS_STATUS_E_FAULT;
   }
 
+<<<<<<< HEAD
+=======
+  if(WDA_TL_IS_TX_XMIT_PENDING( pvosGCtx ))
+  {  
+    /*Already WDA_DS_TX_START_XMIT msg is pending in TL msg queue */
+    return VOS_STATUS_SUCCESS;
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* Serialize our event  */
   VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              "Serializing WDA TX Start Xmit event" );
@@ -582,10 +647,24 @@ WDA_DS_StartXmit
   sMessage.bodyptr = NULL;
   sMessage.type    = WDA_DS_TX_START_XMIT;
 
+<<<<<<< HEAD
   return vos_tx_mq_serialize(VOS_MQ_ID_TL, &sMessage);
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   return WLANBAL_StartXmit( pvosGCtx );
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+  WDA_TL_SET_TX_XMIT_PENDING(pvosGCtx);
+
+  status = vos_tx_mq_serialize(VOS_MQ_ID_TL, &sMessage);
+
+  if(status != VOS_STATUS_SUCCESS)
+  {
+    VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_FATAL,
+             "Serializing WDA TX Start Xmit event FAILED" );
+    WDA_TL_CLEAR_TX_XMIT_PENDING(pvosGCtx);
+  }
+  return status;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -692,7 +771,10 @@ WDA_DS_BuildTxPacketInfo
   v_U8_t          ucUP
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_STATUS             vosStatus;
   WDI_DS_TxMetaInfoType* pTxMetaInfo = NULL;
   v_SIZE_t               usMacAddrSize;
@@ -770,6 +852,7 @@ WDA_DS_BuildTxPacketInfo
              pTxMetaInfo->isEapol, pTxMetaInfo->fdisableFrmXlt, pTxMetaInfo->frmType );
 
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   VOS_STATUS   vosStatus;
   v_PVOID_t    pvBDHeader;
@@ -797,6 +880,8 @@ WDA_DS_BuildTxPacketInfo
   return VOS_STATUS_SUCCESS;
 
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -827,11 +912,15 @@ WDA_DS_TrimRxPacketInfo
   vos_pkt_t *vosDataBuff
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* Nothing to trim
    * Do Nothing */
 
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   VOS_STATUS vosStatus = VOS_STATUS_SUCCESS;
   v_U16_t  usPktLen;
@@ -879,6 +968,8 @@ WDA_DS_TrimRxPacketInfo
 
   return vosStatus;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -919,7 +1010,10 @@ WDA_DS_PeekRxPacketInfo
   v_BOOL_t  bSwap
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Sanity check
    ------------------------------------------------------------------------*/
@@ -940,6 +1034,7 @@ WDA_DS_PeekRxPacketInfo
   }
      
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   VOS_STATUS vosStatus;
 
@@ -960,6 +1055,8 @@ WDA_DS_PeekRxPacketInfo
 
   return VOS_STATUS_SUCCESS;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -1004,7 +1101,10 @@ WDA_DS_GetFrameTypeSubType
   v_U8_t    *ucTypeSubtype
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Sanity check
    ------------------------------------------------------------------------*/
@@ -1018,6 +1118,7 @@ WDA_DS_GetFrameTypeSubType
   *ucTypeSubtype = ( WDA_GET_RX_TYPE( pRxHeader ) << 4 ) | WDA_GET_RX_SUBTYPE( pRxHeader );
 
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   v_PVOID_t           pvBDHeader = pRxHeader;
   v_U16_t             usFrmCtrl  = 0; 
@@ -1052,6 +1153,8 @@ WDA_DS_GetFrameTypeSubType
   
   return VOS_STATUS_SUCCESS;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -1088,6 +1191,7 @@ WDA_DS_RxAmsduBdFix
   v_PVOID_t pvBDHeader
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
   /* Do nothing for Prima */
   return VOS_STATUS_SUCCESS;
@@ -1098,6 +1202,10 @@ WDA_DS_RxAmsduBdFix
   WLANHAL_RxAmsduBdFix(pvosGCtx, pvBDHeader);
   return VOS_STATUS_SUCCESS;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+  /* Do nothing for Prima */
+  return VOS_STATUS_SUCCESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /*==========================================================================
@@ -1133,17 +1241,23 @@ WDA_DS_GetRssi
   v_S7_t*   puRssi
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
          "WDA:halPS_GetRssi no longer supported. Need replacement");
 
   *puRssi = -30;
 
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   halPS_GetRssi(vos_get_context(VOS_MODULE_ID_SME, pvosGCtx), puRssi);
   return VOS_STATUS_SUCCESS;
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /*==========================================================================
@@ -1179,14 +1293,20 @@ WDA_DS_GetTxResources
   v_U32_t*  puResCount
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* Return minimum necessary number of packet(DXE descriptor) for data */
   /* TODO Need to get this from DXE??? */
   *puResCount = WDA_TLI_BD_PDU_RESERVE_THRESHOLD + 50;
   return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
   return WLANBAL_GetTxResources( pvosGCtx, puResCount );
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -1218,6 +1338,7 @@ WDA_DS_GetReplayCounter
   v_PVOID_t pRxHeader
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
   return WDA_GET_RX_REPLAY_COUNT( pRxHeader );
 #else  /* FEATURE_WLAN_INTEGRATED_SOC */
@@ -1254,6 +1375,11 @@ WDA_DS_GetReplayCounter
 }
 
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+  return WDA_GET_RX_REPLAY_COUNT( pRxHeader );
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
    FUNCTION    WDA_DS_TxFrames
 
@@ -1300,6 +1426,10 @@ WDA_DS_TxFrames
   v_U32_t     uMgmtAvailRes;
   v_U32_t     uDataAvailRes;
   WLANTL_TxCompCBType  pfnTxComp = NULL;
+<<<<<<< HEAD
+=======
+  v_U32_t     uTxFailCount = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   wdaContext = (tWDA_CbContext *)vos_get_context(VOS_MODULE_ID_WDA, pvosGCtx);
   if ( NULL == wdaContext )
@@ -1355,9 +1485,19 @@ WDA_DS_TxFrames
                                  0 /* more */ );
     if ( WDI_STATUS_SUCCESS != wdiStatus )
     {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                    "WDA : Pushing a packet to WDI failed.");
       VOS_ASSERT( wdiStatus != WDI_STATUS_E_NOT_ALLOWED );
+=======
+      VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
+                  "WDA : Pushing a packet to WDI failed." );
+      if ( WDI_STATUS_E_NOT_ALLOWED != wdiStatus )
+      {
+        uTxFailCount++;
+      }
+      VOS_ASSERT( wdiStatus == WDI_STATUS_E_NOT_ALLOWED );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //We need to free the packet here
       vos_pkt_get_user_data_ptr(pTxPacket, VOS_PKT_USER_DATA_ID_TL, (void **)&pfnTxComp);
       if(pfnTxComp)
@@ -1368,6 +1508,16 @@ WDA_DS_TxFrames
 
   };
 
+<<<<<<< HEAD
+=======
+  if ( uTxFailCount )
+  {
+    VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
+                 "WDA : Tx fail count for mgmt pkts: %d.", uTxFailCount);
+    uTxFailCount = 0;
+  }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*Data tx*/
   uDataAvailRes = WDI_GetAvailableResCount(wdaContext->pWdiContext, 
                                            WDI_DATA_POOL_ID);
@@ -1410,9 +1560,19 @@ WDA_DS_TxFrames
                                  0 /* more */ );
     if ( WDI_STATUS_SUCCESS != wdiStatus )
     {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                    "WDA : Pushing a packet to WDI failed.");
       VOS_ASSERT( wdiStatus != WDI_STATUS_E_NOT_ALLOWED );
+=======
+      VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
+                  "WDA : Pushing a packet to WDI failed." );
+      if ( WDI_STATUS_E_NOT_ALLOWED != wdiStatus )
+      {
+        uTxFailCount++;
+      }
+      VOS_ASSERT( wdiStatus == WDI_STATUS_E_NOT_ALLOWED );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //We need to free the packet here
       vos_pkt_get_user_data_ptr(pTxPacket, VOS_PKT_USER_DATA_ID_TL, (void **)&pfnTxComp);
       if(pfnTxComp)
@@ -1423,13 +1583,27 @@ WDA_DS_TxFrames
 
   };
 
+<<<<<<< HEAD
+=======
+  if ( uTxFailCount )
+  {
+    VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
+                 "WDA : Tx fail count for data pkts: %d.", uTxFailCount);
+  }
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_DS_TxComplete(wdaContext->pWdiContext, ucTxResReq);
 
   return vosStatus;
 }
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
 
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
    FUNCTION    WDA_DS_TxFlowControlCallback
 
@@ -1514,7 +1688,10 @@ WDA_DS_TxFlowControlCallback
    }
 
 }
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*==========================================================================
    FUNCTION    WDA_DS_GetTxFlowMask
@@ -1547,7 +1724,10 @@ WDA_DS_GetTxFlowMask
  v_U8_t*   puFlowMask
 )
 {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tWDA_CbContext* wdaContext = NULL;
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
@@ -1572,6 +1752,7 @@ WDA_DS_GetTxFlowMask
    *puFlowMask = wdaContext->uTxFlowMask;
 
    return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #else
    *puFlowMask = WDA_TXFLOWMASK;
    return VOS_STATUS_SUCCESS;
@@ -1579,6 +1760,10 @@ WDA_DS_GetTxFlowMask
 }
 
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 v_VOID_t 
 WDA_DS_TxCompleteCB
 (
@@ -1620,4 +1805,7 @@ WDA_DS_TxCompleteCB
 
   wdaContext->pfnTxCompleteCallback( pvosGCtx, pFrameDataBuff, vosStatus );
 }
+<<<<<<< HEAD
 #endif  /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

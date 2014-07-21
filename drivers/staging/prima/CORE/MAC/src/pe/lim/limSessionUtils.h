@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -23,6 +46,14 @@
 #if!defined( __LIM_SESSION_UTILS_H )
 #define __LIM_SESSION_UTILS_H
 
+<<<<<<< HEAD
+=======
+/*
+* Copyright (c) 2012-2013 Qualcomm Atheros, Inc.
+* All Rights Reserved.
+* Qualcomm Atheros Confidential and Proprietary.
+*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**=========================================================================
   
@@ -60,6 +91,7 @@
   ------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------
   
+<<<<<<< HEAD
           \brief peGetVhtCapable() - Returns the Vht capable from a valid session.
  
           This function itrates the session Table and returns the VHT capable from first valid session
@@ -72,6 +104,20 @@
            
  --------------------------------------------------------------------------*/
    tANI_U8 peGetVhtCapable(tpAniSirGlobal pMac);
+=======
+  \brief peGetVhtCapable() - Returns the Vht capable from a valid session.
+ 
+  This function iterates the session Table and returns the VHT capable from first valid session
+  if no sessions are valid/present  it returns FALSE
+
+  \param pMac - pointer to global adapter context
+  \return     - channel to scan from valid session else zero.
+
+  \sa
+
+ --------------------------------------------------------------------------*/
+tANI_U8 peGetVhtCapable(tpAniSirGlobal pMac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /*--------------------------------------------------------------------------
@@ -79,10 +125,17 @@
 
   This function is called to validate the Join Request for a BT-AMP station. If start BSS session is present
   this function returns TRUE else returns FALSE.
+<<<<<<< HEAD
     
   \param pMac                   - pointer to global adapter context
   \return                           - return TRUE if start BSS session is present else return FALSE.
   
+=======
+
+  \param pMac  - pointer to global adapter context
+  \return      - return TRUE if start BSS session is present else return FALSE.
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   \sa
   --------------------------------------------------------------------------*/
 tANI_U8 peValidateBtJoinRequest(tpAniSirGlobal pMac);
@@ -207,5 +260,35 @@ limIsQuietBegin (tpAniSirGlobal pMac);
   --------------------------------------------------------------------------*/
 tANI_U8
 limIsInMCC (tpAniSirGlobal pMac);
+<<<<<<< HEAD
+=======
+/*--------------------------------------------------------------------------
+  \brief peGetCurrentSTAsCount() - Returns total stations associated on 
+                                      all session.
+
+  \param pMac                   - pointer to global adapter context
+  \return                       - Number of station active on all sessions.
+  
+  \sa
+  --------------------------------------------------------------------------*/
+tANI_U8
+peGetCurrentSTAsCount(tpAniSirGlobal pMac);
+
+#ifdef FEATURE_WLAN_LFR
+/*--------------------------------------------------------------------------
+  \brief limIsFastRoamEnabled() - To check Fast roaming is enabled or not
+
+  \param pMac                   - pointer to global adapter context
+  \param sessionId              - session id
+  \return                       - TRUE or FALSE
+
+  \sa
+  --------------------------------------------------------------------------*/
+tANI_U8
+limIsFastRoamEnabled(tpAniSirGlobal pMac, tANI_U8 sessionId);
+#endif
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //#if !defined( __LIM_SESSION_UTILS_H )
 

@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -65,6 +88,7 @@ when        who         what, where, why
 #include <wniApi.h>     // needed for WNI_... message types
 #include "aniGlobal.h"
 #include "wlan_qct_wda.h"
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include <halCommonApi.h>  // needed for halMmhPostMsgApi()
 #endif
@@ -75,15 +99,26 @@ when        who         what, where, why
 VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message);
 
 #endif
+=======
+#include "sme_Api.h"
+#include "macInitApi.h"
+
+VOS_STATUS WLANFTM_McProcessMsg (v_VOID_t *message);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 // Cookie for SYS messages.  Note that anyone posting a SYS Message has to
 // write the COOKIE in the reserved field of the message.  The SYS Module
 // relies on this COOKIE
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
 #define SYS_MSG_ID_FTM_RSP      11
 #define FTM_SYS_MSG_COOKIE      0xFACE
 #endif
+=======
+#define FTM_SYS_MSG_COOKIE      0xFACE
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define SYS_MSG_COOKIE ( 0xFACE )
 
@@ -102,12 +137,15 @@ typedef struct
 
 } sysContextData;
 
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 // keep some static global sys context for the time being... Should we move this
 // into 'context' data?  Probably not, it doesn't need to be persistent except
 // during this messaging sequence.
 static sysContextData gSysContext;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static vos_event_t gStopEvt;
 
@@ -126,6 +164,7 @@ VOS_STATUS sysOpen( v_CONTEXT_t pVosContext )
 }
 
 
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 VOS_STATUS sysMcStart( v_CONTEXT_t pVosContext, sysResponseCback userCallback, v_VOID_t *pUserData )
 {
@@ -150,6 +189,8 @@ VOS_STATUS sysMcStart( v_CONTEXT_t pVosContext, sysResponseCback userCallback, v
    return( vosStatus );
 }
 #endif  /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 v_VOID_t sysStopCompleteCb
 (
@@ -211,6 +252,7 @@ VOS_STATUS sysClose( v_CONTEXT_t pVosContext )
 }
 
 
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 static VOS_STATUS sys_PostMcThreadProbeMsg( v_CONTEXT_t pVosContext, sysResponseCback userCallback,
                                           v_VOID_t *pUserData, SYS_MSG_ID sysMsgId )
@@ -343,6 +385,11 @@ static VOS_STATUS sys_SendHalInitStartReqMsg( v_CONTEXT_t pVosContext )
    return( vosStatus );
 }
 #endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if defined(__ANI_COMPILER_PRAGMA_PACK_STACK)
 #pragma pack( push )
@@ -411,6 +458,7 @@ static unsigned short polFileChkSum( unsigned short *FileData, unsigned long Num
   return( (unsigned short)( ~Sum ) );
 }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 static v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    void **ppStaConfig, v_SIZE_t *pcbStaConfig )
@@ -418,6 +466,10 @@ static v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
 v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    void **ppStaConfig, v_SIZE_t *pcbStaConfig )
 #endif
+=======
+v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
+   void **ppStaConfig, v_SIZE_t *pcbStaConfig )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
    v_BOOL_t fFound = VOS_FALSE;
    tPolFileHeader   *pFileHeader = NULL;
@@ -474,6 +526,7 @@ v_BOOL_t sys_validateStaConfig( void *pImage, unsigned long cbFile,
    return( fFound );
 }
 
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 static v_U8_t _vImageArray[15000];
 
@@ -586,11 +639,14 @@ static VOS_STATUS sys_getCfgBinaryMsgBuffer( tSirMbMsg **ppMsg, v_SIZE_t *pcbCfg
 }
 #endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
 
 
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
 static VOS_STATUS sys_SendWniCfgDnldMsg( v_CONTEXT_t pVosContext )
 {
@@ -664,6 +720,11 @@ VOS_STATUS sys_SendSmeStartReq( v_CONTEXT_t pVosContext )
    return( vosStatus );
 }
 #endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 {
@@ -684,6 +745,7 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       {
          case SYS_MSG_ID_MC_START:
          {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
             // save the callback pointer and user data in the context
             // data
@@ -694,13 +756,18 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
             // SIR_HAL_INIT_START_REQ message to the mac module.
             vosStatus = sys_SendHalInitStartReqMsg( pVosContext );
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Handling for this message is not needed now so adding 
              *debug print and VOS_ASSERT*/
             VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
                        " Received SYS_MSG_ID_MC_START message msgType= %d [0x%08lx]",
                        pMsg->type, pMsg->type );
             VOS_ASSERT(0);
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
          }
 
@@ -714,7 +781,11 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
             if (NULL == hHal)
             {
                VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                           "%s: Invalid hHal", __FUNCTION__ );
+=======
+                          "%s: Invalid hHal", __func__ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else
             {
@@ -735,6 +806,7 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          // function that is in the message.
          case SYS_MSG_ID_MC_THR_PROBE:
          {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
             sysResponseCback callback;
 
@@ -745,13 +817,18 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 
             callback( (v_VOID_t *)pMsg->bodyval );
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Handling for this message is not needed now so adding 
              *debug print and VOS_ASSERT*/
             VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
                        " Received SYS_MSG_ID_MC_THR_PROBE message msgType= %d [0x%08lx]",
                        pMsg->type, pMsg->type );
             VOS_ASSERT(0);
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
          }
 
@@ -769,13 +846,19 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 
             break;
          }
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          case SYS_MSG_ID_FTM_RSP:
          {
              WLANFTM_McProcessMsg((v_VOID_t *)pMsg->bodyptr);
              break;
          }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          default:
          {
@@ -793,6 +876,7 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
       // Process all 'legacy' messages
       switch( pMsg->type )
       {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
          /* Handling for these messages are not needed now. If a request comes for 
             these messages they will goto default and give VOS_ASSERT*/
@@ -886,6 +970,8 @@ VOS_STATUS sysMcProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
             break;
          }
 #endif  /* FEATURE_WLAN_NON_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          default:
          {
@@ -929,6 +1015,7 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
          // function that is in the message.
          case SYS_MSG_ID_TX_THR_PROBE:
          {
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_NON_INTEGRATED_SOC )
             sysResponseCback callback;
 
@@ -939,6 +1026,8 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 
             callback( (v_VOID_t *)pMsg->bodyval );
 #else
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            /* Handling for this message is not needed now so adding 
             * debug print and VOS_ASSERT*/
             VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
@@ -946,7 +1035,10 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
                        pMsg->type, pMsg->type );
             VOS_ASSERT(0);
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
          }
 
@@ -991,7 +1083,10 @@ VOS_STATUS sysTxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 }
 
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 VOS_STATUS sysRxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
 {
    VOS_STATUS vosStatus = VOS_STATUS_SUCCESS;
@@ -1048,7 +1143,10 @@ VOS_STATUS sysRxProcessMsg( v_CONTEXT_t pVosContext, vos_msg_t *pMsg )
    return( vosStatus );
 }
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 v_VOID_t sysMcFreeMsg( v_CONTEXT_t pVContext, vos_msg_t* pMsg )
 {
@@ -1077,7 +1175,18 @@ SysProcessMmhMsg
   ** It is up to the callee to free it
   */
 
+<<<<<<< HEAD
   VOS_ASSERT(NULL != pMsg);
+=======
+
+  if (NULL == pMsg)
+  {
+      VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
+                 "NULL Message Pointer");
+      VOS_ASSERT(0);
+      return;
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
   switch (pMsg->type)
@@ -1095,13 +1204,19 @@ SysProcessMmhMsg
       /* Forward this message to the SYS module */
       targetMQ = VOS_MQ_ID_SYS;
 
+<<<<<<< HEAD
 #if defined( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
                  "Handling for the Message ID %d is removed in SYS\r\n",
                  pMsg->type);
 
       VOS_ASSERT(0);
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
     }
 
@@ -1115,13 +1230,19 @@ SysProcessMmhMsg
       /* Forward this message to the HAL module */
       targetMQ = VOS_MQ_ID_WDA;
 
+<<<<<<< HEAD
 #if defined ( FEATURE_WLAN_INTEGRATED_SOC )
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
                  "Handling for the Message ID %d is removed as there is no HAL \r\n",
                  pMsg->type);
 
       VOS_ASSERT(0);
+<<<<<<< HEAD
 #endif /* FEATURE_WLAN_INTEGRATED_SOC */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
     }
 
@@ -1194,7 +1315,10 @@ SysProcessMmhMsg
 
 } /* SysProcessMmhMsg() */
 
+<<<<<<< HEAD
 #ifndef WLAN_FTM_STUB
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION    WLAN_FTM_SYS_FTM
 
@@ -1237,6 +1361,9 @@ void wlan_sys_ftm(void *pMsgPtr)
     return;
 }
 
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 

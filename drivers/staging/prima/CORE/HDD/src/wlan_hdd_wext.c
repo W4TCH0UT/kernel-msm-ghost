@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -64,8 +87,14 @@
 #include <wlan_hdd_cfg.h>
 #include <wlan_hdd_wmm.h>
 #include "utilsApi.h"
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 #include "wlan_hdd_p2p.h"
+=======
+#include "wlan_hdd_p2p.h"
+#ifdef FEATURE_WLAN_TDLS
+#include "wlan_hdd_tdls.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 #ifdef CONFIG_HAS_EARLYSUSPEND
@@ -80,6 +109,7 @@
 #include "wlan_hdd_packet_filtering.h"
 #endif
 
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
 #include <linux/wireless.h>
 #include <net/cfg80211.h>
@@ -87,13 +117,23 @@
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "wlan_qct_pal_trace.h"
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+#include <linux/wireless.h>
+#include <net/cfg80211.h>
+#include "wlan_qct_pal_trace.h"
+#include "wlan_qct_tl.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "wlan_hdd_misc.h"
 #include "bap_hdd_misc.h"
 
 #include "wlan_hdd_dev_pwr.h"
 #include "qc_sap_ioctl.h"
+<<<<<<< HEAD
 #define WE_MAX_STR_LEN 1024
+=======
+#include "sme_Api.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef CONFIG_HAS_EARLYSUSPEND
 extern void hdd_suspend_wlan(struct early_suspend *wlan_suspend);
@@ -101,7 +141,11 @@ extern void hdd_resume_wlan(struct early_suspend *wlan_suspend);
 #endif
 
 #ifdef FEATURE_OEM_DATA_SUPPORT
+<<<<<<< HEAD
 #define MAX_OEM_DATA_RSP_LEN 1024
+=======
+#define MAX_OEM_DATA_RSP_LEN 2047
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 #define HDD_FINISH_ULA_TIME_OUT    800
@@ -109,7 +153,11 @@ extern void hdd_resume_wlan(struct early_suspend *wlan_suspend);
 extern int wlan_hdd_cfg80211_update_band(struct wiphy *wiphy, eCsrBand eBand);
 int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr);
 
+<<<<<<< HEAD
 static int ioctl_debug = 0;
+=======
+static int ioctl_debug;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 module_param(ioctl_debug, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
 struct statsContext
@@ -134,7 +182,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
         {5620, 124}, {5640, 128}, {5660, 132}, {5680, 136}, {5700, 140},
         {5745, 149}, {5765, 153}, {5785, 157}, {5805, 161}, {5825, 165} };
 
+<<<<<<< HEAD
 #define FREQ_CHAN_MAP_TABLE_SIZE sizeof(freq_chan_map)/sizeof(freq_chan_map[0])
+=======
+#define FREQ_CHAN_MAP_TABLE_SIZE (sizeof(freq_chan_map)/sizeof(freq_chan_map[0]))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls and their sub-ioctls */
 #define WLAN_PRIV_SET_INT_GET_NONE    (SIOCIWFIRSTPRIV + 0)
@@ -147,6 +199,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_SET_MAX_TX_POWER  7
 #define WE_SET_HIGHER_DTIM_TRANSITION   8
 #define WE_SET_TM_LEVEL      9
+<<<<<<< HEAD
+=======
+#define WE_SET_CHANNEL_RANGE 10   // Motorola, IKJBREL1-4181
+#define WE_SET_IPV6_FILTER_STATE 11 // IKJB42MAIN-1244, Motorola, a19091
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls and their sub-ioctls */
 #define WLAN_PRIV_SET_NONE_GET_INT    (SIOCIWFIRSTPRIV + 1)
@@ -159,6 +216,10 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_GET_WDI_DBG       7
 #define WE_GET_SAP_AUTO_CHANNEL_SELECTION 8
 #define WE_GET_CONCURRENCY_MODE 9
+<<<<<<< HEAD
+=======
+#define WE_GET_MCC_MODE      10 /* MOTOROLA IKJB42MAIN-274 */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Private ioctls and their sub-ioctls */
 #define WLAN_PRIV_SET_INT_GET_INT     (SIOCIWFIRSTPRIV + 2)
 
@@ -177,6 +238,12 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_SET_WLAN_DBG      1
 #define WE_SET_WDI_DBG       2
 #define WE_SET_SAP_CHANNELS  3
+<<<<<<< HEAD
+=======
+//Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
+#define WE_SET_WLAN_DBG_TILL_LEVEL 4
+//END IKJBXLINE-5577
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls and their sub-ioctls */
 #define WLAN_PRIV_GET_CHAR_SET_NONE   (SIOCIWFIRSTPRIV + 5)
@@ -188,6 +255,13 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #ifdef WLAN_FEATURE_11AC
 #define WE_GET_RSSI          6
 #endif
+<<<<<<< HEAD
+=======
+#define WE_GET_ROAM_RSSI     7
+#ifdef FEATURE_WLAN_TDLS
+#define WE_GET_TDLS_PEERS    8
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls and their sub-ioctls */
 #define WLAN_PRIV_SET_NONE_GET_NONE   (SIOCIWFIRSTPRIV + 6)
@@ -198,16 +272,40 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WE_DISABLE_AMP       5
 #define WE_ENABLE_DXE_STALL_DETECT 6
 #define WE_DISPLAY_DXE_SNAP_SHOT   7
+<<<<<<< HEAD
+=======
+#define WE_DISPLAY_DATAPATH_SNAP_SHOT    9
+#define WE_SET_REASSOC_TRIGGER     8
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls and their sub-ioctls */
 #define WLAN_PRIV_SET_VAR_INT_GET_NONE   (SIOCIWFIRSTPRIV + 7)
 #define WE_LOG_DUMP_CMD      1
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 #define WE_P2P_NOA_CMD       2
 #endif
 
 #define MAX_VAR_ARGS         7
+=======
+#define WE_P2P_NOA_CMD       2
+//IOCTL to configure MCC params
+#define WE_MCC_CONFIG_CREDENTIAL 3
+#define WE_MCC_CONFIG_PARAMS  4
+
+#ifdef FEATURE_WLAN_TDLS
+#define WE_TDLS_CONFIG_PARAMS   5
+#endif
+
+#ifdef FEATURE_WLAN_TDLS
+#undef  MAX_VAR_ARGS
+#define MAX_VAR_ARGS         10
+#else
+#define MAX_VAR_ARGS         7
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Private ioctls (with no sub-ioctls) */
 /* note that they must be odd so that they have "get" semantics */
@@ -259,6 +357,11 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 
 #define WLAN_PRIV_SET_MCBC_FILTER    (SIOCIWFIRSTPRIV + 26)
 #define WLAN_PRIV_CLEAR_MCBC_FILTER  (SIOCIWFIRSTPRIV + 27)
+<<<<<<< HEAD
+=======
+/* Private ioctl to trigger reassociation */
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define WLAN_SET_POWER_PARAMS        (SIOCIWFIRSTPRIV + 29)
 #define WLAN_GET_LINK_SPEED          (SIOCIWFIRSTPRIV + 31)
 
@@ -287,6 +390,7 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define WLAN_STATS_TX_MC_BYTE_CNT     20
 #define WLAN_STATS_TX_BC_BYTE_CNT     21
 
+<<<<<<< HEAD
 #define FILL_TLV(__p, __type, __size, __val, __tlen) \
 {\
     if ((__tlen + __size + 2) < WE_MAX_STR_LEN) \
@@ -302,6 +406,22 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
         hddLog(VOS_TRACE_LEVEL_ERROR, "FILL_TLV Failed!!!\n");\
     }                                                         \
 }while(0);
+=======
+#define FILL_TLV(__p, __type, __size, __val, __tlen) do {           \
+        if ((__tlen + __size + 2) < WE_MAX_STR_LEN)                 \
+        {                                                           \
+            *__p++ = __type;                                        \
+            *__p++ = __size;                                        \
+            memcpy(__p, __val, __size);                             \
+            __p += __size;                                          \
+            __tlen += __size + 2;                                   \
+        }                                                           \
+        else                                                        \
+        {                                                           \
+            hddLog(VOS_TRACE_LEVEL_ERROR, "FILL_TLV Failed!!!\n");  \
+        }                                                           \
+    } while(0);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define VERSION_VALUE_MAX_LEN 32
 
@@ -309,28 +429,56 @@ static const hdd_freq_chan_map_t freq_chan_map[] = { {2412, 1}, {2417, 2},
 #define TX_PER_TRACKING_MAX_RATIO                10
 #define TX_PER_TRACKING_DEFAULT_WATERMARK         5
 
+<<<<<<< HEAD
 #define WLAN_HDD_UI_BAND_AUTO                     0
 #define WLAN_HDD_UI_BAND_5_GHZ                    1
 #define WLAN_HDD_UI_BAND_2_4_GHZ                  2
 #define WLAN_HDD_UI_SET_BAND_VALUE_OFFSET         8
+=======
+/*MCC Configuration parameters */
+enum {
+    MCC_SCHEDULE_TIME_SLICE_CFG_PARAM = 1,
+    MCC_MAX_NULL_SEND_TIME_CFG_PARAM,
+    MCC_TX_EARLY_STOP_TIME_CFG_PARAM,
+    MCC_RX_DRAIN_TIME_CFG_PARAM,
+    MCC_CHANNEL_SWITCH_TIME_CFG_PARAM,
+    MCC_MIN_CHANNEL_TIME_CFG_PARAM,
+    MCC_PARK_BEFORE_TBTT_CFG_PARAM,
+    MCC_MIN_AFTER_DTIM_CFG_PARAM,
+    MCC_TOO_CLOSE_MARGIN_CFG_PARAM,
+};
+
+int hdd_validate_mcc_config(hdd_adapter_t *pAdapter, v_UINT_t staId,
+                                v_UINT_t arg1, v_UINT_t arg2, v_UINT_t arg3);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_PACKET_FILTERING
 int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest, 
                            v_U8_t sessionId);
+<<<<<<< HEAD
 void wlan_hdd_set_mc_addr_list(hdd_context_t *pHddCtx, v_U8_t set, v_U8_t sessionId);
 #endif
 
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
+=======
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------------
 
   \brief hdd_wlan_get_version() -
 
+<<<<<<< HEAD
    This function use to get Wlan Driver And Firmware Version.
+=======
+   This function use to get Wlan Driver, Firmware, & Hardware Version.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \param  - pAdapter Pointer to the adapter.
             wrqu - Pointer to IOCTL REQUEST Data.
             extra - Pointer to char
 
+<<<<<<< HEAD
   \return - 0 for success, non zero for failure
 
   --------------------------------------------------------------------------*/
@@ -371,6 +519,52 @@ int hdd_wlan_get_version(hdd_adapter_t *pAdapter, union iwreq_data *wrqu,
 }
 
 #endif
+=======
+  \return - none
+
+  --------------------------------------------------------------------------*/
+void hdd_wlan_get_version(hdd_adapter_t *pAdapter, union iwreq_data *wrqu,
+                          char *extra)
+{
+    VOS_STATUS status;
+    tSirVersionString wcnss_SW_version;
+    tSirVersionString wcnss_HW_version;
+    char *pSWversion;
+    char *pHWversion;
+    tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+
+    status = sme_GetWcnssSoftwareVersion(hHal, wcnss_SW_version,
+                                         sizeof(wcnss_SW_version));
+    if (VOS_IS_STATUS_SUCCESS(status))
+    {
+        pSWversion = wcnss_SW_version;
+    }
+    else
+    {
+        pSWversion = "Unknown";
+    }
+
+    status = sme_GetWcnssHardwareVersion(hHal, wcnss_HW_version,
+                                         sizeof(wcnss_HW_version));
+    if (VOS_IS_STATUS_SUCCESS(status))
+    {
+        pHWversion = wcnss_HW_version;
+    }
+    else
+    {
+        pHWversion = "Unknown";
+    }
+
+    wrqu->data.length = scnprintf(extra, WE_MAX_STR_LEN,
+                                 "Host SW:%s, FW:%s, HW:%s",
+                                 QWLAN_VERSIONSTR,
+                                 pSWversion,
+                                 pHWversion);
+
+    return;
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int hdd_wlan_get_rts_threshold(hdd_adapter_t *pAdapter, union iwreq_data *wrqu)
 {
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
@@ -495,12 +689,20 @@ hdd_IsAuthTypeRSN( tHalHandle halHandle, eCsrAuthType authType)
             break;
         default:
             hddLog(LOGE, FL("%s called with unknown authType - default to Open, None\n"),
+<<<<<<< HEAD
                                                                                       __FUNCTION__);
+=======
+                                                                                      __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             rsnType = eANI_BOOLEAN_FALSE;
             break;
     }
     hddLog(LOGE, FL("%s called with authType: %d, returned: %d\n"),
+<<<<<<< HEAD
                                              __FUNCTION__, authType, rsnType);
+=======
+                                             __func__, authType, rsnType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return rsnType;
 }
 
@@ -512,14 +714,22 @@ static void hdd_GetRssiCB( v_S7_t rssi, tANI_U32 staId, void *pContext )
    if (ioctl_debug)
    {
       pr_info("%s: rssi [%d] STA [%d] pContext [%p]\n",
+<<<<<<< HEAD
               __FUNCTION__, (int)rssi, (int)staId, pContext);
+=======
+              __func__, (int)rssi, (int)staId, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    if (NULL == pContext)
    {
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Bad param, pContext [%p]",
+<<<<<<< HEAD
              __FUNCTION__, pContext);
+=======
+             __func__, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -535,11 +745,19 @@ static void hdd_GetRssiCB( v_S7_t rssi, tANI_U32 staId, void *pContext )
       /* the caller presumably timed out so there is nothing we can do */
       hddLog(VOS_TRACE_LEVEL_WARN,
              "%s: Invalid context, pAdapter [%p] magic [%08x]",
+<<<<<<< HEAD
               __FUNCTION__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+              __func__, pAdapter, pStatsContext->magic);
+      if (ioctl_debug)
+      {
+         pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
+                 __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       return;
    }
@@ -589,7 +807,10 @@ VOS_STATUS wlan_hdd_get_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
    if (eHAL_STATUS_SUCCESS != hstatus)
    {
        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: Unable to retrieve RSSI",
+<<<<<<< HEAD
               __FUNCTION__);
+=======
+              __func__);
        /* we'll returned a cached value below */
    }
    else
@@ -603,7 +824,7 @@ VOS_STATUS wlan_hdd_get_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
        if (lrc <= 0)
        {
           hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while retrieving RSSI ",
-                 __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+                 __func__, (0 == lrc) ? "timeout" : "interrupt");
           /* there is a race condition such that the callback
              function could be executing at the same time we are. of
              primary concern is if the callback function had already
@@ -619,6 +840,142 @@ VOS_STATUS wlan_hdd_get_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
 
    return VOS_STATUS_SUCCESS;
 }
+
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+
+static void hdd_GetRoamRssiCB( v_S7_t rssi, tANI_U32 staId, void *pContext )
+{
+   struct statsContext *pStatsContext;
+   hdd_adapter_t *pAdapter;
+   if (ioctl_debug)
+   {
+      pr_info("%s: rssi [%d] STA [%d] pContext [%p]\n",
+              __func__, (int)rssi, (int)staId, pContext);
+   }
+
+   if (NULL == pContext)
+   {
+      hddLog(VOS_TRACE_LEVEL_ERROR,
+             "%s: Bad param, pContext [%p]",
+             __func__, pContext);
+      return;
+   }
+
+   /* there is a race condition that exists between this callback function
+      and the caller since the caller could time out either before or
+      while this code is executing.  we'll assume the timeout hasn't
+      occurred, but we'll verify that right before we save our work */
+
+   pStatsContext = pContext;
+   pAdapter      = pStatsContext->pAdapter;
+   if ((NULL == pAdapter) || (RSSI_CONTEXT_MAGIC != pStatsContext->magic))
+   {
+      /* the caller presumably timed out so there is nothing we can do */
+      hddLog(VOS_TRACE_LEVEL_WARN,
+             "%s: Invalid context, pAdapter [%p] magic [%08x]",
+              __func__, pAdapter, pStatsContext->magic);
+      if (ioctl_debug)
+      {
+         pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
+                 __func__, pAdapter, pStatsContext->magic);
+      }
+      return;
+   }
+
+   /* the race is on.  caller could have timed out immediately after
+      we verified the magic, but if so, caller will wait a short time
+      for us to copy over the rssi */
+   pAdapter->rssi = rssi;
+
+   /* and notify the caller */
+   complete(&pStatsContext->completion);
+}
+
+
+
+VOS_STATUS wlan_hdd_get_roam_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
+{
+   struct statsContext context;
+   hdd_context_t *pHddCtx = NULL;
+   hdd_station_ctx_t *pHddStaCtx = NULL;
+   eHalStatus hstatus;
+   long lrc;
+
+   if (NULL == pAdapter)
+   {
+       hddLog(VOS_TRACE_LEVEL_WARN,
+              "%s: Invalid context, pAdapter", __func__);
+       return VOS_STATUS_E_FAULT;
+   }
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, "%s:LOGP in Progress. Ignore!!!",__func__);
+       /* return a cached value */
+       *rssi_value = pAdapter->rssi;
+       return VOS_STATUS_SUCCESS;
+   }
+
+   pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+   pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+
+   if(eConnectionState_Associated != pHddStaCtx->conn_info.connState)
+   {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s:Not associated!",__func__);
+       /* return a cached value */
+       *rssi_value = 0;
+       return VOS_STATUS_SUCCESS;
+   }
+   init_completion(&context.completion);
+   context.pAdapter = pAdapter;
+   context.magic = RSSI_CONTEXT_MAGIC;
+
+   hstatus = sme_GetRoamRssi(pHddCtx->hHal, hdd_GetRoamRssiCB,
+                         pHddStaCtx->conn_info.staId[ 0 ],
+                         pHddStaCtx->conn_info.bssId,
+                         &context, pHddCtx->pvosContext);
+   if (eHAL_STATUS_SUCCESS != hstatus)
+   {
+       hddLog(VOS_TRACE_LEVEL_ERROR,"%s: Unable to retrieve RSSI",
+              __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+       /* we'll returned a cached value below */
+   }
+   else
+   {
+       /* request was sent -- wait for the response */
+       lrc = wait_for_completion_interruptible_timeout(&context.completion,
+                                    msecs_to_jiffies(WLAN_WAIT_TIME_STATS));
+       /* either we have a response or we timed out
+          either way, first invalidate our magic */
+       context.magic = 0;
+       if (lrc <= 0)
+       {
+          hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while retrieving RSSI ",
+<<<<<<< HEAD
+                 __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                 __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+          /* there is a race condition such that the callback
+             function could be executing at the same time we are. of
+             primary concern is if the callback function had already
+             verified the "magic" but hasn't yet set the completion
+             variable.  Since the completion variable is on our
+             stack, we'll delay just a bit to make sure the data is
+             still valid if that is the case */
+          msleep(50);
+          /* we'll now returned a cached value below */
+       }
+   }
+   *rssi_value = pAdapter->rssi;
+
+   return VOS_STATUS_SUCCESS;
+}
+<<<<<<< HEAD
+=======
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void hdd_StatisticsCB( void *pStats, void *pContext )
 {
@@ -665,7 +1022,11 @@ void hdd_StatisticsCB( void *pStats, void *pContext )
            if (!VOS_IS_STATUS_SUCCESS(vos_status))
            {
               VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                         "%s: vos_event_set failed", __FUNCTION__);
+=======
+                        "%s: vos_event_set failed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               return;
            }
         }
@@ -689,7 +1050,11 @@ void ccmCfgSetCallback(tHalHandle halHandle, tANI_S32 result)
    pHddCtx = (hdd_context_t*) vos_get_context(VOS_MODULE_ID_HDD,pVosContext);
    if (NULL == pHddCtx)
    {
+<<<<<<< HEAD
       hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid pHddCtx", __FUNCTION__);
+=======
+      hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid pHddCtx", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 #if 0
@@ -768,25 +1133,51 @@ void hdd_clearRoamProfileIe( hdd_adapter_t *pAdapter)
 void wlan_hdd_ula_done_cb(v_VOID_t *callbackContext)
 {
     hdd_adapter_t *pAdapter = (hdd_adapter_t*)callbackContext;
+<<<<<<< HEAD
     hdd_wext_state_t *pWextState= WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
 
     complete(&pWextState->completion_var);
+=======
+
+    if (WLAN_HDD_ADAPTER_MAGIC != pAdapter->magic)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+                  "%s: Invalid pAdapter magic", __func__);
+    }
+    else
+    {
+        complete(&pAdapter->ula_complete);
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 VOS_STATUS wlan_hdd_check_ula_done(hdd_adapter_t *pAdapter)
 {
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+<<<<<<< HEAD
     hdd_wext_state_t  *pWextState =  WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     VOS_STATUS vos_status;
 
     if (VOS_FALSE == pHddStaCtx->conn_info.uIsAuthenticated)
     {
         INIT_COMPLETION(pWextState->completion_var);
+=======
+    VOS_STATUS vos_status;
+    unsigned long rc;
+
+    if (VOS_FALSE == pHddStaCtx->conn_info.uIsAuthenticated)
+    {
+        INIT_COMPLETION(pAdapter->ula_complete);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /*To avoid race condition between the set key and the last EAPOL
           packet, notify TL to finish upper layer authentication incase if the
           last EAPOL packet pending in the TL queue.*/
+<<<<<<< HEAD
         vos_status = WLANTL_Finish_ULA(wlan_hdd_ula_done_cb,pAdapter);
+=======
+        vos_status = WLANTL_Finish_ULA(wlan_hdd_ula_done_cb, pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if ( vos_status != VOS_STATUS_SUCCESS )
         {
@@ -797,8 +1188,21 @@ VOS_STATUS wlan_hdd_check_ula_done(hdd_adapter_t *pAdapter)
 
         }
 
+<<<<<<< HEAD
         wait_for_completion_timeout(&pWextState->completion_var,
                                     msecs_to_jiffies(HDD_FINISH_ULA_TIME_OUT));
+=======
+        rc = wait_for_completion_timeout(&pAdapter->ula_complete,
+                                    msecs_to_jiffies(HDD_FINISH_ULA_TIME_OUT));
+        if (0 == rc)
+        {
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+                      "%s: Timeout waiting for ULA to complete", __func__);
+            /* we'll still fall through and return success since the
+             * connection may still get established but is just taking
+             * too long for us to wait */
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return VOS_STATUS_SUCCESS;
 }
@@ -841,7 +1245,11 @@ v_U8_t* wlan_hdd_get_vendor_oui_ie_ptr(v_U8_t *oui, v_U8_t oui_size, v_U8_t *ie,
 static int iw_set_commit(struct net_device *dev, struct iw_request_info *info,
                          union iwreq_data *wrqu, char *extra)
 {
+<<<<<<< HEAD
     hddLog( LOG1, "In %s\n", __FUNCTION__);
+=======
+    hddLog( LOG1, "In %s\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Do nothing for now */
     return 0;
 }
@@ -867,9 +1275,13 @@ static int iw_set_mode(struct net_device *dev,
     eCsrRoamBssType          LastBSSType;
     eMib_dot11DesiredBssType connectedBssType;
     hdd_config_t             *pConfig;
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
     struct wireless_dev      *wdev;
 #endif
+=======
+    struct wireless_dev      *wdev;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
@@ -888,6 +1300,7 @@ static int iw_set_mode(struct net_device *dev,
     pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     if (pWextState == NULL)
     {
+<<<<<<< HEAD
         hddLog (LOGE, "%s ERROR: Data Storage Corruption", __FUNCTION__);
         return -EINVAL;
     }
@@ -899,15 +1312,31 @@ static int iw_set_mode(struct net_device *dev,
     LastBSSType = pRoamProfile->BSSType;
 
     hddLog( LOG1,"%s Old Bss type = %d", __FUNCTION__, LastBSSType);
+=======
+        hddLog (LOGE, "%s ERROR: Data Storage Corruption", __func__);
+        return -EINVAL;
+    }
+
+    wdev = dev->ieee80211_ptr;
+    pRoamProfile = &pWextState->roamProfile;
+    LastBSSType = pRoamProfile->BSSType;
+
+    hddLog( LOG1,"%s Old Bss type = %d", __func__, LastBSSType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (wrqu->mode)
     {
     case IW_MODE_ADHOC:
+<<<<<<< HEAD
         hddLog( LOG1,"%s Setting AP Mode as IW_MODE_ADHOC", __FUNCTION__);
+=======
+        hddLog( LOG1,"%s Setting AP Mode as IW_MODE_ADHOC", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pRoamProfile->BSSType = eCSR_BSS_TYPE_START_IBSS;
         // Set the phymode correctly for IBSS.
         pConfig  = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini;
         pWextState->roamProfile.phyMode = hdd_cfg_xlate_to_csr_phy_mode(pConfig->dot11Mode);
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
         wdev->iftype = NL80211_IFTYPE_ADHOC;
 #endif
@@ -925,6 +1354,21 @@ static int iw_set_mode(struct net_device *dev,
         break;
     default:
         hddLog(LOG1,"%s Unknown AP Mode value", __FUNCTION__);
+=======
+        wdev->iftype = NL80211_IFTYPE_ADHOC;
+        break;
+    case IW_MODE_INFRA:
+        hddLog( LOG1, "%s Setting AP Mode as IW_MODE_INFRA", __func__);
+        pRoamProfile->BSSType = eCSR_BSS_TYPE_INFRASTRUCTURE;
+        wdev->iftype = NL80211_IFTYPE_STATION;
+        break;
+    case IW_MODE_AUTO:
+        hddLog(LOG1,"%s Setting AP Mode as IW_MODE_AUTO", __func__);
+        pRoamProfile->BSSType = eCSR_BSS_TYPE_ANY;
+        break;
+    default:
+        hddLog(LOG1,"%s Unknown AP Mode value", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EOPNOTSUPP;
     }
 
@@ -962,7 +1406,11 @@ static int iw_get_mode(struct net_device *dev,
     hdd_wext_state_t *pWextState;
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
 
+<<<<<<< HEAD
     hddLog (LOG1, "In %s",__FUNCTION__);
+=======
+    hddLog (LOG1, "In %s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (NULL == pAdapter)
     {
@@ -979,18 +1427,27 @@ static int iw_get_mode(struct net_device *dev,
     pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     if (pWextState == NULL)
     {
+<<<<<<< HEAD
         hddLog (LOGE, "%s ERROR: Data Storage Corruption", __FUNCTION__);
+=======
+        hddLog (LOGE, "%s ERROR: Data Storage Corruption", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
 
     switch (pWextState->roamProfile.BSSType)
     {
     case eCSR_BSS_TYPE_INFRASTRUCTURE:
+<<<<<<< HEAD
         hddLog(LOG1, "%s returns IW_MODE_INFRA\n", __FUNCTION__);
+=======
+        hddLog(LOG1, "%s returns IW_MODE_INFRA\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         *uwrq = IW_MODE_INFRA ;
         break;
     case eCSR_BSS_TYPE_IBSS:
     case eCSR_BSS_TYPE_START_IBSS:
+<<<<<<< HEAD
         hddLog( LOG1,"%s returns IW_MODE_ADHOC\n", __FUNCTION__);
         *uwrq= IW_MODE_ADHOC;
         break;
@@ -1000,6 +1457,17 @@ static int iw_get_mode(struct net_device *dev,
         break;
     default:
         hddLog( LOG1,"%s returns APMODE_UNKNOWN\n", __FUNCTION__);
+=======
+        hddLog( LOG1,"%s returns IW_MODE_ADHOC\n", __func__);
+        *uwrq= IW_MODE_ADHOC;
+        break;
+    case eCSR_BSS_TYPE_ANY:
+        hddLog( LOG1,"%s returns IW_MODE_AUTO\n", __func__);
+        *uwrq= IW_MODE_AUTO;
+        break;
+    default:
+        hddLog( LOG1,"%s returns APMODE_UNKNOWN\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     }
     return 0;
@@ -1062,7 +1530,11 @@ static int iw_set_freq(struct net_device *dev, struct iw_request_info *info,
                         (wrqu->freq.m > WNI_CFG_CURRENT_CHANNEL_STAMAX))
         {
             hddLog(LOG1,"%s: Channel [%d] is outside valid range from %d to %d\n",
+<<<<<<< HEAD
                 __FUNCTION__, wrqu->freq.m, WNI_CFG_CURRENT_CHANNEL_STAMIN,
+=======
+                __func__, wrqu->freq.m, WNI_CFG_CURRENT_CHANNEL_STAMIN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     WNI_CFG_CURRENT_CHANNEL_STAMAX);
              return -EINVAL;
         }
@@ -1145,6 +1617,7 @@ static int iw_get_freq(struct net_device *dev, struct iw_request_info *info,
     }
     else
     {
+<<<<<<< HEAD
        channel = pHddStaCtx->conn_info.operationChannel;
        status = hdd_wlan_get_freq(channel, &freq);
        if( TRUE == status )
@@ -1155,6 +1628,13 @@ static int iw_get_freq(struct net_device *dev, struct iw_request_info *info,
            fwrq->m = freq;
            fwrq->e = MHZ;
        }
+=======
+       /* Set Exponent parameter as 6 (MHZ) in struct iw_freq
+        * iwlist & iwconfig command shows frequency into proper
+        * format (2.412 GHz instead of 246.2 MHz)*/
+       fwrq->m = 0;
+       fwrq->e = MHZ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
    return 0;
 }
@@ -1246,7 +1726,11 @@ static int iw_get_bitrate(struct net_device *dev,
       {
          hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: Unable to retrieve statistics",
+<<<<<<< HEAD
                 __FUNCTION__);
+=======
+                __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return status;
       }
 
@@ -1258,7 +1742,11 @@ static int iw_get_bitrate(struct net_device *dev,
       {
          hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: SME timeout while retrieving statistics",
+<<<<<<< HEAD
                 __FUNCTION__);
+=======
+                __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAILURE;
       }
 
@@ -1437,7 +1925,11 @@ static int iw_set_genie(struct net_device *dev,
                 }
               break;
          case DOT11F_EID_RSN:
+<<<<<<< HEAD
                 hddLog (LOG1, "%s Set RSN IE (len %d)",__FUNCTION__, eLen+2);
+=======
+                hddLog (LOG1, "%s Set RSN IE (len %d)",__func__, eLen+2);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 memset( pWextState->WPARSNIE, 0, MAX_WPA_RSN_IE_LEN );
                 memcpy( pWextState->WPARSNIE, genie - 2, (eLen + 2));
                 pWextState->roamProfile.pRSNReqIE = pWextState->WPARSNIE;
@@ -1445,7 +1937,11 @@ static int iw_set_genie(struct net_device *dev,
               break;
 
          default:
+<<<<<<< HEAD
                 hddLog (LOGE, "%s Set UNKNOWN IE %X",__FUNCTION__, elementId);
+=======
+                hddLog (LOGE, "%s Set UNKNOWN IE %X",__func__, elementId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return 0;
     }
         genie += eLen;
@@ -1500,7 +1996,11 @@ static int iw_get_genie(struct net_device *dev,
 
     vos_mem_copy( wrqu->data.pointer, (v_VOID_t*)genIeBytes, wrqu->data.length);
 
+<<<<<<< HEAD
     hddLog(LOG1,"%s: RSN IE of %d bytes returned\n", __FUNCTION__, wrqu->data.length );
+=======
+    hddLog(LOG1,"%s: RSN IE of %d bytes returned\n", __func__, wrqu->data.length );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     EXIT();
 
@@ -1529,7 +2029,11 @@ static int iw_get_encode(struct net_device *dev,
 
     if(keyId < 0 || keyId >= MAX_WEP_KEYS)
     {
+<<<<<<< HEAD
         hddLog(LOG1,"%s: Invalid keyId : %d\n",__FUNCTION__,keyId);
+=======
+        hddLog(LOG1,"%s: Invalid keyId : %d\n",__func__,keyId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
 
@@ -1607,6 +2111,15 @@ static int iw_set_rts_threshold(struct net_device *dev,
 
     ENTER();
 
+<<<<<<< HEAD
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+            "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EAGAIN;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( wrqu->rts.value < WNI_CFG_RTS_THRESHOLD_STAMIN || wrqu->rts.value > WNI_CFG_RTS_THRESHOLD_STAMAX )
     {
         return -EINVAL;
@@ -1643,6 +2156,15 @@ static int iw_set_frag_threshold(struct net_device *dev,
 
    ENTER();
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( wrqu->frag.value < WNI_CFG_FRAGMENTATION_THRESHOLD_STAMIN || wrqu->frag.value > WNI_CFG_FRAGMENTATION_THRESHOLD_STAMAX )
     {
         return -EINVAL;
@@ -1695,6 +2217,15 @@ static int iw_get_range(struct net_device *dev, struct iw_request_info *info,
    wrqu->data.length = sizeof(struct iw_range);
    memset(range, 0, sizeof(struct iw_range));
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+      return -EBUSY;
+   }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*Get the phy mode*/
    if (ccmCfgGetInt(hHal,
@@ -1706,6 +2237,10 @@ static int iw_get_range(struct net_device *dev, struct iw_request_info *info,
       if (active_phy_mode == WNI_CFG_DOT11_MODE_11A || active_phy_mode == WNI_CFG_DOT11_MODE_11G)
       {
          /*Get the supported rates for 11G band*/
+<<<<<<< HEAD
+=======
+         a_len = WNI_CFG_SUPPORTED_RATES_11A_LEN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if (ccmCfgGetStr(hHal,
                           WNI_CFG_SUPPORTED_RATES_11A,
                           supp_rates, &a_len) == eHAL_STATUS_SUCCESS)
@@ -1728,6 +2263,10 @@ static int iw_get_range(struct net_device *dev, struct iw_request_info *info,
       else if (active_phy_mode == WNI_CFG_DOT11_MODE_11B)
       {
          /*Get the supported rates for 11B band*/
+<<<<<<< HEAD
+=======
+         b_len = WNI_CFG_SUPPORTED_RATES_11B_LEN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if (ccmCfgGetStr(hHal,
                           WNI_CFG_SUPPORTED_RATES_11B,
                           supp_rates, &b_len) == eHAL_STATUS_SUCCESS)
@@ -1824,7 +2363,11 @@ static void iw_power_callback_fn (void *pContext, eHalStatus status)
    {
        hddLog(VOS_TRACE_LEVEL_ERROR,
             "%s: Bad param, pContext [%p]",
+<<<<<<< HEAD
               __FUNCTION__, pContext);
+=======
+              __func__, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return;
    }
 
@@ -1841,12 +2384,20 @@ static void iw_power_callback_fn (void *pContext, eHalStatus status)
        /* the caller presumably timed out so there is nothing we can do */
        hddLog(VOS_TRACE_LEVEL_WARN,
            "%s: Invalid context, pAdapter [%p] magic [%08x]",
+<<<<<<< HEAD
            __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+           __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
        if (ioctl_debug)
        {
            pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
+<<<<<<< HEAD
              __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+             __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        }
        return;
   }
@@ -1881,14 +2432,22 @@ void hdd_GetClassA_statisticsCB(void *pStats, void *pContext)
    if (ioctl_debug)
    {
       pr_info("%s: pStats [%p] pContext [%p]\n",
+<<<<<<< HEAD
               __FUNCTION__, pStats, pContext);
+=======
+              __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    if ((NULL == pStats) || (NULL == pContext))
    {
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Bad param, pStats [%p] pContext [%p]",
+<<<<<<< HEAD
               __FUNCTION__, pStats, pContext);
+=======
+              __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -1905,11 +2464,19 @@ void hdd_GetClassA_statisticsCB(void *pStats, void *pContext)
       /* the caller presumably timed out so there is nothing we can do */
       hddLog(VOS_TRACE_LEVEL_WARN,
              "%s: Invalid context, pAdapter [%p] magic [%08x]",
+<<<<<<< HEAD
               __FUNCTION__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+              __func__, pAdapter, pStatsContext->magic);
+      if (ioctl_debug)
+      {
+         pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
+                 __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       return;
    }
@@ -1959,7 +2526,11 @@ VOS_STATUS  wlan_hdd_get_classAstats(hdd_adapter_t *pAdapter)
    {
        hddLog(VOS_TRACE_LEVEL_ERROR,
                "%s: Unable to retrieve Class A statistics ",
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        /* we'll returned a cached value below */
    }
    else
@@ -1974,7 +2545,11 @@ VOS_STATUS  wlan_hdd_get_classAstats(hdd_adapter_t *pAdapter)
        {
           hddLog(VOS_TRACE_LEVEL_ERROR,
                  "%s: SME %s while retrieving Class A statistics",
+<<<<<<< HEAD
                  __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                 __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              /* there is a race condition such that the callback
              function could be executing at the same time we are. of
              primary concern is if the callback function had already
@@ -1998,14 +2573,22 @@ static void hdd_get_station_statisticsCB(void *pStats, void *pContext)
    if (ioctl_debug)
    {
       pr_info("%s: pStats [%p] pContext [%p]\n",
+<<<<<<< HEAD
               __FUNCTION__, pStats, pContext);
+=======
+              __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    if ((NULL == pStats) || (NULL == pContext))
    {
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Bad param, pStats [%p] pContext [%p]",
+<<<<<<< HEAD
              __FUNCTION__, pStats, pContext);
+=======
+             __func__, pStats, pContext);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -2023,11 +2606,19 @@ static void hdd_get_station_statisticsCB(void *pStats, void *pContext)
       /* the caller presumably timed out so there is nothing we can do */
       hddLog(VOS_TRACE_LEVEL_WARN,
              "%s: Invalid context, pAdapter [%p] magic [%08x]",
+<<<<<<< HEAD
              __FUNCTION__, pAdapter, pStatsContext->magic);
       if (ioctl_debug)
       {
          pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
                  __FUNCTION__, pAdapter, pStatsContext->magic);
+=======
+             __func__, pAdapter, pStatsContext->magic);
+      if (ioctl_debug)
+      {
+         pr_info("%s: Invalid context, pAdapter [%p] magic [%08x]\n",
+                 __func__, pAdapter, pStatsContext->magic);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       return;
    }
@@ -2075,7 +2666,11 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
    {
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Unable to retrieve statistics",
+<<<<<<< HEAD
              __FUNCTION__);
+=======
+             __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* we'll return with cached values */
    }
    else
@@ -2090,7 +2685,11 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
       {
          hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: SME %s while retrieving statistics",
+<<<<<<< HEAD
                 __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          /* there is a race condition such that the callback
             function could be executing at the same time we are. of
             primary concern is if the callback function had already
@@ -2115,11 +2714,31 @@ static int iw_get_linkspeed(struct net_device *dev,
                             union iwreq_data *wrqu, char *extra)
 {
    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+<<<<<<< HEAD
    char *pLinkSpeed = (char*)extra;
    int len = sizeof(v_U16_t) + 1;
    v_U16_t link_speed;
    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
    int rc;
+=======
+   hdd_context_t *pHddCtx;
+   char *pLinkSpeed = (char*)extra;
+   int len = sizeof(v_U32_t) + 1;
+   v_U32_t link_speed;
+   hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+   VOS_STATUS status;
+   int rc, valid;
+
+   pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+
+   valid = wlan_hdd_validate_context(pHddCtx);
+
+   if (0 != valid)
+   {
+       hddLog(VOS_TRACE_LEVEL_ERROR, FL("HDD context is not valid"));
+       return valid;
+   }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (eConnectionState_Associated != pHddStaCtx->conn_info.connState)
    {
@@ -2128,14 +2747,43 @@ static int iw_get_linkspeed(struct net_device *dev,
    }
    else
    {
+<<<<<<< HEAD
        wlan_hdd_get_classAstats(pAdapter);
        //The linkspeed returned by HAL is in units of 500kbps.
        //converting it to mbps
        link_speed = pAdapter->hdd_stats.ClassA_stat.tx_rate/2;
+=======
+       status = wlan_hdd_get_classAstats(pAdapter);
+
+       if (!VOS_IS_STATUS_SUCCESS(status ))
+       {
+           hddLog(VOS_TRACE_LEVEL_ERROR, FL("Unable to retrieve SME statistics"));
+           return -EINVAL;
+       }
+
+       /* Unit of link capacity is obtained from the TL API is MbpsX10  */
+       WLANTL_GetSTALinkCapacity(WLAN_HDD_GET_CTX(pAdapter)->pvosContext,
+          (WLAN_HDD_GET_STATION_CTX_PTR(pAdapter))->conn_info.staId[0],
+          &link_speed);
+
+       link_speed = link_speed / 10;
+
+       if (0 == link_speed)
+       {
+           /* The linkspeed returned by HAL is in units of 500kbps.
+            * converting it to mbps.
+            * This is required to support legacy firmware which does
+            * not return link capacity.
+            */
+           link_speed = pAdapter->hdd_stats.ClassA_stat.tx_rate/2;
+       }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    wrqu->data.length = len;
    // return the linkspeed in the format required by the WiFi Framework
+<<<<<<< HEAD
    rc = snprintf(pLinkSpeed, len, "%u", link_speed);
    if ((rc < 0) || (rc >= len))
    {
@@ -2143,6 +2791,13 @@ static int iw_get_linkspeed(struct net_device *dev,
        hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: Unable to encode link speed, got [%s]",
                 __FUNCTION__,pLinkSpeed);
+=======
+   rc = snprintf(pLinkSpeed, len, "%lu", link_speed);
+   if ((rc < 0) || (rc >= len))
+   {
+       // encoding or length error?
+       hddLog(VOS_TRACE_LEVEL_ERROR,FL("Unable to encode link speed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return -EIO;
    }
 
@@ -2176,7 +2831,11 @@ static int iw_get_rssi(struct net_device *dev,
    {
       /* we are not connected or our SSID is too long
          so we cannot report an rssi */
+<<<<<<< HEAD
       rc = snprintf(cmd, len, "OK");
+=======
+      rc = scnprintf(cmd, len, "OK");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else
    {
@@ -2191,7 +2850,11 @@ static int iw_get_rssi(struct net_device *dev,
       {
           /* append the rssi to the ssid in the format required by
              the WiFI Framework */
+<<<<<<< HEAD
           rc = snprintf(&cmd[ssidlen], len - ssidlen, " rssi %d", s7Rssi);
+=======
+          rc = scnprintf(&cmd[ssidlen], len - ssidlen, " rssi %d", s7Rssi);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else
       {
@@ -2205,7 +2868,11 @@ static int iw_get_rssi(struct net_device *dev,
       // encoding or length error?
       hddLog(VOS_TRACE_LEVEL_ERROR,
              "%s: Unable to encode RSSI, got [%s]",
+<<<<<<< HEAD
              __FUNCTION__, cmd);
+=======
+             __func__, cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return -EIO;
    }
 
@@ -2225,12 +2892,21 @@ static int iw_softap_set_channel_range( struct net_device *dev,
     int ret = 0;
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     status = WLANSAP_SetChannelRange(hHal, startChannel, endChannel, band);
     if (VOS_STATUS_SUCCESS != status)
     {
         ret = -EINVAL;
     }
+<<<<<<< HEAD
+=======
+    pHddCtx->is_dynamic_channel_range_set = 1;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return ret;
 }
 
@@ -2272,7 +2948,11 @@ VOS_STATUS  wlan_hdd_enter_bmps(hdd_adapter_t *pAdapter, int mode)
            if (lrc <= 0)
            {
                hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while requesting fullpower ",
+<<<<<<< HEAD
                   __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                  __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                /* there is a race condition such that the callback
                   function could be executing at the same time we are. of
                   primary concern is if the callback function had already
@@ -2306,7 +2986,11 @@ VOS_STATUS  wlan_hdd_enter_bmps(hdd_adapter_t *pAdapter, int mode)
                if (lrc <= 0)
                {
                    hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while requesting BMPS ",
+<<<<<<< HEAD
                       __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+                      __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    /* there is a race condition such that the callback
                       function could be executing at the same time we are. of
                       primary concern is if the callback function had already
@@ -2417,17 +3101,44 @@ static int iw_set_priv(struct net_device *dev,
                        union iwreq_data *wrqu, char *extra)
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+<<<<<<< HEAD
     char *cmd = (char*)wrqu->data.pointer;
     int cmd_len = wrqu->data.length;
+=======
+    int cmd_len = wrqu->data.length;
+    char* cmd = (char *)kmalloc(cmd_len+1, GFP_KERNEL); //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int ret = 0;
     int status = 0;
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 
     ENTER();
 
+<<<<<<< HEAD
     if (ioctl_debug)
     {
        pr_info("%s: req [%s] len [%d]\n", __FUNCTION__, cmd, cmd_len);
+=======
+    //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+    if(cmd == NULL){
+        hddLog(VOS_TRACE_LEVEL_FATAL, "%s Malloc failed for buff of size %d - ignoring ioctl!",
+                __FUNCTION__, cmd_len);
+        status = -ENOMEM;
+        goto cleanup_and_return;
+    }
+
+    if(copy_from_user(cmd, (char*)(wrqu->data.pointer), cmd_len)) {
+        hddLog(VOS_TRACE_LEVEL_FATAL, "%s -- copy_from_user --data pointer failed! bailing",
+                __FUNCTION__);
+        status = -EFAULT;
+        goto cleanup_and_return;
+    }
+    //IKHSS7-35965, a19091, Motorola changes -- END
+
+    if (ioctl_debug)
+    {
+       pr_info("%s: req [%s] len [%d]\n", __func__, cmd, cmd_len);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     hddLog(VOS_TRACE_LEVEL_INFO_MED,
@@ -2436,12 +3147,20 @@ static int iw_set_priv(struct net_device *dev,
     if (pHddCtx->isLogpInProgress) {
        if (ioctl_debug)
        {
+<<<<<<< HEAD
           pr_info("%s: RESTART in progress\n", __FUNCTION__);
+=======
+          pr_info("%s: RESTART in progress\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        }
 
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
                  "%s:LOGP in Progress. Ignore!!!",__func__);
+<<<<<<< HEAD
        return status;
+=======
+       goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if(strncmp(cmd, "CSCAN",5) == 0 )
@@ -2467,7 +3186,11 @@ static int iw_set_priv(struct net_device *dev,
         {
             hddLog(VOS_TRACE_LEVEL_FATAL, "%s: START CMD Status %d", __func__, status);
         }
+<<<<<<< HEAD
         goto done;
+=======
+        goto done; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else if( strcasecmp(cmd, "stop") == 0 )
     {
@@ -2481,7 +3204,11 @@ static int iw_set_priv(struct net_device *dev,
         wrqu.data.length = strlcpy(buf, "STOP", sizeof(buf));
         wireless_send_event(pAdapter->dev, IWEVCUSTOM, &wrqu, buf);
         status = VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
         goto done;
+=======
+        goto done; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else if (strcasecmp(cmd, "macaddr") == 0)
     {
@@ -2490,17 +3217,29 @@ static int iw_set_priv(struct net_device *dev,
     }
     else if (strcasecmp(cmd, "scan-active") == 0)
     {
+<<<<<<< HEAD
         pAdapter->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+=======
+        pHddCtx->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ret = snprintf(cmd, cmd_len, "OK");
     }
     else if (strcasecmp(cmd, "scan-passive") == 0)
     {
+<<<<<<< HEAD
         pAdapter->scan_info.scan_mode = eSIR_PASSIVE_SCAN;
+=======
+        pHddCtx->scan_info.scan_mode = eSIR_PASSIVE_SCAN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ret = snprintf(cmd, cmd_len, "OK");
     }
     else if( strcasecmp(cmd, "scan-mode") == 0 )
     {
+<<<<<<< HEAD
         ret = snprintf(cmd, cmd_len, "ScanMode = %u", pAdapter->scan_info.scan_mode);
+=======
+        ret = snprintf(cmd, cmd_len, "ScanMode = %u", pHddCtx->scan_info.scan_mode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else if( strcasecmp(cmd, "linkspeed") == 0 )
     {
@@ -2527,14 +3266,25 @@ static int iw_set_priv(struct net_device *dev,
         if (lrc <= 0)
         {
             hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while setting country code ",
+<<<<<<< HEAD
                  __FUNCTION__, "Timed out");
+=======
+                 __func__, "Timed out");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
         if( 0 != status )
         {
             VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                        "%s: SME Change Country code fail \n",__func__);
+<<<<<<< HEAD
             return VOS_STATUS_E_FAILURE;
+=======
+             //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+             status = VOS_STATUS_E_FAILURE;
+             goto cleanup_and_return;
+             //IKHSS7-35965, a19091, Motorola changes -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
     else if( strncasecmp(cmd, "rssi", 4) == 0 )
@@ -2547,6 +3297,10 @@ static int iw_set_priv(struct net_device *dev,
 
         sscanf(ptr,"%d",&mode);
         wlan_hdd_enter_bmps(pAdapter, mode);
+<<<<<<< HEAD
+=======
+		goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO:Set the power mode*/
     }
     else if (strncasecmp(cmd, "getpower", 8) == 0 ) {
@@ -2564,66 +3318,115 @@ static int iw_set_priv(struct net_device *dev,
     }
     else if( strncasecmp(cmd, "btcoexmode", 10) == 0 ) {
         hddLog( VOS_TRACE_LEVEL_INFO, "btcoexmode\n");
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: set the btcoexmode*/
     }
     else if( strcasecmp(cmd, "btcoexstat") == 0 ) {
 
         hddLog(VOS_TRACE_LEVEL_INFO, "BtCoex Status\n");
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: Return the btcoex status*/
     }
     else if( strcasecmp(cmd, "rxfilter-start") == 0 ) {
 
         hddLog(VOS_TRACE_LEVEL_INFO, "Rx Data Filter Start command\n");
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /*TODO: Enable Rx data Filter*/
     }
     else if( strcasecmp(cmd, "rxfilter-stop") == 0 ) {
 
         hddLog(VOS_TRACE_LEVEL_INFO, "Rx Data Filter Stop command\n");
+<<<<<<< HEAD
 
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+		
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: Disable Rx data Filter*/
     }
     else if( strcasecmp(cmd, "rxfilter-statistics") == 0 ) {
 
         hddLog( VOS_TRACE_LEVEL_INFO, "Rx Data Filter Statistics command\n");
+<<<<<<< HEAD
+=======
+		goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: rxfilter-statistics*/
     }
     else if( strncasecmp(cmd, "rxfilter-add", 12) == 0 ) {
 
         hddLog( VOS_TRACE_LEVEL_INFO, "rxfilter-add\n");
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola		
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: rxfilter-add*/
     }
     else if( strncasecmp(cmd, "rxfilter-remove",15) == 0 ) {
 
         hddLog( VOS_TRACE_LEVEL_INFO, "rxfilter-remove\n");
+<<<<<<< HEAD
+=======
+        goto done;  //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: rxfilter-remove*/
     }
 #ifdef FEATURE_WLAN_SCAN_PNO
     else if( strncasecmp(cmd, "pnosetup", 8) == 0 ) {
         hddLog( VOS_TRACE_LEVEL_INFO, "pnosetup");
+<<<<<<< HEAD
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: support pnosetup*/
     }
     else if( strncasecmp(cmd, "pnoforce", 8) == 0 ) {
         hddLog( VOS_TRACE_LEVEL_INFO, "pnoforce");
+<<<<<<< HEAD
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*TODO: support pnoforce*/
     }
     else if( strncasecmp(cmd, "pno",3) == 0 ) {
 
         hddLog( VOS_TRACE_LEVEL_INFO, "pno\n");
         status = iw_set_pno(dev, info, wrqu, extra, 3);
+<<<<<<< HEAD
         return status;
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else if( strncasecmp(cmd, "rssifilter",10) == 0 ) {
 
         hddLog( VOS_TRACE_LEVEL_INFO, "rssifilter\n");
         status = iw_set_rssi_filter(dev, info, wrqu, extra, 10);
+<<<<<<< HEAD
         return status;
+=======
+        goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif /*FEATURE_WLAN_SCAN_PNO*/
     else if( strncasecmp(cmd, "powerparams",11) == 0 ) {
       hddLog( VOS_TRACE_LEVEL_INFO, "powerparams\n");
       status = iw_set_power_params(dev, info, wrqu, extra, 11);
+<<<<<<< HEAD
       return status;
+=======
+      goto cleanup_and_return; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else if( 0 == strncasecmp(cmd, "CONFIG-TX-TRACKING", 18) ) {
         tSirTxPerTrackingParam tTxPerTrackingParam;
@@ -2636,7 +3439,14 @@ static int iw_set_priv(struct net_device *dev,
         if (0 == tTxPerTrackingParam.ucTxPerTrackingPeriod)
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN, "Period input is not correct");
+<<<<<<< HEAD
             return VOS_STATUS_E_FAILURE;
+=======
+            //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+            status = VOS_STATUS_E_FAILURE;
+            goto cleanup_and_return;
+            //IKHSS7-35965, a19091, Motorola changes -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
         // use default value 5 is the input is not reasonable. in unit of 10%
@@ -2662,6 +3472,14 @@ static int iw_set_priv(struct net_device *dev,
         hddLog( VOS_TRACE_LEVEL_WARN, "%s: Unsupported GUI command %s",
                 __func__, cmd);
     }
+<<<<<<< HEAD
+=======
+    //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+    if(copy_to_user((char*)(wrqu->data.pointer), cmd, cmd_len)) {
+        hddLog( VOS_TRACE_LEVEL_FATAL, "%s: COPY to user failed ... ignoring",__FUNCTION__);
+    }
+    //IKHSS7-35965, a19091, Motorola changes -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 done:
     /* many of the commands write information back into the command
        string using snprintf().  check the return value here in one
@@ -2675,8 +3493,19 @@ done:
     if (ioctl_debug)
     {
        pr_info("%s: rsp [%s] len [%d] status %d\n",
+<<<<<<< HEAD
                __FUNCTION__, cmd, wrqu->data.length, status);
     }
+=======
+               __func__, cmd, wrqu->data.length, status);
+    }
+    //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+cleanup_and_return:
+    if(cmd != NULL) {
+        kfree(cmd);
+    }
+    //IKHSS7-35965, a19091, Motorola changes -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return status;
 
 }
@@ -2790,7 +3619,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
 
    if(wrqu->data.length > 0)
    {
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_INFO, "%s : wrqu->data.length : %d",__FUNCTION__,wrqu->data.length);
+=======
+       hddLog(VOS_TRACE_LEVEL_INFO, "%s : wrqu->data.length : %d",__func__,wrqu->data.length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
        key_length = wrqu->data.length;
 
@@ -2798,7 +3631,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
 
        if(5 == key_length)
        {
+<<<<<<< HEAD
            hddLog(VOS_TRACE_LEVEL_INFO, "%s: Call with WEP40,key_len=%d",__FUNCTION__,key_length);
+=======
+           hddLog(VOS_TRACE_LEVEL_INFO, "%s: Call with WEP40,key_len=%d",__func__,key_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
            if((IW_AUTH_KEY_MGMT_802_1X == pWextState->authKeyMgmt) && (eCSR_AUTH_TYPE_OPEN_SYSTEM == pHddStaCtx->conn_info.authType))
            {
@@ -2811,7 +3648,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
        }
        else if(13 == key_length)
        {
+<<<<<<< HEAD
            hddLog(VOS_TRACE_LEVEL_INFO, "%s:Call with WEP104,key_len:%d",__FUNCTION__,key_length);
+=======
+           hddLog(VOS_TRACE_LEVEL_INFO, "%s:Call with WEP104,key_len:%d",__func__,key_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
            if((IW_AUTH_KEY_MGMT_802_1X == pWextState->authKeyMgmt) && (eCSR_AUTH_TYPE_OPEN_SYSTEM == pHddStaCtx->conn_info.authType))
            {
@@ -2825,7 +3666,11 @@ static int iw_set_encode(struct net_device *dev,struct iw_request_info *info,
        else
        {
            hddLog(VOS_TRACE_LEVEL_WARN, "%s: Invalid WEP key length :%d",
+<<<<<<< HEAD
                   __FUNCTION__, key_length);
+=======
+                  __func__, key_length);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            return -EINVAL;
        }
 
@@ -2868,11 +3713,25 @@ static int iw_get_encodeext(struct net_device *dev,
 
     ENTER();
 
+<<<<<<< HEAD
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+              "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     keyId = pRoamProfile->Keys.defaultIndex;
 
     if(keyId < 0 || keyId >= MAX_WEP_KEYS)
     {
+<<<<<<< HEAD
         hddLog(LOG1,"%s: Invalid keyId : %d\n",__FUNCTION__,keyId);
+=======
+        hddLog(LOG1,"%s: Invalid keyId : %d\n",__func__,keyId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
 
@@ -2980,7 +3839,11 @@ static int iw_set_encodeext(struct net_device *dev,
     {
        if(IW_AUTH_KEY_MGMT_802_1X == pWextState->authKeyMgmt) {
 
+<<<<<<< HEAD
           VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,("Invalid Configuration:%s \n"),__FUNCTION__);
+=======
+          VOS_TRACE (VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,("Invalid Configuration:%s \n"),__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           return -EINVAL;
        }
        else {
@@ -3083,6 +3946,7 @@ static int iw_set_encodeext(struct net_device *dev,
     }
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
           ("%s:cipher_alg:%d key_len[%d] *pEncryptionType :%d \n"),__FUNCTION__,(int)ext->alg,(int)ext->key_len,setKey.encType);
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
@@ -3092,6 +3956,26 @@ static int iw_set_encodeext(struct net_device *dev,
     if( halStatus == eHAL_STATUS_SUCCESS )
     {
        return halStatus;
+=======
+          ("%s:cipher_alg:%d key_len[%d] *pEncryptionType :%d \n"),__func__,(int)ext->alg,(int)ext->key_len,setKey.encType);
+
+#ifdef WLAN_FEATURE_VOWIFI_11R
+    /* The supplicant may attempt to set the PTK once pre-authentication
+       is done. Save the key in the UMAC and include it in the ADD
+       BSS request */
+    halStatus = sme_FTUpdateKey( WLAN_HDD_GET_HAL_CTX(pAdapter), &setKey);
+    if ( halStatus == eHAL_STATUS_FT_PREAUTH_KEY_SUCCESS )
+    {
+        hddLog(VOS_TRACE_LEVEL_INFO_MED,
+               "%s: Update PreAuth Key success", __func__);
+        return 0;
+    }
+    else if ( halStatus == eHAL_STATUS_FT_PREAUTH_KEY_FAILED )
+    {
+        hddLog(VOS_TRACE_LEVEL_ERROR,
+               "%s: Update PreAuth Key failed", __func__);
+        return -EINVAL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif /* WLAN_FEATURE_VOWIFI_11R */
 
@@ -3129,6 +4013,16 @@ static int iw_set_retry(struct net_device *dev, struct iw_request_info *info,
 
    ENTER();
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                   "%s:LOGP in Progress. Ignore!!!", __func__);
+      return -EBUSY;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(wrqu->retry.value < WNI_CFG_LONG_RETRY_LIMIT_STAMIN ||
        wrqu->retry.value > WNI_CFG_LONG_RETRY_LIMIT_STAMAX) {
 
@@ -3176,6 +4070,16 @@ static int iw_get_retry(struct net_device *dev, struct iw_request_info *info,
 
    ENTER();
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+              "%s:LOGP in Progress. Ignore!!!", __func__);
+      return -EBUSY;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if((wrqu->retry.flags & IW_RETRY_LONG))
    {
       wrqu->retry.flags = IW_RETRY_LIMIT | IW_RETRY_LONG;
@@ -3248,7 +4152,11 @@ static int iw_set_mlme(struct net_device *dev,
                         msecs_to_jiffies(WLAN_WAIT_TIME_DISCONNECT));
                 else
                     hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate : csrRoamDisconnect failure returned %d \n",
+<<<<<<< HEAD
                        __FUNCTION__, (int)mlme->cmd, (int)status );
+=======
+                       __func__, (int)mlme->cmd, (int)status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 /* Resetting authKeyMgmt */
                 (WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter))->authKeyMgmt = 0;
@@ -3259,11 +4167,19 @@ static int iw_set_mlme(struct net_device *dev,
             }
             else
             {
+<<<<<<< HEAD
                 hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate called but station is not in associated state \n", __FUNCTION__, (int)mlme->cmd );
             }
             break;
         default:
             hddLog(LOGE,"%s %d Command should be Disassociate/Deauthenticate \n", __FUNCTION__, (int)mlme->cmd );
+=======
+                hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate called but station is not in associated state \n", __func__, (int)mlme->cmd );
+            }
+            break;
+        default:
+            hddLog(LOGE,"%s %d Command should be Disassociate/Deauthenticate \n", __func__, (int)mlme->cmd );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return -EINVAL;
     }//end of switch
 
@@ -3280,9 +4196,16 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
     hdd_wext_state_t  *pWextState =  WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
+<<<<<<< HEAD
     int *value = (int *)extra;
     int sub_cmd = value[0];
     int set_value = value[1];
+=======
+    int cmd_len = wrqu->data.length;
+    int *value = (int *) kmalloc(cmd_len+1, GFP_KERNEL);  // Motorola, IKHSS7-39028
+    int sub_cmd;
+    int set_value;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int ret = 0; /* success */
     int enable_pbm, enable_mp;
 #ifdef CONFIG_HAS_EARLYSUSPEND
@@ -3290,11 +4213,39 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
 #endif
     INIT_COMPLETION(pWextState->completion_var);
 
+<<<<<<< HEAD
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+
+	    if(value == NULL)
+        return -ENOMEM;
+
+    if(copy_from_user((char *) value, (char*)(wrqu->data.pointer), cmd_len)) {
+        hddLog(VOS_TRACE_LEVEL_FATAL, "%s -- copy_from_user --data pointer failed! bailing",
+                __FUNCTION__);
+        kfree(value);
+        return -EFAULT;
+    }
+
+    sub_cmd = value[0];
+    set_value = value[1];
+    kfree(value);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(sub_cmd)
     {
         case WE_SET_11D_STATE:
         {
+<<<<<<< HEAD
             tSmeConfigParams smeConfig;;
+=======
+            tSmeConfigParams smeConfig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if((ENABLE_11D == set_value) || (DISABLE_11D == set_value)) {
 
                 sme_GetConfigParam(hHal,&smeConfig);
@@ -3315,7 +4266,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
            switch (set_value)
            {
               case 0x00:
+<<<<<<< HEAD
                  hdd_exit_wowl();
+=======
+                 hdd_exit_wowl(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  break;
               case 0x01:
               case 0x02:
@@ -3361,7 +4316,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                     {
                        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while "
                                  "requesting fullpower ",
+<<<<<<< HEAD
                                  __FUNCTION__, (0 == lrc) ?
+=======
+                                 __func__, (0 == lrc) ?
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                  "timeout" : "interrupt");
                        /* there is a race condition such that the callback
                           function could be executing at the same time we are. of
@@ -3405,7 +4364,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                     {
                        hddLog(VOS_TRACE_LEVEL_ERROR,"%s: SME %s while "
                                 "requesting BMPS",
+<<<<<<< HEAD
                                  __FUNCTION__, (0 == lrc) ? "timeout" :
+=======
+                                 __func__, (0 == lrc) ? "timeout" :
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                  "interrupt");
                        /* there is a race condition such that the callback
                           function could be executing at the same time we are. of
@@ -3435,9 +4398,12 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                  break;
               case  8: //Request Standby
 #ifdef CONFIG_HAS_EARLYSUSPEND
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  (void)hdd_enter_standby(pAdapter->pHddCtx);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
                  break;
               case  9: //Start Auto Bmps Timer
@@ -3451,9 +4417,12 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
 #ifdef CONFIG_HAS_EARLYSUSPEND
                  nEnableSuspendOld = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend;
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = 1;
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  hdd_suspend_wlan(NULL);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = nEnableSuspendOld;
 #endif
                  break;
@@ -3461,17 +4430,23 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
 #ifdef CONFIG_HAS_EARLYSUSPEND
                  nEnableSuspendOld = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend;
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = 2;
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  hdd_suspend_wlan(NULL);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->nEnableSuspend = nEnableSuspendOld;
 #endif
                  break;
               case  13://resume from suspend
 #ifdef CONFIG_HAS_EARLYSUSPEND
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
                  hdd_resume_wlan(NULL);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
                  break;
 #endif
@@ -3566,7 +4541,11 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
                 if(pAdapter->higherDtimTransition != set_value)
                 {
                     pAdapter->higherDtimTransition = set_value;
+<<<<<<< HEAD
                     hddLog(LOG1, "%s: higherDtimTransition set to :%d", __FUNCTION__, pAdapter->higherDtimTransition);
+=======
+                    hddLog(LOG1, "%s: higherDtimTransition set to :%d", __func__, pAdapter->higherDtimTransition);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
 
@@ -3581,7 +4560,44 @@ static int iw_setint_getnone(struct net_device *dev, struct iw_request_info *inf
 
            break;
         }
+<<<<<<< HEAD
 
+=======
+		// Motorola, IKJBREL1-4181
+        case WE_SET_CHANNEL_RANGE:
+        {
+            int startChannel, endChannel;
+            if (set_value == 3) {
+                startChannel = 153;
+                endChannel   = 165;
+            } else if (set_value == 2) {
+                startChannel = 104;
+                endChannel   = 140;
+            } else if (set_value == 1) {
+                startChannel = 40;
+                endChannel   = 64;
+            } else {
+                set_value = 0;
+                startChannel = 1;
+                //BEGIN MOT a19110 IKJBXLINE-2149 MHS frequency band support
+                endChannel   = 14;
+                //END IKJBXLINE-2149
+            }
+
+            ret = iw_softap_set_channel_range( dev, startChannel, endChannel, set_value);
+
+            break;
+        }
+        // End IKJBREL1-4181
+        // IKJB42MAIN-1244, Motorola, a19091  -- BEGIN
+        case WE_SET_IPV6_FILTER_STATE:
+        {
+             hddLog(LOGE, "Revieeved ioctl WE_SET_IPV6_FILTER_STATE");
+            ret = wlan_hdd_set_v6_filter(pAdapter, set_value, TRUE);
+            break;
+        }
+        // IKJB42MAIN-1244, Motorola, a19091  -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
         {
             hddLog(LOGE, "Invalid IOCTL setvalue command %d value %d \n",
@@ -3606,18 +4622,38 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
     hdd_config_t  *pConfig = pHddCtx->cfg_ini;
 #endif /* WLAN_FEATURE_VOWIFI */
 
+<<<<<<< HEAD
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
+=======
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __func__, wrqu->data.length);
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch(sub_cmd)
     {
        case WE_WOWL_ADD_PTRN:
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "ADD_PTRN\n");
+<<<<<<< HEAD
           hdd_add_wowl_ptrn((char*)wrqu->data.pointer);
           break;
        case WE_WOWL_DEL_PTRN:
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "DEL_PTRN\n");
           hdd_del_wowl_ptrn((char*)wrqu->data.pointer);
+=======
+          hdd_add_wowl_ptrn(pAdapter, (char*)wrqu->data.pointer);
+          break;
+       case WE_WOWL_DEL_PTRN:
+          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "DEL_PTRN\n");
+          hdd_del_wowl_ptrn(pAdapter, (char*)wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           break;
 #if defined WLAN_FEATURE_VOWIFI
        case WE_NEIGHBOR_REPORT_REQUEST:
@@ -3648,6 +4684,7 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
           }
           break;
 #endif
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
        case WE_SET_AP_WPS_IE:
           hddLog( LOGE, "Received WE_SET_AP_WPS_IE" );
@@ -3656,6 +4693,12 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
 #endif // WLAN_FEATURE_P2P
           break;
 #endif
+=======
+       case WE_SET_AP_WPS_IE:
+          hddLog( LOGE, "Received WE_SET_AP_WPS_IE" );
+          sme_updateP2pIe( WLAN_HDD_GET_HAL_CTX(pAdapter), wrqu->data.pointer, wrqu->data.length );
+          break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        case WE_SET_CONFIG:
           vstatus = hdd_execute_config_command(pHddCtx, wrqu->data.pointer);
           if (VOS_STATUS_SUCCESS != vstatus)
@@ -3665,7 +4708,11 @@ static int iw_setchar_getnone(struct net_device *dev, struct iw_request_info *in
           break;
        default:
        {
+<<<<<<< HEAD
            hddLog(LOGE, "%s: Invalid sub command %d\n",__FUNCTION__, sub_cmd);
+=======
+           hddLog(LOGE, "%s: Invalid sub command %d\n",__func__, sub_cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            ret = -EINVAL;
            break;
        }
@@ -3682,12 +4729,25 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
     int *value = (int *)extra;
     int ret = 0; /* success */
 
+<<<<<<< HEAD
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (value[0])
     {
         case WE_GET_11D_STATE:
         {
+<<<<<<< HEAD
            tSmeConfigParams smeConfig;;
+=======
+           tSmeConfigParams smeConfig;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            
            sme_GetConfigParam(hHal,&smeConfig);
            
@@ -3716,10 +4776,17 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
         }
         case WE_MODULE_DOWN_IND:
         {
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: sending WLAN_MODULE_DOWN_IND", __FUNCTION__);
             send_btc_nlink_msg(WLAN_MODULE_DOWN_IND, 0);
 #ifdef WLAN_BTAMP_FEATURE
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: Take down AMP PAL", __FUNCTION__);
+=======
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: sending WLAN_MODULE_DOWN_IND", __func__);
+            send_btc_nlink_msg(WLAN_MODULE_DOWN_IND, 0);
+#ifdef WLAN_BTAMP_FEATURE
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: Take down AMP PAL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             BSL_Deinit(vos_get_global_context(VOS_MODULE_ID_HDD, NULL));
 #endif
             //WLANBAP_Close(vos_get_global_context(VOS_MODULE_ID_HDD, NULL));
@@ -3736,14 +4803,20 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
             break;
         }
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_GET_WDI_DBG:
         {
            wpalTraceDisplay();
            *value = 0;
            break;
         }
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case WE_GET_SAP_AUTO_CHANNEL_SELECTION:
         {
@@ -3757,6 +4830,16 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, ("concurrency mode=%d \n"),*value);
            break;
         }
+<<<<<<< HEAD
+=======
+        // BEGIN MOTOROLA IKJB42MAIN-274, dpn473, 01/02/2013, Add flag to disable/enable MCC mode
+        case WE_GET_MCC_MODE:
+        {
+           *value = (int)hdd_get_mcc_mode();
+           break;
+        }
+        // IKJB42MAIN-274
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         default:
         {
@@ -3772,29 +4855,63 @@ static int iw_setnone_getint(struct net_device *dev, struct iw_request_info *inf
 int iw_set_three_ints_getnone(struct net_device *dev, struct iw_request_info *info,
                        union iwreq_data *wrqu, char *extra)
 {
+<<<<<<< HEAD
+=======
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int *value = (int *)extra;
     int sub_cmd = value[0];
     int ret = 0;
 
+<<<<<<< HEAD
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(sub_cmd)
     {
         case WE_SET_WLAN_DBG:
         {
+<<<<<<< HEAD
             vos_trace_setValue( value[1], value[2], value[3]);
             break;
         }
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+
+            vos_trace_setValue( value[1], value[2], value[3]);
+            break;
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_SET_WDI_DBG:
         {
             wpalTraceSetLevel( value[1], value[2], value[3]);
             break;
         }
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_SET_SAP_CHANNELS:
         {
             ret = iw_softap_set_channel_range( dev, value[1], value[2], value[3]);
             break;
         }
+<<<<<<< HEAD
+=======
+        //Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
+        case WE_SET_WLAN_DBG_TILL_LEVEL:
+        {
+            vos_trace_setValue_till_level(value[1], value[2], value[3]);
+        }
+        break;
+        //END IKJBXLINE-5577
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         default:
         {
@@ -3810,13 +4927,25 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     int sub_cmd = wrqu->data.flags;
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
     VOS_STATUS status;
 #endif // FEATURE_WLAN_NON_INTEGRATED_SOC
+=======
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(sub_cmd)
     {
         case WE_WLAN_VERSION:
         {
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
             status = hdd_wlan_get_version(pAdapter, wrqu, extra);
 #else // FEATURE_WLAN_NON_INTEGRATED_SOC
@@ -3824,6 +4953,9 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             wrqu->data.length = snprintf(buf, WE_MAX_STR_LEN, "%s_",
                                          WLAN_CHIP_VERSION);
 #endif
+=======
+            hdd_wlan_get_version(pAdapter, wrqu, extra);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
 
@@ -3940,6 +5072,19 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
         }
 #endif
            
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+        case WE_GET_ROAM_RSSI:
+        {
+            v_S7_t s7Rssi = 0;
+            wlan_hdd_get_roam_rssi(pAdapter, &s7Rssi);
+            snprintf(extra, WE_MAX_STR_LEN, "rssi=%d", s7Rssi);
+            wrqu->data.length = strlen(extra)+1;
+            break;
+        }
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_GET_WMM_STATUS:
         {
             snprintf(extra, WE_MAX_STR_LEN,
@@ -3974,8 +5119,13 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             VOS_STATUS status;
             v_U8_t i, len;
             char* buf ;
+<<<<<<< HEAD
             tChannelListInfo channel_list;
 
+=======
+
+            tChannelListInfo channel_list;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = iw_softap_get_channel_list(dev, info, wrqu, (char *)&channel_list);
             if ( !VOS_IS_STATUS_SUCCESS( status ) ) 
             {
@@ -3985,6 +5135,7 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
             buf = extra;
 
             /**
+<<<<<<< HEAD
                        * Maximum channels = WNI_CFG_VALID_CHANNEL_LIST_LEN. Maximum buffer
                        * needed = 5 * number of channels. Check if sufficient buffer is available and 
                        * then proceed to fill the buffer.
@@ -4001,11 +5152,40 @@ static int iw_get_char_setnone(struct net_device *dev, struct iw_request_info *i
                 len = snprintf(buf, 5,
                                "%u ", channel_list.channels[i]);
                 buf += len;
+=======
+             * Maximum channels = WNI_CFG_VALID_CHANNEL_LIST_LEN. Maximum buffer
+             * needed = 5 * number of channels. Check ifsufficient
+             * buffer is available and then proceed to fill the buffer.
+             */
+            if(WE_MAX_STR_LEN < (5 * WNI_CFG_VALID_CHANNEL_LIST_LEN))
+            {
+                hddLog(VOS_TRACE_LEVEL_ERROR,
+                        "%s Insufficient Buffer to populate channel list\n",
+                            __func__);
+                return -EINVAL;
+            }
+            len = scnprintf(buf, WE_MAX_STR_LEN, "%u ",
+                    channel_list.num_channels);
+            for(i = 0 ; i < channel_list.num_channels; i++)
+            {
+                len += scnprintf(buf + len, WE_MAX_STR_LEN - len,
+                               "%u ", channel_list.channels[i]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             wrqu->data.length = strlen(extra)+1;
 
             break;
         }
+<<<<<<< HEAD
+=======
+#ifdef FEATURE_WLAN_TDLS
+        case WE_GET_TDLS_PEERS:
+        {
+            wrqu->data.length = wlan_hdd_tdls_get_all_peers(pAdapter, extra, WE_MAX_STR_LEN)+1;
+            break;
+        }
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:  
         {
             hddLog(LOGE, "Invalid IOCTL command %d  \n",  sub_cmd );
@@ -4022,18 +5202,36 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     int sub_cmd = wrqu->data.flags;
+<<<<<<< HEAD
     int ret = 0; /* sucess */
+=======
+    int ret = 0; /* success */
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (sub_cmd)
     {
         case WE_CLEAR_STATS:
         {
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: clearing", __FUNCTION__);
+=======
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: clearing", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             memset(&pAdapter->stats, 0, sizeof(pAdapter->stats));
             memset(&pAdapter->hdd_stats, 0, sizeof(pAdapter->hdd_stats));
             break;
         }
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_INIT_AP:
         {
           pr_info("Init AP trigger\n");
@@ -4054,6 +5252,15 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
 
                pr_info("Stopping AP mode\n");
 
+<<<<<<< HEAD
+=======
+               if (TRUE == sme_IsPmcBmps(WLAN_HDD_GET_HAL_CTX(pAdapter)))
+               {
+                  /* EXIT BMPS as fw cannot handle DEL_STA when its in BMPS */
+                  wlan_hdd_enter_bmps(pAdapter, DRIVER_POWER_MODE_ACTIVE);
+               }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                /*Make sure that pAdapter cleaned properly*/
                hdd_stop_adapter( pHddCtx, pAdapter_to_stop );
                hdd_deinit_adapter( pHddCtx, pAdapter_to_stop );
@@ -4063,19 +5270,39 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
                        pAdapter_to_stop->macAddressCurrent.bytes);
                hdd_close_adapter(WLAN_HDD_GET_CTX(pAdapter), pAdapter_to_stop,
                        TRUE);
+<<<<<<< HEAD
            }
            else
            {
               printk(KERN_ERR"SAP adaptor not found to stop it!\n");
+=======
+
+               if (FALSE == sme_IsPmcBmps(WLAN_HDD_GET_HAL_CTX(pAdapter)))
+               {
+                  /* put the device back into BMPS */
+                  wlan_hdd_enter_bmps(pAdapter, DRIVER_POWER_MODE_AUTO);
+               }
+           }
+           else
+           {
+              printk(KERN_ERR"SAP adapter not found to stop it!\n");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            }
 
            break;
         }
+<<<<<<< HEAD
 #endif
 #ifdef WLAN_BTAMP_FEATURE
         case WE_ENABLE_AMP:
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: enabling AMP", __FUNCTION__);
+=======
+#ifdef WLAN_BTAMP_FEATURE
+        case WE_ENABLE_AMP:
+        {
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: enabling AMP", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             WLANBAP_RegisterWithHCI(pAdapter);
             break;
         }
@@ -4084,7 +5311,11 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
             hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX( pAdapter );
             VOS_STATUS status;
 
+<<<<<<< HEAD
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: disabling AMP", __FUNCTION__);
+=======
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: disabling AMP", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             pHddCtx = WLAN_HDD_GET_CTX( pAdapter );
             status = WLANBAP_StopAmp();
@@ -4108,11 +5339,17 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
 
         case WE_ENABLE_DXE_STALL_DETECT:
         {
+<<<<<<< HEAD
             sme_transportDebug(VOS_FALSE, VOS_TRUE);
+=======
+            tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+            sme_transportDebug(hHal, VOS_FALSE, VOS_TRUE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
         case WE_DISPLAY_DXE_SNAP_SHOT:
         {
+<<<<<<< HEAD
             sme_transportDebug(VOS_TRUE, VOS_FALSE);
             break;
         }
@@ -4120,6 +5357,34 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
         default:
         {
             hddLog(LOGE, "%s: unknown ioctl %d", __FUNCTION__, sub_cmd);
+=======
+            tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+            sme_transportDebug(hHal, VOS_TRUE, VOS_FALSE);
+            break;
+        }
+        case WE_DISPLAY_DATAPATH_SNAP_SHOT:
+        {
+            hddLog(LOGE, "%s: called %d",__func__, sub_cmd);
+            hdd_wmm_tx_snapshot(pAdapter);
+            WLANTL_TLDebugMessage(VOS_TRUE);
+            break;
+        }
+        case  WE_SET_REASSOC_TRIGGER:
+        {
+            hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+            tpAniSirGlobal pMac = WLAN_HDD_GET_HAL_CTX(pAdapter);
+            v_U32_t roamId = 0;
+            tCsrRoamModifyProfileFields modProfileFields;
+            sme_GetModifyProfileFields(pMac, pAdapter->sessionId, &modProfileFields);
+            sme_RoamReassoc(pMac, pAdapter->sessionId, NULL, modProfileFields, &roamId, 1);
+            return 0;
+        }
+        
+
+        default:
+        {
+            hddLog(LOGE, "%s: unknown ioctl %d", __func__, sub_cmd);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
     }
@@ -4127,6 +5392,45 @@ static int iw_setnone_getnone(struct net_device *dev, struct iw_request_info *in
     return ret;
 }
 
+<<<<<<< HEAD
+=======
+void hdd_wmm_tx_snapshot(hdd_adapter_t *pAdapter)
+{
+    /*
+     * Function to display HDD WMM information
+     * for Tx Queues.
+     * Prints globala as well as per client depending
+     * whether the clients are registered or not.
+     */
+    int i = 0, j = 0;
+    for ( i=0; i< NUM_TX_QUEUES; i++)
+    {
+        spin_lock_bh(&pAdapter->wmm_tx_queue[i].lock);
+        hddLog(LOGE, "HDD WMM TxQueue Info For AC: %d Count: %d PrevAdress:0x%x, NextAddress:0x%x",
+               i, pAdapter->wmm_tx_queue[i].count,
+               pAdapter->wmm_tx_queue[i].anchor.prev, pAdapter->wmm_tx_queue[i].anchor.next);
+        spin_unlock_bh(&pAdapter->wmm_tx_queue[i].lock);
+    }
+
+    for(i =0; i<WLAN_MAX_STA_COUNT; i++)
+    {
+        if(pAdapter->aStaInfo[i].isUsed)
+        {
+             hddLog(LOGE, "******STAIndex: %d*********", i);
+             for ( j=0; j< NUM_TX_QUEUES; j++)
+             {
+                spin_lock_bh(&pAdapter->aStaInfo[i].wmm_tx_queue[j].lock);
+                hddLog(LOGE, "HDD TxQueue Info For AC: %d Count: %d PrevAdress:0x%x, NextAddress:0x%x",
+                       j, pAdapter->aStaInfo[i].wmm_tx_queue[j].count,
+                       pAdapter->aStaInfo[i].wmm_tx_queue[j].anchor.prev,
+                       pAdapter->aStaInfo[i].wmm_tx_queue[j].anchor.next);
+                spin_unlock_bh(&pAdapter->aStaInfo[i].wmm_tx_queue[j].lock);
+             }
+        }
+    }
+
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
 {
@@ -4136,20 +5440,66 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
     int *value = (int*)wrqu->data.pointer;
     int apps_args[MAX_VAR_ARGS] = {0};
     int num_args = wrqu->data.length;
+<<<<<<< HEAD
 
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
+=======
+    hdd_station_ctx_t *pStaCtx = NULL ;
+    hdd_ap_ctx_t  *pAPCtx = NULL;
+    int cmd = 0;
+    int staId = 0;
+
+    hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (num_args > MAX_VAR_ARGS)
     {
        num_args = MAX_VAR_ARGS;
     }
     vos_mem_copy(apps_args, value, (sizeof(int)) * num_args);
 
+<<<<<<< HEAD
+=======
+    if(( sub_cmd == WE_MCC_CONFIG_CREDENTIAL ) ||
+        (sub_cmd == WE_MCC_CONFIG_PARAMS ))
+    {
+        if(( pAdapter->device_mode == WLAN_HDD_INFRA_STATION )||
+           ( pAdapter->device_mode == WLAN_HDD_P2P_CLIENT ))
+        {
+            pStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+            staId = pStaCtx->conn_info.staId[0];
+        }
+        else if (( pAdapter->device_mode == WLAN_HDD_P2P_GO ) ||
+                 ( pAdapter->device_mode == WLAN_HDD_SOFTAP ))
+        {
+            pAPCtx = WLAN_HDD_GET_AP_CTX_PTR(pAdapter);
+            staId = pAPCtx->uBCStaId;
+        }
+        else
+        {
+            hddLog(LOGE, "%s: Device mode %d not recognised", __FUNCTION__, pAdapter->device_mode);
+            return 0;
+        }
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch (sub_cmd)
     {
         case WE_LOG_DUMP_CMD:
             {
                 hddLog(LOG1, "%s: LOG_DUMP %d arg1 %d arg2 %d arg3 %d arg4 %d",
+<<<<<<< HEAD
                         __FUNCTION__, apps_args[0], apps_args[1], apps_args[2],
+=======
+                        __func__, apps_args[0], apps_args[1], apps_args[2],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         apps_args[3], apps_args[4]);
 
                 logPrintf(hHal, apps_args[0], apps_args[1], apps_args[2],
@@ -4158,7 +5508,10 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
             }
             break;
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WE_P2P_NOA_CMD:
             {
                 p2p_app_setP2pPs_t p2pNoA;
@@ -4173,15 +5526,67 @@ int iw_set_var_ints_getnone(struct net_device *dev, struct iw_request_info *info
 
                 hddLog(LOG1, "%s: P2P_NOA_ATTR:oppPS %d ctWindow %d duration %d "
                        "interval %d count %d single noa duration %d PsSelection %x",
+<<<<<<< HEAD
                        __FUNCTION__, apps_args[0], apps_args[1], apps_args[2],
+=======
+                       __func__, apps_args[0], apps_args[1], apps_args[2],
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        apps_args[3], apps_args[4], apps_args[5], apps_args[6]);
 
                 hdd_setP2pPs(dev, &p2pNoA);
 
             }
             break;
+<<<<<<< HEAD
 #endif
 
+=======
+
+        case WE_MCC_CONFIG_CREDENTIAL :
+            {
+                cmd = 287; //Command should be updated if there is any change
+                           // in the Riva dump command
+                if((apps_args[0] >= 40 ) && (apps_args[0] <= 160 ))
+                {
+                    logPrintf(hHal, cmd, staId, apps_args[0], apps_args[1], apps_args[2]);
+                }
+                else
+                {
+                     hddLog(LOGE, "%s : Enter valid MccCredential value between MIN :40 and MAX:160\n", __func__);
+                     return 0;
+                }
+            }
+            break;
+
+        case WE_MCC_CONFIG_PARAMS :
+            {
+                cmd = 288; //command Should be updated if there is any change
+                           // in the Riva dump command
+                 hdd_validate_mcc_config(pAdapter, staId, apps_args[0], apps_args[1],apps_args[2]);
+            }
+        break;
+
+#ifdef FEATURE_WLAN_TDLS
+        case WE_TDLS_CONFIG_PARAMS :
+            {
+                tdls_config_params_t tdlsParams;
+
+                tdlsParams.tdls                    = apps_args[0];
+                tdlsParams.tx_period_t             = apps_args[1];
+                tdlsParams.tx_packet_n             = apps_args[2];
+                tdlsParams.discovery_period_t      = apps_args[3];
+                tdlsParams.discovery_tries_n       = apps_args[4];
+                tdlsParams.idle_timeout_t          = apps_args[5];
+                tdlsParams.idle_packet_n           = apps_args[6];
+                tdlsParams.rssi_hysteresis         = apps_args[7];
+                tdlsParams.rssi_trigger_threshold  = apps_args[8];
+                tdlsParams.rssi_teardown_threshold = apps_args[9];
+
+                wlan_hdd_tdls_set_params(dev, &tdlsParams);
+            }
+        break;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
             {
                 hddLog(LOGE, "Invalid IOCTL command %d",  sub_cmd );
@@ -4212,6 +5617,16 @@ static int iw_add_tspec(struct net_device *dev, struct iw_request_info *info,
       return -EPERM;
    }
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+      return -EBUSY;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // we must be associated in order to add a tspec
    if (eConnectionState_Associated != pHddStaCtx->conn_info.connState)
    {
@@ -4334,6 +5749,16 @@ static int iw_del_tspec(struct net_device *dev, struct iw_request_info *info,
       return -EPERM;
    }
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+      return -EBUSY;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // although we are defined to be a "get" ioctl, the params we require
    // will fit in the iwreq_data, therefore unlike iw_add_tspec() there
    // is no need to copy the params from user space
@@ -4373,6 +5798,16 @@ static int iw_get_tspec(struct net_device *dev, struct iw_request_info *info,
       return 0;
    }
 
+<<<<<<< HEAD
+=======
+   if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+   {
+      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+      return -EBUSY;
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    *pStatus = hdd_wmm_checkts(pAdapter, handle);
    return 0;
 }
@@ -4390,6 +5825,7 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
     WAPI_FUNCTION_MODE *pWapiMode = (WAPI_FUNCTION_MODE *)wrqu->data.pointer;
 
     hddLog(LOG1, "The function iw_qcom_set_wapi_mode called");
+<<<<<<< HEAD
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     hddLog(LOG1, "%s: Input Data (wreq) WAPI Mode:%02d", __FUNCTION__, pWapiMode->wapiMode);
@@ -4397,6 +5833,21 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
 
     if(WZC_ORIGINAL == pWapiMode->wapiMode) {
         hddLog(LOG1, "%s: WAPI Mode Set to OFF", __FUNCTION__);
+=======
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
+    hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
+    hddLog(LOG1, "%s: Input Data (wreq) WAPI Mode:%02d", __func__, pWapiMode->wapiMode);
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+
+    if(WZC_ORIGINAL == pWapiMode->wapiMode) {
+        hddLog(LOG1, "%s: WAPI Mode Set to OFF", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          /* Set Encryption mode to defualt , this allows next successfull non-WAPI Association */
         pRoamProfile->EncryptionType.numEntries = 1;
         pRoamProfile->EncryptionType.encryptionType[0] = eCSR_ENCRYPT_TYPE_NONE;
@@ -4408,7 +5859,11 @@ static int iw_qcom_set_wapi_mode(struct net_device *dev, struct iw_request_info 
         pRoamProfile->AuthType.authType[0] = pHddStaCtx->conn_info.authType;
     }
     else if(WAPI_EXTENTION == pWapiMode->wapiMode) {
+<<<<<<< HEAD
         hddLog(LOG1, "%s: WAPI Mode Set to ON", __FUNCTION__);
+=======
+        hddLog(LOG1, "%s: WAPI Mode Set to ON", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
          return -EINVAL;
@@ -4424,10 +5879,23 @@ static int iw_qcom_get_wapi_mode(struct net_device *dev, struct iw_request_info 
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     WAPI_FUNCTION_MODE *pWapiMode = (WAPI_FUNCTION_MODE *)(extra);
 
+<<<<<<< HEAD
     hddLog(LOG1, "The function iw_qcom_get_wapi_mode called");
 
     pWapiMode->wapiMode = pAdapter->wapi_info.nWapiMode;
     hddLog(LOG1, "%s: GET WAPI Mode Value:%02d", __FUNCTION__, pWapiMode->wapiMode);
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+    hddLog(LOG1, "The function iw_qcom_get_wapi_mode called");
+
+    pWapiMode->wapiMode = pAdapter->wapi_info.nWapiMode;
+    hddLog(LOG1, "%s: GET WAPI Mode Value:%02d", __func__, pWapiMode->wapiMode);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     printk("\nGET WAPI MODE:%d",pWapiMode->wapiMode);
     return 0;
 }
@@ -4440,6 +5908,7 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
     WAPI_AssocInfo *pWapiAssocInfo = (WAPI_AssocInfo *)(extra);
     int i = 0, j = 0;
     hddLog(LOG1, "The function iw_qcom_set_wapi_assoc_info called");
+<<<<<<< HEAD
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)extra);
@@ -4457,6 +5926,31 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
 
     hddLog(LOG1,"%s: Multicast suite:0x%08lx Wapi capa:0x%04x",__FUNCTION__,pWapiAssocInfo->multicastSuite,pWapiAssocInfo->wapiCability);
     hddLog(LOG1, "%s: BKID Cnt:0x%04x\n",__FUNCTION__,pWapiAssocInfo->bkidCount);
+=======
+    hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)extra);
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+    VOS_ASSERT(pWapiAssocInfo);
+
+    hddLog(LOG1, "%s: INPUT DATA:\nElement ID:0x%02x Length:0x%02x Version:0x%04x\n",__func__,pWapiAssocInfo->elementID,pWapiAssocInfo->length,pWapiAssocInfo->version);
+    hddLog(LOG1,"%s: akm Suite Cnt:0x%04x",__func__,pWapiAssocInfo->akmSuiteCount);
+    for(i =0 ; i < 16 ; i++)
+        hddLog(LOG1,"akm suite[%02d]:0x%08lx",i,pWapiAssocInfo->akmSuite[i]);
+
+    hddLog(LOG1,"%s: Unicast Suite Cnt:0x%04x",__func__,pWapiAssocInfo->unicastSuiteCount);
+    for(i =0 ; i < 16 ; i++)
+        hddLog(LOG1, "Unicast suite[%02d]:0x%08lx",i,pWapiAssocInfo->unicastSuite[i]);
+
+    hddLog(LOG1,"%s: Multicast suite:0x%08lx Wapi capa:0x%04x",__func__,pWapiAssocInfo->multicastSuite,pWapiAssocInfo->wapiCability);
+    hddLog(LOG1, "%s: BKID Cnt:0x%04x\n",__func__,pWapiAssocInfo->bkidCount);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     for(i = 0 ; i < 16 ; i++) {
         hddLog(LOG1, "BKID List[%02d].bkid:0x",i);
         for(j = 0 ; j < 16 ; j++)
@@ -4468,12 +5962,20 @@ static int iw_qcom_set_wapi_assoc_info(struct net_device *dev, struct iw_request
      * case of WPA. Only the auth mode information needs to be
      * extracted here*/
     if ( pWapiAssocInfo->akmSuite[0] == WAPI_PSK_AKM_SUITE ) {
+<<<<<<< HEAD
        hddLog(LOG1, "%s: WAPI AUTH MODE SET TO PSK",__FUNCTION__);
+=======
+       hddLog(LOG1, "%s: WAPI AUTH MODE SET TO PSK",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        pAdapter->wapi_info.wapiAuthMode = WAPI_AUTH_MODE_PSK;
     }
 
     if ( pWapiAssocInfo->akmSuite[0] == WAPI_CERT_AKM_SUITE) {
+<<<<<<< HEAD
        hddLog(LOG1, "%s: WAPI AUTH MODE SET TO CERTIFICATE",__FUNCTION__);
+=======
+       hddLog(LOG1, "%s: WAPI AUTH MODE SET TO CERTIFICATE",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        pAdapter->wapi_info.wapiAuthMode = WAPI_AUTH_MODE_CERT;
     }
     return 0;
@@ -4490,6 +5992,7 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
     v_BOOL_t         isConnected = TRUE;
     tCsrRoamSetKey   setKey;
     int i = 0;
+<<<<<<< HEAD
 
 //    WLAN_WAPI_KEY *pWapiKey = (WLAN_WAPI_KEY *)(wrqu->data.pointer);
     WLAN_WAPI_KEY *pWapiKey = (WLAN_WAPI_KEY *)(extra);
@@ -4500,16 +6003,41 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)extra);
 
     hddLog(LOG1,":s: INPUT DATA:\nKey Type:0x%02x Key Direction:0x%02x KEY ID:0x%02x\n", __FUNCTION__,pWapiKey->keyType,pWapiKey->keyDirection,pWapiKey->keyId);
+=======
+    WLAN_WAPI_KEY *pWapiKey = (WLAN_WAPI_KEY *)(extra);
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+
+    hddLog(LOG1, "The function iw_qcom_set_wapi_key called ");
+    hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)extra);
+
+    hddLog(LOG1,":%s: INPUT DATA:\nKey Type:0x%02x Key Direction:0x%02x KEY ID:0x%02x\n", __func__, pWapiKey->keyType, pWapiKey->keyDirection, pWapiKey->keyId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1,"Add Index:0x");
     for(i =0 ; i < 12 ; i++)
         hddLog(LOG1,"%02x",pWapiKey->addrIndex[i]);
 
+<<<<<<< HEAD
     hddLog(LOG1,"\n%s: WAPI ENCRYPTION KEY LENGTH:0x%04x", __FUNCTION__,pWapiKey->wpiekLen);
+=======
+    hddLog(LOG1,"\n%s: WAPI ENCRYPTION KEY LENGTH:0x%04x", __func__,pWapiKey->wpiekLen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1, "WAPI ENCRYPTION KEY:0x");
     for(i =0 ; i < 16 ; i++)
         hddLog(LOG1,"%02x",pWapiKey->wpiek[i]);
 
+<<<<<<< HEAD
     hddLog(LOG1,"\n%s: WAPI INTEGRITY CHECK KEY LENGTH:0x%04x", __FUNCTION__,pWapiKey->wpickLen);
+=======
+    hddLog(LOG1,"\n%s: WAPI INTEGRITY CHECK KEY LENGTH:0x%04x", __func__,pWapiKey->wpickLen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1,"WAPI INTEGRITY CHECK KEY:0x");
     for(i =0 ; i < 16 ; i++)
         hddLog(LOG1,"%02x",pWapiKey->wpick[i]);
@@ -4531,13 +6059,21 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
 
     switch ( pWapiKey->keyType )
     {
+<<<<<<< HEAD
         case HDD_PAIRWISE_WAPI_KEY:
+=======
+        case PAIRWISE_KEY:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             isConnected = hdd_connIsConnected(pHddStaCtx);
             vos_mem_copy(setKey.peerMac,&pHddStaCtx->conn_info.bssId,WNI_CFG_BSSID_LEN);
             break;
         }
+<<<<<<< HEAD
         case HDD_GROUP_WAPI_KEY:
+=======
+        case GROUP_KEY:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             vos_set_macaddr_broadcast( (v_MACADDR_t *)setKey.peerMac );
             break;
@@ -4546,9 +6082,15 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
         {
             //Any other option is invalid.
             VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                        "[%4d] %s() failed to Set Key. Invalid key type %d", __LINE__,__FUNCTION__ , -1 );
 
             hddLog(LOGE," %s: Error WAPI Key Add Type",__FUNCTION__);
+=======
+                       "[%4d] %s() failed to Set Key. Invalid key type %d", __LINE__,__func__ , -1 );
+
+            hddLog(LOGE," %s: Error WAPI Key Add Type",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             halStatus = !eHAL_STATUS_SUCCESS; // NEED TO UPDATE THIS WITH CORRECT VALUE
             break; // NEED RETURN FROM HERE ????
         }
@@ -4594,12 +6136,17 @@ static int iw_qcom_set_wapi_key(struct net_device *dev, struct iw_request_info *
 static int iw_qcom_set_wapi_bkid(struct net_device *dev, struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
 {
+<<<<<<< HEAD
+=======
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_DEBUG
     int i = 0;
     WLAN_BKID_LIST  *pBkid       = ( WLAN_BKID_LIST *) (wrqu->data.pointer);
 #endif
 
     hddLog(LOG1, "The function iw_qcom_set_wapi_bkid called");
+<<<<<<< HEAD
     hddLog(LOG1, "%s: Received length %d", __FUNCTION__, wrqu->data.length);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)wrqu->data.pointer);
     hddLog(LOG1, "%s: Received data %s", __FUNCTION__, (char*)extra);
@@ -4608,6 +6155,24 @@ static int iw_qcom_set_wapi_bkid(struct net_device *dev, struct iw_request_info 
     hddLog(LOG1,"%s: BKID Cnt:0x%04lx",pBkid->BKIDCount);
 
     hddLog(LOG1,"BKID KEY LIST[0]:0x");
+=======
+    hddLog(LOG1, "%s: Received length %d", __func__, wrqu->data.length);
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
+    hddLog(LOG1, "%s: Received data %s", __func__, (char*)extra);
+
+    hddLog(LOG1,"%s: INPUT DATA:\n BKID Length:0x%08lx\n", __func__,pBkid->length);
+    hddLog(LOG1,"%s: BKID Cnt:0x%04lx",pBkid->BKIDCount);
+
+    hddLog(LOG1,"BKID KEY LIST[0]:0x");
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_DEBUG
     for(i =0 ; i < 16 ; i++)
         hddLog(LOG1,"%02x",pBkid->BKID[0].bkid[i]);
@@ -4640,14 +6205,30 @@ static int iw_set_fties(struct net_device *dev, struct iw_request_info *info,
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
     //v_CONTEXT_t pVosContext;
 
+<<<<<<< HEAD
     if (!wrqu->data.length)
     {
         hddLog(LOGE, FL("%s called with 0 length IEs\n"));
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+    if (!wrqu->data.length)
+    {
+        hddLog(LOGE, FL("called with 0 length IEs\n"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
     if (wrqu->data.pointer == NULL)
     {
+<<<<<<< HEAD
         hddLog(LOGE, FL("%s called with NULL IE\n"));
+=======
+        hddLog(LOGE, FL("called with NULL IE\n"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
 
@@ -4671,6 +6252,7 @@ static int iw_set_fties(struct net_device *dev, struct iw_request_info *info,
 }
 #endif
 
+<<<<<<< HEAD
 static int iw_set_dynamic_mcbc_filter(struct net_device *dev, 
         struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
@@ -4749,6 +6331,139 @@ static int iw_set_dynamic_mcbc_filter(struct net_device *dev,
 
       pHddCtx->dynamic_mcbc_filter.mcBcFilterSuspend = 
                          wlanRxpFilterParam->configuredMcstBcstFilterSetting;
+=======
+static int iw_set_dynamic_mcbc_filter(struct net_device *dev,
+        struct iw_request_info *info,
+        union iwreq_data *wrqu, char *extra)
+{
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+    tpRcvFltMcAddrList pRequest = (tpRcvFltMcAddrList)wrqu->data.pointer;
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+    tpSirWlanSetRxpFilters wlanRxpFilterParam;
+    tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+    VOS_STATUS vstatus = VOS_STATUS_E_FAILURE;
+    tpSirRcvFltMcAddrList mc_addr_list_ptr;
+    int idx;
+    eHalStatus ret_val;
+    tANI_U8 mcastBcastFilterSetting;
+
+    if (pHddCtx->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+
+    if (HDD_MULTICAST_FILTER_LIST == pRequest->mcastBcastFilterSetting) {
+
+        mc_addr_list_ptr = vos_mem_malloc(sizeof(tSirRcvFltMcAddrList));
+        if (NULL == mc_addr_list_ptr)
+        {
+            hddLog(VOS_TRACE_LEVEL_ERROR,
+                   "%s: vos_mem_alloc failed", __func__);
+            return -ENOMEM;
+        }
+
+        mc_addr_list_ptr->ulMulticastAddrCnt = pRequest->mcast_addr_cnt;
+
+        if (mc_addr_list_ptr->ulMulticastAddrCnt > HDD_MAX_NUM_MULTICAST_ADDRESS)
+            mc_addr_list_ptr->ulMulticastAddrCnt = HDD_MAX_NUM_MULTICAST_ADDRESS;
+
+        hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s MC Addr List Cnt %d", __func__,
+               mc_addr_list_ptr->ulMulticastAddrCnt);
+
+        for (idx = 0; idx < mc_addr_list_ptr->ulMulticastAddrCnt; idx++)
+        {
+            memcpy(&mc_addr_list_ptr->multicastAddr[idx],
+                   pRequest->multicastAddr[idx], HDD_WLAN_MAC_ADDR_LEN);
+
+            hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s MC Addr for Idx %d ="MAC_ADDRESS_STR, __func__,
+                   idx, MAC_ADDR_ARRAY(mc_addr_list_ptr->multicastAddr[idx]));
+        }
+
+        ret_val = sme_8023MulticastList(hHal, pAdapter->sessionId, mc_addr_list_ptr);
+        vos_mem_free(mc_addr_list_ptr);
+        if (eHAL_STATUS_SUCCESS != ret_val)
+        {
+            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Failure to Set MC Address List",
+                   __func__);
+            return -EINVAL;
+        }
+    } else {
+
+        hddLog(VOS_TRACE_LEVEL_INFO_HIGH,
+               "%s: Set MC BC Filter Config request: %d suspend %d",
+               __func__, pRequest->mcastBcastFilterSetting,
+               pHddCtx->hdd_wlan_suspended);
+
+        pHddCtx->dynamic_mcbc_filter.mcastBcastFilterSetting =
+            pRequest->mcastBcastFilterSetting;
+        pHddCtx->dynamic_mcbc_filter.enableCfg = TRUE;
+
+        if (pHddCtx->hdd_wlan_suspended)
+        {
+            wlanRxpFilterParam = vos_mem_malloc(sizeof(tSirWlanSetRxpFilters));
+            if (NULL == wlanRxpFilterParam)
+            {
+                hddLog(VOS_TRACE_LEVEL_FATAL,
+                       "%s: vos_mem_alloc failed", __func__);
+                return -EINVAL;
+            }
+
+            wlanRxpFilterParam->configuredMcstBcstFilterSetting =
+                pRequest->mcastBcastFilterSetting;
+            wlanRxpFilterParam->setMcstBcstFilter = TRUE;
+
+            if ((pHddCtx->cfg_ini->fhostArpOffload) &&
+                (eConnectionState_Associated ==
+                 (WLAN_HDD_GET_STATION_CTX_PTR(pAdapter))->conn_info.connState))
+            {
+                vstatus = hdd_conf_hostarpoffload(pAdapter, TRUE);
+                if (!VOS_IS_STATUS_SUCCESS(vstatus))
+                {
+                    hddLog(VOS_TRACE_LEVEL_INFO,
+                           "%s:Failed to enable ARPOFFLOAD Feature %d",
+                           __func__, vstatus);
+                }
+                else
+                {
+                    if (HDD_MCASTBCASTFILTER_FILTER_ALL_MULTICAST_BROADCAST ==
+                        pHddCtx->dynamic_mcbc_filter.mcastBcastFilterSetting)
+                    {
+                        wlanRxpFilterParam->configuredMcstBcstFilterSetting =
+                            HDD_MCASTBCASTFILTER_FILTER_ALL_MULTICAST;
+                    }
+                    else if (HDD_MCASTBCASTFILTER_FILTER_ALL_BROADCAST ==
+                             pHddCtx->dynamic_mcbc_filter.mcastBcastFilterSetting)
+                    {
+                        wlanRxpFilterParam->configuredMcstBcstFilterSetting =
+                            HDD_MCASTBCASTFILTER_FILTER_NONE;
+                    }
+                }
+            }
+
+            hddLog(VOS_TRACE_LEVEL_INFO, "%s:MC/BC changed Req %d Set %d En %d",
+                   __func__,
+                   pHddCtx->dynamic_mcbc_filter.mcastBcastFilterSetting,
+                   wlanRxpFilterParam->configuredMcstBcstFilterSetting,
+                   wlanRxpFilterParam->setMcstBcstFilter);
+
+            mcastBcastFilterSetting = wlanRxpFilterParam->configuredMcstBcstFilterSetting;
+
+            if (eHAL_STATUS_SUCCESS != sme_ConfigureRxpFilter(WLAN_HDD_GET_HAL_CTX(pAdapter),
+                                                              wlanRxpFilterParam))
+            {
+                hddLog(VOS_TRACE_LEVEL_ERROR,
+                       "%s: Failure to execute set HW MC/BC Filter request",
+                       __func__);
+                vos_mem_free(wlanRxpFilterParam);
+                return -EINVAL;
+            }
+
+            pHddCtx->dynamic_mcbc_filter.mcBcFilterSuspend =
+                mcastBcastFilterSetting;
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     return 0;
@@ -4761,7 +6476,11 @@ static int iw_clear_dynamic_mcbc_filter(struct net_device *dev,
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 
+<<<<<<< HEAD
     hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: ", __FUNCTION__);
+=======
+    hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: ", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pHddCtx->dynamic_mcbc_filter.enableCfg = FALSE;
 
@@ -4775,11 +6494,25 @@ static int iw_set_host_offload(struct net_device *dev, struct iw_request_info *i
     tpHostOffloadRequest pRequest = (tpHostOffloadRequest)wrqu->data.pointer;
     tSirHostOffloadReq offloadRequest;
 
+<<<<<<< HEAD
+=======
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Debug display of request components. */
     switch (pRequest->offloadType)
     {
         case WLAN_IPV4_ARP_REPLY_OFFLOAD:
+<<<<<<< HEAD
             hddLog(VOS_TRACE_LEVEL_WARN, "%s: Host offload request: ARP reply", __FUNCTION__);
+=======
+            hddLog(VOS_TRACE_LEVEL_WARN, "%s: Host offload request: ARP reply", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             switch (pRequest->enableOrDisable)
             {
                 case WLAN_OFFLOAD_DISABLE:
@@ -4797,7 +6530,11 @@ static int iw_set_host_offload(struct net_device *dev, struct iw_request_info *i
 
     case WLAN_IPV6_NEIGHBOR_DISCOVERY_OFFLOAD:
         hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Host offload request: neighbor discovery\n",
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         switch (pRequest->enableOrDisable)
         {
         case WLAN_OFFLOAD_DISABLE:
@@ -4843,24 +6580,40 @@ static int iw_set_keepalive_params(struct net_device *dev, struct iw_request_inf
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                                   "%s:LOGP in Progress. Ignore!!!",__func__);
+=======
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return 0;
     }
 
     /* Debug display of request components. */
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: Set Keep Alive Request : TimePeriod %d size %d",
+<<<<<<< HEAD
            __FUNCTION__,pRequest->timePeriod, sizeof(tKeepAliveRequest));
+=======
+           __func__,pRequest->timePeriod, sizeof(tKeepAliveRequest));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       switch (pRequest->packetType)
       {
         case WLAN_KEEP_ALIVE_NULL_PKT:
+<<<<<<< HEAD
             hddLog(VOS_TRACE_LEVEL_WARN, "%s: Keep Alive Request: Tx NULL", __FUNCTION__);
+=======
+            hddLog(VOS_TRACE_LEVEL_WARN, "%s: Keep Alive Request: Tx NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case WLAN_KEEP_ALIVE_UNSOLICIT_ARP_RSP:
 
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Keep Alive Request: Tx UnSolicited ARP RSP\n",
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             hddLog(VOS_TRACE_LEVEL_WARN, "  Host IP address: %d.%d.%d.%d",
             pRequest->hostIpv4Addr[0], pRequest->hostIpv4Addr[1],
@@ -4901,13 +6654,22 @@ static int iw_set_keepalive_params(struct net_device *dev, struct iw_request_inf
 int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest, 
                             tANI_U8 sessionId)
 {
+<<<<<<< HEAD
     tSirRcvPktFilterCfgType    packetFilterSetReq;
     tSirRcvFltPktClearParam    packetFilterClrReq;
+=======
+    tSirRcvPktFilterCfgType    packetFilterSetReq = {0};
+    tSirRcvFltPktClearParam    packetFilterClrReq = {0};
+    //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+    int retVal=0;
+    //IKHSS7-35965, a19091, Motorola changes -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int i=0;
 
     if (pHddCtx->cfg_ini->disablePacketFilter)
     {
         hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Packet Filtering Disabled. Returning ",
+<<<<<<< HEAD
                 __FUNCTION__ );
         return 0;
     }
@@ -4915,19 +6677,44 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
     /* Debug display of request components. */
     hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Packet Filter Request : FA %d params %d",
             __FUNCTION__, pRequest->filterAction, pRequest->numParams);
+=======
+                __func__ );
+        return retVal;
+    }
+    if (pHddCtx->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+    /* Debug display of request components. */
+    hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Packet Filter Request : FA %d params %d",
+            __func__, pRequest->filterAction, pRequest->numParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (pRequest->filterAction)
     {
         case HDD_RCV_FILTER_SET:
             hddLog(VOS_TRACE_LEVEL_INFO, "%s: Set Packet Filter Request for Id: %d",
+<<<<<<< HEAD
                     __FUNCTION__, pRequest->filterId);
+=======
+                    __func__, pRequest->filterId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             packetFilterSetReq.filterId = pRequest->filterId;
             if ( pRequest->numParams >= HDD_MAX_CMP_PER_PACKET_FILTER)
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Number of Params exceed Max limit %d\n",
                         __func__, pRequest->numParams);
+<<<<<<< HEAD
                 return -EINVAL;
+=======
+				//IKHSS7-35965, a19091, Motorola changes -- BEGIN
+				retVal = -EINVAL;
+				break;
+				//IKHSS7-35965, a19091, Motorola changes -- END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             packetFilterSetReq.numFieldParams = pRequest->numParams;
             packetFilterSetReq.coalesceTime = 0;
@@ -4940,7 +6727,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
                 packetFilterSetReq.paramsData[i].dataLength = pRequest->paramsData[i].dataLength;
                 packetFilterSetReq.paramsData[i].reserved = 0;
 
+<<<<<<< HEAD
                 hddLog(VOS_TRACE_LEVEL_INFO, "Proto %d Comp Flag %d Filter Type\n",
+=======
+                hddLog(VOS_TRACE_LEVEL_INFO, "Proto %d Comp Flag %d Filter Type %d\n",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pRequest->paramsData[i].protocolLayer, pRequest->paramsData[i].cmpFlag,
                         packetFilterSetReq.filterType);
 
@@ -4967,7 +6758,11 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Failure to execute Set Filter\n",
                         __func__);
+<<<<<<< HEAD
                 return -EINVAL;
+=======
+                retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
             break;
@@ -4975,18 +6770,27 @@ int wlan_hdd_set_filter(hdd_context_t *pHddCtx, tpPacketFilterCfg pRequest,
         case HDD_RCV_FILTER_CLEAR:
 
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Clear Packet Filter Request for Id: %d\n",
+<<<<<<< HEAD
                     __FUNCTION__, pRequest->filterId);
+=======
+                    __func__, pRequest->filterId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             packetFilterClrReq.filterId = pRequest->filterId;
             if (eHAL_STATUS_SUCCESS != sme_ReceiveFilterClearFilter(pHddCtx->hHal, &packetFilterClrReq, sessionId))
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Failure to execute Clear Filter\n",
                         __func__);
+<<<<<<< HEAD
                 return -EINVAL;
+=======
+                retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
         default :
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: Packet Filter Request: Invalid %d\n",
+<<<<<<< HEAD
                     __FUNCTION__, pRequest->filterAction);
             return -EINVAL;
     }
@@ -5032,13 +6836,515 @@ void wlan_hdd_set_mc_addr_list(hdd_context_t *pHddCtx, v_U8_t set, v_U8_t sessio
     }
     pHddCtx->mc_addr_list.isFilterApplied = set ? TRUE : FALSE;
 }
+=======
+                    __func__, pRequest->filterAction);
+            retVal = -EINVAL; //IKHSS7-35965, a19091, Motorola
+    }
+    return retVal;
+}
+
+int wlan_hdd_setIPv6Filter(hdd_context_t *pHddCtx, tANI_U8 filterType,
+                           tANI_U8 sessionId)
+{
+    tSirRcvPktFilterCfgType    packetFilterSetReq = {0};
+    tSirRcvFltPktClearParam    packetFilterClrReq = {0};
+
+    if (NULL == pHddCtx)
+    {
+        hddLog(VOS_TRACE_LEVEL_ERROR, FL(" NULL HDD Context Passed"));
+        return -EINVAL;
+    }
+
+    if (pHddCtx->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+
+    if (pHddCtx->cfg_ini->disablePacketFilter)
+    {
+        hddLog(VOS_TRACE_LEVEL_ERROR,
+                "%s: Packet Filtering Disabled. Returning ",
+                __func__ );
+        return -EINVAL;
+    }
+
+    switch (filterType)
+    {
+        /* For setting IPV6 MC and UC Filter we need to configure
+         * 2 filters, one for MC and one for UC.
+         * The Filter ID shouldn't be swapped, which results in making
+         * UC Filter ineffective.
+         * We have Hardcode all the values
+         *
+         * Reason for a seperate UC filter is because, driver need to
+         * specify the FW that the specific filter is for unicast
+         * otherwise FW will not pass the unicast frames by default
+         * through the filter. This is required to avoid any performance
+         * hits when no unicast filter is set and only MC/BC are set.
+         * The way driver informs host is by using the MAC protocol
+         * layer, CMP flag set to MAX, CMP Data set to 1.
+         */
+
+    case HDD_FILTER_IPV6_MC_UC:
+        /* Setting IPV6 MC Filter below
+         */
+        packetFilterSetReq.filterType = HDD_RCV_FILTER_SET;
+        packetFilterSetReq.filterId = HDD_FILTER_ID_IPV6_MC;
+        packetFilterSetReq.numFieldParams = 2;
+        packetFilterSetReq.paramsData[0].protocolLayer =
+                                         HDD_FILTER_PROTO_TYPE_MAC;
+        packetFilterSetReq.paramsData[0].cmpFlag =
+                                         HDD_FILTER_CMP_TYPE_NOT_EQUAL;
+        packetFilterSetReq.paramsData[0].dataOffset =
+                                         WLAN_HDD_80211_FRM_DA_OFFSET;
+        packetFilterSetReq.paramsData[0].dataLength = 1;
+        packetFilterSetReq.paramsData[0].compareData[0] =
+                                         HDD_IPV6_MC_CMP_DATA;
+
+        packetFilterSetReq.paramsData[1].protocolLayer =
+                                         HDD_FILTER_PROTO_TYPE_ARP;
+        packetFilterSetReq.paramsData[1].cmpFlag =
+                                         HDD_FILTER_CMP_TYPE_NOT_EQUAL;
+        packetFilterSetReq.paramsData[1].dataOffset = ETH_ALEN;
+        packetFilterSetReq.paramsData[1].dataLength = 2;
+        packetFilterSetReq.paramsData[1].compareData[0] =
+                                         HDD_IPV6_CMP_DATA_0;
+        packetFilterSetReq.paramsData[1].compareData[1] =
+                                         HDD_IPV6_CMP_DATA_1;
+
+
+        if (eHAL_STATUS_SUCCESS != sme_ReceiveFilterSetFilter(pHddCtx->hHal,
+                                    &packetFilterSetReq, sessionId))
+        {
+            hddLog(VOS_TRACE_LEVEL_ERROR,
+                    "%s: Failure to execute Set IPv6 Mulicast Filter",
+                    __func__);
+            return -EINVAL;
+        }
+
+        memset( &packetFilterSetReq, 0, sizeof(tSirRcvPktFilterCfgType));
+
+        /*
+         * Setting IPV6 UC Filter below
+         */
+        packetFilterSetReq.filterType = HDD_RCV_FILTER_SET;
+        packetFilterSetReq.filterId = HDD_FILTER_ID_IPV6_UC;
+        packetFilterSetReq.numFieldParams = 2;
+        packetFilterSetReq.paramsData[0].protocolLayer =
+                                         HDD_FILTER_PROTO_TYPE_MAC;
+        packetFilterSetReq.paramsData[0].cmpFlag =
+                                         HDD_FILTER_CMP_TYPE_MAX;
+        packetFilterSetReq.paramsData[0].dataOffset = 0;
+        packetFilterSetReq.paramsData[0].dataLength = 1;
+        packetFilterSetReq.paramsData[0].compareData[0] =
+                                         HDD_IPV6_UC_CMP_DATA;
+
+        packetFilterSetReq.paramsData[1].protocolLayer =
+                                         HDD_FILTER_PROTO_TYPE_ARP;
+        packetFilterSetReq.paramsData[1].cmpFlag =
+                                         HDD_FILTER_CMP_TYPE_NOT_EQUAL;
+        packetFilterSetReq.paramsData[1].dataOffset = ETH_ALEN;
+        packetFilterSetReq.paramsData[1].dataLength = 2;
+        packetFilterSetReq.paramsData[1].compareData[0] =
+                                         HDD_IPV6_CMP_DATA_0;
+        packetFilterSetReq.paramsData[1].compareData[1] =
+                                         HDD_IPV6_CMP_DATA_1;
+
+        if (eHAL_STATUS_SUCCESS != sme_ReceiveFilterSetFilter(pHddCtx->hHal,
+                                    &packetFilterSetReq, sessionId))
+        {
+            hddLog(VOS_TRACE_LEVEL_ERROR,
+                    "%s: Failure to execute Set IPv6 Unicast Filter",
+                    __func__);
+            return -EINVAL;
+        }
+
+        break;
+
+    case HDD_FILTER_IPV6_MC:
+        /*
+         * IPV6 UC Filter might be already set,
+         * clear the UC Filter. As the Filter
+         * IDs are static, we can directly clear it.
+         */
+        packetFilterSetReq.filterType = HDD_RCV_FILTER_SET;
+        packetFilterClrReq.filterId = HDD_FILTER_ID_IPV6_UC;
+        if (eHAL_STATUS_SUCCESS != sme_ReceiveFilterClearFilter(pHddCtx->hHal,
+                                    &packetFilterClrReq, sessionId))
+        {
+            hddLog(VOS_TRACE_LEVEL_ERROR,
+                    "%s: Failure to execute Clear IPv6 Unicast Filter",
+                    __func__);
+            return -EINVAL;
+        }
+
+        /*
+         * Setting IPV6 MC Filter below
+         */
+        packetFilterSetReq.filterId = HDD_FILTER_ID_IPV6_MC;
+        packetFilterSetReq.numFieldParams = 2;
+        packetFilterSetReq.paramsData[0].protocolLayer =
+                                         HDD_FILTER_PROTO_TYPE_MAC;
+        packetFilterSetReq.paramsData[0].cmpFlag =
+                                         HDD_FILTER_CMP_TYPE_NOT_EQUAL;
+        packetFilterSetReq.paramsData[0].dataOffset =
+                                         WLAN_HDD_80211_FRM_DA_OFFSET;
+        packetFilterSetReq.paramsData[0].dataLength = 1;
+        packetFilterSetReq.paramsData[0].compareData[0] =
+                                         HDD_IPV6_MC_CMP_DATA;
+
+        packetFilterSetReq.paramsData[1].protocolLayer =
+                                         HDD_FILTER_PROTO_TYPE_ARP;
+        packetFilterSetReq.paramsData[1].cmpFlag =
+                                         HDD_FILTER_CMP_TYPE_NOT_EQUAL;
+        packetFilterSetReq.paramsData[1].dataOffset = ETH_ALEN;
+        packetFilterSetReq.paramsData[1].dataLength = 2;
+        packetFilterSetReq.paramsData[1].compareData[0] =
+                                         HDD_IPV6_CMP_DATA_0;
+        packetFilterSetReq.paramsData[1].compareData[1] =
+                                         HDD_IPV6_CMP_DATA_1;
+
+
+        if (eHAL_STATUS_SUCCESS != sme_ReceiveFilterSetFilter(pHddCtx->hHal,
+                                    &packetFilterSetReq, sessionId))
+        {
+            hddLog(VOS_TRACE_LEVEL_ERROR,
+                    "%s: Failure to execute Set IPv6 Multicast Filter",
+                    __func__);
+            return -EINVAL;
+        }
+        break;
+
+    default :
+        hddLog(VOS_TRACE_LEVEL_INFO_HIGH,
+                "%s: Packet Filter Request: Invalid",
+                __func__);
+        return -EINVAL;
+    }
+    return 0;
+}
+// IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+#define SET_FILTER_BMAP(filter_map, set, index) { if(set){(filter_map)|=(1<<(index));}\
+    else {(filter_map)&=(~(1<<(index)));}}
+
+#define IS_FILTER_INDEX_FREE(filter_map, index) (((filter_map)&(1<<(index)))==0)
+
+#define IPV6_CONFIG_ALLOW_ALL 1
+#define IPV6_CONFIG_MANDATORY 0
+
+void wlan_hdd_set_mc_v6(hdd_adapter_t *pAdapter, v_U8_t set) {
+    tPacketFilterCfg request = {0};
+    v_SCHAR_t mcFilterIndex = WLAN_HDD_MAX_MC_ADDR_LIST;
+    int ret;
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+
+    if(set) {
+        if(pAdapter->filter_v6_index != -1) {
+            hddLog(VOS_TRACE_LEVEL_INFO, "IPV6 pass through already set, skipping");
+            return;
+        }
+        /* Add v6 pass through rule */
+        if(pAdapter->mc_addr_list.isFilterApplied)
+            wlan_hdd_set_mc_addr_list(pAdapter, FALSE);
+        /* Find a suitable slot and stick in filter */
+        while(--mcFilterIndex >=0 ) {
+            if(IS_FILTER_INDEX_FREE(pAdapter->user_filter_config, mcFilterIndex)) {
+                request.filterAction = HDD_RCV_FILTER_SET;
+                request.filterId = mcFilterIndex;
+                request.numParams = 1;
+                request.paramsData[0].protocolLayer = HDD_FILTER_PROTO_TYPE_MAC;
+                request.paramsData[0].dataOffset = WLAN_HDD_80211_FRM_DA_OFFSET;
+                request.paramsData[0].dataLength = 2;
+                request.paramsData[0].compareData[0]=0x33;
+                request.paramsData[0].compareData[1]=0x33;
+                ret = wlan_hdd_set_filter(pHddCtx, &request, pAdapter->sessionId);
+                if(ret == 0) {
+                    pAdapter->filter_v6_index = mcFilterIndex;
+                    SET_FILTER_BMAP(pAdapter->driver_filter_config, set, request.filterId);
+                    hddLog(VOS_TRACE_LEVEL_INFO, "Programmed IPV6 pass through at index %d",
+                            mcFilterIndex);
+                    break;
+                } else {
+                    hddLog(VOS_TRACE_LEVEL_ERROR,
+                            "Failed programming IPV6 pass through at index %d - TRY NEXT",
+                            mcFilterIndex);
+                }
+            }
+        }
+        if(mcFilterIndex<0)
+            hddLog(VOS_TRACE_LEVEL_ERROR, "IPV6 pass through rule prog failed!!");
+    } else if(pAdapter->filter_v6_index != -1) {
+        /* Remove pass through rule */
+        request.filterAction = HDD_RCV_FILTER_CLEAR;
+        request.filterId = pAdapter->filter_v6_index;
+        request.numParams = 1;
+        ret = wlan_hdd_set_filter(pHddCtx, &request, pAdapter->sessionId);
+        if(ret == 0) {
+            pAdapter->filter_v6_index = -1;
+            SET_FILTER_BMAP(pAdapter->driver_filter_config, set, request.filterId);
+            hddLog(VOS_TRACE_LEVEL_INFO, "Cleared IPV6 pass through at index %d",
+                    request.filterId);
+        } else {
+             hddLog(VOS_TRACE_LEVEL_ERROR, "IPV6 pass through rule CLEAR failed!!");
+        }
+    } else {
+        hddLog(VOS_TRACE_LEVEL_INFO, "Clear IPV6 passthrough when not set - ignore");
+    }
+}
+// IKJB42MAIN-1244, Motorola, a19091 -- END
+
+void wlan_hdd_set_mc_addr_list(hdd_adapter_t *pAdapter, v_U8_t set)
+{
+    v_U8_t filterAction;
+    tPacketFilterCfg request;
+    v_U8_t i;
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+    // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+    int ret;
+    v_SCHAR_t mcFilterIndex = WLAN_HDD_MAX_MC_ADDR_LIST;
+    // IKJB42MAIN-1244, Motorola, a19091 - END
+
+    filterAction = set ? HDD_RCV_FILTER_SET : HDD_RCV_FILTER_CLEAR;
+
+    // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+    hddLog(VOS_TRACE_LEVEL_INFO, "%s: Entered for %s",
+            __func__, set?"SET":"CLEAR");
+
+    if(pAdapter->filter_v6_index != -1) {
+        hddLog(VOS_TRACE_LEVEL_INFO, "%s: First calling CLEAR V6 ALLOW_ALL!",
+                __func__);
+        wlan_hdd_set_mc_v6(pAdapter, FALSE);
+    }
+    // IKJB42MAIN-1244, Motorola, a19091 - END
+
+    /*set mulitcast addr list*/
+    for (i = 0; i < pAdapter->mc_addr_list.mc_cnt; i++)
+    {
+        memset(&request, 0, sizeof (tPacketFilterCfg));
+        request.filterAction = filterAction;
+        if (set)
+        {
+            // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+            while(--mcFilterIndex >=0 ) {
+                if(IS_FILTER_INDEX_FREE(pAdapter->user_filter_config, mcFilterIndex)) {
+                    /* Non user filter index! */
+                    if(!IS_FILTER_INDEX_FREE(pAdapter->driver_filter_config, mcFilterIndex)) {
+                        hddLog(VOS_TRACE_LEVEL_INFO, "Clearing Filter index %d, before reprog",
+                            mcFilterIndex);
+                        request.filterAction = HDD_RCV_FILTER_CLEAR;
+                        request.filterId = mcFilterIndex;
+                        ret = wlan_hdd_set_filter(pHddCtx, &request, pAdapter->sessionId);
+                        if(ret == 0) {
+                            SET_FILTER_BMAP(pAdapter->driver_filter_config, FALSE, request.filterId);
+                        } else {
+                            hddLog(VOS_TRACE_LEVEL_ERROR,"failed to clear filter index %d",mcFilterIndex);
+                        }
+                    }
+                    if(!IS_FILTER_INDEX_FREE(pAdapter->driver_filter_config, mcFilterIndex)) {
+                        hddLog(VOS_TRACE_LEVEL_ERROR, "Failed to clear filter %d - try next",
+                            mcFilterIndex);
+                        continue;
+                    }
+                    request.filterAction = HDD_RCV_FILTER_SET;
+                    request.filterId = mcFilterIndex;
+                    request.numParams = 1;
+                    request.paramsData[0].protocolLayer = HDD_FILTER_PROTO_TYPE_MAC;
+                    request.paramsData[0].cmpFlag = HDD_FILTER_CMP_TYPE_EQUAL;
+                    request.paramsData[0].dataOffset = WLAN_HDD_80211_FRM_DA_OFFSET;
+                    request.paramsData[0].dataLength = ETH_ALEN;
+                    memcpy(&(request.paramsData[0].compareData[0]),
+                        &(pAdapter->mc_addr_list.addr[i][0]), ETH_ALEN);
+                    /*set mulitcast filters*/
+                    hddLog(VOS_TRACE_LEVEL_INFO,
+                        "%s: %s multicast filter: addr ="
+                        "%02x:%02x:%02x:%02x:%02x:%02x",
+                        __func__, set ? "setting" : "clearing",
+                        request.paramsData[0].compareData[0],
+                        request.paramsData[0].compareData[1],
+                        request.paramsData[0].compareData[2],
+                        request.paramsData[0].compareData[3],
+                        request.paramsData[0].compareData[4], 
+                        request.paramsData[0].compareData[5]);
+                    pAdapter->mc_addr_list.filter_index[i] = request.filterId;
+                    break;
+                } else {
+                    /*user filter index - try next*/
+                    hddLog(VOS_TRACE_LEVEL_ERROR,
+                        "Index %d used by user filter - try next", mcFilterIndex);
+                }
+            }
+            if(mcFilterIndex < 0 ) {
+                /*No Free index in driver config available*/
+                hddLog(VOS_TRACE_LEVEL_FATAL,
+                        "No available slots to allow mcast filter - Too many user filters");
+                return;
+            }
+        } else { /* !set */
+            if(pAdapter->mc_addr_list.isFilterApplied == FALSE) {
+                hddLog(VOS_TRACE_LEVEL_INFO, "No previous filter ... skipping");
+                continue;
+            }
+            hddLog(VOS_TRACE_LEVEL_INFO, "Gonna clear index %d",
+                    pAdapter->mc_addr_list.filter_index[i]);
+            request.filterId = pAdapter->mc_addr_list.filter_index[i];
+            request.numParams = 1;
+        }
+        ret = wlan_hdd_set_filter(pHddCtx, &request, pAdapter->sessionId);
+        if(ret == 0) {
+            SET_FILTER_BMAP(pAdapter->driver_filter_config, set, request.filterId);
+        }
+    }
+
+    if(set) {
+        // Clear out any extraneous driver filters
+        request.filterAction = HDD_RCV_FILTER_CLEAR;
+        while(--mcFilterIndex>=0) {
+            request.filterId = mcFilterIndex;
+            if(!IS_FILTER_INDEX_FREE(pAdapter->driver_filter_config, mcFilterIndex) &&
+                    IS_FILTER_INDEX_FREE(pAdapter->user_filter_config, mcFilterIndex)) {
+                hddLog(VOS_TRACE_LEVEL_INFO, "Clearing Filter index %d,", mcFilterIndex);
+                ret = wlan_hdd_set_filter(pHddCtx, &request, pAdapter->sessionId);
+                if(ret == 0) {
+                    SET_FILTER_BMAP(pAdapter->driver_filter_config, FALSE, request.filterId);
+                } else {
+                    hddLog(VOS_TRACE_LEVEL_ERROR,"failed to clear filter index %d",mcFilterIndex);
+                }
+            }
+        }
+        // IKJB42MAIN-1244, Motorola, a19091 - END
+    }
+    pAdapter->mc_addr_list.isFilterApplied = set ? TRUE : FALSE;
+}
+
+// IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+int wlan_hdd_update_v6_filters(hdd_adapter_t *pAdapter, v_U8_t set){
+    tSirInvokeV6Filter filterConfig;
+    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+
+    if(!hdd_connIsConnected(pHddStaCtx))
+    {
+        hddLog(VOS_TRACE_LEVEL_WARN,
+                "Not associated - ignoring wlan_hdd_update_v6_filters");
+        return 0;
+    }
+    filterConfig.configureFilterFn = wlan_hdd_set_v6_filter;
+    filterConfig.pHddAdapter = pAdapter;
+    filterConfig.set = set;
+
+    if (eHAL_STATUS_SUCCESS != sme_ReceiveSetMcFilter(&filterConfig))
+    {
+        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Failure to execute Set Filter\n",
+            __func__);
+        return -1;
+    }
+    return 0;
+}
+
+int wlan_hdd_set_v6_filter(void *pAdapter, v_U8_t set, v_U8_t userSet) {
+    hdd_adapter_t* pTAdapter = (hdd_adapter_t*)pAdapter;
+    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pTAdapter);
+    int ret = 0;
+
+    if(userSet)
+        pTAdapter->ipv6_user_set_map = (set)?IPV6_CONFIG_ALLOW_ALL:IPV6_CONFIG_MANDATORY;
+    else
+        pTAdapter->ipv6_code_set_map = (set)?IPV6_CONFIG_ALLOW_ALL:IPV6_CONFIG_MANDATORY;
+
+    hddLog(VOS_TRACE_LEVEL_INFO, "wlan_hdd_set_v6_filter - %s - set map is now - code = %s, user = %s",
+        userSet?"USER-SET":"CODE-SET",
+        (pTAdapter->ipv6_code_set_map == IPV6_CONFIG_MANDATORY) ? "MANDATORY":"ALLOW_ALL",
+        (pTAdapter->ipv6_user_set_map == IPV6_CONFIG_MANDATORY) ? "MANDATORY":"ALLOW_ALL");
+
+    if(!hdd_connIsConnected(pHddStaCtx))
+    {
+        hddLog(VOS_TRACE_LEVEL_WARN,
+                 "Not associated - ignoring wlan_hdd_set_v6_filter");
+        return ret;
+    }
+    if(pTAdapter->ipv6_code_set_map == pTAdapter->ipv6_user_set_map  &&
+            pTAdapter->ipv6_code_set_map == IPV6_CONFIG_MANDATORY ) {
+        hddLog(VOS_TRACE_LEVEL_INFO, "Set IPV6 filter to MANDATORY");
+        wlan_hdd_set_mc_v6(pAdapter, FALSE);
+        wlan_hdd_set_mc_addr_list(pTAdapter, TRUE);
+    } else {
+        hddLog(VOS_TRACE_LEVEL_INFO, "Set IPV6 filter to ALLOW_ALL");
+        if(pTAdapter->filter_v6_index == -1) {
+            hddLog(VOS_TRACE_LEVEL_INFO, "Program V6!");
+            wlan_hdd_set_mc_addr_list(pTAdapter, FALSE);
+            wlan_hdd_set_mc_v6(pTAdapter, TRUE);
+        } else {
+            hddLog(VOS_TRACE_LEVEL_INFO, "Skip program V6 - already set!");
+        }
+    }
+    return ret;
+}
+// IKJB42MAIN-1244, Motorola, a19091 - END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static int iw_set_packet_filter_params(struct net_device *dev, struct iw_request_info *info,
         union iwreq_data *wrqu, char *extra)
 {   
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+<<<<<<< HEAD
     tpPacketFilterCfg pRequest = (tpPacketFilterCfg)wrqu->data.pointer;
     return wlan_hdd_set_filter(WLAN_HDD_GET_CTX(pAdapter), pRequest, pAdapter->sessionId);
+=======
+    // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+    int retVal;
+    v_U8_t mcFilterReset = FALSE;
+    // IKJB42MAIN-1244, Motorola, a19091 - END
+
+    //IKHSS7-35965, a19091, Motorola changes -- BEGIN
+    tpPacketFilterCfg pRequest = (tpPacketFilterCfg)kmalloc(sizeof(tPacketFilterCfg), GFP_KERNEL);
+
+    if(pRequest == NULL) {
+        hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Out of memory - cant alloc %d bytes",
+                sizeof(tpPacketFilterCfg),__FUNCTION__);
+        return -ENOMEM;
+    }
+
+    if(copy_from_user(pRequest, wrqu->data.pointer, sizeof(tPacketFilterCfg))) {
+        hddLog(VOS_TRACE_LEVEL_FATAL, "%s -- copy_from_user -- data pointer failed! bailing",
+                __FUNCTION__);
+        kfree(pRequest);
+        return -EFAULT;
+    }
+    //IKHSS7-35965, a19091, Motorola changes -- END
+
+    // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+    if(!IS_FILTER_INDEX_FREE(pAdapter->driver_filter_config, pRequest->filterId) &&
+            IS_FILTER_INDEX_FREE(pAdapter->user_filter_config, pRequest->filterId)) {
+        // Need to re-adjust MC filter - disable and re-enable
+        hddLog(VOS_TRACE_LEVEL_INFO, "%s, Filter ID %d already in use - disable and re-enable mc filters!!",
+                __FUNCTION__, pRequest->filterId);
+        wlan_hdd_set_mc_addr_list(pAdapter, FALSE);
+        mcFilterReset = TRUE;
+    }
+    // IKJB42MAIN-1244, Motorola, a19091 - END
+
+    retVal = wlan_hdd_set_filter(pHddCtx, pRequest, pAdapter->sessionId);
+
+    // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+    if(retVal == 0) {
+        SET_FILTER_BMAP(pAdapter->driver_filter_config, (pRequest->filterAction), pRequest->filterId);
+        SET_FILTER_BMAP(pAdapter->user_filter_config, (pRequest->filterAction), pRequest->filterId);
+    }
+
+    if(mcFilterReset) {
+        hddLog(VOS_TRACE_LEVEL_INFO, "%s, Re -enabling MC filters",
+                __FUNCTION__);
+        wlan_hdd_set_mc_addr_list(pAdapter, TRUE);
+    }
+
+    if(pRequest!= NULL)
+        kfree(pRequest);
+
+    return retVal;
+    // IKJB42MAIN-1244, Motorola, a19091 - END
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif
 static int iw_get_statistics(struct net_device *dev,
@@ -5084,7 +7390,11 @@ static int iw_get_statistics(struct net_device *dev,
     {
        hddLog(VOS_TRACE_LEVEL_ERROR,
               "%s: Unable to retrieve SME statistics",
+<<<<<<< HEAD
               __FUNCTION__);
+=======
+              __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EINVAL;
     }
 
@@ -5095,7 +7405,11 @@ static int iw_get_statistics(struct net_device *dev,
     {
        hddLog(VOS_TRACE_LEVEL_ERROR,
               "%s: SME timeout while retrieving statistics",
+<<<<<<< HEAD
               __FUNCTION__);
+=======
+              __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        /*Remove the SME statistics list by passing NULL in callback argument*/
        status = sme_GetStatistics( pHddCtx->hHal, eCSR_HDD,
                        SME_SUMMARY_STATS      |
@@ -5230,7 +7544,12 @@ void found_pref_network_cb (void *callbackContext,
   hdd_adapter_t* pAdapter = (hdd_adapter_t*)callbackContext;
   union iwreq_data wrqu;
   char buf[MAX_PNO_NOTIFY_LEN+1];
+<<<<<<< HEAD
 
+=======
+  int bp = 0;
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   hddLog(VOS_TRACE_LEVEL_WARN, "A preferred network was found: %s with rssi: -%d",
          pPrefNetworkFoundInd->ssId.ssId, pPrefNetworkFoundInd->rssi);
 
@@ -5238,7 +7557,22 @@ void found_pref_network_cb (void *callbackContext,
   memset(&wrqu, 0, sizeof(wrqu));
   memset(buf, 0, sizeof(buf));
 
+<<<<<<< HEAD
   snprintf(buf, MAX_PNO_NOTIFY_LEN, "QCOM: Found preferred network: %s with RSSI of -%u",
+=======
+  // stop PNO
+  bp = strlcpy(buf, "0 ", sizeof(buf));
+  buf[bp++] = '\0';
+  wrqu.data.pointer = buf;
+  wrqu.data.length = strlen(buf);
+  iw_set_pno(pAdapter->dev, NULL, &wrqu, NULL, 0);
+  //printk("PNO Callback: Stopping PNO \n");
+
+  // send event to supplicant
+  memset(&wrqu, 0, sizeof(wrqu));
+  memset(buf, 0, sizeof(buf));
+  snprintf(buf, MAX_PNO_NOTIFY_LEN, "PNOFOUND : Found preferred network: %s with RSSI of -%u",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pPrefNetworkFoundInd->ssId.ssId,
           (unsigned int)pPrefNetworkFoundInd->rssi);
 
@@ -5269,7 +7603,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
             "PNO data len %d data %s",
             wrqu->data.length,
+<<<<<<< HEAD
             wrqu->data.pointer);
+=======
+            (char *)wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if (wrqu->data.length <= nOffset )
   {
@@ -5289,7 +7627,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
     <scan_timers> <scan_time> <scan_repeat> <scan_time> <scan_repeat>
 
     e.g:
+<<<<<<< HEAD
     1 2 4 test 0 0 3 1 6 11 2 40 5 test2 4 4 6 1 2 3 4 5 6 1 0 2 5 2 300 0 
+=======
+    1 2 4 test 0 0 3 1 6 11 2 40 5 test2 4 4 6 1 2 3 4 5 6 1 0 2 5 2 300 0
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     this translates into:
     -----------------------------
@@ -5305,7 +7647,11 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
     bcast type is non-bcast (directed probe will be sent)
     and must not meet any RSSI threshold
 
+<<<<<<< HEAD
     scan every 5 seconds 2 times, scan every 300 seconds until stopped 
+=======
+    scan every 5 seconds 2 times, scan every 300 seconds until stopped
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -----------------------------------------------------------------------*/
   ptr = (char*)(wrqu->data.pointer + nOffset);
 
@@ -5361,6 +7707,7 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
     /*Advance to SSID*/
     ptr += nOffset;
 
+<<<<<<< HEAD
     ucParams = sscanf(ptr,"%32s %lu %lu %hhu %n",
            pnoRequest.aNetworks[i].ssId.ssId,
            &(pnoRequest.aNetworks[i].authentication),
@@ -5378,6 +7725,36 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
             nOffset );
 
     if ( 4 != ucParams )
+=======
+    memcpy(pnoRequest.aNetworks[i].ssId.ssId, ptr,
+           pnoRequest.aNetworks[i].ssId.length);
+    ptr += pnoRequest.aNetworks[i].ssId.length;
+
+    ucParams = sscanf(ptr,"%lu %lu %hhu %n",
+                      &(pnoRequest.aNetworks[i].authentication),
+                      &(pnoRequest.aNetworks[i].encryption),
+                      &(pnoRequest.aNetworks[i].ucChannelCount),
+                      &nOffset);
+
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+              "PNO len %d ssid 0x%08lx%08lx%08lx%08lx%08lx%08lx%08lx%08lx"
+              "auth %d encry %d channel count %d offset %d",
+              pnoRequest.aNetworks[i].ssId.length,
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[0]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[4]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[8]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[12]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[16]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[20]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[24]),
+              *((v_U32_t *) &pnoRequest.aNetworks[i].ssId.ssId[28]),
+              pnoRequest.aNetworks[i].authentication,
+              pnoRequest.aNetworks[i].encryption,
+              pnoRequest.aNetworks[i].ucChannelCount,
+              nOffset );
+
+    if ( 3 != ucParams )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,
                 "Incorrect cmd");
@@ -5431,18 +7808,31 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
               &(pnoRequest.scanTimers.ucScanTimersCount), &nOffset);
 
   /*Read the scan timers*/
+<<<<<<< HEAD
   if (( 1 == ucParams )&&(  pnoRequest.scanTimers.ucScanTimersCount >= 0 ))
   {
      ptr += nOffset;
 
      VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
         "Scan timer count %d offset %d", 
+=======
+  if (( 1 == ucParams ) && ( pnoRequest.scanTimers.ucScanTimersCount > 0 ))
+  {
+     ptr += nOffset;
+
+     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+        "Scan timer count %d offset %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pnoRequest.scanTimers.ucScanTimersCount,
         nOffset );
 
      if ( SIR_PNO_MAX_SCAN_TIMERS < pnoRequest.scanTimers.ucScanTimersCount )
      {
+<<<<<<< HEAD
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
+=======
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "Incorrect cmd - too many scan timers");
        return VOS_STATUS_E_FAILURE;
      }
@@ -5454,15 +7844,25 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
            &( pnoRequest.scanTimers.aTimerValues[i].uTimerRepeat),
            &nOffset);
 
+<<<<<<< HEAD
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
             "PNO Timer value %d Timer repeat %d offset %d", 
             pnoRequest.scanTimers.aTimerValues[i].uTimerValue, 
+=======
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+            "PNO Timer value %d Timer repeat %d offset %d",
+            pnoRequest.scanTimers.aTimerValues[i].uTimerValue,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pnoRequest.scanTimers.aTimerValues[i].uTimerRepeat,
             nOffset );
 
         if ( 2 != ucParams )
         {
+<<<<<<< HEAD
           VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
+=======
+          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "Incorrect cmd - diff params then expected %d", ucParams);
           return VOS_STATUS_E_FAILURE;
         }
@@ -5473,8 +7873,13 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
   }
   else
   {
+<<<<<<< HEAD
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, 
        "No scan timers provided param count %d scan timers %d", 
+=======
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+       "No scan timers provided param count %d scan timers %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ucParams,  pnoRequest.scanTimers.ucScanTimersCount );
 
     /*Scan timers defaults to 5 minutes*/
@@ -5493,6 +7898,33 @@ VOS_STATUS iw_set_pno(struct net_device *dev, struct iw_request_info *info,
      pnoRequest.modePNO = SIR_PNO_MODE_ON_SUSPEND;
   }
 
+<<<<<<< HEAD
+=======
+  // IKHSS7-5797: set PNO intervals
+  /* A set value represents the amount of time that PNO will wait between
+     two consecutive scan procedures.
+     If the desired is for a uniform timer that fires always at the exact same
+     interval - one single value is to be set
+
+     If there is a desire for a more complex - telescopic like timer multiple
+     values can be set - once PNO reaches the end of the array it will
+     continue scanning at intervals presented by the last value
+
+     uTimerRepeat
+     How many times it should repeat that wait value
+     0 - keep using this timer until PNO is disabled/
+     e.g:   2 3
+            4 0
+    - it will wait 2s between consecutive scans for 3 times
+    - after that it will wait 4s between consecutive scans until disabled
+  */
+  pnoRequest.scanTimers.ucScanTimersCount = 2;
+  pnoRequest.scanTimers.aTimerValues[0].uTimerRepeat = 7;
+  pnoRequest.scanTimers.aTimerValues[0].uTimerValue = 45;
+  pnoRequest.scanTimers.aTimerValues[1].uTimerRepeat = 0;
+  pnoRequest.scanTimers.aTimerValues[1].uTimerValue = 480;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   sme_SetPreferredNetworkList(WLAN_HDD_GET_HAL_CTX(pAdapter), &pnoRequest,
                                 pAdapter->sessionId,
                                 found_pref_network_cb, pAdapter);
@@ -5526,9 +7958,24 @@ static int iw_set_pno_priv(struct net_device *dev,
                            struct iw_request_info *info,
                            union iwreq_data *wrqu, char *extra)
 {
+<<<<<<< HEAD
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                 "Set PNO Private");
   return iw_set_pno(dev,info,wrqu,extra,0);
+=======
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                "Set PNO Private");
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+       return -EBUSY;
+    }
+    return iw_set_pno(dev,info,wrqu,extra,0);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif /*FEATURE_WLAN_SCAN_PNO*/
 
@@ -5559,13 +8006,21 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
     }
 
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: change band to %u",
+<<<<<<< HEAD
                 __FUNCTION__, band);
+=======
+                __func__, band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (band == eCSR_BAND_MAX)
     {
         /* Received change band request with invalid band value */
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "%s: Invalid band value %u", __FUNCTION__, band);
+=======
+               "%s: Invalid band value %u", __func__, band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EIO;
     }
 
@@ -5574,7 +8029,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
          (band == eCSR_BAND_ALL && pHddCtx->cfg_ini->nBandCapability!=0)) 
     {       
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
              "%s: band value %u violate INI settings %u", __FUNCTION__,
+=======
+             "%s: band value %u violate INI settings %u", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              band, pHddCtx->cfg_ini->nBandCapability);
          return -EIO;
     }
@@ -5583,7 +8042,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
     {
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
               "%s: Failed to get current band config",
+<<<<<<< HEAD
                  __FUNCTION__);
+=======
+                 __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return -EIO;
     }
 
@@ -5595,7 +8058,11 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
          */
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                 "%s: Current band value = %u, new setting %u ",
+<<<<<<< HEAD
                  __FUNCTION__, currBand, band);
+=======
+                 __func__, currBand, band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if (hdd_connIsConnected(WLAN_HDD_GET_STATION_CTX_PTR(pAdapter)))
         {
@@ -5628,10 +8095,17 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
                      &pAdapter->disconnect_comp_var,
                      msecs_to_jiffies(WLAN_WAIT_TIME_DISCONNECT));
 
+<<<<<<< HEAD
              if(lrc <= 0) {
 
                 hddLog(VOS_TRACE_LEVEL_ERROR,"%s: %s while while waiting for csrRoamDisconnect ",
                  __FUNCTION__, (0 == lrc) ? "Timeout" : "Interrupt");
+=======
+             if (lrc <= 0) {
+
+                hddLog(VOS_TRACE_LEVEL_ERROR,"%s: %s while waiting for csrRoamDisconnect ",
+                 __func__, (0 == lrc) ? "Timeout" : "Interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 return (0 == lrc) ? -ETIMEDOUT : -EINTR;
              }
@@ -5639,6 +8113,7 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
 
         hdd_abort_mac_scan(pHddCtx);
         sme_ScanFlushResult(hHal, pAdapter->sessionId);
+<<<<<<< HEAD
         if(eHAL_STATUS_SUCCESS != sme_SetFreqBand(hHal, (eCsrBand)band))
         {
              VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
@@ -5649,6 +8124,19 @@ int hdd_setBand_helper(struct net_device *dev, tANI_U8* ptr)
 #ifdef CONFIG_CFG80211
         wlan_hdd_cfg80211_update_band(pHddCtx->wiphy, (eCsrBand)band);
 #endif
+=======
+#if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
+        sme_UpdateBgScanConfigIniChannelList(hHal, (eCsrBand) band);
+#endif
+        if (eHAL_STATUS_SUCCESS != sme_SetFreqBand(hHal, (eCsrBand)band))
+        {
+             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                     "%s: failed to set the band value to %u ",
+                        __func__, band);
+             return -EINVAL;
+        }
+        wlan_hdd_cfg80211_update_band(pHddCtx->wiphy, (eCsrBand)band);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return 0;
 }
@@ -5657,10 +8145,25 @@ static int iw_set_band_config(struct net_device *dev,
                            struct iw_request_info *info,
                            union iwreq_data *wrqu, char *extra)
 {
+<<<<<<< HEAD
     tANI_U8 *ptr = (tANI_U8*)wrqu->data.pointer;
     int ret = 0;
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: ", __FUNCTION__);
+=======
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+    tANI_U8 *ptr = (tANI_U8*)wrqu->data.pointer;
+    int ret = 0;
+
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: ", __func__);
+
+    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+    {
+        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+        return -EBUSY;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (memcmp(ptr, "SETBAND ", 8) == 0)
     {
@@ -5697,7 +8200,18 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
             "Power Params data len %d data %s",
             wrqu->data.length,
+<<<<<<< HEAD
             wrqu->data.pointer);
+=======
+            (char *)wrqu->data.pointer);
+
+  if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
+  {
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+                                  "%s:LOGP in Progress. Ignore!!!", __func__);
+    return -EBUSY;
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if (wrqu->data.length <= nOffset )
   {
@@ -5743,7 +8257,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
     if (!uTotalSize)
     {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "Invalid input parametery type : %d with no value at offset %d",
+=======
+                "Invalid input parameter type : %d with no value at offset %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 ucType, nOffset);
       return VOS_STATUS_E_FAILURE;
     }
@@ -5774,7 +8292,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
       break;
       default:
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "Invalid input parametery type : %d with value: %d at offset %d",
+=======
+                "Invalid input parameter type : %d with value: %d at offset %d",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 ucType, uValue,  nOffset);
       return VOS_STATUS_E_FAILURE;
     }
@@ -5797,7 +8319,11 @@ VOS_STATUS iw_set_power_params(struct net_device *dev, struct iw_request_info *i
   wlan_hdd_enter_bmps(pAdapter, DRIVER_POWER_MODE_ACTIVE);
 
   /* Apply the power save params*/
+<<<<<<< HEAD
   sme_SetPowerParams( WLAN_HDD_GET_HAL_CTX(pAdapter), &powerRequest);
+=======
+  sme_SetPowerParams( WLAN_HDD_GET_HAL_CTX(pAdapter), &powerRequest, FALSE);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /* put the device back to power save*/
   wlan_hdd_enter_bmps(pAdapter, DRIVER_POWER_MODE_AUTO);
@@ -5912,7 +8438,11 @@ static const iw_handler we_private[] = {
    [WLAN_PRIV_SET_MCBC_FILTER           - SIOCIWFIRSTPRIV]   = iw_set_dynamic_mcbc_filter,
    [WLAN_PRIV_CLEAR_MCBC_FILTER         - SIOCIWFIRSTPRIV]   = iw_clear_dynamic_mcbc_filter,
    [WLAN_SET_POWER_PARAMS               - SIOCIWFIRSTPRIV]   = iw_set_power_params_priv,
+<<<<<<< HEAD
    [WLAN_GET_LINK_SPEED                 - SIOCIWFIRSTPRIV]   = iw_get_linkspeed
+=======
+   [WLAN_GET_LINK_SPEED                 - SIOCIWFIRSTPRIV]   = iw_get_linkspeed,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 /*Maximum command length can be only 15 */
@@ -5972,6 +8502,21 @@ static const struct iw_priv_args we_private_args[] = {
         0, 
         "setTmLevel" },
 
+<<<<<<< HEAD
+=======
+    {   WE_SET_CHANNEL_RANGE,
+        IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
+        0,
+        "setChannelRange" },
+
+    // IKJB42MAIN-1244, Motorola, a19091 - BEGIN
+    {   WE_SET_IPV6_FILTER_STATE,
+        IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
+        0,
+        "setIPV6FilState" },
+    // IKJB42MAIN-1244, Motorola, a19091 - END
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_NONE_GET_INT,
         0,
@@ -6009,12 +8554,18 @@ static const struct iw_priv_args we_private_args[] = {
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
         "getMaxAssoc" },
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_GET_WDI_DBG,
         0,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
         "getwdidbg" },
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     {   WE_GET_SAP_AUTO_CHANNEL_SELECTION,
         0,
@@ -6026,6 +8577,15 @@ static const struct iw_priv_args we_private_args[] = {
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
         "getconcurrency" },
 
+<<<<<<< HEAD
+=======
+    /* MOTOROLA IKJB42MAIN-274 */
+    {   WE_GET_MCC_MODE,
+        0,
+        IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 1,
+        "getMccMode" },
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_CHAR_GET_NONE,
         IW_PRIV_TYPE_CHAR| 512,
@@ -6072,18 +8632,34 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         "setwlandbg" },
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_SET_WDI_DBG,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 3,
         0,
         "setwdidbg" },
+<<<<<<< HEAD
 #endif // FEATURE_WLAN_INTEGRATED_SOC
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     {   WE_SET_SAP_CHANNELS,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 3,
         0,
         "setsapchannels" },
 
+<<<<<<< HEAD
+=======
+   //Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
+   {    WE_SET_WLAN_DBG_TILL_LEVEL,
+         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 3,
+         0,
+         "setwlanloglevel" },
+   //END IKJBXLINE-5577
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_GET_CHAR_SET_NONE,
         0,
@@ -6109,6 +8685,15 @@ static const struct iw_priv_args we_private_args[] = {
         IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
         "getRSSI" },
 #endif
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+    {   WE_GET_ROAM_RSSI,
+        0,
+        IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
+        "getRoamRSSI" },
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_GET_WMM_STATUS,
         0,
         IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
@@ -6118,7 +8703,17 @@ static const struct iw_priv_args we_private_args[] = {
         0, 
         IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
         "getChannelList" },
+<<<<<<< HEAD
 
+=======
+#ifdef FEATURE_WLAN_TDLS
+    {
+        WE_GET_TDLS_PEERS,
+        0,
+        IW_PRIV_TYPE_CHAR| WE_MAX_STR_LEN,
+        "getTdlsPeers" },
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_NONE_GET_NONE,
         0,
@@ -6138,6 +8733,10 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         0,
         "exitAP" },
+<<<<<<< HEAD
+=======
+#ifdef WLAN_BTAMP_FEATURE
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_ENABLE_AMP,
         0,
         0,
@@ -6146,6 +8745,10 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         0,
         "disableAMP" },
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {   WE_ENABLE_DXE_STALL_DETECT,
         0,
         0,
@@ -6154,6 +8757,18 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         0,
         "dxeSnapshot" },
+<<<<<<< HEAD
+=======
+    {   WE_DISPLAY_DATAPATH_SNAP_SHOT,
+        0,
+        0,
+        "dataSnapshot"},
+    {
+        WE_SET_REASSOC_TRIGGER,
+        0,
+        0,
+        "reassoc" },
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* handlers for main ioctl */
     {   WLAN_PRIV_SET_VAR_INT_GET_NONE,
@@ -6167,6 +8782,32 @@ static const struct iw_priv_args we_private_args[] = {
         0,
         "dump" },
 
+<<<<<<< HEAD
+=======
+    /* handlers for sub ioctl */
+   {
+       WE_MCC_CONFIG_CREDENTIAL,
+       IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
+       0,
+       "setMccCrdnl" },
+
+    /* handlers for sub ioctl */
+   {
+       WE_MCC_CONFIG_PARAMS,
+       IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
+       0,
+       "setMccConfig" },
+
+#ifdef FEATURE_WLAN_TDLS
+    /* handlers for sub ioctl */
+   {
+       WE_TDLS_CONFIG_PARAMS,
+       IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
+       0,
+       "setTdlsConfig" },
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   WLAN_PRIV_ADD_TSPEC,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | HDD_WLAN_WMM_PARAM_COUNT,
@@ -6279,7 +8920,11 @@ static const struct iw_priv_args we_private_args[] = {
     /* handlers for dynamic MC BC ioctl */
     {
         WLAN_PRIV_SET_MCBC_FILTER,
+<<<<<<< HEAD
         IW_PRIV_TYPE_BYTE | sizeof(tMcBcFilterCfg),
+=======
+        IW_PRIV_TYPE_BYTE | sizeof(tRcvFltMcAddrList),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         0,
         "setMCBCFilter" },
     {
@@ -6295,7 +8940,12 @@ static const struct iw_priv_args we_private_args[] = {
     {
         WLAN_GET_LINK_SPEED,
         IW_PRIV_TYPE_CHAR | 18,
+<<<<<<< HEAD
         IW_PRIV_TYPE_CHAR | 3, "getLinkSpeed" },
+=======
+        IW_PRIV_TYPE_CHAR | 5, "getLinkSpeed" },
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 
@@ -6311,10 +8961,192 @@ const struct iw_handler_def we_handler_def = {
    .get_wireless_stats = get_wireless_stats,
 };
 
+<<<<<<< HEAD
+=======
+int hdd_validate_mcc_config(hdd_adapter_t *pAdapter, v_UINT_t staId, v_UINT_t arg1, v_UINT_t arg2, v_UINT_t arg3)
+{
+    v_U32_t  cmd = 288; //Command to RIVA
+    hdd_context_t *pHddCtx = NULL;
+    tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
+    pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+    /*
+     *configMccParam : specify the bit which needs to be modified
+     *allowed to update based on wlan_qcom_cfg.ini
+     * configuration
+     * Bit 0 : SCHEDULE_TIME_SLICE   MIN : 5 MAX : 20
+     * Bit 1 : MAX_NULL_SEND_TIME    MIN : 1 MAX : 10
+     * Bit 2 : TX_EARLY_STOP_TIME    MIN : 1 MAX : 10
+     * Bit 3 : RX_DRAIN_TIME         MIN : 1 MAX : 10
+     * Bit 4 : CHANNEL_SWITCH_TIME   MIN : 1 MAX : 20
+     * Bit 5 : MIN_CHANNEL_TIME      MIN : 5 MAX : 20
+     * Bit 6 : PARK_BEFORE_TBTT      MIN : 1 MAX :  5
+     * Bit 7 : MIN_AFTER_DTIM        MIN : 5 MAX : 15
+     * Bit 8 : TOO_CLOSE_MARGIN      MIN : 1 MAX :  3
+     * Bit 9 : Reserved
+     */
+    switch (arg1)
+    {
+        //Update MCC SCHEDULE_TIME_SLICE parameter
+        case MCC_SCHEDULE_TIME_SLICE_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0001)
+            {
+                if((arg2 >= 5) && (arg2 <= 20))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC MAX_NULL_SEND_TIME parameter
+        case MCC_MAX_NULL_SEND_TIME_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0002)
+            {
+                if((arg2 >= 1) && (arg2 <= 10))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC TX_EARLY_STOP_TIME parameter
+        case MCC_TX_EARLY_STOP_TIME_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0004)
+            {
+                if((arg2 >= 1) && (arg2 <= 10))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC RX_DRAIN_TIME parameter
+        case MCC_RX_DRAIN_TIME_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0008)
+            {
+                if((arg2 >= 1) && (arg2 <= 10))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+        break;
+
+        //Update MCC CHANNEL_SWITCH_TIME parameter
+        case MCC_CHANNEL_SWITCH_TIME_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0010)
+            {
+                if((arg2 >= 1) && (arg2 <= 20))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC MIN_CHANNEL_TIME parameter
+        case MCC_MIN_CHANNEL_TIME_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0020)
+            {
+                if((arg2 >= 5) && (arg2 <= 20))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC PARK_BEFORE_TBTT parameter
+        case MCC_PARK_BEFORE_TBTT_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0040)
+            {
+                if((arg2 >= 1) && (arg2 <= 5))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC MIN_AFTER_DTIM parameter
+        case MCC_MIN_AFTER_DTIM_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0080)
+            {
+                if((arg2 >= 5) && (arg2 <= 15))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        //Update MCC TOO_CLOSE_MARGIN parameter
+        case MCC_TOO_CLOSE_MARGIN_CFG_PARAM :
+            if( pHddCtx->cfg_ini->configMccParam & 0x0100)
+            {
+                if((arg2 >= 1) && (arg2 <= 3))
+                {
+                    logPrintf(hHal, cmd, staId, arg1, arg2, arg3);
+                }
+                else
+                {
+                    hddLog(LOGE, "%s : Enter a valid MCC configuration value\n",__FUNCTION__);
+                    return 0;
+                }
+            }
+            break;
+
+        default :
+            hddLog(LOGE, "%s : Uknown / Not allowed to configure parameter :  %d\n",
+                        __FUNCTION__,arg1);
+            break;
+    }
+    return 0;
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int hdd_set_wext(hdd_adapter_t *pAdapter)
 {
     hdd_wext_state_t *pwextBuf;
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pwextBuf = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
 
@@ -6346,7 +9178,11 @@ int hdd_set_wext(hdd_adapter_t *pAdapter)
     pwextBuf->wpaVersion = IW_AUTH_WPA_VERSION_DISABLED;
 
     /*Set the default scan mode*/
+<<<<<<< HEAD
     pAdapter->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+=======
+    pHddCtx->scan_info.scan_mode = eSIR_ACTIVE_SCAN;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     hdd_clearRoamProfileIe(pAdapter);
 

@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -20,7 +24,10 @@
  */
 
 /*
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file sirCommon.h contains the common definitions used by all
  * Firmware modules.
@@ -37,11 +44,15 @@
 
 #include "sirApi.h"
 #include "sirParams.h"
+<<<<<<< HEAD
 #include "sirWrapper.h"
 
 #ifndef NULL
 #define NULL TX_NULL
 #endif
+=======
+#include "VossWrapper.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ********************************************* *
  *                                               *

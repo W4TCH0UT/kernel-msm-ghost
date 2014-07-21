@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -27,7 +31,11 @@
  *
  *  @author:   Kumar Anand
  *
+<<<<<<< HEAD
  *             Copyright (C) 2010, Qualcomm, Inc. 
+=======
+ *             Copyright (C) 2010, Qualcomm Technologies, Inc. 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *             All rights reserved.
  *
  *=========================================================================*/
@@ -39,6 +47,10 @@
 #include "halCompiler.h"
 #include "wlan_qct_dev_defs.h"
 #include "wlan_nv.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
   API VERSIONING INFORMATION
 
@@ -54,9 +66,15 @@
   All values are in the range 0..255 (ie they are 8-bit values)
  ---------------------------------------------------------------------------*/
 #define WLAN_HAL_VER_MAJOR 1
+<<<<<<< HEAD
 #define WLAN_HAL_VER_MINOR 3
 #define WLAN_HAL_VER_VERSION 1
 #define WLAN_HAL_VER_REVISION 0
+=======
+#define WLAN_HAL_VER_MINOR 4
+#define WLAN_HAL_VER_VERSION 1
+#define WLAN_HAL_VER_REVISION 2
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*---------------------------------------------------------------------------
   Commom Type definitons
@@ -100,11 +118,28 @@ typedef tANI_U8 tHalIpv4Addr[4];
     PARAM_llGCOEXIST_CHANGED|PARAM_HT20MHZCOEXIST_CHANGED|PARAM_NON_GF_DEVICES_PRESENT_CHANGED|PARAM_RIFS_MODE_CHANGED|PARAM_LSIG_TXOP_FULL_SUPPORT_CHANGED| PARAM_OBSS_MODE_CHANGED)
 
 /*Dump command response Buffer size*/
+<<<<<<< HEAD
 #define DUMPCMD_RSP_BUFFER 100
+=======
+#define DUMPCMD_RSP_BUFFER 500
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*Version string max length (including NUL) */
 #define WLAN_HAL_VERSION_LENGTH  64
 
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+#define CHANNEL_LIST_STATIC                   1 /* Occupied channel list remains static */
+#define CHANNEL_LIST_DYNAMIC_INIT             2 /* Occupied channel list can be learnt after init */
+#define CHANNEL_LIST_DYNAMIC_FLUSH            3 /* Occupied channel list can be learnt after flush */
+#define CHANNEL_LIST_DYNAMIC_UPDATE           4 /* Occupied channel list can be learnt after update */
+#define WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE     450
+#define WLAN_HAL_ROAM_SCAN_MAX_CHANNELS       NUM_RF_CHANNELS
+#define WLAN_HAL_ROAM_SCAN_RESERVED_BYTES     61
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Message types for messages exchanged between WDI and HAL */
 typedef enum 
 {
@@ -349,6 +384,25 @@ typedef enum
    WLAN_HAL_SET_THERMAL_MITIGATION_REQ      = 178,
    WLAN_HAL_SET_THERMAL_MITIGATION_RSP      = 179,
 
+<<<<<<< HEAD
+=======
+   WLAN_HAL_UPDATE_VHT_OP_MODE_REQ          = 182,
+   WLAN_HAL_UPDATE_VHT_OP_MODE_RSP          = 183,
+
+   WLAN_HAL_P2P_NOA_START_IND               = 184,
+
+   WLAN_HAL_GET_ROAM_RSSI_REQ               = 185,
+   WLAN_HAL_GET_ROAM_RSSI_RSP               = 186,
+   
+   WLAN_HAL_CLASS_B_STATS_IND               = 187,
+   WLAN_HAL_DEL_BA_IND                      = 188,
+   WLAN_HAL_DHCP_START_IND                  = 189,
+   WLAN_HAL_DHCP_STOP_IND                   = 190,
+   WLAN_ROAM_SCAN_OFFLOAD_REQ               = 191,
+   WLAN_ROAM_SCAN_OFFLOAD_RSP               = 192,
+   WLAN_HAL_WIFI_PROXIMITY_REQ              = 193,
+   WLAN_HAL_WIFI_PROXIMITY_RSP              = 194,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WLAN_HAL_MSG_MAX = WLAN_HAL_MSG_TYPE_MAX_ENUM_SIZE
 }tHalHostMsgType;
 
@@ -357,7 +411,12 @@ typedef enum
 {
    WLAN_HAL_MSG_VERSION0 = 0,
    WLAN_HAL_MSG_VERSION1 = 1,
+<<<<<<< HEAD
    WLAN_HAL_MSG_VERSION_MAX_FIELD = 0x7FFF /*define as 2 bytes data*/
+=======
+   WLAN_HAL_MSG_WCNSS_CTRL_VERSION = 0x7FFF, /*define as 2 bytes data*/
+   WLAN_HAL_MSG_VERSION_MAX_FIELD  = WLAN_HAL_MSG_WCNSS_CTRL_VERSION
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }tHalHostMsgVersion;
 
 /* Enumeration for Boolean - False/True, On/Off */
@@ -541,6 +600,10 @@ typedef enum eSriLinkState {
     eSIR_LINK_FINISH_CAL_STATE  = 13,
 #ifdef WLAN_FEATURE_P2P
     eSIR_LINK_LISTEN_STATE      = 14,
+<<<<<<< HEAD
+=======
+    eSIR_LINK_SEND_ACTION_STATE = 15,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     eSIR_LINK_MAX = WLAN_HAL_MAX_ENUM_SIZE
 } tSirLinkState;
@@ -1421,7 +1484,15 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_U8  p2pCapableSta;
 
     /*Reserved to align next field on a dword boundary*/
+<<<<<<< HEAD
     tANI_U8  reserved;
+=======
+    tANI_U8 htLdpcEnabled:1;
+    tANI_U8 vhtLdpcEnabled:1;
+    tANI_U8 vhtTxBFEnabled:1;
+    tANI_U8 reserved:5;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*These rates are the intersection of peer and self capabilities.*/
     tSirSupportedRates_V1 supportedRates;
 
@@ -2087,6 +2158,16 @@ typedef PACKED_PRE struct PACKED_POST
    tSetBssKeyParams setBssKeyParams;
 } tSetBssKeyReqMsg, *tpSetBssKeyReqMsg;
 
+<<<<<<< HEAD
+=======
+/* tagged version of set bss key */
+typedef PACKED_PRE struct PACKED_POST
+{
+   tSetBssKeyReqMsg  Msg;
+   uint32            Tag;
+} tSetBssKeyReqMsgTagged;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
   WLAN_HAL_SET_BSSKEY_RSP
 ---------------------------------------------------------------------------*/
@@ -2228,11 +2309,19 @@ typedef PACKED_PRE struct PACKED_POST
 #ifdef FEATURE_OEM_DATA_SUPPORT
 
 #ifndef OEM_DATA_REQ_SIZE
+<<<<<<< HEAD
 #define OEM_DATA_REQ_SIZE 70
 #endif
 
 #ifndef OEM_DATA_RSP_SIZE
 #define OEM_DATA_RSP_SIZE 968
+=======
+#define OEM_DATA_REQ_SIZE 134
+#endif
+
+#ifndef OEM_DATA_RSP_SIZE
+#define OEM_DATA_RSP_SIZE 1968
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 /*-------------------------------------------------------------------------
@@ -3187,6 +3276,32 @@ typedef PACKED_PRE struct PACKED_POST
    tSirMicFailureInd micFailureInd;
 }  tMicFailureIndMsg, *tpMicFailureIndMsg;
 
+<<<<<<< HEAD
+=======
+typedef PACKED_PRE struct PACKED_POST
+{
+   tANI_U16  opMode;
+   tANI_U16  staId;
+}tUpdateVHTOpMode, *tpUpdateVHTOpMode; 
+
+typedef PACKED_PRE struct PACKED_POST
+{
+    tHalMsgHeader header;
+    tUpdateVHTOpMode updateVhtOpMode;
+}  tUpdateVhtOpModeReqMsg, *tpUpdateVhtOpModeReqMsg;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+    tANI_U32   status;
+} tUpdateVhtOpModeParamsRsp, *tpUpdateVhtOpModeParamsRsp;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+    tHalMsgHeader header;
+    tUpdateVhtOpModeParamsRsp updateVhtOpModeRspParam;
+}  tUpdateVhtOpModeParamsRspMsg,  *tpUpdateVhtOpModeParamsRspMsg;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
  * WLAN_HAL_UPDATE_BEACON_REQ
  *--------------------------------------------------------------------------*/
@@ -3455,6 +3570,18 @@ typedef PACKED_PRE struct PACKED_POST
     tDeleteStaContextParams deleteStaContextParams;
 }tDeleteStaContextIndMsg, *tpDeleteStaContextIndMsg;
 
+<<<<<<< HEAD
+=======
+typedef PACKED_PRE struct PACKED_POST
+{
+   tHalMsgHeader header;
+   tANI_U8  assocId;
+   tANI_U8  staIdx;
+   tANI_U8  bssIdx;
+   tANI_U8  uReasonCode;
+   tANI_U32  uStatus;
+} tIndicateDelSta, *tpIndicateDelSta;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*---------------------------------------------------------------------------
  *WLAN_HAL_SIGNAL_BTAMP_EVENT_REQ
@@ -3596,6 +3723,23 @@ typedef PACKED_PRE struct PACKED_POST
 }  tHalExitBmpsReqMsg, *tpHalExitBmpsReqMsg;
 
 /*---------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+ * WLAN_HAL_MISSED_BEACON_IND
+ *--------------------------------------------------------------------------*/
+typedef PACKED_PRE struct PACKED_POST
+{
+   tANI_U8     bssIdx;
+} tHalMissedBeaconIndParams, *tpHalMissedBeaconIndParams;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+   tHalMsgHeader header;
+   tHalMissedBeaconIndParams missedBeaconIndParams;
+}  tHalMissedBeaconIndMsg, *tpHalMissedBeaconIndMsg;
+
+/*---------------------------------------------------------------------------
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * WLAN_HAL_ADD_BCN_FILTER_REQ
  *--------------------------------------------------------------------------*/
 /* Beacon Filtering data structures */
@@ -3613,6 +3757,11 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_U16    capabilityMask;
     tANI_U16    beaconInterval;
     tANI_U16    ieNum;
+<<<<<<< HEAD
+=======
+    tANI_U8     bssIdx;
+    tANI_U8     reserved;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tBeaconFilterMsg, *tpBeaconFilterMsg;
 
 /* The above structure would be followed by multiple of below mentioned structure */
@@ -3655,7 +3804,13 @@ typedef PACKED_PRE struct PACKED_POST
 #define HAL_OFFLOAD_DISABLE                         0
 #define HAL_OFFLOAD_ENABLE                          1
 #define HAL_OFFLOAD_BCAST_FILTER_ENABLE             0x2
+<<<<<<< HEAD
 #define HAL_OFFLOAD_ARP_AND_BCAST_FILTER_ENABLE     (HAL_OFFLOAD_ENABLE|HAL_OFFLOAD_BCAST_FILTER_ENABLE)
+=======
+#define HAL_OFFLOAD_MCAST_FILTER_ENABLE             0x4
+#define HAL_OFFLOAD_ARP_AND_BCAST_FILTER_ENABLE     (HAL_OFFLOAD_ENABLE|HAL_OFFLOAD_BCAST_FILTER_ENABLE)
+#define HAL_OFFLOAD_IPV6NS_AND_MCAST_FILTER_ENABLE  (HAL_OFFLOAD_ENABLE|HAL_OFFLOAD_MCAST_FILTER_ENABLE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef PACKED_PRE struct PACKED_POST _tHalNSOffloadParams
 {
@@ -3671,6 +3826,10 @@ typedef PACKED_PRE struct PACKED_POST _tHalNSOffloadParams
    tANI_U8 reserved1 : 5;
    tANI_U8 reserved2;   //make it DWORD aligned
    tANI_U8 bssIdx;
+<<<<<<< HEAD
+=======
+   tANI_U32 slotIndex; // slot index for this offload
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tHalNSOffloadParams;
 
 typedef PACKED_PRE struct PACKED_POST
@@ -3740,7 +3899,11 @@ typedef PACKED_PRE struct PACKED_POST
 {
    tHalMsgHeader header;
    tHalRSSIThresholds rssiThreshParams;
+<<<<<<< HEAD
 }  tHalRSSIThresholdsReqMsg, *tpHalRSSIThresholdReqMsg;
+=======
+}  tHalRSSIThresholdReqMsg, *tpHalRSSIThresholdReqMsg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*---------------------------------------------------------------------------
  * WLAN_HAL_ENTER_UAPSD_REQ
@@ -3933,6 +4096,27 @@ typedef PACKED_PRE struct PACKED_POST
    tHalMsgHeader header;
 }  tHalGetRssiReqMsg, *tpHalGetRssiReqMsg;
 
+<<<<<<< HEAD
+=======
+typedef PACKED_PRE struct PACKED_POST
+{
+   /* Valid STA Idx for per STA stats request */
+   tANI_U32    staId;
+
+}tHalRoamRssiReqParams, *tpHalRoamRssiReqParams;
+
+
+/*---------------------------------------------------------------------------
+ * WLAN_HAL_GET_ROAM_RSSI_REQ
+ *--------------------------------------------------------------------------*/
+typedef PACKED_PRE struct PACKED_POST
+{
+   tHalMsgHeader header;
+   tHalRoamRssiReqParams roamRssiReqParams;
+}  tHalGetRoamRssiReqMsg, *tpHalGetRoamRssiReqMsg;
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
  * WLAN_HAL_SET_UAPSD_AC_PARAMS_REQ
  *--------------------------------------------------------------------------*/
@@ -4070,7 +4254,12 @@ typedef PACKED_PRE struct PACKED_POST
     tANI_U32             bRssiThres2NegCross : 1;
     tANI_U32             bRssiThres3PosCross : 1;
     tANI_U32             bRssiThres3NegCross : 1;
+<<<<<<< HEAD
     tANI_U32             bReserved           : 26;
+=======
+    tANI_U32             avgRssi             : 8;
+    tANI_U32             bReserved           : 18;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tHalRSSINotification, *tpHalRSSINotification;
 
 typedef PACKED_PRE struct PACKED_POST
@@ -4096,6 +4285,27 @@ typedef PACKED_PRE struct PACKED_POST
 }  tHalGetRssiRspMsg, *tpHalGetRssiRspMsg;
 
 /*---------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+ * WLAN_HAL_GET_ROAM_RSSI_RSP
+ *--------------------------------------------------------------------------*/
+typedef PACKED_PRE struct PACKED_POST
+{
+    /* success or failure */
+    tANI_U32   status;
+
+    tANI_U8    staId;
+    tANI_S8    rssi;
+} tHalGetRoamRssiParams, *tpHalGetRoamRspParams;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+   tHalMsgHeader header;
+   tHalGetRoamRssiParams roamRssiRspParams;
+}  tHalGetRoamRssiRspMsg, *tpHalGetRoamRssiRspMsg;
+
+/*---------------------------------------------------------------------------
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * WLAN_HAL_ENTER_WOWL_RSP
  *--------------------------------------------------------------------------*/
 typedef PACKED_PRE struct PACKED_POST
@@ -4625,6 +4835,11 @@ typedef PACKED_PRE struct PACKED_POST
 #define WLAN_COEX_IND_DATA_SIZE (4)
 #define WLAN_COEX_IND_TYPE_DISABLE_HB_MONITOR (0)
 #define WLAN_COEX_IND_TYPE_ENABLE_HB_MONITOR (1)
+<<<<<<< HEAD
+=======
+#define WLAN_COEX_IND_TYPE_SCANS_ARE_COMPROMISED_BY_COEX (2)
+#define WLAN_COEX_IND_TYPE_SCANS_ARE_NOT_COMPROMISED_BY_COEX (3)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef PACKED_PRE struct PACKED_POST
 {
@@ -4701,7 +4916,11 @@ typedef PACKED_PRE struct PACKED_POST
    tANI_U16     ctWin  ;
 
    tANI_U16      uNoa1IntervalCnt;
+<<<<<<< HEAD
    tANI_U16      rsvd1 ;
+=======
+   tANI_U16      bssIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tANI_U32      uNoa1Duration;
    tANI_U32      uNoa1Interval;
    tANI_U32      uNoa1StartTime;
@@ -4720,6 +4939,25 @@ typedef PACKED_PRE struct PACKED_POST
    tHalMsgHeader      header;
    tNoaAttrIndParams  noaAttrIndParams; 
 }tNoaAttrIndMsg, *tpNoaAttrIndMsg;
+<<<<<<< HEAD
+=======
+
+/*---------------------------------------------------------------------------
+ *WLAN_HAL_NOA_START_IND
+ *-------------------------------------------------------------------------*/
+
+typedef PACKED_PRE struct PACKED_POST
+{
+    tANI_U32             status;
+    tANI_U32             bssIdx;
+}tNoaStartIndParams, *tpNoaStartIndParams;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+   tHalMsgHeader      header;
+   tNoaStartIndParams noaStartIndParams;
+}tNoaStartIndMsg, tpNoaStartIndMsg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 /*---------------------------------------------------------------------------
@@ -4752,12 +4990,42 @@ typedef PACKED_PRE struct PACKED_POST
    tHalHostResumeRspParams hostResumeRspParams;
 }  tHalHostResumeRspMsg, *tpHalHostResumeRspMsg;
 
+<<<<<<< HEAD
+=======
+typedef PACKED_PRE struct PACKED_POST
+{
+	tANI_U16 staIdx;
+	// Peer MAC Address, whose BA session has timed out
+	tSirMacAddr peerMacAddr;
+	// TID for which a BA session timeout is being triggered
+	tANI_U8 baTID;
+	// DELBA direction
+	// 1 - Originator
+	// 0 - Recipient
+	tANI_U8 baDirection;
+	tANI_U32 reasonCode;
+	tSirMacAddr  bssId; // TO SUPPORT BT-AMP
+} tHalWlanDelBaIndMsg, *tpHalWlanDelBaIndMsg;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+    tHalMsgHeader   header;
+	tHalWlanDelBaIndMsg hostdelBaParam;
+} tHalDelBAIndMsg, *tpHalDelBAIndMsg;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*---------------------------------------------------------------------------
  *PNO Messages
  *-------------------------------------------------------------------------*/
 /*Max number of channels that a network can be found on*/
 #define WLAN_HAL_PNO_MAX_NETW_CHANNELS  26
 
+<<<<<<< HEAD
+=======
+/*Max number of channels that a network can be found on*/
+#define WLAN_HAL_PNO_MAX_NETW_CHANNELS_EX  60
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*Maximum numbers of networks supported by PNO*/
 #define WLAN_HAL_PNO_MAX_SUPP_NETWORKS  16
 
@@ -4796,6 +5064,11 @@ typedef enum
     eAUTH_TYPE_FT_RSN_PSK            = 7,
     eAUTH_TYPE_WAPI_WAI_CERTIFICATE  = 8,
     eAUTH_TYPE_WAPI_WAI_PSK          = 9,
+<<<<<<< HEAD
+=======
+    eAUTH_TYPE_CCKM_WPA              = 10,
+    eAUTH_TYPE_CCKM_RSN              = 11,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     eAUTH_TYPE_MAX = WLAN_HAL_MAX_ENUM_SIZE
 
@@ -4993,16 +5266,29 @@ typedef PACKED_PRE struct PACKED_POST
 }  tSetPrefNetwListResp, *tpSetPrefNetwListResp;
 
 /*
+<<<<<<< HEAD
   Preferred network indication parameters 
+=======
+  Preferred network indication parameters
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 */
 typedef PACKED_PRE struct PACKED_POST {
 
   /*Network that was found with the highest RSSI*/
   tSirMacSSid ssId;
+<<<<<<< HEAD
   
   /*Indicates the RSSI */
   tANI_U8     rssi;
 
+=======
+
+  /*Indicates the RSSI */
+  tANI_U8     rssi;
+
+  tANI_U16    frameLength;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tPrefNetwFoundParams, * tpPrefNetwFoundParams;
 
 /*
@@ -5021,7 +5307,71 @@ typedef PACKED_PRE struct PACKED_POST {
   tANI_U8          ucRssiThreshold;
 
 } tRssiFilterParams, * tpRssiFilterParams;
+<<<<<<< HEAD
 
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+typedef PACKED_PRE struct PACKED_POST
+{
+   tSirMacSSid ssId;
+   tANI_U8     currAPbssid[HAL_MAC_ADDR_LEN];
+   tANI_U32    authentication;
+   tEdType     encryption;
+   tEdType     mcencryption;
+   tANI_U8     ChannelCount;
+   tANI_U8     ChannelCache[WLAN_HAL_ROAM_SCAN_MAX_CHANNELS];
+}tRoamNetworkType;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+   tANI_U8 mdiePresent;
+   tANI_U16 mobilityDomain;
+}tMobilityDomainInfo;
+
+typedef PACKED_PRE struct PACKED_POST {
+   eAniBoolean       RoamScanOffloadEnabled;
+   tANI_S8           LookupThreshold;
+   tANI_U8           RoamRssiDiff;
+   tANI_U8           ChannelCacheType;
+   tANI_U8           Command;
+   tANI_U8           StartScanReason;
+   tANI_U16          NeighborScanTimerPeriod;
+   tANI_U16          NeighborRoamScanRefreshPeriod;
+   tANI_U16          NeighborScanChannelMinTime;
+   tANI_U16          NeighborScanChannelMaxTime;
+   tANI_U16          EmptyRefreshScanPeriod;
+   tANI_U8           ValidChannelCount;
+   tANI_U8           ValidChannelList[WLAN_HAL_ROAM_SCAN_MAX_CHANNELS];
+   eAniBoolean       IsCCXEnabled;
+
+   tANI_U16          us24GProbeSize;
+   tANI_U8           a24GProbeTemplate[WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE];
+   tANI_U16          us5GProbeSize;
+   tANI_U8           a5GProbeTemplate[WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE];
+   /* Add Reserved bytes */
+   tANI_U8           nProbes;
+   tANI_U16          HomeAwayTime;
+   tANI_U8           ReservedBytes[WLAN_HAL_ROAM_SCAN_RESERVED_BYTES];
+   tRoamNetworkType  ConnectedNetwork;
+   tMobilityDomainInfo MDID;
+} tRoamCandidateListParams, * tpRoamCandidateListParams;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+           tHalMsgHeader header;
+              tRoamCandidateListParams RoamScanOffloadNetwListParams;
+}  tSetRoamScanOffloadReq, *tpRoamScanOffloadReq;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+           tHalMsgHeader header;
+
+              /*status of the request - just to indicate that PNO has acknowledged
+               *      the request and will start scanning*/
+              tANI_U32   status;
+}  tSetRoamOffloadScanResp, *tpSetRoamOffloadScanResp;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
   RSSI Filter request 
 */
@@ -5073,6 +5423,42 @@ typedef PACKED_PRE struct PACKED_POST
 } tUpdateScanParams, * tpUpdateScanParams;
 
 /*
+<<<<<<< HEAD
+=======
+  Update scan params 
+*/
+typedef PACKED_PRE struct PACKED_POST  
+{
+
+  /*Host setting for 11d*/
+  tANI_U8   b11dEnabled; 
+
+  /*Lets PNO know that host has determined the regulatory domain*/
+  tANI_U8   b11dResolved;
+
+  /*Channels on which PNO is allowed to scan*/
+  tANI_U8   ucChannelCount; 
+  tANI_U8   aChannels[WLAN_HAL_PNO_MAX_NETW_CHANNELS_EX]; 
+
+  /*Minimum channel time*/
+  tANI_U16  usActiveMinChTime; 
+
+  /*Maximum channel time*/
+  tANI_U16  usActiveMaxChTime; 
+
+  /*Minimum channel time*/
+  tANI_U16  usPassiveMinChTime; 
+
+  /*Maximum channel time*/
+  tANI_U16  usPassiveMaxChTime; 
+
+  /*Cb State*/
+  ePhyChanBondState cbState;
+
+} tUpdateScanParamsEx, * tpUpdateScanParamsEx;
+
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   Update scan params - sent from host to PNO
   to be used during PNO scanning 
 */
@@ -5089,6 +5475,19 @@ typedef PACKED_PRE struct PACKED_POST{
 typedef PACKED_PRE struct PACKED_POST{
 
    tHalMsgHeader header;
+<<<<<<< HEAD
+=======
+   tUpdateScanParamsEx   scanParams;
+}  tUpdateScanParamsReqEx, *tpUpdateScanParamsReqEx;
+
+/*
+  Update scan params - sent from host to PNO
+  to be used during PNO scanning 
+*/
+typedef PACKED_PRE struct PACKED_POST{
+
+   tHalMsgHeader header;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*status of the request */
    tANI_U32   status;
@@ -5342,10 +5741,44 @@ typedef PACKED_PRE struct PACKED_POST{
  ****************Capability bitmap exchange definitions and macros starts*************
  *--------------------------------------------------------------------------*/
 
+<<<<<<< HEAD
 typedef PACKED_PRE struct PACKED_POST{
 
    tANI_U32 featCaps[4];
 
+=======
+typedef enum {
+    MCC        = 0,
+    P2P        = 1,
+    DOT11AC    = 2,
+    SLM_SESSIONIZATION = 3,
+    DOT11AC_OPMODE     = 4,
+    SAP32STA = 5,
+    TDLS       = 6,
+    P2P_GO_NOA_DECOUPLE_INIT_SCAN = 7,
+    WLANACTIVE_OFFLOAD = 8,
+    BEACON_OFFLOAD     = 9,
+    SCAN_OFFLOAD       = 10,
+    ROAM_OFFLOAD       = 11,
+    BCN_MISS_OFFLOAD   = 12,
+    STA_POWERSAVE      = 13,
+    STA_ADVANCED_PWRSAVE = 14,
+    AP_UAPSD           = 15,
+    AP_DFS             = 16,
+    BLOCKACK           = 17,
+    PHY_ERR            = 18,
+    BCN_FILTER         = 19,
+    RTT                = 20,
+    RATECTRL           = 21,
+    WOW                = 22,
+    WLAN_ROAM_SCAN_OFFLOAD = 23,
+    //MAX_FEATURE_SUPPORTED = 128
+} placeHolderInCapBitmap;
+
+typedef PACKED_PRE struct PACKED_POST{
+
+   tANI_U32 featCaps[4];
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }  tWlanFeatCaps, *tpWlanFeatCaps;
 
 typedef PACKED_PRE struct PACKED_POST{
@@ -5355,6 +5788,7 @@ typedef PACKED_PRE struct PACKED_POST{
 
 }  tWlanFeatCapsMsg, *tpWlanFeatCapsMsg;
 
+<<<<<<< HEAD
 
 typedef enum {
     MCC        = 0,
@@ -5368,17 +5802,33 @@ typedef enum {
 #define IS_MCC_SUPPORTED_BY_HOST (!!(halMsg_GetHostWlanFeatCaps(MCC)))
 #define IS_SLM_SESSIONIZATION_SUPPORTED_BY_HOST (!!(halMsg_GetHostWlanFeatCaps(SLM_SESSIONIZATION)))
 
+=======
+#define IS_MCC_SUPPORTED_BY_HOST (!!(halMsg_GetHostWlanFeatCaps(MCC)))
+#define IS_SLM_SESSIONIZATION_SUPPORTED_BY_HOST (!!(halMsg_GetHostWlanFeatCaps(SLM_SESSIONIZATION)))
+#define IS_FEATURE_SUPPORTED_BY_HOST(featEnumValue) (!!halMsg_GetHostWlanFeatCaps(featEnumValue))
+#define IS_WLANACTIVE_OFFLOAD_SUPPORTED_BY_HOST (!!(halMsg_GetHostWlanFeatCaps(WLANACTIVE_OFFLOAD)))
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+#define IS_ROAM_SCAN_OFFLOAD_SUPPORTED_BY_HOST (!!(halMsg_GetHostWlanFeatCaps(WLAN_ROAM_SCAN_OFFLOAD)))
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tANI_U8 halMsg_GetHostWlanFeatCaps(tANI_U8 feat_enum_value);
 
 #define setFeatCaps(a,b)   {  tANI_U32 arr_index, bit_index; \
+<<<<<<< HEAD
                               if ((b<=127)) { \
                                 arr_index = b/32; \
                                 bit_index = b % 32; \
+=======
+                              if ((b)<=127) { \
+                                arr_index = (b)/32; \
+                                bit_index = (b)%32; \
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 (a)->featCaps[arr_index] |= (1<<bit_index); \
                               } \
                            }
 #define getFeatCaps(a,b,c) {  tANI_U32 arr_index, bit_index; \
+<<<<<<< HEAD
                               if ((b<=127)) { \
                                 arr_index = b/32; \
                                 bit_index = b % 32; \
@@ -5389,6 +5839,18 @@ tANI_U8 halMsg_GetHostWlanFeatCaps(tANI_U8 feat_enum_value);
                               if ((b<=127)) { \
                                 arr_index = b/32; \
                                 bit_index = b % 32; \
+=======
+                              if ((b)<=127) { \
+                                arr_index = (b)/32; \
+                                bit_index = (b)%32; \
+                                (c) = ((a)->featCaps[arr_index] & (1<<bit_index))?1:0; \
+                              } \
+                           }
+#define clearFeatCaps(a,b) {  tANI_U32 arr_index, bit_index; \
+                              if ((b)<=127) { \
+                                arr_index = (b)/32; \
+                                bit_index = (b)%32; \
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 (a)->featCaps[arr_index] &= ~(1<<bit_index); \
                               } \
                            }
@@ -5476,6 +5938,11 @@ typedef PACKED_PRE struct PACKED_POST
 
 #define WLAN_HAL_GTK_OFFLOAD_FLAGS_DISABLE (1 << 0)
 
+<<<<<<< HEAD
+=======
+#define GTK_SET_BSS_KEY_TAG  0x1234AA55
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef PACKED_PRE struct PACKED_POST
 {
   tANI_U32     ulFlags;             /* optional flags */
@@ -5542,6 +6009,25 @@ typedef PACKED_PRE struct PACKED_POST
    tHalGtkOffloadGetInfoRspParams gtkOffloadGetInfoRspParams;
 }  tHalGtkOffloadGetInfoRspMsg, *tpHalGtkOffloadGetInfoRspMsg;
 
+<<<<<<< HEAD
+=======
+/*---------------------------------------------------------------------------
+* WLAN_HAL_DHCP_IND
+*--------------------------------------------------------------------------*/
+typedef PACKED_PRE struct PACKED_POST
+{
+   /*Indicates the device mode which indicates about the DHCP activity */
+    tANI_U8 device_mode;
+    tSirMacAddr macAddr;
+} tDHCPInfo, *tpDHCPInfo;
+
+typedef PACKED_PRE struct PACKED_POST
+{
+   tHalMsgHeader  header;
+   tANI_U32       status;  /* success or failure */
+} tDHCPIndStatus, *tpDHCPIndstatus;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
    Thermal Mitigation mode of operation.
    HAL_THERMAL_MITIGATION_MODE_0 - Based on AMPDU disabling aggregation
@@ -5609,6 +6095,39 @@ typedef PACKED_PRE struct PACKED_POST{
 
 }  tSetThermalMitigationResp, *tpSetThermalMitigationResp;
 
+<<<<<<< HEAD
+=======
+/* Per STA Class B Statistics. Class B statistics are STA TX/RX stats  
+provided to FW from Host via periodic messages */
+typedef PACKED_PRE struct PACKED_POST {
+   /* TX stats */
+   uint32 txBytesPushed;
+   uint32 txPacketsPushed;
+
+   /* RX stats */
+   uint32 rxBytesRcvd;
+   uint32 rxPacketsRcvd;
+   uint32 rxTimeTotal;
+} tStaStatsClassB, *tpStaStatsClassB;
+
+typedef PACKED_PRE struct PACKED_POST {
+
+   /* Duration over which this stats was collected */
+   tANI_U32 duration;
+
+   /* Per STA Stats */
+   tStaStatsClassB staStatsClassB[HAL_NUM_STA];
+} tStatsClassBIndParams, *tpStatsClassBIndParams;
+
+typedef PACKED_PRE struct PACKED_POST {
+
+   tHalMsgHeader header;
+
+   /* Class B Stats */
+   tStatsClassBIndParams statsClassBIndParams;
+} tStatsClassBInd, *tpStatsClassBInd;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined(__ANI_COMPILER_PRAGMA_PACK_STACK)
 #pragma pack(pop)
 #elif defined(__ANI_COMPILER_PRAGMA_PACK)

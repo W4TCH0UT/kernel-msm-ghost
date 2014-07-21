@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -18,7 +41,10 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*============================================================================
 Copyright (c) 2007 QUALCOMM Incorporated.
 All Rights Reserved.
@@ -49,6 +75,7 @@ logDump.c
 #ifdef ANI_LOGDUMP
 
 #define MAX_OVERFLOW_MSG    400
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_WINDOWS)
 #define MAX_LOGDUMP_SIZE    ((4*1024) - MAX_OVERFLOW_MSG)
 #else
@@ -98,6 +125,11 @@ logDump.c
 #include "csrApi.h"
 
 #elif defined(ANI_OS_TYPE_ANDROID)
+=======
+#define MAX_LOGDUMP_SIZE    ((4*1024) - MAX_OVERFLOW_MSG)
+
+#if   defined(ANI_OS_TYPE_ANDROID)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include <linux/kernel.h>
 
@@ -111,9 +143,12 @@ logDump.c
 #include <utilsApi.h>
 
 #include <limApi.h>
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include <halCommonApi.h>
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <cfgApi.h>
 #include <utilsGlobal.h>
 #include <dphGlobal.h>
@@ -123,6 +158,7 @@ logDump.c
 
 #include "pmmApi.h"
 #include "limSerDesUtils.h"
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halLogDump.h"
 //#include "testHalMsgApi.h"
@@ -136,6 +172,10 @@ logDump.c
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halUtils.h"
 #endif
+=======
+#include "limAssocUtils.h"
+#include "limSendMessages.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "limSecurityUtils.h"
 //#include "halRadar.h"
 #include "logDump.h"
@@ -145,7 +185,11 @@ logDump.c
 #define HAL_LOG_DUMP_CMD_START 0
 #define HAL_LOG_DUMP_CMD_END 299
 
+<<<<<<< HEAD
 static int debug = 0;
+=======
+static int debug;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     void
 logPrintf(tpAniSirGlobal pMac, tANI_U32 cmd, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 arg3, tANI_U32 arg4)
@@ -177,6 +221,7 @@ int log_sprintf(tpAniSirGlobal pMac, char *pBuf, char *fmt, ...)
     tANI_S32 ret = 0;
 #ifdef WLAN_DEBUG
 
+<<<<<<< HEAD
 #if defined(ANI_OS_TYPE_AMSS)
     AEEVaList args;
     AEEVA_START(args, fmt);
@@ -184,10 +229,15 @@ int log_sprintf(tpAniSirGlobal pMac, char *pBuf, char *fmt, ...)
     va_list args;
     va_start(args, fmt);
 #endif
+=======
+    va_list args;
+    va_start(args, fmt);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (pMac->gCurrentLogSize >= MAX_LOGDUMP_SIZE)
         return 0;
 
+<<<<<<< HEAD
 #if defined (ANI_OS_TYPE_WINDOWS)
     ret = _vsnprintf(pBuf, (MAX_LOGDUMP_SIZE - pMac->gCurrentLogSize), fmt, args);
 #elif (defined (ANI_OS_TYPE_LINUX) || defined (ANI_OS_TYPE_ANDROID))
@@ -209,6 +259,13 @@ int log_sprintf(tpAniSirGlobal pMac, char *pBuf, char *fmt, ...)
 #else
     va_end(args);
 #endif
+=======
+#if    defined (ANI_OS_TYPE_ANDROID)
+    ret = vsnprintf(pBuf, (MAX_LOGDUMP_SIZE - pMac->gCurrentLogSize), fmt, args);
+#endif
+
+    va_end(args);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* If an output error is encountered, a negative value is returned by vsnprintf */
     if (ret < 0)
@@ -219,6 +276,7 @@ int log_sprintf(tpAniSirGlobal pMac, char *pBuf, char *fmt, ...)
         pBuf += (MAX_LOGDUMP_SIZE - pMac->gCurrentLogSize);
         pMac->gCurrentLogSize = MAX_LOGDUMP_SIZE;
 
+<<<<<<< HEAD
 #if defined (ANI_OS_TYPE_WINDOWS)
         ret = _snprintf(pBuf, MAX_OVERFLOW_MSG, "\n-> ***********"
                 "\nOutput Exceeded the Buffer Size, message truncated!!\n<- ***********\n");
@@ -235,6 +293,9 @@ int log_sprintf(tpAniSirGlobal pMac, char *pBuf, char *fmt, ...)
         if (ret >= 0)
             ret = strlen(pBuf);
 #elif defined (ANI_OS_TYPE_AMSS)
+=======
+#if    defined (ANI_OS_TYPE_ANDROID)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ret = snprintf(pBuf, MAX_OVERFLOW_MSG, "\n-> ***********"
                 "\nOutput Exceeded the Buffer Size, message truncated!!\n<- ***********\n");
 #endif
@@ -249,10 +310,13 @@ int log_sprintf(tpAniSirGlobal pMac, char *pBuf, char *fmt, ...)
     pMac->gCurrentLogSize += ret;
 
 
+<<<<<<< HEAD
 #if defined (ANI_OS_TYPE_WINDOWS)
     //DbgPrint("%s", pBuf);
     sysLog(pMac, LOGE, FL("%s"), pBuf);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //for #ifdef WLAN_DEBUG
     return ret;
 }
@@ -422,6 +486,7 @@ char * dump_log_level_set( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tA
     return p;
 }
 
+<<<<<<< HEAD
 #ifdef WLAN_DEBUG    
 static tLogdRegList dataType[] =
 {
@@ -606,6 +671,8 @@ char * dump_thread_info( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI
     return p;
 }
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* Initialize the index */
 void logDumpInit(tpAniSirGlobal pMac)

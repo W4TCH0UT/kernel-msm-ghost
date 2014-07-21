@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -41,12 +64,15 @@
 /// Send start scan response message
 extern void schSendStartScanRsp(tpAniSirGlobal pMac);
 
+<<<<<<< HEAD
 /// Set init time params
 extern void schSetInitParams(tpAniSirGlobal pMac);
 
 /// Set qos default params
 extern void schUpdateQosInfo(tpAniSirGlobal pMac);
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // update only the broadcast qos params
 extern void schQosUpdateBroadcast(tpAniSirGlobal pMac, tpPESession psessionEntry);
 
@@ -59,9 +85,12 @@ extern void schQosUpdateLocal(tpAniSirGlobal pMac, tpPESession psessionEntry);
 // update the edca profile parameters
 extern void schEdcaProfileUpdate(tpAniSirGlobal pMac, tpPESession psessionEntry);
 
+<<<<<<< HEAD
 /// Check for RR timer expiry
 extern void schCheckRRTimerExpiry(tpAniSirGlobal pMac);
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Set the fixed fields in a beacon frame
 extern tSirRetStatus schSetFixedBeaconFields(tpAniSirGlobal pMac,tpPESession psessionEntry);
 
@@ -77,6 +106,7 @@ extern void schInitializeCfPollTemplate(tpAniSirGlobal pMac);
 /// Initialize CF End template
 extern void schInitializeCfEndTemplate(tpAniSirGlobal pMac);
 
+<<<<<<< HEAD
 /// Process the transmit activity queue
 extern void schProcessTxActivityQueue(tpAniSirGlobal pMac);
 
@@ -95,12 +125,18 @@ extern void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg);
 /// Process the DPH activity queue
 extern void schProcessDphActivityQueue(tpAniSirGlobal pMac);
 
+=======
+/// Process the scheduler messages
+extern void schProcessMessage(tpAniSirGlobal pMac,tpSirMsgQ pSchMsg);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// The beacon Indication handler function
 extern void schProcessPreBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ limMsg);
 
 /// Post a message to the scheduler message queue
 extern tSirRetStatus schPostMessage(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
 /// The scheduling interrupt handler
 extern void schSchedulingInterruptHandler(tpAniSirGlobal pMac);
@@ -115,6 +151,8 @@ extern tANI_U8 schGetCFPCount(tpAniSirGlobal pMac);
 extern tANI_U16 schGetCFPDurRemaining(tpAniSirGlobal pMac);
 
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 extern void schBeaconProcess(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession psessionEntry);
 extern tSirRetStatus schBeaconEdcaProcess(tpAniSirGlobal pMac, tSirMacEdcaParamSetIE *edca, tpPESession psessionEntry);
@@ -126,13 +164,19 @@ void schSetBeaconInterval(tpAniSirGlobal pMac,tpPESession psessionEntry);
 
 tSirRetStatus schSendBeaconReq( tpAniSirGlobal, tANI_U8 *, tANI_U16, tpPESession psessionEntry );
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limUpdateProbeRspTemplateIeBitmapBeacon1(tpAniSirGlobal,tDot11fBeacon1*,tANI_U32*,tDot11fProbeResponse*);
 void limUpdateProbeRspTemplateIeBitmapBeacon2(tpAniSirGlobal,tDot11fBeacon2*,tANI_U32*,tDot11fProbeResponse*);
 void SetProbeRspIeBitmap(tANI_U32*,tANI_U32);
 tANI_U32 limSendProbeRspTemplateToHal(tpAniSirGlobal,tpPESession,
                                     tANI_U32*);
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 #endif

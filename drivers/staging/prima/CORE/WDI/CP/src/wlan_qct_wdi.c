@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -82,9 +105,13 @@
 
 #include "wlan_hal_msg.h"
 
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
 #include "pttMsgApi.h"
 #endif /* ANI_MANF_DIAG */
+=======
+#include "pttMsgApi.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*===========================================================================
    WLAN DAL Control Path Internal Data Definitions and Declarations
@@ -94,22 +121,60 @@
 #define MAC_ADDR_ARRAY(a) (a)[0], (a)[1], (a)[2], (a)[3], (a)[4], (a)[5]
 #define MAC_ADDRESS_STR "%02x:%02x:%02x:%02x:%02x:%02x"
 
+<<<<<<< HEAD
+=======
+#define FEATURE_NOT_SUPPORTED 127
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_SCAN_PNO
 #define WDI_PNO_VERSION_MASK 0x8000
 #endif
 
 /* host capability bitmap global */
+<<<<<<< HEAD
 static tWlanFeatCaps *gpHostWlanFeatCaps = NULL;
 /* FW capability bitmap global */
 static tWlanFeatCaps *gpFwWlanFeatCaps = NULL;
+=======
+static tWlanFeatCaps *gpHostWlanFeatCaps;
+/* FW capability bitmap global */
+static tWlanFeatCaps *gpFwWlanFeatCaps;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* array of features supported. Need to add a new feature
  * and other two places - wlan_hal_msg.h and halMsg.c (FW file)
  */
 static placeHolderInCapBitmap supportEnabledFeatures[] =
+<<<<<<< HEAD
    {MCC, P2P, DOT11AC, SLM_SESSIONIZATION};
 
 /*--------------------------------------------------------------------------
+=======
+   {MCC, P2P, DOT11AC, SLM_SESSIONIZATION, DOT11AC_OPMODE
+#ifdef WLAN_SOFTAP_VSTA_FEATURE
+    ,SAP32STA
+#else
+    ,FEATURE_NOT_SUPPORTED
+#endif
+#ifdef FEATURE_WLAN_TDLS
+    ,TDLS
+#else
+    ,FEATURE_NOT_SUPPORTED
+#endif
+    ,P2P_GO_NOA_DECOUPLE_INIT_SCAN
+#ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
+    ,WLANACTIVE_OFFLOAD
+#else
+    ,FEATURE_NOT_SUPPORTED
+#endif
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+    ,WLAN_ROAM_SCAN_OFFLOAD
+#else
+    ,FEATURE_NOT_SUPPORTED
+#endif
+   };
+
+/*-------------------------------------------------------------------------- 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WLAN DAL  State Machine
  --------------------------------------------------------------------------*/
 WPT_STATIC const WDI_MainFsmEntryType wdiMainFSM[WDI_MAX_ST] =
@@ -141,7 +206,11 @@ WPT_STATIC const WDI_MainFsmEntryType wdiMainFSM[WDI_MAX_ST] =
     NULL,                       /*WDI_REQUEST_EVENT*/
     WDI_MainRsp,                /*WDI_RESPONSE_EVENT*/
     WDI_MainClose,              /*WDI_CLOSE_EVENT*/
+<<<<<<< HEAD
     NULL                        /*WDI_SHUTDOWN_EVENT*/
+=======
+    WDI_MainShutdown            /*WDI_SHUTDOWN_EVENT*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }},
 
   /*WDI_BUSY_ST*/
@@ -212,11 +281,15 @@ WDI_ReqProcFuncType  pfnReqProcTbl[WDI_MAX_UMAC_IND] =
   WDI_ProcessSetStaBcastKeyReq,        /* WDI_SET_STA_BCAST_KEY_REQ  */
   WDI_ProcessRemoveStaBcastKeyReq,     /* WDI_RMV_STA_BCAST_KEY_REQ  */
   WDI_ProcessSetMaxTxPowerReq,         /*WDI_SET_MAX_TX_POWER_REQ*/
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   WDI_ProcessP2PGONOAReq,              /* WDI_P2P_GO_NOTICE_OF_ABSENCE_REQ */
 #else
   NULL,
 #endif
+=======
+  WDI_ProcessP2PGONOAReq,              /* WDI_P2P_GO_NOTICE_OF_ABSENCE_REQ */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* PowerSave APIs */
   WDI_ProcessEnterImpsReq,         /* WDI_ENTER_IMPS_REQ  */
   WDI_ProcessExitImpsReq,          /* WDI_EXIT_IMPS_REQ  */
@@ -247,11 +320,15 @@ WDI_ReqProcFuncType  pfnReqProcTbl[WDI_MAX_UMAC_IND] =
 #endif /* WLAN_FEATURE_VOWIFI_11R */
   WDI_ProcessAddSTASelfReq,         /* WDI_ADD_STA_SELF_REQ */
   WDI_ProcessDelSTASelfReq,          /* WDI DEL STA SELF REQ */
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
   WDI_ProcessFTMCommandReq,            /* WDI_FTM_CMD_REQ */
 #else
   NULL,
 #endif /* ANI_MANF_DIAG */
+=======
+  WDI_ProcessFTMCommandReq,            /* WDI_FTM_CMD_REQ */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_OEM_DATA_SUPPORT
   WDI_ProcessStartOemDataReq,     /*WDI_START_OEM_DATA_REQ*/
@@ -310,10 +387,33 @@ WDI_ReqProcFuncType  pfnReqProcTbl[WDI_MAX_UMAC_IND] =
 
   WDI_ProcessSetTmLevelReq,             /*WDI_SET_TM_LEVEL_REQ*/
   WDI_ProcessFeatureCapsExchangeReq,    /* WDI_FEATURE_CAPS_EXCHANGE_REQ */
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_11AC
+  WDI_ProcessUpdateVHTOpModeReq,        /* WDI_UPDATE_VHT_OP_MODE_REQ */
+#else
+  NULL,
+#endif
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+  WDI_ProcessGetRoamRssiReq,            /* WDI_GET_ROAM_RSSI_REQ  */
+#else
+  NULL,
+#endif
+  WDI_ProcessSetTxPowerReq,             /* WDI_SET_TX_POWER_REQ*/
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+  WDI_ProcessRoamScanOffloadReq,  /* WDI_ROAM_SCAN_OFFLOAD_REQ */
+#else
+  NULL,
+#endif /* WLAN_FEATURE_ROAM_SCAN_OFFLOAD */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*-------------------------------------------------------------------------
     Indications
   -------------------------------------------------------------------------*/
   WDI_ProcessHostSuspendInd,            /* WDI_HOST_SUSPEND_IND*/
+<<<<<<< HEAD
+=======
+  WDI_ProcessTrafficStatsInd,           /* WDI_TRAFFIC_STATS_IND*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 
@@ -415,6 +515,7 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 #endif /*FEATURE_OEM_DATA_SUPPORT*/
   WDI_ProcessHostResumeRsp,        /*WDI_HOST_RESUME_RESP*/
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   WDI_ProcessP2PGONOARsp,           /*WDI_P2P_GO_NOTICE_OF_ABSENCE_RESP */
 #else
@@ -426,6 +527,11 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 #else
   NULL,
 #endif /* ANI_MANF_DIAG */
+=======
+  WDI_ProcessP2PGONOARsp,           /*WDI_P2P_GO_NOTICE_OF_ABSENCE_RESP */
+
+  WDI_ProcessFTMCommandRsp,         /* WDI_FTM_CMD_RESP */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   WDI_ProcessKeepAliveRsp,       /* WDI_KEEP_ALIVE_RESP  */
 
@@ -440,7 +546,11 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 #endif // FEATURE_WLAN_SCAN_PNO
 
   WDI_ProcessSetTxPerTrackingRsp,      /* WDI_SET_TX_PER_TRACKING_RESP  */
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*---------------------------------------------------------------------
     Indications
   ---------------------------------------------------------------------*/
@@ -462,14 +572,22 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 
   WDI_ProcessHALDumpCmdRsp,       /* WDI_HAL_DUMP_CMD_RESP */
   WDI_ProcessShutdownRsp,         /* WDI_SHUTDOWN_RESP */
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ProcessSetPowerParamsRsp,         /*WDI_SET_POWER_PARAMS_RESP*/
 #ifdef FEATURE_WLAN_CCX
   WDI_ProcessTsmStatsRsp,          /* WDI_TSM_STATS_RESP  */
 #else
   NULL,
 #endif
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_GTK_OFFLOAD
   WDI_ProcessGtkOffloadRsp,             /* WDI_GTK_OFFLOAD_RESP  */
   WDI_ProcessGTKOffloadGetInfoRsp,      /* WDI_GTK_OFFLOAD_GETINFO_RESP  */
@@ -479,7 +597,26 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 #endif // WLAN_FEATURE_GTK_OFFLOAD
   WDI_ProcessSetTmLevelRsp,             /* WDI_SET_TM_LEVEL_RESP */
   WDI_ProcessFeatureCapsExchangeRsp,    /* WDI_FEATURE_CAPS_EXCHANGE_RESP */
+<<<<<<< HEAD
 
+=======
+#ifdef WLAN_FEATURE_11AC
+  WDI_ProcessUpdateVHTOpModeRsp,        /* WDI_UPDATE_VHT_OP_MODE_RESP */
+#else
+   NULL,
+#endif
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+  WDI_ProcessGetRoamRssiRsp,            /* WDI_GET_ROAM_RSSI_RESP  */
+#else
+  NULL,
+#endif
+  WDI_ProcessSetTxPowerRsp,             /* WDI_SET_TX_POWER_RESP */
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+    WDI_ProcessRoamScanOffloadRsp, /* WDI_ROAM_SCAN_OFFLOAD_RESP */
+#else
+    NULL,
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*---------------------------------------------------------------------
     Indications
   ---------------------------------------------------------------------*/
@@ -494,11 +631,15 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 
   WDI_ProcessTxCompleteInd,         /* WDI_HAL_TX_COMPLETE_IND  */
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   WDI_ProcessP2pNoaAttrInd,         /*WDI_HOST_NOA_ATTR_IND*/
 #else
   NULL,
 #endif
+=======
+  WDI_ProcessP2pNoaAttrInd,         /*WDI_HOST_NOA_ATTR_IND*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_SCAN_PNO
   WDI_ProcessPrefNetworkFoundInd,   /* WDI_HAL_PREF_NETWORK_FOUND_IND */
@@ -513,6 +654,11 @@ WDI_RspProcFuncType  pfnRspProcTbl[WDI_MAX_RESP] =
 #endif // WLAN_WAKEUP_EVENTS
 
   WDI_ProcessTxPerHitInd,               /* WDI_HAL_TX_PER_HIT_IND  */
+<<<<<<< HEAD
+=======
+
+  WDI_ProcessP2pNoaStartInd,             /* WDI_NOA_START_IND */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 
@@ -802,6 +948,12 @@ static char *WDI_getReqMsgString(wpt_uint16 wdiReqMsgId)
     CASE_RETURN_STRING( WDI_SET_RSSI_FILTER_REQ );
     CASE_RETURN_STRING( WDI_UPDATE_SCAN_PARAMS_REQ );
   #endif
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+    CASE_RETURN_STRING( WDI_ROAM_SCAN_OFFLOAD_REQ );
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     CASE_RETURN_STRING( WDI_SET_TX_PER_TRACKING_REQ );
     CASE_RETURN_STRING( WDI_8023_MULTICAST_LIST_REQ );
     CASE_RETURN_STRING( WDI_RECEIVE_FILTER_SET_FILTER_REQ );
@@ -811,6 +963,11 @@ static char *WDI_getReqMsgString(wpt_uint16 wdiReqMsgId)
     CASE_RETURN_STRING( WDI_HAL_DUMP_CMD_REQ );
     CASE_RETURN_STRING( WDI_SHUTDOWN_REQ );
     CASE_RETURN_STRING( WDI_SET_POWER_PARAMS_REQ );
+<<<<<<< HEAD
+=======
+    CASE_RETURN_STRING( WDI_TRAFFIC_STATS_IND );
+    CASE_RETURN_STRING( WDI_GET_ROAM_RSSI_REQ );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     default:
         return "Unknown WDI MessageId";
   }
@@ -898,6 +1055,12 @@ static char *WDI_getRespMsgString(wpt_uint16 wdiRespMsgId)
     CASE_RETURN_STRING( WDI_SET_RSSI_FILTER_RESP );
     CASE_RETURN_STRING( WDI_UPDATE_SCAN_PARAMS_RESP );
   #endif
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+    CASE_RETURN_STRING( WDI_ROAM_SCAN_OFFLOAD_RESP );
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     CASE_RETURN_STRING( WDI_SET_TX_PER_TRACKING_RESP );
     CASE_RETURN_STRING( WDI_8023_MULTICAST_LIST_RESP );
     CASE_RETURN_STRING( WDI_RECEIVE_FILTER_SET_FILTER_RESP );
@@ -906,6 +1069,10 @@ static char *WDI_getRespMsgString(wpt_uint16 wdiRespMsgId)
     CASE_RETURN_STRING( WDI_HAL_DUMP_CMD_RESP );
     CASE_RETURN_STRING( WDI_SHUTDOWN_RESP );
     CASE_RETURN_STRING( WDI_SET_POWER_PARAMS_RESP );
+<<<<<<< HEAD
+=======
+    CASE_RETURN_STRING( WDI_GET_ROAM_RSSI_RESP );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     default:
         return "Unknown WDI MessageId";
   }
@@ -1034,7 +1201,11 @@ WDI_Init
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                "%s: Failure while initializing STA Table, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wdiStatus);
+=======
+               __func__, wdiStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto fail_STATableInit;
   }
 
@@ -1046,7 +1217,11 @@ WDI_Init
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                "%s: Failed to open PAL, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wptStatus);
+=======
+               __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto fail_wpalOpen;
   }
 
@@ -1057,7 +1232,11 @@ WDI_Init
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                "%s: Failed to init mutex, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wptStatus);
+=======
+               __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto fail_mutex;
   }
 
@@ -1070,17 +1249,38 @@ WDI_Init
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
               "%s: Failed to init response timer, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wptStatus);
     goto fail_timer;
   }
 
+=======
+               __func__, wptStatus);
+    goto fail_timer;
+  }
+
+  wptStatus = wpalTimerInit( &gWDICb.ssrTimer,
+                             WDI_SsrTimerCB,
+                             &gWDICb);
+  if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus )
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+              "%s: Failed to init SSR timer, status %d",
+               __func__, wptStatus);
+    goto fail_timer2;
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /* Initialize the  WDI Pending Request Queue*/
   wptStatus = wpal_list_init(&(gWDICb.wptPendingQueue));
   if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus )
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
               "%s: Failed to init pending request queue, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wptStatus);
+=======
+               __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto fail_pend_queue;
   }
 
@@ -1090,7 +1290,11 @@ WDI_Init
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
               "%s: Failed to init assoc session queue, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wptStatus);
+=======
+               __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto fail_assoc_queue;
   }
 
@@ -1102,7 +1306,11 @@ WDI_Init
     {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                  "%s: Failed to init BSS %d pending queue, status %d",
+<<<<<<< HEAD
                  __FUNCTION__, i, wptStatus);
+=======
+                 __func__, i, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       goto fail_bss_queue;
     }
   }
@@ -1118,7 +1326,11 @@ WDI_Init
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                "%s: Failed to initialize the DP Util Module, status %d",
+<<<<<<< HEAD
                __FUNCTION__, wdiStatus);
+=======
+               __func__, wdiStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     goto fail_dp_util_init;
   }
 
@@ -1128,7 +1340,11 @@ WDI_Init
   {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                 "%s: Failed to initialize power state event, status %d",
+<<<<<<< HEAD
                 __FUNCTION__, wptStatus);
+=======
+                __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      goto fail_power_event;
   }
 
@@ -1138,7 +1354,11 @@ WDI_Init
   {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                 "%s: Failed to initialize WCTS action event, status %d",
+<<<<<<< HEAD
                 __FUNCTION__, wptStatus);
+=======
+                __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      goto fail_wcts_event;
   }
 
@@ -1158,7 +1378,11 @@ WDI_Init
   if ( NULL == gWDICb.wctsHandle )
   {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                 "%s: Failed to open WCTS transport", __FUNCTION__);
+=======
+                "%s: Failed to open WCTS transport", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      goto fail_wcts_open;
   }
 
@@ -1172,7 +1396,11 @@ WDI_Init
     if(eWLAN_PAL_STATUS_SUCCESS != WDTS_openTransport(&gWDICb))
     {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                  "%s: Failed to open the DT Transport", __FUNCTION__);
+=======
+                 "%s: Failed to open the DT Transport", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       goto fail_wdts_open;
     }
   }
@@ -1206,7 +1434,11 @@ WDI_Init
      if ( eWLAN_PAL_STATUS_SUCCESS != eventStatus )
      {
         WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                    "%s: Failed to reset WCTS action event", __FUNCTION__);
+=======
+                   "%s: Failed to reset WCTS action event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      }
 
      WCTS_CloseTransport(gWDICb.wctsHandle);
@@ -1222,7 +1454,11 @@ WDI_Init
         if ( eWLAN_PAL_STATUS_SUCCESS != eventStatus )
         {
            WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                       "%s: Failed to wait on WCTS action event", __FUNCTION__);
+=======
+                      "%s: Failed to wait on WCTS action event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
      }
      else
@@ -1249,6 +1485,11 @@ WDI_Init
  fail_assoc_queue:
   wpal_list_destroy(&(gWDICb.wptPendingQueue));
  fail_pend_queue:
+<<<<<<< HEAD
+=======
+  wpalTimerDelete(&gWDICb.ssrTimer);
+ fail_timer2:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wpalTimerDelete(&gWDICb.wptResponseTimer);
  fail_timer:
   wpalMutexDelete(&gWDICb.wptMutex);
@@ -1257,9 +1498,15 @@ WDI_Init
  fail_wpalOpen:
   WDI_STATableClose(&gWDICb);
  fail_STATableInit:
+<<<<<<< HEAD
   gWDIInitialized = eWLAN_PAL_FALSE;
 
   return WDI_STATUS_E_FAILURE;
+=======
+  gWDIInitialized = eWLAN_PAL_FALSE; 
+
+  return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 }/*WDI_Init*/;
 
@@ -1446,7 +1693,11 @@ WDI_Close
   if ( eWLAN_PAL_STATUS_SUCCESS != eventStatus )
   {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Failed to reset WCTS action event", __FUNCTION__);
+=======
+                "%s: Failed to reset WCTS action event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      /* fall through and try to finish closing via the FSM */
   }
 
@@ -1472,7 +1723,11 @@ WDI_Close
      if ( eWLAN_PAL_STATUS_SUCCESS != eventStatus )
      {
         WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                    "%s: Failed to wait on WCTS action event", __FUNCTION__);
+=======
+                   "%s: Failed to wait on WCTS action event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      }
   }
 
@@ -1521,6 +1776,12 @@ WDI_Close
   /*destroy the response timer */
   wptStatus = wpalTimerDelete( &gWDICb.wptResponseTimer);
 
+<<<<<<< HEAD
+=======
+  /*destroy the SSR timer */
+  wptStatus = wpalTimerDelete( &gWDICb.ssrTimer);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*invalidate the main synchro mutex */
   wptStatus = wpalMutexDelete(&gWDICb.wptMutex);
   if ( eWLAN_PAL_STATUS_SUCCESS !=  wptStatus )
@@ -1590,7 +1851,11 @@ WDI_Shutdown
    if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus )
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
             "%s: Failed to process shutdown event", __FUNCTION__);
+=======
+            "%s: Failed to process shutdown event", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    /* Destroy the Set Power State event */
    wptStatus = wpalEventDelete(&gWDICb.setPowerStateEvent);
@@ -1618,7 +1883,11 @@ WDI_Shutdown
    }
    else
    {
+<<<<<<< HEAD
       /* Riva is crashed then SMD is already closed so cleaning all
+=======
+      /* Riva is crashed then SMD is already closed so cleaning all 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          the pending messages in the transport queue  */
       WCTS_ClearPendingQueue(gWDICb.wctsHandle);
    }
@@ -1634,13 +1903,22 @@ WDI_Shutdown
    wpal_list_destroy(&(gWDICb.wptPendingQueue));
    /*destroy the response timer */
    wptStatus = wpalTimerDelete( &gWDICb.wptResponseTimer);
+<<<<<<< HEAD
+=======
+   /*destroy the SSR timer */
+   wptStatus = wpalTimerDelete( &gWDICb.ssrTimer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*invalidate the main synchro mutex */
    wptStatus = wpalMutexDelete(&gWDICb.wptMutex);
    if ( eWLAN_PAL_STATUS_SUCCESS !=  wptStatus )
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
             "%s: Failed to delete mutex %d",  __FUNCTION__, wptStatus);
+=======
+            "%s: Failed to delete mutex %d",  __func__, wptStatus);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
    }
    /* Free the global variables */
@@ -2639,17 +2917,36 @@ WDI_SetMaxTxPowerReq
   return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
 }
 
-#ifdef FEATURE_WLAN_CCX
+<<<<<<< HEAD
+=======
+/**
+ @brief WDI_SetTxPowerReq will be called when the upper
+        MAC wants to set Tx Power to HW.
+        In state BUSY this request will be queued. Request won't
+        be allowed in any other state.
+
+
+ @param pwdiSetTxPowerParams: set TS Power parameters
+           BSSID and target TX Power with dbm included
+
+        wdiReqStatusCb: callback for passing back the response
+
+        pUserData: user data will be passed back with the
+        callback
+
+ @return Result of the function call
+*/
 WDI_Status
-WDI_TSMStatsReq
+WDI_SetTxPowerReq
 (
-   WDI_TSMStatsReqParamsType*        pwdiTsmReqParams,
-   WDI_TsmRspCb                 wdiReqStatusCb,
-   void*                        pUserData
+  WDI_SetTxPowerParamsType*   pwdiSetTxPowerParams,
+  WDA_SetTxPowerRspCb         wdiReqStatusCb,
+  void*                       pUserData
 )
 {
-  WDI_EventInfoType wdiEventData;
+  WDI_EventInfoType      wdiEventData;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
   /*------------------------------------------------------------------------
     Sanity Check
   ------------------------------------------------------------------------*/
@@ -2664,10 +2961,59 @@ WDI_TSMStatsReq
   /*------------------------------------------------------------------------
     Fill in Event data and post to the Main FSM
   ------------------------------------------------------------------------*/
+  wdiEventData.wdiRequest      = WDI_SET_TX_POWER_REQ;
+  wdiEventData.pEventData      = pwdiSetTxPowerParams;
+  wdiEventData.uEventDataSize  = sizeof(*pwdiSetTxPowerParams);
+  wdiEventData.pCBfnc          = wdiReqStatusCb;
+  wdiEventData.pUserData       = pUserData;
+
+  return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+#ifdef FEATURE_WLAN_CCX
+WDI_Status
+WDI_TSMStatsReq
+(
+   WDI_TSMStatsReqParamsType*        pwdiTsmReqParams,
+   WDI_TsmRspCb                 wdiReqStatusCb,
+   void*                        pUserData
+)
+{
+  WDI_EventInfoType wdiEventData;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*------------------------------------------------------------------------
+<<<<<<< HEAD
+    Sanity Check
+=======
+    Sanity Check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+  ------------------------------------------------------------------------*/
+  if ( eWLAN_PAL_FALSE == gWDIInitialized )
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+              "WDI API call before module is initialized - Fail request");
+
+<<<<<<< HEAD
+    return WDI_STATUS_E_NOT_ALLOWED;
+=======
+    return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+  }
+
+  /*------------------------------------------------------------------------
+    Fill in Event data and post to the Main FSM
+  ------------------------------------------------------------------------*/
   wdiEventData.wdiRequest      = WDI_TSM_STATS_REQ;
+<<<<<<< HEAD
   wdiEventData.pEventData      = pwdiTsmReqParams;
   wdiEventData.uEventDataSize  = sizeof(*pwdiTsmReqParams);
   wdiEventData.pCBfnc          = wdiReqStatusCb;
+=======
+  wdiEventData.pEventData      = pwdiTsmReqParams; 
+  wdiEventData.uEventDataSize  = sizeof(*pwdiTsmReqParams); 
+  wdiEventData.pCBfnc          = wdiReqStatusCb; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wdiEventData.pUserData       = pUserData;
 
   return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
@@ -2675,8 +3021,13 @@ WDI_TSMStatsReq
 }
 #endif
 
+<<<<<<< HEAD
 /*========================================================================
 
+=======
+/*======================================================================== 
+ 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             QoS and BA APIs
 
 ==========================================================================*/
@@ -3367,6 +3718,10 @@ WDI_EnterUapsdReq
 WDI_Status
 WDI_ExitUapsdReq
 (
+<<<<<<< HEAD
+=======
+   WDI_ExitUapsdReqParamsType *pwdiExitUapsdReqParams,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WDI_ExitUapsdRspCb  wdiExitUapsdRspCb,
    void*                   pUserData
 )
@@ -3389,8 +3744,13 @@ WDI_ExitUapsdReq
     Fill in Event data and post to the Main FSM
   ------------------------------------------------------------------------*/
   wdiEventData.wdiRequest      = WDI_EXIT_UAPSD_REQ;
+<<<<<<< HEAD
   wdiEventData.pEventData      = NULL;
   wdiEventData.uEventDataSize  = 0;
+=======
+  wdiEventData.pEventData      = pwdiExitUapsdReqParams;
+  wdiEventData.uEventDataSize  = sizeof(*pwdiExitUapsdReqParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wdiEventData.pCBfnc          = wdiExitUapsdRspCb;
   wdiEventData.pUserData       = pUserData;
 
@@ -3451,7 +3811,11 @@ WDI_UpdateUapsdParamsReq
   ------------------------------------------------------------------------*/
   wdiEventData.wdiRequest      = WDI_UPDATE_UAPSD_PARAM_REQ;
   wdiEventData.pEventData      = pwdiUpdateUapsdReqParams;
+<<<<<<< HEAD
   wdiEventData.uEventDataSize  = sizeof(*pwdiUpdateUapsdReqParams);;
+=======
+  wdiEventData.uEventDataSize  = sizeof(*pwdiUpdateUapsdReqParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wdiEventData.pCBfnc          = wdiUpdateUapsdParamsCb;
   wdiEventData.pUserData       = pUserData;
 
@@ -3629,7 +3993,11 @@ WDI_SetBeaconFilterReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_SET_BEACON_FILTER_REQ;
    wdiEventData.pEventData      = pwdiBeaconFilterReqParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiBeaconFilterReqParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiBeaconFilterReqParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiBeaconFilterCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -3687,7 +4055,11 @@ WDI_RemBeaconFilterReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_REM_BEACON_FILTER_REQ;
    wdiEventData.pEventData      = pwdiBeaconFilterReqParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiBeaconFilterReqParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiBeaconFilterReqParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiBeaconFilterCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -3747,7 +4119,11 @@ WDI_SetRSSIThresholdsReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_SET_RSSI_THRESHOLDS_REQ;
    wdiEventData.pEventData      = pwdiRSSIThresholdsParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiRSSIThresholdsParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiRSSIThresholdsParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiSetRSSIThresholdsCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -3807,7 +4183,11 @@ WDI_HostOffloadReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_HOST_OFFLOAD_REQ;
    wdiEventData.pEventData      = pwdiHostOffloadParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiHostOffloadParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiHostOffloadParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiHostOffloadCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -3928,7 +4308,11 @@ WDI_WowlAddBcPtrnReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_WOWL_ADD_BC_PTRN_REQ;
    wdiEventData.pEventData      = pwdiWowlAddBcPtrnParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiWowlAddBcPtrnParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiWowlAddBcPtrnParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiWowlAddBcPtrnCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -3987,7 +4371,11 @@ WDI_WowlDelBcPtrnReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_WOWL_DEL_BC_PTRN_REQ;
    wdiEventData.pEventData      = pwdiWowlDelBcPtrnParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiWowlDelBcPtrnParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiWowlDelBcPtrnParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiWowlDelBcPtrnCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -4047,7 +4435,11 @@ WDI_WowlEnterReq
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_WOWL_ENTER_REQ;
    wdiEventData.pEventData      = pwdiWowlEnterParams;
+<<<<<<< HEAD
    wdiEventData.uEventDataSize  = sizeof(*pwdiWowlEnterParams);;
+=======
+   wdiEventData.uEventDataSize  = sizeof(*pwdiWowlEnterParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiWowlEnterCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -4081,6 +4473,10 @@ WDI_WowlEnterReq
 WDI_Status
 WDI_WowlExitReq
 (
+<<<<<<< HEAD
+=======
+  WDI_WowlExitReqParamsType*    pwdiWowlExitParams,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_WowlExitReqCb              wdiWowlExitCb,
   void*                          pUserData
 )
@@ -4103,8 +4499,13 @@ WDI_WowlExitReq
      Fill in Event data and post to the Main FSM
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_WOWL_EXIT_REQ;
+<<<<<<< HEAD
    wdiEventData.pEventData      = NULL;
    wdiEventData.uEventDataSize  = 0;
+=======
+   wdiEventData.pEventData      = pwdiWowlExitParams;
+   wdiEventData.uEventDataSize  = sizeof(*pwdiWowlExitParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiWowlExitCb;
    wdiEventData.pUserData       = pUserData;
 
@@ -4289,7 +4690,11 @@ WDI_BtAmpEventReq
 
 #ifdef FEATURE_OEM_DATA_SUPPORT
 /**
+<<<<<<< HEAD
  @brief WDI_Start Oem Data Req will be called when the upper MAC
+=======
+ @brief WDI_Start Oem Data Req will be called when the upper MAC 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         wants to notify the lower mac on a oem data Req event.Upon
         the call of this API the WLAN DAL will pack and send a
         HAL OEM Data Req event request message to the lower RIVA
@@ -4299,8 +4704,13 @@ WDI_BtAmpEventReq
         be allowed in any other state.
 
 
+<<<<<<< HEAD
 
  @param pwdiOemDataReqParams: the Oem Data Req as
+=======
+  
+ @param pwdiOemDataReqParams: the Oem Data Req as 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         specified by the Device Interface
 
         wdiStartOemDataRspCb: callback for passing back the
@@ -4338,9 +4748,15 @@ WDI_StartOemDataReq
      Fill in Event data and post to the Main FSM
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_START_OEM_DATA_REQ;
+<<<<<<< HEAD
    wdiEventData.pEventData      = pwdiOemDataReqParams;
    wdiEventData.uEventDataSize  = sizeof(*pwdiOemDataReqParams);
    wdiEventData.pCBfnc          = wdiOemDataRspCb;
+=======
+   wdiEventData.pEventData      = pwdiOemDataReqParams; 
+   wdiEventData.uEventDataSize  = sizeof(*pwdiOemDataReqParams); 
+   wdiEventData.pCBfnc          = wdiOemDataRspCb; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pUserData       = pUserData;
 
    return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
@@ -4596,6 +5012,69 @@ WDI_GetStatsReq
 
 }/*WDI_GetStatsReq*/
 
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+/**
+ @brief WDI_GetRoamRssiReq will be called when the upper MAC wants
+        to get roam rssi from the device. Upon
+        the call of this API the WLAN DAL will pack and send a
+        HAL Start request message to the lower RIVA sub-system
+        if DAL is in state STARTED.
+
+        In state BUSY this request will be queued. Request won't
+        be allowed in any other state.
+
+ WDI_Start must have been called.
+
+ @param wdiGetRoamRssiReqParams: the stats parameters to get as
+                      specified by the Device Interface
+
+        wdiGetRoamRssiRspCb: callback for passing back the response
+        of the get stats operation received from the device
+
+        pUserData: user data will be passed back with the
+        callback
+
+ @see WDI_Start
+ @return Result of the function call
+*/
+WDI_Status
+WDI_GetRoamRssiReq
+(
+  WDI_GetRoamRssiReqParamsType* pwdiGetRoamRssiReqParams,
+  WDI_GetRoamRssiRspCb          wdiGetRoamRssiRspCb,
+  void*                      pUserData
+)
+{
+  WDI_EventInfoType      wdiEventData;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*------------------------------------------------------------------------
+    Sanity Check
+  ------------------------------------------------------------------------*/
+  if ( eWLAN_PAL_FALSE == gWDIInitialized )
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+              "WDI API call before module is initialized - Fail request");
+
+    return WDI_STATUS_E_NOT_ALLOWED;
+  }
+  /*------------------------------------------------------------------------
+    Fill in Event data and post to the Main FSM
+  ------------------------------------------------------------------------*/
+  wdiEventData.wdiRequest      = WDI_GET_ROAM_RSSI_REQ;
+  wdiEventData.pEventData      = pwdiGetRoamRssiReqParams;
+  wdiEventData.uEventDataSize  = sizeof(*pwdiGetRoamRssiReqParams);
+  wdiEventData.pCBfnc          = wdiGetRoamRssiRspCb;
+  wdiEventData.pUserData       = pUserData;
+
+  return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
+
+}/*WDI_GetRoamRssiReq*/
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  @brief WDI_UpdateCfgReq will be called when the upper MAC when
@@ -5010,7 +5489,10 @@ WDI_NvDownloadReq
 
 }/*WDI_NVDownloadReq*/
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_SetP2PGONOAReq will be called when the
         upper MAC wants to send Notice of Absence
@@ -5069,7 +5551,10 @@ WDI_SetP2PGONOAReq
   return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
 
 }/*WDI_SetP2PGONOAReq*/
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  @brief WDI_AddSTASelfReq will be called when the
@@ -5187,7 +5672,10 @@ WDI_AggrAddTSReq
 
 #endif /* WLAN_FEATURE_VOWIFI_11R */
 
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_FTMCommandReq
         Post FTM Command Event
@@ -5232,7 +5720,10 @@ WDI_FTMCommandReq
 
   return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
 }
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_HostResumeReq will be called
 
@@ -5400,6 +5891,7 @@ WDI_SetTxPerTrackingReq
 
 /**
  @brief WDI_SetTmLevelReq
+<<<<<<< HEAD
         If HW Thermal condition changed, driver should react based on new
         HW thermal condition.
 
@@ -5410,6 +5902,18 @@ WDI_SetTxPerTrackingReq
         usrData: user data will be passed back with the
         callback
 
+=======
+        If HW Thermal condition changed, driver should react based on new 
+        HW thermal condition.
+
+ @param pwdiSetTmLevelReq: New thermal condition information
+  
+        pwdiSetTmLevelRspCb: callback
+  
+        usrData: user data will be passed back with the
+        callback 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @return Result of the function call
 */
 WDI_Status
@@ -5417,38 +5921,61 @@ WDI_SetTmLevelReq
 (
    WDI_SetTmLevelReqType        *pwdiSetTmLevelReq,
    WDI_SetTmLevelCb              pwdiSetTmLevelRspCb,
+<<<<<<< HEAD
    void                         *usrData
+=======
+   void                         *usrData  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 )
 {
    WDI_EventInfoType      wdiEventData;
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*------------------------------------------------------------------------
+<<<<<<< HEAD
      Sanity Check
+=======
+     Sanity Check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ------------------------------------------------------------------------*/
    if ( eWLAN_PAL_FALSE == gWDIInitialized )
    {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "WDI API call before module is initialized - Fail request");
 
+<<<<<<< HEAD
      return WDI_STATUS_E_NOT_ALLOWED;
+=======
+     return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*------------------------------------------------------------------------
      Fill in Event data and post to the Main FSM
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_SET_TM_LEVEL_REQ;
+<<<<<<< HEAD
    wdiEventData.pEventData      = pwdiSetTmLevelReq;
    wdiEventData.uEventDataSize  = sizeof(*pwdiSetTmLevelReq);
    wdiEventData.pCBfnc          = pwdiSetTmLevelRspCb;
+=======
+   wdiEventData.pEventData      = pwdiSetTmLevelReq; 
+   wdiEventData.uEventDataSize  = sizeof(*pwdiSetTmLevelReq);
+   wdiEventData.pCBfnc          = pwdiSetTmLevelRspCb; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pUserData       = usrData;
 
    return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
 }
 
 /**
+<<<<<<< HEAD
  @brief WDI_HostSuspendInd
 
+=======
+ @brief WDI_HostSuspendInd 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         Suspend Indication from the upper layer will be sent
         down to HAL
 
@@ -5493,6 +6020,54 @@ WDI_HostSuspendInd
 }/*WDI_HostSuspendInd*/
 
 /**
+<<<<<<< HEAD
+=======
+ @brief WDI_TrafficStatsInd
+       Traffic Stats from the upper layer will be sent
+        down to HAL
+
+ @param WDI_TrafficStatsIndType
+
+ @see
+
+ @return Status of the request
+*/
+WDI_Status
+WDI_TrafficStatsInd
+(
+  WDI_TrafficStatsIndType *pWdiTrafficStatsIndParams
+)
+{
+
+  WDI_EventInfoType      wdiEventData;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*------------------------------------------------------------------------
+    Sanity Check
+  ------------------------------------------------------------------------*/
+  if ( eWLAN_PAL_FALSE == gWDIInitialized )
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+              "WDI API call before module is initialized - Fail request");
+
+    return WDI_STATUS_E_NOT_ALLOWED;
+  }
+
+  /*------------------------------------------------------------------------
+    Fill in Event data and post to the Main FSM
+  ------------------------------------------------------------------------*/
+  wdiEventData.wdiRequest      = WDI_TRAFFIC_STATS_IND;
+  wdiEventData.pEventData      = pWdiTrafficStatsIndParams;
+  wdiEventData.uEventDataSize  = sizeof(*pWdiTrafficStatsIndParams);
+  wdiEventData.pCBfnc          = NULL;
+  wdiEventData.pUserData       = NULL;
+
+  return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
+
+}/*WDI_TrafficStatsInd*/
+
+/**
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @brief WDI_HALDumpCmdReq
         Post HAL DUMP Command Event
 
@@ -6316,7 +6891,11 @@ WDI_ProcessStartReq
       ( NULL == (wdiStartRspCb   = (WDI_StartRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -6408,9 +6987,15 @@ WDI_ProcessStopReq
       ( NULL == (wdiStopRspCb   = (WDI_StopRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
+=======
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*-----------------------------------------------------------------------
@@ -6425,7 +7010,11 @@ WDI_ProcessStopReq
               "Unable to get send buffer in stop req %x %x %x",
                 pEventData, pwdiStopParams, wdiStopRspCb);
      WDI_ASSERT(0);
+<<<<<<< HEAD
      return WDI_STATUS_E_FAILURE;
+=======
+     goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*-----------------------------------------------------------------------
@@ -6456,6 +7045,7 @@ WDI_ProcessStopReq
                   "WDI Init failed to reset power state event");
 
         WDI_ASSERT(0);
+<<<<<<< HEAD
         return VOS_STATUS_E_FAILURE;
      }
      /* Stop Transport Driver, DXE */
@@ -6464,6 +7054,23 @@ WDI_ProcessStopReq
       * Wait for the event to be set once the ACK comes back from DXE
       */
      status = wpalEventWait(&pWDICtx->setPowerStateEvent,
+=======
+        goto fail;
+     }
+     /* Stop Transport Driver, DXE */
+     status = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_DOWN, WDI_SetPowerStateCb);
+     if( eWLAN_PAL_STATUS_SUCCESS != status ) 
+     {
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering Power Down state\n", status);
+        WDI_ASSERT(0);
+        goto fail;
+     }
+     /*
+      * Wait for the event to be set once the ACK comes back from DXE
+      */
+     status = wpalEventWait(&pWDICtx->setPowerStateEvent, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             WDI_SET_POWER_STATE_TIMEOUT);
      if (eWLAN_PAL_STATUS_SUCCESS != status)
      {
@@ -6471,7 +7078,11 @@ WDI_ProcessStopReq
                   "WDI Init failed to wait on an event");
 
         WDI_ASSERT(0);
+<<<<<<< HEAD
         return VOS_STATUS_E_FAILURE;
+=======
+        goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
   }
 
@@ -6481,6 +7092,17 @@ WDI_ProcessStopReq
   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                        wdiStopRspCb, pEventData->pUserData, WDI_STOP_RESP);
 
+<<<<<<< HEAD
+=======
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessStopReq*/
 
 /**
@@ -6587,7 +7209,11 @@ WDI_ProcessInitScanReq
       ( NULL == (wdiInitScanRspCb   = (WDI_InitScanRspCb)pEventData->pCBfnc)))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
         "%s: Invalid parameters", __FUNCTION__);
+=======
+        "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_E_FAILURE;
   }
@@ -6614,8 +7240,12 @@ WDI_ProcessInitScanReq
 
   wpalMutexRelease(&pWDICtx->wptMutex);
 #endif
+<<<<<<< HEAD
 
   if (pwdiInitScanParams->wdiReqInfo.bUseNOA)
+=======
+  if ((pwdiInitScanParams->wdiReqInfo.bUseNOA) && (!WDI_getFwWlanFeatCaps(P2P_GO_NOA_DECOUPLE_INIT_SCAN)))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     /*This is temporary fix.
      * It shold be removed once host and riva changes are in sync*/
@@ -6654,10 +7284,15 @@ WDI_ProcessInitScanReq
     WDI_CopyWDIMgmFrameHdrToHALMgmFrameHdr( &halInitScanConReqMsg.initScanParams.macMgmtHdr,
         &pwdiInitScanParams->wdiReqInfo.wdiMACMgmtHdr);
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     halInitScanConReqMsg.initScanParams.useNoA = pwdiInitScanParams->wdiReqInfo.bUseNOA;
     halInitScanConReqMsg.initScanParams.scanDuration = pwdiInitScanParams->wdiReqInfo.scanDuration;
 #endif
+=======
+    halInitScanConReqMsg.initScanParams.useNoA = pwdiInitScanParams->wdiReqInfo.bUseNOA;
+    halInitScanConReqMsg.initScanParams.scanDuration = pwdiInitScanParams->wdiReqInfo.scanDuration;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     halInitScanConReqMsg.initScanParams.scanEntry.activeBSScnt =
       pwdiInitScanParams->wdiReqInfo.wdiScanEntry.activeBSScnt;
@@ -6768,7 +7403,11 @@ WDI_ProcessStartScanReq
       ( NULL == (wdiStartScanRspCb   = (WDI_StartScanRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -6863,7 +7502,11 @@ WDI_ProcessEndScanReq
       ( NULL == (wdiEndScanRspCb   = (WDI_EndScanRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -6949,7 +7592,11 @@ WDI_ProcessFinishScanReq
   wpt_uint16                    usDataOffset         = 0;
   wpt_uint16                    usSendSize           = 0;
   wpt_uint8                     i                    = 0;
+<<<<<<< HEAD
 
+=======
+  wpt_status                    wptStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   tHalFinishScanReqMsg          halFinishScanReqMsg;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -6961,7 +7608,11 @@ WDI_ProcessFinishScanReq
       ( NULL == pEventData->pCBfnc))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -6985,7 +7636,11 @@ WDI_ProcessFinishScanReq
                pWDICtx->bScanInProgress );
 
     wpalMutexRelease(&pWDICtx->wptMutex);
+<<<<<<< HEAD
     return WDI_STATUS_E_NOT_ALLOWED;
+=======
+    return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*-----------------------------------------------------------------------
@@ -7000,7 +7655,17 @@ WDI_ProcessFinishScanReq
   if ( pWDICtx->bInBmps )
   {
      // notify DTS that we are entering BMPS
+<<<<<<< HEAD
      WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_BMPS, NULL);
+=======
+     wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_BMPS, NULL);
+     if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+     {
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering BMPS\n", wptStatus);
+        WDI_ASSERT(0);
+     }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*-----------------------------------------------------------------------
@@ -7094,6 +7759,11 @@ WDI_ProcessBSSSessionJoinReq
   tHalJoinReqMsg          halJoinReqMsg;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+<<<<<<< HEAD
+=======
+  wpalMutexAcquire(&pWDICtx->wptMutex);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Check to see if we have any session with this BSSID already stored, we
     should not
@@ -7105,12 +7775,25 @@ WDI_ProcessBSSSessionJoinReq
   if ( NULL != pBSSSes )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
               "Association for this BSSID is already in place");
 
     return WDI_STATUS_E_NOT_ALLOWED;
   }
 
   wpalMutexAcquire(&pWDICtx->wptMutex);
+=======
+          "Association for this BSSID: " MAC_ADDRESS_STR " is already in place",
+          MAC_ADDR_ARRAY(pwdiJoinParams->wdiReqInfo.macBSSID));
+
+    /*reset the bAssociationInProgress otherwise the next 
+     *join request will be queued*/
+    pWDICtx->bAssociationInProgress = eWLAN_PAL_FALSE;
+    wpalMutexRelease(&pWDICtx->wptMutex);
+    return WDI_STATUS_E_NOT_ALLOWED; 
+  }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Fetch an empty session block
   ------------------------------------------------------------------------*/
@@ -7121,6 +7804,12 @@ WDI_ProcessBSSSessionJoinReq
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "DAL has no free sessions - cannot run another join");
 
+<<<<<<< HEAD
+=======
+    /*reset the bAssociationInProgress otherwise the next 
+     *join request will be queued*/
+    pWDICtx->bAssociationInProgress = eWLAN_PAL_FALSE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wpalMutexRelease(&pWDICtx->wptMutex);
     return WDI_STATUS_RES_FAILURE;
   }
@@ -7220,7 +7909,11 @@ WDI_ProcessJoinReq
       ( NULL == (wdiJoinRspCb   = (WDI_JoinRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -7294,7 +7987,11 @@ WDI_ProcessConfigBSSReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -7374,9 +8071,15 @@ WDI_ProcessConfigBSSReq
     {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                 "%s: Association sequence for this BSS does not yet exist." MAC_ADDRESS_STR "wdiBssType %d",
+<<<<<<< HEAD
                 __func__, MAC_ADDR_ARRAY(pwdiConfigBSSParams->wdiReqInfo.macBSSID),
                 pwdiConfigBSSParams->wdiReqInfo.wdiBSSType);
 
+=======
+                __func__, MAC_ADDR_ARRAY(pwdiConfigBSSParams->wdiReqInfo.macBSSID), 
+                pwdiConfigBSSParams->wdiReqInfo.wdiBSSType);
+      
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* for IBSS testing */
       wpalMutexRelease(&pWDICtx->wptMutex);
       return WDI_STATUS_E_NOT_ALLOWED;
@@ -7391,8 +8094,13 @@ WDI_ProcessConfigBSSReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. " MAC_ADDRESS_STR " bssIdx %d",
               __func__, MAC_ADDR_ARRAY(pwdiConfigBSSParams->wdiReqInfo.macBSSID),
+=======
+              "%s: Association sequence for this BSS exists but currently queued. " MAC_ADDRESS_STR " bssIdx %d", 
+              __func__, MAC_ADDR_ARRAY(pwdiConfigBSSParams->wdiReqInfo.macBSSID), 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               ucCurrentBSSSesIdx);
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -7412,10 +8120,17 @@ WDI_ProcessConfigBSSReq
   /* Allocation of BssReqMsg Memory Based on Firmware Capabilities */
 #ifdef WLAN_FEATURE_11AC
   if (WDI_getFwWlanFeatCaps(DOT11AC))
+<<<<<<< HEAD
 	  uMsgSize = sizeof(halConfigBssReqMsg.uBssParams.configBssParams_V1); // Version - 1 For 11AC
   else
 #endif
 	  uMsgSize = sizeof(halConfigBssReqMsg.uBssParams.configBssParams); // default Version - 0 Structure
+=======
+     uMsgSize = sizeof(halConfigBssReqMsg.uBssParams.configBssParams_V1); // Version - 1 For 11AC
+  else
+#endif
+     uMsgSize = sizeof(halConfigBssReqMsg.uBssParams.configBssParams); // default Version - 0 Structure
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*-----------------------------------------------------------------------
     Get message buffer
@@ -7448,6 +8163,7 @@ WDI_ProcessConfigBSSReq
   /* Need to fill in the BSS index */
   halConfigBssReqMsg.uBssParams.configBssParams.staContext.bssIdx = pBSSSes->ucBSSIdx;
 
+<<<<<<< HEAD
   wpalMemoryCopy( pSendBuffer+usDataOffset,
                   &halConfigBssReqMsg.uBssParams.configBssParams,
                   uMsgSize);
@@ -7459,6 +8175,35 @@ WDI_ProcessConfigBSSReq
     Send Config BSS Request to HAL
   -------------------------------------------------------------------------*/
   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+=======
+#ifdef WLAN_FEATURE_11AC
+  if (WDI_getFwWlanFeatCaps(DOT11AC)){
+    wpalMemoryCopy( pSendBuffer+usDataOffset,
+                  &halConfigBssReqMsg.uBssParams.configBssParams_V1,
+                  uMsgSize);
+  }else
+#endif
+  {
+    if ( uMsgSize <= sizeof(tConfigBssParams) )
+    {
+      wpalMemoryCopy( pSendBuffer+usDataOffset,
+                      &halConfigBssReqMsg.uBssParams.configBssParams,
+                      uMsgSize);
+    }
+    else
+    {
+      return WDI_STATUS_E_FAILURE;
+    }
+  }
+
+  pWDICtx->wdiReqStatusCB     = pwdiConfigBSSParams->wdiReqStatusCB;
+  pWDICtx->pReqStatusUserData = pwdiConfigBSSParams->pUserData;
+
+  /*-------------------------------------------------------------------------
+    Send Config BSS Request to HAL
+  -------------------------------------------------------------------------*/
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        wdiConfigBSSRspCb, pEventData->pUserData,
                        WDI_CONFIG_BSS_RESP);
 
@@ -7502,7 +8247,11 @@ WDI_ProcessDelBSSReq
       ( NULL == (wdiDelBSSRspCb   = (WDI_DelBSSRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -7643,7 +8392,11 @@ WDI_ProcessPostAssocReq
       ( NULL == (wdiPostAssocRspCb   = (WDI_PostAssocRspCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -7663,9 +8416,15 @@ WDI_ProcessPostAssocReq
 
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "%s: Association sequence for this BSS does not yet exist - "
               "operation not allowed. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+              "%s: Association sequence for this BSS does not yet exist - " 
+              "operation not allowed. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(pwdiPostAssocParams->wdiBSSParams.macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -7679,7 +8438,11 @@ WDI_ProcessPostAssocReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(pwdiPostAssocParams->wdiBSSParams.macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -7747,6 +8510,10 @@ WDI_ProcessPostAssocReq
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
              "This station does not exist in the WDI Station Table %d");
     wpalMutexRelease(&pWDICtx->wptMutex);
+<<<<<<< HEAD
+=======
+    wpalMemoryFree(pSendBuffer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return WDI_STATUS_E_FAILURE;
   }
 
@@ -7767,6 +8534,10 @@ WDI_ProcessPostAssocReq
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
              "This station does not exist in the WDI Station Table %d");
     wpalMutexRelease(&pWDICtx->wptMutex);
+<<<<<<< HEAD
+=======
+    wpalMemoryFree(pSendBuffer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return WDI_STATUS_E_FAILURE;
   }
 
@@ -7840,7 +8611,11 @@ WDI_ProcessDelSTAReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -7869,8 +8644,13 @@ WDI_ProcessDelSTAReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+              "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -7965,7 +8745,11 @@ WDI_ProcessSetBssKeyReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -7988,7 +8772,11 @@ WDI_ProcessSetBssKeyReq
   if ( NULL == pBSSSes )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS does not yet exist. ucBssIdx %d",
+=======
+              "%s: Association sequence for this BSS does not yet exist. ucBssIdx %d", 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, pwdiSetBSSKeyParams->wdiBSSKeyInfo.ucBssIdx);
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -8111,7 +8899,11 @@ WDI_ProcessRemoveBssKeyReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -8134,7 +8926,11 @@ WDI_ProcessRemoveBssKeyReq
   if ( NULL == pBSSSes )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS does not yet exist. ucBssIdx %d",
+=======
+              "%s: Association sequence for this BSS does not yet exist. ucBssIdx %d", 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, pwdiRemoveBSSKeyParams->wdiKeyInfo.ucBssIdx);
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -8239,7 +9035,11 @@ WDI_ProcessSetStaKeyReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -8268,8 +9068,13 @@ WDI_ProcessSetStaKeyReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+              "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -8322,7 +9127,10 @@ WDI_ProcessSetStaKeyReq
 
   halSetStaKeyReqMsg.setStaKeyParams.singleTidRc = pwdiSetSTAKeyParams->wdiKeyInfo.ucSingleTidRc;
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   for(keyIndex = 0; keyIndex < pwdiSetSTAKeyParams->wdiKeyInfo.ucNumKeys ;
                                                                  keyIndex++)
   {
@@ -8343,6 +9151,7 @@ WDI_ProcessSetStaKeyReq
                          pwdiSetSTAKeyParams->wdiKeyInfo.wdiKey[keyIndex].key,
                         WDI_MAX_KEY_LENGTH);
    }
+<<<<<<< HEAD
 #else
   halSetStaKeyReqMsg.setStaKeyParams.key.keyId =
                       pwdiSetSTAKeyParams->wdiKeyInfo.wdiKey[0].keyId;
@@ -8361,6 +9170,8 @@ WDI_ProcessSetStaKeyReq
                          pwdiSetSTAKeyParams->wdiKeyInfo.wdiKey[0].key,
                         WDI_MAX_KEY_LENGTH);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   wpalMemoryCopy( pSendBuffer+usDataOffset,
                     &halSetStaKeyReqMsg.setStaKeyParams,
@@ -8414,7 +9225,11 @@ WDI_ProcessRemoveStaKeyReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -8443,8 +9258,13 @@ WDI_ProcessRemoveStaKeyReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+              "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -8458,7 +9278,11 @@ WDI_ProcessRemoveStaKeyReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -8554,7 +9378,11 @@ WDI_ProcessSetStaBcastKeyReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -8637,7 +9465,10 @@ WDI_ProcessSetStaBcastKeyReq
 
   halSetStaKeyReqMsg.setStaKeyParams.singleTidRc = pwdiSetSTAKeyParams->wdiKeyInfo.ucSingleTidRc;
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   for(keyIndex = 0; keyIndex < pwdiSetSTAKeyParams->wdiKeyInfo.ucNumKeys ;
                                                                  keyIndex++)
   {
@@ -8658,6 +9489,7 @@ WDI_ProcessSetStaBcastKeyReq
                          pwdiSetSTAKeyParams->wdiKeyInfo.wdiKey[keyIndex].key,
                         WDI_MAX_KEY_LENGTH);
    }
+<<<<<<< HEAD
 #else
   halSetStaKeyReqMsg.setStaKeyParams.key.keyId =
                       pwdiSetSTAKeyParams->wdiKeyInfo.wdiKey[0].keyId;
@@ -8676,6 +9508,8 @@ WDI_ProcessSetStaBcastKeyReq
                          pwdiSetSTAKeyParams->wdiKeyInfo.wdiKey[0].key,
                         WDI_MAX_KEY_LENGTH);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   wpalMemoryCopy( pSendBuffer+usDataOffset,
                     &halSetStaKeyReqMsg.setStaKeyParams,
@@ -8729,7 +9563,11 @@ WDI_ProcessRemoveStaBcastKeyReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -8758,8 +9596,13 @@ WDI_ProcessRemoveStaBcastKeyReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+              "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -8773,7 +9616,11 @@ WDI_ProcessRemoveStaBcastKeyReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -8871,7 +9718,11 @@ WDI_ProcessAddTSpecReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -8900,8 +9751,13 @@ WDI_ProcessAddTSpecReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
               "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+              "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -9050,7 +9906,11 @@ WDI_ProcessDelTSpecReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -9073,10 +9933,17 @@ WDI_ProcessDelTSpecReq
 
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
             "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
             __func__, MAC_ADDR_ARRAY(pwdiDelTSParams->wdiDelTSInfo.macBSSID));
 
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+            "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+            __func__, MAC_ADDR_ARRAY(pwdiDelTSParams->wdiDelTSInfo.macBSSID));
+    
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wpalMutexRelease(&pWDICtx->wptMutex);
     return WDI_STATUS_E_NOT_ALLOWED;
   }
@@ -9088,7 +9955,11 @@ WDI_ProcessDelTSpecReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(pwdiDelTSParams->wdiDelTSInfo.macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -9162,7 +10033,11 @@ WDI_ProcessUpdateEDCAParamsReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -9185,7 +10060,11 @@ WDI_ProcessUpdateEDCAParamsReq
   if ( NULL == pBSSSes )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
             "%s: Association sequence for this BSS does not yet exist. ucBssIdx %d",
+=======
+            "%s: Association sequence for this BSS does not yet exist. ucBssIdx %d", 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             __func__, pwdiUpdateEDCAParams->wdiEDCAInfo.ucBssIdx);
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -9277,7 +10156,11 @@ WDI_ProcessAddBASessionReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -9310,10 +10193,17 @@ WDI_ProcessAddBASessionReq
 
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
           "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
           __func__, MAC_ADDR_ARRAY(macBSSID));
 
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+          "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+          __func__, MAC_ADDR_ARRAY(macBSSID));
+      
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wpalMutexRelease(&pWDICtx->wptMutex);
     return WDI_STATUS_E_NOT_ALLOWED;
   }
@@ -9325,7 +10215,11 @@ WDI_ProcessAddBASessionReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -9421,7 +10315,11 @@ WDI_ProcessDelBAReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -9451,8 +10349,13 @@ WDI_ProcessDelBAReq
 
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
             "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+            "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -9509,13 +10412,18 @@ WDI_ProcessDelBAReq
 
 WDI_Status
 WDI_ProcessTSMStatsReq
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
   WDI_TSMStatsReqParamsType*  pwdiTSMParams;
   WDI_TsmRspCb                wdiTSMRspCb;
+<<<<<<< HEAD
   wpt_uint8                   ucCurrentBSSSesIdx   = 0;
   WDI_BSSSessionType*         pBSSSes              = NULL;
   wpt_uint8*                  pSendBuffer          = NULL;
@@ -9528,20 +10436,41 @@ WDI_ProcessTSMStatsReq
 
   /*-------------------------------------------------------------------------
        Sanity check
+=======
+  wpt_uint8                   ucCurrentBSSSesIdx   = 0; 
+  WDI_BSSSessionType*         pBSSSes              = NULL;
+  wpt_uint8*                  pSendBuffer          = NULL; 
+  wpt_uint16                  usDataOffset         = 0;
+  wpt_uint16                  usSendSize           = 0;
+  WDI_Status                  wdiStatus            = WDI_STATUS_SUCCESS; 
+  tTsmStatsParams             halTsmStatsReqParams = {0};
+  
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*-------------------------------------------------------------------------
+       Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------*/
   if (( NULL == pEventData ) || ( NULL == pEventData->pEventData ) ||
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
+=======
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   pwdiTSMParams = (WDI_TSMStatsReqParamsType*)pEventData->pEventData;
   wdiTSMRspCb   = (WDI_TsmRspCb)pEventData->pCBfnc;
   /*-------------------------------------------------------------------------
     Check to see if we are in the middle of an association, if so queue, if
+<<<<<<< HEAD
     not it means it is free to process request
   -------------------------------------------------------------------------*/
   wpalMutexAcquire(&pWDICtx->wptMutex);
@@ -9555,30 +10484,65 @@ WDI_ProcessTSMStatsReq
 
     wpalMutexRelease(&pWDICtx->wptMutex);
     return WDI_STATUS_E_NOT_ALLOWED;
+=======
+    not it means it is free to process request 
+  -------------------------------------------------------------------------*/
+  wpalMutexAcquire(&pWDICtx->wptMutex);
+
+  ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, pwdiTSMParams->wdiTsmStatsParamsInfo.bssid, &pBSSSes); 
+  if ( NULL == pBSSSes ) 
+  {
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+            "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+            __func__, MAC_ADDR_ARRAY(pwdiTSMParams->wdiTsmStatsParamsInfo.bssid));
+
+    wpalMutexRelease(&pWDICtx->wptMutex);
+    return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*------------------------------------------------------------------------
     Check if this BSS is being currently processed or queued,
+<<<<<<< HEAD
     if queued - queue the new request as well
+=======
+    if queued - queue the new request as well 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ------------------------------------------------------------------------*/
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
               __func__, MAC_ADDR_ARRAY(pwdiTSMParams->wdiTsmStatsParamsInfo.bssid));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
     wpalMutexRelease(&pWDICtx->wptMutex);
     return wdiStatus;
+=======
+              "s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+              __func__, MAC_ADDR_ARRAY(pwdiTSMParams->wdiTsmStatsParamsInfo.bssid));
+
+    wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData); 
+    wpalMutexRelease(&pWDICtx->wptMutex);
+    return wdiStatus; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   wpalMutexRelease(&pWDICtx->wptMutex);
   /*-----------------------------------------------------------------------
     Get message buffer
+<<<<<<< HEAD
     ! TO DO : proper conversion into the HAL Message Request Format
   -----------------------------------------------------------------------*/
   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_TSM_STATS_REQ,
                                                     sizeof(halTsmStatsReqParams),
+=======
+    ! TO DO : proper conversion into the HAL Message Request Format 
+  -----------------------------------------------------------------------*/
+  if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_TSM_STATS_REQ, 
+                                                    sizeof(halTsmStatsReqParams), 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                     &pSendBuffer, &usDataOffset,                                                     &usSendSize))||
       ( usSendSize < (usDataOffset + sizeof(halTsmStatsReqParams) )))
   {
@@ -9586,13 +10550,18 @@ WDI_ProcessTSMStatsReq
               "Unable to get send buffer in set bss key req %x %x %x",
                 pEventData, pwdiTSMParams, wdiTSMRspCb);
      WDI_ASSERT(0);
+<<<<<<< HEAD
      return WDI_STATUS_E_FAILURE;
+=======
+     return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   halTsmStatsReqParams.tsmTID = pwdiTSMParams->wdiTsmStatsParamsInfo.ucTid;
   wpalMemoryCopy(halTsmStatsReqParams.bssId,
                  pwdiTSMParams->wdiTsmStatsParamsInfo.bssid,
                  WDI_MAC_ADDR_LEN);
+<<<<<<< HEAD
   wpalMemoryCopy( pSendBuffer+usDataOffset,
                   &halTsmStatsReqParams,
                   sizeof(halTsmStatsReqParams));
@@ -9606,6 +10575,21 @@ WDI_ProcessTSMStatsReq
   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                        wdiTSMRspCb, pEventData->pUserData,
                        WDI_TSM_STATS_RESP);
+=======
+  wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                  &halTsmStatsReqParams, 
+                  sizeof(halTsmStatsReqParams)); 
+
+  pWDICtx->wdiReqStatusCB     = pwdiTSMParams->wdiReqStatusCB;
+  pWDICtx->pReqStatusUserData = pwdiTSMParams->pUserData; 
+
+  /*-------------------------------------------------------------------------
+    Send TSM Stats Request to HAL 
+  -------------------------------------------------------------------------*/
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                       wdiTSMRspCb, pEventData->pUserData,
+                       WDI_TSM_STATS_RESP); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessTSMStatsReq*/
 
 #endif
@@ -9642,7 +10626,11 @@ WDI_ProcessFlushAcReq
        ( NULL == pEventData->pCBfnc ))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -9712,7 +10700,11 @@ WDI_ProcessBtAmpEventReq
        ( NULL == pEventData->pCBfnc ))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -9784,7 +10776,11 @@ WDI_ProcessAddSTASelfReq
       ( NULL == pEventData->pCBfnc))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -9864,7 +10860,11 @@ WDI_ProcessDelSTASelfReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -9910,7 +10910,11 @@ WDI_ProcessDelSTASelfReq
 
 #ifdef FEATURE_OEM_DATA_SUPPORT
 /**
+<<<<<<< HEAD
  @brief Process Start Oem Data Request function (called when Main
+=======
+ @brief Process Start Oem Data Request function (called when Main 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         FSM allows it)
 
  @param  pWDICtx:         pointer to the WLAN DAL context
@@ -9928,7 +10932,11 @@ WDI_ProcessStartOemDataReq
 {
   WDI_oemDataReqParamsType*    pwdiOemDataReqParams = NULL;
   WDI_oemDataRspCb             wdiOemDataRspCb;
+<<<<<<< HEAD
   wpt_uint8*                   pSendBuffer         = NULL;
+=======
+  wpt_uint8*                   pSendBuffer         = NULL; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wpt_uint16                   usDataOffset        = 0;
   wpt_uint16                   usSendSize          = 0;
   wpt_uint16                   reqLen;
@@ -9941,7 +10949,11 @@ WDI_ProcessStartOemDataReq
       ( NULL == pEventData->pCBfnc ))
   {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
   }
@@ -9955,7 +10967,11 @@ WDI_ProcessStartOemDataReq
 
   reqLen = sizeof(tStartOemDataReqParams);
 
+<<<<<<< HEAD
   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx,
+=======
+  if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          WDI_START_OEM_DATA_REQ, reqLen,
                               &pSendBuffer, &usDataOffset, &usSendSize))||
         (usSendSize < (usDataOffset + reqLen)))
@@ -9974,14 +10990,24 @@ WDI_ProcessStartOemDataReq
   wpalMemoryCopy(&halStartOemDataReqParams->oemDataReq, &pwdiOemDataReqParams->wdiOemDataReqInfo.oemDataReq, OEM_DATA_REQ_SIZE);
 
   pWDICtx->wdiReqStatusCB     = pwdiOemDataReqParams->wdiReqStatusCB;
+<<<<<<< HEAD
   pWDICtx->pReqStatusUserData = pwdiOemDataReqParams->pUserData;
+=======
+  pWDICtx->pReqStatusUserData = pwdiOemDataReqParams->pUserData; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*-------------------------------------------------------------------------
     Send Start Request to HAL
   -------------------------------------------------------------------------*/
+<<<<<<< HEAD
   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiOemDataRspCb, pEventData->pUserData,
                                             WDI_START_OEM_DATA_RESP);
+=======
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                        wdiOemDataRspCb, pEventData->pUserData, 
+                                            WDI_START_OEM_DATA_RESP); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessStartOemDataReq*/
 #endif
 
@@ -10018,7 +11044,11 @@ WDI_ProcessHostResumeReq
       ( NULL == pEventData->pCBfnc ))
   {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                "%s: Invalid parameters ",__FUNCTION__);
+=======
+               "%s: Invalid parameters ",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
   }
@@ -10091,7 +11121,11 @@ WDI_ProcessSetTxPerTrackingReq
        ( NULL == pEventData->pCBfnc ))
    {
        WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters ",__FUNCTION__);
+=======
+                "%s: Invalid parameters ",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        WDI_ASSERT(0);
        return WDI_STATUS_E_FAILURE;
    }
@@ -10168,7 +11202,11 @@ WDI_ProcessHostSuspendInd
   if (( NULL == pEventData ) || ( NULL == pEventData->pEventData ))
   {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                "%s: Invalid parameters in Suspend ind",__FUNCTION__);
+=======
+               "%s: Invalid parameters in Suspend ind",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
   }
@@ -10209,6 +11247,89 @@ WDI_ProcessHostSuspendInd
   return  ( wdiStatus != WDI_STATUS_SUCCESS )?wdiStatus:WDI_STATUS_SUCCESS_SYNC;
 }/*WDI_ProcessHostSuspendInd*/
 
+<<<<<<< HEAD
+=======
+
+
+/**
+ @brief Process Traffic Stats Indications function (called when Main FSM allows it)
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+              pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessTrafficStatsInd
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_TrafficStatsIndType*       pTrafficStatsIndParams;
+  wpt_uint8*                     pSendBuffer         = NULL;
+  wpt_uint16                     usDataOffset        = 0;
+  wpt_uint16                     usSendSize          = 0;
+  WDI_Status                     wdiStatus;
+  tStatsClassBIndParams*         pStatsClassBIndParams;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*-------------------------------------------------------------------------
+     Sanity check
+  -------------------------------------------------------------------------*/
+  if (( NULL == pEventData ) || ( NULL == pEventData->pEventData ))
+  {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+               "%s: Invalid parameters in Traffic Stats ind",__func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+  }
+
+  pTrafficStatsIndParams = (WDI_TrafficStatsIndType *)pEventData->pEventData;
+
+  if(pTrafficStatsIndParams->length != sizeof(tStaStatsClassB)*(HAL_NUM_STA))
+  {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+               "%s: Invalid parameters in Traffic Stats ind",__func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+  }
+
+   /*-----------------------------------------------------------------------
+     Get message buffer
+   -----------------------------------------------------------------------*/
+  if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx,
+                         WDI_TRAFFIC_STATS_IND,
+                     sizeof(tStatsClassBIndParams),
+                     &pSendBuffer, &usDataOffset, &usSendSize))||
+        (usSendSize < (usDataOffset + sizeof(tStatsClassBIndParams))))
+  {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_FATAL,
+                  "Unable to get send buffer in Traffic Stats Ind ");
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+  }
+
+  pStatsClassBIndParams = (tStatsClassBIndParams*)(pSendBuffer+usDataOffset);
+
+  pStatsClassBIndParams->duration = pTrafficStatsIndParams->duration;
+
+  wpalMemoryCopy(pStatsClassBIndParams->staStatsClassB,
+                 pTrafficStatsIndParams->pTrafficStats,
+                 pTrafficStatsIndParams->length);
+
+  /*-------------------------------------------------------------------------
+    Send Suspend Request to HAL
+  -------------------------------------------------------------------------*/
+  pWDICtx->wdiReqStatusCB     = pTrafficStatsIndParams->wdiReqStatusCB;
+  pWDICtx->pReqStatusUserData = pTrafficStatsIndParams->pUserData;
+
+  wdiStatus = WDI_SendIndication( pWDICtx, pSendBuffer, usSendSize);
+  return  ( wdiStatus != WDI_STATUS_SUCCESS )?wdiStatus:WDI_STATUS_SUCCESS_SYNC;
+}/*WDI_ProcessTrafficStatsInd*/
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
                   MISC CONTROL PROCESSING REQUEST API
 ==========================================================================*/
@@ -10244,7 +11365,11 @@ WDI_ProcessChannelSwitchReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10337,7 +11462,11 @@ WDI_ProcessConfigStaReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10359,8 +11488,13 @@ WDI_ProcessConfigStaReq
 
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
           "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+          "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           __func__, MAC_ADDR_ARRAY(pwdiConfigSTAParams->wdiReqInfo.macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -10374,7 +11508,11 @@ WDI_ProcessConfigStaReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(pwdiConfigSTAParams->wdiReqInfo.macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -10383,6 +11521,7 @@ WDI_ProcessConfigStaReq
   }
 
   wpalMutexRelease(&pWDICtx->wptMutex);
+<<<<<<< HEAD
 
   /* Allocation of StaReqMsg Memory Based on Firmware Capabilities */
 #ifdef WLAN_FEATURE_11AC
@@ -10391,6 +11530,16 @@ WDI_ProcessConfigStaReq
   else
 #endif
 	  uMsgSize = sizeof(halConfigStaReqMsg.uStaParams.configStaParams); // Version-0 Default
+=======
+  
+  /* Allocation of StaReqMsg Memory Based on Firmware Capabilities */
+#ifdef WLAN_FEATURE_11AC
+  if (WDI_getFwWlanFeatCaps(DOT11AC))
+     uMsgSize = sizeof(halConfigStaReqMsg.uStaParams.configStaParams_V1); // Version-1 For 11AC
+  else
+#endif
+     uMsgSize = sizeof(halConfigStaReqMsg.uStaParams.configStaParams); // Version-0 Default
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*-----------------------------------------------------------------------
     Get message buffer
@@ -10422,6 +11571,10 @@ WDI_ProcessConfigStaReq
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
                "This station does not exist in the WDI Station Table %d");
       wpalMutexRelease(&pWDICtx->wptMutex);
+<<<<<<< HEAD
+=======
+      wpalMemoryFree(pSendBuffer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return WDI_STATUS_E_FAILURE;
     }
   }
@@ -10429,7 +11582,11 @@ WDI_ProcessConfigStaReq
   {
   /* Need to fill in the STA Index to invalid, since at this point we have not
      yet received it from HAL */
+<<<<<<< HEAD
     halConfigStaReqMsg.uStaParams.configStaParams.staIdx = WDI_STA_INVALID_IDX;
+=======
+    halConfigStaReqMsg.uStaParams.configStaParams.staIdx = pwdiConfigSTAParams->wdiReqInfo.staIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /* Need to fill in the BSS index */
@@ -10489,7 +11646,11 @@ WDI_ProcessSetLinkStateReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10524,7 +11685,11 @@ WDI_ProcessSetLinkStateReq
     if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
     {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+                "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__, MAC_ADDR_ARRAY(pwdiSetLinkParams->wdiLinkInfo.macBSSID));
 
       wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -10616,7 +11781,11 @@ WDI_ProcessGetStatsReq
       ( NULL == pEventData->pCBfnc ) )
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10646,8 +11815,13 @@ WDI_ProcessGetStatsReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
         "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+        "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -10661,7 +11835,11 @@ WDI_ProcessGetStatsReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -10705,6 +11883,132 @@ WDI_ProcessGetStatsReq
                        wdiGetStatsRspCb, pEventData->pUserData, WDI_GET_STATS_RESP);
 }/*WDI_ProcessGetStatsReq*/
 
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+/**
+ @brief Process Get Roam Rssi Request function (called when Main FSM
+        allows it)
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessGetRoamRssiReq
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_GetRoamRssiReqParamsType*   pwdiGetRoamRssiParams;
+  WDI_GetStatsRspCb            wdiGetStatsRspCb;
+  wpt_uint8*                   pSendBuffer         = NULL;
+  wpt_uint16                   usDataOffset        = 0;
+  wpt_uint16                   usSendSize          = 0;
+  wpt_uint8                    ucCurrentBSSSesIdx  = 0;
+  WDI_BSSSessionType*          pBSSSes             = NULL;
+  wpt_macAddr                  macBSSID;
+  WDI_Status                   wdiStatus           = WDI_STATUS_SUCCESS;
+  tHalGetRoamRssiReqMsg        halRssiRoamReqMsg;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*-------------------------------------------------------------------------
+    Sanity check
+  -------------------------------------------------------------------------*/
+  if (( NULL == pEventData ) || ( NULL == pEventData->pEventData) ||
+      ( NULL == pEventData->pCBfnc ) )
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  pwdiGetRoamRssiParams = (WDI_GetRoamRssiReqParamsType*)pEventData->pEventData;
+  wdiGetStatsRspCb   = (WDI_GetStatsRspCb)pEventData->pCBfnc;
+
+  /*-------------------------------------------------------------------------
+    Check to see if we are in the middle of an association, if so queue, if
+    not it means it is free to process request
+  -------------------------------------------------------------------------*/
+  wpalMutexAcquire(&pWDICtx->wptMutex);
+
+  /*------------------------------------------------------------------------
+    Find the BSS for which the request is made
+  ------------------------------------------------------------------------*/
+  if ( WDI_STATUS_SUCCESS != WDI_STATableGetStaBSSIDAddr(pWDICtx,
+                        pwdiGetRoamRssiParams->wdiGetRoamRssiParamsInfo.ucSTAIdx,
+                        &macBSSID))
+  {
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+             "This station does not exist in the WDI Station Table %d");
+    wpalMutexRelease(&pWDICtx->wptMutex);
+    return WDI_STATUS_E_FAILURE;
+  }
+
+  ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
+  if ( NULL == pBSSSes )
+  {
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+        "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+        __func__, MAC_ADDR_ARRAY(macBSSID));
+
+    wpalMutexRelease(&pWDICtx->wptMutex);
+    return WDI_STATUS_E_NOT_ALLOWED;
+  }
+
+  /*------------------------------------------------------------------------
+    Check if this BSS is being currently processed or queued,
+    if queued - queue the new request as well
+  ------------------------------------------------------------------------*/
+  if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
+  {
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+              __func__, MAC_ADDR_ARRAY(macBSSID));
+
+    wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
+    wpalMutexRelease(&pWDICtx->wptMutex);
+    return wdiStatus;
+  }
+
+  wpalMutexRelease(&pWDICtx->wptMutex);
+
+  /*-----------------------------------------------------------------------
+    Get message buffer
+  -----------------------------------------------------------------------*/
+  if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_GET_ROAM_RSSI_REQ,
+                        sizeof(halRssiRoamReqMsg.roamRssiReqParams),
+                        &pSendBuffer, &usDataOffset, &usSendSize))||
+      ( usSendSize < (usDataOffset + sizeof(halRssiRoamReqMsg.roamRssiReqParams) )))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+              "Unable to get send buffer in set bss key req %x %x %x",
+                pEventData, pwdiGetRoamRssiParams, wdiGetStatsRspCb);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  halRssiRoamReqMsg.roamRssiReqParams.staId =
+                  pwdiGetRoamRssiParams->wdiGetRoamRssiParamsInfo.ucSTAIdx;
+  wpalMemoryCopy( pSendBuffer+usDataOffset,
+                  &halRssiRoamReqMsg.roamRssiReqParams,
+                  sizeof(halRssiRoamReqMsg.roamRssiReqParams));
+
+  pWDICtx->wdiReqStatusCB     = pwdiGetRoamRssiParams->wdiReqStatusCB;
+  pWDICtx->pReqStatusUserData = pwdiGetRoamRssiParams->pUserData;
+
+  /*-------------------------------------------------------------------------
+    Send Get STA Request to HAL
+  -------------------------------------------------------------------------*/
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+                       wdiGetStatsRspCb, pEventData->pUserData, WDI_GET_ROAM_RSSI_RESP);
+}/*WDI_ProcessGetRoamRssiReq*/
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process Update Cfg Request function (called when Main
         FSM allows it)
@@ -10737,7 +12041,11 @@ WDI_ProcessUpdateCfgReq
       ( NULL == pEventData->pCBfnc))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10820,7 +12128,11 @@ WDI_ProcessAddBAReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10850,8 +12162,13 @@ WDI_ProcessAddBAReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
             "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+            "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -10865,7 +12182,11 @@ WDI_ProcessAddBAReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -10957,7 +12278,11 @@ WDI_ProcessTriggerBAReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -10986,8 +12311,13 @@ WDI_ProcessTriggerBAReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
         "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+        "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -11001,7 +12331,11 @@ WDI_ProcessTriggerBAReq
   if ( eWLAN_PAL_TRUE == pBSSSes->bAssocReqQueued )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
               "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR,
+=======
+              "%s: Association sequence for this BSS exists but currently queued. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wdiStatus = WDI_QueueAssocRequest( pWDICtx, pBSSSes, pEventData);
@@ -11101,7 +12435,11 @@ WDI_ProcessUpdateBeaconParamsReq
       ( NULL == pEventData->pCBfnc))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -11203,7 +12541,11 @@ WDI_ProcessSendBeaconParamsReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -11233,6 +12575,7 @@ WDI_ProcessSendBeaconParamsReq
   wpalMemoryCopy(halSendBeaconReq.sendBeaconParam.beacon,
                   pwdiSendBeaconParams->wdiSendBeaconParamsInfo.beacon,
                   pwdiSendBeaconParams->wdiSendBeaconParamsInfo.beaconLength);
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
   halSendBeaconReq.sendBeaconParam.timIeOffset =
                   pwdiSendBeaconParams->wdiSendBeaconParamsInfo.timIeOffset;
@@ -11241,6 +12584,24 @@ WDI_ProcessSendBeaconParamsReq
   halSendBeaconReq.sendBeaconParam.p2pIeOffset =
                   pwdiSendBeaconParams->wdiSendBeaconParamsInfo.usP2PIeOffset;
 #endif
+=======
+  halSendBeaconReq.sendBeaconParam.timIeOffset =
+                  pwdiSendBeaconParams->wdiSendBeaconParamsInfo.timIeOffset;
+  /* usP2PIeOffset should be atleast greater than timIeOffset */
+  if ((pwdiSendBeaconParams->wdiSendBeaconParamsInfo.usP2PIeOffset != 0 ) &&
+          (pwdiSendBeaconParams->wdiSendBeaconParamsInfo.usP2PIeOffset <
+           pwdiSendBeaconParams->wdiSendBeaconParamsInfo.timIeOffset))
+  {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+              "Invalid usP2PIeOffset %hu",
+              pwdiSendBeaconParams->wdiSendBeaconParamsInfo.usP2PIeOffset);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+  }
+
+  halSendBeaconReq.sendBeaconParam.p2pIeOffset =
+                  pwdiSendBeaconParams->wdiSendBeaconParamsInfo.usP2PIeOffset;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   wpalMemoryCopy( pSendBuffer+usDataOffset,
                   &halSendBeaconReq.sendBeaconParam,
@@ -11289,7 +12650,11 @@ WDI_ProcessUpdateProbeRspTemplateReq
       ( NULL == pEventData->pCBfnc))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -11375,7 +12740,11 @@ WDI_ProcessNvDownloadReq
                 (WDI_NvDownloadRspCb)pEventData->pCBfnc)))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_E_FAILURE;
   }
@@ -11390,7 +12759,11 @@ WDI_ProcessNvDownloadReq
   {
     wpalMemoryCopy(&pWDICtx->wdiCachedNvDownloadReq,
                  pwdiNvDownloadReqParams,
+<<<<<<< HEAD
                  sizeof(pWDICtx->wdiCachedNvDownloadReq));
+=======
+                 sizeof(pWDICtx->wdiCachedNvDownloadReq)); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pWDICtx->pfncRspCB = pEventData->pCBfnc;
     pWDICtx->pRspCBUserData = pEventData->pUserData;
@@ -11431,7 +12804,11 @@ WDI_Status WDI_ProcessSetMaxTxPowerReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -11482,7 +12859,107 @@ if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_SET_MAX_TX_POWER_
 
 }
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+
+/**
+ @brief Process P2P Notice Of Absence Request function (called when Main FSM
+        allows it)
+=======
+/**
+ @brief Process Set Tx Power Request function (called when Main
+        FSM allows it)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+<<<<<<< HEAD
+WDI_Status
+WDI_ProcessP2PGONOAReq
+=======
+WDI_Status WDI_ProcessSetTxPowerReq
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+<<<<<<< HEAD
+  WDI_SetP2PGONOAReqParamsType*          pwdiP2PGONOAReqParams;
+  WDI_SetP2PGONOAReqParamsRspCb          wdiP2PGONOAReqRspCb;
+  wpt_uint8*                             pSendBuffer         = NULL;
+  wpt_uint16                             usDataOffset        = 0;
+  wpt_uint16                             usSendSize          = 0;
+  tSetP2PGONOAParams                     halSetP2PGONOAParams;
+=======
+  WDI_SetTxPowerParamsType*      pwdiSetTxPowerParams = NULL;
+  WDA_SetTxPowerRspCb            wdiSetTxPowerRspCb;
+  wpt_uint8*                     pSendBuffer          = NULL;
+  wpt_uint16                     usDataOffset         = 0;
+  wpt_uint16                     usSendSize           = 0;
+  tSetTxPwrReqParams            *halSetTxPower       = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*-------------------------------------------------------------------------
+    Sanity check
+  -------------------------------------------------------------------------*/
+  if (( NULL == pEventData ) ||
+<<<<<<< HEAD
+      ( NULL == pEventData->pEventData) ||
+      ( NULL == pEventData->pCBfnc))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                 "%s: Invalid parameters", __FUNCTION__);
+=======
+      ( NULL == pEventData->pEventData ) ||
+      ( NULL == pEventData->pCBfnc ))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  pwdiSetTxPowerParams =
+    (WDI_SetTxPowerParamsType*)pEventData->pEventData;
+  wdiSetTxPowerRspCb =
+    (WDA_SetTxPowerRspCb)pEventData->pCBfnc;
+
+  /*-----------------------------------------------------------------------
+    Get message buffer
+  -----------------------------------------------------------------------*/
+  if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_SET_TX_POWER_REQ,
+                        sizeof(tSetTxPwrReqParams),
+                        &pSendBuffer, &usDataOffset, &usSendSize))||
+      ( usSendSize < (usDataOffset + sizeof(tSetTxPwrReqParams)
+  )))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 "Unable to get Set Max Tx Power req %x %x %x",
+                 pEventData, pwdiSetTxPowerParams, wdiSetTxPowerRspCb);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  halSetTxPower = (tSetTxPwrReqParams *)(pSendBuffer + usDataOffset);
+  halSetTxPower->txPower = pwdiSetTxPowerParams->wdiTxPowerInfo.ucPower;
+  halSetTxPower->bssIdx  = pwdiSetTxPowerParams->wdiTxPowerInfo.bssIdx;
+
+  pWDICtx->wdiReqStatusCB     = pwdiSetTxPowerParams->wdiReqStatusCB;
+  pWDICtx->pReqStatusUserData = pwdiSetTxPowerParams->pUserData;
+
+  /*-------------------------------------------------------------------------
+    Send Set Tx Power Request to HAL
+  -------------------------------------------------------------------------*/
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+                       wdiSetTxPowerRspCb, pEventData->pUserData,
+                       WDI_SET_TX_POWER_RESP);
+}
 
 /**
  @brief Process P2P Notice Of Absence Request function (called when Main FSM
@@ -11517,7 +12994,8 @@ WDI_ProcessP2PGONOAReq
       ( NULL == pEventData->pCBfnc))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
-                 "%s: Invalid parameters", __FUNCTION__);
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -11571,7 +13049,10 @@ WDI_ProcessP2PGONOAReq
                        WDI_P2P_GO_NOTICE_OF_ABSENCE_RESP);
 }/*WDI_ProcessP2PGONOAReq*/
 
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**
@@ -11640,7 +13121,11 @@ WDI_ProcessEnterImpsReq
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    wpt_status               wptStatus;
+=======
+   wpt_status               wptStatus; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WDI_EnterImpsRspCb       wdiEnterImpsRspCb = NULL;
    wpt_uint8*               pSendBuffer         = NULL;
    wpt_uint16               usDataOffset        = 0;
@@ -11654,9 +13139,15 @@ WDI_ProcessEnterImpsReq
        ( NULL == (wdiEnterImpsRspCb   = (WDI_EnterImpsRspCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -11672,35 +13163,67 @@ WDI_ProcessEnterImpsReq
                "Unable to get send buffer in Enter IMPS req %x %x",
                  pEventData, wdiEnterImpsRspCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Reset the event to be not signalled */
    wptStatus = wpalEventReset(&pWDICtx->setPowerStateEvent);
+<<<<<<< HEAD
    if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus )
+=======
+   if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
                 "WDI Init failed to reset an event");
 
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return VOS_STATUS_E_FAILURE;
    }
 
    // notify DTS that we are entering IMPS
    WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_IMPS, WDI_SetPowerStateCb);
+=======
+      goto fail;
+   }
+
+   // notify DTS that we are entering IMPS
+   wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_IMPS, WDI_SetPowerStateCb);
+   if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) {
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering IMPS\n", wptStatus);
+        WDI_ASSERT(0);
+        goto fail;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*
     * Wait for the event to be set once the ACK comes back from DXE
     */
+<<<<<<< HEAD
    wptStatus = wpalEventWait(&pWDICtx->setPowerStateEvent,
                              WDI_SET_POWER_STATE_TIMEOUT);
    if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus )
+=======
+   wptStatus = wpalEventWait(&pWDICtx->setPowerStateEvent, 
+                             WDI_SET_POWER_STATE_TIMEOUT);
+   if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
                 "WDI Init failed to wait on an event");
 
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return VOS_STATUS_E_FAILURE;
+=======
+      goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-------------------------------------------------------------------------
@@ -11708,6 +13231,17 @@ WDI_ProcessEnterImpsReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiEnterImpsRspCb, pEventData->pUserData, WDI_ENTER_IMPS_RESP);
+<<<<<<< HEAD
+=======
+
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessEnterImpsReq*/
 
 /**
@@ -11740,7 +13274,11 @@ WDI_ProcessExitImpsReq
        ( NULL == (wdiExitImpsRspCb   = (WDI_ExitImpsRspCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -11791,7 +13329,11 @@ WDI_ProcessEnterBmpsReq
    wpt_uint16               usDataOffset        = 0;
    wpt_uint16               usSendSize          = 0;
    tHalEnterBmpsReqParams   enterBmpsReq;
+<<<<<<< HEAD
    wpt_status               wptStatus;
+=======
+   wpt_status               wptStatus; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -11803,9 +13345,15 @@ WDI_ProcessEnterBmpsReq
        ( NULL == (wdiEnterBmpsRspCb   = (WDI_EnterBmpsRspCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -11821,7 +13369,11 @@ WDI_ProcessEnterBmpsReq
                "Unable to get send buffer in Enter BMPS req %x %x %x",
                  pEventData, pwdiEnterBmpsReqParams, wdiEnterBmpsRspCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Reset the event to be not signalled */
@@ -11832,16 +13384,35 @@ WDI_ProcessEnterBmpsReq
                 "WDI Init failed to reset an event");
 
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return VOS_STATUS_E_FAILURE;
    }
 
    // notify DTS that we are entering BMPS
    WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_BMPS, WDI_SetPowerStateCb);
+=======
+      goto fail;
+   }
+
+   // notify DTS that we are entering BMPS
+   wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_BMPS, WDI_SetPowerStateCb);
+   if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+   {
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that we are entering BMPS\n", wptStatus);
+        WDI_ASSERT(0);
+        goto fail;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
     * Wait for the event to be set once the ACK comes back from DXE
     */
+<<<<<<< HEAD
    wptStatus = wpalEventWait(&pWDICtx->setPowerStateEvent,
+=======
+   wptStatus = wpalEventWait(&pWDICtx->setPowerStateEvent, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              WDI_SET_POWER_STATE_TIMEOUT);
    if ( eWLAN_PAL_STATUS_SUCCESS != wptStatus )
    {
@@ -11849,7 +13420,11 @@ WDI_ProcessEnterBmpsReq
                 "WDI Init failed to wait on an event");
 
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return VOS_STATUS_E_FAILURE;
+=======
+      goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    pWDICtx->bInBmps = eWLAN_PAL_TRUE;
@@ -11864,9 +13439,15 @@ WDI_ProcessEnterBmpsReq
    enterBmpsReq.numBeaconPerRssiAverage = pwdiEnterBmpsReqParams->wdiEnterBmpsInfo.numBeaconPerRssiAverage;
    enterBmpsReq.bRssiFilterEnable = pwdiEnterBmpsReqParams->wdiEnterBmpsInfo.bRssiFilterEnable;
 
+<<<<<<< HEAD
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &enterBmpsReq,
                    sizeof(enterBmpsReq));
+=======
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &enterBmpsReq, 
+                   sizeof(enterBmpsReq)); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pWDICtx->wdiReqStatusCB     = pwdiEnterBmpsReqParams->wdiReqStatusCB;
    pWDICtx->pReqStatusUserData = pwdiEnterBmpsReqParams->pUserData;
@@ -11876,6 +13457,17 @@ WDI_ProcessEnterBmpsReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiEnterBmpsRspCb, pEventData->pUserData, WDI_ENTER_BMPS_RESP);
+<<<<<<< HEAD
+=======
+
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessEnterBmpsReq*/
 
 /**
@@ -11911,7 +13503,11 @@ WDI_ProcessExitBmpsReq
        ( NULL == (wdiExitBmpsRspCb   = (WDI_ExitBmpsRspCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -11935,9 +13531,15 @@ WDI_ProcessExitBmpsReq
 
    exitBmpsReq.bssIdx = pwdiExitBmpsReqParams->wdiExitBmpsInfo.bssIdx;
 
+<<<<<<< HEAD
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &exitBmpsReq,
                    sizeof(exitBmpsReq));
+=======
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &exitBmpsReq, 
+                   sizeof(exitBmpsReq)); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pWDICtx->wdiReqStatusCB     = pwdiExitBmpsReqParams->wdiReqStatusCB;
    pWDICtx->pReqStatusUserData = pwdiExitBmpsReqParams->pUserData;
@@ -11982,7 +13584,11 @@ WDI_ProcessEnterUapsdReq
        ( NULL == (wdiEnterUapsdRspCb   = (WDI_EnterUapsdRspCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -12048,16 +13654,30 @@ WDI_ProcessExitUapsdReq
    wpt_uint8*               pSendBuffer         = NULL;
    wpt_uint16               usDataOffset        = 0;
    wpt_uint16               usSendSize          = 0;
+<<<<<<< HEAD
+=======
+   WDI_ExitUapsdReqParamsType *pExitUapsdparams;
+   wpt_uint8                bssIdx = 0;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
      Sanity check
    -------------------------------------------------------------------------*/
    if (( NULL == pEventData ) ||
+<<<<<<< HEAD
        ( NULL == (wdiExitUapsdRspCb   = (WDI_ExitUapsdRspCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+       ( NULL == (pExitUapsdparams = (WDI_ExitUapsdReqParamsType *)pEventData->pEventData)) ||
+       ( NULL == (wdiExitUapsdRspCb   = (WDI_ExitUapsdRspCb)pEventData->pCBfnc)))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -12067,9 +13687,15 @@ WDI_ProcessExitUapsdReq
      ! TO DO : proper conversion into the HAL Message Request Format
    -----------------------------------------------------------------------*/
    if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_EXIT_UAPSD_REQ,
+<<<<<<< HEAD
                                                      0,
                                                      &pSendBuffer, &usDataOffset, &usSendSize))||
        ( usSendSize < (usDataOffset )))
+=======
+                                                     sizeof(wpt_uint8),
+                                                     &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < (usDataOffset + sizeof(wpt_uint8))))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
                "Unable to get send buffer in Exit UAPSD req %x %x",
@@ -12078,6 +13704,18 @@ WDI_ProcessExitUapsdReq
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+=======
+   bssIdx = pExitUapsdparams->wdiExitUapsdInfo.bssIdx;
+
+   wpalMemoryCopy( pSendBuffer+usDataOffset,
+                   &bssIdx,
+                   sizeof(wpt_uint8));
+
+   pWDICtx->wdiReqStatusCB     = pExitUapsdparams->wdiReqStatusCB;
+   pWDICtx->pReqStatusUserData = pExitUapsdparams->pUserData;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*-------------------------------------------------------------------------
      Send Get STA Request to HAL
    -------------------------------------------------------------------------*/
@@ -12118,7 +13756,11 @@ WDI_ProcessSetUapsdAcParamsReq
       ( NULL == (wdiSetUapsdAcParamsCb   = (WDI_SetUapsdAcParamsCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -12192,7 +13834,11 @@ WDI_ProcessUpdateUapsdParamsReq
        ( NULL == (wdiUpdateUapsdParamsCb   = (WDI_UpdateUapsdParamsCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -12261,7 +13907,11 @@ WDI_ProcessConfigureRxpFilterReq
       ( NULL == (wdiConfigureRxpFilterCb   = (WDI_ConfigureRxpFilterCb)pEventData->pCBfnc)))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -12332,7 +13982,11 @@ WDI_ProcessSetBeaconFilterReq
        ( NULL == (wdiBeaconFilterCb   = (WDI_SetBeaconFilterCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -12402,7 +14056,11 @@ WDI_ProcessRemBeaconFilterReq
        ( NULL == (wdiBeaconFilterCb   = (WDI_RemBeaconFilterCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -12471,7 +14129,11 @@ WDI_ProcessSetRSSIThresholdsReq
        ( NULL == (wdiRSSIThresholdsCb   = (WDI_SetRSSIThresholdsCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -12521,15 +14183,26 @@ WDI_ProcessSetRSSIThresholdsReq
    pWDICtx->pReqStatusUserData = pwdiRSSIThresholdsParams->pUserData;
 
    /*-------------------------------------------------------------------------
+<<<<<<< HEAD
      Send Set threshold req to HAL
    -------------------------------------------------------------------------*/
    if ((ret_status = WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+=======
+     Send Set threshold req to HAL 
+   -------------------------------------------------------------------------*/
+   if ((ret_status = WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         wdiRSSIThresholdsCb, pEventData->pUserData, WDI_SET_RSSI_THRESHOLDS_RESP)) == WDI_STATUS_SUCCESS)
    {
       // When we are in idle state WDI_STARTED_ST and we receive indication for threshold
       // req. Then as a result of processing the threshold cross ind, we trigger
+<<<<<<< HEAD
       // a Set threshold req, then we need to indicate to WDI that it needs to
       // go to busy state as a result of the indication as we sent a req in the
+=======
+      // a Set threshold req, then we need to indicate to WDI that it needs to 
+      // go to busy state as a result of the indication as we sent a req in the 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // same WDI context.
       // Hence expected state transition is to busy.
       pWDICtx->ucExpectedStateTransition =  WDI_BUSY_ST;
@@ -12562,6 +14235,11 @@ WDI_ProcessHostOffloadReq
    wpt_uint16               usSendSize          = 0;
    tHalHostOffloadReq       hostOffloadParams;
    tHalNSOffloadParams      nsOffloadParams;
+<<<<<<< HEAD
+=======
+   wpt_uint8                ucCurrentBSSSesIdx  = 0;
+   WDI_BSSSessionType*      pBSSSes = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -12573,9 +14251,15 @@ WDI_ProcessHostOffloadReq
        ( NULL == (wdiHostOffloadCb   = (WDI_HostOffloadCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -12591,7 +14275,22 @@ WDI_ProcessHostOffloadReq
                   "Unable to get send buffer in host offload req %x %x %x",
                   pEventData, pwdiHostOffloadParams, wdiHostOffloadCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+   }
+
+   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                            pwdiHostOffloadParams->wdiHostOffloadInfo.bssId, 
+                            &pBSSSes);
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 " %s : Association for this BSSID does not exist " MAC_ADDRESS_STR,
+                 __func__, MAC_ADDR_ARRAY(pwdiHostOffloadParams->wdiHostOffloadInfo.bssId));
+       goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    hostOffloadParams.offloadType = pwdiHostOffloadParams->wdiHostOffloadInfo.ucOffloadType;
@@ -12632,6 +14331,7 @@ WDI_ProcessHostOffloadReq
         nsOffloadParams.targetIPv6Addr1Valid = pwdiHostOffloadParams->wdiNsOffloadParams.targetIPv6Addr1Valid;
         nsOffloadParams.targetIPv6Addr2Valid = pwdiHostOffloadParams->wdiNsOffloadParams.targetIPv6Addr2Valid;
 
+<<<<<<< HEAD
         nsOffloadParams.bssIdx = pwdiHostOffloadParams->wdiNsOffloadParams.bssIdx;
 
 #endif // WLAN_NS_OFFLOAD
@@ -12651,6 +14351,37 @@ WDI_ProcessHostOffloadReq
                        sizeof(nsOffloadParams));
    }
 #endif // WLAN_NS_OFFLOAD
+=======
+#endif // WLAN_NS_OFFLOAD
+   }
+
+   nsOffloadParams.bssIdx = pBSSSes->ucBSSIdx;
+
+   // copy hostOffloadParams into pSendBuffer
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &hostOffloadParams, 
+                   sizeof(hostOffloadParams)); 
+
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION) )
+   {
+        // copy nsOffloadParams into pSendBuffer
+        wpalMemoryCopy( pSendBuffer+usDataOffset+sizeof(hostOffloadParams), 
+                       &nsOffloadParams, 
+                       sizeof(nsOffloadParams)); 
+    }
+    else
+    {
+#ifdef WLAN_NS_OFFLOAD
+        if( HAL_IPV6_NS_OFFLOAD == hostOffloadParams.offloadType )
+        {
+            // copy nsOffloadParams into pSendBuffer
+            wpalMemoryCopy( pSendBuffer+usDataOffset+sizeof(hostOffloadParams), 
+                       &nsOffloadParams, 
+                       sizeof(nsOffloadParams)); 
+        }
+#endif
+     }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pWDICtx->wdiReqStatusCB     = pwdiHostOffloadParams->wdiReqStatusCB;
    pWDICtx->pReqStatusUserData = pwdiHostOffloadParams->pUserData;
@@ -12660,6 +14391,17 @@ WDI_ProcessHostOffloadReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiHostOffloadCb, pEventData->pUserData, WDI_HOST_OFFLOAD_RESP);
+<<<<<<< HEAD
+=======
+
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessHostOffloadReq*/
 
 /**
@@ -12685,6 +14427,12 @@ WDI_ProcessKeepAliveReq
    wpt_uint16               usDataOffset        = 0;
    wpt_uint16               usSendSize          = 0;
    tHalKeepAliveReq         keepAliveReq;
+<<<<<<< HEAD
+=======
+   wpt_uint8                ucCurrentBSSSesIdx  = 0;
+   WDI_BSSSessionType*      pBSSSes = NULL;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -12697,7 +14445,11 @@ WDI_ProcessKeepAliveReq
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_ERROR,
                "Invalid parameters in Keep Alive req");
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -12713,13 +14465,31 @@ WDI_ProcessKeepAliveReq
                   "Unable to get send buffer in keep alive req %x %x %x",
                   pEventData, pwdiKeepAliveParams, wdiKeepAliveCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+   }
+
+   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                            pwdiKeepAliveParams->wdiKeepAliveInfo.bssId, 
+                            &pBSSSes);
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 " %s : Association for this BSSID does not exist",__func__);
+       goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    keepAliveReq.packetType = pwdiKeepAliveParams->wdiKeepAliveInfo.ucPacketType;
    keepAliveReq.timePeriod = pwdiKeepAliveParams->wdiKeepAliveInfo.ucTimePeriod;
 
+<<<<<<< HEAD
    keepAliveReq.bssIdx = pwdiKeepAliveParams->wdiKeepAliveInfo.bssIdx;
+=======
+   keepAliveReq.bssIdx = pBSSSes->ucBSSIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(pwdiKeepAliveParams->wdiKeepAliveInfo.ucPacketType == 2)
    {
@@ -12755,6 +14525,17 @@ WDI_ProcessKeepAliveReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiKeepAliveCb, pEventData->pUserData, WDI_KEEP_ALIVE_RESP);
+<<<<<<< HEAD
+=======
+
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessKeepAliveReq*/
 
 
@@ -12781,6 +14562,12 @@ WDI_ProcessWowlAddBcPtrnReq
    wpt_uint16               usDataOffset        = 0;
    wpt_uint16               usSendSize          = 0;
    tHalWowlAddBcastPtrn     wowlAddBcPtrnReq;
+<<<<<<< HEAD
+=======
+   wpt_uint8                ucCurrentBSSSesIdx  = 0;
+   WDI_BSSSessionType*        pBSSSes = NULL;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -12791,9 +14578,15 @@ WDI_ProcessWowlAddBcPtrnReq
        ( NULL == (wdiWowlAddBcPtrnCb   = (WDI_WowlAddBcPtrnCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -12809,7 +14602,21 @@ WDI_ProcessWowlAddBcPtrnReq
                   "Unable to get send buffer in Wowl add bc ptrn req %x %x %x",
                   pEventData, pwdiWowlAddBcPtrnParams, wdiWowlAddBcPtrnCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+   }
+
+   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                            pwdiWowlAddBcPtrnParams->wdiWowlAddBcPtrnInfo.bssId, 
+                            &pBSSSes);
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 " %s : Association for this BSSID does not exist",__func__);
+       goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    wowlAddBcPtrnReq.ucPatternId =
@@ -12847,9 +14654,17 @@ WDI_ProcessWowlAddBcPtrnReq
                       pwdiWowlAddBcPtrnParams->wdiWowlAddBcPtrnInfo.ucPatternMaskSize - HAL_WOWL_BCAST_PATTERN_MAX_SIZE);
    }
 
+<<<<<<< HEAD
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &wowlAddBcPtrnReq,
                    sizeof(wowlAddBcPtrnReq));
+=======
+   wowlAddBcPtrnReq.bssIdx  = pBSSSes->ucBSSIdx;
+
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &wowlAddBcPtrnReq, 
+                   sizeof(wowlAddBcPtrnReq)); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pWDICtx->wdiReqStatusCB     = pwdiWowlAddBcPtrnParams->wdiReqStatusCB;
    pWDICtx->pReqStatusUserData = pwdiWowlAddBcPtrnParams->pUserData;
@@ -12859,6 +14674,16 @@ WDI_ProcessWowlAddBcPtrnReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiWowlAddBcPtrnCb, pEventData->pUserData, WDI_WOWL_ADD_BC_PTRN_RESP);
+<<<<<<< HEAD
+=======
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessWowlAddBcPtrnReq*/
 
 /**
@@ -12884,6 +14709,11 @@ WDI_ProcessWowlDelBcPtrnReq
    wpt_uint16               usDataOffset        = 0;
    wpt_uint16               usSendSize          = 0;
    tHalWowlDelBcastPtrn     wowlDelBcPtrnReq;
+<<<<<<< HEAD
+=======
+   wpt_uint8                ucCurrentBSSSesIdx  = 0;
+   WDI_BSSSessionType*        pBSSSes = NULL;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -12894,9 +14724,15 @@ WDI_ProcessWowlDelBcPtrnReq
        ( NULL == (wdiWowlDelBcPtrnCb   = (WDI_WowlDelBcPtrnCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -12912,11 +14748,31 @@ WDI_ProcessWowlDelBcPtrnReq
                   "Unable to get send buffer in Wowl del bc ptrn req %x %x %x",
                   pEventData, pwdiWowlDelBcPtrnParams, wdiWowlDelBcPtrnCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+   }
+
+    ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                               pwdiWowlDelBcPtrnParams->wdiWowlDelBcPtrnInfo.bssId, 
+                               &pBSSSes);
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                    " %s : Association for this BSSID does not exist",__func__);
+       goto fail;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    wowlDelBcPtrnReq.ucPatternId =
       pwdiWowlDelBcPtrnParams->wdiWowlDelBcPtrnInfo.ucPatternId;
+<<<<<<< HEAD
+=======
+
+   wowlDelBcPtrnReq.bssIdx = pBSSSes->ucBSSIdx;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &wowlDelBcPtrnReq,
                    sizeof(wowlDelBcPtrnReq));
@@ -12929,6 +14785,17 @@ WDI_ProcessWowlDelBcPtrnReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiWowlDelBcPtrnCb, pEventData->pUserData, WDI_WOWL_DEL_BC_PTRN_RESP);
+<<<<<<< HEAD
+=======
+
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessWowlDelBcPtrnReq*/
 
 /**
@@ -12964,7 +14831,11 @@ WDI_ProcessWowlEnterReq
        ( NULL == (wdiWowlEnterCb   = (WDI_WowlEnterReqCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -13003,12 +14874,17 @@ WDI_ProcessWowlEnterReq
       pwdiWowlEnterParams->wdiWowlEnterInfo.ucWowMaxSleepUsec;
 
 #ifdef WLAN_WAKEUP_EVENTS
+<<<<<<< HEAD
    wowlEnterReq.ucWoWEAPIDRequestEnable =
+=======
+   wowlEnterReq.ucWoWEAPIDRequestEnable = 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pwdiWowlEnterParams->wdiWowlEnterInfo.ucWoWEAPIDRequestEnable;
 
    wowlEnterReq.ucWoWEAPOL4WayEnable =
       pwdiWowlEnterParams->wdiWowlEnterInfo.ucWoWEAPOL4WayEnable;
 
+<<<<<<< HEAD
    wowlEnterReq.ucWowNetScanOffloadMatch =
       pwdiWowlEnterParams->wdiWowlEnterInfo.ucWowNetScanOffloadMatch;
 
@@ -13019,6 +14895,20 @@ WDI_ProcessWowlEnterReq
       pwdiWowlEnterParams->wdiWowlEnterInfo.ucWoWBSSConnLoss;
 #endif // WLAN_WAKEUP_EVENTS
 
+=======
+   wowlEnterReq.ucWowNetScanOffloadMatch = 
+      pwdiWowlEnterParams->wdiWowlEnterInfo.ucWowNetScanOffloadMatch;
+
+   wowlEnterReq.ucWowGTKRekeyError = 
+      pwdiWowlEnterParams->wdiWowlEnterInfo.ucWowGTKRekeyError;
+
+   wowlEnterReq.ucWoWBSSConnLoss = 
+      pwdiWowlEnterParams->wdiWowlEnterInfo.ucWoWBSSConnLoss;
+#endif // WLAN_WAKEUP_EVENTS
+
+   wowlEnterReq.bssIdx = pwdiWowlEnterParams->wdiWowlEnterInfo.bssIdx;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpalMemoryCopy(wowlEnterReq.magicPtrn,
                   pwdiWowlEnterParams->wdiWowlEnterInfo.magicPtrn,
                   sizeof(tSirMacAddr));
@@ -13055,19 +14945,35 @@ WDI_ProcessWowlExitReq
 )
 {
    WDI_WowlExitReqCb           wdiWowlExitCb = NULL;
+<<<<<<< HEAD
    wpt_uint8*               pSendBuffer         = NULL;
    wpt_uint16               usDataOffset        = 0;
    wpt_uint16               usSendSize          = 0;
+=======
+   WDI_WowlExitReqParamsType*  pwdiWowlExitParams = NULL;
+   wpt_uint8*               pSendBuffer         = NULL;
+   wpt_uint16               usDataOffset        = 0;
+   wpt_uint16               usSendSize          = 0;
+   tHalWowlExitParams       wowlExitparams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
      Sanity check
    -------------------------------------------------------------------------*/
    if (( NULL == pEventData ) ||
+<<<<<<< HEAD
        ( NULL == (wdiWowlExitCb   = (WDI_WowlExitReqCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+       ( NULL == (pwdiWowlExitParams = (WDI_WowlExitReqParamsType *)pEventData->pEventData)) ||
+       ( NULL == (wdiWowlExitCb   = (WDI_WowlExitReqCb)pEventData->pCBfnc)))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -13077,9 +14983,15 @@ WDI_ProcessWowlExitReq
      ! TO DO : proper conversion into the HAL Message Request Format
    -----------------------------------------------------------------------*/
    if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_WOWL_EXIT_REQ,
+<<<<<<< HEAD
                                                      0,
                                                      &pSendBuffer, &usDataOffset, &usSendSize))||
        ( usSendSize < (usDataOffset )))
+=======
+                                                     sizeof(wowlExitparams),
+                                                     &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < (usDataOffset + sizeof(wowlExitparams))))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
                "Unable to get send buffer in Wowl Exit req %x %x",
@@ -13088,6 +15000,14 @@ WDI_ProcessWowlExitReq
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+=======
+   wowlExitparams.bssIdx = pwdiWowlExitParams->wdiWowlExitInfo.bssIdx;
+
+   wpalMemoryCopy( pSendBuffer+usDataOffset,
+                   &wowlExitparams,
+                   sizeof(wowlExitparams));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*-------------------------------------------------------------------------
      Send Get STA Request to HAL
    -------------------------------------------------------------------------*/
@@ -13128,7 +15048,11 @@ WDI_ProcessConfigureAppsCpuWakeupStateReq
        ( NULL == (wdiConfigureAppsCpuWakeupStateCb   = (WDI_ConfigureAppsCpuWakeupStateCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -13204,7 +15128,11 @@ WDI_ProcessAggrAddTSpecReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13233,8 +15161,13 @@ WDI_ProcessAggrAddTSpecReq
   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, macBSSID, &pBSSSes);
   if ( NULL == pBSSSes )
   {
+<<<<<<< HEAD
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
         "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR,
+=======
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
+        "%s: Association sequence for this BSS does not yet exist. macBSSID " MAC_ADDRESS_STR, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         __func__, MAC_ADDR_ARRAY(macBSSID));
 
     wpalMutexRelease(&pWDICtx->wptMutex);
@@ -13390,7 +15323,11 @@ WDI_ProcessShutdownReq
    if ( NULL == pEventData )
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
             "%s: Invalid parameters", __FUNCTION__);
+=======
+            "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -13481,7 +15418,11 @@ WDI_ProcessStartRsp
       ( NULL == wdiStartRspCb ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13527,6 +15468,12 @@ WDI_ProcessStartRsp
           sizeof(wdiRspParams.wcnssHardwareVersion));
   wdiRspParams.wdiStatus     = WDI_HAL_2_WDI_STATUS(startRspParams->status);
 
+<<<<<<< HEAD
+=======
+  /*Save the HAL Version*/
+  pWDICtx->wlanVersion = wdiRspParams.wlanReportedVersion; 
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wpalMutexAcquire(&pWDICtx->wptMutex);
   if ( WDI_STATUS_SUCCESS == wdiRspParams.wdiStatus  )
   {
@@ -13597,7 +15544,11 @@ WDI_ProcessStartRsp
   //all DPU indices are the same for self STA
   wdiAddSTAParam.bcastDpuIndex = wdiRspParams.usSelfStaDpuId;
   wdiAddSTAParam.bcastMgmtDpuIndex = wdiRspParams.usSelfStaDpuId;
+<<<<<<< HEAD
   wdiAddSTAParam.dpuIndex = wdiRspParams.usSelfStaDpuId;;
+=======
+  wdiAddSTAParam.dpuIndex = wdiRspParams.usSelfStaDpuId;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wpalMemoryCopy(wdiAddSTAParam.staMacAddr, wdiRspParams.macSelfSta,
                  WDI_MAC_ADDR_LEN);
   wdiAddSTAParam.ucStaType = WDI_STA_ENTRY_SELF; /* 0 - self */
@@ -13649,7 +15600,11 @@ WDI_ProcessStopRsp
       ( NULL == wdiStopRspCb ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13758,6 +15713,10 @@ WDI_ProcessInitScanRsp
   WDI_Status            wdiStatus;
   WDI_InitScanRspCb     wdiInitScanRspCb;
   tHalInitScanRspMsg    halInitScanRspMsg;
+<<<<<<< HEAD
+=======
+  wpt_status            wptStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -13767,7 +15726,11 @@ WDI_ProcessInitScanRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13776,7 +15739,11 @@ WDI_ProcessInitScanRsp
   if( NULL == wdiInitScanRspCb)
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                  "%s: call back function is NULL", __FUNCTION__);
+=======
+                 "%s: call back function is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13794,7 +15761,16 @@ WDI_ProcessInitScanRsp
   if ( pWDICtx->bInBmps )
   {
      // notify DTS that we are entering Full power
+<<<<<<< HEAD
      WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+=======
+     wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+     if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) {
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering Full Power state\n", wptStatus);
+        WDI_ASSERT(0);
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*Notify UMAC*/
@@ -13834,7 +15810,11 @@ WDI_ProcessStartScanRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13843,7 +15823,11 @@ WDI_ProcessStartScanRsp
   if( NULL == wdiStartScanRspCb)
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                  "%s: call back function is NULL", __FUNCTION__);
+=======
+                 "%s: call back function is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13911,7 +15895,11 @@ WDI_ProcessEndScanRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -13973,7 +15961,11 @@ WDI_ProcessFinishScanRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14042,7 +16034,11 @@ WDI_ProcessJoinRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14161,7 +16157,11 @@ WDI_ProcessConfigBSSRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14362,7 +16362,11 @@ WDI_ProcessDelBSSRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14465,7 +16469,11 @@ WDI_ProcessPostAssocRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14634,7 +16642,11 @@ WDI_ProcessDelSTARsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14724,7 +16736,11 @@ WDI_ProcessSetBssKeyRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14781,7 +16797,11 @@ WDI_ProcessRemoveBssKeyRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14839,7 +16859,11 @@ WDI_ProcessSetStaKeyRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14896,7 +16920,11 @@ WDI_ProcessRemoveStaKeyRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -14953,7 +16981,11 @@ WDI_ProcessSetStaBcastKeyRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15013,7 +17045,11 @@ WDI_ProcessRemoveStaBcastKeyRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15078,7 +17114,11 @@ WDI_ProcessAddTSpecRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15127,7 +17167,11 @@ WDI_ProcessDelTSpecRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15175,7 +17219,11 @@ WDI_ProcessUpdateEDCAParamsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15227,7 +17275,11 @@ WDI_ProcessAddBASessionRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15290,7 +17342,11 @@ WDI_ProcessDelBARsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15318,45 +17374,77 @@ WDI_ProcessDelBARsp
 /**
  @brief Process TSM Stats Rsp function (called when a response
         is being received over the bus from HAL)
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessTsmStatsRsp
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
   WDI_TsmRspCb          wdiTsmStatsRspCb;
+<<<<<<< HEAD
   tTsmStatsRspMsg       halTsmStatsRspMsg;
+=======
+  tTsmStatsRspMsg       halTsmStatsRspMsg; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_TSMStatsRspParamsType  wdiTsmStatsRspParams;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
+<<<<<<< HEAD
     Sanity check
+=======
+    Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------*/
   if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
+=======
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   wdiTsmStatsRspCb = (WDI_TsmRspCb)pWDICtx->pfncRspCB;
 
   /*-------------------------------------------------------------------------
     Unpack HAL Response Message - the header was already extracted by the
+<<<<<<< HEAD
     main Response Handling procedure
   -------------------------------------------------------------------------*/
   wpalMemoryCopy( &halTsmStatsRspMsg.tsmStatsRspParams,
                   pEventData->pEventData,
+=======
+    main Response Handling procedure 
+  -------------------------------------------------------------------------*/
+  wpalMemoryCopy( &halTsmStatsRspMsg.tsmStatsRspParams, 
+                  pEventData->pEventData, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   sizeof(halTsmStatsRspMsg.tsmStatsRspParams));
 
   wdiTsmStatsRspParams.UplinkPktQueueDly = halTsmStatsRspMsg.tsmStatsRspParams.UplinkPktQueueDly;
@@ -15375,7 +17463,11 @@ WDI_ProcessTsmStatsRsp
   /*Notify UMAC*/
   wdiTsmStatsRspCb( &wdiTsmStatsRspParams, pWDICtx->pRspCBUserData);
 
+<<<<<<< HEAD
   return WDI_STATUS_SUCCESS;
+=======
+  return WDI_STATUS_SUCCESS; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessTsmStatsRsp*/
 
 #endif
@@ -15411,7 +17503,11 @@ WDI_ProcessFlushAcRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15462,7 +17558,11 @@ WDI_ProcessBtAmpEventRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -15515,7 +17615,11 @@ WDI_ProcessAddSTASelfRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15616,7 +17720,11 @@ WDI_ProcessDelSTASelfRsp
       ( NULL == pEventData->pEventData))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_E_FAILURE;
   }
@@ -15645,7 +17753,11 @@ WDI_ProcessDelSTASelfRsp
     if(WDI_STATUS_E_FAILURE == wdiStatus)
     {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                  "%s: Unable to extract the STA Idx ", __FUNCTION__);
+=======
+                 "%s: Unable to extract the STA Idx ", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
     }
@@ -15660,7 +17772,11 @@ WDI_ProcessDelSTASelfRsp
 
 #ifdef FEATURE_OEM_DATA_SUPPORT
 /**
+<<<<<<< HEAD
  @brief Start Oem Data Rsp function (called when a
+=======
+ @brief Start Oem Data Rsp function (called when a 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         response is being received over the bus from HAL)
 
  @param  pWDICtx:         pointer to the WLAN DAL context
@@ -15689,7 +17805,11 @@ WDI_ProcessStartOemDataRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15763,7 +17883,11 @@ WDI_ProcessChannelSwitchRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15826,7 +17950,11 @@ WDI_ProcessConfigStaRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -15973,7 +18101,11 @@ WDI_ProcessSetLinkStateRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16087,7 +18219,11 @@ WDI_ProcessGetStatsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16133,6 +18269,71 @@ WDI_ProcessGetStatsRsp
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessGetStatsRsp*/
 
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+/**
+ @brief Process Get Roam Rssi Rsp function (called when a response is
+        being received over the bus from HAL)
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessGetRoamRssiRsp
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_GetRoamRssiRspParamsType   wdiGetRoamRssiRsp;
+  WDI_GetRoamRssiRspCb           wdiGetRoamRssiRspCb;
+  tHalGetRoamRssiRspMsg          halRoamRssiRspParams;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*-------------------------------------------------------------------------
+    Sanity check
+  -------------------------------------------------------------------------*/
+  if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
+      ( NULL == pEventData->pEventData))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  wdiGetRoamRssiRspCb = (WDI_GetRoamRssiRspCb)pWDICtx->pfncRspCB;
+  if(NULL == wdiGetRoamRssiRspCb)
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                 "%s: call back function is NULL", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  /*-------------------------------------------------------------------------
+    Extract response and send it to UMAC
+  -------------------------------------------------------------------------*/
+  wpalMemoryCopy( &halRoamRssiRspParams.roamRssiRspParams,
+                  pEventData->pEventData,
+                  sizeof(halRoamRssiRspParams.roamRssiRspParams));
+
+  wdiGetRoamRssiRsp.wdiStatus  = WDI_HAL_2_WDI_STATUS(halRoamRssiRspParams.roamRssiRspParams.status);
+  wdiGetRoamRssiRsp.ucSTAIdx   = halRoamRssiRspParams.roamRssiRspParams.staId;
+  wdiGetRoamRssiRsp.rssi = halRoamRssiRspParams.roamRssiRspParams.rssi;
+
+  /*Notify UMAC*/
+  wdiGetRoamRssiRspCb( &wdiGetRoamRssiRsp, pWDICtx->pRspCBUserData);
+
+  return WDI_STATUS_SUCCESS;
+}/*WDI_ProcessGetRoamRssiRsp*/
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  @brief Process Update Cfg Rsp function (called when a response is
@@ -16163,7 +18364,11 @@ WDI_ProcessUpdateCfgRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16215,7 +18420,11 @@ WDI_ProcessAddBARsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16267,7 +18476,11 @@ WDI_ProcessTriggerBARsp
   WDI_TriggerBARspCandidateType* wdiTriggerBARspCandidate;
   wpt_uint16                     index;
   wpt_uint16                     TidIndex;
+<<<<<<< HEAD
 
+=======
+  WDI_Status                     halTriggerBARspStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16277,7 +18490,11 @@ WDI_ProcessTriggerBARsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16289,6 +18506,7 @@ WDI_ProcessTriggerBARsp
   -------------------------------------------------------------------------*/
   halTriggerBARsp = (tTriggerBARspParams *)pEventData->pEventData;
 
+<<<<<<< HEAD
   wdiTriggerBARsp = wpalMemoryAllocate(sizeof(WDI_TriggerBARspParamsType) +
                       halTriggerBARsp->baCandidateCnt *
                       sizeof(WDI_TriggerBARspCandidateType));
@@ -16306,6 +18524,27 @@ WDI_ProcessTriggerBARsp
 
   if ( WDI_STATUS_SUCCESS == wdiTriggerBARsp->wdiStatus)
   {
+=======
+  halTriggerBARspStatus = WDI_HAL_2_WDI_STATUS(halTriggerBARsp->status);
+
+  if ( WDI_STATUS_SUCCESS == halTriggerBARspStatus)
+  {
+    wdiTriggerBARsp = wpalMemoryAllocate(sizeof(WDI_TriggerBARspParamsType) +
+                      halTriggerBARsp->baCandidateCnt *
+                      sizeof(WDI_TriggerBARspCandidateType));
+
+    if(NULL == wdiTriggerBARsp)
+    {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "Failed to allocate memory in Trigger BA Response %x %x %x ",
+                   pWDICtx, pEventData, pEventData->pEventData);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+    }
+
+    wdiTriggerBARsp->wdiStatus = halTriggerBARspStatus;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wdiTriggerBARsp->usBaCandidateCnt = halTriggerBARsp->baCandidateCnt;
     wpalMemoryCopy(wdiTriggerBARsp->macBSSID,
                                  halTriggerBARsp->bssId , WDI_MAC_ADDR_LEN);
@@ -16328,6 +18567,25 @@ WDI_ProcessTriggerBARsp
       halBaCandidate++;
     }
   }
+<<<<<<< HEAD
+=======
+  else
+  {
+    wdiTriggerBARsp = wpalMemoryAllocate(sizeof(WDI_TriggerBARspParamsType));
+
+    if(NULL == wdiTriggerBARsp)
+    {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "Failed to allocate memory in Trigger BA Response %x %x %x ",
+                   pWDICtx, pEventData, pEventData->pEventData);
+       WDI_ASSERT(0);
+       return WDI_STATUS_E_FAILURE;
+    }
+
+    wdiTriggerBARsp->wdiStatus = halTriggerBARspStatus;
+
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*Notify UMAC*/
   wdiTriggerBARspCb( wdiTriggerBARsp, pWDICtx->pRspCBUserData);
@@ -16365,7 +18623,11 @@ WDI_ProcessUpdateBeaconParamsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16416,7 +18678,11 @@ WDI_ProcessSendBeaconParamsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16468,7 +18734,11 @@ WDI_ProcessUpdateProbeRspTemplateRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16521,7 +18791,11 @@ WDI_ProcessSetMaxTxPowerRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16553,7 +18827,97 @@ WDI_ProcessSetMaxTxPowerRsp
   return WDI_STATUS_SUCCESS;
 }
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+/**
+ @brief Process P2P Group Owner Notice Of Absense Rsp function (called
+        when a response is being received over the bus from HAL)
+=======
+  /**
+ @brief Process Set Tx Power Rsp function (called when a response
+        is being received over the bus from HAL)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+<<<<<<< HEAD
+WDI_ProcessP2PGONOARsp
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_Status       wdiStatus;
+  eHalStatus       halStatus;
+  WDI_SetP2PGONOAReqParamsRspCb   wdiP2PGONOAReqParamsRspCb;
+=======
+WDI_ProcessSetTxPowerRsp
+(
+  WDI_ControlBlockType*          pWDICtx,
+  WDI_EventInfoType*             pEventData
+)
+{
+  tSetTxPwrRspMsg             halTxpowerrsp;
+  WDI_SetTxPowerRspMsg        wdiSetTxPowerRspMsg;
+  WDA_SetTxPowerRspCb         wdiReqStatusCb;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*-------------------------------------------------------------------------
+    Sanity check
+  -------------------------------------------------------------------------*/
+  if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
+      ( NULL == pEventData->pEventData))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
+                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+<<<<<<< HEAD
+  wdiP2PGONOAReqParamsRspCb = (WDI_SetP2PGONOAReqParamsRspCb)pWDICtx->pfncRspCB;
+=======
+  wdiReqStatusCb = (WDA_SetTxPowerRspCb)pWDICtx->pfncRspCB;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+
+  /*-------------------------------------------------------------------------
+    Extract response and send it to UMAC
+  -------------------------------------------------------------------------*/
+<<<<<<< HEAD
+  wpalMemoryCopy( &halStatus,
+                  pEventData->pEventData,
+=======
+  wpalMemoryCopy(&halTxpowerrsp.setTxPwrRspParams,
+                 pEventData->pEventData,
+                 sizeof(halTxpowerrsp.setTxPwrRspParams));
+
+  if (eHAL_STATUS_SUCCESS != halTxpowerrsp.setTxPwrRspParams.status)
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 "Error status returned in Set Tx Power Response ");
+     WDI_DetectedDeviceError(pWDICtx, WDI_ERR_BASIC_OP_FAILURE);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  wdiSetTxPowerRspMsg.wdiStatus =
+         WDI_HAL_2_WDI_STATUS(halTxpowerrsp.setTxPwrRspParams.status);
+
+  /*Notify UMAC*/
+  wdiReqStatusCb(&wdiSetTxPowerRspMsg, pWDICtx->pRspCBUserData);
+
+  return WDI_STATUS_SUCCESS;
+}
+
 /**
  @brief Process P2P Group Owner Notice Of Absense Rsp function (called
         when a response is being received over the bus from HAL)
@@ -16583,7 +18947,7 @@ WDI_ProcessP2PGONOARsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
-                 "%s: Invalid parameters", __FUNCTION__);
+                 "%s: Invalid parameters", __func__);
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16595,6 +18959,7 @@ WDI_ProcessP2PGONOARsp
   -------------------------------------------------------------------------*/
   wpalMemoryCopy( &halStatus,
                   pEventData->pEventData,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   sizeof(halStatus));
 
   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
@@ -16604,7 +18969,10 @@ WDI_ProcessP2PGONOARsp
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessP2PGONOARsp*/
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief Process Enter IMPS Rsp function (called when a response
         is being received over the bus from HAL)
@@ -16625,6 +18993,10 @@ WDI_ProcessEnterImpsRsp
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_EnterImpsRspCb   wdiEnterImpsRspCb;
+<<<<<<< HEAD
+=======
+  wpt_status wptStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16634,7 +19006,11 @@ WDI_ProcessEnterImpsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16648,17 +19024,36 @@ WDI_ProcessEnterImpsRsp
 
   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
+<<<<<<< HEAD
   /* If IMPS req failed, riva is not power collapsed Put the DXE in FULL state.
+=======
+  /* If IMPS req failed, riva is not power collapsed Put the DXE in FULL state. 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    * Other module states are taken care by PMC.
    * TODO: How do we take care of the case where IMPS is success, but riva power collapse fails??
    */
   if (wdiStatus != WDI_STATUS_SUCCESS) {
 
+<<<<<<< HEAD
 	  WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
 		 "WDI PRocess Enter IMPS RSP failed With HAL Status Code: %d",halStatus);
 	  /* Call Back is not required as we are putting the DXE in FULL
 	   * and riva is already in full (IMPS RSP Failed)*/
 	  WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+=======
+     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDI Process Enter IMPS RSP failed With HAL Status Code: %d",
+                halStatus);
+     /* Call Back is not required as we are putting the DXE in FULL
+      * and riva is already in full (IMPS RSP Failed)*/
+     wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+     
+     if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) {
+          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering Full Power state\n", wptStatus);
+          WDI_ASSERT(0);
+     }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
   /*Notify UMAC*/
   wdiEnterImpsRspCb( wdiStatus, pWDICtx->pRspCBUserData);
@@ -16686,6 +19081,10 @@ WDI_ProcessExitImpsRsp
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_ExitImpsRspCb    wdiExitImpsRspCb;
+<<<<<<< HEAD
+=======
+  wpt_status           wptStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16695,7 +19094,11 @@ WDI_ProcessExitImpsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16708,9 +19111,24 @@ WDI_ProcessExitImpsRsp
   halStatus = *((eHalStatus*)pEventData->pEventData);
   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
+<<<<<<< HEAD
   // notify DTS that we are entering Full power
   WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
 
+=======
+  if (halStatus != eHAL_STATUS_SUCCESS)
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                "%s: Exit IMPS response is a failure with halStatus %d", __func__, halStatus);
+
+  // notify DTS that we are entering Full power
+  wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+  if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering Full Power state\n", wptStatus);
+    WDI_ASSERT(0);
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*Notify UMAC*/
   wdiExitImpsRspCb( wdiStatus, pWDICtx->pRspCBUserData);
 
@@ -16734,9 +19152,17 @@ WDI_ProcessEnterBmpsRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_EnterBmpsRspCb   wdiEnterBmpsRspCb;
+=======
+  eHalStatus           halStatus = eHAL_STATUS_FAILURE;
+  tHalEnterBmpsRspParams halEnterBmpsRsp;
+  WDI_EnterBmpsRspCb     wdiEnterBmpsRspCb;
+  WDI_EnterBmpsRspParamsType wdiEnterBmpsRspparams;
+  wpt_status             wptStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16746,11 +19172,16 @@ WDI_ProcessEnterBmpsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
 
+<<<<<<< HEAD
   wdiEnterBmpsRspCb = (WDI_EnterBmpsRspCb)pWDICtx->pfncRspCB;
 
   /*-------------------------------------------------------------------------
@@ -16775,6 +19206,54 @@ WDI_ProcessEnterBmpsRsp
 
   /*Notify UMAC*/
   wdiEnterBmpsRspCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+  /*-------------------------------------------------------------------------
+     Extract response and send it to UMAC
+   -------------------------------------------------------------------------*/
+  if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+  {
+        wpalMemoryCopy( &halEnterBmpsRsp,
+                       pEventData->pEventData,
+                       sizeof(halEnterBmpsRsp));
+
+        //Used to print debug message
+        halStatus = halEnterBmpsRsp.status;
+        wdiEnterBmpsRspparams.wdiStatus = WDI_HAL_2_WDI_STATUS(halEnterBmpsRsp.status);
+        wdiEnterBmpsRspparams.bssIdx = halEnterBmpsRsp.bssIdx;
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiEnterBmpsRspparams.wdiStatus = WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+
+  wdiEnterBmpsRspCb = (WDI_EnterBmpsRspCb)pWDICtx->pfncRspCB;
+
+  /* If BMPS req failed, riva is not power collapsed put the DXE in FULL state. 
+   * Other module states are taken care by PMC.
+   * TODO: How do we take care of the case where BMPS is success, but riva power collapse fails??
+   */
+   if (wdiEnterBmpsRspparams.wdiStatus != WDI_STATUS_SUCCESS) 
+   {  
+
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                  "WDI Process Enter BMPS RSP failed With HAL Status Code: %d",
+                  halStatus); 
+       /* Call Back is not required as we are putting the DXE in FULL
+        * and riva is already in FULL (BMPS RSP Failed)*/
+       wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+       if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+       {
+           WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering Full Power state\n", wptStatus);
+           WDI_ASSERT(0);
+       }
+       pWDICtx->bInBmps = eWLAN_PAL_FALSE;
+   }
+  
+  /*Notify UMAC*/
+  wdiEnterBmpsRspCb( &wdiEnterBmpsRspparams, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessEnterBmpsRsp*/
@@ -16796,9 +19275,17 @@ WDI_ProcessExitBmpsRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_ExitBmpsRspCb   wdiExitBmpsRspCb;
+=======
+  eHalStatus           halStatus;
+  WDI_ExitBmpsRspCb   wdiExitBmpsRspCb;
+  tHalExitBmpsRspParams halExitBmpsRsp;
+  WDI_ExitBmpsRspParamsType wdiExitBmpsRspParams;
+  wpt_status                wptStatus;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16808,7 +19295,11 @@ WDI_ProcessExitBmpsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16818,6 +19309,7 @@ WDI_ProcessExitBmpsRsp
   /*-------------------------------------------------------------------------
     Extract response and send it to UMAC
   -------------------------------------------------------------------------*/
+<<<<<<< HEAD
   halStatus = *((eHalStatus*)pEventData->pEventData);
   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
@@ -16828,6 +19320,36 @@ WDI_ProcessExitBmpsRsp
 
   /*Notify UMAC*/
   wdiExitBmpsRspCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+  
+  if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+  {
+      wpalMemoryCopy( &halExitBmpsRsp,
+                   pEventData->pEventData,
+                   sizeof(halExitBmpsRsp));
+
+      wdiExitBmpsRspParams.wdiStatus = WDI_HAL_2_WDI_STATUS(halExitBmpsRsp.status);
+      wdiExitBmpsRspParams.bssIdx = halExitBmpsRsp.bssIdx;
+  }
+  else
+  {
+      halStatus = *((eHalStatus*)pEventData->pEventData);
+      wdiExitBmpsRspParams.wdiStatus =  WDI_HAL_2_WDI_STATUS(halStatus);
+  }
+
+  // notify DTS that we are entering Full power
+  wptStatus = WDTS_SetPowerState(pWDICtx, WDTS_POWER_STATE_FULL, NULL);
+  if( eWLAN_PAL_STATUS_SUCCESS != wptStatus ) 
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                "WDTS_SetPowerState returned with status %d when trying to notify DTS that host is entering Full Power state\n", wptStatus);
+    WDI_ASSERT(0);
+  }
+  pWDICtx->bInBmps = eWLAN_PAL_FALSE;
+
+  /*Notify UMAC*/
+  wdiExitBmpsRspCb( &wdiExitBmpsRspParams, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessExitBmpsRsp*/
@@ -16849,9 +19371,17 @@ WDI_ProcessEnterUapsdRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_EnterUapsdRspCb   wdiEnterUapsdRspCb;
+=======
+  eHalStatus           halStatus;
+  tUapsdRspParams halEnterUapsdRsp;
+  WDI_EnterUapsdRspCb   wdiEnterUapsdRspCb;
+  WDI_EnterUapsdRspParamsType wdiEnterUapsdRspParams;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16861,7 +19391,11 @@ WDI_ProcessEnterUapsdRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16871,10 +19405,29 @@ WDI_ProcessEnterUapsdRsp
   /*-------------------------------------------------------------------------
     Extract response and send it to UMAC
   -------------------------------------------------------------------------*/
+<<<<<<< HEAD
   halStatus = *((eHalStatus*)pEventData->pEventData);
   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
   if(WDI_STATUS_SUCCESS == wdiStatus)
+=======
+  if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+  {
+    wpalMemoryCopy( &halEnterUapsdRsp,
+                   pEventData->pEventData,
+                   sizeof(halEnterUapsdRsp));
+
+    wdiEnterUapsdRspParams.wdiStatus = WDI_HAL_2_WDI_STATUS(halEnterUapsdRsp.status);
+    wdiEnterUapsdRspParams.bssIdx = halEnterUapsdRsp.bssIdx;
+  }
+  else
+  {
+      halStatus = *((eHalStatus*)pEventData->pEventData);
+      wdiEnterUapsdRspParams.wdiStatus  =  WDI_HAL_2_WDI_STATUS(halStatus);
+  }
+
+  if(WDI_STATUS_SUCCESS == wdiEnterUapsdRspParams.wdiStatus)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
    // Set the DPU routing flag to the FW WQ, all the TX frames would be now pushed
    // from DPU to the FW-WQ (5) in UAPSD. FW would be in data path, monitoring
@@ -16889,7 +19442,11 @@ WDI_ProcessEnterUapsdRsp
   }
 
   /*Notify UMAC*/
+<<<<<<< HEAD
   wdiEnterUapsdRspCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+  wdiEnterUapsdRspCb( &wdiEnterUapsdRspParams, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessEnterUapsdRsp*/
@@ -16911,9 +19468,16 @@ WDI_ProcessExitUapsdRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_ExitUapsdRspCb   wdiExitUapsdRspCb;
+=======
+  eHalStatus           halStatus;
+  WDI_ExitUapsdRspCb   wdiExitUapsdRspCb;
+  tHalExitUapsdRspParams halExitUapsdRsp;
+  WDI_ExitUapsdRspParamsType wdiExitUapsdRspParams; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -16923,7 +19487,11 @@ WDI_ProcessExitUapsdRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -16933,9 +19501,26 @@ WDI_ProcessExitUapsdRsp
   /*-------------------------------------------------------------------------
     Extract response and send it to UMAC
   -------------------------------------------------------------------------*/
+<<<<<<< HEAD
   halStatus = *((eHalStatus*)pEventData->pEventData);
   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
+=======
+  if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+  {
+    wpalMemoryCopy( &halExitUapsdRsp,
+                   pEventData->pEventData,
+                   sizeof(halExitUapsdRsp));
+      
+    wdiExitUapsdRspParams.wdiStatus = WDI_HAL_2_WDI_STATUS(halExitUapsdRsp.status);
+    wdiExitUapsdRspParams.bssIdx = halExitUapsdRsp.bssIdx;
+  }
+  else
+  {
+      halStatus = *((eHalStatus*)pEventData->pEventData);
+      wdiExitUapsdRspParams.wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // Restore back the DPU routing flag in the TxBD, for DPU to push the TxBDs to BTQM
    // directly instead of the FW WQ.
    pWDICtx->ucDpuRF = BMUWQ_BTQM_TX_MGMT;
@@ -16946,7 +19531,11 @@ WDI_ProcessExitUapsdRsp
 #endif
 
   /*Notify UMAC*/
+<<<<<<< HEAD
   wdiExitUapsdRspCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+  wdiExitUapsdRspCb( &wdiExitUapsdRspParams, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessExitUapsdRsp*/
@@ -16980,7 +19569,11 @@ WDI_ProcessSetUapsdAcParamsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17028,7 +19621,11 @@ WDI_ProcessUpdateUapsdParamsRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17076,7 +19673,11 @@ WDI_ProcessConfigureRxpFilterRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17124,7 +19725,11 @@ WDI_ProcessSetBeaconFilterRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17172,7 +19777,11 @@ WDI_ProcessRemBeaconFilterRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17220,7 +19829,11 @@ WDI_ProcessSetRSSIThresoldsRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17268,7 +19881,11 @@ WDI_ProcessHostOffloadRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17319,7 +19936,11 @@ WDI_ProcessKeepAliveRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17355,9 +19976,17 @@ WDI_ProcessWowlAddBcPtrnRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_WowlAddBcPtrnCb    wdiWowlAddBcPtrnCb;
+=======
+   eHalStatus           halStatus;
+   WDI_WowlAddBcPtrnCb    wdiWowlAddBcPtrnCb;
+   tHalAddWowlBcastPtrnRspParams halAddWowlBcastPtrRsp;
+   WDI_WowlAddBcPtrnRspParamsType wdiWowlAddBcPtrRsp;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -17367,7 +19996,11 @@ WDI_ProcessWowlAddBcPtrnRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17377,11 +20010,32 @@ WDI_ProcessWowlAddBcPtrnRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiWowlAddBcPtrnCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+     wpalMemoryCopy( &halAddWowlBcastPtrRsp,
+                    pEventData->pEventData,
+                    sizeof(halAddWowlBcastPtrRsp));
+
+     wdiWowlAddBcPtrRsp.wdiStatus = 
+                   WDI_HAL_2_WDI_STATUS(halAddWowlBcastPtrRsp.status);
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiWowlAddBcPtrRsp.wdiStatus = 
+                          WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+
+   /*Notify UMAC*/
+   wdiWowlAddBcPtrnCb( &wdiWowlAddBcPtrRsp, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessWowlAddBcPtrnRsp*/
@@ -17403,9 +20057,16 @@ WDI_ProcessWowlDelBcPtrnRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_WowlDelBcPtrnCb    wdiWowlDelBcPtrnCb;
+=======
+   eHalStatus           halStatus;
+   WDI_WowlDelBcPtrnCb    wdiWowlDelBcPtrnCb;
+   tHalDelWowlBcastPtrnRspParams halDelWowlBcastPtrRsp;
+   WDI_WowlDelBcPtrnRspParamsType wdiWowlDelBcstPtrRsp;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -17415,7 +20076,11 @@ WDI_ProcessWowlDelBcPtrnRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17425,11 +20090,30 @@ WDI_ProcessWowlDelBcPtrnRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiWowlDelBcPtrnCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+        wpalMemoryCopy( &halDelWowlBcastPtrRsp,
+                    pEventData->pEventData,
+                    sizeof(halDelWowlBcastPtrRsp));
+
+        wdiWowlDelBcstPtrRsp.wdiStatus = 
+                       WDI_HAL_2_WDI_STATUS(halDelWowlBcastPtrRsp.status);
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiWowlDelBcstPtrRsp.wdiStatus  =   WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+   /*Notify UMAC*/
+   wdiWowlDelBcPtrnCb( &wdiWowlDelBcstPtrRsp, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessWowlDelBcPtrnRsp*/
@@ -17451,9 +20135,16 @@ WDI_ProcessWowlEnterRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_WowlEnterReqCb   wdiWowlEnterCb;
+=======
+   eHalStatus           halStatus;
+   WDI_WowlEnterReqCb   wdiWowlEnterCb;
+   WDI_WowlEnterRspParamsType  wdiwowlEnterRsp;
+   tHalEnterWowlRspParams  halEnterWowlRspParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -17463,7 +20154,11 @@ WDI_ProcessWowlEnterRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17473,11 +20168,31 @@ WDI_ProcessWowlEnterRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiWowlEnterCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+      wpalMemoryCopy( &halEnterWowlRspParams,
+                   (wpt_uint8*)pEventData->pEventData,
+                   sizeof(halEnterWowlRspParams));
+
+       wdiwowlEnterRsp.bssIdx = halEnterWowlRspParams.bssIdx;
+       wdiwowlEnterRsp.status =
+                WDI_HAL_2_WDI_STATUS(halEnterWowlRspParams.status);
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiwowlEnterRsp.status   =   WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+   /*Notify UMAC*/
+   wdiWowlEnterCb( &wdiwowlEnterRsp, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessWowlEnterRsp*/
@@ -17499,9 +20214,17 @@ WDI_ProcessWowlExitRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_WowlExitReqCb   wdiWowlExitCb;
+=======
+   eHalStatus           halStatus;
+   WDI_WowlExitReqCb   wdiWowlExitCb;
+   tHalExitWowlRspParams halExitWowlRspParams;
+   WDI_WowlExitRspParamsType wdiWowlExitRsp;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
@@ -17511,7 +20234,11 @@ WDI_ProcessWowlExitRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17521,11 +20248,31 @@ WDI_ProcessWowlExitRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiWowlExitCb( wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+    {
+         wpalMemoryCopy( &halExitWowlRspParams,
+                      pEventData->pEventData,
+                      sizeof(halExitWowlRspParams));
+
+        wdiWowlExitRsp.status = WDI_HAL_2_WDI_STATUS(halExitWowlRspParams.status);
+        wdiWowlExitRsp.bssIdx = halExitWowlRspParams.bssIdx;
+
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiWowlExitRsp.status  =   WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+   /*Notify UMAC*/
+   wdiWowlExitCb( &wdiWowlExitRsp, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessWowlExitRsp*/
@@ -17560,7 +20307,11 @@ WDI_ProcessConfigureAppsCpuWakeupStateRsp
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -17609,7 +20360,11 @@ WDI_ProcessNvDownloadRsp
     ( NULL == pEventData->pEventData))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_E_FAILURE;
   }
@@ -17673,7 +20428,11 @@ WDI_ProcessAggrAddTSpecRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17726,7 +20485,11 @@ WDI_ProcessHostResumeRsp
       ( NULL == pEventData->pEventData))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_E_FAILURE;
   }
@@ -17779,7 +20542,11 @@ WDI_ProcessSetTxPerTrackingRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17830,7 +20597,11 @@ WDI_ProcessLowRSSIInd
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17843,7 +20614,11 @@ WDI_ProcessLowRSSIInd
                   sizeof(tHalRSSINotification));
 
   /*Fill in the indication parameters*/
+<<<<<<< HEAD
   wdiInd.wdiIndicationType = WDI_RSSI_NOTIFICATION_IND;
+=======
+  wdiInd.wdiIndicationType = WDI_RSSI_NOTIFICATION_IND; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   wdiInd.wdiIndicationData.wdiLowRSSIInfo.bRssiThres1PosCross =
      halRSSINotificationIndMsg.rssiNotificationParams.bRssiThres1PosCross;
   wdiInd.wdiIndicationData.wdiLowRSSIInfo.bRssiThres1NegCross =
@@ -17856,9 +20631,20 @@ WDI_ProcessLowRSSIInd
      halRSSINotificationIndMsg.rssiNotificationParams.bRssiThres3PosCross;
   wdiInd.wdiIndicationData.wdiLowRSSIInfo.bRssiThres3NegCross =
      halRSSINotificationIndMsg.rssiNotificationParams.bRssiThres3NegCross;
+<<<<<<< HEAD
 
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  wdiInd.wdiIndicationData.wdiLowRSSIInfo.avgRssi =
+     halRSSINotificationIndMsg.rssiNotificationParams.avgRssi;
+
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC of indication*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessLowRSSIInd*/
@@ -17885,6 +20671,10 @@ WDI_ProcessMissedBeaconInd
   WDI_Status           wdiStatus;
   eHalStatus           halStatus;
   WDI_LowLevelIndType  wdiInd;
+<<<<<<< HEAD
+=======
+  tpHalMissedBeaconIndParams halMissedBeaconIndParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   /*-------------------------------------------------------------------------
@@ -17894,11 +20684,19 @@ WDI_ProcessMissedBeaconInd
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
 
+=======
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+  halMissedBeaconIndParams = (tpHalMissedBeaconIndParams)pEventData->pEventData;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*-------------------------------------------------------------------------
     Extract indication and send it to UMAC
   -------------------------------------------------------------------------*/
@@ -17908,9 +20706,19 @@ WDI_ProcessMissedBeaconInd
 
   /*Fill in the indication parameters*/
   wdiInd.wdiIndicationType = WDI_MISSED_BEACON_IND;
+<<<<<<< HEAD
 
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  wdiInd.wdiIndicationData.wdiMissedBeaconInd.bssIdx =
+                                       halMissedBeaconIndParams->bssIdx;
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessMissedBeaconInd*/
@@ -17946,7 +20754,11 @@ WDI_ProcessUnkAddrFrameInd
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -17963,8 +20775,16 @@ WDI_ProcessUnkAddrFrameInd
   /* ! TO DO - fill in from HAL struct:
     wdiInd.wdiIndicationData.wdiUnkAddr2FrmInfo*/
 
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessUnkAddrFrameInd*/
@@ -18000,7 +20820,11 @@ WDI_ProcessMicFailureInd
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18030,8 +20854,17 @@ WDI_ProcessMicFailureInd
                  pHalMicFailureInd->info.TSC,WDI_CIPHER_SEQ_CTR_SIZE);
   wpalMemoryCopy(wdiInd.wdiIndicationData.wdiMICFailureInfo.macRxAddr,
                  pHalMicFailureInd->info.rxMacAddr, WDI_MAC_ADDR_LEN);
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessMicFailureInd*/
@@ -18067,7 +20900,11 @@ WDI_ProcessFatalErrorInd
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18087,8 +20924,16 @@ WDI_ProcessFatalErrorInd
   wdiInd.wdiIndicationType             = WDI_FATAL_ERROR_IND;
   wdiInd.wdiIndicationData.usErrorCode = WDI_ERR_DEV_INTERNAL_FAILURE;
 
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessFatalErrorInd*/
@@ -18122,7 +20967,11 @@ WDI_ProcessDelSTAInd
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18151,8 +21000,16 @@ WDI_ProcessDelSTAInd
   wdiInd.wdiIndicationData.wdiDeleteSTAIndType.wptReasonCode =
     halDelSTACtx.reasonCode;
 
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessDelSTAInd*/
@@ -18187,7 +21044,11 @@ WDI_ProcessCoexInd
       ( NULL == pEventData->pEventData ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT( 0 );
      return WDI_STATUS_E_FAILURE;
   }
@@ -18216,8 +21077,16 @@ WDI_ProcessCoexInd
               wdiInd.wdiIndicationData.wdiCoexInfo.coexIndData[2],
               wdiInd.wdiIndicationData.wdiCoexInfo.coexIndData[3] );
 
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessCoexInd*/
@@ -18251,7 +21120,11 @@ WDI_ProcessTxCompleteInd
       ( NULL == pEventData->pEventData ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT( 0 );
      return WDI_STATUS_E_FAILURE;
   }
@@ -18268,13 +21141,80 @@ WDI_ProcessTxCompleteInd
   wdiInd.wdiIndicationData.tx_complete_status
                                = halTxComplIndMsg.txComplParams.status;
 
-  /*Notify UMAC*/
-  pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+<<<<<<< HEAD
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessTxCompleteInd*/
 
+/**
+*@brief Process Noa Start Indication function (called when
+        an indication of this kind is being received over the
+        bus from HAL)
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessP2pNoaStartInd
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_LowLevelIndType  wdiInd;
+  tNoaStartIndMsg       halNoaStartIndMsg;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  /*-------------------------------------------------------------------------
+  Sanity check
+ -------------------------------------------------------------------------*/
+  if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
+      ( NULL == pEventData->pEventData ))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT( 0 );
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  /*-------------------------------------------------------------------------
+  Extract indication and send it to UMAC
+ -------------------------------------------------------------------------*/
+  wpalMemoryCopy( &halNoaStartIndMsg.noaStartIndParams,
+                  pEventData->pEventData,
+                  sizeof(halNoaStartIndMsg.noaStartIndParams) );
+
+  /*Fill in the indication parameters*/
+  wdiInd.wdiIndicationType = WDI_P2P_NOA_START_IND;
+
+  wdiInd.wdiIndicationData.wdiP2pNoaStartInfo.status
+                          = halNoaStartIndMsg.noaStartIndParams.status;
+
+  wdiInd.wdiIndicationData.wdiP2pNoaStartInfo.bssIdx
+                          = halNoaStartIndMsg.noaStartIndParams.bssIdx;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+  /*Notify UMAC*/
+  pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+
+  return WDI_STATUS_SUCCESS;
+<<<<<<< HEAD
+}/*WDI_ProcessTxCompleteInd*/
+
 #ifdef WLAN_FEATURE_P2P
+=======
+}/*WDI_ProcessNoaAttrInd*/
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
 *@brief Process Noa Attr Indication function (called when
         an indication of this kind is being received over the
@@ -18304,7 +21244,11 @@ WDI_ProcessP2pNoaAttrInd
       ( NULL == pEventData->pEventData ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT( 0 );
      return WDI_STATUS_E_FAILURE;
   }
@@ -18347,12 +21291,23 @@ WDI_ProcessP2pNoaAttrInd
   wdiInd.wdiIndicationData.wdiP2pNoaAttrInfo.uslNoa2StartTime
                           = halNoaAttrIndMsg.noaAttrIndParams.uNoa2StartTime;
 
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessNoaAttrInd*/
 #endif
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+
+  return WDI_STATUS_SUCCESS;
+}/*WDI_ProcessNoaAttrInd*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  @brief Process Tx PER Hit Indication function (called when
@@ -18381,13 +21336,24 @@ WDI_ProcessTxPerHitInd
   /*Fill in the indication parameters*/
   wdiInd.wdiIndicationType = WDI_TX_PER_HIT_IND;
 
+<<<<<<< HEAD
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+=======
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return WDI_STATUS_SUCCESS;
 }/*WDI_ProcessTxPerHitInd*/
 
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_ProcessFTMCommandReq
         Process FTM Command, simply route to HAL
@@ -18417,7 +21383,11 @@ WDI_ProcessFTMCommandReq
 
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18473,7 +21443,11 @@ WDI_ProcessFTMCommandRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18491,7 +21465,10 @@ WDI_ProcessFTMCommandRsp
 
   return WDI_STATUS_SUCCESS;
 }
+<<<<<<< HEAD
 #endif /* ANI_MANF_DIAG */
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_ProcessHalDumpCmdReq
         Process hal dump Command, simply route to HAL
@@ -18524,7 +21501,11 @@ WDI_ProcessHALDumpCmdReq
       ( NULL == pEventData->pCBfnc ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18593,7 +21574,11 @@ WDI_ProcessHALDumpCmdRsp
 )
 {
   WDI_HALDumpCmdRspCb     wdiHALDumpCmdRspCb;
+<<<<<<< HEAD
   tpHalDumpCmdRspParams   halDumpCmdRspParams;
+=======
+  tHalDumpCmdRspParams   halDumpCmdRspParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_HALDumpCmdRspParamsType wdiHALDumpCmdRsp;
 
   /*-------------------------------------------------------------------------
@@ -18603,7 +21588,11 @@ WDI_ProcessHALDumpCmdRsp
       ( NULL == pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                 "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
   }
@@ -18614,6 +21603,7 @@ WDI_ProcessHALDumpCmdRsp
   wdiHALDumpCmdRsp.usBufferLen = 0;
   wdiHALDumpCmdRsp.pBuffer = NULL;
 
+<<<<<<< HEAD
   halDumpCmdRspParams = (tHalDumpCmdRspParams *)pEventData->pEventData;
 
   wdiHALDumpCmdRsp.wdiStatus   =
@@ -18628,6 +21618,25 @@ WDI_ProcessHALDumpCmdRsp
       wpalMemoryCopy( &halDumpCmdRspParams->rspBuffer,
                   wdiHALDumpCmdRsp.pBuffer,
                   sizeof(wdiHALDumpCmdRsp.usBufferLen));
+=======
+  wpalMemoryCopy( &halDumpCmdRspParams, 
+                 pEventData->pEventData, 
+                 sizeof(tHalDumpCmdRspParams));
+
+  wdiHALDumpCmdRsp.wdiStatus   =
+              WDI_HAL_2_WDI_STATUS(halDumpCmdRspParams.status);
+
+  if (( wdiHALDumpCmdRsp.wdiStatus  ==  WDI_STATUS_SUCCESS) &&
+      (halDumpCmdRspParams.rspLength != 0))
+  {
+      /* Copy the response data */
+      wdiHALDumpCmdRsp.usBufferLen = halDumpCmdRspParams.rspLength;
+      wdiHALDumpCmdRsp.pBuffer = wpalMemoryAllocate(halDumpCmdRspParams.rspLength);
+
+      wpalMemoryCopy( wdiHALDumpCmdRsp.pBuffer,
+                  &halDumpCmdRspParams.rspBuffer, 
+                  halDumpCmdRspParams.rspLength);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*Notify UMAC*/
@@ -18676,7 +21685,11 @@ WDI_NotifyMsgCTSCB
   if (NULL == pWDICtx )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return;
   }
@@ -18685,7 +21698,11 @@ WDI_NotifyMsgCTSCB
   {
     /* callback presumably occurred after close */
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid control block", __FUNCTION__);
+=======
+                "%s: Invalid control block", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return;
   }
 
@@ -18756,7 +21773,11 @@ WDI_RXMsgCTSCB
       ( uLen < sizeof(tHalMsgHeader)))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return;
   }
@@ -18765,7 +21786,11 @@ WDI_RXMsgCTSCB
   {
     /* callback presumably occurred after close */
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid control block", __FUNCTION__);
+=======
+                "%s: Invalid control block", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return;
   }
 
@@ -18950,10 +21975,17 @@ WDI_GetMessageBuffer
   /* Fill msgVersion */
 #ifdef WLAN_FEATURE_11AC
   if (WDI_getFwWlanFeatCaps(DOT11AC))
+<<<<<<< HEAD
 	  halMsgHeader.msgVersion = WLAN_HAL_MSG_VERSION1;
   else
 #endif
 	  halMsgHeader.msgVersion = WLAN_HAL_MSG_VERSION0;
+=======
+     halMsgHeader.msgVersion = WLAN_HAL_MSG_VERSION1; 
+  else
+#endif
+     halMsgHeader.msgVersion = WLAN_HAL_MSG_VERSION0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   halMsgHeader.msgLen  = sizeof(halMsgHeader) + usBufferLen;
   *pusDataOffset       = sizeof(halMsgHeader);
@@ -18994,6 +22026,10 @@ WDI_SendMsg
 )
 {
   WDI_Status wdiStatus = WDI_STATUS_SUCCESS;
+<<<<<<< HEAD
+=======
+  wpt_uint32 ret;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
   /*------------------------------------------------------------------------
@@ -19008,24 +22044,57 @@ WDI_SendMsg
      - notify transport failure
      Note: CTS is reponsible for freeing the message buffer.
    -----------------------------------------------------------------------*/
+<<<<<<< HEAD
    if ( 0 != WCTS_SendMessage( pWDICtx->wctsHandle, (void*)pSendBuffer, usSendSize ))
+=======
+   ret = WCTS_SendMessage(pWDICtx->wctsHandle, (void*)pSendBuffer, usSendSize);
+   if ((eWLAN_PAL_STATUS_SUCCESS != ret) &&
+       (eWLAN_PAL_STATUS_E_RESOURCES != ret))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                 "Failed to send message over the bus - catastrophic failure");
 
      wdiStatus = WDI_STATUS_E_FAILURE;
    }
+<<<<<<< HEAD
+=======
+   else
+   {
+     /* even when message was placed in CTS deferred Q, we will treat it
+        success but log this info
+      */
+     if (eWLAN_PAL_STATUS_E_RESOURCES == ret)
+     {
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+                  "WDI_SendMsg: message placed in CTS deferred Q, expected "
+                  "response %s (%d)",
+                  WDI_getRespMsgString(pWDICtx->wdiExpectedResponse),
+                  pWDICtx->wdiExpectedResponse);
+       WDI_ASSERT(0);
+     }
+   }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*Check if originator provided a request status callback*/
    if ( NULL != pWDICtx->wdiReqStatusCB )
    {
      /*Inform originator whether request went through or not*/
+<<<<<<< HEAD
      WDI_ReqStatusCb callback = pWDICtx->wdiReqStatusCB;
      void *callbackContext = pWDICtx->pReqStatusUserData;
      pWDICtx->wdiReqStatusCB = NULL;
      pWDICtx->pReqStatusUserData = NULL;
      callback(wdiStatus, callbackContext);
 
+=======
+     WDI_ReqStatusCb callback = pWDICtx->wdiReqStatusCB; 
+     void *callbackContext = pWDICtx->pReqStatusUserData; 
+     pWDICtx->wdiReqStatusCB = NULL;
+     pWDICtx->pReqStatusUserData = NULL;
+     callback(wdiStatus, callbackContext);
+     
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      /*For WDI requests which have registered a request callback,
      inform the WDA caller of the same via setting the return value
      (wdiStatus) to WDI_STATUS_PENDING. This makes sure that WDA doesnt
@@ -19039,10 +22108,20 @@ WDI_SendMsg
   {
    /*Start timer for the expected response */
    wpalTimerStart(&pWDICtx->wptResponseTimer, WDI_RESPONSE_TIMEOUT);
+<<<<<<< HEAD
   }
   else
   {
      /*Inform upper stack layers that a transport fatal error occured*/
+=======
+
+   /*cache current timestamp for debugging */
+   pWDICtx->uTimeStampRspTmrStart = wpalGetSystemTime();
+  }
+  else
+  {
+     /*Inform upper stack layers that a transport fatal error occurred*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      WDI_DetectedDeviceError(pWDICtx, WDI_ERR_TRANSPORT_FAILURE);
   }
 
@@ -19088,14 +22167,27 @@ WDI_SendIndication
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
                 "Send indication status : %d", uStatus);
 
+<<<<<<< HEAD
       pWDICtx->wdiReqStatusCB( (uStatus != 0 ) ? WDI_STATUS_E_FAILURE:
                                                  WDI_STATUS_SUCCESS,
+=======
+      /* even if CTS placed indication into its deferred Q, we treat it
+       * as success and let CTS drain its queue as per smd interrupt to CTS
+       */
+      pWDICtx->wdiReqStatusCB( ((uStatus != eWLAN_PAL_STATUS_SUCCESS) && (uStatus != eWLAN_PAL_STATUS_E_RESOURCES)) ? WDI_STATUS_E_FAILURE: WDI_STATUS_SUCCESS,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                pWDICtx->pReqStatusUserData);
    }
 
    /*If sending of the message failed - it is considered catastrophic and
      indicates an error with the device*/
+<<<<<<< HEAD
    if ( 0 != uStatus)
+=======
+   if (( eWLAN_PAL_STATUS_SUCCESS != uStatus) &&
+       ( eWLAN_PAL_STATUS_E_RESOURCES != uStatus))
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                 "Failed to send indication over the bus - catastrophic failure");
@@ -19185,14 +22277,22 @@ WDI_ResponseTimerCB
   WDI_ControlBlockType*  pWDICtx = (WDI_ControlBlockType*)pUserData;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+<<<<<<< HEAD
   if (NULL == pWDICtx )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+  if (NULL == pWDICtx)
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return;
   }
 
+<<<<<<< HEAD
   if ( WDI_MAX_RESP != pWDICtx->wdiExpectedResponse )
   {
 
@@ -19214,6 +22314,67 @@ WDI_ResponseTimerCB
   }
 
   return;
+=======
+  /*cache current timestamp for debugging */
+  pWDICtx->uTimeStampRspTmrExp = wpalGetSystemTime();
+
+  /* If response timer is running at this time that means this timer
+   * event is not for the last request but rather last-to-last request and
+   * this timer event has come after we recevied respone for last-to-last
+   * message
+   */
+  if (VOS_TIMER_STATE_RUNNING == wpalTimerGetCurStatus(&pWDICtx->wptResponseTimer))
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+               "WDI_ResponseTimerCB: timer in running state on timer event, "
+               "ignore tmr event, timeStampTmrStart: %ld, timeStampTmrExp: %ld",
+               pWDICtx->uTimeStampRspTmrStart, pWDICtx->uTimeStampRspTmrExp);
+    return;
+  }
+
+  if (WDI_MAX_RESP != pWDICtx->wdiExpectedResponse)
+  {
+
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+            "Timeout occurred while waiting for %s (%d) message from device "
+            " - catastrophic failure, timeStampTmrStart: %ld, timeStampTmrExp: %ld",
+            WDI_getRespMsgString(pWDICtx->wdiExpectedResponse),
+            pWDICtx->wdiExpectedResponse, pWDICtx->uTimeStampRspTmrStart,
+            pWDICtx->uTimeStampRspTmrExp);
+
+    /* WDI timeout means Riva is not responding or SMD communication to Riva
+     * is not happening. The only possible way to recover from this error
+     * is to initiate SSR from APPS.
+     * There is also an option to re-enable wifi, which will eventually
+     * trigger SSR
+     */
+    if (gWDICb.bEnableSSR == false)
+    {
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+            "SSR is not enabled on WDI timeout");
+       WDI_DetectedDeviceError(pWDICtx, WDI_ERR_BASIC_OP_FAILURE);
+       return;
+    }
+#ifndef WDI_RE_ENABLE_WIFI_ON_WDI_TIMEOUT
+    wpalWcnssResetIntr();
+    /* if this timer fires, it means Riva did not receive the FIQ */
+    wpalTimerStart(&pWDICtx->ssrTimer, WDI_SSR_TIMEOUT);
+#else
+    WDI_DetectedDeviceError(pWDICtx, WDI_ERR_BASIC_OP_FAILURE);
+    wpalWlanReload();
+#endif
+  }
+  else
+  {
+     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 "Timeout occurred but not waiting for any response %d "
+                 "timeStampTmrStart: %ld, timeStampTmrExp: %ld",
+                 pWDICtx->wdiExpectedResponse, pWDICtx->uTimeStampRspTmrStart,
+                 pWDICtx->uTimeStampRspTmrExp);
+  }
+
+  return; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 }/*WDI_ResponseTimerCB*/
 
@@ -19374,27 +22535,45 @@ WDI_PALCtrlMsgCB
   switch ( pEventData->wdiRequest )
   {
 
+<<<<<<< HEAD
   case WDI_STOP_REQ:
+=======
+  case WDI_STOP_REQ:      
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       wdiStatus = WDI_PostMainEvent(&gWDICb, WDI_STOP_EVENT, pEventData);
       break;
 
   case WDI_NV_DOWNLOAD_REQ:
       // When WDI State is WDI_STARTED_ST, send WDI request message with event type WDI_REQUEST_EVENT.
       // In this case, because this request is called from response process, we could call WDI_ProcessRequest() directly.
+<<<<<<< HEAD
       if (pWDICtx->uGlobalState == WDI_STARTED_ST)
       {
         WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
                  "%s: WDI_NV_DOWNLOAD_REQ called in WDI_STARTED_ST - send with WDI_REQUEST_EVENT", __FUNCTION__);
+=======
+      if (pWDICtx->uGlobalState == WDI_STARTED_ST)  
+      {
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+                 "%s: WDI_NV_DOWNLOAD_REQ called in WDI_STARTED_ST - send with WDI_REQUEST_EVENT", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         wdiStatus = WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, pEventData);
       }
       else
       {
         wdiStatus = WDI_PostMainEvent(&gWDICb, WDI_START_EVENT, pEventData);
       }
+<<<<<<< HEAD
 
       break;
 
   default:
+=======
+      
+      break;
+
+  default: 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wdiStatus = WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, pEventData);
     break;
   }/*switch ( pEventData->wdiRequest )*/
@@ -19553,7 +22732,11 @@ WDI_QueueNewAssocRequest
   if ( NULL == pEventDataQueue )
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "%s: Cannot allocate memory for queue node", __FUNCTION__);
+=======
+               "%s: Cannot allocate memory for queue node", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_MEM_FAILURE;
   }
@@ -19562,7 +22745,11 @@ WDI_QueueNewAssocRequest
   if ( NULL == pSessionIdElement )
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "%s: Cannot allocate memory for session ID", __FUNCTION__);
+=======
+               "%s: Cannot allocate memory for session ID", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     wpalMemoryFree(pEventDataQueue);
     return WDI_STATUS_MEM_FAILURE;
@@ -19572,7 +22759,11 @@ WDI_QueueNewAssocRequest
   if ( NULL == pEventInfo )
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "%s: Cannot allocate memory for event data info", __FUNCTION__);
+=======
+               "%s: Cannot allocate memory for event data info", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     wpalMemoryFree(pSessionIdElement);
     wpalMemoryFree(pEventDataQueue);
@@ -19644,7 +22835,11 @@ WDI_QueueAssocRequest
   if (( NULL == pSession ) || ( NULL == pWDICtx ))
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return WDI_STATUS_E_FAILURE;
   }
@@ -19656,7 +22851,11 @@ WDI_QueueAssocRequest
   if ( NULL ==  pEventDataQueue )
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "%s: Cannot allocate memory for queueing", __FUNCTION__);
+=======
+               "%s: Cannot allocate memory for queueing", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     return WDI_STATUS_MEM_FAILURE;
   }
@@ -19666,7 +22865,11 @@ WDI_QueueAssocRequest
   {
     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "%s: Cannot allocate memory for queueing event data info",
+<<<<<<< HEAD
                __FUNCTION__);
+=======
+               __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     WDI_ASSERT(0);
     wpalMemoryFree(pEventDataQueue);
     return WDI_STATUS_MEM_FAILURE;
@@ -19724,7 +22927,11 @@ WDI_DequeueAssocRequest
   if ( NULL == pWDICtx )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return WDI_STATUS_E_FAILURE;
   }
@@ -19898,7 +23105,11 @@ WDI_FindAssocSession
   if ( NULL == ppSession )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return WDI_MAX_BSS_SESSIONS;
   }
 
@@ -19909,8 +23120,15 @@ WDI_FindAssocSession
     ------------------------------------------------------------------------*/
   for ( i = 0; i < WDI_MAX_BSS_SESSIONS; i++ )
   {
+<<<<<<< HEAD
      if ( eWLAN_PAL_TRUE ==
           wpalMemoryCompare(pWDICtx->aBSSSessions[i].macBSSID, macBSSID, WDI_MAC_ADDR_LEN) )
+=======
+     if ( (pWDICtx->aBSSSessions[i].bInUse == eWLAN_PAL_TRUE) && 
+          (eWLAN_PAL_TRUE == 
+                wpalMemoryCompare(pWDICtx->aBSSSessions[i].macBSSID, macBSSID,
+                WDI_MAC_ADDR_LEN)) )
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      {
        /*Found the session*/
        *ppSession = &pWDICtx->aBSSSessions[i];
@@ -19949,7 +23167,11 @@ WDI_FindAssocSessionByBSSIdx
   if ( NULL == ppSession )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return WDI_MAX_BSS_SESSIONS;
   }
 
@@ -19998,7 +23220,11 @@ WDI_FindAssocSessionByIdx
   if ( NULL == ppSession || usIdx >= WDI_MAX_BSS_SESSIONS )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return WDI_MAX_BSS_SESSIONS;
   }
 
@@ -20035,7 +23261,11 @@ WDI_FindEmptySession
   if ( NULL == ppSession )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return WDI_MAX_BSS_SESSIONS;
   }
 
@@ -20115,7 +23345,11 @@ WDI_DeleteSession
   if ( NULL == ppSession )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return ;
   }
 
@@ -20160,7 +23394,11 @@ WDI_AddBcastSTAtoSTATable
   if ( NULL == staParams )
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                 "%s: Invalid parameters", __FUNCTION__);
+=======
+                "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return;
   }
@@ -20441,10 +23679,17 @@ WDI_2_HAL_REQ_TYPE
   case WDI_ADD_BA_REQ:
     return WLAN_HAL_ADD_BA_REQ;
   case WDI_DEL_BA_REQ:
+<<<<<<< HEAD
     return WLAN_HAL_DEL_BA_REQ;
 #ifdef FEATURE_WLAN_CCX
   case WDI_TSM_STATS_REQ:
     return WLAN_HAL_TSM_STATS_REQ;
+=======
+    return WLAN_HAL_DEL_BA_REQ; 
+#ifdef FEATURE_WLAN_CCX
+  case WDI_TSM_STATS_REQ:
+    return WLAN_HAL_TSM_STATS_REQ; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
   case WDI_CH_SWITCH_REQ:
     return WLAN_HAL_CH_SWITCH_REQ;
@@ -20468,10 +23713,17 @@ WDI_2_HAL_REQ_TYPE
     return WLAN_HAL_UPDATE_PROBE_RSP_TEMPLATE_REQ;
    case WDI_SET_MAX_TX_POWER_REQ:
     return WLAN_HAL_SET_MAX_TX_POWER_REQ;
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   case WDI_P2P_GO_NOTICE_OF_ABSENCE_REQ:
     return WLAN_HAL_SET_P2P_GONOA_REQ;
 #endif
+=======
+   case WDI_SET_TX_POWER_REQ:
+    return WLAN_HAL_SET_TX_POWER_REQ;
+  case WDI_P2P_GO_NOTICE_OF_ABSENCE_REQ:
+    return WLAN_HAL_SET_P2P_GONOA_REQ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WDI_ENTER_IMPS_REQ:
     return WLAN_HAL_ENTER_IMPS_REQ;
   case WDI_EXIT_IMPS_REQ:
@@ -20518,10 +23770,15 @@ WDI_2_HAL_REQ_TYPE
   case WDI_AGGR_ADD_TS_REQ:
      return WLAN_HAL_AGGR_ADD_TS_REQ;
 #endif /* WLAN_FEATURE_VOWIFI_11R */
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
   case WDI_FTM_CMD_REQ:
     return WLAN_HAL_PROCESS_PTT_REQ;
 #endif /* ANI_MANF_DIAG */
+=======
+  case WDI_FTM_CMD_REQ:
+    return WLAN_HAL_PROCESS_PTT_REQ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WDI_ADD_STA_SELF_REQ:
     return WLAN_HAL_ADD_STA_SELF_REQ;
   case WDI_DEL_STA_SELF_REQ:
@@ -20534,9 +23791,20 @@ WDI_2_HAL_REQ_TYPE
     return WLAN_HAL_HOST_RESUME_REQ;
   case WDI_HOST_SUSPEND_IND:
     return WLAN_HAL_HOST_SUSPEND_IND;
+<<<<<<< HEAD
   case WDI_KEEP_ALIVE_REQ:
     return WLAN_HAL_KEEP_ALIVE_REQ;
 
+=======
+  case WDI_TRAFFIC_STATS_IND:
+    return WLAN_HAL_CLASS_B_STATS_IND;
+  case WDI_KEEP_ALIVE_REQ:
+    return WLAN_HAL_KEEP_ALIVE_REQ;
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+  case WDI_ROAM_SCAN_OFFLOAD_REQ:
+    return WLAN_ROAM_SCAN_OFFLOAD_REQ;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_SCAN_PNO
   case WDI_SET_PREF_NETWORK_REQ:
     return WLAN_HAL_SET_PREF_NETWORK_REQ;
@@ -20567,6 +23835,7 @@ WDI_2_HAL_REQ_TYPE
 #endif /* WLAN_FEATURE_GTK_OFFLOAD */
 
   case WDI_INIT_SCAN_CON_REQ:
+<<<<<<< HEAD
     return WLAN_HAL_INIT_SCAN_CON_REQ;
   case WDI_SET_POWER_PARAMS_REQ:
     return WLAN_HAL_SET_POWER_PARAMS_REQ;
@@ -20574,6 +23843,21 @@ WDI_2_HAL_REQ_TYPE
     return WLAN_HAL_SET_THERMAL_MITIGATION_REQ;
   case WDI_FEATURE_CAPS_EXCHANGE_REQ:
     return WLAN_HAL_FEATURE_CAPS_EXCHANGE_REQ;
+=======
+    return WLAN_HAL_INIT_SCAN_CON_REQ; 
+  case WDI_SET_POWER_PARAMS_REQ:
+    return WLAN_HAL_SET_POWER_PARAMS_REQ; 
+  case WDI_SET_TM_LEVEL_REQ:
+    return WLAN_HAL_SET_THERMAL_MITIGATION_REQ; 
+  case WDI_FEATURE_CAPS_EXCHANGE_REQ:
+    return WLAN_HAL_FEATURE_CAPS_EXCHANGE_REQ;
+#ifdef WLAN_FEATURE_11AC
+  case WDI_UPDATE_VHT_OP_MODE_REQ:
+    return WLAN_HAL_UPDATE_VHT_OP_MODE_REQ;
+#endif
+  case WDI_GET_ROAM_RSSI_REQ:
+    return WLAN_HAL_GET_ROAM_RSSI_REQ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   default:
     return WLAN_HAL_MSG_MAX;
   }
@@ -20676,18 +23960,32 @@ HAL_2_WDI_RSP_TYPE
     return WDI_HAL_COEX_IND;
   case WLAN_HAL_OTA_TX_COMPL_IND:
     return WDI_HAL_TX_COMPLETE_IND;
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   case WLAN_HAL_P2P_NOA_ATTR_IND:
     return WDI_HAL_P2P_NOA_ATTR_IND;
 #endif
+=======
+  case WLAN_HAL_P2P_NOA_ATTR_IND:
+    return WDI_HAL_P2P_NOA_ATTR_IND;
+  case WLAN_HAL_P2P_NOA_START_IND:
+    return WDI_HAL_P2P_NOA_START_IND;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WLAN_HAL_TX_PER_HIT_IND:
     return WDI_HAL_TX_PER_HIT_IND;
   case WLAN_HAL_SET_MAX_TX_POWER_RSP:
     return WDI_SET_MAX_TX_POWER_RESP;
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   case WLAN_HAL_SET_P2P_GONOA_RSP:
     return WDI_P2P_GO_NOTICE_OF_ABSENCE_RESP;
 #endif
+=======
+  case WLAN_HAL_SET_TX_POWER_RSP:
+    return WDI_SET_TX_POWER_RESP;
+  case WLAN_HAL_SET_P2P_GONOA_RSP:
+    return WDI_P2P_GO_NOTICE_OF_ABSENCE_RESP;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WLAN_HAL_ENTER_IMPS_RSP:
     return WDI_ENTER_IMPS_RESP;
   case WLAN_HAL_EXIT_IMPS_RSP:
@@ -20730,10 +24028,15 @@ HAL_2_WDI_RSP_TYPE
     return WDI_FLUSH_AC_RESP;
   case WLAN_HAL_SIGNAL_BTAMP_EVENT_RSP:
     return WDI_BTAMP_EVENT_RESP;
+<<<<<<< HEAD
 #ifdef ANI_MANF_DIAG
   case WLAN_HAL_PROCESS_PTT_RSP:
     return  WDI_FTM_CMD_RESP;
 #endif /* ANI_MANF_DIAG */
+=======
+  case WLAN_HAL_PROCESS_PTT_RSP:
+    return  WDI_FTM_CMD_RESP;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WLAN_HAL_ADD_STA_SELF_RSP:
     return WDI_ADD_STA_SELF_RESP;
 case WLAN_HAL_DEL_STA_SELF_RSP:
@@ -20756,6 +24059,13 @@ case WLAN_HAL_DEL_STA_SELF_RSP:
   case WLAN_HAL_PREF_NETW_FOUND_IND:
     return WDI_HAL_PREF_NETWORK_FOUND_IND;
 #endif // FEATURE_WLAN_SCAN_PNO
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+  case WLAN_ROAM_SCAN_OFFLOAD_RSP:
+    return WDI_ROAM_SCAN_OFFLOAD_RESP;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WLAN_HAL_SET_TX_PER_TRACKING_RSP:
     return WDI_SET_TX_PER_TRACKING_RESP;
 #ifdef WLAN_FEATURE_PACKET_FILTERING
@@ -20793,6 +24103,17 @@ case WLAN_HAL_DEL_STA_SELF_RSP:
     return WDI_SET_TM_LEVEL_RESP;
   case WLAN_HAL_FEATURE_CAPS_EXCHANGE_RSP:
       return WDI_FEATURE_CAPS_EXCHANGE_RESP;
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_11AC
+  case WLAN_HAL_UPDATE_VHT_OP_MODE_RSP:
+      return WDI_UPDATE_VHT_OP_MODE_RESP;
+#endif
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+  case WLAN_HAL_GET_ROAM_RSSI_RSP:
+    return WDI_GET_ROAM_RSSI_RESP;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   default:
     return eDRIVER_TYPE_MAX;
   }
@@ -20836,8 +24157,13 @@ WDI_2_HAL_STOP_REASON
   {
   case WDI_STOP_TYPE_SYS_RESET:
     return HAL_STOP_TYPE_SYS_RESET;
+<<<<<<< HEAD
   case WDI_DRIVER_TYPE_MFG:
     return WDI_STOP_TYPE_SYS_DEEP_SLEEP;
+=======
+  case WDI_STOP_TYPE_SYS_DEEP_SLEEP:
+    return HAL_STOP_TYPE_SYS_DEEP_SLEEP;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WDI_STOP_TYPE_RF_KILL:
     return HAL_STOP_TYPE_RF_KILL;
   }
@@ -20864,7 +24190,11 @@ WDI_2_HAL_SCAN_MODE
   case WDI_SCAN_MODE_SCAN:
     return eHAL_SYS_MODE_SCAN;
   case WDI_SCAN_MODE_PROMISC:
+<<<<<<< HEAD
     return eHAL_SYS_MODE_PROMISC;
+=======
+    return eHAL_SYS_MODE_PROMISC; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WDI_SCAN_MODE_SUSPEND_LINK:
     return eHAL_SYS_MODE_SUSPEND_LINK;
   case WDI_SCAN_MODE_ROAM_SCAN:
@@ -20913,7 +24243,11 @@ WDI_2_HAL_SEC_CH_OFFSET
       break;
   }
 
+<<<<<<< HEAD
   return PHY_CHANNEL_BONDING_STATE_MAX;
+=======
+  return PHY_CHANNEL_BONDING_STATE_MAX; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_2_HAL_SEC_CH_OFFSET*/
 
 /*Convert WDI BSS type into HAL BSS type*/
@@ -21170,10 +24504,15 @@ WDI_2_HAL_LINK_STATE
   case WDI_LINK_FINISH_CAL_STATE:
     return eSIR_LINK_FINISH_CAL_STATE;
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
   case WDI_LINK_LISTEN_STATE:
     return eSIR_LINK_LISTEN_STATE;
 #endif
+=======
+  case WDI_LINK_LISTEN_STATE:
+    return eSIR_LINK_LISTEN_STATE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   default:
     return eSIR_LINK_MAX;
@@ -21195,7 +24534,11 @@ WDI_CopyWDIStaCtxToHALStaCtx
    tConfigStaParams_V1* phalConfigSta_V1 = NULL;
    if (WDI_getFwWlanFeatCaps(DOT11AC))
    {
+<<<<<<< HEAD
 	   phalConfigSta_V1 = (tConfigStaParams_V1*)phalConfigSta;
+=======
+      phalConfigSta_V1 = (tConfigStaParams_V1*)phalConfigSta;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 #endif
    /*Lightweight function - no sanity checks and no unecessary code to increase
@@ -21263,6 +24606,7 @@ WDI_CopyWDIStaCtxToHALStaCtx
 #ifdef WLAN_FEATURE_11AC
   if(phalConfigSta_V1 != NULL)
   {
+<<<<<<< HEAD
 	  phalConfigSta_V1->supportedRates.vhtRxMCSMap = pwdiConfigSta->wdiSupportedRates.vhtRxMCSMap;
 	  phalConfigSta_V1->supportedRates.vhtRxHighestDataRate = pwdiConfigSta->wdiSupportedRates.vhtRxHighestDataRate;
 	  phalConfigSta_V1->supportedRates.vhtTxMCSMap = pwdiConfigSta->wdiSupportedRates.vhtTxMCSMap;
@@ -21273,12 +24617,31 @@ WDI_CopyWDIStaCtxToHALStaCtx
 #ifdef WLAN_FEATURE_P2P
   phalConfigSta->p2pCapableSta = pwdiConfigSta->ucP2pCapableSta ;
 #endif
+=======
+     phalConfigSta_V1->supportedRates.vhtRxMCSMap = pwdiConfigSta->wdiSupportedRates.vhtRxMCSMap;
+     phalConfigSta_V1->supportedRates.vhtRxHighestDataRate = pwdiConfigSta->wdiSupportedRates.vhtRxHighestDataRate;
+     phalConfigSta_V1->supportedRates.vhtTxMCSMap = pwdiConfigSta->wdiSupportedRates.vhtTxMCSMap;
+     phalConfigSta_V1->supportedRates.vhtTxHighestDataRate = pwdiConfigSta->wdiSupportedRates.vhtTxHighestDataRate;
+  }
+#endif
+
+  phalConfigSta->p2pCapableSta = pwdiConfigSta->ucP2pCapableSta ;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_11AC
   if(phalConfigSta_V1 != NULL)
   {
+<<<<<<< HEAD
 	  phalConfigSta_V1->vhtCapable = pwdiConfigSta->ucVhtCapableSta;
 	  phalConfigSta_V1->vhtTxChannelWidthSet = pwdiConfigSta->ucVhtTxChannelWidthSet;
+=======
+     phalConfigSta_V1->vhtCapable = pwdiConfigSta->ucVhtCapableSta;
+     phalConfigSta_V1->vhtTxChannelWidthSet = pwdiConfigSta->ucVhtTxChannelWidthSet;
+     phalConfigSta_V1->vhtTxBFEnabled = pwdiConfigSta->ucVhtTxBFEnabled;
+     phalConfigSta_V1->htLdpcEnabled = pwdiConfigSta->ucHtLdpcEnabled;
+     phalConfigSta_V1->vhtLdpcEnabled = pwdiConfigSta->ucVhtLdpcEnabled;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 #endif
 }/*WDI_CopyWDIStaCtxToHALStaCtx*/;
@@ -21378,7 +24741,11 @@ WDI_CopyWDIConfigBSSToHALConfigBSS
   /* Get the Version 1 Handler */
   tConfigBssParams_V1* phalConfigBSS_V1 = NULL;
   if (WDI_getFwWlanFeatCaps(DOT11AC))
+<<<<<<< HEAD
 	  phalConfigBSS_V1 = (tConfigBssParams_V1*)phalConfigBSS;
+=======
+     phalConfigBSS_V1 = (tConfigBssParams_V1*)phalConfigBSS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
   wpalMemoryCopy( phalConfigBSS->bssId,
@@ -21483,7 +24850,10 @@ WDI_CopyWDIConfigBSSToHALConfigBSS
 
      phalConfigBSS->extSetStaKeyParam.singleTidRc = pwdiConfigBSS->wdiExtSetKeyParam.ucSingleTidRc;
 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      for(keyIndex = 0; keyIndex < pwdiConfigBSS->wdiExtSetKeyParam.ucNumKeys ;
           keyIndex++)
      {
@@ -21504,6 +24874,7 @@ WDI_CopyWDIConfigBSSToHALConfigBSS
                        pwdiConfigBSS->wdiExtSetKeyParam.wdiKey[keyIndex].key,
                        WDI_MAX_KEY_LENGTH);
      }
+<<<<<<< HEAD
 #else
      phalConfigBSS->extSetStaKeyParam.key.keyId =
         pwdiConfigBSS->wdiExtSetKeyParam.wdiKey[0].keyId;
@@ -21522,6 +24893,8 @@ WDI_CopyWDIConfigBSSToHALConfigBSS
                     pwdiConfigBSS->wdiExtSetKeyParam.wdiKey[0].key,
                     WDI_MAX_KEY_LENGTH);
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
   else/* phalConfigBSS->extSetStaKeyParamValid is not set */
   {
@@ -21662,6 +25035,15 @@ WDI_ExtractRequestCBFromEvent
     *ppfnReqCB   =  ((WDI_GetStatsReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_GetStatsReqParamsType*)pEvent->pEventData)->pUserData;
     break;
+<<<<<<< HEAD
+=======
+#if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
+  case WDI_GET_ROAM_RSSI_REQ:
+    *ppfnReqCB   =  ((WDI_GetRoamRssiReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_GetRoamRssiReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case WDI_UPDATE_CFG_REQ:
     *ppfnReqCB   =  ((WDI_UpdateCfgReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_UpdateCfgReqParamsType*)pEvent->pEventData)->pUserData;
@@ -21694,6 +25076,17 @@ WDI_ExtractRequestCBFromEvent
     *ppfnReqCB   =  ((WDI_EnterUapsdReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_EnterUapsdReqParamsType*)pEvent->pEventData)->pUserData;
      break;
+<<<<<<< HEAD
+=======
+  case  WDI_EXIT_UAPSD_REQ:
+    *ppfnReqCB   =  ((WDI_ExitUapsdReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_ExitUapsdReqParamsType*)pEvent->pEventData)->pUserData;
+     break;
+  case  WDI_SET_UAPSD_PARAM_REQ:
+    *ppfnReqCB   =  ((WDI_SetUapsdAcParamsReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_SetUapsdAcParamsReqParamsType*)pEvent->pEventData)->pUserData;
+     break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case  WDI_UPDATE_UAPSD_PARAM_REQ:
     *ppfnReqCB   =  ((WDI_UpdateUapsdReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_UpdateUapsdReqParamsType*)pEvent->pEventData)->pUserData;
@@ -21730,6 +25123,13 @@ WDI_ExtractRequestCBFromEvent
     *ppfnReqCB   =  ((WDI_WowlEnterReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_WowlEnterReqParamsType*)pEvent->pEventData)->pUserData;
      break;
+<<<<<<< HEAD
+=======
+  case  WDI_WOWL_EXIT_REQ:
+    *ppfnReqCB   =  ((WDI_WowlExitReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_WowlExitReqParamsType*)pEvent->pEventData)->pUserData;
+     break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   case  WDI_CONFIGURE_APPS_CPU_WAKEUP_STATE_REQ:
     *ppfnReqCB   =  ((WDI_ConfigureAppsCpuWakeupStateReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_ConfigureAppsCpuWakeupStateReqParamsType*)pEvent->pEventData)->pUserData;
@@ -21746,9 +25146,63 @@ WDI_ExtractRequestCBFromEvent
     *ppfnReqCB   =  ((WDI_KeepAliveReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_KeepAliveReqParamsType*)pEvent->pEventData)->pUserData;
     break;
+<<<<<<< HEAD
   case WDI_SET_TX_PER_TRACKING_REQ:
     *ppfnReqCB   =  ((WDI_SetTxPerTrackingReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
     *ppUserData  =  ((WDI_SetTxPerTrackingReqParamsType*)pEvent->pEventData)->pUserData;
+=======
+#if defined FEATURE_WLAN_SCAN_PNO
+  case WDI_SET_PREF_NETWORK_REQ:
+    *ppfnReqCB   =  ((WDI_PNOScanReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_PNOScanReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+  case WDI_SET_RSSI_FILTER_REQ:
+    *ppfnReqCB   =  ((WDI_SetRssiFilterReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_SetRssiFilterReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+  case WDI_UPDATE_SCAN_PARAMS_REQ:
+    *ppfnReqCB   =  ((WDI_UpdateScanParamsInfoType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_UpdateScanParamsInfoType*)pEvent->pEventData)->pUserData;
+    break;
+#endif
+  case WDI_SET_TX_PER_TRACKING_REQ:
+    *ppfnReqCB   =  ((WDI_SetTxPerTrackingReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_SetTxPerTrackingReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+#if defined WLAN_FEATURE_PACKET_FILTERING
+  case WDI_8023_MULTICAST_LIST_REQ:
+    *ppfnReqCB   =  ((WDI_RcvFltPktSetMcListReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_RcvFltPktSetMcListReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+  case WDI_RECEIVE_FILTER_SET_FILTER_REQ:
+    *ppfnReqCB   =  ((WDI_SetRcvPktFilterReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_SetRcvPktFilterReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+  case WDI_PACKET_COALESCING_FILTER_MATCH_COUNT_REQ:
+    *ppfnReqCB   =  ((WDI_RcvFltPktMatchCntReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_RcvFltPktMatchCntReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+  case WDI_RECEIVE_FILTER_CLEAR_FILTER_REQ:
+    *ppfnReqCB   =  ((WDI_RcvFltPktClearReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_RcvFltPktClearReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+#endif
+  case WDI_SET_POWER_PARAMS_REQ:
+    *ppfnReqCB   =  ((WDI_SetPowerParamsReqParamsType*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_SetPowerParamsReqParamsType*)pEvent->pEventData)->pUserData;
+    break;
+#if defined WLAN_FEATURE_GTK_OFFLOAD
+  case WDI_GTK_OFFLOAD_REQ:
+    *ppfnReqCB   =  ((WDI_GtkOffloadReqMsg*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_GtkOffloadReqMsg*)pEvent->pEventData)->pUserData;
+    break;
+  case WDI_GTK_OFFLOAD_GETINFO_REQ:
+    *ppfnReqCB   =  ((WDI_GtkOffloadGetInfoReqMsg*)pEvent->pEventData)->wdiReqStatusCB;
+    *ppUserData  =  ((WDI_GtkOffloadGetInfoReqMsg*)pEvent->pEventData)->pUserData;
+    break;
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   default:
     *ppfnReqCB   =  NULL;
     *ppUserData  =  NULL;
@@ -21787,6 +25241,18 @@ WDI_IsHwFrameTxTranslationCapable
     return WDI_STATUS_E_NOT_ALLOWED;
   }
 
+<<<<<<< HEAD
+=======
+#ifdef WLAN_SOFTAP_VSTA_FEATURE
+  if (IS_VSTA_IDX(uSTAIdx))
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+              "STA %d is a Virtual STA, "
+              "HW frame translation disabled", uSTAIdx);
+    return eWLAN_PAL_FALSE;
+  }
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return gWDICb.bFrameTransEnabled;
 }/*WDI_IsHwFrameTxTranslationCapable*/
@@ -22276,7 +25742,11 @@ WDI_ProcessSetPreferredNetworkReq
        ( NULL == (wdiPNOScanCb   = (WDI_PNOScanCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -22287,7 +25757,11 @@ WDI_ProcessSetPreferredNetworkReq
    if ( pWDICtx->wdiPNOVersion > 0 )
    {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                   "%s: PNO new version %d ", __FUNCTION__,
+=======
+                  "%s: PNO new version %d ", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   pWDICtx->wdiPNOVersion);
 
      wdiStatus = WDI_PackPreferredNetworkListNew( pWDICtx, pwdiPNOScanReqParams,
@@ -22296,7 +25770,11 @@ WDI_ProcessSetPreferredNetworkReq
    else
    {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                   "%s: PNO old version %d ", __FUNCTION__,
+=======
+                  "%s: PNO old version %d ", __func__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   pWDICtx->wdiPNOVersion);
 
      wdiStatus = WDI_PackPreferredNetworkList( pWDICtx, pwdiPNOScanReqParams,
@@ -22307,7 +25785,11 @@ WDI_ProcessSetPreferredNetworkReq
        ( NULL == pSendBuffer )||( 0 == usSendSize ))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: failed to pack request parameters", __FUNCTION__);
+=======
+                  "%s: failed to pack request parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return wdiStatus;
    }
@@ -22353,7 +25835,11 @@ WDI_ProcessSetRssiFilterReq
        ( NULL == (wdiRssiFilterCb   = (WDI_RssiFilterCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -22388,6 +25874,7 @@ WDI_ProcessSetRssiFilterReq
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiRssiFilterCb, pEventData->pUserData, WDI_SET_RSSI_FILTER_RESP);
 }
+<<<<<<< HEAD
 
 
 /**
@@ -22484,20 +25971,254 @@ WDI_ProcessUpdateScanParamsReq
 
 /**
  @brief Process Preferred Network Found Indication function
+=======
+#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
+/**
+ @brief WDI_RoamScanOffloadReq
+
+ @param pwdiRoamScanOffloadReqParams: the  LookupReq as specified
+                      by the Device Interface
+
+        wdiRoamOffloadScancb: callback for passing back the response
+        of the Roam Candidate Lookup Req operation received from the
+        device
+
+        pUserData: user data will be passed back with the
+        callback
+ @return Result of the function call
+*/
+WDI_Status
+WDI_RoamScanOffloadReq
+(
+  WDI_RoamScanOffloadReqParamsType* pwdiRoamScanOffloadReqParams,
+  WDI_RoamOffloadScanCb                 wdiRoamOffloadScancb,
+  void*                                 pUserData
+)
+{
+   WDI_EventInfoType      wdiEventData = {{0}};
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   /*------------------------------------------------------------------------
+     Sanity Check
+   ------------------------------------------------------------------------*/
+   if ( eWLAN_PAL_FALSE == gWDIInitialized )
+   {
+     WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+               "WDI API call before module is initialized - Fail request");
+
+     return WDI_STATUS_E_NOT_ALLOWED;
+   }
+
+   /*------------------------------------------------------------------------
+     Fill in Event data and post to the Main FSM
+   ------------------------------------------------------------------------*/
+   wdiEventData.wdiRequest      = WDI_ROAM_SCAN_OFFLOAD_REQ;
+   wdiEventData.pEventData      = pwdiRoamScanOffloadReqParams;
+   wdiEventData.uEventDataSize  = sizeof(*pwdiRoamScanOffloadReqParams);
+   wdiEventData.pCBfnc          = wdiRoamOffloadScancb;
+   wdiEventData.pUserData       = pUserData;
+
+   return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
+}
+
+void
+WDI_wdiEdTypeEncToEdTypeEnc(tEdType *EdType, WDI_EdType wdiEdType)
+{
+  switch (wdiEdType)
+  {
+    case WDI_ED_NONE:
+         *EdType = eED_NONE;
+          break;
+    case WDI_ED_WEP40:
+    case WDI_ED_WEP104:
+         *EdType = eED_WEP;
+          break;
+    case WDI_ED_TKIP:
+         *EdType = eED_TKIP;
+          break;
+    case WDI_ED_CCMP:
+#ifdef WLAN_FEATURE_11W
+    case WDI_ED_AES_128_CMAC:
+#endif
+         *EdType = eED_CCMP;
+          break;
+#ifdef FEATURE_WLAN_WAPI
+    case WDI_ED_WPI:
+         *EdType = eED_WPI;
+          break;
+#endif
+    case WDI_ED_ANY:
+         *EdType = eED_ANY;
+          break;
+
+    default:
+         WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                     "%s: Unknown Encryption Type", __func__);
+         break;
+     }
+}
+
+/**
+ @brief Helper function to pack Start Roam Candidate Lookup
+        Request parameters
+
+ @param  pWDICtx:                               pointer to the WLAN DAL context
+         pwdiRoamScanOffloadReqParams:      pointer to the info received
+         from upper layers
+         ppSendBuffer, pSize - out pointers of the packed buffer
+         and its size
+
+ @return Result of the function call
+*/
+
+WDI_Status
+WDI_PackRoamScanOffloadParams
+(
+  WDI_ControlBlockType*                 pWDICtx,
+  WDI_RoamScanOffloadReqParamsType*     pwdiRoamScanOffloadReqParams,
+  wpt_uint8**                           ppSendBuffer,
+  wpt_uint16*                           pSize
+)
+{
+   wpt_uint8*                 pSendBuffer                = NULL;
+   wpt_uint16                 usDataOffset               = 0;
+   wpt_uint16                 usSendSize                 = 0;
+   tpRoamCandidateListParams  pRoamCandidateListParams   = NULL;
+   wpt_uint8 i;
+   /*-----------------------------------------------------------------------
+     Get message buffer
+   -----------------------------------------------------------------------*/
+   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_ROAM_SCAN_OFFLOAD_REQ,
+                         sizeof(tRoamCandidateListParams),
+                         &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < (usDataOffset + sizeof(tpRoamCandidateListParams) )))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "Unable to get send buffer in Start Roam Candidate Lookup Req %x ",
+                   pwdiRoamScanOffloadReqParams);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+   pRoamCandidateListParams = (tpRoamCandidateListParams)(pSendBuffer + usDataOffset);
+   wpalMemoryZero(pRoamCandidateListParams, sizeof(tpRoamCandidateListParams));
+   pRoamCandidateListParams->RoamScanOffloadEnabled = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.RoamScanOffloadEnabled;
+   wpalMemoryCopy(pRoamCandidateListParams->ConnectedNetwork.currAPbssid,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.currAPbssid,
+                  HAL_MAC_ADDR_LEN);
+   pRoamCandidateListParams->ConnectedNetwork.authentication = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.authentication;
+   WDI_wdiEdTypeEncToEdTypeEnc(&pRoamCandidateListParams->ConnectedNetwork.encryption,
+                               pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.encryption);
+   WDI_wdiEdTypeEncToEdTypeEnc(&pRoamCandidateListParams->ConnectedNetwork.mcencryption,
+                               pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.mcencryption);
+
+   pRoamCandidateListParams->ConnectedNetwork.ssId.length
+                = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.ssId.ucLength;
+   wpalMemoryCopy( pRoamCandidateListParams->ConnectedNetwork.ssId.ssId,
+                   pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.ssId.sSSID,
+                   pRoamCandidateListParams->ConnectedNetwork.ssId.length);
+   wpalMemoryCopy(pRoamCandidateListParams->ConnectedNetwork.ChannelCache,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.ChannelCache,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.ChannelCount );
+   pRoamCandidateListParams->ConnectedNetwork.ChannelCount = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ConnectedNetwork.ChannelCount;
+   pRoamCandidateListParams->ChannelCacheType = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ChannelCacheType ;
+   pRoamCandidateListParams->LookupThreshold = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.LookupThreshold;
+   pRoamCandidateListParams->RoamRssiDiff = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.RoamRssiDiff ;
+   pRoamCandidateListParams->Command = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.Command ;
+   pRoamCandidateListParams->StartScanReason = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.StartScanReason ;
+   pRoamCandidateListParams->NeighborScanTimerPeriod = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.NeighborScanTimerPeriod ;
+   pRoamCandidateListParams->NeighborRoamScanRefreshPeriod = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.NeighborRoamScanRefreshPeriod ;
+   pRoamCandidateListParams->NeighborScanChannelMinTime = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.NeighborScanChannelMinTime ;
+   pRoamCandidateListParams->NeighborScanChannelMaxTime = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.NeighborScanChannelMaxTime ;
+   pRoamCandidateListParams->EmptyRefreshScanPeriod = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.EmptyRefreshScanPeriod ;
+   pRoamCandidateListParams->IsCCXEnabled = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.IsCCXEnabled ;
+   wpalMemoryCopy(pRoamCandidateListParams->ValidChannelList,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ValidChannelList,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ValidChannelCount);
+   pRoamCandidateListParams->ValidChannelCount = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.ValidChannelCount;
+
+   WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO_HIGH,
+              "Values are ssid = %s, RoamOffloadScan=%d,Command=%d,"
+              "StartScanReason=%d,NeighborScanTimerPeriod=%d,"
+              "NeighborRoamScanRefreshPeriod=%d,NeighborScanChannelMinTime=%d,"
+              "NeighborScanChannelMaxTime = %d,EmptyRefreshScanPeriod=%d,"
+              "mdiePresent=%d,MDID=%d, auth=%d, uce=%d, mce=%d, nProbes=%d,"
+              "HomeAwayTime=%d\n",
+              pRoamCandidateListParams->ConnectedNetwork.ssId.ssId,
+              pRoamCandidateListParams->RoamScanOffloadEnabled,
+              pRoamCandidateListParams->Command,
+              pRoamCandidateListParams->StartScanReason,
+              pRoamCandidateListParams->NeighborScanTimerPeriod,
+              pRoamCandidateListParams->NeighborRoamScanRefreshPeriod,
+              pRoamCandidateListParams->NeighborScanChannelMinTime,
+              pRoamCandidateListParams->NeighborScanChannelMaxTime,
+              pRoamCandidateListParams->EmptyRefreshScanPeriod,
+              pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.MDID.mdiePresent,
+                   pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.MDID.mobilityDomain,
+              pRoamCandidateListParams->ConnectedNetwork.authentication,
+              pRoamCandidateListParams->ConnectedNetwork.encryption,
+                   pRoamCandidateListParams->ConnectedNetwork.mcencryption,
+                   pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.nProbes,
+                   pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.HomeAwayTime);
+   pRoamCandidateListParams->us24GProbeSize =
+           (pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.us24GProbeSize<
+            WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE)?
+            pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.us24GProbeSize:
+           WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE;
+   wpalMemoryCopy(pRoamCandidateListParams->a24GProbeTemplate,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.a24GProbeTemplate,
+                  pRoamCandidateListParams->us24GProbeSize);
+   pRoamCandidateListParams->us5GProbeSize =
+           (pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.us5GProbeSize<
+            WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE)?
+           pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.us5GProbeSize:
+           WLAN_HAL_ROAM_SCAN_MAX_PROBE_SIZE;
+   wpalMemoryCopy(pRoamCandidateListParams->a5GProbeTemplate,
+                  pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.a5GProbeTemplate,
+                  pRoamCandidateListParams->us5GProbeSize);
+   pRoamCandidateListParams->MDID.mdiePresent = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.MDID.mdiePresent;
+   pRoamCandidateListParams->MDID.mobilityDomain = pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.MDID.mobilityDomain;
+   pRoamCandidateListParams->nProbes =
+           pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.nProbes;
+   pRoamCandidateListParams->HomeAwayTime =
+           pwdiRoamScanOffloadReqParams->wdiRoamOffloadScanInfo.HomeAwayTime;
+   WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO_HIGH,"Valid Channel List");
+   for (i=0; i<pRoamCandidateListParams->ValidChannelCount ; i++)
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO_HIGH,"%d", pRoamCandidateListParams->ValidChannelList[i]);
+   }
+
+
+   /*Set the output values*/
+   *ppSendBuffer = pSendBuffer;
+   *pSize        = usSendSize;
+   return WDI_STATUS_SUCCESS;
+}/*WDI_PackRoamScanOffloadParams*/
+
+/**
+ @brief Process Start Roam Candidate Lookup Request function
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+<<<<<<< HEAD
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessPrefNetworkFoundInd
+=======
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessRoamScanOffloadReq
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 (
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
   WDI_LowLevelIndType  wdiInd;
   tPrefNetwFoundInd    prefNetwFoundInd = {{0}};
 
@@ -22552,6 +26273,425 @@ WDI_ProcessPrefNetworkFoundInd
 
 /**
  @brief Process PNO Rsp function (called when a
+=======
+   WDI_RoamScanOffloadReqParamsType* pwdiRoamScanOffloadReqParams = NULL;
+   WDI_RoamOffloadScanCb                 wdiRoamOffloadScancb  = NULL;
+   wpt_uint8*                            pSendBuffer           = NULL;
+   wpt_uint16                            usSendSize            = 0;
+   WDI_Status                            wdiStatus;
+   /*-------------------------------------------------------------------------
+     Sanity check
+   -------------------------------------------------------------------------*/
+   if (( NULL == pEventData ) ||
+       ( NULL == (pwdiRoamScanOffloadReqParams = (WDI_RoamScanOffloadReqParamsType*)pEventData->pEventData)) ||
+       ( NULL == (wdiRoamOffloadScancb   = (WDI_RoamOffloadScanCb)pEventData->pCBfnc)))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+
+   /*-------------------------------------------------------------------------
+     Pack the Start Roam Candidate Lookup request structure based on version
+   -------------------------------------------------------------------------*/
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+                  "%s: Packing Roam Candidate Lookup request ", __func__);
+
+     wdiStatus = WDI_PackRoamScanOffloadParams( pWDICtx, pwdiRoamScanOffloadReqParams,
+                                      &pSendBuffer, &usSendSize);
+
+   if (( WDI_STATUS_SUCCESS != wdiStatus )||
+       ( NULL == pSendBuffer )||( 0 == usSendSize ))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: failed to pack request parameters", __func__);
+      WDI_ASSERT(0);
+      return wdiStatus;
+   }
+
+   pWDICtx->wdiReqStatusCB     = pwdiRoamScanOffloadReqParams->wdiReqStatusCB;
+   pWDICtx->pReqStatusUserData = pwdiRoamScanOffloadReqParams->pUserData;
+
+   /*-------------------------------------------------------------------------
+     Send WDI_ROAM_SCAN_OFFLOAD_REQ to HAL
+   -------------------------------------------------------------------------*/
+   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+               wdiRoamOffloadScancb, pEventData->pUserData, WDI_ROAM_SCAN_OFFLOAD_RESP);
+}
+
+/**
+ @brief Process Start Roam Candidate Lookup Rsp function (called when a
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+        response is being received over the bus from HAL)
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+<<<<<<< HEAD
+WDI_ProcessSetPreferredNetworkRsp
+=======
+WDI_ProcessRoamScanOffloadRsp
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+<<<<<<< HEAD
+   WDI_Status           wdiStatus;
+   eHalStatus           halStatus;
+   WDI_PNOScanCb       wdiPNOScanCb   = NULL;
+=======
+   WDI_Status                   wdiStatus;
+   eHalStatus                   halStatus;
+   WDI_RoamOffloadScanCb        wdiRoamOffloadScancb = NULL;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   /*-------------------------------------------------------------------------
+     Sanity check
+   -------------------------------------------------------------------------*/
+   if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
+       ( NULL == pEventData->pEventData ))
+   {
+      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
+                  "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+
+   wdiRoamOffloadScancb = (WDI_RoamOffloadScanCb)pWDICtx->pfncRspCB;
+
+   /*-------------------------------------------------------------------------
+     Extract response and send it to UMAC
+   -------------------------------------------------------------------------*/
+   halStatus = *((eHalStatus*)pEventData->pEventData);
+   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+
+   /*Notify UMAC*/
+   wdiRoamOffloadScancb(wdiStatus, pWDICtx->pRspCBUserData);
+
+   return WDI_STATUS_SUCCESS;
+}/* WDI_ProcessRoamScanOffloadRsp  */
+#endif
+
+/**
+ @brief Process Update Scan Params function
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_PackUpdateScanParamsReq
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_UpdateScanParamsInfoType* pwdiUpdateScanParams,
+  wpt_uint8**                   ppSendBuffer,
+  wpt_uint16*                   pSize
+)
+{
+   wpt_uint8*                    pSendBuffer           = NULL;
+   wpt_uint16                    usDataOffset          = 0;
+   wpt_uint16                    usSendSize            = 0;
+   tUpdateScanParams             updateScanParams = {0};
+
+
+   WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_INFO,
+               "Begin WDI Update Scan Parameters Old Style Params");
+   /*-----------------------------------------------------------------------
+     Get message buffer
+   -----------------------------------------------------------------------*/
+   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_UPDATE_SCAN_PARAMS_REQ,
+                         sizeof(updateScanParams),
+                         &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < (usDataOffset + sizeof(updateScanParams) )))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "Unable to get send buffer in Update Scan Params req %x",
+                   pwdiUpdateScanParams);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+
+   //
+   // Fill updateScanParams from pwdiUpdateScanParams->wdiUpdateScanParamsInfo
+   //
+
+   updateScanParams.b11dEnabled    = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.b11dEnabled;
+   updateScanParams.b11dResolved   = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.b11dResolved;
+
+   updateScanParams.ucChannelCount =
+     (pwdiUpdateScanParams->wdiUpdateScanParamsInfo.ucChannelCount <
+     WLAN_HAL_PNO_MAX_NETW_CHANNELS)?
+     pwdiUpdateScanParams->wdiUpdateScanParamsInfo.ucChannelCount :
+     WLAN_HAL_PNO_MAX_NETW_CHANNELS;
+
+   wpalMemoryCopy( updateScanParams.aChannels,
+                   pwdiUpdateScanParams->wdiUpdateScanParamsInfo.aChannels,
+                   updateScanParams.ucChannelCount);
+
+
+   updateScanParams.usActiveMinChTime  = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usActiveMinChTime;
+   updateScanParams.usActiveMaxChTime  = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usActiveMaxChTime;
+   updateScanParams.usPassiveMinChTime = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usPassiveMinChTime;
+   updateScanParams.usPassiveMaxChTime = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usPassiveMaxChTime;
+   updateScanParams.cbState            = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.cbState;
+
+   wpalMemoryCopy( pSendBuffer+usDataOffset,
+                   &updateScanParams,
+                   sizeof(updateScanParams));
+
+   pWDICtx->wdiReqStatusCB     = pwdiUpdateScanParams->wdiReqStatusCB;
+   pWDICtx->pReqStatusUserData = pwdiUpdateScanParams->pUserData;
+
+   WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_INFO,
+               "End Update Scan Parameters Old Style");
+
+   /*Set the output values*/
+   *ppSendBuffer = pSendBuffer;
+   *pSize        = usSendSize;
+
+   return WDI_STATUS_SUCCESS;
+}
+
+/**
+ @brief Process Update Scan Params function
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_PackUpdateScanParamsReqEx
+(
+  WDI_ControlBlockType*         pWDICtx,
+  WDI_UpdateScanParamsInfoType* pwdiUpdateScanParams,
+  wpt_uint8**                   ppSendBuffer,
+  wpt_uint16*                   pSize
+)
+{
+   wpt_uint8*                    pSendBuffer           = NULL;
+   wpt_uint16                    usDataOffset          = 0;
+   wpt_uint16                    usSendSize            = 0;
+   tUpdateScanParamsEx           updateScanParams = {0};
+
+
+   /*-----------------------------------------------------------------------
+     Get message buffer
+   -----------------------------------------------------------------------*/
+   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_UPDATE_SCAN_PARAMS_REQ,
+                         sizeof(updateScanParams),
+                         &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < (usDataOffset + sizeof(updateScanParams) )))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "Unable to get send buffer in Update Scan Params Ex req %x",
+                  pwdiUpdateScanParams);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+
+   //
+   // Fill updateScanParams from pwdiUpdateScanParams->wdiUpdateScanParamsInfo
+   //
+
+   updateScanParams.b11dEnabled    = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.b11dEnabled;
+   updateScanParams.b11dResolved   = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.b11dResolved;
+
+   updateScanParams.ucChannelCount =
+     (pwdiUpdateScanParams->wdiUpdateScanParamsInfo.ucChannelCount <
+     WLAN_HAL_PNO_MAX_NETW_CHANNELS_EX)?
+     pwdiUpdateScanParams->wdiUpdateScanParamsInfo.ucChannelCount :
+     WLAN_HAL_PNO_MAX_NETW_CHANNELS_EX;
+
+   wpalMemoryCopy( updateScanParams.aChannels,
+                   pwdiUpdateScanParams->wdiUpdateScanParamsInfo.aChannels,
+                   updateScanParams.ucChannelCount);
+
+
+   updateScanParams.usActiveMinChTime  = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usActiveMinChTime;
+   updateScanParams.usActiveMaxChTime  = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usActiveMaxChTime;
+   updateScanParams.usPassiveMinChTime = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usPassiveMinChTime;
+   updateScanParams.usPassiveMaxChTime = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.usPassiveMaxChTime;
+   updateScanParams.cbState            = pwdiUpdateScanParams->wdiUpdateScanParamsInfo.cbState;
+
+   wpalMemoryCopy( pSendBuffer+usDataOffset,
+                   &updateScanParams,
+                   sizeof(updateScanParams));
+
+   pWDICtx->wdiReqStatusCB     = pwdiUpdateScanParams->wdiReqStatusCB;
+   pWDICtx->pReqStatusUserData = pwdiUpdateScanParams->pUserData;
+
+   /*Set the output values*/
+   *ppSendBuffer = pSendBuffer;
+   *pSize        = usSendSize;
+
+   return WDI_STATUS_SUCCESS;
+}
+
+/**
+ @brief Process Update Scan Params function
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessUpdateScanParamsReq
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+   WDI_UpdateScanParamsInfoType* pwdiUpdateScanParams  = NULL;
+   WDI_UpdateScanParamsCb        wdiUpdateScanParamsCb = NULL;
+   wpt_uint8*                    pSendBuffer           = NULL;
+   wpt_uint16                    usSendSize            = 0;
+   WDI_Status                    wdiStatus;
+
+   /*-------------------------------------------------------------------------
+     Sanity check
+   -------------------------------------------------------------------------*/
+   if (( NULL == pEventData ) ||
+       ( NULL == (pwdiUpdateScanParams = (WDI_UpdateScanParamsInfoType*)pEventData->pEventData)) ||
+       ( NULL == (wdiUpdateScanParamsCb   = (WDI_UpdateScanParamsCb)pEventData->pCBfnc)))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+
+   WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_INFO,
+               "Begin WDI Update Scan Parameters");
+
+   //
+   // Fill updateScanParams from pwdiUpdateScanParams->wdiUpdateScanParamsInfo
+   //
+   if ( pWDICtx->wlanVersion.revision < 1 ) 
+   {
+     wdiStatus = WDI_PackUpdateScanParamsReq( pWDICtx, pwdiUpdateScanParams,
+                                  &pSendBuffer, &usSendSize);
+   }
+   else
+   {
+     wdiStatus = WDI_PackUpdateScanParamsReqEx( pWDICtx, pwdiUpdateScanParams,
+                                  &pSendBuffer, &usSendSize);
+   }
+   
+   if(WDI_STATUS_SUCCESS != wdiStatus)
+   {
+        //memory allocation failed
+        return WDI_STATUS_E_FAILURE;
+   }
+
+   /*-------------------------------------------------------------------------
+     Send Get STA Request to HAL
+   -------------------------------------------------------------------------*/
+   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
+                        wdiUpdateScanParamsCb, pEventData->pUserData, 
+                        WDI_UPDATE_SCAN_PARAMS_RESP);
+}
+
+/**
+ @brief Process Preferred Network Found Indication function
+
+ @param  pWDICtx:         pointer to the WLAN DAL context
+         pEventData:      pointer to the event information structure
+
+ @see
+ @return Result of the function call
+*/
+WDI_Status
+WDI_ProcessPrefNetworkFoundInd
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_LowLevelIndType   wdiInd;
+  tpPrefNetwFoundParams pNetwFoundParams;
+  wpt_uint32 msgsize;
+
+
+  /*-------------------------------------------------------------------------
+    Sanity check
+  -------------------------------------------------------------------------*/
+  if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
+      ( NULL == pEventData->pEventData ))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT( 0 );
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  /*-------------------------------------------------------------------------
+    Extract indication and send it to UMAC
+  -------------------------------------------------------------------------*/
+  pNetwFoundParams = (tpPrefNetwFoundParams)(pEventData->pEventData);
+
+  msgsize = sizeof(tPrefNetwFoundParams) + pNetwFoundParams->frameLength;
+  wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.pData =
+      (wpt_uint8 *)wpalMemoryAllocate(msgsize);
+
+  if (NULL == wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.pData)
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 "%s: fail to allocate memory", __func__);
+     return WDI_STATUS_MEM_FAILURE;
+  }
+
+  wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.ssId.ucLength =
+     (pNetwFoundParams->ssId.length < 32 )?
+      pNetwFoundParams->ssId.length : 32;
+  wpalMemoryCopy( wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.ssId.sSSID,
+      pNetwFoundParams->ssId.ssId,
+      wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.ssId.ucLength);
+  wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.rssi = pNetwFoundParams->rssi;
+  wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.frameLength =
+      pNetwFoundParams->frameLength;
+  wpalMemoryCopy( wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.pData,
+      (wpt_uint8 *)pEventData->pEventData + sizeof(tPrefNetwFoundParams),
+      pNetwFoundParams->frameLength);
+
+  /*Fill in the indication parameters*/
+  wdiInd.wdiIndicationType = WDI_PREF_NETWORK_FOUND_IND;
+
+  // DEBUG
+  WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_FATAL,
+              "[PNO WDI] PREF_NETWORK_FOUND_IND Type (%x) data (SSID=%s, RSSI=%d)",
+              wdiInd.wdiIndicationType,
+              wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.ssId.sSSID,
+              wdiInd.wdiIndicationData.wdiPrefNetworkFoundInd.rssi );
+
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( &wdiInd, pWDICtx->pIndUserData );
+  }
+
+  return WDI_STATUS_SUCCESS;
+}
+
+/**
+ @brief Process PNO Rsp function (called when a
         response is being received over the bus from HAL)
 
  @param  pWDICtx:         pointer to the WLAN DAL context
@@ -22579,7 +26719,8 @@ WDI_ProcessSetPreferredNetworkRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
-                  "%s: Invalid parameters", __FUNCTION__);
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -22628,7 +26769,11 @@ WDI_ProcessSetRssiFilterRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -22677,13 +26822,21 @@ WDI_ProcessUpdateScanParamsRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                   "Process UPD scan params ptr : %x", __FUNCTION__);
+=======
+                  "Process UPD scan params ptr : %x", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   wdiUpdateScanParamsCb = (WDI_UpdateScanParamsCb)pWDICtx->pfncRspCB;
 
@@ -22728,7 +26881,11 @@ WDI_8023MulticastListReq
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
              "%s", __FUNCTION__);
+=======
+             "%s", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*------------------------------------------------------------------------
      Sanity Check
@@ -22765,7 +26922,11 @@ WDI_ReceiveFilterSetFilterReq
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
              "%s",__FUNCTION__);
+=======
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*------------------------------------------------------------------------
      Sanity Check
@@ -22784,8 +26945,13 @@ WDI_ReceiveFilterSetFilterReq
    wdiEventData.wdiRequest      = WDI_RECEIVE_FILTER_SET_FILTER_REQ;
    wdiEventData.pEventData      = pwdiSetRcvPktFilterReqInfo;
    wdiEventData.uEventDataSize  = sizeof(*pwdiSetRcvPktFilterReqInfo) +
+<<<<<<< HEAD
                                   (pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.numFieldParams
                                   * sizeof(WDI_RcvPktFilterFieldParams) - 1);
+=======
+                                  (pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.numFieldParams - 1)
+                                  * sizeof(WDI_RcvPktFilterFieldParams);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pCBfnc          = wdiReceiveFilterSetFilterCallback;
    wdiEventData.pUserData       = pUserData;
 
@@ -22805,7 +26971,11 @@ WDI_FilterMatchCountReq
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
              "%s",__FUNCTION__);
+=======
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*------------------------------------------------------------------------
      Sanity Check
@@ -22843,7 +27013,11 @@ WDI_ReceiveFilterClearFilterReq
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
              "%s",__FUNCTION__);
+=======
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*------------------------------------------------------------------------
      Sanity Check
@@ -22896,7 +27070,11 @@ WDI_Process8023MulticastListReq
    WDI_BSSSessionType*        pBSSSes = NULL;
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
              "%s",__FUNCTION__);
+=======
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pRcvFltMcAddrListType = wpalMemoryAllocate(sizeof(tHalRcvFltMcAddrListType)) ;
    if( NULL == pRcvFltMcAddrListType )
@@ -22916,12 +27094,17 @@ WDI_Process8023MulticastListReq
        (WDI_8023MulticastListCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       wpalMemoryFree(pRcvFltMcAddrListType);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
    ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx,
                             pwdiFltPktSetMcListReqParamsType->mcAddrList.bssId,
                             &pBSSSes);
@@ -22929,6 +27112,15 @@ WDI_Process8023MulticastListReq
    {
        WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  " %s : Association for this BSSID does not exist",__FUNCTION__);
+=======
+   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                            pwdiFltPktSetMcListReqParamsType->mcAddrList.bssId, 
+                            &pBSSSes);  
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 " %s : Association for this BSSID does not exist",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        wpalMemoryFree(pRcvFltMcAddrListType);   
        return WDI_STATUS_E_FAILURE; 
    }
@@ -22947,6 +27139,10 @@ WDI_Process8023MulticastListReq
                   "WDI_Process8023MulticastListReq() %x %x %x",
                   pEventData, pwdiFltPktSetMcListReqParamsType,
                   wdi8023MulticastListCb);
+<<<<<<< HEAD
+=======
+      wpalMemoryFree(pRcvFltMcAddrListType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23000,6 +27196,7 @@ WDI_ProcessReceiveFilterSetFilterReq
    wpt_uint16                 usDataOffset          = 0;
    wpt_uint16                 usSendSize            = 0;
    wpt_uint32                 usRcvPktFilterCfgSize;
+<<<<<<< HEAD
    tHalRcvPktFilterCfgType    *pRcvPktFilterCfg;
    wpt_uint8                  i;
    wpt_uint8                  ucCurrentBSSSesIdx = 0;
@@ -23007,6 +27204,17 @@ WDI_ProcessReceiveFilterSetFilterReq
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
              "%s",__FUNCTION__);
+=======
+   tHalRcvPktFilterCfgType    *pRcvPktFilterCfg = NULL;
+   wpt_uint8                  i;
+   wpt_uint8                  ucCurrentBSSSesIdx = 0;
+   WDI_BSSSessionType*        pBSSSes = NULL;
+   tHalSessionizedRcvPktFilterCfgType *pSessRcvPktFilterCfg = NULL;
+   wpt_uint32                 usSessRcvPktFilterCfgSize;
+
+   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23018,11 +27226,16 @@ WDI_ProcessReceiveFilterSetFilterReq
        (WDI_ReceiveFilterSetFilterCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
    ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx,
                             pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.bssId,
                             &pBSSSes);
@@ -23062,10 +27275,172 @@ WDI_ProcessReceiveFilterSetFilterReq
        ( usSendSize < (usDataOffset + usRcvPktFilterCfgSize)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+=======
+   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                            pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.bssId, 
+                            &pBSSSes);  
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 " %s : Association for this BSSID does not exist, filter Id =%d",
+                 __func__, pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.filterId); // IKJB42MAIN-1244, Motorola, a19091
+       return WDI_STATUS_E_FAILURE; 
+   }
+
+   if( WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION) )
+   {
+
+        usSessRcvPktFilterCfgSize = sizeof(tHalSessionizedRcvPktFilterCfgType) + 
+            ((pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.numFieldParams - 1)
+             * sizeof(tHalSessionizedRcvPktFilterCfgType));
+
+       pSessRcvPktFilterCfg = (tHalSessionizedRcvPktFilterCfgType *)wpalMemoryAllocate(
+                                                   usSessRcvPktFilterCfgSize);
+
+       if(NULL == pSessRcvPktFilterCfg)
+       {
+         WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                 "%s: Failed to allocate memory for "
+                 "tHalRcvPktFilterCfgType: %x %x %x ",
+                 __func__, pWDICtx, pEventData, pEventData->pEventData);
+         WDI_ASSERT(0);
+         return WDI_STATUS_E_FAILURE;
+       }
+
+       wpalMemoryZero(pSessRcvPktFilterCfg, usSessRcvPktFilterCfgSize);
+       
+        /*-----------------------------------------------------------------------
+          Get message buffer
+        -----------------------------------------------------------------------*/
+
+       if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_RECEIVE_FILTER_SET_FILTER_REQ,
+                              usSessRcvPktFilterCfgSize,
+                              &pSendBuffer, &usDataOffset, &usSendSize))||
+            ( usSendSize < (usDataOffset + usSessRcvPktFilterCfgSize)))
+        {
+           WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                       "Unable to get send buffer in "
+                       "WDI_ProcessReceiveFilterSetFilterReq() %x %x %x",
+                       pEventData, pwdiSetRcvPktFilterReqInfo,
+                       wdiReceiveFilterSetFilterCb);
+           WDI_ASSERT(0);
+           wpalMemoryFree(pSessRcvPktFilterCfg);
+           return WDI_STATUS_E_FAILURE;
+        }
+
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                   "UsData Off %d UsSend %d cfg %d",usDataOffset,
+                   usSendSize,pSessRcvPktFilterCfg);
+       
+        pSessRcvPktFilterCfg->filterId = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.filterId;
+        pSessRcvPktFilterCfg->filterType = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.filterType;
+        pSessRcvPktFilterCfg->numParams = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.numFieldParams;
+        pSessRcvPktFilterCfg->coleasceTime = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.coalesceTime;
+
+        pSessRcvPktFilterCfg->bssIdx = pBSSSes->ucBSSIdx;
+
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                   "Out: FID %d FT %d",pSessRcvPktFilterCfg->filterId,
+                   pSessRcvPktFilterCfg->filterType);
+        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                   "NParams %d CT %d",pSessRcvPktFilterCfg->numParams, 
+                   pSessRcvPktFilterCfg->coleasceTime);
+       
+        for ( i = 0; i < pSessRcvPktFilterCfg->numParams; i++ )
+        {
+            pSessRcvPktFilterCfg->paramsData[i].protocolLayer =
+                pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].protocolLayer;
+            pSessRcvPktFilterCfg->paramsData[i].cmpFlag =
+                pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].cmpFlag;
+            pSessRcvPktFilterCfg->paramsData[i].dataOffset =
+                pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].dataOffset;
+             pSessRcvPktFilterCfg->paramsData[i].dataLength =
+                 pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].dataLength;
+       
+            wpalMemoryCopy(&pSessRcvPktFilterCfg->paramsData[i].compareData,
+                         &pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].compareData,
+                         8);
+            wpalMemoryCopy(&pSessRcvPktFilterCfg->paramsData[i].dataMask,
+                         &pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].dataMask,
+                         8);
+       
+           WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                "Out:Proto %d Comp Flag %d \n",
+                pSessRcvPktFilterCfg->paramsData[i].protocolLayer,
+                pSessRcvPktFilterCfg->paramsData[i].cmpFlag);
+
+           WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                "Data Offset %d Data Len %d\n",
+                pSessRcvPktFilterCfg->paramsData[i].dataOffset,
+                pSessRcvPktFilterCfg->paramsData[i].dataLength);
+       
+           WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                "CData: %d:%d:%d:%d:%d:%d\n",
+                pSessRcvPktFilterCfg->paramsData[i].compareData[0],
+                pSessRcvPktFilterCfg->paramsData[i].compareData[1],
+                pSessRcvPktFilterCfg->paramsData[i].compareData[2],
+                pSessRcvPktFilterCfg->paramsData[i].compareData[3],
+                pSessRcvPktFilterCfg->paramsData[i].compareData[4],
+                pSessRcvPktFilterCfg->paramsData[i].compareData[5]);
+       
+           WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                "MData: %d:%d:%d:%d:%d:%d\n",
+                pSessRcvPktFilterCfg->paramsData[i].dataMask[0],
+                pSessRcvPktFilterCfg->paramsData[i].dataMask[1],
+                pSessRcvPktFilterCfg->paramsData[i].dataMask[2],
+                pSessRcvPktFilterCfg->paramsData[i].dataMask[3],
+                pSessRcvPktFilterCfg->paramsData[i].dataMask[4],
+                pSessRcvPktFilterCfg->paramsData[i].dataMask[5]);
+        }
+       
+        wpalMemoryCopy( pSendBuffer+usDataOffset,
+                        pSessRcvPktFilterCfg,
+                        usSessRcvPktFilterCfgSize);
+       
+       
+        pWDICtx->wdiReqStatusCB     = pwdiSetRcvPktFilterReqInfo->wdiReqStatusCB;
+        pWDICtx->pReqStatusUserData = pwdiSetRcvPktFilterReqInfo->pUserData;
+
+        wpalMemoryFree(pSessRcvPktFilterCfg);
+
+   }
+   /*If SLM_SESSIONIZATION is not supported then do this */
+   else
+   {
+       usRcvPktFilterCfgSize = sizeof(tHalRcvPktFilterCfgType) + 
+            ((pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.numFieldParams - 1)
+            * sizeof(tHalRcvPktFilterParams));
+
+      pRcvPktFilterCfg = (tHalRcvPktFilterCfgType *)wpalMemoryAllocate(
+                                              usRcvPktFilterCfgSize);
+
+      if(NULL == pRcvPktFilterCfg)
+      {
+            WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+                "%s: Failed to allocate memory for "
+                "tHalRcvPktFilterCfgType: %x %x %x ",
+                __func__, pWDICtx, pEventData, pEventData->pEventData);
+            WDI_ASSERT(0);
+            return WDI_STATUS_E_FAILURE;
+      }
+
+      wpalMemoryZero(pRcvPktFilterCfg, usRcvPktFilterCfgSize);
+
+       /*-----------------------------------------------------------------------
+         Get message buffer
+       -----------------------------------------------------------------------*/
+        if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_RECEIVE_FILTER_SET_FILTER_REQ,
+                         usRcvPktFilterCfgSize,
+                         &pSendBuffer, &usDataOffset, &usSendSize))||
+            ( usSendSize < (usDataOffset + usRcvPktFilterCfgSize)))
+        {
+              WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "Unable to get send buffer in "
                   "WDI_ProcessReceiveFilterSetFilterReq() %x %x %x",
                   pEventData, pwdiSetRcvPktFilterReqInfo,
                   wdiReceiveFilterSetFilterCb);
+<<<<<<< HEAD
       WDI_ASSERT(0);
       wpalMemoryFree(pRcvPktFilterCfg);
       return WDI_STATUS_E_FAILURE;
@@ -23108,10 +27483,53 @@ WDI_ProcessReceiveFilterSetFilterReq
                     8);
 
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+=======
+              WDI_ASSERT(0);
+              wpalMemoryFree(pRcvPktFilterCfg);
+              return WDI_STATUS_E_FAILURE;
+        }
+
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+              "UsData Off %d UsSend %d cfg %d",usDataOffset,
+              usSendSize,usRcvPktFilterCfgSize);
+
+       pRcvPktFilterCfg->filterId = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.filterId;
+       pRcvPktFilterCfg->filterType = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.filterType;
+       pRcvPktFilterCfg->numParams = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.numFieldParams;
+       pRcvPktFilterCfg->coalesceTime = pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.coalesceTime;
+
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+              "Out: FID %d FT %d",pRcvPktFilterCfg->filterId,
+              pRcvPktFilterCfg->filterType);
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+              "NParams %d CT %d",pRcvPktFilterCfg->numParams, 
+              pRcvPktFilterCfg->coalesceTime);
+
+       for ( i = 0; i < pRcvPktFilterCfg->numParams; i++ )
+       {
+           pRcvPktFilterCfg->paramsData[i].protocolLayer =
+               pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].protocolLayer;
+           pRcvPktFilterCfg->paramsData[i].cmpFlag =
+               pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].cmpFlag;
+           pRcvPktFilterCfg->paramsData[i].dataOffset =
+               pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].dataOffset;
+           pRcvPktFilterCfg->paramsData[i].dataLength =
+               pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].dataLength;
+
+           wpalMemoryCopy(&pRcvPktFilterCfg->paramsData[i].compareData,
+                    &pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].compareData,
+                    8);
+           wpalMemoryCopy(&pRcvPktFilterCfg->paramsData[i].dataMask,
+                    &pwdiSetRcvPktFilterReqInfo->wdiPktFilterCfg.paramsData[i].dataMask,
+                    8);
+
+          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            "Out:Proto %d Comp Flag %d \n",
            pRcvPktFilterCfg->paramsData[i].protocolLayer,
            pRcvPktFilterCfg->paramsData[i].cmpFlag);
 
+<<<<<<< HEAD
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
            "Data Offset %d Data Len %d\n",
            pRcvPktFilterCfg->paramsData[i].dataOffset,
@@ -23137,10 +27555,38 @@ WDI_ProcessReceiveFilterSetFilterReq
    }
 
    wpalMemoryCopy( pSendBuffer+usDataOffset,
+=======
+          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+               "Data Offset %d Data Len %d\n",
+               pRcvPktFilterCfg->paramsData[i].dataOffset,
+               pRcvPktFilterCfg->paramsData[i].dataLength);
+
+          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+               "CData: %d:%d:%d:%d:%d:%d\n",
+               pRcvPktFilterCfg->paramsData[i].compareData[0],
+               pRcvPktFilterCfg->paramsData[i].compareData[1],
+               pRcvPktFilterCfg->paramsData[i].compareData[2],
+               pRcvPktFilterCfg->paramsData[i].compareData[3],
+               pRcvPktFilterCfg->paramsData[i].compareData[4],
+               pRcvPktFilterCfg->paramsData[i].compareData[5]);
+
+          WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+               "MData: %d:%d:%d:%d:%d:%d\n",
+               pRcvPktFilterCfg->paramsData[i].dataMask[0],
+               pRcvPktFilterCfg->paramsData[i].dataMask[1],
+               pRcvPktFilterCfg->paramsData[i].dataMask[2],
+               pRcvPktFilterCfg->paramsData[i].dataMask[3],
+               pRcvPktFilterCfg->paramsData[i].dataMask[4],
+               pRcvPktFilterCfg->paramsData[i].dataMask[5]);
+        }
+
+       wpalMemoryCopy( pSendBuffer+usDataOffset,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pRcvPktFilterCfg,
                    usRcvPktFilterCfgSize);
 
 
+<<<<<<< HEAD
    pWDICtx->wdiReqStatusCB     = pwdiSetRcvPktFilterReqInfo->wdiReqStatusCB;
    pWDICtx->pReqStatusUserData = pwdiSetRcvPktFilterReqInfo->pUserData;
 
@@ -23148,6 +27594,15 @@ WDI_ProcessReceiveFilterSetFilterReq
              "%s",__FUNCTION__);
    wpalMemoryFree(pRcvPktFilterCfg);
 
+=======
+       pWDICtx->wdiReqStatusCB     = pwdiSetRcvPktFilterReqInfo->wdiReqStatusCB;
+       pWDICtx->pReqStatusUserData = pwdiSetRcvPktFilterReqInfo->pUserData;
+
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+                 "%s",__func__);
+       wpalMemoryFree(pRcvPktFilterCfg);
+  }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*-------------------------------------------------------------------------
      Send Get STA Request to HAL
    -------------------------------------------------------------------------*/
@@ -23179,9 +27634,18 @@ WDI_ProcessFilterMatchCountReq
    wpt_uint8*                             pSendBuffer           = NULL;
    wpt_uint16                             usDataOffset          = 0;
    wpt_uint16                             usSendSize            = 0;
+<<<<<<< HEAD
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
              "%s",__FUNCTION__);
+=======
+   tHalRcvFltPktMatchCntReqParams         rcvFltPktMatchCntReqParam = {0};
+   wpt_uint8                ucCurrentBSSSesIdx  = 0;
+   WDI_BSSSessionType*        pBSSSes = NULL;
+
+   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23193,19 +27657,42 @@ WDI_ProcessFilterMatchCountReq
        (WDI_FilterMatchCountCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+=======
+   ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx, 
+                               pwdiRcvFltPktMatchCntReqParamsType->bssId, 
+                               &pBSSSes);
+   if ( NULL == pBSSSes )
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                    " %s : Association for this BSSID does not exist",__func__);
+          return WDI_STATUS_E_FAILURE; 
+   }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*-----------------------------------------------------------------------
      Get message buffer
    -----------------------------------------------------------------------*/
    if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx,
                          WDI_PACKET_COALESCING_FILTER_MATCH_COUNT_REQ,
+<<<<<<< HEAD
                          0,
                          &pSendBuffer, &usDataOffset, &usSendSize))||
        ( usSendSize < usDataOffset))
+=======
+                         sizeof(tHalRcvFltPktMatchCntReqParams),
+                         &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < (usDataOffset + sizeof(tHalRcvFltPktMatchCntReqParams))))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
                   "Unable to get send buffer in "
@@ -23216,6 +27703,14 @@ WDI_ProcessFilterMatchCountReq
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+=======
+   rcvFltPktMatchCntReqParam.bssIdx = pBSSSes->ucBSSIdx;
+   wpalMemoryCopy( pSendBuffer+usDataOffset,
+                   &rcvFltPktMatchCntReqParam,
+                   sizeof(rcvFltPktMatchCntReqParam));
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //
    // Don't need to fill send buffer other than header
    //
@@ -23254,11 +27749,19 @@ WDI_ProcessReceiveFilterClearFilterReq
    wpt_uint16                       usDataOffset          = 0;
    wpt_uint16                       usSendSize            = 0;
    tHalRcvFltPktClearParam          rcvFltPktClearParam;
+<<<<<<< HEAD
    wpt_uint8                        ucCurrentBSSSesIdx = 0;
    WDI_BSSSessionType*              pBSSSes = NULL;
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
              "%s",__FUNCTION__);
+=======
+   wpt_uint8                        ucCurrentSessionId = 0;
+   WDI_BSSSessionType*              pBSSSes = NULL;
+
+   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23270,11 +27773,16 @@ WDI_ProcessReceiveFilterClearFilterReq
        (WDI_ReceiveFilterClearFilterCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
    ucCurrentBSSSesIdx = WDI_FindAssocSession( pWDICtx,
                             pwdiRcvFltPktClearReqParamsType->filterClearParam.bssId,
                             &pBSSSes);
@@ -23283,6 +27791,17 @@ WDI_ProcessReceiveFilterClearFilterReq
        WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                  " %s : Association for this BSSID does not exist",__FUNCTION__);
        return WDI_STATUS_E_FAILURE;
+=======
+   ucCurrentSessionId = WDI_FindAssocSession( pWDICtx, 
+                            pwdiRcvFltPktClearReqParamsType->filterClearParam.bssId, 
+                            &pBSSSes);  
+   if ( NULL == pBSSSes )
+   {
+       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                 " %s : Association for this BSSID does not exist, filter ID = %d",
+                 __func__, pwdiRcvFltPktClearReqParamsType->filterClearParam.filterId); // IKJB42MAIN-1244, Motorola, a19091
+       return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
@@ -23342,6 +27861,7 @@ WDI_Process8023MulticastListRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_8023MulticastListCb wdi8023MulticastListCb;
@@ -23349,6 +27869,16 @@ WDI_Process8023MulticastListRsp
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
              "%s",__FUNCTION__);
+=======
+   eHalStatus           halStatus;
+   WDI_8023MulticastListCb wdi8023MulticastListCb;
+   tHalRcvFltPktSetMcListRspType halRcvFltPktSetMcListRsp;
+   WDI_RcvFltPktSetMcListRspParamsType  wdiRcvFltPktSetMcListRspInfo;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23357,7 +27887,11 @@ WDI_Process8023MulticastListRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23367,11 +27901,33 @@ WDI_Process8023MulticastListRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdi8023MulticastListCb(wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+        wpalMemoryCopy( &halRcvFltPktSetMcListRsp,
+                   pEventData->pEventData,
+                   sizeof(halRcvFltPktSetMcListRsp));
+
+       wdiRcvFltPktSetMcListRspInfo.wdiStatus =   
+                       WDI_HAL_2_WDI_STATUS(halRcvFltPktSetMcListRsp.status);
+       wdiRcvFltPktSetMcListRspInfo.bssIdx =   
+                       halRcvFltPktSetMcListRsp.bssIdx;
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiRcvFltPktSetMcListRspInfo.wdiStatus = WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+
+   /*Notify UMAC*/
+   wdi8023MulticastListCb(&wdiRcvFltPktSetMcListRspInfo, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }
@@ -23393,6 +27949,7 @@ WDI_ProcessReceiveFilterSetFilterRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_ReceiveFilterSetFilterCb wdiReceiveFilterSetFilterCb;
@@ -23400,6 +27957,16 @@ WDI_ProcessReceiveFilterSetFilterRsp
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
           "%s",__FUNCTION__);
+=======
+   eHalStatus           halStatus;
+   WDI_ReceiveFilterSetFilterCb wdiReceiveFilterSetFilterCb;
+   tHalSetPktFilterRspParams    halSetPktFilterRspParams;
+   WDI_SetRcvPktFilterRspParamsType wdiSetRcvPktFilterRspInfo;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+          "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23408,7 +27975,11 @@ WDI_ProcessReceiveFilterSetFilterRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23419,11 +27990,30 @@ WDI_ProcessReceiveFilterSetFilterRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiReceiveFilterSetFilterCb(wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+        wpalMemoryCopy( &halSetPktFilterRspParams,
+                    pEventData->pEventData,
+                    sizeof(halSetPktFilterRspParams));
+
+       wdiSetRcvPktFilterRspInfo.bssIdx = halSetPktFilterRspParams.bssIdx;
+       wdiSetRcvPktFilterRspInfo.wdiStatus = WDI_HAL_2_WDI_STATUS(halSetPktFilterRspParams.status);
+    }
+   else
+    {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiSetRcvPktFilterRspInfo.wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+    }
+   /*Notify UMAC*/
+   wdiReceiveFilterSetFilterCb(&wdiSetRcvPktFilterRspInfo, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }
@@ -23444,15 +28034,26 @@ WDI_ProcessFilterMatchCountRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
 
    WDI_FilterMatchCountCb   wdiFilterMatchCountCb;
+=======
+   eHalStatus           halStatus;
+   WDI_FilterMatchCountCb   wdiFilterMatchCountCb;
+   tHalRcvFltPktMatchRspParams  halRcvFltrPktMatachRsp;
+   WDI_RcvFltPktMatchCntRspParamsType wdiRcvFltPktMatchRspParams;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
              "%s",__FUNCTION__);
+=======
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23461,7 +28062,11 @@ WDI_ProcessFilterMatchCountRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23471,11 +28076,31 @@ WDI_ProcessFilterMatchCountRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiFilterMatchCountCb(wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+        wpalMemoryCopy( &halRcvFltrPktMatachRsp,
+                   pEventData->pEventData,
+                   sizeof(halRcvFltrPktMatachRsp));
+            
+       wdiRcvFltPktMatchRspParams.wdiStatus = WDI_HAL_2_WDI_STATUS(halRcvFltrPktMatachRsp.status);
+       wdiRcvFltPktMatchRspParams.bssIdx = halRcvFltrPktMatachRsp.bssIdx;
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiRcvFltPktMatchRspParams.wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+
+   /*Notify UMAC*/
+   wdiFilterMatchCountCb(&wdiRcvFltPktMatchRspParams, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }
@@ -23496,6 +28121,7 @@ WDI_ProcessReceiveFilterClearFilterRsp
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_ReceiveFilterClearFilterCb wdiReceiveFilterClearFilterCb;
@@ -23503,6 +28129,16 @@ WDI_ProcessReceiveFilterClearFilterRsp
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
              "%s",__FUNCTION__);
+=======
+   eHalStatus           halStatus;
+   WDI_ReceiveFilterClearFilterCb wdiReceiveFilterClearFilterCb;
+   tHalRcvFltPktClearParam  halRcvFltPktClearRspMsg;
+   WDI_RcvFltPktClearRspParamsType wdiRcvFltPktClearRspParamsType;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+             "%s",__func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Sanity check
@@ -23511,7 +28147,11 @@ WDI_ProcessReceiveFilterClearFilterRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23522,11 +28162,33 @@ WDI_ProcessReceiveFilterClearFilterRsp
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
    /*Notify UMAC*/
    wdiReceiveFilterClearFilterCb(wdiStatus, pWDICtx->pRspCBUserData);
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+       wpalMemoryCopy( &halRcvFltPktClearRspMsg,
+                   pEventData->pEventData,
+                   sizeof(halRcvFltPktClearRspMsg));
+
+       wdiRcvFltPktClearRspParamsType.wdiStatus =   
+                       WDI_HAL_2_WDI_STATUS(halRcvFltPktClearRspMsg.status);
+       wdiRcvFltPktClearRspParamsType.bssIdx =   
+                       halRcvFltPktClearRspMsg.bssIdx;
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiRcvFltPktClearRspParamsType.wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+    }
+
+   /*Notify UMAC*/
+   wdiReceiveFilterClearFilterCb(&wdiRcvFltPktClearRspParamsType, pWDICtx->pRspCBUserData);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return WDI_STATUS_SUCCESS;
 }
@@ -23636,7 +28298,11 @@ WDI_ProcessSetPowerParamsReq
        ( NULL == (wdiPowerParamsCb   = (WDI_SetPowerParamsCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23680,7 +28346,10 @@ WDI_ProcessSetPowerParamsReq
   powerParams.uBETInterval =
     pwdiPowerParamsReqParams->wdiSetPowerParamsInfo.uBETInterval;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &powerParams,
                    sizeof(powerParams));
@@ -23724,7 +28393,11 @@ WDI_ProcessSetPowerParamsRsp
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
+=======
+                  "%s: Invalid parameters", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
@@ -23745,13 +28418,18 @@ WDI_ProcessSetPowerParamsRsp
 
 #ifdef WLAN_FEATURE_GTK_OFFLOAD
 /**
+<<<<<<< HEAD
  @brief WDI_GTKOffloadReq will be called when the upper MAC
+=======
+ @brief WDI_GTKOffloadReq will be called when the upper MAC 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         wants to set GTK Rekey Counter while in power save. Upon
         the call of this API the WLAN DAL will pack and send a
         HAL GTK offload request message to the lower RIVA
         sub-system if DAL is in state STARTED.
 
         In state BUSY this request will be queued. Request won't
+<<<<<<< HEAD
         be allowed in any other state.
 
  WDI_PostAssocReq must have been called.
@@ -23769,6 +28447,25 @@ WDI_ProcessSetPowerParamsRsp
  @return Result of the function call
 */
 WDI_Status
+=======
+        be allowed in any other state. 
+
+ WDI_PostAssocReq must have been called.
+
+ @param pwdiGtkOffloadParams: the GTK offload as specified 
+                      by the Device Interface
+  
+        wdiGtkOffloadCb: callback for passing back the response
+        of the GTK offload operation received from the device
+  
+        pUserData: user data will be passed back with the
+        callback 
+  
+ @see WDI_PostAssocReq
+ @return Result of the function call
+*/
+WDI_Status 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 WDI_GTKOffloadReq
 (
   WDI_GtkOffloadReqMsg*      pwdiGtkOffloadReqMsg,
@@ -23776,27 +28473,45 @@ WDI_GTKOffloadReq
   void*                      pUserData
 )
 {
+<<<<<<< HEAD
    WDI_EventInfoType      wdiEventData = {0};
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*------------------------------------------------------------------------
      Sanity Check
+=======
+   WDI_EventInfoType      wdiEventData;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   /*------------------------------------------------------------------------
+     Sanity Check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ------------------------------------------------------------------------*/
    if ( eWLAN_PAL_FALSE == gWDIInitialized )
    {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "WDI API call before module is initialized - Fail request");
 
+<<<<<<< HEAD
      return WDI_STATUS_E_NOT_ALLOWED;
+=======
+     return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*------------------------------------------------------------------------
      Fill in Event data and post to the Main FSM
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_GTK_OFFLOAD_REQ;
+<<<<<<< HEAD
    wdiEventData.pEventData      = pwdiGtkOffloadReqMsg;
    wdiEventData.uEventDataSize  = sizeof(*pwdiGtkOffloadReqMsg);;
    wdiEventData.pCBfnc          = wdiGtkOffloadCb;
+=======
+   wdiEventData.pEventData      = pwdiGtkOffloadReqMsg; 
+   wdiEventData.uEventDataSize  = sizeof(*pwdiGtkOffloadReqMsg);
+   wdiEventData.pCBfnc          = wdiGtkOffloadCb; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pUserData       = pUserData;
 
    return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
@@ -23804,13 +28519,18 @@ WDI_GTKOffloadReq
 
 
 /**
+<<<<<<< HEAD
  @brief WDI_GTKOffloadGetInfoReq will be called when the upper
+=======
+ @brief WDI_GTKOffloadGetInfoReq will be called when the upper 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           MAC wants to get GTK Rekey Counter while in power save.
           Upon the call of this API the WLAN DAL will pack and
           send a HAL GTK offload request message to the lower RIVA
         sub-system if DAL is in state STARTED.
 
         In state BUSY this request will be queued. Request won't
+<<<<<<< HEAD
         be allowed in any other state.
 
  WDI_PostAssocReq must have been called.
@@ -23830,6 +28550,27 @@ WDI_GTKOffloadReq
  @return Result of the function call
 */
 WDI_Status
+=======
+        be allowed in any other state. 
+
+ WDI_PostAssocReq must have been called.
+
+ @param pwdiGtkOffloadGetInfoReqMsg: the GTK Offload 
+                        Information Message as specified by the
+                        Device Interface
+  
+          wdiGtkOffloadGetInfoCb: callback for passing back the
+          response of the GTK offload operation received from the
+          device
+  
+        pUserData: user data will be passed back with the
+        callback 
+  
+ @see WDI_PostAssocReq
+ @return Result of the function call
+*/
+WDI_Status 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 WDI_GTKOffloadGetInfoReq
 (
   WDI_GtkOffloadGetInfoReqMsg*  pwdiGtkOffloadGetInfoReqMsg,
@@ -23837,27 +28578,45 @@ WDI_GTKOffloadGetInfoReq
   void*                          pUserData
 )
 {
+<<<<<<< HEAD
    WDI_EventInfoType      wdiEventData = {0};
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*------------------------------------------------------------------------
      Sanity Check
+=======
+   WDI_EventInfoType      wdiEventData;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   /*------------------------------------------------------------------------
+     Sanity Check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ------------------------------------------------------------------------*/
    if ( eWLAN_PAL_FALSE == gWDIInitialized )
    {
      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "WDI API call before module is initialized - Fail request");
 
+<<<<<<< HEAD
      return WDI_STATUS_E_NOT_ALLOWED;
+=======
+     return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*------------------------------------------------------------------------
      Fill in Event data and post to the Main FSM
    ------------------------------------------------------------------------*/
    wdiEventData.wdiRequest      = WDI_GTK_OFFLOAD_GETINFO_REQ;
+<<<<<<< HEAD
    wdiEventData.pEventData      = pwdiGtkOffloadGetInfoReqMsg;
    wdiEventData.uEventDataSize  = sizeof(*pwdiGtkOffloadGetInfoReqMsg);
    wdiEventData.pCBfnc          = wdiGtkOffloadGetInfoCb;
+=======
+   wdiEventData.pEventData      = pwdiGtkOffloadGetInfoReqMsg; 
+   wdiEventData.uEventDataSize  = sizeof(*pwdiGtkOffloadGetInfoReqMsg);
+   wdiEventData.pCBfnc          = wdiGtkOffloadGetInfoCb; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wdiEventData.pUserData       = pUserData;
 
    return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
@@ -23865,23 +28624,36 @@ WDI_GTKOffloadGetInfoReq
 
 
 /**
+<<<<<<< HEAD
  @brief Process set GTK Offload Request function
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ @brief Process set GTK Offload Request function 
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessGTKOffloadReq
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
    WDI_GtkOffloadReqMsg*    pwdiGtkOffloadReqMsg = NULL;
    WDI_GtkOffloadCb         wdiGtkOffloadCb      = NULL;
+<<<<<<< HEAD
    wpt_uint8*               pSendBuffer          = NULL;
    wpt_uint16               usDataOffset         = 0;
    wpt_uint16               usSendSize           = 0;
@@ -23890,21 +28662,44 @@ WDI_ProcessGTKOffloadReq
 
    /*-------------------------------------------------------------------------
      Sanity check
+=======
+   wpt_uint8*               pSendBuffer          = NULL; 
+   wpt_uint16               usDataOffset         = 0;
+   wpt_uint16               usSendSize           = 0;
+   tHalGtkOffloadReqParams  gtkOffloadReqParams = {0};
+   wpt_uint8                ucCurrentSessionId = 0;
+   WDI_BSSSessionType*      pBSSSes = NULL;
+
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   /*-------------------------------------------------------------------------
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pEventData ) ||
        ( NULL == (pwdiGtkOffloadReqMsg = (WDI_GtkOffloadReqMsg*)pEventData->pEventData)) ||
        ( NULL == (wdiGtkOffloadCb   = (WDI_GtkOffloadCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
      Get message buffer
    -----------------------------------------------------------------------*/
+<<<<<<< HEAD
    if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_GTK_OFFLOAD_REQ,
+=======
+   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_GTK_OFFLOAD_REQ, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sizeof(gtkOffloadReqParams),
                          &pSendBuffer, &usDataOffset, &usSendSize))||
        ( usSendSize < (usDataOffset + sizeof(gtkOffloadReqParams) )))
@@ -23913,12 +28708,31 @@ WDI_ProcessGTKOffloadReq
                   "Unable to get send buffer in GTK offload req %x %x %x",
                   pEventData, pwdiGtkOffloadReqMsg, wdiGtkOffloadCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    //
    // Fill gtkOffloadReqParams from pwdiGtkOffloadReqMsg->gtkOffloadReqParams
    //
+<<<<<<< HEAD
+=======
+   ucCurrentSessionId = WDI_FindAssocSession( pWDICtx, 
+                               pwdiGtkOffloadReqMsg->gtkOffloadReqParams.bssId, 
+                               &pBSSSes);  
+   if ( NULL == pBSSSes )
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                    " %s : Association for this BSSID does not exist", __func__);
+      goto fail;
+   }
+
+   gtkOffloadReqParams.bssIdx = pBSSSes->ucBSSIdx;
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    gtkOffloadReqParams.ulFlags = pwdiGtkOffloadReqMsg->gtkOffloadReqParams.ulFlags;
    // Copy KCK
    wpalMemoryCopy(&(gtkOffloadReqParams.aKCK[0]), &(pwdiGtkOffloadReqMsg->gtkOffloadReqParams.aKCK[0]), 16);
@@ -23927,6 +28741,7 @@ WDI_ProcessGTKOffloadReq
    // Copy KeyReplayCounter
    wpalMemoryCopy(&(gtkOffloadReqParams.ullKeyReplayCounter), &(pwdiGtkOffloadReqMsg->gtkOffloadReqParams.ullKeyReplayCounter), sizeof(v_U64_t));
 
+<<<<<<< HEAD
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &gtkOffloadReqParams,
                    sizeof(gtkOffloadReqParams));
@@ -23939,62 +28754,136 @@ WDI_ProcessGTKOffloadReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiGtkOffloadCb, pEventData->pUserData, WDI_GTK_OFFLOAD_RESP);
+=======
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &gtkOffloadReqParams, 
+                   sizeof(gtkOffloadReqParams)); 
+
+   pWDICtx->wdiReqStatusCB     = pwdiGtkOffloadReqMsg->wdiReqStatusCB;
+   pWDICtx->pReqStatusUserData = pwdiGtkOffloadReqMsg->pUserData; 
+
+   /*-------------------------------------------------------------------------
+     Send Get STA Request to HAL 
+   -------------------------------------------------------------------------*/
+   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                        wdiGtkOffloadCb, pEventData->pUserData, WDI_GTK_OFFLOAD_RESP); 
+
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
 /**
  @brief Process GTK Offload Get Information Request function
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessGTKOffloadGetInfoReq
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
    WDI_GtkOffloadGetInfoReqMsg*     pwdiGtkOffloadGetInfoReqMsg = NULL;
    WDI_GtkOffloadGetInfoCb          wdiGtkOffloadGetInfoCb      = NULL;
+<<<<<<< HEAD
    wpt_uint8*                       pSendBuffer           = NULL;
    wpt_uint16                       usDataOffset          = 0;
    wpt_uint16                       usSendSize            = 0;
 
    /*-------------------------------------------------------------------------
      Sanity check
+=======
+   wpt_uint8*                       pSendBuffer           = NULL; 
+   wpt_uint16                       usDataOffset          = 0;
+   wpt_uint16                       usSendSize            = 0;
+   tHalGtkOffloadGetInfoReqParams   halGtkOffloadGetInfoReqParams;
+   wpt_uint8                        ucCurrentSessionId = 0;
+   WDI_BSSSessionType*              pBSSSes = NULL;
+
+   /*-------------------------------------------------------------------------
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pEventData ) ||
        ( NULL == (pwdiGtkOffloadGetInfoReqMsg = (WDI_GtkOffloadGetInfoReqMsg*)pEventData->pEventData)) ||
        ( NULL == (wdiGtkOffloadGetInfoCb = (WDI_GtkOffloadGetInfoCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      goto failRequest;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
      Get message buffer
    -----------------------------------------------------------------------*/
+<<<<<<< HEAD
    if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_GTK_OFFLOAD_GETINFO_REQ,
                          0,
                          &pSendBuffer, &usDataOffset, &usSendSize))||
        ( usSendSize < usDataOffset))
+=======
+   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_GTK_OFFLOAD_GETINFO_REQ, 
+                         sizeof(halGtkOffloadGetInfoReqParams),
+                         &pSendBuffer, &usDataOffset, &usSendSize))||
+       ( usSendSize < ( usDataOffset + sizeof(halGtkOffloadGetInfoReqParams))))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
                   "Unable to get send buffer in WDI_ProcessGTKOffloadGetInfoReq() %x %x %x",
                   pEventData, pwdiGtkOffloadGetInfoReqMsg, wdiGtkOffloadGetInfoCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
    }
+=======
+      goto failRequest;
+   }
+   ucCurrentSessionId = WDI_FindAssocSession( pWDICtx, 
+                               pwdiGtkOffloadGetInfoReqMsg->WDI_GtkOffloadGetInfoReqParams.bssId, 
+                               &pBSSSes);  
+   if ( NULL == pBSSSes )
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                    " %s : Association for this BSSID does not exist",__func__);
+      goto fail;
+   }
+   halGtkOffloadGetInfoReqParams.bssIdx = pBSSSes->ucBSSIdx;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    //
    // Don't need to fill send buffer other than header
    //
+<<<<<<< HEAD
 
    pWDICtx->wdiReqStatusCB     = pwdiGtkOffloadGetInfoReqMsg->wdiReqStatusCB;
    pWDICtx->pReqStatusUserData = pwdiGtkOffloadGetInfoReqMsg->pUserData;
@@ -24004,25 +28893,58 @@ WDI_ProcessGTKOffloadGetInfoReq
    -------------------------------------------------------------------------*/
    return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize,
                         wdiGtkOffloadGetInfoCb, pEventData->pUserData, WDI_GTK_OFFLOAD_GETINFO_RESP);
+=======
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &halGtkOffloadGetInfoReqParams, 
+                   sizeof(halGtkOffloadGetInfoReqParams)); 
+
+   pWDICtx->wdiReqStatusCB     = pwdiGtkOffloadGetInfoReqMsg->wdiReqStatusCB;
+   pWDICtx->pReqStatusUserData = pwdiGtkOffloadGetInfoReqMsg->pUserData; 
+
+   /*-------------------------------------------------------------------------
+     Send Get STA Request to HAL 
+   -------------------------------------------------------------------------*/
+   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                        wdiGtkOffloadGetInfoCb, pEventData->pUserData, WDI_GTK_OFFLOAD_GETINFO_RESP); 
+fail:
+   // Release the message buffer so we don't leak
+   wpalMemoryFree(pSendBuffer);
+
+failRequest:
+   //WDA should have failure check to avoid the memory leak
+   return WDI_STATUS_E_FAILURE;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
  @brief Process host offload Rsp function (called when a
         response is being received over the bus from HAL)
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessGtkOffloadRsp
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
    WDI_GtkOffloadCb    wdiGtkOffloadCb   = NULL;
@@ -24032,19 +28954,38 @@ WDI_ProcessGtkOffloadRsp
 
    /*-------------------------------------------------------------------------
      Sanity check
+=======
+   eHalStatus           halStatus;
+   WDI_GtkOffloadCb    wdiGtkOffloadCb   = NULL;
+   tHalGtkOffloadRspParams halGtkOffloadRspParams;
+   WDI_GtkOffloadRspParams  wdiGtkOffloadRsparams;
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   wdiGtkOffloadCb = (WDI_GtkOffloadCb)pWDICtx->pfncRspCB; 
+
+   /*-------------------------------------------------------------------------
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
        ( NULL == pEventData->pEventData))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
@@ -24052,24 +28993,59 @@ WDI_ProcessGtkOffloadRsp
    wdiGtkOffloadCb( wdiStatus, pWDICtx->pRspCBUserData);
 
    return WDI_STATUS_SUCCESS;
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+        wpalMemoryCopy( &halGtkOffloadRspParams,
+                   pEventData->pEventData,
+                   sizeof(halGtkOffloadRspParams));
+
+       wdiGtkOffloadRsparams.ulStatus =   
+                       WDI_HAL_2_WDI_STATUS(halGtkOffloadRspParams.ulStatus);
+       wdiGtkOffloadRsparams.bssIdx =   
+                       halGtkOffloadRspParams.bssIdx;
+   }
+   else
+   {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiGtkOffloadRsparams.ulStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+   }
+
+   /*Notify UMAC*/
+   wdiGtkOffloadCb( &wdiGtkOffloadRsparams, pWDICtx->pRspCBUserData);
+
+   return WDI_STATUS_SUCCESS; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
  @brief Process GTK Offload Get Information Response function
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessGTKOffloadGetInfoRsp
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_Status           wdiStatus;
    eHalStatus           halStatus;
 
@@ -24081,19 +29057,40 @@ WDI_ProcessGTKOffloadGetInfoRsp
 
    /*-------------------------------------------------------------------------
      Sanity check
+=======
+   eHalStatus           halStatus;
+   WDI_GtkOffloadGetInfoCb   wdiGtkOffloadGetInfoCb = NULL;
+   tHalGtkOffloadGetInfoRspParams halGtkOffloadGetInfoRspParams;
+   WDI_GtkOffloadGetInfoRspParams wdiGtkOffloadGetInfoRsparams;
+   WDI_BSSSessionType*              pBSSSes = NULL;
+
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   wdiGtkOffloadGetInfoCb = (WDI_GtkOffloadGetInfoCb)pWDICtx->pfncRspCB; 
+
+   /*-------------------------------------------------------------------------
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
+<<<<<<< HEAD
    halStatus = *((eHalStatus*)pEventData->pEventData);
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
 
@@ -24103,13 +29100,64 @@ WDI_ProcessGTKOffloadGetInfoRsp
    wdiGtkOffloadGetInfoCb(wdiStatus, pWDICtx->pRspCBUserData);
 
    return WDI_STATUS_SUCCESS;
+=======
+   if(WDI_getFwWlanFeatCaps(SLM_SESSIONIZATION))
+   {
+       wpalMemoryCopy( &halGtkOffloadGetInfoRspParams,
+                   pEventData->pEventData,
+                   sizeof(halGtkOffloadGetInfoRspParams));
+
+       wdiGtkOffloadGetInfoRsparams.ulStatus =   
+                       WDI_HAL_2_WDI_STATUS(halGtkOffloadGetInfoRspParams.ulStatus);
+       wdiGtkOffloadGetInfoRsparams.ullKeyReplayCounter = 
+                       halGtkOffloadGetInfoRspParams.ullKeyReplayCounter;
+       wdiGtkOffloadGetInfoRsparams.ulTotalRekeyCount = 
+                       halGtkOffloadGetInfoRspParams.ulTotalRekeyCount;
+       wdiGtkOffloadGetInfoRsparams.ulGTKRekeyCount = 
+                       halGtkOffloadGetInfoRspParams.ulGTKRekeyCount;
+       wdiGtkOffloadGetInfoRsparams.ulIGTKRekeyCount = 
+                       halGtkOffloadGetInfoRspParams.ulIGTKRekeyCount;
+
+       wpalMutexAcquire(&pWDICtx->wptMutex);
+       WDI_FindAssocSessionByBSSIdx(pWDICtx, halGtkOffloadGetInfoRspParams.bssIdx,
+                       &pBSSSes);
+
+       if ( NULL == pBSSSes )
+       {
+           WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+                    "Association sequence for this BSS does not exist or "
+                    "association no longer in progress - mysterious HAL response");
+           wpalMutexRelease(&pWDICtx->wptMutex);
+           return WDI_STATUS_E_NOT_ALLOWED;
+       }
+
+       wpalMemoryCopy(wdiGtkOffloadGetInfoRsparams.bssId, pBSSSes->macBSSID,
+                       sizeof (wpt_macAddr));
+       wpalMutexRelease(&pWDICtx->wptMutex);
+    }
+   else
+    {
+       halStatus = *((eHalStatus*)pEventData->pEventData);
+       wdiGtkOffloadGetInfoRsparams.ulStatus   =   WDI_HAL_2_WDI_STATUS(halStatus); 
+    }
+   /*Notify UMAC*/
+   //wdiUpdateScanParamsCb(wdiStatus, pWDICtx->pRspCBUserData);
+   //wdiReceiveFilterClearFilterCb(wdiStatus, pWDICtx->pRspCBUserData);
+   wdiGtkOffloadGetInfoCb(&wdiGtkOffloadGetInfoRsparams, pWDICtx->pRspCBUserData);
+
+   return WDI_STATUS_SUCCESS; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif // WLAN_FEATURE_GTK_OFFLOAD
 
 #ifdef WLAN_WAKEUP_EVENTS
 WDI_Status
 WDI_ProcessWakeReasonInd
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
@@ -24119,25 +29167,42 @@ WDI_ProcessWakeReasonInd
   wpt_uint32 allocSize = 0;
 
   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
             "+%s", __FUNCTION__);
 
   /*-------------------------------------------------------------------------
     Sanity check
+=======
+            "+%s", __func__);
+
+  /*-------------------------------------------------------------------------
+    Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------*/
   if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
       ( NULL == pEventData->pEventData ))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
      WDI_ASSERT( 0 );
      return WDI_STATUS_E_FAILURE;
+=======
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT( 0 );
+     return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*-------------------------------------------------------------------------
     Extract indication and send it to UMAC
   -------------------------------------------------------------------------*/
   pWakeReasonParams = (tpWakeReasonParams)(pEventData->pEventData);
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   allocSize = sizeof(WDI_LowLevelIndType) + (pWakeReasonParams->ulStoredDataLen - 1);
 
   //Allocate memory for WDI_WakeReasonIndType structure
@@ -24147,15 +29212,22 @@ WDI_ProcessWakeReasonInd
   {
     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
             "%s: Failed to allocate memory for WDI_WakeReasonIndType: %x %x %x ",
+<<<<<<< HEAD
                 __FUNCTION__, pWDICtx, pEventData, pEventData->pEventData);
     WDI_ASSERT(0);
     return WDI_STATUS_E_FAILURE;
+=======
+                __func__, pWDICtx, pEventData, pEventData->pEventData);
+    WDI_ASSERT(0);
+    return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   wpalMemoryZero(pWdiInd, allocSize);
 
   /* Fill in the indication parameters*/
   // Fill wdiInd.wdiIndicationData.wakeReasonInd structure from wakeReasonInd.wakeReasonParams
+<<<<<<< HEAD
   pWdiInd->wdiIndicationType = WDI_WAKE_REASON_IND;
   pWdiInd->wdiIndicationData.wdiWakeReasonInd.ulReason = pWakeReasonParams->ulReason;
   pWdiInd->wdiIndicationData.wdiWakeReasonInd.ulReasonArg = pWakeReasonParams->ulReasonArg;
@@ -24168,13 +29240,37 @@ WDI_ProcessWakeReasonInd
   /*Notify UMAC*/
   pWDICtx->wdiLowLevelIndCB( pWdiInd, pWDICtx->pIndUserData );
 
+=======
+  pWdiInd->wdiIndicationType = WDI_WAKE_REASON_IND; 
+  pWdiInd->wdiIndicationData.wdiWakeReasonInd.ulReason = pWakeReasonParams->ulReason;
+  pWdiInd->wdiIndicationData.wdiWakeReasonInd.ulReasonArg = pWakeReasonParams->ulReasonArg;
+  pWdiInd->wdiIndicationData.wdiWakeReasonInd.ulStoredDataLen = pWakeReasonParams->ulStoredDataLen;
+  pWdiInd->wdiIndicationData.wdiWakeReasonInd.ulActualDataLen = pWakeReasonParams->ulActualDataLen;    
+  wpalMemoryCopy( (void *)&(pWdiInd->wdiIndicationData.wdiWakeReasonInd.aDataStart[0]), 
+                  &(pWakeReasonParams->aDataStart[0]), 
+                  pWakeReasonParams->ulStoredDataLen);
+
+
+  if ( pWDICtx->wdiLowLevelIndCB )
+  {
+    /*Notify UMAC*/
+    pWDICtx->wdiLowLevelIndCB( pWdiInd, pWDICtx->pIndUserData );
+  }
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   //Free memory allocated for WDI_WakeReasonIndType structure
   wpalMemoryFree(pWdiInd);
 
   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
             "-%s", __FUNCTION__);
 
   return WDI_STATUS_SUCCESS;
+=======
+            "-%s", __func__);
+
+  return WDI_STATUS_SUCCESS; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif // WLAN_WAKEUP_EVENTS
 
@@ -24192,16 +29288,27 @@ void WDI_GetWcnssCompiledApiVersion
 /**
  @brief Process Set TM Level Rsp function (called when a
         response is being received over the bus from HAL)
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessSetTmLevelRsp
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
@@ -24212,37 +29319,65 @@ WDI_ProcessSetTmLevelRsp
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    /*-------------------------------------------------------------------------
+<<<<<<< HEAD
      Sanity check
+=======
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
        ( NULL == pEventData->pEventData ))
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
    }
 
    wdiSetTmLevelCb = (WDI_SetPowerParamsCb)pWDICtx->pfncRspCB;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE; 
+   }
+
+   wdiSetTmLevelCb = (WDI_SetPowerParamsCb)pWDICtx->pfncRspCB; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
    halStatus = *((eHalStatus*)pEventData->pEventData);
+<<<<<<< HEAD
    wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+=======
+   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*Notify UMAC*/
    wdiSetTmLevelCb(wdiStatus, pWDICtx->pRspCBUserData);
 
+<<<<<<< HEAD
    return WDI_STATUS_SUCCESS;
+=======
+   return WDI_STATUS_SUCCESS; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessSetTmLevelRsp*/
 
 /**
  @brief Process Set Thermal Mitigation level Changed request
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
@@ -24255,28 +29390,46 @@ WDI_ProcessSetTmLevelReq
 {
    WDI_SetTmLevelReqType           *pwdiSetTmLevelReq = NULL;
    WDI_SetTmLevelCb                 wdiSetTmLevelCb   = NULL;
+<<<<<<< HEAD
    wpt_uint8*                       pSendBuffer       = NULL;
+=======
+   wpt_uint8*                       pSendBuffer       = NULL; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpt_uint16                       usDataOffset      = 0;
    wpt_uint16                       usSendSize        = 0;
    tSetThermalMitgationType         halTmMsg;
 
    /*-------------------------------------------------------------------------
+<<<<<<< HEAD
      Sanity check
+=======
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pEventData ) ||
        ( NULL == (pwdiSetTmLevelReq = (WDI_SetTmLevelReqType*)pEventData->pEventData)) ||
        ( NULL == (wdiSetTmLevelCb   = (WDI_SetTmLevelCb)pEventData->pCBfnc)))
    {
       WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /*-----------------------------------------------------------------------
      Get message buffer
    -----------------------------------------------------------------------*/
+<<<<<<< HEAD
    if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_SET_TM_LEVEL_REQ,
+=======
+   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_SET_TM_LEVEL_REQ, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sizeof(halTmMsg),
                          &pSendBuffer, &usDataOffset, &usSendSize))||
        ( usSendSize < (usDataOffset + sizeof(halTmMsg) )))
@@ -24285,12 +29438,17 @@ WDI_ProcessSetTmLevelReq
                   "Unable to get send buffer in Set PNO req %x %x %x",
                   pEventData, pwdiSetTmLevelReq, wdiSetTmLevelCb);
       WDI_ASSERT(0);
+<<<<<<< HEAD
       return WDI_STATUS_E_FAILURE;
+=======
+      return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    halTmMsg.thermalMitMode = pwdiSetTmLevelReq->tmMode;
    halTmMsg.thermalMitLevel = pwdiSetTmLevelReq->tmLevel;
 
+<<<<<<< HEAD
    wpalMemoryCopy( pSendBuffer+usDataOffset,
                    &halTmMsg,
                    sizeof(halTmMsg));
@@ -24308,6 +29466,25 @@ WDI_ProcessSetTmLevelReq
  * bitmap struct
  */
 static void
+=======
+   wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                   &halTmMsg, 
+                   sizeof(halTmMsg)); 
+
+   pWDICtx->pReqStatusUserData = pwdiSetTmLevelReq->pUserData; 
+   pWDICtx->pfncRspCB = NULL;
+   /*-------------------------------------------------------------------------
+     Send Get STA Request to HAL 
+   -------------------------------------------------------------------------*/
+   return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                        wdiSetTmLevelCb, pEventData->pUserData, WDI_SET_TM_LEVEL_RESP); 
+}
+
+/* Fill the value from the global features enabled array to the global capabilities
+ * bitmap struct 
+ */
+static void 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 FillAllFeatureCaps(tWlanFeatCaps *fCaps, placeHolderInCapBitmap *enabledFeat, wpt_int8 len)
 {
    wpt_int8 i;
@@ -24320,6 +29497,7 @@ FillAllFeatureCaps(tWlanFeatCaps *fCaps, placeHolderInCapBitmap *enabledFeat, wp
 /**
  @brief WDI_featureCapsExchangeReq
         Post feature capability bitmap exchange event.
+<<<<<<< HEAD
         Host will send its own capability to FW in this req and
         expect FW to send its capability back as a bitmap in Response
 
@@ -24332,6 +29510,20 @@ FillAllFeatureCaps(tWlanFeatCaps *fCaps, placeHolderInCapBitmap *enabledFeat, wp
         pUserData: user data will be passed back with the
         callback
 
+=======
+        Host will send its own capability to FW in this req and 
+        expect FW to send its capability back as a bitmap in Response
+ 
+ @param 
+  
+        wdiFeatureCapsExchangeCb: callback called on getting the response.
+        It is kept to mantain similarity between WDI reqs and if needed, can
+        be used in future. Currently, It is set to NULL
+  
+        pUserData: user data will be passed back with the
+        callback 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
@@ -24344,16 +29536,27 @@ WDI_featureCapsExchangeReq
 {
    WDI_EventInfoType   wdiEventData;
    wpt_int32           fCapsStructSize;
+<<<<<<< HEAD
 
    /*------------------------------------------------------------------------
      Sanity Check
+=======
+   
+   /*------------------------------------------------------------------------
+     Sanity Check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ------------------------------------------------------------------------*/
    if ( eWLAN_PAL_FALSE == gWDIInitialized )
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "WDI API call before module is initialized - Fail request");
+<<<<<<< HEAD
 
       return WDI_STATUS_E_NOT_ALLOWED;
+=======
+   
+      return WDI_STATUS_E_NOT_ALLOWED; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Allocate memory separately for global variable carrying FW caps */
@@ -24362,13 +29565,21 @@ WDI_featureCapsExchangeReq
    if ( NULL ==  gpHostWlanFeatCaps )
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                "Cannot allocate memory for host capability info\n");
+=======
+               "Cannot allocate memory for host capability info\n"); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_MEM_FAILURE;
    }
 
    wpalMemoryZero(gpHostWlanFeatCaps, fCapsStructSize);
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*------------------------------------------------------------------------
    Fill in Event data and post to the Main FSM
    ------------------------------------------------------------------------*/
@@ -24381,6 +29592,7 @@ WDI_featureCapsExchangeReq
       gpHostWlanFeatCaps->featCaps[2],
       gpHostWlanFeatCaps->featCaps[3]
    );
+<<<<<<< HEAD
 
    wdiEventData.wdiRequest      = WDI_FEATURE_CAPS_EXCHANGE_REQ;
    wdiEventData.pEventData      = gpHostWlanFeatCaps;
@@ -24388,46 +29600,101 @@ WDI_featureCapsExchangeReq
    wdiEventData.pCBfnc          = wdiFeatureCapsExchangeCb;
    wdiEventData.pUserData       = pUserData;
 
+=======
+   
+   wdiEventData.wdiRequest      = WDI_FEATURE_CAPS_EXCHANGE_REQ;
+   wdiEventData.pEventData      = gpHostWlanFeatCaps; 
+   wdiEventData.uEventDataSize  = fCapsStructSize; 
+   wdiEventData.pCBfnc          = wdiFeatureCapsExchangeCb; 
+   wdiEventData.pUserData       = pUserData;
+   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
 }
 
 /**
+<<<<<<< HEAD
  @brief Process Host-FW Capability Exchange Request function
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ @brief Disable Active mode offload in Host
+ 
+ @param  void
+ @see
+ @return void
+*/
+void
+WDI_disableCapablityFeature(wpt_uint8 feature_index)
+{
+   supportEnabledFeatures[feature_index] = 0;
+   return;
+}
+
+/**
+ @brief Process Host-FW Capability Exchange Request function
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessFeatureCapsExchangeReq
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
   wpt_uint8*              pSendBuffer        = NULL;
   wpt_uint16              usDataOffset       = 0;
   wpt_uint16              usSendSize         = 0;
   wpt_uint16              usLen              = 0;
+=======
+  wpt_uint8*              pSendBuffer        = NULL; 
+  wpt_uint16              usDataOffset       = 0;
+  wpt_uint16              usSendSize         = 0;
+  wpt_uint16              usLen              = 0; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
   WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
          "%s", __FUNCTION__);
 
   /*-------------------------------------------------------------------------
     Sanity check
+=======
+         "%s", __func__);
+
+  /*-------------------------------------------------------------------------
+    Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------*/
   /* Call back function is NULL since not required for cap exchange req */
   if (( NULL == pEventData ) ||
       ( NULL == (tWlanFeatCaps *)pEventData->pEventData))
   {
      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                  "%s: Invalid parameters", __FUNCTION__);
      WDI_ASSERT(0);
      return WDI_STATUS_E_FAILURE;
+=======
+                 "%s: Invalid parameters", __func__);
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   /*-----------------------------------------------------------------------
@@ -24436,7 +29703,11 @@ WDI_ProcessFeatureCapsExchangeReq
   usLen = sizeof(tWlanFeatCaps);
 
   if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx,
+<<<<<<< HEAD
                         WDI_FEATURE_CAPS_EXCHANGE_REQ,
+=======
+                        WDI_FEATURE_CAPS_EXCHANGE_REQ, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         usLen,
                         &pSendBuffer, &usDataOffset, &usSendSize))||
       ( usSendSize < (usDataOffset + usLen )))
@@ -24445,7 +29716,11 @@ WDI_ProcessFeatureCapsExchangeReq
               "Unable to get send buffer in feat caps exchange req %x %x",
                 pEventData, (tWlanFeatCaps *)pEventData->pEventData);
      WDI_ASSERT(0);
+<<<<<<< HEAD
      return WDI_STATUS_E_FAILURE;
+=======
+     return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   }
 
   WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_INFO,
@@ -24456,6 +29731,7 @@ WDI_ProcessFeatureCapsExchangeReq
       ((tWlanFeatCaps *)pEventData->pEventData)->featCaps[3]
     );
 
+<<<<<<< HEAD
   /* Copy host caps after the offset in the send buffer */
   wpalMemoryCopy( pSendBuffer+usDataOffset,
                   (tWlanFeatCaps *)pEventData->pEventData,
@@ -24468,59 +29744,114 @@ WDI_ProcessFeatureCapsExchangeReq
                        (WDI_StartRspCb)pEventData->pCBfnc,
                        pEventData->pUserData, WDI_FEATURE_CAPS_EXCHANGE_RESP);
 
+=======
+  /* Copy host caps after the offset in the send buffer */  
+  wpalMemoryCopy( pSendBuffer+usDataOffset, 
+                  (tWlanFeatCaps *)pEventData->pEventData, 
+                  usLen); 
+
+  /*-------------------------------------------------------------------------
+    Send Start Request to HAL 
+  -------------------------------------------------------------------------*/
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                       (WDI_StartRspCb)pEventData->pCBfnc,
+                       pEventData->pUserData, WDI_FEATURE_CAPS_EXCHANGE_RESP);
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }/*WDI_ProcessFeatureCapsExchangeReq*/
 
 /**
  @brief Process Host-FW Capability Exchange Response function
+<<<<<<< HEAD
 
  @param  pWDICtx:         pointer to the WLAN DAL context
          pEventData:      pointer to the event information structure
 
+=======
+ 
+ @param  pWDICtx:         pointer to the WLAN DAL context 
+         pEventData:      pointer to the event information structure 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @see
  @return Result of the function call
 */
 WDI_Status
 WDI_ProcessFeatureCapsExchangeRsp
+<<<<<<< HEAD
 (
+=======
+( 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WDI_ControlBlockType*  pWDICtx,
   WDI_EventInfoType*     pEventData
 )
 {
+<<<<<<< HEAD
    WDI_featureCapsExchangeCb    wdiFeatureCapsExchangeCb;
+=======
+   WDI_featureCapsExchangeCb    wdiFeatureCapsExchangeCb;   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpt_int32                   fCapsStructSize;
    /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
           "%s", __FUNCTION__);
 
    /*-------------------------------------------------------------------------
      Sanity check
+=======
+          "%s", __func__);
+
+   /*-------------------------------------------------------------------------
+     Sanity check 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    -------------------------------------------------------------------------*/
    if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
        ( NULL == pEventData->pEventData ))
    {
       /* It will go here when riva is old (doesn't understand this msg) and host is new */
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                   "%s: Invalid parameters", __FUNCTION__);
       WDI_ASSERT(0);
       return WDI_STATUS_E_FAILURE;
+=======
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* Allocate memory separately for global variable carrying FW caps */
    fCapsStructSize = sizeof(tWlanFeatCaps);
+<<<<<<< HEAD
    gpFwWlanFeatCaps = wpalMemoryAllocate(fCapsStructSize);
    if ( NULL ==  gpFwWlanFeatCaps )
    {
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
                "Cannot allocate memory for host capability info\n");
+=======
+   gpFwWlanFeatCaps = wpalMemoryAllocate(fCapsStructSize);   
+   if ( NULL ==  gpFwWlanFeatCaps )
+   {
+      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+               "Cannot allocate memory for host capability info\n"); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WDI_ASSERT(0);
       return WDI_STATUS_MEM_FAILURE;
    }
 
    /*-------------------------------------------------------------------------
      Unpack HAL Response Message - the header was already extracted by the
+<<<<<<< HEAD
      main Response Handling procedure
    -------------------------------------------------------------------------*/
+=======
+     main Response Handling procedure 
+   -------------------------------------------------------------------------*/   
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*-------------------------------------------------------------------------
      Extract response and send it to UMAC
    -------------------------------------------------------------------------*/
@@ -24534,16 +29865,65 @@ WDI_ProcessFeatureCapsExchangeRsp
       gpFwWlanFeatCaps->featCaps[2],
       gpFwWlanFeatCaps->featCaps[3]
      );
+<<<<<<< HEAD
 
    wdiFeatureCapsExchangeCb = (WDI_featureCapsExchangeCb) pWDICtx -> pfncRspCB;
+=======
+   wdiFeatureCapsExchangeCb = (WDI_featureCapsExchangeCb) pWDICtx -> pfncRspCB; 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /*Notify UMAC - there is no callback right now but can be used in future if reqd */
    if (wdiFeatureCapsExchangeCb != NULL)
       wdiFeatureCapsExchangeCb(NULL, NULL);
 
+<<<<<<< HEAD
    return WDI_STATUS_SUCCESS;
 }
 
+=======
+   return WDI_STATUS_SUCCESS; 
+}
+
+#ifdef WLAN_FEATURE_11AC
+WDI_Status
+WDI_ProcessUpdateVHTOpModeRsp
+( 
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+   WDI_UpdateVHTOpModeCb   wdiVHTOpModeCb = NULL;
+   WDI_Status           wdiStatus;
+   eHalStatus           halStatus;
+   
+   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+   /*-------------------------------------------------------------------------
+     Sanity check
+   -------------------------------------------------------------------------*/
+   if (( NULL == pWDICtx ) || ( NULL == pEventData ) ||
+       ( NULL == pEventData->pEventData))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+   wdiVHTOpModeCb = (WDI_UpdateVHTOpModeCb)pEventData->pCBfnc;
+
+   /*-------------------------------------------------------------------------
+     Extract response and send it to UMAC
+   -------------------------------------------------------------------------*/
+   halStatus = *((eHalStatus*)pEventData->pEventData);
+   wdiStatus   =   WDI_HAL_2_WDI_STATUS(halStatus);
+
+   /*Notify UMAC*/
+   wdiVHTOpModeCb( wdiStatus, pEventData->pUserData);
+
+   return WDI_STATUS_SUCCESS; 
+}
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_getHostWlanFeatCaps
         WDI API that returns whether the feature passed to it as enum value in
@@ -24551,6 +29931,7 @@ WDI_ProcessFeatureCapsExchangeRsp
         variable storing host capability bitmap to find this. This can be used by
         other moduels to decide certain things like call different APIs based on
         whether a particular feature is supported.
+<<<<<<< HEAD
 
  @param
 
@@ -24558,6 +29939,15 @@ WDI_ProcessFeatureCapsExchangeRsp
 
  @see
  @return
+=======
+ 
+ @param 
+  
+        feat_enum_value: enum value for the feature as in placeHolderInCapBitmap in wlan_hal_msg.h.
+
+ @see
+ @return 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         0 - if the feature is NOT supported in host
         any non-zero value - if the feature is SUPPORTED in host.
 */
@@ -24570,7 +29960,11 @@ wpt_uint8 WDI_getHostWlanFeatCaps(wpt_uint8 feat_enum_value)
    }
    else
    {
+<<<<<<< HEAD
       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+=======
+      WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         "Caps exchange feature NOT supported. Return NOT SUPPORTED for %u feature", feat_enum_value);
    }
    return featSupported;
@@ -24583,14 +29977,24 @@ wpt_uint8 WDI_getHostWlanFeatCaps(wpt_uint8 feat_enum_value)
         variable storing host capability bitmap to find this. This can be used by
         other moduels to decide certain things like call different APIs based on
         whether a particular feature is supported.
+<<<<<<< HEAD
 
  @param
 
+=======
+ 
+ @param 
+  
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         feat_enum_value: enum value for the feature as in placeHolderInCapBitmap
                                     in wlan_hal_msg.h.
 
  @see
+<<<<<<< HEAD
  @return
+=======
+ @return 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         0 - if the feature is NOT supported in FW
         any non-zero value - if the feature is SUPPORTED in FW.
 */
@@ -24603,19 +30007,130 @@ wpt_uint8 WDI_getFwWlanFeatCaps(wpt_uint8 feat_enum_value)
     }
     else
     {
+<<<<<<< HEAD
        WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+=======
+       WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          "Caps exchange feature NOT supported. Return NOT SUPPORTED for %u feature", feat_enum_value);
     }
     return featSupported;
 }
 
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_11AC
+WDI_Status
+WDI_ProcessUpdateVHTOpModeReq
+(
+  WDI_ControlBlockType*  pWDICtx,
+  WDI_EventInfoType*     pEventData
+)
+{
+  WDI_UpdateVHTOpMode*    pwdiVHTOpModeParams = NULL;
+  WDI_UpdateVHTOpModeCb   wdiVHTOpModeCb = NULL;
+  wpt_uint8*              pSendBuffer        = NULL; 
+  wpt_uint16              usDataOffset       = 0;
+  wpt_uint16              usSendSize         = 0;
+
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_INFO,
+         "%s", __func__);
+
+  /*-------------------------------------------------------------------------
+    Sanity check 
+  -------------------------------------------------------------------------*/
+   if (( NULL == pEventData ) ||
+       ( NULL == (pwdiVHTOpModeParams = (WDI_UpdateVHTOpMode*)pEventData->pEventData)) ||
+       ( NULL == (wdiVHTOpModeCb   = (WDI_UpdateVHTOpModeCb)pEventData->pCBfnc)))
+   {
+      WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                  "%s: Invalid parameters", __func__);
+      WDI_ASSERT(0);
+      return WDI_STATUS_E_FAILURE;
+   }
+  
+  /*-----------------------------------------------------------------------
+    Get message buffer
+  -----------------------------------------------------------------------*/
+  if (( WDI_STATUS_SUCCESS != WDI_GetMessageBuffer( pWDICtx, WDI_UPDATE_VHT_OP_MODE_REQ,
+                        sizeof(WDI_UpdateVHTOpMode),
+                        &pSendBuffer, &usDataOffset, &usSendSize))||
+      ( usSendSize < (usDataOffset + sizeof(WDI_UpdateVHTOpMode) )))
+  {
+     WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+              "Unable to get send buffer in update vht opMode req");
+     WDI_ASSERT(0);
+     return WDI_STATUS_E_FAILURE;
+  }
+
+  WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+            "pwdiVHTOpModeParams->opMode=%d, pwdiVHTOpModeParams->staId=%d\n", pwdiVHTOpModeParams->opMode, pwdiVHTOpModeParams->staId);
+
+  wpalMemoryCopy( pSendBuffer+usDataOffset, pwdiVHTOpModeParams,
+                  sizeof(WDI_UpdateVHTOpMode));
+
+  /*-------------------------------------------------------------------------
+    Send Start Request to HAL 
+  -------------------------------------------------------------------------*/
+  return  WDI_SendMsg( pWDICtx, pSendBuffer, usSendSize, 
+                       wdiVHTOpModeCb,
+                       pEventData->pUserData, WDI_UPDATE_VHT_OP_MODE_RESP);
+
+}
+
+WDI_Status
+WDI_UpdateVHTOpModeReq
+(
+  WDI_UpdateVHTOpMode    *pData,
+  WDI_UpdateVHTOpModeCb  wdiUpdateVHTOpModeCb,
+  void*                  pUserData
+)
+{
+  WDI_EventInfoType      wdiEventData;
+
+  /*------------------------------------------------------------------------
+    Sanity Check
+  ------------------------------------------------------------------------*/
+  if ( eWLAN_PAL_FALSE == gWDIInitialized )
+  {
+    WPAL_TRACE(eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_ERROR,
+              "WDI API call before module is initialized - Fail request");
+
+    return WDI_STATUS_E_NOT_ALLOWED;
+  }
+
+  /*------------------------------------------------------------------------
+    Fill in Event data and post to the Main FSM
+  ------------------------------------------------------------------------*/
+  wdiEventData.wdiRequest      = WDI_UPDATE_VHT_OP_MODE_REQ;
+  wdiEventData.pEventData      = pData;
+  wdiEventData.uEventDataSize  = sizeof(WDI_UpdateVHTOpMode); 
+  wdiEventData.pCBfnc          = wdiUpdateVHTOpModeCb;
+  wdiEventData.pUserData       = pUserData;
+  
+  WPAL_TRACE( eWLAN_MODULE_DAL_CTRL,  eWLAN_PAL_TRACE_LEVEL_WARN,
+            "pData->opMode=%d, pData->staId=%d\n", pData->opMode, pData->staId);
+
+  return WDI_PostMainEvent(&gWDICb, WDI_REQUEST_EVENT, &wdiEventData);
+
+} 
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  @brief WDI_TransportChannelDebug -
     Display DXE Channel debugging information
     User may request to display DXE channel snapshot
     Or if host driver detects any abnormal stcuk may display
+<<<<<<< HEAD
 
  @param  displaySnapshot : Dispaly DXE snapshot option
+=======
+        
+ @param  displaySnapshot : Display DXE snapshot option
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  @param  enableStallDetect : Enable stall detect feature
                         This feature will take effect to data performance
                         Not integrate till fully verification
@@ -24631,3 +30146,51 @@ void WDI_TransportChannelDebug
    WDTS_ChannelDebug(displaySnapshot, toggleStallDetect);
    return;
 }
+<<<<<<< HEAD
+=======
+/**
+ @brief WDI_SsrTimerCB
+    Callback function for SSR timer, if this is called then the graceful
+    shutdown for Riva did not happen.
+
+ @param  pUserData : user data to timer
+
+ @see
+ @return none
+*/
+void
+WDI_SsrTimerCB
+(
+  void *pUserData
+)
+{
+  WDI_ControlBlockType*  pWDICtx = (WDI_ControlBlockType*)pUserData;
+  /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+  if (NULL == pWDICtx )
+  {
+    WPAL_TRACE( eWLAN_MODULE_DAL_CTRL, eWLAN_PAL_TRACE_LEVEL_WARN,
+                "%s: Invalid parameters", __func__);
+    WDI_ASSERT(0);
+    return;
+  }
+  wpalRivaSubystemRestart();
+
+  return;
+
+}/*WDI_SsrTimerCB*/
+
+/**
+ @brief WDI_SetEnableSSR -
+    This API is called to enable/disable SSR on WDI timeout.
+
+ @param  enableSSR : enable/disable SSR
+
+ @see
+ @return none
+*/
+void WDI_SetEnableSSR(wpt_boolean  enableSSR)
+{
+   gWDICb.bEnableSSR = enableSSR;
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

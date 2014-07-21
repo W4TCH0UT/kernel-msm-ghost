@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -37,18 +60,25 @@
 #include "sirApi.h"
 #include "aniGlobal.h"
 #include "sirMacProtDef.h"
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
 #include "sirMacPropExts.h"
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "sirCommon.h"
 #include "sirDebug.h"
 #include "schGlobal.h"
 #include "utilsApi.h"
 #include "limGlobal.h"
 #include "halMsgApi.h"
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "wlan_qct_wdi_ds.h"
 #endif
+=======
+#include "wlan_qct_wdi_ds.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wlan_qct_wda.h"
 #define LIM_POL_SYS_SCAN_MODE      0
 #define LIM_POL_SYS_LEARN_MODE     1
@@ -106,9 +136,13 @@ extern void limPostTdDummyPktCallbak(void* pMacGlobals, unsigned int* pBd);
 extern tSirRetStatus limInitialize(tpAniSirGlobal);
 tSirRetStatus peOpen(tpAniSirGlobal pMac, tMacOpenParameters *pMacOpenParam);
 tSirRetStatus peClose(tpAniSirGlobal pMac);
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 tSirRetStatus limStart(tpAniSirGlobal pMac);
 #endif
+=======
+tSirRetStatus limStart(tpAniSirGlobal pMac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * Function to Initialize radar interrupts.
  */
@@ -126,10 +160,13 @@ extern void limCleanup(tpAniSirGlobal);
 /// Function to post messages to LIM thread
 extern tANI_U32  limPostMsgApi(tpAniSirGlobal, tSirMsgQ *);
 /**
+<<<<<<< HEAD
  * Function to fetch messages posted LIM thread
  */
 extern void limProcessMessageQueue(tpAniSirGlobal);
 /**
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Function to process messages posted to LIM thread
  * and dispatch to various sub modules within LIM module.
  */
@@ -139,6 +176,7 @@ extern void limProcessMessages(tpAniSirGlobal, tpSirMsgQ); // DT test alt deferr
  * Function to check the LIM state if system is in Scan/Learn state.
  */
 extern tANI_U8 limIsSystemInScanState(tpAniSirGlobal);
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
 /**
  * Function to setup Polaris into Learn mode.
@@ -151,6 +189,8 @@ extern void limSetLearnMode(tpAniSirGlobal);
  */
 extern void limReEnableLearnMode(tpAniSirGlobal);
 #endif //#if (defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * Function to handle IBSS coalescing.
  * Beacon Processing module to call this.
@@ -175,6 +215,14 @@ extern void limInitWdsInfoParams(tpAniSirGlobal);
 /// Function that triggers STA context deletion
 extern void limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psessionEntry);
 
+<<<<<<< HEAD
+=======
+#ifdef FEATURE_WLAN_TDLS
+// Function that sends TDLS Del Sta indication to SME
+extern void limSendSmeTDLSDelStaInd(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession psessionEntry, tANI_U16 reasonCode);
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Function that checks for change in AP's capabilties on STA
 extern void limDetectChangeInApCapabilities(tpAniSirGlobal,
                                              tpSirProbeRespBeacon,tpPESession);
@@ -189,13 +237,18 @@ extern void limSendDeltsReq (tpAniSirGlobal pMac, tANI_U16 staid, tANI_U8 tsid, 
 /// creates a SM Power State Mode update request action frame and sends it out to staid
 extern void limPostStartLearnModeMsgToSch(tpAniSirGlobal pMac);
 #ifdef WLAN_FEATURE_11AC
+<<<<<<< HEAD
 extern ePhyChanBondState limGet11ACPhyCBState(tpAniSirGlobal pMac, tANI_U8 channel, tANI_U8 htSecondaryChannelOffset );
+=======
+extern ePhyChanBondState limGet11ACPhyCBState(tpAniSirGlobal pMac, tANI_U8 channel, tANI_U8 htSecondaryChannelOffset, tANI_U8 CenterChan,tpPESession );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 tANI_U8 limIsSystemInActiveState(tpAniSirGlobal pMac);
 #if 0 /* Currently, this function is not used but keep it around for when we do need it */
 tSirRetStatus limUpdateGlobalChannelBonding(tpAniSirGlobal pMac, tHalBitVal cbBit);
 #endif /* 0 */
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && (WNI_POLARIS_FW_PRODUCT == AP)
 extern void setupQuietBss( tpAniSirGlobal pMac, tANI_U32 learnInterval );
 extern tANI_BOOLEAN limUpdateQuietIEInBeacons( tpAniSirGlobal pMac );
@@ -209,6 +262,11 @@ tSirRetStatus limProcessCcaMonitorModeChangeNotification(tpAniSirGlobal pMac, tA
 void limHandleLowRssiInd(tpAniSirGlobal pMac);
 void limHandleBmpsStatusInd(tpAniSirGlobal pMac);
 void limHandleMissedBeaconInd(tpAniSirGlobal pMac);
+=======
+void limHandleLowRssiInd(tpAniSirGlobal pMac);
+void limHandleBmpsStatusInd(tpAniSirGlobal pMac);
+void limHandleMissedBeaconInd(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tMgmtFrmDropReason limIsPktCandidateForDrop(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tANI_U32 subType);
 void limMicFailureInd(tpAniSirGlobal pMac, tpSirMsgQ pMsg);
 /* ----------------------------------------------------------------------- */
@@ -217,11 +275,19 @@ extern void limSetBssid(tpAniSirGlobal pMac, tANI_U8 *bssId);
 extern void limGetBssid(tpAniSirGlobal pMac, tANI_U8 *bssId);
 extern void limGetMyMacAddr(tpAniSirGlobal pMac, tANI_U8 *mac);
 extern tSirRetStatus limCheckRxSeqNumber(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo);
+<<<<<<< HEAD
 #define limGetQosMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->limQosEnabled
 #define limGetWmeMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->limWmeEnabled
 #define limGetWsmMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->limWsmEnabled
 #define limGet11dMode(psessionEntry, pVal) *(pVal) = (psessionEntry)->lim11dEnabled
 #define limGetAckPolicy(pMac, pVal)         *(pVal) = pMac->lim.ackPolicy
+=======
+#define limGetQosMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->limQosEnabled)
+#define limGetWmeMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->limWmeEnabled)
+#define limGetWsmMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->limWsmEnabled)
+#define limGet11dMode(psessionEntry, pVal) (*(pVal) = (psessionEntry)->lim11dEnabled)
+#define limGetAckPolicy(pMac, pVal)         (*(pVal) = pMac->lim.ackPolicy)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ----------------------------------------------------------------------- */
 static inline void limGetPhyMode(tpAniSirGlobal pMac, tANI_U32 *phyMode, tpPESession psessionEntry)
 {

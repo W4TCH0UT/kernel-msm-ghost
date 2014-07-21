@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -27,7 +31,11 @@
  *
  *  @author:   Kumar Anand
  *
+<<<<<<< HEAD
  *             Copyright (C) 2010, Qualcomm, Inc. 
+=======
+ *             Copyright (C) 2010, Qualcomm Technologies, Inc. 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *             All rights reserved.
  *
  *=========================================================================*/
@@ -38,7 +46,11 @@
 /*-------------------------------------------------------------------------
   Include Files
 -------------------------------------------------------------------------*/
+<<<<<<< HEAD
 #include <wlan_defs.h>
+=======
+#include "qwlanfw_defs.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*-------------------------------------------------------------------------
   Preprocessor definitions and constants
@@ -148,11 +160,28 @@
 #define QWLAN_HAL_CFG_BTC_MAX_SCO_BLOCK_PERC             94
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_A2DP              95
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO               96
+<<<<<<< HEAD
 #define QWLAN_HAL_CFG_MAX_PARAMS                         97
 
 
 /* Total number of Integer CFGs. This is used while allocating the memory for TLV */
 #define QWLAN_HAL_CFG_INTEGER_PARAM                      93
+=======
+#define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER              97
+#define QWLAN_HAL_CFG_MAX_ASSOC_LIMIT                    98
+#define QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION         99
+#define QWLAN_HAL_CFG_ENABLE_MCC_ADAPTIVE_SCHEDULER     100
+#define QWLAN_HAL_CFG_ENABLE_DETECT_PS_SUPPORT          101
+#define QWLAN_HAL_CFG_AP_LINK_MONITOR_TIMEOUT           102
+#define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER         103
+#define QWLAN_HAL_CFG_ENABLE_TDLS_OXYGEN_MODE           104
+#define QWLAN_HAL_CFG_MAX_PARAMS                        105
+
+
+
+/* Total number of Integer CFGs. This is used while allocating the memory for TLV */
+#define QWLAN_HAL_CFG_INTEGER_PARAM                      100
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /*-------------------------------------------------------------------------
@@ -269,7 +298,11 @@
  * Mapping is defined in the gHalUserFixedRateCfgToTpeRateTable
  */
 #define QWLAN_HAL_CFG_FIXED_RATE_STAMIN                        0
+<<<<<<< HEAD
 #define QWLAN_HAL_CFG_FIXED_RATE_STAMAX                        44
+=======
+#define QWLAN_HAL_CFG_FIXED_RATE_STAMAX                        226
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_HAL_CFG_FIXED_RATE_STADEF                        0
 #define QWLAN_HAL_CFG_FIXED_RATE_AUTO                          0
 #define QWLAN_HAL_CFG_FIXED_RATE_1MBPS                         1
@@ -711,6 +744,7 @@
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO_MAX 1
 #define QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO_DEF 0
 
+<<<<<<< HEAD
 typedef struct 
 {
    uint8    cfgStaId[QCOM_WLAN_CFG_STA_ID_LEN]; //QWLAN_HAL_CFG_STA_ID
@@ -812,6 +846,44 @@ typedef struct
    uint32   cfgBtcDhcpProtOnA2dp;             //QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_A2DP
    uint32   cfgBtcDhcpProtOnSco;              //QWLAN_HAL_CFG_BTC_DHCP_PROT_ON_SCO
 }tAniHalCfg, *tpAniHalCfg;
+=======
+/* QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER */
+#define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER_MIN  0
+#define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER_MAX  1
+#define QWLAN_HAL_CFG_ENABLE_UNICAST_FILTER_DEF  0
+
+/* QWLAN_HAL_CFG_MAX_ASSOC_LIMIT */
+#define QWLAN_HAL_CFG_MAX_ASSOC_LIMIT_MIN  10
+#define QWLAN_HAL_CFG_MAX_ASSOC_LIMIT_MAX  32
+#define QWLAN_HAL_CFG_MAX_ASSOC_LIMIT_DEF  10
+
+/* QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION */
+#define QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION_MIN    0
+#define QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION_MAX    1
+#define QWLAN_HAL_CFG_ENABLE_LPWR_IMG_TRANSITION_DEF    0
+
+/* QWLAN_HAL_CFG_ENABLE_MCC_ADAPTIVE_SCHEDULER */
+#define QWLAN_HAL_CFG_ENABLE_MCC_ADAPTIVE_SCHEDULER_MIN    0
+#define QWLAN_HAL_CFG_ENABLE_MCC_ADAPTIVE_SCHEDULER_MAX    1
+#define QWLAN_HAL_CFG_ENABLE_MCC_ADAPTIVE_SCHEDULER_DEF    0
+
+/* QWLAN_HAL_CFG_ENABLE_DETECT_PS_SUPPORT */
+#define QWLAN_HAL_CFG_ENABLE_DETECT_PS_SUPPORT_MIN    0
+#define QWLAN_HAL_CFG_ENABLE_DETECT_PS_SUPPORT_MAX    1
+#define QWLAN_HAL_CFG_ENABLE_DETECT_PS_SUPPORT_DEF    0
+
+/* QWLAN_HAL_CFG_AP_LINK_MONITOR_TIMEOUT */
+#define QWLAN_HAL_CFG_AP_LINK_MONITOR_TIMEOUT_MIN  1
+#define QWLAN_HAL_CFG_AP_LINK_MONITOR_TIMEOUT_MAX  255
+#define QWLAN_HAL_CFG_AP_LINK_MONITOR_TIMEOUT_DEF  3
+
+/*QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER*/
+/*This value is multiplied to ChannelDwellTime
+ *i.e If value is 300 then ChannelDwellTime is (3*ChannelDwelltime)*/
+#define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER_MIN    0
+#define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER_MAX    300
+#define QWLAN_HAL_CFG_BTC_DWELL_TIME_MULTIPLIER_DEF    300
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif //__WLAN_HAL_CFG_H__
 

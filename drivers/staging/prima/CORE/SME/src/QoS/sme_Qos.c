@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -35,6 +58,7 @@
   Include Files
   ------------------------------------------------------------------------*/
 
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halInternal.h" //Check if the below include of aniGobal.h is sufficient for Volans too.
 #endif
@@ -42,6 +66,10 @@
 #ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include "aniGlobal.h"
 #endif
+=======
+
+#include "aniGlobal.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "smeInside.h"
 #include "vos_diag_core_event.h"
@@ -519,7 +547,11 @@ eHalStatus sme_QosOpen(tpAniSirGlobal pMac)
    eHalStatus status;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: initializing SME-QoS module",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //init the control block
    //(note that this will make all sessions invalid)
    vos_mem_zero(&sme_QosCb, sizeof(sme_QosCb));
@@ -532,7 +564,11 @@ eHalStatus sme_QosOpen(tpAniSirGlobal pMac)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
                 "%s: %d: cannot initialize Flow List",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    
@@ -548,7 +584,11 @@ eHalStatus sme_QosOpen(tpAniSirGlobal pMac)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
                    "%s: %d: cannot initialize cmd list for session %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId);
          return eHAL_STATUS_FAILURE;
       }
@@ -562,7 +602,11 @@ eHalStatus sme_QosOpen(tpAniSirGlobal pMac)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
                 "%s: %d: cannot register with pmcRegisterPowerSaveCheck()",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    //the routine registered here gets called by PMC whenever there is a device 
@@ -574,12 +618,20 @@ eHalStatus sme_QosOpen(tpAniSirGlobal pMac)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
                 "%s: %d: cannot register with pmcRegisterDeviceStateUpdateInd()",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: done initializing SME-QoS module",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return eHAL_STATUS_SUCCESS;
 }
 /* --------------------------------------------------------------------------
@@ -597,21 +649,33 @@ eHalStatus sme_QosClose(tpAniSirGlobal pMac)
    v_U8_t sessionId;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: closing down SME-QoS",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // deregister with PMC
    if(!HAL_STATUS_SUCCESS(
       pmcDeregisterDeviceStateUpdateInd(pMac, sme_QosPmcDeviceStateUpdateInd)))
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
                 "%s: %d: cannot deregister with pmcDeregisterDeviceStateUpdateInd()",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    if(!HAL_STATUS_SUCCESS(
       pmcDeregisterPowerSaveCheck(pMac, sme_QosPmcCheckRoutine)))
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL,
                 "%s: %d: cannot deregister with pmcDeregisterPowerSaveCheck()",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    //cleanup control block
    //close the flow list
@@ -653,7 +717,11 @@ eHalStatus sme_QosClose(tpAniSirGlobal pMac)
    }
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: closed down QoS",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return eHAL_STATUS_SUCCESS;
 }
 /*--------------------------------------------------------------------------
@@ -701,14 +769,22 @@ sme_QosStatusType sme_QosSetupReq(tHalHandle hHal, tANI_U32 sessionId,
    sme_QosStatusType status;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS Setup requested by client on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    lock_status = sme_AcquireGlobalLock( &pMac->sme );
    if ( !HAL_STATUS_SUCCESS( lock_status ) )
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Unable to obtain lock",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return SME_QOS_STATUS_SETUP_FAILURE_RSP;
    }
    //Make sure the session is valid
@@ -716,7 +792,11 @@ sme_QosStatusType sme_QosSetupReq(tHalHandle hHal, tANI_U32 sessionId,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Supplied Session ID %d is invalid",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       status = SME_QOS_STATUS_SETUP_FAILURE_RSP;
    }
@@ -728,7 +808,11 @@ sme_QosStatusType sme_QosSetupReq(tHalHandle hHal, tANI_U32 sessionId,
       { 
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: Supplied Session ID %d is inactive",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId);
          status = SME_QOS_STATUS_SETUP_FAILURE_RSP;
       }
@@ -738,7 +822,11 @@ sme_QosStatusType sme_QosSetupReq(tHalHandle hHal, tANI_U32 sessionId,
          *pQosFlowID = sme_QosAssignFlowId();
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: QoS request on session %d assigned Flow ID %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, *pQosFlowID);
          //Call the internal function for QoS setup,
          // adding a layer of abstraction
@@ -750,7 +838,11 @@ sme_QosStatusType sme_QosSetupReq(tHalHandle hHal, tANI_U32 sessionId,
    sme_ReleaseGlobalLock( &pMac->sme );
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS setup return status on session %d is %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, status);
    return status;
 }
@@ -787,14 +879,22 @@ sme_QosStatusType sme_QosModifyReq(tHalHandle hHal,
    sme_QosStatusType status;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS Modify requested by client for Flow %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              QosFlowID);
    lock_status = sme_AcquireGlobalLock( &pMac->sme );
    if ( !HAL_STATUS_SUCCESS( lock_status ) )
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Unable to obtain lock",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return SME_QOS_STATUS_MODIFY_SETUP_FAILURE_RSP;
    }
    //Call the internal function for QoS modify, adding a layer of abstraction
@@ -802,7 +902,11 @@ sme_QosStatusType sme_QosModifyReq(tHalHandle hHal,
    sme_ReleaseGlobalLock( &pMac->sme );
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS Modify return status on Flow %d is %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              QosFlowID, status);
    return status;
 }
@@ -829,14 +933,22 @@ sme_QosStatusType sme_QosReleaseReq(tHalHandle hHal, v_U32_t QosFlowID)
    sme_QosStatusType status;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS Release requested by client for Flow %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              QosFlowID);
    lock_status = sme_AcquireGlobalLock( &pMac->sme );
    if ( !HAL_STATUS_SUCCESS( lock_status ) )
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Unable to obtain lock",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return SME_QOS_STATUS_RELEASE_FAILURE_RSP;
    }
    //Call the internal function for QoS release, adding a layer of abstraction
@@ -844,7 +956,11 @@ sme_QosStatusType sme_QosReleaseReq(tHalHandle hHal, v_U32_t QosFlowID)
    sme_ReleaseGlobalLock( &pMac->sme );
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS Release return status on Flow %d is %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              QosFlowID, status);
    return status;
 }
@@ -871,7 +987,11 @@ eHalStatus sme_QosSetParams(tpAniSirGlobal pMac, sme_QosWmmTspecInfo * pQoSInfo)
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Invalid AC %d (via UP %d)",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 ac, pQoSInfo->ts_info.up );
       return eHAL_STATUS_FAILURE;
    }
@@ -879,7 +999,11 @@ eHalStatus sme_QosSetParams(tpAniSirGlobal pMac, sme_QosWmmTspecInfo * pQoSInfo)
    sme_QosCb.def_QoSInfo[ac] = *pQoSInfo;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: QoS default params set for AC %d (via UP %d)",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              ac, pQoSInfo->ts_info.up );
    return eHAL_STATUS_SUCCESS;
 }
@@ -913,7 +1037,11 @@ eHalStatus sme_QosMsgProcessor( tpAniSirGlobal pMac,  v_U16_t msg_type,
    tSmeCmd *pCommand;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: msg = %d for QoS",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, msg_type);
+=======
+             __func__, __LINE__, msg_type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //switch on the msg type & make the state transition accordingly
    switch(msg_type)
    {
@@ -962,7 +1090,11 @@ eHalStatus sme_QosMsgProcessor( tpAniSirGlobal pMac,  v_U16_t msg_type,
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: unknown msg type = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__, msg_type);
+=======
+                   __func__, __LINE__, msg_type);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
    }
    return status;
@@ -987,7 +1119,11 @@ eHalStatus sme_QosValidateParams(tpAniSirGlobal pMac,
    eHalStatus status = eHAL_STATUS_FAILURE;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
              "%s: %d: validation for QAP & APSD",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    do
    {
       if(!HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, pBssDesc, &pIes)))
@@ -995,7 +1131,11 @@ eHalStatus sme_QosValidateParams(tpAniSirGlobal pMac,
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: csrGetParsedBssDescriptionIEs() failed",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       }
       //check if the AP is QAP & it supports APSD
@@ -1004,7 +1144,11 @@ eHalStatus sme_QosValidateParams(tpAniSirGlobal pMac,
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: AP doesn't support QoS",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          
          break;
       }
@@ -1014,14 +1158,22 @@ eHalStatus sme_QosValidateParams(tpAniSirGlobal pMac,
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: AP doesn't support APSD",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       }
       status = eHAL_STATUS_SUCCESS;
    }while(0);
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: validated with status = %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, status);
+=======
+             __func__, __LINE__, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(pIes)
    {
       vos_mem_free(pIes);
@@ -1048,7 +1200,11 @@ eHalStatus sme_QosCsrEventInd(tpAniSirGlobal pMac,
    eHalStatus status = eHAL_STATUS_FAILURE;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: On Session %d Event %d received from CSR",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, ind );
    switch(ind)
    {
@@ -1103,13 +1259,21 @@ eHalStatus sme_QosCsrEventInd(tpAniSirGlobal pMac,
          //Err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: On Session %d Unknown Event %d received from CSR",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, ind );
          break;
    }
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: On Session %d processed Event %d with status %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, ind, status );
    return status;
 }
@@ -1131,7 +1295,11 @@ v_U8_t sme_QosGetACMMask(tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc, t
    v_U8_t acm_mask = 0;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    for(ac = SME_QOS_EDCA_AC_BE; ac < SME_QOS_EDCA_AC_MAX; ac++)
    {
       if(sme_QosIsACM(pMac, pSirBssDesc, ac, pIes))
@@ -1142,7 +1310,11 @@ v_U8_t sme_QosGetACMMask(tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc, t
    }
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: mask is %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, acm_mask);
+=======
+             __func__, __LINE__, acm_mask);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return acm_mask;
 }
 /*-------------------------------------------------------------------------- 
@@ -1206,7 +1378,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
    eHalStatus hstatus;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for flow %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, QosFlowID);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    // if caller sent an empty TSPEC, fill up with the default one
@@ -1214,14 +1390,22 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, 
                 "%s: %d: caller sent an empty QoS param list, using defaults",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // find the AC with UPType passed in
       ac = sme_QosUpToAc(UPType);
       if(SME_QOS_EDCA_AC_MAX == ac)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: invalid AC %d from UP %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    ac, UPType);
          
          return SME_QOS_STATUS_SETUP_INVALID_PARAMS_RSP;
@@ -1236,7 +1420,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: invalid AC %d from UP %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    ac, pQoSInfo->ts_info.up);
          
          return SME_QOS_STATUS_SETUP_INVALID_PARAMS_RSP;
@@ -1246,7 +1434,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: invalid params",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return SME_QOS_STATUS_SETUP_INVALID_PARAMS_RSP;
       }
       Tspec_Info = *pQoSInfo;
@@ -1266,7 +1458,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                 "%s: %d: buffering the setup request for flow %d in state %d "
                 "since another request is pending",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, 
+=======
+                __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID, pACInfo->curr_state );
       bufferCommand = VOS_TRUE;
    }
@@ -1281,7 +1477,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                    "%s: %d: buffering the setup request for flow %d in state %d, "
                    "waiting for full power",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__, 
+=======
+                   __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    QosFlowID, pACInfo->curr_state );
          bufferCommand = VOS_TRUE;
       }
@@ -1303,7 +1503,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: couldn't buffer the setup request in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->curr_state );
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -1312,7 +1516,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       }
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Buffered setup request for flow = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID);
       return SME_QOS_STATUS_SETUP_REQ_PENDING_RSP;
    }
@@ -1327,7 +1535,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: On session %d with AC %d in state SME_QOS_LINK_UP "
                 "sme_QosSetup returned with status %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, ac, status);
       if(SME_QOS_STATUS_SETUP_REQ_PENDING_RSP != status)
       {
@@ -1347,7 +1559,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                       "%s: %d: couldn't allocate memory for the new "
                       "entry in the Flow List",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return SME_QOS_STATUS_SETUP_FAILURE_RSP;
          }
          pentry->ac_type = ac;
@@ -1368,7 +1584,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
                          "%s: %d: On session %d with AC %d in state "
                             "SME_QOS_LINK_UP tspec_mask_status is %d "
                          "but should not be set yet",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, ac, pACInfo->tspec_mask_status);
                //ASSERT
                VOS_ASSERT(0);
@@ -1410,7 +1630,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          pentry->QoSInfo = Tspec_Info;
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: Creating entry on session %d at %p with flowID %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, pentry, QosFlowID);
          csrLLInsertTail(&sme_QosCb.flow_list, &pentry->link, VOS_TRUE);
       }
@@ -1420,7 +1644,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: On session %d unexpected status %d "
                    "returned by sme_QosSetup",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, status);
          new_state = pACInfo->curr_state;
          if(buffered_cmd && hoRenewal)
@@ -1436,7 +1664,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
    case SME_QOS_REQUESTED:
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                 "%s: %d: Buffering setup request for flow %d in state = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID, pACInfo->curr_state );
       //buffer cmd
       cmd.command = SME_QOS_SETUP_REQ;
@@ -1454,7 +1686,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: On session %d couldn't buffer the setup "
                    "request for flow %d in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, QosFlowID, pACInfo->curr_state );
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -1476,14 +1712,22 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                       "%s: %d: tspec_mask_status = %d for AC = %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       pACInfo->tspec_mask_status, ac);
             if(!pACInfo->tspec_mask_status)
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: tspec_mask_status can't be 0 for ac = %d in "
                          "state = %d",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          ac, pACInfo->curr_state);
                //ASSERT
                VOS_ASSERT(0);
@@ -1557,11 +1801,19 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          }
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED,
                    "%s: %d: tmask = %d, new_tmask = %d in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
                    tmask, new_tmask, pACInfo->curr_state );
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED,
                    "%s: %d: tspec_mask_status = %d for AC = %d",
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+                   tmask, new_tmask, pACInfo->curr_state );
+         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED,
+                   "%s: %d: tspec_mask_status = %d for AC = %d",
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->tspec_mask_status, ac);
          if(tmask)
          {
@@ -1594,7 +1846,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
                //err msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: failed to aggregate params",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                // unable to service the request
                // nothing is pending so vote powersave back on
                pSession->readyForPowerSave = VOS_TRUE;
@@ -1604,13 +1860,21 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          else
          {
             tmask = new_tmask;
+<<<<<<< HEAD
+=======
+            pACInfo->requested_QoSInfo[tmask-1] = Tspec_Info;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: no flows running for ac = %d while in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    ac, pACInfo->curr_state );
          //ASSERT
          VOS_ASSERT(0);
@@ -1626,7 +1890,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: On session %d with AC %d in state SME_QOS_QOS_ON "
                 "sme_QosSetup returned with status %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, ac, status);
       if(SME_QOS_STATUS_SETUP_REQ_PENDING_RSP != status)
       {
@@ -1646,7 +1914,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                       "%s: %d: couldn't allocate memory for the new "
                       "entry in the Flow List",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return SME_QOS_STATUS_SETUP_FAILURE_RSP;
          }
          pentry->ac_type = ac;
@@ -1657,7 +1929,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          pentry->sessionId = sessionId;
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: Creating flow %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    QosFlowID);
          if((SME_QOS_STATUS_SETUP_SUCCESS_NO_ACM_NO_APSD_RSP == status)||
             (SME_QOS_STATUS_SETUP_SUCCESS_APSD_SET_ALREADY == status))
@@ -1690,7 +1966,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
                      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                                "%s: %d: couldn't notify other "
                                "entries on this AC =%d",
+<<<<<<< HEAD
                                __FUNCTION__, __LINE__, ac);
+=======
+                               __func__, __LINE__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   }
                }
             }
@@ -1712,7 +1992,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          pentry->QoSInfo = Tspec_Info;
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: On session %d creating entry at %p with flowID %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, pentry, QosFlowID);
          csrLLInsertTail(&sme_QosCb.flow_list, &pentry->link, VOS_TRUE);
       }
@@ -1722,7 +2006,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: On session %d unexpected status %d "
                    "returned by sme_QosSetup",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, status);
          new_state = pACInfo->curr_state;
       }
@@ -1732,7 +2020,11 @@ sme_QosStatusType sme_QosInternalSetupReq(tpAniSirGlobal pMac,
    default:
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: setup requested in unexpected state = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pACInfo->curr_state);
       // unable to service the request
       // nothing is pending so vote powersave back on
@@ -1807,7 +2099,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
    eHalStatus hstatus;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked for flow %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              QosFlowID);
 
    vos_mem_zero(&search_key, sizeof(sme_QosSearchInfo));
@@ -1822,7 +2118,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
       //Err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: no match found for flowID = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID);
       return SME_QOS_STATUS_MODIFY_SETUP_INVALID_PARAMS_RSP;
    }
@@ -1839,7 +2139,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: invalid params",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return SME_QOS_STATUS_MODIFY_SETUP_INVALID_PARAMS_RSP;
    }
    // For modify, make sure that direction, TID and UP are not being altered
@@ -1849,7 +2153,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
    {
      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                "%s: %d: Modification of direction/tid/up is not allowed",
+<<<<<<< HEAD
                __FUNCTION__, __LINE__);
+=======
+               __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
      return SME_QOS_STATUS_MODIFY_SETUP_INVALID_PARAMS_RSP;
    }
@@ -1867,7 +2175,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                 "%s: %d: buffering the modify request for flow %d in state %d "
                 "since another request is pending",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, 
+=======
+                __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID, pACInfo->curr_state );
       bufferCommand = VOS_TRUE;
    }
@@ -1882,7 +2194,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                    "%s: %d: buffering the modify request for flow %d in state %d, "
                    "waiting for full power",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__, 
+=======
+                   __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    QosFlowID, pACInfo->curr_state );
          bufferCommand = VOS_TRUE;
       }
@@ -1900,7 +2216,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: couldn't buffer the modify request in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->curr_state );
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -1909,7 +2229,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
       }
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Buffered modify request for flow = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID);
       return SME_QOS_STATUS_MODIFY_SETUP_PENDING_RSP;
    }
@@ -1926,7 +2250,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                    "%s: %d: couldn't allocate memory for the new "
                    "entry in the Flow List",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          // unable to service the request
          // nothing is pending so vote powersave back on
          pSession->readyForPowerSave = VOS_TRUE;
@@ -1947,7 +2275,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: On session %d creating modified "
                 "entry at %p with flowID %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, pNewEntry, pNewEntry->QosFlowID);
       //add the new entry under construction to the Flow List
       csrLLInsertTail(&sme_QosCb.flow_list, &pNewEntry->link, VOS_TRUE);
@@ -1965,7 +2297,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: On session %d with AC %d in state SME_QOS_QOS_ON "
                    "sme_QosSetup returned with status %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, ac, status);
          if(SME_QOS_STATUS_SETUP_REQ_PENDING_RSP != status)
          {
@@ -2013,7 +2349,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
                      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                                "%s: %d: couldn't notify other "
                                "entries on this AC =%d",
+<<<<<<< HEAD
                                __FUNCTION__, __LINE__, ac);
+=======
+                               __func__, __LINE__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   }
                }
                else if(SME_QOS_STATUS_SETUP_SUCCESS_NO_ACM_NO_APSD_RSP == status)
@@ -2036,7 +2376,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d unexpected status %d "
                       "returned by sme_QosSetup",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, status);
             new_state = SME_QOS_QOS_ON;
          }
@@ -2046,7 +2390,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: sme_QosUpdateParams() failed",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          // unable to service the request
          // nothing is pending so vote powersave back on
          pSession->readyForPowerSave = VOS_TRUE;
@@ -2070,7 +2418,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
    case SME_QOS_REQUESTED:
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                 "%s: %d: Buffering modify request for flow %d in state = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID, pACInfo->curr_state );
       //buffer cmd
       cmd.command = SME_QOS_MODIFY_REQ;
@@ -2083,7 +2435,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: couldn't buffer the modify request in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->curr_state );
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -2098,7 +2454,11 @@ sme_QosStatusType sme_QosInternalModifyReq(tpAniSirGlobal pMac,
    default:
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: modify requested in unexpected state = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pACInfo->curr_state);
       // unable to service the request
       // nothing is pending so vote powersave back on
@@ -2152,7 +2512,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
    tListElem *pResult= NULL;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked for flow %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              QosFlowID);
 
    vos_mem_zero(&search_key, sizeof(sme_QosSearchInfo));
@@ -2168,7 +2532,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       //Err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: no match found for flowID = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID);
       return SME_QOS_STATUS_RELEASE_INVALID_PARAMS_RSP;
    }
@@ -2192,7 +2560,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                 "%s: %d: buffering the release request for flow %d in state %d "
                 "since another request is pending",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, 
+=======
+                __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID, pACInfo->curr_state );
       bufferCommand = VOS_TRUE;
    }
@@ -2207,7 +2579,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                    "%s: %d: buffering the release request for flow %d in state %d, "
                    "waiting for full power",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__, 
+=======
+                   __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    QosFlowID, pACInfo->curr_state );
          bufferCommand = VOS_TRUE;
       }
@@ -2224,7 +2600,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: couldn't buffer the release request in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->curr_state );
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -2233,7 +2613,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       }
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Buffered release request for flow = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 QosFlowID);
       return SME_QOS_STATUS_RELEASE_REQ_PENDING_RSP;
    }
@@ -2244,7 +2628,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                 "%s: %d: tspec_mask_status = %d for AC = %d with "
                 "entry tspec_mask = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, 
+=======
+                __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pACInfo->tspec_mask_status, ac, flow_info->tspec_mask);
 
       //check if multiple flows running on the ac
@@ -2315,7 +2703,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                          "%s: %d: On session %d buffering the AddTS request "
                             "for AC %d in state %d as Addts is pending "
                          "on other Tspec index of this AC",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, ac, pACInfo->curr_state);
 
                // Buffer the (aggregated) tspec request for downstream flows.
@@ -2333,7 +2725,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                             "%s: %d: On session %d unable to buffer the AddTS "
                             "request for AC %d TSPEC %d in state %d",
+<<<<<<< HEAD
                             __FUNCTION__, __LINE__,
+=======
+                            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             sessionId, ac, SME_QOS_TSPEC_MASK_BIT_2_SET, pACInfo->curr_state);
 
                   // unable to buffer the request
@@ -2363,7 +2759,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: On session %d with AC %d in state SME_QOS_QOS_ON "
                       "sme_QosSetup returned with status %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, status);
             if(SME_QOS_STATUS_SETUP_REQ_PENDING_RSP != status)
             {
@@ -2387,7 +2787,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                //delete the entry from Flow List
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: Deleting entry at %p with flowID %d",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info, QosFlowID);
                csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
                pDeletedFlow = flow_info;
@@ -2404,7 +2808,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                                "%s: %d: couldn't notify other "
                                "entries on this AC =%d",
+<<<<<<< HEAD
                                __FUNCTION__, __LINE__, ac);
+=======
+                               __func__, __LINE__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   }
                }
                status = SME_QOS_STATUS_RELEASE_SUCCESS_RSP;
@@ -2422,7 +2830,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: On session %d unexpected status %d "
                          "returned by sme_QosSetup",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, status);
                new_state = SME_QOS_LINK_UP;
                pACInfo->num_flows[flow_info->tspec_mask - 1]--;
@@ -2432,7 +2844,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: On session %d deleting entry at "
                          "%p with flowID %d",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, flow_info, QosFlowID);
                csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
                pDeletedFlow = flow_info;
@@ -2450,7 +2866,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
             //err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosUpdateParams() failed",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // unable to service the request
             // nothing is pending so vote powersave back on
             pSession->readyForPowerSave = VOS_TRUE;
@@ -2510,7 +2930,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                //err msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: sme_QosDelTsReq() failed",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = SME_QOS_STATUS_RELEASE_FAILURE_RSP;
                // we won't be waiting for a response from the AP
                // so vote powersave back on
@@ -2548,7 +2972,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
                //err msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: Reassoc failed",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = SME_QOS_STATUS_RELEASE_FAILURE_RSP;
                // we won't be waiting for a response from the AP
                // so vote powersave back on
@@ -2565,7 +2993,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
          {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: nothing to do for AC = %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__, ac);
+=======
+                      __func__, __LINE__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // we won't be waiting for a response from the AP
             // so vote powersave back on
             pSession->readyForPowerSave = VOS_TRUE;
@@ -2600,7 +3032,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
          {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: Exceeded the array bounds of pACInfo->num_flows",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_ASSERT (0);
             return SME_QOS_STATUS_RELEASE_INVALID_PARAMS_RSP;
          }
@@ -2616,7 +3052,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
          //delete the entry from Flow List
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: On session %d deleting entry at %p with flowID %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, flow_info, QosFlowID);
          csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
          pDeletedFlow = flow_info;
@@ -2646,7 +3086,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: couldn't buffer the release request in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->curr_state );
          // unable to service the request
          // nothing is pending so vote powersave back on
@@ -2662,7 +3106,11 @@ sme_QosStatusType sme_QosInternalReleaseReq(tpAniSirGlobal pMac,
       //print error msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: release request in unexpected state = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pACInfo->curr_state );
       //ASSERT
       VOS_ASSERT(0);
@@ -2732,7 +3180,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Session Id %d is invalid",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       return status;
    }
@@ -2741,7 +3193,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Session %d is inactive",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       return status;
    }
@@ -2749,8 +3205,13 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Session %d has an Invalid BSS Descriptor",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
                 sessionId, ac);
+=======
+                __func__, __LINE__,
+                sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
    hstatus = csrGetParsedBssDescriptionIEs(pMac,
@@ -2760,8 +3221,13 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                 "%s: %d: On session %d unable to parse BSS IEs",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
                 sessionId, ac);
+=======
+                __func__, __LINE__,
+                sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
 
@@ -2771,7 +3237,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: On session %d AP doesn't support QoS",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       vos_mem_free(pIes);
       //notify HDD through the synchronous status msg
@@ -2800,7 +3270,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: Request is looking for APSD but PMC doesn't "
                       "have support for APSD",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
          }
          if(SME_QOS_MAX_TID == pTspec_Info->ts_info.tid)
@@ -2816,12 +3290,20 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
          {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosAddTsReq() failed",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
          }
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                    "%s: %d: On session %d AddTS on AC %d is pending",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, ac);
          status = SME_QOS_STATUS_SETUP_REQ_PENDING_RSP;
          break;
@@ -2842,7 +3324,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: On session %d reassoc needed "
                       "to disable APSD on AC %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac);
             csrGetModifyProfileFields(pMac, sessionId, &modifyProfileFields);
             modifyProfileFields.uapsd_mask |= pSession->apsdMask;
@@ -2854,7 +3340,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
                //err msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: Unable to request reassociation",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break;
             }
             else
@@ -2862,7 +3352,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                          "%s: %d: On session %d reassociation to enable "
                          "APSD on AC %d is pending",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, ac);
                status = SME_QOS_STATUS_SETUP_REQ_PENDING_RSP;
                pACInfo->reassoc_pending = VOS_TRUE;
@@ -2875,7 +3369,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: Request is not looking for APSD & Admission "
                       "Control isn't mandatory for the AC",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //return success right away
             status = SME_QOS_STATUS_SETUP_SUCCESS_NO_ACM_NO_APSD_RSP;
          }
@@ -2887,7 +3385,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
          // application is looking for APSD but AP doesn't support it
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: On session %d AP doesn't support APSD",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId);
          break;
       }
@@ -2899,7 +3401,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: Request is looking for APSD and it is already "
                    "set for the AC",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       }
       else
@@ -2912,7 +3418,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: On session %d reassoc needed "
                       "to enable APSD on AC %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac);
             //reassoc logic
             // update the UAPSD mask to include the new 
@@ -2927,7 +3437,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
                //err msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: Unable to request reassociation",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break;
             }
             else
@@ -2935,7 +3449,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                          "%s: %d: On session %d reassociation to enable "
                          "APSD on AC %d is pending",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, ac);
                status = SME_QOS_STATUS_SETUP_REQ_PENDING_RSP;
                pACInfo->reassoc_pending = VOS_TRUE;
@@ -2946,7 +3464,11 @@ sme_QosStatusType sme_QosSetup(tpAniSirGlobal pMac,
             //err msg: no support for APSD from PMC
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: no support for APSD or BMPS from PMC",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
    }while(0);
@@ -3000,7 +3522,11 @@ eHalStatus sme_QosCCXSaveTspecResponse(tpAniSirGlobal pMac, v_U8_t sessionId, tD
     pAddtsRsp->rsp.wmeTspecPresent = pTspec->present;
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
             "%s: Copy Tspec to local data structure ac=%d, tspecIdx=%d", 
+<<<<<<< HEAD
             __FUNCTION__, ac, tspecIndex);
+=======
+            __func__, ac, tspecIndex);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (pAddtsRsp->rsp.wmeTspecPresent)
     {
@@ -3049,13 +3575,21 @@ eHalStatus sme_QosCCXProcessReassocTspecRsp(tpAniSirGlobal pMac, v_U8_t sessionI
     tspecIeLen = pCsrConnectedInfo->nTspecIeLength;
     if (tspecIeLen < sizeof(tDot11fIEWMMTSPEC)) {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 FL("CCX Tspec IE len %d less than min %d"), 
+=======
+                FL("CCX Tspec IE len %d less than min %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 tspecIeLen, sizeof(tDot11fIEWMMTSPEC));
         return eHAL_STATUS_FAILURE;
     }
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
              "TspecLen = %d, pbFrames = %p, pTspecIE = %p\n", 
+=======
+             "TspecLen = %d, pbFrames = %p, pTspecIE = %p",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              tspecIeLen, pCsrConnectedInfo->pbFrames, pTspecIE);
 
     numTspec = (tspecIeLen)/sizeof(tDot11fIEWMMTSPEC);
@@ -3063,8 +3597,13 @@ eHalStatus sme_QosCCXProcessReassocTspecRsp(tpAniSirGlobal pMac, v_U8_t sessionI
         ac = sme_QosUpToAc(pTspecIE->user_priority);
         pACInfo = &pSession->ac_info[ac];
         tspec_mask_status = pACInfo->tspec_mask_status;
+<<<<<<< HEAD
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, 
                 FL("UP=%d, ac=%d, tspec_mask_status=%x"), 
+=======
+        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN,
+                FL("UP=%d, ac=%d, tspec_mask_status=%x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pTspecIE->user_priority, ac,  tspec_mask_status );
 
             for (tspec_flow_index = 0; tspec_flow_index < SME_QOS_TSPEC_INDEX_MAX; tspec_flow_index++) {
@@ -3136,7 +3675,11 @@ static void sme_QosCopyTspecInfo(tpAniSirGlobal pMac, sme_QosWmmTspecInfo *pTspe
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
             "%s: %d: up = %d, tid = %d",
+<<<<<<< HEAD
             __FUNCTION__, __LINE__,
+=======
+            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pTspec_Info->ts_info.up,
             pTspec_Info->ts_info.tid);
 }
@@ -3209,6 +3752,12 @@ eHalStatus sme_QosCreateTspecRICIE(tpAniSirGlobal pMac, sme_QosWmmTspecInfo *pTs
     VOS_ASSERT(NULL != pRICLength);
     VOS_ASSERT(NULL != pRICIdentifier);
 
+<<<<<<< HEAD
+=======
+    if (pRICBuffer == NULL || pRICIdentifier == NULL || pRICLength == NULL)
+        return eHAL_STATUS_FAILURE;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     vos_mem_zero(&ricIE, sizeof(tDot11fIERICDataDesc));
 
     ricIE.present = 1;
@@ -3330,7 +3879,11 @@ eHalStatus sme_QosProcessFTReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, v
                     (pACInfo->tspec_mask_status & (1<<tspec_flow_index)))
             {
                 VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
+<<<<<<< HEAD
                         FL("Copying the currentQos to requestedQos for AC=%d, flow=%d\n"),
+=======
+                        FL("Copying the currentQos to requestedQos for AC=%d, flow=%d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         ac, tspec_flow_index );
 
                 pACInfo->requested_QoSInfo[tspec_flow_index] = pACInfo->curr_QoSInfo[tspec_flow_index];
@@ -3369,7 +3922,11 @@ eHalStatus sme_QosProcessFTReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, v
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN,
                 "%s: %d: Flow List empty, nothing to update",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -3380,7 +3937,11 @@ eHalStatus sme_QosProcessFTReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, v
         {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                     "%s: %d: Changing FlowID %d reason to SETUP and HO renewal to FALSE",
+<<<<<<< HEAD
                     __FUNCTION__, __LINE__,
+=======
+                    __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     flow_info->QosFlowID);
             flow_info->reason = SME_QOS_REASON_SETUP;
             flow_info->hoRenewal = eANI_BOOLEAN_TRUE;
@@ -3399,7 +3960,11 @@ eHalStatus sme_QosFTAggrQosReq( tpAniSirGlobal pMac, v_U8_t sessionId )
     eHalStatus status = eHAL_STATUS_FAILURE;
     int i, j = 0;
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
+<<<<<<< HEAD
             "%s: %d: invoked on session %d", __FUNCTION__, __LINE__,
+=======
+            "%s: %d: invoked on session %d", __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sessionId);
 
     pSession = &sme_QosCb.sessionInfo[sessionId];
@@ -3411,7 +3976,11 @@ eHalStatus sme_QosFTAggrQosReq( tpAniSirGlobal pMac, v_U8_t sessionId )
         //err msg
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                 "%s: %d: couldn't allocate memory for the msg buffer",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return eHAL_STATUS_FAILURE;
       }
@@ -3432,10 +4001,17 @@ eHalStatus sme_QosFTAggrQosReq( tpAniSirGlobal pMac, v_U8_t sessionId )
         for( j = 0; j < SME_QOS_TSPEC_INDEX_MAX; j++ )
         {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                     FL("ac=%d, tspec_mask_staus=%x, tspec_index=%d\n"), 
                     i, pSession->ac_info[i].tspec_mask_status, j);
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
                     FL("direction = %d\n"), pSession->ac_info[i].addTsRsp[j].rsp.tspec.tsinfo.traffic.direction);
+=======
+                    FL("ac=%d, tspec_mask_staus=%x, tspec_index=%d"),
+                    i, pSession->ac_info[i].tspec_mask_status, j);
+            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
+                    FL("direction = %d"), pSession->ac_info[i].addTsRsp[j].rsp.tspec.tsinfo.traffic.direction);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // Check if any flow is active on this AC
             if ((pSession->ac_info[i].tspec_mask_status) & (1 << j))
             {
@@ -3444,7 +4020,11 @@ eHalStatus sme_QosFTAggrQosReq( tpAniSirGlobal pMac, v_U8_t sessionId )
                         (direction == SME_QOS_WMM_TS_DIR_BOTH))
                 {
                     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, 
+<<<<<<< HEAD
                             FL("Found tspec entry AC=%d, flow=%d, direction = %d\n"), i, j, direction);
+=======
+                            FL("Found tspec entry AC=%d, flow=%d, direction = %d"), i, j, direction);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pMsg->aggrInfo.aggrAddTsInfo[i].dialogToken =
                         sme_QosAssignDialogToken();
                     pMsg->aggrInfo.aggrAddTsInfo[i].lleTspecPresent =
@@ -3475,14 +4055,22 @@ eHalStatus sme_QosFTAggrQosReq( tpAniSirGlobal pMac, v_U8_t sessionId )
     }
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
+<<<<<<< HEAD
             "Sending aggregated message to HAL 0x%x\n", pMsg->aggrInfo.tspecIdx);
+=======
+            "Sending aggregated message to HAL 0x%x", pMsg->aggrInfo.tspecIdx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(HAL_STATUS_SUCCESS(palSendMBMessage(pMac->hHdd, pMsg)))
     {
         status = eHAL_STATUS_SUCCESS;
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                 "%s: %d: sent down a AGGR QoS req to PE",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     return status;
@@ -3535,9 +4123,21 @@ eHalStatus sme_QosProcessFTRICResponse(tpAniSirGlobal pMac, v_U8_t sessionId, tD
     //Process Delay element
     if (pRicDataDesc->TSDelay.present)
         ConvertTSDelay(pMac, &pAddtsRsp->rsp.delay, &pRicDataDesc->TSDelay);
+<<<<<<< HEAD
     //return sme_QosProcessAddTsRsp(pMac, &addtsRsp);
     return eHAL_STATUS_SUCCESS;
    }
+=======
+
+    //Need to call for WMMTSPEC
+    if (pRicDataDesc->WMMTSPEC.present)
+    {
+        ConvertWMMTSPEC(pMac, &pAddtsRsp->rsp.tspec, &pRicDataDesc->WMMTSPEC);
+    }
+    //return sme_QosProcessAddTsRsp(pMac, &addtsRsp);
+    return eHAL_STATUS_SUCCESS;
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus sme_QosProcessAggrQosRsp(tpAniSirGlobal pMac, void *pMsgBuf)
 {
     tpSirAggrQosRsp pAggrRsp = (tpSirAggrQosRsp)pMsgBuf;
@@ -3559,7 +4159,11 @@ eHalStatus sme_QosProcessAggrQosRsp(tpAniSirGlobal pMac, void *pMsgBuf)
                 addTsRsp[j].rsp.tspec.tsinfo.traffic.direction;
 
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                     FL("Addts rsp from LIM AC=%d, flow=%d dir=%d, tspecIdx=%x\n"),
+=======
+                    FL("Addts rsp from LIM AC=%d, flow=%d dir=%d, tspecIdx=%x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     i, j, direction, pAggrRsp->aggrInfo.tspecIdx);
             // Check if the direction is Uplink or bi-directional
             if( ((1<<i) & pAggrRsp->aggrInfo.tspecIdx) &&
@@ -3573,7 +4177,11 @@ eHalStatus sme_QosProcessAggrQosRsp(tpAniSirGlobal pMac, void *pMsgBuf)
                 addtsRsp.rsp.tspec = pAggrRsp->aggrInfo.aggrRsp[i].tspec;
 
                 VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                         FL("%s: Processing Addts rsp from LIM AC=%d, flow=%d\n"), i, j);
+=======
+                        FL("Processing Addts rsp from LIM AC=%d, flow=%d"), i, j);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /* post ADD TS response for each */
                 if (sme_QosProcessAddTsRsp(pMac, &addtsRsp) != eHAL_STATUS_SUCCESS)
                 {
@@ -3596,17 +4204,39 @@ eHalStatus sme_QosProcessFTReassocRspEv(tpAniSirGlobal pMac, v_U8_t sessionId, v
     eHalStatus            status = eHAL_STATUS_SUCCESS;
     tCsrRoamSession *pCsrSession = CSR_GET_SESSION( pMac, sessionId );
     tCsrRoamConnectedInfo *pCsrConnectedInfo = &pCsrSession->connectedInfo;
+<<<<<<< HEAD
     tANI_U32    ricRspLen = pCsrConnectedInfo->nRICRspLength;
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
             "%s: %d: invoked on session %d",
             __FUNCTION__, __LINE__,
+=======
+    tANI_U32    ricRspLen;
+    /* To silence the KW tool NULL check is added */ 
+    if(pCsrConnectedInfo == NULL)
+    {
+        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
+                FL("The connected info pointer is NULL"));
+        return eHAL_STATUS_FAILURE;
+    }
+    ricRspLen = pCsrConnectedInfo->nRICRspLength;
+
+    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
+            "%s: %d: invoked on session %d",
+            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sessionId);
 
     pSession = &sme_QosCb.sessionInfo[sessionId];
 
+<<<<<<< HEAD
     pRicDataDesc = (tDot11fIERICDataDesc *)pCsrConnectedInfo->pbFrames + pCsrConnectedInfo->nBeaconLength +
         pCsrConnectedInfo->nAssocReqLength + pCsrConnectedInfo->nAssocRspLength;
+=======
+    pRicDataDesc = (tDot11fIERICDataDesc *)((pCsrConnectedInfo->pbFrames) +
+        (pCsrConnectedInfo->nBeaconLength + pCsrConnectedInfo->nAssocReqLength +
+        pCsrConnectedInfo->nAssocRspLength));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     for(ac = SME_QOS_EDCA_AC_BE; ac < SME_QOS_EDCA_AC_MAX; ac++)
     {
@@ -3642,13 +4272,21 @@ eHalStatus sme_QosProcessFTReassocRspEv(tpAniSirGlobal pMac, v_U8_t sessionId, v
                             else
                             {
                                 VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
+<<<<<<< HEAD
                                         FL("Processing RIC Response for AC %d, TSPEC Flow index %d with RIC ID %d \n"),
+=======
+                                        FL("Processing RIC Response for AC %d, TSPEC Flow index %d with RIC ID %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                         ac, tspec_flow_index, pRicDataDesc->RICData.Identifier);
                                 status = sme_QosProcessFTRICResponse(pMac, sessionId, pRicDataDesc, ac, tspec_flow_index);
                                 if (eHAL_STATUS_SUCCESS != status)
                                 {
                                     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                                             FL("Failed with status %d for AC %d in TSPEC Flow index = %d\n"),
+=======
+                                            FL("Failed with status %d for AC %d in TSPEC Flow index = %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             status, ac, tspec_flow_index);
                                 }
                             }
@@ -3665,7 +4303,11 @@ eHalStatus sme_QosProcessFTReassocRspEv(tpAniSirGlobal pMac, v_U8_t sessionId, v
     if (ricRspLen)
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                 FL("RIC Response still follows despite traversing through all ACs. Remaining len = %d\n"), ricRspLen);
+=======
+                FL("RIC Response still follows despite traversing through all ACs. Remaining len = %d"), ricRspLen);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         VOS_ASSERT(0);
     }
 
@@ -3710,7 +4352,11 @@ eHalStatus sme_QosAddTsReq(tpAniSirGlobal pMac,
 #endif
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for AC %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, ac);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    pMsg = (tSirAddtsReq *)vos_mem_malloc(sizeof(tSirAddtsReq));
@@ -3719,7 +4365,11 @@ eHalStatus sme_QosAddTsReq(tpAniSirGlobal pMac,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: couldn't allocate memory for the msg buffer",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_zero(pMsg, sizeof(tSirAddtsReq));
@@ -3771,8 +4421,14 @@ eHalStatus sme_QosAddTsReq(tpAniSirGlobal pMac,
    if (NULL == pSession->assocInfo.pBssDesc)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
+<<<<<<< HEAD
                 "%s: %d: BSS descriptor is NULL so we don't send requst to PE",
                 __FUNCTION__, __LINE__);
+=======
+                "%s: %d: BSS descriptor is NULL so we don't send request to PE",
+                __func__, __LINE__);
+      vos_mem_free(pMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_copy( &pMsg->bssId[ 0 ], 
@@ -3780,7 +4436,11 @@ eHalStatus sme_QosAddTsReq(tpAniSirGlobal pMac,
                  sizeof(tCsrBssid) );
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: up = %d, tid = %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, 
+=======
+             __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              pTspec_Info->ts_info.up,
              pTspec_Info->ts_info.tid);
 #ifdef FEATURE_WLAN_CCX
@@ -3795,7 +4455,11 @@ eHalStatus sme_QosAddTsReq(tpAniSirGlobal pMac,
       status = eHAL_STATUS_SUCCESS;
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: sent down a ADDTS req to PE",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //event: EVENT_WLAN_QOS
 #ifdef FEATURE_WLAN_DIAG_SUPPORT          
       qos.eventId = SME_QOS_DIAG_ADDTS_REQ;
@@ -3835,7 +4499,11 @@ eHalStatus sme_QosDelTsReq(tpAniSirGlobal pMac,
 #endif
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for AC %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, ac);
    pMsg = (tSirDeltsReq *)vos_mem_malloc(sizeof(tSirDeltsReq));
    if (!pMsg)
@@ -3843,7 +4511,11 @@ eHalStatus sme_QosDelTsReq(tpAniSirGlobal pMac,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: couldn't allocate memory for the msg buffer",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_zero(pMsg, sizeof(tSirDeltsReq));
@@ -3884,7 +4556,12 @@ eHalStatus sme_QosDelTsReq(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: BSS descriptor is NULL so we don't send request to PE",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+      vos_mem_free(pMsg);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_copy( &pMsg->bssId[ 0 ], 
@@ -3893,7 +4570,11 @@ eHalStatus sme_QosDelTsReq(tpAniSirGlobal pMac,
 
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: up = %d, tid = %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, 
+=======
+             __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              pTspecInfo->ts_info.up,
              pTspecInfo->ts_info.tid);
    vos_mem_zero(&pACInfo->curr_QoSInfo[tspec_mask - 1], 
@@ -3903,7 +4584,11 @@ eHalStatus sme_QosDelTsReq(tpAniSirGlobal pMac,
       status = eHAL_STATUS_SUCCESS;
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: sme_QosDelTsReq:Test: sent down a DELTS req to PE",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //event: EVENT_WLAN_QOS
 #ifdef FEATURE_WLAN_DIAG_SUPPORT          
       qos.eventId = SME_QOS_DIAG_DELTS;
@@ -3945,7 +4630,11 @@ eHalStatus sme_QosProcessAddTsRsp(tpAniSirGlobal pMac, void *pMsgBuf)
 #ifdef WLAN_FEATURE_VOWIFI_11R
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
             "%s: %d: invoked on session %d for UP %d",
+<<<<<<< HEAD
             __FUNCTION__, __LINE__,
+=======
+            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sessionId, up);
 
     ac = sme_QosUpToAc(up);
@@ -3954,7 +4643,11 @@ eHalStatus sme_QosProcessAddTsRsp(tpAniSirGlobal pMac, void *pMsgBuf)
         //err msg
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: invalid AC %d from UP %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, ac, up);
+=======
+                __func__, __LINE__, ac, up);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return eHAL_STATUS_FAILURE;
     }
@@ -3972,7 +4665,11 @@ eHalStatus sme_QosProcessAddTsRsp(tpAniSirGlobal pMac, void *pMsgBuf)
 #endif
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Invoked on session %d with return code %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, paddts_rsp->rc);
    // our outstanding request has been serviced
    // we can go into powersave
@@ -4013,7 +4710,11 @@ eHalStatus sme_QosProcessDelTsRsp(tpAniSirGlobal pMac, void *pMsgBuf)
    // msg
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Invoked on session %d with return code %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, pDeltsRsp->rc);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    // our outstanding request has been serviced
@@ -4050,7 +4751,11 @@ eHalStatus sme_QosProcessDelTsInd(tpAniSirGlobal pMac, void *pMsgBuf)
 #endif
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Invoked on session %d for UP %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, up);
    ac = sme_QosUpToAc(up);
    if(SME_QOS_EDCA_AC_MAX == ac)
@@ -4058,7 +4763,11 @@ eHalStatus sme_QosProcessDelTsInd(tpAniSirGlobal pMac, void *pMsgBuf)
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: invalid AC %d from UP %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 ac, up);
       return eHAL_STATUS_FAILURE;
    }
@@ -4076,7 +4785,11 @@ eHalStatus sme_QosProcessDelTsInd(tpAniSirGlobal pMac, void *pMsgBuf)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: no match found for ac = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, 
+=======
+                __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 search_key.key.ac_type);
       //ASSERT
       VOS_ASSERT(0);
@@ -4122,7 +4835,11 @@ eHalStatus sme_QosProcessAssocCompleteEv(tpAniSirGlobal pMac, v_U8_t sessionId, 
    sme_QosEdcaAcType ac = SME_QOS_EDCA_AC_BE;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    if(((SME_QOS_INIT == pSession->ac_info[SME_QOS_EDCA_AC_BE].curr_state)&&
@@ -4137,7 +4854,11 @@ eHalStatus sme_QosProcessAssocCompleteEv(tpAniSirGlobal pMac, v_U8_t sessionId, 
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: pEvent_info is NULL",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return status;
       }
       if(!((sme_QosAssocInfo *)pEvent_info)->pBssDesc)
@@ -4145,7 +4866,11 @@ eHalStatus sme_QosProcessAssocCompleteEv(tpAniSirGlobal pMac, v_U8_t sessionId, 
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: pBssDesc is NULL",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return status;
       }
       if((pSession->assocInfo.pBssDesc) &&
@@ -4154,7 +4879,11 @@ eHalStatus sme_QosProcessAssocCompleteEv(tpAniSirGlobal pMac, v_U8_t sessionId, 
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: assoc with the same BSS, no update needed",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else
       {
@@ -4165,7 +4894,11 @@ eHalStatus sme_QosProcessAssocCompleteEv(tpAniSirGlobal pMac, v_U8_t sessionId, 
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: wrong state: BE %d, BK %d, VI %d, VO %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pSession->ac_info[SME_QOS_EDCA_AC_BE].curr_state,
                 pSession->ac_info[SME_QOS_EDCA_AC_BK].curr_state,
                 pSession->ac_info[SME_QOS_EDCA_AC_VI].curr_state,
@@ -4201,7 +4934,11 @@ eHalStatus sme_QosProcessAssocCompleteEv(tpAniSirGlobal pMac, v_U8_t sessionId, 
             default:
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, ac, pACInfo->curr_state);
                //ASSERT
                VOS_ASSERT(0);
@@ -4228,7 +4965,11 @@ eHalStatus sme_QosProcessReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
    sme_QosEdcaAcType ac;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
 
@@ -4238,7 +4979,11 @@ eHalStatus sme_QosProcessReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                "%s: %d: no need for state transition, should "
                "already be in handoff state",
+<<<<<<< HEAD
                __FUNCTION__, __LINE__);
+=======
+               __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        VOS_ASSERT(pSession->ac_info[0].curr_state == SME_QOS_HANDOFF);
        VOS_ASSERT(pSession->ac_info[1].curr_state == SME_QOS_HANDOFF);
        VOS_ASSERT(pSession->ac_info[2].curr_state == SME_QOS_HANDOFF);
@@ -4253,7 +4998,11 @@ eHalStatus sme_QosProcessReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: no need for state transition, should "
                 "already be in handoff state",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(pSession->ac_info[0].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[1].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[2].curr_state == SME_QOS_HANDOFF);
@@ -4272,7 +5021,11 @@ eHalStatus sme_QosProcessReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: no need for state transition, should "
                 "already be in handoff state",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(pSession->ac_info[0].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[1].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[2].curr_state == SME_QOS_HANDOFF);
@@ -4301,7 +5054,11 @@ eHalStatus sme_QosProcessReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
          default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, pACInfo->curr_state);
             //ASSERT
             VOS_ASSERT(0);
@@ -4322,7 +5079,12 @@ eHalStatus sme_QosProcessReassocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
   --------------------------------------------------------------------------*/
 eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId, void * pEvent_info)
 {
+<<<<<<< HEAD
    tpSirSmeJoinRsp pSmeJoinRsp = (tpSirSmeJoinRsp) pEvent_info;
+=======
+
+   tCsrRoamSession *pCsrRoamSession = CSR_GET_SESSION( pMac, sessionId );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    sme_QosSessionInfo *pSession;
    sme_QosACInfo *pACInfo;
    sme_QosEdcaAcType ac, ac_index;
@@ -4334,7 +5096,11 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
 
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    // our pending reassociation has completed
@@ -4346,7 +5112,11 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: pEvent_info is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
    if(!((sme_QosAssocInfo *)pEvent_info)->pBssDesc)
@@ -4354,7 +5124,11 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: pBssDesc is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return status;
    }
    status = sme_QosSaveAssocInfo(pSession, pEvent_info);
@@ -4363,7 +5137,11 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: sme_QosSaveAssocInfo() failed",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 //TBH: Assuming both handoff algo & 11r willn't be enabled at the same time   
    if(pSession->handoffRequested)
@@ -4376,15 +5154,29 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
 #ifdef WLAN_FEATURE_VOWIFI_11R
    if (pSession->ftHandoffInProgress)
    {
+<<<<<<< HEAD
        if (csrRoamIs11rAssoc(pMac)) {
            if (pSmeJoinRsp->parsedRicRspLen) {
+=======
+       if (csrRoamIs11rAssoc(pMac))
+       {
+           if (pCsrRoamSession && pCsrRoamSession->connectedInfo.nRICRspLength)
+           {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = sme_QosProcessFTReassocRspEv(pMac, sessionId, pEvent_info);
            }
        }
 #ifdef FEATURE_WLAN_CCX
        // If CCX association check for TSPEC IEs in the reassoc rsp frame
+<<<<<<< HEAD
        if (csrRoamIsCCXAssoc(pMac)) {
            if (pSmeJoinRsp->tspecIeLen) {
+=======
+       if (csrRoamIsCCXAssoc(pMac))
+       {
+           if (pCsrRoamSession && pCsrRoamSession->connectedInfo.nTspecIeLength)
+           {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = sme_QosCCXProcessReassocTspecRsp(pMac, sessionId, pEvent_info);
            }
        }
@@ -4455,7 +5247,11 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
                {
                   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                             "%s: %d: no match found for ac = %d",
+<<<<<<< HEAD
                             __FUNCTION__, __LINE__,
+=======
+                            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             search_key.key.ac_type);
                   //ASSERT
                   VOS_ASSERT(0);
@@ -4478,7 +5274,11 @@ eHalStatus sme_QosProcessReassocSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
          default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, pACInfo->curr_state);
             //ASSERT
             VOS_ASSERT(0);
@@ -4506,7 +5306,11 @@ eHalStatus sme_QosProcessReassocFailureEv(tpAniSirGlobal pMac, v_U8_t sessionId,
    sme_QosEdcaAcType ac;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    // our pending reassociation has completed
@@ -4546,7 +5350,11 @@ eHalStatus sme_QosProcessReassocFailureEv(tpAniSirGlobal pMac, v_U8_t sessionId,
          default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, pACInfo->curr_state);
             //ASSERT
             VOS_ASSERT(0);
@@ -4574,7 +5382,11 @@ eHalStatus sme_QosProcessHandoffAssocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId
    v_U8_t ac;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    for(ac = SME_QOS_EDCA_AC_BE; ac < SME_QOS_EDCA_AC_MAX; ac++) 
@@ -4592,10 +5404,17 @@ eHalStatus sme_QosProcessHandoffAssocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId
 #ifdef WLAN_FEATURE_VOWIFI_11R
             if(pSession->ftHandoffInProgress)
             {
+<<<<<<< HEAD
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: SME_QOS_CSR_HANDOFF_ASSOC_REQ received in "
                          "SME_QOS_HANDOFF state with FT in progress"
                          , __FUNCTION__, __LINE__); 
+=======
+               VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
+                         "%s: %d: SME_QOS_CSR_HANDOFF_ASSOC_REQ received in "
+                         "SME_QOS_HANDOFF state with FT in progress"
+                         , __func__, __LINE__); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break; 
             }
 #endif            
@@ -4605,7 +5424,11 @@ eHalStatus sme_QosProcessHandoffAssocReqEv(tpAniSirGlobal pMac, v_U8_t sessionId
          default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, pACInfo->curr_state);
             //ASSERT
             VOS_ASSERT(0);
@@ -4646,7 +5469,11 @@ eHalStatus sme_QosProcessHandoffSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
    eHalStatus status = eHAL_STATUS_FAILURE;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    //go back to original state before handoff
@@ -4682,7 +5509,11 @@ eHalStatus sme_QosProcessHandoffSuccessEv(tpAniSirGlobal pMac, v_U8_t sessionId,
 #endif
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, pACInfo->curr_state);
             //ASSERT
             VOS_ASSERT(0);
@@ -4708,7 +5539,11 @@ eHalStatus sme_QosProcessHandoffFailureEv(tpAniSirGlobal pMac, v_U8_t sessionId,
    v_U8_t ac;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    for(ac = SME_QOS_EDCA_AC_BE; ac < SME_QOS_EDCA_AC_MAX; ac++) 
@@ -4740,7 +5575,11 @@ eHalStatus sme_QosProcessHandoffFailureEv(tpAniSirGlobal pMac, v_U8_t sessionId,
          default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId, ac, pACInfo->curr_state);
             //ASSERT
             VOS_ASSERT(0);
@@ -4773,7 +5612,11 @@ eHalStatus sme_QosProcessDisconnectEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
    sme_QosSessionInfo *pSession;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    if((pSession->handoffRequested)
@@ -4787,7 +5630,11 @@ eHalStatus sme_QosProcessDisconnectEv(tpAniSirGlobal pMac, v_U8_t sessionId, voi
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: no need for state transition, should "
                 "already be in handoff state",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(pSession->ac_info[0].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[1].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[2].curr_state == SME_QOS_HANDOFF);
@@ -4837,7 +5684,11 @@ eHalStatus sme_QosProcessJoinReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, void *
    sme_QosEdcaAcType ac;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    if(pSession->handoffRequested)
@@ -4845,7 +5696,11 @@ eHalStatus sme_QosProcessJoinReqEv(tpAniSirGlobal pMac, v_U8_t sessionId, void *
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: no need for state transition, should "
                 "already be in handoff state",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(pSession->ac_info[0].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[1].curr_state == SME_QOS_HANDOFF);
       VOS_ASSERT(pSession->ac_info[2].curr_state == SME_QOS_HANDOFF);
@@ -4891,7 +5746,11 @@ eHalStatus sme_QosProcessPreauthSuccessInd(tpAniSirGlobal pMac, v_U8_t sessionId
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
             "%s: %d: invoked on session %d",
+<<<<<<< HEAD
             __FUNCTION__, __LINE__,
+=======
+            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sessionId);
 
     pSession = &sme_QosCb.sessionInfo[sessionId];
@@ -4914,7 +5773,11 @@ eHalStatus sme_QosProcessPreauthSuccessInd(tpAniSirGlobal pMac, v_U8_t sessionId
             default:
                 VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                         "%s: %d: On session %d AC %d is in wrong state %d",
+<<<<<<< HEAD
                         __FUNCTION__, __LINE__,
+=======
+                        __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         sessionId, ac, pACInfo->curr_state);
                 //ASSERT
                 VOS_ASSERT(0);
@@ -4943,7 +5806,11 @@ eHalStatus sme_QosProcessPreauthSuccessInd(tpAniSirGlobal pMac, v_U8_t sessionId
         for(ac = SME_QOS_EDCA_AC_BE; ac < SME_QOS_EDCA_AC_MAX; ac++)
         {
             volatile v_U8_t   tspec_index = 0;
+<<<<<<< HEAD
 
+=======
+            ricIELength = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pACInfo = &pSession->ac_info[ac];
             tspec_pending_status = pACInfo->tspec_pending;
             tspec_mask_status = pACInfo->tspec_mask_status;
@@ -5011,7 +5878,11 @@ eHalStatus sme_QosProcessAddTsFailureRsp(tpAniSirGlobal pMac,
    sme_QosWmmUpType up = (sme_QosWmmUpType)pRsp->tspec.tsinfo.traffic.userPrio;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for UP %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, up);
    ac = sme_QosUpToAc(up);
    if(SME_QOS_EDCA_AC_MAX == ac)
@@ -5019,7 +5890,11 @@ eHalStatus sme_QosProcessAddTsFailureRsp(tpAniSirGlobal pMac,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: invalid AC %d from UP %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, ac, up);
+=======
+                __func__, __LINE__, ac, up);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    pSession = &sme_QosCb.sessionInfo[sessionId];
@@ -5031,7 +5906,11 @@ eHalStatus sme_QosProcessAddTsFailureRsp(tpAniSirGlobal pMac,
       //ASSERT
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: On session %d an AddTS is not pending on AC %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, ac);
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -5046,7 +5925,11 @@ eHalStatus sme_QosProcessAddTsFailureRsp(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: On session %d no match found for ac = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, search_key.key.ac_type);
       //ASSERT
       VOS_ASSERT(0);
@@ -5099,7 +5982,11 @@ static eHalStatus sme_QosUpdateTspecMask(v_U8_t sessionId,
 
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for AC %d TSPEC %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, search_key.key.ac_type, new_tspec_mask);
 
    pSession = &sme_QosCb.sessionInfo[sessionId];
@@ -5112,7 +5999,11 @@ static eHalStatus sme_QosUpdateTspecMask(v_U8_t sessionId,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Exceeded the array bounds of pSession->ac_info",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT (0);
       return eHAL_STATUS_FAILURE;
    }
@@ -5122,7 +6013,11 @@ static eHalStatus sme_QosUpdateTspecMask(v_U8_t sessionId,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Flow List empty, nothing to update",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -5141,7 +6036,11 @@ static eHalStatus sme_QosUpdateTspecMask(v_U8_t sessionId,
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: Flow %d matches",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
                pACInfo->num_flows[flow_info->tspec_mask - 1]--;
                pACInfo->num_flows[new_tspec_mask - 1]++;
@@ -5156,7 +6055,11 @@ static eHalStatus sme_QosUpdateTspecMask(v_U8_t sessionId,
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: Flow %d matches",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
                pACInfo->num_flows[flow_info->tspec_mask - 1]--;
                pACInfo->num_flows[new_tspec_mask - 1]++;
@@ -5205,7 +6108,11 @@ eHalStatus sme_QosProcessAddTsSuccessRsp(tpAniSirGlobal pMac,
 #endif //FEATURE_WLAN_DIAG_SUPPORT
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for UP %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, up);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    ac = sme_QosUpToAc(up);
@@ -5214,7 +6121,11 @@ eHalStatus sme_QosProcessAddTsSuccessRsp(tpAniSirGlobal pMac,
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: invalid AC %d from UP %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__, ac, up);
+=======
+                __func__, __LINE__, ac, up);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    pACInfo = &pSession->ac_info[ac];
@@ -5224,7 +6135,11 @@ eHalStatus sme_QosProcessAddTsSuccessRsp(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: On session %d an AddTS is not pending on AC %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, ac);
       //ASSERT
       VOS_ASSERT(0);
@@ -5254,7 +6169,11 @@ eHalStatus sme_QosProcessAddTsSuccessRsp(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: Exceeded the array bounds of pACInfo->requested_QosInfo",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          VOS_ASSERT (0);
          return eHAL_STATUS_FAILURE;
       }
@@ -5304,7 +6223,11 @@ eHalStatus sme_QosProcessAddTsSuccessRsp(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: On session %d no match found for ac %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, search_key.key.ac_type);
       //ASSERT
       VOS_ASSERT(0);
@@ -5384,19 +6307,31 @@ eHalStatus sme_QosAggregateParams(
    sme_QosWmmTspecInfo TspecInfo;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(!pInput_Tspec_Info)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: input is NULL, nothing to aggregate",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    if(!pCurrent_Tspec_Info)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Current is NULL, can't aggregate",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_copy(&TspecInfo, pCurrent_Tspec_Info, 
@@ -5564,13 +6499,21 @@ static eHalStatus sme_QosUpdateParams(v_U8_t sessionId,
    sme_QosWmmTspecInfo Tspec_Info;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: invoked on session %d for AC %d TSPEC %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, ac, tspec_mask);
    if(!pTspec_Info)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: output is NULL, can't aggregate",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_zero(&Tspec_Info, sizeof(sme_QosWmmTspecInfo));
@@ -5579,7 +6522,11 @@ static eHalStatus sme_QosUpdateParams(v_U8_t sessionId,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Flow List empty, nothing to update",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    pSession = &sme_QosCb.sessionInfo[sessionId];
@@ -5598,7 +6545,11 @@ static eHalStatus sme_QosUpdateParams(v_U8_t sessionId,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: Flow %d matches",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    flow_info->QosFlowID);
          
          if((SME_QOS_REASON_RELEASE == flow_info->reason ) ||
@@ -5608,7 +6559,11 @@ static eHalStatus sme_QosUpdateParams(v_U8_t sessionId,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                       "%s: %d: Skipping Flow %d as it is marked "
                       "for release/modify",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       flow_info->QosFlowID);
          }
          else if(!HAL_STATUS_SUCCESS(sme_QosAggregateParams(&flow_info->QoSInfo, 
@@ -5618,7 +6573,11 @@ static eHalStatus sme_QosUpdateParams(v_U8_t sessionId,
             //err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosAggregateParams() failed",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__);
+=======
+                      __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       pEntry = pNextEntry;
@@ -5646,7 +6605,11 @@ sme_QosWmmUpType sme_QosAcToUp(sme_QosEdcaAcType ac)
    }
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
              "%s: %d: ac = %d up = %d returned",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, ac, up);
+=======
+             __func__, __LINE__, ac, up);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return up;
 }
 /*--------------------------------------------------------------------------
@@ -5666,7 +6629,11 @@ sme_QosEdcaAcType sme_QosUpToAc(sme_QosWmmUpType up)
    }
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
              "%s: %d: up = %d ac = %d returned",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, up, ac);
+=======
+             __func__, __LINE__, up, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return ac;
 }
 /*--------------------------------------------------------------------------
@@ -5693,7 +6660,11 @@ static void sme_QosStateTransition(v_U8_t sessionId,
    pACInfo->curr_state = new_state;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
              "%s: %d: On session %d new state=%d, old state=%d, for AC=%d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, 
+=======
+             __func__, __LINE__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, pACInfo->curr_state, pACInfo->prev_state, ac );
 }
 /*--------------------------------------------------------------------------
@@ -5718,7 +6689,11 @@ tListElem *sme_QosFindInFlowList(sme_QosSearchInfo search_key)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Flow List empty, can't search",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return NULL;
    }
    while( pEntry )
@@ -5735,7 +6710,11 @@ tListElem *sme_QosFindInFlowList(sme_QosSearchInfo search_key)
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: match found on flowID, ending search",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break;
             }
          }
@@ -5746,7 +6725,11 @@ tListElem *sme_QosFindInFlowList(sme_QosSearchInfo search_key)
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: match found on ac, ending search",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break;
             }
          }
@@ -5757,7 +6740,11 @@ tListElem *sme_QosFindInFlowList(sme_QosSearchInfo search_key)
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: match found on reason, ending search",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break;
             }
          }
@@ -5769,7 +6756,11 @@ tListElem *sme_QosFindInFlowList(sme_QosSearchInfo search_key)
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: match found on reason, ending search",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                break;
             }
@@ -5806,7 +6797,11 @@ eHalStatus sme_QosFindAllInFlowList(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Flow List empty, can't search",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    while( pEntry )
@@ -5824,13 +6819,21 @@ eHalStatus sme_QosFindAllInFlowList(tpAniSirGlobal pMac,
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: match found on flowID, ending search",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = fnp(pMac, pEntry);
                if(eHAL_STATUS_FAILURE == status)
                {
                   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                             "%s: %d: Failed to process entry",
+<<<<<<< HEAD
                             __FUNCTION__, __LINE__);
+=======
+                            __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   break;
                }
             }
@@ -5842,14 +6845,22 @@ eHalStatus sme_QosFindAllInFlowList(tpAniSirGlobal pMac,
                //msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: match found on ac, ending search",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                flow_info->hoRenewal = pSession->ac_info[flow_info->ac_type].hoRenewal;
                status = fnp(pMac, pEntry);
                if(eHAL_STATUS_FAILURE == status)
                {
                   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                             "%s: %d: Failed to process entry",
+<<<<<<< HEAD
                             __FUNCTION__, __LINE__);
+=======
+                            __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   break;
                }
             }
@@ -5878,7 +6889,11 @@ v_BOOL_t sme_QosIsACM(tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: pSirBssDesc is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_FALSE;
    }
 
@@ -5895,7 +6910,11 @@ v_BOOL_t sme_QosIsACM(tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc,
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: csrGetParsedBssDescriptionIEs() failed",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__);
+=======
+                   __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_FALSE;
       }
 
@@ -5921,7 +6940,11 @@ v_BOOL_t sme_QosIsACM(tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc,
           default:
              VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                        "%s: %d: unknown AC = %d",
+<<<<<<< HEAD
                        __FUNCTION__, __LINE__, ac);
+=======
+                       __func__, __LINE__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              //Assert
              VOS_ASSERT(0);
              break;
@@ -5929,7 +6952,11 @@ v_BOOL_t sme_QosIsACM(tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc,
    }//IS_QOS_BSS
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: ACM = %d for AC = %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, ret_val, ac );
+=======
+             __func__, __LINE__, ret_val, ac );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (NULL == pIes)
    {
       /* IEs were allocated locally so free them */
@@ -5958,7 +6985,11 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Flow List empty, nothing to buffer",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    while( pEntry )
@@ -5991,7 +7022,11 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: couldn't buffer the setup request for "
                          "flow %d in handoff state",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
             }
             else
@@ -5999,7 +7034,11 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: buffered a setup request for "
                          "flow %d in handoff state",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
             }
          }
@@ -6014,7 +7053,11 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: couldn't buffer the release request for "
                          "flow %d in handoff state",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
             }
             else
@@ -6022,7 +7065,11 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: buffered a release request for "
                          "flow %d in handoff state",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
             }
          }
@@ -6038,7 +7085,11 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                          "%s: %d: couldn't buffer the modify request for "
                          "flow %d in handoff state",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
             }
             else
@@ -6046,14 +7097,22 @@ static eHalStatus sme_QosBufferExistingFlows(tpAniSirGlobal pMac,
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                          "%s: %d: buffered a modify request for "
                          "flow %d in handoff state",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          flow_info->QosFlowID);
             }
          }
          //delete the entry from Flow List
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                    "%s: %d: Deleting original entry at %p with flowID %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    flow_info, flow_info->QosFlowID);
          csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
          vos_mem_free(flow_info);
@@ -6081,9 +7140,15 @@ static eHalStatus sme_QosDeleteExistingFlows(tpAniSirGlobal pMac,
    pEntry = csrLLPeekHead( &sme_QosCb.flow_list, VOS_TRUE );
    if(!pEntry)
    {
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                 "%s: %d: Flow List empty, nothing to delete",
                 __FUNCTION__, __LINE__);
+=======
+      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN,
+                "%s: %d: Flow List empty, nothing to delete",
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    while( pEntry )
@@ -6104,7 +7169,11 @@ static eHalStatus sme_QosDeleteExistingFlows(tpAniSirGlobal pMac,
          }
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                    "%s: %d: Deleting entry at %p with flowID %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    flow_info, flow_info->QosFlowID);
          //delete the entry from Flow List
          csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
@@ -6131,14 +7200,22 @@ eHalStatus sme_QosBufferCmd(sme_QosCmdInfo *pcmd, v_BOOL_t insert_head)
    sme_QosCmdInfoEntry * pentry = NULL;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Invoked",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pentry = (sme_QosCmdInfoEntry *) vos_mem_malloc(sizeof(sme_QosCmdInfoEntry));
    if (!pentry)
    {
       //err msg
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Memory allocation failure",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    // copy the entire CmdInfo
@@ -6173,7 +7250,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
    eHalStatus halStatus = eHAL_STATUS_SUCCESS;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    if(!csrLLIsListEmpty( &pSession->bufferedCommandList, VOS_FALSE ))
@@ -6184,7 +7265,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
          //Err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: no more buffered commands on session %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId);
          pSession->readyForPowerSave = VOS_TRUE;
          return eHAL_STATUS_FAILURE;
@@ -6207,7 +7292,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
             //Err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosInternalSetupReq failed on session %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId);
             halStatus = eHAL_STATUS_FAILURE;
          }
@@ -6221,7 +7310,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
             //Err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosInternalReleaseReq failed on session %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId);
             halStatus = eHAL_STATUS_FAILURE;
          }
@@ -6236,7 +7329,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
             //Err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosInternalModifyReq failed on session %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId);
             halStatus = eHAL_STATUS_FAILURE;
          }
@@ -6252,7 +7349,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
             //Err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: sme_QosReRequestAddTS failed on session %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       sessionId);
             halStatus = eHAL_STATUS_FAILURE;
          }
@@ -6261,7 +7362,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
          //err msg
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: On session %d unknown cmd = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, pcmd->cmdInfo.command);
          //ASSERT
          VOS_ASSERT(0);
@@ -6274,7 +7379,11 @@ static eHalStatus sme_QosProcessBufferedCmd(v_U8_t sessionId)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: cmd buffer empty",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pSession->readyForPowerSave = VOS_TRUE;
    }
    return halStatus;
@@ -6296,23 +7405,39 @@ static eHalStatus sme_QosDeleteBufferedRequests(tpAniSirGlobal pMac,
    tListElem *pEntry= NULL, *pNextEntry = NULL;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Invoked on session %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__, sessionId);
+=======
+             __func__, __LINE__, sessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pSession = &sme_QosCb.sessionInfo[sessionId];
    pEntry = csrLLPeekHead( &pSession->bufferedCommandList, VOS_TRUE );
    if(!pEntry)
    {
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Buffered List empty, nothing to delete on session %d",
                 __FUNCTION__, __LINE__,
+=======
+      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, 
+                "%s: %d: Buffered List empty, nothing to delete on session %d",
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       return eHAL_STATUS_FAILURE;
    }
    while( pEntry )
    {
       pNextEntry = csrLLNext( &pSession->bufferedCommandList, pEntry, VOS_TRUE );
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: deleting entry from buffered List",
                 __FUNCTION__, __LINE__);
+=======
+      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
+                "%s: %d: deleting entry from buffered List",
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //delete the entry from Flow List
       csrLLRemoveEntry(&pSession->bufferedCommandList, pEntry, VOS_TRUE );
       // reclaim the memory
@@ -6343,7 +7468,11 @@ eHalStatus sme_QosSaveAssocInfo(sme_QosSessionInfo *pSession, sme_QosAssocInfo *
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: pAssoc_info is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    //clean up the assoc info if already set
@@ -6360,7 +7489,11 @@ eHalStatus sme_QosSaveAssocInfo(sme_QosSessionInfo *pSession, sme_QosAssocInfo *
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: couldn't allocate memory for the bss Descriptor",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    vos_mem_copy(pBssDesc, pAssoc_info->pBssDesc, bssLen);
@@ -6396,7 +7529,11 @@ eHalStatus sme_QosSetupFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -6414,7 +7551,11 @@ eHalStatus sme_QosSetupFnp(tpAniSirGlobal pMac, tListElem *pEntry)
                              flow_info->QosFlowID);
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Entry with flowID = %d getting notified",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info->QosFlowID);
    }
    return eHAL_STATUS_SUCCESS;
@@ -6441,7 +7582,11 @@ eHalStatus sme_QosModificationNotifyFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -6459,7 +7604,11 @@ eHalStatus sme_QosModificationNotifyFnp(tpAniSirGlobal pMac, tListElem *pEntry)
                              flow_info->QosFlowID);
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Entry with flowID = %d getting notified",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info->QosFlowID);
    }
    return eHAL_STATUS_SUCCESS;
@@ -6482,7 +7631,11 @@ eHalStatus sme_QosModifyFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
    }
@@ -6497,7 +7650,11 @@ eHalStatus sme_QosModifyFnp(tpAniSirGlobal pMac, tListElem *pEntry)
       //delete the original entry from Flow List
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Deleting original entry at %p with flowID %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info, flow_info->QosFlowID);
       csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
       // reclaim the memory
@@ -6530,7 +7687,11 @@ eHalStatus sme_QosDelTsIndFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -6547,7 +7708,11 @@ eHalStatus sme_QosDelTsIndFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    pACInfo->num_flows[flow_info->tspec_mask - 1]--;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
              "%s: %d: Deleting entry at %p with flowID %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              flow_info, flow_info->QosFlowID);
    csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
    // reclaim the memory
@@ -6579,7 +7744,11 @@ eHalStatus sme_QosReassocSuccessEvFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -6687,7 +7856,11 @@ eHalStatus sme_QosReassocSuccessEvFnp(tpAniSirGlobal pMac, tListElem *pEntry)
       //delete the entry from Flow List
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Deleting entry at %p with flowID %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info, flow_info->QosFlowID);
       csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
       // reclaim the memory
@@ -6726,7 +7899,11 @@ eHalStatus sme_QosAddTsFailureFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -6779,7 +7956,11 @@ eHalStatus sme_QosAddTsFailureFnp(tpAniSirGlobal pMac, tListElem *pEntry)
       //delete the entry from Flow List
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Deleting entry at %p with flowID %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info, flow_info->QosFlowID);
       csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
       // reclaim the memory
@@ -6822,7 +8003,11 @@ eHalStatus sme_QosAddTsSuccessFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Entry is NULL",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
       return eHAL_STATUS_FAILURE;
@@ -6836,7 +8021,11 @@ eHalStatus sme_QosAddTsSuccessFnp(tpAniSirGlobal pMac, tListElem *pEntry)
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: No need to notify the HDD, the ADDTS "
                 "success is not for index = %d of the AC = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info->tspec_mask, ac);
       return eHAL_STATUS_SUCCESS;
    }
@@ -6969,7 +8158,11 @@ eHalStatus sme_QosAddTsSuccessFnp(tpAniSirGlobal pMac, tListElem *pEntry)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Deleting entry at %p with flowID %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 flow_info, flow_info->QosFlowID);
       //delete the entry from Flow List
       csrLLRemoveEntry(&sme_QosCb.flow_list, pEntry, VOS_TRUE );
@@ -7064,7 +8257,11 @@ void sme_QosPmcFullPowerCallback(void *callbackContext, eHalStatus status)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: PMC failed to put the chip in Full power",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //ASSERT
       VOS_ASSERT(0);
    }
@@ -7173,16 +8370,26 @@ void sme_QosPmcDeviceStateUpdateInd(void *callbackContext, tPmcState pmcState)
       break;
    default:
       status = eHAL_STATUS_SUCCESS;
+<<<<<<< HEAD
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
                 "%s: %d: nothing to process in PMC state %d",
                 __FUNCTION__, __LINE__,
+=======
+      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
+                "%s: %d: nothing to process in PMC state %d",
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pmcState);
    }
    if(!HAL_STATUS_SUCCESS(status))
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: ignoring Device(PMC) state change to %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pmcState);
    }
 
@@ -7208,7 +8415,11 @@ eHalStatus sme_QosProcessOutOfUapsdMode(tpAniSirGlobal pMac)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
                 "%s: %d: Flow List empty, can't search",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    while( pEntry )
@@ -7251,7 +8462,11 @@ eHalStatus sme_QosProcessIntoUapsdMode(tpAniSirGlobal pMac)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Flow List empty, can't search",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
    while( pEntry )
@@ -7323,7 +8538,11 @@ v_BOOL_t sme_QosIsTSInfoAckPolicyValid(tpAniSirGlobal pMac,
   {
      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                "%s: %d: Session Id %d is invalid",
+<<<<<<< HEAD
                __FUNCTION__, __LINE__,
+=======
+               __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                sessionId);
      return VOS_FALSE;
   }
@@ -7334,7 +8553,11 @@ v_BOOL_t sme_QosIsTSInfoAckPolicyValid(tpAniSirGlobal pMac,
   {
      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                "%s: %d: Session %d is inactive",
+<<<<<<< HEAD
                __FUNCTION__, __LINE__,
+=======
+               __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                sessionId);
      return VOS_FALSE;
   }
@@ -7343,7 +8566,11 @@ v_BOOL_t sme_QosIsTSInfoAckPolicyValid(tpAniSirGlobal pMac,
   {
      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                "%s: %d: Session %d has an Invalid BSS Descriptor",
+<<<<<<< HEAD
                __FUNCTION__, __LINE__,
+=======
+               __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                sessionId);
      return VOS_FALSE;
   }
@@ -7355,7 +8582,11 @@ v_BOOL_t sme_QosIsTSInfoAckPolicyValid(tpAniSirGlobal pMac,
   {
      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                "%s: %d: On session %d unable to parse BSS IEs",
+<<<<<<< HEAD
                __FUNCTION__, __LINE__,
+=======
+               __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                sessionId);
      return VOS_FALSE;
   }
@@ -7367,7 +8598,11 @@ v_BOOL_t sme_QosIsTSInfoAckPolicyValid(tpAniSirGlobal pMac,
   {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: On session %d HT Caps aren't present but application set ack policy to HT ",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       
       vos_mem_free(pIes);
@@ -7407,7 +8642,11 @@ static eHalStatus qosIssueCommand( tpAniSirGlobal pMac, v_U8_t sessionId,
         {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                          "%s: %d: fail to get command buffer for command %d",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__, cmdType);
+=======
+                         __func__, __LINE__, cmdType);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
         pCommand->command = cmdType;
@@ -7425,7 +8664,11 @@ static eHalStatus qosIssueCommand( tpAniSirGlobal pMac, v_U8_t sessionId,
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                          "%s: %d: NULL pointer passed",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__);
+=======
+                         __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = eHAL_STATUS_INVALID_PARAMETER;
             }
             break;
@@ -7437,7 +8680,11 @@ static eHalStatus qosIssueCommand( tpAniSirGlobal pMac, v_U8_t sessionId,
         default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                       "%s: %d: invalid command type %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__, cmdType );
+=======
+                      __func__, __LINE__, cmdType );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = eHAL_STATUS_INVALID_PARAMETER;
             break;
         }
@@ -7478,7 +8725,11 @@ tANI_BOOLEAN qosProcessCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
         default:
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                       "%s: %d: invalid command type %d",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__, pCommand->command );
+=======
+                      __func__, __LINE__, pCommand->command );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }//switch
     } while(0);
@@ -7504,7 +8755,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
    v_BOOL_t addtsWhenACMNotSet = CSR_IS_ADDTS_WHEN_ACMOFF_SUPPORTED(pMac);
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
              "%s: %d: Invoked",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__);
+=======
+             __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    for (sessionId = 0; sessionId < CSR_ROAM_SESSION_MAX; ++sessionId)
    {
       pSession = &sme_QosCb.sessionInfo[sessionId];
@@ -7514,7 +8769,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
       }
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                 "%s: %d: Session %d is active",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId);
       if( HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, pSession->assocInfo.pBssDesc, &pIesLocal)) )
       {
@@ -7535,7 +8794,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
                // Yes, QoS is active on this AC
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                          "%s: %d: On session %d AC %d has QoS active",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId, ac);
                // Does this AC require ACM?
                if(( acm_mask & (1 << (SME_QOS_EDCA_AC_VO - ac)) ) || addtsWhenACMNotSet )
@@ -7543,7 +8806,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
                   // Yes, so we need to re-add any TSPECS
                   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                             "%s: %d: On session %d AC %d has ACM enabled",
+<<<<<<< HEAD
                             __FUNCTION__, __LINE__,
+=======
+                            __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             sessionId, ac);
                   // Are any TSPECs active?
                   if( pACInfo->tspec_mask_status )
@@ -7597,7 +8864,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
                      // QoS is set, ACM is on, but no TSPECs -- inconsistent state
                      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                                "%s: %d: On session %d AC %d has QoS enabled and ACM is set, but no TSPEC",
+<<<<<<< HEAD
                                __FUNCTION__, __LINE__,
+=======
+                               __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                sessionId, ac);
                      VOS_ASSERT(0);
                   }
@@ -7613,7 +8884,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
                      uapsd_mask |= 1 << (SME_QOS_EDCA_AC_VO - ac);
                      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                                "%s: %d: On session %d AC %d has ACM disabled, uapsd mask now 0x%X",
+<<<<<<< HEAD
                                __FUNCTION__, __LINE__,
+=======
+                               __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                sessionId, ac, uapsd_mask);
                   }
                }
@@ -7639,7 +8914,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
                //err msg
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                          "%s: %d: On Session %d Reassoc failed",
+<<<<<<< HEAD
                          __FUNCTION__, __LINE__,
+=======
+                         __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sessionId);
             }
          }
@@ -7648,7 +8927,11 @@ sme_QosStatusType sme_QosTriggerUapsdChange( tpAniSirGlobal pMac )
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                    "%s: %d: On Session %d failed to parse IEs",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId);
       }
    }
@@ -7671,7 +8954,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
    sme_QosCmdInfo  cmd;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
              "%s: %d: Invoked on session %d for AC %d TSPEC %d",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, ac, tspecMask);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    pACInfo = &pSession->ac_info[ac];
@@ -7691,7 +8978,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
                 "%s: %d: On session %d buffering the AddTS request "
                    "for AC %d in state %d as Addts is pending "
                 "on other AC or waiting for full power",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sessionId, ac, pACInfo->curr_state);
       //buffer cmd
       cmd.command = SME_QOS_RESEND_REQ;
@@ -7705,7 +8996,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                    "%s: %d: On session %d unable to buffer the AddTS "
                    "request for AC %d TSPEC %d in state %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    sessionId, ac, tspecMask, pACInfo->curr_state);
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -7725,7 +9020,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                    "%s: %d: sme_QosSetup returned in SME_QOS_QOS_ON state on "
                    "AC %d with status =%d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    ac, status);
          if(SME_QOS_STATUS_SETUP_REQ_PENDING_RSP != status)
          {
@@ -7745,7 +9044,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: UAPSD is setup already status = %d "
                       "returned by sme_QosSetup",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       status);  
          }
          else
@@ -7753,7 +9056,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
             //err msg
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                       "%s: %d: unexpected status = %d returned by sme_QosSetup",
+<<<<<<< HEAD
                       __FUNCTION__, __LINE__,
+=======
+                      __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       status);
          }
       }
@@ -7762,7 +9069,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
    case SME_QOS_REQUESTED:
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: Re-Add request in state = %d  buffer the request",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pACInfo->curr_state);
       cmd.command = SME_QOS_RESEND_REQ;
       cmd.pMac = pMac;
@@ -7774,7 +9085,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                    "%s: %d: couldn't buffer the readd request in state = %d",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pACInfo->curr_state );
          // unable to buffer the request
          // nothing is pending so vote powersave back on
@@ -7790,7 +9105,11 @@ static sme_QosStatusType sme_QosReRequestAddTS(tpAniSirGlobal pMac,
       //print error msg, 
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
                 "%s: %d: ReAdd request in unexpected state = %d",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__,
+=======
+                __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pACInfo->curr_state );
       // unable to service the request
       // nothing is pending so vote powersave back on
@@ -7826,7 +9145,11 @@ static eHalStatus sme_QosRequestReassoc(tpAniSirGlobal pMac, tANI_U8 sessionId,
    eHalStatus status;
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
              "%s: %d: Invoked on session %d with UAPSD mask 0x%X",
+<<<<<<< HEAD
              __FUNCTION__, __LINE__,
+=======
+             __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              sessionId, pModFields->uapsd_mask);
    pSession = &sme_QosCb.sessionInfo[sessionId];
    status = csrReassoc(pMac, sessionId, pModFields, &pSession->roamID, fForce);
@@ -7840,7 +9163,11 @@ static eHalStatus sme_QosRequestReassoc(tpAniSirGlobal pMac, tANI_U8 sessionId,
          pACInfo = &pSession->ac_info[ac];
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
                    "%s: %d: AC[%d] is in state [%d]",
+<<<<<<< HEAD
                    __FUNCTION__, __LINE__,
+=======
+                   __func__, __LINE__,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    ac, pACInfo->curr_state );
          // If it is already in HANDOFF state, don't do anything since we
          // MUST preserve the previous state and sme_QosStateTransition
@@ -7864,7 +9191,11 @@ static v_U32_t sme_QosAssignFlowId(void)
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_FATAL, 
                 "%s: %d: Software Test made the flow counter wrap, "
                 "QoS may no longer be functional",
+<<<<<<< HEAD
                 __FUNCTION__, __LINE__);
+=======
+                __func__, __LINE__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       sme_QosCb.nextFlowId = SME_QOS_MIN_FLOW_ID;
    }
    else

@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -19,6 +42,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if !defined( __WLAN_QCT_PAL_PACKET_H )
 #define __WLAN_QCT_PAL_PACKET_H
 
@@ -30,10 +57,13 @@
                
    Definitions for platform independent.
   
+<<<<<<< HEAD
    Copyright 2010 (c) Qualcomm, Incorporated.  All Rights Reserved.
    
    Qualcomm Confidential and Proprietary.
   
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ========================================================================*/
 
 #include "wlan_qct_pal_type.h"
@@ -67,7 +97,11 @@
 //The size of AMSDU frame per spec can be a max of 3839 bytes 
 // in BD/PDUs that means 30 (one BD = 128 bytes) 
 // we must add the size of the 802.11 header to that 
+<<<<<<< HEAD
 #define VPKT_SIZE_BUFFER  (30 * 128) + 32
+=======
+#define VPKT_SIZE_BUFFER  ((30 * 128) + 32)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef enum
 {
@@ -309,4 +343,17 @@ wpt_int32 wpalPacketGetFragCount(wpt_packet *pPkt);
 ---------------------------------------------------------------------------*/
 wpt_status wpalIsPacketLocked( wpt_packet *pPacket);
 
+<<<<<<< HEAD
+=======
+/*---------------------------------------------------------------------------
+   wpalGetNumRxRawPacket   Query available RX RAW total buffer count
+   param:
+       numRxResource  pointer of queried value
+
+   return:
+       eWLAN_PAL_STATUS_SUCCESS
+---------------------------------------------------------------------------*/
+wpt_status wpalGetNumRxRawPacket(wpt_uint32 *numRxResource);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // __WLAN_QCT_PAL_PACKET_H

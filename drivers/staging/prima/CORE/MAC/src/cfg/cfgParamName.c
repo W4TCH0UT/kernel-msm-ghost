@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,7 +47,11 @@
  */
 
 /*
+<<<<<<< HEAD
  * DO NOT EDIT - This file is generated automaticlly
+=======
+ * DO NOT EDIT - This file is generated automatically
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  */
 
 /*
@@ -236,6 +263,10 @@ unsigned char *gCfgParamName[] = {
     (unsigned char *)"VHT_160MHZ_UTILIZATION",
     (unsigned char *)"MAX_AMSDU_LENGTH",
     (unsigned char *)"MPDU_DENSITY",
+<<<<<<< HEAD
+=======
+    (unsigned char *)"NUM_BUFF_ADVERT",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     (unsigned char *)"MAX_RX_AMPDU_FACTOR",
     (unsigned char *)"SHORT_GI_20MHZ",
     (unsigned char *)"SHORT_GI_40MHZ",
@@ -243,7 +274,10 @@ unsigned char *gCfgParamName[] = {
     (unsigned char *)"MAX_PS_POLL",
     (unsigned char *)"NUM_BEACON_PER_RSSI_AVERAGE",
     (unsigned char *)"RSSI_FILTER_PERIOD",
+<<<<<<< HEAD
     (unsigned char *)"FT_RSSI_FILTER_PERIOD",
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     (unsigned char *)"MIN_RSSI_THRESHOLD",
     (unsigned char *)"NTH_BEACON_FILTER",
     (unsigned char *)"BROADCAST_FRAME_FILTER_ENABLE",
@@ -325,6 +359,14 @@ unsigned char *gCfgParamName[] = {
     (unsigned char *)"AP_KEEP_ALIVE_TIMEOUT",
     (unsigned char *)"GO_KEEP_ALIVE_TIMEOUT",
     (unsigned char *)"ENABLE_MC_ADDR_LIST",
+<<<<<<< HEAD
+=======
+    (unsigned char *)"ENABLE_UC_FILTER",
+    (unsigned char *)"ENABLE_LPWR_IMG_TRANSITION",
+    (unsigned char *)"ENABLE_MCC_ADAPTIVE_SCHED",
+    (unsigned char *)"DISABLE_LDPC_WITH_TXBF_AP",
+    (unsigned char *)"AP_LINK_MONITOR_TIMEOUT",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 

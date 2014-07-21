@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -67,11 +90,16 @@
 #include "VossWrapper.h"
 
 #ifdef WLAN_DEBUG
+<<<<<<< HEAD
 #define TIMER_NAME timer_ptr->timerName 
+=======
+#define TIMER_NAME (timer_ptr->timerName)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #define TIMER_NAME "N/A"
 #endif
 
+<<<<<<< HEAD
 // Routine used to retrieve the Winwrapper context pointer from the pMac structure
 extern tpAniSirTxWrapper sysGetTxWrapperContext(v_PVOID_t pMac);
 
@@ -110,6 +138,8 @@ v_VOID_t tx_voss_wrapper_init(v_PVOID_t pMacGlobal, v_PVOID_t pAdapter)
 
 
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**---------------------------------------------------------------------
  * tx_time_get() 
  *
@@ -302,12 +332,31 @@ static v_VOID_t tx_main_timer_func( v_PVOID_t functionContext )
 {
    TX_TIMER *timer_ptr = (TX_TIMER *)functionContext;
 
+<<<<<<< HEAD
    VOS_ASSERT(NULL != timer_ptr);
 
    VOS_ASSERT(NULL != timer_ptr->pExpireFunc);
 
    VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_INFO, 
              "Timer %s triggered\n", TIMER_NAME);
+=======
+
+   if (NULL == timer_ptr)
+   {
+       VOS_ASSERT(0);
+       return;
+   }
+
+
+   if (NULL == timer_ptr->pExpireFunc)
+   {
+       VOS_ASSERT(0);
+       return;
+   }
+
+   VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_INFO, 
+             "Timer %s triggered", TIMER_NAME);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // Now call the actual timer function, taking the function pointer,
    // from the timer structure.
@@ -324,7 +373,11 @@ static v_VOID_t tx_main_timer_func( v_PVOID_t functionContext )
       if (VOS_STATUS_SUCCESS != status)
       {
          VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_WARN, 
+<<<<<<< HEAD
              "Unable to reschedule timer %s; status=%d\n", TIMER_NAME, status);
+=======
+             "Unable to reschedule timer %s; status=%d", TIMER_NAME, status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
    }
 } /*** tx_timer_change() ***/
@@ -421,7 +474,11 @@ v_UINT_t tx_timer_create_intern( v_PVOID_t pMacGlobal, TX_TIMER *timer_ptr,
 
 #ifdef WLAN_DEBUG
     // Store the timer name
+<<<<<<< HEAD
     vos_mem_copy(timer_ptr->timerName, name_ptr, sizeof(timer_ptr->timerName));
+=======
+    strlcpy(timer_ptr->timerName, name_ptr, sizeof(timer_ptr->timerName));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // Store the timer name, for Debug build only
 
     status = vos_timer_init( &timer_ptr->vosTimer, VOS_TIMER_TYPE_SW, 

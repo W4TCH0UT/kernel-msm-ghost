@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -54,12 +77,28 @@ static void Notify(tpAniSirGlobal, tANI_U16, tANI_U32);
 // ---------------------------------------------------------------------
 tANI_U32 cfgNeedRestart(tpAniSirGlobal pMac, tANI_U16 cfgId)
 {
+<<<<<<< HEAD
+=======
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return 0;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return !!(pMac->cfg.gCfgEntry[cfgId].control & CFG_CTL_RESTART) ;
 }
 
 // ---------------------------------------------------------------------
 tANI_U32 cfgNeedReload(tpAniSirGlobal pMac, tANI_U16 cfgId)
 {
+<<<<<<< HEAD
+=======
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return 0;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return !!(pMac->cfg.gCfgEntry[cfgId].control & CFG_CTL_RELOAD) ;
 }
 
@@ -91,7 +130,11 @@ wlan_cfgInit(tpAniSirGlobal pMac)
     pMac->cfg.gCfgStatus = CFG_INCOMPLETE;
   
      // Send CFG_DNLD_REQ to host
+<<<<<<< HEAD
     PELOGW(cfgLog(pMac, LOGW, FL("Sending CFG_DNLD_REQ\n"));)
+=======
+    PELOGW(cfgLog(pMac, LOGW, FL("Sending CFG_DNLD_REQ"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     cfgSendHostMsg(pMac, WNI_CFG_DNLD_REQ, WNI_CFG_DNLD_REQ_LEN,
                    WNI_CFG_DNLD_REQ_NUM, 0, 0, 0);
 
@@ -99,7 +142,10 @@ wlan_cfgInit(tpAniSirGlobal pMac)
 
 
 //---------------------------------------------------------------------
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT != AP)
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus cfgInit(tpAniSirGlobal pMac)
 {
    pMac->cfg.gCfgIBufMin  = __gCfgIBufMin;
@@ -124,7 +170,10 @@ void cfgDeInit(tpAniSirGlobal pMac)
    pMac->cfg.gCfgEntry    = NULL;
    pMac->cfg.gParamList   = NULL;
 }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // ---------------------------------------------------------------------
 /**
@@ -162,7 +211,16 @@ cfgSetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        return eSIR_CFG_INVALID_ID;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_CFG_INVALID_ID;
     }
 
@@ -170,6 +228,7 @@ cfgSetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
     index    = control & CFG_BUF_INDX_MASK;
     retVal   = eSIR_SUCCESS;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (index >= CFG_AP_IBUF_MAX_SIZE)
 #else
@@ -177,6 +236,11 @@ cfgSetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
 #endif
     {
         PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d\n"), index);)
+=======
+    if (index >= CFG_STA_IBUF_MAX_SIZE)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d"), index);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
@@ -184,13 +248,21 @@ cfgSetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else if ((pMac->cfg.gCfgIBufMin[index] > value) ||
              (pMac->cfg.gCfgIBufMax[index] < value))
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Value %d out of range [%d,%d] cfg id %d\n"),
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Value %d out of range [%d,%d] cfg id %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                value, pMac->cfg.gCfgIBufMin[index],
                pMac->cfg.gCfgIBufMax[index], cfgId);)
         retVal = eSIR_CFG_INVALID_ID;
@@ -203,7 +275,11 @@ cfgSetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
             // Update hardware if necessary
             mask = control & CFG_CTL_NTF_MASK;
             if ((mask & CFG_CTL_NTF_HW) != 0)
+<<<<<<< HEAD
                 PELOGE(cfgLog(pMac, LOGE, FL("CFG Notify HW not supported!!!\n"));)
+=======
+                PELOGE(cfgLog(pMac, LOGE, FL("CFG Notify HW not supported!!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             // Notify other modules if necessary
             if ((mask & CFG_CTL_NTF_MASK) != 0)
@@ -241,16 +317,31 @@ cfgCheckValid(tpAniSirGlobal pMac, tANI_U16 cfgId)
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOG3(cfgLog(pMac, LOG3, FL("Invalid cfg id %d\n"), cfgId);)
         return(eSIR_CFG_INVALID_ID);
     }
+=======
+        PELOG3(cfgLog(pMac, LOG3, FL("Invalid cfg id %d"), cfgId);)
+        return(eSIR_CFG_INVALID_ID);
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return eSIR_CFG_INVALID_ID;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     control = pMac->cfg.gCfgEntry[cfgId].control;
 
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOG3(cfgLog(pMac, LOG3, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOG3(cfgLog(pMac, LOG3, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return(eSIR_CFG_INVALID_ID);
     }
     else
@@ -287,15 +378,28 @@ wlan_cfgGetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pValue)
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        retVal = eSIR_CFG_INVALID_ID;
+        return retVal;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return eSIR_CFG_INVALID_ID;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     control = pMac->cfg.gCfgEntry[cfgId].control;
     index   = control & CFG_BUF_INDX_MASK;
     retVal  = eSIR_SUCCESS;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (index >= CFG_AP_IBUF_MAX_SIZE)
 #else
@@ -303,6 +407,11 @@ wlan_cfgGetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pValue)
 #endif
     {
         PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d\n"), index);)
+=======
+    if (index >= CFG_STA_IBUF_MAX_SIZE)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d"), index);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
@@ -310,12 +419,20 @@ wlan_cfgGetInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pValue)
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else {
         // Get integer value
+<<<<<<< HEAD
         if(index < CFG_AP_IBUF_MAX_SIZE)
+=======
+        if (index < CFG_STA_IBUF_MAX_SIZE)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             *pValue = pMac->cfg.gCfgIBuf[index];
     }
 
@@ -356,9 +473,20 @@ cfgIncrementInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
         retVal = eSIR_CFG_INVALID_ID;
     }
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        retVal = eSIR_CFG_INVALID_ID;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return eSIR_CFG_INVALID_ID;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     control  = pMac->cfg.gCfgEntry[cfgId].control;
     index    = control & CFG_BUF_INDX_MASK;
@@ -367,7 +495,11 @@ cfgIncrementInt(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 value)
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else
@@ -454,7 +586,16 @@ cfgSetStrNotify(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pStr,
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        return eSIR_CFG_INVALID_ID;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_CFG_INVALID_ID;
     }
 
@@ -465,12 +606,20 @@ cfgSetStrNotify(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pStr,
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else if (index >= CFG_STA_SBUF_MAX_SIZE)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid Sbuf index %d (max size %d)\n"),
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid Sbuf index %d (max size %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                index, CFG_STA_SBUF_MAX_SIZE);)
         retVal = eSIR_CFG_INVALID_ID;
     }
@@ -480,7 +629,11 @@ cfgSetStrNotify(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pStr,
             paramLen = *pDst++;
             if (length > paramLen)
             {
+<<<<<<< HEAD
                 PELOGE(cfgLog(pMac, LOGE, FL("Invalid length %d (>%d) cfg id %d\n"),
+=======
+                PELOGE(cfgLog(pMac, LOGE, FL("Invalid length %d (>%d) cfg id %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        length, paramLen, cfgId);)
                 retVal = eSIR_CFG_INVALID_LEN;
             }
@@ -499,7 +652,11 @@ cfgSetStrNotify(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pStr,
                     mask = control & CFG_CTL_NTF_MASK;
                     if ((mask & CFG_CTL_NTF_HW) != 0)
                     {
+<<<<<<< HEAD
                         PELOGE(cfgLog(pMac, LOGE, FL("CFG Notify HW not supported!!!\n"));)
+=======
+                        PELOGE(cfgLog(pMac, LOGE, FL("CFG Notify HW not supported!!!"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
 
                     // Notify other modules if necessary
@@ -551,15 +708,28 @@ wlan_cfgGetStr(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pBuf, tANI_U32 *pLe
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        retVal = eSIR_CFG_INVALID_ID;
+        return retVal;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return eSIR_CFG_INVALID_ID;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     control  = pMac->cfg.gCfgEntry[cfgId].control;
     index    = control & CFG_BUF_INDX_MASK;
     retVal   = eSIR_SUCCESS;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (index >= CFG_AP_SBUF_MAX_SIZE)
 #else
@@ -567,6 +737,11 @@ wlan_cfgGetStr(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pBuf, tANI_U32 *pLe
 #endif
     {
         PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d\n"), index);)
+=======
+    if (index >= CFG_STA_SBUF_MAX_SIZE)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d"), index);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
@@ -574,7 +749,11 @@ wlan_cfgGetStr(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pBuf, tANI_U32 *pLe
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else
@@ -584,7 +763,11 @@ wlan_cfgGetStr(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U8 *pBuf, tANI_U32 *pLe
         pSrc++;                               // skip over max length
         if (*pLength < *pSrc)
         {
+<<<<<<< HEAD
             PELOGE(cfgLog(pMac, LOGE, FL("Invalid length %d (<%d) cfg id %d\n"),
+=======
+            PELOGE(cfgLog(pMac, LOGE, FL("Invalid length %d (<%d) cfg id %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    *pLength, *pSrc, cfgId);)
             retVal = eSIR_CFG_INVALID_LEN;
         }
@@ -632,14 +815,26 @@ wlan_cfgGetStrMaxLen(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pLength)
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
         retVal = eSIR_CFG_INVALID_ID;
     }
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        retVal = eSIR_CFG_INVALID_ID;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return eSIR_CFG_INVALID_ID;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     control  = pMac->cfg.gCfgEntry[cfgId].control;
     index    = control & CFG_BUF_INDX_MASK;
     retVal   = eSIR_SUCCESS;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (index >= CFG_AP_SBUF_MAX_SIZE)
 #else
@@ -647,6 +842,11 @@ wlan_cfgGetStrMaxLen(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pLength)
 #endif
     {
         PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d\n"), index);)
+=======
+    if (index >= CFG_STA_SBUF_MAX_SIZE)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d"), index);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
@@ -654,7 +854,11 @@ wlan_cfgGetStrMaxLen(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pLength)
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else
@@ -697,14 +901,26 @@ wlan_cfgGetStrLen(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pLength)
 
     if (cfgId >= CFG_PARAM_MAX_NUM)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d\n"), cfgId);)
         retVal = eSIR_CFG_INVALID_ID;
     }
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Invalid cfg id %d"), cfgId);)
+        retVal = eSIR_CFG_INVALID_ID;
+    }
+    if (!pMac->cfg.gCfgEntry)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("gCfgEntry is NULL"));)
+        return eSIR_CFG_INVALID_ID;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     control  = pMac->cfg.gCfgEntry[cfgId].control;
     index    = control & CFG_BUF_INDX_MASK;
     retVal   = eSIR_SUCCESS;
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     if (index >= CFG_AP_SBUF_MAX_SIZE-1)
 #else
@@ -712,6 +928,11 @@ wlan_cfgGetStrLen(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pLength)
 #endif
     {
         PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d\n"), index);)
+=======
+    if (index >= CFG_STA_SBUF_MAX_SIZE-1)
+    {
+        PELOGE(cfgLog(pMac, LOGE, FL("cfg index out of bounds %d"), index);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
         return retVal;
     }
@@ -719,7 +940,11 @@ wlan_cfgGetStrLen(tpAniSirGlobal pMac, tANI_U16 cfgId, tANI_U32 *pLength)
     // Check if parameter is valid
     if ((control & CFG_CTL_VALID) == 0)
     {
+<<<<<<< HEAD
         PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d\n"), cfgId);)
+=======
+        PELOGE(cfgLog(pMac, LOGE, FL("Not valid cfg id %d"), cfgId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = eSIR_CFG_INVALID_ID;
     }
     else
@@ -876,12 +1101,16 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
     else if ( (systemRole == eLIM_AP_ROLE) ||(systemRole == eLIM_BT_AMP_AP_ROLE)||(systemRole == eLIM_BT_AMP_STA_ROLE) ||
              (systemRole == eLIM_STA_ROLE) )
         pCapInfo->ess = 1; // ESS bit
+<<<<<<< HEAD
 #if defined WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else if (limGetSystemRole(sessionEntry) == eLIM_P2P_DEVICE_ROLE )
     {
         pCapInfo->ess = 0;
         pCapInfo->ibss = 0;
     }
+<<<<<<< HEAD
 #endif
     else
         cfgLog(pMac, LOGP, FL("can't get capability, role is UNKNOWN!!\n"));
@@ -910,12 +1139,19 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+    else
+        cfgLog(pMac, LOGP, FL("can't get capability, role is UNKNOWN!!"));
+
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(systemRole == eLIM_AP_ROLE)
     {
         val = sessionEntry->privacy;
     }
     else
     {
+<<<<<<< HEAD
 #endif
     // PRIVACY bit
     if (wlan_cfgGetInt(pMac, WNI_CFG_PRIVACY_ENABLED, &val) != eSIR_SUCCESS)
@@ -926,13 +1162,26 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
 #ifdef WLAN_SOFTAP_FEATURE
     }
 #endif
+=======
+        // PRIVACY bit
+        if (wlan_cfgGetInt(pMac, WNI_CFG_PRIVACY_ENABLED, &val) != eSIR_SUCCESS)
+        {
+            cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_PRIVACY_ENABLED failed"));
+            return eSIR_FAILURE;
+        }
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (val)
         pCapInfo->privacy = 1;
 
     // Short preamble bit
     if (wlan_cfgGetInt(pMac, WNI_CFG_SHORT_PREAMBLE, &val) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_SHORT_PREAMBLE failed\n"));
+=======
+        cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_SHORT_PREAMBLE failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     if (val)
@@ -959,7 +1208,11 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
                        != eSIR_SUCCESS)
         {
             cfgLog(pMac, LOGP,
+<<<<<<< HEAD
                    FL("cfg get WNI_CFG_11G_SHORT_SLOT_TIME failed\n"));
+=======
+                   FL("cfg get WNI_CFG_11G_SHORT_SLOT_TIME failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eSIR_FAILURE;
         }
         /* When in STA mode, we need to check if short slot is enabled as well as check if the current operating
@@ -980,7 +1233,11 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
     {
       if (wlan_cfgGetInt(pMac, WNI_CFG_11H_ENABLED, &val) != eSIR_SUCCESS)
       {
+<<<<<<< HEAD
           cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_11H_ENABLED failed\n"));
+=======
+          cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_11H_ENABLED failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           return eSIR_FAILURE;
       }
       if (val)
@@ -990,7 +1247,11 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
     // QoS bit
     if (wlan_cfgGetInt(pMac, WNI_CFG_QOS_ENABLED, &val) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_QOS_ENABLED failed\n"));
+=======
+        cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_QOS_ENABLED failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     if (val)
@@ -999,7 +1260,11 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
     // APSD bit
     if (wlan_cfgGetInt(pMac, WNI_CFG_APSD_ENABLED, &val) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_APSD_ENABLED failed\n"));
+=======
+        cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_APSD_ENABLED failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     if (val)
@@ -1010,11 +1275,19 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
     {
       if (wlan_cfgGetInt(pMac, WNI_CFG_RRM_ENABLED, &val) != eSIR_SUCCESS)
       {
+<<<<<<< HEAD
         cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_RRM_ENABLED failed\n"));
         return eSIR_FAILURE;
       }
 #if defined WLAN_VOWIFI_DEBUG
       PELOGE(cfgLog( pMac, LOGE, "RRM = %d\n",val );)
+=======
+        cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_RRM_ENABLED failed"));
+        return eSIR_FAILURE;
+      }
+#if defined WLAN_VOWIFI_DEBUG
+      PELOGE(cfgLog( pMac, LOGE, "RRM = %d",val );)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       if (val)
         pCapInfo->rrm = 1;
@@ -1026,7 +1299,11 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
     // Block ack bit
     if (wlan_cfgGetInt(pMac, WNI_CFG_BLOCK_ACK_ENABLED, &val) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_BLOCK_ACK_ENABLED failed\n"));
+=======
+        cfgLog(pMac, LOGP, FL("cfg get WNI_CFG_BLOCK_ACK_ENABLED failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     pCapInfo->delayedBA = (tANI_U16)((val >> WNI_CFG_BLOCK_ACK_ENABLED_DELAYED) & 1);
@@ -1059,6 +1336,7 @@ cfgGetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 *pCap,tpPESession sessionEntr
 void
 cfgSetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 caps)
 {
+<<<<<<< HEAD
 #if (defined(ANI_PRODUCT_TYPE_AP))
 
     if (cfgSetInt(pMac, WNI_CFG_PRIVACY_ENABLED,
@@ -1085,6 +1363,8 @@ cfgSetCapabilityInfo(tpAniSirGlobal pMac, tANI_U16 caps)
                   SIR_MAC_GET_BLOCK_ACK(caps)) != eSIR_SUCCESS)
         cfgLog(pMac, LOGP, FL("could not set BlockAck at CFG\n"));
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 

@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -71,9 +94,13 @@ when           who                what, where, why
 #include "vos_packet.h" 
 #include "vos_types.h"
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 #include "p2p_Api.h"
 #endif
+=======
+#include "p2p_Api.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*----------------------------------------------------------------------------
  * Preprocessor Definitions and Constants
@@ -91,10 +118,16 @@ when           who                what, where, why
 /*--------------------------------------------------------------------------
   defines and enum
   ------------------------------------------------------------------------*/
+<<<<<<< HEAD
   
 #define       MAX_SSID_LEN                 32
 #define       MAX_MAC_ADDRESS_ACCEPTED     16
 #define       MAX_MAC_ADDRESS_DENIED       MAX_MAC_ADDRESS_ACCEPTED
+=======
+
+#define       MAX_SSID_LEN                 32
+#define       MAX_ACL_MAC_ADDRESS          16
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define       AUTO_CHANNEL_SELECT          0
 #define       MAX_ASSOC_IND_IE_LEN         255
 
@@ -186,11 +219,19 @@ typedef enum {
     eSAP_ASSOC_STA_CALLBACK_EVENT,  /*Event sent when user called WLANSAP_GetAssocStations */
     eSAP_GET_WPSPBC_SESSION_EVENT,  /* Event send when user call  WLANSAP_getWpsSessionOverlap */  
     eSAP_WPS_PBC_PROBE_REQ_EVENT, /* Event send on WPS PBC probe request is received */
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
     eSAP_INDICATE_MGMT_FRAME,
     eSAP_REMAIN_CHAN_READY,
     eSAP_SEND_ACTION_CNF,
 #endif
+=======
+    eSAP_INDICATE_MGMT_FRAME,
+    eSAP_REMAIN_CHAN_READY,
+    eSAP_SEND_ACTION_CNF,
+    eSAP_DISCONNECT_ALL_P2P_CLIENT,
+    eSAP_MAC_TRIG_STOP_BSS_EVENT,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eSAP_UNKNOWN_STA_JOIN, /* Event send when a STA in neither white list or black list tries to associate in softap mode */
     eSAP_MAX_ASSOC_EXCEEDED, /* Event send when a new STA is rejected association since softAP max assoc limit has reached */
 } eSapHddEvent;
@@ -255,12 +296,18 @@ typedef struct sap_StationAssocIndication_s {
     tANI_U32     assocReqLength;
     tANI_U8*     assocReqPtr;
     tANI_BOOLEAN fWmmEnabled;
+<<<<<<< HEAD
 #if WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCsrAuthType negotiatedAuthType;
     eCsrEncryptionType negotiatedUCEncryptionType;
     eCsrEncryptionType negotiatedMCEncryptionType;
     tANI_BOOLEAN fAuthRequired;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } tSap_StationAssocIndication;
 
 typedef struct sap_StationAssocReassocCompleteEvent_s {
@@ -340,11 +387,18 @@ typedef struct sap_WPSPBCProbeReqEvent_s {
     tSirWPSPBCProbeReq WPSPBCProbeReq;
 } tSap_WPSPBCProbeReqEvent; 
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
 typedef struct sap_ManagementFrameInfo_s {
     tANI_U32 nFrameLength;
     tANI_U8  frameType;
     tANI_U32 rxChan;            //Channel of where packet is recevied 
+=======
+typedef struct sap_ManagementFrameInfo_s {
+    tANI_U32 nFrameLength;
+    tANI_U8  frameType;
+    tANI_U32 rxChan;            //Channel of where packet is received 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8 *pbFrames;         //Point to a buffer contain the beacon, assoc req, assoc rsp frame, in that order
                              //user needs to use nBeaconLength, nAssocReqLength, nAssocRspLength to desice where
                             //each frame starts and ends.
@@ -353,7 +407,10 @@ typedef struct sap_ManagementFrameInfo_s {
 typedef struct sap_SendActionCnf_s {
     eSapStatus actionSendSuccess; 
 } tSap_SendActionCnf;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sap_UnknownSTAJoinEvent_s {
     v_MACADDR_t    macaddr;  
@@ -383,10 +440,15 @@ typedef struct sap_Event_s {
         tSap_AssocStaListEvent                    sapAssocStaListEvent; /*SAP_ASSOC_STA_CALLBACK_EVENT */
         tSap_GetWPSPBCSessionEvent                sapGetWPSPBCSessionEvent; /*SAP_GET_WPSPBC_SESSION_EVENT */
         tSap_WPSPBCProbeReqEvent                  sapPBCProbeReqEvent; /*eSAP_WPS_PBC_PROBE_REQ_EVENT */
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
         tSap_ManagementFrameInfo                  sapManagementFrameInfo; /*eSAP_INDICATE_MGMT_FRAME*/
         tSap_SendActionCnf                        sapActionCnf;  /* eSAP_SEND_ACTION_CNF */ 
 #endif
+=======
+        tSap_ManagementFrameInfo                  sapManagementFrameInfo; /*eSAP_INDICATE_MGMT_FRAME*/
+        tSap_SendActionCnf                        sapActionCnf;  /* eSAP_SEND_ACTION_CNF */ 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tSap_UnknownSTAJoinEvent                  sapUnknownSTAJoin; /* eSAP_UNKNOWN_STA_JOIN */
         tSap_MaxAssocExceededEvent                sapMaxAssocExceeded; /* eSAP_MAX_ASSOC_EXCEEDED */
     } sapevt;
@@ -407,11 +469,19 @@ typedef struct sap_Config {
     tSap_SSIDInfo_t SSIDinfo;
     eSapPhyMode     SapHw_mode; /* Wireless Mode */
     eSapMacAddrACL  SapMacaddr_acl;
+<<<<<<< HEAD
     v_MACADDR_t     accept_mac[MAX_MAC_ADDRESS_ACCEPTED]; /* MAC filtering */
     v_BOOL_t        ieee80211d;      /*Specify if 11D is enabled or disabled*/
     v_BOOL_t        protEnabled;     /*Specify if protection is enabled or disabled*/
     v_BOOL_t        obssProtEnabled; /*Specify if OBSS protection is enabled or disabled*/
     v_MACADDR_t     deny_mac[MAX_MAC_ADDRESS_DENIED]; /* MAC filtering */
+=======
+    v_MACADDR_t     accept_mac[MAX_ACL_MAC_ADDRESS]; /* MAC filtering */
+    v_BOOL_t        ieee80211d;      /*Specify if 11D is enabled or disabled*/
+    v_BOOL_t        protEnabled;     /*Specify if protection is enabled or disabled*/
+    v_BOOL_t        obssProtEnabled; /*Specify if OBSS protection is enabled or disabled*/
+    v_MACADDR_t     deny_mac[MAX_ACL_MAC_ADDRESS]; /* MAC filtering */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_MACADDR_t     self_macaddr; //self macaddress or BSSID
    
     v_U8_t          channel;         /* Operation channel */
@@ -536,6 +606,15 @@ typedef struct sap_WPSIE_s {
     } sapwpsie;
 } tSap_WPSIE, *tpSap_WPSIE;
 
+<<<<<<< HEAD
+=======
+#ifdef WLANTL_DEBUG
+#define MAX_RATE_INDEX      136
+#define MAX_NUM_RSSI        100
+#define MAX_RSSI_INTERVAL     5
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sap_SoftapStats_s {
    v_U32_t txUCFcnt;
    v_U32_t txMCFcnt;
@@ -552,9 +631,22 @@ typedef struct sap_SoftapStats_s {
    v_U32_t rxBcnt;
    v_U32_t rxBcntCRCok;
    v_U32_t rxRate;
+<<<<<<< HEAD
 } tSap_SoftapStats, *tpSap_SoftapStats;
 
 
+=======
+#ifdef WLANTL_DEBUG
+   v_U32_t pktCounterRateIdx[MAX_RATE_INDEX];
+   v_U32_t pktCounterRssi[MAX_NUM_RSSI];
+#endif
+} tSap_SoftapStats, *tpSap_SoftapStats;
+
+
+int sapSetPreferredChannel(tANI_U8* ptr);
+void sapCleanupChannelList(void);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION    WLANSAP_Set_WpsIe
 
@@ -882,6 +974,41 @@ WLANSAP_StartBss
 );
 
 /*==========================================================================
+<<<<<<< HEAD
+=======
+  FUNCTION    WLANSAP_SetMacACL
+
+  DESCRIPTION
+  This api function provides SAP to set mac list entry in accept list as well
+  as deny list
+
+  DEPENDENCIES
+    NA.
+
+  PARAMETERS
+
+    IN
+pvosGCtx: Pointer to vos global context structure
+pConfig:  Pointer to configuration structure passed down from
+          HDD(HostApd for Android)
+
+
+  RETURN VALUE
+    The VOS_STATUS code associated with performing the operation
+
+    VOS_STATUS_SUCCESS:  Success
+
+  SIDE EFFECTS
+============================================================================*/
+VOS_STATUS
+WLANSAP_SetMacACL
+(
+    v_PVOID_t  pvosGCtx,
+    tsap_Config_t *pConfig
+);
+
+/*==========================================================================
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   FUNCTION    WLANSAP_Stop
 
   DESCRIPTION 
@@ -1352,7 +1479,10 @@ VOS_STATUS WLANSAP_Set_WPARSNIes(v_PVOID_t pvosGCtx, v_U8_t *pWPARSNIEs, v_U32_t
 ============================================================================*/
 VOS_STATUS WLANSAP_GetStatistics(v_PVOID_t pvosGCtx, tSap_SoftapStats *statBuf, v_BOOL_t bReset);
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
 
   FUNCTION    WLANSAP_SendAction
@@ -1493,7 +1623,10 @@ VOS_STATUS WLANSAP_RegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType,
 ============================================================================*/
 VOS_STATUS WLANSAP_DeRegisterMgmtFrame( v_PVOID_t pvosGCtx, tANI_U16 frameType, 
                                       tANI_U8* matchData, tANI_U16 matchLen );
+<<<<<<< HEAD
 #endif // WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 #ifdef __cplusplus

@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -18,7 +41,10 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file limProcessActionFrame.cc contains the code
@@ -34,6 +60,7 @@
 #include "wniApi.h"
 #include "sirApi.h"
 #include "aniGlobal.h"
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #endif
@@ -42,6 +69,9 @@
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "schApi.h"
 #include "utilsApi.h"
 #include "limTypes.h"
@@ -99,7 +129,11 @@ void limStopTxAndSwitchChannel(tpAniSirGlobal pMac, tANI_U8 sessionId)
       return;
     }
 
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Channel switch Mode == %d\n"), 
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Channel switch Mode == %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        psessionEntry->gLimChannelSwitch.switchMode);)
 
     if (psessionEntry->gLimChannelSwitch.switchMode == eSIR_CHANSW_MODE_SILENT ||
@@ -142,12 +176,20 @@ void limStopTxAndSwitchChannel(tpAniSirGlobal pMac, tANI_U8 sessionId)
         }
         return;
     }
+<<<<<<< HEAD
     MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, NO_SESSION, eLIM_CHANNEL_SWITCH_TIMER));
+=======
+    MTRACE(macTrace(pMac, TRACE_CODE_TIMER_ACTIVATE, sessionId, eLIM_CHANNEL_SWITCH_TIMER));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     if (tx_timer_activate(&pMac->lim.limTimers.gLimChannelSwitchTimer) != TX_SUCCESS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("tx_timer_activate failed\n"));
+=======
+        limLog(pMac, LOGP, FL("tx_timer_activate failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return;
 }
@@ -164,22 +206,37 @@ void limStopTxAndSwitchChannel(tpAniSirGlobal pMac, tANI_U8 sessionId)
 ------------------------------------------------------------*/
 tSirRetStatus limStartChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEntry)
 {
+<<<<<<< HEAD
     PELOG1(limLog(pMac, LOG1, FL("Starting the channel switch\n"));)
+=======
+    PELOG1(limLog(pMac, LOG1, FL("Starting the channel switch"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     /*If channel switch is already running and it is on a different session, just return*/  
     /*This need to be removed for MCC */
     if( limIsChanSwitchRunning (pMac) &&
         psessionEntry->gLimSpecMgmt.dot11hChanSwState != eLIM_11H_CHANSW_RUNNING )
     {
+<<<<<<< HEAD
        limLog(pMac, LOGW, FL("Ignoring channel switch on session %d\n"), psessionEntry->peSessionId);
+=======
+       limLog(pMac, LOGW, FL("Ignoring channel switch on session %d"), psessionEntry->peSessionId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eSIR_SUCCESS;
     }
      
     /* Deactivate and change reconfigure the timeout value */
     //limDeactivateAndChangeTimer(pMac, eLIM_CHANNEL_SWITCH_TIMER);
+<<<<<<< HEAD
     if (tx_timer_deactivate(&pMac->lim.limTimers.gLimChannelSwitchTimer) != eSIR_SUCCESS)
     {
         limLog(pMac, LOGP, FL("tx_timer_deactivate failed!\n"));
+=======
+    MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_CHANNEL_SWITCH_TIMER));
+    if (tx_timer_deactivate(&pMac->lim.limTimers.gLimChannelSwitchTimer) != eSIR_SUCCESS)
+    {
+        limLog(pMac, LOGP, FL("tx_timer_deactivate failed!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -187,7 +244,11 @@ tSirRetStatus limStartChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEnt
                 psessionEntry->gLimChannelSwitch.switchTimeoutValue,
                             0) != TX_SUCCESS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("tx_timer_change failed \n"));
+=======
+        limLog(pMac, LOGP, FL("tx_timer_change failed "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -199,7 +260,11 @@ tSirRetStatus limStartChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEnt
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_QUIET_TIMER));
         if (tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietTimer) != TX_SUCCESS)
         {
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("tx_timer_deactivate failed\n"));
+=======
+            limLog(pMac, LOGP, FL("tx_timer_deactivate failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eSIR_FAILURE;
         }
     }
@@ -208,7 +273,11 @@ tSirRetStatus limStartChannelSwitch(tpAniSirGlobal pMac, tpPESession psessionEnt
         MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, psessionEntry->peSessionId, eLIM_QUIET_BSS_TIMER));
         if (tx_timer_deactivate(&pMac->lim.limTimers.gLimQuietBssTimer) != TX_SUCCESS)
         {
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("tx_timer_deactivate failed\n"));
+=======
+            limLog(pMac, LOGP, FL("tx_timer_deactivate failed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eSIR_FAILURE;
         }
     }
@@ -258,7 +327,11 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
     pBody = WDA_GET_RX_MPDU_DATA(pRxPacketInfo);
     frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
 
+<<<<<<< HEAD
     PELOG3(limLog(pMac, LOG3, FL("Received Channel switch action frame\n"));)
+=======
+    PELOG3(limLog(pMac, LOG3, FL("Received Channel switch action frame"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (!psessionEntry->lim11hEnable)
         return;
 
@@ -266,7 +339,11 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
     if (eHAL_STATUS_SUCCESS != status)
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
             FL("palAllocateMemory failed, status = %d \n"), status);
+=======
+            FL("palAllocateMemory failed, status = %d "), status);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -276,7 +353,11 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
     if( DOT11F_FAILED( nStatus ))
     {
         limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL( "Failed to unpack and parse an 11h-CHANSW Request (0x%08x, %d bytes):\n"),
+=======
+            FL( "Failed to unpack and parse an 11h-CHANSW Request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nStatus,
             frameLen);
         palFreeMemory(pMac->hHdd, pChannelSwitchFrame);
@@ -285,7 +366,11 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
     else if(DOT11F_WARNED( nStatus ))
     {
         limLog( pMac, LOGW,
+<<<<<<< HEAD
             FL( "There were warnings while unpacking an 11h-CHANSW Request (0x%08x, %d bytes):\n"),
+=======
+            FL( "There were warnings while unpacking an 11h-CHANSW Request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nStatus,
             frameLen);
     }
@@ -298,7 +383,11 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
         if (wlan_cfgGetInt(pMac, WNI_CFG_BEACON_INTERVAL, &val) != eSIR_SUCCESS)
         {
             palFreeMemory(pMac->hHdd, pChannelSwitchFrame);
+<<<<<<< HEAD
             limLog(pMac, LOGP, FL("could not retrieve Beacon interval\n"));
+=======
+            limLog(pMac, LOGP, FL("could not retrieve Beacon interval"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
         #endif// TO SUPPORT BT-AMP
@@ -313,8 +402,21 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
         psessionEntry->gLimChannelSwitch.switchTimeoutValue = SYS_MS_TO_TICKS(beaconPeriod) *
                                                          psessionEntry->gLimChannelSwitch.switchCount;
         psessionEntry->gLimChannelSwitch.switchMode = pChannelSwitchFrame->ChanSwitchAnn.switchMode;
+<<<<<<< HEAD
 
        PELOG3(limLog(pMac, LOG3, FL("Rcv Chnl Swtch Frame: Timeout in %d ticks\n"),
+=======
+#ifdef WLAN_FEATURE_11AC
+        if ( pChannelSwitchFrame->WiderBWChanSwitchAnn.present && psessionEntry->vhtCapability)
+        {
+            psessionEntry->gLimWiderBWChannelSwitch.newChanWidth = pChannelSwitchFrame->WiderBWChanSwitchAnn.newChanWidth;
+            psessionEntry->gLimWiderBWChannelSwitch.newCenterChanFreq0 = pChannelSwitchFrame->WiderBWChanSwitchAnn.newCenterChanFreq0;
+            psessionEntry->gLimWiderBWChannelSwitch.newCenterChanFreq1 = pChannelSwitchFrame->WiderBWChanSwitchAnn.newCenterChanFreq1;
+        }
+#endif
+
+       PELOG3(limLog(pMac, LOG3, FL("Rcv Chnl Swtch Frame: Timeout in %d ticks"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                              psessionEntry->gLimChannelSwitch.switchTimeoutValue);)
 
         /* Only primary channel switch element is present */
@@ -329,6 +431,28 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
                 psessionEntry->gLimChannelSwitch.state = eLIM_CHANNEL_SWITCH_PRIMARY_AND_SECONDARY;
                 psessionEntry->gLimChannelSwitch.secondarySubBand = pChannelSwitchFrame->ExtChanSwitchAnn.secondaryChannelOffset;
             }
+<<<<<<< HEAD
+=======
+#ifdef WLAN_FEATURE_11AC
+            if(psessionEntry->vhtCapability && pChannelSwitchFrame->WiderBWChanSwitchAnn.present)
+            {
+                if (pChannelSwitchFrame->WiderBWChanSwitchAnn.newChanWidth == WNI_CFG_VHT_CHANNEL_WIDTH_80MHZ)
+                {
+                    if (pChannelSwitchFrame->ExtChanSwitchAnn.present && ((pChannelSwitchFrame->ExtChanSwitchAnn.secondaryChannelOffset == PHY_DOUBLE_CHANNEL_LOW_PRIMARY) ||
+                        (pChannelSwitchFrame->ExtChanSwitchAnn.secondaryChannelOffset == PHY_DOUBLE_CHANNEL_HIGH_PRIMARY)))
+                    {
+                        psessionEntry->gLimChannelSwitch.state = eLIM_CHANNEL_SWITCH_PRIMARY_AND_SECONDARY;
+                        psessionEntry->gLimChannelSwitch.secondarySubBand =
+                           limGet11ACPhyCBState(pMac,
+                                                psessionEntry->gLimChannelSwitch.primaryChannel,
+                                                pChannelSwitchFrame->ExtChanSwitchAnn.secondaryChannelOffset,
+                                                pChannelSwitchFrame->WiderBWChanSwitchAnn.newCenterChanFreq0,
+                                                psessionEntry);
+                    }
+                }
+            }
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
     }
@@ -339,7 +463,11 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
 
     if (eSIR_SUCCESS != limStartChannelSwitch(pMac, psessionEntry))
     {
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("Could not start channel switch\n"));)
+=======
+        PELOG1(limLog(pMac, LOG1, FL("Could not start channel switch"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     palFreeMemory(pMac->hHdd, pChannelSwitchFrame);
@@ -347,6 +475,7 @@ __limProcessChannelSwitchActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo
 } /*** end limProcessChannelSwitchActionFrame() ***/
 
 
+<<<<<<< HEAD
 static void
 __limProcessAddTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession psessionEntry)
 {
@@ -362,11 +491,28 @@ __limProcessAddTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     tANI_U32              frameLen;
     tANI_U8              *pBody;
     tANI_U8 tspecIdx = 0; //index in the sch tspec table.
+=======
+#ifdef WLAN_FEATURE_11AC
+static void
+__limProcessOperatingModeActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession psessionEntry)
+{
+
+    tpSirMacMgmtHdr         pHdr;
+    tANI_U8                 *pBody;
+    tDot11fOperatingMode    *pOperatingModeframe;
+    tANI_U32                frameLen;
+    tANI_U32                nStatus;
+    eHalStatus              status;
+    tpDphHashNode           pSta;
+    tANI_U16                aid;
+    tANI_U8  operMode;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
     pBody = WDA_GET_RX_MPDU_DATA(pRxPacketInfo);
     frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
 
+<<<<<<< HEAD
 
     if ((psessionEntry->limSystemRole != eLIM_AP_ROLE)||(psessionEntry->limSystemRole != eLIM_BT_AMP_AP_ROLE))
     {
@@ -489,6 +635,81 @@ __limProcessAddTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
 
     limSendAddtsRspActionFrame(pMac, pHdr->sa, status, &addts, &schedule,psessionEntry);
 #endif
+=======
+    PELOG3(limLog(pMac, LOG3, FL("Received Operating Mode action frame"));)
+    status = palAllocateMemory( pMac->hHdd, (void **)&pOperatingModeframe, sizeof(*pOperatingModeframe));
+    if (eHAL_STATUS_SUCCESS != status)
+    {
+        limLog(pMac, LOGE,
+            FL("palAllocateMemory failed, status = %d "), status);
+        return;
+    }
+
+    /* Unpack channel switch frame */
+    nStatus = dot11fUnpackOperatingMode(pMac, pBody, frameLen, pOperatingModeframe);
+
+    if( DOT11F_FAILED( nStatus ))
+    {
+        limLog( pMac, LOGE,
+            FL( "Failed to unpack and parse an 11h-CHANSW Request (0x%08x, %d bytes):"),
+            nStatus,
+            frameLen);
+        palFreeMemory(pMac->hHdd, pOperatingModeframe);
+        return;
+    }
+    else if(DOT11F_WARNED( nStatus ))
+    {
+        limLog( pMac, LOGW,
+            FL( "There were warnings while unpacking an 11h-CHANSW Request (0x%08x, %d bytes):"),
+            nStatus,
+            frameLen);
+    }
+    pSta = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable);
+    
+    operMode = pSta->vhtSupportedChannelWidthSet ? eHT_CHANNEL_WIDTH_80MHZ : pSta->htSupportedChannelWidthSet ? eHT_CHANNEL_WIDTH_40MHZ: eHT_CHANNEL_WIDTH_20MHZ;
+    if( operMode != pOperatingModeframe->OperatingMode.chanWidth)
+    {
+        limLog(pMac, LOGE, 
+            FL(" received Chanwidth %d, staIdx = %d"),
+            (pOperatingModeframe->OperatingMode.chanWidth ),
+            pSta->staIndex);
+
+        limLog(pMac, LOGE, 
+            FL(" MAC - %0x:%0x:%0x:%0x:%0x:%0x"),
+            pHdr->sa[0],
+            pHdr->sa[1],
+            pHdr->sa[2],
+            pHdr->sa[3],
+            pHdr->sa[4],
+            pHdr->sa[5]);
+
+        if(pOperatingModeframe->OperatingMode.chanWidth == eHT_CHANNEL_WIDTH_80MHZ)
+        {
+            pSta->vhtSupportedChannelWidthSet = WNI_CFG_VHT_CHANNEL_WIDTH_80MHZ;
+            pSta->htSupportedChannelWidthSet = eHT_CHANNEL_WIDTH_40MHZ;
+        } 
+        else if(pOperatingModeframe->OperatingMode.chanWidth == eHT_CHANNEL_WIDTH_40MHZ)
+        {
+            pSta->vhtSupportedChannelWidthSet = WNI_CFG_VHT_CHANNEL_WIDTH_20_40MHZ;
+            pSta->htSupportedChannelWidthSet = eHT_CHANNEL_WIDTH_40MHZ;
+        }
+        else if(pOperatingModeframe->OperatingMode.chanWidth == eHT_CHANNEL_WIDTH_20MHZ)
+        {
+            pSta->vhtSupportedChannelWidthSet = WNI_CFG_VHT_CHANNEL_WIDTH_20_40MHZ;
+            pSta->htSupportedChannelWidthSet = eHT_CHANNEL_WIDTH_20MHZ;
+        }
+        limCheckVHTOpModeChange( pMac, psessionEntry, 
+                                 (pOperatingModeframe->OperatingMode.chanWidth), pSta->staIndex);\
+    }
+    palFreeMemory(pMac->hHdd, pOperatingModeframe);
+    return;
+}
+#endif
+
+static void
+__limProcessAddTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession psessionEntry)
+{
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -515,24 +736,39 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
 
 
+<<<<<<< HEAD
     PELOGW(limLog(pMac, LOGW, "Recv AddTs Response\n");)
     if ((psessionEntry->limSystemRole == eLIM_AP_ROLE)||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE))
     {
         PELOGW(limLog(pMac, LOGW, FL("AddTsRsp recvd at AP: ignoring\n"));)
+=======
+    PELOGW(limLog(pMac, LOGW, "Recv AddTs Response");)
+    if ((psessionEntry->limSystemRole == eLIM_AP_ROLE)||(psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE))
+    {
+        PELOGW(limLog(pMac, LOGW, FL("AddTsRsp recvd at AP: ignoring"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     pSta = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable);
     if (pSta == NULL)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring AddTsRsp\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring AddTsRsp"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     retval = sirConvertAddtsRsp2Struct(pMac, pBody, frameLen, &addts);
     if (retval != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("AddTsRsp parsing failed (error %d)\n"), retval);)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("AddTsRsp parsing failed (error %d)"), retval);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -541,13 +777,21 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     if (! pMac->lim.gLimAddtsSent)
     {
         // we never sent an addts request!
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, "Recvd AddTsRsp but no request was ever sent - ignoring\n");)
+=======
+        PELOGW(limLog(pMac, LOGW, "Recvd AddTsRsp but no request was ever sent - ignoring");)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     if (pMac->lim.gLimAddtsReq.req.dialogToken != addts.dialogToken)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGW, "AddTsRsp: token mismatch (got %d, exp %d) - ignoring\n",
+=======
+        limLog(pMac, LOGW, "AddTsRsp: token mismatch (got %d, exp %d) - ignoring",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                addts.dialogToken, pMac->lim.gLimAddtsReq.req.dialogToken);
         return;
     }
@@ -567,17 +811,29 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
         // add the classifier - this should always succeed
         if (addts.numTclas > 1) // currently no support for multiple tclas elements
         {
+<<<<<<< HEAD
             limLog(pMac, LOGE, FL("Sta %d: Too many Tclas (%d), only 1 supported\n"),
+=======
+            limLog(pMac, LOGE, FL("Sta %d: Too many Tclas (%d), only 1 supported"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    aid, addts.numTclas);
             return;
         }
         else if (addts.numTclas == 1)
         {
+<<<<<<< HEAD
             limLog(pMac, LOGW, "AddTs Response from STA %d: tsid %d, UP %d, OK!\n", aid,
                    addts.tspec.tsinfo.traffic.tsid, addts.tspec.tsinfo.traffic.userPrio);
         }
     }
     limLog(pMac, LOGW, "Recv AddTsRsp: tsid %d, UP %d, status %d \n",
+=======
+            limLog(pMac, LOGW, "AddTs Response from STA %d: tsid %d, UP %d, OK!", aid,
+                   addts.tspec.tsinfo.traffic.tsid, addts.tspec.tsinfo.traffic.userPrio);
+        }
+    }
+    limLog(pMac, LOGW, "Recv AddTsRsp: tsid %d, UP %d, status %d ",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           addts.tspec.tsinfo.traffic.tsid, addts.tspec.tsinfo.traffic.userPrio,
           addts.status);
 
@@ -586,7 +842,11 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
 
     if (addts.status != eSIR_MAC_SUCCESS_STATUS)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGW, "Recv AddTsRsp: tsid %d, UP %d, status %d \n",
+=======
+        limLog(pMac, LOGW, "Recv AddTsRsp: tsid %d, UP %d, status %d ",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               addts.tspec.tsinfo.traffic.tsid, addts.tspec.tsinfo.traffic.userPrio,
               addts.status);
         limSendSmeAddtsRsp(pMac, true, addts.status, psessionEntry, addts.tspec, 
@@ -600,7 +860,11 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
 #ifdef FEATURE_WLAN_CCX
     if (addts.tsmPresent)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGW, "TSM IE Present\n");
+=======
+        limLog(pMac, LOGW, "TSM IE Present");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         psessionEntry->ccxContext.tsm.tid = addts.tspec.tsinfo.traffic.userPrio;
         vos_mem_copy(&psessionEntry->ccxContext.tsm.tsmInfo,
                                          &addts.tsmIE,sizeof(tSirMacCCXTSMIE));
@@ -652,7 +916,11 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
             limSendEdcaParams(pMac, psessionEntry->gLimEdcaParamsActive, pStaDs->bssId, eANI_BOOLEAN_FALSE);
     }
     else
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Self entry missing in Hash Table \n"));
+=======
+        limLog(pMac, LOGE, FL("Self entry missing in Hash Table "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         
     sirCopyMacAddr(peerMacAddr,psessionEntry->bssId);
@@ -662,7 +930,11 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
       addts.schedule.svcInterval = 0;
     if(eSIR_SUCCESS != limTspecAdd(pMac, pSta->staAddr, pSta->assocId, &addts.tspec,  addts.schedule.svcInterval, &tspecInfo))
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Adding entry in lim Tspec Table failed \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Adding entry in lim Tspec Table failed "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limSendDeltsReqActionFrame(pMac, peerMacAddr, rspReqd, &addts.tspec.tsinfo, &addts.tspec,
                 psessionEntry);
         pMac->lim.gLimAddtsSent = false;
@@ -686,14 +958,24 @@ __limProcessAddTsRsp(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
             pMac->lim.gLimAddtsSent = false;
             return;
         }
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("AddTsRsp received successfully(UP %d, TSID %d)\n"),
+=======
+        PELOGW(limLog(pMac, LOGW, FL("AddTsRsp received successfully(UP %d, TSID %d)"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            addts.tspec.tsinfo.traffic.userPrio, addts.tspec.tsinfo.traffic.tsid);)
     }
     else
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("AddTsRsp received successfully(UP %d, TSID %d)\n"),
                addts.tspec.tsinfo.traffic.userPrio, addts.tspec.tsinfo.traffic.tsid);)
         PELOGW(limLog(pMac, LOGW, FL("no ACM: Bypass sending WDA_ADD_TS_REQ to HAL \n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("AddTsRsp received successfully(UP %d, TSID %d)"),
+               addts.tspec.tsinfo.traffic.userPrio, addts.tspec.tsinfo.traffic.tsid);)
+        PELOGW(limLog(pMac, LOGW, FL("no ACM: Bypass sending WDA_ADD_TS_REQ to HAL "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Use the smesessionId and smetransactionId from the PE session context
         limSendSmeAddtsRsp(pMac, true, eSIR_SME_SUCCESS, psessionEntry, addts.tspec,
                 psessionEntry->smeSessionId, psessionEntry->transactionId);
@@ -729,7 +1011,11 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     pSta = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable);
     if (pSta == NULL)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring DelTs\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("Station context not found - ignoring DelTs"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -737,7 +1023,11 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     retval = sirConvertDeltsReq2Struct(pMac, pBody, frameLen, &delts);
     if (retval != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("DelTs parsing failed (error %d)\n"), retval);)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("DelTs parsing failed (error %d)"), retval);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -745,6 +1035,7 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     {
         if ((!psessionEntry->limWmeEnabled) || (! pSta->wmeEnabled))
         {
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("Ignoring delts request: wme not enabled/capable\n"));)
             return;
         }
@@ -761,6 +1052,24 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     else
     {
         PELOGW(limLog(pMac, LOGW, FL("Ignoring delts request: qos not enabled/capable\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("Ignoring delts request: wme not enabled/capable"));)
+            return;
+        }
+        PELOG2(limLog(pMac, LOG2, FL("WME Delts received"));)
+    }
+    else if ((psessionEntry->limQosEnabled) && pSta->lleEnabled)
+        {
+        PELOG2(limLog(pMac, LOG2, FL("11e QoS Delts received"));)
+        }
+    else if ((psessionEntry->limWsmEnabled) && pSta->wsmEnabled)
+        {
+        PELOG2(limLog(pMac, LOG2, FL("WSM Delts received"));)
+        }
+    else
+    {
+        PELOGW(limLog(pMac, LOGW, FL("Ignoring delts request: qos not enabled/capable"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -770,6 +1079,7 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     if ((tsinfo->traffic.accessPolicy == SIR_MAC_ACCESSPOLICY_EDCA))
     {
     
+<<<<<<< HEAD
 #if(defined(ANI_PRODUCT_TYPE_AP) || defined(ANI_PRODUCT_TYPE_AP_SDK))
         if ((psessionEntry->limSystemRole == eLIM_AP_ROLE &&
         (! psessionEntry->gLimEdcaParamsBC[upToAc(tsinfo->traffic.userPrio)].aci.acm)) ||
@@ -780,6 +1090,11 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
 #endif
         {
             limLog(pMac, LOGW, FL("DelTs with UP %d has no AC - ignoring request\n"),
+=======
+        if ((upToAc(tsinfo->traffic.userPrio) >= MAX_NUM_AC) || (! psessionEntry->gLimEdcaParams[upToAc(tsinfo->traffic.userPrio)].aci.acm))
+        {
+            limLog(pMac, LOGW, FL("DelTs with UP %d has no AC - ignoring request"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    tsinfo->traffic.userPrio);
             return;
         }
@@ -788,7 +1103,11 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
     // try to delete the TS
     if (eSIR_SUCCESS != limAdmitControlDeleteTS(pMac, pSta->assocId, tsinfo, &tsStatus, &tspecIdx))
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Unable to Delete TS\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Unable to Delete TS"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -802,7 +1121,11 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
       //send message to HAL to delete TS
       if(eSIR_SUCCESS != limSendHalMsgDelTs(pMac, pSta->staIndex, tspecIdx, delts, psessionEntry->peSessionId))
       {
+<<<<<<< HEAD
         limLog(pMac, LOGW, FL("DelTs with UP %d failed in limSendHalMsgDelTs - ignoring request\n"),
+=======
+        limLog(pMac, LOGW, FL("DelTs with UP %d failed in limSendHalMsgDelTs - ignoring request"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          tsinfo->traffic.userPrio);
          return;
       }
@@ -857,9 +1180,15 @@ __limProcessDelTsReq(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession pse
             limSendEdcaParams(pMac, psessionEntry->gLimEdcaParamsActive, pStaDs->bssId, eANI_BOOLEAN_FALSE);
     }
     else
+<<<<<<< HEAD
         limLog(pMac, LOGE, FL("Self entry missing in Hash Table \n"));
 
     PELOG1(limLog(pMac, LOG1, FL("DeleteTS succeeded\n"));)
+=======
+        limLog(pMac, LOGE, FL("Self entry missing in Hash Table "));
+
+    PELOG1(limLog(pMac, LOG1, FL("DeleteTS succeeded"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((psessionEntry->limSystemRole != eLIM_AP_ROLE)&&(psessionEntry->limSystemRole != eLIM_BT_AMP_AP_ROLE))
       limSendSmeDeltsInd(pMac, &delts, aid,psessionEntry);
 
@@ -902,7 +1231,11 @@ __limProcessBasicMeasReq(tpAniSirGlobal pMac,
                                pMeasReqFrame,
                                peerMacAddr) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("fail to send Basic Meas report \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("fail to send Basic Meas report "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 }
@@ -939,7 +1272,11 @@ __limProcessCcaMeasReq(tpAniSirGlobal pMac,
                                pMeasReqFrame,
                                peerMacAddr) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("fail to send CCA Meas report \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("fail to send CCA Meas report "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 }
@@ -973,7 +1310,11 @@ __limProcessRpiMeasReq(tpAniSirGlobal pMac,
                                pMeasReqFrame,
                                peerMacAddr) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("fail to send RPI Meas report \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("fail to send RPI Meas report "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 }
@@ -1011,14 +1352,22 @@ __limProcessMeasurementRequestFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
         palAllocateMemory( pMac->hHdd, (void **)&pMeasReqFrame, sizeof( tSirMacMeasReqActionFrame ) ) )
     {
         limLog(pMac, LOGE,
+<<<<<<< HEAD
             FL("limProcessMeasurementRequestFrame: palAllocateMemory failed \n"));
+=======
+            FL("limProcessMeasurementRequestFrame: palAllocateMemory failed "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     if (sirConvertMeasReqFrame2Struct(pMac, pBody, pMeasReqFrame, frameLen) !=
         eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Rcv invalid Measurement Request Action Frame \n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Rcv invalid Measurement Request Action Frame "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -1038,7 +1387,11 @@ __limProcessMeasurementRequestFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
             break;
 
         default:
+<<<<<<< HEAD
             PELOG1(limLog(pMac, LOG1, FL("Unknown Measurement Type %d \n"),
+=======
+            PELOG1(limLog(pMac, LOG1, FL("Unknown Measurement Type %d "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pMeasReqFrame->measReqIE.measType);)
             break;
     }
@@ -1076,14 +1429,22 @@ __limProcessTpcRequestFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
     if ( eHAL_STATUS_SUCCESS !=
         palAllocateMemory( pMac->hHdd, (void **)&pTpcReqFrame, sizeof( tSirMacTpcReqActionFrame ) ) )
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("palAllocateMemory failed "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     if (sirConvertTpcReqFrame2Struct(pMac, pBody, pTpcReqFrame, frameLen) !=
         eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Rcv invalid TPC Req Action Frame \n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Rcv invalid TPC Req Action Frame "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -1091,7 +1452,11 @@ __limProcessTpcRequestFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
                               pTpcReqFrame,
                               pHdr->sa) != eSIR_SUCCESS)
     {
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("fail to send TPC Report Frame. \n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("fail to send TPC Report Frame. "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 }
@@ -1178,11 +1543,19 @@ tSirMacStatusCodes statusCode = eSIR_MAC_STA_BLK_ACK_NOT_SUPPORTED_STATUS;
       statusCode = eSIR_MAC_SUCCESS_STATUS;
 
       limLog( pMac, LOGW,
+<<<<<<< HEAD
           FL("Valid DELBA Ind received. Time to send WDA_DELBA_IND to HAL...\n"));
     }
     else
       limLog( pMac, LOGW,
           FL("Received an INVALID DELBA Ind for TID %d...\n"),
+=======
+          FL("Valid DELBA Ind received. Time to send WDA_DELBA_IND to HAL..."));
+    }
+    else
+      limLog( pMac, LOGW,
+          FL("Received an INVALID DELBA Ind for TID %d..."),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           baParameterSet.tid );
 
   return statusCode;
@@ -1208,20 +1581,32 @@ __limProcessAddBAReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
     tpDphHashNode pSta;
     tSirMacStatusCodes status = eSIR_MAC_SUCCESS_STATUS;
     tANI_U16 aid;
+<<<<<<< HEAD
     tANI_U32 frameLen, nStatus;
+=======
+    tANI_U32 frameLen, nStatus,val;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8 *pBody;
     tANI_U8 delBAFlag =0;
 
     pHdr = WDA_GET_RX_MAC_HEADER( pRxPacketInfo );
     pBody = WDA_GET_RX_MPDU_DATA( pRxPacketInfo );
     frameLen = WDA_GET_RX_PAYLOAD_LEN( pRxPacketInfo );
+<<<<<<< HEAD
+=======
+    val = 0;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Unpack the received frame
     nStatus = dot11fUnpackAddBAReq( pMac, pBody, frameLen, &frmAddBAReq );
     if( DOT11F_FAILED( nStatus ))
     {
         limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL("Failed to unpack and parse an ADDBA Request (0x%08x, %d bytes):\n"),
+=======
+            FL("Failed to unpack and parse an ADDBA Request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nStatus,
             frameLen );
 
@@ -1233,19 +1618,33 @@ __limProcessAddBAReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
     else if ( DOT11F_WARNED( nStatus ) )
     {
         limLog( pMac, LOGW,
+<<<<<<< HEAD
             FL( "There were warnings while unpacking an ADDBA Request (0x%08x, %d bytes):\n"),
+=======
+            FL( "There were warnings while unpacking an ADDBA Request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             nStatus,
             frameLen );
 
         PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
     }
 
+<<<<<<< HEAD
+=======
+    psessionEntry->amsduSupportedInBA = frmAddBAReq.AddBAParameterSet.amsduSupported;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSta = dphLookupHashEntry( pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable );
     if( pSta == NULL )
     {
         limLog( pMac, LOGE,
+<<<<<<< HEAD
             FL( "STA context not found - ignoring ADDBA from \n" ));
         limPrintMacAddr( pMac, pHdr->sa, LOGW );
+=======
+            FL( "STA context not found - ignoring ADDBA from " ));
+        limPrintMacAddr( pMac, pHdr->sa, LOGE );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         // FIXME - Should we do this?
         status = eSIR_MAC_INABLITY_TO_CONFIRM_ASSOC_STATUS;
@@ -1253,7 +1652,11 @@ __limProcessAddBAReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
     }
 
     limLog( pMac, LOGW,
+<<<<<<< HEAD
       FL( "ADDBA Req from STA with AID %d, tid = %d\n" ),
+=======
+      FL( "ADDBA Req from STA with AID %d, tid = %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       aid, frmAddBAReq.AddBAParameterSet.tid);
 
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
@@ -1265,6 +1668,26 @@ __limProcessAddBAReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
     }
 #endif //WLAN_SOFTAP_VSTA_FEATURE
 
+<<<<<<< HEAD
+=======
+    if (wlan_cfgGetInt(pMac, WNI_CFG_DEL_ALL_RX_BA_SESSIONS_2_4_G_BTC, &val) !=
+                    eSIR_SUCCESS)
+    {
+        limLog(pMac, LOGE,
+               FL("Unable to get WNI_CFG_DEL_ALL_RX_BA_SESSIONS_2_4_G_BTC"));
+        val = 0;
+    }
+    if ((SIR_BAND_2_4_GHZ == limGetRFBand(psessionEntry->currentOperChannel)) &&
+                    val)
+    {
+        limLog( pMac, LOGW,
+            FL( "BTC disabled aggregation - ignoring ADDBA from " ));
+        limPrintMacAddr( pMac, pHdr->sa, LOGW );
+
+        status = eSIR_MAC_REQ_DECLINED_STATUS;
+        goto returnAfterError;
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Now, validate the ADDBA Req
     if( eSIR_MAC_SUCCESS_STATUS !=
@@ -1289,7 +1712,11 @@ __limProcessAddBAReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
 
   // Check if the ADD BA Declined configuration is Disabled
     if ((pMac->lim.gAddBA_Declined & ( 1 << frmAddBAReq.AddBAParameterSet.tid ) )) {
+<<<<<<< HEAD
         limLog( pMac, LOGE, FL( "Declined the ADDBA Req for the TID %d  \n" ),
+=======
+        limLog( pMac, LOGE, FL( "Declined the ADDBA Req for the TID %d  " ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         frmAddBAReq.AddBAParameterSet.tid);
         status = eSIR_MAC_REQ_DECLINED_STATUS;
         goto returnAfterError;
@@ -1305,6 +1732,28 @@ __limProcessAddBAReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
   // ADDBA Rsp from HAL
   LIM_SET_STA_BA_STATE(pSta, frmAddBAReq.AddBAParameterSet.tid, eLIM_BA_STATE_WT_ADD_RSP);
 
+<<<<<<< HEAD
+=======
+  if (wlan_cfgGetInt(pMac, WNI_CFG_NUM_BUFF_ADVERT , &val) != eSIR_SUCCESS)
+  {
+        limLog(pMac, LOGP, FL("Unable to get WNI_CFG_NUM_BUFF_ADVERT"));
+        return ;
+  }
+
+
+  if (frmAddBAReq.AddBAParameterSet.bufferSize)
+  {
+      frmAddBAReq.AddBAParameterSet.bufferSize =
+            VOS_MIN(val, frmAddBAReq.AddBAParameterSet.bufferSize);
+  }
+  else
+  {
+      frmAddBAReq.AddBAParameterSet.bufferSize = val;
+  }
+  limLog( pMac, LOG1, FL( "ADDBAREQ NUMBUFF %d" ),
+                        frmAddBAReq.AddBAParameterSet.bufferSize);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if( eSIR_SUCCESS != limPostMsgAddBAReq( pMac,
         pSta,
         (tANI_U8) frmAddBAReq.DialogToken.token,
@@ -1372,7 +1821,11 @@ tANI_U8 *pBody;
   if( pSta == NULL )
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL( "STA context not found - ignoring ADDBA from \n" ));
+=======
+        FL( "STA context not found - ignoring ADDBA from " ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limPrintMacAddr( pMac, pHdr->sa, LOGW );
     return;
   }
@@ -1391,7 +1844,11 @@ tANI_U8 *pBody;
   if( DOT11F_FAILED( nStatus ))
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL( "Failed to unpack and parse an ADDBA Response (0x%08x, %d bytes):\n"),
+=======
+        FL( "Failed to unpack and parse an ADDBA Response (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         nStatus,
         frameLen );
 
@@ -1401,7 +1858,11 @@ tANI_U8 *pBody;
   else if ( DOT11F_WARNED( nStatus ) )
   {
     limLog( pMac, LOGW,
+<<<<<<< HEAD
         FL( "There were warnings while unpacking an ADDBA Response (0x%08x, %d bytes):\n"),
+=======
+        FL( "There were warnings while unpacking an ADDBA Response (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         nStatus,
         frameLen );
 
@@ -1409,7 +1870,11 @@ tANI_U8 *pBody;
   }
 
   limLog( pMac, LOGW,
+<<<<<<< HEAD
       FL( "ADDBA Rsp from STA with AID %d, tid = %d, status = %d\n" ),
+=======
+      FL( "ADDBA Rsp from STA with AID %d, tid = %d, status = %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       aid, frmAddBARsp.AddBAParameterSet.tid, frmAddBARsp.Status.status);
 
   //if there is no matchin dialougue token then ignore the response.
@@ -1417,7 +1882,11 @@ tANI_U8 *pBody;
   if(eSIR_SUCCESS != limSearchAndDeleteDialogueToken(pMac, frmAddBARsp.DialogToken.token,
         pSta->assocId, frmAddBARsp.AddBAParameterSet.tid))
   {
+<<<<<<< HEAD
       PELOGW(limLog(pMac, LOGW, FL("dialogueToken in received addBARsp did not match with outstanding requests\n"));)
+=======
+      PELOGW(limLog(pMac, LOGW, FL("dialogueToken in received addBARsp did not match with outstanding requests"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
   }
 
@@ -1521,19 +1990,31 @@ tANI_U8 *pBody;
   pSta = dphLookupHashEntry( pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable );
   if( pSta == NULL )
   {
+<<<<<<< HEAD
     limLog( pMac, LOGE, FL( "STA context not found - ignoring DELBA from \n"));
+=======
+    limLog( pMac, LOGE, FL( "STA context not found - ignoring DELBA from "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limPrintMacAddr( pMac, pHdr->sa, LOGW );
     return;
   }
 
+<<<<<<< HEAD
   limLog( pMac, LOG1, FL( "DELBA Ind from STA with AID %d\n" ), aid );
+=======
+  limLog( pMac, LOG1, FL( "DELBA Ind from STA with AID %d" ), aid );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   // Unpack the received frame
   nStatus = dot11fUnpackDelBAInd( pMac, pBody, frameLen, &frmDelBAInd );
   if( DOT11F_FAILED( nStatus ))
   {
     limLog( pMac, LOGE,
+<<<<<<< HEAD
         FL( "Failed to unpack and parse a DELBA Indication (0x%08x, %d bytes):\n"),
+=======
+        FL( "Failed to unpack and parse a DELBA Indication (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         nStatus,
         frameLen );
 
@@ -1543,7 +2024,11 @@ tANI_U8 *pBody;
   else if ( DOT11F_WARNED( nStatus ) )
   {
     limLog( pMac, LOGW,
+<<<<<<< HEAD
         FL( "There were warnings while unpacking a DELBA Indication (0x%08x, %d bytes):\n"),
+=======
+        FL( "There were warnings while unpacking a DELBA Indication (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         nStatus,
         frameLen );
 
@@ -1551,7 +2036,11 @@ tANI_U8 *pBody;
   }
 
   limLog( pMac, LOGW,
+<<<<<<< HEAD
       FL( "Received DELBA for TID %d, Reason code %d\n" ),
+=======
+      FL( "Received DELBA for TID %d, Reason code %d" ),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       frmDelBAInd.DelBAParameterSet.tid,
       frmDelBAInd.Reason.code );
 
@@ -1573,7 +2062,11 @@ tANI_U8 *pBody;
         (tANI_U8) frmDelBAInd.DelBAParameterSet.tid,
         (eBA_RECIPIENT == frmDelBAInd.DelBAParameterSet.initiator)?
           eBA_INITIATOR: eBA_RECIPIENT,psessionEntry))
+<<<<<<< HEAD
     limLog( pMac, LOGE, FL( "Posting WDA_DELBA_IND to HAL failed \n"));
+=======
+    limLog( pMac, LOGE, FL( "Posting WDA_DELBA_IND to HAL failed "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   return;
 
@@ -1598,7 +2091,11 @@ __limProcessSMPowerSaveUpdate(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo ,tpPES
 
         pSta = dphLookupHashEntry(pMac, pHdr->sa, &aid, &psessionEntry->dph.dphHashTable );
         if( pSta == NULL ) {
+<<<<<<< HEAD
             limLog( pMac, LOGE,FL( "STA context not found - ignoring UpdateSM PSave Mode from \n" ));
+=======
+            limLog( pMac, LOGE,FL( "STA context not found - ignoring UpdateSM PSave Mode from " ));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limPrintMacAddr( pMac, pHdr->sa, LOGW );
             return;
         }
@@ -1607,12 +2104,20 @@ __limProcessSMPowerSaveUpdate(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo ,tpPES
         nStatus = dot11fUnpackSMPowerSave( pMac, pBody, frameLen, &frmSMPower);
 
         if( DOT11F_FAILED( nStatus )) {
+<<<<<<< HEAD
             limLog( pMac, LOGE, FL( "Failed to unpack and parse a Update SM Power (0x%08x, %d bytes):\n"),
+=======
+            limLog( pMac, LOGE, FL( "Failed to unpack and parse a Update SM Power (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                     nStatus, frameLen );
             PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
             return;
         }else if ( DOT11F_WARNED( nStatus ) ) {
+<<<<<<< HEAD
             limLog(pMac, LOGW, FL( "There were warnings while unpacking a SMPower Save update (0x%08x, %d bytes):\n"),
+=======
+            limLog(pMac, LOGW, FL( "There were warnings while unpacking a SMPower Save update (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 nStatus, frameLen );
             PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
         }
@@ -1669,12 +2174,20 @@ __limProcessRadioMeasureRequest( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo ,tp
      nStatus = dot11fUnpackRadioMeasurementRequest( pMac, pBody, frameLen, &frm );
 
      if( DOT11F_FAILED( nStatus )) {
+<<<<<<< HEAD
           limLog( pMac, LOGE, FL( "Failed to unpack and parse a Radio Measure request (0x%08x, %d bytes):\n"),
+=======
+          limLog( pMac, LOGE, FL( "Failed to unpack and parse a Radio Measure request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     nStatus, frameLen );
           PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
                return;
      }else if ( DOT11F_WARNED( nStatus ) ) {
+<<<<<<< HEAD
           limLog(pMac, LOGW, FL( "There were warnings while unpacking a Radio Measure request (0x%08x, %d bytes):\n"),
+=======
+          limLog(pMac, LOGW, FL( "There were warnings while unpacking a Radio Measure request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     nStatus, frameLen );
           PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
      }
@@ -1705,12 +2218,20 @@ __limProcessLinkMeasurementReq( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo ,tpP
      nStatus = dot11fUnpackLinkMeasurementRequest( pMac, pBody, frameLen, &frm );
 
      if( DOT11F_FAILED( nStatus )) {
+<<<<<<< HEAD
           limLog( pMac, LOGE, FL( "Failed to unpack and parse a Link Measure request (0x%08x, %d bytes):\n"),
+=======
+          limLog( pMac, LOGE, FL( "Failed to unpack and parse a Link Measure request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     nStatus, frameLen );
           PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
                return;
      }else if ( DOT11F_WARNED( nStatus ) ) {
+<<<<<<< HEAD
           limLog(pMac, LOGW, FL( "There were warnings while unpacking a Link Measure request (0x%08x, %d bytes):\n"),
+=======
+          limLog(pMac, LOGW, FL( "There were warnings while unpacking a Link Measure request (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     nStatus, frameLen );
           PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
      }
@@ -1736,7 +2257,11 @@ __limProcessNeighborReport( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo ,tpPESes
      if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, 
                                                  (void **)&pFrm, sizeof(tDot11fNeighborReportResponse)))
      {
+<<<<<<< HEAD
          limLog(pMac, LOGE, FL("Unable to PAL allocate memory in __limProcessNeighborReport\n") );
+=======
+         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in __limProcessNeighborReport") );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return;
      }
 
@@ -1750,13 +2275,21 @@ __limProcessNeighborReport( tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo ,tpPESes
      nStatus = dot11fUnpackNeighborReportResponse( pMac, pBody, frameLen,pFrm );
 
      if( DOT11F_FAILED( nStatus )) {
+<<<<<<< HEAD
           limLog( pMac, LOGE, FL( "Failed to unpack and parse a Neighbor report response (0x%08x, %d bytes):\n"),
+=======
+          limLog( pMac, LOGE, FL( "Failed to unpack and parse a Neighbor report response (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     nStatus, frameLen );
           PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
           palFreeMemory(pMac->hHdd, pFrm);
           return;
      }else if ( DOT11F_WARNED( nStatus ) ) {
+<<<<<<< HEAD
           limLog(pMac, LOGW, FL( "There were warnings while unpacking a Neighbor report response (0x%08x, %d bytes):\n"),
+=======
+          limLog(pMac, LOGW, FL( "There were warnings while unpacking a Neighbor report response (0x%08x, %d bytes):"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     nStatus, frameLen );
           PELOG2(sirDumpBuf( pMac, SIR_DBG_MODULE_ID, LOG2, pBody, frameLen );)
      }
@@ -1868,7 +2401,11 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
                         break;
 
                     default:
+<<<<<<< HEAD
                         PELOGE(limLog(pMac, LOGE, FL("Qos action %d not handled\n"), pActionHdr->actionID);)
+=======
+                        PELOGE(limLog(pMac, LOGE, FL("Qos action %d not handled"), pActionHdr->actionID);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         break;
                 }
                 break ;
@@ -1906,7 +2443,11 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
                     }
                     break;
                 default:
+<<<<<<< HEAD
                     PELOGE(limLog(pMac, LOGE, FL("Spectrum mgmt action id %d not handled\n"), pActionHdr->actionID);)
+=======
+                    PELOGE(limLog(pMac, LOGE, FL("Spectrum mgmt action id %d not handled"), pActionHdr->actionID);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     break;
             }
             break;
@@ -1914,7 +2455,11 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         case SIR_MAC_ACTION_WME:
             if (! psessionEntry->limWmeEnabled)
             {
+<<<<<<< HEAD
                 limLog(pMac, LOGW, FL("WME mode disabled - dropping action frame %d\n"),
+=======
+                limLog(pMac, LOGW, FL("WME mode disabled - dropping action frame %d"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        pActionHdr->actionID);
                 break;
             }
@@ -1933,7 +2478,11 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
                     break;
 
                 default:
+<<<<<<< HEAD
                     PELOGE(limLog(pMac, LOGE, FL("WME action %d not handled\n"), pActionHdr->actionID);)
+=======
+                    PELOGE(limLog(pMac, LOGE, FL("WME action %d not handled"), pActionHdr->actionID);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     break;
             }
             break;
@@ -1966,7 +2515,11 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
             __limProcessSMPowerSaveUpdate(pMac, (tANI_U8 *) pRxPacketInfo,psessionEntry);
             break;
         default:
+<<<<<<< HEAD
             PELOGE(limLog(pMac, LOGE, FL("Action ID %d not handled in HT Action category\n"), pActionHdr->actionID);)
+=======
+            PELOGE(limLog(pMac, LOGE, FL("Action ID %d not handled in HT Action category"), pActionHdr->actionID);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
         break;
@@ -1986,7 +2539,11 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
                     __limProcessNeighborReport( pMac, (tANI_U8*) pRxPacketInfo, psessionEntry );
                     break;
                 default:
+<<<<<<< HEAD
                     PELOGE( limLog( pMac, LOGE, FL("Action ID %d not handled in RRM\n"), pActionHdr->actionID);)
+=======
+                    PELOGE( limLog( pMac, LOGE, FL("Action ID %d not handled in RRM"), pActionHdr->actionID);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     break;
 
             }
@@ -1994,11 +2551,56 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         else
         {
             // Else we will just ignore the RRM messages.
+<<<<<<< HEAD
             PELOGE( limLog( pMac, LOGE, FL("RRM Action frame ignored as RRM is disabled in cfg\n"));)
         }
         break;
 #endif
 #if defined WLAN_FEATURE_P2P
+=======
+            PELOGE( limLog( pMac, LOGE, FL("RRM Action frame ignored as RRM is disabled in cfg"));)
+        }
+        break;
+#endif
+#if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
+        case SIR_MAC_ACTION_VENDOR_SPECIFIC_CATEGORY:
+            {
+              tpSirMacVendorSpecificFrameHdr pVendorSpecific = (tpSirMacVendorSpecificFrameHdr) pActionHdr;
+              tpSirMacMgmtHdr     pHdr;
+              tANI_U32            frameLen;
+              tANI_U8 Oui[] = { 0x00, 0x00, 0xf0 };
+
+              pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
+              frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
+
+              //Check if it is a vendor specific action frame.
+              if ((eLIM_STA_ROLE == psessionEntry->limSystemRole) &&
+                  (VOS_TRUE == palEqualMemory(pMac->hHdd, psessionEntry->selfMacAddr,
+                    &pHdr->da[0], sizeof(tSirMacAddr))) &&
+                  IS_WES_MODE_ENABLED(pMac) && palEqualMemory( pMac->hHdd, pVendorSpecific->Oui, Oui, 3))
+              {
+                  PELOGE( limLog( pMac, LOGW, FL("Received Vendor specific action frame, OUI %x %x %x"),
+                         pVendorSpecific->Oui[0], pVendorSpecific->Oui[1], pVendorSpecific->Oui[2]);)
+                 /* Forward to the SME to HDD to wpa_supplicant */
+                 // type is ACTION
+                 limSendSmeMgmtFrameInd(pMac, pHdr->fc.subType,
+                    (tANI_U8*)pHdr, frameLen + sizeof(tSirMacMgmtHdr), 0,
+                    WDA_GET_RX_CH( pRxPacketInfo ), psessionEntry, 0);
+              }
+              else
+              {
+                 limLog( pMac, LOGE, FL("Dropping the vendor specific action frame because of( "
+                                        "WES Mode not enabled (WESMODE = %d) or OUI mismatch (%02x %02x %02x) or "
+                                        "not received with SelfSta Mac address) system role = %d"),
+                                        IS_WES_MODE_ENABLED(pMac),
+                                        pVendorSpecific->Oui[0], pVendorSpecific->Oui[1],
+                                        pVendorSpecific->Oui[2],
+                                        psessionEntry->limSystemRole );
+              }
+           }
+           break;
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case SIR_MAC_ACTION_PUBLIC_USAGE:
         switch(pActionHdr->actionID) {
         case SIR_MAC_ACTION_VENDOR_SPECIFIC:
@@ -2018,15 +2620,24 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
                  // type is ACTION
                  limSendSmeMgmtFrameInd(pMac, pHdr->fc.subType, 
                     (tANI_U8*)pHdr, frameLen + sizeof(tSirMacMgmtHdr), 0, 
+<<<<<<< HEAD
                     WDA_GET_RX_CH( pRxPacketInfo ), psessionEntry);
               }
               else
               {
                  limLog( pMac, LOGE, FL("Unhandled public action frame (Vendor specific). OUI %x %x %x %x\n"),
+=======
+                    WDA_GET_RX_CH( pRxPacketInfo ), psessionEntry, 0);
+              }
+              else
+              {
+                 limLog( pMac, LOGE, FL("Unhandled public action frame (Vendor specific). OUI %x %x %x %x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       pPubAction->Oui[0], pPubAction->Oui[1], pPubAction->Oui[2], pPubAction->Oui[3] );
               }
            }
             break;
+<<<<<<< HEAD
 
         default:
             PELOGE(limLog(pMac, LOGE, FL("Unhandled public action frame -- %x \n"), pActionHdr->actionID);)
@@ -2034,6 +2645,37 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         }
         break;
 #endif
+=======
+#ifdef FEATURE_WLAN_TDLS
+           case SIR_MAC_TDLS_DIS_RSP:
+           {
+#ifdef FEATURE_WLAN_TDLS_INTERNAL
+               //LIM_LOG_TDLS(printk("Public Action TDLS Discovery RSP ..")) ;
+               limProcessTdlsPublicActionFrame(pMac, (tANI_U32*)pRxPacketInfo, psessionEntry) ;
+#else
+               tpSirMacMgmtHdr     pHdr;
+               tANI_U32            frameLen;
+               tANI_S8             rssi;
+
+               pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
+               frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
+               rssi = WDA_GET_RX_RSSI_DB(pRxPacketInfo);
+               VOS_TRACE(VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_INFO, 
+                                    ("Public Action TDLS Discovery RSP ..")) ;
+               limSendSmeMgmtFrameInd(pMac, pHdr->fc.subType, 
+                  (tANI_U8*)pHdr, frameLen + sizeof(tSirMacMgmtHdr), 0, 
+                  WDA_GET_RX_CH( pRxPacketInfo ), psessionEntry, rssi);
+#endif
+           }
+               break;
+#endif
+
+        default:
+            PELOGE(limLog(pMac, LOGE, FL("Unhandled public action frame -- %x "), pActionHdr->actionID);)
+            break;
+        }
+        break;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_11W
     case SIR_MAC_ACTION_SA_QUERY:
@@ -2043,14 +2685,38 @@ limProcessActionFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         break;
      }
 #endif
+<<<<<<< HEAD
 
     default:
        PELOGE(limLog(pMac, LOGE, FL("Action category %d not handled\n"), pActionHdr->category);)
+=======
+#ifdef WLAN_FEATURE_11AC
+    case SIR_MAC_ACTION_VHT:
+    {
+        if (psessionEntry->vhtCapability)
+        {
+            switch (pActionHdr->actionID)
+            {
+                case  SIR_MAC_VHT_OPMODE_NOTIFICATION:
+                    __limProcessOperatingModeActionFrame(pMac,pRxPacketInfo,psessionEntry);                
+                break;
+                default:
+                break;
+            }
+        }
+    }
+#endif
+    default:
+       PELOGE(limLog(pMac, LOGE, FL("Action category %d not handled"), pActionHdr->category);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        break;
     }
 }
 
+<<<<<<< HEAD
 #if defined WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limProcessActionFrameNoSession
  *
@@ -2099,24 +2765,43 @@ limProcessActionFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pBd)
                   // type is ACTION
                   limSendSmeMgmtFrameInd(pMac, pHdr->fc.subType, 
                       (tANI_U8*)pHdr, frameLen + sizeof(tSirMacMgmtHdr), 0,
+<<<<<<< HEAD
                       WDA_GET_RX_CH( pBd ), NULL);
                 }
                 else
                 {
                   limLog( pMac, LOGE, FL("Unhandled public action frame (Vendor specific). OUI %x %x %x %x\n"),
+=======
+                      WDA_GET_RX_CH( pBd ), NULL, 0);
+                }
+                else
+                {
+                  limLog( pMac, LOGE, FL("Unhandled public action frame (Vendor specific). OUI %x %x %x %x"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       pActionHdr->Oui[0], pActionHdr->Oui[1], pActionHdr->Oui[2], pActionHdr->Oui[3] );
                 }
               }
                break;
             default:
+<<<<<<< HEAD
                PELOGE(limLog(pMac, LOGE, FL("Unhandled public action frame -- %x \n"), pActionHdr->actionID);)
+=======
+               PELOGE(limLog(pMac, LOGE, FL("Unhandled public action frame -- %x "), pActionHdr->actionID);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   break;
          }
          break;
       default:
+<<<<<<< HEAD
          PELOGE(limLog(pMac, LOG1, FL("Unhandled action frame without session -- %x \n"), pActionHdr->category);)
+=======
+         PELOGE(limLog(pMac, LOG1, FL("Unhandled action frame without session -- %x "), pActionHdr->category);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
    }
 }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

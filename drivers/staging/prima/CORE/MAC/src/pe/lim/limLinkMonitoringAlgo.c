@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -33,6 +56,7 @@
  */
 
 #include "aniGlobal.h"
+<<<<<<< HEAD
 #include "wniCfgAp.h"
 #include "cfgApi.h"
 
@@ -40,6 +64,11 @@
 #include "halDataStruct.h"
 #include "halCommonApi.h"
 #endif
+=======
+#include "wniCfgSta.h"
+#include "cfgApi.h"
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "schApi.h"
 #include "pmmApi.h"
@@ -77,6 +106,7 @@ void
 limSendKeepAliveToPeer(tpAniSirGlobal pMac)
 {
 
+<<<<<<< HEAD
 #ifdef ANI_PRODUCT_TYPE_AP   //oct 3rd review
 
     tpDphHashNode   pStaDs;
@@ -136,6 +166,8 @@ limSendKeepAliveToPeer(tpAniSirGlobal pMac)
         }
     }
     #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** limSendKeepAliveToPeer() ***/
 
 
@@ -157,6 +189,7 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     tpPESession psessionEntry ;
     tANI_U8     sessionId;
 
+<<<<<<< HEAD
     if((psessionEntry = peFindSessionByBssid(pMac,pMsg->bssId,&sessionId))== NULL)
     {
          PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId\n"));)
@@ -212,12 +245,77 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
                     tLimMlmDeauthInd  mlmDeauthInd;
                     PELOGW(limLog(pMac, LOGW, FL("lim Delete Station Context (staId: %d, assocId: %d) \n"),
                                   pMsg->staId, pMsg->assocId);)
+=======
+    if(NULL == pMsg)
+    {
+        PELOGE(limLog(pMac, LOGE,FL("Invalid body pointer in message"));)
+        return;
+    }
+    if((psessionEntry = peFindSessionByBssid(pMac,pMsg->bssId,&sessionId))== NULL)
+    {
+        PELOGE(limLog(pMac, LOGE,FL("session does not exist for given BSSId"));)
+            palFreeMemory(pMac->hHdd, pMsg);
+        return;
+    }
+
+    switch(pMsg->reasonCode)
+    {
+        case HAL_DEL_STA_REASON_CODE_KEEP_ALIVE:
+        case HAL_DEL_STA_REASON_CODE_TIM_BASED:
+             PELOGE(limLog(pMac, LOGE, FL(" Deleting station: staId = %d, reasonCode = %d"), pMsg->staId, pMsg->reasonCode);)
+             pStaDs = dphLookupAssocId(pMac, pMsg->staId, &pMsg->assocId, &psessionEntry->dph.dphHashTable);
+
+             if (!pStaDs)
+             {
+                 PELOGE(limLog(pMac, LOGE, FL("Skip STA deletion (invalid STA) limSystemRole=%d"),psessionEntry->limSystemRole);)
+                 palFreeMemory(pMac->hHdd, pMsg);
+                 return;
+             }
+
+             /* check and see if same staId. This is to avoid the scenario
+              * where we're trying to delete a staId we just added.
+              */
+             if (pStaDs->staIndex != pMsg->staId)
+             {
+                 PELOGE(limLog(pMac, LOGE, FL("staid mismatch: %d vs %d "), pStaDs->staIndex, pMsg->staId);)
+                 palFreeMemory(pMac->hHdd, pMsg);
+                 return;
+             }
+
+             if((eLIM_BT_AMP_AP_ROLE == psessionEntry->limSystemRole) ||
+                     (eLIM_AP_ROLE == psessionEntry->limSystemRole))
+             {
+                 PELOG1(limLog(pMac, LOG1, FL("SAP:lim Delete Station Context (staId: %d, assocId: %d) "),
+                             pMsg->staId, pMsg->assocId);)
+                 limTriggerSTAdeletion(pMac, pStaDs, psessionEntry);
+             }
+             else
+             {
+#ifdef FEATURE_WLAN_TDLS
+                if(eLIM_STA_ROLE == psessionEntry->limSystemRole &&
+                    STA_ENTRY_TDLS_PEER == pStaDs->staType)
+                {
+                    //TeardownLink with PEER
+                    //Reason code HAL_DEL_STA_REASON_CODE_KEEP_ALIVE means
+                    //eSIR_MAC_TDLS_TEARDOWN_PEER_UNREACHABLE
+                    limSendSmeTDLSDelStaInd(pMac, pStaDs, psessionEntry,
+                    /*pMsg->reasonCode*/ eSIR_MAC_TDLS_TEARDOWN_PEER_UNREACHABLE);
+                }
+                else
+                {
+#endif
+                    //TearDownLink with AP
+                    tLimMlmDeauthInd  mlmDeauthInd;
+                    PELOGW(limLog(pMac, LOGW, FL("lim Delete Station Context (staId: %d, assocId: %d) "),
+                                pMsg->staId, pMsg->assocId);)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                     pStaDs->mlmStaContext.disassocReason = eSIR_MAC_UNSPEC_FAILURE_REASON;
                     pStaDs->mlmStaContext.cleanupTrigger = eLIM_LINK_MONITORING_DEAUTH;
 
                     // Issue Deauth Indication to SME.
                     palCopyMemory( pMac->hHdd, (tANI_U8 *) &mlmDeauthInd.peerMacAddr,
+<<<<<<< HEAD
                                    pStaDs->staAddr, sizeof(tSirMacAddr));
                     mlmDeauthInd.reasonCode    = (tANI_U8) pStaDs->mlmStaContext.disassocReason;
                     mlmDeauthInd.deauthTrigger =  pStaDs->mlmStaContext.cleanupTrigger;
@@ -244,6 +342,36 @@ limDeleteStaContext(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 #endif
     }
 
+=======
+                            pStaDs->staAddr, sizeof(tSirMacAddr));
+                    mlmDeauthInd.reasonCode    = (tANI_U8) pStaDs->mlmStaContext.disassocReason;
+                    mlmDeauthInd.deauthTrigger =  pStaDs->mlmStaContext.cleanupTrigger;
+
+#ifdef FEATURE_WLAN_TDLS
+                    /* Delete all TDLS peers connected before leaving BSS*/
+                    limDeleteTDLSPeers(pMac, psessionEntry);
+#endif
+                    limPostSmeMessage(pMac, LIM_MLM_DEAUTH_IND, (tANI_U32 *) &mlmDeauthInd);
+
+                    limSendSmeDeauthInd(pMac, pStaDs, psessionEntry);
+#ifdef FEATURE_WLAN_TDLS
+                 }
+#endif
+             }
+             break;        
+
+        case HAL_DEL_STA_REASON_CODE_UNKNOWN_A2:
+             PELOGE(limLog(pMac, LOGE, FL(" Deleting Unknown station "));)
+             limPrintMacAddr(pMac, pMsg->addr2, LOGE);
+             limSendDeauthMgmtFrame( pMac, eSIR_MAC_CLASS3_FRAME_FROM_NON_ASSOC_STA_REASON, pMsg->addr2, psessionEntry, FALSE);
+             break;
+
+        default:
+             PELOGE(limLog(pMac, LOGE, FL(" Unknown reason code "));)
+             break;
+
+    }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palFreeMemory(pMac->hHdd, pMsg);
     return;
 }
@@ -276,7 +404,11 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
 
     if (! pStaDs)
     {
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Skip STA deletion (invalid STA)\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Skip STA deletion (invalid STA)"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     /**
@@ -287,18 +419,26 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pSmeDeauthReq, sizeof(tSirSmeDeauthReq)))
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_REQ \n"));
+=======
+        limLog(pMac, LOGP, FL("palAllocateMemory failed for eWNI_SME_DEAUTH_REQ "));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     pBuf = (tANI_U8 *) &pSmeDeauthReq->messageType;
 
     //messageType
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limCopyU16((tANI_U8*)pBuf, eWNI_SME_DISASSOC_REQ);
 #else
     limCopyU16((tANI_U8*)pBuf, eWNI_SME_DEAUTH_REQ);
 #endif
+=======
+    limCopyU16((tANI_U8*)pBuf, eWNI_SME_DISASSOC_REQ);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pBuf += sizeof(tANI_U16);
     msgLength += sizeof(tANI_U16);
 
@@ -328,11 +468,15 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
     msgLength += sizeof(tSirMacAddr);
 
     //reasonCode 
+<<<<<<< HEAD
 #ifdef WLAN_SOFTAP_FEATURE
     limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DISASSOC);
 #else
     limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DEAUTH);
 #endif
+=======
+    limCopyU16((tANI_U8*)pBuf, (tANI_U16)eLIM_LINK_MONITORING_DISASSOC);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pBuf += sizeof(tANI_U16);
     msgLength += sizeof(tANI_U16);
 
@@ -344,6 +488,7 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
     msgLength += sizeof(tANI_U8);
 
 
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     //aid
     limCopyU16((tANI_U8*)pBuf, pStaDs->assocId);
@@ -359,6 +504,13 @@ limTriggerSTAdeletion(tpAniSirGlobal pMac, tpDphHashNode pStaDs, tpPESession pse
 #else
     limPostSmeMessage(pMac, eWNI_SME_DEAUTH_REQ, (tANI_U32 *) pSmeDeauthReq);
 #endif
+=======
+  
+    //Fill in length
+    limCopyU16((tANI_U8*)pLen , msgLength);
+
+    limPostSmeMessage(pMac, eWNI_SME_DISASSOC_REQ, (tANI_U32 *) pSmeDeauthReq);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palFreeMemory( pMac->hHdd, pSmeDeauthReq );
 
 } /*** end limTriggerSTAdeletion() ***/
@@ -392,7 +544,11 @@ limTearDownLinkWithAp(tpAniSirGlobal pMac, tANI_U8 sessionId, tSirMacReasonCodes
 
     if((psessionEntry = peFindSessionBySessionId(pMac, sessionId))== NULL)
     {
+<<<<<<< HEAD
         limLog(pMac, LOGP,FL("Session Does not exist for given sessionID\n"));
+=======
+        limLog(pMac, LOGP,FL("Session Does not exist for given sessionID"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     /**
@@ -403,7 +559,11 @@ limTearDownLinkWithAp(tpAniSirGlobal pMac, tANI_U8 sessionId, tSirMacReasonCodes
 
     pMac->pmm.inMissedBeaconScenario = FALSE;
     limLog(pMac, LOGW,
+<<<<<<< HEAD
        FL("No ProbeRsp from AP after HB failure. Tearing down link\n"));
+=======
+       FL("No ProbeRsp from AP after HB failure. Tearing down link"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Deactivate heartbeat timer
     limHeartBeatDeactivateAndChangeTimer(pMac, psessionEntry);
@@ -418,6 +578,14 @@ limTearDownLinkWithAp(tpAniSirGlobal pMac, tANI_U8 sessionId, tSirMacReasonCodes
     {
         tLimMlmDeauthInd  mlmDeauthInd;
 
+<<<<<<< HEAD
+=======
+#ifdef FEATURE_WLAN_TDLS
+        /* Delete all TDLS peers connected before leaving BSS*/
+        limDeleteTDLSPeers(pMac, psessionEntry);
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pStaDs->mlmStaContext.disassocReason = reasonCode;
         pStaDs->mlmStaContext.cleanupTrigger = eLIM_LINK_MONITORING_DEAUTH;
 
@@ -467,9 +635,14 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
      * want to handle heartbeat timeout in the BMPS, because Firmware handles it in BMPS.
      * So just return from heartbeatfailure handler
      */
+<<<<<<< HEAD
 
     if(!limIsSystemInActiveState(pMac))
         return;
+=======
+    if(!IS_ACTIVEMODE_OFFLOAD_FEATURE_ENABLE && (!limIsSystemInActiveState(pMac)))
+       return;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM //FEATURE_WLAN_DIAG_SUPPORT
     WLAN_VOS_DIAG_LOG_ALLOC(log_ptr, vos_log_beacon_update_pkt_type, LOG_WLAN_BEACON_UPDATE_C);
@@ -514,7 +687,11 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
         /**
          * Beacon frame not received within heartbeat timeout.
          */
+<<<<<<< HEAD
         PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure\n"));)
+=======
+        PELOGW(limLog(pMac, LOGW, FL("Heartbeat Failure"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->lim.gLimHBfailureCntInLinkEstState++;
 
         /**
@@ -530,7 +707,11 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
              * it is still around. Wait until certain
              * timeout for Probe Response from AP.
              */
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("Heart Beat missed from AP. Sending Probe Req\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("Heart Beat missed from AP. Sending Probe Req"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* for searching AP, we don't include any additional IE */
             limSendProbeReqMgmtFrame(pMac, &psessionEntry->ssId, psessionEntry->bssId,
                                       psessionEntry->currentOperChannel,psessionEntry->selfMacAddr,
@@ -551,7 +732,11 @@ void limHandleHeartBeatFailure(tpAniSirGlobal pMac,tpPESession psessionEntry)
             * or in states other than link-established state.
             * Log error.
             */
+<<<<<<< HEAD
         PELOG1(limLog(pMac, LOG1, FL("received heartbeat timeout in state %X\n"),
+=======
+        PELOG1(limLog(pMac, LOG1, FL("received heartbeat timeout in state %X"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                psessionEntry->limMlmState);)
         limPrintMlmState(pMac, LOG1, psessionEntry->limMlmState);
         pMac->lim.gLimHBfailureCntInOtherStates++;

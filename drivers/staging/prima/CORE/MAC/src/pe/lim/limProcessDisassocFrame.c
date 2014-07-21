@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -19,8 +42,14 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+<<<<<<< HEAD
 /*
  *
+=======
+
+
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file limProcessDisassocFrame.cc contains the code
  * for processing Disassocation Frame.
@@ -35,6 +64,7 @@
 #include "wniApi.h"
 #include "sirApi.h"
 #include "aniGlobal.h"
+<<<<<<< HEAD
 #ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
 #include "halDataStruct.h"
 #endif
@@ -43,6 +73,9 @@
 #else
 #include "wniCfgSta.h"
 #endif
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "utilsApi.h"
 #include "limTypes.h"
@@ -91,7 +124,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
         // Received Disassoc frame from a BC/MC address
         // Log error and ignore it
         PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
                FL("received Disassoc frame from a BC/MC address\n"));)
+=======
+               FL("received Disassoc frame from a BC/MC address"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -101,7 +138,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
         // Received Disassoc frame for a MC address
         // Log error and ignore it
         PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
                FL("received Disassoc frame for a MC address\n"));)
+=======
+               FL("received Disassoc frame for a MC address"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -110,7 +151,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
     reasonCode = sirReadU16(pBody);
 
     PELOG2(limLog(pMac, LOG2,
+<<<<<<< HEAD
         FL("Received Disassoc frame (mlm state %d sme state %d), with reason code %d from "MAC_ADDRESS_STR), 
+=======
+        FL("Received Disassoc frame (mlm state %d sme state %d), with reason code %d from "MAC_ADDRESS_STR),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         psessionEntry->limMlmState, psessionEntry->limSmeState, reasonCode, MAC_ADDR_ARRAY(pHdr->sa));)
 
     /**
@@ -133,6 +178,17 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
         return;
     }
 
+<<<<<<< HEAD
+=======
+    if (limCheckDisassocDeauthAckPending(pMac, (tANI_U8*)pHdr->sa))
+    {
+        PELOGW(limLog(pMac, LOGW,
+                    FL("Ignore the DisAssoc received, while waiting for ack of disassoc/deauth"));)
+        limCleanUpDisassocDeauthReq(pMac,(tANI_U8*)pHdr->sa, 1);
+        return;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /** If we are in the Wait for ReAssoc Rsp state */
     if (limIsReassocInProgress(pMac,psessionEntry)) {
         /** If we had received the DisAssoc from,
@@ -141,14 +197,22 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
         *   drop/ignore the DisAssoc received
         */
         if (!IS_REASSOC_BSSID(pMac,pHdr->sa,psessionEntry)) {
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("Ignore the DisAssoc received, while Processing ReAssoc with different/unknown AP\n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("Ignore the DisAssoc received, while Processing ReAssoc with different/unknown AP"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
         /** If the Disassoc is received from the new AP to which we tried to ReAssociate
          *  Drop ReAssoc and Restore the Previous context( current connected AP).
          */
         if (!IS_CURRENT_BSSID(pMac, pHdr->sa,psessionEntry)) {
+<<<<<<< HEAD
             PELOGW(limLog(pMac, LOGW, FL("received Disassoc from the New AP to which ReAssoc is sent \n"));)
+=======
+            PELOGW(limLog(pMac, LOGW, FL("received Disassoc from the New AP to which ReAssoc is sent "));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limRestorePreReassocState(pMac,
                                   eSIR_SME_REASSOC_REFUSED, reasonCode,psessionEntry);
             return;
@@ -174,7 +238,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
             default:
                 // Invalid reasonCode in received Disassociation frame
                 PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
                        FL("received Disassoc frame with invalid reasonCode %d from \n"),
+=======
+                       FL("received Disassoc frame with invalid reasonCode %d from "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        reasonCode);
                 limPrintMacAddr(pMac, pHdr->sa, LOG1);)
                 break;
@@ -202,6 +270,10 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
                 // Valid reasonCode in received Disassociation frame
                 break;
 
+<<<<<<< HEAD
+=======
+            case eSIR_MAC_DEAUTH_LEAVING_BSS_REASON:
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             case eSIR_MAC_DISASSOC_LEAVING_BSS_REASON:
                 // Valid reasonCode in received Disassociation frame
                 // as long as we're not about to channel switch
@@ -209,7 +281,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
                 {
                     limLog(pMac, LOGW,
                         FL("Ignoring disassoc frame due to upcoming "
+<<<<<<< HEAD
                            "channel switch, from\n"),
+=======
+                           "channel switch, from"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         reasonCode);
                     limPrintMacAddr(pMac, pHdr->sa, LOGW);
                     return;
@@ -220,7 +296,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
                 // Invalid reasonCode in received Disassociation frame
                 // Log error and ignore the frame
                 PELOG1(limLog(pMac, LOG1,
+<<<<<<< HEAD
                        FL("received Disassoc frame with invalid reasonCode %d from \n"),
+=======
+                       FL("received Disassoc frame with invalid reasonCode %d from "),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        reasonCode);
                 limPrintMacAddr(pMac, pHdr->sa, LOG1);)
                 return;
@@ -229,18 +309,30 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
     else
     {
         // Received Disassociation frame in either IBSS
+<<<<<<< HEAD
         // or un-known role. Log error and ignore it
         limLog(pMac, LOGE,
                FL("received Disassoc frame with invalid reasonCode %d in role %d in sme state %d from \n"),
                reasonCode, psessionEntry->limSystemRole, psessionEntry->limSmeState);
         limPrintMacAddr(pMac, pHdr->sa, LOGE);
+=======
+        // or un-known role. Log and ignore it
+        limLog(pMac, LOG1,
+               FL("received Disassoc frame with invalid reasonCode %d in role %d in sme state %d from "),
+               reasonCode, psessionEntry->limSystemRole, psessionEntry->limSmeState);
+        limPrintMacAddr(pMac, pHdr->sa, LOG1);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
 
     // Disassociation from peer MAC entity
 
+<<<<<<< HEAD
    PELOGE(limLog(pMac, LOGE,
+=======
+   PELOG1(limLog(pMac, LOG1,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            FL("Received Disassoc frame from sta with assocId=%d with reasonCode=%d. Peer MAC is "MAC_ADDRESS_STR),
            pStaDs->assocId, reasonCode, MAC_ADDR_ARRAY(pHdr->sa));)
 
@@ -280,9 +372,12 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
                   sizeof(tSirMacAddr));
     mlmDisassocInd.reasonCode =
         (tANI_U8) pStaDs->mlmStaContext.disassocReason;
+<<<<<<< HEAD
 #if (WNI_POLARIS_FW_PRODUCT == AP)
     mlmDisassocInd.aid        = pStaDs->assocId;
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     mlmDisassocInd.disassocTrigger = eLIM_PEER_ENTITY_DISASSOC;
 
     /* Update PE session Id  */
@@ -295,7 +390,11 @@ limProcessDisassocFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo, tpPESession
      * failure result code. By design, SME will then issue "Disassoc"  
      * and cleanup will happen at that time. 
      */
+<<<<<<< HEAD
         PELOGE(limLog(pMac, LOGE, FL("received Disassoc from AP while waiting for Reassoc Rsp\n"));)
+=======
+        PELOGE(limLog(pMac, LOGE, FL("received Disassoc from AP while waiting for Reassoc Rsp"));)
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      
         if (psessionEntry->limAssocResponseData) {
             palFreeMemory(pMac->hHdd, psessionEntry->limAssocResponseData);

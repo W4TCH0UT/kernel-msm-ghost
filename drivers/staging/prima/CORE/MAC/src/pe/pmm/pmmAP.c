@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -39,11 +62,16 @@
 #include "schApi.h"
 #include "limApi.h"
 #include "cfgApi.h"
+<<<<<<< HEAD
 #include "wniCfgAp.h"
+=======
+#include "wniCfgSta.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "pmmApi.h"
 #include "pmmDebug.h"
 
+<<<<<<< HEAD
 #define PMM_TIM_BITS_LIMIT        10
 #define PMM_CF_POLLABLE_SCH_LIMIT 100
 
@@ -208,6 +236,8 @@ void pmmHandleTimBasedDisassociation (tpAniSirGlobal pMac, tpPESession psessionE
 #endif
 
 #ifdef WLAN_SOFTAP_FEATURE
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * pmmGenerateTIM
  *
@@ -253,12 +283,17 @@ void pmmGenerateTIM(tpAniSirGlobal pMac, tANI_U8 **pPtr, tANI_U16 *timLength, tA
     *ptr++ = 0xFF; // location for dtimCount. will be filled in by FW.
     *ptr++ = (tANI_U8)val;
 
+<<<<<<< HEAD
     *ptr++ = 0xFF; // location for bitmap contorl. will be filled in by FW.
+=======
+    *ptr++ = 0xFF; // location for bitmap control. will be filled in by FW.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptr += (N2 - N1 + 1);
 
     PELOG2(sirDumpBuf(pMac, SIR_PMM_MODULE_ID, LOG2, *pPtr, (*timLength)+2);)
     *pPtr = ptr;
 }
+<<<<<<< HEAD
 
 #endif
 #ifdef ANI_PRODUCT_TYPE_AP
@@ -677,3 +712,5 @@ void pmmUpdatePollablePMMode(tpAniSirGlobal pMac, tANI_U16 staId, tANI_U8 pmMode
 
 // --------------------------------------------------------------------
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

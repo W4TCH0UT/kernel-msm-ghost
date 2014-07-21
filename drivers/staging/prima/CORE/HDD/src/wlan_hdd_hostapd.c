@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -70,9 +93,13 @@
 #include "wlan_nlink_common.h"
 #include "wlan_btc_svc.h"
 #include <bap_hdd_main.h>
+<<<<<<< HEAD
 #if defined CONFIG_CFG80211
 #include "wlan_hdd_p2p.h"
 #endif
+=======
+#include "wlan_hdd_p2p.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define    IS_UP(_dev) \
     (((_dev)->flags & (IFF_RUNNING|IFF_UP)) == (IFF_RUNNING|IFF_UP))
@@ -80,6 +107,14 @@
     (IS_UP((_ic)->ic_dev) && (_ic)->ic_roaming == IEEE80211_ROAMING_AUTO)
 #define WE_WLAN_VERSION     1
 #define STATS_CONTEXT_MAGIC 0x53544154
+<<<<<<< HEAD
+=======
+#define WE_GET_STA_INFO_SIZE 30
+/* WEXT limition: MAX allowed buf len for any *
+ * IW_PRIV_TYPE_CHAR is 2Kbytes *
+ */
+#define WE_SAP_MAX_STA_INFO 0x7FF
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 struct statsContext
 {
@@ -87,7 +122,14 @@ struct statsContext
    hdd_adapter_t *pAdapter;
    unsigned int magic;
 };
+<<<<<<< HEAD
 #define SAP_24GHZ_CH_COUNT (14) 
+=======
+#define SAP_24GHZ_CH_COUNT (14)
+
+#define MIN_MTU_SIZE 256     // Motorola, IKHSS7-19443, A21623, Hotspot MTU changes
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*--------------------------------------------------------------------------- 
  *   Function definitions
  *-------------------------------------------------------------------------*/
@@ -185,6 +227,15 @@ int hdd_hostapd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 }
 int hdd_hostapd_change_mtu(struct net_device *dev, int new_mtu)
 {
+<<<<<<< HEAD
+=======
+//  Motorola, IKHSS7-19443, A21623, Hotspot MTU changes
+    if ( (new_mtu  < MIN_MTU_SIZE)  || (new_mtu > IEEE80211_MAX_DATA_LEN - 26) )
+        return EINVAL;
+
+    dev->mtu = new_mtu;
+//  End IKHSS7-19443
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return 0;
 }
 
@@ -198,7 +249,11 @@ int hdd_hostapd_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
     if (NULL == pAdapter)
     {
        VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
           "%s: HDD adapter context is Null", __FUNCTION__);
+=======
+          "%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        ret = -ENODEV;
        goto exit;
     }
@@ -219,7 +274,11 @@ int hdd_hostapd_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
     if (!command)
     {
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
            "%s: failed to allocate memory\n", __FUNCTION__);
+=======
+           "%s: failed to allocate memory\n", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ret = -ENOMEM;
         goto exit;
     }
@@ -235,7 +294,10 @@ int hdd_hostapd_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
            "***HOSTAPD*** : Received %s cmd from Wi-Fi GUI***", command);
 
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(strncmp(command, "P2P_SET_NOA", 11) == 0 )   
         {
             hdd_setP2pNoa(dev, command);
@@ -244,7 +306,22 @@ int hdd_hostapd_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
         {
             hdd_setP2pOpps(dev, command);
         }
+<<<<<<< HEAD
 #endif
+=======
+
+        /*
+           command should be a string having format
+           SET_SAP_CHANNEL_LIST <num of channels> <the channels seperated by spaces>
+        */
+        if(strncmp(command, "SET_SAP_CHANNEL_LIST", 20) == 0)
+        {
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                       " Received Command to Set Preferred Channels for SAP in %s", __func__);
+
+            ret = sapSetPreferredChannel(command);
+        }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 exit:
    if (command)
@@ -329,6 +406,79 @@ void hdd_hostapd_inactivity_timer_cb(v_PVOID_t usrDataForCallback)
     EXIT();
 }
 
+<<<<<<< HEAD
+=======
+VOS_STATUS hdd_change_mcc_go_beacon_interval(hdd_adapter_t *pHostapdAdapter)
+{
+    v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pHostapdAdapter))->pvosContext;
+    ptSapContext  pSapCtx = NULL;
+    eHalStatus halStatus = eHAL_STATUS_FAILURE;
+    v_PVOID_t hHal = NULL;
+
+    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
+               "%s: UPDATE Beacon Params", __func__);
+
+    if(VOS_STA_SAP_MODE == vos_get_conparam ( )){
+        pSapCtx = VOS_GET_SAP_CB(pVosContext);
+        if ( NULL == pSapCtx )
+        {
+            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: Invalid SAP pointer from pvosGCtx", __func__);
+            return VOS_STATUS_E_FAULT;
+        }
+
+        hHal = VOS_GET_HAL_CB(pSapCtx->pvosGCtx);
+        if ( NULL == hHal ){
+            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: Invalid HAL pointer from pvosGCtx", __func__);
+            return VOS_STATUS_E_FAULT;
+        }
+        halStatus = sme_ChangeMCCBeaconInterval(hHal, pSapCtx->sessionId);
+        if(halStatus == eHAL_STATUS_FAILURE ){
+            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: Failed to update Beacon Params", __func__);
+            return VOS_STATUS_E_FAILURE;
+        }
+    }
+    return VOS_STATUS_SUCCESS;
+}
+
+void hdd_clear_all_sta(hdd_adapter_t *pHostapdAdapter, v_PVOID_t usrDataForCallback)
+{
+    v_U8_t staId = 0;
+    struct net_device *dev;
+    dev = (struct net_device *)usrDataForCallback;
+
+    hddLog(LOGE, FL("Clearing all the STA entry....\n"));
+    for (staId = 0; staId < WLAN_MAX_STA_COUNT; staId++)
+    {
+        if ( pHostapdAdapter->aStaInfo[staId].isUsed && 
+           ( staId != (WLAN_HDD_GET_AP_CTX_PTR(pHostapdAdapter))->uBCStaId))
+        {
+            //Disconnect all the stations
+            hdd_softap_sta_disassoc(pHostapdAdapter, &pHostapdAdapter->aStaInfo[staId].macAddrSTA.bytes[0]);
+        }
+    }
+}
+
+static int hdd_stop_p2p_link(hdd_adapter_t *pHostapdAdapter,v_PVOID_t usrDataForCallback)
+{
+    struct net_device *dev;
+    VOS_STATUS status = VOS_STATUS_SUCCESS;
+    dev = (struct net_device *)usrDataForCallback;
+    ENTER();
+    if(test_bit(SOFTAP_BSS_STARTED, &pHostapdAdapter->event_flags)) 
+    {
+        if ( VOS_STATUS_SUCCESS == (status = WLANSAP_StopBss((WLAN_HDD_GET_CTX(pHostapdAdapter))->pvosContext) ) )
+        {
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, FL("Deleting P2P link!!!!!!"));
+        }
+        clear_bit(SOFTAP_BSS_STARTED, &pHostapdAdapter->event_flags);
+    }
+    EXIT();
+    return (status == VOS_STATUS_SUCCESS) ? 0 : -EBUSY;
+}
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCallback)
 {
@@ -351,6 +501,12 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
     char maxAssocExceededEvent[IW_CUSTOM_MAX+1];
     v_BYTE_t we_custom_start_event[64];
     char *startBssEvent; 
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx;
+    hdd_scaninfo_t *pScanInfo  = NULL;
+    struct iw_michaelmicfailure msg;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     dev = (struct net_device *)usrDataForCallback;
     pHostapdAdapter = netdev_priv(dev);
@@ -358,6 +514,10 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
     pHddApCtx = WLAN_HDD_GET_AP_CTX_PTR(pHostapdAdapter);
     sapEvent = pSapEvent->sapHddEventCode;
     memset(&wrqu, '\0', sizeof(wrqu));
+<<<<<<< HEAD
+=======
+    pHddCtx = (hdd_context_t*)(pHostapdAdapter->pHddCtx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch(sapEvent)
     {
@@ -401,7 +561,10 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
             // Send current operating channel of SoftAP to BTC-ES
             send_btc_nlink_msg(WLAN_BTC_SOFTAP_BSS_START, 0);
 
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211            
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //Check if there is any group key pending to set.
             if( pHddApCtx->groupKey.keyLength )
             {
@@ -429,7 +592,10 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                     pHddApCtx->wepKey[i].keyLength = 0;
                 }
            }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //Fill the params for sending IWEVCUSTOM Event with SOFTAP.enabled
             startBssEvent = "SOFTAP.enabled";
             memset(&we_custom_start_event, '\0', sizeof(we_custom_start_event));
@@ -438,15 +604,26 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
             wrqu.data.length = strlen(startBssEvent);
             we_event = IWEVCUSTOM;
             we_custom_event_generic = we_custom_start_event;
+<<<<<<< HEAD
 
+=======
+            hdd_dump_concurrency_info(pHddCtx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break; //Event will be sent after Switch-Case stmt 
 
         case eSAP_STOP_BSS_EVENT:
             hddLog(LOG1, FL("BSS stop status = %s\n"),pSapEvent->sapevt.sapStopBssCompleteEvent.status ? 
                              "eSAP_STATUS_FAILURE" : "eSAP_STATUS_SUCCESS");
 
+<<<<<<< HEAD
             pHddApCtx->operatingChannel = 0; //Invalidate the channel info.
             vos_event_set(&pHostapdState->vosEvent);
+=======
+            //Free up Channel List incase if it is set
+            sapCleanupChannelList();
+
+            pHddApCtx->operatingChannel = 0; //Invalidate the channel info.
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             goto stopbss;
         case eSAP_STA_SET_KEY_EVENT:
             //TODO: forward the message to hostapd once implementtation is done for now just print
@@ -459,10 +636,16 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
            return VOS_STATUS_SUCCESS;
         case eSAP_STA_MIC_FAILURE_EVENT:
         {
+<<<<<<< HEAD
             struct iw_michaelmicfailure msg;
             memset(&msg, '\0', sizeof(msg));
             msg.src_addr.sa_family = ARPHRD_ETHER;
             memcpy(msg.src_addr.sa_data, &pSapEvent->sapevt.sapStationMICFailureEvent.staMac, sizeof(msg.src_addr.sa_data));
+=======
+            memset(&msg, '\0', sizeof(msg));
+            msg.src_addr.sa_family = ARPHRD_ETHER;
+            memcpy(msg.src_addr.sa_data, &pSapEvent->sapevt.sapStationMICFailureEvent.staMac, sizeof(v_MACADDR_t));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(LOG1, "MIC MAC "MAC_ADDRESS_STR"\n", MAC_ADDR_ARRAY(msg.src_addr.sa_data));
             if(pSapEvent->sapevt.sapStationMICFailureEvent.multicast == eSAP_TRUE)
              msg.flags = IW_MICFAILURE_GROUP;
@@ -473,7 +656,10 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
             we_event = IWEVMICHAELMICFAILURE;
             we_custom_event_generic = (v_BYTE_t *)&msg;
         }
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* inform mic failure to nl80211 */
         cfg80211_michael_mic_failure(dev, 
                                      pSapEvent->sapevt.
@@ -484,14 +670,21 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                                      pSapEvent->sapevt.sapStationMICFailureEvent.keyId, 
                                      pSapEvent->sapevt.sapStationMICFailureEvent.TSC, 
                                      GFP_KERNEL);
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         
         case eSAP_STA_ASSOC_EVENT:
         case eSAP_STA_REASSOC_EVENT:
             wrqu.addr.sa_family = ARPHRD_ETHER;
             memcpy(wrqu.addr.sa_data, &pSapEvent->sapevt.sapStationAssocReassocCompleteEvent.staMac, 
+<<<<<<< HEAD
                 sizeof(wrqu.addr.sa_data));
+=======
+                sizeof(v_MACADDR_t));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(LOG1, " associated "MAC_ADDRESS_STR"\n", MAC_ADDR_ARRAY(wrqu.addr.sa_data));
             we_event = IWEVREGISTERED;
             
@@ -525,8 +718,13 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                                        0,
                                        (v_MACADDR_t *)wrqu.addr.sa_data,
                                        pSapEvent->sapevt.sapStationAssocReassocCompleteEvent.wmmEnabled);
+<<<<<<< HEAD
             } 
             
+=======
+            }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // Stop AP inactivity timer
             if (pHddApCtx->hdd_ap_inactivity_timer.state == VOS_TIMER_STATE_RUNNING)
             {
@@ -534,7 +732,17 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                 if (!VOS_IS_STATUS_SUCCESS(vos_status))
                    hddLog(LOGE, FL("Failed to start AP inactivity timer\n"));
             }
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+#ifdef WLAN_OPEN_SOURCE
+            if (wake_lock_active(&pHddCtx->sap_wake_lock))
+            {
+               wake_unlock(&pHddCtx->sap_wake_lock);
+            }
+            wake_lock_timeout(&pHddCtx->sap_wake_lock, msecs_to_jiffies(HDD_SAP_WAKE_LOCK_DURATION));
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
             {
                 struct station_info staInfo;
@@ -546,7 +754,11 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                     staInfo.assoc_req_ies =
                         (const u8 *)&pSapEvent->sapevt.sapStationAssocReassocCompleteEvent.ies[0];
                     staInfo.assoc_req_ies_len = iesLen;
+<<<<<<< HEAD
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,4,0))
+=======
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,0,31))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     staInfo.filled |= STATION_INFO_ASSOC_REQ_IES;
 #endif
                     cfg80211_new_sta(dev,
@@ -559,12 +771,25 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                 }
              }
 #endif
+<<<<<<< HEAD
 #endif
+=======
+            pScanInfo =  &pHddCtx->scan_info;
+            // Lets do abort scan to ensure smooth authentication for client
+            if ((pScanInfo != NULL) && pScanInfo->mScanPending)
+            {
+                hdd_abort_mac_scan(pHddCtx);
+            }
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             break;
         case eSAP_STA_DISASSOC_EVENT:
             memcpy(wrqu.addr.sa_data, &pSapEvent->sapevt.sapStationDisassocCompleteEvent.staMac,
+<<<<<<< HEAD
                    sizeof(wrqu.addr.sa_data));
+=======
+                   sizeof(v_MACADDR_t));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(LOG1, " disassociated "MAC_ADDRESS_STR"\n", MAC_ADDR_ARRAY(wrqu.addr.sa_data));
             if (pSapEvent->sapevt.sapStationDisassocCompleteEvent.reason == eSAP_USR_INITATED_DISASSOC)
                 hddLog(LOG1," User initiated disassociation");
@@ -605,13 +830,21 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                         VOS_ASSERT(vos_timer_getCurrentState(&pHddApCtx->hdd_ap_inactivity_timer) == VOS_TIMER_STATE_STOPPED);
                 }
             }
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
             cfg80211_del_sta(dev,
                             (const u8 *)&pSapEvent->sapevt.sapStationDisassocCompleteEvent.staMac.bytes[0],
                             GFP_KERNEL);
 #endif
+<<<<<<< HEAD
 #endif
+=======
+            //Update the beacon Interval if it is P2P GO
+            hdd_change_mcc_go_beacon_interval(pHostapdAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         case eSAP_WPS_PBC_PROBE_REQ_EVENT:
         {
@@ -648,13 +881,20 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
             }
             vos_mem_free(pSapEvent->sapevt.sapAssocStaListEvent.pAssocStas);// Release caller allocated memory here
             return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eSAP_INDICATE_MGMT_FRAME:
            hdd_indicateMgmtFrame( pHostapdAdapter, 
                                  pSapEvent->sapevt.sapManagementFrameInfo.nFrameLength,
                                  pSapEvent->sapevt.sapManagementFrameInfo.pbFrames,
                                  pSapEvent->sapevt.sapManagementFrameInfo.frameType, 
+<<<<<<< HEAD
                                  pSapEvent->sapevt.sapManagementFrameInfo.rxChan);
+=======
+                                 pSapEvent->sapevt.sapManagementFrameInfo.rxChan, 0);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            return VOS_STATUS_SUCCESS;
         case eSAP_REMAIN_CHAN_READY:
            hdd_remainChanReadyHandler( pHostapdAdapter );
@@ -665,7 +905,10 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                                 pSapEvent->sapevt.sapActionCnf.actionSendSuccess ) ? 
                                 TRUE : FALSE );
            return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eSAP_UNKNOWN_STA_JOIN:
             snprintf(unknownSTAEvent, IW_CUSTOM_MAX, "JOIN_UNKNOWN_STA-%02x:%02x:%02x:%02x:%02x:%02x",
                 pSapEvent->sapevt.sapUnknownSTAJoin.macaddr.bytes[0],
@@ -682,6 +925,7 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
             break;
 
         case eSAP_MAX_ASSOC_EXCEEDED:
+<<<<<<< HEAD
             snprintf(maxAssocExceededEvent, IW_CUSTOM_MAX, "Peer %02x:%02x:%02x:%02x:%02x:%02x denied"
                     " assoc due to Maximum Mobile Hotspot connections reached. Please disconnect"
                     " one or more devices to enable the new device connection",
@@ -691,6 +935,16 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
                     pSapEvent->sapevt.sapMaxAssocExceeded.macaddr.bytes[3],
                     pSapEvent->sapevt.sapMaxAssocExceeded.macaddr.bytes[4],
                     pSapEvent->sapevt.sapMaxAssocExceeded.macaddr.bytes[5]);
+=======
+            /* Beging Motorola IKHSS7-18970 fpx478, 30/03/2012, nottification to MHS */
+            /* Redefining the Custom Message
+             * IW_CUSTOM_MAX will inform when STA is denied when assoc due to Maximum Mobile
+             * Hotspot connections reached. Please disconnect one or more devices to enable
+             * the new device connection, and we dont require the MAC address of the STA
+             */
+            snprintf(maxAssocExceededEvent, IW_CUSTOM_MAX, "eSAP_MAX_ASSOC_EXCEEDED");
+            /* END IKHSS7-18970 */
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             we_event = IWEVCUSTOM; /* Discovered a new node (AP mode). */
             wrqu.data.pointer = maxAssocExceededEvent;
             wrqu.data.length = strlen(maxAssocExceededEvent);
@@ -699,6 +953,19 @@ VOS_STATUS hdd_hostapd_SAPEventCB( tpSap_Event pSapEvent, v_PVOID_t usrDataForCa
             break;
         case eSAP_STA_ASSOC_IND:
             return VOS_STATUS_SUCCESS;
+<<<<<<< HEAD
+=======
+
+        case eSAP_DISCONNECT_ALL_P2P_CLIENT:
+            hddLog(LOG1, FL(" Disconnecting all the P2P Clients....\n"));
+            hdd_clear_all_sta(pHostapdAdapter, usrDataForCallback);
+            return VOS_STATUS_SUCCESS;
+
+        case eSAP_MAC_TRIG_STOP_BSS_EVENT :
+            hdd_stop_p2p_link(pHostapdAdapter, usrDataForCallback);
+            return VOS_STATUS_SUCCESS;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
             hddLog(LOG1,"SAP message is not handled\n");
             goto stopbss;
@@ -721,6 +988,23 @@ stopbss :
          * we don't want interfaces to become re-enabled */
         pHostapdState->bssState = BSS_STOP;
 
+<<<<<<< HEAD
+=======
+        if (0 != (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->nAPAutoShutOff)
+        {
+            if (VOS_TIMER_STATE_RUNNING == pHddApCtx->hdd_ap_inactivity_timer.state)
+            {
+                vos_status = vos_timer_stop(&pHddApCtx->hdd_ap_inactivity_timer);
+                if (!VOS_IS_STATUS_SUCCESS(vos_status))
+                    hddLog(LOGE, FL("Failed to stop AP inactivity timer"));
+            }
+
+            vos_status = vos_timer_destroy(&pHddApCtx->hdd_ap_inactivity_timer);
+            if (!VOS_IS_STATUS_SUCCESS(vos_status))
+                hddLog(LOGE, FL("Failed to Destroy AP inactivity timer"));
+        }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Stop the pkts from n/w stack as we are going to free all of
          * the TX WMM queues for all STAID's */
         hdd_hostapd_stop(dev);
@@ -728,6 +1012,15 @@ stopbss :
         /* reclaim all resources allocated to the BSS */
         hdd_softap_stop_bss(pHostapdAdapter);
 
+<<<<<<< HEAD
+=======
+        /* once the event is set, structure dev/pHostapdAdapter should
+         * not be touched since they are now subject to being deleted
+         * by another thread */
+        if (eSAP_STOP_BSS_EVENT == sapEvent)
+            vos_event_set(&pHostapdState->vosEvent);
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* notify userspace that the BSS has stopped */
         memset(&we_custom_event, '\0', sizeof(we_custom_event));
         memcpy(&we_custom_event, stopBssEvent, event_len);
@@ -736,6 +1029,10 @@ stopbss :
         we_event = IWEVCUSTOM;
         we_custom_event_generic = we_custom_event;
         wireless_send_event(dev, we_event, &wrqu, (char *)we_custom_event_generic);
+<<<<<<< HEAD
+=======
+        hdd_dump_concurrency_info(pHddCtx);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return VOS_STATUS_SUCCESS;
 }
@@ -783,9 +1080,15 @@ int hdd_softap_unpackIE(
                             &dot11RSNIE);
         // Copy out the encryption and authentication types 
         hddLog(LOG1, FL("%s: pairwise cipher suite count: %d\n"), 
+<<<<<<< HEAD
                 __FUNCTION__, dot11RSNIE.pwise_cipher_suite_count );
         hddLog(LOG1, FL("%s: authentication suite count: %d\n"), 
                 __FUNCTION__, dot11RSNIE.akm_suite_count);
+=======
+                __func__, dot11RSNIE.pwise_cipher_suite_count );
+        hddLog(LOG1, FL("%s: authentication suite count: %d\n"), 
+                __func__, dot11RSNIE.akm_suite_count);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*Here we have followed the apple base code, 
           but probably I suspect we can do something different*/
         //dot11RSNIE.akm_suite_count
@@ -818,9 +1121,15 @@ int hdd_softap_unpackIE(
                             &dot11WPAIE);
         // Copy out the encryption and authentication types 
         hddLog(LOG1, FL("%s: WPA unicast cipher suite count: %d\n"), 
+<<<<<<< HEAD
                 __FUNCTION__, dot11WPAIE.unicast_cipher_count );
         hddLog(LOG1, FL("%s: WPA authentication suite count: %d\n"), 
                 __FUNCTION__, dot11WPAIE.auth_suite_count);
+=======
+                __func__, dot11WPAIE.unicast_cipher_count );
+        hddLog(LOG1, FL("%s: WPA authentication suite count: %d\n"), 
+                __func__, dot11WPAIE.auth_suite_count);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //dot11WPAIE.auth_suite_count
         // Just translate the FIRST one 
         *pAuthType =  hdd_TranslateWPAToCsrAuthType(dot11WPAIE.auth_suites[0]); 
@@ -831,7 +1140,11 @@ int hdd_softap_unpackIE(
     } 
     else 
     { 
+<<<<<<< HEAD
         hddLog(LOGW, FL("%s: gen_ie[0]: %d\n"), __FUNCTION__, gen_ie[0]);
+=======
+        hddLog(LOGW, FL("%s: gen_ie[0]: %d\n"), __func__, gen_ie[0]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE; 
     }
     return VOS_STATUS_SUCCESS;
@@ -843,7 +1156,11 @@ static iw_softap_setparam(struct net_device *dev,
 {
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
+<<<<<<< HEAD
     int *value = (int *)extra;
+=======
+    int *value = (int *)(wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int sub_cmd = value[0];
     int set_value = value[1];
     eHalStatus status;
@@ -906,7 +1223,11 @@ static iw_softap_setparam(struct net_device *dev,
                 {
                     hddLog(VOS_TRACE_LEVEL_ERROR,
                             "%s: QCSAP_PARAM_HIDE_SSID failed",
+<<<<<<< HEAD
                             __FUNCTION__);
+=======
+                            __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return status;
                 }
                 break;
@@ -957,11 +1278,19 @@ static iw_softap_getparam(struct net_device *dev,
     case QCSAP_PARAM_MODULE_DOWN_IND:
         {
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
                 "%s: sending WLAN_MODULE_DOWN_IND", __FUNCTION__);
             send_btc_nlink_msg(WLAN_MODULE_DOWN_IND, 0);
 #ifdef WLAN_BTAMP_FEATURE 
             VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
                 "%s: Take down AMP PAL", __FUNCTION__);
+=======
+                "%s: sending WLAN_MODULE_DOWN_IND", __func__);
+            send_btc_nlink_msg(WLAN_MODULE_DOWN_IND, 0);
+#ifdef WLAN_BTAMP_FEATURE 
+            VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                "%s: Take down AMP PAL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             BSL_Deinit(vos_get_global_context(VOS_MODULE_ID_HDD, NULL));
 #endif            
             *value = 0;
@@ -1016,7 +1345,11 @@ int iw_softap_modify_acl(struct net_device *dev, struct iw_request_info *info,
 {
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pHostapdAdapter))->pvosContext; 
+<<<<<<< HEAD
     v_BYTE_t *value = (v_BYTE_t*)extra;
+=======
+    char *value = (char *)(wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U8_t pPeerStaMac[VOS_MAC_ADDR_SIZE];
     int listType, cmd, i;
     int ret = 0; /* success */
@@ -1031,7 +1364,11 @@ int iw_softap_modify_acl(struct net_device *dev, struct iw_request_info *info,
     cmd = (int)(*(value+i));
 
     hddLog(LOG1, "%s: SAP Modify ACL arg0 %02x:%02x:%02x:%02x:%02x:%02x arg1 %d arg2 %d\n",
+<<<<<<< HEAD
             __FUNCTION__, pPeerStaMac[0], pPeerStaMac[1], pPeerStaMac[2], 
+=======
+            __func__, pPeerStaMac[0], pPeerStaMac[1], pPeerStaMac[2], 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pPeerStaMac[3], pPeerStaMac[4], pPeerStaMac[5], listType, cmd);
 
     if (WLANSAP_ModifyACL(pVosContext, pPeerStaMac,(eSapACLType)listType,(eSapACLCmdType)cmd)
@@ -1058,18 +1395,27 @@ static iw_softap_getchannel(struct net_device *dev,
 }
 
 int
+<<<<<<< HEAD
 static iw_softap_set_tx_power(struct net_device *dev,
+=======
+static iw_softap_set_max_tx_power(struct net_device *dev,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         struct iw_request_info *info,
                         union iwreq_data *wrqu, char *extra)
 {
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
+<<<<<<< HEAD
     int cmd_len = wrqu->data.length;
     int *value = (int *) kmalloc(cmd_len+1, GFP_KERNEL);
+=======
+    int *value = (int *)extra;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int set_value;
     tSirMacAddr bssid = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
     tSirMacAddr selfMac = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
 
+<<<<<<< HEAD
     if(value == NULL)
         return -ENOMEM;
 
@@ -1087,6 +1433,14 @@ static iw_softap_set_tx_power(struct net_device *dev,
             eHAL_STATUS_SUCCESS )
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Setting maximum tx power failed",
+=======
+    if (NULL == value)
+        return -ENOMEM;
+
+    set_value = value[0];
+    if (eHAL_STATUS_SUCCESS != sme_SetMaxTxPower(hHal, bssid, selfMac, set_value))
+    {
+        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Setting maximum tx power failed",
                 __func__);
         return -EIO;
     }
@@ -1094,6 +1448,134 @@ static iw_softap_set_tx_power(struct net_device *dev,
     return 0;
 }
 
+int
+static iw_display_data_path_snapshot(struct net_device *dev,
+                        struct iw_request_info *info,
+                        union iwreq_data *wrqu, char *extra)
+{
+
+    /* Function intitiating dumping states of
+     *  HDD(WMM Tx Queues)
+     *  TL State (with Per Client infor)
+     *  DXE Snapshot (Called at the end of TL Snapshot)
+     */
+    hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
+    hddLog(LOGE, "%s: called for SAP",__func__);
+    hdd_wmm_tx_snapshot(pHostapdAdapter);
+    WLANTL_TLDebugMessage(VOS_TRUE);
+    return 0;
+}
+
+int
+static iw_softap_set_tx_power(struct net_device *dev,
+                        struct iw_request_info *info,
+                        union iwreq_data *wrqu, char *extra)
+{
+    hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
+    v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pHostapdAdapter))->pvosContext;
+    tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
+    int *value = (int *)extra;
+    int set_value;
+    ptSapContext  pSapCtx = NULL;
+
+    if (NULL == value)
+        return -ENOMEM;
+
+    pSapCtx = VOS_GET_SAP_CB(pVosContext);
+    if (NULL == pSapCtx)
+    {
+        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                   "%s: Invalid SAP pointer from pvosGCtx", __func__);
+        return VOS_STATUS_E_FAULT;
+    }
+
+    set_value = value[0];
+    if (eHAL_STATUS_SUCCESS != sme_SetTxPower(hHal, pSapCtx->sessionId, set_value))
+    {
+        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Setting tx power failed",
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
+                __func__);
+        return -EIO;
+    }
+
+    return 0;
+}
+
+<<<<<<< HEAD
+=======
+/**---------------------------------------------------------------------------
+
+  \brief iw_softap_set_trafficmonitor() -
+   This function dynamically enable/disable traffic monitor functonality
+   the command iwpriv wlanX setTrafficMon <value>.
+
+  \param  - dev - Pointer to the net device.
+              - addr - Pointer to the sockaddr.
+  \return - 0 for success, non zero for failure
+
+  --------------------------------------------------------------------------*/
+
+static int iw_softap_set_trafficmonitor(struct net_device *dev,
+        struct iw_request_info *info,
+        union iwreq_data *wrqu, char *extra)
+{
+    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
+    int *isSetTrafficMon = (int *)wrqu->data.pointer;
+    hdd_context_t *pHddCtx;
+    int status;
+
+    if (NULL == pAdapter)
+    {
+        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                   "%s: HDD adapter is Null", __func__);
+        return -ENODEV;
+    }
+
+    pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
+
+    status = wlan_hdd_validate_context(pHddCtx);
+
+    if (0 != status)
+    {
+        VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+                   "%s: HDD context is not valid", __func__);
+        return status;
+    }
+
+    hddLog(VOS_TRACE_LEVEL_INFO, "%s : ", __func__);
+
+    if (NULL == isSetTrafficMon)
+    {
+        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
+                   "%s: Invalid SAP pointer from extra", __func__);
+        return -ENOMEM;
+    }
+
+    if (TRUE == *isSetTrafficMon)
+    {
+        pHddCtx->cfg_ini->enableTrafficMonitor= TRUE;
+        if (VOS_STATUS_SUCCESS != hdd_start_trafficMonitor(pAdapter))
+        {
+            VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: failed to Start Traffic Monitor timer ", __func__ );
+            return -EIO;
+        }
+    }
+    else if (FALSE == *isSetTrafficMon)
+    {
+        pHddCtx->cfg_ini->enableTrafficMonitor= FALSE;
+        if (VOS_STATUS_SUCCESS != hdd_stop_trafficMonitor(pAdapter))
+        {
+            VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
+                       "%s: failed to Stop Traffic Monitor timer ", __func__ );
+            return -EIO;
+        }
+
+    }
+    return 0;
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define IS_BROADCAST_MAC(x) (((x[0] & x[1] & x[2] & x[3] & x[4] & x[5]) == 0xff) ? 1 : 0)
 
 int
@@ -1155,14 +1637,27 @@ static iw_softap_disassoc_sta(struct net_device *dev,
     v_U8_t *peerMacAddr;    
     
     ENTER();
+<<<<<<< HEAD
     /* the comparison below is needed since if iwpriv tool is used for calling this ioctl
      * data is passed in extra (less than 16 octets); however in android wifi framework
      * data is placed in wrqu->data.pointer.
      */
+=======
+    /* iwpriv tool or framework calls this ioctl with
+     * data passed in extra (less than 16 octets);
+     */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((v_U8_t*)wrqu == (v_U8_t*)extra)
         peerMacAddr = (v_U8_t *)(extra);
     else
         peerMacAddr = (v_U8_t *)(wrqu->data.pointer);
+<<<<<<< HEAD
+=======
+*/
+
+    peerMacAddr = (v_U8_t *)(wrqu->data.pointer);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     hddLog(LOG1, "data %02x:%02x:%02x:%02x:%02x:%02x",
             peerMacAddr[0], peerMacAddr[1], peerMacAddr[2],
@@ -1280,11 +1775,15 @@ static iw_softap_commit(struct net_device *dev,
             // The actual processing may eventually be more extensive than this.
             // Right now, just consume any PMKIDs that are  sent in by the app.
             status = hdd_softap_unpackIE( 
+<<<<<<< HEAD
 #if defined(FEATURE_WLAN_NON_INTEGRATED_SOC)
                                   vos_get_context( VOS_MODULE_ID_HAL, pVosContext),
 #else
                                   vos_get_context( VOS_MODULE_ID_PE, pVosContext),
 #endif
+=======
+                                  vos_get_context( VOS_MODULE_ID_PE, pVosContext),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                   &RSNEncryptType,
                                   &mcRSNEncryptType,
                                   &RSNAuthType,
@@ -1297,7 +1796,11 @@ static iw_softap_commit(struct net_device *dev,
                  //TODO: Need to handle mixed mode     
                  pConfig->RSNEncryptType = RSNEncryptType; // Use the cipher type in the RSN IE
                  pConfig->mcRSNEncryptType = mcRSNEncryptType;
+<<<<<<< HEAD
                  hddLog( LOG1, FL("%s: CSR AuthType = %d, EncryptionType = %d mcEncryptionType = %d\n"), 
+=======
+                 hddLog( LOG1, FL("CSR AuthType = %d, EncryptionType = %d mcEncryptionType = %d\n"),
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                   RSNAuthType, RSNEncryptType, mcRSNEncryptType);
              } 
         }
@@ -1311,6 +1814,15 @@ static iw_softap_commit(struct net_device *dev,
                          pConfig->RSNEncryptType, pConfig->mcRSNEncryptType);
     }
 
+<<<<<<< HEAD
+=======
+    if (pConfig->RSNWPAReqIELength > QCSAP_MAX_OPT_IE) {
+        hddLog(LOGE, FL("RSNWPAReqIELength: %d too large"), pConfig->RSNWPAReqIELength);
+        kfree(pConfig);
+        return -EIO;
+    }
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pConfig->SSIDinfo.ssidHidden = pCommitConfig->SSIDinfo.ssidHidden; 
     pConfig->SSIDinfo.ssid.length = pCommitConfig->SSIDinfo.ssid.length;
     vos_mem_copy(pConfig->SSIDinfo.ssid.ssId, pCommitConfig->SSIDinfo.ssid.ssId, pConfig->SSIDinfo.ssid.length);
@@ -1321,8 +1833,13 @@ static iw_softap_commit(struct net_device *dev,
     // ht_capab is not what the name conveys,this is used for protection bitmap
     pConfig->ht_capab = (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->apProtection;
 
+<<<<<<< HEAD
     if (pCommitConfig->num_accept_mac > MAX_MAC_ADDRESS_ACCEPTED)
         num_mac = pConfig->num_accept_mac = MAX_MAC_ADDRESS_ACCEPTED;
+=======
+    if (pCommitConfig->num_accept_mac > MAX_ACL_MAC_ADDRESS)
+        num_mac = pConfig->num_accept_mac = MAX_ACL_MAC_ADDRESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else
         num_mac = pConfig->num_accept_mac = pCommitConfig->num_accept_mac;
     acl_entry = pCommitConfig->accept_mac;
@@ -1331,8 +1848,13 @@ static iw_softap_commit(struct net_device *dev,
         vos_mem_copy(&pConfig->accept_mac[i], acl_entry->addr, sizeof(v_MACADDR_t));
         acl_entry++;
     }
+<<<<<<< HEAD
     if (pCommitConfig->num_deny_mac > MAX_MAC_ADDRESS_DENIED)
         num_mac = pConfig->num_deny_mac = MAX_MAC_ADDRESS_DENIED;
+=======
+    if (pCommitConfig->num_deny_mac > MAX_ACL_MAC_ADDRESS)
+        num_mac = pConfig->num_deny_mac = MAX_ACL_MAC_ADDRESS;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else
         num_mac = pConfig->num_deny_mac = pCommitConfig->num_deny_mac;
     acl_entry = pCommitConfig->deny_mac;
@@ -1378,7 +1900,11 @@ static iw_softap_commit(struct net_device *dev,
     pHostapdState->bCommit = TRUE;
     if(pHostapdState->vosStatus)
     {
+<<<<<<< HEAD
         return -1;
+=======
+      return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
     {
@@ -1431,6 +1957,10 @@ static int iw_softap_set_channel_range(struct net_device *dev,
 {
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
+<<<<<<< HEAD
+=======
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     int *value = (int *)extra;
     int startChannel = value[0];
@@ -1446,6 +1976,12 @@ static int iw_softap_set_channel_range(struct net_device *dev,
                                   startChannel,endChannel, band);
       ret = -EINVAL;
     }
+<<<<<<< HEAD
+=======
+
+    pHddCtx->is_dynamic_channel_range_set = 1;
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return ret;
 }
 
@@ -1461,11 +1997,43 @@ int iw_softap_get_channel_list(struct net_device *dev,
     hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
     v_REGDOMAIN_t domainIdCurrentSoftap;
+<<<<<<< HEAD
 
     tpChannelListInfo channel_list = (tpChannelListInfo) extra;
     wrqu->data.length = sizeof(tChannelListInfo);
     ENTER();
 
+=======
+    tpChannelListInfo channel_list = (tpChannelListInfo) extra;
+    eCsrBand curBand = eCSR_BAND_ALL;
+
+    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
+
+    if (eHAL_STATUS_SUCCESS != sme_GetFreqBand(hHal, &curBand))
+    {
+        hddLog(LOGE,FL("not able get the current frequency band\n"));
+        //return -EIO;
+		curBand = eCSR_BAND_ALL;
+    }
+    wrqu->data.length = sizeof(tChannelListInfo);
+    ENTER();
+
+    if (eCSR_BAND_24 == curBand || eCSR_BAND_24 == pHddCtx->cfg_ini->nBandCapability)
+    {
+        bandStartChannel = RF_CHAN_1;
+        bandEndChannel = RF_CHAN_14;
+    }
+    else if (eCSR_BAND_5G == curBand || eCSR_BAND_5G == pHddCtx->cfg_ini->nBandCapability)
+    {
+        bandStartChannel = RF_CHAN_36;
+        bandEndChannel = RF_CHAN_165;
+    }
+
+    hddLog(LOG1, FL("\n curBand = %d, bandStartChannel = %hu, "
+                "bandEndChannel = %hu "), curBand,
+                bandStartChannel, bandEndChannel );
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     for( i = bandStartChannel; i <= bandEndChannel; i++ )
     {
         if( NV_CHANNEL_ENABLE == regChannels[i].enabled )
@@ -1482,7 +2050,11 @@ int iw_softap_get_channel_list(struct net_device *dev,
     if(eHAL_STATUS_SUCCESS != sme_getSoftApDomain(hHal,(v_REGDOMAIN_t *) &domainIdCurrentSoftap))
     {
         hddLog(LOG1,FL("Failed to get Domain ID, %d \n"),domainIdCurrentSoftap);
+<<<<<<< HEAD
         return -1;
+=======
+        return -EIO;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if(REGDOMAIN_FCC == domainIdCurrentSoftap)
@@ -1511,6 +2083,10 @@ int iw_softap_get_channel_list(struct net_device *dev,
     }
 
     channel_list->num_channels = num_channels;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     EXIT();
 
     return 0;
@@ -1605,7 +2181,11 @@ int iw_set_auth_hostap(struct net_device *dev,struct iw_request_info *info,
          
       default:
          
+<<<<<<< HEAD
          hddLog(LOGW, "%s called with unsupported auth type %d", __FUNCTION__, 
+=======
+         hddLog(LOGW, "%s called with unsupported auth type %d", __func__, 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                wrqu->param.flags & IW_AUTH_INDEX);
       break;
    }
@@ -1674,9 +2254,15 @@ static int iw_set_ap_encodeext(struct net_device *dev,
               break;
          }
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Remove key cipher_alg:%d key_len%d *pEncryptionType :%d \n",
+<<<<<<< HEAD
                     __FUNCTION__,(int)ext->alg,(int)ext->key_len,RemoveKey.encType);
          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Peer Mac = "MAC_ADDRESS_STR"\n",
                     __FUNCTION__, MAC_ADDR_ARRAY(RemoveKey.peerMac));
+=======
+                    __func__,(int)ext->alg,(int)ext->key_len,RemoveKey.encType);
+         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Peer Mac = "MAC_ADDRESS_STR"\n",
+                    __func__, MAC_ADDR_ARRAY(RemoveKey.peerMac));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           );
          vstatus = WLANSAP_DelKeySta( pVosContext, &RemoveKey);
          if ( vstatus != VOS_STATUS_SUCCESS )
@@ -1727,7 +2313,11 @@ static int iw_set_ap_encodeext(struct net_device *dev,
        case IW_ENCODE_ALG_WEP:
          setKey.encType = (ext->key_len== 5) ? eCSR_ENCRYPT_TYPE_WEP40:eCSR_ENCRYPT_TYPE_WEP104;
          pHddApCtx->uPrivacy = 1;
+<<<<<<< HEAD
          hddLog(LOG1, "(%s) uPrivacy=%d", __FUNCTION__, pHddApCtx->uPrivacy);
+=======
+         hddLog(LOG1, "(%s) uPrivacy=%d", __func__, pHddApCtx->uPrivacy);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       
        case IW_ENCODE_ALG_TKIP:
@@ -1775,7 +2365,11 @@ static int iw_set_ap_encodeext(struct net_device *dev,
     }
          
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+<<<<<<< HEAD
           ("%s:EncryptionType:%d key_len:%d, :%d, KeyId:%d \n"),__FUNCTION__, setKey.encType, setKey.keyLength,
+=======
+          ("%s:EncryptionType:%d key_len:%d, KeyId:%d"), __func__, setKey.encType, setKey.keyLength,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             setKey.keyId);
     for(i=0; i< ext->key_len; i++)
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
@@ -1823,7 +2417,11 @@ static int iw_set_ap_mlme(struct net_device *dev,
                 //clear all the reason codes
                 if (status != 0)
                 {
+<<<<<<< HEAD
                     hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate : csrRoamDisconnect failure returned %d \n", __FUNCTION__, (int)mlme->cmd, (int)status );
+=======
+                    hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate : csrRoamDisconnect failure returned %d \n", __func__, (int)mlme->cmd, (int)status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
                 
                netif_stop_queue(dev);
@@ -1831,10 +2429,17 @@ static int iw_set_ap_mlme(struct net_device *dev,
             }
             else
             {
+<<<<<<< HEAD
                 hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate called but station is not in associated state \n", __FUNCTION__, (int)mlme->cmd );
             }
         default:
             hddLog(LOGE,"%s %d Command should be Disassociate/Deauthenticate \n", __FUNCTION__, (int)mlme->cmd );
+=======
+                hddLog(LOGE,"%s %d Command Disassociate/Deauthenticate called but station is not in associated state \n", __func__, (int)mlme->cmd );
+            }
+        default:
+            hddLog(LOGE,"%s %d Command should be Disassociate/Deauthenticate \n", __func__, (int)mlme->cmd );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return -EINVAL;
     }//end of switch
     EXIT();
@@ -1950,7 +2555,11 @@ static int iw_softap_setwpsie(struct net_device *dev,
    }
    vos_mem_zero(pSap_WPSIe, sizeof(tSap_WPSIE));
  
+<<<<<<< HEAD
    hddLog(LOG1,"%s WPS IE type[0x%X] IE[0x%X], LEN[%d]\n", __FUNCTION__, wps_genie[0], wps_genie[1], wps_genie[2]);
+=======
+   hddLog(LOG1,"%s WPS IE type[0x%X] IE[0x%X], LEN[%d]\n", __func__, wps_genie[0], wps_genie[1], wps_genie[2]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WPSIeType = wps_genie[0];
    if ( wps_genie[0] == eQC_WPS_BEACON_IE)
    {
@@ -1966,7 +2575,11 @@ static int iw_softap_setwpsie(struct net_device *dev,
             }
             else if (memcmp(&wps_genie[2], "\x00\x50\xf2\x04", 4) == 0) 
             {
+<<<<<<< HEAD
              hddLog (LOG1, "%s Set WPS BEACON IE(len %d)",__FUNCTION__, wps_genie[1]+2);
+=======
+             hddLog (LOG1, "%s Set WPS BEACON IE(len %d)",__func__, wps_genie[1]+2);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              pos = &wps_genie[6];
              while (((size_t)pos - (size_t)&wps_genie[6])  < (wps_genie[1] - 4) )
              {
@@ -2041,12 +2654,20 @@ static int iw_softap_setwpsie(struct net_device *dev,
             }
             else { 
                  hddLog (LOGE, "%s WPS IE Mismatch %X",
+<<<<<<< HEAD
                          __FUNCTION__, wps_genie[0]);
+=======
+                         __func__, wps_genie[0]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }     
             break;
                  
          default:
+<<<<<<< HEAD
             hddLog (LOGE, "%s Set UNKNOWN IE %X",__FUNCTION__, wps_genie[0]);
+=======
+            hddLog (LOGE, "%s Set UNKNOWN IE %X",__func__, wps_genie[0]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             vos_mem_free(pSap_WPSIe);
             return 0;
       }
@@ -2065,7 +2686,11 @@ static int iw_softap_setwpsie(struct net_device *dev,
             }
             else if (memcmp(&wps_genie[2], "\x00\x50\xf2\x04", 4) == 0) 
             {
+<<<<<<< HEAD
              hddLog (LOG1, "%s Set WPS PROBE RSP IE(len %d)",__FUNCTION__, wps_genie[1]+2);
+=======
+             hddLog (LOG1, "%s Set WPS PROBE RSP IE(len %d)",__func__, wps_genie[1]+2);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              pos = &wps_genie[6];
              while (((size_t)pos - (size_t)&wps_genie[6])  < (wps_genie[1] - 4) )
              {
@@ -2210,7 +2835,11 @@ static int iw_softap_setwpsie(struct net_device *dev,
          } 
          else
          {
+<<<<<<< HEAD
             hddLog (LOGE, "%s WPS IE Mismatch %X",__FUNCTION__, wps_genie[0]);
+=======
+            hddLog (LOGE, "%s WPS IE Mismatch %X",__func__, wps_genie[0]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          
       } // switch
@@ -2260,6 +2889,7 @@ static int iw_softap_stopbss(struct net_device *dev,
 
 static int iw_softap_version(struct net_device *dev,
         struct iw_request_info *info,
+<<<<<<< HEAD
         union iwreq_data *wrqu, 
         char *extra)
 {
@@ -2268,14 +2898,78 @@ static int iw_softap_version(struct net_device *dev,
     VOS_STATUS status;
     ENTER();
     status = hdd_wlan_get_version(pHostapdAdapter, wrqu, extra);
+=======
+        union iwreq_data *wrqu,
+        char *extra)
+{
+    hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
+
+    ENTER();
+    hdd_wlan_get_version(pHostapdAdapter, wrqu, extra);
+    EXIT();
+    return 0;
+}
+
+VOS_STATUS hdd_softap_get_sta_info(hdd_adapter_t *pAdapter, v_U8_t *pBuf, int buf_len)
+{
+    v_U8_t i;
+    int len = 0;
+    const char sta_info_header[] = "staId staAddress\n";
+
+    len = scnprintf(pBuf, buf_len, sta_info_header);
+    pBuf += len;
+    buf_len -= len;
+
+    for (i = 0; i < WLAN_MAX_STA_COUNT; i++)
+    {
+        if(pAdapter->aStaInfo[i].isUsed)
+        {
+            len = scnprintf(pBuf, buf_len, "%*d .%02x:%02x:%02x:%02x:%02x:%02x\n",
+                                       strlen("staId"),
+                                       pAdapter->aStaInfo[i].ucSTAId,
+                                       pAdapter->aStaInfo[i].macAddrSTA.bytes[0],
+                                       pAdapter->aStaInfo[i].macAddrSTA.bytes[1],
+                                       pAdapter->aStaInfo[i].macAddrSTA.bytes[2],
+                                       pAdapter->aStaInfo[i].macAddrSTA.bytes[3],
+                                       pAdapter->aStaInfo[i].macAddrSTA.bytes[4],
+                                       pAdapter->aStaInfo[i].macAddrSTA.bytes[5]);
+            pBuf += len;
+            buf_len -= len;
+        }
+        if(WE_GET_STA_INFO_SIZE > buf_len)
+        {
+            break;
+        }
+    }
+    return VOS_STATUS_SUCCESS;
+}
+
+static int iw_softap_get_sta_info(struct net_device *dev,
+        struct iw_request_info *info,
+        union iwreq_data *wrqu, 
+        char *extra)
+{
+    hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
+    VOS_STATUS status;
+    ENTER();
+    status = hdd_softap_get_sta_info(pHostapdAdapter, extra, WE_SAP_MAX_STA_INFO);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ( !VOS_IS_STATUS_SUCCESS( status ) ) {
        hddLog(VOS_TRACE_LEVEL_ERROR, "%s Failed!!!\n",__func__);
        return -EINVAL;
     }
+<<<<<<< HEAD
     EXIT();
 #endif//TODO need to handle in prima
     return 0;
 }
+=======
+    wrqu->data.length = strlen(extra);
+    EXIT();
+    return 0;
+}
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int iw_set_ap_genie(struct net_device *dev,
         struct iw_request_info *info,
         union iwreq_data *wrqu, 
@@ -2309,7 +3003,11 @@ static int iw_set_ap_genie(struct net_device *dev,
             break;
             
         default:
+<<<<<<< HEAD
             hddLog (LOGE, "%s Set UNKNOWN IE %X",__FUNCTION__, genie[0]);
+=======
+            hddLog (LOGE, "%s Set UNKNOWN IE %X",__func__, genie[0]);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             halStatus = 0;
     }
     
@@ -2344,7 +3042,11 @@ static VOS_STATUS  wlan_hdd_get_classAstats_for_station(hdd_adapter_t *pAdapter,
    {
       hddLog(VOS_TRACE_LEVEL_ERROR,
             "%s: Unable to retrieve statistics for link speed",
+<<<<<<< HEAD
             __FUNCTION__);
+=======
+            __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else
    {
@@ -2355,7 +3057,11 @@ static VOS_STATUS  wlan_hdd_get_classAstats_for_station(hdd_adapter_t *pAdapter,
       {
          hddLog(VOS_TRACE_LEVEL_ERROR,
                "%s: SME %s while retrieving link speed",
+<<<<<<< HEAD
               __FUNCTION__, (0 == lrc) ? "timeout" : "interrupt");
+=======
+              __func__, (0 == lrc) ? "timeout" : "interrupt");
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          msleep(50);
       }
    }
@@ -2369,6 +3075,7 @@ int iw_get_softap_linkspeed(struct net_device *dev,
 
 {
    hdd_adapter_t *pHostapdAdapter = (netdev_priv(dev));
+<<<<<<< HEAD
    char *pLinkSpeed = (char*)extra;
    v_U16_t link_speed;
    unsigned short staId;
@@ -2388,11 +3095,57 @@ int iw_get_softap_linkspeed(struct net_device *dev,
    if (!VOS_IS_STATUS_SUCCESS(status ))
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, FL("ERROR: HDD Failed to find sta id!!"));
+=======
+   hdd_context_t *pHddCtx;
+   char *pLinkSpeed = (char*)extra;
+   v_U32_t link_speed;
+   unsigned short staId;
+   int len = sizeof(v_U32_t)+1;
+   v_BYTE_t macAddress[VOS_MAC_ADDR_SIZE];
+   VOS_STATUS status;
+   int rc, valid;
+
+   pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
+
+   valid = wlan_hdd_validate_context(pHddCtx);
+
+   if (0 != valid)
+   {
+       hddLog(VOS_TRACE_LEVEL_ERROR, FL("HDD context not valid"));
+       return valid;
+   }
+
+   hddLog(VOS_TRACE_LEVEL_INFO, "%s wrqu->data.length= %d\n", __func__, wrqu->data.length);
+   status = hdd_string_to_hex ((char *)wrqu->data.pointer, wrqu->data.length, macAddress );
+
+   if (!VOS_IS_STATUS_SUCCESS(status ))
+   {
+      hddLog(VOS_TRACE_LEVEL_ERROR, FL("String to Hex conversion Failed"));
+   }
+
+   /* If no mac address is passed and/or its length is less than 18,
+    * link speed for first connected client will be returned.
+    */
+   if (!VOS_IS_STATUS_SUCCESS(status ) || wrqu->data.length < 18)
+   {
+      status = hdd_softap_GetConnectedStaId(pHostapdAdapter, (void *)(&staId));
+   }
+   else
+   {
+      status = hdd_softap_GetStaId(pHostapdAdapter,
+                               (v_MACADDR_t *)macAddress, (void *)(&staId));
+   }
+
+   if (!VOS_IS_STATUS_SUCCESS(status))
+   {
+      hddLog(VOS_TRACE_LEVEL_ERROR, FL("ERROR: HDD Failed to find sta id!!"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       link_speed = 0;
    }
    else
    {
       status = wlan_hdd_get_classAstats_for_station(pHostapdAdapter , staId);
+<<<<<<< HEAD
       if (!VOS_IS_STATUS_SUCCESS(status ))
       {
           hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unable to retrieve SME statistics", __FUNCTION__);
@@ -2409,6 +3162,38 @@ int iw_get_softap_linkspeed(struct net_device *dev,
       hddLog(VOS_TRACE_LEVEL_ERROR,
             "%s: Unable to encode link speed, got [%s]",
              __FUNCTION__, pLinkSpeed);
+=======
+
+      if (!VOS_IS_STATUS_SUCCESS(status ))
+      {
+          hddLog(VOS_TRACE_LEVEL_ERROR, FL("Unable to retrieve SME statistics"));
+          return -EINVAL;
+      }
+
+      WLANTL_GetSTALinkCapacity(pHddCtx->pvosContext,
+                                staId, &link_speed);
+
+      link_speed = link_speed / 10;
+
+      if (0 == link_speed)
+      {
+          /* The linkspeed returned by HAL is in units of 500kbps.
+           * converting it to mbps.
+           * This is required to support legacy firmware which does
+           * not return link capacity.
+           */
+          link_speed =(int)pHostapdAdapter->hdd_stats.ClassA_stat.tx_rate/2;
+      }
+   }
+
+   wrqu->data.length = len;
+   rc = snprintf(pLinkSpeed, len, "%lu", link_speed);
+
+   if ((rc < 0) || (rc >= len))
+   {
+      // encoding or length error?
+      hddLog(VOS_TRACE_LEVEL_ERROR,FL( "Unable to encode link speed"));
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return -EIO;
    }
 
@@ -2474,9 +3259,15 @@ static const iw_handler      hostapd_handler[] =
    (iw_handler) NULL,           /* SIOCSIWPMKSA */
 };
 
+<<<<<<< HEAD
 #define    IW_PRIV_TYPE_OPTIE    IW_PRIV_TYPE_BYTE | QCSAP_MAX_OPT_IE
 #define    IW_PRIV_TYPE_MLME \
     IW_PRIV_TYPE_BYTE | sizeof(struct ieee80211req_mlme)
+=======
+#define    IW_PRIV_TYPE_OPTIE    (IW_PRIV_TYPE_BYTE | QCSAP_MAX_OPT_IE)
+#define    IW_PRIV_TYPE_MLME \
+  (IW_PRIV_TYPE_BYTE | sizeof(struct ieee80211req_mlme))
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static const struct iw_priv_args hostapd_private_args[] = {
   { QCSAP_IOCTL_SETPARAM,
@@ -2516,6 +3307,11 @@ static const struct iw_priv_args hostapd_private_args[] = {
       IW_PRIV_TYPE_BYTE | IW_PRIV_SIZE_FIXED, 0, "stopbss" },
   { QCSAP_IOCTL_VERSION, 0,
       IW_PRIV_TYPE_CHAR | QCSAP_MAX_WSC_IE, "version" },
+<<<<<<< HEAD
+=======
+  { QCSAP_IOCTL_GET_STA_INFO, 0,
+      IW_PRIV_TYPE_CHAR | WE_SAP_MAX_STA_INFO, "get_sta_info" },
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   { QCSAP_IOCTL_GET_WPS_PBC_PROBE_REQ_IES,
       IW_PRIV_TYPE_BYTE | sizeof(sQcSapreq_WPSPBCProbeReqIES_t) | IW_PRIV_SIZE_FIXED | 1, 0, "getProbeReqIEs" },
   { QCSAP_IOCTL_GET_CHANNEL, 0,
@@ -2528,7 +3324,11 @@ static const struct iw_priv_args hostapd_private_args[] = {
         IW_PRIV_TYPE_BYTE | QCSAP_MAX_WSC_IE, 0, "ap_stats" },
   { QCSAP_IOCTL_PRIV_GET_SOFTAP_LINK_SPEED,
         IW_PRIV_TYPE_CHAR | 18,
+<<<<<<< HEAD
         IW_PRIV_TYPE_CHAR | 3, "getLinkSpeed" },
+=======
+        IW_PRIV_TYPE_CHAR | 5, "getLinkSpeed" },
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   { QCSAP_IOCTL_PRIV_SET_THREE_INT_GET_NONE,
         IW_PRIV_TYPE_INT | IW_PRIV_SIZE_FIXED | 3, 0, "" },
@@ -2549,12 +3349,32 @@ static const struct iw_priv_args hostapd_private_args[] = {
        IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
        0, 
        "dump" },
+<<<<<<< HEAD
 #ifdef WLAN_FEATURE_P2P
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {   WE_P2P_NOA_CMD,
        IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
        0, 
        "SetP2pPs" },
+<<<<<<< HEAD
 #endif
+=======
+     /* handlers for sub ioctl */
+    {
+        WE_MCC_CONFIG_CREDENTIAL,
+        IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
+        0,
+        "setMccCrdnl" },
+
+     /* handlers for sub ioctl */
+    {
+        WE_MCC_CONFIG_PARAMS,
+        IW_PRIV_TYPE_INT | MAX_VAR_ARGS,
+        0,
+        "setMccConfig" },
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* handlers for main ioctl */
     {   QCSAP_IOCTL_MODIFY_ACL,
         IW_PRIV_TYPE_BYTE | IW_PRIV_SIZE_FIXED | 8,
@@ -2571,7 +3391,28 @@ static const struct iw_priv_args hostapd_private_args[] = {
     {   QCSAP_IOCTL_SET_TX_POWER,
         IW_PRIV_TYPE_INT| IW_PRIV_SIZE_FIXED | 1,
         0,
+<<<<<<< HEAD
         "" },
+=======
+        "setTxPower" },
+
+    /* handlers for main ioctl */
+    {   QCSAP_IOCTL_SET_MAX_TX_POWER,
+        IW_PRIV_TYPE_INT| IW_PRIV_SIZE_FIXED | 1,
+        0,
+        "setTxMaxPower" },
+
+    {   QCSAP_IOCTL_DATAPATH_SNAP_SHOT,
+        IW_PRIV_TYPE_NONE | IW_PRIV_TYPE_NONE,
+        0,
+        "dataSnapshot" },
+
+    /* handlers for main ioctl */
+    {   QCSAP_IOCTL_SET_TRAFFIC_MONITOR,
+        IW_PRIV_TYPE_INT| IW_PRIV_SIZE_FIXED | 1,
+        0,
+        "setTrafficMon" },
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 static const iw_handler hostapd_private[] = {
@@ -2593,8 +3434,17 @@ static const iw_handler hostapd_private[] = {
    [QCSAP_IOCTL_SET_CHANNEL_RANGE - SIOCIWFIRSTPRIV] = iw_softap_set_channel_range,
    [QCSAP_IOCTL_MODIFY_ACL - SIOCIWFIRSTPRIV]   = iw_softap_modify_acl,
    [QCSAP_IOCTL_GET_CHANNEL_LIST - SIOCIWFIRSTPRIV]   = iw_softap_get_channel_list,
+<<<<<<< HEAD
    [QCSAP_IOCTL_PRIV_GET_SOFTAP_LINK_SPEED - SIOCIWFIRSTPRIV]     = iw_get_softap_linkspeed,
    [QCSAP_IOCTL_SET_TX_POWER - SIOCIWFIRSTPRIV]   = iw_softap_set_tx_power,
+=======
+   [QCSAP_IOCTL_GET_STA_INFO - SIOCIWFIRSTPRIV] = iw_softap_get_sta_info,
+   [QCSAP_IOCTL_PRIV_GET_SOFTAP_LINK_SPEED - SIOCIWFIRSTPRIV]     = iw_get_softap_linkspeed,
+   [QCSAP_IOCTL_SET_TX_POWER - SIOCIWFIRSTPRIV]   = iw_softap_set_tx_power,
+   [QCSAP_IOCTL_SET_MAX_TX_POWER - SIOCIWFIRSTPRIV]   = iw_softap_set_max_tx_power,
+   [QCSAP_IOCTL_DATAPATH_SNAP_SHOT - SIOCIWFIRSTPRIV]  =   iw_display_data_path_snapshot,
+   [QCSAP_IOCTL_SET_TRAFFIC_MONITOR - SIOCIWFIRSTPRIV]  =  iw_softap_set_trafficmonitor,
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 const struct iw_handler_def hostapd_handler_def = {
    .num_standard     = sizeof(hostapd_handler) / sizeof(hostapd_handler[0]),
@@ -2680,6 +3530,7 @@ VOS_STATUS hdd_init_ap_mode( hdd_adapter_t *pAdapter )
     status = hdd_softap_init_tx_rx(pAdapter);
     if ( !VOS_IS_STATUS_SUCCESS( status ))
     {
+<<<<<<< HEAD
        hddLog(VOS_TRACE_LEVEL_FATAL, "%s: hdd_softap_init_tx_rx failed", __FUNCTION__);
     }
     
@@ -2704,6 +3555,12 @@ VOS_STATUS hdd_init_ap_mode( hdd_adapter_t *pAdapter )
         */
     }
 #endif
+=======
+       hddLog(VOS_TRACE_LEVEL_FATAL, "%s: hdd_softap_init_tx_rx failed", __func__);
+    }
+    
+    wlan_hdd_set_monitor_tx_adapter( WLAN_HDD_GET_CTX(pAdapter), pAdapter );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     EXIT();
     return status;
 }
@@ -2714,11 +3571,15 @@ hdd_adapter_t* hdd_wlan_create_ap_dev( hdd_context_t *pHddCtx, tSirMacAddr macAd
     hdd_adapter_t *pHostapdAdapter = NULL;
     v_CONTEXT_t pVosContext= NULL;
 
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
    pWlanHostapdDev = alloc_netdev_mq(sizeof(hdd_adapter_t), iface_name, ether_setup, NUM_TX_QUEUES);
 #else   
    pWlanHostapdDev = alloc_etherdev_mq(sizeof(hdd_adapter_t), NUM_TX_QUEUES);
 #endif
+=======
+   pWlanHostapdDev = alloc_netdev_mq(sizeof(hdd_adapter_t), iface_name, ether_setup, NUM_TX_QUEUES);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (pWlanHostapdDev != NULL)
     {
@@ -2751,20 +3612,29 @@ hdd_adapter_t* hdd_wlan_create_ap_dev( hdd_context_t *pHddCtx, tSirMacAddr macAd
         vos_mem_copy(pHostapdAdapter->macAddressCurrent.bytes, (void *)macAddr, sizeof(tSirMacAddr));
 
         pWlanHostapdDev->destructor = free_netdev;
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pWlanHostapdDev->ieee80211_ptr = &pHostapdAdapter->wdev ;
         pHostapdAdapter->wdev.wiphy = pHddCtx->wiphy;  
         pHostapdAdapter->wdev.netdev =  pWlanHostapdDev;
         init_completion(&pHostapdAdapter->tx_action_cnf_event);
+<<<<<<< HEAD
 #endif 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         init_completion(&pHostapdAdapter->cancel_rem_on_chan_var);
         init_completion(&pHostapdAdapter->rem_on_chan_ready_event);
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
         init_completion(&pHostapdAdapter->offchannel_tx_event);
 #endif
 
+<<<<<<< HEAD
         init_completion(&pHostapdAdapter->scan_info.scan_req_completion_event);
 
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         SET_NETDEV_DEV(pWlanHostapdDev, pHddCtx->parent_dev);
     }
     return pHostapdAdapter;
@@ -2779,7 +3649,11 @@ VOS_STATUS hdd_register_hostapd( hdd_adapter_t *pAdapter, tANI_U8 rtnl_lock_held
    
    if( rtnl_lock_held )
    {
+<<<<<<< HEAD
       if (strchr(dev->name, '%')) {
+=======
+     if (strnchr(dev->name, strlen(dev->name), '%')) {
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if( dev_alloc_name(dev, dev->name) < 0 )
          {
             hddLog(VOS_TRACE_LEVEL_FATAL, "%s:Failed:dev_alloc_name", __func__);

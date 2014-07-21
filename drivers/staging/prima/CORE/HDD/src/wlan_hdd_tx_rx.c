@@ -1,4 +1,27 @@
 /*
+<<<<<<< HEAD
+=======
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
+ *
+ *
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all
+ * copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/*
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -41,12 +64,21 @@
 #include <linux/skbuff.h>
 #include <linux/etherdevice.h>
 
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <wlan_hdd_p2p.h>
 #include <linux/wireless.h>
 #include <net/cfg80211.h>
 #include <net/ieee80211_radiotap.h>
 #include "sapApi.h"
+<<<<<<< HEAD
+=======
+
+#ifdef FEATURE_WLAN_TDLS
+#include "wlan_hdd_tdls.h"
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 /*--------------------------------------------------------------------------- 
@@ -68,9 +100,13 @@ const v_U8_t hdd_QdiscAcToTlAC[] = {
    WLANTL_AC_BK,
 };
 
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
 static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter);
 #endif
+=======
+static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------- 
   Type declarations
@@ -84,6 +120,7 @@ static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter);
 //Utility function to dump an sk_buff
 static void dump_sk_buff(struct sk_buff * skb)
 {
+<<<<<<< HEAD
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: head = %p ", __FUNCTION__, skb->head);
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: data = %p ", __FUNCTION__, skb->data);
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: tail = %p ", __FUNCTION__, skb->tail);
@@ -91,6 +128,15 @@ static void dump_sk_buff(struct sk_buff * skb)
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: len = %d ", __FUNCTION__, skb->len);
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: data_len = %d ", __FUNCTION__, skb->data_len);
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: mac_len = %d\n", __FUNCTION__, skb->mac_len);
+=======
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: head = %p ", __func__, skb->head);
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: data = %p ", __func__, skb->data);
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: tail = %p ", __func__, skb->tail);
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: end = %p ", __func__, skb->end);
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: len = %d ", __func__, skb->len);
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: data_len = %d ", __func__, skb->data_len);
+  VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: mac_len = %d\n", __func__, skb->mac_len);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x ", 
      skb->data[0], skb->data[1], skb->data[2], skb->data[3], skb->data[4], 
@@ -117,6 +163,7 @@ static void transport_thread(hdd_adapter_t *pAdapter)
                                      &pVosPacket,
                                      &pktMetaInfo );
   if (status != VOS_STATUS_SUCCESS && status != VOS_STATUS_E_EMPTY)
+<<<<<<< HEAD
      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_tx_fetch_packet_cbk", __FUNCTION__);
   else
      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_tx_fetch_packet_cbk", __FUNCTION__);
@@ -132,15 +179,38 @@ static void transport_thread(hdd_adapter_t *pAdapter)
      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_tx_low_resource_cbk", __FUNCTION__);
   else
      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_tx_low_resource_cbk", __FUNCTION__);
+=======
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_tx_fetch_packet_cbk", __func__);
+  else
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_tx_fetch_packet_cbk", __func__);
+
+  status = hdd_tx_complete_cbk(pAdapter->pvosContext, &dummyPacket, VOS_STATUS_SUCCESS);
+  if (status != VOS_STATUS_SUCCESS)
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_tx_complete_cbk", __func__);
+  else
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_tx_complete_cbk", __func__);
+
+  status = hdd_tx_low_resource_cbk(pVosPacket, pAdapter);
+  if (status != VOS_STATUS_SUCCESS)
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_tx_low_resource_cbk", __func__);
+  else
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_tx_low_resource_cbk", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
   status = hdd_rx_packet_cbk( pAdapter->pvosContext,
                               &dummyPacket,
                               staId,
                               &pktRxMetaInfo);
   if (status != VOS_STATUS_SUCCESS)
+<<<<<<< HEAD
      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_rx_packet_cbk", __FUNCTION__);
   else
      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_rx_packet_cbk", __FUNCTION__);
+=======
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test FAIL hdd_rx_packet_cbk", __func__);
+  else
+     VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Test PASS hdd_rx_packet_cbk", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 }
 #endif
@@ -189,7 +259,10 @@ static VOS_STATUS hdd_flush_tx_queues( hdd_adapter_t *pAdapter )
    return status;
 }
 
+<<<<<<< HEAD
 #ifdef CONFIG_CFG80211
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter)
 {
    skb_list_node_t *pktNode = NULL;
@@ -210,7 +283,11 @@ static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter)
    if( size == 0 )
    {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                  "%s: NO Packet Pending", __FUNCTION__);
+=======
+                 "%s: NO Packet Pending", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return NULL;
    }
 
@@ -229,7 +306,11 @@ static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter)
    {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                 "%s: Not able to remove Packet from the list",
+<<<<<<< HEAD
                   __FUNCTION__);
+=======
+                  __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       return NULL;
    }
@@ -239,7 +320,11 @@ static struct sk_buff* hdd_mon_tx_fetch_pkt(hdd_adapter_t* pAdapter)
         (size <= HDD_TX_QUEUE_LOW_WATER_MARK) )
    {
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,
+<<<<<<< HEAD
                  "%s: TX queue[%d] re-enabled", __FUNCTION__, ac);
+=======
+                 "%s: TX queue[%d] re-enabled", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pAdapter->isTxSuspended[ac] = VOS_FALSE;      
       /* Enable Queues which we have disabled earlier */
       netif_tx_start_all_queues( pAdapter->dev ); 
@@ -474,7 +559,11 @@ int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
       if ( !VOS_IS_STATUS_SUCCESS( status ) )
       {
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                 "%s:Insert Tx queue failed. Pkt dropped", __FUNCTION__);
+=======
+                "%s:Insert Tx queue failed. Pkt dropped", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          kfree_skb(skb);
          return NETDEV_TX_OK;
       }
@@ -498,16 +587,25 @@ fail:
    kfree_skb(skb);
    return NETDEV_TX_OK;
 }
+<<<<<<< HEAD
 #endif
 /**============================================================================
   @brief hdd_hard_start_xmit() - Function registered with the Linux OS for 
+=======
+/**============================================================================
+  @brief hdd_hard_start_xmit() - Function registered with the Linux OS for
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   transmitting packets. There are 2 versions of this function. One that uses
   locked queue and other that uses lockless queues. Both have been retained to
   do some performance testing
 
   @param skb      : [in]  pointer to OS packet (sk_buff)
   @param dev      : [in] pointer to Libra network device
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @return         : NET_XMIT_DROP if packets are dropped
                   : NET_XMIT_SUCCESS if packet is enqueued succesfully
   ===========================================================================*/
@@ -528,10 +626,23 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 
    ++pAdapter->hdd_stats.hddTxRxStats.txXmitCalled;
 
+<<<<<<< HEAD
    //Get TL AC corresponding to Qdisc queue index/AC.
    ac = hdd_QdiscAcToTlAC[skb->queue_mapping];
 
    //user priority from IP header, which is already extracted and set from 
+=======
+   if (unlikely(netif_queue_stopped(dev))) {
+       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+                  "%s is called when netif TX is disabled", __func__);
+       return NETDEV_TX_BUSY;
+   }
+
+   //Get TL AC corresponding to Qdisc queue index/AC.
+   ac = hdd_QdiscAcToTlAC[skb->queue_mapping];
+
+   //user priority from IP header, which is already extracted and set from
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //select_queue call back function
    up = skb->priority;
 
@@ -539,6 +650,7 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 
 #ifdef HDD_WMM_DEBUG
    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
               "%s: Classified as ac %d up %d", __FUNCTION__, ac, up);
 #endif // HDD_WMM_DEBUG
 
@@ -549,6 +661,21 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
    if((pAdapter->wmm_tx_queue[ac].count + 1) % 10 == 0)
    {
            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s:Queue is Filling up.Inform TL again about pending packets", __FUNCTION__);
+=======
+              "%s: Classified as ac %d up %d", __func__, ac, up);
+#endif // HDD_WMM_DEBUG
+
+   spin_lock(&pAdapter->wmm_tx_queue[ac].lock);
+   /*CR 463598,384996*/
+   /*For every increment of 10 pkts in the queue, we inform TL about pending pkts.
+    *We check for +1 in the logic,to take care of Zero count which
+    *occurs very frequently in low traffic cases */
+   if((pAdapter->wmm_tx_queue[ac].count + 1) % 10 == 0)
+   {
+           /* Use the following debug statement during Engineering Debugging.There are chance that this will lead to a Watchdog Bark
+            * if it is in the mainline code and if the log level is enabled by someone for debugging
+           VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s:Queue is Filling up.Inform TL again about pending packets", __func__);*/
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            WLANTL_STAPktPending( (WLAN_HDD_GET_CTX(pAdapter))->pvosContext, pHddStaCtx->conn_info.staId[0], ac );
    }
    //If we have already reached the max queue size, disable the TX queue
@@ -562,6 +689,7 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
       txSuspended = VOS_TRUE;
    }
 
+<<<<<<< HEAD
    spin_unlock(&pAdapter->wmm_tx_queue[ac].lock);      
    if (VOS_TRUE == txSuspended)
    {
@@ -569,6 +697,15 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
                   "%s: TX queue full for AC=%d Disable OS TX queue", 
                   __FUNCTION__, ac );
       return NETDEV_TX_BUSY;   
+=======
+   spin_unlock(&pAdapter->wmm_tx_queue[ac].lock);
+   if (VOS_TRUE == txSuspended)
+   {
+       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                  "%s: TX queue full for AC=%d Disable OS TX queue",
+                  __func__, ac );
+      return NETDEV_TX_BUSY;
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    //Use the skb->cb field to hold the list node information
@@ -577,7 +714,11 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
    //Stick the OS packet inside this node.
    pktNode->skb = skb;
 
+<<<<<<< HEAD
    //Stick the User Priority inside this node 
+=======
+   //Stick the User Priority inside this node
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pktNode->userPriority = up;
 
 
@@ -590,7 +731,11 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 
    if ( !VOS_IS_STATUS_SUCCESS( status ) )
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s:Insert Tx queue failed. Pkt dropped", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,"%s:Insert Tx queue failed. Pkt dropped", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       ++pAdapter->hdd_stats.hddTxRxStats.txXmitDropped;
       ++pAdapter->hdd_stats.hddTxRxStats.txXmitDroppedAC[ac];
       ++pAdapter->stats.tx_dropped;
@@ -602,7 +747,11 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
    ++pAdapter->hdd_stats.hddTxRxStats.txXmitQueuedAC[ac];
 
    //Make sure we have access to this access category
+<<<<<<< HEAD
    if (likely(pAdapter->hddWmmStatus.wmmAcStatus[ac].wmmAcAccessAllowed) || 
+=======
+   if (likely(pAdapter->hddWmmStatus.wmmAcStatus[ac].wmmAcAccessAllowed) ||
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            ( pHddStaCtx->conn_info.uIsAuthenticated == VOS_FALSE))
    {
       granted = VOS_TRUE;
@@ -615,12 +764,20 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
    if ( granted && ( pktListSize == 1 ))
    {
       //Let TL know we have a packet to send for this AC
+<<<<<<< HEAD
       //VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s:Indicating Packet to TL", __FUNCTION__);
+=======
+      //VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s:Indicating Packet to TL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = WLANTL_STAPktPending( (WLAN_HDD_GET_CTX(pAdapter))->pvosContext, pHddStaCtx->conn_info.staId[0], ac );      
 
       if ( !VOS_IS_STATUS_SUCCESS( status ) )
       {
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, "%s: Failed to signal TL for AC=%d", __FUNCTION__, ac );
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN, "%s: Failed to signal TL for AC=%d", __func__, ac );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          //Remove the packet from queue. It must be at the back of the queue, as TX thread cannot preempt us in the middle
          //as we are in a soft irq context. Also it must be the same packet that we just allocated.
@@ -651,14 +808,21 @@ int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
 void hdd_tx_timeout(struct net_device *dev)
 {
    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
       "%s: Transmission timeout occurred", __FUNCTION__);
+=======
+      "%s: Transmission timeout occurred", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //Getting here implies we disabled the TX queues for too long. Queues are 
    //disabled either because of disassociation or low resource scenarios. In
    //case of disassociation it is ok to ignore this. But if associated, we have
    //do possible recovery here
+<<<<<<< HEAD
 
    //testing underlying data path stall
    sme_transportDebug(0, 1);
+=======
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } 
 
 
@@ -827,7 +991,11 @@ VOS_STATUS hdd_tx_complete_cbk( v_VOID_t *vosContext,
    
    if( ( NULL == vosContext ) || ( NULL == pVosPacket )  )
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE; 
    }
 
@@ -836,7 +1004,11 @@ VOS_STATUS hdd_tx_complete_cbk( v_VOID_t *vosContext,
    if(!VOS_IS_STATUS_SUCCESS( status ))
    {
       //This is bad but still try to free the VOSS resources if we can
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_pkt_return_packet( pVosPacket );
       return VOS_STATUS_E_FAILURE;
    }
@@ -847,7 +1019,11 @@ VOS_STATUS hdd_tx_complete_cbk( v_VOID_t *vosContext,
    pAdapter = hdd_get_adapter(pHddCtx,WLAN_HDD_INFRA_STATION);
    if(pAdapter == NULL)
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else
    {
@@ -860,7 +1036,11 @@ VOS_STATUS hdd_tx_complete_cbk( v_VOID_t *vosContext,
    status = vos_pkt_return_packet( pVosPacket );
    if(!VOS_IS_STATUS_SUCCESS( status ))
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Could not return VOS packet to the pool", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Could not return VOS packet to the pool", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return status;
@@ -906,7 +1086,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
         ( NULL == ppVosPacket ) ||
         ( NULL == pPktMetaInfo ) )
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Null Params being passed", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Null Params being passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
 
@@ -914,7 +1098,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    pHddCtx = (hdd_context_t *)vos_get_context( VOS_MODULE_ID_HDD, vosContext );
    if(pHddCtx == NULL)
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
  
@@ -932,14 +1120,22 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    //Make sure the AC being asked for is sane
    if( ac >= WLANTL_MAX_AC || ac < 0)
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Invalid AC %d passed by TL", __FUNCTION__, ac);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Invalid AC %d passed by TL", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
 
    ++pAdapter->hdd_stats.hddTxRxStats.txFetchedAC[ac];
 
 #ifdef HDD_WMM_DEBUG
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: AC %d passed by TL", __FUNCTION__, ac);
+=======
+   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: AC %d passed by TL", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
    // We find an AC with packets
@@ -954,7 +1150,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchEmpty;
 #ifdef HDD_WMM_DEBUG
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                  "%s: no packets pending", __FUNCTION__);
+=======
+                 "%s: no packets pending", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
       return VOS_STATUS_E_FAILURE;
    }
@@ -966,7 +1166,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
        // yes, so process it
 #ifdef HDD_WMM_DEBUG
        VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                        "%s: AC %d has packets pending", __FUNCTION__, ac);
+=======
+                       "%s: AC %d has packets pending", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
    }
    else
@@ -974,7 +1178,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchEmpty;
 #ifdef HDD_WMM_DEBUG
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
+<<<<<<< HEAD
                    "%s: no packets pending", __FUNCTION__);
+=======
+                   "%s: no packets pending", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
       return VOS_STATUS_E_FAILURE;
    }
@@ -992,7 +1200,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       //Remember VOS is in a low resource situation
       pAdapter->isVosOutOfResource = VOS_TRUE;
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchLowResources;
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: VOSS in Low Resource scenario", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,"%s: VOSS in Low Resource scenario", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //TL will now think we have no more packets in this AC
       return VOS_STATUS_E_FAILURE;
    }
@@ -1011,8 +1223,13 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    else
    {
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchDequeueError;
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, "%s: Error in de-queuing "
          "skb from Tx queue status = %d", __FUNCTION__, status );
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN, "%s: Error in de-queuing "
+         "skb from Tx queue status = %d", __func__, status );
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_pkt_return_packet(pVosPacket);
       return VOS_STATUS_E_FAILURE;
    }
@@ -1021,7 +1238,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    status = vos_pkt_set_os_packet( pVosPacket, skb );
    if (status != VOS_STATUS_SUCCESS)
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Error attaching skb", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,"%s: Error attaching skb", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       vos_pkt_return_packet(pVosPacket);
       ++pAdapter->stats.tx_dropped;
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchDequeueError;
@@ -1032,13 +1253,45 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    //Just being paranoid. To be removed later
    if(pVosPacket == NULL)
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: VOS packet returned by VOSS is NULL", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,"%s: VOS packet returned by VOSS is NULL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       ++pAdapter->stats.tx_dropped;
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchDequeueError;
       kfree_skb(skb);
       return VOS_STATUS_E_FAILURE;
    }
 
+<<<<<<< HEAD
+=======
+#ifdef FEATURE_WLAN_TDLS
+    if (eTDLS_SUPPORT_ENABLED == pHddCtx->tdls_mode)
+    {
+        hdd_station_ctx_t *pHddStaCtx = &pAdapter->sessionCtx.station;
+        u8 mac[6];
+
+        wlan_hdd_tdls_extract_da(skb, mac);
+
+        if (vos_is_macaddr_group((v_MACADDR_t *)mac)) {
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
+                      "broadcast packet, not adding to peer list");
+        } else if (memcmp(pHddStaCtx->conn_info.bssId,
+                            mac, 6) != 0) {
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
+                      "extract mac: " MAC_ADDRESS_STR,
+                      MAC_ADDR_ARRAY(mac) );
+
+            wlan_hdd_tdls_increment_pkt_count(pAdapter, mac, 1);
+        } else {
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
+                       "packet da is bssid, not adding to peer list");
+        }
+    }
+#endif
+
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //Return VOS packet to TL;
    *ppVosPacket = pVosPacket;
 
@@ -1118,8 +1371,13 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
    {
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchDePressured;
       ++pAdapter->hdd_stats.hddTxRxStats.txFetchDePressuredAC[ac];
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_WARN,
                  "%s: TX queue[%d] re-enabled", __FUNCTION__, ac);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
+                 "%s: TX queue[%d] re-enabled", __func__, ac);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pAdapter->isTxSuspended[ac] = VOS_FALSE;      
       netif_tx_wake_queue(netdev_get_tx_queue(pAdapter->dev, 
                                         skb_get_queue_mapping(skb) ));
@@ -1145,7 +1403,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
       if(mutex_lock_interruptible(&pHddCtx->tmInfo.tmOperationLock))
       {
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
+<<<<<<< HEAD
                     "%s: Tm Lock fail", __FUNCTION__);
+=======
+                    "%s: Tm Lock fail", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAILURE;
       }
       if(WLAN_HDD_TM_LEVEL_1 < pHddCtx->tmInfo.currentTmLevel)
@@ -1189,7 +1451,11 @@ VOS_STATUS hdd_tx_fetch_packet_cbk( v_VOID_t *vosContext,
 
 
 #ifdef HDD_WMM_DEBUG
+<<<<<<< HEAD
    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: Valid VOS PKT returned to TL", __FUNCTION__);
+=======
+   VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,"%s: Valid VOS PKT returned to TL", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
    return status;
@@ -1218,7 +1484,11 @@ VOS_STATUS hdd_tx_low_resource_cbk( vos_pkt_t *pVosPacket,
    
    if(pAdapter == NULL)
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
 
@@ -1241,7 +1511,11 @@ VOS_STATUS hdd_tx_low_resource_cbk( vos_pkt_t *pVosPacket,
                                         (WLANTL_ACEnumType)i );
          if( !VOS_IS_STATUS_SUCCESS( status ) )
          {
+<<<<<<< HEAD
             VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure in indicating pkt to TL for ac=%d", __FUNCTION__,i); 
+=======
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure in indicating pkt to TL for ac=%d", __func__,i); 
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
    }
@@ -1281,21 +1555,34 @@ VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
         ( NULL == pVosPacketChain ) ||
         ( NULL == pRxMetaInfo ) )
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Null params being passed", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
 
    pHddCtx = (hdd_context_t *)vos_get_context( VOS_MODULE_ID_HDD, vosContext );
    if ( NULL == pHddCtx )
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: HDD adapter context is Null", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
 
    pAdapter = pHddCtx->sta_to_adapter[staId];
    if( NULL == pAdapter )
    {
+<<<<<<< HEAD
       VOS_ASSERT(0);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: pAdapter is Null for staId %u",
+                 __func__, staId);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAILURE;
    }
 
@@ -1313,7 +1600,11 @@ VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
       if (!((status == VOS_STATUS_SUCCESS) || (status == VOS_STATUS_E_EMPTY)))
       {
          ++pAdapter->hdd_stats.hddTxRxStats.rxDropped;
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure walking packet chain", __FUNCTION__);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure walking packet chain", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAILURE;
       }
 
@@ -1323,7 +1614,11 @@ VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
       if(!VOS_IS_STATUS_SUCCESS( status ))
       {
          ++pAdapter->hdd_stats.hddTxRxStats.rxDropped;
+<<<<<<< HEAD
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __FUNCTION__);
+=======
+         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure extracting skb from vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAILURE;
       }
 
@@ -1334,6 +1629,7 @@ VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
          return eHAL_STATUS_FAILURE;
       }
 
+<<<<<<< HEAD
       skb->dev = pAdapter->dev;
       skb->protocol = eth_type_trans(skb, skb->dev);
       skb->ip_summed = CHECKSUM_UNNECESSARY;
@@ -1342,6 +1638,51 @@ VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
       pAdapter->stats.rx_bytes += skb->len;
 #ifdef WLAN_FEATURE_HOLD_RX_WAKELOCK
       wake_lock_timeout(&pHddCtx->rx_wake_lock, HDD_WAKE_LOCK_DURATION);
+=======
+#ifdef FEATURE_WLAN_TDLS
+    if ((eTDLS_SUPPORT_ENABLED == pHddCtx->tdls_mode) &&
+         0 != pHddCtx->connected_peer_count)
+    {
+        hdd_station_ctx_t *pHddStaCtx = &pAdapter->sessionCtx.station;
+        u8 mac[6];
+
+        wlan_hdd_tdls_extract_sa(skb, mac);
+
+        if (vos_is_macaddr_group((v_MACADDR_t *)mac)) {
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
+                      "rx broadcast packet, not adding to peer list");
+        } else if (memcmp(pHddStaCtx->conn_info.bssId,
+                            mac, 6) != 0) {
+            hddTdlsPeer_t *curr_peer;
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
+                      "rx extract mac:" MAC_ADDRESS_STR,
+                      MAC_ADDR_ARRAY(mac) );
+            curr_peer = wlan_hdd_tdls_find_peer(pAdapter, mac);
+            if ((NULL != curr_peer) && (eTDLS_LINK_CONNECTED == curr_peer->link_status)
+                 && (TRUE == pRxMetaInfo->isStaTdls))
+            {
+                wlan_hdd_tdls_increment_pkt_count(pAdapter, mac, 0);
+                VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,"rssi is %d", pRxMetaInfo->rssiAvg);
+                wlan_hdd_tdls_set_rssi (pAdapter, mac, pRxMetaInfo->rssiAvg);
+            }
+        } else {
+            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_MED,
+                       "rx packet sa is bssid, not adding to peer list");
+        }
+    }
+#endif
+
+      skb->dev = pAdapter->dev;
+      skb->protocol = eth_type_trans(skb, skb->dev);
+      skb->ip_summed = CHECKSUM_NONE;
+      ++pAdapter->hdd_stats.hddTxRxStats.rxPackets;
+      ++pAdapter->stats.rx_packets;
+      pAdapter->stats.rx_bytes += skb->len;
+#ifdef WLAN_OPEN_SOURCE
+#ifdef WLAN_FEATURE_HOLD_RX_WAKELOCK
+      wake_lock_timeout(&pHddCtx->rx_wake_lock, msecs_to_jiffies(HDD_WAKE_LOCK_DURATION));
+#endif
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
       rxstat = netif_rx_ni(skb);
       if (NET_RX_SUCCESS == rxstat)
@@ -1361,7 +1702,11 @@ VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
    status = vos_pkt_return_packet( pVosPacketChain );
    if(!VOS_IS_STATUS_SUCCESS( status ))
    {
+<<<<<<< HEAD
       VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure returning vos pkt", __FUNCTION__);
+=======
+      VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,"%s: Failure returning vos pkt", __func__);
+>>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    
    pAdapter->dev->last_rx = jiffies;
