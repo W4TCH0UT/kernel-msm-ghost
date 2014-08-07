@@ -1,0 +1,9 @@
+--- fs/fscache/stats.c
++++ fs/fscache/stats.c
+@@ -276,5 +276,5 @@
+ 	.open		= fscache_stats_open,
+ 	.read		= seq_read,
+ 	.llseek		= seq_lseek,
+-	.release	= seq_release,
++	.release        = single_release,
+ };
