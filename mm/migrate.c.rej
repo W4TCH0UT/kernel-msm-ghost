@@ -1,0 +1,11 @@
+--- mm/migrate.c
++++ mm/migrate.c
+@@ -145,7 +145,7 @@
+ 	if (PageHuge(new))
+ 		pte = pte_mkhuge(pte);
+ #endif
+-	flush_cache_page(vma, addr, pte_pfn(pte));
++	flush_dcache_page(new);
+ 	set_pte_at(mm, addr, ptep, pte);
+ 
+ 	if (PageHuge(new)) {
