@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -81,15 +72,7 @@
 #define WPAL_MIN( _x, _y ) ( ( (_x) < (_y) ) ? (_x) : (_y)  )  
 
 // macro to get the ceiling of an integer division operation...
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define WPAL_CEIL_DIV( _a, _b ) ( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ) 
-=======
 #define WPAL_CEIL_DIV( _a, _b ) (( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WPAL_CEIL_DIV( _a, _b ) (( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // macro to return the floor of an integer division operation
 #define WPAL_FLOOR_DIV( _a, _b ) ( ( (_a) - ( (_a) % (_b) ) ) / (_b) )
@@ -98,18 +81,8 @@
    ( ( ( (_x) << 8 ) & 0xFF00 ) | ( ( (_x) >> 8 ) & 0x00FF ) )
 
 #define WPAL_SWAP_U32(_x) \
-<<<<<<< HEAD
-<<<<<<< HEAD
-   ( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
-   ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) )
-=======
   (( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
    ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  (( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
-   ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // Endian operations for Big Endian and Small Endian modes
 #ifndef ANI_BIG_BYTE_ENDIAN
@@ -351,11 +324,6 @@ wpt_status wpalRivaSubystemRestart(void);
        NONE
 ---------------------------------------------------------------------------*/
 void wpalWlanReload(void);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*---------------------------------------------------------------------------
     wpalWcnssResetIntr -  Trigger the reset FIQ to Riva
@@ -382,8 +350,4 @@ void wpalWcnssResetIntr(void);
 void wpalFwDumpReq(wpt_uint32 cmd, wpt_uint32 arg1, wpt_uint32 arg2,
                     wpt_uint32 arg3, wpt_uint32 arg4);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // __WLAN_QCT_PAL_API_H

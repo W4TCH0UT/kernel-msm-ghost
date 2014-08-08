@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -63,31 +54,12 @@
 #define __LIM_SECURITY_UTILS_H
 #include "sirMacProtDef.h" //for tSirMacAuthFrameBody
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define LIM_ENCR_AUTH_BODY_LEN  sizeof(tSirMacAuthFrameBody) + \
-                                SIR_MAC_WEP_IV_LENGTH + \
-                                SIR_MAC_WEP_ICV_LENGTH
-struct tLimPreAuthNode;
-
-#ifdef WLAN_SOFTAP_FEATURE
-tANI_U8        limIsAuthAlgoSupported(tpAniSirGlobal, tAniAuthType, tpPESession);
-#else
-tANI_U8        limIsAuthAlgoSupported(tpAniSirGlobal, tAniAuthType);
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define LIM_ENCR_AUTH_BODY_LEN  (sizeof(tSirMacAuthFrameBody) + \
                                 SIR_MAC_WEP_IV_LENGTH + \
                                 SIR_MAC_WEP_ICV_LENGTH)
 struct tLimPreAuthNode;
 
 tANI_U8        limIsAuthAlgoSupported(tpAniSirGlobal, tAniAuthType, tpPESession);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // MAC based authentication related functions
 void               limInitPreAuthList(tpAniSirGlobal);

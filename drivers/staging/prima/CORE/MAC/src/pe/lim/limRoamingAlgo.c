@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -61,24 +52,6 @@
  *
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP)
-#include "wniCfgAp.h"
-#else
-#include "wniCfgSta.h"
-#endif
-#include "cfgApi.h"
-#include "limTypes.h"
-#include "limTimerUtils.h"
-
-
-
-
-#if (WNI_POLARIS_FW_PRODUCT == WLAN_STA) || defined(ANI_AP_CLIENT_SDK)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wniCfgSta.h"
 #include "cfgApi.h"
 #include "limTypes.h"
@@ -87,10 +60,6 @@
 
 
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** ----------------------------------------------------------------------
 \fn      limSelectsBackgroundScanMode() 
 \brief   This function is called by limIsBackgroundScanAllowed(). 
@@ -110,15 +79,7 @@ tSirBackgroundScanMode limSelectsBackgroundScanMode(tpAniSirGlobal pMac)
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_MAX_CONSECUTIVE_BACKGROUND_SCAN_FAILURE, &cfgVal) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Fail to get WNI_CFG_MAX_CONSECUTIVE_BACKGROUND_SCAN_FAILURE value\n"));
-=======
         limLog(pMac, LOGP, FL("Fail to get WNI_CFG_MAX_CONSECUTIVE_BACKGROUND_SCAN_FAILURE value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Fail to get WNI_CFG_MAX_CONSECUTIVE_BACKGROUND_SCAN_FAILURE value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_NORMAL_BACKGROUND_SCAN;
     }
   
@@ -133,15 +94,7 @@ tSirBackgroundScanMode limSelectsBackgroundScanMode(tpAniSirGlobal pMac)
     {
         pMac->lim.gLimNumOfForcedBkgndScan += 1;
         limLog(pMac, LOGE,
-<<<<<<< HEAD
-<<<<<<< HEAD
-               FL("Had %d consec scan fail(when expect < %d). Trigger AGGRESSIVE bkgnd scan.\n"),
-=======
                FL("Had %d consec scan fail(when expect < %d). Trigger AGGRESSIVE bkgnd scan."),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               FL("Had %d consec scan fail(when expect < %d). Trigger AGGRESSIVE bkgnd scan."),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->lim.gLimNumOfConsecutiveBkgndScanFailure, cfgVal);
         return eSIR_AGGRESSIVE_BACKGROUND_SCAN;
     }
@@ -214,28 +167,12 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
     tSirMacAddr      bcAddr = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
     tSirBackgroundScanMode   backgroundScan;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    PELOG1(limLog(pMac, LOG1, FL("Background Scan: %d success, %d consec fail \n"),
-=======
     PELOG1(limLog(pMac, LOG1, FL("Background Scan: %d success, %d consec fail "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    PELOG1(limLog(pMac, LOG1, FL("Background Scan: %d success, %d consec fail "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->lim.gLimNumOfBackgroundScanSuccess,  pMac->lim.gLimNumOfConsecutiveBkgndScanFailure);)
 
     if (! limIsBackgroundScanAllowed(pMac))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOG1(limLog(pMac, LOG1, FL("Skipping Background Scan \n"));)
-=======
         PELOG1(limLog(pMac, LOG1, FL("Skipping Background Scan "));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOG1(limLog(pMac, LOG1, FL("Skipping Background Scan "));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -248,15 +185,7 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
          * Could not get Valid channel list from CFG.
          * Log error.
          */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("could not retrieve valid channel list\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("could not retrieve valid channel list"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("could not retrieve valid channel list"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -274,15 +203,7 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
                     (tANI_U32 *) &ssidLen) != eSIR_SUCCESS)
     {
         /// Could not get SSID from CFG. Log error.
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("could not retrieve SSID\n"));
-=======
         limLog(pMac, LOGP, FL("could not retrieve SSID"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("could not retrieve SSID"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     smeScanReq.ssId[0].length = (tANI_U8) ssidLen;
     smeScanReq.numSsid = 1;
@@ -294,15 +215,7 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
                   &smeScanReq.minChannelTime) != eSIR_SUCCESS)
     {
         /// Could not get minChlTime value from CFG. Log error.
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("could not retrieve minChlTime value\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("could not retrieve minChlTime value"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("could not retrieve minChlTime value"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -311,15 +224,7 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
                   &smeScanReq.maxChannelTime) != eSIR_SUCCESS)
     {
         /// Could not get maxChlTime value from CFG. Log error.
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("could not retrieve maxChlTime value\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("could not retrieve maxChlTime value"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("could not retrieve maxChlTime value"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return;
     }
@@ -343,61 +248,28 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
     {
         pMac->lim.gLimBackgroundScanChannelId = 0;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("Skipping Background Scan since the channel list is exhausted.\n"));)
-        PELOGE(limLog(pMac, LOGE, FL("SME should send WNI_CFG_BACKGROUND_SCAN_PERIOD indication to start the background scan again.\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("Skipping Background Scan since the channel list is exhausted."));)
         PELOGE(limLog(pMac, LOGE, FL("SME should send WNI_CFG_BACKGROUND_SCAN_PERIOD indication to start the background scan again."));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("Skipping Background Scan since the channel list is exhausted."));)
-        PELOGE(limLog(pMac, LOGE, FL("SME should send WNI_CFG_BACKGROUND_SCAN_PERIOD indication to start the background scan again."));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Stop the BG scan timer here. SME should send WNI_CFG_BACKGROUND_SCAN_PERIOD 
          * indication to start the background scan again.
          */
         if (TX_TIMER_VALID(pMac->lim.limTimers.gLimBackgroundScanTimer))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, NO_SESSION, eLIM_BACKGROUND_SCAN_TIMER));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            MTRACE(macTrace(pMac, TRACE_CODE_TIMER_DEACTIVATE, NO_SESSION, eLIM_BACKGROUND_SCAN_TIMER));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (tx_timer_deactivate(&pMac->lim.limTimers.gLimBackgroundScanTimer)
                             != TX_SUCCESS)
             {
                 // Could not deactivate BackgroundScanTimer timer.
                 // Log error
                 limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   FL("unable to deactivate BackgroundScanTimer timer\n"));
-=======
                    FL("unable to deactivate BackgroundScanTimer timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   FL("unable to deactivate BackgroundScanTimer timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
 
         pMac->lim.gLimBackgroundScanTerminate = TRUE;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("Send dummy scan with returnFreshResults as 0 to report BG scan results to SME.\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("Send dummy scan with returnFreshResults as 0 to report BG scan results to SME."));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("Send dummy scan with returnFreshResults as 0 to report BG scan results to SME."));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     smeScanReq.channelList.channelNumber[0] =
@@ -407,15 +279,7 @@ void limTriggerBackgroundScan(tpAniSirGlobal pMac)
     smeScanReq.uIEFieldOffset = sizeof(tSirSmeScanReq);
     
     backgroundScan = limSelectsBackgroundScanMode(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    PELOG1(limLog(pMac, LOG1, FL("Performing (mode %d) Background Scan \n"), backgroundScan);)
-=======
     PELOG1(limLog(pMac, LOG1, FL("Performing (mode %d) Background Scan "), backgroundScan);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    PELOG1(limLog(pMac, LOG1, FL("Performing (mode %d) Background Scan "), backgroundScan);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smeScanReq.backgroundScanMode = backgroundScan;
     
     //determine whether to send the results or not, If so, notify the BG scan results to SME
@@ -443,15 +307,7 @@ void limAbortBackgroundScan(tpAniSirGlobal pMac)
 
     if(pMac->lim.gLimBackgroundScanTerminate == FALSE) 
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGE, FL("Abort Background Scan \n"));
-=======
         limLog(pMac, LOGE, FL("Abort Background Scan "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGE, FL("Abort Background Scan "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (TX_TIMER_VALID(pMac->lim.limTimers.gLimBackgroundScanTimer))
         {
             limDeactivateAndChangeTimer(pMac, eLIM_BACKGROUND_SCAN_TIMER); 
@@ -476,10 +332,3 @@ void limAbortBackgroundScan(tpAniSirGlobal pMac)
     return;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

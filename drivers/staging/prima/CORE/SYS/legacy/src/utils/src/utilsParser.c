@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -49,13 +40,6 @@
  */
 
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- *
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file utilsParser.cc contains the code for parsing
  * 802.11 messages.
@@ -181,13 +165,6 @@ tSirRetStatus ConvertWscOpaque( tpAniSirGlobal      pMac,
     return eSIR_SUCCESS;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus ConvertP2POpaque( tpAniSirGlobal      pMac,
                                 tSirAddie           *pOld,
                                 tDot11fIEP2PIEOpaque *pNew )
@@ -207,13 +184,6 @@ tSirRetStatus ConvertP2POpaque( tpAniSirGlobal      pMac,
 
     return eSIR_SUCCESS;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_WFD
 tSirRetStatus ConvertWFDOpaque( tpAniSirGlobal      pMac,
@@ -450,15 +420,7 @@ tSirRetStatus ConvertTCLAS(tpAniSirGlobal  pMac,
                                  tSirTclasInfo  *pOld,
                                  tDot11fIETCLAS *pNew)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U32 length;
-=======
     tANI_U32 length = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U32 length = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if ( DOT11F_FAILED( dot11fGetPackedIETCLAS( pMac, pNew, &length ) ) )
     {
@@ -548,15 +510,7 @@ tSirRetStatus ConvertWMMTCLAS(tpAniSirGlobal    pMac,
                                     tSirTclasInfo     *pOld,
                                     tDot11fIEWMMTCLAS *pNew)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U32 length;
-=======
     tANI_U32 length = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U32 length = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if ( DOT11F_FAILED( dot11fGetPackedIEWMMTCLAS( pMac, pNew, &length ) ) )
     {

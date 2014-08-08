@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -124,15 +115,7 @@
 #define WLANBAP_LLC_OUI_SIZE                   3
 
 /*Offset of the protocol type field inside the LLC/SNAP header*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define WLANBAP_LLC_PROTO_TYPE_OFFSET  WLANBAP_LLC_OUI_OFFSET +  WLANBAP_LLC_OUI_SIZE
-=======
 #define WLANBAP_LLC_PROTO_TYPE_OFFSET  (WLANBAP_LLC_OUI_OFFSET +  WLANBAP_LLC_OUI_SIZE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WLANBAP_LLC_PROTO_TYPE_OFFSET  (WLANBAP_LLC_OUI_OFFSET +  WLANBAP_LLC_OUI_SIZE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*Size of the protocol type field inside the LLC/SNAP header*/
 #define WLANBAP_LLC_PROTO_TYPE_SIZE            2
@@ -169,20 +152,6 @@ static v_U8_t WLANBAP_LLC_HEADER[] =  {0xAA, 0xAA, 0x03, 0x00, 0x00, 0x00 };
 //#define DBGLOG printf
 #define DUMPLOG_ON
 #ifdef DUMPLOG_ON
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define DUMPLOG(n, name1, name2, aStr, size) \
-    if (1) \
-{\
-    int i;\
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,"%d. %s: %s = \n", n, name1, name2); \
-    for (i = 0; i < size; i++) \
-       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,"%2.2x%s", ((unsigned char *)aStr)[i], i % 16 == 15 ? "\n" : " "); \
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,"\n"); \
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define DUMPLOG(n, name1, name2, aStr, size) do {                       \
         int i;                                                          \
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,"%d. %s: %s = \n", n, name1, name2); \
@@ -190,10 +159,6 @@ static v_U8_t WLANBAP_LLC_HEADER[] =  {0xAA, 0xAA, 0x03, 0x00, 0x00, 0x00 };
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,"%2.2x%s", ((unsigned char *)aStr)[i], i % 16 == 15 ? "\n" : " "); \
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,"\n");      \
     } while (0)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #define DUMPLOG(n, name1, name2, aStr, size)
 #endif
@@ -203,20 +168,6 @@ static v_U8_t WLANBAP_LLC_HEADER[] =  {0xAA, 0xAA, 0x03, 0x00, 0x00, 0x00 };
 #define DBGLOG printf
 #define DUMPLOG
 #if defined DUMPLOG
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define DUMPLOG(n, name1, name2, aStr, size) \
-    if (1) \
-{\
-    int i;\
-    DBGLOG("%d. %s: %s = \n", n, name1, name2); \
-    for (i = 0; i < size; i++) \
-        DBGLOG("%2.2x%s", ((unsigned char *)aStr)[i], i % 16 == 15 ? "\n" : " "); \
-    DBGLOG("\n"); \
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define DUMPLOG(n, name1, name2, aStr, size) do {                       \
         int i;                                                          \
         DBGLOG("%d. %s: %s = \n", n, name1, name2);                     \
@@ -224,10 +175,6 @@ static v_U8_t WLANBAP_LLC_HEADER[] =  {0xAA, 0xAA, 0x03, 0x00, 0x00, 0x00 };
             DBGLOG("%2.2x%s", ((unsigned char *)aStr)[i], i % 16 == 15 ? "\n" : " "); \
         DBGLOG("\n");                                                   \
     } while (0)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #define DUMPLOG(n, name1, name2, aStr, size)
 #endif
@@ -392,15 +339,7 @@ WLANBAP_XlateTxDataPkt
     if ( NULL == pBtampCtx) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "Invalid BAP handle value in %s", __FUNCTION__);
-=======
                      "Invalid BAP handle value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "Invalid BAP handle value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -424,15 +363,7 @@ WLANBAP_XlateTxDataPkt
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
                 "WLAN BAP: phy_link_handle mismatch in %s phy_link_handle=%d hciACLHeader.phyLinkHandle=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, phy_link_handle, hciACLHeader.phyLinkHandle);
-=======
                 __func__, phy_link_handle, hciACLHeader.phyLinkHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, phy_link_handle, hciACLHeader.phyLinkHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_INVAL;
     }
 
@@ -447,15 +378,7 @@ WLANBAP_XlateTxDataPkt
     if ( VOS_STATUS_SUCCESS != vosStatus ) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "Unable to retrieve STA Id from BAP context and phy_link_handle in %s", __FUNCTION__);
-=======
                      "Unable to retrieve STA Id from BAP context and phy_link_handle in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "Unable to retrieve STA Id from BAP context and phy_link_handle in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -466,15 +389,7 @@ WLANBAP_XlateTxDataPkt
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
                 "WLAN BAP: Invalid logical link handle (%d) in %s. Corrected.", 
                 hciACLHeader.logLinkHandle,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         // JEZ090123: Insure that the logical link value is good
         hciACLHeader.logLinkHandle = 1;
@@ -492,15 +407,7 @@ WLANBAP_XlateTxDataPkt
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
                 "WLAN BAP: Invalid logical link entry in %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return VOS_STATUS_E_INVAL;
     }
@@ -610,15 +517,7 @@ WLANBAP_GetAcFromTxDataPkt
     if (( NULL == btampHandle) || (NULL == pHciData) || (NULL == pucAC))
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "Invalid params in %s", __FUNCTION__);
-=======
                      "Invalid params in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "Invalid params in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
     pBtampCtx = (ptBtampContext) btampHandle;
@@ -630,15 +529,7 @@ WLANBAP_GetAcFromTxDataPkt
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
                 "WLAN BAP: Invalid logical link handle (%d) in %s", 
                 hciACLHeader.logLinkHandle,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return VOS_STATUS_E_INVAL;
     }
@@ -653,15 +544,7 @@ WLANBAP_GetAcFromTxDataPkt
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
                 "WLAN BAP: Invalid logical link entry in %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return VOS_STATUS_E_INVAL;
     }
@@ -728,15 +611,7 @@ WLANBAP_XlateRxDataPkt
     if ( NULL == pBtampCtx) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "Invalid BAP handle value in %s", __FUNCTION__);
-=======
                      "Invalid BAP handle value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "Invalid BAP handle value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -781,15 +656,7 @@ WLANBAP_XlateRxDataPkt
     {
 
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "Invalid LLC header for BT-AMP packet in %s", __FUNCTION__);
-=======
                      "Invalid LLC header for BT-AMP packet in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "Invalid LLC header for BT-AMP packet in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 #endif //BAP_DEBUG
@@ -806,15 +673,7 @@ WLANBAP_XlateRxDataPkt
     {
 
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "Invalid (non-data) frame type in %s", __FUNCTION__);
-=======
                      "Invalid (non-data) frame type in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "Invalid (non-data) frame type in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -829,15 +688,7 @@ WLANBAP_XlateRxDataPkt
     {
 
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "MAC address mismatch in %s", __FUNCTION__);
-=======
                      "MAC address mismatch in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "MAC address mismatch in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 #endif //BAP_DEBUG
@@ -1039,15 +890,7 @@ WLANBAP_STARxCB
     protoType = vos_be16_to_cpu(protoType);
     
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "%s: received : %d, => BAP",__FUNCTION__,
-=======
             "%s: received : %d, => BAP",__func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "%s: received : %d, => BAP",__func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  protoType);
     
     if(WLANBAP_BT_AMP_TYPE_DATA == protoType)
@@ -1076,15 +919,7 @@ WLANBAP_STARxCB
     {
           VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                 "%s: link Supervision packet received over TL: %d, => BAP",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     __FUNCTION__,protoType);
-=======
                      __func__,protoType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     __func__,protoType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           btampHandle = (ptBtampHandle)bapContext; 
           vosStatus = WLANBAP_RxProcLsPkt(
                         btampHandle,
@@ -1162,30 +997,14 @@ WLANBAP_TxCompCB
     if ( NULL == vosDataBuff) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "Invalid vosDataBuff value in %s", __FUNCTION__);
-=======
                 "Invalid vosDataBuff value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "Invalid vosDataBuff value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
     if ( NULL == bapContext) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "Invalid bapContext value in %s", __FUNCTION__);
-=======
                 "Invalid bapContext value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "Invalid bapContext value in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_pkt_return_packet( vosDataBuff ); 
         return VOS_STATUS_E_FAULT;
     }
@@ -1210,15 +1029,7 @@ WLANBAP_TxCompCB
 #ifdef BAP_DEBUG
     /* Trace the bapContext referenced. */
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "WLAN BAP Context Monitor: bapContext value = %p in %s:%d. vosDataBuff=%p", bapContext, __FUNCTION__, __LINE__, vosDataBuff );
-=======
               "WLAN BAP Context Monitor: bapContext value = %p in %s:%d. vosDataBuff=%p", bapContext, __func__, __LINE__, vosDataBuff );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-              "WLAN BAP Context Monitor: bapContext value = %p in %s:%d. vosDataBuff=%p", bapContext, __func__, __LINE__, vosDataBuff );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //BAP_DEBUG
 
     // Sanity check the log_link_handle value 
@@ -1233,15 +1044,7 @@ WLANBAP_TxCompCB
     } else 
     {
        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "In %s:%d: Invalid logical link handle: %d", __FUNCTION__, __LINE__, hciACLHeader.logLinkHandle);
-=======
                    "In %s:%d: Invalid logical link handle: %d", __func__, __LINE__, hciACLHeader.logLinkHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "In %s:%d: Invalid logical link handle: %d", __func__, __LINE__, hciACLHeader.logLinkHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* Invoke the callback that BSL registered with me */ 
@@ -1377,15 +1180,7 @@ WLANBAP_STAPktPending
 #ifdef BAP_DEBUG
     /* Trace the tBtampCtx being passed in. */
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "WLAN BAP Context Monitor: pBtampCtx value = %p in %s:%d", pBtampCtx, __FUNCTION__, __LINE__ );
-=======
               "WLAN BAP Context Monitor: pBtampCtx value = %p in %s:%d", pBtampCtx, __func__, __LINE__ );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-              "WLAN BAP Context Monitor: pBtampCtx value = %p in %s:%d", pBtampCtx, __func__, __LINE__ );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //BAP_DEBUG
 
     /*------------------------------------------------------------------------

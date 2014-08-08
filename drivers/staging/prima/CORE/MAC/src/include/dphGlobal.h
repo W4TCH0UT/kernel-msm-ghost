@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -271,13 +262,6 @@ typedef struct sDphQueueAttr
 } tDphQueueAttr, *tpDphQueueAttr;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined( FEATURE_WLAN_INTEGRATED_SOC )
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sCfgTrafficClass {
 
@@ -340,13 +324,6 @@ typedef struct sCfgTrafficClass {
 
 } tCfgTrafficClass;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* EATURE_WLAN_INTEGRATED_SOC */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /// STA state node
@@ -410,27 +387,9 @@ typedef struct sDphHashNode
 
     tANI_U8  fAniCount:1;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP)
-
-    tANI_U8   hcfEnabled : 1;
-
-#else
 
     tANI_U8   rsvd:1;
 
-#endif
-=======
-
-    tANI_U8   rsvd:1;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-    tANI_U8   rsvd:1;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     /// Fragmentation size
@@ -658,23 +617,12 @@ typedef struct sDphHashNode
 
 #ifdef WLAN_FEATURE_11AC
     tANI_U8  vhtSupportedChannelWidthSet;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8  vhtBeamFormerCapable;
 #endif
 
     tANI_U8 htLdpcCapable;
     tANI_U8 vhtLdpcCapable;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* When a station with already an existing dph entry tries to 
 
      * associate again, the old dph entry will be zeroed out except 

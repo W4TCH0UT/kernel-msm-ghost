@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -388,13 +379,6 @@ VOS_STATUS WLANTL_ChainFrontPkts
    WLANTL_CbType          *pTLCb
 );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
  
    FUNCTION    WLANTL_FillReplayCounter
@@ -425,12 +409,5 @@ void WLANTL_FillReplayCounter
    v_U64_t                replayCounter,
    v_U8_t                 ucSlotIndex
 );
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /*ANI_CHIPSET_VOLANS*/
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif /* #ifndef WLAN_QCT_TLI_H */

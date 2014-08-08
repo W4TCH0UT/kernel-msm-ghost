@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -212,15 +203,7 @@ WLANBAP_RoamCallback
     v_U8_t status;    /* return the BT-AMP status here */
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before switch on roamStatus = %d", __FUNCTION__, roamStatus);
-=======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before switch on roamStatus = %d", __func__, roamStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before switch on roamStatus = %d", __func__, roamStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (roamStatus) {
         //JEZ081110: For testing purposes, with Infra STA as BT STA, this 
@@ -229,15 +212,7 @@ WLANBAP_RoamCallback
         //case eCSR_ROAM_ROAMING_START: 
         case eCSR_ROAM_ASSOCIATION_START: 
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_STARTED */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_ROAMING_START", roamResult);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_ROAMING_START", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_ROAMING_START", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // This only gets called when CSR decides to roam on its own - due to lostlink. 
 #if 0
             if ((pCsrRoamInfo) && (pCsrRoamInfo->pConnectedProfile) && (pCsrRoamInfo->pConnectedProfile->pBssDesc))
@@ -245,15 +220,7 @@ WLANBAP_RoamCallback
                 memcpy(bssid.ether_addr_octet, pCsrRoamInfo->pConnectedProfile->pBssDesc->bssId,
                        sizeof(tSirMacAddr)); 
                 apple80211Interface->willRoam(&bssid);  // Return result isn't significant 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: willRoam returns\n", __FUNCTION__);
-=======
                 VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: willRoam returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: willRoam returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 #endif //0
             /* Fill in the event structure */ 
@@ -269,15 +236,7 @@ WLANBAP_RoamCallback
 
         case eCSR_ROAM_SET_KEY_COMPLETE:
             /* bapRoamCompleteCallback with eCSR_ROAM_SET_KEY_COMPLETE */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __FUNCTION__, "eCSR_ROAM_SET_KEY_COMPLETE", roamStatus);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __func__, "eCSR_ROAM_SET_KEY_COMPLETE", roamStatus);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __func__, "eCSR_ROAM_SET_KEY_COMPLETE", roamStatus);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_KEY_SET_SUCCESS; 
@@ -292,23 +251,10 @@ WLANBAP_RoamCallback
 
         case eCSR_ROAM_DISASSOCIATED: 
             /* bapRoamCompleteCallback with eCSR_ROAM_DISASSOCIATED */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __FUNCTION__, "eCSR_ROAM_DISASSOCIATED", roamStatus);   
-        case eCSR_ROAM_LOSTLINK:
-            /* bapRoamCompleteCallback with eCSR_ROAM_LOSTLINK */
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __FUNCTION__, "eCSR_ROAM_LOSTLINK", roamStatus);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __func__, "eCSR_ROAM_DISASSOCIATED", roamStatus);   
         case eCSR_ROAM_LOSTLINK:
             /* bapRoamCompleteCallback with eCSR_ROAM_LOSTLINK */
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamStatus = %s (%d)", __func__, "eCSR_ROAM_LOSTLINK", roamStatus);   
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             if (roamResult != eCSR_ROAM_RESULT_NONE) {
                 /* Fill in the event structure */ 
@@ -324,49 +270,20 @@ WLANBAP_RoamCallback
             break;
 
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, unsupported CSR roamStatus = %d", __FUNCTION__, roamStatus);
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, unsupported CSR roamStatus = %d", __func__, roamStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, unsupported CSR roamStatus = %d", __func__, roamStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             break;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before switch on roamResult = %d", __FUNCTION__, roamResult);
-=======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before switch on roamResult = %d", __func__, roamResult);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before switch on roamResult = %d", __func__, roamResult);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (roamResult) {
         //JEZ081110: Commented out for testing. Test relies upon IBSS. 
         case eCSR_ROAM_RESULT_IBSS_STARTED:  
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_STARTED", roamResult);   
-        case eCSR_ROAM_RESULT_WDS_STARTED: 
-            /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_STARTED */
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_STARTED", roamResult);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_IBSS_STARTED", roamResult);   
         case eCSR_ROAM_RESULT_WDS_STARTED: 
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_STARTED */
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_STARTED", roamResult);   
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_START_BSS_SUCCESS; 
@@ -385,29 +302,13 @@ WLANBAP_RoamCallback
         //case eCSR_ROAM_RESULT_NOT_ASSOCIATED:
         //case eCSR_ROAM_RESULT_IBSS_START_FAILED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_FAILURE or eCSR_ROAM_RESULT_NOT_ASSOCIATED */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_FAILURE", roamResult);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_FAILURE", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_FAILURE", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_BTAMP_UT_RF
             break;
 #endif
         case eCSR_ROAM_RESULT_WDS_START_FAILED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_START_FAILED */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_START_FAILED", roamResult);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_START_FAILED", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_START_FAILED", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             /* I don't think I should signal a eCSR_ROAM_RESULT_FAILURE 
@@ -425,27 +326,12 @@ WLANBAP_RoamCallback
 
         //JEZ081110: Commented out for testing. This handles both Infra STA and IBSS STA.
         case eCSR_ROAM_RESULT_IBSS_CONNECT:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_CONNECT", roamResult);   
-        case eCSR_ROAM_RESULT_ASSOCIATED:
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_ASSOCIATED", roamResult);   
-        case eCSR_ROAM_RESULT_WDS_ASSOCIATED:
-            /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_ASSOCIATED */
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_ASSOCIATED", roamResult);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT", roamResult);   
         case eCSR_ROAM_RESULT_ASSOCIATED:
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_ASSOCIATED", roamResult);   
         case eCSR_ROAM_RESULT_WDS_ASSOCIATED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_ASSOCIATED */
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_ASSOCIATED", roamResult);   
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_CONNECT_COMPLETED;
@@ -462,37 +348,16 @@ WLANBAP_RoamCallback
         //JEZ081110: But I cannot rely upon IBSS for the initial testing. 
         //case eCSR_ROAM_RESULT_FAILURE: 
         case eCSR_ROAM_RESULT_IBSS_START_FAILED:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_START_FAILED", roamResult);   
-        case eCSR_ROAM_RESULT_NOT_ASSOCIATED:
-            /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_FAILURE or eCSR_ROAM_RESULT_NOT_ASSOCIATED */
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED", roamResult);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_IBSS_START_FAILED", roamResult);   
         case eCSR_ROAM_RESULT_NOT_ASSOCIATED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_FAILURE or eCSR_ROAM_RESULT_NOT_ASSOCIATED */
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED", roamResult);   
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_BTAMP_UT_RF
             break;
 #endif
         case eCSR_ROAM_RESULT_WDS_NOT_ASSOCIATED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_NOT_ASSOCIATED */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_NOT_ASSOCIATED", roamResult);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_NOT_ASSOCIATED", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_NOT_ASSOCIATED", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_CONNECT_FAILED; 
@@ -508,29 +373,13 @@ WLANBAP_RoamCallback
         //JEZ081110: I think I have to check for the bssType to
         //differentiate between IBSS Start and IBSS Join success.  
         //case eCSR_ROAM_RESULT_IBSS_CONNECT:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_CONNECT", roamResult);   
-=======
             //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            //VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         //JEZ081110: Commented out for testing. Test relies upon IBSS. 
         // No longer commented out. 
         case eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND", roamResult);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_CONNECT_INDICATION;
@@ -551,15 +400,7 @@ WLANBAP_RoamCallback
 #if 0
         case eCSR_ROAM_RESULT_KEY_SET: 
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_KEY_SET */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_KEY_SET", roamResult);   
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_KEY_SET", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_KEY_SET", roamResult);   
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_KEY_SET_SUCCESS; 
@@ -574,23 +415,10 @@ WLANBAP_RoamCallback
 #endif //0
 
         case eCSR_ROAM_RESULT_DISASSOC_IND:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_DISASSOC_IND", roamResult);   
-        case eCSR_ROAM_RESULT_WDS_DISASSOCIATED:
-            /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_DISASSOCIATED */
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_DISASSOCIATED", roamResult);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_DISASSOC_IND", roamResult);   
         case eCSR_ROAM_RESULT_WDS_DISASSOCIATED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_DISASSOCIATED */
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_DISASSOCIATED", roamResult);   
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event =  eWLAN_BAP_MAC_INDICATES_MEDIA_DISCONNECTION; 
@@ -614,23 +442,10 @@ WLANBAP_RoamCallback
 
         //JEZ081110: Commented out for testing. Test relies upon IBSS. 
         case eCSR_ROAM_RESULT_IBSS_INACTIVE:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_INACTIVE", roamResult);   
-        case eCSR_ROAM_RESULT_WDS_STOPPED:
-            /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_STOPPED */
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __FUNCTION__, "eCSR_ROAM_RESULT_WDS_STOPPED", roamResult);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_IBSS_INACTIVE", roamResult);   
         case eCSR_ROAM_RESULT_WDS_STOPPED:
             /* bapRoamCompleteCallback with eCSR_ROAM_RESULT_WDS_STOPPED */
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, CSR roamResult = %s (%d)", __func__, "eCSR_ROAM_RESULT_WDS_STOPPED", roamResult);   
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             /* Fill in the event structure */ 
             bapEvent.event = eWLAN_BAP_MAC_READY_FOR_CONNECTIONS; 
@@ -644,15 +459,7 @@ WLANBAP_RoamCallback
             break;
 
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, unsupported CSR roamResult = %d", __FUNCTION__, roamResult);
-=======
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, unsupported CSR roamResult = %d", __func__, roamResult);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, unsupported CSR roamResult = %d", __func__, roamResult);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             break;
     }
@@ -686,15 +493,7 @@ WLANBAP_RoamCallback
             if (mLinkStatus == 0)
             {
                 // enable the flow of data
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: marking link as up in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_CONNECT");
-=======
                 DBGLOG("%s: marking link as up in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: marking link as up in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 mLinkStatus = 1;
                 ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkUp);
                 outputQueue->setCapacity(TRANSMIT_QUEUE_SIZE);
@@ -704,15 +503,7 @@ WLANBAP_RoamCallback
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: link is already up in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_CONNECT");
-=======
                 DBGLOG("%s: link is already up in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: link is already up in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_CONNECT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -720,15 +511,7 @@ WLANBAP_RoamCallback
             // we have no more IBSS peers, so disable the flow of data
             if (mLinkStatus != 0)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_INACTIVE");
-=======
                 DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_INACTIVE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_INACTIVE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 mLinkStatus = (tANI_U8) 0;
                 // JEZ070627: Revisit ?
                 ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
@@ -740,15 +523,7 @@ WLANBAP_RoamCallback
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_IBSS_INACTIVE");
-=======
                 DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_INACTIVE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_IBSS_INACTIVE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
             break;
@@ -775,29 +550,13 @@ WLANBAP_RoamCallback
             {
                 mLinkStatus = (tANI_U8) 1;
                 ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkUp);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: marking link as up in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_ASSOCIATED");
-=======
                 DBGLOG("%s: marking link as up in %s\n", __func__, "eCSR_ROAM_RESULT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: marking link as up in %s\n", __func__, "eCSR_ROAM_RESULT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 outputQueue->setCapacity(TRANSMIT_QUEUE_SIZE);
                 outputQueue->start();
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: link is already up in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_ASSOCIATED");
-=======
                 DBGLOG("%s: link is already up in %s\n", __func__, "eCSR_ROAM_RESULT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: link is already up in %s\n", __func__, "eCSR_ROAM_RESULT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         case eCSR_ROAM_RESULT_NOT_ASSOCIATED:
@@ -806,29 +565,13 @@ WLANBAP_RoamCallback
 
             if (mLinkStatus != 0)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED");
-=======
                 DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 mLinkStatus = (tANI_U8) 0;
                 ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED");
-=======
                 DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_NOT_ASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
            
@@ -838,29 +581,13 @@ WLANBAP_RoamCallback
 
             if (mLinkStatus != 0)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_FAILURE");
-=======
                 DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_FAILURE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_FAILURE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 mLinkStatus = (tANI_U8) 0;
                 ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_FAILURE");
-=======
                 DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_FAILURE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_FAILURE");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         
@@ -870,29 +597,13 @@ WLANBAP_RoamCallback
 
                 if (mLinkStatus != 0)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_DISASSOC_IND");
-=======
                     DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_DISASSOC_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_DISASSOC_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     mLinkStatus = (tANI_U8) 0;
                     ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_DISASSOC_IND");
-=======
                     DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_DISASSOC_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_DISASSOC_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
 
                 //if (pCsrRoamInfo)  // For now, leave this commented out. Until CSR changes integrated.
@@ -924,29 +635,13 @@ WLANBAP_RoamCallback
 
                 if (mLinkStatus != 0)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_DEAUTH_IND");
-=======
                     DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_DEAUTH_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_RESULT_DEAUTH_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     mLinkStatus = (tANI_U8) 0;
                     ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_DEAUTH_IND");
-=======
                     DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_DEAUTH_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_RESULT_DEAUTH_IND");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
 
                 //if (pCsrRoamInfo)  // For now, leave this commented out. Until CSR changes integrated.
@@ -979,25 +674,11 @@ WLANBAP_RoamCallback
                 if (btampContext->mTKIPCounterMeasures)
                 {
                     ((IO80211Interface*) mNetworkIF)->postMessage(APPLE80211_M_MIC_ERROR_UCAST); 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: TKIP Countermeasures in effect in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_MIC_ERROR_UNICAST"); 
-                } 
-                else 
-                { 
-                    DBGLOG("%s: TKIP Countermeasures disabled in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_MIC_ERROR_UNICAST"); 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     DBGLOG("%s: TKIP Countermeasures in effect in %s\n", __func__, "eCSR_ROAM_RESULT_MIC_ERROR_UNICAST"); 
                 } 
                 else 
                 { 
                     DBGLOG("%s: TKIP Countermeasures disabled in %s\n", __func__, "eCSR_ROAM_RESULT_MIC_ERROR_UNICAST"); 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
             break;
@@ -1009,25 +690,11 @@ WLANBAP_RoamCallback
                 if (btampContext->mTKIPCounterMeasures)
                 { 
                     ((IO80211Interface*) mNetworkIF)->postMessage(APPLE80211_M_MIC_ERROR_MCAST); 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: TKIP Countermeasures in effect in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_MIC_ERROR_GROUP"); 
-                } 
-                else 
-                { 
-                    DBGLOG("%s: TKIP Countermeasures disabled in %s\n", __FUNCTION__, "eCSR_ROAM_RESULT_MIC_ERROR_GROUP"); 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     DBGLOG("%s: TKIP Countermeasures in effect in %s\n", __func__, "eCSR_ROAM_RESULT_MIC_ERROR_GROUP"); 
                 } 
                 else 
                 { 
                     DBGLOG("%s: TKIP Countermeasures disabled in %s\n", __func__, "eCSR_ROAM_RESULT_MIC_ERROR_GROUP"); 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
             break;
@@ -1037,15 +704,7 @@ WLANBAP_RoamCallback
     }
     switch (roamStatus) {
         case eCSR_ROAM_ROAMING_START: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            DBGLOG("%s: In %s\n", __FUNCTION__, "eCSR_ROAM_ROAMING_START");
-=======
             DBGLOG("%s: In %s\n", __func__, "eCSR_ROAM_ROAMING_START");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            DBGLOG("%s: In %s\n", __func__, "eCSR_ROAM_ROAMING_START");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // This only gets called when CSR decides to roam on its own - due to lostlink. 
             // Apple still needs to be told.
             if ((pCsrRoamInfo) && (pCsrRoamInfo->pConnectedProfile) && (pCsrRoamInfo->pConnectedProfile->pBssDesc))
@@ -1053,15 +712,7 @@ WLANBAP_RoamCallback
                 memcpy(bssid.ether_addr_octet, pCsrRoamInfo->pConnectedProfile->pBssDesc->bssId,
                        sizeof(tSirMacAddr)); 
                 apple80211Interface->willRoam(&bssid);  // Return result isn't significant 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: willRoam returns\n", __FUNCTION__);
-=======
                 DBGLOG("%s: willRoam returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: willRoam returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -1077,15 +728,7 @@ WLANBAP_RoamCallback
                 roamAccepted = apple80211Interface->shouldRoam(&scanResult);  // Return result is crucial
                 if (roamAccepted == true) { 
                     // If the roam is acceptable, return SUCCESS 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: shouldRoam returns \"acceptable\"\n", __FUNCTION__);
-=======
                     DBGLOG("%s: shouldRoam returns \"acceptable\"\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: shouldRoam returns \"acceptable\"\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //#if 0
                     // Actually, before returning, immediately signal willRoam
                     // This is a workaround for a CSR bug.  Eventually, when 
@@ -1093,29 +736,13 @@ WLANBAP_RoamCallback
                     // pointing to a tBssDescription, this work-around can be removed.
                     memcpy(bssid.ether_addr_octet, pCsrRoamInfo->pBssDesc->bssId, sizeof(tSirMacAddr)); 
                     apple80211Interface->willRoam(&bssid);  // Return result isn't significant 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: willRoam (called out of order) returns\n", __FUNCTION__);
-=======
                     DBGLOG("%s: willRoam (called out of order) returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: willRoam (called out of order) returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     DBGLOG("    with BSSID = " MAC_ADDR_STRING(bssid.ether_addr_octet));
 //#endif
                     return eHAL_STATUS_SUCCESS;
                 } else { 
                     // If the roam is NOT acceptable, return FAILURE
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: shouldRoam returns \"NOT acceptable\"\n", __FUNCTION__);
-=======
                     DBGLOG("%s: shouldRoam returns \"NOT acceptable\"\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: shouldRoam returns \"NOT acceptable\"\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return eHAL_STATUS_FAILURE;
                 }
             }
@@ -1128,29 +755,13 @@ WLANBAP_RoamCallback
 
                 if (mLinkStatus != 0)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_DISASSOCIATED");
-=======
                     DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_DISASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_DISASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     mLinkStatus = (tANI_U8) 0;
                     ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_DISASSOCIATED");
-=======
                     DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_DISASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_DISASSOCIATED");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
             break;
@@ -1161,42 +772,18 @@ WLANBAP_RoamCallback
 
             if (mLinkStatus != 0)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: marking link as down in %s\n", __FUNCTION__, "eCSR_ROAM_LOSTLINK");
-=======
                 DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_LOSTLINK");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: marking link as down in %s\n", __func__, "eCSR_ROAM_LOSTLINK");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 mLinkStatus = (tANI_U8) 0;
                 ((IO80211Interface*) mNetworkIF)->setLinkState(kIO80211NetworkLinkDown);
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: link already down in %s\n", __FUNCTION__, "eCSR_ROAM_LOSTLINK");
-=======
                 DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_LOSTLINK");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: link already down in %s\n", __func__, "eCSR_ROAM_LOSTLINK");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
         case eCSR_ROAM_ASSOCIATION_START:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            DBGLOG("%s: In %s\n", __FUNCTION__, "eCSR_ROAM_ASSOCIATION_START");
-=======
             DBGLOG("%s: In %s\n", __func__, "eCSR_ROAM_ASSOCIATION_START");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            DBGLOG("%s: In %s\n", __func__, "eCSR_ROAM_ASSOCIATION_START");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if 0
             // This is the right place to call willRoam - for an "initial" association.
             // But, unfortunately, when eCSR_ROAM_ASSOCIATION_START gets called, 
@@ -1205,30 +792,14 @@ WLANBAP_RoamCallback
             if ((pCsrRoamInfo) && (pCsrRoamInfo->pBssDesc) {
                 memcpy(bssid.ether_addr_octet, pCsrRoamInfo->pBssDesc->bssId, 6); 
                 apple80211Interface->willRoam(&bssid);  // Return result isn't significant 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                DBGLOG("%s: willRoam returns\n", __FUNCTION__);
-=======
                 DBGLOG("%s: willRoam returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                DBGLOG("%s: willRoam returns\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 DBGLOG("    with BSSID = " MAC_ADDR_STRING(bssid.ether_addr_octet));
             }
 #endif //0
             break;
 
         case eCSR_ROAM_ASSOCIATION_COMPLETION:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            DBGLOG("%s: In %s\n", __FUNCTION__, "eCSR_ROAM_ASSOCIATION_COMPLETION");
-=======
             DBGLOG("%s: In %s\n", __func__, "eCSR_ROAM_ASSOCIATION_COMPLETION");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            DBGLOG("%s: In %s\n", __func__, "eCSR_ROAM_ASSOCIATION_COMPLETION");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case eCSR_ROAM_MIC_ERROR_IND:   // Handled in eCSR_ROAM_RESULT_MIC_ERROR_UNICAST and GROUP, above
@@ -1311,27 +882,12 @@ WLAN_BAPPhysicalLinkCreate
     /* Validate params */ 
     if ((pBapHCIPhysLinkCreate == NULL) || (NULL == btampContext))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: btampHandle value: %x, pBapHCIPhysLinkCreate is %x", 
-                 __FUNCTION__,  btampHandle, pBapHCIPhysLinkCreate); 
-      return VOS_STATUS_E_FAULT;
-    }
-
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: btampHandle value: %p, pBapHCIPhysLinkCreate is %p",
                  __func__,  btampHandle, pBapHCIPhysLinkCreate); 
       return VOS_STATUS_E_FAULT;
     }
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(DISCONNECTED != instanceVar->stateVar)
     {
@@ -1357,15 +913,7 @@ WLAN_BAPPhysicalLinkCreate
                 &btampContext, /* Handle to return per assoc btampContext value in  */ 
                 BT_INITIATOR); /* BT_INITIATOR */ 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %x", __FUNCTION__,  btampContext); 
-=======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Handle event */ 
         vosStatus = btampFsm(btampContext, &bapEvent, &status);
@@ -1437,27 +985,12 @@ WLAN_BAPPhysicalLinkAccept
     /* Validate params */ 
     if ((pBapHCIPhysLinkAccept == NULL) || (NULL == btampContext))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: btampHandle value: %x, pBapHCIPhysLinkAccept is %x", 
-                 __FUNCTION__,  btampHandle, pBapHCIPhysLinkAccept); 
-      return VOS_STATUS_E_FAULT;
-    }
-
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "%s: btampHandle value: %p, pBapHCIPhysLinkAccept is %p",
                  __func__,  btampHandle, pBapHCIPhysLinkAccept); 
       return VOS_STATUS_E_FAULT;
     }
 
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     instanceVar = &(btampContext->bapPhysLinkMachine);
     if(DISCONNECTED != instanceVar->stateVar)
@@ -1484,15 +1017,7 @@ WLAN_BAPPhysicalLinkAccept
                 &btampContext, /* Handle to return per assoc btampContext value in  */ 
                 BT_RESPONDER); /* BT_RESPONDER */ 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %x", __FUNCTION__,  btampContext); 
-=======
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Handle event */ 
         vosStatus = btampFsm(btampContext, &bapEvent, &status);
@@ -1562,15 +1087,7 @@ WLAN_BAPPhysicalLinkDisconnect
       return VOS_STATUS_E_FAULT;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
-=======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Validate the Physical link handle */
     if (pBapHCIPhysLinkDisconnect->phy_link_handle != btampContext->phy_link_handle) 
@@ -1589,15 +1106,7 @@ WLAN_BAPPhysicalLinkDisconnect
     bapEvent.event = eWLAN_BAP_HCI_PHYSICAL_LINK_DISCONNECT;
     bapEvent.params = pBapHCIPhysLinkDisconnect;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %x", __FUNCTION__,  btampContext); 
-=======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampContext value: %p", __func__,  btampContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Handle event */ 
     vosStatus = btampFsm(btampContext, &bapEvent, &status);
@@ -1683,15 +1192,7 @@ WLAN_BAPLogicalLinkCreate
     }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
-=======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Validate the BAP state to accept the logical link request
        Logical Link create/accept requests are allowed only in
@@ -1881,15 +1382,7 @@ WLAN_BAPLogicalLinkAccept
     }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %x", __FUNCTION__,  btampHandle); 
-=======
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH, "%s: btampHandle value: %p", __func__,  btampHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Validate the BAP state to accept the logical link request
        Logical Link create/accept requests are allowed only in
@@ -2072,15 +1565,7 @@ WLAN_BAPLogicalLinkDisconnect
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
                    "Critical error: Invalid input parameter on %s", 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__); 
-=======
                    __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT; 
     }
 
@@ -2091,15 +1576,7 @@ WLAN_BAPLogicalLinkDisconnect
     {
        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, 
                   "Critical error: Invalid input parameter on %s", 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__); 
-=======
                   __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Fill in the event code to propagate the event notification to BRM
            BRM generates the Command status Event based on this.*/
         pBapHCIEvent->bapHCIEventCode = BTAMP_TLV_HCI_DISCONNECT_LOGICAL_LINK_COMPLETE_EVENT;
@@ -2113,15 +1590,7 @@ WLAN_BAPLogicalLinkDisconnect
 #ifdef BAP_DEBUG
   /* Trace the tBtampCtx being passed in. */
   VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO_HIGH,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "WLAN BAP Context Monitor: btampContext value = %x in %s:%d", btampContext, __FUNCTION__, __LINE__ );
-=======
             "WLAN BAP Context Monitor: btampContext value = %p in %s:%d", btampContext, __func__, __LINE__ );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "WLAN BAP Context Monitor: btampContext value = %p in %s:%d", btampContext, __func__, __LINE__ );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //BAP_DEBUG
 
     bapHCIEvent.bapHCIEventCode = BTAMP_TLV_HCI_COMMAND_STATUS_EVENT;
@@ -2151,15 +1620,7 @@ WLAN_BAPLogicalLinkDisconnect
 #ifdef BAP_DEBUG
         /* Log the error. */
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s:%d Invalid Logical Link handle(should be) = %d(%d)", __FUNCTION__, __LINE__,  
-=======
                 "%s:%d Invalid Logical Link handle(should be) = %d(%d)", __func__, __LINE__,  
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s:%d Invalid Logical Link handle(should be) = %d(%d)", __func__, __LINE__,  
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBapHCILogLinkDisconnect->log_link_handle, pLogLinkContext->log_link_handle);
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
                 " Logical Link index = %d", log_link_index);
@@ -2250,15 +1711,7 @@ WLAN_BAPLogicalLinkCancel
         (pBapHCIEvent == NULL))
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "%s: Null Parameters Not allowed", __FUNCTION__); 
-=======
             "%s: Null Parameters Not allowed", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "%s: Null Parameters Not allowed", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -2372,15 +1825,7 @@ WLAN_BAPFlowSpecModify
        (pBapHCIEvent == NULL))
    {
        VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-           "%s: Null Parameters Not allowed", __FUNCTION__); 
-=======
            "%s: Null Parameters Not allowed", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           "%s: Null Parameters Not allowed", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_E_FAULT;
    }
 
@@ -2388,15 +1833,7 @@ WLAN_BAPFlowSpecModify
 
    index_for_logLinkHandle = pBapHCIFlowSpecModify->log_link_handle >> 8; /*  Return the logical link index here */
    VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
-<<<<<<< HEAD
-              " %s:index_for_logLinkHandle=%d", __FUNCTION__,index_for_logLinkHandle);
-=======
               " %s:index_for_logLinkHandle=%d", __func__,index_for_logLinkHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-              " %s:index_for_logLinkHandle=%d", __func__,index_for_logLinkHandle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    bapHCIEvent.bapHCIEventCode = BTAMP_TLV_HCI_COMMAND_STATUS_EVENT;
    bapHCIEvent.u.btampCommandStatusEvent.present = 1;
@@ -2462,15 +1899,7 @@ void WLAN_BAPEstablishLogicalLink(ptBtampContext btampContext)
     if (btampContext == NULL) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "%s: Null Parameters Not allowed", __FUNCTION__); 
-=======
             "%s: Null Parameters Not allowed", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "%s: Null Parameters Not allowed", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 

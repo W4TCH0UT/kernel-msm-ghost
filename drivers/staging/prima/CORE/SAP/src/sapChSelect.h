@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -50,21 +41,12 @@
 
 #if !defined( __SAP_CH_SELECT_H )
 #define __SAP_CH_SELECT_H
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*
 * Copyright (c) 2012-2013 Qualcomm Atheros, Inc.
 * All Rights Reserved.
 * Qualcomm Atheros Confidential and Proprietary.
 */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===========================================================================
 
                       s a p C h S e l e c t . h
@@ -126,11 +108,6 @@
 #define SAP_DEFAULT_CHANNEL     (6)
 #define SAP_DEFAULT_5GHZ_CHANNEL      (40)
 #define SAP_CHANNEL_NOT_SELECTED (0)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define SOFTAP_HT20_CHANNELWIDTH 0
 #define SAP_SUBBAND1_RSSI_EFFECT_PRIMARY  (-20) // In HT40/VHT80, Effect of primary Channel RSSi on Subband1
@@ -157,21 +134,10 @@ typedef enum
     CHANNEL_11
 } tSapChannel;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
 * Structure holding information of each channel in the spectrum, 
 * it contains the channel number, the computed weight
 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef struct {
-    v_U16_t chNum;      // Channel Number
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sSapChannelListInfo{
     v_U8_t numChannel;
@@ -181,10 +147,6 @@ typedef struct sSapChannelListInfo{
 typedef struct {
     v_U16_t chNum;      // Channel Number
     v_U16_t channelWidth;      // Channel Width
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U16_t bssCount;   // bss found in scanresult for this channel
     v_S31_t rssiAgr;    // Max value of rssi among all BSS(es) from scanresult for this channel
     v_U32_t weight;     // Weightage of this channel
@@ -195,14 +157,7 @@ typedef struct {
 * Structure holding all the information required to make a 
 * decision for the best operating channel based on dfs formula
 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct {
     tSapSpectChInfo *pSpectCh;//tDfsSpectChInfo *pSpectCh;  // Ptr to the channels in the entire spectrum band
     v_U8_t numSpectChans;      // Total num of channels in the spectrum

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -184,15 +175,7 @@ when        who    what, where, why
 #define WLANBAP_LLC_OUI_OFFSET                 3
 
 /*Offset of the protocol type field inside the LLC/SNAP header*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define WLANBAP_LLC_PROTO_TYPE_OFFSET  WLANBAP_LLC_OUI_OFFSET +  WLANBAP_LLC_OUI_SIZE
-=======
 #define WLANBAP_LLC_PROTO_TYPE_OFFSET  (WLANBAP_LLC_OUI_OFFSET +  WLANBAP_LLC_OUI_SIZE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WLANBAP_LLC_PROTO_TYPE_OFFSET  (WLANBAP_LLC_OUI_OFFSET +  WLANBAP_LLC_OUI_SIZE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define WLANBAP_MAX_NUM_TRIPLETS               5
 

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -77,15 +68,7 @@
 
 #define CSR_RSN_OUI_SIZE              ( 4 )
 #define CSR_RSN_VERSION_SUPPORTED     ( 1 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define CSR_RSN_MAX_AUTH_SUITES       ( 2 )
-=======
 #define CSR_RSN_MAX_AUTH_SUITES       ( 16 )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define CSR_RSN_MAX_AUTH_SUITES       ( 16 )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CSR_RSN_MAX_CYPHERS           ( 5 )
 #define CSR_RSN_MAX_UNICAST_CYPHERS   ( 5 )
 #define CSR_RSN_MAX_MULTICAST_CYPHERS ( 1 )
@@ -840,36 +823,17 @@ eHalStatus
 csrIsconcurrentsessionValid(tpAniSirGlobal pMac,tANI_U32 cursessionId,
                                  tVOS_CON_MODE currBssPersona);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//BeaconInterval valiadation for MCC support
-eHalStatus csrValidateBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Update beaconInterval for P2P-GO case if it is different 
 eHalStatus csrUpdatep2pBeaconInterval(tpAniSirGlobal pMac);
 
 //BeaconInterval validation for MCC support
 eHalStatus csrValidateMCCBeaconInterval(tpAniSirGlobal pMac, tANI_U8 channelId,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                      tANI_U16 *beaconInterval, tANI_U32 cursessionId,
                                      tVOS_CON_MODE currBssPersona);
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
 tANI_BOOLEAN csrIsProfile11r( tCsrRoamProfile *pProfile );
-<<<<<<< HEAD
-<<<<<<< HEAD
-tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType );
-=======
 tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType, tANI_U8 mdiePresent);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tANI_BOOLEAN csrIsAuthType11r( eCsrAuthType AuthType, tANI_U8 mdiePresent);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 #ifdef FEATURE_WLAN_CCX

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -64,15 +55,7 @@
 #define WLAN_NLINK_SRV_H 
 
 #include <linux/skbuff.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-#include <linux/netlink.h>
-=======
 #include <net/netlink.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include <net/netlink.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <wlan_nlink_common.h>
 
 #define NLINK_MAX_CALLBACKS (WLAN_NL_MSG_MAX - WLAN_NL_MSG_BASE)

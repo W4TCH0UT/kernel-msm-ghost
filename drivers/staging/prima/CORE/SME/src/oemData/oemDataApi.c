@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -90,15 +81,7 @@ eHalStatus oemData_OemDataReqOpen(tHalHandle hHal)
         vos_mem_set(&(pMac->oemData), sizeof(tOemDataStruct), 0);
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, "oemData_OemDataReqOpen: Cannot allocate memory for the timer function\n");
-=======
             smsLog(pMac, LOGE, "oemData_OemDataReqOpen: Cannot allocate memory for the timer function");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, "oemData_OemDataReqOpen: Cannot allocate memory for the timer function");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
     } while(0);
@@ -121,15 +104,7 @@ eHalStatus oemData_OemDataReqClose(tHalHandle hHal)
     {
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, "oemData_OemDataReqClose: Failed in oemData_OemDataReqClose at StopTimers\n");
-=======
             smsLog(pMac, LOGE, "oemData_OemDataReqClose: Failed in oemData_OemDataReqClose at StopTimers");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, "oemData_OemDataReqClose: Failed in oemData_OemDataReqClose at StopTimers");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
 
@@ -166,15 +141,7 @@ void oemData_ReleaseOemDataReqCommand(tpAniSirGlobal pMac, tSmeCmd *pOemDataCmd,
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, "OEM_DATA: **************** oemData_ReleaseOemDataReqCommand cannot release the command\n");
-=======
         smsLog(pMac, LOGE, "OEM_DATA: **************** oemData_ReleaseOemDataReqCommand cannot release the command");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, "OEM_DATA: **************** oemData_ReleaseOemDataReqCommand cannot release the command");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 }
 
@@ -266,15 +233,7 @@ eHalStatus oemData_SendMBOemDataReq(tpAniSirGlobal pMac, tOemDataReq *pOemDataRe
     tANI_U16 msgLen;
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, pOemDataReq->sessionId );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "OEM_DATA: entering Function %s\n", __FUNCTION__);
-=======
     smsLog(pMac, LOGW, "OEM_DATA: entering Function %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "OEM_DATA: entering Function %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     msgLen = (tANI_U16)(sizeof(tSirOemDataReq));
 
@@ -287,15 +246,7 @@ eHalStatus oemData_SendMBOemDataReq(tpAniSirGlobal pMac, tOemDataReq *pOemDataRe
         status = palCopyMemory(pMac->hHdd, pMsg->oemDataReq, pOemDataReq->oemDataReq, OEM_DATA_REQ_SIZE);
         if(HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGW, "OEM_DATA: sending message to pe%s\n", __FUNCTION__);
-=======
             smsLog(pMac, LOGW, "OEM_DATA: sending message to pe%s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGW, "OEM_DATA: sending message to pe%s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = palSendMBMessage(pMac->hHdd, pMsg);
         }
         else
@@ -304,15 +255,7 @@ eHalStatus oemData_SendMBOemDataReq(tpAniSirGlobal pMac, tOemDataReq *pOemDataRe
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "OEM_DATA: exiting Function %s\n", __FUNCTION__);
-=======
     smsLog(pMac, LOGW, "OEM_DATA: exiting Function %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "OEM_DATA: exiting Function %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return status;
 }
@@ -339,29 +282,13 @@ eHalStatus oemData_ProcessOemDataReqCommand(tpAniSirGlobal pMac, tSmeCmd *pOemDa
 
     if(eHAL_STATUS_SUCCESS == oemData_IsOemDataReqAllowed(pMac))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG1, "%s: OEM_DATA REQ allowed in the current mode\n", __FUNCTION__);
-=======
         smsLog(pMac, LOG1, "%s: OEM_DATA REQ allowed in the current mode", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG1, "%s: OEM_DATA REQ allowed in the current mode", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->oemData.oemDataReqActive = eANI_BOOLEAN_TRUE;
         status = oemData_SendMBOemDataReq(pMac, &(pOemDataReqCmd->u.oemDataCmd.oemDataReq));
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG1, "%s: OEM_DATA REQ not allowed in the current mode\n", __FUNCTION__);
-=======
         smsLog(pMac, LOG1, "%s: OEM_DATA REQ not allowed in the current mode", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG1, "%s: OEM_DATA REQ not allowed in the current mode", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         oemData_ReleaseOemDataReqCommand(pMac, pOemDataReqCmd, eOEM_DATA_REQ_INVALID_MODE);
         pMac->oemData.oemDataReqActive = eANI_BOOLEAN_FALSE;
     }
@@ -384,29 +311,13 @@ eHalStatus sme_HandleOemDataRsp(tHalHandle hHal, tANI_U8* pMsg)
     tSirOemDataRsp*                    pOemDataRsp = NULL;
     pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG1, "%s: OEM_DATA Entering\n", __FUNCTION__);
-=======
     smsLog(pMac, LOG1, "%s: OEM_DATA Entering", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG1, "%s: OEM_DATA Entering", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     do
     {
         if(pMsg == NULL)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, "in %s msg ptr is NULL\n", __FUNCTION__);
-=======
             smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, "in %s msg ptr is NULL", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = eHAL_STATUS_FAILURE;
             break;
         }
@@ -435,65 +346,27 @@ eHalStatus sme_HandleOemDataRsp(tHalHandle hHal, tANI_U8* pMsg)
                 if(pMac->oemData.pOemDataRsp == NULL)
                 {
                     sme_ReleaseGlobalLock(&pMac->sme);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, "in %s vos_mem_malloc failed for pMac->oemData.pOemDataRsp\n", __FUNCTION__);
-=======
                     smsLog(pMac, LOGE, "in %s vos_mem_malloc failed for pMac->oemData.pOemDataRsp", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, "in %s vos_mem_malloc failed for pMac->oemData.pOemDataRsp", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     status = eHAL_STATUS_FAILURE;
                     break;
                 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, "Before memory copy\n"); 
-                vos_mem_copy((v_VOID_t*)(pMac->oemData.pOemDataRsp), (v_VOID_t*)(&pOemDataRsp->oemDataRsp), sizeof(tOemDataRsp));
-                smsLog(pMac, LOGE, "after memory copy\n");
-=======
                 smsLog(pMac, LOGE, "Before memory copy");
                 vos_mem_copy((v_VOID_t*)(pMac->oemData.pOemDataRsp), (v_VOID_t*)(&pOemDataRsp->oemDataRsp), sizeof(tOemDataRsp));
                 smsLog(pMac, LOGE, "after memory copy");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, "Before memory copy");
-                vos_mem_copy((v_VOID_t*)(pMac->oemData.pOemDataRsp), (v_VOID_t*)(&pOemDataRsp->oemDataRsp), sizeof(tOemDataRsp));
-                smsLog(pMac, LOGE, "after memory copy");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sme_ReleaseGlobalLock(&pMac->sme);
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, "in %s eWNI_SME_OEM_DATA_RSP Received but NO REQs are ACTIVE ...\n",
-                    __FUNCTION__);
-=======
                 smsLog(pMac, LOGE, "in %s eWNI_SME_OEM_DATA_RSP Received but NO REQs are ACTIVE ...",
                     __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, "in %s eWNI_SME_OEM_DATA_RSP Received but NO REQs are ACTIVE ...",
-                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 status = eHAL_STATUS_FAILURE;
                 break;
             }
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, "in %s eWNI_SME_OEM_DATA_RSP Received but NO commands are ACTIVE ...\n", __FUNCTION__);
-=======
             smsLog(pMac, LOGE, "in %s eWNI_SME_OEM_DATA_RSP Received but NO commands are ACTIVE ...", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, "in %s eWNI_SME_OEM_DATA_RSP Received but NO commands are ACTIVE ...", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = eHAL_STATUS_FAILURE;
             break;
         }
@@ -524,42 +397,18 @@ eHalStatus oemData_IsOemDataReqAllowed(tHalHandle hHal)
         if(CSR_IS_SESSION_VALID(pMac, sessionId))
         {
             if(csrIsConnStateIbss(pMac, sessionId) || csrIsBTAMP(pMac, sessionId) 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-               || csrIsConnStateConnectedInfraAp(pMac, sessionId)
-#endif
-               )
-            {
-                //co-exist with IBSS or BT-AMP or Soft-AP mode is not supported
-                smsLog(pMac, LOGW, "OEM DATA REQ is not allowed due to IBSS|BTAMP|SAP exist in session %d\n", sessionId);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                || csrIsConnStateConnectedInfraAp(pMac, sessionId)
                )
             {
                 //co-exist with IBSS or BT-AMP or Soft-AP mode is not supported
                 smsLog(pMac, LOGW, "OEM DATA REQ is not allowed due to IBSS|BTAMP|SAP exist in session %d", sessionId);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 status = eHAL_STATUS_CSR_WRONG_STATE;
                 break;
             }
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG1, "Exiting oemData_IsOemDataReqAllowed with status %d\n", status);
-=======
     smsLog(pMac, LOG1, "Exiting oemData_IsOemDataReqAllowed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG1, "Exiting oemData_IsOemDataReqAllowed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return (status);
 }

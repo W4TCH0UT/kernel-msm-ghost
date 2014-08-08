@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -72,18 +63,9 @@
 #define MAX_SIZE_OF_TRIPLETS_IN_COUNTRY_IE (COUNTRY_STRING_LENGTH * COUNTRY_INFO_MAX_CHANNEL)
 #define HIGHEST_24GHZ_CHANNEL_NUM  ( 14 )
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #define IS_24G_CH(__chNum) ((__chNum > 0) && (__chNum < 14))
 #define IS_5G_CH(__chNum) ((__chNum >= 36) && (__chNum <= 165))
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define IS_24G_CH(__chNum) ((__chNum > 0) && (__chNum < 14))
-#define IS_5G_CH(__chNum) ((__chNum >= 36) && (__chNum <= 165))
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirCountryInformation
 {
     tANI_U8 countryString[COUNTRY_STRING_LENGTH];
@@ -128,17 +110,7 @@ typedef struct sSirProbeRespBeacon
     tDot11fIEQuiet            quietIE;
     tDot11fIEHTCaps           HTCaps;
     tDot11fIEHTInfo           HTInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
     tDot11fIEP2PProbeRes      P2PProbeRes;
-#endif
-=======
-    tDot11fIEP2PProbeRes      P2PProbeRes;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tDot11fIEP2PProbeRes      P2PProbeRes;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
     tANI_U8                   mdie[SIR_MDIE_SIZE];
 #endif
@@ -177,18 +149,9 @@ typedef struct sSirProbeRespBeacon
     tDot11fIEVHTCaps          VHTCaps;
     tDot11fIEVHTOperation     VHTOperation;
     tDot11fIEVHTExtBssLoad    VHTExtBssLoad;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     tDot11fIEOperatingMode    OperatingMode;
     tANI_U8                   WiderBWChanSwitchAnnPresent;
     tDot11fIEWiderBWChanSwitchAnn WiderBWChanSwitchAnn;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tDot11fIEOperatingMode    OperatingMode;
-    tANI_U8                   WiderBWChanSwitchAnnPresent;
-    tDot11fIEWiderBWChanSwitchAnn WiderBWChanSwitchAnn;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 } tSirProbeRespBeacon, *tpSirProbeRespBeacon;
@@ -236,17 +199,7 @@ typedef struct sSirAssocReq
     tSirMacPowerCapabilityIE  powerCapability;
     tSirMacSupportedChannelIE supportedChannels;
     tDot11fIEHTCaps   HTCaps;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
     tDot11fIEWMMInfoStation   WMMInfoStation;
-#endif
-=======
-    tDot11fIEWMMInfoStation   WMMInfoStation;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tDot11fIEWMMInfoStation   WMMInfoStation;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /// This is set if the frame is a reassoc request:
     tANI_U8                   reassocRequest;
     tANI_U8                   ssidPresent;
@@ -264,32 +217,13 @@ typedef struct sSirAssocReq
 
     tANI_U8                   powerCapabilityPresent;
     tANI_U8                   supportedChannelsPresent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // keeing copy of assoction request received, this is 
     // required for indicating the frame to upper layers
     tANI_U32                  assocReqFrameLength;
     tANI_U8*                  assocReqFrame;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-#ifdef WLAN_FEATURE_11AC
-    tDot11fIEVHTCaps          VHTCaps;
-=======
 #ifdef WLAN_FEATURE_11AC
     tDot11fIEVHTCaps          VHTCaps;
     tDot11fIEOperatingMode    operMode;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef WLAN_FEATURE_11AC
-    tDot11fIEVHTCaps          VHTCaps;
-    tDot11fIEOperatingMode    operMode;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 } tSirAssocReq, *tpSirAssocReq;
 
@@ -352,53 +286,6 @@ sirGetCfgPropCaps(struct sAniSirGlobal *, tANI_U16 *);
 
 void dot11fLog(tpAniSirGlobal pMac, int nSev, const char *lpszFormat, ...);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define CFG_GET_INT(nStatus, pMac, nItem, cfg )                 \
-    (nStatus) = wlan_cfgGetInt( (pMac), (nItem), & (cfg) );          \
-    if ( eSIR_SUCCESS != (nStatus) )                            \
-    {                                                           \
-        dot11fLog( (pMac), LOGP, FL("Failed to retrieve "       \
-                                 #nItem " from CFG (%d).\n"),   \
-                (nStatus) );                                    \
-        return nStatus;                                         \
-    }
-
-#define CFG_GET_INT_NO_STATUS(nStatus, pMac, nItem, cfg )       \
-    (nStatus) = wlan_cfgGetInt( (pMac), (nItem), & (cfg) );          \
-    if ( eSIR_SUCCESS != (nStatus) )                            \
-    {                                                           \
-        dot11fLog( (pMac), LOGP, FL("Failed to retrieve "       \
-                                 #nItem " from CFG (%d).\n"),   \
-                (nStatus) );                                    \
-        return;                                                 \
-    }
-
-#define CFG_GET_STR(nStatus, pMac, nItem, cfg, nCfg, nMaxCfg)   \
-    (nCfg) = (nMaxCfg);                                         \
-    (nStatus) = wlan_cfgGetStr( (pMac), (nItem), (cfg), & (nCfg) );  \
-    if ( eSIR_SUCCESS != (nStatus) )                            \
-    {                                                           \
-        dot11fLog( (pMac), LOGP, FL("Failed to retrieve "       \
-                                 #nItem " from CFG (%d).\n"),   \
-                (nStatus) );                                    \
-        return nStatus;                                         \
-    }
-
-#define CFG_GET_STR_NO_STATUS(nStatus, pMac, nItem, cfg, nCfg,  \
-                              nMaxCfg)                          \
-    (nCfg) = (nMaxCfg);                                         \
-    (nStatus) = wlan_cfgGetStr( (pMac), (nItem), (cfg), & (nCfg) );  \
-    if ( eSIR_SUCCESS != (nStatus) )                            \
-    {                                                           \
-        dot11fLog( (pMac), LOGP, FL("Failed to retrieve "       \
-                                 #nItem " from CFG (%d).\n"),   \
-                (nStatus) );                                    \
-        return;                                                 \
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CFG_GET_INT(nStatus, pMac, nItem, cfg )  do {                \
         (nStatus) = wlan_cfgGetInt( (pMac), (nItem), & (cfg) );      \
         if ( eSIR_SUCCESS != (nStatus) )                             \
@@ -445,10 +332,6 @@ void dot11fLog(tpAniSirGlobal pMac, int nSev, const char *lpszFormat, ...);
             return;                                                     \
         }                                                               \
     } while (0)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void swapBitField16(tANI_U16 in, tANI_U16 *out);
 
@@ -609,27 +492,9 @@ PopulateDot11fEDCAParamSet(tpAniSirGlobal         pMac,
                            tDot11fIEEDCAParamSet *pDot11f,
                            tpPESession psessionEntry);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
 tSirRetStatus
 PopulateDot11fERPInfo(tpAniSirGlobal    pMac,
                       tDot11fIEERPInfo *pDot11f, tpPESession psessionEntry);
-#else
-tSirRetStatus
-PopulateDot11fERPInfo(tpAniSirGlobal    pMac,
-                      tDot11fIEERPInfo *pDot11f);
-#endif
-=======
-tSirRetStatus
-PopulateDot11fERPInfo(tpAniSirGlobal    pMac,
-                      tDot11fIEERPInfo *pDot11f, tpPESession psessionEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tSirRetStatus
-PopulateDot11fERPInfo(tpAniSirGlobal    pMac,
-                      tDot11fIEERPInfo *pDot11f, tpPESession psessionEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tSirRetStatus
 PopulateDot11fExtSuppRates(tpAniSirGlobal      pMac,
@@ -674,28 +539,10 @@ PopulateDot11fHTCaps(tpAniSirGlobal           pMac,
                            tpPESession      psessionEntry,
                            tDot11fIEHTCaps *pDot11f);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
                      tDot11fIEHTInfo *pDot11f,
                      tpPESession      psessionEntry);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#else
-tSirRetStatus
-PopulateDot11fHTInfo(tpAniSirGlobal   pMac,
-                     tDot11fIEHTInfo *pDot11f);
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void PopulateDot11fIBSSParams(tpAniSirGlobal  pMac,
        tDot11fIEIBSSParams *pDot11f, tpPESession psessionEntry);
@@ -876,26 +723,9 @@ void PopulateDot11fWMMInfoAp(tpAniSirGlobal      pMac,
 void PopulateDot11fWMMInfoStation(tpAniSirGlobal           pMac,
                                   tDot11fIEWMMInfoStation *pInfo);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
 void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
                              tDot11fIEWMMParams *pParams,
                              tpPESession        psessionEntry);
-#else
-void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
-                             tDot11fIEWMMParams *pParams);
-#endif
-=======
-void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
-                             tDot11fIEWMMParams *pParams,
-                             tpPESession        psessionEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-void PopulateDot11fWMMParams(tpAniSirGlobal      pMac,
-                             tDot11fIEWMMParams *pParams,
-                             tpPESession        psessionEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * \brief Populate a tDot11fIEWMMSchedule
@@ -942,48 +772,6 @@ PopulateDot11fWMMTCLAS(tpAniSirGlobal     pMac,
                        tSirTclasInfo     *pOld,
                        tDot11fIEWMMTCLAS *pDot11f);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if ( WNI_POLARIS_FW_PRODUCT == AP )
-
-tSirRetStatus
-PopulateDot11fCFParams(tpAniSirGlobal         pMac,
-                       tDot11fFfCapabilities *pCaps,
-                       tDot11fIECFParams     *pDot11f);
-
-void
-PopulateDot11fQuiet(tpAniSirGlobal  pMac,
-                    tDot11fIEQuiet *pDot11f);
-
-tSirRetStatus
-PopulateDot11fAPName(tpAniSirGlobal   pMac,
-                     tANI_U32              capEnable,
-                     tDot11fIEAPName *pDot11f);
-
-void
-PopulateDot11fPropQuietBSS(tpAniSirGlobal         pMac,
-                           tANI_U32                    capsEnable,
-                           tDot11fIEPropQuietBSS *pDot11f);
-
-void
-PopulateDot11fTrigStaBkScan(tpAniSirGlobal             pMac,
-                            tANI_U32                        capsEnable,
-                            tDot11fIETriggerStaBgScan *pDot11f);
-
-#if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-
-tSirRetStatus
-PopulateDot11fWDS(tpAniSirGlobal  pMac,
-                  tANI_U32             capEnable,
-                  tDot11fIEWDS   *pDot11f );
-
-#endif // WNI_POLARIS_FW_PACKAGE == ADVANCED
-
-#endif // WNI_POLARIS_FW_PRODUCT == AP
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tSirRetStatus PopulateDot11fWsc(tpAniSirGlobal pMac,
                                 tDot11fIEWscBeacon *pDot11f);
@@ -994,23 +782,9 @@ tSirRetStatus PopulateDot11fWscRegistrarInfo(tpAniSirGlobal pMac,
 tSirRetStatus DePopulateDot11fWscRegistrarInfo(tpAniSirGlobal pMac,
                                                tDot11fIEWscBeacon *pDot11f);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
 tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProbeRes *pDot11f, tpPESession psessionEntry);
 tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAssocRes *pDot11f, tpPESession psessionEntry);
 tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon *pDot11f, tpPESession psessionEntry);
-#endif
-=======
-tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProbeRes *pDot11f, tpPESession psessionEntry);
-tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAssocRes *pDot11f, tpPESession psessionEntry);
-tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon *pDot11f, tpPESession psessionEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tSirRetStatus PopulateDot11fProbeResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscProbeRes *pDot11f, tpPESession psessionEntry);
-tSirRetStatus PopulateDot11fAssocResWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscAssocRes *pDot11f, tpPESession psessionEntry);
-tSirRetStatus PopulateDot11fBeaconWPSIEs(tpAniSirGlobal pMac, tDot11fIEWscBeacon *pDot11f, tpPESession psessionEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tSirRetStatus PopulateDot11fWscInProbeRes(tpAniSirGlobal pMac,
                                           tDot11fIEWscProbeRes *pDot11f);
@@ -1026,23 +800,9 @@ tSirRetStatus PopulateDot11fAssocResWscIE(tpAniSirGlobal pMac,
                                           tDot11fIEWscAssocRes *pDot11f, 
                                           tpSirAssocReq pRcvdAssocReq);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
 tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac, 
                                        tDot11fIEP2PAssocRes *pDot11f, 
                                        tpSirAssocReq pRcvdAssocReq);
-#endif
-=======
-tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac, 
-                                       tDot11fIEP2PAssocRes *pDot11f, 
-                                       tpSirAssocReq pRcvdAssocReq);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tSirRetStatus PopulateDot11AssocResP2PIE(tpAniSirGlobal pMac, 
-                                       tDot11fIEP2PAssocRes *pDot11f, 
-                                       tpSirAssocReq pRcvdAssocReq);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 tSirRetStatus PopulateDot11fWscInAssocRes(tpAniSirGlobal pMac,
                                           tDot11fIEWscAssocRes *pDot11f);
@@ -1082,11 +842,6 @@ PopulateDot11fVHTOperation(tpAniSirGlobal  pMac, tDot11fIEVHTOperation  *pDot11f
 tSirRetStatus
 PopulateDot11fVHTExtBssLoad(tpAniSirGlobal  pMac, tDot11fIEVHTExtBssLoad   *pDot11f);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 PopulateDot11fExtCap(tpAniSirGlobal pMac, tDot11fIEExtCap * pDot11f);
 
@@ -1097,8 +852,4 @@ void
 PopulateDot11fWiderBWChanSwitchAnn(tpAniSirGlobal pMac,
                                    tDot11fIEWiderBWChanSwitchAnn *pDot11f,
                                    tpPESession psessionEntry);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif

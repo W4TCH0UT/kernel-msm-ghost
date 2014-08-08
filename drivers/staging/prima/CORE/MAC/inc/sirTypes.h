@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -49,14 +40,6 @@
  */
 
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- *
- * Airgo Networks, Inc proprietary. All rights reserved.
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * This file sirTypes.h contains the common types
  *
  * Author:    V. K. Kandarpa
@@ -70,30 +53,6 @@
 #define __SIR_TYPES_H
 
 #include "halTypes.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*
- typedef unsigned char  tANI_U8;
- typedef unsigned short tANI_U16;
- typedef unsigned long  tANI_U32;
- typedef signed char    tANI_S8;
- typedef signed short   tANI_S16;
- typedef signed long    tANI_S32;
-
- #ifndef tANI_BOOLEAN
- #define tANI_BOOLEAN tANI_U8
- #endif
-*/
-
-
-#if defined( ANI_OS_TYPE_WINDOWS )
-#define inline __inline
-#endif
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ********************************************** *
  *                                                *

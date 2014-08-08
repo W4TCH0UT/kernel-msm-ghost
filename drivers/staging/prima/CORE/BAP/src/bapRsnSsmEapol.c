@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -71,16 +62,6 @@
 
 //#include "aniSsmUtils.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define CHECK_RETVAL(retVal) \
-              assert(retVal == ANI_OK); \
-              if (retVal != ANI_OK) return ANI_E_FAILED;
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 //TODO: Put these in an array after EAPOL_TYPE is made an enum
 #define ANI_EAPOL_TYPE_PACKET_STR    "EAP"
@@ -103,15 +84,7 @@
 
 #define EAPOL_BODY_LEN_SIZE 2
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define ANI_SSM_LEGACY_RC4_KEY_SIGN_OFFSET EAPOL_BODY_POS + 28
-=======
 #define ANI_SSM_LEGACY_RC4_KEY_SIGN_OFFSET (EAPOL_BODY_POS + 28)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define ANI_SSM_LEGACY_RC4_KEY_SIGN_OFFSET (EAPOL_BODY_POS + 28)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * Bitmasks for the RSN Key Information field
@@ -130,15 +103,7 @@
 #define ANI_SSM_RSN_KEY_DESC_VERS_OFFSET  0
 #define ANI_SSM_RSN_KEY_INDEX_OFFSET      4
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define ANI_SSM_RSN_KEY_MIC_OFFSET EAPOL_BODY_POS + 77
-=======
 #define ANI_SSM_RSN_KEY_MIC_OFFSET (EAPOL_BODY_POS + 77)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define ANI_SSM_RSN_KEY_MIC_OFFSET (EAPOL_BODY_POS + 77)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**
  * Other hard coded values for convenience:

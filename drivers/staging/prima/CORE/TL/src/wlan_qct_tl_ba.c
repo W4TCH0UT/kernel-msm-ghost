@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -136,14 +127,7 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
    WLANTL_TIMER_EXPIER_UDATA_T *expireHandle;
    WLANTL_BAReorderType        *ReorderInfo;
    WLANTL_CbType               *pTLHandle;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    WLANTL_STAClientType*       pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   WLANTL_STAClientType*       pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_pkt_t                   *vosDataBuff;
    VOS_STATUS                   status = VOS_STATUS_SUCCESS;
    v_U8_t                       ucSTAID;
@@ -176,12 +160,6 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
       return;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   ReorderInfo = &pTLHandle->atlSTAClients[ucSTAID].atlBAReorderInfo[ucTID];
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pClientSTA = pTLHandle->atlSTAClients[ucSTAID];
    if( NULL == pClientSTA ){
       TLLOGE(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
@@ -190,10 +168,6 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
    }
 
    ReorderInfo = &pClientSTA->atlBAReorderInfo[ucTID];
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(NULL == ReorderInfo)
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Reorder data NULL, this could not happen SID %d, TID %d", 
@@ -201,15 +175,7 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
       return;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   if(0 == pTLHandle->atlSTAClients[ucSTAID].atlBAReorderInfo[ucTID].ucExists)
-=======
    if(0 == pClientSTA->atlBAReorderInfo[ucTID].ucExists)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   if(0 == pClientSTA->atlBAReorderInfo[ucTID].ucExists)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
        TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Reorder session doesn't exist SID %d, TID %d", 
                    ucSTAID, ucTID));
@@ -222,15 +188,7 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
       return;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   if( pTLHandle->atlSTAClients[ucSTAID].atlBAReorderInfo[ucTID].ucExists == 0 )
-=======
    if( 0 == pClientSTA->atlBAReorderInfo[ucTID].ucExists )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   if( 0 == pClientSTA->atlBAReorderInfo[ucTID].ucExists )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       vos_lock_release(&ReorderInfo->reorderLock);
       return;
@@ -260,22 +218,9 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
       fwIdx = ReorderInfo->ucCIndex - 1;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-   /* Do replay check before giving packets to upper layer 
-      replay check code : check whether replay check is needed or not */
-   if(VOS_TRUE == pTLHandle->atlSTAClients[ucSTAID].ucIsReplayCheckValid)
-=======
    /* Do replay check before giving packets to upper layer 
       replay check code : check whether replay check is needed or not */
    if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   /* Do replay check before giving packets to upper layer 
-      replay check code : check whether replay check is needed or not */
-   if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
        v_U64_t    ullpreviousReplayCounter = 0;
        v_U64_t    ullcurrentReplayCounter = 0;
@@ -286,15 +231,7 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
        for(ucloopCounter = 0; ucloopCounter < WLANTL_MAX_WINSIZE; ucloopCounter++)
        {
          /*Get previous reply counter*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-         ullpreviousReplayCounter = pTLHandle->atlSTAClients[ucSTAID].ullReplayCounter[ucTID];
-=======
          ullpreviousReplayCounter = pClientSTA->ullReplayCounter[ucTID];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         ullpreviousReplayCounter = pClientSTA->ullReplayCounter[ucTID];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          /*Get current replay counter of packet in reorder buffer*/
          ullcurrentReplayCounter = ReorderInfo->reorderBuffer->ullReplayCounter[ucloopCounter];
@@ -308,28 +245,12 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
            if(VOS_TRUE == status)
            {
                /*Increment the debug counter*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-               pTLHandle->atlSTAClients[ucSTAID].ulTotalReplayPacketsDetected++;
-=======
                pClientSTA->ulTotalReplayPacketsDetected++;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               pClientSTA->ulTotalReplayPacketsDetected++;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                /*A replay packet found*/
                VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                 "WLANTL_ReorderingAgingTimerExpierCB: total dropped replay packets on STA ID %X is [0x%lX]\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                ucSTAID, pTLHandle->atlSTAClients[ucSTAID].ulTotalReplayPacketsDetected);
-=======
                 ucSTAID, pClientSTA->ulTotalReplayPacketsDetected);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                ucSTAID, pClientSTA->ulTotalReplayPacketsDetected);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
                 "WLANTL_ReorderingAgingTimerExpierCB: replay packet found with PN : [0x%llX]\n",
@@ -345,15 +266,7 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
            else
            {
               /*Not a replay packet update previous replay counter*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-              pTLHandle->atlSTAClients[ucSTAID].ullReplayCounter[ucTID] = ullcurrentReplayCounter;
-=======
               pClientSTA->ullReplayCounter[ucTID] = ullcurrentReplayCounter;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-              pClientSTA->ullReplayCounter[ucTID] = ullcurrentReplayCounter;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            }
          }
          else
@@ -364,13 +277,6 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
          }
        } 
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    status = WLANTL_ChainFrontPkts(fwIdx, opCode, 
                                   &vosDataBuff, ReorderInfo, NULL);
@@ -384,15 +290,7 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
       return;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   if(NULL == pTLHandle->atlSTAClients[ucSTAID].pfnSTARx)
-=======
    if(NULL == pClientSTA->pfnSTARx)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   if(NULL == pClientSTA->pfnSTARx)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Callback function NULL with STAID %d", ucSTAID));
       if(!VOS_IS_STATUS_SUCCESS(vos_lock_release(&ReorderInfo->reorderLock)))
@@ -412,36 +310,14 @@ v_VOID_t WLANTL_ReorderingAgingTimerExpierCB
       return;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE  
-   if( WLAN_STA_SOFTAP == pTLHandle->atlSTAClients[ucSTAID].wSTADesc.wSTAType)
-=======
    if( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   if( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       WLANTL_FwdPktToHDD( expireHandle->pAdapter, vosDataBuff, ucSTAID);
    }
    else
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-   {
-      wRxMetaInfo.ucUP = ucTID;
-      pTLHandle->atlSTAClients[ucSTAID].pfnSTARx(expireHandle->pAdapter,
-=======
    {
       wRxMetaInfo.ucUP = ucTID;
       pClientSTA->pfnSTARx(expireHandle->pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   {
-      wRxMetaInfo.ucUP = ucTID;
-      pClientSTA->pfnSTARx(expireHandle->pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                            vosDataBuff, ucSTAID, &wRxMetaInfo);
    }
    if(!VOS_IS_STATUS_SUCCESS(vos_lock_release(&ReorderInfo->reorderLock)))
@@ -482,15 +358,7 @@ void WLANTL_InitBAReorderBuffer
    if (NULL == pTLCb)
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       "%s: Invalid TL Control Block", __FUNCTION__));
-=======
                        "%s: Invalid TL Control Block", __func__));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       "%s: Invalid TL Control Block", __func__));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -500,17 +368,7 @@ void WLANTL_InitBAReorderBuffer
       for(pIdx = 0; pIdx < WLANTL_MAX_WINSIZE; pIdx++)
       {
          pTLCb->reorderBufferPool[idx].arrayBuffer[pIdx] = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
          pTLCb->reorderBufferPool[idx].ullReplayCounter[pIdx] = 0; 
-#endif
-=======
-         pTLCb->reorderBufferPool[idx].ullReplayCounter[pIdx] = 0; 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         pTLCb->reorderBufferPool[idx].ullReplayCounter[pIdx] = 0; 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
    }
 
@@ -565,17 +423,8 @@ WLANTL_BaSessionAdd
   v_U32_t     SSN
 )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  WLANTL_CbType        *pTLCb = NULL; 
-=======
   WLANTL_CbType        *pTLCb = NULL;
   WLANTL_STAClientType *pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  WLANTL_CbType        *pTLCb = NULL;
-  WLANTL_STAClientType *pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   WLANTL_BAReorderType *reorderInfo;
   v_U32_t               idx;
   VOS_STATUS            status = VOS_STATUS_SUCCESS;
@@ -609,12 +458,6 @@ WLANTL_BaSessionAdd
     return VOS_STATUS_E_FAULT;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  if ( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists ) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -625,10 +468,6 @@ WLANTL_BaSessionAdd
   }
 
   if ( 0 == pClientSTA->ucExists )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
           "WLAN TL:Station was not yet registered on WLANTL_BaSessionAdd");
@@ -638,21 +477,9 @@ WLANTL_BaSessionAdd
   /*------------------------------------------------------------------------
     Verify that BA session was not already added
    ------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  if ( 0 != pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists ) 
-  {
-    pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists++;
-=======
   if ( 0 != pClientSTA->atlBAReorderInfo[ucTid].ucExists )
   {
     pClientSTA->atlBAReorderInfo[ucTid].ucExists++;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  if ( 0 != pClientSTA->atlBAReorderInfo[ucTid].ucExists )
-  {
-    pClientSTA->atlBAReorderInfo[ucTid].ucExists++;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
               "WLAN TL:BA session already exists on WLANTL_BaSessionAdd");
     return VOS_STATUS_E_EXISTS;
@@ -661,60 +488,25 @@ WLANTL_BaSessionAdd
   /*------------------------------------------------------------------------
     Initialize new BA session 
    ------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reorderInfo = &pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid];
-=======
   reorderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  reorderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   for(idx = 0; idx < WLANTL_MAX_BA_SESSION; idx++)
   {
     if(VOS_TRUE == pTLCb->reorderBufferPool[idx].isAvailable)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].reorderBuffer =
-=======
       pClientSTA->atlBAReorderInfo[ucTid].reorderBuffer =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      pClientSTA->atlBAReorderInfo[ucTid].reorderBuffer =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             &(pTLCb->reorderBufferPool[idx]);
       pTLCb->reorderBufferPool[idx].isAvailable = VOS_FALSE;
       TLLOG4(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_LOW,"%dth buffer available, buffer PTR 0x%p",
                   idx,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].reorderBuffer
-=======
                   pClientSTA->atlBAReorderInfo[ucTid].reorderBuffer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  pClientSTA->atlBAReorderInfo[ucTid].reorderBuffer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   ));
       break;
     }
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE  
-  
-  if( WLAN_STA_SOFTAP == pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType)
-=======
   
   if( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  
-  if( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
       if( WLANTL_MAX_BA_SESSION == idx) 
       {
@@ -723,13 +515,6 @@ WLANTL_BaSessionAdd
           return VOS_STATUS_E_NOSUPPORT;
       }
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   reorderInfo->timerUdata.pAdapter     = pvosGCtx;
   reorderInfo->timerUdata.pTLHandle    = (v_PVOID_t)pTLCb;
   reorderInfo->timerUdata.STAID        = ucSTAId;
@@ -756,26 +541,6 @@ WLANTL_BaSessionAdd
      return status;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists++;
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].usCount   = 0;
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucCIndex  = 0;
-  if(0 == winSize)
-  {
-    pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].winSize =
-                                                   WLANTL_MAX_WINSIZE;
-  }
-  else
-  {
-    pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].winSize   = winSize;
-  }
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].SSN       = SSN;
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].sessionID = sessionID;
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].pendingFramesCount = 0;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA->atlBAReorderInfo[ucTid].ucExists++;
   pClientSTA->atlBAReorderInfo[ucTid].usCount   = 0;
   pClientSTA->atlBAReorderInfo[ucTid].ucCIndex  = 0;
@@ -790,10 +555,6 @@ WLANTL_BaSessionAdd
   pClientSTA->atlBAReorderInfo[ucTid].SSN       = SSN;
   pClientSTA->atlBAReorderInfo[ucTid].sessionID = sessionID;
   pClientSTA->atlBAReorderInfo[ucTid].pendingFramesCount = 0;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
              "WLAN TL:New BA session added for STA: %d TID: %d",
              ucSTAId, ucTid));
@@ -840,17 +601,8 @@ WLANTL_BaSessionDel
   v_U8_t         ucTid
 )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  WLANTL_CbType*          pTLCb       = NULL; 
-=======
   WLANTL_CbType*          pTLCb       = NULL;
   WLANTL_STAClientType    *pClientSTA   = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  WLANTL_CbType*          pTLCb       = NULL;
-  WLANTL_STAClientType    *pClientSTA   = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vos_pkt_t*              vosDataBuff = NULL;
   VOS_STATUS              vosStatus   = VOS_STATUS_E_FAILURE;
   VOS_STATUS              lockStatus = VOS_STATUS_E_FAILURE;  
@@ -888,20 +640,6 @@ WLANTL_BaSessionDel
     return VOS_STATUS_E_FAULT;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  if (( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists ) &&
-      ( 0 == pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists ))
-  {
-    VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
-          "WLAN TL:Station was not yet registered on WLANTL_BaSessionDel");
-    return VOS_STATUS_E_EXISTS;
-  }
-  else if(( 0 == pTLCb->atlSTAClients[ucSTAId].ucExists ) &&
-          ( 0 != pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists ))
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -920,23 +658,11 @@ WLANTL_BaSessionDel
   }
   else if(( 0 == pClientSTA->ucExists ) &&
           ( 0 != pClientSTA->atlBAReorderInfo[ucTid].ucExists ))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_WARN,
           "STA was deleted but BA info is still there, just remove BA info");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    reOrderInfo = &pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid];
-=======
     reOrderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    reOrderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     reOrderInfo->reorderBuffer->isAvailable = VOS_TRUE;
     memset(&reOrderInfo->reorderBuffer->arrayBuffer[0],
            0,
@@ -950,15 +676,7 @@ WLANTL_BaSessionDel
   /*------------------------------------------------------------------------
     Verify that BA session was added
    ------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  if ( 0 == pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists )
-=======
   if ( 0 == pClientSTA->atlBAReorderInfo[ucTid].ucExists )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  if ( 0 == pClientSTA->atlBAReorderInfo[ucTid].ucExists )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   {
     VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                "WLAN TL:BA session does not exists on WLANTL_BaSessionDel");
@@ -969,15 +687,7 @@ WLANTL_BaSessionDel
   /*------------------------------------------------------------------------
      Send all pending packets to HDD 
    ------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reOrderInfo = &pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid];
-=======
   reOrderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  reOrderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   /*------------------------------------------------------------------------
      Invalidate reorder info here. This ensures that no packets are 
@@ -987,23 +697,10 @@ WLANTL_BaSessionDel
   if(!VOS_IS_STATUS_SUCCESS(lockStatus))
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "Unable to acquire reorder vos lock in %s\n", __FUNCTION__));
-    return lockStatus;
-  }
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists = 0;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           "Unable to acquire reorder vos lock in %s\n", __func__));
     return lockStatus;
   }
   pClientSTA->atlBAReorderInfo[ucTid].ucExists = 0;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   TLLOG2(VOS_TRACE( VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO_HIGH,
                "WLAN TL: Fwd all packets to HDD on WLANTL_BaSessionDel"));
@@ -1030,36 +727,14 @@ WLANTL_BaSessionDel
              "WLAN TL: Chaining was successful sending all pkts to HDD : %x",
               vosDataBuff ));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-    if ( WLAN_STA_SOFTAP == pTLCb->atlSTAClients[ucSTAId].wSTADesc.wSTAType )
-=======
     if ( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if ( WLAN_STA_SOFTAP == pClientSTA->wSTADesc.wSTAType )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
       WLANTL_FwdPktToHDD( pvosGCtx, vosDataBuff, ucSTAId);
     }
     else
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-    {
-      wRxMetaInfo.ucUP = ucTid;
-      pTLCb->atlSTAClients[ucSTAId].pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
-=======
     {
       wRxMetaInfo.ucUP = ucTid;
       pClientSTA->pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    {
-      wRxMetaInfo.ucUP = ucTid;
-      pClientSTA->pfnSTARx( pvosGCtx, vosDataBuff, ucSTAId,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             &wRxMetaInfo );
     }
   }
@@ -1074,15 +749,7 @@ WLANTL_BaSessionDel
     vosStatus = vos_timer_stop(&reOrderInfo->agingTimer);
     if(!VOS_IS_STATUS_SUCCESS(vosStatus))
     { 
-<<<<<<< HEAD
-<<<<<<< HEAD
-       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Timer stop fail", vosStatus));
-=======
        TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Timer stop fail: %d", vosStatus));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Timer stop fail: %d", vosStatus));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return vosStatus;
     }
   }
@@ -1105,18 +772,8 @@ WLANTL_BaSessionDel
   /*------------------------------------------------------------------------
     Delete session 
    ------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].usCount  = 0;
-  pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucCIndex = 0;
-=======
   pClientSTA->atlBAReorderInfo[ucTid].usCount  = 0;
   pClientSTA->atlBAReorderInfo[ucTid].ucCIndex = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  pClientSTA->atlBAReorderInfo[ucTid].usCount  = 0;
-  pClientSTA->atlBAReorderInfo[ucTid].ucCIndex = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   reOrderInfo->winSize   = 0;
   reOrderInfo->SSN       = 0;
   reOrderInfo->sessionID = 0;
@@ -1206,29 +863,14 @@ WLANTL_AMSDUProcess
   v_U8_t          ucFsf; /* First AMSDU sub frame */
   v_U8_t          ucAef; /* Error in AMSDU sub frame */
   WLANTL_CbType*  pTLCb = NULL; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   WLANTL_STAClientType *pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  WLANTL_STAClientType *pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   v_U8_t          MPDUHeaderAMSDUHeader[WLANTL_MPDU_HEADER_LEN + TL_AMSDU_SUBFRM_HEADER_LEN];
   v_U16_t         subFrameLength;
   v_U16_t         paddingSize;
   VOS_STATUS      vStatus = VOS_STATUS_SUCCESS;
   v_U16_t         MPDUDataOffset;
   v_U16_t         packetLength; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  static v_U32_t  numAMSDUFrames = 0;
-=======
   static v_U32_t  numAMSDUFrames;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  static v_U32_t  numAMSDUFrames;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   vos_pkt_t*      vosDataBuff;
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
   /*------------------------------------------------------------------------
@@ -1254,11 +896,6 @@ WLANTL_AMSDUProcess
     return VOS_STATUS_E_FAULT;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
   if ( NULL == pClientSTA )
@@ -1268,31 +905,13 @@ WLANTL_AMSDUProcess
       return VOS_STATUS_E_FAILURE;
   }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   /*------------------------------------------------------------------------
     Check frame
    ------------------------------------------------------------------------*/
   ucAef =  (v_U8_t)WDA_GET_RX_AEF( pvBDHeader );
   ucFsf =  (v_U8_t)WDA_GET_RX_ESF( pvBDHeader );
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifndef FEATURE_WLAN_INTEGRATED_SOC
-  MPDUDataOffset = (v_U16_t)WDA_GET_RX_MPDU_DATA_OFFSET(pvBDHeader) - WLANHAL_RX_BD_HEADER_SIZE;
-#else
   /* On Prima, MPDU data offset not includes BD header size */
   MPDUDataOffset = (v_U16_t)WDA_GET_RX_MPDU_DATA_OFFSET(pvBDHeader);
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
-=======
-  /* On Prima, MPDU data offset not includes BD header size */
-  MPDUDataOffset = (v_U16_t)WDA_GET_RX_MPDU_DATA_OFFSET(pvBDHeader);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  /* On Prima, MPDU data offset not includes BD header size */
-  MPDUDataOffset = (v_U16_t)WDA_GET_RX_MPDU_DATA_OFFSET(pvBDHeader);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   if ( WLANHAL_RX_BD_AEF_SET == ucAef ) 
   {
@@ -1311,11 +930,6 @@ WLANTL_AMSDUProcess
      * AMSDU Header should be removed
      * MPDU header should be stored into context to recover next frames
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Assumed here Address4 is never part of AMSDU received at TL */
     if (ucMPDUHLen > WLANTL_MPDU_HEADER_LEN)
     {
@@ -1325,10 +939,6 @@ WLANTL_AMSDUProcess
       return VOS_STATUS_SUCCESS; /*Not a transport error*/
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     vStatus = vos_pkt_pop_head(vosDataBuff, MPDUHeaderAMSDUHeader, ucMPDUHLen + TL_AMSDU_SUBFRM_HEADER_LEN);
     if(!VOS_IS_STATUS_SUCCESS(vStatus))
     {
@@ -1337,18 +947,6 @@ WLANTL_AMSDUProcess
       *ppVosDataBuff = NULL;
       return VOS_STATUS_SUCCESS; /*Not a transport error*/ 
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pTLCb->atlSTAClients[ucSTAId].ucMPDUHeaderLen = ucMPDUHLen;
-    memcpy(pTLCb->atlSTAClients[ucSTAId].aucMPDUHeader, MPDUHeaderAMSDUHeader, ucMPDUHLen);
-    /* AMSDU header stored to handle gabage data within next frame */
-  }
-  else
-  {
-    /* Trim gabage, size is frameLoop */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pClientSTA->ucMPDUHeaderLen = ucMPDUHLen;
     memcpy(pClientSTA->aucMPDUHeader, MPDUHeaderAMSDUHeader, ucMPDUHLen);
     /* AMSDU header stored to handle garbage data within next frame */
@@ -1356,10 +954,6 @@ WLANTL_AMSDUProcess
   else
   {
     /* Trim garbage, size is frameLoop */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(MPDUDataOffset > 0)
     {
       vStatus = vos_pkt_trim_head(vosDataBuff, MPDUDataOffset);
@@ -1384,15 +978,7 @@ WLANTL_AMSDUProcess
   } /* End of henalding not first sub frame specific */
 
   /* Put in MPDU header into all the frame */
-<<<<<<< HEAD
-<<<<<<< HEAD
-  vStatus = vos_pkt_push_head(vosDataBuff, pTLCb->atlSTAClients[ucSTAId].aucMPDUHeader, pTLCb->atlSTAClients[ucSTAId].ucMPDUHeaderLen);
-=======
   vStatus = vos_pkt_push_head(vosDataBuff, pClientSTA->aucMPDUHeader, pClientSTA->ucMPDUHeaderLen);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  vStatus = vos_pkt_push_head(vosDataBuff, pClientSTA->aucMPDUHeader, pClientSTA->ucMPDUHeaderLen);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   if(!VOS_IS_STATUS_SUCCESS(vStatus))
   {
     TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"MPDU Header Push back fail"));
@@ -1473,14 +1059,7 @@ VOS_STATUS WLANTL_MSDUReorder
 )
 {
    WLANTL_BAReorderType *currentReorderInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    WLANTL_STAClientType *pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   WLANTL_STAClientType *pClientSTA = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    vos_pkt_t            *vosPktIdx;
    v_U8_t               ucOpCode; 
    v_U8_t               ucSlotIdx;
@@ -1492,17 +1071,7 @@ VOS_STATUS WLANTL_MSDUReorder
    VOS_STATUS           timerStatus = VOS_STATUS_SUCCESS; 
    VOS_TIMER_STATE      timerState;
    v_SIZE_t             rxFree;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
    v_U64_t              ullreplayCounter = 0; /* 48-bit replay counter */
-#endif
-=======
-   v_U64_t              ullreplayCounter = 0; /* 48-bit replay counter */
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   v_U64_t              ullreplayCounter = 0; /* 48-bit replay counter */
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if((NULL == pTLCb) || (*vosDataBuff == NULL))
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Invalid ARG pTLCb 0x%p, vosDataBuff 0x%p",
@@ -1510,12 +1079,6 @@ VOS_STATUS WLANTL_MSDUReorder
       return VOS_STATUS_E_INVAL;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   currentReorderInfo = &pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid];
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pClientSTA = pTLCb->atlSTAClients[ucSTAId];
 
    if ( NULL == pClientSTA )
@@ -1526,10 +1089,6 @@ VOS_STATUS WLANTL_MSDUReorder
    }
 
    currentReorderInfo = &pClientSTA->atlBAReorderInfo[ucTid];
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    lockStatus = vos_lock_acquire(&currentReorderInfo->reorderLock);
    if(!VOS_IS_STATUS_SUCCESS(lockStatus))
@@ -1538,15 +1097,7 @@ VOS_STATUS WLANTL_MSDUReorder
       return lockStatus;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   if( pTLCb->atlSTAClients[ucSTAId].atlBAReorderInfo[ucTid].ucExists == 0 )
-=======
    if( pClientSTA->atlBAReorderInfo[ucTid].ucExists == 0 )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   if( pClientSTA->atlBAReorderInfo[ucTid].ucExists == 0 )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
      vos_lock_release(&currentReorderInfo->reorderLock);
      return VOS_STATUS_E_INVAL;
@@ -1560,15 +1111,7 @@ VOS_STATUS WLANTL_MSDUReorder
 
 #ifdef WLANTL_HAL_VOLANS
    /* Replay check code : check whether replay check is needed or not */
-<<<<<<< HEAD
-<<<<<<< HEAD
-   if(VOS_TRUE == pTLCb->atlSTAClients[ucSTAId].ucIsReplayCheckValid)
-=======
    if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
            /* Getting 48-bit replay counter from the RX BD */
            ullreplayCounter = WDA_DS_GetReplayCounter(aucBDHeader);
@@ -1606,27 +1149,11 @@ VOS_STATUS WLANTL_MSDUReorder
          status = WLANTL_QueueCurrent(currentReorderInfo,
                                       vosDataBuff,
                                       ucSlotIdx);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-         if(VOS_TRUE == pTLCb->atlSTAClients[ucSTAId].ucIsReplayCheckValid)
-=======
          if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          {
              WLANTL_FillReplayCounter(currentReorderInfo,
                                ullreplayCounter, ucSlotIdx);
          }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if(VOS_STATUS_E_RESOURCES == status)
          {
             /* This is the case slot index is already cycle one route, route all the frames Qed */
@@ -1723,27 +1250,11 @@ VOS_STATUS WLANTL_MSDUReorder
          status = WLANTL_QueueCurrent(currentReorderInfo,
                                       vosDataBuff,
                                       ucSlotIdx);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-           if(VOS_TRUE == pTLCb->atlSTAClients[ucSTAId].ucIsReplayCheckValid)
-=======
            if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            {
                WLANTL_FillReplayCounter(currentReorderInfo,
                                  ullreplayCounter, ucSlotIdx);
            }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if(VOS_STATUS_E_RESOURCES == status)
          {
             /* This is the case slot index is already cycle one route, route all the frames Qed */
@@ -1800,27 +1311,11 @@ VOS_STATUS WLANTL_MSDUReorder
          status = WLANTL_QueueCurrent(currentReorderInfo,
                                       vosDataBuff,
                                       ucSlotIdx);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-           if(VOS_TRUE == pTLCb->atlSTAClients[ucSTAId].ucIsReplayCheckValid)
-=======
            if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            {
                WLANTL_FillReplayCounter(currentReorderInfo,
                                  ullreplayCounter, ucSlotIdx);
            }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if(VOS_STATUS_E_RESOURCES == status)
          {
             vos_pkt_return_packet(vosPktIdx); 
@@ -1951,27 +1446,11 @@ VOS_STATUS WLANTL_MSDUReorder
          status = WLANTL_QueueCurrent(currentReorderInfo,
                                       vosDataBuff,
                                       ucSlotIdx);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-           if(VOS_TRUE == pTLCb->atlSTAClients[ucSTAId].ucIsReplayCheckValid)
-=======
            if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           if(VOS_TRUE == pClientSTA->ucIsReplayCheckValid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            {
                WLANTL_FillReplayCounter(currentReorderInfo,
                                  ullreplayCounter, ucSlotIdx);
            }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          if(!VOS_IS_STATUS_SUCCESS(status))
          {
             TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Q Current frame fail %d",
@@ -2006,23 +1485,10 @@ VOS_STATUS WLANTL_MSDUReorder
     * Route all the Qed frames upper layer
     * Otherwise, RX thread could be stall */
    vos_pkt_get_available_buffer_pool(VOS_PKT_TYPE_RX_RAW, &rxFree);
-<<<<<<< HEAD
-<<<<<<< HEAD
-   if(WLANTL_BA_MIN_FREE_RX_VOS_BUFFER > rxFree)
-   {
-      TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"RX Free", rxFree));
-      TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"RX free buffer count is too low, Pending frame count is %d",
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if(WLANTL_BA_MIN_FREE_RX_VOS_BUFFER >= rxFree)
    {
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO, "RX Free: %d", rxFree));
       TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_INFO, "RX free buffer count is too low, Pending frame count is %d",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   currentReorderInfo->pendingFramesCount));
       vosPktIdx = NULL;
       status = WLANTL_ChainFrontPkts(ucFwdIdx,
@@ -2088,15 +1554,7 @@ VOS_STATUS WLANTL_MSDUReorder
                                        WLANTL_BA_REORDERING_AGING_TIMER);
          if(!VOS_IS_STATUS_SUCCESS(timerStatus))
          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Timer start fail", timerStatus));
-=======
             TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Timer start fail: %d", timerStatus));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            TLLOGE(VOS_TRACE(VOS_MODULE_ID_TL, VOS_TRACE_LEVEL_ERROR,"Timer start fail: %d", timerStatus));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             lockStatus = vos_lock_release(&currentReorderInfo->reorderLock);
             if(!VOS_IS_STATUS_SUCCESS(lockStatus))
             {
@@ -2310,13 +1768,6 @@ VOS_STATUS WLANTL_ChainFrontPkts
 
    return status; 
 }/*WLANTL_ChainFrontPkts*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
  
   FUNCTION    WLANTL_FillReplayCounter
@@ -2359,11 +1810,4 @@ void WLANTL_FillReplayCounter
                //pwBaReorder->reorderBuffer->ullReplayCounter);
    return;
 }/*WLANTL_FillReplayCounter*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /*End of #ifdef WLANTL_HAL_VOLANS*/
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

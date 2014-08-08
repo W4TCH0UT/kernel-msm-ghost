@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -62,25 +53,8 @@
  */
 
 #include "wniApi.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_PRODUCT_TYPE_AP
-#include "wniCfgAp.h"
-#else
-#include "wniCfgSta.h"
-#endif
-#include "aniGlobal.h"
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-#include "halCommonApi.h"
-#endif
-=======
 #include "wniCfgSta.h"
 #include "aniGlobal.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include "wniCfgSta.h"
-#include "aniGlobal.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "schApi.h"
 #include "utilsApi.h"
 #include "limApi.h"
@@ -93,11 +67,6 @@
 
 #include "parserApi.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus
 limValidateIEInformationInProbeRspFrame (tANI_U8 *pRxPacketInfo)
 {
@@ -111,10 +80,6 @@ limValidateIEInformationInProbeRspFrame (tANI_U8 *pRxPacketInfo)
    return status;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limProcessProbeRspFrame
  *
@@ -153,31 +118,13 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
     if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, 
                                                 (void **)&pProbeRsp, sizeof(tSirProbeRespBeacon)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessProbeRspFrame\n") );
-=======
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessProbeRspFrame") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessProbeRspFrame") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     pProbeRsp->ssId.length              = 0;
     pProbeRsp->wpa.length               = 0;
     pProbeRsp->propIEinfo.apName.length = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-    pProbeRsp->propIEinfo.aniIndicator  = 0;
-    pProbeRsp->propIEinfo.wdsLength     = 0;
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
@@ -193,12 +140,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
        palFreeMemory(pMac->hHdd, pProbeRsp);    
        return;
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // Validate IE information before processing Probe Response Frame
    if (limValidateIEInformationInProbeRspFrame(pRxPacketInfo) != eSIR_SUCCESS)
    {
@@ -207,10 +148,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
        palFreeMemory(pMac->hHdd, pProbeRsp);
        return;
    }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /**
      * Expect Probe Response only when
@@ -239,19 +176,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
     {
         frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // Get pointer to Probe Response frame body
-        pBody = WDA_GET_RX_MPDU_DATA(pRxPacketInfo);
-
-        if (sirConvertProbeFrame2Struct(pMac, pBody, frameLen, pProbeRsp)
-                          ==eSIR_FAILURE)
-        {
-            PELOG1(limLog(pMac, LOG1,
-               FL("PArse error ProbeResponse, length=%d\n"),
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pMac->lim.gLimBackgroundScanMode == eSIR_ROAMING_SCAN)
         {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
@@ -268,10 +192,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
         {
             PELOG1(limLog(pMac, LOG1,
                FL("Parse error ProbeResponse, length=%d"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                frameLen);)
             palFreeMemory(pMac->hHdd, pProbeRsp);
             return;
@@ -283,24 +203,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                ((pMac->lim.gLimHalScanState == eLIM_HAL_SCANNING_STATE) ? eANI_BOOLEAN_TRUE : eANI_BOOLEAN_FALSE), eANI_BOOLEAN_TRUE);
         else if (pMac->lim.gLimMlmState == eLIM_MLM_LEARN_STATE)           //mlm state check should be global - 18th oct
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-            // STA/AP is in learn mode
-            /* Not sure whether the below 2 lines are needed for the station. TODO If yes, this should be 
-             * uncommented. Also when we tested enabling this, there is a crash as soon as the station
-             * comes up which needs to be fixed*/
-            //if (pMac->lim.gLimSystemRole == eLIM_STA_ROLE)
-              //  limCheckAndAddBssDescription(pMac, pProbeRsp, pRxPacketInfo, eANI_BOOLEAN_TRUE);
-            limCollectMeasurementData(pMac, pRxPacketInfo, pProbeRsp);
-           PELOG3(limLog(pMac, LOG3,
-               FL("Parsed WDS info in ProbeRsp frames: wdsLength=%d\n"),
-               pProbeRsp->propIEinfo.wdsLength);)
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else if (psessionEntry->limMlmState ==
                                      eLIM_MLM_WT_JOIN_BEACON_STATE)
@@ -344,15 +246,7 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                           &cfg) != eSIR_SUCCESS)
             {
                 /// Could not get BSSID from CFG. Log error.
-<<<<<<< HEAD
-<<<<<<< HEAD
-                limLog(pMac, LOGP, FL("could not retrieve BSSID\n"));
-=======
                 limLog(pMac, LOGP, FL("could not retrieve BSSID"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                limLog(pMac, LOGP, FL("could not retrieve BSSID"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             #endif //TO SUPPORT BT-AMP
             sirCopyMacAddr(currentBssId,psessionEntry->bssId);
@@ -366,15 +260,7 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
             if (!LIM_IS_CONNECTION_ACTIVE(psessionEntry))
             {
                 limLog(pMac, LOGW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("Received Probe Resp from AP. So it is alive!!\n"));
-=======
                     FL("Received Probe Resp from AP. So it is alive!!"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    FL("Received Probe Resp from AP. So it is alive!!"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 if (pProbeRsp->HTInfo.present)
                     limReceivedHBHandler(pMac, (tANI_U8)pProbeRsp->HTInfo.primaryChannel, psessionEntry);
@@ -382,33 +268,9 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                     limReceivedHBHandler(pMac, (tANI_U8)pProbeRsp->channelNumber, psessionEntry);
             }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined ANI_PRODUCT_TYPE_CLIENT || defined (ANI_AP_CLIENT_SDK)
             
             if (psessionEntry->limSystemRole == eLIM_STA_ROLE)
             {
-                if (pProbeRsp->quietIEPresent)
-                {
-                    limUpdateQuietIEFromBeacon(pMac, &(pProbeRsp->quietIE), psessionEntry);
-                }
-                else if ((psessionEntry->gLimSpecMgmt.quietState == eLIM_QUIET_BEGIN) ||
-                     (psessionEntry->gLimSpecMgmt.quietState == eLIM_QUIET_RUNNING))
-                {
-                    PELOG1(limLog(pMac, LOG1, FL("Received a probe rsp without Quiet IE\n"));)
-                    limCancelDot11hQuiet(pMac, psessionEntry);
-                }
-
-=======
-            
-            if (psessionEntry->limSystemRole == eLIM_STA_ROLE)
-            {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            
-            if (psessionEntry->limSystemRole == eLIM_STA_ROLE)
-            {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (pProbeRsp->channelSwitchPresent ||
                     pProbeRsp->propIEinfo.propChannelSwitchPresent)
                 {
@@ -420,13 +282,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                 }
             }
         
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             
             /**
             * Now Process EDCA Parameters, if EDCAParamSet count is different.
@@ -441,15 +296,7 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
             limGetQosMode(psessionEntry, &qosEnabled);
             limGetWmeMode(psessionEntry, &wmeEnabled);
            PELOG2(limLog(pMac, LOG2,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("wmeEdcaPresent: %d wmeEnabled: %d, edcaPresent: %d, qosEnabled: %d,  edcaParams.qosInfo.count: %d schObject.gLimEdcaParamSetCount: %d\n"),
-=======
                     FL("wmeEdcaPresent: %d wmeEnabled: %d, edcaPresent: %d, qosEnabled: %d,  edcaParams.qosInfo.count: %d schObject.gLimEdcaParamSetCount: %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    FL("wmeEdcaPresent: %d wmeEnabled: %d, edcaPresent: %d, qosEnabled: %d,  edcaParams.qosInfo.count: %d schObject.gLimEdcaParamSetCount: %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           pProbeRsp->wmeEdcaPresent, wmeEnabled, pProbeRsp->edcaPresent, qosEnabled,
                           pProbeRsp->edcaParams.qosInfo.count, psessionEntry->gLimEdcaParamSetCount);)
             if (((pProbeRsp->wmeEdcaPresent && wmeEnabled) ||
@@ -457,15 +304,7 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                 (pProbeRsp->edcaParams.qosInfo.count != psessionEntry->gLimEdcaParamSetCount))
             {
                 if (schBeaconEdcaProcess(pMac, &pProbeRsp->edcaParams, psessionEntry) != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    PELOGE(limLog(pMac, LOGE, FL("EDCA parameter processing error\n"));)
-=======
                     PELOGE(limLog(pMac, LOGE, FL("EDCA parameter processing error"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    PELOGE(limLog(pMac, LOGE, FL("EDCA parameter processing error"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else if (pStaDs != NULL)
                 {
                     // If needed, downgrade the EDCA parameters
@@ -477,14 +316,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                         limSendEdcaParams(pMac, psessionEntry->gLimEdcaParamsActive, pStaDs->bssId, eANI_BOOLEAN_FALSE);
                 }
                 else
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    PELOGE(limLog(pMac, LOGE, FL("Self Entry missing in Hash Table\n"));)
-
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     PELOGE(limLog(pMac, LOGE, FL("Self Entry missing in Hash Table"));)
 
             }
@@ -494,10 +325,6 @@ limProcessProbeRspFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession 
                limLog(pMac, LOGW, FL("Checking probe response for capability change\n") );
                limDetectChangeInApCapabilities(pMac, pProbeRsp, psessionEntry);
            }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else if ((psessionEntry->limSystemRole == eLIM_STA_IN_IBSS_ROLE) &&
                  (psessionEntry->limMlmState == eLIM_MLM_BSS_STARTED_STATE))
@@ -521,31 +348,13 @@ limProcessProbeRspFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
     if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, 
                                                 (void **)&pProbeRsp, sizeof(tSirProbeRespBeacon)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessProbeRspFrameNoSession\n") );
-=======
         limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessProbeRspFrameNoSession") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessProbeRspFrameNoSession") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     pProbeRsp->ssId.length              = 0;
     pProbeRsp->wpa.length               = 0;
     pProbeRsp->propIEinfo.apName.length = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-    pProbeRsp->propIEinfo.aniIndicator  = 0;
-    pProbeRsp->propIEinfo.wdsLength     = 0;
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
@@ -556,17 +365,6 @@ limProcessProbeRspFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
              WDA_GET_RX_MPDU_LEN(pRxPacketInfo));
     limPrintMacAddr(pMac, pHdr->sa, LOG2);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (limDeactivateMinChannelTimerDuringScan(pMac) != eSIR_SUCCESS)
-    {
-        palFreeMemory(pMac->hHdd, pProbeRsp);
-        return;
-    }
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
     if (!(WDA_GET_OFFLOADSCANLEARN(pRxPacketInfo) ||
           WDA_GET_ROAMCANDIDATEIND(pRxPacketInfo)))
@@ -596,24 +394,12 @@ limProcessProbeRspFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
        palFreeMemory(pMac->hHdd, pProbeRsp);
        return;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*  Since there is no psessionEntry, PE cannot be in the following states:
      *   - eLIM_MLM_WT_JOIN_BEACON_STATE
      *   - eLIM_MLM_LINK_ESTABLISHED_STATE
      *   - eLIM_MLM_BSS_STARTED_STATE
      *  Hence, expect Probe Response only when
      *   1. STA is in scan mode waiting for Beacon/Probe response 
-<<<<<<< HEAD
-<<<<<<< HEAD
-     *  
-     *  Ignore Probe Response frame in all other states
-     */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      *   2. LFR logic in FW sends up candidate frames
      *  
      *  Ignore Probe Response frame in all other states
@@ -646,21 +432,12 @@ limProcessProbeRspFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
     }
     else
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( (pMac->lim.gLimMlmState == eLIM_MLM_WT_PROBE_RESP_STATE) ||
         (pMac->lim.gLimMlmState == eLIM_MLM_PASSIVE_SCAN_STATE)  ||     //mlm state check should be global - 18th oct
         (pMac->lim.gLimMlmState == eLIM_MLM_LEARN_STATE) )
     {
         frameLen = WDA_GET_RX_PAYLOAD_LEN(pRxPacketInfo);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (pMac->lim.gLimBackgroundScanMode == eSIR_ROAMING_SCAN)
         {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
@@ -669,24 +446,12 @@ limProcessProbeRspFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
                       (uint)abs((tANI_S8)WDA_GET_RX_RSSI_DB(pRxPacketInfo)));
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Get pointer to Probe Response frame body
         pBody = WDA_GET_RX_MPDU_DATA(pRxPacketInfo);
 
         if (sirConvertProbeFrame2Struct(pMac, pBody, frameLen, pProbeRsp) == eSIR_FAILURE)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOG1, FL("Parse error ProbeResponse, length=%d\n"), frameLen);
-=======
             limLog(pMac, LOG1, FL("Parse error ProbeResponse, length=%d"), frameLen);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOG1, FL("Parse error ProbeResponse, length=%d"), frameLen);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             palFreeMemory(pMac->hHdd, pProbeRsp);
             return;
         }
@@ -696,24 +461,6 @@ limProcessProbeRspFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
             limCheckAndAddBssDescription(pMac, pProbeRsp, pRxPacketInfo, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_TRUE);
         else if (pMac->lim.gLimMlmState == eLIM_MLM_LEARN_STATE)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_PRODUCT_TYPE_AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-            // STA/AP is in learn mode
-            /* Not sure whether the below 2 lines are needed for the station. TODO If yes, this should be 
-             * uncommented. Also when we tested enabling this, there is a crash as soon as the station
-             * comes up which needs to be fixed*/
-            //if (pMac->lim.gLimSystemRole == eLIM_STA_ROLE)
-              //  limCheckAndAddBssDescription(pMac, pProbeRsp, pRxPacketInfo, eANI_BOOLEAN_TRUE);
-            limCollectMeasurementData(pMac, pRxPacketInfo, pProbeRsp);
-            limLog(pMac, LOG3,
-               FL("Parsed WDS info in ProbeRsp frames: wdsLength=%d\n"),
-               pProbeRsp->propIEinfo.wdsLength);
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     } 
     palFreeMemory(pMac->hHdd, pProbeRsp);

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -148,43 +139,19 @@ VOS_STATUS vos_lock_init ( vos_lock_t *lock )
    //check for invalid pointer
    if ( lock == NULL)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__FUNCTION__);
-=======
        VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_E_FAULT; 
    }
    // check for 'already initialized' lock
    if ( LINUX_LOCK_COOKIE == lock->cookie )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: already initialized lock",__FUNCTION__);
-=======
        VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: already initialized lock",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: already initialized lock",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_E_BUSY;
    }
       
    if (in_interrupt())
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_FAULT; 
    }
       
@@ -228,43 +195,19 @@ VOS_STATUS vos_lock_acquire ( vos_lock_t* lock )
       //Check for invalid pointer
       if ( lock == NULL )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAULT;
       }
       // check if lock refers to an initialized object
       if ( LINUX_LOCK_COOKIE != lock->cookie )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock",__FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_INVAL;
       }
 
       if (in_interrupt())
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAULT; 
       }
       if ((lock->processID == current->pid) && 
@@ -277,27 +220,12 @@ VOS_STATUS vos_lock_acquire ( vos_lock_t* lock )
          return VOS_STATUS_SUCCESS;
       }
       // Acquire a Lock
-<<<<<<< HEAD
-<<<<<<< HEAD
-      mutex_lock( &lock->m_lock ); 
-      rc = mutex_is_locked( &lock->m_lock );
-      if (rc == 0) 
-      {
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-                "%s: unable to lock mutex (rc = %d)", __FUNCTION__, rc);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       mutex_lock( &lock->m_lock );
       rc = mutex_is_locked( &lock->m_lock );
       if (rc == 0)
       {
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                 "%s: unable to lock mutex (rc = %d)", __func__, rc);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAILURE;
       }
  
@@ -315,15 +243,7 @@ VOS_STATUS vos_lock_acquire ( vos_lock_t* lock )
       else
       {
          // lock is already destroyed
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: Lock is already destroyed", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: Lock is already destroyed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: Lock is already destroyed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          mutex_unlock(&lock->m_lock);
          return VOS_STATUS_E_FAILURE;
       }
@@ -363,44 +283,20 @@ VOS_STATUS vos_lock_release ( vos_lock_t *lock )
       //Check for invalid pointer
       if ( lock == NULL )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAULT;
       }
 
       // check if lock refers to an uninitialized object
       if ( LINUX_LOCK_COOKIE != lock->cookie )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock",__FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_INVAL;
       }
 
       if (in_interrupt())
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAULT; 
       }
 
@@ -409,15 +305,7 @@ VOS_STATUS vos_lock_release ( vos_lock_t *lock )
       // of the thread which acquire the lock
       if ( lock->processID != current->pid )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: current task pid does not match original task pid!!",__FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: current task pid does not match original task pid!!",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: current task pid does not match original task pid!!",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef VOS_NESTED_LOCK_DEBUG
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_INFO,"%s: Lock held by=%d being released by=%d", __func__, lock->processID, current->pid);
 #endif
@@ -483,58 +371,26 @@ VOS_STATUS vos_lock_destroy( vos_lock_t *lock )
       //Check for invalid pointer
       if ( NULL == lock )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: NULL pointer passed in", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAULT; 
       }
 
       if ( LINUX_LOCK_COOKIE != lock->cookie )
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: uninitialized lock", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_INVAL;
       }
 
       if (in_interrupt())
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s cannot be called from interrupt context!!!", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_FAULT; 
       }
 
       // check if lock is released
       if (!mutex_trylock(&lock->m_lock))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: lock is not released", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: lock is not released", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, "%s: lock is not released", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return VOS_STATUS_E_BUSY;
       }
       lock->cookie = 0;

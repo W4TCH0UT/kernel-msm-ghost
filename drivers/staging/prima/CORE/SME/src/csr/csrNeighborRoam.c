@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -48,14 +39,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*
- * */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** ------------------------------------------------------------------------- * 
     ------------------------------------------------------------------------- *  
 
@@ -116,23 +99,11 @@ static void csrNeighborRoamResetPreauthControlInfo(tpAniSirGlobal pMac);
 static void csrNeighborRoamDeregAllRssiIndication(tpAniSirGlobal pMac);
 
 VOS_STATUS csrNeighborRoamNeighborLookupUPCallback (v_PVOID_t pAdapter, v_U8_t rssiNotification,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                                               v_PVOID_t pUserCtxt);
-VOS_STATUS csrNeighborRoamNeighborLookupDOWNCallback (v_PVOID_t pAdapter, v_U8_t rssiNotification,
-                                                                               v_PVOID_t pUserCtxt);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                                                v_PVOID_t pUserCtxt,
                                                                                v_S7_t avgRssi);
 VOS_STATUS csrNeighborRoamNeighborLookupDOWNCallback (v_PVOID_t pAdapter, v_U8_t rssiNotification,
                                                                                v_PVOID_t pUserCtxt,
                                                                                v_S7_t avgRssi);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus);
 eHalStatus csrRoamCopyConnectedProfile(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfile *pDstProfile );
 
@@ -141,11 +112,6 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac);
 VOS_STATUS csrNeighborRoamIssueNeighborRptRequest(tpAniSirGlobal pMac);
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define ROAM_STATE_RETURN_STRING( str )\
         case ( ( str ) ): return( #str )
 
@@ -169,29 +135,15 @@ v_U8_t *csrNeighborRoamStateToString(v_U8_t state)
 
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* State Transition macro */
 #define CSR_NEIGHBOR_ROAM_STATE_TRANSITION(newState)\
 {\
     pMac->roam.neighborRoamInfo.prevNeighborRoamState = pMac->roam.neighborRoamInfo.neighborRoamState;\
     pMac->roam.neighborRoamInfo.neighborRoamState = newState;\
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG1, FL("Neighbor Roam Transition from state %d ==> %d"), pMac->roam.neighborRoamInfo.prevNeighborRoamState, newState);\
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG, \
                FL("Neighbor Roam Transition from state %s ==> %s"), \
                csrNeighborRoamStateToString (pMac->roam.neighborRoamInfo.prevNeighborRoamState), \
                csrNeighborRoamStateToString (newState));\
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /* ---------------------------------------------------------------------------
@@ -244,15 +196,7 @@ tANI_BOOLEAN csrNeighborRoamRemoveRoamableAPListEntry(tpAniSirGlobal pMac,
         return csrLLRemoveEntry(pList, &pNeighborEntry->List, LL_ACCESS_LOCK);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGE, FL("Removing neighbor BSS node from list failed. Current count = %d\n"), csrLLCount(pList));
-=======
     smsLog(pMac, LOGE, FL("Removing neighbor BSS node from list failed. Current count = %d"), csrLLCount(pList));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGE, FL("Removing neighbor BSS node from list failed. Current count = %d"), csrLLCount(pList));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return eANI_BOOLEAN_FALSE;
 }
@@ -311,15 +255,7 @@ void csrNeighborRoamFreeRoamableBSSList(tpAniSirGlobal pMac, tDblLinkList *pList
 {
     tpCsrNeighborRoamBSSInfo pResult = NULL;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Emptying the BSS list. Current count = %d\n"), csrLLCount(pList));
-=======
     NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Emptying the BSS list. Current count = %d"), csrLLCount(pList));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Emptying the BSS list. Current count = %d"), csrLLCount(pList));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Pick up the head, remove and free the node till the list becomes empty */
     while ((pResult = csrNeighborRoamGetRoamableAPListNextEntry(pMac, pList, NULL)) != NULL)
@@ -330,11 +266,6 @@ void csrNeighborRoamFreeRoamableBSSList(tpAniSirGlobal pMac, tDblLinkList *pList
     return;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static void csrNeighborRoamTriggerHandoff(tpAniSirGlobal pMac, 
                                           tpCsrNeighborRoamControlInfo pNeighborRoamInfo)
 {
@@ -573,10 +504,6 @@ VOS_STATUS csrNeighborRoamSetLookupRssiThreshold(tpAniSirGlobal pMac, v_U8_t nei
     return vosStatus;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     \fn csrNeighborRoamReassocIndCallback
@@ -594,41 +521,16 @@ VOS_STATUS csrNeighborRoamSetLookupRssiThreshold(tpAniSirGlobal pMac, v_U8_t nei
 ---------------------------------------------------------------------------*/
 VOS_STATUS csrNeighborRoamReassocIndCallback(v_PVOID_t pAdapter, 
                                v_U8_t trafficStatus, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                               v_PVOID_t pUserCtxt)
-=======
                                v_PVOID_t pUserCtxt,
                                v_S7_t   avgRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                               v_PVOID_t pUserCtxt,
-                               v_S7_t   avgRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tpAniSirGlobal pMac = PMAC_STRUCT( pUserCtxt );
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     VOS_STATUS vosStatus = VOS_STATUS_SUCCESS;   
  
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG1, FL("Reassoc indication callback called"));
-
-
-    //smsLog(pMac, LOGE, FL("Reassoc indication callback called at state %d"), pNeighborRoamInfo->neighborRoamState);
-
-    NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering DOWN event reassoc callback with TL. RSSI = %d"), pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1));
-
-=======
     NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering DOWN event reassoc callback with TL. Threshold RSSI = %d Reported RSSI = %d"),
                          pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1),
                          avgRssi);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering DOWN event reassoc callback with TL. Threshold RSSI = %d Reported RSSI = %d"),
-                         pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1),
-                         avgRssi);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     vosStatus = WLANTL_DeregRSSIIndicationCB(pMac->roam.gVosContext, (v_S7_t)pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1),
                                                         WLANTL_HO_THRESHOLD_DOWN, 
@@ -638,21 +540,6 @@ VOS_STATUS csrNeighborRoamReassocIndCallback(v_PVOID_t pAdapter,
     if(!VOS_IS_STATUS_SUCCESS(vosStatus))
     {
         //err msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with TL: Status = %d\n"), vosStatus);
-    }
-    
-    NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering UP event neighbor lookup callback with TL. RSSI = %d"), pNeighborRoamInfo->cfgParams.neighborLookupThreshold * (-1));
-    /* Deregister reassoc callback. Ignore return status */
-    /*Varun TODO*/
-    vosStatus = WLANTL_DeregRSSIIndicationCB(pMac->roam.gVosContext, (v_S7_t)pNeighborRoamInfo->cfgParams.neighborLookupThreshold * (-1),
-                                                        WLANTL_HO_THRESHOLD_DOWN, 
-                                                        csrNeighborRoamNeighborLookupUPCallback,
-                                                        VOS_MODULE_ID_SME);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with TL: Status = %d"), vosStatus);
     }
     
@@ -663,98 +550,19 @@ VOS_STATUS csrNeighborRoamReassocIndCallback(v_PVOID_t pAdapter,
                         WLANTL_HO_THRESHOLD_UP,
                         csrNeighborRoamNeighborLookupUPCallback,
                         VOS_MODULE_ID_SME);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         
     if(!VOS_IS_STATUS_SUCCESS(vosStatus))
     {
         //err msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with TL: Status = %d\n"), vosStatus);
-=======
         smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamNeighborLookupUPCallback with TL: Status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamNeighborLookupUPCallback with TL: Status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* We dont need to run this timer any more. */
     palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-#ifdef WLAN_FEATURE_VOWIFI_11R
-    if (pNeighborRoamInfo->is11rAssoc)
-    {
-        if (eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN == pNeighborRoamInfo->neighborRoamState)
-        {
-            csrNeighborRoamIssuePreauthReq(pMac);
-        }
-        else
-        {
-            smsLog(pMac, LOGE, FL("11R Reassoc indication received in unexpected state %d"), pNeighborRoamInfo->neighborRoamState);
-            VOS_ASSERT(0);
-        }
-    }
-    else
-#endif
-
-#ifdef FEATURE_WLAN_CCX
-    if (pNeighborRoamInfo->isCCXAssoc)
-    {
-        if (eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN == pNeighborRoamInfo->neighborRoamState)
-        {
-            csrNeighborRoamIssuePreauthReq(pMac);
-        }
-        else
-        {
-            smsLog(pMac, LOGE, FL("CCX Reassoc indication received in unexpected state %d"), pNeighborRoamInfo->neighborRoamState);
-            VOS_ASSERT(0);
-        }
-    }
-    else
-#endif
-#ifdef FEATURE_WLAN_LFR
-    if (csrRoamIsFastRoamEnabled(pMac))
-    {
-        if (eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN == pNeighborRoamInfo->neighborRoamState)
-        {
-            csrNeighborRoamIssuePreauthReq(pMac);
-        }
-        else
-        {
-            smsLog(pMac, LOGE, FL("LFR Reassoc indication received in unexpected state %d"), pNeighborRoamInfo->neighborRoamState);
-            VOS_ASSERT(0);
-        }
-    }
-    else
-#endif
-    {
-        if (eCSR_NEIGHBOR_ROAM_STATE_CFG_CHAN_LIST_SCAN == pNeighborRoamInfo->neighborRoamState)
-        {
-            csrNeighborRoamRequestHandoff(pMac);
-        }
-        else
-        {
-            smsLog(pMac, LOGE, FL("Non-11R Reassoc indication received in unexpected state %d"), pNeighborRoamInfo->neighborRoamState);
-            VOS_ASSERT(0);
-        }
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
 
     csrNeighborRoamTriggerHandoff(pMac, pNeighborRoamInfo);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_SUCCESS;
 }
 
@@ -763,35 +571,12 @@ static void csrNeighborRoamResetChannelInfo(tpCsrNeighborRoamChannelInfo rChInfo
 {
         if ((rChInfo->IAPPNeighborListReceived == FALSE) &&
                         (rChInfo->currentChannelListInfo.numOfChannels))
-<<<<<<< HEAD
-<<<<<<< HEAD
-    {
-=======
         {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 rChInfo->currentChanIndex = CSR_NEIGHBOR_ROAM_INVALID_CHANNEL_INDEX;
                 rChInfo->currentChannelListInfo.numOfChannels = 0;
 
                 if (rChInfo->currentChannelListInfo.ChannelList)
                         vos_mem_free(rChInfo->currentChannelListInfo.ChannelList);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-                rChInfo->currentChannelListInfo.ChannelList = NULL;
-                rChInfo->chanListScanInProgress = eANI_BOOLEAN_FALSE;
-    }
-    else 
-    {
-                rChInfo->currentChanIndex = 0;
-                rChInfo->chanListScanInProgress = eANI_BOOLEAN_TRUE;
-        }
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 rChInfo->currentChannelListInfo.ChannelList = NULL;
                 rChInfo->chanListScanInProgress = eANI_BOOLEAN_FALSE;
@@ -802,84 +587,37 @@ static void csrNeighborRoamResetChannelInfo(tpCsrNeighborRoamChannelInfo rChInfo
                 rChInfo->chanListScanInProgress = eANI_BOOLEAN_TRUE;
         }
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static void csrNeighborRoamResetCfgListChanScanControlInfo(tpAniSirGlobal pMac)
 {
         tpCsrNeighborRoamControlInfo pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
 
         /* Stop neighbor scan timer */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
-=======
         palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Stop neighbor scan results refresh timer */
         palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /* Abort any ongoing scan */
-    if (eANI_BOOLEAN_TRUE == pNeighborRoamInfo->scanRspPending)
-    {
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Stop empty scan results refresh timer */
         palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
 
         /* Abort any ongoing scan */
         if (eANI_BOOLEAN_TRUE == pNeighborRoamInfo->scanRspPending)
         {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrScanAbortMacScan(pMac);
         }
         pNeighborRoamInfo->scanRspPending = eANI_BOOLEAN_FALSE;
 
         /* Reset roam channel list information */
         csrNeighborRoamResetChannelInfo(&pNeighborRoamInfo->roamChannelInfo);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    }
-=======
 }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-}
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static void csrNeighborRoamResetPreauthControlInfo(tpAniSirGlobal pMac)
 {
         tpCsrNeighborRoamControlInfo pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-#if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
-        pNeighborRoamInfo->is11rAssoc = eANI_BOOLEAN_FALSE;
-        pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimerInfo.pMac = pMac;
-        pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimerInfo.sessionId = 
-                CSR_SESSION_ID_INVALID;
-=======
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
         pNeighborRoamInfo->is11rAssoc = eANI_BOOLEAN_FALSE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-#if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
-        pNeighborRoamInfo->is11rAssoc = eANI_BOOLEAN_FALSE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Purge pre-auth fail list */
         csrNeighborRoamPurgePreauthFailedList(pMac);
 #endif
@@ -887,93 +625,16 @@ static void csrNeighborRoamResetPreauthControlInfo(tpAniSirGlobal pMac)
         pNeighborRoamInfo->FTRoamInfo.preauthRspPending = eANI_BOOLEAN_FALSE;
         pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries = 0;
 #ifdef WLAN_FEATURE_VOWIFI_11R
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* Do not free up the preauth done list here */
-    pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum = 0;
-    pNeighborRoamInfo->FTRoamInfo.neighborRptPending = eANI_BOOLEAN_FALSE;
-    pNeighborRoamInfo->FTRoamInfo.numBssFromNeighborReport = 0;
-    vos_mem_zero(pNeighborRoamInfo->FTRoamInfo.neighboReportBssInfo, sizeof(tCsrNeighborReportBssInfo) * MAX_BSS_IN_NEIGHBOR_RPT);
-    palTimerStop(pMac->hHdd, pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimer);
-#endif    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Do not free up the preauth done list here */
         pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum = 0;
         pNeighborRoamInfo->FTRoamInfo.neighborRptPending = eANI_BOOLEAN_FALSE;
         pNeighborRoamInfo->FTRoamInfo.numBssFromNeighborReport = 0;
         vos_mem_zero(pNeighborRoamInfo->FTRoamInfo.neighboReportBssInfo, sizeof(tCsrNeighborReportBssInfo) * MAX_BSS_IN_NEIGHBOR_RPT);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 static void csrNeighborRoamDeregAllRssiIndication(tpAniSirGlobal pMac)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tpCsrNeighborRoamControlInfo pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-    VOS_STATUS                    vosStatus = VOS_STATUS_SUCCESS;
-
-        NEIGHBOR_ROAM_DEBUG(pMac, LOG2, 
-                        FL("Deregister neighbor lookup UP callback with TL. RSSI = %d"), 
-                        pNeighborRoamInfo->cfgParams.neighborLookupThreshold * (-1));
-
-        /* Deregister reassoc callback. Ignore return status */
-        vosStatus = WLANTL_DeregRSSIIndicationCB(pMac->roam.gVosContext, 
-                        (v_S7_t)pNeighborRoamInfo->cfgParams.neighborLookupThreshold * (-1),
-                        WLANTL_HO_THRESHOLD_UP, 
-                        csrNeighborRoamNeighborLookupUPCallback,
-                        VOS_MODULE_ID_SME);
-    
-        if(!VOS_IS_STATUS_SUCCESS(vosStatus))
-        {
-                smsLog(pMac, LOGW, 
-                                FL("Couldn't deregister csrNeighborRoamNeighborLookupUPCallback "
-                                        "with TL: Status = %d\n"), vosStatus);
-        }
-
-        NEIGHBOR_ROAM_DEBUG(pMac, LOG2, 
-                        FL("Deregistering reassoc DOWN callback with TL. RSSI = %d"), 
-                        pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1));
-
-    /* Deregister reassoc callback. Ignore return status */
-        vosStatus = WLANTL_DeregRSSIIndicationCB(pMac->roam.gVosContext, 
-                        (v_S7_t)pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1),
-                                                        WLANTL_HO_THRESHOLD_DOWN, 
-                                                        csrNeighborRoamReassocIndCallback,
-                                                        VOS_MODULE_ID_SME);
-                        
-    if(!VOS_IS_STATUS_SUCCESS(vosStatus))
-    {
-                smsLog(pMac, LOGW, 
-                                FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with "
-                                        "TL: Status = %d\n"), vosStatus);
-    }
-
-        NEIGHBOR_ROAM_DEBUG(pMac, LOG2, 
-                        FL("Deregistering neighborLookup DOWN callback with TL. RSSI = %d"), 
-                        pNeighborRoamInfo->currentNeighborLookupThreshold * (-1));
-
-    /* Deregister neighbor lookup callback. Ignore return status */
-        vosStatus = WLANTL_DeregRSSIIndicationCB(pMac->roam.gVosContext, 
-                        (v_S7_t)pNeighborRoamInfo->currentNeighborLookupThreshold * (-1),
-                                                        WLANTL_HO_THRESHOLD_DOWN, 
-                                                        csrNeighborRoamNeighborLookupDOWNCallback,
-                                                        VOS_MODULE_ID_SME);
-                        
-    if(!VOS_IS_STATUS_SUCCESS(vosStatus))
-    {
-                smsLog(pMac, LOGW, 
-                                FL(" Couldn't deregister csrNeighborRoamNeighborLookupDOWNCallback "
-                                        "with TL: Status = %d\n"), vosStatus);
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tpCsrNeighborRoamControlInfo pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
         VOS_STATUS                    vosStatus = VOS_STATUS_SUCCESS;
 
@@ -1030,23 +691,10 @@ static void csrNeighborRoamDeregAllRssiIndication(tpAniSirGlobal pMac)
                                 FL(" Couldn't deregister csrNeighborRoamNeighborLookupDOWNCallback "
                                         "with TL: Status = %d"), vosStatus);
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Reset thresholds only after deregistering DOWN event from TL */
         pNeighborRoamInfo->currentNeighborLookupThreshold = 
                 pNeighborRoamInfo->cfgParams.neighborLookupThreshold;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pNeighborRoamInfo->currentScanResultsRefreshPeriod = 
-            NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MIN;
-}
-                        
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
         pNeighborRoamInfo->uEmptyScanCount = 0;
         pNeighborRoamInfo->lookupDOWNRssi = 0;
@@ -1056,10 +704,6 @@ static void csrNeighborRoamDeregAllRssiIndication(tpAniSirGlobal pMac)
 #endif
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     \fn csrNeighborRoamResetConnectedStateControlInfo
@@ -1074,15 +718,7 @@ static void csrNeighborRoamDeregAllRssiIndication(tpAniSirGlobal pMac)
 
 ---------------------------------------------------------------------------*/
 void csrNeighborRoamResetConnectedStateControlInfo(tpAniSirGlobal pMac)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    {
-=======
 {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-{
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
 
     csrNeighborRoamResetChannelInfo(&pNeighborRoamInfo->roamChannelInfo);
@@ -1090,14 +726,7 @@ void csrNeighborRoamResetConnectedStateControlInfo(tpAniSirGlobal pMac)
     
  /* We dont need to run this timer any more. */
     palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);    
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
     /* Do not free up the preauth done list here */
@@ -1107,23 +736,9 @@ void csrNeighborRoamResetConnectedStateControlInfo(tpAniSirGlobal pMac)
     pNeighborRoamInfo->FTRoamInfo.numBssFromNeighborReport = 0;
     pNeighborRoamInfo->FTRoamInfo.preauthRspPending = 0;
     vos_mem_zero(pNeighborRoamInfo->FTRoamInfo.neighboReportBssInfo, sizeof(tCsrNeighborReportBssInfo) * MAX_BSS_IN_NEIGHBOR_RPT);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    palTimerStop(pMac->hHdd, pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimer);
-#endif
-
-    }
-    
-=======
 #endif
 }
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#endif
-}
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void csrNeighborRoamResetReportScanStateControlInfo(tpAniSirGlobal pMac)
 {
     tpCsrNeighborRoamControlInfo pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
@@ -1139,16 +754,8 @@ void csrNeighborRoamResetReportScanStateControlInfo(tpAniSirGlobal pMac)
 
     /* Stop scan refresh timer */
     palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     /* Stop empty scan results refresh timer */
     palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    /* Stop empty scan results refresh timer */
-    palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      /* Purge roamable AP list */
        csrNeighborRoamFreeRoamableBSSList(pMac, &pNeighborRoamInfo->roamableAPList); 
     return;
@@ -1201,16 +808,8 @@ static eHalStatus csrNeighborRoamBssIdScanFilter(tpAniSirGlobal pMac, tCsrScanRe
     tANI_U8 i = 0;
 
     VOS_ASSERT(pScanFilter != NULL);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     if (pScanFilter == NULL)
         return eHAL_STATUS_FAILURE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (pScanFilter == NULL)
-        return eHAL_STATUS_FAILURE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     vos_mem_zero(pScanFilter, sizeof(tCsrScanResultFilter));
 
     pScanFilter->BSSIDs.numOfBSSIDs = pNeighborRoamInfo->FTRoamInfo.numBssFromNeighborReport;
@@ -1275,15 +874,7 @@ eHalStatus csrNeighborRoamAddBssIdToPreauthFailList(tpAniSirGlobal pMac, tSirMac
 {
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL(" Added BSSID %02x:%02x:%02x:%02x:%02x:%02x to Preauth failed list\n"), 
-=======
     NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL(" Added BSSID %02x:%02x:%02x:%02x:%02x:%02x to Preauth failed list"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL(" Added BSSID %02x:%02x:%02x:%02x:%02x:%02x to Preauth failed list"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         bssId[0], bssId[1], bssId[2], bssId[3], bssId[4], bssId[5]);
 
 
@@ -1317,21 +908,12 @@ tANI_BOOLEAN csrNeighborRoamIsPreauthCandidate(tpAniSirGlobal pMac, tSirMacAddr 
     tANI_U8 i = 0;
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
     if (csrRoamIsRoamOffloadScanEnabled(pMac))
     {
         return eANI_BOOLEAN_TRUE;
     }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (0 == pNeighborRoamInfo->FTRoamInfo.preAuthFailList.numMACAddress)
         return eANI_BOOLEAN_TRUE;
     
@@ -1366,11 +948,6 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac)
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     eHalStatus status = eHAL_STATUS_SUCCESS;
     tpCsrNeighborRoamBSSInfo    pNeighborBssNode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
 #ifdef FEATURE_WLAN_LFR_METRICS
     tCsrRoamInfo *roamInfo;
@@ -1378,10 +955,6 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac)
 #endif
 //End fjdw67 Motorola, IKJB42MAIN-6385
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     /* This must not be true here */
     VOS_ASSERT(pNeighborRoamInfo->FTRoamInfo.preauthRspPending == eANI_BOOLEAN_FALSE);
@@ -1399,16 +972,6 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac)
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        status = csrRoamEnqueuePreauth(pMac, pNeighborRoamInfo->csrSessionId, pNeighborBssNode->pBssDescription,
-                eCsrPerformPreauth, eANI_BOOLEAN_TRUE);
-        if (eHAL_STATUS_SUCCESS != status)
-        {
-            smsLog(pMac, LOGE, FL("Send Preauth request to PE failed with status %d\n"), status);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
 #ifdef FEATURE_WLAN_LFR_METRICS
         /* LFR metrics - pre-auth initiation metric. send the event to supplicant that pre-auth was initiated */
@@ -1433,10 +996,6 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac)
         if (eHAL_STATUS_SUCCESS != status)
         {
             smsLog(pMac, LOGE, FL("Send Preauth request to PE failed with status %d"), status);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return status;
         }
     }
@@ -1448,23 +1007,6 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac)
     
     /* Transition the state to preauthenticating */
     CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_PREAUTHENTICATING)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if 0    
-    /* Start the preauth rsp timer */
-    status = palTimerStart(pMac->hHdd, pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimer, 
-                   CSR_NEIGHBOR_ROAM_PREAUTH_RSP_WAIT_MULTIPLIER * pNeighborRoamInfo->cfgParams.neighborScanPeriod * PAL_TIMER_TO_MS_UNIT,
-                   eANI_BOOLEAN_FALSE);
-    if (eHAL_STATUS_SUCCESS != status)
-    {
-        smsLog(pMac, LOGE, FL("Preauth response wait timer start failed with status %d\n"), status);
-        return status;
-    }
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     return status;
 }
@@ -1481,37 +1023,13 @@ static eHalStatus csrNeighborRoamIssuePreauthReq(tpAniSirGlobal pMac)
             roamable AP list, transition to REPORT_SCAN state
 
     \param  pMac - The handle returned by macOpen.
-<<<<<<< HEAD
-<<<<<<< HEAD
-            vosStatus - VOS_STATUS_SUCCESS/FAILURE/TIMEOUT status from PE
-=======
             limStatus - eSIR_SUCCESS/eSIR_FAILURE/eSIR_LIM_MAX_STA_REACHED_ERROR/
                      eSIT_LIM_AUTH_RSP_TIMEOUT status from PE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limStatus - eSIR_SUCCESS/eSIR_FAILURE/eSIR_LIM_MAX_STA_REACHED_ERROR/
-                     eSIT_LIM_AUTH_RSP_TIMEOUT status from PE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \return eHAL_STATUS_SUCCESS on success (i.e. pre-auth processed),
             eHAL_STATUS_FAILURE otherwise
 
 ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, VOS_STATUS vosStatus)
-{
-    tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-    eHalStatus  status = eHAL_STATUS_SUCCESS;
-    eHalStatus  preauthProcessed = eHAL_STATUS_SUCCESS;
-    tpCsrNeighborRoamBSSInfo pPreauthRspNode = NULL;
-    
-    if (eANI_BOOLEAN_FALSE == pNeighborRoamInfo->FTRoamInfo.preauthRspPending)
-    {
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus limStatus)
 {
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
@@ -1527,27 +1045,13 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
     if (eANI_BOOLEAN_FALSE == pNeighborRoamInfo->FTRoamInfo.preauthRspPending)
     {
             
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* This can happen when we disconnect immediately
              * after sending a pre-auth request. During processing
              * of the disconnect command, we would have reset
              * preauthRspPending and transitioned to INIT state.
              */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            NEIGHBOR_ROAM_DEBUG(pMac, LOGW, 
-                                FL("Unexpected pre-auth response in state %d\n"), 
-=======
             NEIGHBOR_ROAM_DEBUG(pMac, LOGW,
                                 FL("Unexpected pre-auth response in state %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            NEIGHBOR_ROAM_DEBUG(pMac, LOGW,
-                                FL("Unexpected pre-auth response in state %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 pNeighborRoamInfo->neighborRoamState);
             preauthProcessed = eHAL_STATUS_FAILURE;
             goto DEQ_PREAUTH;
@@ -1557,41 +1061,12 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
     if ((pNeighborRoamInfo->neighborRoamState != eCSR_NEIGHBOR_ROAM_STATE_PREAUTHENTICATING) &&
         (pNeighborRoamInfo->neighborRoamState != eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Preauth response received in state %d\n"), 
-=======
         NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Preauth response received in state %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Preauth response received in state %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             pNeighborRoamInfo->neighborRoamState);
         preauthProcessed = eHAL_STATUS_FAILURE;
         goto DEQ_PREAUTH;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (VOS_STATUS_E_TIMEOUT != vosStatus)
-    {
-#if 0
-        /* This means we got the response from PE. Hence stop the timer */
-        status = palTimerStop(pMac->hHdd, pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimer);
-#endif
-        pNeighborRoamInfo->FTRoamInfo.preauthRspPending = eANI_BOOLEAN_FALSE;
-    }
-
-    if (VOS_STATUS_SUCCESS == vosStatus)
-    {
-        pPreauthRspNode = csrNeighborRoamGetRoamableAPListNextEntry(pMac, &pNeighborRoamInfo->roamableAPList, NULL);
-    }
-    if ((VOS_STATUS_SUCCESS == vosStatus) && (NULL != pPreauthRspNode))
-    {
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Preauth completed successfully after %d tries\n"), pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pNeighborRoamInfo->FTRoamInfo.preauthRspPending = eANI_BOOLEAN_FALSE;
 
     if (eSIR_SUCCESS == limStatus)
@@ -1619,10 +1094,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
         csrRoamCallCallback(pMac, pNeighborRoamInfo->csrSessionId, roamInfo, 0, eCSR_ROAM_PREAUTH_STATUS_SUCCESS, 0);
 #endif
 //End fjdw67 Motorola, IKJB42MAIN-6385
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Preauth competer successfully. Insert the preauthenticated node to tail of preAuthDoneList */
         csrNeighborRoamRemoveRoamableAPListEntry(pMac, &pNeighborRoamInfo->roamableAPList, pPreauthRspNode);
@@ -1640,15 +1111,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
         tpCsrNeighborRoamBSSInfo    pNeighborBssNode = NULL;
         tListElem                   *pEntry;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Preauth failed retry number %d, status = %d\n"), pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries, vosStatus);
-        
-        /* Preauth failed. Add the bssId to the preAuth failed list MAC Address. Also remove the AP from roamable AP list */
-        if (pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries >=  CSR_NEIGHBOR_ROAM_MAX_NUM_PREAUTH_RETRIES)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGE, FL("Preauth failed retry number %d, status = 0x%x"),
                pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries, limStatus);
         
@@ -1656,10 +1118,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
         if ((pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries >=
              CSR_NEIGHBOR_ROAM_MAX_NUM_PREAUTH_RETRIES) ||
             (eSIR_LIM_MAX_STA_REACHED_ERROR == limStatus))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             /* We are going to remove the node as it fails for more than MAX tries. Reset this count to 0 */
             pNeighborRoamInfo->FTRoamInfo.numPreAuthRetries = 0;
@@ -1671,11 +1129,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
                 pNeighborBssNode = GET_BASE_ADDR(pEntry, tCsrNeighborRoamBSSInfo, List);
             /* Add the BSSID to pre-auth fail list */
             status = csrNeighborRoamAddBssIdToPreauthFailList(pMac, pNeighborBssNode->pBssDescription->bssId);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
 #ifdef FEATURE_WLAN_LFR_METRICS
                /* LFR metrics - pre-auth completion metric. send the event to supplicant that pre-auth successfully completed */
@@ -1686,10 +1139,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
                csrRoamCallCallback(pMac, pNeighborRoamInfo->csrSessionId, roamInfo, 0, eCSR_ROAM_PREAUTH_STATUS_FAILURE, 0);
 #endif
 //End fjdw67 Motorola, IKJB42MAIN-6385
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Now we can free this node */
             csrNeighborRoamFreeNeighborRoamBSSNode(pMac, pNeighborBssNode);
             }
@@ -1699,22 +1148,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
         if (eHAL_STATUS_SUCCESS == csrNeighborRoamIssuePreauthReq(pMac))
         goto DEQ_PREAUTH; 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN)
-
-        /* Start the neighbor results refresh timer and transition to REPORT_SCAN state to perform scan again */
-        status = palTimerStart(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer, 
-                        pNeighborRoamInfo->cfgParams.neighborResultsRefreshPeriod * PAL_TIMER_TO_MS_UNIT, 
-                        eANI_BOOLEAN_FALSE);
-        if (eHAL_STATUS_SUCCESS != status)
-        {
-            smsLog(pMac, LOGE, FL("Neighbor results refresh timer start failed with status %d\n"), status);
-        }
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
         if (csrRoamIsRoamOffloadScanEnabled(pMac))
         {
@@ -1752,10 +1185,6 @@ eHalStatus csrNeighborRoamPreauthRspHandler(tpAniSirGlobal pMac, tSirRetStatus l
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
     }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 DEQ_PREAUTH:
     csrRoamDequeuePreauth(pMac);
@@ -1784,16 +1213,8 @@ eHalStatus csrNeighborRoamPrepareScanProfileFilter(tpAniSirGlobal pMac, tCsrScan
     tANI_U8 i = 0;
     
     VOS_ASSERT(pScanFilter != NULL);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     if (pScanFilter == NULL)
         return eHAL_STATUS_FAILURE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (pScanFilter == NULL)
-        return eHAL_STATUS_FAILURE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     vos_mem_zero(pScanFilter, sizeof(tCsrScanResultFilter));
 
@@ -1813,22 +1234,11 @@ eHalStatus csrNeighborRoamPrepareScanProfileFilter(tpAniSirGlobal pMac, tCsrScan
     pScanFilter->SSIDs.SSIDList->SSID.length =  pCurProfile->SSID.length;
     vos_mem_copy((void *)pScanFilter->SSIDs.SSIDList->SSID.ssId, (void *)pCurProfile->SSID.ssId, pCurProfile->SSID.length); 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Filtering for SSID %s from scan results.. SSID Length = %d\n"), 
-                        pScanFilter->SSIDs.SSIDList->SSID.ssId, pScanFilter->SSIDs.SSIDList->SSID.length);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Filtering for SSID %.*s from scan results,"
                                 "length of SSID = %u"),
                                 pScanFilter->SSIDs.SSIDList->SSID.length,
                                 pScanFilter->SSIDs.SSIDList->SSID.ssId,
                                 pScanFilter->SSIDs.SSIDList->SSID.length);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pScanFilter->authType.numEntries = 1;
     pScanFilter->authType.authType[0] = pCurProfile->AuthType;
 
@@ -1871,14 +1281,6 @@ tANI_U32 csrGetCurrentAPRssi(tpAniSirGlobal pMac, tScanResultHandle *pScanResult
 {
         tCsrScanResultInfo *pScanResult;
         tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        tANI_U32 CurrAPRssi = -125; /* We are setting this as default value to make sure we return this value,
-                                       when we do not see this AP in the scan result for some reason.However,it is 
-                                       less likely that we are associated to an AP and do not see it in the scan list*/
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
         tANI_U32 CurrAPRssi = pNeighborRoamInfo->lookupDOWNRssi;
 #else
@@ -1887,10 +1289,6 @@ tANI_U32 csrGetCurrentAPRssi(tpAniSirGlobal pMac, tScanResultHandle *pScanResult
         less likely that we are associated to an AP and do not see it in the scan list */
         tANI_U32 CurrAPRssi = -125;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         while (NULL != (pScanResult = csrScanResultGetNext(pMac, *pScanResultList)))
         {
@@ -1925,16 +1323,6 @@ tANI_U32 csrGetCurrentAPRssi(tpAniSirGlobal pMac, tScanResultHandle *pScanResult
     \param  pMac - The handle returned by macOpen.
             pScanResultList - Scan result result obtained from csrScanGetResult()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \return VOID
-
----------------------------------------------------------------------------*/
-
-static void csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac, tScanResultHandle *pScanResultList)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \return tANI_BOOLEAN - return TRUE if we have a candidate we can immediately
             roam to. Otherwise, return FALSE.
 
@@ -1942,29 +1330,16 @@ static void csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac, tScanResultHa
 
 static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac, 
                                                       tScanResultHandle *pScanResultList)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tCsrScanResultInfo *pScanResult;
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     tpCsrNeighborRoamBSSInfo    pBssInfo;
     tANI_U32 CurrAPRssi;
     tANI_U8 RoamRssiDiff = pMac->roam.configParam.RoamRssiDiff;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     tANI_U8 immediateRoamRssiDiff = pMac->roam.configParam.nImmediateRoamRssiDiff;
 #endif
     tANI_BOOLEAN roamNow = eANI_BOOLEAN_FALSE;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /***************************************************************
      * Find out the Current AP RSSI and keep it handy to check if
@@ -1983,65 +1358,21 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 
     while (NULL != (pScanResult = csrScanResultGetNext(pMac, *pScanResultList)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, 
-            FL("Scan result: BSSID %02x:%02x:%02x:%02x:%02x:%02x (Rssi %d)"), 
-=======
             VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG,
             FL("Scan result: BSSID %02x:%02x:%02x:%02x:%02x:%02x (Rssi %d, Ch:%d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG,
-            FL("Scan result: BSSID %02x:%02x:%02x:%02x:%02x:%02x (Rssi %d, Ch:%d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pScanResult->BssDescriptor.bssId[0],
             pScanResult->BssDescriptor.bssId[1],
             pScanResult->BssDescriptor.bssId[2],
             pScanResult->BssDescriptor.bssId[3],
             pScanResult->BssDescriptor.bssId[4],
             pScanResult->BssDescriptor.bssId[5],
-<<<<<<< HEAD
-<<<<<<< HEAD
-            abs(pScanResult->BssDescriptor.rssi));
-=======
             abs(pScanResult->BssDescriptor.rssi),
             pScanResult->BssDescriptor.channelId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            abs(pScanResult->BssDescriptor.rssi),
-            pScanResult->BssDescriptor.channelId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
        if (VOS_TRUE == vos_mem_compare(pScanResult->BssDescriptor.bssId, 
                        pNeighborRoamInfo->currAPbssid, sizeof(tSirMacAddr)))
         {
             /* currently associated AP. Do not have this in the roamable AP list */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            continue;
-        }
-
-       /*
-        * If RSSI is lower than the lookup threshold, then continue.
-        */
-       if (abs(pScanResult->BssDescriptor.rssi) >
-           pNeighborRoamInfo->currentNeighborLookupThreshold)
-       {
-           VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
-               "%s: [INFOLOG] new ap rssi (%d) lower than lookup threshold (%d)\n",
-               __func__, (int)pScanResult->BssDescriptor.rssi * (-1),
-               (int)pNeighborRoamInfo->currentNeighborLookupThreshold * (-1));
-           continue;
-       }
-
-       /* This condition is to ensure to roam to an AP with better RSSI. if the value of RoamRssiDiff is Zero, this feature
-        * is disabled and we continue to roam without any check*/
-       if(RoamRssiDiff > 0)
-       {
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
                     "SKIP-currently associated AP");
             continue;
@@ -2068,23 +1399,11 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
                     continue;
                }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                if (abs(CurrAPRssi) < abs(pScanResult->BssDescriptor.rssi))
                {
                        /*Do not roam to an AP with worse RSSI than the current*/
                        VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                 "%s: [INFOLOG]Current AP rssi=%d new ap rssi worse=%d\n", __func__,
-=======
                                  "%s: [INFOLOG]Current AP rssi=%d new ap rssi worse=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                 "%s: [INFOLOG]Current AP rssi=%d new ap rssi worse=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                  CurrAPRssi,
                                  (int)pScanResult->BssDescriptor.rssi * (-1) );
                        continue;
@@ -2093,33 +1412,16 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
                         * margin that is provided by user from the ini file (RoamRssiDiff)*/
                        if (abs(abs(CurrAPRssi) - abs(pScanResult->BssDescriptor.rssi)) < RoamRssiDiff)
                        {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
                                  "%s: [INFOLOG]Current AP rssi=%d new ap rssi=%d not good enough, roamRssiDiff=%d", __func__,
                                  CurrAPRssi,
                                  (int)pScanResult->BssDescriptor.rssi * (-1),
                                  RoamRssiDiff);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           continue;
                        }
                        else {
                                  VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                            "%s: [INFOLOG]Current AP rssi=%d new ap rssi better=%d\n", __func__,
-=======
                                             "%s: [INFOLOG]Current AP rssi=%d new ap rssi better=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                            "%s: [INFOLOG]Current AP rssi=%d new ap rssi better=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             CurrAPRssi,
                                             (int)pScanResult->BssDescriptor.rssi * (-1) );
                        }
@@ -2138,56 +1440,6 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 #endif /* WLAN_FEATURE_VOWIFI_11R */
 
 #ifdef FEATURE_WLAN_CCX
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (pNeighborRoamInfo->isCCXAssoc)
-        {
-            if (!csrNeighborRoamIsPreauthCandidate(pMac, pScanResult->BssDescriptor.bssId))
-            {
-                smsLog(pMac, LOGE, FL("BSSID present in pre-auth fail list.. Ignoring"));
-                continue;
-            }
-        }
-        if ((pScanResult->BssDescriptor.QBSSLoad_present) &&
-             (pScanResult->BssDescriptor.QBSSLoad_avail))
-        {
-            if (pNeighborRoamInfo->isVOAdmitted)
-            {
-                smsLog(pMac, LOG1, FL("New AP has %x BW available\n"), (unsigned int)pScanResult->BssDescriptor.QBSSLoad_avail);
-                smsLog(pMac, LOG1, FL("We need %x BW available\n"),(unsigned int)pNeighborRoamInfo->MinQBssLoadRequired);
-                if (pScanResult->BssDescriptor.QBSSLoad_avail < pNeighborRoamInfo->MinQBssLoadRequired) 
-                {
-                    VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
-                        "[INFOLOG]BSSID : %02x:%02x:%02x:%02x:%02x:%02x has no bandwidth ignoring..not adding to roam list\n",
-                        pScanResult->BssDescriptor.bssId[0],
-                        pScanResult->BssDescriptor.bssId[1],
-                        pScanResult->BssDescriptor.bssId[2],
-                        pScanResult->BssDescriptor.bssId[3],
-                        pScanResult->BssDescriptor.bssId[4],
-                        pScanResult->BssDescriptor.bssId[5]);
-                    continue;
-                }
-            }
-        }
-        else
-        {
-            smsLog(pMac, LOGE, FL("No QBss %x %x\n"), (unsigned int)pScanResult->BssDescriptor.QBSSLoad_avail, (unsigned int)pScanResult->BssDescriptor.QBSSLoad_present);
-            if (pNeighborRoamInfo->isVOAdmitted)
-            {
-                VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
-                    "[INFOLOG]BSSID : %02x:%02x:%02x:%02x:%02x:%02x has no QBSSLoad IE, ignoring..not adding to roam list\n",
-                    pScanResult->BssDescriptor.bssId[0],
-                    pScanResult->BssDescriptor.bssId[1],
-                    pScanResult->BssDescriptor.bssId[2],
-                    pScanResult->BssDescriptor.bssId[3],
-                    pScanResult->BssDescriptor.bssId[4],
-                    pScanResult->BssDescriptor.bssId[5]);
-                continue;
-            }
-        }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
         if (!csrRoamIsRoamOffloadScanEnabled(pMac))
         {
@@ -2240,24 +1492,12 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
         }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* FEATURE_WLAN_CCX */
 
 #ifdef FEATURE_WLAN_LFR
         // If we are supporting legacy roaming, and 
         // if the candidate is on the "pre-auth failed" list, ignore it. 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (csrRoamIsFastRoamEnabled(pMac))
-=======
         if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if (!csrNeighborRoamIsPreauthCandidate(pMac, pScanResult->BssDescriptor.bssId))
             {
@@ -2269,21 +1509,11 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 
         /* If the received timestamp in BSS description is earlier than the scan request timestamp, skip 
          * this result */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (pNeighborRoamInfo->scanRequestTimeStamp >= pScanResult->BssDescriptor.nReceivedTime)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ((pNeighborRoamInfo->scanRequestTimeStamp >= pScanResult->BssDescriptor.nReceivedTime)
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             && !csrRoamIsRoamOffloadScanEnabled(pMac)
 #endif
         )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             smsLog(pMac, LOGE, FL("Ignoring BSS as it is older than the scan request timestamp"));
             continue;
@@ -2313,11 +1543,6 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 
         /* Just add to the end of the list as it is already sorted by RSSI */
         csrLLInsertTail(&pNeighborRoamInfo->roamableAPList, &pBssInfo->List, LL_ACCESS_LOCK);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
         if ((abs(abs(CurrAPRssi) - abs(pScanResult->BssDescriptor.rssi)) >= immediateRoamRssiDiff)
@@ -2341,24 +1566,12 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
         }
 #endif
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* Now we have all the scan results in our local list. Good time to free up the the list we got as a part of csrGetScanResult */
     csrScanResultPurge(pMac, *pScanResultList);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return;
-=======
     return roamNow;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    return roamNow;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /* ---------------------------------------------------------------------------
@@ -2367,17 +1580,6 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 
     \brief      This function will be invoked in CFG_CHAN_LIST_SCAN state when 
                 there are no valid APs in the scan result for roaming. This means 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                out AP is the best and no other AP is around. No point in scanning 
-                again and again. Performing the following here.
-                1. Remain in eCSR_NEIGHBOR_ROAM_STATE_CFG_CHAN_LIST_SCAN.
-                2. Stop the neighbor scan timer.
-                3. Start neighbor scan results refresh timer.
-                4. Update currentScanResultsRefreshPeriod for next iteration.
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 our AP is the best and no other AP is around. No point in scanning
                 again and again. Performing the following here.
                 1. Stop the neighbor scan timer.
@@ -2420,10 +1622,6 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
                                     were found.
 
                 [1], [2,3] and [4,5] together form one discrete set of scan cycle.
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param  pMac - The handle returned by macOpen.
 
@@ -2432,13 +1630,6 @@ static tANI_BOOLEAN csrNeighborRoamProcessScanResults(tpAniSirGlobal pMac,
 ---------------------------------------------------------------------------*/
 static VOS_STATUS csrNeighborRoamHandleEmptyScanResult(tpAniSirGlobal pMac)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-    eHalStatus  status = eHAL_STATUS_SUCCESS;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS  vosStatus = VOS_STATUS_SUCCESS;
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     eHalStatus  status = eHAL_STATUS_SUCCESS;
@@ -2447,21 +1638,11 @@ static VOS_STATUS csrNeighborRoamHandleEmptyScanResult(tpAniSirGlobal pMac)
     tANI_BOOLEAN performPeriodicScan =
         (pNeighborRoamInfo->cfgParams.emptyScanRefreshPeriod) ? TRUE : FALSE;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Stop neighbor scan timer */
     status = palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
     if (eHAL_STATUS_SUCCESS != status) 
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, FL(" palTimerStop failed with status %d\n"), status);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGW, FL("stopping neighborScanTimer failed with status %d"), status);
     }
 
@@ -2503,116 +1684,6 @@ static VOS_STATUS csrNeighborRoamHandleEmptyScanResult(tpAniSirGlobal pMac)
         pNeighborRoamInfo->cfgParams.neighborReassocThreshold)
 #ifdef FEATURE_WLAN_LFR
         && ((pNeighborRoamInfo->uEmptyScanCount % 2) == 1)
-<<<<<<< HEAD
-#endif
-        )
-    {
-        pNeighborRoamInfo->currentNeighborLookupThreshold += 3;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-    }
-
-#ifdef WLAN_FEATURE_VOWIFI_11R
-    /* Clear off the old neighbor report details */
-    vos_mem_zero(&pNeighborRoamInfo->FTRoamInfo.neighboReportBssInfo, sizeof(tCsrNeighborReportBssInfo) * MAX_BSS_IN_NEIGHBOR_RPT);
-#endif
-
-<<<<<<< HEAD
-    /* Start neighbor scan results refresh timer */
-    if (eHAL_STATUS_SUCCESS != 
-            palTimerStart(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer, 
-            pNeighborRoamInfo->currentScanResultsRefreshPeriod * PAL_TIMER_TO_MS_UNIT, 
-            eANI_BOOLEAN_FALSE)) 
-    {
-        smsLog(pMac, LOGE, FL("Neighbor results refresh timer failed to start (%d)"), status);
-        vos_mem_free(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList);
-        pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-        return VOS_STATUS_E_FAILURE;
-    }
-    smsLog(pMac, LOG1, FL("Neighbor results refresh timer started (%ld ms)"), 
-            (pNeighborRoamInfo->currentScanResultsRefreshPeriod * PAL_TIMER_TO_MS_UNIT));
-
-    /* Update currentScanResultsRefreshPeriod to be used for next iteration */
-    if ( (2*pNeighborRoamInfo->currentScanResultsRefreshPeriod) >
-            NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MAX ) 
-    {
-        pNeighborRoamInfo->currentScanResultsRefreshPeriod = 
-            NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MAX;
-    } else {
-        /* Double the refresh period every time we fail to find candidates */
-        pNeighborRoamInfo->currentScanResultsRefreshPeriod *= 2;
-    }
-
-    return VOS_STATUS_SUCCESS;
-}
-
-/* ---------------------------------------------------------------------------
-
-    \fn csrNeighborRoamScanRequestCallback
-
-    \brief  This function is the callback function registered in csrScanRequest() to 
-            indicate the completion of scan. If scan is completed for all the channels in 
-            the channel list, this function gets the scan result and starts the refresh results
-            timer to avoid having stale results. If scan is not completed on all the channels,
-            it restarts the neighbor scan timer which on expiry issues scan on the next 
-            channel
-
-    \param  halHandle - The handle returned by macOpen.
-            pContext - not used
-            scanId - not used
-            status - not used
-
-    \return eHAL_STATUS_SUCCESS on success, corresponding error code otherwise
-
----------------------------------------------------------------------------*/
-static eHalStatus csrNeighborRoamScanRequestCallback(tHalHandle halHandle, void *pContext,
-                         tANI_U32 scanId, eCsrScanStatus status)
-{
-    tpAniSirGlobal                  pMac = (tpAniSirGlobal) halHandle;
-    tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-    tANI_U8                         currentChanIndex;
-    tCsrScanResultFilter    scanFilter;
-    tScanResultHandle       scanResult;
-    tANI_U32                tempVal = 0;
-    eHalStatus              hstatus;
-
-    pMac->roam.neighborRoamInfo.scanRspPending = eANI_BOOLEAN_FALSE;
-    
-    /* This can happen when we receive a UP event from TL in any of the scan states. Silently ignore it */
-    if (eCSR_NEIGHBOR_ROAM_STATE_CONNECTED == pNeighborRoamInfo->neighborRoamState)
-    {
-        smsLog(pMac, LOGE, FL("Received in CONNECTED state. Must be because a UP event from TL after issuing scan request. Ignore it"));
-        return eHAL_STATUS_SUCCESS;
-    }
-
-    /* -1 is done because the chanIndex would have got incremented after issuing a successful scan request */
-    currentChanIndex = (pMac->roam.neighborRoamInfo.roamChannelInfo.currentChanIndex) ? (pMac->roam.neighborRoamInfo.roamChannelInfo.currentChanIndex - 1) : 0;
-
-    /* Validate inputs */
-    if (pMac->roam.neighborRoamInfo.roamChannelInfo.currentChannelListInfo.ChannelList) { 
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("csrNeighborRoamScanRequestCallback received for Channel = %d, ChanIndex = %d"), 
-                    pMac->roam.neighborRoamInfo.roamChannelInfo.currentChannelListInfo.ChannelList[currentChanIndex], currentChanIndex);
-    }
-    else
-    {
-        smsLog(pMac, LOG1, FL("Received during clean-up. Silently ignore scan completion event."));
-        return eHAL_STATUS_SUCCESS;
-    }
-
-    if (eANI_BOOLEAN_FALSE == pNeighborRoamInfo->roamChannelInfo.chanListScanInProgress)
-    {
-        /* Scan is completed in the  CFG_CHAN_SCAN state. We can transition to REPORT_SCAN state 
-           just to get the results and perform PREAUTH */
-        /* Now we have completed scanning the channel list. We have get the result by applying appropriate filter
-           sort the results based on neighborScore and RSSI and select the best candidate out of the list */
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Channel list scan completed. Current chan index = %d"), currentChanIndex);
-        VOS_ASSERT(pNeighborRoamInfo->roamChannelInfo.currentChanIndex == 0);
-
-#if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
-        /* If the state is REPORT_SCAN, then this must be the scan after the REPORT_QUERY state. So, we 
-           should use the BSSID filter made out of neighbor reports */
-        if (eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN == pNeighborRoamInfo->neighborRoamState)
-=======
-=======
 #endif
         )
     {
@@ -2624,7 +1695,6 @@ static eHalStatus csrNeighborRoamScanRequestCallback(tHalHandle halHandle, void 
     vos_mem_zero(&pNeighborRoamInfo->FTRoamInfo.neighboReportBssInfo, sizeof(tCsrNeighborReportBssInfo) * MAX_BSS_IN_NEIGHBOR_RPT);
 #endif
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Transition to CONNECTED state */
     CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_CONNECTED);
         
@@ -2762,10 +1832,6 @@ static eHalStatus csrNeighborRoamProcessScanComplete (tpAniSirGlobal pMac)
         && (!csrRoamIsRoamOffloadScanEnabled(pMac))
 #endif
         )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             hstatus = csrNeighborRoamBssIdScanFilter(pMac, &scanFilter);
             NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("11R or CCX Association: Prepare scan filter status  with neighbor AP = %d"), hstatus);
@@ -2783,47 +1849,18 @@ static eHalStatus csrNeighborRoamProcessScanComplete (tpAniSirGlobal pMac)
             return eHAL_STATUS_FAILURE;
         }
         hstatus = csrScanGetResult(pMac, &scanFilter, &scanResult);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Get Scan Result status code %d"), hstatus);
-        /* Process the scan results and update roamable AP list */
-        csrNeighborRoamProcessScanResults(pMac, &scanResult);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (hstatus != eHAL_STATUS_SUCCESS)
         {
             NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Get Scan Result status code %d"), hstatus);
         }
         /* Process the scan results and update roamable AP list */
         roamNow = csrNeighborRoamProcessScanResults(pMac, &scanResult);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Free the scan filter */
         csrFreeScanFilter(pMac, &scanFilter);
 
         tempVal = csrLLCount(&pNeighborRoamInfo->roamableAPList);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        switch(pNeighborRoamInfo->neighborRoamState)
-        {
-            case eCSR_NEIGHBOR_ROAM_STATE_CFG_CHAN_LIST_SCAN:
-                if (tempVal)
-                {
-                    /*
-                     * Since there are non-zero candidates found
-                     * after the scan, reset the refresh period
-                     * to minimum.
-                     */
-                    pNeighborRoamInfo->currentScanResultsRefreshPeriod = 
-                        NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
         if(!csrRoamIsRoamOffloadScanEnabled(pMac))
         {
@@ -2841,10 +1878,6 @@ static eHalStatus csrNeighborRoamProcessScanComplete (tpAniSirGlobal pMac)
                     pNeighborRoamInfo->uEmptyScanCount = 0;
                     pNeighborRoamInfo->uScanMode = DEFAULT_SCAN;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
                     /* If this is a non-11r association, then we can register the reassoc callback here as we have some 
                                         APs in the roamable AP list */
@@ -2868,15 +1901,7 @@ static eHalStatus csrNeighborRoamProcessScanComplete (tpAniSirGlobal pMac)
 #ifdef FEATURE_WLAN_LFR
                     /* If LFR is enabled, then we can register the reassoc callback here as we have some 
                                         APs in the roamable AP list */
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if (csrRoamIsFastRoamEnabled(pMac))
-=======
                     if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     {
                         /* Valid APs are found after scan. Now we can initiate pre-authentication */
                         CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_REPORT_SCAN)
@@ -2916,16 +1941,6 @@ static eHalStatus csrNeighborRoamProcessScanComplete (tpAniSirGlobal pMac)
                 // in the meantime decides to disassoc, we will be in init state and still received call
                 // back issued. Should not come here in any other state, printing just in case
                 VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "%s: [INFOLOG] State %d\n", __func__, (pNeighborRoamInfo->neighborRoamState));
-
-                // Lets just exit out silently.
-                return eHAL_STATUS_SUCCESS;
-        }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         "%s: [INFOLOG] State %d", __func__, (pNeighborRoamInfo->neighborRoamState));
 
                 // Lets just exit out silently.
@@ -2934,66 +1949,11 @@ static eHalStatus csrNeighborRoamProcessScanComplete (tpAniSirGlobal pMac)
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
         }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if (tempVal)
         {
             VOS_STATUS  vosStatus = VOS_STATUS_SUCCESS;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-           /* This timer should be started before registering the Reassoc callback with TL. This is because, it is very likely 
-            * that the callback getting called immediately and the timer would never be stopped when pre-auth is in progress */
-           if (eHAL_STATUS_SUCCESS != palTimerStart(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer, 
-                        pNeighborRoamInfo->cfgParams.neighborResultsRefreshPeriod * PAL_TIMER_TO_MS_UNIT, 
-                        eANI_BOOLEAN_FALSE))
-            {
-                smsLog(pMac, LOGE, FL("Neighbor results refresh timer failed to start, status = %d"), status);
-                vos_mem_free(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList);
-                pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-                return eHAL_STATUS_FAILURE;
-            }
-
-            NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Registering DOWN event Reassoc callback with TL. RSSI = %d"), pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1));
-            /* Register a reassoc Indication callback */
-            vosStatus = WLANTL_RegRSSIIndicationCB(pMac->roam.gVosContext, (v_S7_t)pNeighborRoamInfo->cfgParams.neighborReassocThreshold * (-1),
-                                            WLANTL_HO_THRESHOLD_DOWN, 
-                                            csrNeighborRoamReassocIndCallback,
-                                            VOS_MODULE_ID_SME, pMac);
-            
-            if(!VOS_IS_STATUS_SUCCESS(vosStatus))
-            {
-               //err msg
-               smsLog(pMac, LOGW, FL(" Couldn't register csrNeighborRoamReassocIndCallback with TL: Status = %d\n"), vosStatus);
-            }
- 
-        }
-    }
-    else
-    {
-
-        /* Restart the timer for the next scan sequence as scanning is not over */
-        hstatus = palTimerStart(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer, 
-                    pNeighborRoamInfo->cfgParams.neighborScanPeriod * PAL_TIMER_TO_MS_UNIT, 
-                    eANI_BOOLEAN_FALSE);
-    
-        if (eHAL_STATUS_SUCCESS != hstatus)
-        {
-            /* Timer start failed.. Should we ASSERT here??? */
-            smsLog(pMac, LOGE, FL("Neighbor scan PAL Timer start failed, status = %d, Ignoring state transition"), status);
-            vos_mem_free(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList);
-            pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-            return eHAL_STATUS_FAILURE;
-        }
-    }
-    return eHAL_STATUS_SUCCESS;
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (roamNow)
             {
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
@@ -3283,10 +2243,6 @@ static eHalStatus csrNeighborRoamContiguousScanRequestCallback(tHalHandle halHan
     return hstatus;
 }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
 
@@ -3301,44 +2257,21 @@ static eHalStatus csrNeighborRoamContiguousScanRequestCallback(tHalHandle halHan
     \return eHAL_STATUS_SUCCESS on success, corresponding error code otherwise
 
 ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus csrNeighborRoamIssueBgScanRequest(tpAniSirGlobal pMac, tCsrBGScanRequest *pBgScanParams)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrNeighborRoamIssueBgScanRequest(tpAniSirGlobal pMac, 
                                              tCsrBGScanRequest *pBgScanParams,
                                              tANI_U32 sessionId,
                                              csrScanCompleteCallback callbackfn)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eHalStatus status = eHAL_STATUS_SUCCESS;
     tANI_U32 scanId;
     tCsrScanRequest scanReq;
     tANI_U8 channel;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("csrNeighborRoamIssueBgScanRequest for Channel = %d, ChanIndex = %d"), 
-                    pBgScanParams->ChannelInfo.ChannelList[0], pMac->roam.neighborRoamInfo.roamChannelInfo.currentChanIndex);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     void * userData = NULL;
     
     if (1 == pBgScanParams->ChannelInfo.numOfChannels)
         NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Channel = %d, ChanIndex = %d"),
             pBgScanParams->ChannelInfo.ChannelList[0], 
             pMac->roam.neighborRoamInfo.roamChannelInfo.currentChanIndex);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     //send down the scan req for 1 channel on the associated SSID
     palZeroMemory(pMac->hHdd, &scanReq, sizeof(tCsrScanRequest));
@@ -3348,15 +2281,7 @@ eHalStatus csrNeighborRoamIssueBgScanRequest(tpAniSirGlobal pMac,
     if(NULL == scanReq.SSIDs.SSIDList)
     {
        //err msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGW, FL("Couldn't allocate memory for the SSID..Freeing memory allocated for Channel List\n"));
-=======
        smsLog(pMac, LOGE, FL("Couldn't allocate memory for the SSID..Freeing memory allocated for Channel List"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGE, FL("Couldn't allocate memory for the SSID..Freeing memory allocated for Channel List"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eHAL_STATUS_FAILURE;
     }
     vos_mem_zero(scanReq.SSIDs.SSIDList, sizeof(tCsrSSIDInfo) * scanReq.SSIDs.numOfSSIDs);
@@ -3366,14 +2291,6 @@ eHalStatus csrNeighborRoamIssueBgScanRequest(tpAniSirGlobal pMac,
     vos_mem_copy((void *)&scanReq.SSIDs.SSIDList[0].SSID, (void *)&pBgScanParams->SSID, sizeof(pBgScanParams->SSID));
     
     scanReq.ChannelInfo.numOfChannels = pBgScanParams->ChannelInfo.numOfChannels;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    channel = pBgScanParams->ChannelInfo.ChannelList[0];
-    scanReq.ChannelInfo.ChannelList = &channel;    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (1 == pBgScanParams->ChannelInfo.numOfChannels)
     {
         channel = pBgScanParams->ChannelInfo.ChannelList[0];
@@ -3383,23 +2300,12 @@ eHalStatus csrNeighborRoamIssueBgScanRequest(tpAniSirGlobal pMac,
     {
         scanReq.ChannelInfo.ChannelList = pBgScanParams->ChannelInfo.ChannelList;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     scanReq.BSSType = eCSR_BSS_TYPE_INFRASTRUCTURE;
     scanReq.scanType = eSIR_ACTIVE_SCAN;
     scanReq.requestType = eCSR_SCAN_HO_BG_SCAN;
     scanReq.maxChnTime = pBgScanParams->maxChnTime;
     scanReq.minChnTime = pBgScanParams->minChnTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    status = csrScanRequest(pMac, CSR_SESSION_ID_INVALID, &scanReq,
-                        &scanId, csrNeighborRoamScanRequestCallback, NULL);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     userData = vos_mem_malloc(sizeof(tANI_U32));
     if (NULL == userData)
@@ -3411,38 +2317,16 @@ eHalStatus csrNeighborRoamIssueBgScanRequest(tpAniSirGlobal pMac,
     *((tANI_U32*)userData) = sessionId;
     status = csrScanRequest(pMac, CSR_SESSION_ID_INVALID, &scanReq,
                         &scanId, callbackfn, (void *) userData);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (eHAL_STATUS_SUCCESS != status)
     {
         smsLog(pMac, LOGE, FL("CSR Scan Request failed with status %d"), status);
         vos_mem_free(scanReq.SSIDs.SSIDList);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         vos_mem_free(userData);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        vos_mem_free(userData);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return status;
     }
     pMac->roam.neighborRoamInfo.scanRspPending = eANI_BOOLEAN_TRUE;
 
     vos_mem_free(scanReq.SSIDs.SSIDList);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Channel List Address = %08x, Actual index = %d"), 
-                    &pMac->roam.neighborRoamInfo.roamChannelInfo.currentChannelListInfo.ChannelList[0], 
-                    pMac->roam.neighborRoamInfo.roamChannelInfo.currentChanIndex);
-    return status;
-}
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (1 == pBgScanParams->ChannelInfo.numOfChannels)
         NEIGHBOR_ROAM_DEBUG(pMac, LOG1, FL("Channel List Address = %08x, Actual index = %d"),
                 &pMac->roam.neighborRoamInfo.roamChannelInfo.currentChannelListInfo.ChannelList[0], 
@@ -3467,10 +2351,6 @@ static void csrNeighborRoamFillNonChannelBgScanParams (tpAniSirGlobal pMac,
     bgScanParams->maxChnTime = pNeighborRoamInfo->cfgParams.maxChannelScanTime;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     \fn csrNeighborRoamPerformBgScan
@@ -3485,68 +2365,27 @@ static void csrNeighborRoamFillNonChannelBgScanParams (tpAniSirGlobal pMac,
     \return eHAL_STATUS_SUCCESS on success, corresponding error code otherwise
 
 ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus csrNeighborRoamPerformBgScan(tpAniSirGlobal pMac)
-=======
 eHalStatus csrNeighborRoamPerformBgScan(tpAniSirGlobal pMac, tANI_U32 sessionId)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-eHalStatus csrNeighborRoamPerformBgScan(tpAniSirGlobal pMac, tANI_U32 sessionId)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eHalStatus      status = eHAL_STATUS_SUCCESS;
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     tCsrBGScanRequest   bgScanParams;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8             broadcastBssid[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8             channel = 0;
 
     if (pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Channel List Address = %08x"), &pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList[0]);
-=======
         NEIGHBOR_ROAM_DEBUG(pMac, LOG1, FL("Channel List Address = %08x"), &pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList[0]);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        NEIGHBOR_ROAM_DEBUG(pMac, LOG1, FL("Channel List Address = %08x"), &pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList[0]);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else 
     {
         NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Channel List Empty"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // Go back and restart. Mostly timer start failure has occured.
-=======
         // Go back and restart. Mostly timer start failure has occurred.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        // Go back and restart. Mostly timer start failure has occurred.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // When timer start is declared a failure, then we delete the list.
         // Should not happen now as we stop and then only start the scan timer. 
         // still handle the unlikely case.
         csrNeighborRoamHandleEmptyScanResult(pMac);
         return status;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* Need to perform scan here before getting the list */
-    vos_mem_copy(bgScanParams.bssid, broadcastBssid, sizeof(tCsrBssid));
-    bgScanParams.SSID.length = pMac->roam.roamSession[pNeighborRoamInfo->csrSessionId].connectedProfile.SSID.length;
-    vos_mem_copy(bgScanParams.SSID.ssId, pMac->roam.roamSession[pNeighborRoamInfo->csrSessionId].connectedProfile.SSID.ssId, 
-                                    pMac->roam.roamSession[pNeighborRoamInfo->csrSessionId].connectedProfile.SSID.length);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Validate the currentChanIndex value before using it to index the ChannelList array */
     if ( pNeighborRoamInfo->roamChannelInfo.currentChanIndex
@@ -3561,28 +2400,11 @@ eHalStatus csrNeighborRoamPerformBgScan(tpAniSirGlobal pMac, tANI_U32 sessionId)
     /* Need to perform scan here before getting the list */
 
     palZeroMemory(pMac->hHdd, &bgScanParams, sizeof(tCsrBGScanRequest));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     channel = pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList[pNeighborRoamInfo->roamChannelInfo.currentChanIndex];
     bgScanParams.ChannelInfo.numOfChannels = 1;
     bgScanParams.ChannelInfo.ChannelList = &channel;
    
-<<<<<<< HEAD
-<<<<<<< HEAD
-    bgScanParams.minChnTime = pNeighborRoamInfo->cfgParams.minChannelScanTime;
-    bgScanParams.maxChnTime = pNeighborRoamInfo->cfgParams.maxChannelScanTime;
-
-    status = csrNeighborRoamIssueBgScanRequest(pMac, &bgScanParams);
-    if (eHAL_STATUS_SUCCESS != status)
-    {
-        smsLog(pMac, LOGE, FL("Issue of BG Scan request failed: Status = %d"), status);
-        return status;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrNeighborRoamFillNonChannelBgScanParams(pMac, &bgScanParams);
 
     status = csrNeighborRoamIssueBgScanRequest(pMac, &bgScanParams,
@@ -3590,25 +2412,13 @@ eHalStatus csrNeighborRoamPerformBgScan(tpAniSirGlobal pMac, tANI_U32 sessionId)
     if (eHAL_STATUS_SUCCESS != status)
     {
         smsLog(pMac, LOGE, FL("Issue of BG Scan request failed: Status = %d"), status);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     pNeighborRoamInfo->roamChannelInfo.currentChanIndex++;
     if (pNeighborRoamInfo->roamChannelInfo.currentChanIndex >= 
             pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels)
     {      
-<<<<<<< HEAD
-<<<<<<< HEAD
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Completed scanning channels in Channel List: CurrChanIndex = %d, Num Channels = %d"),
-=======
         NEIGHBOR_ROAM_DEBUG(pMac, LOG1, FL("Completed scanning channels in Channel List: CurrChanIndex = %d, Num Channels = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        NEIGHBOR_ROAM_DEBUG(pMac, LOG1, FL("Completed scanning channels in Channel List: CurrChanIndex = %d, Num Channels = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             pNeighborRoamInfo->roamChannelInfo.currentChanIndex, 
                                             pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels);
         /* We have completed scanning all the channels */
@@ -3621,13 +2431,6 @@ eHalStatus csrNeighborRoamPerformBgScan(tpAniSirGlobal pMac, tANI_U32 sessionId)
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return status;
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (eHAL_STATUS_SUCCESS != status)
     {
         /*
@@ -3717,10 +2520,6 @@ eHalStatus csrNeighborRoamPerformContiguousBgScan(tpAniSirGlobal pMac, tANI_U32 
     return status;
 }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
 
@@ -3745,15 +2544,7 @@ void csrNeighborRoamNeighborScanTimerCallback(void *pv)
     if(eANI_BOOLEAN_TRUE == pNeighborRoamInfo->scanRspPending)
     {
        //msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGW, FL("Already BgScanRsp is Pending\n"));
-=======
        smsLog(pMac, LOGW, FL("Already BgScanRsp is Pending"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGW, FL("Already BgScanRsp is Pending"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return;
     }
 
@@ -3766,38 +2557,17 @@ void csrNeighborRoamNeighborScanTimerCallback(void *pv)
             switch(pNeighborRoamInfo->prevNeighborRoamState)
             {
                 case eCSR_NEIGHBOR_ROAM_STATE_REPORT_QUERY:
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    csrNeighborRoamPerformBgScan(pMac);
-                    break;
-                default:
-                    smsLog(pMac, LOGE, FL("Neighbor scan callback received in state %d, prev state = %d"), 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrNeighborRoamPerformBgScan(pMac, sessionId);
                     break;
                 default:
                     smsLog(pMac, LOGE, FL("Neighbor scan callback received in state %d, prev state = %d"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     pNeighborRoamInfo->neighborRoamState, pNeighborRoamInfo->prevNeighborRoamState);
                     break;
             }
             break;
 #endif /* WLAN_FEATURE_VOWIFI_11R */
         case eCSR_NEIGHBOR_ROAM_STATE_CFG_CHAN_LIST_SCAN:     
-<<<<<<< HEAD
-<<<<<<< HEAD
-            csrNeighborRoamPerformBgScan(pMac);
-=======
             csrNeighborRoamPerformBgScan(pMac, sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            csrNeighborRoamPerformBgScan(pMac, sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         default:
             break;
@@ -3805,11 +2575,6 @@ void csrNeighborRoamNeighborScanTimerCallback(void *pv)
     return;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void csrNeighborRoamEmptyScanRefreshTimerCallback(void *context)
 {
     tCsrTimerInfo *pInfo = (tCsrTimerInfo *)context;
@@ -3848,10 +2613,6 @@ void csrNeighborRoamEmptyScanRefreshTimerCallback(void *context)
     return;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     \fn csrNeighborRoamResultsRefreshTimerCallback
@@ -3884,15 +2645,7 @@ void csrNeighborRoamResultsRefreshTimerCallback(void *context)
     if(!VOS_IS_STATUS_SUCCESS(vosStatus))
     {
         //err msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with TL: Status = %d\n"), vosStatus);
-=======
         smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with TL: Status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, FL(" Couldn't deregister csrNeighborRoamReassocIndCallback with TL: Status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* Reset all the variables just as no scan had happened before */
@@ -3905,15 +2658,7 @@ void csrNeighborRoamResultsRefreshTimerCallback(void *context)
         vosStatus = csrNeighborRoamIssueNeighborRptRequest(pMac);
         if (VOS_STATUS_SUCCESS != vosStatus)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d\n"), vosStatus);
-=======
             smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
         /* Increment the neighbor report retry count after sending the neighbor request successfully */
@@ -3924,15 +2669,7 @@ void csrNeighborRoamResultsRefreshTimerCallback(void *context)
     else
 #endif      
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Non 11R or CCX Association:Neighbor Lookup Down event received in CONNECTED state"));
-=======
         NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Non 11R or CCX Association:results refresh timer expired"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Non 11R or CCX Association:results refresh timer expired"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vosStatus = csrNeighborRoamTransitToCFGChanScan(pMac);
         if (VOS_STATUS_SUCCESS != vosStatus)
         {
@@ -3979,11 +2716,6 @@ VOS_STATUS csrNeighborRoamIssueNeighborRptRequest(tpAniSirGlobal pMac)
 
 /* ---------------------------------------------------------------------------
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \fn csrNeighborRoamChannelsFilterByCurrentBand
 
     \brief  This function is used to filter out the channels
@@ -4034,10 +2766,6 @@ VOS_STATUS csrNeighborRoamChannelsFilterByCurrentBand(
 
 /* ---------------------------------------------------------------------------
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \fn csrNeighborRoamMergeChannelLists 
 
     \brief  This function is used to merge two channel list.
@@ -4068,16 +2796,6 @@ VOS_STATUS csrNeighborRoamMergeChannelLists(
     int numChannels = outputNumOfChannels;
 
     // Check for NULL pointer
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (!pInputChannelList) return eHAL_STATUS_E_NULL_VALUE;
-
-    // Check for NULL pointer
-    if (!pOutputChannelList) return eHAL_STATUS_E_NULL_VALUE;
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (!pInputChannelList) return VOS_STATUS_E_INVAL;
 
     // Check for NULL pointer
@@ -4090,10 +2808,6 @@ VOS_STATUS csrNeighborRoamMergeChannelLists(
              __func__, inputNumOfChannels);
          return VOS_STATUS_E_INVAL;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Add the "new" channels in the input list to the end of the output list.
     for (i = 0; i < inputNumOfChannels; i++)
     {
@@ -4106,18 +2820,8 @@ VOS_STATUS csrNeighborRoamMergeChannelLists(
         {
             if (pInputChannelList[i])
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-                        "%s: [INFOLOG] Adding extra %d to Neighbor channel list\n", __func__, 
-=======
                 VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
                         "%s: [INFOLOG] Adding extra %d to Neighbor channel list", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
-                        "%s: [INFOLOG] Adding extra %d to Neighbor channel list", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pInputChannelList[i]); 
                 pOutputChannelList[numChannels] = pInputChannelList[i]; 
                 numChannels++; 
@@ -4128,15 +2832,7 @@ VOS_STATUS csrNeighborRoamMergeChannelLists(
     // Return final number of channels
     *pMergedOutputNumOfChannels = numChannels; 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return eHAL_STATUS_SUCCESS;
-=======
     return VOS_STATUS_SUCCESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    return VOS_STATUS_SUCCESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /* ---------------------------------------------------------------------------
@@ -4195,16 +2891,6 @@ VOS_STATUS csrNeighborRoamCreateChanListFromNeighborReport(tpAniSirGlobal pMac)
         {
             if (pNeighborBssDesc->pNeighborBssDescription->channel)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
-                                "%s: [INFOLOG] Adding %d to Neighbor channel list\n", __func__,
-                                pNeighborBssDesc->pNeighborBssDescription->channel);
-                        channelList[numChannels] = pNeighborBssDesc->pNeighborBssDescription->channel;
-                        numChannels++;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (CSR_IS_ROAM_INTRA_BAND_ENABLED(pMac))
                 {
                     // Make sure to add only if its the same band
@@ -4226,10 +2912,6 @@ VOS_STATUS csrNeighborRoamCreateChanListFromNeighborReport(tpAniSirGlobal pMac)
                     channelList[numChannels] = pNeighborBssDesc->pNeighborBssDescription->channel;
                     numChannels++;
                 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
             
@@ -4254,14 +2936,7 @@ VOS_STATUS csrNeighborRoamCreateChanListFromNeighborReport(tpAniSirGlobal pMac)
     }
 
     pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Store the obtained channel list to the Neighbor Control data structure */
     if (numChannels)
         pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = vos_mem_malloc((numChannels) * sizeof(tANI_U8));
@@ -4276,14 +2951,6 @@ VOS_STATUS csrNeighborRoamCreateChanListFromNeighborReport(tpAniSirGlobal pMac)
     pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = numChannels;
     if (numChannels)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG1, FL("IAPP Neighbor list callback received as expected in state %d."), 
-            pNeighborRoamInfo->neighborRoamState);
-        pNeighborRoamInfo->roamChannelInfo.IAPPNeighborListReceived = eANI_BOOLEAN_TRUE;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG1, FL("IAPP Neighbor list callback received as expected in state %d."),
             pNeighborRoamInfo->neighborRoamState);
         pNeighborRoamInfo->roamChannelInfo.IAPPNeighborListReceived = eANI_BOOLEAN_TRUE;
@@ -4293,10 +2960,6 @@ VOS_STATUS csrNeighborRoamCreateChanListFromNeighborReport(tpAniSirGlobal pMac)
            csrRoamOffloadScan(pMac, ROAM_SCAN_OFFLOAD_UPDATE_CFG, REASON_CHANNEL_LIST_CHANGED);
         }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     pNeighborRoamInfo->roamChannelInfo.currentChanIndex = 0;
     pNeighborRoamInfo->roamChannelInfo.chanListScanInProgress = eANI_BOOLEAN_TRUE;
@@ -4326,15 +2989,7 @@ void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus)
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     eHalStatus  status = eHAL_STATUS_SUCCESS;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG1, FL("Neighbor report result callback with status = %d\n"), vosStatus);
-=======
     smsLog(pMac, LOG1, FL("Neighbor report result callback with status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG1, FL("Neighbor report result callback with status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch (pNeighborRoamInfo->neighborRoamState)
     {
         case eCSR_NEIGHBOR_ROAM_STATE_REPORT_QUERY:
@@ -4346,15 +3001,7 @@ void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus)
                 vosStatus = csrNeighborRoamCreateChanListFromNeighborReport(pMac);
                 if (VOS_STATUS_SUCCESS == vosStatus)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Channel List created from Neighbor report, Transitioning to NEIGHBOR_SCAN state\n")); 
-=======
                     NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Channel List created from Neighbor report, Transitioning to NEIGHBOR_SCAN state"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Channel List created from Neighbor report, Transitioning to NEIGHBOR_SCAN state"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
 
                 /* We are gonna scan now. Remember the time stamp to filter out results only after this timestamp */
@@ -4372,14 +3019,7 @@ void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus)
                     smsLog(pMac, LOGE, FL("PAL Timer start for neighbor scan timer failed, status = %d, Ignoring state transition"), status);
                     vos_mem_free(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList);
                     pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                     pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return;
                 }
                 pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum = 0;                
@@ -4390,38 +3030,16 @@ void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus)
             {
                 /* Neighbor report timeout happened in SME RRM. We can try sending more neighbor requests until we 
                                 reach the maxNeighborRetries or receiving a successful neighbor response */
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Neighbor report result failed after %d retries, MAX RETRIES = %d\n"), 
-=======
                 smsLog(pMac, LOGE, FL("Neighbor report result failed after %d retries, MAX RETRIES = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Neighbor report result failed after %d retries, MAX RETRIES = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum, pNeighborRoamInfo->cfgParams.maxNeighborRetries);
                 if (pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum >= 
                         pNeighborRoamInfo->cfgParams.maxNeighborRetries)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, FL("Bailing out to CFG Channel list scan.. \n"));
-                    vosStatus = csrNeighborRoamTransitToCFGChanScan(pMac);
-                    if (VOS_STATUS_SUCCESS != vosStatus)
-                    {
-                        smsLog(pMac, LOGE, FL("Transit to CFG Channel list scan state failed with status %d \n"), vosStatus);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     smsLog(pMac, LOGE, FL("Bailing out to CFG Channel list scan.. "));
                     vosStatus = csrNeighborRoamTransitToCFGChanScan(pMac);
                     if (VOS_STATUS_SUCCESS != vosStatus)
                     {
                         smsLog(pMac, LOGE, FL("Transit to CFG Channel list scan state failed with status %d "), vosStatus);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         return;
                     }
                     /* We transitioned to different state now. Reset the Neighbor report retry count */
@@ -4432,15 +3050,7 @@ void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus)
                     vosStatus = csrNeighborRoamIssueNeighborRptRequest(pMac);
                     if (VOS_STATUS_SUCCESS != vosStatus)
                     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d\n"), vosStatus);
-=======
                         smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         return;
                     }
                     pNeighborRoamInfo->FTRoamInfo.neighborRptPending = eANI_BOOLEAN_TRUE;
@@ -4459,13 +3069,6 @@ void csrNeighborRoamRRMNeighborReportResult(void *context, VOS_STATUS vosStatus)
 
 
 #ifdef FEATURE_WLAN_LFR 
-<<<<<<< HEAD
-<<<<<<< HEAD
-tANI_BOOLEAN csrNeighborRoamIsSsidCandidateMatch( 
-        tpAniSirGlobal pMac, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_BOOLEAN csrNeighborRoamIsSsidAndSecurityMatch(
         tpAniSirGlobal pMac, 
         tCsrRoamConnectedProfile *pCurProfile,
@@ -4572,25 +3175,10 @@ tANI_BOOLEAN csrNeighborRoamIsNewConnectedProfile(
 tANI_BOOLEAN csrNeighborRoamConnectedProfileMatch(
         tpAniSirGlobal pMac,
         tCsrScanResult *pResult,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tDot11fBeaconIEs *pIes)
 {
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     tANI_U8 sessionId   = (tANI_U8)pNeighborRoamInfo->csrSessionId;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tCsrRoamConnectedProfile *pCurProfile;
-    tANI_BOOLEAN fMatch = FALSE;
-
-    if( !(pMac->roam.roamSession
-            && CSR_IS_SESSION_VALID(pMac, sessionId)))
-        return TRUE;  // Treat missing information as a match for everything. 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrRoamConnectedProfile *pCurProfile = NULL;
     tSirBssDescription *pBssDesc = &pResult->Result.BssDescriptor;
 
@@ -4599,97 +3187,35 @@ tANI_BOOLEAN csrNeighborRoamConnectedProfileMatch(
     {
         return FALSE;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pCurProfile = &pMac->roam.roamSession[sessionId].connectedProfile;
 
     if( !pCurProfile)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return TRUE;  // Treat missing information as a match for everything. 
-
-    if( pIes )
-    {
-        if(pIes->SSID.present)
-        {
-            fMatch = csrIsSsidMatch( pMac, (void *)pCurProfile->SSID.ssId, pCurProfile->SSID.length, 
-                    pIes->SSID.ssid, pIes->SSID.num_ssid, 
-                    eANI_BOOLEAN_TRUE ); // Treat a missing SSID as a non-match.
-            // Return the result of the match operation
-            return fMatch;  
-        } else
-            return FALSE;  // Treat a missing SSID as a non-match.
-    } else
-        return FALSE;  // Again, treat missing SSID information as a non-match. 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         return FALSE;
     }
 
     return csrNeighborRoamIsSsidAndSecurityMatch(pMac, pCurProfile, pBssDesc, pIes);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /* ---------------------------------------------------------------------------
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \fn csrNeighborRoamReorderChannelList
-
-    \brief  This function is used to reorder the channel list used for the background
-            scan. It uses the information learned from previous scans to re-order the
-            scan channel list to "favor" the "occupied channels".  The actual algorithm
-            is to scan the current set of "occupied channels" first, for every BG scan,
-            followed by a "chunk" of the remaining list of "valid channels". 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \fn csrNeighborRoamPrepareNonOccupiedChannelList
 
     \brief  This function is used to prepare a channel list that is derived from
             the list of valid channels and does not include those in the occupied
             list.
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \param  pMac - The handle returned by macOpen.
     \param  pInputChannelList - The default channels list.
     \param  numOfChannels - The number of channels in the default channels list.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \param  pOutputChannelList - The place to put the "re-ordered" channel list.
-    \param  pOutputNumOfChannels - The number of channels in the "re-ordered" channel list.
-=======
     \param  pOutputChannelList - The place to put the non-occupied channel list.
     \param  pOutputNumOfChannels - The number of channels in the non-occupied channel list.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    \param  pOutputChannelList - The place to put the non-occupied channel list.
-    \param  pOutputNumOfChannels - The number of channels in the non-occupied channel list.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     \return VOS_STATUS_SUCCESS on success, corresponding error code otherwise
 
 ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-VOS_STATUS csrNeighborRoamReorderChannelList( 
-=======
 VOS_STATUS csrNeighborRoamPrepareNonOccupiedChannelList(
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-VOS_STATUS csrNeighborRoamPrepareNonOccupiedChannelList(
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tpAniSirGlobal pMac, 
         tANI_U8   *pInputChannelList, 
         int numOfChannels,
@@ -4698,50 +3224,10 @@ VOS_STATUS csrNeighborRoamPrepareNonOccupiedChannelList(
         )
 {
     int i = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    int j = 0;
-    static int index = 0;
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int outputNumOfChannels  = 0; // Clear the output number of channels
     tANI_U8 numOccupiedChannels = pMac->scan.occupiedChannels.numChannels;
     tANI_U8 *pOccupiedChannelList = pMac->scan.occupiedChannels.channelList;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    // Copy over the "occupied channels" at the FRONT of pOutputChannelList.
-    for (i = 0; i < numOccupiedChannels; i++)
-    {
-        if (pOccupiedChannelList[i] != 0) 
-        {
-            pOutputChannelList[i] = pOccupiedChannelList[i]; 
-            outputNumOfChannels++;
-        }
-    }
-
-    // Copy over one "chunk" of channels from the "rest of the channels"...append them to the END of pOutputChannelList.
-    for (j = 0; j < CSR_BG_SCAN_VALID_CHANNEL_LIST_CHUNK_SIZE; j++)
-    {
-        if (!csrIsChannelPresentInList(pOccupiedChannelList, numOccupiedChannels, pInputChannelList[(j+index)%numOfChannels]))
-        {
-            pOutputChannelList[i] = pInputChannelList[(j+index)%numOfChannels]; 
-            i++;
-            outputNumOfChannels++;
-        }
-    }
-
-    //Let's update the index...at which we start retrieving the next chunk
-    index = (index + CSR_BG_SCAN_VALID_CHANNEL_LIST_CHUNK_SIZE) % numOfChannels; 
-
-    //VOS_ASSERT(numOfChannels == i);
-    smsLog(pMac, LOGE, FL("numOfChannels in the default channels list=%d. Number in the final list=%d."), numOfChannels, i);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     for (i = 0; i < numOfChannels; i++)
     {
         if (!csrIsChannelPresentInList(pOccupiedChannelList, numOccupiedChannels,
@@ -4754,10 +3240,6 @@ VOS_STATUS csrNeighborRoamPrepareNonOccupiedChannelList(
     smsLog(pMac, LOG2, FL("Number of channels in the valid channel list=%d; "
            "Number of channels in the non-occupied list list=%d"),
             numOfChannels, outputNumOfChannels);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Return the number of channels
     *pOutputNumOfChannels = outputNumOfChannels; 
@@ -4787,20 +3269,11 @@ VOS_STATUS csrNeighborRoamTransitToCFGChanScan(tpAniSirGlobal pMac)
     int i = 0;
     int numOfChannels = 0;
     tANI_U8   channelList[WNI_CFG_VALID_CHANNEL_LIST_LEN];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpCsrChannelInfo    currChannelListInfo;
 #ifdef FEATURE_WLAN_LFR
     tANI_U32 sessionId = pNeighborRoamInfo->csrSessionId;
 #endif
     currChannelListInfo = &pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if ( 
 #ifdef FEATURE_WLAN_CCX
@@ -4808,48 +3281,20 @@ VOS_STATUS csrNeighborRoamTransitToCFGChanScan(tpAniSirGlobal pMac)
                     (pNeighborRoamInfo->roamChannelInfo.IAPPNeighborListReceived == eANI_BOOLEAN_FALSE)) ||
         (pNeighborRoamInfo->isCCXAssoc == eANI_BOOLEAN_FALSE) || 
 #endif // CCX
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels == 0)
-
-    {
-        smsLog(pMac, LOGW, FL("Falling back to CFG channel list"));
-=======
         currChannelListInfo->numOfChannels == 0)
     {
         smsLog(pMac, LOGW, FL("Building channel list to scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        currChannelListInfo->numOfChannels == 0)
-    {
-        smsLog(pMac, LOGW, FL("Building channel list to scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
         /* Free up the channel list and allocate a new memory. This is because we dont know how much 
             was allocated last time. If we directly copy more number of bytes than allocated earlier, this might 
             result in memory corruption */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (NULL != pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList)
-        {
-            vos_mem_free(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList);
-            pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-        }
-        VOS_ASSERT( pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList == NULL);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (NULL != currChannelListInfo->ChannelList)
         {
             vos_mem_free(currChannelListInfo->ChannelList);
             currChannelListInfo->ChannelList = NULL;
             currChannelListInfo->numOfChannels = 0;
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         // Now obtain the contents for "channelList" (the "default valid channel list") from EITHER
         // the gNeighborScanChannelList in "cfg.ini", OR the actual "valid channel list" information formed by CSR.
@@ -4864,79 +3309,6 @@ VOS_STATUS csrNeighborRoamTransitToCFGChanScan(tpAniSirGlobal pMac)
                     channelList, 
                     0, //NB: If 0, simply copy the input channel list to the output list.
                     &numOfChannels );
-<<<<<<< HEAD
-<<<<<<< HEAD
-        } 
-        else
-            {
-            /* Get current list of valid channels. */
-            NEIGHBOR_ROAM_DEBUG(pMac, LOGE, "Switching to master list of valid channels");
-            numOfChannels = sizeof(pMac->roam.validChannelList);
-            if(HAL_STATUS_SUCCESS(csrGetCfgValidChannels(pMac, (tANI_U8 *)pMac->roam.validChannelList, (tANI_U32 *) &numOfChannels)))
-            {
-                // Copy the "default valid channel list" (channelList) from the actual "valid channel list" information formed by CSR
-                status = csrNeighborRoamMergeChannelLists( 
-                        pMac, 
-                        (tANI_U8 *)pMac->roam.validChannelList, 
-                        numOfChannels,   // The number of channels in the validChannelList 
-                        channelList, 
-                        0, //NB: If 0, simply copy the input channel list to the output list.
-                        &numOfChannels );  // The final number of channels in the output list. Will be numOfChannels
-            }
-            else
-            { 
-                smsLog(pMac, LOGE, FL("Could not get valid channel list, TL event ignored")); 
-                return VOS_STATUS_E_FAILURE;
-            }
-        }
-
-        /* At this point, channelList contains our best inputs on the "valid channel list" */
-
-        /* Allocate for the maximum number that might be used */
-        smsLog(pMac, LOGE, FL("%d channels in the default list. Add %d occupied channels. %d is the MAX scan channel list."), 
-                numOfChannels, 
-                CSR_BG_SCAN_OCCUPIED_CHANNEL_LIST_LEN, 
-                numOfChannels+CSR_BG_SCAN_OCCUPIED_CHANNEL_LIST_LEN );
-        pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = numOfChannels;
-        VOS_ASSERT( pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList == NULL);
-        if (numOfChannels)
-        {
-            pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = 
-                vos_mem_malloc(numOfChannels+CSR_BG_SCAN_OCCUPIED_CHANNEL_LIST_LEN );
-        }
-    
-        if (NULL == pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList)
-        {
-            smsLog(pMac, LOGE, FL("Memory allocation for Channel list failed.. TL event ignored"));
-            return VOS_STATUS_E_RESOURCES;
-        }
-    
-#ifdef FEATURE_WLAN_LFR
-        /* Since this is a legacy case, copy the channel list from CFG here */
-    
-        status = csrNeighborRoamReorderChannelList( pMac, 
-                channelList, 
-                numOfChannels, 
-                pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList, 
-                &numOfChannels );
-        if (eHAL_STATUS_SUCCESS != status)
-#endif
-        {
-            /* Re-ordering failed. */
-            smsLog(pMac, LOGE, FL("Cannot re-order scan channel list. (status = %d) Going to use default scan channel list."), status);
-        vos_mem_copy(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList, 
-                                channelList, numOfChannels * sizeof(tANI_U8));
-        } 
-
-        /* Adjust for the actual number that are used */
-        pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels = numOfChannels;
-        for (i = 0; i < pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.numOfChannels; i++)
-        {
-            NEIGHBOR_ROAM_DEBUG(pMac, LOGE, "Channel List from CFG (or scan caching) = %d\n", 
-                pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList[i]);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             if (CSR_IS_ROAM_INTRA_BAND_ENABLED(pMac))
             {
@@ -5133,10 +3505,6 @@ VOS_STATUS csrNeighborRoamTransitToCFGChanScan(tpAniSirGlobal pMac)
         {
             NEIGHBOR_ROAM_DEBUG(pMac, LOGW, "Channel List from CFG (or) (non-)occupied list"
                     "= %d", currChannelListInfo->ChannelList[i]);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
@@ -5154,32 +3522,14 @@ VOS_STATUS csrNeighborRoamTransitToCFGChanScan(tpAniSirGlobal pMac)
     {
         /* Timer start failed..  */
         smsLog(pMac, LOGE, FL("Neighbor scan PAL Timer start failed, status = %d, Ignoring state transition"), status);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        vos_mem_free(pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList);
-        pNeighborRoamInfo->roamChannelInfo.currentChannelListInfo.ChannelList = NULL;
-=======
         vos_mem_free(currChannelListInfo->ChannelList);
         currChannelListInfo->ChannelList = NULL;
         currChannelListInfo->numOfChannels = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        vos_mem_free(currChannelListInfo->ChannelList);
-        currChannelListInfo->ChannelList = NULL;
-        currChannelListInfo->numOfChannels = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE;
     }
     
     pNeighborRoamInfo->roamChannelInfo.currentChanIndex = 0;
     pNeighborRoamInfo->roamChannelInfo.chanListScanInProgress = eANI_BOOLEAN_TRUE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* We are about to start a fresh scan cycle, purge results from the past */
-    csrScanFlushResult(pMac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* We are about to start a fresh scan cycle, 
      * purge non-P2P results from the past */
     csrScanFlushSelectiveResult(pMac, VOS_FALSE);
@@ -5187,10 +3537,6 @@ VOS_STATUS csrNeighborRoamTransitToCFGChanScan(tpAniSirGlobal pMac)
     /* We are about to start a fresh scan cycle,
      * purge failed pre-auth results from the past */
     csrNeighborRoamPurgePreauthFailedList(pMac);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     /* Transition to CFG_CHAN_LIST_SCAN_STATE */
     CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_CFG_CHAN_LIST_SCAN)
@@ -5220,12 +3566,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupUpEvent(tpAniSirGlobal pMac)
     /* Recheck whether the below check is needed. */
     if (pNeighborRoamInfo->neighborRoamState != eCSR_NEIGHBOR_ROAM_STATE_CONNECTED)
         CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_CONNECTED)
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
     if (!csrRoamIsFastRoamEnabled(pMac,pMac->roam.neighborRoamInfo.csrSessionId))
     {
@@ -5233,10 +3573,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupUpEvent(tpAniSirGlobal pMac)
         return eHAL_STATUS_SUCCESS;
     }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Reset all the neighbor roam info control variables. Free all the allocated memory. It is like we are just associated now */
     csrNeighborRoamResetConnectedStateControlInfo(pMac);
 
@@ -5247,15 +3583,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupUpEvent(tpAniSirGlobal pMac)
                                     WLANTL_HO_THRESHOLD_DOWN, 
                                     csrNeighborRoamNeighborLookupDOWNCallback, 
                                     VOS_MODULE_ID_SME, pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if(!VOS_IS_STATUS_SUCCESS(vosStatus))
-    {
-       //err msg
-       smsLog(pMac, LOGW, FL(" Couldn't register csrNeighborRoamNeighborLookupCallback DOWN event with TL: Status = %d\n"), vosStatus);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
     pNeighborRoamInfo->lookupDOWNRssi = 0;
 #endif
@@ -5263,10 +3590,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupUpEvent(tpAniSirGlobal pMac)
     {
        //err msg
        smsLog(pMac, LOGW, FL(" Couldn't register csrNeighborRoamNeighborLookupCallback DOWN event with TL: Status = %d"), vosStatus);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
 
@@ -5297,15 +3620,7 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
     {
         case eCSR_NEIGHBOR_ROAM_STATE_CONNECTED:
             
-<<<<<<< HEAD
-<<<<<<< HEAD
-            NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering DOWN event neighbor lookup callback with TL. RSSI = %d,"), 
-=======
             NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering DOWN event neighbor lookup callback with TL. RSSI = %d,"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Deregistering DOWN event neighbor lookup callback with TL. RSSI = %d,"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                             pNeighborRoamInfo->currentNeighborLookupThreshold * (-1));
             /* De-register Neighbor Lookup threshold callback with TL */
             vosStatus = WLANTL_DeregRSSIIndicationCB(pMac->roam.gVosContext, (v_S7_t)pNeighborRoamInfo->currentNeighborLookupThreshold * (-1),
@@ -5316,14 +3631,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
             if(!VOS_IS_STATUS_SUCCESS(vosStatus))
             {
                //err msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-               smsLog(pMac, LOGW, FL(" Couldn't Deregister csrNeighborRoamNeighborLookupCallback DOWN event from TL: Status = %d\n"), status);
-            }
-            
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                smsLog(pMac, LOGW, FL(" Couldn't Deregister csrNeighborRoamNeighborLookupCallback DOWN event from TL: Status = %d"), vosStatus);
             }
 #ifdef FEATURE_WLAN_LFR
@@ -5333,10 +3640,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
                 return eHAL_STATUS_SUCCESS;
             }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            
 #if defined WLAN_FEATURE_VOWIFI_11R && defined WLAN_FEATURE_VOWIFI
             if ((pNeighborRoamInfo->is11rAssoc) && (pMac->rrm.rrmSmeContext.rrmConfig.rrmEnabled))
@@ -5346,15 +3649,7 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
                 vosStatus = csrNeighborRoamIssueNeighborRptRequest(pMac);
                 if (VOS_STATUS_SUCCESS != vosStatus)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d\n"), vosStatus);
-=======
                     smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, FL("Neighbor report request failed. status = %d"), vosStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return vosStatus;
                 }
                 /* Increment the neighbor report retry count after sending the neighbor request successfully */
@@ -5370,17 +3665,6 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
                 vosStatus = csrNeighborRoamTransitToCFGChanScan(pMac);
                 if (VOS_STATUS_SUCCESS != vosStatus)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    return vosStatus;
-                }
-            }
-            NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Registering UP event neighbor lookup callback with TL. RSSI = %d,"), pNeighborRoamInfo->cfgParams.neighborLookupThreshold * (-1));
-            /* Register Neighbor Lookup threshold callback with TL for UP event now */
-            vosStatus = WLANTL_RegRSSIIndicationCB(pMac->roam.gVosContext, (v_S7_t)pNeighborRoamInfo->cfgParams.neighborLookupThreshold * (-1),
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("csrNeighborRoamTransitToCFGChanScan failed"
                         " with status=%d"), vosStatus);
                     return vosStatus;
@@ -5390,25 +3674,13 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
             /* Register Neighbor Lookup threshold callback with TL for UP event now */
             vosStatus = WLANTL_RegRSSIIndicationCB(pMac->roam.gVosContext,
                                             (v_S7_t)NEIGHBOR_ROAM_LOOKUP_UP_THRESHOLD * (-1),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                             WLANTL_HO_THRESHOLD_UP, 
                                             csrNeighborRoamNeighborLookupUPCallback, 
                                             VOS_MODULE_ID_SME, pMac);
             if(!VOS_IS_STATUS_SUCCESS(vosStatus))
             {
                //err msg
-<<<<<<< HEAD
-<<<<<<< HEAD
-               smsLog(pMac, LOGW, FL(" Couldn't register csrNeighborRoamNeighborLookupCallback UP event with TL: Status = %d\n"), status);
-=======
                smsLog(pMac, LOGE, FL(" Couldn't register csrNeighborRoamNeighborLookupCallback UP event with TL: Status = %d"), status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               smsLog(pMac, LOGE, FL(" Couldn't register csrNeighborRoamNeighborLookupCallback UP event with TL: Status = %d"), status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         default:
@@ -5434,32 +3706,13 @@ VOS_STATUS  csrNeighborRoamNeighborLookupDownEvent(tpAniSirGlobal pMac)
 
 ---------------------------------------------------------------------------*/
 VOS_STATUS csrNeighborRoamNeighborLookupUPCallback (v_PVOID_t pAdapter, v_U8_t rssiNotification,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                                               v_PVOID_t pUserCtxt)
-=======
                                                                                v_PVOID_t pUserCtxt,
                                                                                v_S7_t avgRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                                                               v_PVOID_t pUserCtxt,
-                                                                               v_S7_t avgRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tpAniSirGlobal pMac = PMAC_STRUCT( pUserCtxt );
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     VOS_STATUS  vosStatus = eHAL_STATUS_SUCCESS;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Neighbor Lookup UP indication callback called with notification %d"), rssiNotification);
-
-    if(!csrIsConnStateConnectedInfra(pMac, pNeighborRoamInfo->csrSessionId))
-    {
-       smsLog(pMac, LOGW, "Ignoring the indication as we are not connected\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Neighbor Lookup UP indication callback called with notification %d Reported RSSI = %d"),
                                        rssiNotification,
                                        avgRssi);
@@ -5467,10 +3720,6 @@ VOS_STATUS csrNeighborRoamNeighborLookupUPCallback (v_PVOID_t pAdapter, v_U8_t r
     if(!csrIsConnStateConnectedInfra(pMac, pNeighborRoamInfo->csrSessionId))
     {
        smsLog(pMac, LOGW, "Ignoring the indication as we are not connected");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_SUCCESS;
     }
 
@@ -5494,32 +3743,13 @@ VOS_STATUS csrNeighborRoamNeighborLookupUPCallback (v_PVOID_t pAdapter, v_U8_t r
 
 ---------------------------------------------------------------------------*/
 VOS_STATUS csrNeighborRoamNeighborLookupDOWNCallback (v_PVOID_t pAdapter, v_U8_t rssiNotification,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                                               v_PVOID_t pUserCtxt)
-=======
                                                                                v_PVOID_t pUserCtxt,
                                                                                v_S7_t avgRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                                                               v_PVOID_t pUserCtxt,
-                                                                               v_S7_t avgRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tpAniSirGlobal pMac = PMAC_STRUCT( pUserCtxt );
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
     VOS_STATUS  vosStatus = eHAL_STATUS_SUCCESS;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Neighbor Lookup DOWN indication callback called with notification %d"), rssiNotification);
-
-    if(!csrIsConnStateConnectedInfra(pMac, pNeighborRoamInfo->csrSessionId))
-    {
-       smsLog(pMac, LOGW, "Ignoring the indication as we are not connected\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     NEIGHBOR_ROAM_DEBUG(pMac, LOGW, FL("Neighbor Lookup DOWN indication callback called with notification %d Reported RSSI = %d"),
                                rssiNotification,
                                avgRssi);
@@ -5530,10 +3760,6 @@ VOS_STATUS csrNeighborRoamNeighborLookupDOWNCallback (v_PVOID_t pAdapter, v_U8_t
     if(!csrIsConnStateConnectedInfra(pMac, pNeighborRoamInfo->csrSessionId))
     {
        smsLog(pMac, LOGW, "Ignoring the indication as we are not connected");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_SUCCESS;
     }
 
@@ -5565,19 +3791,6 @@ extern int dumpCmdRSSI;
 eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessionId)
 {
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    smsLog(pMac, LOGE, FL("Disconnect indication on session %d in state %d (sub-state %d)"), 
-           sessionId, pNeighborRoamInfo->neighborRoamState,
-           pMac->roam.curSubState[sessionId]);
- 
-#ifdef FEATURE_WLAN_CCX
-    {
-      tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
     tCsrRoamConnectedProfile *pPrevProfile = &pNeighborRoamInfo->prevConnProfile;
 #endif
@@ -5607,10 +3820,6 @@ eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessio
 
 #ifdef FEATURE_WLAN_CCX
     {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if (pSession->connectedProfile.isCCXAssoc)
       {
           vos_mem_copy(&pSession->prevApSSID, &pSession->connectedProfile.SSID, sizeof(tSirMacSSid));
@@ -5634,14 +3843,7 @@ eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessio
             // state.
             palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
             palTimerStop(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            palTimerStop(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (!CSR_IS_ROAM_SUBSTATE_DISASSOC_HO( pMac, sessionId )) {
                 /*
                  * Disconnect indication during Disassoc Handoff sub-state
@@ -5658,18 +3860,6 @@ eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessio
 
         case eCSR_NEIGHBOR_ROAM_STATE_INIT:
             csrNeighborRoamResetInitStateControlInfo(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            csrNeighborRoamDeregAllRssiIndication(pMac);
-            break; 
-
-        case eCSR_NEIGHBOR_ROAM_STATE_CFG_CHAN_LIST_SCAN:
-            CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_INIT);
-            csrNeighborRoamResetCfgListChanScanControlInfo(pMac);
-            csrNeighborRoamDeregAllRssiIndication(pMac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             if(!pMac->roam.configParam.isRoamOffloadScanEnabled)
             {
@@ -5704,10 +3894,6 @@ eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessio
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case eCSR_NEIGHBOR_ROAM_STATE_PREAUTH_DONE:
@@ -5718,20 +3904,6 @@ eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessio
             CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_INIT)
             csrNeighborRoamResetPreauthControlInfo(pMac);
             csrNeighborRoamResetReportScanStateControlInfo(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            csrNeighborRoamDeregAllRssiIndication(pMac);
-            break;
-
-        default:
-            NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Received disconnect event in state %d"), pNeighborRoamInfo->neighborRoamState);
-            NEIGHBOR_ROAM_DEBUG(pMac, LOGE, FL("Transitioning to INIT state"));
-            CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_INIT)
-            break;
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             if (!pMac->roam.configParam.isRoamOffloadScanEnabled)
             {
@@ -5753,10 +3925,6 @@ eHalStatus csrNeighborRoamIndicateDisconnect(tpAniSirGlobal pMac, tANI_U8 sessio
     if (csrRoamIsStaMode(pMac, sessionId))
        csrRoamOffloadScan(pMac, ROAM_SCAN_OFFLOAD_STOP, REASON_DISCONNECTED);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return eHAL_STATUS_SUCCESS;
 }
 
@@ -5785,13 +3953,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
     int  init_ft_flag = FALSE;
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Connect indication received with session id %d in state %d"), sessionId, pNeighborRoamInfo->neighborRoamState);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == pNeighborRoamInfo)
     {
         return eHAL_STATUS_FAILURE;
@@ -5810,10 +3971,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
         return eHAL_STATUS_SUCCESS;
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch (pNeighborRoamInfo->neighborRoamState)
     {
         case eCSR_NEIGHBOR_ROAM_STATE_REASSOCIATING:
@@ -5828,14 +3985,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
             /* Reset all the data structures here */ 
             csrNeighborRoamResetInitStateControlInfo(pMac);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_CONNECTED)
-
-            pNeighborRoamInfo->csrSessionId = sessionId;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pNeighborRoamInfo->csrSessionId = sessionId;
 
 #ifdef FEATURE_WLAN_LFR
@@ -5848,20 +3997,11 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
 #endif
             CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_CONNECTED);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             vos_mem_copy(pNeighborRoamInfo->currAPbssid, 
                         pMac->roam.roamSession[sessionId].connectedProfile.bssid, sizeof(tCsrBssid));
             pNeighborRoamInfo->currAPoperationChannel = pMac->roam.roamSession[sessionId].connectedProfile.operationChannel;
             pNeighborRoamInfo->neighborScanTimerInfo.pMac = pMac;
             pNeighborRoamInfo->neighborScanTimerInfo.sessionId = sessionId;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pNeighborRoamInfo->currentNeighborLookupThreshold =
                 pNeighborRoamInfo->cfgParams.neighborLookupThreshold;
 #ifdef FEATURE_WLAN_LFR
@@ -5872,10 +4012,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
             pNeighborRoamInfo->emptyScanTotalTime = 0;
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
             /* Now we can clear the preauthDone that was saved as we are connected afresh */
@@ -5884,17 +4020,8 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
             
 #ifdef WLAN_FEATURE_VOWIFI_11R
             // Based on the auth scheme tell if we are 11r
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if ( csrIsAuthType11r( pMac->roam.roamSession[sessionId].connectedProfile.AuthType ) )
-=======
             if ( csrIsAuthType11r( pMac->roam.roamSession[sessionId].connectedProfile.AuthType, 
                                    pMac->roam.roamSession[sessionId].connectedProfile.MDID.mdiePresent))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            if ( csrIsAuthType11r( pMac->roam.roamSession[sessionId].connectedProfile.AuthType, 
-                                   pMac->roam.roamSession[sessionId].connectedProfile.MDID.mdiePresent))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 if (pMac->roam.configParam.isFastTransitionEnabled)
                     init_ft_flag = TRUE;
@@ -5922,15 +4049,7 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
 
 #ifdef FEATURE_WLAN_LFR
             // If "Legacy Fast Roaming" is enabled 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if (csrRoamIsFastRoamEnabled(pMac))
-=======
             if (csrRoamIsFastRoamEnabled(pMac, sessionId))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            if (csrRoamIsFastRoamEnabled(pMac, sessionId))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 init_ft_flag = TRUE;
             }
@@ -5940,15 +4059,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
             if ( init_ft_flag == TRUE )
             {
                 /* Initialize all the data structures needed for the 11r FT Preauth */
-<<<<<<< HEAD
-<<<<<<< HEAD
-                pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimerInfo.pMac = pMac;
-                pNeighborRoamInfo->FTRoamInfo.preAuthRspWaitTimerInfo.sessionId = sessionId;
-                pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum = 0;
-                csrNeighborRoamPurgePreauthFailedList(pMac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pNeighborRoamInfo->FTRoamInfo.currentNeighborRptRetryNum = 0;
                 csrNeighborRoamPurgePreauthFailedList(pMac);
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
@@ -5961,10 +4071,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
                   csrRoamOffloadScan(pMac, ROAM_SCAN_OFFLOAD_START, REASON_CONNECT);
               } else {
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 NEIGHBOR_ROAM_DEBUG(pMac, LOG2, FL("Registering neighbor lookup DOWN event with TL, RSSI = %d"), pNeighborRoamInfo->currentNeighborLookupThreshold);
                 /* Register Neighbor Lookup threshold callback with TL for DOWN event only */
@@ -5972,18 +4078,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
                                             WLANTL_HO_THRESHOLD_DOWN, 
                                             csrNeighborRoamNeighborLookupDOWNCallback, 
                                             VOS_MODULE_ID_SME, pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-                if(!VOS_IS_STATUS_SUCCESS(vstatus))
-                {
-                   //err msg
-                   smsLog(pMac, LOGW, FL(" Couldn't register csrNeighborRoamNeighborLookupDOWNCallback with TL: Status = %d\n"), vstatus);
-                   status = eHAL_STATUS_FAILURE;
-                }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
                 pNeighborRoamInfo->lookupDOWNRssi = 0;
 #endif
@@ -5996,10 +4090,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
               }
 #endif /* WLAN_FEATURE_ROAM_SCAN_OFFLOAD */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 #endif
             break;
@@ -6014,36 +4104,6 @@ eHalStatus csrNeighborRoamIndicateConnect(tpAniSirGlobal pMac, tANI_U8 sessionId
 #ifdef WLAN_FEATURE_VOWIFI_11R
 /* ---------------------------------------------------------------------------
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \fn csrNeighborRoamPreAuthResponseWaitTimerHandler
-
-    \brief  If this function is invoked, that means the preauthentication response 
-            is timed out from the PE. Preauth rsp handler is called with status as 
-            TIMEOUT
-
-    \param  context - CSR Timer info which holds pMac and session ID
-
-    \return VOID
-
----------------------------------------------------------------------------*/
-void csrNeighborRoamPreAuthResponseWaitTimerHandler(void *context)
-{
-    tCsrTimerInfo *pTimerInfo = (tCsrTimerInfo *)context;
-    tpAniSirGlobal pMac = (tpAniSirGlobal)pTimerInfo->pMac;
-    tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
-
-    pNeighborRoamInfo->FTRoamInfo.preauthRspPending = eANI_BOOLEAN_FALSE;
-
-    csrNeighborRoamPreauthRspHandler(pMac, VOS_STATUS_E_TIMEOUT);
-}
-
-/* ---------------------------------------------------------------------------
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \fn csrNeighborRoamPurgePreauthFailedList
 
     \brief  This function purges all the MAC addresses in the pre-auth fail list
@@ -6089,23 +4149,6 @@ eHalStatus csrNeighborRoamInit11rAssocInfo(tpAniSirGlobal pMac)
     pFTRoamInfo->neighborRptPending = eANI_BOOLEAN_FALSE;
     pFTRoamInfo->preauthRspPending = eANI_BOOLEAN_FALSE;
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pFTRoamInfo->preAuthRspWaitTimerInfo.pMac = pMac;
-    pFTRoamInfo->preAuthRspWaitTimerInfo.sessionId = CSR_SESSION_ID_INVALID;
-    status = palTimerAlloc(pMac->hHdd, &pFTRoamInfo->preAuthRspWaitTimer, 
-                    csrNeighborRoamPreAuthResponseWaitTimerHandler, (void *)&pFTRoamInfo->preAuthRspWaitTimerInfo);
-
-    if (eHAL_STATUS_SUCCESS != status)
-    {
-        smsLog(pMac, LOGE, FL("Response wait Timer allocation failed"));
-        return eHAL_STATUS_RESOURCES;
-    }
-    
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->roam.neighborRoamInfo.FTRoamInfo.currentNeighborRptRetryNum = 0;
     pMac->roam.neighborRoamInfo.FTRoamInfo.numBssFromNeighborReport = 0;
     vos_mem_zero(pMac->roam.neighborRoamInfo.FTRoamInfo.neighboReportBssInfo, 
@@ -6116,13 +4159,6 @@ eHalStatus csrNeighborRoamInit11rAssocInfo(tpAniSirGlobal pMac)
     if (eHAL_STATUS_SUCCESS != status)
     {
         smsLog(pMac, LOGE, FL("LL Open of preauth done AP List failed"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-        palTimerFree(pMac->hHdd, pFTRoamInfo->preAuthRspWaitTimer);
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_RESOURCES;
     }
     return status;
@@ -6155,16 +4191,6 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
     pNeighborRoamInfo->cfgParams.neighborReassocThreshold = pMac->roam.configParam.neighborRoamConfig.nNeighborReassocRssiThreshold;
     pNeighborRoamInfo->cfgParams.neighborScanPeriod = pMac->roam.configParam.neighborRoamConfig.nNeighborScanTimerPeriod;
     pNeighborRoamInfo->cfgParams.neighborResultsRefreshPeriod = pMac->roam.configParam.neighborRoamConfig.nNeighborResultsRefreshPeriod;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    pNeighborRoamInfo->cfgParams.channelInfo.numOfChannels   =   
-                        pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels;
-
-    pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pNeighborRoamInfo->cfgParams.emptyScanRefreshPeriod = pMac->roam.configParam.neighborRoamConfig.nEmptyScanRefreshPeriod;
     pNeighborRoamInfo->cfgParams.emptyScanMaxPeriod = pMac->roam.configParam.neighborRoamConfig.nEmptyScanMaxPeriod;
 
@@ -6183,10 +4209,6 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
                         pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels;
 
     pNeighborRoamInfo->cfgParams.channelInfo.ChannelList =
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 vos_mem_malloc(pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels);
 
     if (NULL == pNeighborRoamInfo->cfgParams.channelInfo.ChannelList)
@@ -6196,27 +4218,12 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
     }
 
     /* Update the roam global structure from CFG */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    palCopyMemory(pMac->hHdd, pNeighborRoamInfo->cfgParams.channelInfo.ChannelList, 
-=======
     palCopyMemory(pMac->hHdd, pNeighborRoamInfo->cfgParams.channelInfo.ChannelList,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    palCopyMemory(pMac->hHdd, pNeighborRoamInfo->cfgParams.channelInfo.ChannelList,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.channelList,
                         pMac->roam.configParam.neighborRoamConfig.neighborScanChanList.numChannels);
 
     vos_mem_set(pNeighborRoamInfo->currAPbssid, sizeof(tCsrBssid), 0);
     pNeighborRoamInfo->currentNeighborLookupThreshold = pMac->roam.neighborRoamInfo.cfgParams.neighborLookupThreshold;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pNeighborRoamInfo->currentScanResultsRefreshPeriod = 
-        NEIGHBOR_SCAN_RESULTS_REFRESH_PERIOD_MIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
     pNeighborRoamInfo->lookupDOWNRssi = 0;
     pNeighborRoamInfo->uEmptyScanCount = 0;
@@ -6225,10 +4232,6 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
     pNeighborRoamInfo->uEmptyScanRefreshTimerCount = 1;
     pNeighborRoamInfo->emptyScanTotalTime = 0;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pNeighborRoamInfo->scanRspPending = eANI_BOOLEAN_FALSE;
 
     pNeighborRoamInfo->neighborScanTimerInfo.pMac = pMac;
@@ -6238,15 +4241,7 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
 
     if (eHAL_STATUS_SUCCESS != status)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Response wait Timer allocation failed"));
-=======
         smsLog(pMac, LOGE, FL("Neighbor scan timer allocation failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Neighbor scan timer allocation failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pNeighborRoamInfo->cfgParams.channelInfo.ChannelList);
         pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = NULL;
         return eHAL_STATUS_RESOURCES;
@@ -6257,16 +4252,6 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
 
     if (eHAL_STATUS_SUCCESS != status)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Response wait Timer allocation failed"));
-        smsLog(pMac, LOGE, FL("LL Open of roamable AP List failed"));
-        vos_mem_free(pNeighborRoamInfo->cfgParams.channelInfo.ChannelList);
-        pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = NULL;
-        palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGE, FL("Neighbor results refresh timer allocation failed"));
         vos_mem_free(pNeighborRoamInfo->cfgParams.channelInfo.ChannelList);
         pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = NULL;
@@ -6285,10 +4270,6 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
         pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = NULL;
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_RESOURCES;
     }
 
@@ -6300,14 +4281,7 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
         pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = NULL;
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        palTimerFree(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_RESOURCES;
     }
 
@@ -6326,14 +4300,7 @@ eHalStatus csrNeighborRoamInit(tpAniSirGlobal pMac)
         pNeighborRoamInfo->cfgParams.channelInfo.ChannelList = NULL;
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);        
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         palTimerFree(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        palTimerFree(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         csrLLClose(&pNeighborRoamInfo->roamableAPList);
         return eHAL_STATUS_RESOURCES;
     }
@@ -6363,15 +4330,7 @@ void csrNeighborRoamClose(tpAniSirGlobal pMac)
 
     if (eCSR_NEIGHBOR_ROAM_STATE_CLOSED == pNeighborRoamInfo->neighborRoamState)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Neighbor Roam Algorithm Already Closed\n"));
-=======
         smsLog(pMac, LOGW, FL("Neighbor Roam Algorithm Already Closed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, FL("Neighbor Roam Algorithm Already Closed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -6384,14 +4343,7 @@ void csrNeighborRoamClose(tpAniSirGlobal pMac)
     pNeighborRoamInfo->neighborScanTimerInfo.sessionId = CSR_SESSION_ID_INVALID;
     palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborScanTimer);
     palTimerFree(pMac->hHdd, pNeighborRoamInfo->neighborResultsRefreshTimer);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     palTimerFree(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    palTimerFree(pMac->hHdd, pNeighborRoamInfo->emptyScanRefreshTimer);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Should free up the nodes in the list before closing the double Linked list */
     csrNeighborRoamFreeRoamableBSSList(pMac, &pNeighborRoamInfo->roamableAPList);
@@ -6411,26 +4363,11 @@ void csrNeighborRoamClose(tpAniSirGlobal pMac)
 
     /* Free the profile.. */ 
     csrReleaseProfile(pMac, &pNeighborRoamInfo->csrNeighborRoamProfile);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-#ifdef WLAN_FEATURE_VOWIFI_11R
-    pMac->roam.neighborRoamInfo.FTRoamInfo.currentNeighborRptRetryNum = 0;
-    palTimerFree(pMac->hHdd, pMac->roam.neighborRoamInfo.FTRoamInfo.preAuthRspWaitTimer);
-    pMac->roam.neighborRoamInfo.FTRoamInfo.preAuthRspWaitTimerInfo.pMac = NULL;
-    pMac->roam.neighborRoamInfo.FTRoamInfo.preAuthRspWaitTimerInfo.sessionId = CSR_SESSION_ID_INVALID;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR    
     csrRoamFreeConnectProfile(pMac, &pNeighborRoamInfo->prevConnProfile);
 #endif
 #ifdef WLAN_FEATURE_VOWIFI_11R
     pMac->roam.neighborRoamInfo.FTRoamInfo.currentNeighborRptRetryNum = 0;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->roam.neighborRoamInfo.FTRoamInfo.numBssFromNeighborReport = 0;
     vos_mem_zero(pMac->roam.neighborRoamInfo.FTRoamInfo.neighboReportBssInfo, 
                             sizeof(tCsrNeighborReportBssInfo) * MAX_BSS_IN_NEIGHBOR_RPT);
@@ -6465,15 +4402,6 @@ void csrNeighborRoamRequestHandoff(tpAniSirGlobal pMac)
     tCsrNeighborRoamBSSInfo     handoffNode;
     extern void csrRoamRoamingStateDisassocRspProcessor( tpAniSirGlobal pMac, tSirSmeDisassocRsp *pSmeDisassocRsp );
     tANI_U32 roamId = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    if (pMac->roam.neighborRoamInfo.neighborRoamState != eCSR_NEIGHBOR_ROAM_STATE_PREAUTH_DONE) 
-    {
-        smsLog(pMac, LOGE, FL("Roam requested when Neighbor roam is in %d state"), 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
 #ifdef FEATURE_WLAN_LFR_METRICS
     tCsrRoamInfo *roamInfoMetrics;
@@ -6483,10 +4411,6 @@ void csrNeighborRoamRequestHandoff(tpAniSirGlobal pMac)
     if (pMac->roam.neighborRoamInfo.neighborRoamState != eCSR_NEIGHBOR_ROAM_STATE_PREAUTH_DONE) 
     {
         smsLog(pMac, LOGE, FL("Roam requested when Neighbor roam is in %d state"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->roam.neighborRoamInfo.neighborRoamState);
         return;
     }
@@ -6499,29 +4423,14 @@ void csrNeighborRoamRequestHandoff(tpAniSirGlobal pMac)
     CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_REASSOCIATING)
     
     csrNeighborRoamGetHandoffAPInfo(pMac, &handoffNode);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGE, FL("HANDOFF CANDIDATE BSSID %02x:%02x:%02x:%02x:%02x:%02x"),
-=======
     VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG,
                FL("HANDOFF CANDIDATE BSSID %02x:%02x:%02x:%02x:%02x:%02x"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE (VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_DEBUG,
-               FL("HANDOFF CANDIDATE BSSID %02x:%02x:%02x:%02x:%02x:%02x"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                 handoffNode.pBssDescription->bssId[0], 
                                                 handoffNode.pBssDescription->bssId[1], 
                                                 handoffNode.pBssDescription->bssId[2], 
                                                 handoffNode.pBssDescription->bssId[3], 
                                                 handoffNode.pBssDescription->bssId[4], 
                                                 handoffNode.pBssDescription->bssId[5]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
     #ifdef FEATURE_WLAN_LFR_METRICS
        /* LFR metrics - pre-auth completion metric. send the event to supplicant that pre-auth successfully completed */
@@ -6530,10 +4439,6 @@ void csrNeighborRoamRequestHandoff(tpAniSirGlobal pMac)
        csrRoamCallCallback(pMac, pNeighborRoamInfo->csrSessionId, roamInfoMetrics, 0, eCSR_ROAM_HANDOVER_SUCCESS, 0);
     #endif
     //End fjdw67 Motorola, IKJB42MAIN-6385
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Free the profile.. Just to make sure we dont leak memory here */ 
     csrReleaseProfile(pMac, &pNeighborRoamInfo->csrNeighborRoamProfile);
     /* Create the Handoff AP profile. Copy the currently connected profile and update only the BSSID and channel number
@@ -6542,25 +4447,11 @@ void csrNeighborRoamRequestHandoff(tpAniSirGlobal pMac)
     vos_mem_copy(pNeighborRoamInfo->csrNeighborRoamProfile.BSSIDs.bssid, handoffNode.pBssDescription->bssId, sizeof(tSirMacAddr));
     pNeighborRoamInfo->csrNeighborRoamProfile.ChannelInfo.ChannelList[0] = handoffNode.pBssDescription->channelId;
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NEIGHBOR_ROAM_DEBUG(pMac, LOGW, " csrRoamHandoffRequested: disassociating with current AP\n");
-
-    if(!HAL_STATUS_SUCCESS(csrRoamIssueDisassociateCmd(pMac, sessionId, eCSR_DISCONNECT_REASON_HANDOFF)))
-    {
-        smsLog(pMac, LOGW, "csrRoamHandoffRequested:  fail to issue disassociate\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     NEIGHBOR_ROAM_DEBUG(pMac, LOGW, " csrRoamHandoffRequested: disassociating with current AP");
 
     if(!HAL_STATUS_SUCCESS(csrRoamIssueDisassociateCmd(pMac, sessionId, eCSR_DISCONNECT_REASON_HANDOFF)))
     {
         smsLog(pMac, LOGW, "csrRoamHandoffRequested:  fail to issue disassociate");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }                       
 
@@ -6598,15 +4489,7 @@ tANI_BOOLEAN csrNeighborRoamIsHandoffInProgress(tpAniSirGlobal pMac)
     return eANI_BOOLEAN_FALSE;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_VOWIFI_11R
-=======
 #if defined(WLAN_FEATURE_VOWIFI_11R) || defined(WLAN_FEATURE_NEIGHBOR_ROAMING)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#if defined(WLAN_FEATURE_VOWIFI_11R) || defined(WLAN_FEATURE_NEIGHBOR_ROAMING)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
 
     \fn csrNeighborRoamIs11rAssoc
@@ -6665,15 +4548,7 @@ void csrNeighborRoamGetHandoffAPInfo(tpAniSirGlobal pMac, tpCsrNeighborRoamBSSIn
     else
 #endif
 #ifdef FEATURE_WLAN_LFR
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (csrRoamIsFastRoamEnabled(pMac))
-=======
     if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (csrRoamIsFastRoamEnabled(pMac, CSR_SESSION_ID_INVALID))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         /* Always the BSS info in the head is the handoff candidate */
         pBssNode = csrNeighborRoamGetRoamableAPListNextEntry(pMac, &pNeighborRoamInfo->FTRoamInfo.preAuthDoneList, NULL);
@@ -6729,11 +4604,6 @@ void csrNeighborRoamTranistionPreauthDoneToDisconnected(tpAniSirGlobal pMac)
     CSR_NEIGHBOR_ROAM_STATE_TRANSITION(eCSR_NEIGHBOR_ROAM_STATE_INIT)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
     \brief  This function returns TRUE if background scan triggered by
             LFR is in progress.
@@ -6807,8 +4677,4 @@ eHalStatus csrNeighborRoamCandidateFoundIndHdlr(tpAniSirGlobal pMac, void* pMsg)
     return status;
 }
 #endif //WLAN_FEATURE_ROAM_SCAN_OFFLOAD
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif /* WLAN_FEATURE_NEIGHBOR_ROAMING */

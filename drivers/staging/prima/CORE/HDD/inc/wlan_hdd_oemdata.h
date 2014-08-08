@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -67,25 +58,11 @@
 #define __WLAN_HDD_OEM_DATA_H__
 
 #ifndef OEM_DATA_REQ_SIZE
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define OEM_DATA_REQ_SIZE 70
-#endif
-
-#ifndef OEM_DATA_RSP_SIZE
-#define OEM_DATA_RSP_SIZE 968
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define OEM_DATA_REQ_SIZE 134
 #endif
 
 #ifndef OEM_DATA_RSP_SIZE
 #define OEM_DATA_RSP_SIZE 1968
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 struct iw_oem_data_req

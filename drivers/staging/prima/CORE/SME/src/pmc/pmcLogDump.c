@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -241,21 +232,10 @@ dump_pmc_enter_wowl( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32
     tSirSmeWowlEnterParams wowlEnterParams;
     tSirRetStatus status;
     tANI_U32 length;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    (void) arg3; (void) arg4;
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8  sessionId = 0;
 
     (void) arg4;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palZeroMemory(pMac->hHdd, &wowlEnterParams, sizeof(tSirSmeWowlEnterParams));
 
     if (arg1 == 0 && arg2 == 0)
@@ -285,17 +265,6 @@ dump_pmc_enter_wowl( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32
       wowlEnterParams.ucPatternFilteringEnable = 1;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pMac->pmc.bmpsEnabled = TRUE;
-    pMac->pmc.wowlEnabled = TRUE;
-#ifdef WLAN_WAKEUP_EVENTS
-    (void)sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, dump_pmc_callbackRoutine2, pMac, &wowlEnterParams);
-#else // WLAN_WAKEUP_EVENTS
-    (void)sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, &wowlEnterParams);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(arg3 == CSR_ROAM_SESSION_MAX )
     {
         smsLog(pMac, LOGE, "Enter valid sessionId\n");
@@ -310,10 +279,6 @@ dump_pmc_enter_wowl( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32
                         &wowlEnterParams, sessionId);
 #else // WLAN_WAKEUP_EVENTS
     (void)sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, &wowlEnterParams, sessionId);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // WLAN_WAKEUP_EVENTS
     return p;
 }
@@ -330,26 +295,12 @@ static char *
 dump_pmc_remove_ptrn( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 arg3, tANI_U32 arg4, char *p)
 {
     tSirWowlDelBcastPtrn delPattern;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    (void) arg2; (void) arg3; (void) arg4;
-
-    palZeroMemory(pMac->hHdd, &delPattern, sizeof(tSirWowlDelBcastPtrn));
-
-    if(arg1 <= 7)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8  sessionId = 0;
     (void) arg3; (void) arg4;
  
     palZeroMemory(pMac->hHdd, &delPattern, sizeof(tSirWowlDelBcastPtrn));
 
     if((arg1 <= 7) || (arg2 == CSR_ROAM_SESSION_MAX))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         delPattern.ucPatternId = (tANI_U8)arg1;
     }
@@ -359,17 +310,8 @@ dump_pmc_remove_ptrn( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U3
         return p;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    (void)pmcWowlDelBcastPattern(pMac, &delPattern);
-=======
     sessionId = (tANI_U8 ) arg2;
     (void)pmcWowlDelBcastPattern(pMac, &delPattern, sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    sessionId = (tANI_U8 ) arg2;
-    (void)pmcWowlDelBcastPattern(pMac, &delPattern, sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return p;
 }
 
@@ -403,32 +345,13 @@ dump_pmc_test_Wowl( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 
     tSirWowlAddBcastPtrn addPattern;
     tSirWowlDelBcastPtrn delPattern;
     tSirSmeWowlEnterParams wowlEnterParams;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     tANI_U8            sessionId = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U8            sessionId = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     smeRsp.statusCode = eSIR_SME_SUCCESS;
     palZeroMemory(pMac->hHdd, &addPattern, sizeof(tSirWowlAddBcastPtrn));
     palZeroMemory(pMac->hHdd, &delPattern, sizeof(tSirWowlDelBcastPtrn));
     palZeroMemory(pMac->hHdd, &wowlEnterParams, sizeof(tSirSmeWowlEnterParams));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    (void) arg1; (void) arg2; (void) arg3; (void) arg4;
-
-    //Add pattern
-    sme_WowlAddBcastPattern(pMac, &addPattern);
-
-    //Delete pattern
-    sme_WowlDelBcastPattern(pMac, &delPattern);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     (void) arg2; (void) arg3; (void) arg4;
 
     if(arg1 == CSR_ROAM_SESSION_MAX)
@@ -443,32 +366,16 @@ dump_pmc_test_Wowl( tpAniSirGlobal pMac, tANI_U32 arg1, tANI_U32 arg2, tANI_U32 
 
     //Delete pattern
     sme_WowlDelBcastPattern(pMac, &delPattern, sessionId);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     //Force the device into BMPS
     pMac->pmc.pmcState = BMPS;
 
     //Enter Wowl
 #ifdef WLAN_WAKEUP_EVENTS
-<<<<<<< HEAD
-<<<<<<< HEAD
-    sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, dump_pmc_callbackRoutine2, pMac, &wowlEnterParams);
-#else // WLAN_WAKEUP_EVENTS
-    sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, &wowlEnterParams);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, dump_pmc_callbackRoutine2, pMac, 
                    &wowlEnterParams, sessionId);
 #else // WLAN_WAKEUP_EVENTS
     sme_EnterWowl(pMac, dump_pmc_callbackRoutine, pMac, &wowlEnterParams, sessionId);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // WLAN_WAKEUP_EVENTS
     smeRsp.messageType = eWNI_PMC_ENTER_WOWL_RSP;
     pmcMessageProcessor(pMac, &smeRsp);
@@ -503,25 +410,11 @@ static tDumpFuncEntry pmcMenuDumpTable[] = {
     {912,   "PMC: Request Full Power",  dump_pmc_request_full_power},
     //Unit Test Related
     {913,   "PMC: Test UAPSD",          dump_pmc_test_uapsd},
-<<<<<<< HEAD
-<<<<<<< HEAD
-    {914,   "PMC: Test WOWL",           dump_pmc_test_Wowl},
-    // WoWL Related
-    {915,   "PMC: Enter WoWL: Syntax: dump 915 <enable_magic_pkt> <enable_ptrn_match>",  dump_pmc_enter_wowl},
-    {916,   "PMC: Exit WoWL",  dump_pmc_exit_wowl},
-    {917,   "PMC: Remove a pattern: Syntax: dump 917 <pattern_id(0-7)>",  dump_pmc_remove_ptrn},
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {914,   "PMC: Test WOWL : Syntax :dump 914 <sessionId>",           dump_pmc_test_Wowl},
     // WoWL Related
     {915,   "PMC: Enter WoWL: Syntax: dump 915 <enable_magic_pkt> <enable_ptrn_match> <sessionId>",  dump_pmc_enter_wowl},
     {916,   "PMC: Exit WoWL",  dump_pmc_exit_wowl},
     {917,   "PMC: Remove a pattern: Syntax: dump 917 <pattern_id(0-7) <sessionId>>",  dump_pmc_remove_ptrn},
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {918,   "PMC: Enable BMPS",         dump_pmc_enable_bmps},
     {919,   "PMC: Disable BMPS",        dump_pmc_disable_bmps}
 };

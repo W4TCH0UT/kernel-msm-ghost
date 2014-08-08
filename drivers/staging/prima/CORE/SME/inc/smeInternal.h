@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -94,11 +85,6 @@ typedef enum eSmeCommandType
     eSmeCommandRemoveKey,
     eSmeCommandAddStaSession,
     eSmeCommandDelStaSession,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
     //eSmeTdlsCommandMask = 0x80000,  //To identify TDLS commands <TODO>
     //These can be considered as csr commands. 
@@ -113,10 +99,6 @@ typedef enum eSmeCommandType
     eSmeCommandTdlsExitUapsd,
 #endif
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //PMC
     eSmePmcCommandMask = 0x20000, //To identify PMC commands
     eSmeCommandEnterImps,
@@ -135,20 +117,8 @@ typedef enum eSmeCommandType
 #ifdef FEATURE_OEM_DATA_SUPPORT
     eSmeCommandOemDataReq = 0x80000, //To identify the oem data commands
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
     eSmeCommandRemainOnChannel,
     eSmeCommandNoAUpdate,
-#endif
-=======
-    eSmeCommandRemainOnChannel,
-    eSmeCommandNoAUpdate,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eSmeCommandRemainOnChannel,
-    eSmeCommandNoAUpdate,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } eSmeCommandType;
 
 
@@ -159,11 +129,6 @@ typedef enum eSmeState
     SME_STATE_READY,
 } eSmeState;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
 /* enumeration for Korea country revision index,
    index to the list of valid channels */
@@ -174,10 +139,6 @@ typedef enum eSmeKRRevision
     SME_KR_25        = 25,
 } eSmeKRRevision;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define SME_IS_START(pMac)  (SME_STATE_STOP != (pMac)->sme.state)
 #define SME_IS_READY(pMac)  (SME_STATE_READY == (pMac)->sme.state)

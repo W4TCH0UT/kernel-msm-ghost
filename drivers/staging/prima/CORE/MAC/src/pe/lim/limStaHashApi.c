@@ -1,13 +1,5 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Copyright (c) 2012, The Linux Foundation. All rights reserved.
-=======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -26,17 +18,7 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 /*
- *
-=======
-/*
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-/*
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
  * limStaHashApi.c: Provides access functions to get/set values of station hash entry fields.
  * Author:    Sunit Bhatia
@@ -78,15 +60,7 @@ tSirRetStatus limGetStaHashBssidx(tpAniSirGlobal pMac, tANI_U16 assocId, tANI_U8
 
     if (pSta == NULL)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("invalid STA %d\n"),  assocId);)
-=======
         PELOGE(limLog(pMac, LOGE, FL("invalid STA %d"),  assocId);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("invalid STA %d"),  assocId);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_LIM_INVALID_STA;
     }
 

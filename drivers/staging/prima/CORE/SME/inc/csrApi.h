@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -48,18 +39,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/** ------------------------------------------------------------------------- * 
-    ------------------------------------------------------------------------- *  
-    \file csrApi.h
-  
-    Exports and types for the Common Scan and Roaming Module interfaces.
-  
-    Copyright (C) 2006 Airgo Networks, Incorporated 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** ------------------------------------------------------------------------- *
     ------------------------------------------------------------------------- *
     \file csrApi.h
@@ -67,34 +46,15 @@
     Exports and types for the Common Scan and Roaming Module interfaces.
 
     Copyright (C) 2006 Airgo Networks, Incorporated
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ========================================================================== */
 #ifndef CSRAPI_H__
 #define CSRAPI_H__
 
 #include "sirApi.h"
 #include "sirMacProtDef.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-#include "halRfTypes.h"
-#endif
-#include "csrLinkList.h"
-
-typedef enum 
-=======
 #include "csrLinkList.h"
 
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include "csrLinkList.h"
-
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_AUTH_TYPE_NONE,    //never used
     // MAC layer authentication types
@@ -128,15 +88,7 @@ typedef enum
 }eCsrAuthType;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_ENCRYPT_TYPE_NONE,
     eCSR_ENCRYPT_TYPE_WEP40_STATICKEY,
@@ -209,22 +161,9 @@ typedef tANI_U8 tCsrBssid[WNI_CFG_BSSID_LEN];
 
 typedef enum
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eCSR_BSS_TYPE_INFRASTRUCTURE,
-#ifdef WLAN_SOFTAP_FEATURE
-    eCSR_BSS_TYPE_INFRA_AP,       // SoftAP AP
-#endif
-=======
     eCSR_BSS_TYPE_NONE,
     eCSR_BSS_TYPE_INFRASTRUCTURE,
     eCSR_BSS_TYPE_INFRA_AP,       // SoftAP AP
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eCSR_BSS_TYPE_NONE,
-    eCSR_BSS_TYPE_INFRASTRUCTURE,
-    eCSR_BSS_TYPE_INFRA_AP,       // SoftAP AP
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_BSS_TYPE_IBSS,           // an IBSS network we will NOT start
     eCSR_BSS_TYPE_START_IBSS,     // an IBSS network we will start if no partners detected.
     eCSR_BSS_TYPE_WDS_AP,         // BT-AMP AP
@@ -257,15 +196,7 @@ typedef enum
     eCSR_SCAN_SUCCESS,
     eCSR_SCAN_FAILURE,
     eCSR_SCAN_ABORT,
-<<<<<<< HEAD
-<<<<<<< HEAD
-   eCSR_SCAN_FOUND_PEER,    
-=======
    eCSR_SCAN_FOUND_PEER,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   eCSR_SCAN_FOUND_PEER,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }eCsrScanStatus;
 
 #define CSR_SCAN_TIME_DEFAULT       0
@@ -296,16 +227,6 @@ typedef struct tagCsrChannelInfo
 {
     tANI_U8 numOfChannels;
     tANI_U8 *ChannelList;   //it will be an array of channels
-<<<<<<< HEAD
-<<<<<<< HEAD
-}tCsrChannelInfo;
-
-typedef struct tagCsrSSIDInfo
-{
-   tSirMacSSid     SSID;   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }tCsrChannelInfo, *tpCsrChannelInfo;
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
@@ -319,10 +240,6 @@ typedef struct tagCsrCountryChannelInfo
 typedef struct tagCsrSSIDInfo
 {
    tSirMacSSid     SSID;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    tANI_BOOLEAN    handoffPermitted;
    tANI_BOOLEAN    ssidHidden;
 }tCsrSSIDInfo;
@@ -339,13 +256,6 @@ typedef struct tagCsrBSSIDs
     tCsrBssid *bssid;
 }tCsrBSSIDs;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-typedef struct tagCsrScanRequest 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct tagCsrStaParams
 {
     tANI_U16   capability;
@@ -361,51 +271,22 @@ typedef struct tagCsrStaParams
 }tCsrStaParams;
 
 typedef struct tagCsrScanRequest
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tSirScanType scanType;
     tCsrBssid bssid;
     eCsrRoamBssType BSSType;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tCsrSSIDs SSIDs;   
-    tCsrChannelInfo ChannelInfo;
-    tANI_U32 minChnTime;    //in units of milliseconds
-    tANI_U32 maxChnTime;    //in units of milliseconds
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrSSIDs SSIDs;
     tCsrChannelInfo ChannelInfo;
     tANI_U32 minChnTime;    //in units of milliseconds
     tANI_U32 maxChnTime;    //in units of milliseconds
     tANI_U32 minChnTimeBtc;    //in units of milliseconds
     tANI_U32 maxChnTimeBtc;    //in units of milliseconds
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32 restTime;      //in units of milliseconds  //ignored when not connected
     tANI_U32 uIEFieldLen;
     tANI_U8 *pIEField;
     eCsrRequestType requestType;    //11d scan or full scan
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
     tANI_BOOLEAN p2pSearch;
     tANI_BOOLEAN skipDfsChnlInP2pSearch;
-#endif
-=======
-    tANI_BOOLEAN p2pSearch;
-    tANI_BOOLEAN skipDfsChnlInP2pSearch;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_BOOLEAN p2pSearch;
-    tANI_BOOLEAN skipDfsChnlInP2pSearch;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }tCsrScanRequest;
 
 typedef struct tagCsrBGScanRequest
@@ -416,25 +297,12 @@ typedef struct tagCsrBGScanRequest
     tANI_U32 scanInterval;  //in units of milliseconds
     tANI_U32 minChnTime;    //in units of milliseconds
     tANI_U32 maxChnTime;    //in units of milliseconds
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U32 restTime;      //in units of milliseconds  //ignored when not connected
-    tANI_U32 throughputImpact;      //specify whether BG scan cares about impacting throughput  //ignored when not connected
-    tCsrBssid bssid;    //how to use it?? Apple
-}tCsrBGScanRequest;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32 minChnTimeBtc;    //in units of milliseconds
     tANI_U32 maxChnTimeBtc;    //in units of milliseconds
     tANI_U32 restTime;      //in units of milliseconds  //ignored when not connected
     tANI_U32 throughputImpact;      //specify whether BG scan cares about impacting throughput  //ignored when not connected
     tCsrBssid bssid;    //how to use it?? Apple
 }tCsrBGScanRequest, *tpCsrBGScanRequest;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 typedef struct tagCsrScanResultInfo
@@ -483,24 +351,6 @@ typedef struct tagCsrCcxCckmInfo
 typedef struct tagCsrScanResultFilter
 {
     tCsrBSSIDs BSSIDs;    //each bssid has a length of WNI_CFG_BSSID_LEN (6)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tCsrSSIDs SSIDs;   
-    tCsrChannelInfo ChannelInfo;
-    tCsrAuthList authType;
-    tCsrEncryptionList EncryptionType;
-    //eCSR_ENCRYPT_TYPE_ANY cannot be set in multicast encryption type. If caller doesn't case, 
-    //put all supported encryption types in here
-    tCsrEncryptionList mcEncryptionType;
-    eCsrRoamBssType BSSType;   
-    //this is a bit mask of all the needed phy mode defined in eCsrPhyMode
-    tANI_U32 phyMode;   
-    //If countryCode[0] is not 0, countryCode is checked independent of fCheckUnknownCountryCode
-    tANI_U8 countryCode[WNI_CFG_COUNTRY_CODE_LEN]; 
-    tANI_U8 uapsd_mask; 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrSSIDs SSIDs;
     tCsrChannelInfo ChannelInfo;
     tCsrAuthList authType;
@@ -514,10 +364,6 @@ typedef struct tagCsrScanResultFilter
     //If countryCode[0] is not 0, countryCode is checked independent of fCheckUnknownCountryCode
     tANI_U8 countryCode[WNI_CFG_COUNTRY_CODE_LEN];
     tANI_U8 uapsd_mask;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*For WPS filtering if true => auth and ecryption should be ignored*/
     tANI_BOOLEAN bWPSAssociation;
 #if defined WLAN_FEATURE_VOWIFI
@@ -559,28 +405,6 @@ typedef enum
 {
     eCSR_ROAM_CANCELLED = 1,
     //this mean error happens before association_start or roaming_start is called.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eCSR_ROAM_FAILED,   
-    //a CSR trigger roaming operation starts, callback may get a pointer to tCsrConnectedProfile
-    eCSR_ROAM_ROAMING_START,    
-    //a CSR trigger roaming operation is completed
-    eCSR_ROAM_ROAMING_COMPLETION,   
-    //Connection completed status.
-    eCSR_ROAM_CONNECT_COMPLETION, 
-    //an association or start_IBSS operation starts, 
-    //callback may get a pointer to tCsrRoamProfile and a pointer to tSirBssDescription 
-    eCSR_ROAM_ASSOCIATION_START,    
-    //a roaming operation is finish, see eCsrRoamResult for 
-    //possible data passed back
-    eCSR_ROAM_ASSOCIATION_COMPLETION,   
-    eCSR_ROAM_DISASSOCIATED,
-    eCSR_ROAM_ASSOCIATION_FAILURE,
-    //when callback with this flag. callback gets a pointer to the BSS desc.
-    eCSR_ROAM_SHOULD_ROAM,  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_FAILED,
     //a CSR trigger roaming operation starts, callback may get a pointer to tCsrConnectedProfile
     eCSR_ROAM_ROAMING_START,
@@ -598,59 +422,26 @@ typedef enum
     eCSR_ROAM_ASSOCIATION_FAILURE,
     //when callback with this flag. callback gets a pointer to the BSS desc.
     eCSR_ROAM_SHOULD_ROAM,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //A new candidate for PMKID is found
     eCSR_ROAM_SCAN_FOUND_NEW_BSS,
     //CSR is done lostlink roaming and still cannot reconnect
     eCSR_ROAM_LOSTLINK,
     //a link lost is detected. CSR starts roaming.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eCSR_ROAM_LOSTLINK_DETECTED,   
-    //TKIP MIC error detected, callback gets a pointer to tpSirSmeMicFailureInd
-    eCSR_ROAM_MIC_ERROR_IND,
-    eCSR_ROAM_IBSS_IND, //IBSS indications.
-    //Update the connection status, useful for IBSS: new peer added, network is active etc. 
-    eCSR_ROAM_CONNECT_STATUS_UPDATE,  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_LOSTLINK_DETECTED,
     //TKIP MIC error detected, callback gets a pointer to tpSirSmeMicFailureInd
     eCSR_ROAM_MIC_ERROR_IND,
     eCSR_ROAM_IBSS_IND, //IBSS indications.
     //Update the connection status, useful for IBSS: new peer added, network is active etc.
     eCSR_ROAM_CONNECT_STATUS_UPDATE,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_GEN_INFO,
     eCSR_ROAM_SET_KEY_COMPLETE,
     eCSR_ROAM_REMOVE_KEY_COMPLETE,
     eCSR_ROAM_IBSS_LEAVE, //IBSS indications.
     //BSS in WDS mode status indication
     eCSR_ROAM_WDS_IND,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
     //BSS in SoftAP mode status indication
     eCSR_ROAM_INFRA_IND,
     eCSR_ROAM_WPS_PBC_PROBE_REQ_IND,
-#endif
-=======
-    //BSS in SoftAP mode status indication
-    eCSR_ROAM_INFRA_IND,
-    eCSR_ROAM_WPS_PBC_PROBE_REQ_IND,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    //BSS in SoftAP mode status indication
-    eCSR_ROAM_INFRA_IND,
-    eCSR_ROAM_WPS_PBC_PROBE_REQ_IND,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
     eCSR_ROAM_FT_RESPONSE,
 #endif
@@ -664,11 +455,6 @@ typedef enum
 #ifdef FEATURE_WLAN_LFR
     eCSR_ROAM_PMK_NOTIFY,
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
 #ifdef FEATURE_WLAN_LFR_METRICS
     eCSR_ROAM_PREAUTH_INIT_NOTIFY,
@@ -685,10 +471,6 @@ typedef enum
     eCSR_ROAM_SEND_P2P_STOP_BSS, //Stopbss triggered from SME due to different
                                  // beacon interval
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }eRoamCmdStatus;
 
 
@@ -698,21 +480,9 @@ typedef enum
     eCSR_ROAM_RESULT_NONE,
     //this means no more action in CSR
     //If roamStatus is eCSR_ROAM_ASSOCIATION_COMPLETION, tCsrRoamInfo's pBssDesc may pass back
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eCSR_ROAM_RESULT_FAILURE,   
-    //Pass back pointer to tCsrRoamInfo
-    eCSR_ROAM_RESULT_ASSOCIATED,    
-=======
     eCSR_ROAM_RESULT_FAILURE,
     //Pass back pointer to tCsrRoamInfo
     eCSR_ROAM_RESULT_ASSOCIATED,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eCSR_ROAM_RESULT_FAILURE,
-    //Pass back pointer to tCsrRoamInfo
-    eCSR_ROAM_RESULT_ASSOCIATED,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_RESULT_NOT_ASSOCIATED,
     eCSR_ROAM_RESULT_MIC_FAILURE,
     eCSR_ROAM_RESULT_FORCED,
@@ -721,32 +491,6 @@ typedef enum
     eCSR_ROAM_RESULT_CAP_CHANGED,
     //This means we starts an IBSS
     //tCsrRoamInfo's pBssDesc may pass back
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eCSR_ROAM_RESULT_IBSS_STARTED,  
-    //START_BSS failed
-    //tCsrRoamInfo's pBssDesc may pass back
-    eCSR_ROAM_RESULT_IBSS_START_FAILED, 
-    eCSR_ROAM_RESULT_IBSS_JOIN_SUCCESS,
-    eCSR_ROAM_RESULT_IBSS_JOIN_FAILED, 
-    eCSR_ROAM_RESULT_IBSS_CONNECT,
-    eCSR_ROAM_RESULT_IBSS_INACTIVE,
-    //If roamStatus is eCSR_ROAM_ASSOCIATION_COMPLETION
-    //tCsrRoamInfo's pBssDesc may pass back. and the peer's MAC address in peerMacOrBssid 
-    //If roamStatus is eCSR_ROAM_IBSS_IND,  
-    //the peer's MAC address in peerMacOrBssid and a beacon frame of the IBSS in pbFrames
-    eCSR_ROAM_RESULT_IBSS_NEW_PEER, 
-    //Peer departed from IBSS, Callback may get a pointer tSmeIbssPeerInd in pIbssPeerInd
-    eCSR_ROAM_RESULT_IBSS_PEER_DEPARTED, 
-    //Coalescing in the IBSS network (joined an IBSS network)
-    //Callback pass a BSSID in peerMacOrBssid
-    eCSR_ROAM_RESULT_IBSS_COALESCED,    
-    //If roamStatus is eCSR_ROAM_ROAMING_START, callback may get a pointer to tCsrConnectedProfile used to connect.
-    eCSR_ROAM_RESULT_IBSS_STOP,  
-    eCSR_ROAM_RESULT_LOSTLINK, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_RESULT_IBSS_STARTED,
     //START_BSS failed
     //tCsrRoamInfo's pBssDesc may pass back
@@ -768,10 +512,6 @@ typedef enum
     //If roamStatus is eCSR_ROAM_ROAMING_START, callback may get a pointer to tCsrConnectedProfile used to connect.
     eCSR_ROAM_RESULT_IBSS_STOP,
     eCSR_ROAM_RESULT_LOSTLINK,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_RESULT_MIC_ERROR_UNICAST,
     eCSR_ROAM_RESULT_MIC_ERROR_GROUP,
     eCSR_ROAM_RESULT_AUTHENTICATED,
@@ -787,27 +527,12 @@ typedef enum
     eCSR_ROAM_RESULT_WDS_STOPPED,
     // WDS joined successfully in STA mode
     eCSR_ROAM_RESULT_WDS_ASSOCIATED,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // A station joined WDS AP 
-=======
     // A station joined WDS AP
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    // A station joined WDS AP
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCSR_ROAM_RESULT_WDS_ASSOCIATION_IND,
     // WDS join failed in STA mode
     eCSR_ROAM_RESULT_WDS_NOT_ASSOCIATED,
     // WDS disassociated
     eCSR_ROAM_RESULT_WDS_DISASSOCIATED,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // INFRA started successfully
     eCSR_ROAM_RESULT_INFRA_STARTED,
     // INFRA start failed
@@ -821,27 +546,11 @@ typedef enum
     // INFRA disassociated
     eCSR_ROAM_RESULT_INFRA_DISASSOCIATED,
     eCSR_ROAM_RESULT_WPS_PBC_PROBE_REQ_IND,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-#ifdef WLAN_FEATURE_P2P
     eCSR_ROAM_RESULT_SEND_ACTION_FAIL,
-#endif
-=======
-    eCSR_ROAM_RESULT_SEND_ACTION_FAIL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eCSR_ROAM_RESULT_SEND_ACTION_FAIL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // peer rejected assoc because max assoc limit reached. callback gets pointer to peer
     eCSR_ROAM_RESULT_MAX_ASSOC_EXCEEDED,
     //Assoc rejected due to concurrent session running on a different channel
     eCSR_ROAM_RESULT_ASSOC_FAIL_CON_CHANNEL,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
     eCSR_ROAM_RESULT_ADD_TDLS_PEER,
     eCSR_ROAM_RESULT_UPDATE_TDLS_PEER,
@@ -850,10 +559,6 @@ typedef enum
     eCSR_ROAM_RESULT_DELETE_ALL_TDLS_PEER_IND,
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }eCsrRoamResult;
 
 
@@ -885,15 +590,7 @@ typedef enum
     eCSR_DISCONNECT_REASON_IBSS_LEAVE,
 }eCsrRoamDisconnectReason;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     // Not associated in Infra or participating in an IBSS / Ad-hoc network.
     eCSR_ASSOC_STATE_TYPE_NOT_CONNECTED,
@@ -908,39 +605,17 @@ typedef enum
     eCSR_ASSOC_STATE_TYPE_WDS_DISCONNECTED,
     // Participating in a WDS network and connected peer to peer
     eCSR_ASSOC_STATE_TYPE_WDS_CONNECTED,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Participating in a Infra network in AP not yet in connected state
     eCSR_ASSOC_STATE_TYPE_INFRA_DISCONNECTED,
     // Participating in a Infra network and connected to a peer
     eCSR_ASSOC_STATE_TYPE_INFRA_CONNECTED,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 }eCsrConnectState;
 
 
 // This parameter is no longer supported in the Profile.  Need to set this in the global properties
 // for the adapter.
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum eCSR_MEDIUM_ACCESS 
-=======
 typedef enum eCSR_MEDIUM_ACCESS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum eCSR_MEDIUM_ACCESS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_MEDIUM_ACCESS_AUTO = 0,
     eCSR_MEDIUM_ACCESS_DCF,
@@ -954,15 +629,7 @@ typedef enum eCSR_MEDIUM_ACCESS
     eCSR_MEDIUM_ACCESS_11e_HCF  = eCSR_MEDIUM_ACCESS_HCF,
 }eCsrMediaAccessType;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_TX_RATE_AUTO = 0,   // use rate adaption to determine Tx rate.
 
@@ -992,30 +659,14 @@ typedef enum
 
 }eCsrExposedTxRate;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_OPERATING_CHANNEL_ALL  = 0,
     eCSR_OPERATING_CHANNEL_AUTO = eCSR_OPERATING_CHANNEL_ALL,
     eCSR_OPERATING_CHANNEL_ANY  = eCSR_OPERATING_CHANNEL_ALL,
 }eOperationChannel;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_DOT11_FRAG_THRESH_AUTO            = -1,
     eCSR_DOT11_FRAG_THRESH_MIN             = 256,
@@ -1025,15 +676,7 @@ typedef enum
 
 
 //for channel bonding for ibss
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_CB_OFF = 0,
     eCSR_CB_AUTO = 1,
@@ -1049,15 +692,7 @@ typedef enum
 #define CSR_MAX_5GHz_CHANNEL_NUMBER  ( SIR_11A_CHANNEL_END )
 
 // WEP keysize (in bits)...
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum  
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_SECURITY_WEP_KEYSIZE_40  =  40,   // 40 bit key + 24bit IV = 64bit WEP
     eCSR_SECURITY_WEP_KEYSIZE_104 = 104,   // 104bit key + 24bit IV = 128bit WEP
@@ -1082,15 +717,7 @@ typedef enum
 
 #define CSR_MAX_NUM_KEY     (eCSR_SECURITY_WEP_STATIC_KEY_ID_MAX + 1)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-=======
 typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef enum
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eCSR_SECURITY_SET_KEY_ACTION_NO_CHANGE,
     eCSR_SECURITY_SET_KEY_ACTION_SET_KEY,
@@ -1106,22 +733,6 @@ typedef enum
 }eCsrBand;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef enum 
-{
-   // Roaming because HDD requested for reassoc by changing one of the fields in 
-   // tCsrRoamModifyProfileFields. OR
-   // Roaming because SME requested for reassoc by changing one of the fields in 
-   // tCsrRoamModifyProfileFields.
-   eCsrRoamReasonStaCapabilityChanged,
-   // Roaming because SME requested for reassoc to a different AP, as part of 
-   // inter AP handoff.
-   eCsrRoamReasonBetterAP,
-   // Roaming because SME requested it as the link is lost - placeholder, will 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef enum
 {
    // Roaming because HDD requested for reassoc by changing one of the fields in
@@ -1133,10 +744,6 @@ typedef enum
    // inter AP handoff.
    eCsrRoamReasonBetterAP,
    // Roaming because SME requested it as the link is lost - placeholder, will
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // clean it up once handoff code gets in
    eCsrRoamReasonSmeIssuedForLostLink,
 
@@ -1191,34 +798,14 @@ typedef struct tagCsrKeys
     tANI_U8 defaultIndex;
 }tCsrKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* Following are fields which are part of tCsrRoamConnectedProfile might need 
-=======
 /* Following are fields which are part of tCsrRoamConnectedProfile might need
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-/* Following are fields which are part of tCsrRoamConnectedProfile might need
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    modification dynamically once STA is up & running and this could trigger
    reassoc */
 typedef struct tagCsrRoamModifyProfileFields
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-   // during connect this specifies ACs U-APSD is to be setup 
-   //   for (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored).
-   //  During assoc response this COULD carry confirmation of what ACs U-APSD 
-=======
    // during connect this specifies ACs U-APSD is to be setup
    //   for (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored).
    //  During assoc response this COULD carry confirmation of what ACs U-APSD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   // during connect this specifies ACs U-APSD is to be setup
-   //   for (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored).
-   //  During assoc response this COULD carry confirmation of what ACs U-APSD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // got setup for. Later if an APP looking for APSD, SME-QoS might need to
    // modify this field
    tANI_U8     uapsd_mask;
@@ -1243,50 +830,21 @@ typedef struct tagCsrRoamProfile
     //This field is for output only, not for input
     eCsrEncryptionType negotiatedUCEncryptionType;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //eCSR_ENCRYPT_TYPE_ANY cannot be set in multicast encryption type. If caller doesn't case, 
-    //put all supported encryption types in here
-    tCsrEncryptionList mcEncryptionType;
-    //This field is for output only, not for input
-    eCsrEncryptionType negotiatedMCEncryptionType;  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //eCSR_ENCRYPT_TYPE_ANY cannot be set in multicast encryption type. If caller doesn't case,
     //put all supported encryption types in here
     tCsrEncryptionList mcEncryptionType;
     //This field is for output only, not for input
     eCsrEncryptionType negotiatedMCEncryptionType;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     tCsrKeys Keys;
     eCsrCBChoice CBMode; //up, down or auto
     tCsrChannelInfo ChannelInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8 operationChannel;   
-    tANI_U16 beaconInterval;    //If this is 0, SME will fill in for caller.
-    // during connect this specifies ACs U-APSD is to be setup 
-    //   for (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored).
-    //  During assoc response this COULD carry confirmation of what ACs U-APSD got setup for
-    tANI_U8 uapsd_mask; 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8 operationChannel;
     tANI_U16 beaconInterval;    //If this is 0, SME will fill in for caller.
     // during connect this specifies ACs U-APSD is to be setup
     //   for (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored).
     //  During assoc response this COULD carry confirmation of what ACs U-APSD got setup for
     tANI_U8 uapsd_mask;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32 nWPAReqIELength;   //The byte count in the pWPAReqIE
     tANI_U8 *pWPAReqIE;   //If not null, it has the IE byte stream for WPA
     tANI_U32 nRSNReqIELength;  //The byte count in the pRSNReqIE
@@ -1298,15 +856,7 @@ typedef struct tagCsrRoamProfile
 
     tANI_U32 nAddIEScanLength;   //The byte count in the pAddIE for scan (at the time of join)
     tANI_U8 *pAddIEScan;       //If not null, it has the IE byte stream for additional IE, which can be WSC IE and/or P2P IE
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U32 nAddIEAssocLength;   //The byte count in the pAddIE for assoc 
-=======
     tANI_U32 nAddIEAssocLength;   //The byte count in the pAddIE for assoc
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U32 nAddIEAssocLength;   //The byte count in the pAddIE for assoc
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8 *pAddIEAssoc;       //If not null, it has the IE byte stream for additional IE, which can be WSC IE and/or P2P IE
 
     tANI_U8 countryCode[WNI_CFG_COUNTRY_CODE_LEN];  //it is ignored if [0] is 0.
@@ -1315,13 +865,6 @@ typedef struct tagCsrRoamProfile
     tANI_U32 nWSCReqIELength;   //The byte count in the pWSCReqIE
     tANI_U8 *pWSCReqIE;   //If not null, it has the IE byte stream for WSC
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8 ieee80211d;
     tANI_U8 privacy;
     tANI_BOOLEAN fwdWPSPBCProbeReq;
@@ -1332,13 +875,6 @@ typedef struct tagCsrRoamProfile
     tANI_BOOLEAN obssProtEnabled;
     tANI_U16 cfg_protection;
     tANI_U8 wps_state;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
     tCsrMobilityDomainInfo MDID;
@@ -1367,16 +903,6 @@ typedef struct tagCsrRoamConnectedProfile
     tCsrKeys Keys;
     // meaningless on connect. It's an OUT param from CSR's point of view
     // During assoc response carries the ACM bit-mask i.e. what
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // ACs have ACM=1 (if any), 
-    // (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored)
-    tANI_U8  acm_mask;
-    tCsrRoamModifyProfileFields modifyProfileFields;
-    tSirBssDescription *pBssDesc;   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // ACs have ACM=1 (if any),
     // (Bit0:VO; Bit1:VI; Bit2:BK; Bit3:BE all other bits are ignored)
     tANI_U8  acm_mask;
@@ -1385,35 +911,17 @@ typedef struct tagCsrRoamConnectedProfile
     tANI_U8 *pAddIEAssoc;       //If not null, it has the IE byte stream for additional IE, which can be WSC IE and/or P2P IE
 
     tSirBssDescription *pBssDesc;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_BOOLEAN   qap; //AP supports QoS
     tANI_BOOLEAN   qosConnection; //A connection is QoS enabled
 #ifdef WLAN_FEATURE_VOWIFI_11R
     tCsrMobilityDomainInfo MDID;
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-#ifdef FEATURE_WLAN_CCX
-    tCsrCcxCckmInfo ccxCckmInfo;
-    tANI_BOOLEAN    isCCXAssoc; 
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_CCX
     tCsrCcxCckmInfo ccxCckmInfo;
     tANI_BOOLEAN    isCCXAssoc;
 #endif
     tANI_U32 dot11Mode;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }tCsrRoamConnectedProfile;
 
 
@@ -1436,16 +944,8 @@ typedef struct tagCsrNeighborRoamConfigParams
     sCsrChannel    neighborScanChanList;
     tANI_U8        nMaxNeighborRetries;
     tANI_U16       nNeighborResultsRefreshPeriod;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     tANI_U16       nEmptyScanRefreshPeriod;
     tANI_U32       nEmptyScanMaxPeriod;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U16       nEmptyScanRefreshPeriod;
-    tANI_U32       nEmptyScanMaxPeriod;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }tCsrNeighborRoamConfigParams;
 #endif
 
@@ -1485,26 +985,6 @@ typedef struct tagCsrConfigParam
                                //at the moment, this flag is provided only to pass Wi-Fi Cert. 5.1.12
     tCsr11dinfo  Csr11dinfo;
     //Whether to limit the channels to the ones set in Csr11dInfo. If true, the opertaional
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //channels are limited to the default channel list. It is an "AND" operation between the 
-    //default channels and the channels in the 802.11d IE.
-    tANI_BOOLEAN fEnforce11dChannels;  
-    //Country Code Priority
-    //0 = 802.11D > Country IOCTL > NV 
-    //1 = Country IOCTL > 802.11D > NV
-    tANI_BOOLEAN fSupplicantCountryCodeHasPriority;
-    //When true, AP with unknown country code won't be see. 
-    //"Unknown country code" means either Ap doesn't have 11d IE or we cannot 
-    //find a domain for the country code in its 11d IE. 
-    tANI_BOOLEAN fEnforceCountryCodeMatch;  
-    //When true, only APs in the default domain can be seen. If the Ap has "unknown country
-    //code", or the domain of the country code doesn't match the default domain, the Ap is
-    //not acceptable.
-    tANI_BOOLEAN fEnforceDefaultDomain;     
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //channels are limited to the default channel list. It is an "AND" operation between the
     //default channels and the channels in the 802.11d IE.
     tANI_BOOLEAN fEnforce11dChannels;
@@ -1520,10 +1000,6 @@ typedef struct tagCsrConfigParam
     //code", or the domain of the country code doesn't match the default domain, the Ap is
     //not acceptable.
     tANI_BOOLEAN fEnforceDefaultDomain;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     tANI_U16 vccRssiThreshold;
     tANI_U32 vccUlMacLossThreshold;
@@ -1533,16 +1009,6 @@ typedef struct tagCsrConfigParam
     tANI_U32  nActiveMinChnTime;     //in units of milliseconds
     tANI_U32  nActiveMaxChnTime;     //in units of milliseconds
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_BOOLEAN IsIdleScanEnabled;
-    //in dBm, the maximum TX power
-    //The actual TX power is the lesser of this value and 11d. 
-    //If 11d is disable, the lesser of this and default setting.
-    tANI_U8 nTxPowerCap;     
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32  nActiveMinChnTimeBtc;     //in units of milliseconds
     tANI_U32  nActiveMaxChnTimeBtc;     //in units of milliseconds
     tANI_U32  disableAggWithBtc;
@@ -1563,10 +1029,6 @@ typedef struct tagCsrConfigParam
     //The actual TX power is the lesser of this value and 11d.
     //If 11d is disable, the lesser of this and default setting.
     tANI_U8 nTxPowerCap;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U32  statsReqPeriodicity;  //stats request frequency from PE while in full power
     tANI_U32  statsReqPeriodicityInPS;//stats request frequency from PE while in power save
 #ifdef WLAN_FEATURE_VOWIFI_11R
@@ -1580,48 +1042,22 @@ typedef struct tagCsrConfigParam
 #endif
 
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8   isFastTransitionEnabled;
-    tANI_U8   RoamRssiDiff;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8        isFastTransitionEnabled;
     tANI_U8        RoamRssiDiff;
     tANI_U8        nImmediateRoamRssiDiff;
     tANI_BOOLEAN   isWESModeEnabled;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 #ifdef WLAN_FEATURE_NEIGHBOR_ROAMING
     tCsrNeighborRoamConfigParams    neighborRoamConfig;
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* Instead of Reassoc, send ADDTS/DELTS even when ACM is off for that AC 
-     * This is mandated by WMM-AC certification */
-    tANI_BOOLEAN addTSWhenACMIsOff;
-
-    
-    /*channelPowerInfoList24 has been seen corrupted. Set this flag to true trying to 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Instead of Reassoc, send ADDTS/DELTS even when ACM is off for that AC
      * This is mandated by WMM-AC certification */
     tANI_BOOLEAN addTSWhenACMIsOff;
 
 
     /*channelPowerInfoList24 has been seen corrupted. Set this flag to true trying to
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     * detect when it happens. Adding this into code because we can't reproduce it easily.
     * We don't know when it happens. */
     tANI_BOOLEAN fValidateList;
@@ -1632,18 +1068,8 @@ typedef struct tagCsrConfigParam
     * to determine the country code & domain */
     tANI_BOOLEAN fEnableBypass11d;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /*Customer wants to optimize the scan time. Avoiding scans(passive) on DFS 
-    * channels while swipping through both bands can save some time 
-=======
     /*Customer wants to optimize the scan time. Avoiding scans(passive) on DFS
     * channels while swipping through both bands can save some time
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    /*Customer wants to optimize the scan time. Avoiding scans(passive) on DFS
-    * channels while swipping through both bands can save some time
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     * (apprx 1.3 sec) */
     tANI_BOOLEAN fEnableDFSChnlScan;
 
@@ -1651,16 +1077,8 @@ typedef struct tagCsrConfigParam
     tANI_BOOLEAN fScanTwice;
 #ifdef WLAN_FEATURE_11AC
     tANI_U32  nVhtChannelWidth;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     tANI_U8   enableTxBF;
     tANI_U8   txBFCsnValue;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U8   enableTxBF;
-    tANI_U8   txBFCsnValue;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
     /*
@@ -1668,14 +1086,6 @@ typedef struct tagCsrConfigParam
     */
     tANI_BOOLEAN fFirstScanOnly2GChnl;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_BOOLEAN fIgnore_chan165;
-
-}tCsrConfigParam;   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     tANI_BOOLEAN nRoamPrefer5GHz;
     tANI_BOOLEAN nRoamIntraBand;
@@ -1693,10 +1103,6 @@ typedef struct tagCsrConfigParam
 
     tANI_U8 isAmsduSupportInAMPDU;
 }tCsrConfigParam;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 //Tush
 typedef struct tagCsrUpdateConfigParam
@@ -1719,18 +1125,6 @@ typedef struct tagCsrRoamInfo
     tANI_BOOLEAN fReassocReq;   //set to true if for re-association
     tANI_BOOLEAN fReassocRsp;   //set to true if for re-association
     tCsrBssid bssid;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //Only valid in IBSS 
-    //this is the peers MAC address for eCSR_ROAM_RESULT_IBSS_NEW_PEER or PEER_DEPARTED
-    tCsrBssid peerMac;  
-    tSirResultCodes statusCode;
-    tANI_U32 reasonCode;    //this could be our own defined or sent from the other BSS(per 802.11 spec)
-    tANI_U8  staId;         // Peer stationId when connected
-    /*The DPU signatures will be sent eventually to TL to help it determine the 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Only valid in IBSS
     //this is the peers MAC address for eCSR_ROAM_RESULT_IBSS_NEW_PEER or PEER_DEPARTED
     tCsrBssid peerMac;
@@ -1738,10 +1132,6 @@ typedef struct tagCsrRoamInfo
     tANI_U32 reasonCode;    //this could be our own defined or sent from the other BSS(per 802.11 spec)
     tANI_U8  staId;         // Peer stationId when connected
     /*The DPU signatures will be sent eventually to TL to help it determine the
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       association to which a packet belongs to*/
     /*Unicast DPU signature*/
     tANI_U8            ucastSig;
@@ -1756,84 +1146,34 @@ typedef struct tagCsrRoamInfo
 
     tANI_U8 addIELen;
     tANI_U8 *paddIE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     union
     {
         tSirMicFailureInfo *pMICFailureInfo;
         tCsrRoamConnectedProfile *pConnectedProfile;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-        tSirWPSPBCProbeReq *pWPSPBCProbeReq;
-#endif
-    } u;
-
-#ifdef WLAN_SOFTAP_FEATURE
-    tANI_BOOLEAN wmmEnabledSta;   //set to true if WMM enabled STA
-    tANI_U32 dtimPeriod;
-#endif
-=======
         tSirWPSPBCProbeReq *pWPSPBCProbeReq;
     } u;
 
     tANI_BOOLEAN wmmEnabledSta;   //set to true if WMM enabled STA
     tANI_U32 dtimPeriod;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        tSirWPSPBCProbeReq *pWPSPBCProbeReq;
-    } u;
-
-    tANI_BOOLEAN wmmEnabledSta;   //set to true if WMM enabled STA
-    tANI_U32 dtimPeriod;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_CCX
     tANI_BOOLEAN isCCXAssoc;
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-    void* pRemainCtx; 
-    tANI_U32 rxChan;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     void* pRemainCtx;
     tANI_U32 rxChan;
 
 #ifdef FEATURE_WLAN_TDLS
     tANI_U8 staType;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
     // Required for indicating the frames to upper layer
     tANI_U32 beaconLength;
     tANI_U8* beaconPtr;
     tANI_U32 assocReqLength;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8* assocReqPtr;    
-=======
     tANI_U8* assocReqPtr;
 
     tANI_S8 rxRssi;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U8* assocReqPtr;
-
-    tANI_S8 rxRssi;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }tCsrRoamInfo;
 
 
@@ -1848,13 +1188,6 @@ typedef struct tagCsrFreqScanInfo
 }tCsrFreqScanInfo;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct sSirSmeAssocIndToUpperLayerCnf
 {
     tANI_U16             messageType; // eWNI_SME_ASSOC_CNF
@@ -1871,13 +1204,6 @@ typedef struct sSirSmeAssocIndToUpperLayerCnf
     tSirAddie            addIE;           // Additional IE received from peer, which can be WSC and/or P2P IE
     tANI_U8              reassocReq;      //set to true if reassoc
 } tSirSmeAssocIndToUpperLayerCnf, *tpSirSmeAssocIndToUpperLayerCnf;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct tagCsrSummaryStatsInfo
 {
@@ -1997,11 +1323,6 @@ typedef struct tagCsrRoamRemoveKey
     tANI_U8 keyId;  //key index
 } tCsrRoamRemoveKey;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
 typedef struct tagCsrTdlsSendMgmt
 {
@@ -2035,10 +1356,6 @@ typedef struct tagCsrTdlsTeardownRequest
 }tCsrTdlsTeardownRequest ;
 #endif
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef void * tScanResultHandle;
 
@@ -2050,15 +1367,7 @@ typedef void * tScanResultHandle;
 
 //void *p2 -- the second context pass in for the caller
 //***what if callback is called before requester gets the scanId??
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef eHalStatus (*csrScanCompleteCallback)(tHalHandle, void *p2, tANI_U32 scanID, eCsrScanStatus status);   
-=======
 typedef eHalStatus (*csrScanCompleteCallback)(tHalHandle, void *p2, tANI_U32 scanID, eCsrScanStatus status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef eHalStatus (*csrScanCompleteCallback)(tHalHandle, void *p2, tANI_U32 scanID, eCsrScanStatus status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -2070,23 +1379,10 @@ typedef eHalStatus (*csrScanCompleteCallback)(tHalHandle, void *p2, tANI_U32 sca
 //roamId is to identify the callback related roam request. 0 means unsolicit
 //roamStatus is a flag indicating the status of the callback
 //roamResult is the result
-<<<<<<< HEAD
-<<<<<<< HEAD
-typedef eHalStatus (*csrRoamCompleteCallback)(void *pContext, tCsrRoamInfo *pParam, tANI_U32 roamId, 
-                                              eRoamCmdStatus roamStatus, eCsrRoamResult roamResult);
-
-typedef eHalStatus (*csrRoamSessionCloseCallback)(void *pContext);   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef eHalStatus (*csrRoamCompleteCallback)(void *pContext, tCsrRoamInfo *pParam, tANI_U32 roamId,
                                               eRoamCmdStatus roamStatus, eCsrRoamResult roamResult);
 
 typedef eHalStatus (*csrRoamSessionCloseCallback)(void *pContext);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* ---------------------------------------------------------------------------
     \fn csrRoamGetNumPMKIDCache
@@ -2098,15 +1394,7 @@ typedef eHalStatus (*csrRoamSessionCloseCallback)(void *pContext);
 /* ---------------------------------------------------------------------------
     \fn csrRoamGetPMKIDCache
     \brief return PMKID cache from CSR
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \param pNum - caller allocated memory that has the space of the number of pBuf tPmkidCacheInfo as input. Upon returned, *pNum has the 
-=======
     \param pNum - caller allocated memory that has the space of the number of pBuf tPmkidCacheInfo as input. Upon returned, *pNum has the
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    \param pNum - caller allocated memory that has the space of the number of pBuf tPmkidCacheInfo as input. Upon returned, *pNum has the
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     needed or actually number in tPmkidCacheInfo.
     \param pPmkidCache - Caller allocated memory that contains PMKID cache, if any, upon return
     \return eHalStatus - when fail, it usually means the buffer allocated is not big enough
@@ -2122,27 +1410,10 @@ typedef eHalStatus (*csrRoamSessionCloseCallback)(void *pContext);
 #define CSR_IS_WDS_AP( pProfile )  ( eCSR_BSS_TYPE_WDS_AP == (pProfile)->BSSType )
 #define CSR_IS_WDS_STA( pProfile ) ( eCSR_BSS_TYPE_WDS_STA == (pProfile)->BSSType )
 #define CSR_IS_WDS( pProfile )  ( CSR_IS_WDS_AP( pProfile ) || CSR_IS_WDS_STA( pProfile ) )
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-#define CSR_IS_INFRA_AP( pProfile )  ( eCSR_BSS_TYPE_INFRA_AP == (pProfile)->BSSType )
-#endif
-
-//pProfile - pointer to tCsrRoamConnectedProfile
-#ifdef WLAN_SOFTAP_FEATURE
-#define CSR_IS_CONN_INFRA_AP( pProfile )  ( eCSR_BSS_TYPE_INFRA_AP == (pProfile)->BSSType )
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CSR_IS_INFRA_AP( pProfile )  ( eCSR_BSS_TYPE_INFRA_AP == (pProfile)->BSSType )
 
 //pProfile - pointer to tCsrRoamConnectedProfile
 #define CSR_IS_CONN_INFRA_AP( pProfile )  ( eCSR_BSS_TYPE_INFRA_AP == (pProfile)->BSSType )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CSR_IS_CONN_WDS_AP( pProfile )  ( eCSR_BSS_TYPE_WDS_AP == (pProfile)->BSSType )
 #define CSR_IS_CONN_WDS_STA( pProfile ) ( eCSR_BSS_TYPE_WDS_STA == (pProfile)->BSSType )
 #define CSR_IS_CONN_WDS( pProfile )  ( CSR_IS_WDS_AP( pProfile ) || CSR_IS_WDS_STA( pProfile ) )
@@ -2153,40 +1424,17 @@ typedef eHalStatus (*csrRoamSessionCloseCallback)(void *pContext);
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-/* ---------------------------------------------------------------------------
-    \fn csrSetChannels
-    \brief HDD calls this function to change some global settings. 
-    caller must set the all fields or call csrGetConfigParam to prefill the fields.
-    \param pParam - caller allocated memory
-    \return eHalStatus     
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* ---------------------------------------------------------------------------
     \fn csrSetChannels
     \brief HDD calls this function to change some global settings.
     caller must set the all fields or call csrGetConfigParam to prefill the fields.
     \param pParam - caller allocated memory
     \return eHalStatus
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 
 eHalStatus csrSetChannels(tHalHandle hHal,  tCsrConfigParam *pParam  );
 
 eHalStatus csrSetRegInfo(tHalHandle hHal,  tANI_U8 *apCntryCode);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 //enum to string conversion for debug output
@@ -2197,27 +1445,12 @@ const char * get_eCsrRoamResult_str(eCsrRoamResult val);
     \brief HDD calls this function to set the phyMode.
     This function must be called after CFG is downloaded and all the band/mode setting already passed into
     CSR.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \param phyMode - indicate the phyMode needs to set to. The value has to be either 0, or some bits set. 
-    See eCsrPhyMode for definition
-    \param eBand - specify the operational band (2.4, 5 or both)
-    \param pfRestartNeeded - pointer to a caller allocated space. Upon successful return, it indicates whether 
-    a restart is needed to apply the change
-    \return eHalStatus     
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \param phyMode - indicate the phyMode needs to set to. The value has to be either 0, or some bits set.
     See eCsrPhyMode for definition
     \param eBand - specify the operational band (2.4, 5 or both)
     \param pfRestartNeeded - pointer to a caller allocated space. Upon successful return, it indicates whether
     a restart is needed to apply the change
     \return eHalStatus
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   -------------------------------------------------------------------------------*/
 eHalStatus csrSetPhyMode(tHalHandle hHal, tANI_U32 phyMode, eCsrBand eBand, tANI_BOOLEAN *pfRestartNeeded);
 
@@ -2227,15 +1460,7 @@ void csrDumpInit(tHalHandle hHal);
 /*---------------------------------------------------------------------------
   This is the type for a link quality callback to be registered with SME
   for indications
-<<<<<<< HEAD
-<<<<<<< HEAD
-  Once the link quality has been indicated, subsequently, link indications are 
-=======
   Once the link quality has been indicated, subsequently, link indications are
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  Once the link quality has been indicated, subsequently, link indications are
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   posted each time there is a CHANGE in link quality.
   *** If there is no change in link, there will be no indication ***
 
@@ -2243,21 +1468,9 @@ void csrDumpInit(tHalHandle hHal);
   such as RSSI and PER.
 
   \param ind - Indication being posted
-<<<<<<< HEAD
-<<<<<<< HEAD
-  \param pContext - any user data given at callback registration.  
-  \return None
-  
-=======
   \param pContext - any user data given at callback registration.
   \return None
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  \param pContext - any user data given at callback registration.
-  \return None
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ---------------------------------------------------------------------------*/
 typedef void (* csrRoamLinkQualityIndCallback)
              (eCsrRoamLinkQualityInd  ind, void *pContext);
@@ -2267,20 +1480,6 @@ typedef void (* csrRoamLinkQualityIndCallback)
   This is the type for a statistics callback to be registered with SME
   for stats reporting
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  Since the client requesting for the stats already know which class/type of 
-  stats it asked for, the callback will carry them in the rsp buffer 
-  (void * stats) whose size will be same as the size of requested stats & 
-  will be exactly in the same order requested in the stats mask from LSB to MSB
-
-  \param stats - stats rsp buffer sent back with the report
-  \param pContext - any user data given at callback registration.  
-  \return None
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   Since the client requesting for the stats already know which class/type of
   stats it asked for, the callback will carry them in the rsp buffer
   (void * stats) whose size will be same as the size of requested stats &
@@ -2290,10 +1489,6 @@ typedef void (* csrRoamLinkQualityIndCallback)
   \param pContext - any user data given at callback registration.
   \return None
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ---------------------------------------------------------------------------*/
 typedef void ( *tCsrStatsCallback) (void * stats, void *pContext);
 
@@ -2302,21 +1497,9 @@ typedef void ( *tCsrStatsCallback) (void * stats, void *pContext);
   for getting rssi
 
   \param rssi - rssi
-<<<<<<< HEAD
-<<<<<<< HEAD
-  \param pContext - any user data given at callback registration.  
-  \return None
-  
-=======
   \param pContext - any user data given at callback registration.
   \return None
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  \param pContext - any user data given at callback registration.
-  \return None
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ---------------------------------------------------------------------------*/
 
 typedef void ( *tCsrRssiCallback) (v_S7_t rssi, tANI_U32 staId, void *pContext);
@@ -2326,27 +1509,12 @@ eHalStatus csrRoamIssueFTPreauthReq(tHalHandle hHal, tANI_U32 sessionId, tpSirBs
 #endif
 
 /*---------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-  This is the function to change the Band configuraiton (ALL/2.4 GHZ/5 GHZ) 
-
-  \param hHal - handle to Hal context 
-  \param eBand - band value
-  \return  eHalStatus
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   This is the function to change the Band configuraiton (ALL/2.4 GHZ/5 GHZ)
 
   \param hHal - handle to Hal context
   \param eBand - band value
   \return  eHalStatus
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ---------------------------------------------------------------------------*/
 eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand);
 
@@ -2354,15 +1522,7 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand);
   This is the function to get the current operating band value
   \param hHal - handl to Hal context
   \return eCsrband - band value
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ---------------------------------------------------------------------------*/
 eCsrBand csrGetCurrentBand (tHalHandle hHal);
 

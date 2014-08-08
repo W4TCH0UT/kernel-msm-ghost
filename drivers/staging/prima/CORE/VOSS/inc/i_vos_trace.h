@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -99,18 +90,9 @@ void vos_trace_display(void);
 
 void vos_trace_setValue( VOS_MODULE_ID module, VOS_TRACE_LEVEL level, v_U8_t on );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 //Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
 void vos_trace_setValue_till_level( VOS_MODULE_ID module, VOS_TRACE_LEVEL level, v_U8_t on) ;
 //END IKJBXLINE-5577
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-//Begin Motorola dcw476 4/17/13 IKJBXLINE-5577:changing wlan driver log level dynamically
-void vos_trace_setValue_till_level( VOS_MODULE_ID module, VOS_TRACE_LEVEL level, v_U8_t on) ;
-//END IKJBXLINE-5577
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // VOS_TRACE is the macro invoked to add trace messages to code.  See the 
 // documenation for vos_trace_msg() for the parameters etc. for this function.
@@ -134,17 +116,6 @@ void vos_snprintf(char *strBuffer, unsigned  int size, char *strFormat, ...);
 #ifdef VOS_ENABLE_TRACING
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define VOS_ASSERT( _condition )                          \
-if ( ! ( _condition ) )                                   \
-{                                                         \
-   printk(KERN_CRIT "VOS ASSERT in %s Line %d\n", __FUNCTION__, __LINE__); \
-   WARN_ON(1); \
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define VOS_ASSERT( _condition ) do {                                   \
         if ( ! ( _condition ) )                                         \
         {                                                               \
@@ -152,10 +123,6 @@ if ( ! ( _condition ) )                                   \
             WARN_ON(1);                                                 \
         }                                                               \
     } while(0)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #else 
 
@@ -170,26 +137,6 @@ if ( ! ( _condition ) )                                   \
 
 #ifdef PANIC_ON_BUG
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define VOS_BUG( _condition ) \
-if ( ! ( _condition ) )       \
-{                             \
-   printk(KERN_CRIT "VOS BUG in %s Line %d\n", __FUNCTION__, __LINE__); \
-   BUG_ON(1); \
-}
-
-#else
-
-#define VOS_BUG( _condition ) \
-if ( ! ( _condition ) )       \
-{                             \
-   printk(KERN_CRIT "VOS BUG in %s Line %d\n", __FUNCTION__, __LINE__); \
-   WARN_ON(1); \
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define VOS_BUG( _condition ) do {                                      \
         if ( ! ( _condition ) )                                         \
         {                                                               \
@@ -207,10 +154,6 @@ if ( ! ( _condition ) )       \
             WARN_ON(1);                                                 \
         }                                                               \
     } while(0)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif
 

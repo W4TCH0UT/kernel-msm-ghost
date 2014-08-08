@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -85,15 +76,7 @@ static void wpalTimerCback( void * userData )
    else
    {
       WPAL_TRACE( eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_WARN, " %s pTimer(%d) callback after deleted \n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-         __FUNCTION__, (wpt_uint32)pTimer );
-=======
          __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 }/*wpalTimerCback*/
 
@@ -112,15 +95,7 @@ wpt_status wpalTimerInit(wpt_timer * pTimer, wpal_timer_callback callback, void 
    if( pTimer == NULL || callback == NULL )
    {
       WPAL_TRACE( eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, " %s Wrong param pTimer(%d) callback(%d)\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-         __FUNCTION__, (wpt_uint32)pTimer, (wpt_uint32)callback );
-=======
          __func__, (wpt_uint32)pTimer, (wpt_uint32)callback );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         __func__, (wpt_uint32)pTimer, (wpt_uint32)callback );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -151,15 +126,7 @@ wpt_status wpalTimerDelete(wpt_timer *pTimer)
    if( pTimer == NULL )
    {
       WPAL_TRACE( eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, " %s Wrong param pTimer(%d)\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-         __FUNCTION__, (wpt_uint32)pTimer );
-=======
          __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -190,15 +157,7 @@ wpt_status wpalTimerStart(wpt_timer * pTimer, wpt_uint32 timeout)
    if( pTimer == NULL )
    {
       WPAL_TRACE( eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, " %s Wrong param pTimer(%d)\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-         __FUNCTION__, (wpt_uint32)pTimer );
-=======
          __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
    return ( WPAL_VOS_TO_WPAL_STATUS( vos_timer_start( &pTimer->timer.timerObj,
@@ -221,26 +180,13 @@ wpt_status wpalTimerStop(wpt_timer * pTimer)
    if( pTimer == NULL )
    {
       WPAL_TRACE( eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, " %s Wrong param pTimer(%d)\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-         __FUNCTION__, (wpt_uint32)pTimer );
-=======
          __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         __func__, (wpt_uint32)pTimer );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
    return (WPAL_VOS_TO_WPAL_STATUS( vos_timer_stop( &pTimer->timer.timerObj )));
 }/*wpalTimerStop*/
 
 /*---------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \brief wpalTimerGetCurStatus - Get the current status of timer
 
     \param pTimer - a pointer to caller allocated wpt_timer object
@@ -272,10 +218,6 @@ wpt_uint32 wpalGetSystemTime(void)
 }/*wpalGetSystemTime*/
 
 /*---------------------------------------------------------------------------
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wpalSleep - sleep for a specified interval
     Param:
         timeout - amount of time to sleep. In unit of milli-seconds.

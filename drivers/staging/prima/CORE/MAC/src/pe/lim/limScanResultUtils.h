@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -74,11 +65,6 @@ void    limDeleteCachedScanResults(tpAniSirGlobal);
 void    limRestorePreScanState(tpAniSirGlobal);
 void    limCopyScanResult(tpAniSirGlobal, tANI_U8 *);
 void    limReInitScanResults(tpAniSirGlobal);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 void    limInitLfrHashTable(tpAniSirGlobal);
 eHalStatus
@@ -87,10 +73,6 @@ void    limDeleteLfrHashEntry(tLimScanResultNode *);
 void    limDeleteCachedLfrScanResults(tpAniSirGlobal);
 void    limReInitLfrScanResults(tpAniSirGlobal);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tANI_U32 limDeactivateMinChannelTimerDuringScan(tpAniSirGlobal);
 void    limCheckAndAddBssDescription(tpAniSirGlobal, tpSirProbeRespBeacon, tANI_U8 *, tANI_BOOLEAN, tANI_U8);
 #if defined WLAN_FEATURE_VOWIFI

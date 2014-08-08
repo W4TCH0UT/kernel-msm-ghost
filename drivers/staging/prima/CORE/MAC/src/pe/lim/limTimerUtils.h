@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -76,21 +67,8 @@ enum
     eLIM_ASSOC_FAIL_TIMER,
     eLIM_REASSOC_FAIL_TIMER,
     eLIM_PRE_AUTH_CLEANUP_TIMER,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eLIM_HEART_BEAT_TIMER,    
-    eLIM_BACKGROUND_SCAN_TIMER,
-#ifdef ANI_PRODUCT_TYPE_AP
-    eLIM_LEARN_INTERVAL_TIMER,
-#endif
-=======
     eLIM_HEART_BEAT_TIMER,
     eLIM_BACKGROUND_SCAN_TIMER,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eLIM_HEART_BEAT_TIMER,
-    eLIM_BACKGROUND_SCAN_TIMER,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eLIM_KEEPALIVE_TIMER,
     eLIM_CNF_WAIT_TIMER,
     eLIM_AUTH_RSP_TIMER,
@@ -101,42 +79,15 @@ enum
     eLIM_LEARN_DURATION_TIMER,
     eLIM_QUIET_TIMER,
     eLIM_QUIET_BSS_TIMER,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-    eLIM_WPS_OVERLAP_TIMER, 
-#endif
-#ifdef WLAN_FEATURE_VOWIFI_11R
-    eLIM_FT_PREAUTH_RSP_TIMER,
-#endif
-#ifdef WLAN_FEATURE_P2P
-    eLIM_REMAIN_CHN_TIMER,
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eLIM_WPS_OVERLAP_TIMER,
 #ifdef WLAN_FEATURE_VOWIFI_11R
     eLIM_FT_PREAUTH_RSP_TIMER,
 #endif
     eLIM_REMAIN_CHN_TIMER,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eLIM_PERIODIC_PROBE_REQ_TIMER,
 #ifdef FEATURE_WLAN_CCX
     eLIM_TSM_TIMER,
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-};
-
-// Timer Handler functions
-void limCreateTimers(tpAniSirGlobal);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
     eLIM_TDLS_DISCOVERY_RSP_WAIT,
     eLIM_TDLS_LINK_SETUP_RSP_TIMEOUT,
@@ -155,10 +106,6 @@ void limCreateTimers(tpAniSirGlobal);
 
 // Timer Handler functions
 v_UINT_t limCreateTimers(tpAniSirGlobal);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limTimerHandler(void *, tANI_U32);
 void limAuthResponseTimerHandler(void *, tANI_U32);
 void limAssocFailureTimerHandler(void *, tANI_U32);
@@ -174,17 +121,7 @@ void limKeepaliveTmerHandler(void *, tANI_U32);
 void limDeactivateAndChangePerStaIdTimer(tpAniSirGlobal, tANI_U32, tANI_U16);
 void limActivateCnfTimer(tpAniSirGlobal, tANI_U16, tpPESession);
 void limActivateAuthRspTimer(tpAniSirGlobal, tLimPreAuthNode *);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
 void limUpdateOlbcCacheTimerHandler(void *, tANI_U32);
-#endif
-=======
-void limUpdateOlbcCacheTimerHandler(void *, tANI_U32);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-void limUpdateOlbcCacheTimerHandler(void *, tANI_U32);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void limAddtsResponseTimerHandler(void *, tANI_U32);
 void limChannelSwitchTimerHandler(void *, tANI_U32);
 void limQuietTimerHandler(void *, tANI_U32);
@@ -211,23 +148,10 @@ void limCBScanDurationTimerHandler(void *, tANI_U32);
  */
 v_UINT_t limActivateHearBeatTimer(tpAniSirGlobal pMac);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-#if 0
-void limWPSOverlapTimerHandler(void *pMacGlobal, tANI_U32 param);
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if 0
 void limWPSOverlapTimerHandler(void *pMacGlobal, tANI_U32 param);
 #endif
 #ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
 void limMissedBeaconInActiveMode(void *pMacGlobal, tpPESession psessionEntry);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 #endif /* __LIM_TIMER_UTILS_H */

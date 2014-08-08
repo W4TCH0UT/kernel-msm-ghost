@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -84,15 +75,7 @@
 
 static tSuppRsnFsmConsts suppConsts = { 2000, 3 };    //timeout, retry limit
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-int gReadToSetKey = 0;
-=======
 int gReadToSetKey;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-int gReadToSetKey;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**************************************
  * Static functions in this module
@@ -669,15 +652,7 @@ gotoStateGroupKeySet(tSuppRsnFsm *fsm,
         {
             retVal = ANI_ERROR;
             VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR, "Supp could not send eapol. Disconnect\n" );
-<<<<<<< HEAD
-<<<<<<< HEAD
-            break;;    
-=======
             break;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            break;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
         //FIX_RSN there is no need to set GTK retVal = setGtk(fsm->suppCtx, rxDesc->keyRecvSeqCounter);
@@ -822,15 +797,7 @@ int checkPeerReplayCounter(tSuppRsnFsm *fsm,
     if (cmp > 0) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "BP radio %d got old EAPOL replay counter from AP\n" );
-=======
             "BP got old EAPOL replay counter from AP" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "BP got old EAPOL replay counter from AP" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retVal = ANI_E_REPLAY_CHECK_FAILED;
 
     } 
@@ -908,15 +875,7 @@ int checkTransition(tSuppRsnFsm *fsm, void *arg)
 
                     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
                                     "Resending EAPOL-Key Msg2 from "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                  "supplicant radio %d to AP\n" );
-=======
                                   "supplicant to AP" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                  "supplicant to AP" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     retVal = gotoStateStaKeyStart(fsm, data, eANI_BOOLEAN_TRUE);
 
                 } 
@@ -1082,15 +1041,7 @@ static int suppRsnRxFrameHandler( v_PVOID_t pvosGCtx, vos_pkt_t *pPacket )
     if ((pvosGCtx == NULL) || (NULL == pPacket))
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "param is NULL in %s", __FUNCTION__);
-=======
                      "param is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "param is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return retVal;
     }
@@ -1098,15 +1049,7 @@ static int suppRsnRxFrameHandler( v_PVOID_t pvosGCtx, vos_pkt_t *pPacket )
     if (NULL == ctx) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "ctx is NULL in %s", __FUNCTION__);
-=======
                      "ctx is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "ctx is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return retVal;
     }
@@ -1115,15 +1058,7 @@ static int suppRsnRxFrameHandler( v_PVOID_t pvosGCtx, vos_pkt_t *pPacket )
     if (NULL == fsm) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "fsm is NULL in %s", __FUNCTION__);
-=======
                      "fsm is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "fsm is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return retVal;
     }
@@ -1161,15 +1096,7 @@ static int suppRsnTxCompleteHandler( v_PVOID_t pvosGCtx, vos_pkt_t *pPacket, VOS
     if (pvosGCtx == NULL)
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "param is NULL in %s", __FUNCTION__);
-=======
                      "param is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "param is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return ANI_ERROR;
     }
@@ -1177,15 +1104,7 @@ static int suppRsnTxCompleteHandler( v_PVOID_t pvosGCtx, vos_pkt_t *pPacket, VOS
     if (NULL == ctx) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "ctx is NULL in %s", __FUNCTION__);
-=======
                      "ctx is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "ctx is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return ANI_ERROR;
     }
@@ -1194,15 +1113,7 @@ static int suppRsnTxCompleteHandler( v_PVOID_t pvosGCtx, vos_pkt_t *pPacket, VOS
     if (NULL == fsm) 
     {
         VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "fsm is NULL in %s", __FUNCTION__);
-=======
                      "fsm is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "fsm is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         return ANI_ERROR;
     }

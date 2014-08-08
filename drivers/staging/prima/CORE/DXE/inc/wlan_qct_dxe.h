@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -152,15 +143,7 @@ typedef enum
        RX Frame Ready indication CB
 
   @  Parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-         pVoid         pAdaptor : Driver global control block pointer
-=======
          pVoid         pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         pVoid         pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          palPacket     pRXFramePtr : Received Frame Pointer
          pVoid         userCtxt : DTS user contect pointer
 
@@ -177,15 +160,7 @@ typedef WDTS_RxFrameReadyCbType WLANDXE_RxFrameReadyCbType;
       TX complete indication CB
 
   @  Parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-         pVoid      pAdaptor : Driver global control block pointer
-=======
          pVoid      pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         pVoid      pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          void       pTXFramePtr : Completed TX Frame Pointer
          pVoid      userCtxt : DTS user contect pointer
 
@@ -202,15 +177,7 @@ typedef WDTS_TxCompleteCbType WLANDXE_TxCompleteCbType;
        DXE Low resource indication CB
 
   @  Parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-      pVoid      pAdaptor : Driver global control block pointer
-=======
       pVoid      pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      pVoid      pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       BOOL      lowResourceCondition : DXE low resource or not
       pVoid      userCtxt : DTS user contect pointer
 
@@ -249,15 +216,7 @@ typedef WDTS_SetPSCbType  WLANDXE_SetPowerStateCbType;
       Allocate, DXE local control block, DXE descriptor pool, DXE descriptor control block pool
 
   @  Parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-      pVoid      pAdaptor : Driver global control block pointer
-=======
       pVoid      pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      pVoid      pAdapter : Driver global control block pointer
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   @  Return
       pVoid DXE local module control block pointer
@@ -454,37 +413,16 @@ wpt_uint32 WLANDXE_GetFreeTxDataResNumber
 );
 
 /*==========================================================================
-<<<<<<< HEAD
-<<<<<<< HEAD
-  @  Function Name 
-    WLANDXE_ChannelDebug
-
-  @  Description 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   @  Function Name
     WLANDXE_ChannelDebug
 
   @  Description
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     Display DXE Channel debugging information
     User may request to display DXE channel snapshot
     Or if host driver detects any abnormal stcuk may display
 
   @  Parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-    displaySnapshot : Dispaly DXE snapshot option
-=======
     displaySnapshot : Display DXE snapshot option
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    displaySnapshot : Display DXE snapshot option
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     enableStallDetect : Enable stall detect feature
                         This feature will take effect to data performance
                         Not integrate till fully verification

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -155,11 +146,6 @@
 #endif
 #elif defined(ANI_COMPILER_TYPE_RVCT)
 /* Nothing defined so far */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* 
  * RIVA 1.2 and Pronto uses ARMCT5.1 compiler and it throws lot of warning when __align() is used in structure definitions. 
@@ -179,10 +165,6 @@
 #define PREPACK                                 __packed
 #define POSTPACK
 #else
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define __ani_attr_packed
 #define __ani_attr_pre_packed                   __packed
 #define __ani_attr_aligned_2                    __align(2)
@@ -193,16 +175,8 @@
 #define PACKED                                  __packed
 #define PACKED_POST
 #define ALIGN(__value)                          __align(__value)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #endif
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#endif
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #error "Unknown compiler"
 #endif

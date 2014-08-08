@@ -1,13 +1,5 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Copyright (c) 2012, The Linux Foundation. All rights reserved.
-=======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -26,14 +18,6 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-/*
- * */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -54,10 +38,6 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*============================================================================
   FILE:         vos_utils.c
 
@@ -320,15 +300,7 @@ int hmac_sha1(v_U8_t *key, v_U8_t ksize, char *plaintext, v_U8_t psize,
     ahash_request_set_crypt(req, &sg, hash_result, psize);
     ret = wcnss_wlan_crypto_ahash_digest(req);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR, "ret 0x%x");
-=======
     VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR, "ret 0x%x", ret);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR, "ret 0x%x", ret);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (ret) {
     case 0:
@@ -431,15 +403,7 @@ int hmac_md5(v_U8_t *key, v_U8_t ksize, char *plaintext, v_U8_t psize,
     struct crypto_ahash *tfm;
     struct scatterlist sg;
     struct ahash_request *req;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    struct hmac_md5_result tresult;
-=======
     struct hmac_md5_result tresult = {.err = 0};
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    struct hmac_md5_result tresult = {.err = 0};
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     void *hash_buff = NULL;
 
     unsigned char hash_result[64];
@@ -491,15 +455,7 @@ int hmac_md5(v_U8_t *key, v_U8_t ksize, char *plaintext, v_U8_t psize,
     ahash_request_set_crypt(req, &sg, hash_result, psize);
     ret = wcnss_wlan_crypto_ahash_digest(req);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR, "ret 0x%x");
-=======
     VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR, "ret 0x%x", ret);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR, "ret 0x%x", ret);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (ret) {
         case 0:
@@ -668,15 +624,7 @@ err_req:
 err_tfm:
     //return ret;
     if (ret != 0) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR,"%s() call failed", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR,"%s() call failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR,"%s() call failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
    }
 
@@ -772,15 +720,7 @@ err_req:
 err_tfm:
     //return ret;
     if (ret != 0) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR,"%s() call failed", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR,"%s() call failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_VOSS,VOS_TRACE_LEVEL_ERROR,"%s() call failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
       }
 

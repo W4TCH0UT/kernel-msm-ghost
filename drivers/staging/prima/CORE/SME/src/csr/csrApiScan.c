@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -48,20 +39,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/** ------------------------------------------------------------------------- * 
-    ------------------------------------------------------------------------- *  
-
-  
-    \file csrApiScan.c
-  
-    Implementation for the Common Scan interfaces.
-  
-    Copyright (C) 2006 Airgo Networks, Incorporated 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /** ------------------------------------------------------------------------- *
     ------------------------------------------------------------------------- *
 
@@ -71,10 +48,6 @@
     Implementation for the Common Scan interfaces.
 
     Copyright (C) 2006 Airgo Networks, Incorporated
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    ========================================================================== */
 
 #include "aniGlobal.h"
@@ -92,28 +65,12 @@
 
 #include "vos_nvitem.h"
 #include "wlan_qct_wda.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                                     
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define CSR_VALIDATE_LIST  //This portion of code need to be removed once the issue is resolved.
 
 #ifdef CSR_VALIDATE_LIST
 tDblLinkList *g_pchannelPowerInfoList24 = NULL, * g_pchannelPowerInfoList5 = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-tpAniSirGlobal g_pMac = NULL;
-=======
 tpAniSirGlobal g_pMac;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tpAniSirGlobal g_pMac;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 /* Purpose of HIDDEN_TIMER 
@@ -149,38 +106,14 @@ RSSI *cannot* be more than 0xFF or less than 0 for meaningful WLAN operation
 #define CSR_SCAN_HANDOFF_DELTA 10
 #define MAX_ACTIVE_SCAN_FOR_ONE_CHANNEL 140
 #define MIN_ACTIVE_SCAN_FOR_ONE_CHANNEL 120
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define CSR_SCAN_OVERALL_SCORE( rssi ) \
-  ( rssi < CSR_SCAN_MAX_SCORE_VAL )\
-   ? (CSR_SCAN_MAX_SCORE_VAL-rssi) : CSR_SCAN_MIN_SCORE_VAL
-=======
 #define CSR_SCAN_OVERALL_SCORE( rssi )                          \
     (( rssi < CSR_SCAN_MAX_SCORE_VAL )                          \
      ? (CSR_SCAN_MAX_SCORE_VAL-rssi) : CSR_SCAN_MIN_SCORE_VAL)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define CSR_SCAN_OVERALL_SCORE( rssi )                          \
-    (( rssi < CSR_SCAN_MAX_SCORE_VAL )                          \
-     ? (CSR_SCAN_MAX_SCORE_VAL-rssi) : CSR_SCAN_MIN_SCORE_VAL)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                                      
 
 #define CSR_SCAN_IS_OVER_BSS_LIMIT(pMac)  \
    ( (pMac)->scan.nBssLimit <= (csrLLCount(&(pMac)->scan.scanResultList)) )
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//*** This is temporary work around. It need to call CCM api to get to CFG later
-/// Get string parameter value
-extern tSirRetStatus wlan_cfgGetStr(tpAniSirGlobal, tANI_U16, tANI_U8*, tANI_U32*);
-                                                                     
-void csrScanGetResultTimerHandler(void *);
-void csrScanResultAgingTimerHandler(void *pv);
-void csrScanIdleScanTimerHandler(void *);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Maximum number of channels per country can be ignored */
 #define MAX_CHANNELS_IGNORE 10
 
@@ -211,10 +144,6 @@ void csrScanResultAgingTimerHandler(void *pv);
 static void csrScanResultCfgAgingTimerHandler(void *pv);
 void csrScanIdleScanTimerHandler(void *);
 static void csrSetDefaultScanTiming( tpAniSirGlobal pMac, tSirScanType scanType, tCsrScanRequest *pScanRequest);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_AP_STA_CONCURRENCY
 static void csrStaApConcTimerHandler(void *);
 #endif
@@ -239,11 +168,6 @@ void csrPruneChannelListForMode( tpAniSirGlobal pMac, tCsrChannel *pChannelList 
 #define CSR_IS_SOCIAL_CHANNEL(channel) (((channel) == 1) || ((channel) == 6) || ((channel) == 11) )
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static void csrReleaseScanCmdPendingList(tpAniSirGlobal pMac)
 {
@@ -263,10 +187,6 @@ static void csrReleaseScanCmdPendingList(tpAniSirGlobal pMac)
         }
     }
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //pResult is invalid calling this function.
 void csrFreeScanResultEntry( tpAniSirGlobal pMac, tCsrScanResult *pResult )
 {
@@ -390,56 +310,26 @@ eHalStatus csrScanOpen( tpAniSirGlobal pMac )
         status = palTimerAlloc(pMac->hHdd, &pMac->scan.hTimerGetResult, csrScanGetResultTimerHandler, pMac);
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("cannot allocate memory for getResult timer\n"));
-=======
             smsLog(pMac, LOGE, FL("cannot allocate memory for getResult timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("cannot allocate memory for getResult timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
 #ifdef WLAN_AP_STA_CONCURRENCY
         status = palTimerAlloc(pMac->hHdd, &pMac->scan.hTimerStaApConcTimer, csrStaApConcTimerHandler, pMac);
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("cannot allocate memory for hTimerStaApConcTimer timer\n"));
-=======
             smsLog(pMac, LOGE, FL("cannot allocate memory for hTimerStaApConcTimer timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("cannot allocate memory for hTimerStaApConcTimer timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
 #endif        
         status = palTimerAlloc(pMac->hHdd, &pMac->scan.hTimerIdleScan, csrScanIdleScanTimerHandler, pMac);
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("cannot allocate memory for idleScan timer\n"));
-=======
             smsLog(pMac, LOGE, FL("cannot allocate memory for idleScan timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("cannot allocate memory for idleScan timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
         status = palTimerAlloc(pMac->hHdd, &pMac->scan.hTimerResultAging, csrScanResultAgingTimerHandler, pMac);
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("cannot allocate memory for ResultAging timer\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOGE, FL("cannot allocate memory for ResultAging timer"));
             break;
         }
@@ -448,10 +338,6 @@ eHalStatus csrScanOpen( tpAniSirGlobal pMac )
         if(!HAL_STATUS_SUCCESS(status))
         {
             smsLog(pMac, LOGE, FL("cannot allocate memory for CFG ResultAging timer"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
     }while(0);
@@ -470,15 +356,7 @@ eHalStatus csrScanClose( tpAniSirGlobal pMac )
     csrLLScanPurgeResult(pMac, &pMac->scan.tempScanResults);
     csrLLScanPurgeResult(pMac, &pMac->scan.scanResultList);
 #ifdef WLAN_AP_STA_CONCURRENCY
-<<<<<<< HEAD
-<<<<<<< HEAD
-    csrLLScanPurgeResult(pMac, &pMac->scan.scanCmdPendingList);
-=======
     csrReleaseScanCmdPendingList(pMac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    csrReleaseScanCmdPendingList(pMac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     csrLLClose(&pMac->scan.scanResultList);
     csrLLClose(&pMac->scan.tempScanResults);
@@ -491,14 +369,7 @@ eHalStatus csrScanClose( tpAniSirGlobal pMac )
     csrLLClose(&pMac->scan.channelPowerInfoList5G);
     csrScanDisable(pMac);
     palTimerFree(pMac->hHdd, pMac->scan.hTimerResultAging);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     palTimerFree(pMac->hHdd, pMac->scan.hTimerResultCfgAging);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    palTimerFree(pMac->hHdd, pMac->scan.hTimerResultCfgAging);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palTimerFree(pMac->hHdd, pMac->scan.hTimerGetResult);
 #ifdef WLAN_AP_STA_CONCURRENCY
     palTimerFree(pMac->hHdd, pMac->scan.hTimerStaApConcTimer);
@@ -528,11 +399,6 @@ eHalStatus csrScanDisable( tpAniSirGlobal pMac )
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 //Set scan timing parameters according to state of other driver sessions 
 //No validation of the parameters is performed. 
 static void csrSetDefaultScanTiming( tpAniSirGlobal pMac, tSirScanType scanType, tCsrScanRequest *pScanRequest)
@@ -583,10 +449,6 @@ static void csrSetDefaultScanTiming( tpAniSirGlobal pMac, tSirScanType scanType,
 #endif
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_AP_STA_CONCURRENCY
 //Return SUCCESS is the command is queued, else returns eHAL_STATUS_FAILURE 
 eHalStatus csrQueueScanRequest( tpAniSirGlobal pMac, tSmeCmd *pScanCmd )
@@ -596,15 +458,6 @@ eHalStatus csrQueueScanRequest( tpAniSirGlobal pMac, tSmeCmd *pScanCmd )
     tANI_BOOLEAN fNoCmdPending;
     tSmeCmd *pQueueScanCmd=NULL;
     tSmeCmd *pSendScanCmd=NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    if (vos_get_concurrency_mode() == VOS_STA_SAP) //TODO:- Also make sure AP BSS has started
-    {
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8  nNumChanCombinedConc = 0;
     if (NULL == pScanCmd)
     {
@@ -640,145 +493,16 @@ eHalStatus csrQueueScanRequest( tpAniSirGlobal pMac, tSmeCmd *pScanCmd )
          (pScanCmd->u.scanCmd.u.scanRequest.p2pSearch != 1)) ||
             (csrIsP2pSessionConnected(pMac)) )
     {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tCsrScanRequest scanReq;
         tANI_U8 numChn = pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels;
         tCsrChannelInfo *pChnInfo = &scanReq.ChannelInfo;
         tANI_U8    channelToScan[WNI_CFG_VALID_CHANNEL_LIST_LEN];
-<<<<<<< HEAD
-<<<<<<< HEAD
-        tANI_U8    i = 0;
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tANI_BOOLEAN bMemAlloc = eANI_BOOLEAN_FALSE;
 
         if (numChn == 0)
         {
 
             numChn = pMac->scan.baseChannels.numChannels;
-<<<<<<< HEAD
-<<<<<<< HEAD
-             
-             status = palAllocateMemory( pMac->hHdd, (void **)&pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList, numChn );
-             if( !HAL_STATUS_SUCCESS( status ) )
-             {
-                 smsLog( pMac, LOGE, FL(" Failed to get memory for channel list \n") );
-                 return eHAL_STATUS_FAILURE;
-             }
-             bMemAlloc = eANI_BOOLEAN_TRUE;
-             status = palCopyMemory( pMac->hHdd, pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList, 
-                         pMac->scan.baseChannels.channelList, numChn );
-             if( !HAL_STATUS_SUCCESS( status ) )
-             {
-                 palFreeMemory( pMac->hHdd, pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList );
-                 pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
-                 smsLog( pMac, LOGE, FL(" Failed to copy memory to channel list \n") );
-                 return eHAL_STATUS_FAILURE;
-             }
-             pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels = numChn;
-         }
-
-         //Whenever we get a scan request with multiple channels we break it up into 2 requests
-         //First request  for first channel to scan and second request to scan remaining channels
-         for  (i=0; i < 2; i++)
-         {   //go through max 2 iterations. 
-             //Once for using the existing command when number of channels is 1 
-             //Second to go over the remaining channels after creating a new command
-            
-            if (1 == numChn)
-            {
-                pSendScanCmd = pScanCmd;
-                pSendScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels = 1;
-                pSendScanCmd->u.scanCmd.u.scanRequest.scanType = eSIR_ACTIVE_SCAN;
-                pSendScanCmd->u.scanCmd.u.scanRequest.maxChnTime = 
-                    CSR_MIN(pSendScanCmd->u.scanCmd.u.scanRequest.maxChnTime,CSR_ACTIVE_MAX_CHANNEL_TIME_CONC);
-                pSendScanCmd->u.scanCmd.u.scanRequest.minChnTime = 
-                    CSR_MIN(pSendScanCmd->u.scanCmd.u.scanRequest.minChnTime, CSR_ACTIVE_MIN_CHANNEL_TIME_CONC);
-                if (i != 0)
-                { //Callback should be NULL for all except last channel So hdd_callback will be called only after last command
-                  //i!=0 then we came here in second iteration 
-                   pSendScanCmd->u.scanCmd.callback = NULL;
-                }
-                break; //break out of this loop in case there is only 1 channel then no need for 2nd iteration
-            
-            } else { //if number of channels > 1 then
-            
-                palZeroMemory(pMac->hHdd, &scanReq, sizeof(tCsrScanRequest));
-
-                pQueueScanCmd = csrGetCommandBuffer(pMac); //optimize this to use 2 command buffer only
-                if (!pQueueScanCmd)
-                {
-                    if (bMemAlloc)
-                    {
-                        palFreeMemory( pMac->hHdd, pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList );
-                        pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
-                 
-                    }
-                    smsLog( pMac, LOGE, FL(" Failed to get Queue command buffer\n") );
-                    return eHAL_STATUS_FAILURE;
-                }
-                pQueueScanCmd->command = pScanCmd->command; 
-                pQueueScanCmd->sessionId = pScanCmd->sessionId;
-                pQueueScanCmd->u.scanCmd.callback = pScanCmd->u.scanCmd.callback;
-                pQueueScanCmd->u.scanCmd.pContext = pScanCmd->u.scanCmd.pContext;
-                pQueueScanCmd->u.scanCmd.reason = pScanCmd->u.scanCmd.reason;
-                pQueueScanCmd->u.scanCmd.scanID = pMac->scan.nextScanID++; //let it wrap around
-
-                pChnInfo->numOfChannels = pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels - 1;
-
-                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, 
-                   FL(" &channelToScan %0x pScanCmd(0x%X) pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList(0x%X)numChn(%d)"),
-                   &channelToScan[0], (unsigned int)pScanCmd, 
-                   (unsigned int)pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList, numChn);
-              
-                palCopyMemory(pMac->hHdd, &channelToScan[0], &pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList[1], 
-                              pChnInfo->numOfChannels * sizeof(tANI_U8));
-
-                pChnInfo->ChannelList = &channelToScan[0];
-              
-
-                scanReq.BSSType = eCSR_BSS_TYPE_ANY;
-                //Modify callers parameters in case of concurrency
-                scanReq.scanType = eSIR_ACTIVE_SCAN;
-                scanReq.maxChnTime = CSR_ACTIVE_MAX_CHANNEL_TIME_CONC;
-                scanReq.minChnTime = CSR_ACTIVE_MIN_CHANNEL_TIME_CONC;
-
-                status = csrScanCopyRequest(pMac, &pQueueScanCmd->u.scanCmd.u.scanRequest, &scanReq);
-                if(!HAL_STATUS_SUCCESS(status))
-                {
-                    if (bMemAlloc)
-                    {
-                        palFreeMemory( pMac->hHdd, pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList );
-                        pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
-                 
-                    }
-                    smsLog( pMac, LOGE, FL(" Failed to get copy csrScanRequest = %d\n"), status );
-                    return eHAL_STATUS_FAILURE;
-                }       
-                numChn = 1; //make numChn to be 1 for second iteration to create a send command
-            }  
-
-         }
-
-         fNoCmdPending = csrLLIsListEmpty( &pMac->scan.scanCmdPendingList, LL_ACCESS_LOCK );
-
-         //Logic Below is as follows
-         // If the scanCmdPendingList is empty then we directly send that command
-         // to smeCommandQueue else we buffer it in our scanCmdPendingList Queue
-         if( fNoCmdPending )
-         {
-            
-            if (pQueueScanCmd != NULL)
-            {            
-              csrLLInsertTail( &pMac->scan.scanCmdPendingList, &pQueueScanCmd->Link, LL_ACCESS_LOCK );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             status = palAllocateMemory( pMac->hHdd, (void **)&pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList, numChn );
             if( !HAL_STATUS_SUCCESS( status ) )
@@ -904,64 +628,24 @@ eHalStatus csrQueueScanRequest( tpAniSirGlobal pMac, tSmeCmd *pScanCmd )
             if (pQueueScanCmd != NULL)
             {            
                 csrLLInsertTail( &pMac->scan.scanCmdPendingList, &pQueueScanCmd->Link, LL_ACCESS_LOCK );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
             if (pSendScanCmd != NULL)
             {            
                 return csrQueueSmeCommand(pMac, pSendScanCmd, eANI_BOOLEAN_FALSE);
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-         }
-         else
-         {           
-=======
         }
         else
         {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        }
-        else
-        {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pSendScanCmd != NULL)
             {
                 csrLLInsertTail( &pMac->scan.scanCmdPendingList, &pSendScanCmd->Link, LL_ACCESS_LOCK );
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pQueueScanCmd != NULL)
             {
                 csrLLInsertTail( &pMac->scan.scanCmdPendingList, &pQueueScanCmd->Link, LL_ACCESS_LOCK );
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-         }
-
-    }
-    else
-    {  //No concurrency case
-        return csrQueueSmeCommand(pMac, pScanCmd, eANI_BOOLEAN_FALSE);
-    }
-    
-
-
-    return ( status );
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
     else
@@ -975,25 +659,13 @@ eHalStatus csrQueueScanRequest( tpAniSirGlobal pMac, tSmeCmd *pScanCmd )
     }
 
     return ( status );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 #endif
 
 /* ---------------------------------------------------------------------------
     \fn csrScan2GOnyRequest
     \brief This function will update the scan request with only 
-<<<<<<< HEAD
-<<<<<<< HEAD
-           2.4GHz valid cahnnel list.
-=======
            2.4GHz valid channel list.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           2.4GHz valid channel list.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     \param pMac
     \param pScanCmd
     \param pScanRequest
@@ -1007,21 +679,12 @@ static void csrScan2GOnyRequest(tpAniSirGlobal pMac,tSmeCmd *pScanCmd,
     static tANI_U8 validchannelList[CSR_MAX_2_4_GHZ_SUPPORTED_CHANNELS] = {0};
 
     VOS_ASSERT(pScanCmd && pScanRequest);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* To silence the KW tool null check is added */
     if((pScanCmd == NULL) || (pScanRequest == NULL))
     { 
         smsLog( pMac, LOGE, FL(" pScanCmd or pScanRequest is NULL "));
         return;
     }    
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (pScanCmd->u.scanCmd.scanID ||
        (eCSR_SCAN_REQUEST_FULL_SCAN != pScanRequest->requestType))
@@ -1047,13 +710,6 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
 {
     eHalStatus status = eHAL_STATUS_FAILURE;
     tSmeCmd *pScanCmd = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	eCsrConnectState ConnectState;
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eCsrConnectState ConnectState;
     
     if(pScanRequest == NULL)
@@ -1062,10 +718,6 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
         VOS_ASSERT(0);
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     do
     {
         if(pMac->scan.fScanEnable)
@@ -1099,24 +751,10 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                 {
                     pScanCmd->u.scanCmd.reason = eCsrScanProbeBss;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else if(eCSR_SCAN_P2P_FIND_PEER == pScanRequest->requestType)
                 {
                     pScanCmd->u.scanCmd.reason = eCsrScanP2PFindPeer;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif                
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else
                 {
                     pScanCmd->u.scanCmd.reason = eCsrScanIdleScan;
@@ -1124,30 +762,6 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                 if(pScanRequest->minChnTime == 0 && pScanRequest->maxChnTime == 0)
                 {
                     //The caller doesn't set the time correctly. Set it here
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if(pScanRequest->scanType == eSIR_ACTIVE_SCAN)
-                    {
-                        pScanRequest->maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
-                        pScanRequest->minChnTime = pMac->roam.configParam.nActiveMinChnTime;
-                    }
-                    else
-                    {
-                        pScanRequest->maxChnTime = pMac->roam.configParam.nPassiveMaxChnTime;
-                        pScanRequest->minChnTime = pMac->roam.configParam.nPassiveMinChnTime;
-                    }
-                }
-                 /*For Standalone wlan : channel time will remain the same.
-                                  For BTC with A2DP up: Channel time = Channel time * 2 , if station is not already associated.
-                                  This has been done to provide a larger scan window for faster connection during btc.Else Scan is seen
-                                  to take a long time.
-                                  For BTC with A2DP up: Channel time will not be doubled, if station is already associated.
-                               */
-                status = csrRoamGetConnectState(pMac,sessionId,&ConnectState);
-                if(pMac->btc.fA2DPUp && 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrSetDefaultScanTiming(pMac, pScanRequest->scanType, pScanRequest);
                 }
 #ifdef WLAN_AP_STA_CONCURRENCY
@@ -1169,28 +783,15 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                 status = csrRoamGetConnectState(pMac,sessionId,&ConnectState);
                 if (HAL_STATUS_SUCCESS(status) &&
                     pMac->btc.fA2DPUp &&
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    (eCSR_ASSOC_STATE_TYPE_INFRA_ASSOCIATED != ConnectState) &&
                    (eCSR_ASSOC_STATE_TYPE_IBSS_CONNECTED != ConnectState))
                 {
                     pScanRequest->maxChnTime = pScanRequest->maxChnTime << 1;
                     pScanRequest->minChnTime = pScanRequest->minChnTime << 1;
                 }  
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 		pScanRequest->maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
 		pScanRequest->minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-		pScanRequest->maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-		pScanRequest->minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //Need to make the following atomic
                 pScanCmd->u.scanCmd.scanID = pMac->scan.nextScanID++; //let it wrap around
                 
@@ -1199,23 +800,10 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                     *pScanRequestID = pScanCmd->u.scanCmd.scanID; 
                 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                //Tush : If it is the first scan request from HDD, CSR checks if it is for 11d. 
-                // If it is not, CSR will save the scan request in the pending cmd queue 
-                // & issue an 11d scan request to PE.
-                if(((0 == pScanCmd->u.scanCmd.scanID)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 // If it is the first scan request from HDD, CSR checks if it is for 11d. 
                 // If it is not, CSR will save the scan request in the pending cmd queue 
                 // & issue an 11d scan request to PE.
                 if (((0 == pScanCmd->u.scanCmd.scanID)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    && (eCSR_SCAN_REQUEST_11D_SCAN != pScanRequest->requestType))
 #ifdef SOFTAP_CHANNEL_RANGE
                    && (eCSR_SCAN_SOFTAP_CHANNEL_RANGE != pScanRequest->requestType)
@@ -1230,43 +818,19 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                     palZeroMemory(pMac->hHdd, &scanReq, sizeof(tCsrScanRequest));
 
                     p11dScanCmd = csrGetCommandBuffer(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if(p11dScanCmd)
-=======
                     if (p11dScanCmd)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    if (p11dScanCmd)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     {
                         tANI_U32 numChn = pMac->scan.baseChannels.numChannels;
 
                         palZeroMemory(pMac->hHdd, &p11dScanCmd->u.scanCmd, sizeof(tScanCmd));
                         status = palAllocateMemory( pMac->hHdd, (void **)&pChnInfo->ChannelList, numChn );
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        if( !HAL_STATUS_SUCCESS( status ) )
-=======
                         if ( !HAL_STATUS_SUCCESS( status ) )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        if ( !HAL_STATUS_SUCCESS( status ) )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         {
                             break;
                         }
                         status = palCopyMemory( pMac->hHdd, pChnInfo->ChannelList, 
                                     pMac->scan.baseChannels.channelList, numChn );
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        if( !HAL_STATUS_SUCCESS( status ) )
-=======
                         if ( !HAL_STATUS_SUCCESS( status ) )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        if ( !HAL_STATUS_SUCCESS( status ) )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         {
                             palFreeMemory( pMac->hHdd, pChnInfo->ChannelList );
                             pChnInfo->ChannelList = NULL;
@@ -1294,37 +858,17 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                             p11dScanCmd->u.scanCmd.reason = eCsrScanIdleScan;
                             scanReq.maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
                             scanReq.minChnTime = pMac->roam.configParam.nActiveMinChnTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 			    scanReq.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
 			    scanReq.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-			    scanReq.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-			    scanReq.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         }
 
                         status = csrScanCopyRequest(pMac, &p11dScanCmd->u.scanCmd.u.scanRequest, &scanReq);
                         //Free the channel list
                         palFreeMemory( pMac->hHdd, pChnInfo->ChannelList );
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-                        if(HAL_STATUS_SUCCESS(status))
-=======
                         pChnInfo->ChannelList = NULL;
 
                         if (HAL_STATUS_SUCCESS(status))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        pChnInfo->ChannelList = NULL;
-
-                        if (HAL_STATUS_SUCCESS(status))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         {
                             //Start process the command
 #ifdef WLAN_AP_STA_CONCURRENCY
@@ -1334,15 +878,7 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
 #endif                   
                             if( !HAL_STATUS_SUCCESS( status ) )
                             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 break;
                             }
                         }
@@ -1363,14 +899,7 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                 //Once we turn on Wifi
                 if(pMac->scan.fFirstScanOnly2GChnl)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                     smsLog( pMac, LOG1, FL("Scanning only 2G Channels during first scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog( pMac, LOG1, FL("Scanning only 2G Channels during first scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrScan2GOnyRequest(pMac, pScanCmd, pScanRequest);
                 }
 
@@ -1385,43 +914,19 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
 #endif
                     if( !HAL_STATUS_SUCCESS( status ) )
                     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                         smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         break;
                     }
                 }
                 else 
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog( pMac, LOGE, FL(" fail to copy request status = %d\n"), status );
-=======
                     smsLog( pMac, LOGE, FL(" fail to copy request status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog( pMac, LOGE, FL(" fail to copy request status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     break;
                 }
             }
             else 
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                //log error
-=======
                 smsLog( pMac, LOGE, FL(" pScanCmd is NULL"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGE, FL(" pScanCmd is NULL"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
         }
@@ -1433,14 +938,7 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
             //Set the flag back for restarting idle scan
             pMac->scan.fRestartIdleScan = eANI_BOOLEAN_TRUE;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         smsLog( pMac, LOGE, FL(" failed with status = %d, releasing scan cmd"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOGE, FL(" failed with status = %d, releasing scan cmd"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         csrReleaseCommandScan(pMac, pScanCmd);
     }
 
@@ -1464,40 +962,18 @@ eHalStatus csrScanRequestResult(tpAniSirGlobal pMac)
             pScanCmd->u.scanCmd.pContext = NULL;
             pScanCmd->u.scanCmd.reason = eCsrScanGetResult;
             //Need to make the following atomic
-<<<<<<< HEAD
-<<<<<<< HEAD
-            pScanCmd->u.scanCmd.scanID = pMac->scan.nextScanID++; //let it wrap around
-            status = csrQueueSmeCommand(pMac, pScanCmd, eANI_BOOLEAN_FALSE);
-            if( !HAL_STATUS_SUCCESS( status ) )
-            {
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pScanCmd->u.scanCmd.scanID = pMac->scan.nextScanID; //let it wrap around
             status = csrQueueSmeCommand(pMac, pScanCmd, eANI_BOOLEAN_FALSE);
             if( !HAL_STATUS_SUCCESS( status ) )
             {
                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrReleaseCommandScan(pMac, pScanCmd);
             }
         }
         else 
         {
             //log error
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("can not obtain a common buffer\n"));
-=======
             smsLog(pMac, LOGE, FL("can not obtain a common buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("can not obtain a common buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = eHAL_STATUS_RESOURCES;
         }
     }
@@ -1505,11 +981,6 @@ eHalStatus csrScanRequestResult(tpAniSirGlobal pMac)
     return (status);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 eHalStatus csrScanRequestLfrResult(tpAniSirGlobal pMac, tANI_U32 sessionId,
                                    csrScanCompleteCallback callback, void *pContext)
@@ -1548,10 +1019,6 @@ eHalStatus csrScanRequestLfrResult(tpAniSirGlobal pMac, tANI_U32 sessionId,
     return (status);
 }
 #endif //WLAN_FEATURE_ROAM_SCAN_OFFLOAD
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 eHalStatus csrScanAllChannels(tpAniSirGlobal pMac, eCsrRequestType reqType)
 {
@@ -1565,16 +1032,8 @@ eHalStatus csrScanAllChannels(tpAniSirGlobal pMac, eCsrRequestType reqType)
     scanReq.requestType = reqType;
     scanReq.maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
     scanReq.minChnTime = pMac->roam.configParam.nActiveMinChnTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     scanReq.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
     scanReq.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    scanReq.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-    scanReq.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Scan with invalid sessionId. 
     //This results in SME using the first available session to scan.
     status = csrScanRequest(pMac, CSR_SESSION_ID_INVALID, &scanReq, 
@@ -1603,23 +1062,10 @@ eHalStatus csrIssueRoamAfterLostlinkScan(tpAniSirGlobal pMac, tANI_U32 sessionId
 
     do
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG1, " csrIssueRoamAfterLostlinkScan called\n");
-        if(pSession->fCancelRoaming)
-        {
-            smsLog(pMac, LOGW, " lostlink roaming is cancelled\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG1, " csrIssueRoamAfterLostlinkScan called");
         if(pSession->fCancelRoaming)
         {
             smsLog(pMac, LOGW, " lostlink roaming is cancelled");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             csrScanStartIdleScan(pMac);
             status = eHAL_STATUS_SUCCESS;
             break;
@@ -1702,30 +1148,14 @@ eHalStatus csrScanGetScanChnInfo(tpAniSirGlobal pMac, void *callback, void *pCon
             status = csrQueueSmeCommand(pMac, pScanCmd, eANI_BOOLEAN_FALSE);
             if( !HAL_STATUS_SUCCESS( status ) )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrReleaseCommandScan(pMac, pScanCmd);
             }
         }
         else 
         {
             //log error
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("can not obtain a common buffer\n"));
-=======
             smsLog(pMac, LOGE, FL("can not obtain a common buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("can not obtain a common buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = eHAL_STATUS_RESOURCES;
         }
     }
@@ -1745,15 +1175,7 @@ eHalStatus csrScanHandleFailedLostlink1(tpAniSirGlobal pMac, tANI_U32 sessionId)
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "  Lostlink scan 1 failed\n");
-=======
     smsLog(pMac, LOGW, "  Lostlink scan 1 failed");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "  Lostlink scan 1 failed");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pSession->fCancelRoaming)
     {
         csrScanStartIdleScan(pMac);
@@ -1804,15 +1226,7 @@ eHalStatus csrScanHandleFailedLostlink2(tpAniSirGlobal pMac, tANI_U32 sessionId)
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "  Lostlink scan 2 failed\n");
-=======
     smsLog(pMac, LOGW, "  Lostlink scan 2 failed");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "  Lostlink scan 2 failed");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pSession->fCancelRoaming)
     {
         csrScanStartIdleScan(pMac);
@@ -1841,15 +1255,7 @@ eHalStatus csrScanHandleFailedLostlink3(tpAniSirGlobal pMac, tANI_U32 sessionId)
 {
     eHalStatus status = eHAL_STATUS_SUCCESS;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "  Lostlink scan 3 failed\n");
-=======
     smsLog(pMac, LOGW, "  Lostlink scan 3 failed");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "  Lostlink scan 3 failed");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(eANI_BOOLEAN_TRUE == csrRoamCompleteRoaming(pMac, sessionId, eANI_BOOLEAN_FALSE, eCSR_ROAM_RESULT_FAILURE))
     {
         //we are done with lostlink
@@ -1880,15 +1286,7 @@ eHalStatus csrScanRequestLostLink1( tpAniSirGlobal pMac, tANI_U32 sessionId )
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, FL(" called\n"));
-=======
     smsLog(pMac, LOGW, FL(" called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, FL(" called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     do
     {
         pCommand = csrGetCommandBuffer(pMac);
@@ -1905,16 +1303,8 @@ eHalStatus csrScanRequestLostLink1( tpAniSirGlobal pMac, tANI_U32 sessionId )
         pCommand->u.scanCmd.pContext = NULL;
         pCommand->u.scanCmd.u.scanRequest.maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
         pCommand->u.scanCmd.u.scanRequest.minChnTime = pMac->roam.configParam.nActiveMinChnTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         pCommand->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
         pCommand->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        pCommand->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-        pCommand->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pCommand->u.scanCmd.u.scanRequest.scanType = eSIR_ACTIVE_SCAN;
         if(pSession->connectedProfile.SSID.length)
         {
@@ -2012,30 +1402,14 @@ eHalStatus csrScanRequestLostLink1( tpAniSirGlobal pMac, tANI_U32 sessionId )
         status = csrQueueSmeCommand(pMac, pCommand, eANI_BOOLEAN_FALSE);
         if( !HAL_STATUS_SUCCESS( status ) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
     } while( 0 );
 
     if(!HAL_STATUS_SUCCESS(status))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, " csrScanRequestLostLink1 failed with status %d\n", status);
-=======
         smsLog(pMac, LOGW, " csrScanRequestLostLink1 failed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, " csrScanRequestLostLink1 failed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pCommand)
         {
             csrReleaseCommandScan(pMac, pCommand);
@@ -2074,15 +1448,7 @@ eHalStatus csrScanRequestLostLink2( tpAniSirGlobal pMac, tANI_U32 sessionId )
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, FL(" called\n"));
-=======
     smsLog(pMac, LOGW, FL(" called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, FL(" called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     do
     {
         pCommand = csrGetCommandBuffer(pMac);
@@ -2099,16 +1465,8 @@ eHalStatus csrScanRequestLostLink2( tpAniSirGlobal pMac, tANI_U32 sessionId )
         pCommand->u.scanCmd.pContext = NULL;
         pCommand->u.scanCmd.u.scanRequest.maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
         pCommand->u.scanCmd.u.scanRequest.minChnTime = pMac->roam.configParam.nActiveMinChnTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         pCommand->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
         pCommand->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        pCommand->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-        pCommand->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pCommand->u.scanCmd.u.scanRequest.scanType = eSIR_ACTIVE_SCAN;
         if(pSession->pCurRoamProfile)
         {
@@ -2161,30 +1519,14 @@ eHalStatus csrScanRequestLostLink2( tpAniSirGlobal pMac, tANI_U32 sessionId )
         status = csrQueueSmeCommand(pMac, pCommand, eANI_BOOLEAN_TRUE);
         if( !HAL_STATUS_SUCCESS( status ) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
     } while( 0 );
 
     if(!HAL_STATUS_SUCCESS(status))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, " csrScanRequestLostLink2 failed with status %d\n", status);
-=======
         smsLog(pMac, LOGW, " csrScanRequestLostLink2 failed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, " csrScanRequestLostLink2 failed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pCommand)
         {
             csrReleaseCommandScan(pMac, pCommand);
@@ -2212,15 +1554,7 @@ eHalStatus csrScanRequestLostLink3( tpAniSirGlobal pMac, tANI_U32 sessionId )
     tSmeCmd *pCommand;
     tANI_U8 bAddr[6] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, FL(" called\n"));
-=======
     smsLog(pMac, LOGW, FL(" called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, FL(" called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     do
     {
         pCommand = csrGetCommandBuffer(pMac);
@@ -2237,45 +1571,21 @@ eHalStatus csrScanRequestLostLink3( tpAniSirGlobal pMac, tANI_U32 sessionId )
         pCommand->u.scanCmd.pContext = NULL;
         pCommand->u.scanCmd.u.scanRequest.maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
         pCommand->u.scanCmd.u.scanRequest.minChnTime = pMac->roam.configParam.nActiveMinChnTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         pCommand->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
         pCommand->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        pCommand->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-        pCommand->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pCommand->u.scanCmd.u.scanRequest.scanType = eSIR_ACTIVE_SCAN;
         palCopyMemory(pMac->hHdd, &pCommand->u.scanCmd.u.scanRequest.bssid, bAddr, sizeof(tCsrBssid));
         //Put to the head of pending queue
         status = csrQueueSmeCommand(pMac, pCommand, eANI_BOOLEAN_TRUE);
         if( !HAL_STATUS_SUCCESS( status ) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
     } while( 0 );
     if(!HAL_STATUS_SUCCESS(status))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, " csrScanRequestLostLink3 failed with status %d\n", status);
-=======
         smsLog(pMac, LOGW, " csrScanRequestLostLink3 failed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, " csrScanRequestLostLink3 failed with status %d", status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(csrRoamCompleteRoaming(pMac, sessionId, eANI_BOOLEAN_FALSE, eCSR_ROAM_RESULT_FAILURE))
         {
             csrScanStartIdleScan(pMac);
@@ -2305,15 +1615,7 @@ eHalStatus csrScanHandleSearchForSSID(tpAniSirGlobal pMac, tSmeCmd *pCommand)
         //If there is roam command waiting, ignore this roam because the newer roam command is the one to execute
         if(csrIsRoamCommandWaitingForSession(pMac, sessionId))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGW, FL(" aborts because roam command waiting\n"));
-=======
             smsLog(pMac, LOGW, FL(" aborts because roam command waiting"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGW, FL(" aborts because roam command waiting"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
         if(pProfile == NULL)
@@ -2396,15 +1698,7 @@ eHalStatus csrScanHandleSearchForSSIDFailure(tpAniSirGlobal pMac, tSmeCmd *pComm
         palCopyMemory(pMac->hHdd, str, pCommand->u.scanCmd.u.scanRequest.SSIDs.SSIDList[0].SSID.ssId,
             pCommand->u.scanCmd.u.scanRequest.SSIDs.SSIDList[0].SSID.length);
         str[pCommand->u.scanCmd.u.scanRequest.SSIDs.SSIDList[0].SSID.length] = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, FL(" SSID = %s\n"), str);
-=======
         smsLog(pMac, LOGW, FL(" SSID = %s"), str);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, FL(" SSID = %s"), str);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
     //Check whether it is for start ibss. No need to do anything if it is a JOIN request
@@ -2414,15 +1708,7 @@ eHalStatus csrScanHandleSearchForSSIDFailure(tpAniSirGlobal pMac, tSmeCmd *pComm
                                         pCommand->u.scanCmd.roamId, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_TRUE);
         if(!HAL_STATUS_SUCCESS(status))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("failed to issue startIBSS command with status = 0x%08X\n"), status);
-=======
             smsLog(pMac, LOGE, FL("failed to issue startIBSS command with status = 0x%08X"), status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("failed to issue startIBSS command with status = 0x%08X"), status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             csrRoamCallCallback(pMac, sessionId, NULL, pCommand->u.scanCmd.roamId, eCSR_ROAM_FAILED, eCSR_ROAM_RESULT_FAILURE);
         }
     }
@@ -2544,15 +1830,7 @@ eHalStatus csrScanHandleCapChangeScanComplete(tpAniSirGlobal pMac, tANI_U32 sess
             }//Have scan result
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGW, FL("cannot find matching BSS of %02X-%02X-%02X-%02X-%02X-%02X\n"), 
-=======
                 smsLog(pMac, LOGW, FL("cannot find matching BSS of %02X-%02X-%02X-%02X-%02X-%02X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGW, FL("cannot find matching BSS of %02X-%02X-%02X-%02X-%02X-%02X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pSession->connectedProfile.bssid[0],
                         pSession->connectedProfile.bssid[1],
                         pSession->connectedProfile.bssid[2],
@@ -2618,12 +1896,6 @@ static tANI_U32 csrGetBssPreferValue(tpAniSirGlobal pMac, int rssi)
 static tANI_U32 csrGetBssCapValue(tpAniSirGlobal pMac, tSirBssDescription *pBssDesc, tDot11fBeaconIEs *pIes)
 {
     tANI_U32 ret = CSR_BSS_CAP_VALUE_NONE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if  defined (WLAN_FEATURE_VOWIFI_11R) || defined (FEATURE_WLAN_CCX) || defined(FEATURE_WLAN_LFR)
     if(CSR_IS_ROAM_PREFER_5GHZ(pMac))
     {
@@ -2633,10 +1905,6 @@ static tANI_U32 csrGetBssCapValue(tpAniSirGlobal pMac, tSirBssDescription *pBssD
         }
     }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pIes )
     {
         //We only care about 11N capability
@@ -2704,30 +1972,14 @@ static void csrScanAddToOccupiedChannels(
     channel = pResult->Result.BssDescriptor.channelId;
 
     if (!csrIsChannelPresentInList(pOccupiedChannelList, numOccupiedChannels, channel)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        && csrNeighborRoamIsSsidCandidateMatch(pMac, pIes)) 
-=======
         && csrNeighborRoamConnectedProfileMatch(pMac, pResult, pIes))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        && csrNeighborRoamConnectedProfileMatch(pMac, pResult, pIes))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         status = csrAddToChannelListFront(pOccupiedChannelList, numOccupiedChannels, channel); 
         if(HAL_STATUS_SUCCESS(status))
         { 
             pOccupiedChannels->numChannels++;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             smsLog(pMac, LOG2, FL("%s: added channel %d to the list (count=%d)"),
               __func__, channel, pOccupiedChannels->numChannels);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOG2, FL("%s: added channel %d to the list (count=%d)"),
-              __func__, channel, pOccupiedChannels->numChannels);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pOccupiedChannels->numChannels > CSR_BG_SCAN_OCCUPIED_CHANNEL_LIST_LEN) 
                 pOccupiedChannels->numChannels = CSR_BG_SCAN_OCCUPIED_CHANNEL_LIST_LEN; 
         } 
@@ -2739,39 +1991,20 @@ static void csrScanAddToOccupiedChannels(
 //pIes can not be NULL
 static void csrScanAddResult(tpAniSirGlobal pMac, tCsrScanResult *pResult, tDot11fBeaconIEs *pIes)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR 
     tpCsrNeighborRoamControlInfo    pNeighborRoamInfo = &pMac->roam.neighborRoamInfo;
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pResult->preferValue = csrGetBssPreferValue(pMac, (int)pResult->Result.BssDescriptor.rssi);
     pResult->capValue = csrGetBssCapValue(pMac, &pResult->Result.BssDescriptor, pIes);
     csrLLInsertTail( &pMac->scan.scanResultList, &pResult->Link, LL_ACCESS_LOCK );
 #ifdef FEATURE_WLAN_LFR 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    csrScanAddToOccupiedChannels(pMac, pResult, &pMac->scan.occupiedChannels, pIes);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(0 == pNeighborRoamInfo->cfgParams.channelInfo.numOfChannels)
     {
         /* Build the occupied channel list, only if "gNeighborScanChannelList" is 
            NOT set in the cfg.ini file */
         csrScanAddToOccupiedChannels(pMac, pResult, &pMac->scan.occupiedChannels, pIes);
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 }
 
@@ -2837,15 +2070,7 @@ eHalStatus csrScanGetResult(tpAniSirGlobal pMac, tCsrScanResultFilter *pFilter, 
                             }
                             else
                             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                smsLog(pMac, LOGE, FL(" fail to allocate memory for IEs\n"));
-=======
                                 smsLog(pMac, LOGE, FL(" fail to allocate memory for IEs"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                smsLog(pMac, LOGE, FL(" fail to allocate memory for IEs"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 //Need to free memory allocated by csrMatchBSS
                                 if( !pBssDesc->Result.pvIes )
                                 {
@@ -2868,15 +2093,7 @@ eHalStatus csrScanGetResult(tpAniSirGlobal pMac, tCsrScanResultFilter *pFilter, 
                 status = palAllocateMemory(pMac->hHdd, (void **)&pResult, allocLen);
                 if(!HAL_STATUS_SUCCESS(status))
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, FL("  fail to allocate memory for scan result, len=%d\n"), allocLen);
-=======
                     smsLog(pMac, LOGE, FL("  fail to allocate memory for scan result, len=%d"), allocLen);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, FL("  fail to allocate memory for scan result, len=%d"), allocLen);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if(pNewIes)
                     {
                         palFreeMemory(pMac->hHdd, pNewIes);
@@ -2897,15 +2114,7 @@ eHalStatus csrScanGetResult(tpAniSirGlobal pMac, tCsrScanResultFilter *pFilter, 
                 status = palCopyMemory(pMac->hHdd, &pResult->Result.BssDescriptor, &pBssDesc->Result.BssDescriptor, bssLen);
                 if(!HAL_STATUS_SUCCESS(status))
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, FL("  fail to copy memory for scan result\n"));
-=======
                     smsLog(pMac, LOGE, FL("  fail to copy memory for scan result"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, FL("  fail to copy memory for scan result"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     palFreeMemory(pMac->hHdd, pResult);
                     if(pNewIes)
                     {
@@ -2949,15 +2158,7 @@ eHalStatus csrScanGetResult(tpAniSirGlobal pMac, tCsrScanResultFilter *pFilter, 
         }//while
         csrLLUnlock(&pMac->scan.scanResultList);
         
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG2, FL("return %d BSS\n"), csrLLCount(&pRetList->List));
-=======
         smsLog(pMac, LOG2, FL("return %d BSS"), csrLLCount(&pRetList->List));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG2, FL("return %d BSS"), csrLLCount(&pRetList->List));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         
         if( !HAL_STATUS_SUCCESS(status) || (phResult == NULL) )
         {
@@ -3019,38 +2220,6 @@ eHalStatus csrScanFlushResult(tpAniSirGlobal pMac)
     return ( csrLLScanPurgeResult(pMac, &pMac->scan.scanResultList) );
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus csrScanFlushP2PResult(tpAniSirGlobal pMac)
-{
-        eHalStatus status = eHAL_STATUS_SUCCESS;
-        tListElem *pEntry,*pFreeElem;
-        tCsrScanResult *pBssDesc;
-        tDblLinkList *pList = &pMac->scan.scanResultList;
-
-        csrLLLock(pList);
-
-        pEntry = csrLLPeekHead( pList, LL_ACCESS_NOLOCK );
-        while( pEntry != NULL)
-        {
-                pBssDesc = GET_BASE_ADDR( pEntry, tCsrScanResult, Link );
-                if( vos_mem_compare( pBssDesc->Result.ssId.ssId, "DIRECT-", 7) )
-                {
-                        pFreeElem = pEntry;
-                        pEntry = csrLLNext(pList, pEntry, LL_ACCESS_NOLOCK);
-                        csrLLRemoveEntry(pList, pFreeElem, LL_ACCESS_NOLOCK);
-                        csrFreeScanResultEntry( pMac, pBssDesc );
-                        continue;
-                }
-                pEntry = csrLLNext(pList, pEntry, LL_ACCESS_NOLOCK);
-        }
-
-        csrLLUnlock(pList);
-
-        return (status);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrScanFlushSelectiveResult(tpAniSirGlobal pMac, v_BOOL_t flushP2P)
 {
     eHalStatus status = eHAL_STATUS_SUCCESS;
@@ -3079,10 +2248,6 @@ eHalStatus csrScanFlushSelectiveResult(tpAniSirGlobal pMac, v_BOOL_t flushP2P)
     csrLLUnlock(pList);
 
     return (status);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /**
@@ -3284,20 +2449,6 @@ eHalStatus csrScanningStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if( csrIsAnySessionInConnectState( pMac ) )
-        {
-            //In case of we are connected, we need to check whether connect status changes
-            //because scan may also run while connected.
-            csrRoamCheckForLinkStatusChange( pMac, ( tSirSmeRsp * )pMsgBuf );
-        }
-        else
-        {
-            smsLog( pMac, LOGW, "Message [0x%04x] received in state, when expecting Scan Response\n", pMsg->type );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pMsg->type == eWNI_SME_UPPER_LAYER_ASSOC_CNF) 
         {
             tCsrRoamSession  *pSession;
@@ -3356,10 +2507,6 @@ eHalStatus csrScanningStateMsgProcessor( tpAniSirGlobal pMac, void *pMsgBuf )
             {
                 smsLog( pMac, LOGW, "Message [0x%04x] received in state, when expecting Scan Response", pMsg->type );
             }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
@@ -3443,15 +2590,7 @@ tANI_BOOLEAN csrRemoveDupBssDescription( tpAniSirGlobal pMac, tSirBssDescription
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOGW, FL( "  fail to remove entry\n" ) );
-=======
                 smsLog( pMac, LOGW, FL( "  fail to remove entry" ) );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGW, FL( "  fail to remove entry" ) );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             fRC = TRUE;
 
@@ -3478,15 +2617,7 @@ eHalStatus csrAddPMKIDCandidateList( tpAniSirGlobal pMac, tANI_U32 sessionId,
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "csrAddPMKIDCandidateList called pMac->scan.NumPmkidCandidate = %d\n", pSession->NumPmkidCandidate);
-=======
     smsLog(pMac, LOGW, "csrAddPMKIDCandidateList called pMac->scan.NumPmkidCandidate = %d", pSession->NumPmkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "csrAddPMKIDCandidateList called pMac->scan.NumPmkidCandidate = %d", pSession->NumPmkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pIes )
     {
         // check if this is a RSN BSS
@@ -3518,15 +2649,7 @@ eHalStatus csrAddPMKIDCandidateList( tpAniSirGlobal pMac, tANI_U32 sessionId,
             
                 if( HAL_STATUS_SUCCESS( status ) )
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if ( pIes->RSN.preauth )
-=======
                     if ( (pIes->RSN.RSN_Cap[0] >> 0) & 0x1 ) // Bit 0 offirst byte - PreAuthentication Capability
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    if ( (pIes->RSN.RSN_Cap[0] >> 0) & 0x1 ) // Bit 0 offirst byte - PreAuthentication Capability
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     {
                         pSession->PmkidCandidateInfo[pSession->NumPmkidCandidate].preAuthSupported = eANI_BOOLEAN_TRUE;
                     }
@@ -3601,15 +2724,7 @@ eHalStatus csrAddBKIDCandidateList( tpAniSirGlobal pMac, tANI_U32 sessionId,
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "csrAddBKIDCandidateList called pMac->scan.NumBkidCandidate = %d\n", pSession->NumBkidCandidate);
-=======
     smsLog(pMac, LOGW, "csrAddBKIDCandidateList called pMac->scan.NumBkidCandidate = %d", pSession->NumBkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "csrAddBKIDCandidateList called pMac->scan.NumBkidCandidate = %d", pSession->NumBkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( pIes )
     {
         // check if this is a WAPI BSS
@@ -3689,16 +2804,6 @@ tANI_BOOLEAN csrProcessBSSDescForBKIDList(tpAniSirGlobal pMac, tSirBssDescriptio
 #endif
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac )
-{
-    tListElem *pEntry;
-    tCsrScanResult *pBssDescription;
-    tANI_S8         cand_Bss_rssi;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reason )
 {
     tListElem *pEntry;
@@ -3707,10 +2812,6 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
     tCsrScanResult *pBssDescription;
     tANI_S8         cand_Bss_rssi;
     tANI_S8         rssi_of_current_country;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_BOOLEAN    fDupBss;
 #ifdef FEATURE_WLAN_WAPI
     tANI_BOOLEAN fNewWapiBSSForCurConnection = eANI_BOOLEAN_FALSE;
@@ -3719,38 +2820,18 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
     tANI_U32 sessionId = CSR_SESSION_ID_INVALID;
     tAniSSID tmpSsid;
     v_TIME_t timer=0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    tmpSsid.length = 0;
-    cand_Bss_rssi = -128; // RSSI coming from PE is -ve
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrBssid bssid_temp =  {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 
     tmpSsid.length = 0;
     cand_Bss_rssi = -128; // RSSI coming from PE is -ve
     rssi_of_current_country = -128;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // remove the BSS descriptions from temporary list
     while( ( pEntry = csrLLRemoveTail( &pMac->scan.tempScanResults, LL_ACCESS_LOCK ) ) != NULL)
     {
         pBssDescription = GET_BASE_ADDR( pEntry, tCsrScanResult, Link );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog( pMac, LOG2, "...Bssid= %02x-%02x-%02x-%02x-%02x-%02x chan= %d, rssi = -%d\n",
-=======
         smsLog( pMac, LOGW, "...Bssid= %02x-%02x-%02x-%02x-%02x-%02x chan= %d, rssi = -%d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOGW, "...Bssid= %02x-%02x-%02x-%02x-%02x-%02x chan= %d, rssi = -%d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       pBssDescription->Result.BssDescriptor.bssId[ 0 ], pBssDescription->Result.BssDescriptor.bssId[ 1 ],
                       pBssDescription->Result.BssDescriptor.bssId[ 2 ], pBssDescription->Result.BssDescriptor.bssId[ 3 ],
                       pBssDescription->Result.BssDescriptor.bssId[ 4 ], pBssDescription->Result.BssDescriptor.bssId[ 5 ],
@@ -3761,29 +2842,11 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
         pIesLocal = (tDot11fBeaconIEs *)( pBssDescription->Result.pvIes );
         if( !pIesLocal && (!HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, &pBssDescription->Result.BssDescriptor, &pIesLocal))) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("  Cannot pared IEs\n"));
-=======
             smsLog(pMac, LOGE, FL("  Cannot pared IEs"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("  Cannot pared IEs"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             csrFreeScanResultEntry(pMac, pBssDescription);
             continue;
         }
         fDupBss = csrRemoveDupBssDescription( pMac, &pBssDescription->Result.BssDescriptor, pIesLocal, &tmpSsid , &timer );
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //Check whether we have reach out limit
-        if( CSR_SCAN_IS_OVER_BSS_LIMIT(pMac) )
-        {
-            //Limit reach
-            smsLog(pMac, LOGW, FL("  BSS limit reached\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Check whether we have reach out limit, but don't lose the LFR candidates came from FW
         if( CSR_SCAN_IS_OVER_BSS_LIMIT(pMac)
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
@@ -3793,10 +2856,6 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
         {
             //Limit reach
             smsLog(pMac, LOGW, FL("  BSS limit reached"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //Free the resources
             if( (pBssDescription->Result.pvIes == NULL) && pIesLocal )
             {
@@ -3836,24 +2895,6 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
                 }
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        //Tush: find a good AP for 11d info
-        if( csrIs11dSupported( pMac ) )
-        {
-            if(cand_Bss_rssi < pBssDescription->Result.BssDescriptor.rssi)
-            {
-                // check if country information element is present
-                if(pIesLocal->Country.present)
-                {
-                    cand_Bss_rssi = pBssDescription->Result.BssDescriptor.rssi;
-                    // learn country information
-                    csrLearnCountryInformation( pMac, &pBssDescription->Result.BssDescriptor, 
-                             pIesLocal, eANI_BOOLEAN_FALSE );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Find a good AP for 11d info
         if ( csrIs11dSupported( pMac ) )
         {
@@ -3873,31 +2914,10 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
                     palCopyMemory(pMac->hHdd, bssid_temp,
                             pBssDescription->Result.BssDescriptor.bssId, sizeof(tSirMacAddr));
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
 
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        else if( csrIs11hSupported( pMac ) && pIesLocal->Country.present && 
-                 !pMac->roam.configParam.fSupplicantCountryCodeHasPriority )
-        {
-             /* If 11h is supported, store the power information received in the Country IE */
-            csrSaveToChannelPower2G_5G( pMac, pIesLocal->Country.num_triplets * sizeof(tSirMacChanInfo), 
-                                        (tSirMacChanInfo *)(&pIesLocal->Country.triplets[0]) );
-        }
-
-        // append to main list
-        csrScanAddResult(pMac, pBssDescription, pIesLocal);
-        if( (pBssDescription->Result.pvIes == NULL) && pIesLocal )
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //get current rssi for BSS from which country code is acquired.
         if ( csrIs11dSupported(pMac) && (csrIsMacAddressEqual(pMac,
                                &pMac->scan.currentCountryBssid,
@@ -3917,20 +2937,11 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
         // append to main list
         csrScanAddResult(pMac, pBssDescription, pIesLocal);
         if ( (pBssDescription->Result.pvIes == NULL) && pIesLocal )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             palFreeMemory(pMac->hHdd, pIesLocal);
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Calculating 30% of current rssi is an idea for not to change
     // country code so freq.
     if (rssi_of_current_country != -128)
@@ -3966,10 +2977,6 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
     }
 
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Tush: If we can find the current 11d info in any of the scan results, or
     // a good enough AP with the 11d info from the scan results then no need to
     // get into ambiguous state
@@ -4143,15 +3150,7 @@ eHalStatus csrSaveToChannelPower2G_5G( tpAniSirGlobal pMac, tANI_U32 tableSize, 
                     csrLLInsertTail( &pMac->scan.channelPowerInfoList24, &pChannelSet->link, LL_ACCESS_LOCK );
                 }
                 else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog( pMac, LOGW, FL("Adding 11B/G channels in 11A mode -- First Channel is %d"), 
-=======
                     smsLog( pMac, LOGW, FL("Adding 11B/G channels in 11A mode -- First Channel is %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog( pMac, LOGW, FL("Adding 11B/G channels in 11A mode -- First Channel is %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 pChannelSet->firstChannel);
                     palFreeMemory(pMac->hHdd, pChannelSet);
                 }
@@ -4172,15 +3171,7 @@ eHalStatus csrSaveToChannelPower2G_5G( tpAniSirGlobal pMac, tANI_U32 tableSize, 
                     csrLLInsertTail( &pMac->scan.channelPowerInfoList5G, &pChannelSet->link, LL_ACCESS_LOCK );
                 }
                 else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog( pMac, LOGW, FL("Adding 11A channels in B/G mode -- First Channel is %d"), 
-=======
                     smsLog( pMac, LOGW, FL("Adding 11A channels in B/G mode -- First Channel is %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog( pMac, LOGW, FL("Adding 11A channels in B/G mode -- First Channel is %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 pChannelSet->firstChannel);
                     palFreeMemory(pMac->hHdd, pChannelSet);
                 }
@@ -4193,16 +3184,6 @@ eHalStatus csrSaveToChannelPower2G_5G( tpAniSirGlobal pMac, tANI_U32 tableSize, 
     return eHAL_STATUS_SUCCESS;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-void csrApplyPower2Current( tpAniSirGlobal pMac )
-{
-    smsLog( pMac, LOG3, FL(" Updating Cfg with power settings\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static  void csrClearDfsChannelList( tpAniSirGlobal pMac )
 {
     tSirMbMsg *pMsg;
@@ -4223,67 +3204,11 @@ static  void csrClearDfsChannelList( tpAniSirGlobal pMac )
 void csrApplyPower2Current( tpAniSirGlobal pMac )
 {
     smsLog( pMac, LOG3, FL(" Updating Cfg with power settings"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrSaveTxPowerToCfg( pMac, &pMac->scan.channelPowerInfoList24, WNI_CFG_MAX_TX_POWER_2_4 );
     csrSaveTxPowerToCfg( pMac, &pMac->scan.channelPowerInfoList5G, WNI_CFG_MAX_TX_POWER_5 );
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-void csrApplyChannelPowerCountryInfo( tpAniSirGlobal pMac, tCsrChannel *pChannelList, tANI_U8 *countryCode)
-{
-    int i;
-    eNVChannelEnabledType channelEnabledType;
-    tANI_U8 numChannels = 0;
-    tANI_U8 tempNumChannels = 0;
-    tCsrChannel ChannelList;
-    if( pChannelList->numChannels )
-    {
-        tempNumChannels = CSR_MIN(pChannelList->numChannels, WNI_CFG_VALID_CHANNEL_LIST_LEN);
-        /* If user doesn't want to scan the DFS channels lets trim them from 
-        the valid channel list*/
-        for(i = 0; i< tempNumChannels; i++)
-        {
-             if(FALSE == pMac->scan.fEnableDFSChnlScan)
-             {
-                 channelEnabledType = 
-                     vos_nv_getChannelEnabledState(pChannelList->channelList[i]);
-             }
-             else
-             {
-                channelEnabledType = NV_CHANNEL_ENABLE;
-             }
-             if( NV_CHANNEL_ENABLE ==  channelEnabledType)
-             {
-                // Ignore the channel 165 for the country INDONESIA 
-                if ( vos_mem_compare(countryCode, "ID", VOS_COUNTRY_CODE_LEN ) 
-                      && ( pChannelList->channelList[i] == 165 )
-                      && ( pMac->scan.fIgnore_chan165 == VOS_TRUE ))
-                 {
-                     continue;
-                 }
-                 else
-                 {
-                     ChannelList.channelList[numChannels] = pChannelList->channelList[i];
-                     numChannels++;
-                 }
-             }
-        }
-        ChannelList.numChannels = numChannels;   
-   
-        csrSetCfgValidChannelList(pMac, ChannelList.channelList, ChannelList.numChannels);
-        // extend scan capability
-        csrSetCfgScanControlList(pMac, countryCode, &ChannelList);     //  build a scan list based on the channel list : channel# + active/passive scan
-#ifdef FEATURE_WLAN_SCAN_PNO
-        // Send HAL UpdateScanParams message
-        //pmcUpdateScanParams(pMac, &(pMac->roam.configParam), pChannelList, TRUE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void csrApplyChannelPowerCountryInfo( tpAniSirGlobal pMac, tCsrChannel *pChannelList, tANI_U8 *countryCode, tANI_BOOLEAN updateRiva)
 {
     int i, j, count, countryIndex = -1;
@@ -4354,38 +3279,18 @@ void csrApplyChannelPowerCountryInfo( tpAniSirGlobal pMac, tCsrChannel *pChannel
             // Send HAL UpdateScanParams message
             pmcUpdateScanParams(pMac, &(pMac->roam.configParam), &ChannelList, TRUE);
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // FEATURE_WLAN_SCAN_PNO
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog( pMac, LOGE, FL("  11D channel list is empty\n"));
-=======
         smsLog( pMac, LOGE, FL("  11D channel list is empty"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOGE, FL("  11D channel list is empty"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     csrApplyPower2Current( pMac );     // Store the channel+power info in the global place: Cfg 
     csrSetCfgCountryCode(pMac, countryCode);
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-void csrResetCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce )
-=======
 void csrResetCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce, tANI_BOOLEAN updateRiva )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-void csrResetCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce, tANI_BOOLEAN updateRiva )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     if( fForce || (csrIs11dSupported( pMac ) && (!pMac->scan.f11dInfoReset)))
     {
@@ -4439,15 +3344,7 @@ void csrResetCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce, tANI_
         csrSaveChannelPowerForBand(pMac, eANI_BOOLEAN_FALSE);
         csrSaveChannelPowerForBand(pMac, eANI_BOOLEAN_TRUE);
         // ... and apply the channel list, power settings, and the country code.
-<<<<<<< HEAD
-<<<<<<< HEAD
-        csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent );
-=======
         csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent, updateRiva );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.base20MHzChannels, pMac->scan.countryCodeCurrent, updateRiva );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // clear the 11d channel list
         palZeroMemory( pMac->hHdd, &pMac->scan.channels11d, sizeof(pMac->scan.channels11d) );
         pMac->scan.f11dInfoReset = eANI_BOOLEAN_TRUE;
@@ -4470,15 +3367,7 @@ eHalStatus csrResetCountryCodeInformation(tpAniSirGlobal pMac, tANI_BOOLEAN *pfR
           && !csrIsInfraConnected(pMac))
     {
         //Only reset the country info if we don't need to restart
-<<<<<<< HEAD
-<<<<<<< HEAD
-        csrResetCountryInformation(pMac, eANI_BOOLEAN_TRUE);
-=======
         csrResetCountryInformation(pMac, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_TRUE);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        csrResetCountryInformation(pMac, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_TRUE);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     if(pfRestartNeeded)
     {
@@ -4578,23 +3467,10 @@ void csrApplyCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce )
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL(" failed to get domain from currentCountryCode %02X%02X\n"), 
-                    pMac->scan.countryCodeCurrent[0], pMac->scan.countryCodeCurrent[1]);
-            }
-            csrResetCountryInformation( pMac, eANI_BOOLEAN_FALSE );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog(pMac, LOGE, FL(" failed to get domain from currentCountryCode %02X%02X"),
                     pMac->scan.countryCodeCurrent[0], pMac->scan.countryCodeCurrent[1]);
             }
             csrResetCountryInformation( pMac, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_TRUE );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
         if ( pMac->scan.f11dInfoApplied && !fForce ) break;
@@ -4657,26 +3533,6 @@ void csrApplyCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce )
 #endif //#ifdef FEATURE_WLAN_DIAG_SUPPORT_CSR
                 if(pMac->scan.domainIdCurrent != domainId)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   /* Regulatory Domain Changed, Purge Only scan result 
-                    * which does not have channel number belong to 11d 
-                    * channel list
-                    * */
-                   smsLog(pMac, LOGW, FL("Domain Changed Old %d, new %d"),
-                                      pMac->scan.domainIdCurrent, domainId);
-                   csrScanFilter11dResult(pMac);
-                }
-                status = WDA_SetRegDomain(pMac, domainId);
-                if (status != eHAL_STATUS_SUCCESS)
-                {
-                    smsLog( pMac, LOGE, FL("  fail to set regId %d\n"), domainId );
-                }
-                pMac->scan.domainIdCurrent = domainId;
-                csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.channels11d, pMac->scan.countryCode11d );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    smsLog(pMac, LOGW, FL("Domain Changed Old %d, new %d"),
                                       pMac->scan.domainIdCurrent, domainId);
                    status = WDA_SetRegDomain(pMac, domainId);
@@ -4687,10 +3543,6 @@ void csrApplyCountryInformation( tpAniSirGlobal pMac, tANI_BOOLEAN fForce )
                 }
                 pMac->scan.domainIdCurrent = domainId;
                 csrApplyChannelPowerCountryInfo( pMac, &pMac->scan.channels11d, pMac->scan.countryCode11d, eANI_BOOLEAN_TRUE );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 // switch to active scans using this new channel list
                 pMac->scan.curScanType = eSIR_ACTIVE_SCAN;
                 pMac->scan.f11dInfoApplied = eANI_BOOLEAN_TRUE;
@@ -4767,51 +3619,25 @@ void csrSaveChannelPowerForBand( tpAniSirGlobal pMac, tANI_BOOLEAN fPopulate5GBa
     tANI_U32 Index, count=0;
     tSirMacChanInfo *pChanInfo;
     tSirMacChanInfo *pChanInfoStart;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_S32 maxChannelIndex;
 
     maxChannelIndex = ( pMac->scan.base20MHzChannels.numChannels < WNI_CFG_VALID_CHANNEL_LIST_LEN ) ?
                       pMac->scan.base20MHzChannels.numChannels : WNI_CFG_VALID_CHANNEL_LIST_LEN ;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if(HAL_STATUS_SUCCESS(palAllocateMemory(pMac->hHdd, (void **)&pChanInfo, sizeof(tSirMacChanInfo) * WNI_CFG_VALID_CHANNEL_LIST_LEN)))
     {
         palZeroMemory(pMac->hHdd, pChanInfo, sizeof(tSirMacChanInfo) * WNI_CFG_VALID_CHANNEL_LIST_LEN);
         pChanInfoStart = pChanInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        for (Index=0; Index < pMac->scan.base20MHzChannels.numChannels; Index++)
-=======
         for (Index=0; Index < maxChannelIndex; Index++)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        for (Index=0; Index < maxChannelIndex; Index++)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             if ((fPopulate5GBand && (CSR_IS_CHANNEL_5GHZ(pMac->scan.defaultPowerTable[Index].chanId))) ||
                 (!fPopulate5GBand && (CSR_IS_CHANNEL_24GHZ(pMac->scan.defaultPowerTable[Index].chanId))) )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(count >= WNI_CFG_VALID_CHANNEL_LIST_LEN)
                 {
                     smsLog( pMac, LOGW, FL(" csrSaveChannelPowerForBand, count exceeded, count =  %d"), count);
                     break;
                 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pChanInfo->firstChanNum = pMac->scan.defaultPowerTable[Index].chanId;
                 pChanInfo->numChannels  = 1;
                 pChanInfo->maxTxPower   = CSR_ROAM_MIN( pMac->scan.defaultPowerTable[Index].pwr, pMac->roam.configParam.nTxPowerCap );
@@ -4943,32 +3769,13 @@ void csrConstructCurrentValidChannelList( tpAniSirGlobal pMac, tDblLinkList *pCh
 tANI_BOOLEAN csrLearnCountryInformation( tpAniSirGlobal pMac, tSirBssDescription *pSirBssDesc,
                                          tDot11fBeaconIEs *pIes, tANI_BOOLEAN fForce)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8 Num2GChannels, bMaxNumChn;
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eHalStatus status;
     tANI_BOOLEAN fRet = eANI_BOOLEAN_FALSE;
     v_REGDOMAIN_t domainId;
     tDot11fBeaconIEs *pIesLocal = pIes;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
     if (VOS_STA_SAP_MODE == vos_get_conparam ())
         return eHAL_STATUS_SUCCESS;
-#endif
-=======
-    if (VOS_STA_SAP_MODE == vos_get_conparam ())
-        return eHAL_STATUS_SUCCESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (VOS_STA_SAP_MODE == vos_get_conparam ())
-        return eHAL_STATUS_SUCCESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     do
     {
@@ -5011,15 +3818,7 @@ tANI_BOOLEAN csrLearnCountryInformation( tpAniSirGlobal pMac, tSirBssDescription
                             csrFreeScanFilter( pMac, &filter );
                             if(fMatch)
                             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                smsLog(pMac, LOGW, "   Matching roam profile BSSID %02X-%02X-%02X-%02X-%02X-%02X causing ambiguous domain info\n",
-=======
                                 smsLog(pMac, LOGW, "   Matching roam profile BSSID %02X-%02X-%02X-%02X-%02X-%02X causing ambiguous domain info",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                smsLog(pMac, LOGW, "   Matching roam profile BSSID %02X-%02X-%02X-%02X-%02X-%02X causing ambiguous domain info",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     pSirBssDesc->bssId[0], pSirBssDesc->bssId[1], pSirBssDesc->bssId[2], 
                                     pSirBssDesc->bssId[3], pSirBssDesc->bssId[4], pSirBssDesc->bssId[5]);
                                 pMac->scan.fAmbiguous11dInfoFound = eANI_BOOLEAN_TRUE;
@@ -5033,15 +3832,7 @@ tANI_BOOLEAN csrLearnCountryInformation( tpAniSirGlobal pMac, tSirBssDescription
                         //User doesn't give profile and just connect to anything.
                         if(csrMatchBSSToConnectProfile(pMac, &pSession->connectedProfile, pSirBssDesc, pIesLocal))
                         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            smsLog(pMac, LOGW, "   Matching connect profile BSSID %02X-%02X-%02X-%02X-%02X-%02X causing ambiguous domain info\n",
-=======
                             smsLog(pMac, LOGW, "   Matching connect profile BSSID %02X-%02X-%02X-%02X-%02X-%02X causing ambiguous domain info",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                            smsLog(pMac, LOGW, "   Matching connect profile BSSID %02X-%02X-%02X-%02X-%02X-%02X causing ambiguous domain info",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 pSirBssDesc->bssId[0], pSirBssDesc->bssId[1], pSirBssDesc->bssId[2],
                                 pSirBssDesc->bssId[3], pSirBssDesc->bssId[4], pSirBssDesc->bssId[5]);
                             //Tush
@@ -5096,39 +3887,6 @@ tANI_BOOLEAN csrLearnCountryInformation( tpAniSirGlobal pMac, tSirBssDescription
                 }
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG3, FL("  %d sets each one is %d\n"), pIesLocal->Country.num_triplets, sizeof(tSirMacChanInfo));
-        // save the channel/power information from the Channel IE.
-        //sizeof(tSirMacChanInfo) has to be 3
-        if (eHAL_STATUS_SUCCESS != csrSaveToChannelPower2G_5G( pMac, pIesLocal->Country.num_triplets * sizeof(tSirMacChanInfo),
-                    (tSirMacChanInfo *)(&pIesLocal->Country.triplets[0]) ))
-        {
-            fRet = eANI_BOOLEAN_FALSE;
-            return fRet;
-        }
-
-        // set the indicator of the channel where the country IE was found...
-        pMac->scan.channelOf11dInfo = pSirBssDesc->channelId;
-        // Populate both band channel lists based on what we found in the country information...
-        csrSetOppositeBandChannelInfo( pMac );
-        bMaxNumChn = WNI_CFG_VALID_CHANNEL_LIST_LEN;
-        // construct 2GHz channel list first
-        csrConstructCurrentValidChannelList( pMac, &pMac->scan.channelPowerInfoList24, pMac->scan.channels11d.channelList, 
-                                                bMaxNumChn, &Num2GChannels );
-        // construct 5GHz channel list now
-        if(bMaxNumChn > Num2GChannels)
-        {
-            csrConstructCurrentValidChannelList( pMac, &pMac->scan.channelPowerInfoList5G, pMac->scan.channels11d.channelList + Num2GChannels,
-                                                 bMaxNumChn - Num2GChannels,
-                                                 &pMac->scan.channels11d.numChannels );
-        }
-
-        pMac->scan.channels11d.numChannels += Num2GChannels;
-        fRet = eANI_BOOLEAN_TRUE;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG3, FL("  %d sets each one is %d"), pIesLocal->Country.num_triplets, sizeof(tSirMacChanInfo));
 
         // set the indicator of the channel where the country IE was found...
@@ -5190,10 +3948,6 @@ tANI_BOOLEAN csrLearnCountryInformation( tpAniSirGlobal pMac, tSirBssDescription
             fRet = eANI_BOOLEAN_TRUE;
 
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     } while( 0 );
     
@@ -5207,15 +3961,7 @@ tANI_BOOLEAN csrLearnCountryInformation( tpAniSirGlobal pMac, tSirBssDescription
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-static void csrSaveScanResults( tpAniSirGlobal pMac )
-=======
 static void csrSaveScanResults( tpAniSirGlobal pMac, tANI_U8 reason )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static void csrSaveScanResults( tpAniSirGlobal pMac, tANI_U8 reason )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     // initialize this to FALSE. profMoveInterimScanResultsToMainList() routine
     // will set this to the channel where an .11d beacon is seen
@@ -5227,15 +3973,7 @@ static void csrSaveScanResults( tpAniSirGlobal pMac, tANI_U8 reason )
     // only if the applied 11d info could be found in one of the scan results
     pMac->scan.fCurrent11dInfoMatch = eANI_BOOLEAN_FALSE;
     // move the scan results from interim list to the main scan list
-<<<<<<< HEAD
-<<<<<<< HEAD
-    csrMoveTempScanResultsToMainList( pMac );
-=======
     csrMoveTempScanResultsToMainList( pMac, reason );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    csrMoveTempScanResultsToMainList( pMac, reason );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Now check if we gathered any domain/country specific information
     // If so, we should update channel list and apply Tx power settings
@@ -5243,17 +3981,6 @@ static void csrSaveScanResults( tpAniSirGlobal pMac, tANI_U8 reason )
     {
         csrApplyCountryInformation( pMac, FALSE );
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    else if( csrIs11hSupported(pMac) && !pMac->roam.configParam.fSupplicantCountryCodeHasPriority) 
-    {
-        // If llh is enabled, store the channel + power information gathered  in the cfg
-        csrApplyPower2Current( pMac );
-    }     
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -5385,15 +4112,7 @@ tANI_BOOLEAN csrHandleScan11d1Failure(tpAniSirGlobal pMac, tSmeCmd *pCommand)
     tANI_BOOLEAN fRet = eANI_BOOLEAN_TRUE;
     
     //Apply back the default setting and passively scan one more time.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    csrResetCountryInformation(pMac, eANI_BOOLEAN_FALSE);
-=======
     csrResetCountryInformation(pMac, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_TRUE);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    csrResetCountryInformation(pMac, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_TRUE);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pCommand->u.scanCmd.reason = eCsrScan11d2;
     if(HAL_STATUS_SUCCESS(csrScanChannels(pMac, pCommand)))
     {
@@ -5419,14 +4138,7 @@ tANI_BOOLEAN csrHandleScan11dSuccess(tpAniSirGlobal pMac, tSmeCmd *pCommand)
             if(pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList)
             {
                 palFreeMemory(pMac->hHdd, pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList); 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                 pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             if(HAL_STATUS_SUCCESS(palAllocateMemory(pMac->hHdd, (void **)&pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList, cChannels)))
             {
@@ -5478,15 +4190,7 @@ tANI_BOOLEAN csrScanComplete( tpAniSirGlobal pMac, tSirSmeScanRsp *pScanRsp )
                 //This check only valid here because csrSaveScanresults is not yet called
                 fSuccess = (!csrLLIsListEmpty(&pMac->scan.tempScanResults, LL_ACCESS_LOCK));
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-            csrSaveScanResults(pMac);
-=======
             csrSaveScanResults(pMac, pCommand->u.scanCmd.reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            csrSaveScanResults(pMac, pCommand->u.scanCmd.reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_CSR
             {
@@ -5526,15 +4230,7 @@ tANI_BOOLEAN csrScanComplete( tpAniSirGlobal pMac, tSirSmeScanRsp *pScanRsp )
                                 {
                                     if(!HAL_STATUS_SUCCESS(csrGetParsedBssDescriptionIEs(pMac, &pScanResult->BssDescriptor, &pIes)))
                                     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        smsLog(pMac, LOGE, FL(" fail to parse IEs\n"));
-=======
                                         smsLog(pMac, LOGE, FL(" fail to parse IEs"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                        smsLog(pMac, LOGE, FL(" fail to parse IEs"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                         break;
                                     }
                                     palCopyMemory(pMac->hHdd, pScanLog->bssid[n], pScanResult->BssDescriptor.bssId, 6);
@@ -5568,15 +4264,7 @@ tANI_BOOLEAN csrScanComplete( tpAniSirGlobal pMac, tSirSmeScanRsp *pScanRsp )
             {
             case eCsrNext11dScan1Success:
             case eCsrNext11dScan2Success:
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOG2, FL("11dScan1/3 produced results.  Reissue Active scan...\n"));
-=======
                 smsLog( pMac, LOG2, FL("11dScan1/3 produced results.  Reissue Active scan..."));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOG2, FL("11dScan1/3 produced results.  Reissue Active scan..."));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 // if we found country information, no need to continue scanning further, bail out
                 fRemoveCommand = eANI_BOOLEAN_TRUE;
                 NextCommand = eCsrNext11dScanComplete;
@@ -5637,29 +4325,13 @@ tANI_BOOLEAN csrScanComplete( tpAniSirGlobal pMac, tSirSmeScanRsp *pScanRsp )
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGW, FL("Scan Completion called but SCAN command is not ACTIVE ...\n"));
-=======
             smsLog( pMac, LOGW, FL("Scan Completion called but SCAN command is not ACTIVE ..."));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog( pMac, LOGW, FL("Scan Completion called but SCAN command is not ACTIVE ..."));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             fRemoveCommand = eANI_BOOLEAN_FALSE;
         }
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog( pMac, LOGW, FL("Scan Completion called but NO commands are ACTIVE ...\n"));
-=======
         smsLog( pMac, LOGW, FL("Scan Completion called but NO commands are ACTIVE ..."));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOGW, FL("Scan Completion called but NO commands are ACTIVE ..."));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         fRemoveCommand = eANI_BOOLEAN_FALSE;
     }
    
@@ -5737,15 +4409,7 @@ tCsrScanResult *csrScanSaveBssDescriptionToInterimList( tpAniSirGlobal pMac,
         if( pIes->SSID.present && !csrIsNULLSSID(pIes->SSID.ssid, pIes->SSID.num_ssid) )
         {
             //SSID not hidden
-<<<<<<< HEAD
-<<<<<<< HEAD
-            tANI_U32 len = pIes->SSID.num_ssid;;
-=======
             tANI_U32 len = pIes->SSID.num_ssid;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            tANI_U32 len = pIes->SSID.num_ssid;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (len > SIR_MAC_MAX_SSID_LENGTH)
             {
                // truncate to fit in our struct
@@ -5828,26 +4492,12 @@ tANI_BOOLEAN csrIsDuplicateBssDescription( tpAniSirGlobal pMac, tSirBssDescripti
                 }
             }while(0);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* In case of P2P devices, ess and ibss will be set to zero */
         else if (!pCap1->ess && 
                 csrIsMacAddressEqual( pMac, (tCsrBssid *)pSirBssDesc1->bssId, (tCsrBssid *)pSirBssDesc2->bssId))
         {
             fMatch = TRUE;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if(pIes1)
@@ -5998,11 +4648,6 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
             tANI_U8 cChannels = 0;
 
             //Different scan type can reach this point, we need to distinguish it
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             if( eCsrScanGetLfrResult == pCommand->u.scanCmd.reason )
             {
@@ -6011,10 +4656,6 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
             }
             else
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if( eCsrScanSetBGScanParam == pCommand->u.scanCmd.reason )
             {
                 //eCsrScanSetBGScanParam uses different structure
@@ -6052,15 +4693,7 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
                 else
                 {
                     //Cannot continue
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog( pMac, LOGE, "CSR: Processing internal SCAN results...csrGetCfgValidChannels failed\n" );
-=======
                     smsLog( pMac, LOGE, "CSR: Processing internal SCAN results...csrGetCfgValidChannels failed" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog( pMac, LOGE, "CSR: Processing internal SCAN results...csrGetCfgValidChannels failed" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     break;
                 }
             }
@@ -6106,15 +4739,6 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGW, " Scanrsp fail (0x%08X), length = %d\n", pScanRsp->statusCode, pScanRsp->length );
-            //HO bg scan/probe failed no need to try autonomously
-            if(eCsrScanBgScan == pCommand->u.scanCmd.reason ||
-               eCsrScanProbeBss == pCommand->u.scanCmd.reason ||
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog( pMac, LOGW, " Scanrsp fail (0x%08X), length = %d (expected %d)",
                     pScanRsp->statusCode, pScanRsp->length, cbScanResult);
             //HO bg scan/probe failed no need to try autonomously
@@ -6123,10 +4747,6 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
                eCsrScanGetLfrResult == pCommand->u.scanCmd.reason ||
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                eCsrScanSetBGScanParam == pCommand->u.scanCmd.reason)
             {
                 fRemoveCommand = eANI_BOOLEAN_TRUE;
@@ -6135,15 +4755,7 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
     }while(0);
     if ( eSIR_SME_MORE_SCAN_RESULTS_FOLLOW != pScanRsp->statusCode )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG1, " Scan received %d unique BSS scan reason is %d\n", csrLLCount(&pMac->scan.tempScanResults), pCommand->u.scanCmd.reason);
-=======
         smsLog(pMac, LOG1, " Scan received %d unique BSS scan reason is %d", csrLLCount(&pMac->scan.tempScanResults), pCommand->u.scanCmd.reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG1, " Scan received %d unique BSS scan reason is %d", csrLLCount(&pMac->scan.tempScanResults), pCommand->u.scanCmd.reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         fRemoveCommand = csrScanComplete( pMac, pScanRsp );
         fRet = eANI_BOOLEAN_TRUE;
     }//if ( eSIR_SME_MORE_SCAN_RESULTS_FOLLOW != pScanRsp->statusCode )
@@ -6155,13 +4767,6 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
 #ifdef WLAN_AP_STA_CONCURRENCY
     if (!csrLLIsListEmpty( &pMac->scan.scanCmdPendingList, LL_ACCESS_LOCK ))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         palTimerStart(pMac->hHdd, pMac->scan.hTimerStaApConcTimer, 
-                 CSR_SCAN_STAAP_CONC_INTERVAL, eANI_BOOLEAN_FALSE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Pending scan commands in the list because the previous scan command
          * was split into a scan command on one channel + a scan command for all
          * remaining channels.
@@ -6194,10 +4799,6 @@ static tANI_BOOLEAN csrScanProcessScanResults( tpAniSirGlobal pMac, tSmeCmd *pCo
             /* minimum timer granularity is 10ms */
             palTimerStart(pMac->hHdd, pMac->scan.hTimerStaApConcTimer, 10 * 1000, eANI_BOOLEAN_FALSE);
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
     return (fRet);
@@ -6245,64 +4846,31 @@ eHalStatus csrScanSmeScanResponse( tpAniSirGlobal pMac, void *pMsgBuf )
                 break;
             case eCsrScanGetScanChnInfo:
                 pScanChnInfo = (tSmeGetScanChnRsp *)pMsgBuf;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /*
                  * status code not available in tSmeGetScanChnRsp, so 
                  * by default considereing it to be success
                  */
                 scanStatus = eSIR_SME_SUCCESS;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrScanAgeResults(pMac, pScanChnInfo);
                 break;
             case eCsrScanForCapsChange:
                 csrScanProcessScanResults( pMac, pCommand, pScanRsp, &fRemoveCommand );
                 break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             case eCsrScanP2PFindPeer:
               scanStatus = ((eSIR_SME_SUCCESS == pScanRsp->statusCode) && (pScanRsp->length > 50)) ? eCSR_SCAN_FOUND_PEER : eCSR_SCAN_FAILURE;
               csrScanProcessScanResults( pMac, pCommand, pScanRsp, NULL );
               break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif                
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             case eCsrScanSetBGScanParam:
             default:
                 if(csrScanProcessScanResults( pMac, pCommand, pScanRsp, &fRemoveCommand ))
                 {
                     //Not to get channel info if the scan is not a wildcard scan because
                     //it may cause scan results got aged out incorrectly.
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if( csrScanIsWildCardScan( pMac, pCommand ) && (!pCommand->u.scanCmd.u.scanRequest.p2pSearch) )
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if( csrScanIsWildCardScan( pMac, pCommand ) && (!pCommand->u.scanCmd.u.scanRequest.p2pSearch)
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
                         && (pCommand->u.scanCmd.reason != eCsrScanGetLfrResult)
 #endif
                       )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     {
                         //Get the list of channels scanned
                        if( pCommand->u.scanCmd.reason != eCsrScanUserRequest)
@@ -6323,15 +4891,7 @@ eHalStatus csrScanSmeScanResponse( tpAniSirGlobal pMac, void *pMsgBuf )
 
                 csrReleaseScanCommand(pMac, pCommand, scanStatus);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            }
-=======
                 }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smeProcessPendingQueue( pMac );
         }
         else
@@ -6458,15 +5018,7 @@ tANI_BOOLEAN csrScanAgeOutBss(tpAniSirGlobal pMac, tCsrScanResult *pResult)
                                                       pSession->pConnectBssDesc, NULL))
               )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOG2, "Aging out BSS %02X-%02X-%02X-%02X-%02X-%02X Channel %d\n",
-=======
                 smsLog(pMac, LOGW, "Aging out BSS %02X-%02X-%02X-%02X-%02X-%02X Channel %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGW, "Aging out BSS %02X-%02X-%02X-%02X-%02X-%02X Channel %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           pResult->Result.BssDescriptor.bssId[0],
                                           pResult->Result.BssDescriptor.bssId[1],
                                           pResult->Result.BssDescriptor.bssId[2],
@@ -6478,31 +5030,13 @@ tANI_BOOLEAN csrScanAgeOutBss(tpAniSirGlobal pMac, tCsrScanResult *pResult)
                 if( csrLLRemoveEntry(&pMac->scan.scanResultList, &pResult->Link, LL_ACCESS_NOLOCK) )
                 {
                     csrFreeScanResultEntry(pMac, pResult);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                }
-                fRet = eANI_BOOLEAN_TRUE;
-=======
                     fRet = eANI_BOOLEAN_TRUE;
                 }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    fRet = eANI_BOOLEAN_TRUE;
-                }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
         } //valid session
     } //for
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if( CSR_ROAM_SESSION_MAX == i )
-=======
     if( CSR_ROAM_SESSION_MAX == i && fRet != eANI_BOOLEAN_TRUE )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if( CSR_ROAM_SESSION_MAX == i && fRet != eANI_BOOLEAN_TRUE )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         //reset the counter so this won't hapeen too soon
         pResult->AgingCount = (tANI_S32)pMac->roam.configParam.agingCount;
@@ -6657,49 +5191,14 @@ eHalStatus csrSendMBScanReq( tpAniSirGlobal pMac, tANI_U16 sessionId,
                                                         SIR_SCAN_MAX_NUM_SSID;
             if((pScanReq->SSIDs.numOfSSIDs != 0) && ( eSIR_PASSIVE_SCAN != scanType ))
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            for (i = 0; i < pMsg->numSsid; i++)
-            {
-                palCopyMemory(pMac->hHdd, &pMsg->ssId[i], &pScanReq->SSIDs.SSIDList[i].SSID, sizeof(tSirMacSSid));
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 for (i = 0; i < pMsg->numSsid; i++)
                 {
                     palCopyMemory(pMac->hHdd, &pMsg->ssId[i], &pScanReq->SSIDs.SSIDList[i].SSID, sizeof(tSirMacSSid));
                 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else
             {
                 //Otherwise we scan all SSID and let the result filter later
-<<<<<<< HEAD
-<<<<<<< HEAD
-            for (i = 0; i < SIR_SCAN_MAX_NUM_SSID; i++)
-            {
-                pMsg->ssId[i].length = 0;
-            }
-            }
-
-//TODO: This preprocessor macro should be removed from CSR for production driver
-//This is a temperarory fix for scanning on FPGA.
-#if defined (ANI_CHIPSET_VIRGO) || defined (LIBRA_FPGA)|| defined (VOLANS_FPGA)
-            pMsg->minChannelTime = pal_cpu_to_be32(minChnTime * 8);
-            pMsg->maxChannelTime = pal_cpu_to_be32(maxChnTime * 8);
-#elif defined (ANI_CHIPSET_TAURUS) || defined(ANI_CHIPSET_LIBRA) || defined(ANI_CHIPSET_VOLANS)
-            pMsg->minChannelTime = pal_cpu_to_be32(minChnTime);
-            pMsg->maxChannelTime = pal_cpu_to_be32(maxChnTime);
-#else
-#error unknown chipset
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 for (i = 0; i < SIR_SCAN_MAX_NUM_SSID; i++)
                 {
                     pMsg->ssId[i].length = 0;
@@ -6710,10 +5209,6 @@ eHalStatus csrSendMBScanReq( tpAniSirGlobal pMac, tANI_U16 sessionId,
             pMsg->maxChannelTime = pal_cpu_to_be32(maxChnTime);
             pMsg->minChannelTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
             pMsg->maxChannelTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //hidden SSID option
             pMsg->hiddenSsid = pScanReqParam->hiddenSsid;
             //rest time
@@ -6741,18 +5236,7 @@ eHalStatus csrSendMBScanReq( tpAniSirGlobal pMac, tANI_U16 sessionId,
                 palCopyMemory(pMac->hHdd, (tANI_U8 *)pMsg+pMsg->uIEFieldOffset,
                                     pScanReq->pIEField, pScanReq->uIEFieldLen );
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
             pMsg->p2pSearch = pScanReq->p2pSearch;
-            pMsg->skipDfsChnlInP2pSearch = pScanReq->skipDfsChnlInP2pSearch;
-#endif
-=======
-            pMsg->p2pSearch = pScanReq->p2pSearch;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            pMsg->p2pSearch = pScanReq->p2pSearch;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             if (pScanReq->requestType == eCSR_SCAN_HO_BG_SCAN) 
             {
@@ -6760,11 +5244,6 @@ eHalStatus csrSendMBScanReq( tpAniSirGlobal pMac, tANI_U16 sessionId,
             } 
 
         }while(0);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG1, FL("domainIdCurrent %d scanType %d bssType %d requestType %d numChannels %d  "),
                pMac->scan.domainIdCurrent, pMsg->scanType, pMsg->bssType, 
                pScanReq->requestType, pMsg->channelList.numChannels);
@@ -6774,24 +5253,10 @@ eHalStatus csrSendMBScanReq( tpAniSirGlobal pMac, tANI_U16 sessionId,
             smsLog(pMac, LOG3, FL("channelNumber[%d]= %d"), i, pMsg->channelList.channelNumber[i]);
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(HAL_STATUS_SUCCESS(status))
         {
             status = palSendMBMessage(pMac->hHdd, pMsg);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        else {
-            palFreeMemory(pMac->hHdd, pMsg);
-        }
-    }//Success allocated memory
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         else 
         {
             smsLog( pMac, LOGE, FL(" failed to send down scan req with status = %d"), status );
@@ -6802,23 +5267,11 @@ eHalStatus csrSendMBScanReq( tpAniSirGlobal pMac, tANI_U16 sessionId,
     {
         smsLog( pMac, LOGE, FL(" memory allocation failure"));
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return( status );
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus csrSendMBScanResultReq( tpAniSirGlobal pMac, tScanReqParam *pScanReqParam )
-=======
 eHalStatus csrSendMBScanResultReq( tpAniSirGlobal pMac, tANI_U32 sessionId, tScanReqParam *pScanReqParam )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-eHalStatus csrSendMBScanResultReq( tpAniSirGlobal pMac, tANI_U32 sessionId, tScanReqParam *pScanReqParam )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eHalStatus status = eHAL_STATUS_SUCCESS;
     tSirSmeScanReq *pMsg;
@@ -6831,36 +5284,18 @@ eHalStatus csrSendMBScanResultReq( tpAniSirGlobal pMac, tANI_U32 sessionId, tSca
         palZeroMemory(pMac->hHdd, pMsg, msgLen);
         pMsg->messageType = pal_cpu_to_be16((tANI_U16)eWNI_SME_SCAN_REQ);
         pMsg->length = pal_cpu_to_be16(msgLen);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pMsg->sessionId = 0;
-=======
         pMsg->sessionId = sessionId;
         pMsg->transactionId = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        pMsg->sessionId = sessionId;
-        pMsg->transactionId = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMsg->returnFreshResults = pScanReqParam->freshScan;
         //Always ask for unique result
         pMsg->returnUniqueResults = pScanReqParam->fUniqueResult;
         pMsg->returnAfterFirstMatch = pScanReqParam->bReturnAfter1stMatch;
         status = palSendMBMessage(pMac->hHdd, pMsg);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (!HAL_STATUS_SUCCESS(status))
         {
             smsLog( pMac, LOGE, FL(" failed to send down scan req with status = %d\n"), status );
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }                             
 
     return( status );
@@ -6940,31 +5375,13 @@ eHalStatus csrScanChannels( tpAniSirGlobal pMac, tSmeCmd *pCommand )
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus csrScanRetrieveResult(tpAniSirGlobal pMac)
-=======
 eHalStatus csrScanRetrieveResult(tpAniSirGlobal pMac, tSmeCmd *pCommand)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-eHalStatus csrScanRetrieveResult(tpAniSirGlobal pMac, tSmeCmd *pCommand)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     eHalStatus status = eHAL_STATUS_FAILURE;
     tScanReqParam scanReq;
     
     do
     {    
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //not a fresh scan
-        scanReq.freshScan = CSR_SME_SCAN_FLAGS_DELETE_CACHE;
-        scanReq.fUniqueResult = TRUE;
-        scanReq.bReturnAfter1stMatch = CSR_SCAN_RETURN_AFTER_ALL_CHANNELS;
-        status = csrSendMBScanResultReq(pMac, &scanReq);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
         if (eCsrScanGetLfrResult == pCommand->u.scanCmd.reason)
         {
@@ -6982,10 +5399,6 @@ eHalStatus csrScanRetrieveResult(tpAniSirGlobal pMac, tSmeCmd *pCommand)
            scanReq.bReturnAfter1stMatch = CSR_SCAN_RETURN_AFTER_ALL_CHANNELS;
         }
         status = csrSendMBScanResultReq(pMac, pCommand->sessionId, &scanReq);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }while(0);
     
     return (status);
@@ -7005,37 +5418,17 @@ eHalStatus csrProcessScanCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
     for( i = 0; i < CSR_ROAM_SESSION_MAX; i++ )
     {
       pCommand->u.scanCmd.lastRoamState[i] = csrRoamStateChange( pMac, eCSR_ROAMING_STATE_SCANNING, i);
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog( pMac, LOG3, "starting SCAN command from %d state.... reason is %d\n", pCommand->u.scanCmd.lastRoamState[i], pCommand->u.scanCmd.reason );
-=======
       smsLog( pMac, LOG3, "starting SCAN command from %d state.... reason is %d", pCommand->u.scanCmd.lastRoamState[i], pCommand->u.scanCmd.reason );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog( pMac, LOG3, "starting SCAN command from %d state.... reason is %d", pCommand->u.scanCmd.lastRoamState[i], pCommand->u.scanCmd.reason );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     switch(pCommand->u.scanCmd.reason)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    case eCsrScanGetResult:
-    case eCsrScanForCapsChange:     //For cap change, LIM already save BSS description
-        status = csrScanRetrieveResult(pMac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
     case eCsrScanGetLfrResult:
 #endif
     case eCsrScanGetResult:
     case eCsrScanForCapsChange:     //For cap change, LIM already save BSS description
         status = csrScanRetrieveResult(pMac, pCommand);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         break;
     case eCsrScanSetBGScanParam:
         status = csrProcessSetBGScanParam(pMac, pCommand);
@@ -7092,14 +5485,7 @@ eHalStatus csrProcessScanCommand( tpAniSirGlobal pMac, tSmeCmd *pCommand )
                 {
                     //pChannel points to the channellist from the command, free it.
                     vos_mem_free(pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                     pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
                 pCommand->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels = j;
                 pCommand->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList = newChannelInfo.ChannelList;
@@ -7160,15 +5546,7 @@ eHalStatus csrScanSetBGScanparams(tpAniSirGlobal pMac, tCsrBGScanRequest *pScanR
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, FL("ran out of memory\n"));
-=======
                     smsLog(pMac, LOGE, FL("ran out of memory"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, FL("ran out of memory"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrReleaseCommandScan(pMac, pCommand);
                     break;
                 }
@@ -7192,15 +5570,7 @@ eHalStatus csrScanSetBGScanparams(tpAniSirGlobal pMac, tCsrBGScanRequest *pScanR
             status = csrQueueSmeCommand(pMac, pCommand, eANI_BOOLEAN_FALSE);
             if( !HAL_STATUS_SUCCESS( status ) )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrReleaseCommandScan( pMac, pCommand );
                 break;
             }
@@ -7231,15 +5601,7 @@ eHalStatus csrScanBGScanAbort( tpAniSirGlobal pMac )
         status = csrQueueSmeCommand(pMac, pCommand, eANI_BOOLEAN_FALSE);
         if( !HAL_STATUS_SUCCESS( status ) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
             smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             csrReleaseCommandScan( pMac, pCommand );
             break;
         }
@@ -7273,15 +5635,7 @@ eHalStatus csrScanBGScanEnable(tpAniSirGlobal pMac)
             status = csrQueueSmeCommand(pMac, pCommand, eANI_BOOLEAN_FALSE);
             if( !HAL_STATUS_SUCCESS( status ) )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 csrReleaseCommandScan( pMac, pCommand );
                 break;
             }
@@ -7295,15 +5649,7 @@ eHalStatus csrScanBGScanEnable(tpAniSirGlobal pMac)
     {
         //We don't have BG scan so stop the aging timer
         csrScanStopResultAgingTimer(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("cannot continue because the bgscan interval is 0\n"));
-=======
         smsLog(pMac, LOGE, FL("cannot continue because the bgscan interval is 0"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("cannot continue because the bgscan interval is 0"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status = eHAL_STATUS_INVALID_PARAMETER;
     }
     
@@ -7324,20 +5670,11 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
         if(HAL_STATUS_SUCCESS(status))
         {
             status = palCopyMemory(pMac->hHdd, pDstReq, pSrcReq, sizeof(tCsrScanRequest));
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* Re-initialize the pointers to NULL since we did a copy */
             pDstReq->pIEField = NULL;
             pDstReq->ChannelInfo.ChannelList = NULL;
             pDstReq->SSIDs.SSIDList = NULL;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(pSrcReq->uIEFieldLen == 0)
             {
                 pDstReq->pIEField = NULL;
@@ -7352,15 +5689,7 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, "No memory for scanning IE fields\n");
-=======
                     smsLog(pMac, LOGE, "No memory for scanning IE fields");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, "No memory for scanning IE fields");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     break;
                 }
             }//Allocate memory for IE field
@@ -7377,15 +5706,7 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
                     if(!HAL_STATUS_SUCCESS(status))
                     {
                         pDstReq->ChannelInfo.numOfChannels = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        smsLog(pMac, LOGE, "No memory for scanning Channel List\n");
-=======
                         smsLog(pMac, LOGE, "No memory for scanning Channel List");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        smsLog(pMac, LOGE, "No memory for scanning Channel List");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         break;
                     }
 
@@ -7411,15 +5732,6 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
                              * that is the only way to find p2p peers.
                              * This can happen only if band is set to 5Ghz mode.
                              */
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            if((csrRoamIsValidChannel(pMac, pSrcReq->ChannelInfo.ChannelList[index])) || 
-                               ((eCSR_SCAN_P2P_DISCOVERY == pSrcReq->requestType) && 
-                                CSR_IS_SOCIAL_CHANNEL(pSrcReq->ChannelInfo.ChannelList[index])))
-                            {
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             if((csrRoamIsValidChannel(pMac, pSrcReq->ChannelInfo.ChannelList[index])) ||
                                ((eCSR_SCAN_P2P_DISCOVERY == pSrcReq->requestType) &&
                                 CSR_IS_SOCIAL_CHANNEL(pSrcReq->ChannelInfo.ChannelList[index])))
@@ -7452,25 +5764,12 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
                                   continue;
                                 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 pDstReq->ChannelInfo.ChannelList[new_index] =
                                     pSrcReq->ChannelInfo.ChannelList[index];
                                 new_index++;
                             }
                         }
                         pDstReq->ChannelInfo.numOfChannels = new_index;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    }
-                    else
-                    {
-                        smsLog(pMac, LOGE, "Couldn't get the valid Channel List, keeping requester's list\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_LFR
                         if ((eCSR_SCAN_HO_BG_SCAN == pSrcReq->requestType) &&
                                 (0 == pDstReq->ChannelInfo.numOfChannels))
@@ -7497,10 +5796,6 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
                     else
                     {
                         smsLog(pMac, LOGE, "Couldn't get the valid Channel List, keeping requester's list");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         palCopyMemory(pMac->hHdd, pDstReq->ChannelInfo.ChannelList, pSrcReq->ChannelInfo.ChannelList, 
                                         pSrcReq->ChannelInfo.numOfChannels * sizeof(*pDstReq->ChannelInfo.ChannelList));
                         pDstReq->ChannelInfo.numOfChannels = pSrcReq->ChannelInfo.numOfChannels;
@@ -7525,29 +5820,12 @@ eHalStatus csrScanCopyRequest(tpAniSirGlobal pMac, tCsrScanRequest *pDstReq, tCs
                 else
                 {
                     pDstReq->SSIDs.numOfSSIDs = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, "No memory for scanning SSID List\n");
-                    break;
-                }
-            }//Allocate memory for SSID List
-#ifdef WLAN_FEATURE_P2P
-            pDstReq->p2pSearch = pSrcReq->p2pSearch;
-            pDstReq->skipDfsChnlInP2pSearch = pSrcReq->skipDfsChnlInP2pSearch;
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     smsLog(pMac, LOGE, "No memory for scanning SSID List");
                     break;
                 }
             }//Allocate memory for SSID List
             pDstReq->p2pSearch = pSrcReq->p2pSearch;
             pDstReq->skipDfsChnlInP2pSearch = pSrcReq->skipDfsChnlInP2pSearch;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         }
     }while(0);
@@ -7596,15 +5874,7 @@ void csrScanCallCallback(tpAniSirGlobal pMac, tSmeCmd *pCommand, eCsrScanStatus 
         pCommand->u.scanCmd.callback(pMac, pCommand->u.scanCmd.pContext, pCommand->u.scanCmd.scanID, scanStatus); 
 //        sme_AcquireGlobalLock( &pMac->sme );
     } else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog( pMac, LOG2, "%s:%d - Callback NULL!!!\n", __FUNCTION__, __LINE__);
-=======
         smsLog( pMac, LOG2, "%s:%d - Callback NULL!!!", __func__, __LINE__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOG2, "%s:%d - Callback NULL!!!", __func__, __LINE__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 }
 
@@ -7614,20 +5884,11 @@ void csrScanStopTimers(tpAniSirGlobal pMac)
     csrScanStopResultAgingTimer(pMac);
     csrScanStopIdleScanTimer(pMac);
     csrScanStopGetResultTimer(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(0 != pMac->scan.scanResultCfgAgingTime )
     {
         csrScanStopResultCfgAgingTimer(pMac);
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -7675,30 +5936,12 @@ static void csrStaApConcTimerHandler(void *pv)
         tCsrScanRequest scanReq;
         tSmeCmd *pSendScanCmd = NULL;
         tANI_U8 numChn = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        tANI_U8 i;
-=======
         tANI_U8 nNumChanCombinedConc = 0;
         tANI_U8 i, j;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        tANI_U8 nNumChanCombinedConc = 0;
-        tANI_U8 i, j;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         tCsrChannelInfo *pChnInfo = &scanReq.ChannelInfo;
         tANI_U8    channelToScan[WNI_CFG_VALID_CHANNEL_LIST_LEN];
         eHalStatus status;
        
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        pScanCmd = GET_BASE_ADDR( pEntry, tSmeCmd, Link );
-        numChn = pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels;
-        if (numChn > 1)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pScanCmd = GET_BASE_ADDR( pEntry, tSmeCmd, Link );
         numChn = pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels;
 
@@ -7738,25 +5981,13 @@ static void csrStaApConcTimerHandler(void *pv)
 #endif
                   (pScanCmd->u.scanCmd.u.scanRequest.p2pSearch != 1)) ||
               (csrIsP2pSessionConnected(pMac))))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
              palZeroMemory(pMac->hHdd, &scanReq, sizeof(tCsrScanRequest));
 
              pSendScanCmd = csrGetCommandBuffer(pMac); //optimize this to use 2 command buffer only
              if (!pSendScanCmd)
              {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 smsLog( pMac, LOGE, FL(" Failed to get Queue command buffer\n") );
-=======
                  smsLog( pMac, LOGE, FL(" Failed to get Queue command buffer") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 smsLog( pMac, LOGE, FL(" Failed to get Queue command buffer") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  csrLLUnlock(&pMac->scan.scanCmdPendingList);
                  return;
              }
@@ -7767,23 +5998,6 @@ static void csrStaApConcTimerHandler(void *pv)
              pSendScanCmd->u.scanCmd.reason = pScanCmd->u.scanCmd.reason;
              pSendScanCmd->u.scanCmd.scanID = pMac->scan.nextScanID++; //let it wrap around
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-             pChnInfo->numOfChannels = 1;
-             palCopyMemory(pMac->hHdd, &channelToScan[0], &pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList[0], 
-                          1 * sizeof(tANI_U8)); //just send one channel
-             pChnInfo->ChannelList = &channelToScan[0];
-
-             for (i = 0; i < (numChn-2); i++)
-             {
-                 pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList[i] = 
-                 pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.ChannelList[i+1]; //Move all the channels one step
-             }
-          
-             pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels = numChn -1; //reduce outstanding # of channels to be scanned
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              /* First copy all the parameters to local variable of scan request */
              csrScanCopyRequest(pMac, &scanReq, &pScanCmd->u.scanCmd.u.scanRequest);
              
@@ -7806,45 +6020,17 @@ static void csrStaApConcTimerHandler(void *pv)
              }
           
              pScanCmd->u.scanCmd.u.scanRequest.ChannelInfo.numOfChannels = numChn - nNumChanCombinedConc; //reduce outstanding # of channels to be scanned
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
              scanReq.BSSType = eCSR_BSS_TYPE_ANY;
              //Modify callers parameters in case of concurrency
              scanReq.scanType = eSIR_ACTIVE_SCAN;
-<<<<<<< HEAD
-<<<<<<< HEAD
-             scanReq.maxChnTime = CSR_MIN(pScanCmd->u.scanCmd.u.scanRequest.maxChnTime,CSR_ACTIVE_MAX_CHANNEL_TIME_CONC);
-             scanReq.minChnTime =  CSR_MIN(pScanCmd->u.scanCmd.u.scanRequest.minChnTime,CSR_ACTIVE_MIN_CHANNEL_TIME_CONC);
-=======
              //Use concurrency values for min/maxChnTime. 
              //We know csrIsAnySessionConnected(pMac) returns TRUE here
              csrSetDefaultScanTiming(pMac, scanReq.scanType, &scanReq);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             //Use concurrency values for min/maxChnTime. 
-             //We know csrIsAnySessionConnected(pMac) returns TRUE here
-             csrSetDefaultScanTiming(pMac, scanReq.scanType, &scanReq);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
              status = csrScanCopyRequest(pMac, &pSendScanCmd->u.scanCmd.u.scanRequest, &scanReq);
              if(!HAL_STATUS_SUCCESS(status))
              {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 smsLog( pMac, LOGE, FL(" Failed to get copy csrScanRequest = %d\n"), status );
-                 csrLLUnlock(&pMac->scan.scanCmdPendingList);
-                 return;
-             }       
-        }
-        else
-        {    //numChn ==1 This is the last channel to be scanned
-             //last channel remaining to scan
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  smsLog( pMac, LOGE, FL(" Failed to get copy csrScanRequest = %d"), status );
                  csrLLUnlock(&pMac->scan.scanCmdPendingList);
                  return;
@@ -7858,23 +6044,11 @@ static void csrStaApConcTimerHandler(void *pv)
         {
              /* no active connected session present or numChn == 1
               * scan all remaining channels */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              pSendScanCmd = pScanCmd;
              //remove this command from pending list 
              if (csrLLRemoveHead( &pMac->scan.scanCmdPendingList, LL_ACCESS_NOLOCK) == NULL)
              { //In case between PeekHead and here, the entry got removed by another thread.
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 smsLog( pMac, LOGE, FL(" Failed to remove entry from scanCmdPendingList\n"));
-=======
                  smsLog( pMac, LOGE, FL(" Failed to remove entry from scanCmdPendingList"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 smsLog( pMac, LOGE, FL(" Failed to remove entry from scanCmdPendingList"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              }
             
         }               
@@ -7882,17 +6056,6 @@ static void csrStaApConcTimerHandler(void *pv)
 
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (!csrLLIsListEmpty( &pMac->scan.scanCmdPendingList, LL_ACCESS_NOLOCK ))
-    {
-         palTimerStart(pMac->hHdd, pMac->scan.hTimerStaApConcTimer, 
-                 CSR_SCAN_STAAP_CONC_INTERVAL, eANI_BOOLEAN_FALSE);
-    }
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrLLUnlock(&pMac->scan.scanCmdPendingList);
     
 }
@@ -7900,34 +6063,12 @@ static void csrStaApConcTimerHandler(void *pv)
 
 eHalStatus csrScanStartResultAgingTimer(tpAniSirGlobal pMac)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eHalStatus status;
-=======
     eHalStatus status = eHAL_STATUS_FAILURE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eHalStatus status = eHAL_STATUS_FAILURE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     if(pMac->scan.fScanEnable)
     {
         status = palTimerStart(pMac->hHdd, pMac->scan.hTimerResultAging, CSR_SCAN_RESULT_AGING_INTERVAL, eANI_BOOLEAN_TRUE);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    else
-    {
-        status = eHAL_STATUS_FAILURE;
-    }
-    
-    return (status);
-}
-
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return (status);
 }
 
@@ -7943,28 +6084,15 @@ eHalStatus csrScanStartResultCfgAgingTimer(tpAniSirGlobal pMac)
     return (status);
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrScanStopResultAgingTimer(tpAniSirGlobal pMac)
 {
     return (palTimerStop(pMac->hHdd, pMac->scan.hTimerResultAging));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrScanStopResultCfgAgingTimer(tpAniSirGlobal pMac)
 {
     return (palTimerStop(pMac->hHdd, pMac->scan.hTimerResultCfgAging));
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 //This function returns the maximum time a BSS is allowed in the scan result.
 //The time varies base on connection and power saving factors.
@@ -8063,11 +6191,6 @@ void csrScanResultAgingTimerHandler(void *pv)
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static void csrScanResultCfgAgingTimerHandler(void *pv)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT( pv );
@@ -8091,24 +6214,12 @@ static void csrScanResultCfgAgingTimerHandler(void *pv)
     }
     csrLLUnlock(&pMac->scan.scanResultList);
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 eHalStatus csrScanStartIdleScanTimer(tpAniSirGlobal pMac, tANI_U32 interval)
 {
     eHalStatus status;
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG1, " csrScanStartIdleScanTimer \n ");
-=======
     smsLog(pMac, LOG1, " csrScanStartIdleScanTimer");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG1, " csrScanStartIdleScanTimer");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((pMac->scan.fScanEnable) && (eANI_BOOLEAN_FALSE == pMac->scan.fCancelIdleScan) && interval)
     {
         pMac->scan.nIdleScanTimeGap += interval;
@@ -8116,15 +6227,7 @@ eHalStatus csrScanStartIdleScanTimer(tpAniSirGlobal pMac, tANI_U32 interval)
         status = palTimerStart(pMac->hHdd, pMac->scan.hTimerIdleScan, interval, eANI_BOOLEAN_FALSE);
         if( !HAL_STATUS_SUCCESS(status) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, "  Fail to start Idle scan timer. status = %d interval = %d\n", status, interval);
-=======
             smsLog(pMac, LOGE, "  Fail to start Idle scan timer. status = %d interval = %d", status, interval);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, "  Fail to start Idle scan timer. status = %d interval = %d", status, interval);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             //This should not happen but set the flag to restart when ready
             pMac->scan.fRestartIdleScan = eANI_BOOLEAN_TRUE;
         }
@@ -8175,28 +6278,12 @@ void csrScanIMPSCallback(void *callbackContext, eHalStatus status)
             {
                 if(csrIsAllSessionDisconnected(pMac) && !csrIsRoamCommandWaiting(pMac))
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGW, FL("starts idle mode full scan\n"));
-=======
                     smsLog(pMac, LOGW, FL("starts idle mode full scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGW, FL("starts idle mode full scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     csrScanAllChannels(pMac, eCSR_SCAN_IDLE_MODE_SCAN);
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGW, FL("cannot start idle mode full scan\n"));
-=======
                     smsLog(pMac, LOGW, FL("cannot start idle mode full scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGW, FL("cannot start idle mode full scan"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     //even though we are in timer handle, calling stop timer will make sure the timer
                     //doesn't get to restart.
                     csrScanStopIdleScanTimer(pMac);
@@ -8204,15 +6291,7 @@ void csrScanIMPSCallback(void *callbackContext, eHalStatus status)
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("sees not success status (%d)\n"), status);
-=======
                 smsLog(pMac, LOGE, FL("sees not success status (%d)"), status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("sees not success status (%d)"), status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else
@@ -8240,15 +6319,7 @@ eHalStatus csrScanTriggerIdleScan(tpAniSirGlobal pMac, tANI_U32 *pTimeInterval)
     //Do not trigger IMPS in case of concurrency
     if (vos_concurrent_sessions_running() && csrIsAnySessionInConnectState(pMac))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog( pMac, LOG1, FL("Cannot request IMPS because Concurrent Sessions Running\n") );
-=======
         smsLog( pMac, LOG1, FL("Cannot request IMPS because Concurrent Sessions Running") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOG1, FL("Cannot request IMPS because Concurrent Sessions Running") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return (status);
     }
 
@@ -8257,23 +6328,10 @@ eHalStatus csrScanTriggerIdleScan(tpAniSirGlobal pMac, tANI_U32 *pTimeInterval)
         *pTimeInterval = 0;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG3, FL("called\n"));
-    if( smeCommandPending( pMac ) )
-    {
-        smsLog( pMac, LOG1, FL("  Cannot request IMPS because command pending\n") );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     smsLog(pMac, LOG3, FL("called"));
     if( smeCommandPending( pMac ) )
     {
         smsLog( pMac, LOG1, FL("  Cannot request IMPS because command pending") );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //Not to enter IMPS because more work to do
         if(pTimeInterval)
         {
@@ -8284,12 +6342,6 @@ eHalStatus csrScanTriggerIdleScan(tpAniSirGlobal pMac, tANI_U32 *pTimeInterval)
 
         return (status);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (IsPmcImpsReqFailed (pMac))
     {
         if(pTimeInterval)
@@ -8301,10 +6353,6 @@ eHalStatus csrScanTriggerIdleScan(tpAniSirGlobal pMac, tANI_U32 *pTimeInterval)
 
         return status;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if((pMac->scan.fScanEnable) && (eANI_BOOLEAN_FALSE == pMac->scan.fCancelIdleScan) 
     /*&& pMac->roam.configParam.impsSleepTime*/)
     {
@@ -8339,25 +6387,11 @@ eHalStatus csrScanTriggerIdleScan(tpAniSirGlobal pMac, tANI_U32 *pTimeInterval)
                     *pTimeInterval = CSR_IDLE_SCAN_WAIT_TIME;
                 }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGW, FL("call pmcRequestImps and it returns status code (%d)\n"), status);
-            }
-            else
-            {
-                smsLog(pMac, LOGW, FL("already in IMPS\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog(pMac, LOGW, FL("call pmcRequestImps and it returns status code (%d)"), status);
             }
             else
             {
                 smsLog(pMac, LOGW, FL("already in IMPS"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //Since CSR is the only module to request for IMPS. If it is already in IMPS, CSR assumes
                 //the callback will be called in the future. Should not happen though.
                 status = eHAL_STATUS_SUCCESS;
@@ -8380,15 +6414,7 @@ eHalStatus csrScanStartIdleScan(tpAniSirGlobal pMac)
     eHalStatus status = eHAL_STATUS_CSR_WRONG_STATE;
     tANI_U32 nTime = 0;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, FL("called\n"));
-=======
     smsLog(pMac, LOGW, FL("called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, FL("called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(pMac->roam.configParam.IsIdleScanEnabled)
     {
         //stop bg scan first
@@ -8413,25 +6439,10 @@ void csrScanCancelIdleScan(tpAniSirGlobal pMac)
 {
     if(eANI_BOOLEAN_FALSE == pMac->scan.fCancelIdleScan)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-        if (vos_concurrent_sessions_running()) {
-            return;
-        }
-#endif
-        smsLog(pMac, LOG1, "  csrScanCancelIdleScan\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (vos_concurrent_sessions_running()) {
             return;
         }
         smsLog(pMac, LOG1, "  csrScanCancelIdleScan");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->scan.fCancelIdleScan = eANI_BOOLEAN_TRUE;
         //Set the restart flag in case later on it is uncancelled
         pMac->scan.fRestartIdleScan = eANI_BOOLEAN_TRUE;
@@ -8448,14 +6459,7 @@ void csrScanIdleScanTimerHandler(void *pv)
     tANI_U32 nTime = 0;
 
     smsLog(pMac, LOGW, "  csrScanIdleScanTimerHandler called  ");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     pmcResetImpsFailStatus (pMac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pmcResetImpsFailStatus (pMac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = csrScanTriggerIdleScan(pMac, &nTime);
     if(!HAL_STATUS_SUCCESS(status) && (eANI_BOOLEAN_FALSE == pMac->scan.fCancelIdleScan))
     {
@@ -8552,18 +6556,9 @@ tANI_BOOLEAN csrScanRemoveFreshScanCommand(tpAniSirGlobal pMac, tANI_U8 sessionI
         {
             switch(pCommand->u.scanCmd.reason)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
             case eCsrScanGetLfrResult:
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
-            case eCsrScanGetLfrResult:
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             case eCsrScanGetResult:
             case eCsrScanSetBGScanParam:
             case eCsrScanBGScanAbort:
@@ -8571,18 +6566,8 @@ tANI_BOOLEAN csrScanRemoveFreshScanCommand(tpAniSirGlobal pMac, tANI_U8 sessionI
             case eCsrScanGetScanChnInfo:
                 break;
             default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 smsLog (pMac, LOGW, "%s: -------- abort scan command reason = %d\n",
-                    __FUNCTION__, pCommand->u.scanCmd.reason);
-=======
                  smsLog (pMac, LOGW, "%s: -------- abort scan command reason = %d",
                     __func__, pCommand->u.scanCmd.reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 smsLog (pMac, LOGW, "%s: -------- abort scan command reason = %d",
-                    __func__, pCommand->u.scanCmd.reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //The rest are fresh scan requests
                 if( csrLLRemoveEntry(&pMac->sme.smeCmdPendingList, pEntry, LL_ACCESS_NOLOCK) )
                 {
@@ -8628,30 +6613,14 @@ void csrReleaseScanCommand(tpAniSirGlobal pMac, tSmeCmd *pCommand, eCsrScanStatu
 
         csrScanCallCallback(pMac, pCommand, scanStatus);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG3, "   Remove Scan command reason = %d\n", reason);
-=======
     smsLog(pMac, LOG3, "   Remove Scan command reason = %d", reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG3, "   Remove Scan command reason = %d", reason);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( csrLLRemoveEntry( &pMac->sme.smeCmdActiveList, &pCommand->Link, LL_ACCESS_LOCK ) )
     {
         csrReleaseCommandScan( pMac, pCommand );
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, " ********csrReleaseScanCommand cannot release command reason %d\n", pCommand->u.scanCmd.reason );
-=======
         smsLog(pMac, LOGE, " ********csrReleaseScanCommand cannot release command reason %d", pCommand->u.scanCmd.reason );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, " ********csrReleaseScanCommand cannot release command reason %d", pCommand->u.scanCmd.reason );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 }
 
@@ -8668,15 +6637,7 @@ eHalStatus csrScanGetPMKIDCandidateList(tpAniSirGlobal pMac, tANI_U32 sessionId,
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "  pMac->scan.NumPmkidCandidate = %d\n ", pSession->NumPmkidCandidate);
-=======
     smsLog(pMac, LOGW, "  pMac->scan.NumPmkidCandidate = %d", pSession->NumPmkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "  pMac->scan.NumPmkidCandidate = %d", pSession->NumPmkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrResetPMKIDCandidateList(pMac, sessionId);
     if(csrIsConnStateConnected(pMac, sessionId) && pSession->pCurRoamProfile)
     {
@@ -8735,15 +6696,7 @@ eHalStatus csrScanGetBKIDCandidateList(tpAniSirGlobal pMac, tANI_U32 sessionId,
         return eHAL_STATUS_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "  pMac->scan.NumBkidCandidate = %d\n ", pSession->NumBkidCandidate);
-=======
     smsLog(pMac, LOGW, "  pMac->scan.NumBkidCandidate = %d", pSession->NumBkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "  pMac->scan.NumBkidCandidate = %d", pSession->NumBkidCandidate);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     csrResetBKIDCandidateList(pMac, sessionId);
     if(csrIsConnStateConnected(pMac, sessionId) && pSession->pCurRoamProfile)
     {
@@ -8798,15 +6751,7 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
     tANI_U8  index = 0;
     tANI_U32 numSsid = pProfile->SSIDs.numOfSSIDs;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("called\n"));
-=======
     smsLog(pMac, LOG2, FL("called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("called"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //For WDS, we use the index 0. There must be at least one in there
     if( CSR_IS_WDS_STA( pProfile ) && numSsid )
     {
@@ -8819,15 +6764,7 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
             pScanCmd = csrGetCommandBuffer(pMac);
             if(!pScanCmd)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("failed to allocate command buffer\n"));
-=======
                 smsLog(pMac, LOGE, FL("failed to allocate command buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("failed to allocate command buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
             palZeroMemory(pMac->hHdd, &pScanCmd->u.scanCmd, sizeof(tScanCmd));
@@ -8865,15 +6802,7 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                 }
                 else
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, "No memory for scanning IE fields\n");
-=======
                     smsLog(pMac, LOGE, "No memory for scanning IE fields");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, "No memory for scanning IE fields");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             } //Allocate memory for IE field
             else
@@ -8891,16 +6820,8 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                  pScanCmd->u.scanCmd.u.scanRequest.maxChnTime = pMac->roam.configParam.nActiveMaxChnTime;
                  pScanCmd->u.scanCmd.u.scanRequest.minChnTime = pMac->roam.configParam.nActiveMinChnTime;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	    pScanCmd->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
 	    pScanCmd->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-	    pScanCmd->u.scanCmd.u.scanRequest.maxChnTimeBtc = pMac->roam.configParam.nActiveMaxChnTimeBtc;
-	    pScanCmd->u.scanCmd.u.scanRequest.minChnTimeBtc = pMac->roam.configParam.nActiveMinChnTimeBtc;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(pProfile->BSSIDs.numOfBSSIDs == 1)
             {
                 palCopyMemory(pMac->hHdd, pScanCmd->u.scanCmd.u.scanRequest.bssid, pProfile->BSSIDs.bssid, sizeof(tCsrBssid));
@@ -8926,15 +6847,7 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
                      }
                      else 
                      {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         smsLog(pMac, LOGW, FL("process a channel (%d) that is invalid\n"), pProfile->ChannelInfo.ChannelList[index]);
-=======
                          smsLog(pMac, LOGW, FL("process a channel (%d) that is invalid"), pProfile->ChannelInfo.ChannelList[index]);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                         smsLog(pMac, LOGW, FL("process a channel (%d) that is invalid"), pProfile->ChannelInfo.ChannelList[index]);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      }
 
                   }
@@ -8965,15 +6878,7 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
             status = csrQueueSmeCommand(pMac, pScanCmd, eANI_BOOLEAN_FALSE);
             if( !HAL_STATUS_SUCCESS( status ) )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
         }while(0);
@@ -8989,15 +6894,7 @@ eHalStatus csrScanForSSID(tpAniSirGlobal pMac, tANI_U32 sessionId, tCsrRoamProfi
     }//valid
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("cannot scan because scanEnable (%d) or numSSID (%d) is invalid\n"),
-=======
         smsLog(pMac, LOGE, FL("cannot scan because scanEnable (%d) or numSSID (%d) is invalid"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("cannot scan because scanEnable (%d) or numSSID (%d) is invalid"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pMac->scan.fScanEnable, pProfile->SSIDs.numOfSSIDs);
     }
     
@@ -9020,15 +6917,7 @@ eHalStatus csrScanForCapabilityChange(tpAniSirGlobal pMac, tSirSmeApNewCaps *pNe
             pScanCmd = csrGetCommandBuffer(pMac);
             if(!pScanCmd)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("failed to allocate command buffer\n"));
-=======
                 smsLog(pMac, LOGE, FL("failed to allocate command buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("failed to allocate command buffer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 status = eHAL_STATUS_RESOURCES;
                 break;
             }
@@ -9043,15 +6932,7 @@ eHalStatus csrScanForCapabilityChange(tpAniSirGlobal pMac, tSirSmeApNewCaps *pNe
             status = csrQueueSmeCommand(pMac, pScanCmd, eANI_BOOLEAN_FALSE);
             if( !HAL_STATUS_SUCCESS( status ) )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d\n"), status );
-=======
                 smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog( pMac, LOGE, FL(" fail to send message status = %d"), status );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
         }while(0);
@@ -9141,15 +7022,7 @@ eHalStatus csrScanGetSupportedChannels( tpAniSirGlobal pMac )
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog( pMac, LOGE, FL(" failed\n") );
-=======
         smsLog( pMac, LOGE, FL(" failed") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog( pMac, LOGE, FL(" failed") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->scan.baseChannels.numChannels = 0;
     }
     
@@ -9211,15 +7084,7 @@ void csrSaveTxPowerToCfg( tpAniSirGlobal pMac, tDblLinkList *pList, tANI_U32 cfg
                     // expanding this entry will overflow our allocation
                     smsLog(pMac, LOGE,
                            "%s: Buffer overflow, start %d, num %d, offset %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                           __FUNCTION__,
-=======
                            __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                           __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            pChannelSet->firstChannel,
                            pChannelSet->numChannels,
                            pChannelSet->interChannelOffset);
@@ -9229,27 +7094,10 @@ void csrSaveTxPowerToCfg( tpAniSirGlobal pMac, tDblLinkList *pList, tANI_U32 cfg
                 for( idx = 0; idx < pChannelSet->numChannels; idx++ )
                 {
                     pChannelPowerSet->firstChanNum = (tSirMacChanNum)(pChannelSet->firstChannel + ( idx * pChannelSet->interChannelOffset ));
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOG3, " Setting Channel Number %d\n", pChannelPowerSet->firstChanNum);
-                    pChannelPowerSet->numChannels  = 1;
-#ifdef WLAN_SOFTAP_FEATURE
-                    pChannelPowerSet->maxTxPower = CSR_ROAM_MIN( pChannelSet->txPower, pMac->roam.configParam.nTxPowerCap );
-#else
-                    pChannelPowerSet->maxTxPower = pChannelSet->txPower;
-#endif
-                    smsLog(pMac, LOG3, " Setting Max Transmit Power %d\n", pChannelPowerSet->maxTxPower);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     smsLog(pMac, LOG3, " Setting Channel Number %d", pChannelPowerSet->firstChanNum);
                     pChannelPowerSet->numChannels  = 1;
                     pChannelPowerSet->maxTxPower = CSR_ROAM_MIN( pChannelSet->txPower, pMac->roam.configParam.nTxPowerCap );
                     smsLog(pMac, LOG3, " Setting Max Transmit Power %d", pChannelPowerSet->maxTxPower);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     cbLen += sizeof( tSirMacChanInfo );
                     pChannelPowerSet++;
                 }
@@ -9261,42 +7109,17 @@ void csrSaveTxPowerToCfg( tpAniSirGlobal pMac, tDblLinkList *pList, tANI_U32 cfg
                     // this entry will overflow our allocation
                     smsLog(pMac, LOGE,
                            "%s: Buffer overflow, start %d, num %d, offset %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                           __FUNCTION__,
-=======
                            __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                           __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            pChannelSet->firstChannel,
                            pChannelSet->numChannels,
                            pChannelSet->interChannelOffset);
                     break;
                 }
                 pChannelPowerSet->firstChanNum = pChannelSet->firstChannel;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOG3, " Setting Channel Number %d\n", pChannelPowerSet->firstChanNum);
-                pChannelPowerSet->numChannels = pChannelSet->numChannels;
-#ifdef WLAN_SOFTAP_FEATURE
-                pChannelPowerSet->maxTxPower = CSR_ROAM_MIN( pChannelSet->txPower, pMac->roam.configParam.nTxPowerCap );
-#else
-                pChannelPowerSet->maxTxPower = pChannelSet->txPower;
-#endif
-                smsLog(pMac, LOG3, " Setting Max Transmit Power %d, nTxPower %d\n", pChannelPowerSet->maxTxPower,pMac->roam.configParam.nTxPowerCap );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 smsLog(pMac, LOG3, " Setting Channel Number %d", pChannelPowerSet->firstChanNum);
                 pChannelPowerSet->numChannels = pChannelSet->numChannels;
                 pChannelPowerSet->maxTxPower = CSR_ROAM_MIN( pChannelSet->txPower, pMac->roam.configParam.nTxPowerCap );
                 smsLog(pMac, LOG3, " Setting Max Transmit Power %d, nTxPower %d", pChannelPowerSet->maxTxPower,pMac->roam.configParam.nTxPowerCap );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
                 cbLen += sizeof( tSirMacChanInfo );
@@ -9320,15 +7143,7 @@ void csrSetCfgCountryCode( tpAniSirGlobal pMac, tANI_U8 *countryCode )
     tANI_U8 cc[WNI_CFG_COUNTRY_CODE_LEN];
     ///v_REGDOMAIN_t DomainId;
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog( pMac, LOG3, "Setting Country Code in Cfg from csrSetCfgCountryCode %s\n",countryCode );
-=======
     smsLog( pMac, LOG3, "Setting Country Code in Cfg from csrSetCfgCountryCode %s",countryCode );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog( pMac, LOG3, "Setting Country Code in Cfg from csrSetCfgCountryCode %s",countryCode );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     palCopyMemory( pMac->hHdd, cc, countryCode, WNI_CFG_COUNTRY_CODE_LEN );
 
     // don't program the bogus country codes that we created for Korea in the MAC.  if we see
@@ -9397,23 +7212,7 @@ void csrSetCfgScanControlList( tpAniSirGlobal pMac, tANI_U8 *countryCode, tCsrCh
                    
                 if (found)    // insert a pair(channel#, flag)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if (CSR_IS_CHANNEL_5GHZ(pControlList[j]))
-                    {
-                        pControlList[j+1] = csrGetScanType(pMac, pControlList[j]);     
-                    }
-                    else  
-                    {
-                        pControlList[j+1]  = eSIR_ACTIVE_SCAN;  
-                    }
-
-=======
                     pControlList[j+1] = csrGetScanType(pMac, pControlList[j]);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    pControlList[j+1] = csrGetScanType(pMac, pControlList[j]);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     found = FALSE;  // reset the flag
                 }
                        
@@ -9450,15 +7249,7 @@ void csrScanCcmCfgSetCallback(tHalHandle hHal, tANI_S32 result)
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog( pMac, LOGW, "CSR: Scan Completion called but SCAN command is not ACTIVE ...\n" );
-=======
             smsLog( pMac, LOGW, "CSR: Scan Completion called but SCAN command is not ACTIVE ..." );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog( pMac, LOGW, "CSR: Scan Completion called but SCAN command is not ACTIVE ..." );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }   
     smeProcessPendingQueue( pMac );
@@ -9674,11 +7465,6 @@ tANI_BOOLEAN csrRoamIsValidChannel( tpAniSirGlobal pMac, tANI_U8 channel )
     return fValid;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus csrScanSavePreferredNetworkFound(tpAniSirGlobal pMac,
             tSirPrefNetworkFoundInd *pPrefNetworkFoundInd)
 {
@@ -9911,8 +7697,4 @@ void csrInitOccupiedChannelsList(tpAniSirGlobal pMac)
     
 }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

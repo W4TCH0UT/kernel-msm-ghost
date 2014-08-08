@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -83,15 +74,7 @@ wpt_status wpalPostCtrlMsg(void *pPalContext, wpt_msg *pMsg)
    if (NULL == pMsg)
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "%s: NULL message pointer", __FUNCTION__);
-=======
                  "%s: NULL message pointer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "%s: NULL message pointer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WPAL_ASSERT(0);
       return status;
    }
@@ -107,15 +90,7 @@ wpt_status wpalPostCtrlMsg(void *pPalContext, wpt_msg *pMsg)
    else
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, "%s fail to post msg %d\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__, pMsg->type);
-=======
                   __func__, pMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__, pMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return status;
@@ -137,15 +112,7 @@ wpt_status wpalPostTxMsg(void *pPalContext, wpt_msg *pMsg)
    if (NULL == pMsg)
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "%s: NULL message pointer", __FUNCTION__);
-=======
                  "%s: NULL message pointer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "%s: NULL message pointer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WPAL_ASSERT(0);
       return status;
    }
@@ -161,15 +128,7 @@ wpt_status wpalPostTxMsg(void *pPalContext, wpt_msg *pMsg)
    else
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, "%s fail to post msg %d\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__, pMsg->type);
-=======
                   __func__, pMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__, pMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return status;
@@ -190,15 +149,7 @@ wpt_status wpalPostRxMsg(void *pPalContext, wpt_msg *pMsg)
    if (NULL == pMsg)
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "%s: NULL message pointer", __FUNCTION__);
-=======
                  "%s: NULL message pointer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "%s: NULL message pointer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       WPAL_ASSERT(0);
       return status;
    }
@@ -214,15 +165,7 @@ wpt_status wpalPostRxMsg(void *pPalContext, wpt_msg *pMsg)
    else
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, "%s fail to post msg %d\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__, pMsg->type);
-=======
                   __func__, pMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__, pMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return status;

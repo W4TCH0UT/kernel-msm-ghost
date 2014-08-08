@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -63,39 +54,6 @@
 #ifndef __SYSDEF_H
 #define __SYSDEF_H
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/// Sirius system level defitions
-// NOTE: Do not program system timer tick duration to less than 1msec
-
-/// System timer tick duration in nanoseconds
-#if defined ANI_OS_TYPE_LINUX
-#ifdef ANI_AP_SDK
-#define SYS_TICK_DUR_NS     10000000    // 10ms
-#define SYS_TICK_TO_MICRO_SECOND   10000
-#else
-#define SYS_TICK_DUR_NS     1000000    // 1ms
-#define SYS_TICK_TO_MICRO_SECOND   1000
-#endif
-#elif defined ANI_OS_TYPE_OSX
-#define SYS_TICK_DUR_NS     10000000    // 10ms
-#define SYS_TICK_TO_MICRO_SECOND   10000
-#elif defined ANI_OS_TYPE_WINDOWS
-#define SYS_TICK_DUR_NS     20000000    // 20ms
-#define SYS_TICK_TO_MICRO_SECOND   20000
-#else
-#define SYS_TICK_DUR_NS     10000000    // 10ms
-#define SYS_TICK_TO_MICRO_SECOND   10000
-#endif
-
-/// System timer tick duration in miliseconds
-#define SYS_TICK_DUR_MS     (SYS_TICK_DUR_NS/1000000)
-
-/// Clocks in a milisecond
-#define SYS_CLOCKS_PER_MS   120000 // 120 MHz 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Sirius system level definitions
 // NOTE: Do not program system timer tick duration to less than 1msec
 
@@ -108,10 +66,6 @@
 
 /// Clocks in a millisecond
 #define SYS_CLOCKS_PER_MS   120000 // 120 MHz
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // In Milliseconds
 #define SYS_ADD_BA_RSP_DUR   1000
@@ -135,15 +89,7 @@
 #define SYS_MNT_INTERVAL     60
 
 /// MS to Time Units
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define SYS_MS_TO_TU(x)      (x * 1000) >> 10;
-=======
 #define SYS_MS_TO_TU(x)      ((x * 1000) >> 10)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define SYS_MS_TO_TU(x)      ((x * 1000) >> 10)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /// TU to MS
 #define SYS_TU_TO_MS(x)      ((x << 10) / 1000)

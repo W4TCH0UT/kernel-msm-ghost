@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -47,13 +38,6 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file lim ProcessMessageQueue.cc contains the code
@@ -67,34 +51,11 @@
  */
 #include "palTypes.h"
 #include "wniApi.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-#include "halDataStruct.h"
-#include "halCommonApi.h"
-#elif defined FEATURE_WLAN_INTEGRATED_SOC
-#include "wlan_qct_wdi_ds.h"
-#include "wlan_qct_pal_packet.h"
-#include "wlan_qct_wda.h"
-#endif
-
-#ifdef ANI_PRODUCT_TYPE_AP
-#include "wniCfgAp.h"
-#else
-#include "wniCfgSta.h"
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wlan_qct_wdi_ds.h"
 #include "wlan_qct_pal_packet.h"
 #include "wlan_qct_wda.h"
 
 #include "wniCfgSta.h"
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "cfgApi.h"
 #include "sirCommon.h"
 #include "utilsApi.h"
@@ -108,14 +69,7 @@
 #include "limIbssPeerMgmt.h"
 #include "schApi.h"
 #include "limSession.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #include "limSendMessages.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include "limSendMessages.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if defined WLAN_FEATURE_VOWIFI
 #include "rrmApi.h"
@@ -132,23 +86,9 @@
 #include "wmmApsd.h"
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef VOSS_ENABLED
 #include "vos_types.h"
 #include "vos_packet.h"
 #include "vos_memory.h"
-#endif
-=======
-#include "vos_types.h"
-#include "vos_packet.h"
-#include "vos_memory.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include "vos_types.h"
-#include "vos_packet.h"
-#include "vos_memory.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 void limLogSessionStates(tpAniSirGlobal pMac);
 
@@ -172,15 +112,7 @@ defMsgDecision(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
       // Defer processsing this message
       if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) %s limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-=======
           PELOGW(limLog(pMac, LOGW, FL("Unable to Defer message(0x%X) %s limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-          PELOGW(limLog(pMac, LOGW, FL("Unable to Defer message(0x%X) %s limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    limMsg->type, limMsgStr(limMsg->type), pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
                    pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
           limLogSessionStates(pMac);
@@ -217,47 +149,20 @@ defMsgDecision(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         (limMsg->type != WDA_WOWL_ENTER_RSP) &&
         (limMsg->type != WDA_WOWL_EXIT_RSP) &&
         (limMsg->type != WDA_SWITCH_CHANNEL_RSP) &&
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P 
-        (limMsg->type != WDA_P2P_NOA_ATTR_IND) &&
-#endif
-=======
         (limMsg->type != WDA_P2P_NOA_ATTR_IND) &&
         (limMsg->type != WDA_P2P_NOA_START_IND) &&
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        (limMsg->type != WDA_P2P_NOA_ATTR_IND) &&
-        (limMsg->type != WDA_P2P_NOA_START_IND) &&
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_OEM_DATA_SUPPORT
         (limMsg->type != WDA_START_OEM_DATA_RSP) &&
 #endif
         (limMsg->type != WDA_ADD_TS_RSP))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOG1(limLog(pMac, LOG1, FL("Defer the current message %s , gLimProcessDefdMsgs is false and system is not in scan/learn mode\n"),
-=======
         PELOG1(limLog(pMac, LOG1, FL("Defer the current message %s , gLimProcessDefdMsgs is false and system is not in scan/learn mode"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOG1(limLog(pMac, LOG1, FL("Defer the current message %s , gLimProcessDefdMsgs is false and system is not in scan/learn mode"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                limMsgStr(limMsg->type));)
 
         // Defer processsing this message
         if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) %s limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-=======
             PELOGW(limLog(pMac, LOGW, FL("Unable to Defer message(0x%X) %s limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOGW(limLog(pMac, LOGW, FL("Unable to Defer message(0x%X) %s limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    limMsg->type, limMsgStr(limMsg->type), pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
                    pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
             limLogSessionStates(pMac);
@@ -312,65 +217,6 @@ __limHandleBeacon(tpAniSirGlobal pMac, tpSirMsgQ pMsg, tpPESession psessionEntry
 void limProcessNormalHddMsg(tpAniSirGlobal pMac, tSirMsgQ *pLimMsg, tANI_U8 fRspReqd);
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
- * limProcessMessageQueue
- *
- *FUNCTION:
- * This function is called by LIM thread entry function. This
- * function fetches messages posted to the message queue
- * limMsgQ.
- *
- *LOGIC:
- *
- *ASSUMPTIONS:
- * NA
- *
- *NOTE:
- * NA
- *
- * @param  pMac - Pointer to Global MAC structure
- * @return None
- */
-
-void
-limProcessMessageQueue(tpAniSirGlobal pMac)
-{
-    tSirMsgQ  limMsg = { 0, 0, 0 };
-
-    if(pMac->gDriverType == eDRIVER_TYPE_MFG)
-    {
-        return;
-    }
-
-#if defined(ANI_OS_TYPE_RTAI_LINUX)
-    ULONG param;
-    while(get_timer_event(LIM_TIMER_EXPIRY_LIST,&param))
-    {
-        limMsg.type = (tANI_U16) param;
-        limMsg.bodyval = 0;
-        limMsg.bodyptr = NULL;
-        limMessageProcessor(pMac, &limMsg);
-    }
-#endif
-
-    if (tx_queue_receive( &pMac->sys.gSirLimMsgQ, (void *) &limMsg, TX_WAIT_FOREVER)
-            == TX_SUCCESS)
-    {
-        PELOG3(limLog(pMac, LOG3, FL("LIM Received message %s\n"), limMsgStr(limMsg.type));)
-        limPrintMsgInfo(pMac, LOG3, &limMsg);
-        limMessageProcessor(pMac, &limMsg);
-    } // if (tx_queue_receive)
-    
-} /*** end limProcessMessageQueue() ***/
-
-
-
-/**
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * limDeferMsg()
  *
  *FUNCTION:
@@ -395,34 +241,6 @@ tANI_U32
 limDeferMsg(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
 {
     tANI_U32 retCode = TX_SUCCESS;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
-   PELOG3(limLog(pMac, LOG3, FL("Deferring message %X in Learn mode\n"),
-           pMsg->type);
-    limPrintMsgName(pMac, LOG3, pMsg->type);)
-    retCode = tx_queue_send(&pMac->sys.gSirLimDeferredMsgQ,
-                            pMsg,
-                            TX_NO_WAIT);
-    if (retCode == TX_SUCCESS)
-        pMac->lim.gLimNumDeferredMsgs++;
-#else
-
-        retCode = limWriteDeferredMsgQ(pMac, pMsg);
-
-#endif
-    if(retCode == TX_SUCCESS)
-        {
-            MTRACE(macTraceMsgRx(pMac, NO_SESSION, LIM_TRACE_MAKE_RXMSG(pMsg->type, LIM_MSG_DEFERRED));)
-        }
-    else
-        {
-            MTRACE(macTraceMsgRx(pMac, NO_SESSION, LIM_TRACE_MAKE_RXMSG(pMsg->type, LIM_MSG_DROPPED));)
-        }
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     retCode = limWriteDeferredMsgQ(pMac, pMsg);
 
@@ -434,10 +252,6 @@ limDeferMsg(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
     {
         MTRACE(macTraceMsgRx(pMac, NO_SESSION, LIM_TRACE_MAKE_RXMSG(pMsg->type, LIM_MSG_DROPPED));)
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return retCode;
 } /*** end limDeferMsg() ***/
@@ -472,95 +286,13 @@ limHandleFramesInScanState(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pRxPa
 {
     tSirMacFrameCtl  fc;
     tpSirMacMgmtHdr  pHdr;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
-    tANI_U32         ignore = 0;
-    tSirMacAddr      bssIdRcv;
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     *deferMsg = false;
     pHdr = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
     fc = pHdr->fc;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog( pMac, LOG2, FL("ProtVersion %d, Type %d, Subtype %d\n"),
-            fc.protVer, fc.type, fc.subType );
-
-#if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
-    // System is in DFS (Learn) mode
-    pMac->lim.numLearn++;
-
-    // Process all BDs and extract PHY stats
-    limGetBssidFromBD(pMac, (tpHalBufDesc) pRxPacketInfo, bssIdRcv, &ignore);
-
-    if ((psessionEntry->limSystemRole == eLIM_AP_ROLE) &&
-        palEqualMemory( pMac->hHdd,bssIdRcv, psessionEntry->bssId, sizeof(tSirMacAddr)))
-    {
-        /**
-                   * Frame from current BSS. Defer processing of
-                   * Disassociation/Deauthentication from
-                   * STAs that are currently associated.
-                   * Collect stats for other received frames.
-                   */
-        if ((fc.subType == SIR_MAC_MGMT_DISASSOC) ||
-            (fc.subType == SIR_MAC_MGMT_DEAUTH))
-        {
-            if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
-            {
-                PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-                   limMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
-                   pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
-                limLogSessionStates(pMac);
-                limPrintMsgName(pMac, LOGE, limMsg->type);
-                limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, NULL, limMsg->bodyptr);
-            }
-            return;
-        }
-        pMac->lim.numLearnIgnore++;
-    }
-    else
-    {
-        // Frame received from other BSS
-        if (fc.type == SIR_MAC_DATA_FRAME && psessionEntry->limSystemRole == eLIM_AP_ROLE)
-        {
-            /**
-              * Data Frame from neighbor BSS.
-              * Extract neighbor BSS info as much as possible.
-              */
-            limCollectMeasurementData(pMac, pRxPacketInfo, NULL);
-        }
-        else if ((fc.type == SIR_MAC_MGMT_FRAME) && (fc.subType == SIR_MAC_MGMT_BEACON))
-        {
-            if (psessionEntry == NULL)
-                limProcessBeaconFrameNoSession(pMac, pRxPacketInfo);
-            else 
-                limProcessBeaconFrame(pMac, pRxPacketInfo,psessionEntry);
-        }
-        else if ((fc.type == SIR_MAC_MGMT_FRAME) && (fc.subType == SIR_MAC_MGMT_PROBE_RSP))
-        {
-            if (psessionEntry == NULL)
-                limProcessProbeRspFrameNoSession(pMac, pRxPacketInfo);
-            else
-                limProcessProbeRspFrame(pMac, pRxPacketInfo,psessionEntry);
-        }
-    }
-
-#else
-=======
     limLog( pMac, LOG2, FL("ProtVersion %d, Type %d, Subtype %d"),
             fc.protVer, fc.type, fc.subType );
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog( pMac, LOG2, FL("ProtVersion %d, Type %d, Subtype %d"),
-            fc.protVer, fc.type, fc.subType );
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // defer all message in scan state except for Beacons and Probe Response
     if ((fc.type == SIR_MAC_MGMT_FRAME) && (fc.subType == SIR_MAC_MGMT_BEACON))
     {
@@ -580,37 +312,16 @@ limHandleFramesInScanState(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pRxPa
     {
       limProcessProbeReqFrame_multiple_BSS(pMac, pRxPacketInfo, psessionEntry);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else if ((fc.type == SIR_MAC_MGMT_FRAME) && (fc.subType == SIR_MAC_MGMT_ACTION))
     {
        limProcessActionFrameNoSession( pMac, pRxPacketInfo);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else
     {
         *deferMsg = true;
         return; 
     }
  
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, (void *) limMsg->bodyptr);
     return;
 
@@ -626,116 +337,12 @@ limHandleFramesInScanState(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pRxPa
 \ -------------------------------------------------------------- */
 static void limHandleUnknownA2IndexFrames(tpAniSirGlobal pMac, void *pRxPacketInfo,tpPESession psessionEntry)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifndef ANI_CHIPSET_VOLANS
-    tpSirMacDataHdr3a pMacHdr;
-
-    /** This prevents from disassoc/deauth being sent in a burst,
-        and gLimDisassocFrameCredit is reset for every 10 seconds.*/
-    if (pMac->lim.gLimDisassocFrameCredit > pMac->lim.gLimDisassocFrameThreshold)
-        return;
-
-    pMac->lim.gLimDisassocFrameCredit++;
-
-    pMacHdr = WDA_GET_RX_MPDUHEADER3A(pRxPacketInfo);
-
-    if (limIsGroupAddr(pMacHdr->addr2))
-    {
-        PELOG2(limLog(pMac, LOG2, FL("Ignoring A2 Invalid Packet received for MC/BC:\n"));
-        limPrintMacAddr(pMac, pMacHdr->addr2, LOG2);)
-
-        return;
-    }
-
-    if (((psessionEntry->limSystemRole == eLIM_AP_ROLE) || (psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE) )&&
-        (psessionEntry->limMlmState == eLIM_MLM_BSS_STARTED_STATE))
-    {
-        switch (pMacHdr->fc.type)
-        {
-            case SIR_MAC_MGMT_FRAME:
-                switch (pMacHdr->fc.subType)
-                {
-                    case SIR_MAC_MGMT_ACTION:
-                        // Send Disassociation frame to
-                        // sender if role is AP
-                        PELOG1(limLog(pMac, LOG1, FL("Send Disassoc Frame due to Invalid Addr2 packet"));
-                        limPrintMacAddr(pMac, pMacHdr->addr2, LOG1);)
-                        limSendDisassocMgmtFrame(pMac,
-                           eSIR_MAC_CLASS3_FRAME_FROM_NON_ASSOC_STA_REASON, pMacHdr->addr2,psessionEntry);
-                        break;
-
-                    default:
-                        break;
-
-                }
-                break;
-
-            case SIR_MAC_CTRL_FRAME:
-                switch (pMacHdr->fc.subType)
-                {
-                    case SIR_MAC_CTRL_PS_POLL:
-                    case SIR_MAC_CTRL_BAR:
-                        // Send Disassociation frame to
-                        // sender if role is AP
-                        PELOG1(limLog(pMac, LOG1, FL("Send Disassoc Frame due to Invalid Addr2 packet"));
-                        limPrintMacAddr(pMac, pMacHdr->addr2, LOG1);)
-                        limSendDisassocMgmtFrame(pMac,
-                           eSIR_MAC_CLASS3_FRAME_FROM_NON_ASSOC_STA_REASON, pMacHdr->addr2,psessionEntry);
-                        break;
-
-                    default:
-                        break;
-                }
-                break;
-
-            case SIR_MAC_DATA_FRAME:
-                switch (pMacHdr->fc.subType)
-                {
-                    case SIR_MAC_DATA_NULL:
-                    case SIR_MAC_DATA_QOS_NULL:
-                        // Send Disassociation frame to
-                        // sender if role is AP
-                        PELOG1(limLog(pMac, LOG1, FL("Send Disassoc Frame due to Invalid Addr2 packet"));
-                        limPrintMacAddr(pMac, pMacHdr->addr2, LOG1);)
-                        limSendDisassocMgmtFrame(pMac,
-                           eSIR_MAC_CLASS3_FRAME_FROM_NON_ASSOC_STA_REASON, pMacHdr->addr2,psessionEntry);
-                        break;
-
-                    default:
-                        // Send Deauthentication frame to
-                        // sender if role is AP
-                        PELOG1(limLog(pMac, LOG1, FL("Sending Deauth frame due to Invalid Addr2 packet"));
-                        limPrintMacAddr(pMac, pMacHdr->addr2, LOG1);)
-                        limSendDeauthMgmtFrame(pMac,
-                           eSIR_MAC_CLASS3_FRAME_FROM_NON_ASSOC_STA_REASON, pMacHdr->addr2,psessionEntry);
-                        break;
-                }
-                break;
-        }
-    }
-#else
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* addr2 mismatch interrupt occurred this means previous 
        disassociation was not successful
        In Volans pRxPacketInfo only contains pointer 48-bit address2 field */
        /*Send disassociation message again*/
        //Dinesh need one more arguement. 
        //limSendDisassocMgmtFrame(pMac, eSIR_MAC_CLASS3_FRAME_FROM_NON_ASSOC_STA_REASON,(tANI_U8 *) pRxPacketInfo);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
-    //This could be a public action frame.
-    if( psessionEntry->limSystemRole == eLIM_P2P_DEVICE_ROLE )
-        limProcessActionFrameNoSession(pMac, (tANI_U8 *) pRxPacketInfo);
-#endif
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //TODO: verify this   
     //This could be a public action frame.
     if( psessionEntry->limSystemRole == eLIM_P2P_DEVICE_ROLE )
@@ -786,21 +393,10 @@ static void limHandleUnknownA2IndexFrames(tpAniSirGlobal pMac, void *pRxPacketIn
     }
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**
  * limCheckMgmtRegisteredFrames()
  *
@@ -850,15 +446,7 @@ limCheckMgmtRegisteredFrames(tpAniSirGlobal pMac, tANI_U8 *pBd,
               && (subType == SIR_MAC_MGMT_RESERVED15) )
         {
             limLog( pMac, LOG3, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                FL("rcvd frame match with SIR_MAC_MGMT_RESERVED15\n"));
-=======
                 FL("rcvd frame match with SIR_MAC_MGMT_RESERVED15"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                FL("rcvd frame match with SIR_MAC_MGMT_RESERVED15"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             match = VOS_TRUE;
             break;
         }
@@ -872,25 +460,11 @@ limCheckMgmtRegisteredFrames(tpAniSirGlobal pMac, tANI_U8 *pBd,
                     if (palEqualMemory(pMac, pLimMgmtRegistration->matchData,
                                        pBody, pLimMgmtRegistration->matchLen))
                     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       /* found match! */   
-                       match = VOS_TRUE;
-                       break;
-                    }
-                } 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          /* found match! */
                          match = VOS_TRUE;
                          break;
                     }
                 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else
             {
@@ -911,29 +485,13 @@ limCheckMgmtRegisteredFrames(tpAniSirGlobal pMac, tANI_U8 *pBd,
     if (match)
     {
         limLog( pMac, LOG1, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                FL("rcvd frame match with registered frame params\n"));
-=======
                 FL("rcvd frame match with registered frame params"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                FL("rcvd frame match with registered frame params"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Indicate this to SME */
         limSendSmeMgmtFrameInd( pMac, pHdr->fc.subType, (tANI_U8*)pHdr, 
                      WDA_GET_RX_PAYLOAD_LEN(pBd) + sizeof(tSirMacMgmtHdr), 
                      pLimMgmtRegistration->sessionId,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     WDA_GET_RX_CH(pBd), psessionEntry );
-=======
                      WDA_GET_RX_CH(pBd), psessionEntry, 0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     WDA_GET_RX_CH(pBd), psessionEntry, 0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
         if ( (type == SIR_MAC_MGMT_FRAME) && (fc.type == SIR_MAC_MGMT_FRAME)
               && (subType == SIR_MAC_MGMT_RESERVED15) )
@@ -946,13 +504,6 @@ limCheckMgmtRegisteredFrames(tpAniSirGlobal pMac, tANI_U8 *pBd,
 
     return match;
 } /*** end  limCheckMgmtRegisteredFrames() ***/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* WLAN_FEATURE_P2P */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 /**
@@ -995,15 +546,6 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
     fcOffset = (v_U8_t)WDA_GET_RX_MPDU_HEADER_OFFSET(pRxPacketInfo);
     fc = pHdr->fc;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog( pMac, LOG4, FL("ProtVersion %d, Type %d, Subtype %d rateIndex=%d\n"),
-            fc.protVer, fc.type, fc.subType, WDA_GET_RX_MAC_RATE_IDX(pRxPacketInfo));
-   
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limLog( pMac, LOG4, FL("ProtVersion %d, Type %d, Subtype %d rateIndex=%d"),
             fc.protVer, fc.type, fc.subType, WDA_GET_RX_MAC_RATE_IDX(pRxPacketInfo));
    
@@ -1035,10 +577,6 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
         goto end;
     }
 #endif //WLAN_FEATURE_ROAM_SCAN_OFFLOAD
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_CCX
     if (fc.type == SIR_MAC_DATA_FRAME && isFrmFt) 
     {
@@ -1056,15 +594,7 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
 
         if (!psessionEntry->isCCXconnection)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog( pMac, LOGE, FL("LIM received Type %d, Subtype %d in Non CCX connection\n"),
-=======
             limLog( pMac, LOGE, FL("LIM received Type %d, Subtype %d in Non CCX connection"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog( pMac, LOGE, FL("LIM received Type %d, Subtype %d in Non CCX connection"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     fc.type, fc.subType);
             limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pBD, limMsg->bodyptr);
             return;
@@ -1072,15 +602,7 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
         limLog( pMac, LOGE, FL("Processing IAPP Frm from SA:"));
         limPrintMacAddr(pMac, pDataFrmHdr->sa, LOGE);
 #else
-<<<<<<< HEAD
-<<<<<<< HEAD
-        printk("%s: Need to port handling of IAPP frames to PRIMA for CCX\n", __func__);
-=======
         printk("%s: Need to port handling of IAPP frames to PRIMA for CCX", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        printk("%s: Need to port handling of IAPP frames to PRIMA for CCX", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
 
@@ -1093,21 +615,9 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
         if (fc.subType == SIR_MAC_MGMT_AUTH) 
         {
 #ifdef WLAN_FEATURE_VOWIFI_11R_DEBUG
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog( pMac, LOGE, FL("ProtVersion %d, Type %d, Subtype %d rateIndex=%d\n"),
-                    fc.protVer, fc.type, fc.subType, WDA_GET_RX_MAC_RATE_IDX(pRxPacketInfo));
-            limPrintMacAddr(pMac, pHdr->bssId, LOGE);
-=======
             limLog( pMac, LOG1, FL("ProtVersion %d, Type %d, Subtype %d rateIndex=%d"),
                     fc.protVer, fc.type, fc.subType, WDA_GET_RX_MAC_RATE_IDX(pRxPacketInfo));
             limPrintMacAddr(pMac, pHdr->bssId, LOG1);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog( pMac, LOG1, FL("ProtVersion %d, Type %d, Subtype %d rateIndex=%d"),
-                    fc.protVer, fc.type, fc.subType, WDA_GET_RX_MAC_RATE_IDX(pRxPacketInfo));
-            limPrintMacAddr(pMac, pHdr->bssId, LOG1);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
             if (limProcessAuthFrameNoSession(pMac, pRxPacketInfo, limMsg->bodyptr) == eSIR_SUCCESS)
             {
@@ -1119,58 +629,12 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
         if((fc.subType != SIR_MAC_MGMT_PROBE_RSP )&&
             (fc.subType != SIR_MAC_MGMT_BEACON)&&
             (fc.subType != SIR_MAC_MGMT_PROBE_REQ)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
             && (fc.subType != SIR_MAC_MGMT_ACTION ) //Public action frame can be received from non-associated stations.
-#endif
-=======
-            && (fc.subType != SIR_MAC_MGMT_ACTION ) //Public action frame can be received from non-associated stations.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            && (fc.subType != SIR_MAC_MGMT_ACTION ) //Public action frame can be received from non-associated stations.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           )
         {
 
             if((psessionEntry = peFindSessionByPeerSta(pMac,pHdr->sa,&sessionId))== NULL) 
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-               limLog(pMac, LOG1, FL("session does not exist for given bssId\n"));
-               limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, limMsg->bodyptr);
-               return;
-            }
-        } 
-    }
-
-
-#ifdef WLAN_FEATURE_P2P 
-    /* Check if frame is registered by HDD */
-    if(limCheckMgmtRegisteredFrames(pMac, pRxPacketInfo, psessionEntry))
-    {        
-        limLog( pMac, LOG1, FL("Received frame is passed to SME\n"));
-        limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, limMsg->bodyptr);
-        return;
-    }
-#endif 
-
-
-#ifdef ANI_PRODUCT_TYPE_AP
-    if ((psessionEntry->limSystemRole == eLIM_AP_ROLE) && (LIM_IS_RADAR_DETECTED(pMac)))
-    {
-        PELOGW(limLog(pMac, LOGW, FL("Droping the received packets as radar is detected\n"));)
-        limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, (void *) limMsg->bodyptr);
-        return;
-    }
-#endif
-
-    if (fc.protVer != SIR_MAC_PROTOCOL_VERSION)
-    {   // Received Frame with non-zero Protocol Version
-        limLog(pMac, LOGE, FL("Unexpected frame with protVersion %d received\n"),
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                limLog(pMac, LOG1, FL("session does not exist for given bssId"));
                limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, limMsg->bodyptr);
                return;
@@ -1198,10 +662,6 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
     if (fc.protVer != SIR_MAC_PROTOCOL_VERSION)
     {   // Received Frame with non-zero Protocol Version
         limLog(pMac, LOGE, FL("Unexpected frame with protVersion %d received"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            fc.protVer);
         limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, (void *) limMsg->bodyptr);
 #ifdef WLAN_DEBUG            
@@ -1221,15 +681,7 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
 
 #if 0
     if (psessionEntry->limSystemRole == eLIM_UNKNOWN_ROLE) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog( pMac, LOGW, FL( "gLimSystemRole is %d. Exiting...\n" ),psessionEntry->limSystemRole );
-=======
         limLog( pMac, LOGW, FL( "gLimSystemRole is %d. Exiting..." ),psessionEntry->limSystemRole );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog( pMac, LOGW, FL( "gLimSystemRole is %d. Exiting..." ),psessionEntry->limSystemRole );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, (void *) limMsg->bodyptr);
 
 #ifdef WLAN_DEBUG        
@@ -1252,15 +704,7 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
                 if (limIsReassocInProgress( pMac,psessionEntry) && (fc.subType != SIR_MAC_MGMT_DISASSOC) &&
                                                 (fc.subType != SIR_MAC_MGMT_DEAUTH) && (fc.subType != SIR_MAC_MGMT_REASSOC_RSP))
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    limLog(pMac, LOGE, FL("Frame with Type - %d, Subtype - %d received in ReAssoc Wait state, dropping...\n"),
-=======
                     limLog(pMac, LOGE, FL("Frame with Type - %d, Subtype - %d received in ReAssoc Wait state, dropping..."),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    limLog(pMac, LOGE, FL("Frame with Type - %d, Subtype - %d received in ReAssoc Wait state, dropping..."),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                                 fc.type, fc.subType);
                     return;
             }
@@ -1271,32 +715,14 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
                 case SIR_MAC_MGMT_ASSOC_REQ:
                     // Make sure the role supports Association
                     if ((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
                     || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
-#endif
-=======
-                    || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     )
                         limProcessAssocReqFrame(pMac, pRxPacketInfo, LIM_ASSOC, psessionEntry);
 
                     else
                     {
                         // Unwanted messages - Log error
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        limLog(pMac, LOGE, FL("unexpected message received %X\n"),limMsg->type);
-=======
                         limLog(pMac, LOGE, FL("unexpected message received %X"),limMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        limLog(pMac, LOGE, FL("unexpected message received %X"),limMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         limPrintMsgName(pMac, LOGE, limMsg->type);
                     }
                     break;
@@ -1308,32 +734,14 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
                 case SIR_MAC_MGMT_REASSOC_REQ:
                     // Make sure the role supports Reassociation
                     if ((psessionEntry->limSystemRole == eLIM_BT_AMP_AP_ROLE)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
                       || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
-#endif                   
-=======
-                      || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      || (psessionEntry->limSystemRole == eLIM_AP_ROLE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     ){
                         limProcessAssocReqFrame(pMac, pRxPacketInfo, LIM_REASSOC, psessionEntry);
                     }
                     else
                     {
                         // Unwanted messages - Log error
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        limLog(pMac, LOGE, FL("unexpected message received %X\n"),limMsg->type);
-=======
                         limLog(pMac, LOGE, FL("unexpected message received %X"),limMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        limLog(pMac, LOGE, FL("unexpected message received %X"),limMsg->type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         limPrintMsgName(pMac, LOGE, limMsg->type);
                     }
                     break;
@@ -1370,39 +778,15 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
                     break;
 
                 case SIR_MAC_MGMT_ACTION:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    if(psessionEntry == NULL)
                       limProcessActionFrameNoSession(pMac, pRxPacketInfo);
                    else
                    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       if (WDA_GET_RX_UNKNOWN_UCAST(pRxPacketInfo))
                          limHandleUnknownA2IndexFrames(pMac, pRxPacketInfo,psessionEntry);
                      else
                          limProcessActionFrame(pMac, pRxPacketInfo,psessionEntry);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
                    }
-#endif
-=======
-                   }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    break;
                 default:
                     // Received Management frame of 'reserved' subtype
@@ -1411,14 +795,6 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
 
         }
         break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_CCX
-        case SIR_MAC_DATA_FRAME:
-        {
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_MAC_DATA_FRAME:
         {
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
@@ -1443,10 +819,6 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
             }     
 #endif
 #ifdef FEATURE_WLAN_CCX
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              /* We accept data frame (IAPP frame) only if Session is
               * present and ccx connection is established on that
               * session
@@ -1454,39 +826,18 @@ limHandle80211Frames(tpAniSirGlobal pMac, tpSirMsgQ limMsg, tANI_U8 *pDeferMsg)
              if (psessionEntry && psessionEntry->isCCXconnection) {
                  limProcessIappFrame(pMac, pRxPacketInfo, psessionEntry);
              }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-        break;
-#endif
-=======
 #endif
         }
         break;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#endif
-        }
-        break;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
             // Received frame of type 'reserved'
             break;
 
     } // switch (fc.type)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
 end:
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
-end:
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limPktFree(pMac, HAL_TXRX_FRM_802_11_MGMT, pRxPacketInfo, (void *) limMsg->bodyptr) ;
     return;
 } /*** end limHandle80211Frames() ***/
@@ -1516,15 +867,7 @@ limProcessAbortScanInd(tpAniSirGlobal pMac)
      * SME should send WNI_CFG_BACKGROUND_SCAN_PERIOD indication 
      * to start the background scan again
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    PELOGE(limLog(pMac, LOGE, FL("Processing AbortScan Ind\n"));)
-=======
     PELOG2(limLog(pMac, LOG2, FL("Processing AbortScan Ind"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    PELOG2(limLog(pMac, LOG2, FL("Processing AbortScan Ind"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     limAbortBackgroundScan(pMac);
 
@@ -1537,29 +880,13 @@ limProcessAbortScanInd(tpAniSirGlobal pMac)
             (eLIM_HAL_FINISH_SCAN_WAIT_STATE == pMac->lim.gLimHalScanState) )
         {
             //Simply signal we need to abort
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog( pMac, LOGW, FL(" waiting for HAL, simply signal abort gLimHalScanState = %d\n"), pMac->lim.gLimHalScanState );
-=======
             limLog( pMac, LOGW, FL(" waiting for HAL, simply signal abort gLimHalScanState = %d"), pMac->lim.gLimHalScanState );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog( pMac, LOGW, FL(" waiting for HAL, simply signal abort gLimHalScanState = %d"), pMac->lim.gLimHalScanState );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->lim.abortScan = 1;
         }
         else
         {
             //Force abort
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog( pMac, LOGW, FL(" Force aborting scan\n") );
-=======
             limLog( pMac, LOGW, FL(" Force aborting scan") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog( pMac, LOGW, FL(" Force aborting scan") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->lim.abortScan = 0;
             limDeactivateAndChangeTimer(pMac, eLIM_MIN_CHANNEL_TIMER);
             limDeactivateAndChangeTimer(pMac, eLIM_MAX_CHANNEL_TIMER);
@@ -1594,13 +921,6 @@ void limMessageProcessor(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     if (!defMsgDecision(pMac, limMsg))
     {
         limProcessMessages(pMac, limMsg);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_PRODUCT_TYPE_CLIENT
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // process deferred message queue if allowed
         {
             if ( (! (pMac->lim.gLimAddtsSent))
@@ -1612,27 +932,6 @@ void limMessageProcessor(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
                   limProcessDeferredMessageQueue(pMac);
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#else
-        {
-        // process deferred message queue if allowed
-            if (! (pMac->lim.gLimSystemInScanLearnMode))
-            {
-#if defined(ANI_AP_CLIENT_SDK)
-                if (pMac->lim.gLimSystemRole != eLIM_AP_ROLE && (pMac->lim.gLimAddtsSent))
-                    return;
-#endif
-
-                if (true == GET_LIM_PROCESS_DEFD_MESGS(pMac))
-                        limProcessDeferredMessageQueue(pMac);
-            }
-        }
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 }
 
@@ -1642,15 +941,7 @@ void limOemDataRspHandleResumeLinkRsp(tpAniSirGlobal pMac, eHalStatus status, tA
 {
     if(status != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGE, FL("OEM Data Rsp failed to get the response for resume link\n"));
-=======
         limLog(pMac, LOGE, FL("OEM Data Rsp failed to get the response for resume link"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGE, FL("OEM Data Rsp failed to get the response for resume link"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if(NULL != pMac->lim.gpLimMlmOemDataReq)
@@ -1682,15 +973,7 @@ void limProcessOemDataRsp(tpAniSirGlobal pMac, tANI_U32* body)
     status = palAllocateMemory(pMac->hHdd, (void**)(&mlmOemDataRsp), sizeof(tLimMlmOemDataRsp));
     if(status != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("could not allocate memory for mlmOemDataRsp\n"));
-=======
         limLog(pMac, LOGP, FL("could not allocate memory for mlmOemDataRsp"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("could not allocate memory for mlmOemDataRsp"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -1754,15 +1037,7 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
 #endif
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   PELOG3(limLog(pMac, LOG3, FL("rcvd msgType = %s, sme state = %s, mlm state = %s\n"),
-=======
    PELOG3(limLog(pMac, LOG3, FL("rcvd msgType = %s, sme state = %s, mlm state = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   PELOG3(limLog(pMac, LOG3, FL("rcvd msgType = %s, sme state = %s, mlm state = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       limMsgStr(limMsg->type), limSmeStateStr(pMac->lim.gLimSmeState),
       limMlmStateStr(pMac->lim.gLimMlmState));)
 
@@ -1783,24 +1058,12 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
                 // Defer processsing this message
                 if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-                        limMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
-                        pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     if(!(pMac->lim.deferredMsgCnt & 0xF))
                     {
                         PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
                         limMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
                         pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
                     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limLogSessionStates(pMac);
                     limPrintMsgName(pMac, LOGE, limMsg->type);
                 }
@@ -1848,30 +1111,14 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             pMac->lim.numBbt++;
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef VOSS_ENABLED
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 v_U16_t     pktLen = 0;
                 vos_pkt_t  *pVosPkt;
                 VOS_STATUS  vosStatus;
                 tSirMsgQ    limMsgNew;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
                 tANI_U32    *pBD = NULL ;
 #endif 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef FEATURE_WLAN_TDLS_INTERNAL
-                tANI_U32    *pBD = NULL ;
-#endif 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 /* The original limMsg which we were deferring have the 
                  * bodyPointer point to 'BD' instead of 'Vos pkt'. If we don't make a copy
@@ -1891,11 +1138,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
                     break;
 
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
                 /* 
                  * TDLS frames comes as translated frames as well as
@@ -1914,31 +1156,14 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
                 }
                 else
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limHandle80211Frames(pMac, &limMsgNew, &deferMsg);
 
                 if ( deferMsg == true )
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    PELOG1(limLog(pMac, LOG1, FL("Defer message type=%X \n"), limMsg->type);)
-                        if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
-                        {
-                            PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     PELOG1(limLog(pMac, LOG1, FL("Defer message type=%X "), limMsg->type);)
                         if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
                         {
                             PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 limMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
                                 pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
                             limLogSessionStates(pMac);
@@ -1955,29 +1180,10 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
                     vos_pkt_return_packet(pVosPkt);
                 }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#else
-            limHandle80211Frames(pMac, limMsg);
-#endif
-            break;
-
-        case eWNI_SME_SCAN_REQ:
-#ifdef WLAN_FEATURE_P2P
-        case eWNI_SME_REMAIN_ON_CHANNEL_REQ:
-#endif
-=======
             break;
 
         case eWNI_SME_SCAN_REQ:
         case eWNI_SME_REMAIN_ON_CHANNEL_REQ:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            break;
-
-        case eWNI_SME_SCAN_REQ:
-        case eWNI_SME_REMAIN_ON_CHANNEL_REQ:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eWNI_SME_DISASSOC_REQ:
         case eWNI_SME_DEAUTH_REQ:
         case eWNI_SME_STA_STAT_REQ:
@@ -1986,14 +1192,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         case eWNI_SME_STAT_SUMM_REQ:
         case eWNI_SME_GET_SCANNED_CHANNEL_REQ:
         case eWNI_SME_GET_STATISTICS_REQ:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_OEM_DATA_SUPPORT
-        case eWNI_SME_OEM_DATA_REQ:
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
         case eWNI_SME_GET_ROAM_RSSI_REQ:
 #endif
@@ -2011,10 +1209,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         case eWNI_SME_TDLS_TEARDOWN_REQ:
 #endif
         case eWNI_SME_RESET_AP_CAPS_CHANGED:
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // These messages are from HDD
             limProcessNormalHddMsg(pMac, limMsg, true);  //need to response to hdd
             break;
@@ -2052,28 +1246,13 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         case eWNI_SME_SET_TX_POWER_REQ:
         case eWNI_SME_GET_TX_POWER_REQ:
         case eWNI_SME_GET_NOISE_REQ:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE        
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eWNI_SME_GET_ASSOC_STAS_REQ:
         case eWNI_SME_TKIP_CNTR_MEAS_REQ:
         case eWNI_SME_UPDATE_APWPSIE_REQ:
         case eWNI_SME_HIDE_SSID_REQ:
         case eWNI_SME_GET_WPSPBC_SESSION_REQ:
         case eWNI_SME_SET_APWPARSNIEs_REQ:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
         case eWNI_SME_CHNG_MCC_BEACON_INTERVAL:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        case eWNI_SME_CHNG_MCC_BEACON_INTERVAL:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI
         case eWNI_SME_NEIGHBOR_REPORT_REQ_IND:
         case eWNI_SME_BEACON_REPORT_RESP_XMIT_IND:
@@ -2088,22 +1267,9 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
 #endif
         case eWNI_SME_ADD_STA_SELF_REQ:
         case eWNI_SME_DEL_STA_SELF_REQ:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-        case eWNI_SME_REGISTER_MGMT_FRAME_REQ:
-        case eWNI_SME_UPDATE_NOA:
-#endif
-=======
         case eWNI_SME_REGISTER_MGMT_FRAME_REQ:
         case eWNI_SME_UPDATE_NOA:
         case eWNI_SME_CLEAR_DFS_CHANNEL_LIST:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        case eWNI_SME_REGISTER_MGMT_FRAME_REQ:
-        case eWNI_SME_UPDATE_NOA:
-        case eWNI_SME_CLEAR_DFS_CHANNEL_LIST:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // These messages are from HDD
             limProcessNormalHddMsg(pMac, limMsg, false);   //no need to response to hdd
             break;
@@ -2131,13 +1297,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             }
         }
             break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case eWNI_SME_SEND_ACTION_FRAME_IND:
             limSendP2PActionFrame(pMac, limMsg);
             palFreeMemory(pMac->hHdd, (tANI_U8 *)limMsg->bodyptr);
@@ -2149,11 +1308,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             limMsg->bodyptr = NULL;
             break;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_HAL_P2P_NOA_START_IND:
         {
             tpPESession psessionEntry = &pMac->lim.gpSession[0];
@@ -2196,49 +1350,23 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
          }
             break;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_HAL_P2P_NOA_ATTR_IND:
             {
                 tpPESession psessionEntry = &pMac->lim.gpSession[0];  
                 tANI_U8  i;
                 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                
-                limLog(pMac, LOGW, FL("Received message Noa_ATTR %x\n"), limMsg->type);
-                for(i=0; i < pMac->lim.maxBssId; i++)
-                {
-                    if   ( (psessionEntry != NULL) && (pMac->lim.gpSession[i].valid) && 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limLog(pMac, LOGW, FL("Received message Noa_ATTR %x"), limMsg->type);
                 for(i=0; i < pMac->lim.maxBssId; i++)
                 {
                     psessionEntry = &pMac->lim.gpSession[i];
                     if   ( (psessionEntry != NULL) && (psessionEntry->valid) && 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         (psessionEntry->pePersona == VOS_P2P_GO_MODE))
                     { //Save P2P attributes for P2P Go persona
                     
                         palCopyMemory(pMac->hHdd,&psessionEntry->p2pGoPsUpdate, limMsg->bodyptr,sizeof(tSirP2PNoaAttr));
                         
                         
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        limLog(pMac, LOGE, FL(" &psessionEntry->bssId%02x:%02x:%02x:%02x:%02x:%02x ctWin=%d oppPsFlag=%d\n"),
-=======
                         limLog(pMac, LOG2, FL(" &psessionEntry->bssId%02x:%02x:%02x:%02x:%02x:%02x ctWin=%d oppPsFlag=%d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        limLog(pMac, LOG2, FL(" &psessionEntry->bssId%02x:%02x:%02x:%02x:%02x:%02x ctWin=%d oppPsFlag=%d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                      psessionEntry->bssId[0],
                                      psessionEntry->bssId[1],
                                      psessionEntry->bssId[2],
@@ -2248,15 +1376,7 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
                                      psessionEntry->p2pGoPsUpdate.ctWin,
                                      psessionEntry->p2pGoPsUpdate.oppPsFlag);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        limLog(pMac, LOGE, FL(" uNoa1IntervalCnt=%d uNoa1Duration=%d uNoa1Interval=%d uNoa1StartTime=%d\n"),
-=======
                         limLog(pMac, LOG2, FL(" uNoa1IntervalCnt=%d uNoa1Duration=%d uNoa1Interval=%d uNoa1StartTime=%d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        limLog(pMac, LOG2, FL(" uNoa1IntervalCnt=%d uNoa1Duration=%d uNoa1Interval=%d uNoa1StartTime=%d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                      psessionEntry->p2pGoPsUpdate.uNoa1IntervalCnt,
                                      psessionEntry->p2pGoPsUpdate.uNoa1Duration,
                                      psessionEntry->p2pGoPsUpdate.uNoa1Interval,
@@ -2274,13 +1394,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             break;
 
             
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* eWNI_SME_PRE_CHANNEL_SWITCH_FULL_POWER Message comes after the
          * device comes out of full power for the full power request sent 
          * because of channel switch with switch count as 0, so call the same 
@@ -2317,19 +1430,9 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             break;
 
         case WDA_MISSED_BEACON_IND:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limHandleMissedBeaconInd(pMac);
-=======
             limHandleMissedBeaconInd(pMac, limMsg);
             palFreeMemory(pMac->hHdd, (tANI_U8 *)limMsg->bodyptr);
             limMsg->bodyptr = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limHandleMissedBeaconInd(pMac, limMsg);
-            palFreeMemory(pMac->hHdd, (tANI_U8 *)limMsg->bodyptr);
-            limMsg->bodyptr = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         case WDA_MIC_FAILURE_IND:
            limMicFailureInd(pMac, limMsg);
@@ -2338,90 +1441,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
            break;
     
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PACKAGE == ADVANCED) && defined(ANI_PRODUCT_TYPE_AP)
-        case eWNI_SME_MEASUREMENT_REQ:
-        case eWNI_SME_SET_WDS_INFO_REQ:
-            // Message to support ANI feature set
-            // These are handled by LMM sub module
-            if (limIsSystemInScanState(pMac))
-            {
-                // System is in DFS (Learn) mode
-                // Defer processsing this message
-                if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
-                {
-                    pMac->lim.numSme++;
-                    PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-                        limMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
-                        pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
-                    limLogSessionStates(pMac);
-                    limPrintMsgName(pMac, LOGE, limMsg->type);
-                    // Release body
-                    palFreeMemory( pMac->hHdd, (tANI_U8 *) limMsg->bodyptr);
-                    break;
-                }
-
-                if (limMsg->type == eWNI_SME_MEASUREMENT_REQ)
-                {
-                    if (GET_LIM_PROCESS_DEFD_MESGS(pMac))
-                    {
-                        //Set the resume channel to Any valid channel (invalid). 
-                        //This will instruct HAL to set it to any previous valid channel.
-                        peSetResumeChannel(pMac, 0, 0);
-                        limSendHalFinishScanReq(pMac, eLIM_HAL_FINISH_LEARN_WAIT_STATE);
-                    }
-                }
-            }
-            else
-            {
-                pMac->lim.numSme++;
-                limProcessLmmMessages(pMac,
-                                      limMsg->type,
-                                      (tANI_U32 *) limMsg->bodyptr);
-
-                // Release body
-                palFreeMemory( pMac->hHdd, (tANI_U8 *) limMsg->bodyptr);
-            }
-            break;
-
-        case SIR_LIM_LEARN_INTERVAL_TIMEOUT:
-            if ((pMac->lim.gLimSystemRole == eLIM_STA_ROLE) &&
-                ((pMac->lim.gLimMlmState == eLIM_MLM_WT_DEL_STA_RSP_STATE) ||
-                 (pMac->lim.gLimMlmState == eLIM_MLM_WT_DEL_BSS_RSP_STATE)))
-            {
-                // BP is in the process of cleaning up
-                // its state with previously assocaited AP.
-                // Discard processsing this message.
-                PELOG1(limLog(pMac, LOG1,
-                       FL("Discarding LEARN_INTERVAL_TO message\n"));)
-            }
-            else
-                limProcessLmmMessages(pMac,
-                                      limMsg->type,
-                                      (tANI_U32 *) limMsg->bodyptr);
-            break;
-
-        case SIR_LIM_MEASUREMENT_IND_TIMEOUT:
-        case SIR_LIM_LEARN_DURATION_TIMEOUT:
-            // These measurement related timeouts are
-            // handled by LMM sub module.
-            limProcessLmmMessages(pMac,
-                                  limMsg->type,
-                                  (tANI_U32 *) limMsg->bodyptr);
-
-            break;
-
-        case SIR_LIM_RADAR_DETECT_IND:
-            limDetectRadar(pMac, (tANI_U32*)limMsg->bodyptr);
-            palFreeMemory( pMac->hHdd, (tANI_U32*)limMsg->bodyptr);
-            break;
-
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case SIR_LIM_ADDTS_RSP_TIMEOUT:
             limProcessSmeReqMessages(pMac,limMsg);
@@ -2440,51 +1459,20 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
 
         case SIR_LIM_DEL_TS_IND:
           limProcessDelTsInd(pMac, limMsg);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             break;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            break;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_LIM_ADD_BA_IND:
             limProcessAddBaInd(pMac, limMsg);
             break;
         case SIR_LIM_DEL_BA_ALL_IND:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limDelAllBASessions(pMac);  // refer notes and change
-=======
             limDelAllBASessions(pMac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limDelAllBASessions(pMac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         case SIR_LIM_DEL_BA_IND:
             limProcessMlmHalBADeleteInd( pMac, limMsg );
             break;
 
          case SIR_LIM_BEACON_GEN_IND: {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_PRODUCT_TYPE_AP
-                    if (pMac->lim.gLimSystemRole == eLIM_AP_ROLE)
-                        pmmUpdateTIM(pMac, (tpBeaconGenParams)limMsg->bodyptr);
-#endif
-
-#ifdef WLAN_SOFTAP_FEATURE
-                if( pMac->lim.gLimSystemRole != eLIM_AP_ROLE )
-#endif                  
-=======
 
                 if( pMac->lim.gLimSystemRole != eLIM_AP_ROLE )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-                if( pMac->lim.gLimSystemRole != eLIM_AP_ROLE )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     schProcessPreBeaconInd(pMac, limMsg);    
 
                 }
@@ -2498,14 +1486,7 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         case SIR_LIM_MAX_CHANNEL_TIMEOUT:
         case SIR_LIM_PERIODIC_PROBE_REQ_TIMEOUT:
         case SIR_LIM_JOIN_FAIL_TIMEOUT:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         case SIR_LIM_PERIODIC_JOIN_PROBE_REQ_TIMEOUT:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        case SIR_LIM_PERIODIC_JOIN_PROBE_REQ_TIMEOUT:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_LIM_AUTH_FAIL_TIMEOUT:
         case SIR_LIM_AUTH_RSP_TIMEOUT:
         case SIR_LIM_ASSOC_FAIL_TIMEOUT:
@@ -2513,23 +1494,11 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
 #ifdef WLAN_FEATURE_VOWIFI_11R
         case SIR_LIM_FT_PREAUTH_RSP_TIMEOUT:
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-        case SIR_LIM_REMAIN_CHN_TIMEOUT:
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_LIM_REMAIN_CHN_TIMEOUT:
         case SIR_LIM_INSERT_SINGLESHOT_NOA_TIMEOUT:
         case SIR_LIM_DISASSOC_ACK_TIMEOUT:
         case SIR_LIM_DEAUTH_ACK_TIMEOUT:
         case SIR_LIM_CONVERT_ACTIVE_CHANNEL_TO_PASSIVE:
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             // These timeout messages are handled by MLM sub module
 
             limProcessMlmReqMessages(pMac,
@@ -2544,15 +1513,7 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
                     */
 
             #if 0 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOG1(limLog(pMac, LOG1, FL("Heartbeat timeout, SME %d, MLME %d, #bcn %d\n"),
-=======
             PELOG1(limLog(pMac, LOG1, FL("Heartbeat timeout, SME %d, MLME %d, #bcn %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOG1(limLog(pMac, LOG1, FL("Heartbeat timeout, SME %d, MLME %d, #bcn %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pMac->lim.gLimSmeState, pMac->lim.gLimMlmState,
                    pMac->lim.gLimRxedBeaconCntDuringHB);)
 
@@ -2567,15 +1528,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
 
             break;
             #endif //TO SUPPORT BT-AMP
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-            limHandleHeartBeatTimeout(pMac);
-            break;
-           
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (limIsSystemInScanState(pMac))
             {
                 // System is in DFS (Learn) mode
@@ -2601,22 +1553,11 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             }            
             break;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_LIM_PROBE_HB_FAILURE_TIMEOUT:
             limHandleHeartBeatFailureTimeout(pMac);            
             break;
 
         case SIR_LIM_CHANNEL_SCAN_TIMEOUT:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /**
              * Background scan timeout occurred on STA.
              * This is handled by LMM sub module.
@@ -2627,41 +1568,8 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             //if (pMac->sys.gSysEnableScanMode)
             pMac->lim.gLimReportBackgroundScanResults = FALSE;
             limTriggerBackgroundScan(pMac);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
             break;
 
-#ifdef ANI_PRODUCT_TYPE_AP
-        case SIR_LIM_PREAUTH_CLNUP_TIMEOUT:
-            if (limIsSystemInScanState(pMac))
-            {
-                // System is in DFS (Learn) mode
-                // Defer processsing this message
-                if (limDeferMsg(pMac, limMsg) != TX_SUCCESS)
-                {
-                    PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-                        limMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
-                        pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
-                    limLogSessionStates(pMac);
-                }
-            }
-            else
-            {
-                // Pre-authentication context cleanup timeout message
-                limPreAuthClnupHandler(pMac);
-            }
-
-            break;
-#endif
-=======
-            break;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            break;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case SIR_LIM_HASH_MISS_THRES_TIMEOUT:
 
@@ -2718,13 +1626,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             limProcessQuietBssTimeout(pMac);
             break;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case SIR_LIM_UPDATE_OLBC_CACHEL_TIMEOUT:
             limHandleUpdateOlbcCache(pMac);
             break;
@@ -2734,13 +1635,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             break;
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
         /*
@@ -2828,10 +1722,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             break ;
         }
 #endif   /* FEATURE_WLAN_TDLS TIMER */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case WDA_ADD_BSS_RSP:
             limProcessMlmAddBssRsp( pMac, limMsg );
             break;
@@ -2882,21 +1772,12 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         case WDA_GET_STATISTICS_RSP:
             limSendSmePEStatisticsRsp ( pMac, limMsg->type, (void *)limMsg->bodyptr);
             break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI_11R || defined FEATURE_WLAN_CCX || defined(FEATURE_WLAN_LFR)
         case WDA_GET_ROAM_RSSI_RSP:
             limSendSmePEGetRoamRssiRsp ( pMac, limMsg->type, (void *)limMsg->bodyptr);
             break;
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case WDA_SET_MIMOPS_RSP:            //limProcessSetMimoRsp(pMac, limMsg);
         case WDA_SET_TX_POWER_RSP:          //limProcessSetTxPowerRsp(pMac, limMsg);
@@ -2918,24 +1799,10 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
             }
             break;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_CHIPSET_VOLANS
-       case SIR_LIM_ADDR2_MISS_IND:
-       {
-           limLog(pMac, LOGE,
-                   FL("Addr2 mismatch interrupt received %X\n"),
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        case SIR_LIM_ADDR2_MISS_IND:
        {
            limLog(pMac, LOGE,
                    FL("Addr2 mismatch interrupt received %X"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    limMsg->type);
            /*a message from HAL indicating addr2 mismatch interrupt occurred
              limMsg->bodyptr contains only pointer to 48-bit addr2 field*/
@@ -2946,13 +1813,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
            vos_mem_free((v_VOID_t *)(limMsg->bodyptr));
            break;
        }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_VOWIFI_11R
     case WDA_AGGR_QOS_RSP:
@@ -2989,12 +1849,6 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
         pmmProcessMessage(pMac, limMsg);
         break;
 #endif // WLAN_FEATURE_GTK_OFFLOAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case eWNI_SME_SET_BCN_FILTER_REQ:
         {
 #ifdef WLAN_ACTIVEMODE_OFFLOAD_FEATURE
@@ -3014,40 +1868,20 @@ limProcessMessages(tpAniSirGlobal pMac, tpSirMsgQ  limMsg)
 #endif
         }
         break;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     default:
         vos_mem_free((v_VOID_t*)limMsg->bodyptr);
         limMsg->bodyptr = NULL;
         // Unwanted messages
         // Log error
         limLog(pMac, LOGE,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                FL("Discarding unexpected message received %X\n"),
-=======
                 FL("Discarding unexpected message received %X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                FL("Discarding unexpected message received %X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limMsg->type);
         limPrintMsgName(pMac, LOGE, limMsg->type);
         break;
 
     } // switch (limMsg->type)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   PELOG2(limLog(pMac, LOG2, FL("Done Processing msgType = %d, sme state = %s, mlm state = %s\n"),
-=======
    PELOG2(limLog(pMac, LOG2, FL("Done Processing msgType = %d, sme state = %s, mlm state = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   PELOG2(limLog(pMac, LOG2, FL("Done Processing msgType = %d, sme state = %s, mlm state = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limMsg->type, limSmeStateStr(pMac->lim.gLimSmeState),
             limMlmStateStr(pMac->lim.gLimMlmState));)
 
@@ -3080,24 +1914,6 @@ limProcessDeferredMessageQueue(tpAniSirGlobal pMac)
 {
     tSirMsgQ  limMsg = { 0, 0, 0 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_OS_TYPE_LINUX) || defined(ANI_OS_TYPE_OSX)
-    while (TX_SUCCESS == tx_queue_receive(&pMac->sys.gSirLimDeferredMsgQ, (void *) &limMsg, TX_NO_WAIT))
-    {
-        PELOG3(limLog(pMac, LOG3, FL("Processing deferred message %X\n"), limMsg.type);)
-        limPrintMsgName(pMac, LOG3, limMsg.type);
-        pMac->lim.gLimNumDeferredMsgs--;
-        limProcessMessages(pMac, &limMsg);
-
-        if(true != GET_LIM_PROCESS_DEFD_MESGS(pMac))
-            break;
-    }
-#else
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tSirMsgQ *readMsg;
     tANI_U16  size;
 
@@ -3119,13 +1935,6 @@ limProcessDeferredMessageQueue(tpAniSirGlobal pMac)
                 break;
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /*** end limProcessDeferredMessageQueue() ***/
 
 
@@ -3179,15 +1988,7 @@ void limProcessNormalHddMsg(tpAniSirGlobal pMac, tSirMsgQ *pLimMsg, tANI_U8 fRsp
 #ifdef WLAN_DEBUG            
             pMac->lim.numSme++;
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)\n"),
-=======
             PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOGE(limLog(pMac, LOGE, FL("Unable to Defer message(0x%X) limSmeState %d (prev sme state %d) sysRole %d mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         pLimMsg->type, pMac->lim.gLimSmeState,  pMac->lim.gLimPrevSmeState,
                         pMac->lim.gLimSystemRole,  pMac->lim.gLimMlmState,  pMac->lim.gLimPrevMlmState);)
             limLogSessionStates(pMac);
@@ -3231,15 +2032,7 @@ handleHTCapabilityandHTInfo(struct sAniSirGlobal *pMac, tpPESession psessionEntr
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_HT_CAP_INFO, &cfgValue) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_CAP_INFO value\n"));
-=======
         limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_CAP_INFO value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_CAP_INFO value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return ;
     }
     ptr = (tANI_U8 *) &macHTCapabilityInfo;
@@ -3255,15 +2048,7 @@ handleHTCapabilityandHTInfo(struct sAniSirGlobal *pMac, tpPESession psessionEntr
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_HT_AMPDU_PARAMS, &cfgValue) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_PARAM_INFO value\n"));
-=======
         limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_PARAM_INFO value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_PARAM_INFO value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return ;
     }
     ptr = (tANI_U8 *) &macHTParametersInfo;
@@ -3274,15 +2059,7 @@ handleHTCapabilityandHTInfo(struct sAniSirGlobal *pMac, tpPESession psessionEntr
     // Get HT IE Info
     if (wlan_cfgGetInt(pMac, WNI_CFG_HT_INFO_FIELD1, &cfgValue) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD1 value\n"));
-=======
         limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD1 value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD1 value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return ;
     }
     ptr = (tANI_U8 *) &macHTInfoField1;
@@ -3293,15 +2070,7 @@ handleHTCapabilityandHTInfo(struct sAniSirGlobal *pMac, tpPESession psessionEntr
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_HT_INFO_FIELD2, &cfgValue) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD2 value\n"));
-=======
         limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD2 value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD2 value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return ;
     }
     ptr = (tANI_U8 *) &macHTInfoField2;
@@ -3310,15 +2079,7 @@ handleHTCapabilityandHTInfo(struct sAniSirGlobal *pMac, tpPESession psessionEntr
 
     if (wlan_cfgGetInt(pMac, WNI_CFG_HT_INFO_FIELD3, &cfgValue) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD3 value\n"));
-=======
         limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD3 value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Fail to retrieve WNI_CFG_HT_INFO_FIELD3 value"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return ;
     }
     ptr = (tANI_U8 *) &macHTInfoField3;
@@ -3350,15 +2111,7 @@ void limLogSessionStates(tpAniSirGlobal pMac)
     {
         if(pMac->lim.gpSession[i].valid)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOGE(limLog(pMac, LOGE, FL("Session[%d] sysRole(%d) limSmeState %d (prev sme state %d) mlm state %d (prev mlm state %d)\n"),
-=======
             PELOG1(limLog(pMac, LOG1, FL("Session[%d] sysRole(%d) limSmeState %d (prev sme state %d) mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOG1(limLog(pMac, LOG1, FL("Session[%d] sysRole(%d) limSmeState %d (prev sme state %d) mlm state %d (prev mlm state %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    i, pMac->lim.gpSession[i].limSystemRole,  pMac->lim.gpSession[i].limSmeState,  
                    pMac->lim.gpSession[i].limPrevSmeState,   pMac->lim.gpSession[i].limMlmState,  
                    pMac->lim.gpSession[i].limPrevMlmState);)

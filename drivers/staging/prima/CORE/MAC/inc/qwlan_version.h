@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -67,17 +58,6 @@ BRIEF DESCRIPTION:
 
 #define QWLAN_VERSION_MAJOR            3
 #define QWLAN_VERSION_MINOR            2
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define QWLAN_VERSION_PATCH            1
-#define QWLAN_VERSION_EXTRA            "h"
-#define QWLAN_VERSION_BUILD            11
-#define QWLAN_VERSIONSTR               "3.2.1.11h"
-
-#endif /* QWLAN_VERSION_H */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define QWLAN_VERSION_PATCH            6
 #define QWLAN_VERSION_EXTRA            ""
 #define QWLAN_VERSION_BUILD            114
@@ -86,7 +66,3 @@ BRIEF DESCRIPTION:
 
 #endif /* QWLAN_VERSION_H */
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

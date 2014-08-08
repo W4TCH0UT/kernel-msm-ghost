@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -103,15 +94,7 @@ eHalStatus pmcOpen (tHalHandle hHal)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcOpen\n"));
-=======
     smsLog(pMac, LOG2, FL("Entering pmcOpen"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcOpen"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Initialize basic PMC information about device. */
     pMac->pmc.powerSource = BATTERY_POWER;
@@ -135,15 +118,7 @@ eHalStatus pmcOpen (tHalHandle hHal)
     /* Allocate a timer to use with IMPS. */
     if (palTimerAlloc(pMac->hHdd, &pMac->pmc.hImpsTimer, pmcImpsTimerExpired, hHal) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot allocate timer for IMPS\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot allocate timer for IMPS"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot allocate timer for IMPS"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -152,15 +127,7 @@ eHalStatus pmcOpen (tHalHandle hHal)
     if (!VOS_IS_STATUS_SUCCESS(vos_timer_init(&pMac->pmc.hTrafficTimer, 
                                 VOS_TIMER_TYPE_SW, pmcTrafficTimerExpired, hHal)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot allocate timer for traffic measurement\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot allocate timer for traffic measurement"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot allocate timer for traffic measurement"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -168,15 +135,7 @@ eHalStatus pmcOpen (tHalHandle hHal)
     /* Allocate a timer used to report current PMC state through periodic DIAG event */
     if (palTimerAlloc(pMac->hHdd, &pMac->pmc.hDiagEvtTimer, pmcDiagEvtTimerExpired, hHal) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot allocate timer for diag event reporting\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot allocate timer for diag event reporting"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot allocate timer for diag event reporting"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 #endif
@@ -189,15 +148,7 @@ eHalStatus pmcOpen (tHalHandle hHal)
     if (palTimerAlloc(pMac->hHdd, &pMac->pmc.hExitPowerSaveTimer,
                       pmcExitPowerSaveTimerExpired, hHal) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot allocate exit power save mode timer\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot allocate exit power save mode timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot allocate exit power save mode timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -205,29 +156,13 @@ eHalStatus pmcOpen (tHalHandle hHal)
     /* Initialize lists for power save check routines and request full power callback routines. */
     if (csrLLOpen(pMac->hHdd, &pMac->pmc.powerSaveCheckList) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot initialize power save check routine list\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot initialize power save check routine list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot initialize power save check routine list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
     if (csrLLOpen(pMac->hHdd, &pMac->pmc.requestFullPowerList) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot initialize request full power callback routine list\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot initialize request full power callback routine list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot initialize request full power callback routine list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -236,59 +171,27 @@ eHalStatus pmcOpen (tHalHandle hHal)
     if (csrLLOpen(pMac->hHdd, &pMac->pmc.requestBmpsList) !=
       eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, "PMC: cannot initialize request BMPS callback routine list\n");
-=======
         smsLog(pMac, LOGE, "PMC: cannot initialize request BMPS callback routine list");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, "PMC: cannot initialize request BMPS callback routine list");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
     /* Initialize lists for request start UAPSD callback routines. */
     if (csrLLOpen(pMac->hHdd, &pMac->pmc.requestStartUapsdList) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, "PMC: cannot initialize request start UAPSD callback routine list\n");
-=======
         smsLog(pMac, LOGE, "PMC: cannot initialize request start UAPSD callback routine list");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, "PMC: cannot initialize request start UAPSD callback routine list");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
     /* Initialize lists for device state update indication callback routines. */
     if (csrLLOpen(pMac->hHdd, &pMac->pmc.deviceStateUpdateIndList) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, "PMC: cannot initialize device state update indication callback list\n");
-=======
         smsLog(pMac, LOGE, "PMC: cannot initialize device state update indication callback list");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, "PMC: cannot initialize device state update indication callback list");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
     if (csrLLOpen(pMac->hHdd, &pMac->pmc.deferredMsgList) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot initialize deferred msg list\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot initialize deferred msg list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot initialize deferred msg list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -317,15 +220,7 @@ eHalStatus pmcStart (tHalHandle hHal)
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
     tSirMacHTMIMOPowerSaveState  htMimoPowerSaveState;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcStart\n"));
-=======
     smsLog(pMac, LOG2, FL("Entering pmcStart"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcStart"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Initialize basic PMC information about device. */
     pMac->pmc.pmcState = FULL_POWER;
@@ -352,19 +247,10 @@ eHalStatus pmcStart (tHalHandle hHal)
     /* Initialize BMPS traffic counts. */
     pMac->pmc.cLastTxUnicastFrames = 0;
     pMac->pmc.cLastRxUnicastFrames = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->pmc.ImpsReqFailed = VOS_FALSE;
     pMac->pmc.ImpsReqFailCnt = 0;
     pMac->pmc.ImpsReqTimerFailed = 0;
     pMac->pmc.ImpsReqTimerfailCnt = 0;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Configure SMPS. */
     if (pMac->pmc.smpsEnabled && (pMac->pmc.powerSource != AC_POWER || pMac->pmc.smpsConfig.enterOnAc))
@@ -417,28 +303,12 @@ eHalStatus pmcStop (tHalHandle hHal)
     tListElem *pEntry;
     tPmcDeferredMsg *pDeferredMsg;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcStop\n"));
-=======
     smsLog(pMac, LOG2, FL("Entering pmcStop"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcStop"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Cancel any running timers. */
     if (palTimerStop(pMac->hHdd, pMac->pmc.hImpsTimer) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     pmcStopTrafficTimer(hHal);
@@ -449,15 +319,7 @@ eHalStatus pmcStop (tHalHandle hHal)
 
     if (palTimerStop(pMac->hHdd, pMac->pmc.hExitPowerSaveTimer) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot cancel exit power save mode timer\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot cancel exit power save mode timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot cancel exit power save mode timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /* Do all the callbacks. */
@@ -503,64 +365,26 @@ eHalStatus pmcClose (tHalHandle hHal)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcClose\n"));
-=======
     smsLog(pMac, LOG2, FL("Entering pmcClose"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcClose"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Free up allocated resources. */
     if (palTimerFree(pMac->hHdd, pMac->pmc.hImpsTimer) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot deallocate IMPS timer\n"));
-    }
-    if (!VOS_IS_STATUS_SUCCESS(vos_timer_destroy(&pMac->pmc.hTrafficTimer)))
-    {
-        smsLog(pMac, LOGE, FL("Cannot deallocate traffic timer\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGE, FL("Cannot deallocate IMPS timer"));
     }
     if (!VOS_IS_STATUS_SUCCESS(vos_timer_destroy(&pMac->pmc.hTrafficTimer)))
     {
         smsLog(pMac, LOGE, FL("Cannot deallocate traffic timer"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #ifdef FEATURE_WLAN_DIAG_SUPPORT    
     if (palTimerFree(pMac->hHdd, pMac->pmc.hDiagEvtTimer) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot deallocate timer for diag event reporting\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot deallocate timer for diag event reporting"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot deallocate timer for diag event reporting"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 #endif
     if (palTimerFree(pMac->hHdd, pMac->pmc.hExitPowerSaveTimer) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot deallocate exit power save mode timer\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot deallocate exit power save mode timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot deallocate exit power save mode timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /*
@@ -601,15 +425,7 @@ eHalStatus pmcSignalPowerEvent (tHalHandle hHal, tPmcPowerEvent event)
     tSirMacHTMIMOPowerSaveState  htMimoPowerSaveState;
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcSignalPowerEvent, event %d\n"), event);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcSignalPowerEvent, event %d"), event);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcSignalPowerEvent, event %d"), event);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Take action based on the event being signaled. */
     switch (event)
@@ -667,15 +483,7 @@ eHalStatus pmcSignalPowerEvent (tHalHandle hHal, tPmcPowerEvent event)
         return eHAL_STATUS_SUCCESS;
 #endif //GEN6_ONWARDS
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid event %d\n"), event);
-=======
         smsLog(pMac, LOGE, FL("Invalid event %d"), event);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid event %d"), event);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -708,15 +516,7 @@ eHalStatus pmcSetConfigPowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode, v
     WLAN_VOS_DIAG_EVENT_DEF(psRequest, vos_event_wlan_powersave_payload_type);
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcSetConfigPowerSave, power save mode %d\n"), psMode);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcSetConfigPowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcSetConfigPowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Configure the specified power saving mode. */
     switch (psMode)
@@ -725,47 +525,13 @@ eHalStatus pmcSetConfigPowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode, v
     case ePMC_IDLE_MODE_POWER_SAVE:
         pMac->pmc.impsConfig = *(tpPmcImpsConfigParams)pConfigParams;
         smsLog(pMac, LOG3, FL("IMPS configuration"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG3, "          enter on AC: %d\n",
-=======
         smsLog(pMac, LOG3, "          enter on AC: %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG3, "          enter on AC: %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->pmc.impsConfig.enterOnAc);
         break;
 
     case ePMC_BEACON_MODE_POWER_SAVE:
         pMac->pmc.bmpsConfig = *(tpPmcBmpsConfigParams)pConfigParams;
         smsLog(pMac, LOG3, FL("BMPS configuration"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG3, "          enter on AC: %d\n",
-               pMac->pmc.bmpsConfig.enterOnAc);
-        smsLog(pMac, LOG3, "          TX threshold: %d\n",
-               pMac->pmc.bmpsConfig.txThreshold);
-        smsLog(pMac, LOG3, "          RX threshold: %d\n",
-               pMac->pmc.bmpsConfig.rxThreshold);
-        smsLog(pMac, LOG3, "          traffic measurement period (ms): %d\n",
-               pMac->pmc.bmpsConfig.trafficMeasurePeriod);
-        smsLog(pMac, LOG3, "          BMPS period: %d\n",
-               pMac->pmc.bmpsConfig.bmpsPeriod);
-        smsLog(pMac, LOG3, "          beacons to forward code: %d\n",
-               pMac->pmc.bmpsConfig.forwardBeacons);
-        smsLog(pMac, LOG3, "          value of N: %d\n",
-               pMac->pmc.bmpsConfig.valueOfN);
-        smsLog(pMac, LOG3, "          use PS poll: %d\n",
-               pMac->pmc.bmpsConfig.usePsPoll);
-        smsLog(pMac, LOG3, "          set PM on last frame: %d\n",
-               pMac->pmc.bmpsConfig.setPmOnLastFrame);
-        smsLog(pMac, LOG3, "          value of enableBeaconEarlyTermination: %d\n",
-               pMac->pmc.bmpsConfig.enableBeaconEarlyTermination);
-        smsLog(pMac, LOG3, "          value of bcnEarlyTermWakeInterval: %d\n",
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG3, "          enter on AC: %d",
                pMac->pmc.bmpsConfig.enterOnAc);
         smsLog(pMac, LOG3, "          TX threshold: %d",
@@ -787,10 +553,6 @@ eHalStatus pmcSetConfigPowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode, v
         smsLog(pMac, LOG3, "          value of enableBeaconEarlyTermination: %d",
                pMac->pmc.bmpsConfig.enableBeaconEarlyTermination);
         smsLog(pMac, LOG3, "          value of bcnEarlyTermWakeInterval: %d",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->pmc.bmpsConfig.bcnEarlyTermWakeInterval);
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT    
@@ -810,31 +572,13 @@ eHalStatus pmcSetConfigPowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode, v
     case ePMC_SPATIAL_MULTIPLEX_POWER_SAVE:
         pMac->pmc.smpsConfig = *(tpPmcSmpsConfigParams)pConfigParams;
         smsLog(pMac, LOG3, FL("SMPS configuration"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG3, "          mode: %d\n", pMac->pmc.smpsConfig.mode);
-        smsLog(pMac, LOG3, "          enter on AC: %d\n",
-=======
         smsLog(pMac, LOG3, "          mode: %d", pMac->pmc.smpsConfig.mode);
         smsLog(pMac, LOG3, "          enter on AC: %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG3, "          mode: %d", pMac->pmc.smpsConfig.mode);
-        smsLog(pMac, LOG3, "          enter on AC: %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pMac->pmc.smpsConfig.enterOnAc);
         break;
 
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d\n"), psMode);
-=======
         smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -872,15 +616,7 @@ eHalStatus pmcGetConfigPowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode, v
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcGetConfigPowerSave, power save mode %d\n"), psMode);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcGetConfigPowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcGetConfigPowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Configure the specified power saving mode. */
     switch (psMode)
@@ -899,15 +635,7 @@ eHalStatus pmcGetConfigPowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode, v
         break;
 
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d\n"), psMode);
-=======
         smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -944,15 +672,7 @@ eHalStatus pmcEnablePowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode)
     WLAN_VOS_DIAG_EVENT_REPORT(&psRequest, EVENT_WLAN_POWERSAVE_GENERIC);
 #endif
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcEnablePowerSave, power save mode %d\n"), psMode);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcEnablePowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcEnablePowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Enable the specified power saving mode. */
     switch (psMode)
@@ -997,15 +717,7 @@ eHalStatus pmcEnablePowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode)
         break;
 
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d\n"), psMode);
-=======
         smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -1033,28 +745,12 @@ eHalStatus pmcStartAutoBmpsTimer (tHalHandle hHal)
    WLAN_VOS_DIAG_EVENT_REPORT(&psRequest, EVENT_WLAN_POWERSAVE_GENERIC);
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   smsLog(pMac, LOG2, FL("Entering pmcStartAutoBmpsTimer\n"));
-=======
    smsLog(pMac, LOG2, FL("Entering pmcStartAutoBmpsTimer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   smsLog(pMac, LOG2, FL("Entering pmcStartAutoBmpsTimer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* Check if BMPS is enabled. */
    if (!pMac->pmc.bmpsEnabled)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot enable BMPS timer. BMPS is disabled\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot enable BMPS timer. BMPS is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot enable BMPS timer. BMPS is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -1095,15 +791,7 @@ eHalStatus pmcStopAutoBmpsTimer (tHalHandle hHal)
    WLAN_VOS_DIAG_EVENT_REPORT(&psRequest, EVENT_WLAN_POWERSAVE_GENERIC);
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   smsLog(pMac, LOG2, FL("Entering pmcStopAutoBmpsTimer\n"));
-=======
    smsLog(pMac, LOG2, FL("Entering pmcStopAutoBmpsTimer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   smsLog(pMac, LOG2, FL("Entering pmcStopAutoBmpsTimer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pMac->pmc.autoBmpsEntryEnabled = FALSE;
    /* If uapsd session is not required or HDD has not requested BMPS, stop the auto bmps timer.*/
@@ -1144,15 +832,7 @@ eHalStatus pmcDisablePowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode)
     WLAN_VOS_DIAG_EVENT_REPORT(&psRequest, EVENT_WLAN_POWERSAVE_GENERIC);
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcDisablePowerSave, power save mode %d\n"), psMode);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcDisablePowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcDisablePowerSave, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Disable the specified power saving mode. */
     switch (psMode)
@@ -1189,15 +869,7 @@ eHalStatus pmcDisablePowerSave (tHalHandle hHal, tPmcPowerSavingMode psMode)
         break;
 
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d\n"), psMode);
-=======
         smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -1231,15 +903,7 @@ eHalStatus pmcQueryPowerState (tHalHandle hHal, tPmcPowerState *pPowerState,
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcQueryPowerState\n"));
-=======
     smsLog(pMac, LOG2, FL("Entering pmcQueryPowerState"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcQueryPowerState"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Return current power state based on PMC state. */
     if(pPowerState != NULL)
@@ -1291,15 +955,7 @@ tANI_BOOLEAN pmcIsPowerSaveEnabled (tHalHandle hHal, tPmcPowerSavingMode psMode)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcIsPowerSaveEnabled, power save mode %d\n"), psMode);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcIsPowerSaveEnabled, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcIsPowerSaveEnabled, power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Check ability to enter based on the specified power saving mode. */
     switch (psMode)
@@ -1325,15 +981,7 @@ tANI_BOOLEAN pmcIsPowerSaveEnabled (tHalHandle hHal, tPmcPowerSavingMode psMode)
         break;
 
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d\n"), psMode);
-=======
         smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid power save mode %d"), psMode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return FALSE;
     }
@@ -1387,18 +1035,8 @@ eHalStatus pmcRequestFullPower (tHalHandle hHal, void (*callbackRoutine) (void *
 
     if( !PMC_IS_READY(pMac) )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Requesting Full Power when PMC not ready\n"));
-        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s\n"), 
-=======
         smsLog(pMac, LOGE, FL("Requesting Full Power when PMC not ready"));
         smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Requesting Full Power when PMC not ready"));
-        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pMac->pmc.pmcReady, pmcGetPmcStateStr(pMac->pmc.pmcState));
         return eHAL_STATUS_FAILURE;
     }
@@ -1419,15 +1057,7 @@ eHalStatus pmcRequestFullPower (tHalHandle hHal, void (*callbackRoutine) (void *
     if (pMac->pmc.pmcState == IMPS)
         if (palTimerStop(pMac->hHdd, pMac->pmc.hImpsTimer) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer\n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot cancel IMPS timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eHAL_STATUS_FAILURE;
         }
 
@@ -1442,15 +1072,7 @@ eHalStatus pmcRequestFullPower (tHalHandle hHal, void (*callbackRoutine) (void *
     {
         if (palAllocateMemory(pMac->hHdd, (void **)&pEntry, sizeof(tRequestFullPowerEntry)) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot allocate memory for request full power routine list entry\n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot allocate memory for request full power routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot allocate memory for request full power routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             return eHAL_STATUS_FAILURE;
         }
@@ -1572,15 +1194,7 @@ eHalStatus pmcRegisterPowerSaveCheck (tHalHandle hHal, tANI_BOOLEAN (*checkRouti
     /* Allocate entry for power save check routine list. */
     if (palAllocateMemory(pMac->hHdd, (void **)&pEntry, sizeof(tPowerSaveCheckEntry)) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot allocate memory for power save check routine list entry\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot allocate memory for power save check routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot allocate memory for power save check routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -1633,30 +1247,14 @@ eHalStatus pmcDeregisterPowerSaveCheck (tHalHandle hHal, tANI_BOOLEAN (*checkRou
             {
                 if (palFreeMemory(pMac->hHdd, pPowerSaveCheckEntry) != eHAL_STATUS_SUCCESS)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    smsLog(pMac, LOGE, FL("Cannot free memory for power save check routine list entry\n"));
-=======
                     smsLog(pMac, LOGE, FL("Cannot free memory for power save check routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    smsLog(pMac, LOGE, FL("Cannot free memory for power save check routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     PMC_ABORT;
                     return eHAL_STATUS_FAILURE;
                 }
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Cannot remove power save check routine list entry\n"));
-=======
                 smsLog(pMac, LOGE, FL("Cannot remove power save check routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Cannot remove power save check routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return eHAL_STATUS_FAILURE;
             }
             return eHAL_STATUS_SUCCESS;
@@ -1680,15 +1278,7 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
     {
         pCommand = GET_BASE_ADDR(pEntry, tSmeCmd, Link);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG2, FL("process message = %d\n"), pMsg->messageType);
-=======
         smsLog(pMac, LOG2, FL("process message = %d"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOG2, FL("process message = %d"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Process each different type of message. */
     switch (pMsg->messageType)
@@ -1696,23 +1286,10 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
 
     /* We got a response to our IMPS request.  */
     case eWNI_PMC_ENTER_IMPS_RSP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_ENTER_IMPS_RSP with status = %d\n"), pMsg->statusCode);
-            if( (eSmeCommandEnterImps != pCommand->command) && (eSmeCommandEnterStandby != pCommand->command) )
-            {
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_IMPS_RSP without request\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_ENTER_IMPS_RSP with status = %d"), pMsg->statusCode);
             if( (eSmeCommandEnterImps != pCommand->command) && (eSmeCommandEnterStandby != pCommand->command) )
             {
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_IMPS_RSP without request"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
@@ -1721,19 +1298,6 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
             /* Enter IMPS State if response indicates success. */
             if (pMsg->statusCode == eSIR_SME_SUCCESS)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    pmcEnterImpsState(pMac);
-            }
-
-            /* If response is failure, then we stay in Full Power State and tell everyone that we aren't going into IMPS. */
-            else {
-                smsLog(pMac, LOGE, FL("Response message to request to enter IMPS indicates failure, status %x\n"),
-                       pMsg->statusCode);
-                    pmcEnterFullPowerState(pMac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pMac->pmc.ImpsReqFailed = VOS_FALSE;
                 pmcEnterImpsState(pMac);
                 if (!(pMac->pmc.ImpsReqFailed || pMac->pmc.ImpsReqTimerFailed) && pMac->pmc.ImpsReqFailCnt)
@@ -1758,10 +1322,6 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
                     pMac->pmc.ImpsReqFailCnt++;
                 }
                 pmcEnterFullPowerState(pMac);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else if (pMac->pmc.pmcState == REQUEST_STANDBY)
@@ -1769,18 +1329,8 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
             /* Enter STANDBY State if response indicates success. */
             if (pMsg->statusCode == eSIR_SME_SUCCESS)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    pmcEnterStandbyState(pMac);
-                    pmcDoStandbyCallbacks(pMac, eHAL_STATUS_SUCCESS);
-=======
                 pmcEnterStandbyState(pMac);
                 pmcDoStandbyCallbacks(pMac, eHAL_STATUS_SUCCESS);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                pmcEnterStandbyState(pMac);
-                pmcDoStandbyCallbacks(pMac, eHAL_STATUS_SUCCESS);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
 
             /* If response is failure, then we stay in Full Power State
@@ -1788,115 +1338,50 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
             else
             {
                 smsLog(pMac, LOGE, "PMC: response message to request to enter "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       "standby indicates failure, status %x\n", pMsg->statusCode);
-                    pmcEnterFullPowerState(pMac);
-                    pmcDoStandbyCallbacks(pMac, eHAL_STATUS_FAILURE);
-=======
                        "standby indicates failure, status %x", pMsg->statusCode);
                 pmcEnterFullPowerState(pMac);
                 pmcDoStandbyCallbacks(pMac, eHAL_STATUS_FAILURE);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       "standby indicates failure, status %x", pMsg->statusCode);
-                pmcEnterFullPowerState(pMac);
-                pmcDoStandbyCallbacks(pMac, eHAL_STATUS_FAILURE);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else
         {
             smsLog(pMac, LOGE, "PMC: Enter IMPS rsp rcvd when device is "
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "in %d state\n", pMac->pmc.pmcState);
-=======
                "in %d state", pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "in %d state", pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         break;
 
     /* We got a response to our wake from IMPS request. */
     case eWNI_PMC_EXIT_IMPS_RSP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_EXIT_IMPS_RSP with status = %d\n"), pMsg->statusCode);
-            if( eSmeCommandExitImps != pCommand->command )
-            {
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_IMPS_RSP without request\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_EXIT_IMPS_RSP with status = %d"), pMsg->statusCode);
             if( eSmeCommandExitImps != pCommand->command )
             {
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_IMPS_RSP without request"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_FULL_POWER)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got Exit IMPS Response Message while in state %d\n"), pMac->pmc.pmcState);
-=======
                 smsLog(pMac, LOGE, FL("Got Exit IMPS Response Message while "
                    "in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got Exit IMPS Response Message while "
-                   "in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
 
             /* Enter Full Power State. */
             if (pMsg->statusCode != eSIR_SME_SUCCESS)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGP, FL("Response message to request to exit IMPS indicates failure, status %x\n"),
-                       pMsg->statusCode);
-=======
                 smsLog(pMac, LOGE, FL("Response message to request to exit "
                    "IMPS indicates failure, status %x"), pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Response message to request to exit "
-                   "IMPS indicates failure, status %x"), pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             pmcEnterFullPowerState(pMac);
         break;
 
     /* We got a response to our BMPS request.  */
     case eWNI_PMC_ENTER_BMPS_RSP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_ENTER_BMPS_RSP with status = %d\n"), pMsg->statusCode);
-            if( eSmeCommandEnterBmps != pCommand->command )
-            {
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_BMPS_RSP without request\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_ENTER_BMPS_RSP with status = %d"), pMsg->statusCode);
             if( eSmeCommandEnterBmps != pCommand->command )
             {
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_BMPS_RSP without request"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
@@ -1904,15 +1389,7 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_BMPS)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got Enter BMPS Response Message while in state %d\n"), pMac->pmc.pmcState);
-=======
                 smsLog(pMac, LOGE, FL("Got Enter BMPS Response Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got Enter BMPS Response Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
 
@@ -1928,15 +1405,7 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
         /* If response is failure, then we stay in Full Power State and tell everyone that we aren't going into BMPS. */
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Response message to request to enter BMPS indicates failure, status %x\n"),
-=======
                 smsLog(pMac, LOGE, FL("Response message to request to enter BMPS indicates failure, status %x"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Response message to request to enter BMPS indicates failure, status %x"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pMsg->statusCode);
                 pmcEnterFullPowerState(pMac);
                 //Do not call UAPSD callback here since it may be re-entered
@@ -1946,53 +1415,24 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
 
     /* We got a response to our wake from BMPS request. */
     case eWNI_PMC_EXIT_BMPS_RSP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_EXIT_BMPS_RSP with status = %d\n"), pMsg->statusCode);
-            if( eSmeCommandExitBmps != pCommand->command )
-            {
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_BMPS_RSP without request\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_EXIT_BMPS_RSP with status = %d"), pMsg->statusCode);
             if( eSmeCommandExitBmps != pCommand->command )
             {
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_BMPS_RSP without request"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_FULL_POWER)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got Exit BMPS Response Message while in state %d\n"), pMac->pmc.pmcState);
-=======
                 smsLog(pMac, LOGE, FL("Got Exit BMPS Response Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got Exit BMPS Response Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
 
             /* Enter Full Power State. */
             if (pMsg->statusCode != eSIR_SME_SUCCESS)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGP, FL("Response message to request to exit BMPS indicates failure, status %x\n"),
-=======
                 smsLog(pMac, LOGP, FL("Response message to request to exit BMPS indicates failure, status %x"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGP, FL("Response message to request to exit BMPS indicates failure, status %x"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        pMsg->statusCode);
             }
             pmcEnterFullPowerState(pMac);
@@ -2000,38 +1440,17 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
 
         /* We got a response to our Start UAPSD request.  */
         case eWNI_PMC_ENTER_UAPSD_RSP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_ENTER_UAPSD_RSP with status = %d\n"), pMsg->statusCode);
-            if( eSmeCommandEnterUapsd != pCommand->command )
-        {
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_UAPSD_RSP without request\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_ENTER_UAPSD_RSP with status = %d"), pMsg->statusCode);
             if( eSmeCommandEnterUapsd != pCommand->command )
         {
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_UAPSD_RSP without request"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_START_UAPSD)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got Enter Uapsd rsp Message while in state %d\n"), pMac->pmc.pmcState);
-=======
                 smsLog(pMac, LOGE, FL("Got Enter Uapsd rsp Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got Enter Uapsd rsp Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
 
@@ -2045,15 +1464,7 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
             BMPS mode*/
             else {
                 smsLog(pMac, LOGE, "PMC: response message to request to enter "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "UAPSD indicates failure, status %x\n", pMsg->statusCode);
-=======
                    "UAPSD indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "UAPSD indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //Need to reset the UAPSD flag so pmcEnterBmpsState won't try to enter UAPSD.
                 pMac->pmc.uapsdSessionRequired = FALSE;
                 pmcEnterBmpsState(pMac);
@@ -2064,53 +1475,24 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
 
       /* We got a response to our Stop UAPSD request.  */
       case eWNI_PMC_EXIT_UAPSD_RSP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_EXIT_UAPSD_RSP with status = %d\n"), pMsg->statusCode);
-            if( eSmeCommandExitUapsd != pCommand->command )
-            {
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_UAPSD_RSP without request\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          smsLog(pMac, LOG2, FL("Rcvd eWNI_PMC_EXIT_UAPSD_RSP with status = %d"), pMsg->statusCode);
             if( eSmeCommandExitUapsd != pCommand->command )
             {
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_UAPSD_RSP without request"));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_STOP_UAPSD)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got Exit Uapsd rsp Message while in state %d\n"), pMac->pmc.pmcState);
-=======
                 smsLog(pMac, LOGE, FL("Got Exit Uapsd rsp Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got Exit Uapsd rsp Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
 
          /* Enter BMPS State */
          if (pMsg->statusCode != eSIR_SME_SUCCESS) {
             smsLog(pMac, LOGP, "PMC: response message to request to exit "
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "UAPSD indicates failure, status %x\n", pMsg->statusCode);
-=======
                "UAPSD indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "UAPSD indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
             pmcEnterBmpsState(pMac);
          break;
@@ -2120,30 +1502,14 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
 
             if( eSmeCommandEnterWowl != pCommand->command )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_WOWL_RSP without request\n"));
-=======
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_WOWL_RSP without request"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_ENTER_WOWL_RSP without request"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_ENTER_WOWL)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got eWNI_PMC_ENTER_WOWL_RSP while in state %s\n"), 
-=======
                 smsLog(pMac, LOGE, FL("Got eWNI_PMC_ENTER_WOWL_RSP while in state %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got eWNI_PMC_ENTER_WOWL_RSP while in state %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pmcGetPmcStateStr(pMac->pmc.pmcState));
                 break;
             }
@@ -2158,15 +1524,7 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
             BMPS mode*/
          else {
             smsLog(pMac, LOGE, "PMC: response message to request to enter "
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "WOWL indicates failure, status %x\n", pMsg->statusCode);
-=======
                "WOWL indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "WOWL indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pmcEnterBmpsState(pMac);
                 pmcDoEnterWowlCallbacks(pMac, eHAL_STATUS_FAILURE);
          }
@@ -2177,59 +1535,27 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
 
             if( eSmeCommandExitWowl != pCommand->command )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_WOWL_RSP without request\n"));
-=======
                 smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_WOWL_RSP without request"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_WOWL_RSP without request"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 fRemoveCommand = eANI_BOOLEAN_FALSE;
                 break;
             }
             /* Check that we are in the correct state for this message. */
             if (pMac->pmc.pmcState != REQUEST_EXIT_WOWL)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Got Exit WOWL rsp Message while in state %d\n"), pMac->pmc.pmcState);
-=======
                 smsLog(pMac, LOGE, FL("Got Exit WOWL rsp Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Got Exit WOWL rsp Message while in state %d"), pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             }
 
          /* Enter BMPS State */
          if (pMsg->statusCode != eSIR_SME_SUCCESS) {
             smsLog(pMac, LOGP, "PMC: response message to request to exit "
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "WOWL indicates failure, status %x\n", pMsg->statusCode);
-=======
                "WOWL indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "WOWL indicates failure, status %x", pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
             pmcEnterBmpsState(pMac);
          break;
 
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Invalid message type %d received\n"), pMsg->messageType);
-=======
         smsLog(pMac, LOGE, FL("Invalid message type %d received"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Invalid message type %d received"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         break;
         }//switch
@@ -2245,15 +1571,7 @@ static void pmcProcessResponse( tpAniSirGlobal pMac, tSirSmeRsp *pMsg )
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("message type %d received but no request is found\n"), pMsg->messageType);
-=======
         smsLog(pMac, LOGE, FL("message type %d received but no request is found"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("message type %d received but no request is found"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 }
 
@@ -2277,15 +1595,7 @@ void pmcMessageProcessor (tHalHandle hHal, tSirSmeRsp *pMsg)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOG2, FL("Entering pmcMessageProcessor, message type %d\n"), pMsg->messageType);
-=======
     smsLog(pMac, LOG2, FL("Entering pmcMessageProcessor, message type %d"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOG2, FL("Entering pmcMessageProcessor, message type %d"), pMsg->messageType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch( pMsg->messageType )
     {
@@ -2293,15 +1603,7 @@ void pmcMessageProcessor (tHalHandle hHal, tSirSmeRsp *pMsg)
     //When PMC needs to handle more indication from PE, they need to be added here.
     {
         /* Device left BMPS on its own. */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_BMPS_IND with status = %d\n"), pMsg->statusCode);
-=======
         smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_BMPS_IND with status = %d"), pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGW, FL("Rcvd eWNI_PMC_EXIT_BMPS_IND with status = %d"), pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Check that we are in the correct state for this message. */
         switch(pMac->pmc.pmcState)
         {
@@ -2313,23 +1615,10 @@ void pmcMessageProcessor (tHalHandle hHal, tSirSmeRsp *pMsg)
         case WOWL:
         case REQUEST_EXIT_WOWL:
         case REQUEST_FULL_POWER:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGW, FL("Got eWNI_PMC_EXIT_BMPS_IND while in state %d\n"), pMac->pmc.pmcState);
-            break;
-        default:
-            smsLog(pMac, LOGE, FL("Got eWNI_PMC_EXIT_BMPS_IND while in state %d\n"), pMac->pmc.pmcState);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             smsLog(pMac, LOGW, FL("Got eWNI_PMC_EXIT_BMPS_IND while in state %d"), pMac->pmc.pmcState);
             break;
         default:
             smsLog(pMac, LOGE, FL("Got eWNI_PMC_EXIT_BMPS_IND while in state %d"), pMac->pmc.pmcState);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -2337,15 +1626,7 @@ void pmcMessageProcessor (tHalHandle hHal, tSirSmeRsp *pMsg)
         /* Enter Full Power State. */
         if (pMsg->statusCode != eSIR_SME_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGP, FL("Exit BMPS indication indicates failure, status %x\n"), pMsg->statusCode);
-=======
             smsLog(pMac, LOGP, FL("Exit BMPS indication indicates failure, status %x"), pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGP, FL("Exit BMPS indication indicates failure, status %x"), pMsg->statusCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
@@ -2369,43 +1650,19 @@ tANI_BOOLEAN pmcValidateConnectState( tHalHandle hHal )
 
    if ( !csrIsInfraConnected( pMac ) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGW, "PMC: STA not associated. BMPS cannot be entered\n");
-=======
       smsLog(pMac, LOGW, "PMC: STA not associated. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGW, "PMC: STA not associated. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eANI_BOOLEAN_FALSE;
    }
 
    //Cannot have other session
    if ( csrIsIBSSStarted( pMac ) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGW, "PMC: IBSS started. BMPS cannot be entered\n");
-=======
       smsLog(pMac, LOGW, "PMC: IBSS started. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGW, "PMC: IBSS started. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eANI_BOOLEAN_FALSE;
    }
    if ( csrIsBTAMPStarted( pMac ) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGW, "PMC: BT-AMP exists. BMPS cannot be entered\n");
-=======
       smsLog(pMac, LOGW, "PMC: BT-AMP exists. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGW, "PMC: BT-AMP exists. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eANI_BOOLEAN_FALSE;
    }
    if ((vos_concurrent_sessions_running()) &&
@@ -2413,15 +1670,7 @@ tANI_BOOLEAN pmcValidateConnectState( tHalHandle hHal )
        (vos_get_concurrency_mode()& VOS_SAP) ||
        (vos_get_concurrency_mode()& VOS_P2P_GO)))
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGW, "PMC: Multiple active sessions exists. BMPS cannot be entered\n");
-=======
       smsLog(pMac, LOGW, "PMC: Multiple active sessions exists. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGW, "PMC: Multiple active sessions exists. BMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eANI_BOOLEAN_FALSE;
    }
    return eANI_BOOLEAN_TRUE;
@@ -2434,43 +1683,19 @@ tANI_BOOLEAN pmcAllowImps( tHalHandle hHal )
     //Cannot have other session like IBSS or BT AMP running
     if ( csrIsIBSSStarted( pMac ) )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGW, "PMC: IBSS started. IMPS cannot be entered\n");
-=======
        smsLog(pMac, LOGW, "PMC: IBSS started. IMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGW, "PMC: IBSS started. IMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eANI_BOOLEAN_FALSE;
     }
     if ( csrIsBTAMPStarted( pMac ) )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGW, "PMC: BT-AMP exists. IMPS cannot be entered\n");
-=======
        smsLog(pMac, LOGW, "PMC: BT-AMP exists. IMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGW, "PMC: BT-AMP exists. IMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eANI_BOOLEAN_FALSE;
     }
 
     //All sessions must be disconnected to allow IMPS
     if ( !csrIsAllSessionDisconnected( pMac ) )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGW, "PMC: Atleast one connected session. IMPS cannot be entered\n");
-=======
        smsLog(pMac, LOGW, "PMC: Atleast one connected session. IMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGW, "PMC: Atleast one connected session. IMPS cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eANI_BOOLEAN_FALSE;
     }
 
@@ -2543,15 +1768,7 @@ eHalStatus pmcRequestBmps (
                sizeof(tRequestBmpsEntry)) != eHAL_STATUS_SUCCESS)
          {
             smsLog(pMac, LOGE, "PMC: cannot allocate memory for request "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "BMPS routine list entry\n");
-=======
                   "BMPS routine list entry");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "BMPS routine list entry");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return eHAL_STATUS_FAILURE;
          }
 
@@ -2569,11 +1786,6 @@ eHalStatus pmcRequestBmps (
          status = eHAL_STATUS_FAILURE;
       }
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* Retry to enter the BMPS if the
       status = eHAL_STATUS_PMC_NOT_NOW */
    else if (status == eHAL_STATUS_PMC_NOT_NOW)
@@ -2592,10 +1804,6 @@ eHalStatus pmcRequestBmps (
                 FL("BMPS Retry Timer already running or started"));
       }
    }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return status;
 }
@@ -2641,18 +1849,8 @@ eHalStatus pmcStartUapsd (
 
    if( !PMC_IS_READY(pMac) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGE, FL("Requesting UAPSD when PMC not ready\n"));
-       smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s\n"), 
-=======
        smsLog(pMac, LOGE, FL("Requesting UAPSD when PMC not ready"));
        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGE, FL("Requesting UAPSD when PMC not ready"));
-       smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pMac->pmc.pmcReady, pmcGetPmcStateStr(pMac->pmc.pmcState));
        return eHAL_STATUS_FAILURE;
    }
@@ -2660,30 +1858,14 @@ eHalStatus pmcStartUapsd (
    /* Check if BMPS is enabled. */
    if (!pMac->pmc.bmpsEnabled)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot enter UAPSD. BMPS is disabled\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot enter UAPSD. BMPS is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot enter UAPSD. BMPS is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_PMC_DISABLED;
    }
 
    /* Check if UAPSD is enabled. */
    if (!pMac->pmc.uapsdEnabled)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot enter UAPSD. UAPSD is disabled\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot enter UAPSD. UAPSD is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot enter UAPSD. UAPSD is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_PMC_DISABLED;
    }
 
@@ -2694,15 +1876,7 @@ eHalStatus pmcStartUapsd (
    /* Check that we are associated. */
    if (!pmcValidateConnectState( pMac ))
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: STA not associated with an AP. UAPSD cannot be entered\n");
-=======
       smsLog(pMac, LOGE, "PMC: STA not associated with an AP. UAPSD cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: STA not associated with an AP. UAPSD cannot be entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -2717,15 +1891,7 @@ eHalStatus pmcStartUapsd (
             sizeof(tStartUapsdEntry)) != eHAL_STATUS_SUCCESS)
       {
          smsLog(pMac, LOGE, "PMC: cannot allocate memory for request "
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "start UAPSD routine list entry\n");
-=======
             "start UAPSD routine list entry");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "start UAPSD routine list entry");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return eHAL_STATUS_FAILURE;
       }
 
@@ -2778,15 +1944,7 @@ eHalStatus pmcStopUapsd (tHalHandle hHal)
    if (pMac->pmc.pmcState != UAPSD && pMac->pmc.pmcState != REQUEST_STOP_UAPSD)
    {
       smsLog(pMac, LOGW, "PMC: Device is already out of UAPSD "
-<<<<<<< HEAD
-<<<<<<< HEAD
-         "state. Current state is %d\n", pMac->pmc.pmcState);
-=======
          "state. Current state is %d", pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         "state. Current state is %d", pMac->pmc.pmcState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_SUCCESS;
    }
 
@@ -2829,32 +1987,14 @@ extern eHalStatus pmcRequestStandby (
    /* Check if standby is enabled. */
    if (!pMac->pmc.standbyEnabled)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot enter standby. Standby is disabled\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot enter standby. Standby is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot enter standby. Standby is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_PMC_DISABLED;
    }
 
    if( !PMC_IS_READY(pMac) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGE, FL("Requesting standby when PMC not ready\n"));
-       smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s\n"), 
-=======
        smsLog(pMac, LOGE, FL("Requesting standby when PMC not ready"));
        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGE, FL("Requesting standby when PMC not ready"));
-       smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pMac->pmc.pmcReady, pmcGetPmcStateStr(pMac->pmc.pmcState));
        return eHAL_STATUS_FAILURE;
    }
@@ -2906,15 +2046,7 @@ extern eHalStatus pmcRegisterDeviceStateUpdateInd (tHalHandle hHal,
     /* Allocate entry for device power state update indication. */
     if (palAllocateMemory(pMac->hHdd, (void **)&pEntry, sizeof(tDeviceStateUpdateIndEntry)) != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot allocate memory for device power state update indication\n"));
-=======
         smsLog(pMac, LOGE, FL("Cannot allocate memory for device power state update indication"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot allocate memory for device power state update indication"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         PMC_ABORT;
         return eHAL_STATUS_FAILURE;
     }
@@ -2957,28 +2089,12 @@ eHalStatus pmcDeregisterDeviceStateUpdateInd (tHalHandle hHal,
         {
             if (!csrLLRemoveEntry(&pMac->pmc.deviceStateUpdateIndList, pEntry, FALSE))
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Cannot remove device state update ind entry from list\n"));
-=======
                 smsLog(pMac, LOGE, FL("Cannot remove device state update ind entry from list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Cannot remove device state update ind entry from list"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 return eHAL_STATUS_FAILURE;
             }
             if (palFreeMemory(pMac->hHdd, pDeviceStateUpdateIndEntry) != eHAL_STATUS_SUCCESS)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                smsLog(pMac, LOGE, FL("Cannot free memory for device state update ind routine list entry\n"));
-=======
                 smsLog(pMac, LOGE, FL("Cannot free memory for device state update ind routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                smsLog(pMac, LOGE, FL("Cannot free memory for device state update ind routine list entry"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 PMC_ABORT;
                 return eHAL_STATUS_FAILURE;
             }
@@ -3036,23 +2152,11 @@ eHalStatus pmcReady(tHalHandle hHal)
   ---------------------------------------------------------------------------*/
 eHalStatus pmcWowlAddBcastPattern (
     tHalHandle hHal, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tpSirWowlAddBcastPtrn pattern)
-{
-    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpSirWowlAddBcastPtrn pattern,
     tANI_U8 sessionId)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT
     vos_log_powersave_wow_add_ptrn_pkt_type *log_ptr = NULL;
@@ -3063,12 +2167,6 @@ eHalStatus pmcWowlAddBcastPattern (
 
     if(pattern == NULL)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Null broadcast pattern being passed\n"));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         smsLog(pMac, LOGE, FL("Null broadcast pattern being passed"));
         return eHAL_STATUS_FAILURE;
     }
@@ -3076,10 +2174,6 @@ eHalStatus pmcWowlAddBcastPattern (
     if( pSession == NULL)
     {
         smsLog(pMac, LOGE, FL("Session not found "));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -3102,49 +2196,22 @@ eHalStatus pmcWowlAddBcastPattern (
 
     if(pattern->ucPatternId >= SIR_WOWL_BCAST_MAX_NUM_PATTERNS )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Pattern Id must range from 0 to %d\n"), SIR_WOWL_BCAST_MAX_NUM_PATTERNS-1);
-=======
         smsLog(pMac, LOGE, FL("Pattern Id must range from 0 to %d"), SIR_WOWL_BCAST_MAX_NUM_PATTERNS-1);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Pattern Id must range from 0 to %d"), SIR_WOWL_BCAST_MAX_NUM_PATTERNS-1);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
     if( pMac->pmc.pmcState == STANDBY || pMac->pmc.pmcState == REQUEST_STANDBY )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot add WoWL Pattern as chip is in %s state\n"),
-=======
         smsLog(pMac, LOGE, FL("Cannot add WoWL Pattern as chip is in %s state"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot add WoWL Pattern as chip is in %s state"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pmcGetPmcStateStr(pMac->pmc.pmcState));
         return eHAL_STATUS_FAILURE;
     }
     if( pMac->pmc.pmcState == IMPS || pMac->pmc.pmcState == REQUEST_IMPS )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //Wake up the chip first
-        eHalStatus status = pmcDeferMsg( pMac, eWNI_PMC_WOWL_ADD_BCAST_PTRN, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         eHalStatus status;
         vos_mem_copy(pattern->bssId, pSession->connectedProfile.bssid, sizeof(tSirMacAddr));
         //Wake up the chip first
         status = pmcDeferMsg( pMac, eWNI_PMC_WOWL_ADD_BCAST_PTRN, 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     pattern, sizeof(tSirWowlAddBcastPtrn) );
 
         if( eHAL_STATUS_PMC_PENDING == status )
@@ -3165,15 +2232,7 @@ eHalStatus pmcWowlAddBcastPattern (
     if (pmcSendMessage(hHal, eWNI_PMC_WOWL_ADD_BCAST_PTRN, pattern, sizeof(tSirWowlAddBcastPtrn))
         != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed\n"));
-=======
         smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_ADD_BCAST_PTRN to PE failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -3191,23 +2250,11 @@ eHalStatus pmcWowlAddBcastPattern (
   ---------------------------------------------------------------------------*/
 eHalStatus pmcWowlDelBcastPattern (
     tHalHandle hHal, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tpSirWowlDelBcastPtrn pattern)
-{
-    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpSirWowlDelBcastPtrn pattern,
     tANI_U8  sessionId)
 {
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT    
     WLAN_VOS_DIAG_EVENT_DEF(wowRequest, vos_event_wlan_powersave_wow_payload_type);
@@ -3221,14 +2268,6 @@ eHalStatus pmcWowlDelBcastPattern (
 
     smsLog(pMac, LOG2, "PMC: entering pmcWowlDelBcastPattern");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if(pattern->ucPatternId >= SIR_WOWL_BCAST_MAX_NUM_PATTERNS )
-    {
-        smsLog(pMac, LOGE, FL("Pattern Id must range from 0 to %d\n"), 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( NULL == pSession )
     {
         smsLog(pMac, LOGE, FL("Session not found "));
@@ -3238,47 +2277,24 @@ eHalStatus pmcWowlDelBcastPattern (
     if(pattern->ucPatternId >= SIR_WOWL_BCAST_MAX_NUM_PATTERNS )
     {
         smsLog(pMac, LOGE, FL("Pattern Id must range from 0 to %d"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             SIR_WOWL_BCAST_MAX_NUM_PATTERNS-1);
         return eHAL_STATUS_FAILURE;
     }
 
     if(pMac->pmc.pmcState == STANDBY || pMac->pmc.pmcState == REQUEST_STANDBY)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Cannot delete WoWL Pattern as chip is in %s state\n"),
-=======
         smsLog(pMac, LOGE, FL("Cannot delete WoWL Pattern as chip is in %s state"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Cannot delete WoWL Pattern as chip is in %s state"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pmcGetPmcStateStr(pMac->pmc.pmcState));
         return eHAL_STATUS_FAILURE;
     }
 
     if( pMac->pmc.pmcState == IMPS || pMac->pmc.pmcState == REQUEST_IMPS )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //Wake up the chip first
-        eHalStatus status = pmcDeferMsg( pMac, eWNI_PMC_WOWL_DEL_BCAST_PTRN, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         eHalStatus status;
 
         vos_mem_copy(pattern->bssId, pSession->connectedProfile.bssid, sizeof(tSirMacAddr));
         //Wake up the chip first
         status = pmcDeferMsg( pMac, eWNI_PMC_WOWL_DEL_BCAST_PTRN, 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     pattern, sizeof(tSirWowlDelBcastPtrn) );
 
         if( eHAL_STATUS_PMC_PENDING == status )
@@ -3299,15 +2315,7 @@ eHalStatus pmcWowlDelBcastPattern (
     if (pmcSendMessage(hHal, eWNI_PMC_WOWL_DEL_BCAST_PTRN, pattern, sizeof(tSirWowlDelBcastPtrn))
         != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_DEL_BCAST_PTRN to PE failed\n"));
-=======
         smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_DEL_BCAST_PTRN to PE failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        smsLog(pMac, LOGE, FL("Send of eWNI_PMC_WOWL_DEL_BCAST_PTRN to PE failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -3357,22 +2365,10 @@ eHalStatus pmcEnterWowl (
     void (*wakeReasonIndCB) (void *callbackContext, tpSirWakeReasonInd pWakeReasonInd),
     void *wakeReasonIndCBContext,
 #endif // WLAN_WAKEUP_EVENTS
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tpSirSmeWowlEnterParams wowlEnterParams)
-{
-   tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tpSirSmeWowlEnterParams wowlEnterParams, tANI_U8 sessionId)
 {
    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
    tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef FEATURE_WLAN_DIAG_SUPPORT    
    WLAN_VOS_DIAG_EVENT_DEF(wowRequest, vos_event_wlan_powersave_wow_payload_type);
@@ -3391,21 +2387,6 @@ eHalStatus pmcEnterWowl (
    {
        wowRequest.wow_type |= 2;
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-   WLAN_VOS_DIAG_EVENT_REPORT(&wowRequest, EVENT_WLAN_POWERSAVE_WOW);
-#endif
-
-   smsLog(pMac, LOG2, "PMC: entering pmcEnterWowl\n");
-
-   if( !PMC_IS_READY(pMac) )
-   {
-       smsLog(pMac, LOGE, FL("Requesting WoWL when PMC not ready\n"));
-       smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s\n"), 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WLAN_VOS_DIAG_EVENT_REPORT(&wowRequest, EVENT_WLAN_POWERSAVE_WOW);
 #endif
 
@@ -3424,10 +2405,6 @@ eHalStatus pmcEnterWowl (
    {
        smsLog(pMac, LOGE, FL("Requesting WoWL when PMC not ready"));
        smsLog(pMac, LOGE, FL("pmcReady = %d pmcState = %s"),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pMac->pmc.pmcReady, pmcGetPmcStateStr(pMac->pmc.pmcState));
        return eHAL_STATUS_FAILURE;
    }
@@ -3435,30 +2412,14 @@ eHalStatus pmcEnterWowl (
    /* Check if BMPS is enabled. */
    if (!pMac->pmc.bmpsEnabled)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot enter WoWL. BMPS is disabled\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot enter WoWL. BMPS is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot enter WoWL. BMPS is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_PMC_DISABLED;
    }
 
    /* Check if WoWL is enabled. */
    if (!pMac->pmc.wowlEnabled)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot enter WoWL. WoWL is disabled\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot enter WoWL. WoWL is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot enter WoWL. WoWL is disabled");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_PMC_DISABLED;
    }
 
@@ -3466,15 +2427,7 @@ eHalStatus pmcEnterWowl (
    if (!pmcValidateConnectState( pMac ))
    {
       smsLog(pMac, LOGE, "PMC: Cannot enable WOWL. STA not associated "
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "with an Access Point in Infra Mode with single active session\n");
-=======
              "with an Access Point in Infra Mode with single active session");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "with an Access Point in Infra Mode with single active session");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -3482,15 +2435,7 @@ eHalStatus pmcEnterWowl (
       module to do the necessary cleanup before triggring WOWL*/
    if(pMac->pmc.uapsdSessionRequired)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, "PMC: Cannot request WOWL. Pending UAPSD request\n");
-=======
       smsLog(pMac, LOGE, "PMC: Cannot request WOWL. Pending UAPSD request");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, "PMC: Cannot request WOWL. Pending UAPSD request");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -3498,15 +2443,7 @@ eHalStatus pmcEnterWowl (
    if (pMac->pmc.pmcState == FULL_POWER && !pmcPowerSaveCheck(hHal))
    {
       smsLog(pMac, LOGE, "PMC: Power save check failed. WOWL request "
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "will not be accepted\n");
-=======
              "will not be accepted");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "will not be accepted");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -3580,40 +2517,6 @@ eHalStatus pmcExitWowl (tHalHandle hHal)
             eHAL_STATUS_FAILURE  Cannot set the offload.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus pmcSetHostOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest, tANI_U8 *bssId)
-{
-    tpSirHostOffloadReq pRequestBuf;
-    vos_msg_t msg;
-    tpPESession     psessionEntry;
-    tANI_U8   sessionId;
-    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
-
-    if((psessionEntry = peFindSessionByBssid( pMac, bssId,&sessionId)) == NULL )
-    {
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Unable to find"
-        "the psessionEntry for bssid : 0x%x:0x%x:0x%x:0x%x:0x%x:0x%x", 
-        __FUNCTION__,bssId[5],bssId[4],bssId[3],bssId[2],bssId[1],bssId[0]);
-        return eHAL_STATUS_FAILURE;
-    }
-
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s: IP address = %d.%d.%d.%d", __FUNCTION__,
-        pRequest->params.hostIpv4Addr[0], pRequest->params.hostIpv4Addr[1],
-        pRequest->params.hostIpv4Addr[2], pRequest->params.hostIpv4Addr[3]);
-
-    pRequestBuf = vos_mem_malloc(sizeof(tSirHostOffloadReq));
-    if (NULL == pRequestBuf)
-    {
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for host offload request", __FUNCTION__);
-        return eHAL_STATUS_FAILED_ALLOC;
-    }
-    vos_mem_copy(pRequestBuf, pRequest, sizeof(tSirHostOffloadReq));
-
-    pRequestBuf->bssIdx = psessionEntry->bssIdx;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus pmcSetHostOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest, 
                                    tANI_U8 sessionId)
 {
@@ -3642,25 +2545,13 @@ eHalStatus pmcSetHostOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest,
     vos_mem_copy(pRequest->bssId, pSession->connectedProfile.bssid, sizeof(tSirMacAddr));
 
     vos_mem_copy(pRequestBuf, pRequest, sizeof(tSirHostOffloadReq));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     msg.type = WDA_SET_HOST_OFFLOAD;
     msg.reserved = 0;
     msg.bodyptr = pRequestBuf;
     if(VOS_STATUS_SUCCESS != vos_mq_post_message(VOS_MODULE_ID_WDA, &msg))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_HOST_OFFLOAD message to WDA", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_HOST_OFFLOAD message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_HOST_OFFLOAD message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -3677,29 +2568,6 @@ eHalStatus pmcSetHostOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest,
             eHAL_STATUS_FAILURE  Cannot set the keepalive.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8 *bssId)
-{
-    tpSirKeepAliveReq pRequestBuf;
-    vos_msg_t msg;
-    tpPESession     psessionEntry;
-    tANI_U8   sessionId;
-    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
-    if((psessionEntry = peFindSessionByBssid( pMac, bssId,&sessionId)) == NULL )
-    {
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Unable to find"
-        "the psessionEntry for bssid : 0x%x:0x%x:0x%x:0x%x:0x%x:0x%x", 
-        __FUNCTION__,bssId[5],bssId[4],bssId[3],bssId[2],bssId[1],bssId[0]);
-        return eHAL_STATUS_FAILURE;
-    }
-
-    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_LOW, "%s: "
-                  "WDA_SET_KEEP_ALIVE message", __FUNCTION__);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8 sessionId)
 {
     tpSirKeepAliveReq pRequestBuf;
@@ -3716,36 +2584,17 @@ eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8
            " Session not Found", __func__);
         return eHAL_STATUS_FAILURE;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pRequestBuf = vos_mem_malloc(sizeof(tSirKeepAliveReq));
     if (NULL == pRequestBuf)
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
                   "Not able to allocate memory for keep alive request",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__);
-        return eHAL_STATUS_FAILED_ALLOC;
-    }
-    vos_mem_copy(pRequestBuf, pRequest, sizeof(tSirKeepAliveReq));
-
-    pRequestBuf->bssIdx = psessionEntry->bssIdx;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   __func__);
         return eHAL_STATUS_FAILED_ALLOC;
     }
 
     vos_mem_copy(pRequest->bssId, pSession->connectedProfile.bssid, sizeof(tSirMacAddr));
     vos_mem_copy(pRequestBuf, pRequest, sizeof(tSirKeepAliveReq));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_LOW, "buff TP %d "
               "input TP %d ", pRequestBuf->timePeriod, pRequest->timePeriod);
@@ -3757,15 +2606,7 @@ eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: "
                   "Not able to post WDA_SET_KEEP_ALIVE message to WDA",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__);
-=======
                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -3785,31 +2626,6 @@ eHalStatus pmcSetKeepAlive (tHalHandle hHal, tpSirKeepAliveReq pRequest, tANI_U8
             eHAL_STATUS_FAILURE  Cannot set the offload.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus pmcSetNSOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest, tANI_U8 *bssId)
-{
-    tpSirHostOffloadReq pRequestBuf;
-    vos_msg_t msg;
-    int i;
-    tpPESession     psessionEntry;
-    tANI_U8   sessionId;
-    tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
-    if((psessionEntry = peFindSessionByBssid( pMac, bssId,&sessionId)) == NULL )
-    {
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Unable to find"
-        "the psessionEntry for bssid : 0x%x:0x%x:0x%x:0x%x:0x%x:0x%x", 
-        __FUNCTION__,bssId[5],bssId[4],bssId[3],bssId[2],bssId[1],bssId[0]);
-        return eHAL_STATUS_FAILURE;
-    }
-
-    pRequestBuf = vos_mem_malloc(sizeof(tSirHostOffloadReq));
-    if (NULL == pRequestBuf)
-    {
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for NS offload request", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus pmcSetNSOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest, 
                                  tANI_U8 sessionId)
 {
@@ -3832,36 +2648,16 @@ eHalStatus pmcSetNSOffload (tHalHandle hHal, tpSirHostOffloadReq pRequest,
     if (NULL == pRequestBuf)
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for NS offload request", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILED_ALLOC;
     }
     vos_mem_copy(pRequestBuf, pRequest, sizeof(tSirHostOffloadReq));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pRequestBuf->bssIdx = psessionEntry->bssIdx;
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msg.type = WDA_SET_NS_OFFLOAD;
     msg.reserved = 0;
     msg.bodyptr = pRequestBuf;
     if(VOS_STATUS_SUCCESS != vos_mq_post_message(VOS_MODULE_ID_WDA, &msg))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post SIR_HAL_SET_HOST_OFFLOAD message to HAL", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post SIR_HAL_SET_HOST_OFFLOAD message to HAL", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post SIR_HAL_SET_HOST_OFFLOAD message to HAL", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -3883,15 +2679,7 @@ void pmcClosePowerSaveCheckList(tpAniSirGlobal pMac)
         pPowerSaveCheckEntry = GET_BASE_ADDR(pEntry, tPowerSaveCheckEntry, link);
         if (palFreeMemory(pMac->hHdd, pPowerSaveCheckEntry) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot free memory \n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -3912,15 +2700,7 @@ void pmcCloseRequestFullPowerList(tpAniSirGlobal pMac)
         pRequestFullPowerEntry = GET_BASE_ADDR(pEntry, tRequestFullPowerEntry, link);
         if (palFreeMemory(pMac->hHdd, pRequestFullPowerEntry) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot free memory \n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -3941,15 +2721,7 @@ void pmcCloseRequestBmpsList(tpAniSirGlobal pMac)
         pRequestBmpsEntry = GET_BASE_ADDR(pEntry, tRequestBmpsEntry, link);
         if (palFreeMemory(pMac->hHdd, pRequestBmpsEntry) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot free memory \n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -3970,15 +2742,7 @@ void pmcCloseRequestStartUapsdList(tpAniSirGlobal pMac)
         pStartUapsdEntry = GET_BASE_ADDR(pEntry, tStartUapsdEntry, link);
         if (palFreeMemory(pMac->hHdd, pStartUapsdEntry) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot free memory \n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -3999,15 +2763,7 @@ void pmcCloseDeviceStateUpdateList(tpAniSirGlobal pMac)
         pDeviceStateUpdateIndEntry = GET_BASE_ADDR(pEntry, tDeviceStateUpdateIndEntry, link);
         if (palFreeMemory(pMac->hHdd, pDeviceStateUpdateIndEntry) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot free memory \n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -4028,15 +2784,7 @@ void pmcCloseDeferredMsgList(tpAniSirGlobal pMac)
         pDeferredMsg = GET_BASE_ADDR(pEntry, tPmcDeferredMsg, link);
         if (palFreeMemory(pMac->hHdd, pDeferredMsg) != eHAL_STATUS_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, FL("Cannot free memory \n"));
-=======
             smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, FL("Cannot free memory "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             PMC_ABORT;
             break;
         }
@@ -4124,15 +2872,7 @@ pmcPrepareProbeReqTemplate(tpAniSirGlobal pMac,
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                   "Failed to calculate the packed size f"
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "or a Probe Request (0x%08x).\n", nStatus );
-=======
                   "or a Probe Request (0x%08x).", nStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "or a Probe Request (0x%08x).", nStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         // We'll fall back on the worst case scenario:
         nPayload = sizeof( tDot11fProbeRequest );
@@ -4142,15 +2882,7 @@ pmcPrepareProbeReqTemplate(tpAniSirGlobal pMac,
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                   "There were warnings while calculating"
                   "the packed size for a Probe Request ("
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "0x%08x).\n", nStatus );
-=======
                   "0x%08x).", nStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "0x%08x).", nStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     nBytes = nPayload + sizeof( tSirMacMgmtHdr );
@@ -4165,15 +2897,7 @@ pmcPrepareProbeReqTemplate(tpAniSirGlobal pMac,
     if ( eSIR_SUCCESS != nSirStatus )
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "Failed to populate the buffer descriptor for a Probe Request (%d).\n",
-=======
         "Failed to populate the buffer descriptor for a Probe Request (%d).",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        "Failed to populate the buffer descriptor for a Probe Request (%d).",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 nSirStatus );
         return nSirStatus;      // allocated!
     }
@@ -4185,29 +2909,13 @@ pmcPrepareProbeReqTemplate(tpAniSirGlobal pMac,
     if ( DOT11F_FAILED( nStatus ) )
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "Failed to pack a Probe Request (0x%08x).\n", nStatus );
-=======
                   "Failed to pack a Probe Request (0x%08x).", nStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "Failed to pack a Probe Request (0x%08x).", nStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;    // allocated!
     }
     else if ( DOT11F_WARNED( nStatus ) )
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "There were warnings while packing a Probe Request (0x%08x).\n" );
-=======
             "There were warnings while packing a Probe Request" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "There were warnings while packing a Probe Request" );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     *pusLen = nPayload + sizeof(tSirMacMgmtHdr); 
@@ -4228,15 +2936,6 @@ eHalStatus pmcSetPreferredNetworkList
     vos_msg_t msg;
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8 ucDot11Mode; 
-
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s: SSID = %s, %s", __FUNCTION__,
-        pRequest->aNetworks[0].ssId.ssId, pRequest->aNetworks[1].ssId.ssId);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8 ucDot11Mode;
 
     VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO,
@@ -4259,23 +2958,11 @@ eHalStatus pmcSetPreferredNetworkList
                *((v_U32_t *) &pRequest->aNetworks[1].ssId.ssId[24]),
                *((v_U32_t *) &pRequest->aNetworks[1].ssId.ssId[28]));
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pRequestBuf = vos_mem_malloc(sizeof(tSirPNOScanReq));
     if (NULL == pRequestBuf)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for PNO request", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for PNO request", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for PNO request", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILED_ALLOC;
     }
 
@@ -4286,17 +2973,6 @@ eHalStatus pmcSetPreferredNetworkList
                                        csrFindBestPhyMode( pMac, pMac->roam.configParam.phyMode ));
 
     /*Prepare a probe request for 2.4GHz band and one for 5GHz band*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pmcPrepareProbeReqTemplate(pMac,SIR_PNO_24G_DEFAULT_CH, ucDot11Mode, pSession->selfMacAddr, 
-                               pRequestBuf->p24GProbeTemplate, &pRequestBuf->us24GProbeTemplateLen); 
-
-    pmcPrepareProbeReqTemplate(pMac,SIR_PNO_5G_DEFAULT_CH, ucDot11Mode, pSession->selfMacAddr, 
-                               pRequestBuf->p5GProbeTemplate, &pRequestBuf->us5GProbeTemplateLen); 
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      if (eSIR_SUCCESS == pmcPrepareProbeReqTemplate(pMac, SIR_PNO_24G_DEFAULT_CH,
                               ucDot11Mode, pSession->selfMacAddr,
                               pRequestBuf->p24GProbeTemplate,
@@ -4351,25 +3027,13 @@ eHalStatus pmcSetPreferredNetworkList
                     pRequest->us5GProbeTemplateLen);
         }
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     msg.type     = WDA_SET_PNO_REQ;
     msg.reserved = 0;
     msg.bodyptr  = pRequestBuf;
     if (!VOS_IS_STATUS_SUCCESS(vos_mq_post_message(VOS_MODULE_ID_WDA, &msg)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_PNO_REQ message to WDA", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_PNO_REQ message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_PNO_REQ message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -4378,15 +3042,7 @@ eHalStatus pmcSetPreferredNetworkList
     pMac->pmc.prefNetwFoundCB = callbackRoutine;
     pMac->pmc.preferredNetworkFoundIndCallbackContext = callbackContext;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "-%s", __FUNCTION__);
-=======
     VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "-%s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "-%s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return eHAL_STATUS_SUCCESS;
 }
@@ -4400,15 +3056,7 @@ eHalStatus pmcSetRssiFilter(tHalHandle hHal,   v_U8_t        rssiThreshold)
     pRequestBuf = vos_mem_malloc(sizeof(tpSirSetRSSIFilterReq));
     if (NULL == pRequestBuf)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for PNO request", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for PNO request", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for PNO request", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILED_ALLOC;
     }
 
@@ -4420,15 +3068,7 @@ eHalStatus pmcSetRssiFilter(tHalHandle hHal,   v_U8_t        rssiThreshold)
     msg.bodyptr = pRequestBuf;
     if (!VOS_IS_STATUS_SUCCESS(vos_mq_post_message(VOS_MODULE_ID_WDA, &msg)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_PNO_REQ message to WDA", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_PNO_REQ message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_PNO_REQ message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -4443,28 +3083,12 @@ eHalStatus pmcUpdateScanParams(tHalHandle hHal, tCsrConfig *pRequest, tCsrChanne
     vos_msg_t msg;
     int i;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s started", __FUNCTION__);
-=======
     VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s started", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s started", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pRequestBuf = vos_mem_malloc(sizeof(tSirUpdateScanParams));
     if (NULL == pRequestBuf)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for UpdateScanParams request", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for UpdateScanParams request", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for UpdateScanParams request", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILED_ALLOC;
     }
 
@@ -4474,16 +3098,6 @@ eHalStatus pmcUpdateScanParams(tHalHandle hHal, tCsrConfig *pRequest, tCsrChanne
     pRequestBuf->b11dEnabled    = pRequest->Is11eSupportEnabled;
     pRequestBuf->b11dResolved   = b11dResolved;
     pRequestBuf->ucChannelCount = 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        ( pChannelList->numChannels < SIR_PNO_MAX_NETW_CHANNELS )?
-        pChannelList->numChannels:SIR_PNO_MAX_NETW_CHANNELS;
-
-    for (i=0; i < pChannelList->numChannels; i++)
-    {    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         ( pChannelList->numChannels < SIR_PNO_MAX_NETW_CHANNELS_EX )?
         pChannelList->numChannels:SIR_PNO_MAX_NETW_CHANNELS_EX;
 
@@ -4492,10 +3106,6 @@ eHalStatus pmcUpdateScanParams(tHalHandle hHal, tCsrConfig *pRequest, tCsrChanne
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
                   "%s: Channel List %d: %d", __FUNCTION__, i, pChannelList->channelList[i] );
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pRequestBuf->aChannels[i] = pChannelList->channelList[i];
     }
     pRequestBuf->usPassiveMinChTime = pRequest->nPassiveMinChnTime;
@@ -4509,15 +3119,7 @@ eHalStatus pmcUpdateScanParams(tHalHandle hHal, tCsrConfig *pRequest, tCsrChanne
     msg.bodyptr = pRequestBuf;
     if (!VOS_IS_STATUS_SUCCESS(vos_mq_post_message(VOS_MODULE_ID_WDA, &msg)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_UPDATE_SCAN_PARAMS message to WDA", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_UPDATE_SCAN_PARAMS message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_UPDATE_SCAN_PARAMS message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -4526,32 +3128,15 @@ eHalStatus pmcUpdateScanParams(tHalHandle hHal, tCsrConfig *pRequest, tCsrChanne
 }
 #endif // FEATURE_WLAN_SCAN_PNO
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus pmcSetPowerParams(tHalHandle hHal,   tSirSetPowerParamsReq*  pwParams)
-=======
 eHalStatus pmcSetPowerParams(tHalHandle hHal,   tSirSetPowerParamsReq*  pwParams, tANI_BOOLEAN forced)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-eHalStatus pmcSetPowerParams(tHalHandle hHal,   tSirSetPowerParamsReq*  pwParams, tANI_BOOLEAN forced)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tSirSetPowerParamsReq* pRequestBuf;
     vos_msg_t msg;
     tpAniSirGlobal pMac = PMAC_STRUCT(hHal);
     tpPESession     psessionEntry;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if((psessionEntry = peGetValidPowerSaveSession(pMac))== NULL)
-=======
     psessionEntry = peGetValidPowerSaveSession(pMac);
     if (!forced && (psessionEntry == NULL))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    psessionEntry = peGetValidPowerSaveSession(pMac);
-    if (!forced && (psessionEntry == NULL))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         return eHAL_STATUS_NOT_INITIALIZED;
     }
@@ -4559,15 +3144,7 @@ eHalStatus pmcSetPowerParams(tHalHandle hHal,   tSirSetPowerParamsReq*  pwParams
     pRequestBuf = vos_mem_malloc(sizeof(tSirSetPowerParamsReq));
     if (NULL == pRequestBuf)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for Power Paramrequest", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for Power Paramrequest", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate memory for Power Paramrequest", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILED_ALLOC;
     }
 
@@ -4581,15 +3158,7 @@ eHalStatus pmcSetPowerParams(tHalHandle hHal,   tSirSetPowerParamsReq*  pwParams
 
     if(VOS_STATUS_SUCCESS != vos_mq_post_message(VOS_MODULE_ID_WDA, &msg))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_POWER_PARAMS_REQ message to WDA", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_POWER_PARAMS_REQ message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_SET_POWER_PARAMS_REQ message to WDA", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -4602,30 +3171,13 @@ eHalStatus pmcGetFilterMatchCount
 (
     tHalHandle hHal, 
     FilterMatchCountCallback callbackRoutine, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    void *callbackContext
-=======
     void *callbackContext,
     tANI_U8  sessionId
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    void *callbackContext,
-    tANI_U8  sessionId
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 )
 {
     tpSirRcvFltPktMatchRsp  pRequestBuf;
     vos_msg_t               msg;
     tpAniSirGlobal          pMac = PMAC_STRUCT(hHal);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
-        "%s: filterId = %d", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
 
     VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, 
@@ -4637,25 +3189,10 @@ eHalStatus pmcGetFilterMatchCount
                   "%s: Session not found ", __func__);
         return eHAL_STATUS_FAILURE;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pRequestBuf = vos_mem_malloc(sizeof(tSirRcvFltPktMatchRsp));
     if (NULL == pRequestBuf)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-                  "%s: Not able to allocate "
-                  "memory for Get PC Filter Match Count request", __FUNCTION__);
-        return eHAL_STATUS_FAILED_ALLOC;
-    }
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
                   "%s: Not able to allocate "
                   "memory for Get PC Filter Match Count request", __func__);
@@ -4664,10 +3201,6 @@ eHalStatus pmcGetFilterMatchCount
 
     vos_mem_copy(pRequestBuf->bssId, pSession->connectedProfile.bssid, sizeof(tSirMacAddr)); 
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msg.type = WDA_PACKET_COALESCING_FILTER_MATCH_COUNT_REQ;
     msg.reserved = 0;
     msg.bodyptr = pRequestBuf;
@@ -4689,17 +3222,8 @@ eHalStatus pmcGetFilterMatchCount
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
             "%s: Not able to post WDA_PACKET_COALESCING_FILTER_MATCH_COUNT_REQ "
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "message to WDA", __FUNCTION__);
-=======
             "message to WDA", __func__);
         vos_mem_free(pRequestBuf);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "message to WDA", __func__);
-        vos_mem_free(pRequestBuf);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eHAL_STATUS_FAILURE;
     }
 
@@ -4717,19 +3241,6 @@ eHalStatus pmcGetFilterMatchCount
             eHAL_STATUS_FAILURE  Cannot set the offload.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload)
-{
-    tpSirGtkOffloadParams pRequestBuf;
-    vos_msg_t msg;
-    int i;
-
-    VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: KeyReplayCounter: %d", 
-                __FUNCTION__, pGtkOffload->ullKeyReplayCounter);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload, 
                                   tANI_U8 sessionId)
 {
@@ -4747,26 +3258,11 @@ eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload,
                   "%s: Session not found ", __func__);
         return eHAL_STATUS_FAILURE;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pRequestBuf = (tpSirGtkOffloadParams)vos_mem_malloc(sizeof(tSirGtkOffloadParams));
     if (NULL == pRequestBuf)
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "memory for GTK offload request", __FUNCTION__);
-        return eHAL_STATUS_FAILED_ALLOC;
-    }
-
-    vos_mem_copy(pRequestBuf, pGtkOffload, sizeof(tSirGtkOffloadParams));
-        
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   "memory for GTK offload request", __func__);
         return eHAL_STATUS_FAILED_ALLOC;
     }
@@ -4775,25 +3271,13 @@ eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload,
 
     vos_mem_copy(pRequestBuf, pGtkOffload, sizeof(tSirGtkOffloadParams));
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msg.type = WDA_GTK_OFFLOAD_REQ;
     msg.reserved = 0;
     msg.bodyptr = pRequestBuf;
     if (!VOS_IS_STATUS_SUCCESS(vos_mq_post_message(VOS_MODULE_ID_WDA, &msg)))
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "SIR_HAL_SET_GTK_OFFLOAD message to HAL", __FUNCTION__);
-=======
                   "SIR_HAL_SET_GTK_OFFLOAD message to HAL", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "SIR_HAL_SET_GTK_OFFLOAD message to HAL", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -4810,38 +3294,12 @@ eHalStatus pmcSetGTKOffload (tHalHandle hHal, tpSirGtkOffloadParams pGtkOffload,
             eHAL_STATUS_FAILURE  Cannot set the offload.
             eHAL_STATUS_SUCCESS  Request accepted. 
   ---------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-eHalStatus pmcGetGTKOffload(tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, void *callbackContext)
-=======
 eHalStatus pmcGetGTKOffload(tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, 
                                   void *callbackContext, tANI_U8 sessionId)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-eHalStatus pmcGetGTKOffload(tHalHandle hHal, GTKOffloadGetInfoCallback callbackRoutine, 
-                                  void *callbackContext, tANI_U8 sessionId)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tpSirGtkOffloadGetInfoRspParams  pRequestBuf;
     vos_msg_t               msg;
     tpAniSirGlobal          pMac = PMAC_STRUCT(hHal);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s: filterId = %d", 
-                __FUNCTION__);
-
-    pRequestBuf = vos_mem_malloc(sizeof(tSirGtkOffloadGetInfoRspParams));
-    if (NULL == pRequestBuf)
-    {
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to allocate "
-                  "memory for Get GTK Offload request", __FUNCTION__);
-        return eHAL_STATUS_FAILED_ALLOC;
-    }
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tCsrRoamSession *pSession = CSR_GET_SESSION( pMac, sessionId );
 
     VOS_TRACE( VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s: filterId = %d", 
@@ -4865,10 +3323,6 @@ eHalStatus pmcGetGTKOffload(tHalHandle hHal, GTKOffloadGetInfoCallback callbackR
 
     vos_mem_copy(pRequestBuf->bssId, pSession->connectedProfile.bssid, sizeof(tSirMacAddr)); 
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msg.type = WDA_GTK_OFFLOAD_GETINFO_REQ;
     msg.reserved = 0;
     msg.bodyptr = pRequestBuf;
@@ -4888,15 +3342,7 @@ eHalStatus pmcGetGTKOffload(tHalHandle hHal, GTKOffloadGetInfoCallback callbackR
     if (!VOS_IS_STATUS_SUCCESS(vos_mq_post_message(VOS_MODULE_ID_WDA, &msg)))
     {
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s: Not able to post WDA_GTK_OFFLOAD_GETINFO_REQ message to WDA", 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    __FUNCTION__);
-=======
                     __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_free(pRequestBuf);
         return eHAL_STATUS_FAILURE;
     }
@@ -4904,11 +3350,6 @@ eHalStatus pmcGetGTKOffload(tHalHandle hHal, GTKOffloadGetInfoCallback callbackR
     return eHAL_STATUS_SUCCESS;
 }
 #endif // WLAN_FEATURE_GTK_OFFLOAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 v_BOOL_t IsPmcImpsReqFailed (tHalHandle hHal)
 {
@@ -4927,7 +3368,3 @@ void pmcResetImpsFailStatus (tHalHandle hHal)
     pMac->pmc.ImpsReqFailed = VOS_FALSE;
     pMac->pmc.ImpsReqTimerFailed = VOS_FALSE;
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

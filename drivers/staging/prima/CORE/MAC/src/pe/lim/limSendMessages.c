@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -83,31 +74,15 @@ static tBeaconFilterIe beaconFilterTable[] = {
    {SIR_MAC_EDCA_PARAM_SET_EID,  0, {0, 0, EDCA_FILTER_MASK,      0}},
    {SIR_MAC_QOS_CAPABILITY_EID,  0, {0, 0, QOS_FILTER_MASK,       0}},
    {SIR_MAC_CHNL_SWITCH_ANN_EID, 1, {0, 0, 0,                     0}},
-<<<<<<< HEAD
-<<<<<<< HEAD
-   {SIR_MAC_QUIET_EID,           1, {0, 0, 0,                     0}},
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {SIR_MAC_HT_INFO_EID,         0, {0, 0, HT_BYTE0_FILTER_MASK,  0}},  
    {SIR_MAC_HT_INFO_EID,         0, {2, 0, HT_BYTE2_FILTER_MASK,  0}}, 
    {SIR_MAC_HT_INFO_EID,         0, {5, 0, HT_BYTE5_FILTER_MASK,  0}}
 #if defined WLAN_FEATURE_VOWIFI
    ,{SIR_MAC_PWR_CONSTRAINT_EID,  0, {0, 0, 0, 0}}
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef WLAN_FEATURE_11AC
    ,{SIR_MAC_VHT_OPMODE_EID,     0,  {0, 0, 0, 0}}
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef WLAN_FEATURE_11AC
-   ,{SIR_MAC_VHT_OPMODE_EID,     0,  {0, 0, 0, 0}}
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 /**
@@ -142,15 +117,7 @@ tSirRetStatus limSendCFParams(tpAniSirGlobal pMac, tANI_U8 bssIdx, tANI_U8 cfpCo
           sizeof( tUpdateCFParams )))
       {
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            FL( "Unable to PAL allocate memory during Update CF Params\n" ));
-=======
             FL( "Unable to PAL allocate memory during Update CF Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            FL( "Unable to PAL allocate memory during Update CF Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode = eSIR_MEM_ALLOC_FAILED;
         goto returnFailure;
       }
@@ -170,15 +137,7 @@ tSirRetStatus limSendCFParams(tpAniSirGlobal pMac, tANI_U8 bssIdx, tANI_U8 cfpCo
     {
         palFreeMemory(pMac->hHdd, pCFParams);
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("Posting  WDA_UPDATE_CF_IND to WDA failed, reason=%X\n"),
-=======
                     FL("Posting  WDA_UPDATE_CF_IND to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    FL("Posting  WDA_UPDATE_CF_IND to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     retCode );
     }
 returnFailure:
@@ -218,15 +177,7 @@ tSirRetStatus limSendBeaconParams(tpAniSirGlobal pMac,
           (void **) &pBcnParams, sizeof(*pBcnParams)))
     {
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            FL( "Unable to PAL allocate memory during Update Beacon Params\n" ));
-=======
             FL( "Unable to PAL allocate memory during Update Beacon Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            FL( "Unable to PAL allocate memory during Update Beacon Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_MEM_ALLOC_FAILED;
     }
     palCopyMemory( pMac->hHdd, (tANI_U8 *) pBcnParams,  pUpdatedBcnParams, sizeof(*pBcnParams));
@@ -237,12 +188,6 @@ tSirRetStatus limSendBeaconParams(tpAniSirGlobal pMac,
     PELOG3(limLog( pMac, LOG3,
                 FL( "Sending WDA_UPDATE_BEACON_IND, paramChangeBitmap in hex = %x" ),
                     pUpdatedBcnParams->paramChangeBitmap);)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, msgQ.type));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(NULL == psessionEntry)
     {
         MTRACE(macTraceMsgTx(pMac, NO_SESSION, msgQ.type));
@@ -251,33 +196,14 @@ tSirRetStatus limSendBeaconParams(tpAniSirGlobal pMac,
     {
         MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, msgQ.type));
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ )))
     {
         palFreeMemory(pMac->hHdd, pBcnParams);
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("Posting  WDA_UPDATE_BEACON_IND to WDA failed, reason=%X\n"),
-                    retCode );
-    }
-#ifdef WLAN_SOFTAP_FEATURE
-    limSendBeaconInd(pMac, psessionEntry);
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     FL("Posting  WDA_UPDATE_BEACON_IND to WDA failed, reason=%X"),
                     retCode );
     }
     limSendBeaconInd(pMac, psessionEntry);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return retCode;
 }
 
@@ -321,15 +247,7 @@ tSirRetStatus limSendSwitchChnlParams(tpAniSirGlobal pMac,
     if((pSessionEntry = peFindSessionBySessionId(pMac , peSessionId)) == NULL)
     {
        limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             FL( "Unable to get Session for session Id %d\n" ), peSessionId);
-=======
              FL( "Unable to get Session for session Id %d" ), peSessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             FL( "Unable to get Session for session Id %d" ), peSessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eSIR_FAILURE;
     }
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
@@ -337,15 +255,7 @@ tSirRetStatus limSendSwitchChnlParams(tpAniSirGlobal pMac,
           sizeof( tSwitchChannelParams )))
       {
           limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            FL( "Unable to PAL allocate memory during Switch Channel Params\n" ));
-=======
             FL( "Unable to PAL allocate memory during Switch Channel Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            FL( "Unable to PAL allocate memory during Switch Channel Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode = eSIR_MEM_ALLOC_FAILED;
         goto returnFailure;
       }
@@ -381,15 +291,7 @@ tSirRetStatus limSendSwitchChnlParams(tpAniSirGlobal pMac,
     {
         palFreeMemory(pMac->hHdd, pChnlParams);
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("Posting  WDA_CHNL_SWITCH_REQ to WDA failed, reason=%X\n"),
-=======
                     FL("Posting  WDA_CHNL_SWITCH_REQ to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    FL("Posting  WDA_CHNL_SWITCH_REQ to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     retCode );
     }
 returnFailure:
@@ -427,15 +329,7 @@ tSirRetStatus limSendEdcaParams(tpAniSirGlobal pMac, tSirMacEdcaParamRecord *pUp
           sizeof(tEdcaParams)))
     {
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            FL( "Unable to PAL allocate memory during Update EDCA Params\n" ));
-=======
             FL( "Unable to PAL allocate memory during Update EDCA Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            FL( "Unable to PAL allocate memory during Update EDCA Params" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode = eSIR_MEM_ALLOC_FAILED;
         return retCode;
     }
@@ -454,15 +348,7 @@ tSirRetStatus limSendEdcaParams(tpAniSirGlobal pMac, tSirMacEdcaParamRecord *pUp
         PELOG1(limLog( pMac, LOG1,FL("Sending WDA_UPDATE_EDCA_PROFILE_IND with EDCA Parameters:" ));)
         for(i=0; i<MAX_NUM_AC; i++)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOG1(limLog(pMac, LOG1, FL("AC[%d]:  AIFSN %d, ACM %d, CWmin %d, CWmax %d, TxOp %d \n"),  
-=======
             PELOG1(limLog(pMac, LOG1, FL("AC[%d]:  AIFSN %d, ACM %d, CWmin %d, CWmax %d, TxOp %d "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOG1(limLog(pMac, LOG1, FL("AC[%d]:  AIFSN %d, ACM %d, CWmin %d, CWmax %d, TxOp %d "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    i, pUpdatedEdcaParams[i].aci.aifsn, pUpdatedEdcaParams[i].aci.acm, 
                    pUpdatedEdcaParams[i].cw.min, pUpdatedEdcaParams[i].cw.max, pUpdatedEdcaParams[i].txoplimit);)
         }
@@ -472,15 +358,7 @@ tSirRetStatus limSendEdcaParams(tpAniSirGlobal pMac, tSirMacEdcaParamRecord *pUp
     {
         palFreeMemory(pMac->hHdd, pEdcaParams);
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("Posting  WDA_UPDATE_EDCA_PROFILE_IND to WDA failed, reason=%X\n"),
-=======
                     FL("Posting  WDA_UPDATE_EDCA_PROFILE_IND to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    FL("Posting  WDA_UPDATE_EDCA_PROFILE_IND to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     retCode );
     }
     return retCode;
@@ -528,27 +406,12 @@ tSirRetStatus limSendEdcaParams(tpAniSirGlobal pMac, tSirMacEdcaParamRecord *pUp
      *   such that: BE_ACM=1, BK_ACM=1, VI_ACM=1, VO_ACM=0
      *   then all AC will be downgraded to AC_BE.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, LOG1, FL("adAdmitMask[UPLINK] = 0x%x \n"),  pMac->lim.gAcAdmitMask[SIR_MAC_DIRECTION_UPLINK] );
-    limLog(pMac, LOG1, FL("adAdmitMask[DOWNLINK] = 0x%x \n"),  pMac->lim.gAcAdmitMask[SIR_MAC_DIRECTION_DNLINK] );
-    for (ac = EDCA_AC_BK; ac <= EDCA_AC_VO; ac++)
-    {
-        acAdmitted = ( (pMac->lim.gAcAdmitMask[SIR_MAC_DIRECTION_UPLINK] & (1 << ac)) >> ac );
-        limLog(pMac, LOG1, FL("For AC[%d]: acm=%d,  acAdmit=%d \n"), ac, plocalEdcaParams[ac].aci.acm, acAdmitted);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     limLog(pMac, LOG1, FL("adAdmitMask[UPLINK] = 0x%x "),  pMac->lim.gAcAdmitMask[SIR_MAC_DIRECTION_UPLINK] );
     limLog(pMac, LOG1, FL("adAdmitMask[DOWNLINK] = 0x%x "),  pMac->lim.gAcAdmitMask[SIR_MAC_DIRECTION_DNLINK] );
     for (ac = EDCA_AC_BK; ac <= EDCA_AC_VO; ac++)
     {
         acAdmitted = ( (pMac->lim.gAcAdmitMask[SIR_MAC_DIRECTION_UPLINK] & (1 << ac)) >> ac );
         limLog(pMac, LOG1, FL("For AC[%d]: acm=%d,  acAdmit=%d "), ac, plocalEdcaParams[ac].aci.acm, acAdmitted);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if ( (plocalEdcaParams[ac].aci.acm == 1) && (acAdmitted == 0) )
         {
             limLog(pMac, LOG1, FL("We need to downgrade AC %d!! "), ac);
@@ -612,15 +475,7 @@ tSirRetStatus limSetLinkState(tpAniSirGlobal pMac, tSirLinkState state,tSirMacAd
     MTRACE(macTraceMsgTx(pMac, 0, msg.type));
     retCode = wdaPostCtrlMsg(pMac, &msg);
     if (retCode != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x \n"), retCode);
-=======
         limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x "), retCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x "), retCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return retCode;
 }
 #endif //0
@@ -637,15 +492,7 @@ tSirRetStatus limSetLinkState(tpAniSirGlobal pMac, tSirLinkState state,tSirMacAd
           sizeof(tLinkStateParams)))
     {
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        FL( "Unable to PAL allocate memory while sending Set Link State\n" ));
-=======
         FL( "Unable to PAL allocate memory while sending Set Link State" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        FL( "Unable to PAL allocate memory while sending Set Link State" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode = eSIR_SME_RESOURCES_UNAVAILABLE;
         return retCode;
     }
@@ -669,15 +516,7 @@ tSirRetStatus limSetLinkState(tpAniSirGlobal pMac, tSirLinkState state,tSirMacAd
     if (retCode != eSIR_SUCCESS)
     {
         palFreeMemory(pMac, (void*)pLinkStateParams);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x \n"), retCode);
-=======
         limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x "), retCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x "), retCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return retCode;
 }
@@ -694,15 +533,7 @@ state,tSirMacAddr bssId, tSirMacAddr selfMacAddr, int ft, tpPESession psessionEn
           sizeof(tLinkStateParams)))
     {
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        FL( "Unable to PAL allocate memory while sending Set Link State\n" ));
-=======
         FL( "Unable to PAL allocate memory while sending Set Link State" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        FL( "Unable to PAL allocate memory while sending Set Link State" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode = eSIR_SME_RESOURCES_UNAVAILABLE;
         return retCode;
     }
@@ -718,13 +549,6 @@ state,tSirMacAddr bssId, tSirMacAddr selfMacAddr, int ft, tpPESession psessionEn
     msgQ.reserved = 0;
     msgQ.bodyptr = pLinkStateParams;
     msgQ.bodyval = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, msgQ.type));
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(NULL == psessionEntry)
     {
         MTRACE(macTraceMsgTx(pMac, NO_SESSION, msgQ.type));
@@ -733,24 +557,12 @@ state,tSirMacAddr bssId, tSirMacAddr selfMacAddr, int ft, tpPESession psessionEn
     {
         MTRACE(macTraceMsgTx(pMac, psessionEntry->peSessionId, msgQ.type));
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     retCode = (tANI_U32)wdaPostCtrlMsg(pMac, &msgQ);
     if (retCode != eSIR_SUCCESS)
     {
         palFreeMemory(pMac, (void*)pLinkStateParams);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x \n"), retCode);
-=======
         limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x "), retCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Posting link state %d failed, reason = %x "), retCode);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return retCode;
 }
@@ -763,32 +575,6 @@ state,tSirMacAddr bssId, tSirMacAddr selfMacAddr, int ft, tpPESession psessionEn
 \param   tpSirSetTxPowerReq  request message
 \return  None
   -----------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-tSirRetStatus limSendSetTxPowerReq(tpAniSirGlobal pMac,  tpSirSetTxPowerReq pTxPowerReq)
-{
-    tSirRetStatus  retCode = eSIR_SUCCESS;
-    tSirMsgQ       msgQ;
-    if (NULL == pTxPowerReq)
-        return retCode;
-    msgQ.type = WDA_SET_TX_POWER_REQ;
-    msgQ.reserved = 0;
-    msgQ.bodyptr = pTxPowerReq;
-    msgQ.bodyval = 0;
-    PELOGW(limLog(pMac, LOGW, FL( "Sending WDA_SET_TX_POWER_REQ to WDA"));)
-    MTRACE(macTraceMsgTx(pMac, NO_SESSION, msgQ.type));
-    if( eSIR_SUCCESS != (retCode = wdaPostCtrlMsg( pMac, &msgQ )))
-    {
-        limLog( pMac, LOGP, FL("Posting WDA_SET_TX_POWER_REQ to WDA failed, reason=%X"), retCode );
-        if (NULL != pTxPowerReq)
-        {
-            palFreeMemory( pMac->hHdd, (tANI_U8 *) pTxPowerReq);
-        }
-        return retCode;
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus limSendSetTxPowerReq(tpAniSirGlobal pMac,  tANI_U32 *pMsgBuf)
 {
     tSirSetTxPowerReq   *txPowerReq;
@@ -833,10 +619,6 @@ tSirRetStatus limSendSetTxPowerReq(tpAniSirGlobal pMac,  tANI_U32 *pMsgBuf)
         return retCode;
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return retCode;
 }
 /** ---------------------------------------------------------
@@ -875,15 +657,7 @@ tSirRetStatus limSendGetTxPowerReq(tpAniSirGlobal pMac,  tpSirGetTxPowerReq pTxP
 \param   tpAniSirGlobal  pMac
 \return  None
   -----------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac)
-=======
 tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac,tpPESession psessionEntry)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac,tpPESession psessionEntry)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tpBeaconFilterMsg  pBeaconFilterMsg = NULL;
     tSirRetStatus      retCode = eSIR_SUCCESS;
@@ -892,13 +666,6 @@ tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac,tpPESession psessionEn
     tANI_U32           i;
     tANI_U32           msgSize;
     tpBeaconFilterIe   pIe;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tpPESession psessionEntry = &pMac->lim.gpSession[0];  //TBD-RAJESH get the sessionEntry from the caller
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if( psessionEntry == NULL )
     {
@@ -906,23 +673,11 @@ tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac,tpPESession psessionEn
         retCode = eSIR_FAILURE;
         return retCode;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msgSize = sizeof(tBeaconFilterMsg) + sizeof(beaconFilterTable);
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd,
           (void **) &pBeaconFilterMsg, msgSize) )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog( pMac, LOGP, FL("Fail to allocate memory for beaconFiilterMsg \n"));
-=======
         limLog( pMac, LOGP, FL("Fail to allocate memory for beaconFiilterMsg "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog( pMac, LOGP, FL("Fail to allocate memory for beaconFiilterMsg "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retCode = eSIR_MEM_ALLOC_FAILED;
         return retCode;
     }
@@ -935,18 +690,9 @@ tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac,tpPESession psessionEn
     pBeaconFilterMsg->beaconInterval = (tANI_U16) psessionEntry->beaconParams.beaconInterval;
     // Fill in number of IEs in beaconFilterTable
     pBeaconFilterMsg->ieNum = (tANI_U16) (sizeof(beaconFilterTable) / sizeof(tBeaconFilterIe));
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     //Fill the BSSIDX
     pBeaconFilterMsg->bssIdx = psessionEntry->bssIdx;
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    //Fill the BSSIDX
-    pBeaconFilterMsg->bssIdx = psessionEntry->bssIdx;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Fill message with info contained in the beaconFilterTable
     ptr = (tANI_U8 *)pBeaconFilterMsg + sizeof(tBeaconFilterMsg);
     for(i=0; i < (pBeaconFilterMsg->ieNum); i++)
@@ -970,25 +716,12 @@ tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac,tpPESession psessionEn
     {
         palFreeMemory(pMac->hHdd, pBeaconFilterMsg);
         limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            FL("Posting  WDA_BEACON_FILTER_IND to WDA failed, reason=%X\n"),
-=======
             FL("Posting  WDA_BEACON_FILTER_IND to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            FL("Posting  WDA_BEACON_FILTER_IND to WDA failed, reason=%X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             retCode );
         return retCode;
     }
     return retCode;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_11AC
 tSirRetStatus limSendModeUpdate(tpAniSirGlobal pMac, 
@@ -1136,7 +869,3 @@ tSirRetStatus limSendTdlsLinkTeardown(tpAniSirGlobal pMac, tANI_U16 staId)
 
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

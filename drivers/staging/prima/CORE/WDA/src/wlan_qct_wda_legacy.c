@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -48,13 +39,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===========================================================================
 
                        wlan_qct_wda_legacy.c
@@ -141,112 +125,16 @@ wdaPostCfgMsg(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
 
    do
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_OS_TYPE_RTAI_LINUX
-
-      // Posts message to the queue
-
-      if (tx_queue_send(&pMac->sys.gSirMntMsgQ, pMsg,
-                       TX_NO_WAIT) != TX_SUCCESS)
-      {
-         wdaLog(pMac, LOGP, FL("Queue send Failed! rc (%X)\n"),
-                eSIR_SYS_TX_Q_SEND_FAILED);
-         rc = eSIR_SYS_TX_Q_SEND_FAILED;
-         break;
-      }
-
-#else
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // For Windows based MAC, instead of posting message to different
       // queues we will call the handler routines directly
 
       cfgProcessMbMsg(pMac, (tSirMbMsg*)pMsg->bodyptr);
       rc = eSIR_SUCCESS;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    } while (0);
 
    return rc;
 } // halMntPostMsg()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifndef FEATURE_WLAN_INTEGRATED_SOC
-#if defined(ANI_MANF_DIAG) || defined(ANI_PHY_DEBUG)
-#include "pttModuleApi.h"
-// -------------------------------------------------------------
-/**
- * halNimPTTPostMsgApi
- *
- * FUNCTION:
- *     Posts NIM messages to gNIM thread
- *
- * LOGIC:
- *
- * ASSUMPTIONS:pl
- *
- *
- * NOTE:
- *
- * @param tpAniSirGlobal MAC parameters structure
- * @param pMsg pointer with message
- * @return Success or Failure
- */
-
-tSirRetStatus
-halNimPTTPostMsgApi(tpAniSirGlobal pMac, tSirMsgQ *pMsg)
-{
-   tSirRetStatus rc = eSIR_SUCCESS;
-
-   do
-   {
-#ifdef ANI_OS_TYPE_RTAI_LINUX
-
-      // Posts message to the queue
-      if (tx_queue_send(&pMac->sys.gSirNimRDMsgQ, pMsg,
-                       TX_NO_WAIT) != TX_SUCCESS)
-      {
-         rc = eSIR_FAILURE;
-         wdaLog(pMac, LOGP,
-                FL("Posting a Msg to nimMsgQ failed!\n"));
-         break;
-      }
-#else
-      // For Windows based MAC, instead of posting message to different
-      // queues, we will call the handler routines directly
-      wdaLog(pMac, LOGE, "ERROR: Received PTT message in obsolete code path.\n");
-      wdaLog(pMac, LOGP, "This indicates that the wrong OID is being used - clean registry and previous inf files.\n");
-      /*
-      tPttMsgbuffer *msgPtr = (tPttMsgbuffer *)(pMsg->body);  //for some reason, body is actually being used as if it were a void *
-      pttProcessMsg(pMac, msgPtr);
-      */
-
-      //TODO: the resonse is now packaged in ((tPttMsgbuffer *)&pMsg->body)->msgResponse and needs to be sent back to the application
-
-      rc = eSIR_SUCCESS;
-#endif
-   }
-   while (0);
-
-   return rc;
-} // halNimPTTPostMsgApi()
-
-
-#endif  //ANI_MANF_DIAG
-#endif  //FEATURE_WLAN_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // -------------------------------------------------------------
 /**
@@ -277,20 +165,6 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
    tSirMsgQ msg;
    tpAniSirGlobal pMac = (tpAniSirGlobal)pSirGlobal;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_OS_TYPE_RTAI_LINUX
-
-   msg.type = pMb->type;
-   msg.bodyptr = pMb;
-   msg.bodyval = 0;
-   WDALOG3( wdaLog(pMac, LOG3, FL("msgType %d, msgLen %d\n" ),
-        pMb->type, pMb->msgLen));
-#else
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    tSirMbMsg* pMbLocal;
    msg.type = pMb->type;
@@ -313,13 +187,6 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
 
    palCopyMemory(pMac, (void *)pMbLocal, (void *)pMb, pMb->msgLen);
    msg.bodyptr = pMbLocal;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    switch (msg.type & HAL_MMH_MB_MSG_TYPE_MASK)
    {
@@ -339,26 +206,9 @@ tSirRetStatus uMacPostCtrlMsg(void* pSirGlobal, tSirMbMsg* pMb)
       pmmPostMessage(pMac, &msg);
       break;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_MANF_DIAG) || defined(ANI_PHY_DEBUG)
-   case SIR_PTT_MSG_TYPES_BEGIN:
-#ifndef FEATURE_WLAN_INTEGRATED_SOC
-      halNimPTTPostMsgApi(pMac, &msg); // Posts a message to the NIM PTT MsgQ
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
-      break;
-
-#endif
-=======
    case SIR_PTT_MSG_TYPES_BEGIN:
       break;
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   case SIR_PTT_MSG_TYPES_BEGIN:
-      break;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    default:
       WDALOGW( wdaLog(pMac, LOGW, FL("Unknown message type = "
@@ -394,15 +244,7 @@ tBssSystemRole wdaGetGlobalSystemRole(tpAniSirGlobal pMac)
    if(NULL == wdaContext)
    {
       VOS_TRACE( VOS_MODULE_ID_WDA, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                           "%s:WDA context is NULL", __FUNCTION__); 
-=======
                            "%s:WDA context is NULL", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                           "%s:WDA context is NULL", __func__); 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return eSYSTEM_UNKNOWN_ROLE;
    }

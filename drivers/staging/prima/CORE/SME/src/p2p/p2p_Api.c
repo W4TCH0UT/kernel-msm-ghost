@@ -1,13 +1,5 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Copyright (c) 2012, The Linux Foundation. All rights reserved.
-=======
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -26,19 +18,6 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-/*
- * Copyright (c) 2008 QUALCOMM Incorporated. All Rights Reserved.
- * Qualcomm Confidential and Proprietary 
- */
-
-#if defined WLAN_FEATURE_P2P
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
@@ -60,10 +39,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "sme_Api.h"
 #include "smsDebug.h"
 #include "csrInsideApi.h"
@@ -113,30 +88,14 @@ eHalStatus p2pProcessRemainOnChannelCmd(tpAniSirGlobal pMac, tSmeCmd *p2pRemaino
 #ifdef WLAN_FEATURE_P2P_INTERNAL
     if( !pSession->sessionActive || (CSR_SESSION_ID_INVALID == P2PsessionId)) 
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGE, FL("  session %d (P2P session %d) is invalid or listen is disabled "), 
-=======
        smsLog(pMac, LOGE, FL("  session %d (P2P session %d) is invalid or listen is disabled "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGE, FL("  session %d (P2P session %d) is invalid or listen is disabled "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             p2pRemainonChn->sessionId, P2PsessionId);
        return eHAL_STATUS_FAILURE;
     }
 #else
     if(!pSession->sessionActive) 
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       smsLog(pMac, LOGE, FL("  session %d is invalid or listen is disabled "), 
-=======
        smsLog(pMac, LOGE, FL("  session %d is invalid or listen is disabled "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       smsLog(pMac, LOGE, FL("  session %d is invalid or listen is disabled "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             p2pRemainonChn->sessionId);
        return eHAL_STATUS_FAILURE;
     }
@@ -154,15 +113,7 @@ eHalStatus p2pProcessRemainOnChannelCmd(tpAniSirGlobal pMac, tSmeCmd *p2pRemaino
     status = palAllocateMemory(pMac->hHdd, (void**)&pMsg, len );
     if(HAL_STATUS_SUCCESS(status))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s call\n", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s call", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s call", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         palZeroMemory(pMac->hHdd, pMsg, sizeof(tSirRemainOnChnReq));
         pMsg->messageType = eWNI_SME_REMAIN_ON_CHANNEL_REQ;
         pMsg->length = len;
@@ -250,14 +201,7 @@ eHalStatus sme_mgmtFrmInd( tHalHandle hHal, tpSirSmeMgmtFrameInd pSmeMgmtFrm)
        pRoamInfo.pbFrames = pSmeMgmtFrm->frameBuf;
        pRoamInfo.frameType = pSmeMgmtFrm->frameType;
        pRoamInfo.rxChan   = pSmeMgmtFrm->rxChan;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
        pRoamInfo.rxRssi   = pSmeMgmtFrm->rxRssi;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       pRoamInfo.rxRssi   = pSmeMgmtFrm->rxRssi;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
        //Somehow we don't get the right sessionId.
        for(i = 0; i < CSR_ROAM_SESSION_MAX; i++)
@@ -275,14 +219,7 @@ eHalStatus sme_mgmtFrmInd( tHalHandle hHal, tpSirSmeMgmtFrameInd pSmeMgmtFrm)
     pRoamInfo.pbFrames = pSmeMgmtFrm->frameBuf;
     pRoamInfo.frameType = pSmeMgmtFrm->frameType;
     pRoamInfo.rxChan   = pSmeMgmtFrm->rxChan;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     pRoamInfo.rxRssi   = pSmeMgmtFrm->rxRssi;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pRoamInfo.rxRssi   = pSmeMgmtFrm->rxRssi;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* forward the mgmt frame to HDD */
     csrRoamCallCallback(pMac, SessionId, &pRoamInfo, 0, eCSR_ROAM_INDICATE_MGMT_FRAME, 0);
@@ -357,47 +294,21 @@ eHalStatus sme_sendActionCnf( tHalHandle hHal, tANI_U8* pMsg)
    if(CSR_SESSION_ID_INVALID == HDDsessionId)
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-         " %s fail to get HDD sessionID (SMESessionID %d)", __FUNCTION__, pSmeRsp->sessionId);
-=======
          " %s fail to get HDD sessionID (SMESessionID %d)", __func__, pSmeRsp->sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         " %s fail to get HDD sessionID (SMESessionID %d)", __func__, pSmeRsp->sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_INVALID_PARAMETER;
    }
 
    pP2pContext = &pMac->p2pContext[HDDsessionId];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s status %d Action Frame %d actionFrameTimeout %d\n", 
-         __FUNCTION__, pSmeRsp->statusCode, pP2pContext->actionFrameType
-=======
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s status %d Action Frame %d actionFrameTimeout %d",
          __func__, pSmeRsp->statusCode, pP2pContext->actionFrameType
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s status %d Action Frame %d actionFrameTimeout %d",
-         __func__, pSmeRsp->statusCode, pP2pContext->actionFrameType
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          , pP2pContext->actionFrameTimeout);
    vos_mem_zero(&RoamInfo, sizeof(tCsrRoamInfo));
 
    if (pSmeRsp->statusCode != eSIR_SME_SUCCESS && !pP2pContext->actionFrameTimeout
          && pP2pContext->pSentActionFrame)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Action frame:Ack not received. Retransmitting\n", __FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Action frame:Ack not received. Retransmitting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Action frame:Ack not received. Retransmitting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       if(NULL == pP2pContext->pNextActionFrm)
       {
@@ -405,18 +316,8 @@ eHalStatus sme_sendActionCnf( tHalHandle hHal, tANI_U8* pMsg)
                         ACTION_FRAME_RETRY_TIMEOUT * PAL_TIMER_TO_MS_UNIT, eANI_BOOLEAN_FALSE);
          if (!HAL_STATUS_SUCCESS(status))
          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, " %s fail to start retryActionFrameTimerHandler\n", 
-               __FUNCTION__, pP2pContext->NextActionFrameType);
-=======
             smsLog(pMac, LOGE, " %s fail to start retryActionFrameTimerHandler",
                __func__, pP2pContext->NextActionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, " %s fail to start retryActionFrameTimerHandler",
-               __func__, pP2pContext->NextActionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          return status;
       }
@@ -424,15 +325,7 @@ eHalStatus sme_sendActionCnf( tHalHandle hHal, tANI_U8* pMsg)
       else
       {
          smsLog(pMac, LOGE, " %s send next action frame type %d Last frame status (%d)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            __FUNCTION__, rspStatus);
-=======
             __func__, rspStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            __func__, rspStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          //Force it to be success
          rspStatus = eSIR_SME_SUCCESS;
       }
@@ -473,15 +366,7 @@ eHalStatus sme_sendActionCnf( tHalHandle hHal, tANI_U8* pMsg)
       }
       else
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, "%s pSentActionFrame is null \n", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, "%s pSentActionFrame is null ", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN, "%s pSentActionFrame is null ", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       if(pP2pContext->pNextActionFrm)
       {
@@ -495,42 +380,18 @@ eHalStatus sme_sendActionCnf( tHalHandle hHal, tANI_U8* pMsg)
    }
    else
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s cannot get lock1", __FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s cannot get lock1", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s cannot get lock1", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    if(NULL != pP2pContext->pSentActionFrame)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " sending next frame %d type\n", 
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " sending next frame %d type",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " sending next frame %d type",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   pP2pContext->NextActionFrameType);
       status = palTimerStart(pMac->hHdd, pP2pContext->actionFrameTimer, 
                         pP2pContext->ActionFrameSendTimeout * PAL_TIMER_TO_MS_UNIT, eANI_BOOLEAN_FALSE);
       if (!HAL_STATUS_SUCCESS(status))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOGE, FL(" %s fail to start timer status %d"), __FUNCTION__, status);
-=======
          smsLog(pMac, LOGE, FL(" %s fail to start timer status %d"), __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         smsLog(pMac, LOGE, FL(" %s fail to start timer status %d"), __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          //Without the timer we cannot continue
          csrRoamCallCallback((tpAniSirGlobal)pP2pContext->hHal, 
                      pP2pContext->SMEsessionId, &RoamInfo, 0, 
@@ -548,29 +409,13 @@ eHalStatus sme_sendActionCnf( tHalHandle hHal, tANI_U8* pMsg)
       status = p2pSendActionFrame(pMac, pP2pContext->sessionId, pP2pContext->actionFrameType);
       if(!HAL_STATUS_SUCCESS(status))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, " sending next frame %d type\n", 
-=======
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, " sending next frame %d type",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, " sending next frame %d type",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   pP2pContext->NextActionFrameType);
          status = palTimerStart(pMac->hHdd, pP2pContext->retryActionFrameTimer, 
                      ACTION_FRAME_RETRY_TIMEOUT * PAL_TIMER_TO_MS_UNIT, eANI_BOOLEAN_FALSE);
          if (!HAL_STATUS_SUCCESS(status))
          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            smsLog(pMac, LOGE, " %s fail to start retryActionFrameTimerHandler\n", __FUNCTION__);
-=======
             smsLog(pMac, LOGE, " %s fail to start retryActionFrameTimerHandler", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            smsLog(pMac, LOGE, " %s fail to start retryActionFrameTimerHandler", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
    }
@@ -744,44 +589,20 @@ eHalStatus sme_p2pOpen( tHalHandle hHal )
                                     p2pActionFrameTimerHandler, pP2pContext);
       if (!HAL_STATUS_SUCCESS(status))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOGE, " %s fail to alloc actionFrame timer for session %d\n", __FUNCTION__, i);
-=======
          smsLog(pMac, LOGE, " %s fail to alloc actionFrame timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         smsLog(pMac, LOGE, " %s fail to alloc actionFrame timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       }
       status = palTimerAlloc(pMac->hHdd, &pP2pContext->listenTimerHandler, 
                               p2pListenDiscoverTimerHandler, pP2pContext);
       if (!HAL_STATUS_SUCCESS(status))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOGE, " %s fail to alloc listen timer for session %d\n", __FUNCTION__, i);
-=======
          smsLog(pMac, LOGE, " %s fail to alloc listen timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         smsLog(pMac, LOGE, " %s fail to alloc listen timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       } 
       status = palTimerAlloc(pMac->hHdd, &pP2pContext->discoverTimer, p2pDiscoverTimerHandler, pP2pContext);
       if (!HAL_STATUS_SUCCESS(status))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOGE, " %s fail to alloc discover timer for session %d\n", __FUNCTION__, i);
-=======
          smsLog(pMac, LOGE, " %s fail to alloc discover timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         smsLog(pMac, LOGE, " %s fail to alloc discover timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       }
 
@@ -789,15 +610,7 @@ eHalStatus sme_p2pOpen( tHalHandle hHal )
                      p2pRetryActionFrameTimerHandler, pP2pContext);
       if (!HAL_STATUS_SUCCESS(status))
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOGE, " %s fail to alloc retryActionFrameTimerHandler timer for session %d\n", __FUNCTION__, i);
-=======
          smsLog(pMac, LOGE, " %s fail to alloc retryActionFrameTimerHandler timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         smsLog(pMac, LOGE, " %s fail to alloc retryActionFrameTimerHandler timer for session %d", __func__, i);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          break;
       }
 
@@ -969,15 +782,7 @@ eHalStatus p2pRemainOnChannel(tHalHandle hHal, tANI_U8 sessionId,
 #endif
     } while(0);
   
-<<<<<<< HEAD
-<<<<<<< HEAD
-    smsLog(pMac, LOGW, "exiting function %s\n", __FUNCTION__);
-=======
     smsLog(pMac, LOGW, "exiting function %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    smsLog(pMac, LOGW, "exiting function %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
     return(status);
 }
@@ -991,15 +796,7 @@ eHalStatus p2pSendAction(tHalHandle hHal, tANI_U8 sessionId,
     tANI_U16 msgLen;
 
     VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED,
-<<<<<<< HEAD
-<<<<<<< HEAD
-       " %s sends action frame", __FUNCTION__);
-=======
        " %s sends action frame", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       " %s sends action frame", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msgLen = (tANI_U16)((sizeof( tSirMbMsg )) + len);
     status = palAllocateMemory(pMac->hHdd, (void **)&pMsg, msgLen);
     if(HAL_STATUS_SUCCESS(status))
@@ -1096,15 +893,7 @@ eHalStatus p2pChangeDefaultConfigParam(tHalHandle hHal, tP2PConfigParam *pParam)
    if ( !HAL_STATUS_SUCCESS( status ) )
    {
       status = eHAL_STATUS_FAILURE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Cannot get the country code\n", __FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Cannot get the country code", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Cannot get the country code", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    vos_mem_copy(p2pChannel.countryString, pBuf, sizeof(pBuf));
@@ -1123,18 +912,8 @@ eHalStatus p2pChangeDefaultConfigParam(tHalHandle hHal, tP2PConfigParam *pParam)
          {
             pMac->p2pContext[i].P2PListenChannel = P2P_OPERATING_CHANNEL;
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "Invalid P2P Listen Channel in config. Switch to default Listen Channel %d\n",
-               __FUNCTION__, P2P_OPERATING_CHANNEL);
-=======
                "Invalid P2P Listen Channel in config. Switch to default Listen Channel %d",
                __func__, P2P_OPERATING_CHANNEL);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "Invalid P2P Listen Channel in config. Switch to default Listen Channel %d",
-               __func__, P2P_OPERATING_CHANNEL);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          
          if(csrRoamIsChannelValid(pMac, pParam->P2POperatingChannel))
@@ -1144,21 +923,9 @@ eHalStatus p2pChangeDefaultConfigParam(tHalHandle hHal, tP2PConfigParam *pParam)
          else
          {
             pMac->p2pContext[i].P2POperatingChannel = P2P_OPERATING_CHANNEL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH, 
-               "Invalid P2P Operating Channel in config. Switch to default Channel %d\n", 
-               __FUNCTION__, P2P_OPERATING_CHANNEL);
-=======
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
                "Invalid P2P Operating Channel in config. Switch to default Channel %d",
                __func__, P2P_OPERATING_CHANNEL);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_HIGH,
-               "Invalid P2P Operating Channel in config. Switch to default Channel %d",
-               __func__, P2P_OPERATING_CHANNEL);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
          pMac->p2pContext[i].pNoA.ctWindow = pParam->P2POpPSCTWindow;
          pMac->p2pContext[i].pNoA.psSelection = pParam->P2PPSSelection;
@@ -1223,15 +990,7 @@ eHalStatus p2pPS(tHalHandle hHal, tANI_U8 sessionId)
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
       " %s HDDSession %d set NoA parameters. Selection %d, opp_ps %d, ctWindow %d, count %d, "
       "duration %d, interval %d single NoA duration %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-      __FUNCTION__, sessionId, pMac->p2pContext[sessionId].pNoA.psSelection,
-=======
       __func__, sessionId, pMac->p2pContext[sessionId].pNoA.psSelection,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      __func__, sessionId, pMac->p2pContext[sessionId].pNoA.psSelection,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pNoA.opp_ps, pNoA.ctWindow, pNoA.count, pNoA.duration, 
       pNoA.interval, pNoA.single_noa_duration );
 
@@ -1269,40 +1028,17 @@ static eHalStatus p2pRemainOnChannelReadyCallback(tHalHandle halHandle,
    eHalStatus status = eHAL_STATUS_SUCCESS;
    tp2pContext *p2pContext = (tp2pContext*) pContext;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s GroupFormationPending %d  PeerFound %d\n", 
-               __FUNCTION__, p2pContext->GroupFormationPending, p2pContext->PeerFound);
-=======
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s GroupFormationPending %d  PeerFound %d",
                __func__, p2pContext->GroupFormationPending, p2pContext->PeerFound);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s GroupFormationPending %d  PeerFound %d",
-               __func__, p2pContext->GroupFormationPending, p2pContext->PeerFound);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (p2pContext->PeerFound)
    {
       p2pContext->PeerFound = FALSE;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Sending actionframe\n", __FUNCTION__);
-      if (p2pContext->pSentActionFrame)
-      {
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s calling p2pSendAction\n", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Sending actionframe", __func__);
       if (p2pContext->pSentActionFrame)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s calling p2pSendAction", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          p2pSendAction(halHandle, p2pContext->SMEsessionId, (tANI_U8 *)p2pContext->pSentActionFrame, p2pContext->ActionFrameLen);
       }
    }
@@ -1331,28 +1067,12 @@ void p2pRetryActionFrameTimerHandler(void *pContext)
    tpAniSirGlobal pMac = PMAC_STRUCT( p2pContext->hHal );
 
    p2pContext->PeerFound = TRUE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   smsLog( pMac, LOGE, "%s Calling remain on channel \n", __FUNCTION__);
-=======
    smsLog( pMac, LOGE, "%s Calling remain on channel ", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   smsLog( pMac, LOGE, "%s Calling remain on channel ", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    status = p2pRemainOnChannel( pMac, p2pContext->SMEsessionId, p2pContext->P2PListenChannel/*pScanResult->BssDescriptor.channelId*/, P2P_REMAIN_ON_CHAN_TIMEOUT_LOW,
                                     NULL, NULL, eP2PRemainOnChnReasonSendFrame);
    if(status != eHAL_STATUS_SUCCESS)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog( pMac, LOGE, "%s remain on channel failed\n", __FUNCTION__);
-=======
       smsLog( pMac, LOGE, "%s remain on channel failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog( pMac, LOGE, "%s remain on channel failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return;
@@ -1379,30 +1099,14 @@ void p2pActionFrameTimerHandler(void *pContext)
       if(p2pContext->pSentActionFrame)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            " %s actionframe timeout type %d", __FUNCTION__, p2pContext->actionFrameType);
-=======
             " %s actionframe timeout type %d", __func__, p2pContext->actionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            " %s actionframe timeout type %d", __func__, p2pContext->actionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pBuf = p2pContext->pSentActionFrame;
          p2pContext->pSentActionFrame = NULL;
       }
       if(p2pContext->pNextActionFrm)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_WARN,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            " %s next actionframe timeout type %d", __FUNCTION__, p2pContext->NextActionFrameType);
-=======
             " %s next actionframe timeout type %d", __func__, p2pContext->NextActionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            " %s next actionframe timeout type %d", __func__, p2pContext->NextActionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pNextBuf = p2pContext->pNextActionFrm;
          p2pContext->pNextActionFrm = NULL;
       }
@@ -1428,15 +1132,7 @@ void p2pActionFrameTimerHandler(void *pContext)
    }
    status = p2pFsm(p2pContext, eP2P_TRIGGER_DISCONNECTED);
    p2pContext->actionFrameTimeout = TRUE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s timedout\n", __FUNCTION__);
-=======
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s timedout", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s timedout", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return;
 }
@@ -1544,15 +1240,7 @@ eHalStatus p2pCreateActionFrame(tpAniSirGlobal pMac, tANI_U8 SessionID, void *p2
 
    if(NULL != pLocal)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(pMac, LOGE, FL(" Drop a waiting action frame 0x%x, type %d lenth %d"), 
-=======
       smsLog(pMac, LOGE, FL(" Drop a waiting action frame 0x%x, type %d lenth %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(pMac, LOGE, FL(" Drop a waiting action frame 0x%x, type %d lenth %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pLocal, pendingActionFrameType, pendingFrameLen);
       vos_mem_free(pLocal);
    }
@@ -1592,29 +1280,13 @@ static eHalStatus p2pSendActionFrame(tpAniSirGlobal pMac, tANI_U8 HDDSessionID, 
          {
 
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s found match on channel %d", 
-<<<<<<< HEAD
-<<<<<<< HEAD
-               __FUNCTION__, pScanResult->BssDescriptor.channelId);
-=======
                __func__, pScanResult->BssDescriptor.channelId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               __func__, pScanResult->BssDescriptor.channelId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pP2pContext->formationReq.targetListenChannel = pScanResult->BssDescriptor.channelId;
             if(pP2pContext->P2PListenChannel != pScanResult->BssDescriptor.channelId)
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
                   "%s adapt listen channel to %d", 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__, pScanResult->BssDescriptor.channelId);
-=======
                   __func__, pScanResult->BssDescriptor.channelId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__, pScanResult->BssDescriptor.channelId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                p2pSetListenChannel(pMac, pP2pContext->sessionId, pScanResult->BssDescriptor.channelId);
             }
             vos_mem_copy(pP2pContext->formationReq.deviceAddress, pScanResult->BssDescriptor.bssId, P2P_MAC_ADDRESS_LEN);
@@ -1651,15 +1323,7 @@ static eHalStatus p2pSendActionFrame(tpAniSirGlobal pMac, tANI_U8 HDDSessionID, 
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-               VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not found match\n", __FUNCTION__);
-=======
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not found match", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not found match", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pP2pContext->formationReq.targetListenChannel = 0;
                vos_mem_copy(pP2pContext->formationReq.deviceAddress, pP2pContext->peerMacAddress, P2P_MAC_ADDRESS_LEN);
                status = eHAL_STATUS_SUCCESS;
@@ -1668,15 +1332,7 @@ static eHalStatus p2pSendActionFrame(tpAniSirGlobal pMac, tANI_U8 HDDSessionID, 
          }
          else
          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not found match\n", __FUNCTION__);
-=======
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not found match", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not found match", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pP2pContext->formationReq.targetListenChannel = 0;
             vos_mem_copy(pP2pContext->formationReq.deviceAddress, pP2pContext->peerMacAddress, P2P_MAC_ADDRESS_LEN);
             status = eHAL_STATUS_SUCCESS;
@@ -1684,18 +1340,8 @@ static eHalStatus p2pSendActionFrame(tpAniSirGlobal pMac, tANI_U8 HDDSessionID, 
       }
       sme_CancelRemainOnChannel(pMac, pP2pContext->SMEsessionId );
       p2pFsm(pP2pContext, eP2P_TRIGGER_GROUP_FORMATION);     
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " %s send action frame %d timeout %d\n", 
-               __FUNCTION__, actionFrameType, pP2pContext->ActionFrameSendTimeout);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " %s send action frame %d timeout %d",
                __func__, actionFrameType, pP2pContext->ActionFrameSendTimeout);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " %s send action frame %d timeout %d",
-               __func__, actionFrameType, pP2pContext->ActionFrameSendTimeout);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    } 
    else
    {
@@ -1706,15 +1352,7 @@ static eHalStatus p2pSendActionFrame(tpAniSirGlobal pMac, tANI_U8 HDDSessionID, 
       if(status != eHAL_STATUS_SUCCESS)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,  
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "%s p2pSendAction failed to send frame type %d\n", __FUNCTION__, actionFrameType);
-=======
             "%s p2pSendAction failed to send frame type %d", __func__, actionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "%s p2pSendAction failed to send frame type %d", __func__, actionFrameType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pP2pContext->GroupFormationPending = FALSE;
          return status;
       }
@@ -1722,29 +1360,13 @@ static eHalStatus p2pSendActionFrame(tpAniSirGlobal pMac, tANI_U8 HDDSessionID, 
       if ( actionFrameType == eP2P_GONEGO_RES )
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling p2pRemainOnChannel with duration"
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "%d on channel %d\n", __FUNCTION__, P2P_REMAIN_ON_CHAN_TIMEOUT, pP2pContext->P2PListenChannel);
-=======
             "%d on channel %d", __func__, P2P_REMAIN_ON_CHAN_TIMEOUT, pP2pContext->P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "%d on channel %d", __func__, P2P_REMAIN_ON_CHAN_TIMEOUT, pP2pContext->P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          if(p2pRemainOnChannel( pMac, pP2pContext->SMEsessionId, 
                                       pP2pContext->P2PListenChannel, P2P_REMAIN_ON_CHAN_TIMEOUT_LOW,
                                       NULL, NULL, eP2PRemainOnChnReasonSendFrame))
          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,  "%s remain on channel failed\n", __FUNCTION__);
-=======
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,  "%s remain on channel failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,  "%s remain on channel failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
    }
@@ -1770,18 +1392,8 @@ eHalStatus p2pCreateSendActionFrame(tHalHandle hHal, tANI_U8 HDDSessionID,
       return status;
    }
       
-<<<<<<< HEAD
-<<<<<<< HEAD
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " %s send action frame %d timeout %d\n", 
-                  __FUNCTION__, actionFrameType, timeout);
-=======
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " %s send action frame %d timeout %d",
                   __func__, actionFrameType, timeout);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, " %s send action frame %d timeout %d",
-                  __func__, actionFrameType, timeout);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if(NULL != pBuf)
    {
@@ -1801,15 +1413,7 @@ eHalStatus p2pCreateSendActionFrame(tHalHandle hHal, tANI_U8 HDDSessionID,
          tCsrRoamInfo RoamInfo;
 
          vos_mem_zero(&RoamInfo, sizeof(tCsrRoamInfo));
-<<<<<<< HEAD
-<<<<<<< HEAD
-         smsLog(pMac, LOGE, FL(" %s fail to start timer status %d"), __FUNCTION__, status);
-=======
          smsLog(pMac, LOGE, FL(" %s fail to start timer status %d"), __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         smsLog(pMac, LOGE, FL(" %s fail to start timer status %d"), __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          //Without the timer we cannot continue
          csrRoamCallCallback((tpAniSirGlobal)pP2pContext->hHal, 
                      pP2pContext->SMEsessionId, &RoamInfo, 0, 
@@ -1863,32 +1467,14 @@ void p2pListenDiscoverTimerHandler(void *pContext)
    if( (eP2P_STATE_DISCONNECTED == p2pContext->state) && 
        (eStateDisabled != p2pContext->listenDiscoverableState) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with duration %d on channel %d\n", 
-             __FUNCTION__, p2pContext->listenDuration, p2pContext->P2PListenChannel);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with duration %d on channel %d",
              __func__, p2pContext->listenDuration, p2pContext->P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with duration %d on channel %d",
-             __func__, p2pContext->listenDuration, p2pContext->P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = p2pRemainOnChannel( p2pContext->hHal, p2pContext->SMEsessionId, p2pContext->P2PListenChannel, p2pContext->listenDuration, 
                                     p2pListenStateDiscoverableCallback, p2pContext, eP2PRemainOnChnReasonListen);
    }
    else
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      smsLog(((tpAniSirGlobal)p2pContext->hHal), LOGW, FL(" cannot call p2pRemainOnChannel state %d\n"), p2pContext->state);
-=======
       smsLog(((tpAniSirGlobal)p2pContext->hHal), LOGW, FL(" cannot call p2pRemainOnChannel state %d"), p2pContext->state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      smsLog(((tpAniSirGlobal)p2pContext->hHal), LOGW, FL(" cannot call p2pRemainOnChannel state %d"), p2pContext->state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return;
@@ -1905,18 +1491,8 @@ static eHalStatus p2pListenStateDiscoverableCallback(tHalHandle halHandle, void 
        (eStateDisabled != p2pContext->listenDiscoverableState) && 
        (NULL == p2pContext->p2pDiscoverCBFunc) )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s restart listen timer expire time %d\n", 
-                  __FUNCTION__, p2pContext->expire_time);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s restart listen timer expire time %d",
                   __func__, p2pContext->expire_time);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s restart listen timer expire time %d",
-                  __func__, p2pContext->expire_time);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       //We can restart the listening
       status = palTimerStart(pMac->hHdd, p2pContext->listenTimerHandler, p2pContext->expire_time, eANI_BOOLEAN_FALSE);
       if (eHAL_STATUS_SUCCESS != status)
@@ -1926,18 +1502,8 @@ static eHalStatus p2pListenStateDiscoverableCallback(tHalHandle halHandle, void 
    }
    else
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not restart listen timer  state (%d)\n", 
-                  __FUNCTION__, p2pContext->state);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not restart listen timer  state (%d)",
                   __func__, p2pContext->state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s not restart listen timer  state (%d)",
-                  __func__, p2pContext->state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return status;
@@ -1953,15 +1519,7 @@ eHalStatus P2P_ListenStateDiscoverable(tHalHandle hHal, tANI_U8 sessionId,
    switch (listenState) 
    {
    case P2P_DEVICE_NOT_DISCOVERABLE:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_NOT_DISCOVERABLE\n", __FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_NOT_DISCOVERABLE", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_NOT_DISCOVERABLE", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pMac->p2pContext[sessionId].listenDiscoverableState = eStateDisabled;
       pMac->p2pContext[sessionId].DiscoverableCfg = listenState;
       if (pMac->p2pContext[sessionId].state == eP2P_STATE_DISCONNECTED)
@@ -1971,63 +1529,27 @@ eHalStatus P2P_ListenStateDiscoverable(tHalHandle hHal, tANI_U8 sessionId,
          if (pMac->p2pContext[sessionId].listenTimerHandler)
          {
             status = palTimerStop(pMac->hHdd, pMac->p2pContext[sessionId].listenTimerHandler);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Timer Stop status %d\n", 
-                        __FUNCTION__, status);
-=======
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Timer Stop status %d",
                         __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Timer Stop status %d",
-                        __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s P2P_NOT_DISCOVERABLE not in right state (%d)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            __FUNCTION__, pMac->p2pContext[sessionId].state);
-=======
             __func__, pMac->p2pContext[sessionId].state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            __func__, pMac->p2pContext[sessionId].state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       break;
 
    case P2P_DEVICE_AUTO_AVAILABILITY:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_AUTO_AVAILABILITY\n",__FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_AUTO_AVAILABILITY",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_AUTO_AVAILABILITY",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pMac->p2pContext[sessionId].listenDiscoverableState = eStateEnabled;
       pMac->p2pContext[sessionId].DiscoverableCfg = listenState;
       pMac->p2pContext[sessionId].expire_time = P2P_LISTEN_TIMEOUT_AUTO * PAL_TIMER_TO_MS_UNIT;
       pMac->p2pContext[sessionId].listenDuration = P2P_LISTEN_TIMEOUT;
       if (pMac->p2pContext[sessionId].state == eP2P_STATE_DISCONNECTED)
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d\n",
-                     __FUNCTION__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
-=======
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d",
                      __func__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d",
-                     __func__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          p2pRemainOnChannel( pMac, pMac->p2pContext[sessionId].SMEsessionId, pMac->p2pContext[sessionId].P2PListenChannel, 
                               pMac->p2pContext[sessionId].listenDuration, p2pListenStateDiscoverableCallback, 
                               &pMac->p2pContext[sessionId], eP2PRemainOnChnReasonListen);
@@ -2035,46 +1557,20 @@ eHalStatus P2P_ListenStateDiscoverable(tHalHandle hHal, tANI_U8 sessionId,
       else
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s P2P_AUTO_DISCOVERABLE not in right state (%d)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            __FUNCTION__, pMac->p2pContext[sessionId].state);
-=======
             __func__, pMac->p2pContext[sessionId].state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            __func__, pMac->p2pContext[sessionId].state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       break;
 
    case P2P_DEVICE_HIGH_AVAILABILITY:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_HIGH_AVAILABILITY\n",__FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_HIGH_AVAILABILITY",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_HIGH_AVAILABILITY",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pMac->p2pContext[sessionId].listenDiscoverableState = eStateEnabled;
       pMac->p2pContext[sessionId].DiscoverableCfg = listenState;
       pMac->p2pContext[sessionId].expire_time = P2P_REMAIN_ON_CHAN_TIMEOUT_LOW * PAL_TIMER_TO_MS_UNIT;
       pMac->p2pContext[sessionId].listenDuration = P2P_LISTEN_TIMEOUT_HIGH;
       if (pMac->p2pContext[sessionId].state == eP2P_STATE_DISCONNECTED)
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d\n",
-                     __FUNCTION__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
-=======
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d",
                      __func__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d",
-                     __func__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          p2pRemainOnChannel( pMac, pMac->p2pContext[sessionId].SMEsessionId, pMac->p2pContext[sessionId].P2PListenChannel, 
                               pMac->p2pContext[sessionId].listenDuration, p2pListenStateDiscoverableCallback, 
                               &pMac->p2pContext[sessionId], eP2PRemainOnChnReasonListen);
@@ -2082,28 +1578,12 @@ eHalStatus P2P_ListenStateDiscoverable(tHalHandle hHal, tANI_U8 sessionId,
       else
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s P2P_HIGH_DISCOVERABLE not in right state (%d)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            __FUNCTION__, pMac->p2pContext[sessionId].state);
-=======
             __func__, pMac->p2pContext[sessionId].state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            __func__, pMac->p2pContext[sessionId].state);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       break;
 
    case 234: //Not to use this as it enabling GO to be concurrent with P2P device P2P_DEVICE_HIGH_AVAILABILITY:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_HIGH_AVAILABILITY\n",__FUNCTION__);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_HIGH_AVAILABILITY",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s P2P_HIGH_AVAILABILITY",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pMac->p2pContext[sessionId].listenDiscoverableState = eStateEnabled;
       pMac->p2pContext[sessionId].DiscoverableCfg = listenState;
 
@@ -2121,18 +1601,8 @@ eHalStatus P2P_ListenStateDiscoverable(tHalHandle hHal, tANI_U8 sessionId,
 
       if (pMac->p2pContext[sessionId].state == eP2P_STATE_DISCONNECTED)
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d\n",
-                     __FUNCTION__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
-=======
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d",
                      __func__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Calling RemainOnChannel with diration %d on channel %d",
-                     __func__, pMac->p2pContext[sessionId].listenDuration, pMac->p2pContext[sessionId].P2PListenChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          p2pRemainOnChannel( pMac, pMac->p2pContext[sessionId].SMEsessionId, pMac->p2pContext[sessionId].P2PListenChannel, 
                               pMac->p2pContext[sessionId].listenDuration, p2pListenStateDiscoverableCallback, 
                               &pMac->p2pContext[sessionId], eP2PRemainOnChnReasonListen);
@@ -2142,15 +1612,7 @@ eHalStatus P2P_ListenStateDiscoverable(tHalHandle hHal, tANI_U8 sessionId,
 
    default:
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-         "%s Unknown listen setting",__FUNCTION__, listenState);
-=======
          "%s Unknown listen setting",__func__, listenState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         "%s Unknown listen setting",__func__, listenState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       break;
    }
 
@@ -2175,15 +1637,7 @@ void p2pDiscoverTimerHandler(void *pContext)
    tp2pContext *p2pContext = (tp2pContext*) pContext;
    eHalStatus status = eHAL_STATUS_SUCCESS;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s enter", __FUNCTION__);
-=======
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s enter", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s enter", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    p2pCallDiscoverCallback(p2pContext, 
          (p2pContext->directedDiscovery) ? eP2P_DIRECTED_DISCOVER : eP2P_DISCOVER_SUCCESS);
 
@@ -2237,15 +1691,7 @@ eHalStatus p2pGetResultFilter(tp2pContext *pP2pContext,
             if(NULL == bssid)
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  " %s fail to allocate bssid", __FUNCTION__);
-=======
                   " %s fail to allocate bssid", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  " %s fail to allocate bssid", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = eHAL_STATUS_RESOURCES;
                break;
             }
@@ -2268,15 +1714,7 @@ eHalStatus p2pGetResultFilter(tp2pContext *pP2pContext,
             if(NULL == pFilter->SSIDs.SSIDList)
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  " %s fail to allocate bssid", __FUNCTION__);
-=======
                   " %s fail to allocate bssid", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  " %s fail to allocate bssid", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = eHAL_STATUS_RESOURCES;
                break;
             }
@@ -2389,15 +1827,7 @@ eHalStatus P2P_DiscoverRequest(tHalHandle hHal,
    {
       if (pDiscoverRequest->uNumDeviceFilters)
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s directed\n", __FUNCTION__);
-=======
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s directed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s directed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          fDirect = TRUE;
          uNumDeviceFilters = pDiscoverRequest->uNumDeviceFilters;
 
@@ -2416,15 +1846,7 @@ eHalStatus P2P_DiscoverRequest(tHalHandle hHal,
             if(NULL == pP2pContext->directedDiscoveryFilter)
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "%s fail to allocate memory for discoverFilter", __FUNCTION__);
-=======
                   "%s fail to allocate memory for discoverFilter", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "%s fail to allocate memory for discoverFilter", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                status = eHAL_STATUS_RESOURCES;
                break;
             }
@@ -2440,15 +1862,7 @@ eHalStatus P2P_DiscoverRequest(tHalHandle hHal,
             if(!HAL_STATUS_SUCCESS(status = p2pGetResultFilter(pP2pContext, &filter)))
             {
                VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "%s fail to create filter", __FUNCTION__);
-=======
                   "%s fail to create filter", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "%s fail to create filter", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                break;
             }
          }//if(NULL != pDeviceFilters)
@@ -2457,15 +1871,7 @@ eHalStatus P2P_DiscoverRequest(tHalHandle hHal,
          if (hScanResult)
          {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "%s calling p2pDiscoverCompleteCallback\n", __FUNCTION__);
-=======
                "%s calling p2pDiscoverCompleteCallback", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "%s calling p2pDiscoverCompleteCallback", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (callback)
             {
                callback(hHal, pContext, eP2P_DIRECTED_DISCOVER);
@@ -2477,15 +1883,7 @@ eHalStatus P2P_DiscoverRequest(tHalHandle hHal,
          else
          {
             VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "%s Directed find did not find BSSID in cache\n", __FUNCTION__);
-=======
                "%s Directed find did not find BSSID in cache", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               "%s Directed find did not find BSSID in cache", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pP2pContext->formationReq.targetListenChannel = 0;
             if (pDiscoverRequest->uNumDeviceFilters == 1 && filter.BSSIDs.numOfBSSIDs == 1)
             {
@@ -2505,39 +1903,17 @@ eHalStatus P2P_DiscoverRequest(tHalHandle hHal,
       else
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-               "%s while group formation", __FUNCTION__);
-      }
-
-      pP2pContext->uDiscoverTimeout = pDiscoverRequest->uDiscoverTimeout;
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s Start discover", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                "%s while group formation", __func__);
       }
 
       pP2pContext->uDiscoverTimeout = pDiscoverRequest->uDiscoverTimeout;
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO_MED, "%s Start discover", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = palTimerStart(pMac->hHdd, pP2pContext->discoverTimer, 
                      pP2pContext->uDiscoverTimeout * 1000, eANI_BOOLEAN_FALSE);
       if(!HAL_STATUS_SUCCESS(status))
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "%s failt to start discover timer", __FUNCTION__);
-=======
             "%s failt to start discover timer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            "%s failt to start discover timer", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pP2pContext->p2pDiscoverCBFunc = NULL;
             pP2pContext->pContext          = NULL;
             if(callback)
@@ -2585,34 +1961,14 @@ eHalStatus p2pScanRequest(tp2pContext *p2pContext, p2pDiscoverCompleteCallback c
    {
       scanRequest.ChannelInfo.numOfChannels = 1;      
       scanRequest.ChannelInfo.ChannelList = &Channel;
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Scan on channel %d p2pContext->sessionId %d\n", 
-                  __FUNCTION__, Channel, p2pContext->sessionId);
-=======
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Scan on channel %d p2pContext->sessionId %d",
                   __func__, Channel, p2pContext->sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Scan on channel %d p2pContext->sessionId %d",
-                  __func__, Channel, p2pContext->sessionId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else
    {
        getChannelInfo(p2pContext, &scanRequest.ChannelInfo, WFD_DISCOVER_TYPE_AUTO);
-<<<<<<< HEAD
-<<<<<<< HEAD
-       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Scan on all channels\n", 
-                  __FUNCTION__);
-=======
        VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Scan on all channels",
                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Scan on all channels",
-                  __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    /* set the scan type to active */
@@ -2746,15 +2102,7 @@ eHalStatus p2pSetListenChannel(tHalHandle hHal, tANI_U8 SessionID, tANI_U8 chann
    else
    {
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-         " %s fail with invalid channel %d", __FUNCTION__, channel);
-=======
          " %s fail with invalid channel %d", __func__, channel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         " %s fail with invalid channel %d", __func__, channel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       status = eHAL_STATUS_INVALID_PARAMETER;
    }
   
@@ -2771,25 +2119,11 @@ eHalStatus p2pStopDiscovery(tHalHandle hHal, tANI_U8 SessionID)
    status = palTimerStop(pMac->hHdd, pMac->p2pContext[SessionID].discoverTimer);
    if (status != eHAL_STATUS_SUCCESS)
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Timer Stop status %d\n",  __FUNCTION__, status);
-      return status;
-   }
-
-   VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Timer Stop status %d\n",  __FUNCTION__, status);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR, "%s Timer Stop status %d",  __func__, status);
       return status;
    }
 
    VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_INFO, "%s Timer Stop status %d",  __func__, status);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    p2pCallDiscoverCallback(&pMac->p2pContext[SessionID],  eP2P_DIRECTED_DISCOVER);
 
    status = p2pFsm( &pMac->p2pContext[SessionID], eP2P_TRIGGER_DISCONNECTED );
@@ -2817,15 +2151,7 @@ eHalStatus p2pPurgeDeviceList(tpAniSirGlobal pMac, tDblLinkList *pList)
       {
          VOS_TRACE(VOS_MODULE_ID_SME, VOS_TRACE_LEVEL_ERROR,
             " %s fail to parse IEs. pEntry (0x%X)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            __FUNCTION__, pEntry);
-=======
             __func__, pEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            __func__, pEntry);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          pEntry = pNext;
          continue;
       }
@@ -2938,10 +2264,3 @@ eHalStatus p2pProcessNoAReq(tpAniSirGlobal pMac, tSmeCmd *pNoACmd)
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif //WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

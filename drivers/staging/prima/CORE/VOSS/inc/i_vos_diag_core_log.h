@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -93,15 +84,7 @@ typedef struct
   
    /*Time Stamp hi*/
     v_U32_t ts_hi;
-<<<<<<< HEAD
-<<<<<<< HEAD
-}__attribute__((packed)) log_hdr_type;
-=======
 }__packed log_hdr_type;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-}__packed log_hdr_type;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 #ifdef __cplusplus

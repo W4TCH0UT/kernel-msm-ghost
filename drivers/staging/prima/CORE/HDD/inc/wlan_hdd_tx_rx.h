@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -52,24 +43,6 @@
 #define WLAN_HDD_TX_RX_H
 
 /**===========================================================================
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  \file  wlan_hdd_tx_rx.h
-  
-  \brief Linux HDD Tx/RX APIs
-         Copyright 2008 (c) Qualcomm, Incorporated.
-         All Rights Reserved.
-         Qualcomm Confidential and Proprietary.
-  
-  ==========================================================================*/
-  
-/*--------------------------------------------------------------------------- 
-  Include files
-  -------------------------------------------------------------------------*/ 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \file  wlan_hdd_tx_rx.h
 
@@ -88,30 +61,14 @@
 /*---------------------------------------------------------------------------
   Include files
   -------------------------------------------------------------------------*/
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include <wlan_hdd_includes.h>
 #include <vos_api.h>
 #include <linux/skbuff.h>
 #include <wlan_qct_tl.h>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*--------------------------------------------------------------------------- 
-  Preprocessor definitions and constants
-  -------------------------------------------------------------------------*/ 
-=======
 /*---------------------------------------------------------------------------
   Preprocessor definitions and constants
   -------------------------------------------------------------------------*/
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-/*---------------------------------------------------------------------------
-  Preprocessor definitions and constants
-  -------------------------------------------------------------------------*/
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define HDD_ETHERTYPE_802_1_X              ( 0x888E )
 #define HDD_ETHERTYPE_802_1_X_FRAME_OFFSET ( 12 )
 #define HDD_ETHERTYPE_802_1_X_SIZE         ( 2 )
@@ -152,17 +109,7 @@
   ===========================================================================*/
 extern int hdd_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef CONFIG_CFG80211   
 extern int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
-#endif
-=======
-extern int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-extern int hdd_mon_hard_start_xmit(struct sk_buff *skb, struct net_device *dev);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**============================================================================
   @brief hdd_tx_timeout() - Function called by OS if there is any
   timeout during transmission. Since HDD simply enqueues packet
@@ -282,13 +229,6 @@ extern VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
                                      v_U8_t staId,
                                      WLANTL_RxMetaInfoType* pRxMetaInfo );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**============================================================================
   @brief hdd_IsEAPOLPacket() - Checks the packet is EAPOL or not.
@@ -298,30 +238,12 @@ extern VOS_STATUS hdd_rx_packet_cbk( v_VOID_t *vosContext,
                   : VOS_FALSE otherwise
   ===========================================================================*/
 extern v_BOOL_t hdd_IsEAPOLPacket( vos_pkt_t *pVosPacket );
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
 
-#ifdef CONFIG_CFG80211
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**============================================================================
   @brief hdd_mon_tx_mgmt_pkt() - Transmit MGMT packet received on monitor 
                                  interface.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  @param pAdapter: [in] SAP/P2P GO adaptor. 
-=======
   @param pAdapter: [in] SAP/P2P GO adapter.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  @param pAdapter: [in] SAP/P2P GO adapter.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ===========================================================================*/
 void hdd_mon_tx_mgmt_pkt(hdd_adapter_t* pAdapter);
 
@@ -331,12 +253,5 @@ void hdd_mon_tx_mgmt_pkt(hdd_adapter_t* pAdapter);
   @param work: [in] workqueue structure.
   ===========================================================================*/
 void hdd_mon_tx_work_queue(struct work_struct *work);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif    // end #if !defined( WLAN_HDD_TX_RX_H )

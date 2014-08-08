@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -53,18 +44,8 @@
   
    Macros and Function prototypes FT and 802.11R purposes 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   Copyright 2010 (c) Qualcomm, Incorporated.  All Rights Reserved.
-   Qualcomm Confidential and Proprietary.
-=======
    Copyright 2010 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
    Qualcomm Technologies Confidential and Proprietary.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   Copyright 2010 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
-   Qualcomm Technologies Confidential and Proprietary.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   
   ========================================================================*/
 
@@ -91,23 +72,10 @@ extern void limPerformFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32
 void        limPerformPostFTPreAuth(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data, 
                 tpPESession psessionEntry);
 void        limFTResumeLinkCb(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data);
-<<<<<<< HEAD
-<<<<<<< HEAD
-void        limPostFTPreAuthRsp(tpAniSirGlobal pMac, eHalStatus status,
-                tANI_U8 *auth_rsp, tANI_U16  auth_rsp_length,
-                tpPESession psessionEntry);
-void        limHandleFTPreAuthRsp(tpAniSirGlobal pMac, eHalStatus status,
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 void        limPostFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
                 tANI_U8 *auth_rsp, tANI_U16  auth_rsp_length,
                 tpPESession psessionEntry);
 void        limHandleFTPreAuthRsp(tpAniSirGlobal pMac, tSirRetStatus status,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 tANI_U8 *auth_rsp, tANI_U16  auth_rsp_len,
                 tpPESession psessionEntry);
 void        limProcessMlmFTReassocReq(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf,

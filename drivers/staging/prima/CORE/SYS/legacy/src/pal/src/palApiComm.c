@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -55,21 +46,6 @@
 #include <sirParams.h>  // needed for tSirMbMsg
 #include "wlan_qct_wda.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-// its not worth the time trying to get all the includes in place to get to
-// halMmhForwardMBmsg.  if I inlude halMnt.h, I get all kids of compile errros
-// for things missing from palPipes.h (asicDxe.h is looking for these).  palPipes
-// is used only in Gen4 DVT code so why we would have it or need it is puzzling.
-//#include <halMnt.h>
-
-
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef MEMORY_DEBUG
 eHalStatus palAllocateMemory_debug( tHddHandle hHdd, void **ppMemory, tANI_U32 numBytes, char* fileName, tANI_U32 lineNum )
 {
@@ -328,15 +304,7 @@ eHalStatus palSendMBMessage(tHddHandle hHdd, void *pBuf)
    if (NULL == vosContext)
    {
       VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s: invalid vosContext", __FUNCTION__);
-=======
                 "%s: invalid vosContext", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s: invalid vosContext", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
    else
    {
@@ -344,15 +312,7 @@ eHalStatus palSendMBMessage(tHddHandle hHdd, void *pBuf)
       if (NULL == hHal)
       {
          VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "%s: invalid hHal", __FUNCTION__);
-=======
                    "%s: invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "%s: invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else
       {

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -205,15 +196,7 @@ WLANDXE_ChannelConfigType chanRXLowPriConfig =
    WLANDXE_CHANNEL_HANDLE_CIRCULA,
 
    /* Number of Descriptor, NOT CLEAR YET !!! */
-<<<<<<< HEAD
-<<<<<<< HEAD
-   512,
-=======
    256,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   256,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* MAX num RX Buffer, NOT CLEAR YET !!! */
    1,
@@ -253,15 +236,7 @@ WLANDXE_ChannelConfigType chanRXHighPriConfig =
    WLANDXE_CHANNEL_HANDLE_CIRCULA,
 
    /* Number of Descriptor, NOT CLEAR YET !!! */
-<<<<<<< HEAD
-<<<<<<< HEAD
-   40,
-=======
    256,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   256,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    /* MAX num RX Buffer, NOT CLEAR YET !!! */
    1,
@@ -411,15 +386,7 @@ wpt_status dxeCommonDefaultConfig
       All the channels must have it's own configurations
 
   @  Parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-      WLANDXE_CtrlBlkType     *dxeCtrlBlk,
-=======
       WLANDXE_CtrlBlkType:    *dxeCtrlBlk,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      WLANDXE_CtrlBlkType:    *dxeCtrlBlk,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                DXE host driver main control block
       WLANDXE_ChannelCBType   *channelEntry
                                Channel specific control block
@@ -442,14 +409,7 @@ wpt_status dxeChannelDefaultConfig
    wpt_uint32                  dxeControlWriteEop = 0;
    wpt_uint32                  dxeControlWriteEopInt = 0;
    wpt_uint32                  idx;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    wpt_uint32                  rxResourceCount = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   wpt_uint32                  rxResourceCount = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    WLANDXE_ChannelMappingType *mappedChannel = NULL;
 
    /* Sanity Check */
@@ -472,15 +432,7 @@ wpt_status dxeChannelDefaultConfig
    if((NULL == mappedChannel) || (WDTS_CHANNEL_MAX == idx))
    {
       HDXE_MSG(eWLAN_MODULE_DAL_DATA, eWLAN_PAL_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "%s Failed to map channel", __FUNCTION__);
-=======
               "%s Failed to map channel", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-              "%s Failed to map channel", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eWLAN_PAL_STATUS_E_INVAL;
    }
 
@@ -670,12 +622,6 @@ wpt_status dxeChannelDefaultConfig
    channelEntry->extraConfig.intMask = channelInterruptMask[mappedChannel->DMAChannel];
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   channelEntry->numDesc            = mappedChannel->channelConfig->nDescs;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wpalGetNumRxRawPacket(&rxResourceCount);
    if((WDTS_CHANNEL_TX_LOW_PRI == channelEntry->channelType) ||
       (0 == rxResourceCount))
@@ -686,10 +632,6 @@ wpt_status dxeChannelDefaultConfig
    {
       channelEntry->numDesc         = rxResourceCount / 4;
    }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    channelEntry->assignedDMAChannel = mappedChannel->DMAChannel;
    channelEntry->numFreeDesc             = 0;
    channelEntry->numRsvdDesc             = 0;

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -53,22 +44,6 @@
 
 /**=============================================================================
   wlan_hdd_dp_utils.h
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  \brief      Utility functions for data path module
-  
-  Description...
-               Copyright 2008 (c) Qualcomm, Incorporated.
-               All Rights Reserved.
-               Qualcomm Confidential and Proprietary.
-  
-  ==============================================================================**/
-/* $HEADER$ */
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   \brief      Utility functions for data path module
 
@@ -85,10 +60,6 @@
   ==============================================================================**/
 /* $HEADER$ */
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**-----------------------------------------------------------------------------
   Include files
   ----------------------------------------------------------------------------*/
@@ -99,30 +70,12 @@
 #include <vos_status.h>
 #include <linux/spinlock.h>
 #include <vos_trace.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
 #include <vos_list.h>
-#endif
-=======
-#include <vos_list.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include <vos_list.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**-----------------------------------------------------------------------------
   Preprocessor definitions and constants
  ----------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**-----------------------------------------------------------------------------
   Type declarations
  ----------------------------------------------------------------------------*/
@@ -161,15 +114,7 @@ VOS_INLINE_FN v_VOID_t hdd_list_destroy( hdd_list_t *pList )
 {
    if ( pList->count !=0 )
    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "%s: list length not equal to zero",__FUNCTION__);
-=======
        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "%s: list length not equal to zero",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "%s: list length not equal to zero",__func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 }
 

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -55,18 +46,6 @@
   OVERVIEW:
 
   This software unit holds the implementation of the WLAN SAP Finite
-<<<<<<< HEAD
-<<<<<<< HEAD
-  State Machine modules  
-
-  DEPENDENCIES: 
-
-  Are listed for each API below. 
-
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   State Machine modules
 
   DEPENDENCIES:
@@ -74,10 +53,6 @@
   Are listed for each API below.
 
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   Copyright (c) 2010 QUALCOMM Incorporated.
   All Rights Reserved.
   Qualcomm Confidential and Proprietary
@@ -123,15 +98,7 @@
  * -------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
- *  External declarations for global context 
-=======
  *  External declarations for global context
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- *  External declarations for global context
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * -------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------
@@ -142,15 +109,7 @@
  * Static Function Declarations and Definitions
  * -------------------------------------------------------------------------*/
 #ifdef SOFTAP_CHANNEL_RANGE
-<<<<<<< HEAD
-<<<<<<< HEAD
-static VOS_STATUS sapGetChannelList(ptSapContext sapContext, v_U8_t **channelList, 
-=======
 static VOS_STATUS sapGetChannelList(ptSapContext sapContext, v_U8_t **channelList,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static VOS_STATUS sapGetChannelList(ptSapContext sapContext, v_U8_t **channelList,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                  v_U8_t  *numberOfChannels);
 #endif
 /*----------------------------------------------------------------------------
@@ -164,27 +123,6 @@ static VOS_STATUS sapGetChannelList(ptSapContext sapContext, v_U8_t **channelLis
 /*==========================================================================
   FUNCTION    sapEventInit
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    Function for initializing sWLAN_SAPEvent structure
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-
-    IN
-    sapEvent    : State machine event
-   
-  RETURN VALUE
-
-    None
-  
-  SIDE EFFECTS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Function for initializing sWLAN_SAPEvent structure
 
@@ -201,10 +139,6 @@ static VOS_STATUS sapGetChannelList(ptSapContext sapContext, v_U8_t **channelLis
     None
 
   SIDE EFFECTS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 static inline void sapEventInit(ptWLAN_SAPEvent sapEvent)
 {
@@ -217,18 +151,6 @@ static inline void sapEventInit(ptWLAN_SAPEvent sapEvent)
 /*==========================================================================
   FUNCTION    sapGotoChannelSel
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    Function for initiating scan request for SME 
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Function for initiating scan request for SME
 
@@ -236,39 +158,17 @@ static inline void sapEventInit(ptWLAN_SAPEvent sapEvent)
     NA.
 
   PARAMETERS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
     sapContext  : Sap Context value
     sapEvent    : State machine event
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
 
     VOS_STATUS_SUCCESS: Success
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  SIDE EFFECTS 
-=======
 
   SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-  SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
 sapGotoChannelSel
@@ -295,15 +195,7 @@ sapGotoChannelSel
     {
         /* we have a serious problem */
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "In %s, invalid hHal", __FUNCTION__);
-=======
                    "In %s, invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "In %s, invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -313,31 +205,13 @@ sapGotoChannelSel
         channel = sme_GetConcurrentOperationChannel(hHal);
 
         if (channel)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { /*if a valid channel is returned then use concurrent channel. 
-=======
         { /*if a valid channel is returned then use concurrent channel.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { /*if a valid channel is returned then use concurrent channel.
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   Else take whatever comes from configuartion*/
             sapContext->channel = channel;
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    if (sapContext->channel == AUTO_CHANNEL_SELECT) 
-=======
 
     if (sapContext->channel == AUTO_CHANNEL_SELECT)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-    if (sapContext->channel == AUTO_CHANNEL_SELECT)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         vos_mem_zero(&scanRequest, sizeof(scanRequest));
 
@@ -350,18 +224,8 @@ sapGotoChannelSel
 
         /* Set BSSType to default type */
         scanRequest.BSSType = eCSR_BSS_TYPE_ANY;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-#ifndef SOFTAP_CHANNEL_RANGE        
-=======
 
 #ifndef SOFTAP_CHANNEL_RANGE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-#ifndef SOFTAP_CHANNEL_RANGE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*Scan all the channels */
         scanRequest.ChannelInfo.numOfChannels = 0;
 
@@ -375,39 +239,17 @@ sapGotoChannelSel
 
         /*Scan the channels in the list*/
         scanRequest.ChannelInfo.numOfChannels = numOfChannels;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         scanRequest.ChannelInfo.ChannelList = channelList;
 
         scanRequest.requestType = eCSR_SCAN_SOFTAP_CHANNEL_RANGE;
 
         sapContext->channelList = channelList;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-#endif
-        /* Set requestType to Full scan */
-
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, calling sme_ScanRequest", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif
         /* Set requestType to Full scan */
 
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, calling sme_ScanRequest", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         halStatus = sme_ScanRequest(hHal,
                             0,//Not used in csrScanRequest
@@ -417,15 +259,7 @@ sapGotoChannelSel
                             sapContext);//void * pContext scanRequestID filled up
         if (eHAL_STATUS_SUCCESS != halStatus)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "%s:sme_ScanRequest  fail %d!!!", __FUNCTION__, halStatus);
-=======
             VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "%s:sme_ScanRequest  fail %d!!!", __func__, halStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "%s:sme_ScanRequest  fail %d!!!", __func__, halStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "SoftAP Configuring for default channel, Ch= %d", sapContext->channel);
             /* In case of error, switch to default channel */
             sapContext->channel = SAP_DEFAULT_CHANNEL;
@@ -446,18 +280,6 @@ sapGotoChannelSel
         else
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, return from sme_ScanRequest, scanRequestID=%d, Ch= %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, scanRequestID, sapContext->channel);
-        }
-
-    }
-    else 
-    {
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, for configured channel, Ch= %d", __FUNCTION__, sapContext->channel);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    __func__, scanRequestID, sapContext->channel);
         }
 
@@ -465,10 +287,6 @@ sapGotoChannelSel
     else
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, for configured channel, Ch= %d", __func__, sapContext->channel);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Fill in the event structure */
         // Eventhough scan was not done, means a user set channel was chosen
         sapEventInit(sapEvent);
@@ -478,15 +296,7 @@ sapGotoChannelSel
 
     /* If scan failed, get default channel and advance state machine as success with default channel */
     /* Have to wait for the call back to be called to get the channel cannot advance state machine here as said above */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before exiting sapGotoChannelSel channel=%d", __FUNCTION__, sapContext->channel);
-=======
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before exiting sapGotoChannelSel channel=%d", __func__, sapContext->channel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, before exiting sapGotoChannelSel channel=%d", __func__, sapContext->channel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return VOS_STATUS_SUCCESS;
 }// sapGotoChannelSel
@@ -494,18 +304,6 @@ sapGotoChannelSel
 /*==========================================================================
   FUNCTION    sapGotoStarting
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    Function for initiating start bss request for SME
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Function for initiating start bss request for SME
 
@@ -513,10 +311,6 @@ sapGotoChannelSel
     NA.
 
   PARAMETERS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
     sapContext  : Sap Context value
@@ -528,48 +322,17 @@ sapGotoChannelSel
     The VOS_STATUS code associated with performing the operation
 
     VOS_STATUS_SUCCESS: Success
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  SIDE EFFECTS 
-============================================================================*/
-VOS_STATUS
-sapGotoStarting
-( 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   SIDE EFFECTS
 ============================================================================*/
 VOS_STATUS
 sapGotoStarting
 (
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext sapContext,
     ptWLAN_SAPEvent sapEvent,
     eCsrRoamBssType bssType
 )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* tHalHandle */    
-    tHalHandle hHal = VOS_GET_HAL_CB(sapContext->pvosGCtx);
-    eHalStatus halStatus;
-    
-    /*- - - - - - - - TODO:once configs from hdd available - - - - - - - - -*/
-    char key_material[32]={ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1,}; 
-    sapContext->key_type = 0x05;
-    sapContext->key_length = 32;
-    vos_mem_copy(sapContext->key_material, key_material, sizeof(key_material));  /* Need a key size define */
-    
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* tHalHandle */
     tHalHandle hHal = VOS_GET_HAL_CB(sapContext->pvosGCtx);
     eHalStatus halStatus;
@@ -581,72 +344,30 @@ sapGotoStarting
     vos_mem_copy(sapContext->key_material, key_material, sizeof(key_material));  /* Need a key size define */
 
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == hHal)
     {
         /* we have a serious problem */
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "In %s, invalid hHal", __FUNCTION__);
-=======
                    "In %s, invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "In %s, invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
     //TODO: What shall we do if failure????
-<<<<<<< HEAD
-<<<<<<< HEAD
-    halStatus = pmcRequestFullPower( hHal, 
-                            WLANSAP_pmcFullPwrReqCB, 
-=======
     halStatus = pmcRequestFullPower( hHal,
                             WLANSAP_pmcFullPwrReqCB,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    halStatus = pmcRequestFullPower( hHal,
-                            WLANSAP_pmcFullPwrReqCB,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             sapContext,
                             eSME_REASON_OTHER);
 
     /* Open SME Session for Softap */
     halStatus = sme_OpenSession(hHal,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        &WLANSAP_RoamCallback, 
-                        sapContext,
-                        sapContext->self_mac_addr,  
-=======
                         &WLANSAP_RoamCallback,
                         sapContext,
                         sapContext->self_mac_addr,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        &WLANSAP_RoamCallback,
-                        sapContext,
-                        sapContext->self_mac_addr,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         &sapContext->sessionId);
 
     if(eHAL_STATUS_SUCCESS != halStatus )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Error: In %s calling sme_RoamConnect status = %d", __FUNCTION__, halStatus);
-=======
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Error: In %s calling sme_RoamConnect status = %d", __func__, halStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Error: In %s calling sme_RoamConnect status = %d", __func__, halStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE;
     }
 
@@ -656,18 +377,6 @@ sapGotoStarting
 /*==========================================================================
   FUNCTION    sapGotoDisconnecting
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    Processing of SAP FSM Disconnecting state
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Processing of SAP FSM Disconnecting state
 
@@ -675,39 +384,17 @@ sapGotoStarting
     NA.
 
   PARAMETERS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
     sapContext  : Sap Context value
     status      : Return the SAP status here
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
 
     VOS_STATUS_SUCCESS: Success
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  SIDE EFFECTS 
-=======
 
   SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-  SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
 sapGotoDisconnecting
@@ -723,15 +410,7 @@ sapGotoDisconnecting
     {
         /* we have a serious problem */
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "In %s, invalid hHal", __FUNCTION__);
-=======
                    "In %s, invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "In %s, invalid hHal", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAULT;
     }
 
@@ -739,15 +418,7 @@ sapGotoDisconnecting
     halStatus = sme_RoamStopBss(hHal, sapContext->sessionId);
     if(eHAL_STATUS_SUCCESS != halStatus )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Error: In %s calling sme_RoamStopBss status = %d", __FUNCTION__, halStatus);
-=======
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Error: In %s calling sme_RoamStopBss status = %d", __func__, halStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "Error: In %s calling sme_RoamStopBss status = %d", __func__, halStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE;
     }
 
@@ -757,33 +428,13 @@ sapGotoDisconnecting
 static eHalStatus sapRoamSessionCloseCallback(void *pContext)
 {
     ptSapContext sapContext = (ptSapContext)pContext;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return sapSignalHDDevent(sapContext, NULL, 
-=======
     return sapSignalHDDevent(sapContext, NULL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    return sapSignalHDDevent(sapContext, NULL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     eSAP_STOP_BSS_EVENT, (v_PVOID_t) eSAP_STATUS_SUCCESS);
 }
 
 /*==========================================================================
   FUNCTION    sapGotoDisconnected
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    Function for setting the SAP FSM to Disconnection state
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Function for setting the SAP FSM to Disconnection state
 
@@ -791,10 +442,6 @@ static eHalStatus sapRoamSessionCloseCallback(void *pContext)
     NA.
 
   PARAMETERS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
     sapContext  : Sap Context value
@@ -805,18 +452,8 @@ static eHalStatus sapRoamSessionCloseCallback(void *pContext)
     The VOS_STATUS code associated with performing the operation
 
     VOS_STATUS_SUCCESS: Success
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  SIDE EFFECTS 
-=======
 
   SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-  SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
 sapGotoDisconnected
@@ -834,33 +471,13 @@ sapGotoDisconnected
     sapEvent.u2 = 0;
     /* Handle event */
     vosStatus = sapFsm(sapContext, &sapEvent);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return vosStatus;
 }
 
 /*==========================================================================
   FUNCTION    sapSignalHDDevent
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    Function for HDD to send the event notification using callback
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     Function for HDD to send the event notification using callback
 
@@ -868,52 +485,23 @@ sapGotoDisconnected
     NA.
 
   PARAMETERS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
     sapContext  : Sap Context value
     pCsrRoamInfo : Pointer to CSR roam information
     sapHddevent      : SAP HDD event
-<<<<<<< HEAD
-<<<<<<< HEAD
-    context          : to pass the element for future support 
-   
-=======
     context          : to pass the element for future support
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    context          : to pass the element for future support
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
 
     VOS_STATUS_SUCCESS: Success
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  SIDE EFFECTS 
-============================================================================*/
-VOS_STATUS
-sapSignalHDDevent 
-( 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   SIDE EFFECTS
 ============================================================================*/
 VOS_STATUS
 sapSignalHDDevent
 (
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext sapContext, /* sapContext value */
     tCsrRoamInfo *pCsrRoamInfo,
     eSapHddEvent sapHddevent,
@@ -925,21 +513,11 @@ sapSignalHDDevent
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
     /* Format the Start BSS Complete event to return... */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_ASSERT(sapContext->pfnSapEventCallback);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL == sapContext->pfnSapEventCallback)
     {
         VOS_ASSERT(0);
         return VOS_STATUS_E_FAILURE;
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch (sapHddevent)
     {
@@ -962,54 +540,24 @@ sapSignalHDDevent
                sapApAppEvent.sapevt.sapAssocIndication.negotiatedUCEncryptionType = pCsrRoamInfo->u.pConnectedProfile->EncryptionType;
                sapApAppEvent.sapevt.sapAssocIndication.negotiatedMCEncryptionType = pCsrRoamInfo->u.pConnectedProfile->mcEncryptionType;
                sapApAppEvent.sapevt.sapAssocIndication.fAuthRequired = pCsrRoamInfo->fAuthRequired;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            }  
-            break;
-       case eSAP_START_BSS_EVENT:
-            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-                __FUNCTION__, "eSAP_START_BSS_EVENT");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
        case eSAP_START_BSS_EVENT:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
                 __func__, "eSAP_START_BSS_EVENT");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapHddEventCode = eSAP_START_BSS_EVENT;
             sapApAppEvent.sapevt.sapStartBssCompleteEvent.status = (eSapStatus )context;
             if(pCsrRoamInfo != NULL ){
                 sapApAppEvent.sapevt.sapStartBssCompleteEvent.staId = pCsrRoamInfo->staId;
             }
             else
-<<<<<<< HEAD
-<<<<<<< HEAD
-                sapApAppEvent.sapevt.sapStartBssCompleteEvent.staId = 0;              
-=======
                 sapApAppEvent.sapevt.sapStartBssCompleteEvent.staId = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                sapApAppEvent.sapevt.sapStartBssCompleteEvent.staId = 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapevt.sapStartBssCompleteEvent.operatingChannel = (v_U8_t)sapContext->channel;
             break;
 
         case eSAP_STOP_BSS_EVENT:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, "eSAP_STOP_BSS_EVENT");
-=======
                        __func__, "eSAP_STOP_BSS_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, "eSAP_STOP_BSS_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapHddEventCode = eSAP_STOP_BSS_EVENT;
             sapApAppEvent.sapevt.sapStopBssCompleteEvent.status = (eSapStatus )context;
             break;
@@ -1017,15 +565,7 @@ sapSignalHDDevent
         case eSAP_STA_ASSOC_EVENT:
         {
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, "eSAP_STA_ASSOC_EVENT");
-=======
                 __func__, "eSAP_STA_ASSOC_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, "eSAP_STA_ASSOC_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pCsrRoamInfo->fReassocReq)
                 sapApAppEvent.sapHddEventCode = eSAP_STA_REASSOC_EVENT;
             else
@@ -1033,24 +573,6 @@ sapSignalHDDevent
 
             //TODO: Need to fill the SET KEY information and pass to HDD
             vos_mem_copy( &sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.staMac,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         pCsrRoamInfo->peerMac,sizeof(tSirMacAddr));  
-            sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.staId = pCsrRoamInfo->staId ; 
-            sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.statusCode = pCsrRoamInfo->statusCode;
-            sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.iesLen = pCsrRoamInfo->rsnIELen;
-            vos_mem_copy(sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.ies, pCsrRoamInfo->prsnIE, 
-                        pCsrRoamInfo->rsnIELen);
-           
-            if(pCsrRoamInfo->addIELen) 
-            {
-                v_U8_t  len = sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.iesLen;
-                sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.iesLen 
-                                                        += pCsrRoamInfo->addIELen;
-                vos_mem_copy(&sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.ies[len], pCsrRoamInfo->paddIE, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          pCsrRoamInfo->peerMac,sizeof(tSirMacAddr));
             sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.staId = pCsrRoamInfo->staId ;
             sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.statusCode = pCsrRoamInfo->statusCode;
@@ -1064,49 +586,23 @@ sapSignalHDDevent
                 sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.iesLen
                                                         += pCsrRoamInfo->addIELen;
                 vos_mem_copy(&sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.ies[len], pCsrRoamInfo->paddIE,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             pCsrRoamInfo->addIELen);
             }
 
             sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.wmmEnabled = pCsrRoamInfo->wmmEnabledSta;
             sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.status = (eSapStatus )context;
             //TODO: Need to fill sapAuthType
-<<<<<<< HEAD
-<<<<<<< HEAD
-            //sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.SapAuthType = pCsrRoamInfo->pProfile->negotiatedAuthType; 
-=======
             //sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.SapAuthType = pCsrRoamInfo->pProfile->negotiatedAuthType;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            //sapApAppEvent.sapevt.sapStationAssocReassocCompleteEvent.SapAuthType = pCsrRoamInfo->pProfile->negotiatedAuthType;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         }
 
         case eSAP_STA_DISASSOC_EVENT:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, "eSAP_STA_DISASSOC_EVENT");
-            sapApAppEvent.sapHddEventCode = eSAP_STA_DISASSOC_EVENT;
-        
-            vos_mem_copy( &sapApAppEvent.sapevt.sapStationDisassocCompleteEvent.staMac,
-                          pCsrRoamInfo->peerMac, sizeof(tSirMacAddr));  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        __func__, "eSAP_STA_DISASSOC_EVENT");
             sapApAppEvent.sapHddEventCode = eSAP_STA_DISASSOC_EVENT;
 
             vos_mem_copy( &sapApAppEvent.sapevt.sapStationDisassocCompleteEvent.staMac,
                           pCsrRoamInfo->peerMac, sizeof(tSirMacAddr));
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapevt.sapStationDisassocCompleteEvent.staId = pCsrRoamInfo->staId;
             if (pCsrRoamInfo->reasonCode == eCSR_ROAM_RESULT_FORCED)
                 sapApAppEvent.sapevt.sapStationDisassocCompleteEvent.reason = eSAP_USR_INITATED_DISASSOC;
@@ -1119,15 +615,7 @@ sapSignalHDDevent
 
         case eSAP_STA_SET_KEY_EVENT:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, "eSAP_STA_SET_KEY_EVENT");
-=======
                        __func__, "eSAP_STA_SET_KEY_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, "eSAP_STA_SET_KEY_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapHddEventCode = eSAP_STA_SET_KEY_EVENT;
             sapApAppEvent.sapevt.sapStationSetKeyCompleteEvent.status = (eSapStatus )context;
             vos_mem_copy(&sapApAppEvent.sapevt.sapStationSetKeyCompleteEvent.peerMacAddr,
@@ -1136,15 +624,7 @@ sapSignalHDDevent
 
         case eSAP_STA_DEL_KEY_EVENT :
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, "eSAP_STA_DEL_KEY_EVENT");
-=======
                        __func__, "eSAP_STA_DEL_KEY_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, "eSAP_STA_DEL_KEY_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapHddEventCode = eSAP_STA_DEL_KEY_EVENT;
             sapApAppEvent.sapevt.sapStationDeleteKeyCompleteEvent.status = (eSapStatus )context;
             //TODO: Should we need to send the key information
@@ -1153,15 +633,7 @@ sapSignalHDDevent
 
         case eSAP_STA_MIC_FAILURE_EVENT :
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        __FUNCTION__, "eSAP_STA_MIC_FAILURE_EVENT");
-=======
                         __func__, "eSAP_STA_MIC_FAILURE_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        __func__, "eSAP_STA_MIC_FAILURE_EVENT");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapHddEventCode = eSAP_STA_MIC_FAILURE_EVENT;
             vos_mem_copy( &sapApAppEvent.sapevt.sapStationMICFailureEvent.srcMacAddr,
                           pCsrRoamInfo->u.pMICFailureInfo->srcMacAddr,
@@ -1178,31 +650,6 @@ sapSignalHDDevent
             vos_mem_copy( sapApAppEvent.sapevt.sapStationMICFailureEvent.TSC,
                           pCsrRoamInfo->u.pMICFailureInfo->TSC,
                           SIR_CIPHER_SEQ_CTR_SIZE);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            break;            
-
-        case eSAP_ASSOC_STA_CALLBACK_EVENT:
-            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, SAP event callback event = %s",
-                       __FUNCTION__, "eSAP_ASSOC_STA_CALLBACK_EVENT");
-            break;
-            
-        case eSAP_WPS_PBC_PROBE_REQ_EVENT:
-            sapApAppEvent.sapHddEventCode = eSAP_WPS_PBC_PROBE_REQ_EVENT;
-                        
-            vos_mem_copy( &sapApAppEvent.sapevt.sapPBCProbeReqEvent.WPSPBCProbeReq,
-                          pCsrRoamInfo->u.pWPSPBCProbeReq,
-                          sizeof(tSirWPSPBCProbeReq));  
-            break;
-
-#ifdef WLAN_FEATURE_P2P
-       case eSAP_INDICATE_MGMT_FRAME:
-            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
-                                 "In %s, SAP event callback event = %s",
-                                __FUNCTION__, "eSAP_INDICATE_MGMT_FRAME");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case eSAP_ASSOC_STA_CALLBACK_EVENT:
@@ -1222,10 +669,6 @@ sapSignalHDDevent
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                                  "In %s, SAP event callback event = %s",
                                 __func__, "eSAP_INDICATE_MGMT_FRAME");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sapApAppEvent.sapHddEventCode = eSAP_INDICATE_MGMT_FRAME;
             sapApAppEvent.sapevt.sapManagementFrameInfo.nFrameLength
                                            = pCsrRoamInfo->nFrameLength;
@@ -1240,30 +683,12 @@ sapSignalHDDevent
        case eSAP_REMAIN_CHAN_READY:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                                  "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                __FUNCTION__, "eSAP_REMAIN_CHAN_READY");
-=======
                                 __func__, "eSAP_REMAIN_CHAN_READY");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                __func__, "eSAP_REMAIN_CHAN_READY");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            sapApAppEvent.sapHddEventCode = eSAP_REMAIN_CHAN_READY;
             break;
        case eSAP_SEND_ACTION_CNF:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                                  "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                __FUNCTION__, "eSAP_SEND_ACTION_CNF");
-            sapApAppEvent.sapHddEventCode = eSAP_SEND_ACTION_CNF;
-            sapApAppEvent.sapevt.sapActionCnf.actionSendSuccess = (eSapStatus)context; 
-            break;
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 __func__, "eSAP_SEND_ACTION_CNF");
             sapApAppEvent.sapHddEventCode = eSAP_SEND_ACTION_CNF;
             sapApAppEvent.sapevt.sapActionCnf.actionSendSuccess = (eSapStatus)context;
@@ -1285,64 +710,28 @@ sapSignalHDDevent
             sapApAppEvent.sapevt.sapActionCnf.actionSendSuccess = (eSapStatus)context;
             break;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case eSAP_UNKNOWN_STA_JOIN:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                        "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, "eSAP_UNKNOWN_STA_JOIN");
-            sapApAppEvent.sapHddEventCode = eSAP_UNKNOWN_STA_JOIN;
-            vos_mem_copy((v_PVOID_t)sapApAppEvent.sapevt.sapUnknownSTAJoin.macaddr.bytes, 
-=======
                        __func__, "eSAP_UNKNOWN_STA_JOIN");
             sapApAppEvent.sapHddEventCode = eSAP_UNKNOWN_STA_JOIN;
             vos_mem_copy((v_PVOID_t)sapApAppEvent.sapevt.sapUnknownSTAJoin.macaddr.bytes,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, "eSAP_UNKNOWN_STA_JOIN");
-            sapApAppEvent.sapHddEventCode = eSAP_UNKNOWN_STA_JOIN;
-            vos_mem_copy((v_PVOID_t)sapApAppEvent.sapevt.sapUnknownSTAJoin.macaddr.bytes,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          (v_PVOID_t)context, sizeof(v_MACADDR_t));
             break;
 
         case eSAP_MAX_ASSOC_EXCEEDED:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                     "In %s, SAP event callback event = %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    __FUNCTION__, "eSAP_MAX_ASSOC_EXCEEDED");
-            sapApAppEvent.sapHddEventCode = eSAP_MAX_ASSOC_EXCEEDED;
-            vos_mem_copy((v_PVOID_t)sapApAppEvent.sapevt.sapMaxAssocExceeded.macaddr.bytes, 
-=======
                     __func__, "eSAP_MAX_ASSOC_EXCEEDED");
             sapApAppEvent.sapHddEventCode = eSAP_MAX_ASSOC_EXCEEDED;
             vos_mem_copy((v_PVOID_t)sapApAppEvent.sapevt.sapMaxAssocExceeded.macaddr.bytes,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    __func__, "eSAP_MAX_ASSOC_EXCEEDED");
-            sapApAppEvent.sapHddEventCode = eSAP_MAX_ASSOC_EXCEEDED;
-            vos_mem_copy((v_PVOID_t)sapApAppEvent.sapevt.sapMaxAssocExceeded.macaddr.bytes,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     (v_PVOID_t)pCsrRoamInfo->peerMac, sizeof(v_MACADDR_t));
             break;
 
         default:
             VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, SAP Unknown callback event = %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__,sapHddevent);
-=======
                        __func__,sapHddevent);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__,sapHddevent);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
     }
     vosStatus = (*sapContext->pfnSapEventCallback)
@@ -1350,15 +739,7 @@ sapSignalHDDevent
                  &sapApAppEvent,
                  sapContext->pUsrContext//userdataforcallback - hdd opaque handle
                  );
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return vosStatus;
 
 } /* sapSignalApAppStartBssEvent */
@@ -1366,18 +747,6 @@ sapSignalHDDevent
 /*==========================================================================
   FUNCTION    sapFsm
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  DESCRIPTION 
-    SAP State machine entry function
-
-  DEPENDENCIES 
-    NA. 
-
-  PARAMETERS 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   DESCRIPTION
     SAP State machine entry function
 
@@ -1385,63 +754,27 @@ sapSignalHDDevent
     NA.
 
   PARAMETERS
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     IN
     sapContext  : Sap Context value
     sapEvent    : State machine event
     status      : Return the SAP status here
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   RETURN VALUE
     The VOS_STATUS code associated with performing the operation
 
     VOS_STATUS_SUCCESS: Success
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-  SIDE EFFECTS 
-=======
 
   SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-  SIDE EFFECTS
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ============================================================================*/
 VOS_STATUS
 sapFsm
 (
-<<<<<<< HEAD
-<<<<<<< HEAD
-    ptSapContext sapContext,    /* sapContext value */    
-    ptWLAN_SAPEvent sapEvent   /* State machine event */
-)
-{
-   /* Retrieve the phy link state machine structure 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ptSapContext sapContext,    /* sapContext value */
     ptWLAN_SAPEvent sapEvent   /* State machine event */
 )
 {
    /* Retrieve the phy link state machine structure
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      * from the sapContext value
      */
     eSapFsmStates_t stateVar = sapContext->sapsMachine; /*state var that keeps track of state machine*/
@@ -1456,18 +789,6 @@ sapFsm
             {
                 /* Transition from eSAP_DISCONNECTED to eSAP_CH_SELECT (both without substates) */
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, new from state %s => %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            __FUNCTION__, "eSAP_DISCONNECTED", "eSAP_CH_SELECT");
-
-                /* There can be one SAP Session for softap */
-                if (sapContext->isSapSessionOpen == eSAP_TRUE) 
-                {
-                   VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL,
-                        "%s:SME Session is already opened\n",__FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             __func__, "eSAP_DISCONNECTED", "eSAP_CH_SELECT");
 
                 /* There can be one SAP Session for softap */
@@ -1475,10 +796,6 @@ sapFsm
                 {
                    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_FATAL,
                         "%s:SME Session is already opened\n",__func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    return VOS_STATUS_E_EXISTS;
                 }
 
@@ -1489,20 +806,6 @@ sapFsm
 
                 /* Perform sme_ScanRequest */
                 vosStatus = sapGotoChannelSel(sapContext, sapEvent);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                
-                /* Transition from eSAP_DISCONNECTED to eSAP_CH_SELECT (both without substates) */
-                VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-                           __FUNCTION__, "eSAP_DISCONNECTED", "eSAP_CH_SELECT");
-            } 
-            else 
-            {
-                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, in state %s, event msg %d",
-                             __FUNCTION__, "eSAP_DISCONNECTED", msg);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 /* Transition from eSAP_DISCONNECTED to eSAP_CH_SELECT (both without substates) */
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
@@ -1512,33 +815,15 @@ sapFsm
             {
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, in state %s, event msg %d",
                              __func__, "eSAP_DISCONNECTED", msg);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
         case eSAP_CH_SELECT:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if (msg == eSAP_MAC_SCAN_COMPLETE) 
-            {
-                 /* Transition from eSAP_CH_SELECT to eSAP_STARTING (both without substates) */
-                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-                            __FUNCTION__, "eSAP_CH_SELECT", "eSAP_STARTING");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (msg == eSAP_MAC_SCAN_COMPLETE)
             {
                  /* Transition from eSAP_CH_SELECT to eSAP_STARTING (both without substates) */
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
                             __func__, "eSAP_CH_SELECT", "eSAP_STARTING");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  // Channel selected. Now can sapGotoStarting
                  sapContext->sapsMachine = eSAP_STARTING;
                  // Specify the channel
@@ -1548,51 +833,21 @@ sapFsm
                  vosStatus = sapGotoStarting( sapContext, sapEvent, eCSR_BSS_TYPE_INFRA_AP);
                  /* Transition from eSAP_CH_SELECT to eSAP_STARTING (both without substates) */
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                             __FUNCTION__, "eSAP_CH_SELECT", "eSAP_STARTING");
-=======
                              __func__, "eSAP_CH_SELECT", "eSAP_STARTING");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                             __func__, "eSAP_CH_SELECT", "eSAP_STARTING");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             else
             {
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, in state %s, invalid event msg %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            __FUNCTION__, "eSAP_CH_SELECT", msg);
-=======
                             __func__, "eSAP_CH_SELECT", msg);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                            __func__, "eSAP_CH_SELECT", msg);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
         case eSAP_STARTING:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if (msg == eSAP_MAC_START_BSS_SUCCESS ) 
-            {
-                /* Transition from eSAP_STARTING to eSAP_STARTED (both without substates) */
-                VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state channel = %d %s => %s",
-                            __FUNCTION__,sapContext->channel, "eSAP_STARTING", "eSAP_STARTED");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (msg == eSAP_MAC_START_BSS_SUCCESS )
             {
                 /* Transition from eSAP_STARTING to eSAP_STARTED (both without substates) */
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state channel = %d %s => %s",
                             __func__,sapContext->channel, "eSAP_STARTING", "eSAP_STARTED");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                  sapContext->sapsMachine = eSAP_STARTED;
                  /*Action code for transition */
@@ -1600,19 +855,6 @@ sapFsm
 
                  /* Transition from eSAP_STARTING to eSAP_STARTED (both without substates) */
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            __FUNCTION__, "eSAP_STARTING", "eSAP_STARTED");
-             }
-             else if (msg == eSAP_MAC_START_FAILS) 
-             {
-                 /*Transition from STARTING to DISCONNECTED (both without substates)*/                         
-                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-                            __FUNCTION__, "eSAP_STARTING", "eSAP_DISCONNECTED");
-                
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             __func__, "eSAP_STARTING", "eSAP_STARTED");
              }
              else if (msg == eSAP_MAC_START_FAILS)
@@ -1621,10 +863,6 @@ sapFsm
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
                             __func__, "eSAP_STARTING", "eSAP_DISCONNECTED");
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  /*Action code for transition */
                  vosStatus = sapSignalHDDevent( sapContext, NULL, eSAP_START_BSS_EVENT,(v_PVOID_t) eSAP_STATUS_FAILURE);
                  vosStatus =  sapGotoDisconnected(sapContext);
@@ -1634,21 +872,9 @@ sapFsm
              }
              else if (msg == eSAP_HDD_STOP_INFRA_BSS)
              {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 /*Transition from eSAP_STARTING to eSAP_DISCONNECTING (both without substates)*/        
-                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-                             __FUNCTION__, "eSAP_STARTING", "eSAP_DISCONNECTING");
-=======
                  /*Transition from eSAP_STARTING to eSAP_DISCONNECTING (both without substates)*/
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
                              __func__, "eSAP_STARTING", "eSAP_DISCONNECTING");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 /*Transition from eSAP_STARTING to eSAP_DISCONNECTING (both without substates)*/
-                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-                             __func__, "eSAP_STARTING", "eSAP_DISCONNECTING");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                  /*Advance outer statevar */
                  sapContext->sapsMachine = eSAP_DISCONNECTED;
@@ -1656,36 +882,16 @@ sapFsm
                  vosStatus = sapGotoDisconnected(sapContext);
                  /* Close the SME session*/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 if (eSAP_TRUE == sapContext->isSapSessionOpen) 
-=======
                  if (eSAP_TRUE == sapContext->isSapSessionOpen)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 if (eSAP_TRUE == sapContext->isSapSessionOpen)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  {
                     tHalHandle hHal = VOS_GET_HAL_CB(sapContext->pvosGCtx);
                     if (NULL == hHal)
                     {
                        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                                   "In %s, NULL hHal in state %s, msg %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                  __FUNCTION__, "eSAP_STARTING", msg);
-                    }
-                    else if (eHAL_STATUS_SUCCESS == 
-=======
                                   __func__, "eSAP_STARTING", msg);
                     }
                     else if (eHAL_STATUS_SUCCESS ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                  __func__, "eSAP_STARTING", msg);
-                    }
-                    else if (eHAL_STATUS_SUCCESS ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          sme_CloseSession(hHal,
                                          sapContext->sessionId, NULL, NULL))
                      {
@@ -1693,25 +899,11 @@ sapFsm
                      }
                  }
              }
-<<<<<<< HEAD
-<<<<<<< HEAD
-             else 
-             {
-                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
-                             "In %s, in state %s, invalid event msg %d",
-                             __FUNCTION__, "eSAP_STARTING", msg);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              else
              {
                  VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                              "In %s, in state %s, invalid event msg %d",
                              __func__, "eSAP_STARTING", msg);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  /* Intentionally left blank */
              }
              break;
@@ -1721,30 +913,14 @@ sapFsm
             {
                 /* Transition from eSAP_STARTED to eSAP_DISCONNECTING (both without substates) */
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                           __FUNCTION__, "eSAP_STARTED", "eSAP_DISCONNECTING");
-=======
                            __func__, "eSAP_STARTED", "eSAP_DISCONNECTING");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                           __func__, "eSAP_STARTED", "eSAP_DISCONNECTING");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 sapContext->sapsMachine = eSAP_DISCONNECTING;
                 vosStatus = sapGotoDisconnecting(sapContext);
             }
             else
             {
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, in state %s, invalid event msg %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                           __FUNCTION__, "eSAP_STARTED", msg);
-=======
                            __func__, "eSAP_STARTED", msg);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                           __func__, "eSAP_STARTED", msg);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -1753,25 +929,11 @@ sapFsm
             {
                 /* Transition from eSAP_DISCONNECTING to eSAP_DISCONNECTED (both without substates) */
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, from state %s => %s",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          __FUNCTION__, "eSAP_DISCONNECTING", "eSAP_DISCONNECTED");
-
-                sapContext->sapsMachine = eSAP_DISCONNECTED;
-                /* Close the SME session*/
-                if (eSAP_TRUE == sapContext->isSapSessionOpen) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           __func__, "eSAP_DISCONNECTING", "eSAP_DISCONNECTED");
 
                 sapContext->sapsMachine = eSAP_DISCONNECTED;
                 /* Close the SME session*/
                 if (eSAP_TRUE == sapContext->isSapSessionOpen)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 {
                     tHalHandle hHal = VOS_GET_HAL_CB(sapContext->pvosGCtx);
 
@@ -1779,15 +941,7 @@ sapFsm
                     {
                         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                                    "In %s, NULL hHal in state %s, msg %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                   __FUNCTION__, "eSAP_DISCONNECTING", msg);
-=======
                                    __func__, "eSAP_DISCONNECTING", msg);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                   __func__, "eSAP_DISCONNECTING", msg);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     }
                     else
                     {
@@ -1798,39 +952,17 @@ sapFsm
                                      sapRoamSessionCloseCallback, sapContext)))
                         {
                             vosStatus = sapSignalHDDevent(sapContext, NULL,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                              eSAP_STOP_BSS_EVENT, 
-=======
                                               eSAP_STOP_BSS_EVENT,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                              eSAP_STOP_BSS_EVENT,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                               (v_PVOID_t) eSAP_STATUS_SUCCESS);
                         }
                     }
                 }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-            else 
-            {
-                VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, 
-                           "In %s, in state %s, invalid event msg %d",
-                          __FUNCTION__, "eSAP_DISCONNECTING", msg);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             else
             {
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
                            "In %s, in state %s, invalid event msg %d",
                           __func__, "eSAP_DISCONNECTING", msg);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
       }
@@ -1846,15 +978,7 @@ sapconvertToCsrProfile(tsap_Config_t *pconfig_params, eCsrRoamBssType bssType, t
     profile->SSIDs.numOfSSIDs = 1;
     profile->csrPersona = pconfig_params->persona;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    vos_mem_zero(profile->SSIDs.SSIDList[0].SSID.ssId, 
-=======
     vos_mem_zero(profile->SSIDs.SSIDList[0].SSID.ssId,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    vos_mem_zero(profile->SSIDs.SSIDList[0].SSID.ssId,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  sizeof(profile->SSIDs.SSIDList[0].SSID.ssId));
 
     //Flag to not broadcast the SSID information
@@ -1907,61 +1031,26 @@ sapconvertToCsrProfile(tsap_Config_t *pconfig_params, eCsrRoamBssType bssType, t
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        profile->csr80211AuthType = eSIR_AUTO_SWITCH; 
-    }
-
-    //Initialize we are not going to use it 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         profile->csr80211AuthType = eSIR_AUTO_SWITCH;
     }
 
     //Initialize we are not going to use it
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     profile->pWPAReqIE = NULL;
     profile->nWPAReqIELength = 0;
 
     //set the RSN/WPA IE
     profile->pRSNReqIE = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    profile->nRSNReqIELength = pconfig_params->RSNWPAReqIELength; 
-=======
     profile->nRSNReqIELength = pconfig_params->RSNWPAReqIELength;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    profile->nRSNReqIELength = pconfig_params->RSNWPAReqIELength;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pconfig_params->RSNWPAReqIELength)
     {
         profile->pRSNReqIE = vos_mem_malloc(pconfig_params->RSNWPAReqIELength);
         if( NULL == profile->pRSNReqIE )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-           VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, " %s Fail to alloc memory", __FUNCTION__);
-           return eSAP_STATUS_FAILURE;
-        }
-        vos_mem_copy(profile->pRSNReqIE, pconfig_params->pRSNWPAReqIE, pconfig_params->RSNWPAReqIELength);
-        profile->nRSNReqIELength = pconfig_params->RSNWPAReqIELength; 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, " %s Fail to alloc memory", __func__);
            return eSAP_STATUS_FAILURE;
         }
         vos_mem_copy(profile->pRSNReqIE, pconfig_params->pRSNWPAReqIE, pconfig_params->RSNWPAReqIELength);
         profile->nRSNReqIELength = pconfig_params->RSNWPAReqIELength;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     // Turn off CB mode
@@ -1987,20 +1076,8 @@ sapconvertToCsrProfile(tsap_Config_t *pconfig_params, eCsrRoamBssType bssType, t
 
     //country code
     if (pconfig_params->countryCode[0])
-<<<<<<< HEAD
-<<<<<<< HEAD
-        vos_mem_copy(profile->countryCode, pconfig_params->countryCode, WNI_CFG_COUNTRY_CODE_LEN); 
-#ifdef WLAN_SOFTAP_FEATURE
-    profile->ieee80211d = pconfig_params->ieee80211d;
-#endif
-=======
         vos_mem_copy(profile->countryCode, pconfig_params->countryCode, WNI_CFG_COUNTRY_CODE_LEN);
     profile->ieee80211d = pconfig_params->ieee80211d;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        vos_mem_copy(profile->countryCode, pconfig_params->countryCode, WNI_CFG_COUNTRY_CODE_LEN);
-    profile->ieee80211d = pconfig_params->ieee80211d;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //wps config info
     profile->wps_state = pconfig_params->wps_state;
 
@@ -2058,15 +1135,7 @@ sapSearchMacList(v_MACADDR_t *macList, v_U8_t num_mac, v_U8_t *peerMac, v_U8_t *
                     "search SUCC");
             // "index equals NULL" means the caller does not need the
             // index value of the peerMac being searched
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if (index != NULL) 
-=======
             if (index != NULL)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            if (index != NULL)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 *index = (v_U8_t) nMiddle;
                 VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
@@ -2112,15 +1181,7 @@ sapAddMacToACL(v_MACADDR_t *macList, v_U8_t *size, v_U8_t *peerMac)
 }
 
 void
-<<<<<<< HEAD
-<<<<<<< HEAD
-sapRemoveMacFromACL(v_MACADDR_t *macList, v_U8_t *size, v_U8_t index)    
-=======
 sapRemoveMacFromACL(v_MACADDR_t *macList, v_U8_t *size, v_U8_t index)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-sapRemoveMacFromACL(v_MACADDR_t *macList, v_U8_t *size, v_U8_t index)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     int i;
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,"remove acl entered");
@@ -2143,28 +1204,12 @@ sapRemoveMacFromACL(v_MACADDR_t *macList, v_U8_t *size, v_U8_t index)
 void sapPrintACL(v_MACADDR_t *macList, v_U8_t size)
 {
     int i;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,"print acl entered");    
-=======
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,"print acl entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,"print acl entered");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (size==0) return;
     for (i=0; i<size; i++)
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "** ACL entry %i - %02x:%02x:%02x:%02x:%02x:%02x", i, 
-=======
                 "** ACL entry %i - %02x:%02x:%02x:%02x:%02x:%02x", i,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "** ACL entry %i - %02x:%02x:%02x:%02x:%02x:%02x", i,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 (macList+i)->bytes[0], (macList+i)->bytes[1], (macList+i)->bytes[2],
                 (macList+i)->bytes[3], (macList+i)->bytes[4], (macList+i)->bytes[5]);
     }
@@ -2183,15 +1228,7 @@ sapIsPeerMacAllowed(ptSapContext sapContext, v_U8_t *peerMac)
     if (sapSearchMacList(sapContext->denyMacList, sapContext->nDenyMac, peerMac, NULL))
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Peer %02x:%02x:%02x:%02x:%02x:%02x in deny list",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
-=======
                 __func__, *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE;
     }
 
@@ -2203,15 +1240,7 @@ sapIsPeerMacAllowed(ptSapContext sapContext, v_U8_t *peerMac)
     if (eSAP_DENY_UNLESS_ACCEPTED == sapContext->eSapMacAddrAclMode)
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Peer %02x:%02x:%02x:%02x:%02x:%02x denied, Mac filter mode is eSAP_DENY_UNLESS_ACCEPTED",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__,  *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
-=======
                 __func__,  *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__,  *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE;
     }
 
@@ -2220,21 +1249,9 @@ sapIsPeerMacAllowed(ptSapContext sapContext, v_U8_t *peerMac)
      */
     if (eSAP_SUPPORT_ACCEPT_AND_DENY == sapContext->eSapMacAddrAclMode)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        sapSignalHDDevent(sapContext, NULL, eSAP_UNKNOWN_STA_JOIN, (v_PVOID_t)peerMac);    
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Peer %02x:%02x:%02x:%02x:%02x:%02x denied, Mac filter mode is eSAP_SUPPORT_ACCEPT_AND_DENY",
-                __FUNCTION__,  *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
-=======
         sapSignalHDDevent(sapContext, NULL, eSAP_UNKNOWN_STA_JOIN, (v_PVOID_t)peerMac);
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Peer %02x:%02x:%02x:%02x:%02x:%02x denied, Mac filter mode is eSAP_SUPPORT_ACCEPT_AND_DENY",
                 __func__,  *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        sapSignalHDDevent(sapContext, NULL, eSAP_UNKNOWN_STA_JOIN, (v_PVOID_t)peerMac);
-        VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Peer %02x:%02x:%02x:%02x:%02x:%02x denied, Mac filter mode is eSAP_SUPPORT_ACCEPT_AND_DENY",
-                __func__,  *peerMac, *(peerMac + 1), *(peerMac + 2), *(peerMac + 3), *(peerMac + 4), *(peerMac + 5));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return VOS_STATUS_E_FAILURE;
     }
     return VOS_STATUS_SUCCESS;
@@ -2263,96 +1280,38 @@ static VOS_STATUS sapGetChannelList(ptSapContext sapContext,
         *channelList = NULL;
         return VOS_STATUS_E_FAULT;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ccmCfgGetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_START_CHANNEL, &startChannelNum);
     ccmCfgGetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_END_CHANNEL, &endChannelNum);
     ccmCfgGetInt(hHal, WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND, &operatingBand);
     ccmCfgGetInt(hHal, WNI_CFG_ENABLE_LTE_COEX, &enableLTECoex);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
-             "%s:sapGetChannelList: startChannel %d,EndChannel %d,Operatingband:%d",
-             __FUNCTION__,startChannelNum,endChannelNum,operatingBand);
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO,
              "%s:sapGetChannelList: startChannel %d,EndChannel %d,Operatingband:%d",
              __func__,startChannelNum,endChannelNum,operatingBand);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch(operatingBand)
     {
         case RF_SUBBAND_2_4_GHZ:
            bandStartChannel = RF_CHAN_1;
            bandEndChannel = RF_CHAN_14;
            break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case RF_SUBBAND_5_LOW_GHZ:
            bandStartChannel = RF_CHAN_36;
            bandEndChannel = RF_CHAN_64;
            break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case RF_SUBBAND_5_MID_GHZ:
            bandStartChannel = RF_CHAN_100;
            bandEndChannel = RF_CHAN_140;
            break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         case RF_SUBBAND_5_HIGH_GHZ:
            bandStartChannel = RF_CHAN_149;
            bandEndChannel = RF_CHAN_165;
            break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-           
-        case RF_SUBBAND_4_9_GHZ:
-           bandStartChannel = RF_CHAN_240;
-           bandEndChannel = RF_CHAN_216;
-           break;
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         default:
            VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
              "sapGetChannelList:OperatingBand not valid ");
@@ -2362,42 +1321,18 @@ static VOS_STATUS sapGetChannelList(ptSapContext sapContext,
            break;
     }
     /*Check if LTE coex is enabled and 2.4GHz is selected*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (enableLTECoex && (bandStartChannel == RF_CHAN_1) 
-=======
     if (enableLTECoex && (bandStartChannel == RF_CHAN_1)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (enableLTECoex && (bandStartChannel == RF_CHAN_1)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        && (bandEndChannel == RF_CHAN_14))
     {
         /*Set 2.4GHz upper limit to channel 9 for LTE COEX*/
         bandEndChannel = RF_CHAN_9;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    }      
-=======
     }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Allocate the max number of channel supported */
     list = (v_U8_t *)vos_mem_malloc(NUM_5GHZ_CHANNELS);
     if (NULL == list)
     {
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "%s: Unable to allocate channel list", __FUNCTION__);
-=======
                    "%s: Unable to allocate channel list", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "%s: Unable to allocate channel list", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         *numberOfChannels = 0;
         *channelList = NULL;
         return VOS_STATUS_E_RESOURCES;
@@ -2412,29 +1347,13 @@ static VOS_STATUS sapGetChannelList(ptSapContext sapContext,
         {
             if( regChannels[loopCount].enabled )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                list[channelCount] = rfChannels[loopCount].channelNum; 
-=======
                 list[channelCount] = rfChannels[loopCount].channelNum;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                list[channelCount] = rfChannels[loopCount].channelNum;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 channelCount++;
             }
         }
     }
     if (0 == channelCount)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    { 
-=======
     {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR,
         "sapGetChannelList:No active channels present in the given range for the current region");
         /*LTE COEX: channel range outside the restricted 2.4GHz band limits*/
@@ -2444,25 +1363,11 @@ static VOS_STATUS sapGetChannelList(ptSapContext sapContext,
             "sapGetChannelList:SAP cannot be started as LTE COEX restricted 2.4GHz limits");
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-    /* return the channel list and number of channels to scan*/
-    *numberOfChannels = channelCount;
-    if(channelCount != 0)
-    {         
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* return the channel list and number of channels to scan*/
     *numberOfChannels = channelCount;
     if(channelCount != 0)
     {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        *channelList = list;
     }
     else

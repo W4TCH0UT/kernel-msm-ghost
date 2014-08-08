@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -49,13 +40,6 @@
  */
 
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- *
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file contains TSPEC and STA admit control related functions
  * NOTE: applies only to AP builds
@@ -165,15 +149,7 @@ limCalculateSvcInt(
         msduSz = pTspec->maxMsduSz;
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("MsduSize not specified\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("MsduSize not specified"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("MsduSize not specified"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -185,15 +161,7 @@ limCalculateSvcInt(
     else if (pTspec->minDataRate  != 0) dataRate = pTspec->minDataRate;
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("DataRate not specified\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("DataRate not specified"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("DataRate not specified"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -222,15 +190,7 @@ limValidateTspecHcca(
     /* make sure a TSID is being requested */
     if (pTspec->tsinfo.traffic.tsid < SIR_MAC_HCCA_TSID_MIN)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("tsid %d must be >%d)\n"),
-=======
         limLog(pMac, LOGW, FL("tsid %d must be >%d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("tsid %d must be >%d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->tsinfo.traffic.tsid, SIR_MAC_HCCA_TSID_MIN);
         retval =  eSIR_FAILURE;
     }
@@ -243,44 +203,20 @@ limValidateTspecHcca(
     if (pTspec->tsinfo.traffic.userPrio !=
         (pTspec->tsinfo.traffic.tsid - SIR_MAC_HCCA_TSID_MIN))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGE, FL("TSid=0x%x, userPrio=%d: is not allowed\n"),
-=======
         limLog(pMac, LOGE, FL("TSid=0x%x, userPrio=%d: is not allowed"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGE, FL("TSid=0x%x, userPrio=%d: is not allowed"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->tsinfo.traffic.tsid, pTspec->tsinfo.traffic.userPrio);
         retval = eSIR_FAILURE;
     }
     // an inactivity interval is mandatory
     if (pTspec->inactInterval == 0)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGW(limLog(pMac, LOGW, FL("inactInterval unspecified!\n"));)
-=======
         PELOGW(limLog(pMac, LOGW, FL("inactInterval unspecified!"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGW(limLog(pMac, LOGW, FL("inactInterval unspecified!"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         retval =  eSIR_FAILURE;
     }
     // surplus BW must be specified if a delay Bound is specified
     if ((pTspec->delayBound != 0) && (pTspec->surplusBw == 0))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("delayBound %d, but surplusBw unspecified!\n"),
-=======
         limLog(pMac, LOGW, FL("delayBound %d, but surplusBw unspecified!"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("delayBound %d, but surplusBw unspecified!"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->delayBound);
         retval =  eSIR_FAILURE;
     }
@@ -294,15 +230,7 @@ limValidateTspecHcca(
         || (pTspec->minPhyRate > maxPhyRate)
         || (pTspec->minPhyRate < minPhyRate))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("minPhyRate (%d) invalid\n"),
-=======
         limLog(pMac, LOGW, FL("minPhyRate (%d) invalid"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("minPhyRate (%d) invalid"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->minPhyRate);
         retval =  eSIR_FAILURE;
     }
@@ -313,15 +241,7 @@ limValidateTspecHcca(
         (pTspec->meanDataRate == 0) ||
         (pTspec->peakDataRate == 0))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("DataRate must be specified (min %d, mean %d, peak %d)\n"),
-=======
         limLog(pMac, LOGW, FL("DataRate must be specified (min %d, mean %d, peak %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("DataRate must be specified (min %d, mean %d, peak %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->minDataRate, pTspec->meanDataRate, pTspec->peakDataRate);
         retval =  eSIR_FAILURE;
     }
@@ -329,15 +249,7 @@ limValidateTspecHcca(
     // mean data rate can't be more than the min phy rate
     if (pTspec->meanDataRate > pTspec->minPhyRate)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("Data rate (%d) is more than Phyrate %d\n"),
-=======
         limLog(pMac, LOGW, FL("Data rate (%d) is more than Phyrate %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("Data rate (%d) is more than Phyrate %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->meanDataRate, pTspec->minPhyRate);
         return eSIR_FAILURE;
     }
@@ -352,29 +264,13 @@ limValidateTspecHcca(
         // max < min is ridiculous
         if (pTspec->maxSvcInterval < pTspec->minSvcInterval)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGW, FL("maxSvcInt %d  > minSvcInterval %d!!\n"),
-=======
             limLog(pMac, LOGW, FL("maxSvcInt %d  > minSvcInterval %d!!"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGW, FL("maxSvcInt %d  > minSvcInterval %d!!"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pTspec->maxSvcInterval, pTspec->minSvcInterval);
             retval =  eSIR_FAILURE;
         }
         if (pTspec->maxSvcInterval < ADMIT_CONTROL_MIN_INTERVAL)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGW, FL("maxSvcInt %d must be >%d\n"),
-=======
             limLog(pMac, LOGW, FL("maxSvcInt %d must be >%d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGW, FL("maxSvcInt %d must be >%d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pTspec->maxSvcInterval, ADMIT_CONTROL_MIN_INTERVAL);
             retval =  eSIR_FAILURE;
         }
@@ -388,28 +284,12 @@ limValidateTspecHcca(
          */
          if (pTspec->nomMsduSz == 0)
          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-             PELOGW(limLog(pMac, LOGW, FL("No svcInt and no MsduSize specified\n"));)
-=======
              PELOGW(limLog(pMac, LOGW, FL("No svcInt and no MsduSize specified"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             PELOGW(limLog(pMac, LOGW, FL("No svcInt and no MsduSize specified"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              retval = eSIR_FAILURE;
          }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("return status %d\n"), retval);
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("return status %d"), retval);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("return status %d"), retval);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return retval;
 }
 
@@ -446,28 +326,12 @@ limValidateTspecEdca(
         (pTspec->minPhyRate   == 0) ||
         (pTspec->minPhyRate   > maxPhyRate))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("Invalid EDCA Tspec: NomMsdu %d, meanDataRate %d, surplusBw %d, minPhyRate %d\n"),
-=======
         limLog(pMac, LOGW, FL("Invalid EDCA Tspec: NomMsdu %d, meanDataRate %d, surplusBw %d, minPhyRate %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("Invalid EDCA Tspec: NomMsdu %d, meanDataRate %d, surplusBw %d, minPhyRate %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pTspec->nomMsduSz, pTspec->meanDataRate, pTspec->surplusBw, pTspec->minPhyRate);
         retval = eSIR_FAILURE;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("return status %d\n"), retval);
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("return status %d"), retval);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("return status %d"), retval);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return retval;
 }
 
@@ -490,43 +354,19 @@ limValidateTspec(
     {
         case SIR_MAC_ACCESSPOLICY_EDCA:
             if ((retval = limValidateTspecEdca(pMac, pTspec, psessionEntry)) != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-                PELOGW(limLog(pMac, LOGW, FL("EDCA tspec invalid\n"));)
-=======
                 PELOGW(limLog(pMac, LOGW, FL("EDCA tspec invalid"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                PELOGW(limLog(pMac, LOGW, FL("EDCA tspec invalid"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case SIR_MAC_ACCESSPOLICY_HCCA:
 #if 0 //Not supported right now.    
             if ((retval = limValidateTspecHcca(pMac, pTspec)) != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-                PELOGW(limLog(pMac, LOGW, FL("HCCA tspec invalid\n"));)
-=======
                 PELOGW(limLog(pMac, LOGW, FL("HCCA tspec invalid"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                PELOGW(limLog(pMac, LOGW, FL("HCCA tspec invalid"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 #endif
        case SIR_MAC_ACCESSPOLICY_BOTH:
          // TBD: should we support hybrid tspec as well?? for now, just fall through
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGW, FL("AccessType %d not supported\n"),
-=======
             limLog(pMac, LOGW, FL("AccessType %d not supported"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGW, FL("AccessType %d not supported"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pTspec->tsinfo.traffic.accessPolicy);
             retval = eSIR_FAILURE;
             break;
@@ -566,15 +406,7 @@ limComputeMeanBwUsed(
             if (pSta == NULL)
             {
                 // maybe we should delete the tspec??
-<<<<<<< HEAD
-<<<<<<< HEAD
-                limLog(pMac, LOGE, FL("Tspec %d (assocId %d): dphNode not found\n"),
-=======
                 limLog(pMac, LOGE, FL("Tspec %d (assocId %d): dphNode not found"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                limLog(pMac, LOGE, FL("Tspec %d (assocId %d): dphNode not found"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        ctspec, pTspecInfo->assocId);
                 continue;
             }
@@ -672,15 +504,7 @@ limAdmitPolicyOversubscription(
     if ((totalbw - usedbw) < pTspec->meanDataRate)
     {
         limLog(pMac, ADMIT_CONTROL_POLICY_LOGLEVEL,
-<<<<<<< HEAD
-<<<<<<< HEAD
-               FL("Total BW %d, Used %d, Tspec request %d not possible\n"),
-=======
                FL("Total BW %d, Used %d, Tspec request %d not possible"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               FL("Total BW %d, Used %d, Tspec request %d not possible"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                totalbw, usedbw, pTspec->meanDataRate);
         return eSIR_FAILURE;
     }
@@ -713,15 +537,7 @@ tSirRetStatus limAdmitPolicy(
             retval = limAdmitPolicyOversubscription(pMac, pTspec,
                         &pMac->lim.admitPolicyInfo, &pMac->lim.tspecInfo[0], psessionEntry);
             if (retval != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-                PELOGE(limLog(pMac, LOGE, FL("rejected by BWFactor policy\n"));)
-=======
                 PELOGE(limLog(pMac, LOGE, FL("rejected by BWFactor policy"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                PELOGE(limLog(pMac, LOGE, FL("rejected by BWFactor policy"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
 
         case WNI_CFG_ADMIT_POLICY_REJECT_ALL:
@@ -730,15 +546,7 @@ tSirRetStatus limAdmitPolicy(
 
         default:
             retval = eSIR_SUCCESS;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGE, FL("Admit Policy %d unknown, admitting all traffic\n"),
-=======
             limLog(pMac, LOGE, FL("Admit Policy %d unknown, admitting all traffic"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGE, FL("Admit Policy %d unknown, admitting all traffic"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pAdmitPolicy->type);
             break;
     }
@@ -760,18 +568,8 @@ void limTspecDelete(tpAniSirGlobal pMac, tpLimTspecInfo pInfo)
     if (pInfo == NULL)
         return;
         //pierre
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("tspec entry = %d\n"), pInfo->idx);
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("delete tspec %08X\n"),pInfo);
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("tspec entry = %d"), pInfo->idx);
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("delete tspec %08X"),pInfo);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("tspec entry = %d"), pInfo->idx);
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("delete tspec %08X"),pInfo);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pInfo->inuse = 0;
 
     // clear the hcca/parameterized queue indicator
@@ -844,18 +642,8 @@ limTspecFindByAssocId(
 
     *ppInfo = NULL;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Trying to find tspec entry for assocId = %d\n"), assocId);
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("pTsInfo->traffic.direction = %d, pTsInfo->traffic.tsid = %d\n"),
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Trying to find tspec entry for assocId = %d"), assocId);
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("pTsInfo->traffic.direction = %d, pTsInfo->traffic.tsid = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Trying to find tspec entry for assocId = %d"), assocId);
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("pTsInfo->traffic.direction = %d, pTsInfo->traffic.tsid = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pTspecIE->tsinfo.traffic.direction, pTspecIE->tsinfo.traffic.tsid);
 
     for (ctspec = 0; ctspec < LIM_NUM_TSPEC_MAX; ctspec++, pTspecList++)
@@ -894,18 +682,8 @@ limFindTspec(
 
     *ppInfo = NULL;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Trying to find tspec entry for assocId = %d\n"), assocId);
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("pTsInfo->traffic.direction = %d, pTsInfo->traffic.tsid = %d\n"),
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Trying to find tspec entry for assocId = %d"), assocId);
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("pTsInfo->traffic.direction = %d, pTsInfo->traffic.tsid = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Trying to find tspec entry for assocId = %d"), assocId);
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("pTsInfo->traffic.direction = %d, pTsInfo->traffic.tsid = %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pTsInfo->traffic.direction, pTsInfo->traffic.tsid);
 
     for (ctspec = 0; ctspec < LIM_NUM_TSPEC_MAX; ctspec++, pTspecList++)
@@ -949,15 +727,7 @@ tSirRetStatus limTspecAdd(
     // validate the assocId
     if (assocId >= pMac->lim.maxStation)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("Invalid assocId 0x%x\n"), assocId);)
-=======
         PELOGE(limLog(pMac, LOGE, FL("Invalid assocId 0x%x"), assocId);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("Invalid assocId 0x%x"), assocId);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1004,15 +774,7 @@ tSirRetStatus limTspecAdd(
     {
         pTspecList->inuse = 1;
         *ppInfo = pTspecList;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("added entry for EDCA AccessPolicy\n"));
-=======
         limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("added entry for EDCA AccessPolicy"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("added entry for EDCA AccessPolicy"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_SUCCESS;
     }
 
@@ -1032,15 +794,7 @@ tSirRetStatus limTspecAdd(
 #endif
     pTspecList->inuse = 1;
     *ppInfo = pTspecList;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("added entry for HCCA AccessPolicy\n"));
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("added entry for HCCA AccessPolicy"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("added entry for HCCA AccessPolicy"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return eSIR_SUCCESS;
 }
 
@@ -1065,15 +819,7 @@ limValidateAccessPolicy(
 
     if ((pSta == NULL) || (! pSta->valid))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("invalid station address passed\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("invalid station address passed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("invalid station address passed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1093,28 +839,12 @@ limValidateAccessPolicy(
             break;
 #endif  //only EDCA supported for now.
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOGE(limLog(pMac, LOGE, FL("Invalid accessPolicy %d\n"), accessPolicy);)
-=======
             PELOGE(limLog(pMac, LOGE, FL("Invalid accessPolicy %d"), accessPolicy);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOGE(limLog(pMac, LOGE, FL("Invalid accessPolicy %d"), accessPolicy);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
     }
 
     if (retval != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("failed (accPol %d, staId %d, lle %d, wme %d, wsm %d)\n"),
-=======
         limLog(pMac, LOGW, FL("failed (accPol %d, staId %d, lle %d, wme %d, wsm %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("failed (accPol %d, staId %d, lle %d, wme %d, wsm %d)"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                accessPolicy, pSta->staIndex, pSta->lleEnabled, pSta->wmeEnabled, pSta->wsmEnabled);
 
     return retval;
@@ -1158,15 +888,7 @@ tSirRetStatus limAdmitControlAddTS(
     // EDCA: need to fill in the medium time and the minimum phy rate
     // to be consistent with the desired traffic parameters.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("tsid %d, directn %d, start %d, intvl %d, accPolicy %d, up %d\n"),
-=======
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("tsid %d, directn %d, start %d, intvl %d, accPolicy %d, up %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("tsid %d, directn %d, start %d, intvl %d, accPolicy %d, up %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            pAddts->tspec.tsinfo.traffic.tsid, pAddts->tspec.tsinfo.traffic.direction,
            pAddts->tspec.svcStartTime, pAddts->tspec.minSvcInterval,
            pAddts->tspec.tsinfo.traffic.accessPolicy, pAddts->tspec.tsinfo.traffic.userPrio);
@@ -1178,60 +900,28 @@ tSirRetStatus limAdmitControlAddTS(
 
     if (retval == eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("duplicate tspec (index %d)!\n"), pTspecInfo->idx);
-=======
         limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("duplicate tspec (index %d)!"), pTspecInfo->idx);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("duplicate tspec (index %d)!"), pTspecInfo->idx);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     // check that the tspec's are well formed and acceptable
     if (limValidateTspec(pMac, &pAddts->tspec, psessionEntry) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGW(limLog(pMac, LOGW, FL("tspec validation failed\n"));)
-=======
         PELOGW(limLog(pMac, LOGW, FL("tspec validation failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGW(limLog(pMac, LOGW, FL("tspec validation failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     // determine a service interval for the tspec
     if (limCalculateSvcInt(pMac, &pAddts->tspec, &svcInterval) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGW(limLog(pMac, LOGW, FL("SvcInt calculate failed\n"));)
-=======
         PELOGW(limLog(pMac, LOGW, FL("SvcInt calculate failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGW(limLog(pMac, LOGW, FL("SvcInt calculate failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     // determine if the tspec can be admitted or not based on current policy
     if (limAdmitPolicy(pMac, &pAddts->tspec, psessionEntry) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGW(limLog(pMac, LOGW, FL("tspec rejected by admit control policy\n"));)
-=======
         PELOGW(limLog(pMac, LOGW, FL("tspec rejected by admit control policy"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGW(limLog(pMac, LOGW, FL("tspec rejected by admit control policy"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1256,15 +946,7 @@ tSirRetStatus limAdmitControlAddTS(
     // check that we are in the proper mode to deal with the tspec type
     if (limValidateAccessPolicy(pMac, (tANI_U8) pAddts->tspec.tsinfo.traffic.accessPolicy, assocId, psessionEntry) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGW, FL("AccessPolicy %d is not valid in current mode\n"),
-=======
         limLog(pMac, LOGW, FL("AccessPolicy %d is not valid in current mode"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGW, FL("AccessPolicy %d is not valid in current mode"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                pAddts->tspec.tsinfo.traffic.accessPolicy);
         return eSIR_FAILURE;
     }
@@ -1273,15 +955,7 @@ tSirRetStatus limAdmitControlAddTS(
     if (limTspecAdd(pMac, pAddr, assocId, &pAddts->tspec, svcInterval, &pTspecInfo)
         != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE, FL("no space in tspec list\n"));)
-=======
         PELOGE(limLog(pMac, LOGE, FL("no space in tspec list"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE, FL("no space in tspec list"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
@@ -1319,15 +993,7 @@ limAdmitControlDeleteTS(
     {
         if(pTspecInfo != NULL)    
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Tspec entry %d found\n"), pTspecInfo->idx);
-=======
           limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Tspec entry %d found"), pTspecInfo->idx);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-          limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Tspec entry %d found"), pTspecInfo->idx);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         
           *ptspecIdx = pTspecInfo->idx;
           limTspecDelete(pMac, pTspecInfo);
@@ -1358,25 +1024,11 @@ limAdmitControlDeleteSta(
         if (assocId == pTspecInfo->assocId)
         {
             limTspecDelete(pMac, pTspecInfo);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Deleting TSPEC %d for assocId %d\n"),
-                   ctspec, assocId);
-        }
-    }
-    limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("assocId %d done\n"), assocId);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("Deleting TSPEC %d for assocId %d"),
                    ctspec, assocId);
         }
     }
     limLog(pMac, ADMIT_CONTROL_LOGLEVEL, FL("assocId %d done"), assocId);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return eSIR_SUCCESS;
 }
@@ -1405,42 +1057,18 @@ tSirRetStatus limUpdateAdmitPolicy(tpAniSirGlobal    pMac)
     tANI_U32 val;
     if (wlan_cfgGetInt(pMac, WNI_CFG_ADMIT_POLICY, &val) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Unable to get CFG_ADMIT_POLICY\n"));
-=======
         limLog(pMac, LOGP, FL("Unable to get CFG_ADMIT_POLICY"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Unable to get CFG_ADMIT_POLICY"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     pMac->lim.admitPolicyInfo.type = (tANI_U8) val;
     if (wlan_cfgGetInt(pMac, WNI_CFG_ADMIT_BWFACTOR, &val) != eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGP, FL("Unable to get CFG_ADMIT_BWFACTOR\n"));
-=======
         limLog(pMac, LOGP, FL("Unable to get CFG_ADMIT_BWFACTOR"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGP, FL("Unable to get CFG_ADMIT_BWFACTOR"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
     pMac->lim.admitPolicyInfo.bw_factor = (tANI_U8) val;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    PELOG1(limLog(pMac, LOG1, FL("LIM: AdmitPolicy %d, bw_factor %d\n"),
-=======
     PELOG1(limLog(pMac, LOG1, FL("LIM: AdmitPolicy %d, bw_factor %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    PELOG1(limLog(pMac, LOG1, FL("LIM: AdmitPolicy %d, bw_factor %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           pMac->lim.admitPolicyInfo.type, pMac->lim.admitPolicyInfo.bw_factor);)
 
     return eSIR_SUCCESS;
@@ -1472,15 +1100,7 @@ limSendHalMsgAddTs(
 
     if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pAddTsParam, sizeof(tAddTsParams)))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       PELOGW(limLog(pMac, LOGW, FL("palAllocateMemory() failed\n"));)
-=======
        PELOGW(limLog(pMac, LOGW, FL("palAllocateMemory() failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       PELOGW(limLog(pMac, LOGW, FL("palAllocateMemory() failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return eSIR_MEM_ALLOC_FAILED;          
     }
 
@@ -1502,15 +1122,7 @@ limSendHalMsgAddTs(
 
     if(eSIR_SUCCESS != wdaPostCtrlMsg(pMac, &msg))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed\n"));)
-=======
        PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        SET_LIM_PROCESS_DEFD_MESGS(pMac, true);
        palFreeMemory(pMac->hHdd, (tANI_U8*)pAddTsParam);
        return eSIR_FAILURE;
@@ -1541,15 +1153,7 @@ limSendHalMsgDelTs(
 
   if( eHAL_STATUS_SUCCESS != palAllocateMemory( pMac->hHdd, (void **)&pDelTsParam, sizeof(tDelTsParams)))
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-     limLog(pMac, LOGP, FL("palAllocateMemory() failed\n"));
-=======
      limLog(pMac, LOGP, FL("palAllocateMemory() failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-     limLog(pMac, LOGP, FL("palAllocateMemory() failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return eSIR_MEM_ALLOC_FAILED;
   }
 
@@ -1562,28 +1166,12 @@ limSendHalMsgDelTs(
   pDelTsParam->staIdx = staIdx;
   pDelTsParam->tspecIdx = tspecIdx;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  PELOGW(limLog(pMac, LOGW, FL("calling wdaPostCtrlMsg()\n"));)
-=======
   PELOGW(limLog(pMac, LOGW, FL("calling wdaPostCtrlMsg()"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  PELOGW(limLog(pMac, LOGW, FL("calling wdaPostCtrlMsg()"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   MTRACE(macTraceMsgTx(pMac, sessionId, msg.type));
 
   if(eSIR_SUCCESS != wdaPostCtrlMsg(pMac, &msg))
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-     PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed\n"));)
-=======
      PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-     PELOGW(limLog(pMac, LOGW, FL("wdaPostCtrlMsg() failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      palFreeMemory(pMac->hHdd, (tANI_U8*)pDelTsParam);
      return eSIR_FAILURE;
   }
@@ -1629,15 +1217,7 @@ void limProcessHalAddTsRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
     if(psessionEntry == NULL)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog(pMac, LOGE,FL("Session does Not exist with given sessionId :%d \n"), pAddTsRspMsg->sessionId);)
-=======
         PELOGE(limLog(pMac, LOGE,FL("Session does Not exist with given sessionId :%d "), pAddTsRspMsg->sessionId);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog(pMac, LOGE,FL("Session does Not exist with given sessionId :%d "), pAddTsRspMsg->sessionId);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limSendSmeAddtsRsp(pMac, rspReqd, eSIR_SME_ADDTS_RSP_FAILED, psessionEntry, pAddTsRspMsg->tspec, 
               pMac->lim.gLimAddtsReq.sessionId, pMac->lim.gLimAddtsReq.transactionId);
         goto end;
@@ -1645,15 +1225,7 @@ void limProcessHalAddTsRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
 
     if(pAddTsRspMsg->status == eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOG1(limLog(pMac, LOG1, FL("Received successful ADDTS response from HAL \n"));)
-=======
         PELOG1(limLog(pMac, LOG1, FL("Received successful ADDTS response from HAL "));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOG1(limLog(pMac, LOG1, FL("Received successful ADDTS response from HAL "));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Use the smesessionId and smetransactionId from the PE session context
         limSendSmeAddtsRsp(pMac, rspReqd, eSIR_SME_SUCCESS, psessionEntry, pAddTsRspMsg->tspec,
                 psessionEntry->smeSessionId, psessionEntry->transactionId);
@@ -1661,15 +1233,7 @@ void limProcessHalAddTsRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOG1(limLog(pMac, LOG1, FL("Received failure ADDTS response from HAL \n"));)
-=======
         PELOG1(limLog(pMac, LOG1, FL("Received failure ADDTS response from HAL "));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOG1(limLog(pMac, LOG1, FL("Received failure ADDTS response from HAL "));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         // Send DELTS action frame to AP        
         // 090803: Get peer MAC addr from session        
@@ -1677,15 +1241,7 @@ void limProcessHalAddTsRsp(tpAniSirGlobal pMac, tpSirMsgQ limMsg)
         cfgLen = sizeof(tSirMacAddr);
         if (wlan_cfgGetStr(pMac, WNI_CFG_BSSID, peerMacAddr, &cfgLen) != eSIR_SUCCESS)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGP, FL("Fail to retrieve BSSID \n"));
-=======
             limLog(pMac, LOGP, FL("Fail to retrieve BSSID "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGP, FL("Fail to retrieve BSSID "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             goto end;
         }
 #endif //TO SUPPORT BT-AMP

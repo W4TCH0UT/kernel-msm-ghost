@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -74,14 +65,7 @@
 
 #include "dma-mapping.h"
 #include <mach/subsystem_restart.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #include <linux/wcnss_wlan.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include <linux/wcnss_wlan.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sPalStruct
 {
@@ -131,15 +115,7 @@ wpt_status wpalOpen(void **ppPalContext, void *pOSContext)
    {
       WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                  "%s: wpalDeviceInit failed with status %u",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 __FUNCTION__, status);
-=======
                  __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 __func__, status);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    }
 
    return status;
@@ -258,15 +234,7 @@ void *wpalDmaMemoryAllocate(wpt_uint32 size, void **ppPhysicalAddr)
    if ( NULL == pv ) 
    {
      WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_ERROR, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "%s Unable to allocate DMA buffer\n", __FUNCTION__);
-=======
                  "%s Unable to allocate DMA buffer\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "%s Unable to allocate DMA buffer\n", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return NULL;
    }
 
@@ -420,23 +388,10 @@ wpt_status wpalRivaSubystemRestart(void)
     {
          WPAL_TRACE(eWLAN_MODULE_PAL, eWLAN_PAL_TRACE_LEVEL_FATAL,
                  "%s: loading/unloading in progress,"
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 " SSR will be done at the end of unload", __FUNCTION__);
-         return eWLAN_PAL_STATUS_E_FAILURE;
-    }
-    if (0 == subsystem_restart("riva")) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  " SSR will be done at the end of unload", __func__);
          return eWLAN_PAL_STATUS_E_FAILURE;
     }
     if (0 == subsystem_restart("wcnss")) 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         return eWLAN_PAL_STATUS_SUCCESS;
     }
@@ -455,12 +410,6 @@ void wpalWlanReload(void)
 {
    vos_wlanRestart();
    return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /*---------------------------------------------------------------------------
@@ -497,7 +446,3 @@ void wpalFwDumpReq(wpt_uint32 cmd, wpt_uint32 arg1, wpt_uint32 arg2,
    vos_fwDumpReq(cmd, arg1, arg2, arg3, arg4);
    return;
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

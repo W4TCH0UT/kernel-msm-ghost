@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -47,13 +38,6 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * Airgo Networks, Inc proprietary. All rights reserved.
  * This file schBeaconProcess.cc contains beacon processing related
@@ -68,15 +52,7 @@
  */
 
 #include "palTypes.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-#include "wniCfgAp.h"
-=======
 #include "wniCfgSta.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include "wniCfgSta.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "cfgApi.h"
 #include "pmmApi.h"
@@ -85,15 +61,6 @@
 #include "schDebug.h"
 #include "schApi.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-#include "halCommonApi.h"
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include "limUtils.h"
 #include "limSendMessages.h"
@@ -186,15 +153,7 @@ ap_beacon_process(
                     if( psessionEntry->isCCXconnection )
                     {
                         VOS_TRACE (VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_INFO, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "%s: [INFOLOG]CCX 11g erpPresent=%d useProtection=%d nonErpPresent=%d\n", __func__,
-=======
                             "%s: [INFOLOG]CCX 11g erpPresent=%d useProtection=%d nonErpPresent=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                            "%s: [INFOLOG]CCX 11g erpPresent=%d useProtection=%d nonErpPresent=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             pBcnStruct->erpPresent,
                             pBcnStruct->erpIEInfo.useProtection,
                             pBcnStruct->erpIEInfo.nonErpPresent);
@@ -221,15 +180,7 @@ ap_beacon_process(
                   if( psessionEntry->isCCXconnection )
                   {
                       VOS_TRACE (VOS_MODULE_ID_PE, VOS_TRACE_LEVEL_INFO, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "%s: [INFOLOG]CCX 11g erpPresent=%d useProtection=%d nonErpPresent=%d\n", __func__,
-=======
                           "%s: [INFOLOG]CCX 11g erpPresent=%d useProtection=%d nonErpPresent=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                          "%s: [INFOLOG]CCX 11g erpPresent=%d useProtection=%d nonErpPresent=%d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           pBcnStruct->erpPresent,
                           pBcnStruct->erpIEInfo.useProtection,
                           pBcnStruct->erpIEInfo.nonErpPresent);
@@ -243,29 +194,10 @@ ap_beacon_process(
                   !(pBcnStruct->erpIEInfo.useProtection || 
                     pBcnStruct->erpIEInfo.nonErpPresent) && !(pBcnStruct->HTInfo.present))
               {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlap11gParams));
 
                   if (psessionEntry->gLimOverlap11gParams.numSta && 
                       !psessionEntry->gLimOverlap11gParams.protectionEnabled)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#else
-                   limUpdateOverlapStaParam(pMac, pMh->bssId, &(pMac->lim.gLimOverlap11gParams));
-
-                  if (pMac->lim.gLimOverlap11gParams.numSta &&
-                      !pMac->lim.gLimOverlap11gParams.protectionEnabled)
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   {
                       limEnableHtProtectionFrom11g(pMac, true, true, pBeaconParams,psessionEntry);
                   }
@@ -287,28 +219,9 @@ ap_beacon_process(
                       if((eSIR_HT_OP_MODE_MIXED != pMac->lim.gHTOperMode) &&
                           (eSIR_HT_OP_MODE_OVERLAP_LEGACY != pMac->lim.gHTOperMode))
                       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
                           limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlap11gParams));
                           if (psessionEntry->gLimOverlap11gParams.numSta &&
                               !psessionEntry->gLimOverlap11gParams.protectionEnabled)
-#else
-                          limUpdateOverlapStaParam(pMac, pMh->bssId, &(pMac->lim.gLimOverlap11gParams));
-
-                          if (pMac->lim.gLimOverlap11gParams.numSta &&
-                              !pMac->lim.gLimOverlap11gParams.protectionEnabled)
-#endif
-=======
-                          limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlap11gParams));
-                          if (psessionEntry->gLimOverlap11gParams.numSta &&
-                              !psessionEntry->gLimOverlap11gParams.protectionEnabled)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                          limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlap11gParams));
-                          if (psessionEntry->gLimOverlap11gParams.numSta &&
-                              !psessionEntry->gLimOverlap11gParams.protectionEnabled)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           {
                               limEnableHtProtectionFrom11g(pMac, true, true, pBeaconParams,psessionEntry);
                           }
@@ -316,28 +229,9 @@ ap_beacon_process(
                   }           
                   else if(eSIR_HT_OP_MODE_NO_LEGACY_20MHZ_HT == pBcnStruct->HTInfo.opMode)
                   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
                       limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlapHt20Params));
                       if (psessionEntry->gLimOverlapHt20Params.numSta &&
                           !psessionEntry->gLimOverlapHt20Params.protectionEnabled)
-#else
-                      limUpdateOverlapStaParam(pMac, pMh->bssId, &(pMac->lim.gLimOverlapHt20Params));
-
-                      if (pMac->lim.gLimOverlapHt20Params.numSta &&
-                          !pMac->lim.gLimOverlapHt20Params.protectionEnabled)
-#endif
-=======
-                      limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlapHt20Params));
-                      if (psessionEntry->gLimOverlapHt20Params.numSta &&
-                          !psessionEntry->gLimOverlapHt20Params.protectionEnabled)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      limUpdateOverlapStaParam(pMac, pMh->bssId, &(psessionEntry->gLimOverlapHt20Params));
-                      if (psessionEntry->gLimOverlapHt20Params.numSta &&
-                          !psessionEntry->gLimOverlapHt20Params.protectionEnabled)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                       {
                           limEnableHT20Protection(pMac, true, true, pBeaconParams,psessionEntry);
                       }
@@ -454,12 +348,6 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
     tUpdateBeaconParams beaconParams;
     tANI_U8 sendProbeReq = FALSE;
     tpDphHashNode pStaDs = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
     tpSirMacMgmtHdr    pMh = WDA_GET_RX_MAC_HEADER(pRxPacketInfo);
     tANI_U16  aid;
@@ -468,10 +356,6 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
 #if defined FEATURE_WLAN_CCX || defined FEATURE_WLAN_VOWIFI
      tPowerdBm regMax = 0,maxTxPower = 0;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     beaconParams.paramChangeBitmap = 0;
 
@@ -487,23 +371,9 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
         *  -- Infra STA receving beacons from AP  
         *  -- BTAMP_STA receving beacons from BTAMP_AP
         */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-    
-        //Always save the beacon into LIM's cached scan results
-        limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_FALSE);
-        
-=======
         //Always save the beacon into LIM's cached scan results
         limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_FALSE);
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        //Always save the beacon into LIM's cached scan results
-        limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, eANI_BOOLEAN_FALSE, eANI_BOOLEAN_FALSE);
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /**
                * This is the Beacon received from the AP  we're currently associated with. Check
                * if there are any changes in AP's capabilities 
@@ -511,15 +381,7 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
         if((tANI_U8) pBeacon->channelNumber != psessionEntry->currentOperChannel)
         {
             PELOGE(limLog(pMac, LOGE, FL("Channel Change from %d --> %d  - "
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                         "Ignoring beacon!\n"), 
-=======
                                          "Ignoring beacon!"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                         "Ignoring beacon!"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           psessionEntry->currentOperChannel, pBeacon->channelNumber);)
            goto fail;
         }
@@ -541,15 +403,7 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
         bi = psessionEntry->beaconParams.beaconInterval;
         if (bi != pBeacon->beaconInterval)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-           PELOG1(schLog(pMac, LOG1, FL("Beacon interval changed from %d to %d\n"),
-=======
            PELOG1(schLog(pMac, LOG1, FL("Beacon interval changed from %d to %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           PELOG1(schLog(pMac, LOG1, FL("Beacon interval changed from %d to %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    pBeacon->beaconInterval, bi);)
 
             bi = pBeacon->beaconInterval;
@@ -571,41 +425,15 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
             //SMAC already parses TIM bit.
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if(pMac->lim.gLimProtectionControl != WNI_CFG_FORCE_POLICY_PROTECTION_DISABLE)
 
         limDecideStaProtection(pMac, pBeacon, &beaconParams, psessionEntry);
         if (pBeacon->erpPresent)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pBeacon->erpIEInfo.barkerPreambleMode)
                 limEnableShortPreamble(pMac, false, &beaconParams, psessionEntry);
             else
                 limEnableShortPreamble(pMac, true, &beaconParams, psessionEntry);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#else
-            if (pBeacon->erpIEInfo.barkerPreambleMode)
-                limEnableShortPreamble(pMac, false, &beaconParams);
-            else
-                limEnableShortPreamble(pMac, true, &beaconParams);
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           }
         limUpdateShortSlot(pMac, pBeacon, &beaconParams,psessionEntry);
 
@@ -616,15 +444,7 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
             if(pBeacon->edcaParams.qosInfo.count != psessionEntry->gLimEdcaParamSetCount)
             {
                 if (schBeaconEdcaProcess(pMac, &pBeacon->edcaParams, psessionEntry) != eSIR_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    PELOGE(schLog(pMac, LOGE, FL("EDCA parameter processing error\n"));)
-=======
                     PELOGE(schLog(pMac, LOGE, FL("EDCA parameter processing error"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    PELOGE(schLog(pMac, LOGE, FL("EDCA parameter processing error"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 else if(pStaDs != NULL)
                 {
                     // If needed, downgrade the EDCA parameters
@@ -636,15 +456,7 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
                         limSendEdcaParams(pMac, psessionEntry->gLimEdcaParamsActive, pStaDs->bssId, eANI_BOOLEAN_FALSE);
                 }
                 else
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    PELOGE(limLog(pMac, LOGE, FL("Self Entry missing in Hash Table\n"));)
-=======
                     PELOGE(limLog(pMac, LOGE, FL("Self Entry missing in Hash Table"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    PELOGE(limLog(pMac, LOGE, FL("Self Entry missing in Hash Table"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else if( (pBeacon->qosCapabilityPresent && psessionEntry->limQosEnabled) &&
@@ -657,33 +469,9 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
         limUpdateStaRunTimeHTSwitchChnlParams( pMac, &pBeacon->HTInfo, bssIdx,psessionEntry);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(ANI_PRODUCT_TYPE_CLIENT) || defined(ANI_AP_CLIENT_SDK)
     if ( (psessionEntry->limSystemRole == eLIM_STA_ROLE) ||(psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE) ||
           (psessionEntry->limSystemRole == eLIM_STA_IN_IBSS_ROLE) )
     {
-        if(pBeacon->quietIEPresent)
-        {
-            limUpdateQuietIEFromBeacon(pMac, &(pBeacon->quietIE), psessionEntry);
-        }
-        else if ((psessionEntry->gLimSpecMgmt.quietState == eLIM_QUIET_BEGIN) ||
-             (psessionEntry->gLimSpecMgmt.quietState == eLIM_QUIET_RUNNING))
-        {
-            PELOG1(limLog(pMac, LOG1, FL("Received a beacon without Quiet IE\n"));)
-            limCancelDot11hQuiet(pMac, psessionEntry);
-        }
-
-=======
-    if ( (psessionEntry->limSystemRole == eLIM_STA_ROLE) ||(psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE) ||
-          (psessionEntry->limSystemRole == eLIM_STA_IN_IBSS_ROLE) )
-    {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if ( (psessionEntry->limSystemRole == eLIM_STA_ROLE) ||(psessionEntry->limSystemRole == eLIM_BT_AMP_STA_ROLE) ||
-          (psessionEntry->limSystemRole == eLIM_STA_IN_IBSS_ROLE) )
-    {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Channel Switch information element updated */
         if(pBeacon->channelSwitchPresent || 
             pBeacon->propIEinfo.propChannelSwitchPresent)
@@ -693,64 +481,6 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
         else if (psessionEntry->gLimSpecMgmt.dot11hChanSwState == eLIM_11H_CHANSW_RUNNING)
         {
             limCancelDot11hChannelSwitch(pMac, psessionEntry);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }   
-    }
-#endif
-
-#if defined FEATURE_WLAN_CCX
-        if( psessionEntry->isCCXconnection )
-        {
-           tPowerdBm  localConstraint = 0, regMax = 0, maxTxPower = 0;
-           if (pBeacon->ccxTxPwr.present)
-           {
-              localConstraint = pBeacon->ccxTxPwr.power_limit;
-              regMax = cfgGetRegulatoryMaxTransmitPower( pMac, psessionEntry->currentOperChannel ); 
-              maxTxPower = limGetMaxTxPower(regMax, localConstraint, pMac->roam.configParam.nTxPowerCap);
-
-              //If maxTxPower is increased or decreased
-             if( maxTxPower != psessionEntry->maxTxPower )
-             {
-                limLog( pMac, LOG1, "RegMax = %d, lpc = %d, MaxTx = %d", regMax, localConstraint, maxTxPower );
-                limLog( pMac, LOG1, "Local power constraint change..updating new maxTx power to HAL");
-                if( limSendSetMaxTxPowerReq ( pMac, maxTxPower, psessionEntry ) == eSIR_SUCCESS )
-                   psessionEntry->maxTxPower = maxTxPower;
-             }
-           }
-        }
-#endif
-
-
-#if defined WLAN_FEATURE_VOWIFI
-        if( pMac->rrm.rrmPEContext.rrmEnable )
-        {
-           tPowerdBm  localConstraint = 0, regMax = 0, maxTxPower = 0;
-           if (pBeacon->powerConstraintPresent && pMac->rrm.rrmPEContext.rrmEnable)
-           {
-              localConstraint = pBeacon->localPowerConstraint.localPowerConstraints;
-           }
-           else
-           {
-              localConstraint = 0;
-           }
-           regMax = cfgGetRegulatoryMaxTransmitPower( pMac, psessionEntry->currentOperChannel ); 
-           maxTxPower = VOS_MIN( regMax , (regMax - localConstraint) );
-           //If maxTxPower is increased or decreased
-           if( maxTxPower != psessionEntry->maxTxPower )
-           {
-#if defined WLAN_VOWIFI_DEBUG
-              limLog( pMac, LOGE, "Regulatory max = %d, local power constraint = %d, max tx = %d", regMax, localConstraint, maxTxPower );
-              limLog( pMac, LOGE, "Local power constraint change..updating mew maxTx power to HAL");
-#endif
-              if( rrmSendSetMaxTxPowerReq ( pMac, maxTxPower, psessionEntry ) == eSIR_SUCCESS )
-                 psessionEntry->maxTxPower = maxTxPower;
-
-           }
-        }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
@@ -841,10 +571,6 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
                    psessionEntry->maxTxPower = maxTxPower;
         }
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
 
     // Indicate to LIM that Beacon is received
@@ -862,18 +588,8 @@ static void __schBeaconProcessForSession( tpAniSirGlobal      pMac,
 
     if(beaconParams.paramChangeBitmap)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGW(schLog(pMac, LOGW, FL("Beacon for session[%d] got changed. \n"), psessionEntry->peSessionId);)
-        PELOGW(schLog(pMac, LOGW, FL("sending beacon param change bitmap: 0x%x \n"), beaconParams.paramChangeBitmap);)
-=======
         PELOGW(schLog(pMac, LOGW, FL("Beacon for session[%d] got changed. "), psessionEntry->peSessionId);)
         PELOGW(schLog(pMac, LOGW, FL("sending beacon param change bitmap: 0x%x "), beaconParams.paramChangeBitmap);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGW(schLog(pMac, LOGW, FL("Beacon for session[%d] got changed. "), psessionEntry->peSessionId);)
-        PELOGW(schLog(pMac, LOGW, FL("sending beacon param change bitmap: 0x%x "), beaconParams.paramChangeBitmap);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limSendBeaconParams(pMac, &beaconParams, psessionEntry);
     }
 
@@ -912,15 +628,7 @@ void schBeaconProcess(tpAniSirGlobal pMac, tANI_U8* pRxPacketInfo, tpPESession p
     // Convert the beacon frame into a structure
     if (sirConvertBeaconFrame2Struct(pMac, (tANI_U8 *) pRxPacketInfo, &beaconStruct)!= eSIR_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(schLog(pMac, LOGE, FL("beacon parsing failed\n"));)
-=======
         PELOGE(schLog(pMac, LOGE, FL("beacon parsing failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(schLog(pMac, LOGE, FL("beacon parsing failed"));)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->sch.gSchBcnParseErrorCnt++;
         return;
     }
@@ -942,19 +650,6 @@ void schBeaconProcess(tpAniSirGlobal pMac, tANI_U8* pRxPacketInfo, tpPESession p
     * 
     */
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if((pAPSession = limIsApSessionActive(pMac)) != NULL)
-    {
-        beaconParams.bssIdx = pAPSession->bssIdx;
-#ifdef WLAN_SOFTAP_FEATURE
-        if (pAPSession->gLimProtectionControl != WNI_CFG_FORCE_POLICY_PROTECTION_DISABLE)
-#else
-        if (pMac->lim.gLimProtectionControl != WNI_CFG_FORCE_POLICY_PROTECTION_DISABLE)
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (((pAPSession = limIsApSessionActive(pMac)) != NULL)
 #ifdef WLAN_FEATURE_ROAM_SCAN_OFFLOAD
           && (!(WDA_GET_OFFLOADSCANLEARN(pRxPacketInfo)))
@@ -963,28 +658,14 @@ void schBeaconProcess(tpAniSirGlobal pMac, tANI_U8* pRxPacketInfo, tpPESession p
     {
         beaconParams.bssIdx = pAPSession->bssIdx;
         if (pAPSession->gLimProtectionControl != WNI_CFG_FORCE_POLICY_PROTECTION_DISABLE)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             ap_beacon_process(pMac,  pRxPacketInfo, &beaconStruct, &beaconParams, pAPSession);
 
         if (beaconParams.paramChangeBitmap)
         {
             //Update the beacons and apply the new settings to HAL
             schSetFixedBeaconFields(pMac, pAPSession);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOG1(schLog(pMac, LOG1, FL("Beacon for PE session[%d] got changed.  \n"), pAPSession->peSessionId);)
-            PELOG1(schLog(pMac, LOG1, FL("sending beacon param change bitmap: 0x%x \n"), beaconParams.paramChangeBitmap);)
-=======
             PELOG1(schLog(pMac, LOG1, FL("Beacon for PE session[%d] got changed.  "), pAPSession->peSessionId);)
             PELOG1(schLog(pMac, LOG1, FL("sending beacon param change bitmap: 0x%x "), beaconParams.paramChangeBitmap);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOG1(schLog(pMac, LOG1, FL("Beacon for PE session[%d] got changed.  "), pAPSession->peSessionId);)
-            PELOG1(schLog(pMac, LOG1, FL("sending beacon param change bitmap: 0x%x "), beaconParams.paramChangeBitmap);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limSendBeaconParams(pMac, &beaconParams, pAPSession);
         }
     }
@@ -1031,15 +712,7 @@ tSirRetStatus schBeaconEdcaProcess(tpAniSirGlobal pMac, tSirMacEdcaParamSetIE *e
     vos_log_qos_edca_pkt_type *log_ptr = NULL;
 #endif //FEATURE_WLAN_DIAG_SUPPORT 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    PELOG1(schLog(pMac, LOG1, FL("Updating parameter set count: Old %d ---> new %d\n"),
-=======
     PELOG1(schLog(pMac, LOG1, FL("Updating parameter set count: Old %d ---> new %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    PELOG1(schLog(pMac, LOG1, FL("Updating parameter set count: Old %d ---> new %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            psessionEntry->gLimEdcaParamSetCount, edca->qosInfo.count);)
 
     psessionEntry->gLimEdcaParamSetCount = edca->qosInfo.count;
@@ -1074,15 +747,7 @@ tSirRetStatus schBeaconEdcaProcess(tpAniSirGlobal pMac, tSirMacEdcaParamSetIE *e
     PELOG1(schLog(pMac, LOGE, FL("Updating Local EDCA Params(gLimEdcaParams) to: "));)
     for(i=0; i<MAX_NUM_AC; i++)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOG1(schLog(pMac, LOG1, FL("AC[%d]:  AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d\n"),
-=======
         PELOG1(schLog(pMac, LOG1, FL("AC[%d]:  AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOG1(schLog(pMac, LOG1, FL("AC[%d]:  AIFSN: %d, ACM %d, CWmin %d, CWmax %d, TxOp %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             i,
             psessionEntry->gLimEdcaParams[i].aci.aifsn, 
             psessionEntry->gLimEdcaParams[i].aci.acm,

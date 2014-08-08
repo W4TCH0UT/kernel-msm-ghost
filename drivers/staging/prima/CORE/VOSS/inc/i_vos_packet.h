@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -75,20 +66,8 @@
 #include <linux/skbuff.h>
 #include <linux/list.h>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include <wlan_qct_pal_packet.h>
 #include <wlan_qct_wdi_ds.h>
-#endif
-=======
-#include <wlan_qct_pal_packet.h>
-#include <wlan_qct_wdi_ds.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include <wlan_qct_pal_packet.h>
-#include <wlan_qct_wdi_ds.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
   Preprocessor definitions and constants
@@ -140,23 +119,9 @@
 /// implementation specific vos packet type
 struct vos_pkt_t
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
 
    //palPacket MUST be the first member of vos_pkt_t
    wpt_packet palPacket;
-#endif
-=======
-
-   //palPacket MUST be the first member of vos_pkt_t
-   wpt_packet palPacket;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-   //palPacket MUST be the first member of vos_pkt_t
-   wpt_packet palPacket;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // Node for linking vos packets into a free list
    struct list_head node;
@@ -222,32 +187,13 @@ typedef struct vos_pkt_context_s
    struct list_head txDataFreeList;
    struct list_head txMgmtFreeList;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
    //Existing list_size opearation traverse the list. Too slow for data path.
    //Add the field to enable faster flow control on tx path
    v_U32_t uctxDataFreeListCount;
-#endif
-=======
-   //Existing list_size opearation traverse the list. Too slow for data path.
-   //Add the field to enable faster flow control on tx path
-   v_U32_t uctxDataFreeListCount;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   //Existing list_size opearation traverse the list. Too slow for data path.
-   //Add the field to enable faster flow control on tx path
-   v_U32_t uctxDataFreeListCount;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // We keep a separate count of the number of RX_RAW packets
    // waiting to be replenished
    v_SIZE_t rxReplenishListCount;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    //Existing list_size opearation traverse the list. Too slow for data path.
    //Add the field for a faster rx path
    v_SIZE_t rxRawFreeListCount;
@@ -255,43 +201,19 @@ typedef struct vos_pkt_context_s
    // Number of RX Raw packets that will be reserved; this is a configurable
    // value to the driver to save the memory usage.
    v_SIZE_t numOfRxRawPackets;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // These are the structs to keep low-resource callback information.
    // There are separate low-resource callback information blocks for
    // RX_RAW, TX_DATA, and TX_MGMT.
    vos_pkt_low_resource_info rxRawLowResourceInfo;
    vos_pkt_low_resource_info txDataLowResourceInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   vos_pkt_low_resource_info txMgmtLowResourceInfo;   
-
-   struct mutex mlock;
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-=======
    vos_pkt_low_resource_info txMgmtLowResourceInfo;
 
    struct mutex mlock;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   vos_pkt_low_resource_info txMgmtLowResourceInfo;
-
-   struct mutex mlock;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /*Meta Information to be transported with the packet*/
    WDI_DS_TxMetaInfoType txMgmtMetaInfo[VPKT_NUM_TX_MGMT_PACKETS];
    WDI_DS_TxMetaInfoType txDataMetaInfo[VPKT_NUM_TX_DATA_PACKETS];
    WDI_DS_RxMetaInfoType rxMetaInfo[VPKT_NUM_RX_RAW_PACKETS];
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 } vos_pkt_context_t;
 

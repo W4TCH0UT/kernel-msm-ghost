@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -61,31 +52,10 @@
  *
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP)
-#include "wniCfgAp.h"
-#else
-#include "wniCfgSta.h"
-#endif
-#include "aniGlobal.h"
-#include "cfgApi.h"
-#include "schApi.h"
-#include "wniCfgAp.h"
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-#include "halCommonApi.h"
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wniCfgSta.h"
 #include "aniGlobal.h"
 #include "cfgApi.h"
 #include "schApi.h"
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "utilsApi.h"
 #include "limTypes.h"
 #include "limUtils.h"
@@ -151,15 +121,7 @@ limProcessBeaconFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, 
                                                     (void **)&pBeacon, sizeof(tSchBeaconStruct)))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessBeaconFrame\n") );
-=======
             limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessBeaconFrame") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessBeaconFrame") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
 
@@ -170,26 +132,13 @@ limProcessBeaconFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
             // Received wrongly formatted/invalid Beacon.
             // Ignore it and move on.
             limLog(pMac, LOGW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   FL("Received invalid Beacon in state %X\n"),
-=======
                    FL("Received invalid Beacon in state %X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   FL("Received invalid Beacon in state %X"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    psessionEntry->limMlmState);
             limPrintMlmState(pMac, LOGW,  psessionEntry->limMlmState);
             palFreeMemory(pMac->hHdd, pBeacon);
             return;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*during scanning, when any session is active, and beacon/Pr belongs to
           one of the session, fill up the following, TBD - HB couter */
         if ((!psessionEntry->lastBeaconDtimPeriod) &&
@@ -200,10 +149,6 @@ limProcessBeaconFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
             psessionEntry->lastBeaconDtimPeriod= pBeacon->tim.dtimPeriod;
             psessionEntry->currentBssBeaconCnt++;
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         MTRACE(macTrace(pMac, TRACE_CODE_RX_MGMT_TSF, 0, pBeacon->timeStamp[0]);)
         MTRACE(macTrace(pMac, TRACE_CODE_RX_MGMT_TSF, 0, pBeacon->timeStamp[1]);)
@@ -212,23 +157,9 @@ limProcessBeaconFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         if ((pMac->lim.gLimMlmState  == eLIM_MLM_WT_PROBE_RESP_STATE) ||
             (pMac->lim.gLimMlmState  == eLIM_MLM_PASSIVE_SCAN_STATE))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
             //If we are scanning for P2P, only accept probe rsp
             if((pMac->lim.gLimHalScanState != eLIM_HAL_SCANNING_STATE) || (NULL == pMac->lim.gpLimMlmScanReq) 
                || !pMac->lim.gpLimMlmScanReq->p2pSearch )
-#endif
-=======
-            //If we are scanning for P2P, only accept probe rsp
-            if((pMac->lim.gLimHalScanState != eLIM_HAL_SCANNING_STATE) || (NULL == pMac->lim.gpLimMlmScanReq) 
-               || !pMac->lim.gpLimMlmScanReq->p2pSearch )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            //If we are scanning for P2P, only accept probe rsp
-            if((pMac->lim.gLimHalScanState != eLIM_HAL_SCANNING_STATE) || (NULL == pMac->lim.gpLimMlmScanReq) 
-               || !pMac->lim.gpLimMlmScanReq->p2pSearch )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, 
                        ((pMac->lim.gLimHalScanState == eLIM_HAL_SCANNING_STATE) ? eANI_BOOLEAN_TRUE : eANI_BOOLEAN_FALSE), 
@@ -237,23 +168,6 @@ limProcessBeaconFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         }
         else if (pMac->lim.gLimMlmState == eLIM_MLM_LEARN_STATE)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-            // STA/AP is in learn mode
-            /* Not sure whether the below 2 lines are needed for the station. TODO If yes, this should be 
-             * uncommented. Also when we tested enabling this, there is a crash as soon as the station
-             * comes up which needs to be fixed*/
-            //if (pMac->lim.gLimSystemRole == eLIM_STA_ROLE)
-              //  limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, eANI_BOOLEAN_TRUE);
-            limCollectMeasurementData(pMac, pRxPacketInfo, pBeacon);
-           PELOG3(limLog(pMac, LOG3, FL("Parsed WDS info in Beacon frames: wdsLength=%d\n"),
-               pBeacon->propIEinfo.wdsLength);)
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
@@ -300,15 +214,7 @@ limProcessBeaconFrame(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo,tpPESession ps
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            PELOG1(limLog(pMac, LOG1, FL("Received Beacon in unexpected state %d\n"),
-=======
             PELOG1(limLog(pMac, LOG1, FL("Received Beacon in unexpected state %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            PELOG1(limLog(pMac, LOG1, FL("Received Beacon in unexpected state %d"),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    psessionEntry->limMlmState);
             limPrintMlmState(pMac, LOG1, psessionEntry->limMlmState);)
 #ifdef WLAN_DEBUG                    
@@ -359,30 +265,14 @@ limProcessBeaconFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
         if(eHAL_STATUS_SUCCESS != palAllocateMemory(pMac->hHdd, 
                                                     (void **)&pBeacon, sizeof(tSchBeaconStruct)))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessBeaconFrameNoSession\n") );
-=======
             limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessBeaconFrameNoSession") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGE, FL("Unable to PAL allocate memory in limProcessBeaconFrameNoSession") );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return;
         }
 
         if (sirConvertBeaconFrame2Struct(pMac, (tANI_U8 *) pRxPacketInfo, pBeacon) != eSIR_SUCCESS)
         {
             // Received wrongly formatted/invalid Beacon. Ignore and move on. 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGW, FL("Received invalid Beacon in global MLM state %X\n"), pMac->lim.gLimMlmState);
-=======
             limLog(pMac, LOGW, FL("Received invalid Beacon in global MLM state %X"), pMac->lim.gLimMlmState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGW, FL("Received invalid Beacon in global MLM state %X"), pMac->lim.gLimMlmState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             limPrintMlmState(pMac, LOGW,  pMac->lim.gLimMlmState);
             palFreeMemory(pMac->hHdd, pBeacon);
             return;
@@ -391,60 +281,21 @@ limProcessBeaconFrameNoSession(tpAniSirGlobal pMac, tANI_U8 *pRxPacketInfo)
         if ( (pMac->lim.gLimMlmState == eLIM_MLM_WT_PROBE_RESP_STATE) ||
              (pMac->lim.gLimMlmState == eLIM_MLM_PASSIVE_SCAN_STATE) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
             //If we are scanning for P2P, only accept probe rsp
             if((pMac->lim.gLimHalScanState != eLIM_HAL_SCANNING_STATE) || (NULL == pMac->lim.gpLimMlmScanReq) 
                || !pMac->lim.gpLimMlmScanReq->p2pSearch )
-#endif
-=======
-            //If we are scanning for P2P, only accept probe rsp
-            if((pMac->lim.gLimHalScanState != eLIM_HAL_SCANNING_STATE) || (NULL == pMac->lim.gpLimMlmScanReq) 
-               || !pMac->lim.gpLimMlmScanReq->p2pSearch )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            //If we are scanning for P2P, only accept probe rsp
-            if((pMac->lim.gLimHalScanState != eLIM_HAL_SCANNING_STATE) || (NULL == pMac->lim.gpLimMlmScanReq) 
-               || !pMac->lim.gpLimMlmScanReq->p2pSearch )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, eANI_BOOLEAN_TRUE, eANI_BOOLEAN_FALSE);
             }
         }
         else if (pMac->lim.gLimMlmState == eLIM_MLM_LEARN_STATE)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP) && (WNI_POLARIS_FW_PACKAGE == ADVANCED)
-            // STA/AP is in learn mode
-            /* Not sure whether the below 2 lines are needed for the station. TODO If yes, this should be 
-             * uncommented. Also when we tested enabling this, there is a crash as soon as the station
-             * comes up which needs to be fixed*/
-            //if (pMac->lim.gLimSystemRole == eLIM_STA_ROLE)
-              //  limCheckAndAddBssDescription(pMac, pBeacon, pRxPacketInfo, eANI_BOOLEAN_TRUE);
-            limCollectMeasurementData(pMac, pRxPacketInfo, pBeacon);
-            limLog(pMac, LOG3, FL("Parsed WDS info in Beacon frames: wdsLength=%d\n"),
-               pBeacon->propIEinfo.wdsLength);
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }  // end of eLIM_MLM_LEARN_STATE)       
         palFreeMemory(pMac->hHdd, pBeacon);
     } // end of (eLIM_MLM_WT_PROBE_RESP_STATE) || (eLIM_MLM_PASSIVE_SCAN_STATE)
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOG1, FL("Rcvd Beacon in unexpected MLM state %d\n"), pMac->lim.gLimMlmState);
-=======
         limLog(pMac, LOG1, FL("Rcvd Beacon in unexpected MLM state %d"), pMac->lim.gLimMlmState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOG1, FL("Rcvd Beacon in unexpected MLM state %d"), pMac->lim.gLimMlmState);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         limPrintMlmState(pMac, LOG1, pMac->lim.gLimMlmState);
 #ifdef WLAN_DEBUG                    
         pMac->lim.gLimUnexpBcnCnt++;

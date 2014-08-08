@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -153,15 +144,7 @@
 #endif /* WLAN_MDM_CODE_REDUCTION_OPT */
 
 #define FL(x)    "%s: %d: "\
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 x, __FUNCTION__, __LINE__
-=======
                  x, __func__, __LINE__
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 x, __func__, __LINE__
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define MAC_ADDR_ARRAY(a) (a)[0], (a)[1], (a)[2], (a)[3], (a)[4], (a)[5]
 #define MAC_ADDRESS_STR "%02x:%02x:%02x:%02x:%02x:%02x"

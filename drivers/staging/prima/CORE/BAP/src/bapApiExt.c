@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -178,15 +169,7 @@ WLANBAP_GetCurrentChannel
   if (( NULL == pBtampCtx ) || (NULL == channel) || (NULL == activeFlag))
   {
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "Invalid BAP pointer in %s", __FUNCTION__);
-=======
                  "Invalid BAP pointer in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "Invalid BAP pointer in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_E_FAULT;
   }
 
@@ -195,15 +178,7 @@ WLANBAP_GetCurrentChannel
   if(NULL == halHandle)
   {
      VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "halHandle is NULL in %s", __FUNCTION__);
-=======
                   "halHandle is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "halHandle is NULL in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return VOS_STATUS_E_FAULT;
   }
 
@@ -211,15 +186,7 @@ WLANBAP_GetCurrentChannel
           != eHAL_STATUS_SUCCESS ) 
   {
     VOS_TRACE( VOS_MODULE_ID_BAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "Get CFG failed in %s", __FUNCTION__);
-=======
                  "Get CFG failed in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "Get CFG failed in %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_E_FAULT;
   }
 

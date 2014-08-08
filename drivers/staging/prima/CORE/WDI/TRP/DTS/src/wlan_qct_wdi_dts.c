@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -87,11 +78,6 @@ static WDTS_TransportDriverTrype gTransportDriver = {
 
 static WDTS_SetPowerStateCbInfoType gSetPowerStateCbInfo;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef struct 
 {
    uint32 phyRate;   //unit in Mega bits per sec X 10
@@ -384,10 +370,6 @@ void WDTS_ClearTrafficStats(void)
    wpalMemoryZero(gDsTrafficStats.txStats, sizeof(gDsTrafficStats.txStats));
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* DTS Tx packet complete function. 
  * This function should be invoked by the transport device to indicate 
  * transmit complete for a frame.
@@ -420,11 +402,6 @@ wpt_status WDTS_TxPacketComplete(void *pContext, wpt_packet *pFrame, wpt_status 
   switch(pTxMetadata->frmType) 
   {
     case WDI_MAC_DATA_FRAME:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* note that EAPOL frame hasn't incremented ReserveCount. see
        WDI_DS_TxPacket() in wlan_qct_wdi_ds.c
     */
@@ -440,26 +417,14 @@ wpt_status WDTS_TxPacketComplete(void *pContext, wpt_packet *pFrame, wpt_status 
     if(!pTxMetadata->isEapol)
 #endif
     {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       /* SWAP BD header to get STA index for completed frame */
       WDI_SwapTxBd(pvBDHeader);
       staIndex = (wpt_uint8)WDI_TX_BD_GET_STA_ID(pvBDHeader);
       WDI_DS_MemPoolFree(&(pClientData->dataMemPool), pvBDHeader, physBDHeader);
       WDI_DS_MemPoolDecreaseReserveCount(&(pClientData->dataMemPool), staIndex);
       break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     }
     // intentional fall-through to handle eapol packet as mgmt
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    }
-    // intentional fall-through to handle eapol packet as mgmt
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     case WDI_MAC_MGMT_FRAME:
       WDI_DS_MemPoolFree(&(pClientData->mgmtMemPool), pvBDHeader, physBDHeader);
       break;
@@ -610,17 +575,6 @@ wpt_status WDTS_RxPacket (void *pContext, wpt_packet *pFrame, WDTS_ChannelType c
       if(VPKT_SIZE_BUFFER < (usMPDULen+ucMPDUHOffset)){
         DTI_TRACE( DTI_TRACE_LEVEL_FATAL,
                    "Invalid Frame size, might memory corrupted");
-<<<<<<< HEAD
-<<<<<<< HEAD
-        wpalPacketFree(pFrame);
-        return eWLAN_PAL_STATUS_SUCCESS;
-      }
-      wpalPacketSetRxLength(pFrame, usMPDULen+ucMPDUHOffset);
-      wpalPacketRawTrimHead(pFrame, ucMPDUHOffset);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Size of the packet tranferred by the DMA engine is
          * greater than the the memory allocated for the skb
@@ -642,10 +596,6 @@ wpt_status WDTS_RxPacket (void *pContext, wpt_packet *pFrame, WDTS_ChannelType c
           wpalPacketFree(pFrame);
           return eWLAN_PAL_STATUS_SUCCESS;
       }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      
 
       pRxMetadata = WDI_DS_ExtractRxMetaData(pFrame);
@@ -667,11 +617,6 @@ wpt_status WDTS_RxPacket (void *pContext, wpt_packet *pFrame, WDTS_ChannelType c
       pRxMetadata->rateIndex = WDI_RX_BD_GET_RATEINDEX(pBDHeader);
       pRxMetadata->rxpFlags = WDI_RX_BD_GET_RXPFLAGS(pBDHeader);
       pRxMetadata->mclkRxTimestamp = WDI_RX_BD_GET_TIMESTAMP(pBDHeader);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11W
       pRxMetadata->rmf = WDI_RX_BD_GET_RMF(pBDHeader);
 #endif
@@ -679,10 +624,6 @@ wpt_status WDTS_RxPacket (void *pContext, wpt_packet *pFrame, WDTS_ChannelType c
       pRxMetadata->offloadScanLearn = WDI_RX_BD_GET_OFFLOADSCANLEARN(pBDHeader);
       pRxMetadata->roamCandidateInd = WDI_RX_BD_GET_ROAMCANDIDATEIND(pBDHeader);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       /* typeSubtype in BD doesn't look like correct. Fill from frame ctrl
          TL does it for Volans but TL does not know BD for Prima. WDI should do it */
@@ -759,26 +700,12 @@ wpt_status WDTS_RxPacket (void *pContext, wpt_packet *pFrame, WDTS_ChannelType c
       pRxMetadata = WDI_DS_ExtractRxMetaData(pFrame);
       //flow control related
       pRxMetadata->fc = isFcBd;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
       pRxMetadata->mclkRxTimestamp = WDI_RX_BD_GET_TIMESTAMP(pBDHeader);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      pRxMetadata->mclkRxTimestamp = WDI_RX_BD_GET_TIMESTAMP(pBDHeader);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pRxMetadata->fcStaTxDisabledBitmap = WDI_RX_FC_BD_GET_STA_TX_DISABLED_BITMAP(pBDHeader);
       pRxMetadata->fcSTAValidMask = WDI_RX_FC_BD_GET_STA_VALID_MASK(pBDHeader);
       // Invoke Rx complete callback
       pClientData->receiveFrameCB(pClientData->pCallbackContext, pFrame);  
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-  return eWLAN_PAL_STATUS_SUCCESS;
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
   //Log the RX Stats
   if(gDsTrafficStats.running && pRxMetadata->staId < HAL_NUM_STA)
@@ -794,10 +721,6 @@ wpt_status WDTS_RxPacket (void *pContext, wpt_packet *pFrame, WDTS_ChannelType c
      }
   }
   return eWLAN_PAL_STATUS_SUCCESS;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -862,15 +785,7 @@ wpt_status WDTS_openTransport( void *pContext)
   pDTDriverContext = gTransportDriver.open(); 
   if( NULL == pDTDriverContext )
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-     DTI_TRACE( DTI_TRACE_LEVEL_ERROR, " %s fail from transport open", __FUNCTION__);
-=======
      DTI_TRACE( DTI_TRACE_LEVEL_ERROR, " %s fail from transport open", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-     DTI_TRACE( DTI_TRACE_LEVEL_ERROR, " %s fail from transport open", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      return eWLAN_PAL_STATUS_E_FAILURE;
   }
   WDT_AssignTransportDriverContext(pContext, pDTDriverContext);
@@ -891,16 +806,8 @@ wpt_status WDTS_openTransport( void *pContext)
     return eWLAN_PAL_STATUS_E_NOMEM;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   wpalMemoryZero(&gDsTrafficStats, sizeof(gDsTrafficStats));
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  wpalMemoryZero(&gDsTrafficStats, sizeof(gDsTrafficStats));
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return eWLAN_PAL_STATUS_SUCCESS;
 
 }
@@ -945,15 +852,6 @@ wpt_status WDTS_TxPacket(void *pContext, wpt_packet *pFrame)
   // extract metadata from PAL packet
   pTxMetadata = WDI_DS_ExtractTxMetaData(pFrame);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  // assign MDPU to correct channel??
-  channel =  (pTxMetadata->frmType & WDI_MAC_DATA_FRAME)? 
-      WDTS_CHANNEL_TX_LOW_PRI : WDTS_CHANNEL_TX_HIGH_PRI;
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   //Log the TX Stats
   if(gDsTrafficStats.running && pTxMetadata->staIdx < HAL_NUM_STA)
   {
@@ -982,10 +880,6 @@ wpt_status WDTS_TxPacket(void *pContext, wpt_packet *pFrame)
 #else
       ((pTxMetadata->isEapol) ? WDTS_CHANNEL_TX_HIGH_PRI : WDTS_CHANNEL_TX_LOW_PRI) : WDTS_CHANNEL_TX_HIGH_PRI;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   // Send packet to  Transport Driver. 
   status =  gTransportDriver.xmit(pDTDriverContext, pFrame, channel);
   return status;
@@ -1063,36 +957,16 @@ wpt_status WDTS_SetPowerState(void *pContext, WDTS_PowerStateType  powerState,
  * User may request to display DXE channel snapshot
  * Or if host driver detects any abnormal stcuk may display
  * Parameters:
-<<<<<<< HEAD
-<<<<<<< HEAD
- *  displaySnapshot : Dispaly DXE snapshot option
-=======
  *  displaySnapshot : Display DXE snapshot option
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- *  displaySnapshot : Display DXE snapshot option
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *  enableStallDetect : Enable stall detect feature
                         This feature will take effect to data performance
                         Not integrate till fully verification
  * Return Value: NONE
  *
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-void WDTS_ChannelDebug(wpt_boolean dispalySnapshot, wpt_boolean toggleStallDetect)
-{
-   gTransportDriver.channelDebug(dispalySnapshot, toggleStallDetect);
-=======
 void WDTS_ChannelDebug(wpt_boolean displaySnapshot, wpt_boolean toggleStallDetect)
 {
    gTransportDriver.channelDebug(displaySnapshot, toggleStallDetect);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-void WDTS_ChannelDebug(wpt_boolean displaySnapshot, wpt_boolean toggleStallDetect)
-{
-   gTransportDriver.channelDebug(displaySnapshot, toggleStallDetect);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return;
 }
 
@@ -1111,16 +985,8 @@ wpt_status WDTS_Stop(void *pContext)
 
   status =  gTransportDriver.stop(pDTDriverContext);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   wpalMemoryZero(&gDsTrafficStats, sizeof(gDsTrafficStats));
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  wpalMemoryZero(&gDsTrafficStats, sizeof(gDsTrafficStats));
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   return status;
 }
 

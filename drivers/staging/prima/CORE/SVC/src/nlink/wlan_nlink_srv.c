@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -68,15 +59,7 @@
 
 //Global variables
 static DEFINE_MUTEX(nl_srv_sem);
-<<<<<<< HEAD
-<<<<<<< HEAD
-static struct sock *nl_srv_sock = NULL;
-=======
 static struct sock *nl_srv_sock;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static struct sock *nl_srv_sock;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static nl_srv_msg_callback nl_srv_msg_handler[NLINK_MAX_CALLBACKS];
 
 //Forward declaration
@@ -91,13 +74,6 @@ static void nl_srv_rcv_msg (struct sk_buff *skb, struct nlmsghdr *nlh);
 int nl_srv_init(void)
 {
    int retcode = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   nl_srv_sock = netlink_kernel_create(&init_net, WLAN_NLINK_PROTO_FAMILY,
-      WLAN_NLINK_MCAST_GRP_ID, nl_srv_rcv, NULL, THIS_MODULE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0))
    struct netlink_kernel_cfg cfg = {
       .groups = WLAN_NLINK_MCAST_GRP_ID,
@@ -115,10 +91,6 @@ int nl_srv_init(void)
    nl_srv_sock = netlink_kernel_create(&init_net, WLAN_NLINK_PROTO_FAMILY,
       WLAN_NLINK_MCAST_GRP_ID, nl_srv_rcv, NULL, THIS_MODULE);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (nl_srv_sock != NULL) {
       memset(nl_srv_msg_handler, 0, sizeof(nl_srv_msg_handler));
@@ -191,21 +163,11 @@ int nl_srv_ucast(struct sk_buff *skb, int dst_pid)
 {
    int err;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   NETLINK_CB(skb).pid = 0; //sender's pid
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,7,0))
    NETLINK_CB(skb).pid = 0; //sender's pid
 #else
    NETLINK_CB(skb).portid = 0; //sender's pid
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    NETLINK_CB(skb).dst_group = 0; //not multicast
 
    err = netlink_unicast(nl_srv_sock, skb, dst_pid, MSG_DONTWAIT);
@@ -225,21 +187,11 @@ int nl_srv_bcast(struct sk_buff *skb)
 {
    int err;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   NETLINK_CB(skb).pid = 0; //sender's pid
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,7,0))
    NETLINK_CB(skb).pid = 0; //sender's pid
 #else
    NETLINK_CB(skb).portid = 0; //sender's pid
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    NETLINK_CB(skb).dst_group = WLAN_NLINK_MCAST_GRP_ID; //destination group
 
    err = netlink_broadcast(nl_srv_sock, skb, 0, WLAN_NLINK_MCAST_GRP_ID, GFP_KERNEL);

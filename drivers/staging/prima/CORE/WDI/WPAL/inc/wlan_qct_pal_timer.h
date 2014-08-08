@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -70,16 +61,8 @@
 #include "wlan_qct_os_timer.h"
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 typedef VOS_TIMER_STATE WPAL_TIMER_STATE;
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-typedef VOS_TIMER_STATE WPAL_TIMER_STATE;
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 typedef void (*wpal_timer_callback)(void *pUserData);
 
 typedef struct
@@ -130,11 +113,6 @@ wpt_status wpalTimerStart(wpt_timer * pTimer, wpt_uint32 timeout);
 wpt_status wpalTimerStop(wpt_timer * pTimer);
 
 /*---------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wpalTimerGetCurStatus - Get the current status of timer
 
     pTimer - a pointer to caller allocated wpt_timer object
@@ -153,10 +131,6 @@ WPAL_TIMER_STATE wpalTimerGetCurStatus(wpt_timer * pTimer);
 wpt_uint32 wpalGetSystemTime(void);
 
 /*---------------------------------------------------------------------------
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wpalSleep - sleep for a specified interval
     Param:
         timeout - amount of time to sleep. In unit of milli-seconds.

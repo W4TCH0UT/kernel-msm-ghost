@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -50,17 +41,6 @@
 
 #if !defined( __VOS_TYPES_H )
 #define __VOS_TYPES_H
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-/**=========================================================================
-  
-  \file  vos_Types.h
-  
-  \brief virtual Operating System Servies (vOS)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
 * Copyright (c) 2013 Qualcomm Atheros, Inc.
 * All Rights Reserved.
@@ -73,10 +53,6 @@
 
   \brief virtual Operating System Servies (vOS)
 <<<<<<< HEAD:CORE/VOSS/inc/vos_types.h
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                
    Basic type definitions 
   
@@ -84,11 +60,6 @@
    
    Qualcomm Confidential and Proprietary.
   
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 =======
 
    Basic type definitions
@@ -97,10 +68,6 @@
    All Rights Reserved.
    Qualcomm Confidential and Proprietary.
 >>>>>>> b682f18... wlan: qnx awareness to corestack:prima/CORE/VOSS/inc/vos_types.h
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ========================================================================*/
 
 /* $Header$ */
@@ -121,15 +88,7 @@
 #define VOS_MIN( _x, _y ) ( ( (_x) < (_y) ) ? (_x) : (_y)  )  
 
 // macro to get the ceiling of an integer division operation...
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define VOS_CEIL_DIV( _a, _b ) ( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ) 
-=======
 #define VOS_CEIL_DIV( _a, _b ) (( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define VOS_CEIL_DIV( _a, _b ) (( 0 != (_a) % (_b) ) ? ( (_a) / (_b) + 1 ) : ( (_a) / (_b) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // macro to return the floor of an integer division operation
 #define VOS_FLOOR_DIV( _a, _b ) ( ( (_a) - ( (_a) % (_b) ) ) / (_b) )
@@ -138,18 +97,8 @@
    ( ( ( (_x) << 8 ) & 0xFF00 ) | ( ( (_x) >> 8 ) & 0x00FF ) )
 
 #define VOS_SWAP_U32(_x) \
-<<<<<<< HEAD
-<<<<<<< HEAD
-   ( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
-   ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) )
-=======
   (( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
    ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-  (( ( ( (_x) << 24 ) & 0xFF000000 ) | ( ( (_x) >> 24 ) & 0x000000FF ) ) | \
-   ( ( ( (_x) << 8 ) & 0x00FF0000 ) | ( ( (_x) >> 8 ) & 0x0000FF00 ) ))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // Endian operations for Big Endian and Small Endian modes
 #ifdef ANI_LITTLE_BYTE_ENDIAN
@@ -178,64 +127,17 @@
 
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*-------------------------------------------------------------------------- 
-  Type declarations
-  ------------------------------------------------------------------------*/
-   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
   Type declarations
   ------------------------------------------------------------------------*/
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /// Module IDs.  These are generic IDs that identify the various modules
 /// in the software system.
 typedef enum
 {
    VOS_MODULE_ID_BAP        = 0,
    VOS_MODULE_ID_TL         = 1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-#ifndef FEATURE_WLAN_INTEGRATED_SOC
-   VOS_MODULE_ID_BAL        = 2,
-   VOS_MODULE_ID_SAL        = 3,
-   VOS_MODULE_ID_SSC        = 4,
-#endif
-
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-   VOS_MODULE_ID_WDI        = 2,
-#endif
-   
-   VOS_MODULE_ID_HDD        = 5,
-   VOS_MODULE_ID_SME        = 6,
-   VOS_MODULE_ID_PE         = 7,
-
-#ifndef FEATURE_WLAN_INTEGRATED_SOC
-   VOS_MODULE_ID_HAL        = 8,
-#else
-   VOS_MODULE_ID_WDA        = 8,
-#endif
-
-   VOS_MODULE_ID_SYS        = 9,
-   VOS_MODULE_ID_VOSS       = 10,
-#ifdef WLAN_SOFTAP_FEATURE
-   VOS_MODULE_ID_SAP        = 11,
-   VOS_MODULE_ID_HDD_SOFTAP = 12,
-#endif   
-
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    VOS_MODULE_ID_WDI        = 2,
    // 3 & 4 are unused for historical purposes
    VOS_MODULE_ID_HDD        = 5,
@@ -246,10 +148,6 @@ typedef enum
    VOS_MODULE_ID_VOSS       = 10,
    VOS_MODULE_ID_SAP        = 11,
    VOS_MODULE_ID_HDD_SOFTAP = 12,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // not a real module ID.  This is used to identify the maxiumum
    // number of VOS_MODULE_IDs and should always be at the END of
@@ -269,17 +167,7 @@ typedef enum
     VOS_P2P_CLIENT_MODE,
     VOS_P2P_GO_MODE,
     VOS_MONITOR_MODE,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef ANI_MANF_DIAG
     VOS_FTM_MODE = 5,
-#endif
-=======
-    VOS_FTM_MODE = 5,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_FTM_MODE = 5,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_MAX_NO_OF_MODE
 
 } tVOS_CON_MODE;

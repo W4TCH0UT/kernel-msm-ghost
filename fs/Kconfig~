@@ -285,15 +285,15 @@ source "fs/nls/Kconfig"
 source "fs/dlm/Kconfig"
 
 <<<<<<< HEAD
-=======
 config ASYNC_FSYNC
 	bool "asynchronous fsync"
 	default y
-
-config AIO_OPTIMIZATION
-	bool "AIO kernel optimization patches"
-	default y
+=======
+config DYNAMIC_FSYNC
+	bool "dynamic file sync control"
+	default n
 	help
-	  An experimental AIO FS kernel optimization
->>>>>>> 69f18e5... Asynchronous Fsync: initial extraction of Async Fsync from HTC
+	  An experimental file sync control using Android's early suspend / late resume drivers
+>>>>>>> 57f33be... fs/dyn_sync_cntrl: dynamic sync control
+
 endmenu

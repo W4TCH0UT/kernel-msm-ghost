@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -84,21 +75,11 @@
 #define SCH_DIAG_RR_TIMEOUT_DELETE    0x1
 #define SCH_DIAG_RR_LOWER_RATE        0x2
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define TIM_IE_SIZE 0x6
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_SOFTAP_VSTA_FEATURE
 #define TIM_IE_SIZE 0xB
 #else
 #define TIM_IE_SIZE 0x7
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // ----------------------- Beacon processing ------------------------
 
@@ -111,19 +92,7 @@
 //****************** MISC defs *********************************
 
 /// Maximum allowable size of a beacon frame
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP)
-#define SCH_MAX_BEACON_SIZE    2048
-#else
 #define SCH_MAX_BEACON_SIZE    512
-#endif
-=======
-#define SCH_MAX_BEACON_SIZE    512
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define SCH_MAX_BEACON_SIZE    512
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define SCH_MAX_PROBE_RESP_SIZE 512
 
@@ -136,15 +105,7 @@ struct schMisc {
 
     /// Trailing portion of the beacon frame to be written to TFP
     tANI_U8 *gSchBeaconFrameEnd;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /// Size of the beginning portion
     tANI_U16 gSchBeaconOffsetBegin;
     /// Size of the trailing portion
@@ -191,17 +152,7 @@ struct schMisc {
     /// flag to indicate that beacon template has been updated
     tANI_U8   fBeaconChanged;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(WLAN_SOFTAP_FEATURE) && defined(WLAN_FEATURE_P2P) 
     tANI_U16 p2pIeOffset;
-#endif
-=======
-    tANI_U16 p2pIeOffset;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U16 p2pIeOffset;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 };
 
@@ -231,15 +182,6 @@ typedef struct sAniSirSch
     /// Whether scan request is received by SCH or not
     tANI_U8 gSchScanReqRcvd;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP)
-    tANI_U8 gSchRRRecd;
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /// Debug flag to disable beacon generation
     tANI_U32 gSchGenBeacon;

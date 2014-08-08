@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -51,25 +42,6 @@
 /*===========================================================================
 
                       s a p C h S e l e c t . C
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                               
-  OVERVIEW:
-  
-  This software unit holds the implementation of the WLAN SAP modules
-  functions for channel selection.  
-
-  DEPENDENCIES: 
-
-  Are listed for each API below. 
-  
-  
-  Copyright (c) 2010 QUALCOMM Incorporated.
-  All Rights Reserved.
-  Qualcomm Confidential and Proprietary
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   OVERVIEW:
 
   This software unit holds the implementation of the WLAN SAP modules
@@ -78,10 +50,6 @@
   DEPENDENCIES:
 
   Are listed for each API below.
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 ===========================================================================*/
 
 /*===========================================================================
@@ -109,18 +77,9 @@
 #include "sme_Api.h"
 #include "sapChSelect.h"
 #include "sapInternal.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef ANI_OS_TYPE_QNX
 #include "stdio.h"
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef ANI_OS_TYPE_QNX
-#include "stdio.h"
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------------
   Function definitions
@@ -131,11 +90,6 @@
 --------------------------------------------------------------------------*/
 #define SAP_DEBUG
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #define IS_RSSI_VALID( extRssi, rssi ) \
 ( \
    ((extRssi < rssi)?eANI_BOOLEAN_TRUE:eANI_BOOLEAN_FALSE) \
@@ -393,10 +347,6 @@ v_U8_t sapSelectPreferredChannelFromChannelList(v_U8_t bestChNum,
 }
 
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION    sapChanSelInit
 
@@ -424,15 +374,7 @@ v_BOOL_t sapChanSelInit(tHalHandle halHandle, tSapChSelSpectInfo *pSpectInfoPara
     v_U16_t channelnum = 0;
     tpAniSirGlobal pMac = PMAC_STRUCT(halHandle);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s", __FUNCTION__);
-=======
     VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Channels for that 2.4GHz band
     //Considered only for 2.4GHz need to change in future to support 5GHz support
@@ -442,15 +384,7 @@ v_BOOL_t sapChanSelInit(tHalHandle halHandle, tSapChSelSpectInfo *pSpectInfoPara
     pSpectCh = (tSapSpectChInfo *)vos_mem_malloc((pSpectInfoParams->numSpectChans) * sizeof(*pSpectCh));
 
     if(pSpectCh == NULL) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, VOS_MALLOC_ERR", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, VOS_MALLOC_ERR", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, VOS_MALLOC_ERR", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSAP_FALSE;
     }
 
@@ -469,14 +403,7 @@ v_BOOL_t sapChanSelInit(tHalHandle halHandle, tSapChSelSpectInfo *pSpectInfoPara
         pSpectCh->chNum = *pChans;
         pSpectCh->valid = eSAP_TRUE;
         pSpectCh->rssiAgr = SOFTAP_MIN_RSSI;// Initialise for all channels
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         pSpectCh->channelWidth = SOFTAP_HT20_CHANNELWIDTH; // Initialise 20MHz for all the Channels 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        pSpectCh->channelWidth = SOFTAP_HT20_CHANNELWIDTH; // Initialise 20MHz for all the Channels 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pSpectCh++;
         pChans++;
     }
@@ -513,15 +440,7 @@ v_U32_t sapweightRssiCount(v_S7_t rssi, v_U16_t count)
     // Weight from RSSI
     rssiWeight = SOFTAP_RSSI_WEIGHT * (rssi - SOFTAP_MIN_RSSI)
                  /(SOFTAP_MAX_RSSI - SOFTAP_MIN_RSSI);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(rssiWeight > SOFTAP_RSSI_WEIGHT)
         rssiWeight = SOFTAP_RSSI_WEIGHT;
     else if (rssiWeight < 0)
@@ -530,47 +449,20 @@ v_U32_t sapweightRssiCount(v_S7_t rssi, v_U16_t count)
     // Weight from data count
     countWeight = SOFTAP_COUNT_WEIGHT * (count - SOFTAP_MIN_COUNT)
                   /(SOFTAP_MAX_COUNT - SOFTAP_MIN_COUNT);
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(countWeight > SOFTAP_COUNT_WEIGHT)
         countWeight = SOFTAP_COUNT_WEIGHT;
     else if (countWeight < 0)
         countWeight = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-    rssicountWeight =  rssiWeight + countWeight;      
-
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, rssiWeight=%d, countWeight=%d, rssicountWeight=%d",
-              __FUNCTION__, rssiWeight, countWeight, rssicountWeight);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     rssicountWeight =  rssiWeight + countWeight;      
 
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, rssiWeight=%d, countWeight=%d, rssicountWeight=%d",
               __func__, rssiWeight, countWeight, rssicountWeight);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     return(rssicountWeight);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*==========================================================================
   FUNCTION    sapInterferenceRssiCount
@@ -1309,10 +1201,6 @@ void sapInterferenceRssiCount(tSapSpectChInfo *pSpectCh)
     }
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*==========================================================================
   FUNCTION    sapComputeSpectWeight
 
@@ -1336,18 +1224,8 @@ void sapInterferenceRssiCount(tSapSpectChInfo *pSpectCh)
   
   SIDE EFFECTS 
 ============================================================================*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams, 
-                                 tHalHandle halHandle, tScanResultHandle pResult)
-=======
 void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                              tHalHandle halHandle, tScanResultHandle pResult)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
-                             tHalHandle halHandle, tScanResultHandle pResult)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     v_S7_t rssi = 0;
     v_U8_t chn_num = 0;
@@ -1355,13 +1233,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
 
     tCsrScanResultInfo *pScanResult;
     tSapSpectChInfo *pSpectCh   = pSpectInfoParams->pSpectCh;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Computing spectral weight", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U32_t operatingBand;
     v_U16_t channelWidth;
     v_U16_t secondaryChannelOffset;
@@ -1379,24 +1250,10 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
         return;
     }
     VOS_TRACE( VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Computing spectral weight", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /**
     * Soft AP specific channel weight calculation using DFS formula
     */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    pScanResult = sme_ScanResultGetFirst(halHandle, pResult);    
-
-    while (pScanResult) {
-        pSpectCh = pSpectInfoParams->pSpectCh;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ccmCfgGetInt( halHandle, WNI_CFG_SAP_CHANNEL_SELECT_OPERATING_BAND, &operatingBand);
 
     pScanResult = sme_ScanResultGetFirst(halHandle, pResult);
@@ -1431,10 +1288,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                 }
             }
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         // Processing for each tCsrScanResultInfo in the tCsrScanResult DLink list
         for (chn_num = 0; chn_num < pSpectInfoParams->numSpectChans; chn_num++) {
 
@@ -1447,30 +1300,12 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
             else
                 channel_id = pScanResult->BssDescriptor.channelId;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if (channel_id == pSpectCh->chNum) {        
-=======
             if (channel_id == pSpectCh->chNum) {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            if (channel_id == pSpectCh->chNum) {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (pSpectCh->rssiAgr < pScanResult->BssDescriptor.rssi)
                     pSpectCh->rssiAgr = pScanResult->BssDescriptor.rssi;
 
                 ++pSpectCh->bssCount; // Increment the count of BSS
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
-                   "In %s, bssdes.ch_self=%d, bssdes.ch_ID=%d, bssdes.rssi=%d, SpectCh.bssCount=%d, pScanResult=0x%x",
-                  __FUNCTION__, pScanResult->BssDescriptor.channelIdSelf, pScanResult->BssDescriptor.channelId, 
-                  pScanResult->BssDescriptor.rssi, pSpectCh->bssCount, pScanResult);
-                         
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if(operatingBand) // Connsidering the Extension Channel only in a channels
                 {
                     /* Updating the received ChannelWidth */
@@ -1690,10 +1525,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                 VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
                    "In %s, bssdes.ch_self=%d, bssdes.ch_ID=%d, bssdes.rssi=%d, SpectCh.bssCount=%d, pScanResult=%p, ChannelWidth %d, secondaryChanOffset %d, center frequency %d \n",
                   __func__, pScanResult->BssDescriptor.channelIdSelf, pScanResult->BssDescriptor.channelId, pScanResult->BssDescriptor.rssi, pSpectCh->bssCount, pScanResult,pSpectCh->channelWidth,secondaryChannelOffset,centerFreq);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  pSpectCh++;
                  break;
            } else {
@@ -1707,23 +1538,10 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
     // Calculate the weights for all channels in the spectrum pSpectCh
     pSpectCh = pSpectInfoParams->pSpectCh;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Spectrum Channels Weight", __FUNCTION__);
-
-    for (chn_num = 0; chn_num < (pSpectInfoParams->numSpectChans); chn_num++) {
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Spectrum Channels Weight", __func__);
 
     for (chn_num = 0; chn_num < (pSpectInfoParams->numSpectChans); chn_num++) {
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*
           rssi : Maximum received signal strength among all BSS on that channel
           bssCount : Number of BSS on that channel
@@ -1733,17 +1551,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
 
         pSpectCh->weight = SAPDFS_NORMALISE_1000 * sapweightRssiCount(rssi, pSpectCh->bssCount);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //------ Debug Info ------ 
-        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Chan=%d Weight= %d rssiAgr=%d bssCount=%d", __FUNCTION__, pSpectCh->chNum,
-            pSpectCh->weight, pSpectCh->rssiAgr, pSpectCh->bssCount);
-        //------ Debug Info ------ 
-        pSpectCh++;
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //------ Debug Info ------
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH,
              "In %s, Chan=%d Weight= %d rssiAgr=%d bssCount=%d", __func__,
@@ -1753,10 +1560,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
         pSpectCh++;
     }
     palFreeMemory(pMac->hHdd, pBeaconStruct);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /*==========================================================================
@@ -1845,25 +1648,11 @@ void sapSortChlWeight(tSapChSelSpectInfo *pSpectInfoParams)
 #endif
 
     /* For testing */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Sorted Spectrum Channels Weight", __FUNCTION__);
-    pSpectCh = pSpectInfoParams->pSpectCh;
-    for (j = 0; j < (pSpectInfoParams->numSpectChans); j++) {
-        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Channel=%d Weight= %d rssi=%d bssCount=%d",
-                    __FUNCTION__, pSpectCh->chNum, pSpectCh->weight, pSpectCh->rssiAgr, pSpectCh->bssCount);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Sorted Spectrum Channels Weight", __func__);
     pSpectCh = pSpectInfoParams->pSpectCh;
     for (j = 0; j < (pSpectInfoParams->numSpectChans); j++) {
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Channel=%d Weight= %d rssi=%d bssCount=%d",
                     __func__, pSpectCh->chNum, pSpectCh->weight, pSpectCh->rssiAgr, pSpectCh->bssCount);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pSpectCh++;
     }
 
@@ -1890,62 +1679,26 @@ void sapSortChlWeight(tSapChSelSpectInfo *pSpectInfoParams)
   
   SIDE EFFECTS 
 ============================================================================*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-v_U8_t sapSelectChannel(tHalHandle halHandle, tScanResultHandle pScanResult)
-=======
 v_U8_t sapSelectChannel(tHalHandle halHandle, ptSapContext pSapCtx,  tScanResultHandle pScanResult)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-v_U8_t sapSelectChannel(tHalHandle halHandle, ptSapContext pSapCtx,  tScanResultHandle pScanResult)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     // DFS param object holding all the data req by the algo
     tSapChSelSpectInfo oSpectInfoParams = {NULL,0}; 
     tSapChSelSpectInfo *pSpectInfoParams = &oSpectInfoParams; // Memory? NB    
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U8_t bestChNum = 0;
 #ifdef SOFTAP_CHANNEL_RANGE
     v_U32_t startChannelNum;
     v_U32_t endChannelNum;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    v_U32_t operatingBand;
-    v_U8_t  count = 0;
-#endif    
-    VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Running SAP Ch Select", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U32_t operatingBand = 0;
     v_U8_t  count = 0;
 #endif    
     VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Running SAP Ch Select", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     // Set to zero tSapChSelParams
     //vos_mem_zero(&sapChSelParams, sizeof(sapChSelParams));
 
     // Initialize the structure pointed by pSpectInfoParams
     if(sapChanSelInit( halHandle, pSpectInfoParams) != eSAP_TRUE ) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, Ch Select initialization failed", __FUNCTION__);
-=======
         VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, Ch Select initialization failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_ERROR, "In %s, Ch Select initialization failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return SAP_CHANNEL_NOT_SELECTED;
     }
 
@@ -1966,22 +1719,6 @@ v_U8_t sapSelectChannel(tHalHandle halHandle, ptSapContext pSapCtx,  tScanResult
         if((startChannelNum <= pSpectInfoParams->pSpectCh[count].chNum)&&
           ( endChannelNum >= pSpectInfoParams->pSpectCh[count].chNum))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            bestChNum = (v_U8_t)pSpectInfoParams->pSpectCh[count].chNum;
-            break;
-        }
-    }
-
-#else
-    // Get the first channel in sorted array as best 20M Channel
-    bestChNum = (v_U8_t)pSpectInfoParams->pSpectCh[0].chNum;
-
-#endif
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if(bestChNum == 0)
             {
                 bestChNum = (v_U8_t)pSpectInfoParams->pSpectCh[count].chNum;
@@ -2011,24 +1748,11 @@ v_U8_t sapSelectChannel(tHalHandle halHandle, ptSapContext pSapCtx,  tScanResult
     //Select Best Channel from Channel List if Configured
     bestChNum = sapSelectPreferredChannelFromChannelList(bestChNum, pSapCtx, pSpectInfoParams);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // Free all the allocated memory
     sapChanSelExit(pSpectInfoParams);
 
     VOS_TRACE(VOS_MODULE_ID_SAP, VOS_TRACE_LEVEL_INFO_HIGH, "In %s, Running SAP Ch select Completed, Ch=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, bestChNum);
-
-=======
                         __func__, bestChNum);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        __func__, bestChNum);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (bestChNum > 0 && bestChNum <= 252)
         return bestChNum;
     else

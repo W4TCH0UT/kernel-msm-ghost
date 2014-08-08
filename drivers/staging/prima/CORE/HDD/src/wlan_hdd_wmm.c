@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -89,17 +80,7 @@
 #include <linux/ip.h>
 #include <linux/semaphore.h>
 #include <wlan_hdd_hostapd.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include <wlan_hdd_softap_tx_rx.h>
-#endif
-=======
-#include <wlan_hdd_softap_tx_rx.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include <wlan_hdd_softap_tx_rx.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // change logging behavior based upon debug flag
 #ifdef HDD_WMM_DEBUG
@@ -179,15 +160,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Invoked with invalid TSPEC",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -206,15 +179,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
       // this is OK, there just won't be U-APSD
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: No service interval supplied",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -230,15 +195,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: No change in U-APSD parameters",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -247,15 +204,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: BMPS is not enabled",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -263,15 +212,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: U-APSD is not enabled",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -289,15 +230,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
    {
       VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                  "%s: Failed to enable U-APSD for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 __FUNCTION__, acType );
-=======
                  __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -310,15 +243,7 @@ static void hdd_wmm_enable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: Enabled UAPSD in TL srv_int=%ld "
              "susp_int=%ld dir=%d AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__,
-=======
              __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              service_interval,
              suspension_interval,
              direction,
@@ -354,15 +279,7 @@ static void hdd_wmm_disable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
       {
          VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                     "%s: Failed to disable U-APSD for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    __FUNCTION__, acType );
-=======
                     __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
       else
       {
@@ -370,15 +287,7 @@ static void hdd_wmm_disable_tl_uapsd (hdd_wmm_qos_context_t* pQosContext)
          pAc->wmmAcUapsdInfoValid = VOS_FALSE;
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Disabled UAPSD in TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__,
-=======
                    __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    acType);
       }
    }
@@ -400,15 +309,7 @@ static void hdd_wmm_free_context (hdd_wmm_qos_context_t* pQosContext)
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: Entered, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pQosContext);
-=======
              __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (unlikely((NULL == pQosContext) ||
                 (HDD_WMM_CTX_MAGIC != pQosContext->magic)))
@@ -456,30 +357,14 @@ static void hdd_wmm_notify_app (hdd_wmm_qos_context_t* pQosContext)
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: Entered, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pQosContext);
-=======
              __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (unlikely((NULL == pQosContext) ||
                 (HDD_WMM_CTX_MAGIC != pQosContext->magic)))
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Invalid QoS Context",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -500,15 +385,7 @@ static void hdd_wmm_notify_app (hdd_wmm_qos_context_t* pQosContext)
 
    // send the event
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Sending [%s]", __FUNCTION__, buf);
-=======
              "%s: Sending [%s]", __func__, buf);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Sending [%s]", __func__, buf);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wireless_send_event(pAdapter->dev, IWEVCUSTOM, &wrqu, buf);
 }
 
@@ -737,30 +614,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: Entered, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pQosContext);
-=======
              __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (unlikely((NULL == pQosContext) ||
                 (HDD_WMM_CTX_MAGIC != pQosContext->magic)))
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Invalid QoS Context",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return eHAL_STATUS_FAILURE;
    }
 
@@ -770,15 +631,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: status %d flowid %d info %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, smeStatus, qosFlowId, pCurrentQosInfo);
-=======
              __func__, smeStatus, qosFlowId, pCurrentQosInfo);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, smeStatus, qosFlowId, pCurrentQosInfo);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    switch (smeStatus)
    {
@@ -786,15 +639,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_SUCCESS_IND:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Setup is complete",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       // there will always be a TSPEC returned with this status, even if
       // a TSPEC is not exchanged OTA
@@ -811,15 +656,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Implicit Qos, notifying TL for TL AC %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, acType);
-=======
                    __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by implicit QoS so we know packets are pending
          // update state
@@ -836,30 +673,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                        "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, acType );
-=======
                        __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_SUCCESS;
@@ -868,23 +689,10 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
 #ifdef FEATURE_WLAN_CCX
       // Check if the inactivity interval is specified
-<<<<<<< HEAD
-<<<<<<< HEAD
-      if (pCurrentQosInfo->inactivity_interval) {
-         VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
-                 "%s: Inactivity timer value = %d for AC=%d\n",
-                 __FUNCTION__, pCurrentQosInfo->inactivity_interval, acType);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if (pCurrentQosInfo && pCurrentQosInfo->inactivity_interval) {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                  "%s: Inactivity timer value = %d for AC=%d\n",
                  __func__, pCurrentQosInfo->inactivity_interval, acType);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          hdd_wmm_enable_inactivity_timer(pQosContext, pCurrentQosInfo->inactivity_interval);
       }
 #endif // FEATURE_WLAN_CCX
@@ -897,30 +705,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_SUCCESS_APSD_SET_ALREADY:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: Setup is complete (U-APSD set previously)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       if (HDD_WMM_HANDLE_IMPLICIT == pQosContext->handle)
       {
 
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Implicit Qos, notifying TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by implicit QoS so we know packets are pending
          // update state
@@ -937,30 +729,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                        "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, acType );
-=======
                        __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_SUCCESS_NO_ACM_UAPSD_EXISTING;
@@ -972,15 +748,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_FAILURE_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Setup failed",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // QoS setup failed
 
       if (HDD_WMM_HANDLE_IMPLICIT == pQosContext->handle)
@@ -988,15 +756,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Implicit Qos, notifying TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // we note the failure, but we also mark access as allowed so that
          // the packets will flow.  Note that the MAC will "do the right thing"
@@ -1013,30 +773,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                        "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, acType );
-=======
                        __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_FAILED;
@@ -1055,15 +799,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_INVALID_PARAMS_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Setup Invalid Params, notify TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // QoS setup failed
 
       if (HDD_WMM_HANDLE_IMPLICIT == pQosContext->handle)
@@ -1071,15 +807,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Implicit Qos, notifying TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // we note the failure, but we also mark access as allowed so that
          // the packets will flow.  Note that the MAC will "do the right thing"
@@ -1096,30 +824,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                        "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, acType );
-=======
                        __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_FAILED_BAD_PARAM;
@@ -1130,28 +842,12 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_NOT_QOS_AP_RSP:
       VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                  "%s: Setup failed, not a QoS AP\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 __FUNCTION__);
-=======
                  __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if (!HDD_WMM_HANDLE_IMPLICIT == pQosContext->handle)
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_FAILED_NO_WMM;
@@ -1162,30 +858,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_REQ_PENDING_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: Setup pending",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // not a callback status -- ignore if we get it
       break;
 
    case SME_QOS_STATUS_SETUP_MODIFIED_IND:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: Setup modified",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if (pCurrentQosInfo)
       {
          // update the TSPEC
@@ -1198,15 +878,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                       "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      __FUNCTION__);
-=======
                       __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             // this was triggered by an application
             pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_MODIFIED;
@@ -1224,15 +896,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Implicit Qos, notifying TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by implicit QoS so we know packets are pending
          pAc->wmmAcAccessPending = VOS_FALSE;
@@ -1248,30 +912,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                        "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, acType );
-=======
                        __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_SUCCESS_NO_ACM_NO_UAPSD;
@@ -1286,30 +934,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_SETUP_SUCCESS_IND_APSD_SET_FAILED:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Setup successful but U-APSD failed",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       if (HDD_WMM_HANDLE_IMPLICIT == pQosContext->handle)
       {
 
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Implicit Qos, notifying TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // QoS setup was successful but setting U=APSD failed
          // Since the OTA part of the request was successful, we don't mark
@@ -1329,30 +961,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
          {
             VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                        "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       __FUNCTION__, acType );
-=======
                        __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                       __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          }
       }
       else
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_SETUP_UAPSD_SET_FAILED;
@@ -1367,29 +983,13 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_RELEASE_SUCCESS_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: Release is complete",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       if (pCurrentQosInfo)
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: flows still active",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // there is still at least one flow active for this AC
          // so update the AC state
@@ -1404,15 +1004,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: last flow",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this is the last flow active for this AC so update the AC state
          pAc->wmmAcTspecValid = VOS_FALSE;
@@ -1425,15 +1017,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_RELEASE_SUCCESS;
@@ -1447,30 +1031,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_RELEASE_FAILURE_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: Release failure",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       // we don't need to update our state or TL since nothing has changed
       if (HDD_WMM_HANDLE_IMPLICIT != pQosContext->handle)
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_RELEASE_FAILED;
@@ -1482,15 +1050,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_RELEASE_QOS_LOST_IND:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: QOS Lost indication received",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       // current TSPEC is no longer valid
       pAc->wmmAcTspecValid = VOS_FALSE;
@@ -1508,15 +1068,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                    "%s: Explicit Qos, notifying userspace",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__);
-=======
                    __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // this was triggered by an application
          pQosContext->lastStatus = HDD_WLAN_WMM_STATUS_LOST;
@@ -1530,30 +1082,14 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_RELEASE_REQ_PENDING_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Release pending",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // not a callback status -- ignore if we get it
       break;
 
    case SME_QOS_STATUS_RELEASE_INVALID_PARAMS_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Release Invalid Params",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       if (HDD_WMM_HANDLE_IMPLICIT != pQosContext->handle)
       {
          // this was triggered by an application
@@ -1565,15 +1101,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_MODIFY_SETUP_SUCCESS_IND:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Modification is complete, notify TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       // there will always be a TSPEC returned with this status, even if
       // a TSPEC is not exchanged OTA
@@ -1621,15 +1149,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_MODIFY_SETUP_PENDING_RSP:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: modification pending",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       // not a callback status -- ignore if we get it
       break;
 
@@ -1661,15 +1181,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    case SME_QOS_STATUS_MODIFY_SETUP_SUCCESS_IND_APSD_SET_FAILED:
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Modify successful but U-APSD failed",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       // QoS modification was successful but setting U=APSD failed.
       // This will always be an explicit QoS instance, so all we can
@@ -1703,15 +1215,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
    default:
       VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                  "%s: unexpected SME Status=%d\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 __FUNCTION__, smeStatus );
-=======
                  __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
    }
 
@@ -1723,15 +1227,7 @@ static eHalStatus hdd_wmm_sme_callback (tHalHandle hHal,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: complete, access for TL AC %d is%sallowed",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__,
-=======
              __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              acType,
              pAc->wmmAcAccessAllowed ? " " : " not ");
 
@@ -1762,29 +1258,13 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: Entered, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pQosContext);
-=======
              __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (unlikely(HDD_WMM_CTX_MAGIC != pQosContext->magic))
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Invalid QoS Context",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return;
    }
 
@@ -1794,29 +1274,13 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: pAdapter %p acType %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pAdapter, acType);
-=======
              __func__, pAdapter, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pAdapter, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (!pAc->wmmAcAccessNeeded)
    {
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: AC %d doesn't need service",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, acType);
-=======
                 __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pQosContext->magic = 0;
       kfree(pQosContext);
       return;
@@ -1922,15 +1386,7 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: sme_QosSetupReq returned %d flowid %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, smeStatus, pQosContext->qosFlowId);
-=======
              __func__, smeStatus, pQosContext->qosFlowId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, smeStatus, pQosContext->qosFlowId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // need to check the return values and act appropriately
    switch (smeStatus)
@@ -1941,15 +1397,7 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
       // all further work will be done in hdd_wmm_sme_callback()
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Setup is pending, no further work",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       break;
 
@@ -1972,15 +1420,7 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
       // signal TL that it has work to do
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Setup is complete, notify TL",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       pAc->wmmAcAccessAllowed = VOS_TRUE;
       pAc->wmmAcAccessGranted = VOS_TRUE;
@@ -1994,15 +1434,7 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
       {
          VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                     "%s: Failed to signal TL for AC=%d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    __FUNCTION__, acType );
-=======
                     __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    __func__, acType );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       }
 
       break;
@@ -2011,15 +1443,7 @@ static void hdd_wmm_do_implicit_qos(struct work_struct *work)
    default:
       VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                  "%s: unexpected SME Status=%d\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 __FUNCTION__, smeStatus );
-=======
                  __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
    }
 #endif
@@ -2042,15 +1466,7 @@ VOS_STATUS hdd_wmm_init ( hdd_context_t* pHddCtx )
    v_U8_t dscp;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered", __FUNCTION__);
-=======
              "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // DSCP to User Priority Lookup Table
    for (dscp = 0; dscp <= WLAN_HDD_MAX_DSCP; dscp++)
@@ -2085,15 +1501,7 @@ VOS_STATUS hdd_wmm_adapter_init( hdd_adapter_t *pAdapter )
    WLANTL_ACEnumType acType;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered", __FUNCTION__);
-=======
              "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pAdapter->hddWmmStatus.wmmQap = VOS_FALSE;
    INIT_LIST_HEAD(&pAdapter->hddWmmStatus.wmmContextList);
@@ -2129,15 +1537,7 @@ VOS_STATUS hdd_wmm_adapter_close ( hdd_adapter_t* pAdapter )
    hdd_wmm_qos_context_t* pQosContext;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered", __FUNCTION__);
-=======
              "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // free any context records that we still have linked
    while (!list_empty(&pAdapter->hddWmmStatus.wmmContextList))
@@ -2181,15 +1581,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 
 #ifdef HDD_WMM_DEBUG
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered", __FUNCTION__);
-=======
              "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
    pPkt = skb->data;
@@ -2198,15 +1590,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: proto/length is 0x%04x",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pHdr->eth_II.h_proto);
-=======
              __func__, pHdr->eth_II.h_proto);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pHdr->eth_II.h_proto);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
    if (HDD_WMM_CLASSIFICATION_DSCP == (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->PktClassificationBasis)
@@ -2219,15 +1603,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                    "%s: Ethernet II IP Packet, tos is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, tos);
-=======
                    __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
       }
@@ -2243,15 +1619,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                    "%s: 802.3 LLC/SNAP IP Packet, tos is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, tos);
-=======
                    __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
       }
       else if (pHdr->eth_II.h_proto == htons(ETH_P_8021Q))
@@ -2266,15 +1634,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
             VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                       "%s: Ethernet II VLAN tagged IP Packet, tos is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      __FUNCTION__, tos);
-=======
                       __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
          }
          else if ((ntohs(pHdr->eth_IIv.h_vlan_encapsulated_proto) < WLAN_MIN_PROTO) &&
@@ -2289,15 +1649,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
             VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                       "%s: 802.3 LLC/SNAP VLAN tagged IP Packet, tos is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      __FUNCTION__, tos);
-=======
                       __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      __func__, tos);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
          }
          else
@@ -2306,15 +1658,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
             VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_WARN,
                       "%s: VLAN tagged Unhandled Protocol, using default tos",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      __FUNCTION__);
-=======
                       __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
             tos = 0;
          }
@@ -2325,15 +1669,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
           VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_WARN,
                   "%s: Unhandled Protocol, using default tos",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__);
-=======
                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
           //Give the highest priority to 802.1x packet
           if (pHdr->eth_II.h_proto == htons(HDD_ETHERTYPE_802_1_X))
@@ -2348,15 +1684,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                 "%s: tos is %d, dscp is %d, up is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, tos, dscp, userPri);
-=======
                 __func__, tos, dscp, userPri);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, tos, dscp, userPri);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
    }
@@ -2369,15 +1697,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
                    "%s: Tagged frame, UP is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, userPri);
-=======
                    __func__, userPri);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, userPri);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
       }
       else
@@ -2386,15 +1706,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
           VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_WARN,
                   "%s: Untagged frame, using default UP",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  __FUNCTION__);
-=======
                   __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
           //Give the highest priority to 802.1x packet
           if (pHdr->eth_II.h_proto == htons(HDD_ETHERTYPE_802_1_X))
@@ -2409,15 +1721,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Unknown classification scheme, using default UP",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__);
-=======
                 __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
       userPri = SME_QOS_WMM_UP_BE;
    }
@@ -2427,15 +1731,7 @@ v_VOID_t hdd_wmm_classify_pkt ( hdd_adapter_t* pAdapter,
 #ifdef HDD_WMM_DEBUG
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: UP is %d, AC is %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, userPri, acType);
-=======
              __func__, userPri, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, userPri, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // HDD_WMM_DEBUG
 
    *pUserPri = userPri;
@@ -2462,41 +1758,10 @@ v_U16_t hdd_hostapd_select_queue(struct net_device * dev, struct sk_buff *skb)
    v_MACADDR_t *pDestMacAddress = (v_MACADDR_t*)skb->data;
    hdd_adapter_t *pAdapter = (hdd_adapter_t *)netdev_priv(dev);
    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-   tpAniSirGlobal  pMac = (tpAniSirGlobal) vos_get_context(VOS_MODULE_ID_HAL, pHddCtx->pvosContext);
-#endif //FEATURE_WLAN_NON_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U8_t STAId;
    v_U8_t *pSTAId = (v_U8_t *)(((v_U8_t *)(skb->data)) - 1);
 
    /*Get the Station ID*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-   if (eHAL_STATUS_SUCCESS != halTable_FindStaidByAddr(pMac, (tANI_U8 *)pDestMacAddress, &STAId))
-   {
-      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
-            "%s: Failed to find right station", __FUNCTION__);
-      *pSTAId = HDD_WLAN_INVALID_STA_ID;
-      goto done;
-   }
-#else
-   if (VOS_STATUS_SUCCESS != hdd_softap_GetStaId(pAdapter, pDestMacAddress, &STAId))
-   {
-      VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
-            "%s: Failed to find right station", __FUNCTION__);
-      *pSTAId = HDD_WLAN_INVALID_STA_ID;
-      goto done;
-   }
-#endif //FEATURE_WLAN_NON_INTEGRATED_SOC
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    if (VOS_STATUS_SUCCESS != hdd_softap_GetStaId(pAdapter, pDestMacAddress, &STAId))
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_INFO,
@@ -2504,24 +1769,12 @@ v_U16_t hdd_hostapd_select_queue(struct net_device * dev, struct sk_buff *skb)
       *pSTAId = HDD_WLAN_INVALID_STA_ID;
       goto done;
    }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    spin_lock_bh( &pAdapter->staInfo_lock );
    if (FALSE == vos_is_macaddr_equal(&pAdapter->aStaInfo[STAId].macAddrSTA, pDestMacAddress))
    {
       VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   "%s: Station MAC address does not matching", __FUNCTION__);
-=======
                    "%s: Station MAC address does not matching", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   "%s: Station MAC address does not matching", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       *pSTAId = HDD_WLAN_INVALID_STA_ID;
       goto release_lock;
@@ -2592,30 +1845,14 @@ VOS_STATUS hdd_wmm_acquire_access( hdd_adapter_t* pAdapter,
    hdd_wmm_qos_context_t *pQosContext;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered for AC %d", __FUNCTION__, acType);
-=======
              "%s: Entered for AC %d", __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered for AC %d", __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (!hdd_wmm_is_active(pAdapter) || !(WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->bImplicitQosEnabled)
    {
       // either we don't want QoS or the AP doesn't support QoS
       // or we don't want to do implicit QoS
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s: QoS not configured on both ends ", __FUNCTION__);
-=======
                 "%s: QoS not configured on both ends ", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s: QoS not configured on both ends ", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       pAdapter->hddWmmStatus.wmmAcStatus[acType].wmmAcAccessAllowed = VOS_TRUE;
       *pGranted = VOS_TRUE;
@@ -2629,15 +1866,7 @@ VOS_STATUS hdd_wmm_acquire_access( hdd_adapter_t* pAdapter,
       // request already pending so we need to wait for that response
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Implicit QoS for TL AC %d already scheduled",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, acType);
-=======
                 __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       *pGranted = VOS_FALSE;
       return VOS_STATUS_SUCCESS;
@@ -2651,15 +1880,7 @@ VOS_STATUS hdd_wmm_acquire_access( hdd_adapter_t* pAdapter,
       // allow access, but we'll be downgraded
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                 "%s: Implicit QoS for TL AC %d previously failed",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, acType);
-=======
                 __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, acType);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       pAdapter->hddWmmStatus.wmmAcStatus[acType].wmmAcAccessAllowed = VOS_TRUE;
       *pGranted = VOS_TRUE;
@@ -2669,15 +1890,7 @@ VOS_STATUS hdd_wmm_acquire_access( hdd_adapter_t* pAdapter,
    // we need to establish implicit QoS
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: Need to schedule implicit QoS for TL AC %d, pAdapter is %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, acType, pAdapter);
-=======
              __func__, acType, pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, acType, pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pAdapter->hddWmmStatus.wmmAcStatus[acType].wmmAcAccessNeeded = VOS_TRUE;
 
@@ -2686,15 +1899,7 @@ VOS_STATUS hdd_wmm_acquire_access( hdd_adapter_t* pAdapter,
    {
       // no memory for QoS context.  Nothing we can do but let data flow
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s: Unable to allocate context", __FUNCTION__);
-=======
                 "%s: Unable to allocate context", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s: Unable to allocate context", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       pAdapter->hddWmmStatus.wmmAcStatus[acType].wmmAcAccessAllowed = VOS_TRUE;
       *pGranted = VOS_TRUE;
       return VOS_STATUS_SUCCESS;
@@ -2710,15 +1915,7 @@ VOS_STATUS hdd_wmm_acquire_access( hdd_adapter_t* pAdapter,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: Scheduling work for AC %d, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, acType, pQosContext);
-=======
              __func__, acType, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, acType, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    schedule_work(&pQosContext->wmmAcSetupImplicitQos);
 
@@ -2750,15 +1947,7 @@ VOS_STATUS hdd_wmm_assoc( hdd_adapter_t* pAdapter,
    // UAPSD for any access categories
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered", __FUNCTION__);
-=======
              "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (pRoamInfo->fReassocReq)
    {
@@ -2770,15 +1959,7 @@ VOS_STATUS hdd_wmm_assoc( hdd_adapter_t* pAdapter,
       // flow, and U-APSD parameters will be updated there
 
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s: Reassoc so no work, Exiting", __FUNCTION__);
-=======
                 "%s: Reassoc so no work, Exiting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s: Reassoc so no work, Exiting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       return VOS_STATUS_SUCCESS;
    }
@@ -2787,15 +1968,7 @@ VOS_STATUS hdd_wmm_assoc( hdd_adapter_t* pAdapter,
    uapsdMask = pRoamInfo->u.pConnectedProfile->modifyProfileFields.uapsd_mask;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: U-APSD mask is 0x%02x", __FUNCTION__, (int) uapsdMask);
-=======
              "%s: U-APSD mask is 0x%02x", __func__, (int) uapsdMask);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: U-APSD mask is 0x%02x", __func__, (int) uapsdMask);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if (uapsdMask & HDD_AC_VO)
    {
@@ -2854,15 +2027,7 @@ VOS_STATUS hdd_wmm_assoc( hdd_adapter_t* pAdapter,
    }
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Exiting", __FUNCTION__);
-=======
              "%s: Exiting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Exiting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return VOS_STATUS_SUCCESS;
 }
@@ -2898,15 +2063,7 @@ VOS_STATUS hdd_wmm_connect( hdd_adapter_t* pAdapter,
    v_U8_t acmMask;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered", __FUNCTION__);
-=======
              "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    if ((eCSR_BSS_TYPE_INFRASTRUCTURE == eBssType) &&
        pRoamInfo &&
@@ -2925,15 +2082,7 @@ VOS_STATUS hdd_wmm_connect( hdd_adapter_t* pAdapter,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: qap is %d, qosConnection is %d, acmMask is 0x%x",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, qap, qosConnection, acmMask);
-=======
              __func__, qap, qosConnection, acmMask);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, qap, qosConnection, acmMask);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    pAdapter->hddWmmStatus.wmmQap = qap;
    pAdapter->hddWmmStatus.wmmQosConnection = qosConnection;
@@ -2946,15 +2095,7 @@ VOS_STATUS hdd_wmm_connect( hdd_adapter_t* pAdapter,
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                    "%s: ac %d on",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, ac);
-=======
                    __func__, ac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, ac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          // admission is required
          pAdapter->hddWmmStatus.wmmAcStatus[ac].wmmAcAccessRequired = VOS_TRUE;
@@ -2965,15 +2106,7 @@ VOS_STATUS hdd_wmm_connect( hdd_adapter_t* pAdapter,
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                    "%s: ac %d off",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, ac);
-=======
                    __func__, ac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, ac);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          // admission is not required so access is allowed
          pAdapter->hddWmmStatus.wmmAcStatus[ac].wmmAcAccessRequired = VOS_FALSE;
          pAdapter->hddWmmStatus.wmmAcStatus[ac].wmmAcAccessAllowed = VOS_TRUE;
@@ -2982,15 +2115,7 @@ VOS_STATUS hdd_wmm_connect( hdd_adapter_t* pAdapter,
    }
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Exiting", __FUNCTION__);
-=======
              "%s: Exiting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Exiting", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    return VOS_STATUS_SUCCESS;
 }
@@ -3092,15 +2217,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
    v_BOOL_t found = VOS_FALSE;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered with handle 0x%x", __FUNCTION__, handle);
-=======
              "%s: Entered with handle 0x%x", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered with handle 0x%x", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // see if a context already exists with the given handle
    mutex_lock(&pAdapter->hddWmmStatus.wmmLock);
@@ -3120,15 +2237,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
       // record with that handle already exists
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
                 "%s: Record already exists with handle 0x%x",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                __FUNCTION__, handle);
-=======
                 __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       /* Application is trying to modify some of the Tspec params. Allow it */
       smeStatus = sme_QosModifyReq(WLAN_HDD_GET_HAL_CTX(pAdapter),
@@ -3159,15 +2268,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
         default:
           // we didn't get back one of the SME_QOS_STATUS_MODIFY_* status codes
           VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     "%s: unexpected SME Status=%d\n", smeStatus );
-=======
                      "%s: unexpected SME Status=%d\n", __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     "%s: unexpected SME Status=%d\n", __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           VOS_ASSERT(0);
           return HDD_WLAN_WMM_STATUS_MODIFY_FAILED;
       }
@@ -3182,15 +2283,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
    {
       // no memory for QoS context.  Nothing we can do
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s: Unable to allocate QoS context", __FUNCTION__);
-=======
                 "%s: Unable to allocate QoS context", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s: Unable to allocate QoS context", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return HDD_WLAN_WMM_STATUS_INTERNAL_FAILURE;
    }
 
@@ -3204,15 +2297,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: Setting up QoS, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, pQosContext);
-=======
              __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    mutex_lock(&pAdapter->hddWmmStatus.wmmLock);
    list_add(&pQosContext->node, &pAdapter->hddWmmStatus.wmmContextList);
@@ -3229,15 +2314,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO,
              "%s: sme_QosSetupReq returned %d flowid %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, smeStatus, pQosContext->qosFlowId);
-=======
              __func__, smeStatus, pQosContext->qosFlowId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, smeStatus, pQosContext->qosFlowId);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // need to check the return value and act appropriately
    switch (smeStatus)
@@ -3269,15 +2346,7 @@ hdd_wlan_wmm_status_e hdd_wmm_addts( hdd_adapter_t* pAdapter,
       // we didn't get back one of the SME_QOS_STATUS_SETUP_* status codes
       hdd_wmm_free_context(pQosContext);
       VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "%s: unexpected SME Status=%d\n", smeStatus );
-=======
                  "%s: unexpected SME Status=%d\n", __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "%s: unexpected SME Status=%d\n", __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       return HDD_WLAN_WMM_STATUS_SETUP_FAILED;
    }
@@ -3311,15 +2380,7 @@ hdd_wlan_wmm_status_e hdd_wmm_delts( hdd_adapter_t* pAdapter,
 #endif
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered with handle 0x%x", __FUNCTION__, handle);
-=======
              "%s: Entered with handle 0x%x", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered with handle 0x%x", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // locate the context with the given handle
    mutex_lock(&pAdapter->hddWmmStatus.wmmLock);
@@ -3341,45 +2402,21 @@ hdd_wlan_wmm_status_e hdd_wmm_delts( hdd_adapter_t* pAdapter,
    {
       // we didn't find the handle
       VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "%s: handle 0x%x not found", __FUNCTION__, handle);
-=======
                 "%s: handle 0x%x not found", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "%s: handle 0x%x not found", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return HDD_WLAN_WMM_STATUS_RELEASE_FAILED_BAD_PARAM;
    }
 
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: found handle 0x%x, flow %d, AC %d, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, handle, qosFlowId, acType, pQosContext);
-=======
              __func__, handle, qosFlowId, acType, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, handle, qosFlowId, acType, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifndef WLAN_MDM_CODE_REDUCTION_OPT
    smeStatus = sme_QosReleaseReq( WLAN_HDD_GET_HAL_CTX(pAdapter), qosFlowId );
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
              "%s: SME flow %d released, SME status %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-             __FUNCTION__, qosFlowId, smeStatus);
-=======
              __func__, qosFlowId, smeStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             __func__, qosFlowId, smeStatus);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    switch(smeStatus)
    {
@@ -3420,15 +2457,7 @@ hdd_wlan_wmm_status_e hdd_wmm_delts( hdd_adapter_t* pAdapter,
    default:
       // we didn't get back one of the SME_QOS_STATUS_RELEASE_* status codes
       VOS_TRACE( VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "%s: unexpected SME Status=%d\n", smeStatus );
-=======
                  "%s: unexpected SME Status=%d\n", __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 "%s: unexpected SME Status=%d\n", __func__, smeStatus );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       VOS_ASSERT(0);
       status = HDD_WLAN_WMM_STATUS_RELEASE_FAILED;
    }
@@ -3454,15 +2483,7 @@ hdd_wlan_wmm_status_e hdd_wmm_checkts( hdd_adapter_t* pAdapter,
    hdd_wlan_wmm_status_e status = HDD_WLAN_WMM_STATUS_LOST;
 
    VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: Entered with handle 0x%x", __FUNCTION__, handle);
-=======
              "%s: Entered with handle 0x%x", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: Entered with handle 0x%x", __func__, handle);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // locate the context with the given handle
    mutex_lock(&pAdapter->hddWmmStatus.wmmLock);
@@ -3474,15 +2495,7 @@ hdd_wlan_wmm_status_e hdd_wmm_checkts( hdd_adapter_t* pAdapter,
       {
          VOS_TRACE(VOS_MODULE_ID_HDD, WMM_TRACE_LEVEL_INFO_LOW,
                    "%s: found handle 0x%x, context %p",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   __FUNCTION__, handle, pQosContext);
-=======
                    __func__, handle, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                   __func__, handle, pQosContext);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
          status = pQosContext->lastStatus;
          break;

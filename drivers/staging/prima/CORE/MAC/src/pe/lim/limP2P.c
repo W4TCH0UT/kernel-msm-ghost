@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -47,13 +38,6 @@
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*===========================================================================
                         L I M _ P 2 P . C
 
@@ -86,13 +70,6 @@
 ===========================================================================*/
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "limUtils.h"
 #include "limSessionUtils.h"
 #include "wlan_qct_wda.h"
@@ -101,21 +78,10 @@
 #define   BSSID_OFFSET           16
 #define   ADDR2_OFFSET           10
 #define   ACTION_OFFSET          24
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define   LIM_MIN_REM_TIME_FOR_TX_ACTION_FRAME                     50
-#define   LIM_MIN_REM_TIME_EXT_FOR_TX_ACTION_FRAME                 60
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* A DFS channel can be ACTIVE for max 9000 msec, from the last
    received Beacon/Prpbe Resp. */
 #define   MAX_TIME_TO_BE_ACTIVE_CHANNEL 9000
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
 
@@ -165,13 +131,6 @@ void limSetLinkStateP2PCallback(tpAniSirGlobal pMac, void *callbackArg)
 
 int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8 i;
-    tpPESession psessionEntry;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* CONC_OPER_AND_LISTEN_CHNL_SAME_OPTIMIZE - Currently removed the special optimization when a concurrent session
      * exists with operating channel same as P2P listen channel since it was causing issues in P2P search. The reason was
@@ -183,10 +142,6 @@ int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg)
     tANI_U8 i;
     tpPESession psessionEntry;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_P2P_INTERNAL
     tpPESession pP2pSession;
 #endif
@@ -194,14 +149,7 @@ int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg)
     tSirRemainOnChnReq *MsgBuff = (tSirRemainOnChnReq *)pMsg;
     pMac->lim.gpLimRemainOnChanReq = MsgBuff;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef CONC_OPER_AND_LISTEN_CHNL_SAME_OPTIMIZE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef CONC_OPER_AND_LISTEN_CHNL_SAME_OPTIMIZE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     for (i =0; i < pMac->lim.maxBssId;i++)
     {
         psessionEntry = peFindSessionBySessionId(pMac,i);
@@ -225,30 +173,14 @@ int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg)
                                           != TX_SUCCESS)
                 {
                     limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          FL("Unable to change remain on channel Timer val\n"));
-=======
                           FL("Unable to change remain on channel Timer val"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                          FL("Unable to change remain on channel Timer val"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     goto error;
                 }
                 else if(TX_SUCCESS != tx_timer_activate(
                                 &pMac->lim.limTimers.gLimRemainOnChannelTimer))
                 {
                     limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    FL("Unable to activate remain on channel Timer\n"));
-=======
                     FL("Unable to activate remain on channel Timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    FL("Unable to activate remain on channel Timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limDeactivateAndChangeTimer(pMac, eLIM_REMAIN_CHN_TIMER);
                     goto error;
                 }
@@ -273,15 +205,7 @@ int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg)
             }
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pMac->lim.gLimPrevMlmState = pMac->lim.gLimMlmState;
     pMac->lim.gLimMlmState     = eLIM_MLM_P2P_LISTEN_STATE;
 
@@ -292,26 +216,12 @@ int limProcessRemainOnChnlReq(tpAniSirGlobal pMac, tANI_U32 *pMsg)
                    limRemainOnChnlSuspendLinkHdlr, NULL);
     return FALSE;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #ifdef CONC_OPER_AND_LISTEN_CHNL_SAME_OPTIMIZE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#ifdef CONC_OPER_AND_LISTEN_CHNL_SAME_OPTIMIZE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 error:
     limRemainOnChnRsp(pMac,eHAL_STATUS_FAILURE, NULL);
     /* pMsg is freed by the caller */
     return FALSE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -327,15 +237,7 @@ tSirRetStatus limCreateSessionForRemainOnChn(tpAniSirGlobal pMac, tPESession **p
         if((psessionEntry = peCreateSession(pMac,
            pMac->lim.gpLimRemainOnChanReq->selfMacAddr, &sessionId, 1)) == NULL)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGE, FL("Session Can not be created \n"));
-=======
             limLog(pMac, LOGE, FL("Session Can not be created "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGE, FL("Session Can not be created "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* send remain on chn failure */
             return nSirStatus;
         }
@@ -403,15 +305,7 @@ tSirRetStatus limRemainOnChnlChangeChnReq(tpAniSirGlobal pMac,
         /* Try to Create a new session */
         if(eSIR_SUCCESS != limCreateSessionForRemainOnChn(pMac, &psessionEntry))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            limLog(pMac, LOGE, FL("Session Can not be created \n"));
-=======
             limLog(pMac, LOGE, FL("Session Can not be created "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            limLog(pMac, LOGE, FL("Session Can not be created "));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /* send remain on chn failure */
             goto error;
         }
@@ -450,15 +344,7 @@ void limRemainOnChnlSetLinkStat(tpAniSirGlobal pMac, eHalStatus status,
 
     if (status != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog( pMac, LOGE, "%s: Change channel not successful\n");
-=======
         limLog( pMac, LOGE, "%s: Change channel not successful");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog( pMac, LOGE, "%s: Change channel not successful");
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         goto error1;
     }
 
@@ -479,15 +365,7 @@ void limRemainOnChnlSetLinkStat(tpAniSirGlobal pMac, eHalStatus status,
         * Could not change Remain on channel Timer. Log error.
         */
         limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-               FL("Unable to change remain on channel Timer val\n"));
-=======
                FL("Unable to change remain on channel Timer val"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               FL("Unable to change remain on channel Timer val"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         goto error;
     }
 
@@ -495,15 +373,7 @@ void limRemainOnChnlSetLinkStat(tpAniSirGlobal pMac, eHalStatus status,
        tx_timer_activate(&pMac->lim.limTimers.gLimRemainOnChannelTimer))
     {
         limLog( pMac, LOGE,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "%s: remain on channel Timer Start Failed\n", __FUNCTION__);
-=======
                   "%s: remain on channel Timer Start Failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "%s: remain on channel Timer Start Failed", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         goto error;
     }
 
@@ -525,11 +395,6 @@ error1:
 
 /*------------------------------------------------------------------
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * lim Insert NOA timer timeout callback - when timer fires, deactivate it and send
  * scan rsp to csr/hdd
  *
@@ -599,10 +464,6 @@ void limConvertActiveChannelToPassiveChannel(tpAniSirGlobal pMac )
 
 /*------------------------------------------------------------------
  *
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * limchannelchange callback, on success channel change, set the
  * link_state to LISTEN
  *
@@ -649,15 +510,7 @@ void limProcessRemainOnChnTimeout(tpAniSirGlobal pMac)
             pMac->lim.limTimers.gLimRemainOnChannelTimer.sessionId))== NULL)
         {
             limLog(pMac, LOGE,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  FL("Session Does not exist for given sessionID\n"));
-=======
                   FL("Session Does not exist for given sessionID"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  FL("Session Does not exist for given sessionID"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             goto error;
         }
 
@@ -683,15 +536,7 @@ void limExitRemainOnChannel(tpAniSirGlobal pMac, eHalStatus status,
     
     if (status != eHAL_STATUS_SUCCESS)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        PELOGE(limLog( pMac, LOGE, "Remain on Channel Failed\n");)
-=======
         PELOGE(limLog( pMac, LOGE, "Remain on Channel Failed");)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        PELOGE(limLog( pMac, LOGE, "Remain on Channel Failed");)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         goto error;
     }
     //Set the resume channel to Any valid channel (invalid). 
@@ -719,15 +564,7 @@ void limRemainOnChnRsp(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data)
     if ( NULL == MsgRemainonChannel )
     {
         PELOGE(limLog( pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-             "%s: No Pointer for Remain on Channel Req\n", __FUNCTION__);)
-=======
              "%s: No Pointer for Remain on Channel Req", __func__);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-             "%s: No Pointer for Remain on Channel Req", __func__);)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
@@ -771,15 +608,7 @@ void limRemainOnChnRsp(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data)
 
     /* If remain on channel timer expired and action frame is pending then 
      * indicaiton confirmation with status failure */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (pMac->lim.actionFrameSessionId != 0xff)
-=======
     if (pMac->lim.mgmtFrameSessionId != 0xff)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (pMac->lim.mgmtFrameSessionId != 0xff)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
        limP2PActionCnf(pMac, 0);
     }
@@ -796,17 +625,8 @@ void limRemainOnChnRsp(tpAniSirGlobal pMac, eHalStatus status, tANI_U32 *data)
 void limSendSmeMgmtFrameInd(
                     tpAniSirGlobal pMac, tANI_U8 frameType,
                     tANI_U8  *frame, tANI_U32 frameLen, tANI_U16 sessionId,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    tANI_U32 rxChannel, tpPESession psessionEntry)
-=======
                     tANI_U32 rxChannel, tpPESession psessionEntry,
                     tANI_S8 rxRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    tANI_U32 rxChannel, tpPESession psessionEntry,
-                    tANI_S8 rxRssi)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     tSirMsgQ              mmhMsg;
     tpSirSmeMgmtFrameInd pSirSmeMgmtFrame = NULL;
@@ -818,15 +638,7 @@ void limSendSmeMgmtFrameInd(
          palAllocateMemory( pMac->hHdd, (void **)&pSirSmeMgmtFrame, length ))
     {
         limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-               FL("palAllocateMemory failed for eWNI_SME_LISTEN_RSP\n"));
-=======
                FL("palAllocateMemory failed for eWNI_SME_LISTEN_RSP"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               FL("palAllocateMemory failed for eWNI_SME_LISTEN_RSP"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
     palZeroMemory(pMac->hHdd, (void*)pSirSmeMgmtFrame, length);
@@ -835,27 +647,6 @@ void limSendSmeMgmtFrameInd(
     pSirSmeMgmtFrame->mesgLen = length;
     pSirSmeMgmtFrame->sessionId = sessionId;
     pSirSmeMgmtFrame->frameType = frameType;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    /* work around for 5Ghz channel is not correct since rxhannel 
-     * is 4 bits. So we don't indicate more than 16 channels 
-     */
-    if( (VOS_FALSE == 
-        tx_timer_running(&pMac->lim.limTimers.gLimRemainOnChannelTimer)) &&
-        (psessionEntry != NULL) && 
-        (SIR_BAND_5_GHZ == limGetRFBand(psessionEntry->currentOperChannel)) ) 
-    {
-        pSirSmeMgmtFrame->rxChan = psessionEntry->currentOperChannel;
-    }
-    else
-    {
-        pSirSmeMgmtFrame->rxChan = rxChannel;
-    }
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pSirSmeMgmtFrame->rxRssi = rxRssi;
 
     /*
@@ -884,10 +675,6 @@ void limSendSmeMgmtFrameInd(
 
     pSirSmeMgmtFrame->rxChan = rxChannel;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     vos_mem_zero(pSirSmeMgmtFrame->frameBuf,frameLen);
     vos_mem_copy(pSirSmeMgmtFrame->frameBuf,frame,frameLen);
 
@@ -899,22 +686,6 @@ void limSendSmeMgmtFrameInd(
             ( (psessionEntry != NULL) && (psessionEntry->pePersona != VOS_P2P_GO_MODE)) &&
             (frameType == SIR_MAC_MGMT_ACTION))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        tANI_U32 curTime = vos_timer_get_system_time();
-        if((curTime - pMac->lim.p2pRemOnChanTimeStamp) > (pMac->lim.gTotalScanDuration - LIM_MIN_REM_TIME_FOR_TX_ACTION_FRAME))
-        {
-            unsigned int chanWaitTime, vStatus ;
-
-            limLog( pMac, LOG1, FL("Rx: Extend the gLimRemainOnChannelTimer"));
-
-            pMac->lim.p2pRemOnChanTimeStamp = vos_timer_get_system_time();
-            pMac->lim.gTotalScanDuration = LIM_MIN_REM_TIME_EXT_FOR_TX_ACTION_FRAME;
-
-            chanWaitTime = SYS_MS_TO_TICKS(LIM_MIN_REM_TIME_EXT_FOR_TX_ACTION_FRAME);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             unsigned int chanWaitTime, vStatus ;
 
             limLog( pMac, LOG1, FL("Rx: Extend the gLimRemainOnChannelTimer = %d "),
@@ -923,10 +694,6 @@ void limSendSmeMgmtFrameInd(
             pMac->lim.p2pRemOnChanTimeStamp = vos_timer_get_system_time();
 
             chanWaitTime = SYS_MS_TO_TICKS(pMac->lim.gTotalScanDuration);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             vStatus = tx_timer_deactivate(&pMac->lim.limTimers.gLimRemainOnChannelTimer);
 
             if (VOS_STATUS_SUCCESS != vStatus)
@@ -943,13 +710,6 @@ void limSendSmeMgmtFrameInd(
             {
                 limLog( pMac, LOGE, FL("Unable to active the gLimRemainOnChannelTimer"));
             } 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        } 
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     limSysProcessMmhMsgApi(pMac, &mmhMsg, ePROT);
@@ -959,32 +719,14 @@ void limSendSmeMgmtFrameInd(
 
 eHalStatus limP2PActionCnf(tpAniSirGlobal pMac, tANI_U32 txCompleteSuccess)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (pMac->lim.actionFrameSessionId != 0xff)
-=======
     if (pMac->lim.mgmtFrameSessionId != 0xff)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (pMac->lim.mgmtFrameSessionId != 0xff)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         /* The session entry might be invalid(0xff) action confirmation received after
          * remain on channel timer expired */
         limSendSmeRsp(pMac, eWNI_SME_ACTION_FRAME_SEND_CNF,
                 (txCompleteSuccess ? eSIR_SME_SUCCESS : eSIR_SME_SEND_ACTION_FAIL),
-<<<<<<< HEAD
-<<<<<<< HEAD
-                pMac->lim.actionFrameSessionId, 0);
-        pMac->lim.actionFrameSessionId = 0xff;
-=======
                 pMac->lim.mgmtFrameSessionId, 0);
         pMac->lim.mgmtFrameSessionId = 0xff;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                pMac->lim.mgmtFrameSessionId, 0);
-        pMac->lim.mgmtFrameSessionId = 0xff;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     return eHAL_STATUS_SUCCESS;
@@ -1067,15 +809,7 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
     tANI_U8             txFlag = 0;
     tpSirMacFrameCtl    pFc = (tpSirMacFrameCtl ) pMbMsg->data;
     tANI_U8             noaLen = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tANI_U8             noaStream[SIR_MAX_NOA_ATTR_LEN + SIR_P2P_IE_HEADER_LEN];
-=======
     tANI_U8             noaStream[SIR_MAX_NOA_ATTR_LEN + (2*SIR_P2P_IE_HEADER_LEN)];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    tANI_U8             noaStream[SIR_MAX_NOA_ATTR_LEN + (2*SIR_P2P_IE_HEADER_LEN)];
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U8             origLen = 0;
     tANI_U8             sessionId = 0;
     v_U8_t              *pP2PIe = NULL;
@@ -1219,15 +953,7 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
                 nBytes += noaLen;
                 limLog( pMac, LOGE,
                         FL("noaLen=%d origLen=%d pP2PIe=0x%x"
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        " nBytes=%d nBytesToCopy=%d \n"),
-=======
                         " nBytes=%d nBytesToCopy=%d "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        " nBytes=%d nBytesToCopy=%d "),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                    noaLen,origLen,pP2PIe,nBytes,
                    ((pP2PIe + origLen + 2) - (v_U8_t *)pMbMsg->data));
             }
@@ -1236,15 +962,7 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
         if (SIR_MAC_MGMT_PROBE_RSP == pFc->subType)
         {
             limSetHtCaps( pMac, psessionEntry, (tANI_U8*)pMbMsg->data + PROBE_RSP_IE_OFFSET,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                           nBytes);
-=======
                            nBytes - PROBE_RSP_IE_OFFSET);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                           nBytes - PROBE_RSP_IE_OFFSET);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         
         /* The minimum wait for any action frame should be atleast 100 ms.
@@ -1265,60 +983,28 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
                 val = SYS_MS_TO_TICKS(pMbMsg->wait);
 
                 limLog(pMac, LOG1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        FL("Tx: Extending the gLimRemainOnChannelTimer\n"));
-=======
                         FL("Tx: Extending the gLimRemainOnChannelTimer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        FL("Tx: Extending the gLimRemainOnChannelTimer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (tx_timer_change(
                             &pMac->lim.limTimers.gLimRemainOnChannelTimer, val, 0)
                         != TX_SUCCESS)
                 {
                     limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            FL("Unable to change remain on channel Timer val\n"));
-=======
                             FL("Unable to change remain on channel Timer val"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                            FL("Unable to change remain on channel Timer val"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     return;
                 }
                 else if(TX_SUCCESS != tx_timer_activate(
                             &pMac->lim.limTimers.gLimRemainOnChannelTimer))
                 {
                     limLog(pMac, LOGP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            FL("Unable to activate remain on channel Timer\n"));
-=======
                             FL("Unable to activate remain on channel Timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                            FL("Unable to activate remain on channel Timer"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     limDeactivateAndChangeTimer(pMac, eLIM_REMAIN_CHN_TIMER);
                     return;
                 }
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                 limLog(pMac, LOGE,
                             FL("Failed to Send Action frame \n"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                limLog(pMac, LOGE,
-                            FL("Failed to Send Action frame \n"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 limSendSmeRsp(pMac, eWNI_SME_ACTION_FRAME_SEND_CNF, 
                         eHAL_STATUS_FAILURE, pMbMsg->sessionId, 0);
                 return;
@@ -1333,30 +1019,14 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
     if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
     {
         limLog( pMac, LOGE, FL("Failed to allocate %d bytes for a Probe"
-<<<<<<< HEAD
-<<<<<<< HEAD
-          " Request.\n"), nBytes );
-=======
           " Request."), nBytes );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-          " Request."), nBytes );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return;
     }
 
     // Paranoia:
     palZeroMemory( pMac->hHdd, pFrame, nBytes );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (noaLen > 0)
-=======
     if ((noaLen > 0) && (noaLen<(SIR_MAX_NOA_ATTR_LEN + SIR_P2P_IE_HEADER_LEN)))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if ((noaLen > 0) && (noaLen<(SIR_MAX_NOA_ATTR_LEN + SIR_P2P_IE_HEADER_LEN)))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         // Add 2 bytes for length and Arribute field
         v_U32_t nBytesToCopy = ((pP2PIe + origLen + 2 ) -
@@ -1391,24 +1061,11 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
            limSendSmeRsp(pMac, eWNI_SME_ACTION_FRAME_SEND_CNF, 
                halstatus, pMbMsg->sessionId, 0);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pMac->lim.actionFrameSessionId = 0xff;
-    }
-    else
-    {
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pMac->lim.mgmtFrameSessionId = 0xff;
     }
     else
     {
         pMac->lim.mgmtFrameSessionId = 0xff;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         halstatus = halTxFrameWithTxComplete( pMac, pPacket, (tANI_U16)nBytes,
                         HAL_TXRX_FRM_802_11_MGMT, ANI_TXDIR_TODS,
                         7,/*SMAC_SWBD_TX_TID_MGMT_HIGH */ limTxComplete, pFrame,
@@ -1416,21 +1073,6 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
 
         if ( ! HAL_STATUS_SUCCESS ( halstatus ) )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-             limLog( pMac, LOGE, FL("could not send action frame!\n" ));
-             limSendSmeRsp(pMac, eWNI_SME_ACTION_FRAME_SEND_CNF, halstatus, 
-                pMbMsg->sessionId, 0);
-             pMac->lim.actionFrameSessionId = 0xff;
-        }
-        else
-        {
-             pMac->lim.actionFrameSessionId = pMbMsg->sessionId;
-             limLog( pMac, LOG2, FL("lim.actionFrameSessionId = %lu\n" ), 
-                     pMac->lim.actionFrameSessionId);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              limLog( pMac, LOGE, FL("could not send action frame!" ));
              limSendSmeRsp(pMac, eWNI_SME_ACTION_FRAME_SEND_CNF, halstatus, 
                 pMbMsg->sessionId, 0);
@@ -1441,10 +1083,6 @@ void limSendP2PActionFrame(tpAniSirGlobal pMac, tpSirMsgQ pMsg)
              pMac->lim.mgmtFrameSessionId = pMbMsg->sessionId;
              limLog( pMac, LOG2, FL("lim.actionFrameSessionId = %lu" ),
                      pMac->lim.mgmtFrameSessionId);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         }
     }
@@ -1478,15 +1116,7 @@ tSirRetStatus __limProcessSmeNoAUpdate(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
                   pMac->hHdd, (void **) &pMsgNoA, sizeof( tP2pPsConfig )))
     {
         limLog( pMac, LOGE,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     FL( "Unable to allocate memory during NoA Update\n" ));
-=======
                      FL( "Unable to allocate memory during NoA Update" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                     FL( "Unable to allocate memory during NoA Update" ));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_MEM_ALLOC_FAILED;
     }
 
@@ -1499,41 +1129,18 @@ tSirRetStatus __limProcessSmeNoAUpdate(tpAniSirGlobal pMac, tANI_U32 *pMsgBuf)
     pMsgNoA->single_noa_duration = pNoA->single_noa_duration;
     pMsgNoA->psSelection = pNoA->psSelection;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    msg.type = SIR_HAL_SET_P2P_GO_NOA_REQ;
-=======
     msg.type = WDA_SET_P2P_GO_NOA_REQ;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    msg.type = WDA_SET_P2P_GO_NOA_REQ;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     msg.reserved = 0;
     msg.bodyptr = pMsgNoA;
     msg.bodyval = 0;
 
     if(eSIR_SUCCESS != wdaPostCtrlMsg(pMac, &msg))
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        limLog(pMac, LOGE, FL("halPostMsgApi failed\n"));
-=======
         limLog(pMac, LOGE, FL("halPostMsgApi failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        limLog(pMac, LOGE, FL("halPostMsgApi failed"));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return eSIR_FAILURE;
     }
 
     return eSIR_SUCCESS;
 } /*** end __limProcessSmeGoNegReq() ***/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -92,14 +83,7 @@ typedef struct
    wpt_uint8 fProtectedFrame;
    wpt_uint16 fPktlen;
    wpt_status txCompleteStatus;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    wpt_uint8  staIdx;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   wpt_uint8  staIdx;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } WDI_DS_TxMetaInfoType;
 
 
@@ -178,11 +162,6 @@ typedef struct
 
    wpt_uint32 rssi0;
    wpt_uint32 rssi1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_FEATURE_11W
    wpt_uint32 rmf:1;
@@ -191,10 +170,6 @@ typedef struct
    wpt_uint32 offloadScanLearn;
    wpt_uint32 roamCandidateInd;
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } WDI_DS_RxMetaInfoType;
 
 typedef struct sPktMetaInfo
@@ -362,11 +337,6 @@ WDI_Status WDI_DS_GetStaIdxFromBssIdx(void *pContext, wpt_uint8 bssIdx, wpt_uint
  */
 WDI_Status WDI_DS_ClearStaIdxPerBssIdx(void *pContext, wpt_uint8 bssIdx, wpt_uint8 staIdx);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* @brief: WDI_DS_GetTrafficStats
  * This function should be invoked to fetch the current stats
   * Parameters:
@@ -397,8 +367,4 @@ void WDI_DS_ActivateTrafficStats(void);
  */
 void WDI_DS_ClearTrafficStats(void);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -114,20 +105,7 @@
 #define WLAN_FTM_PRIV_SET_NONE_GET_NONE   (SIOCIWFIRSTPRIV + 6)
 #define WE_SET_NV_DEFAULTS    1
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define WLAN_FTM_PRIV_SET_VAR_INT_GET_NONE   (SIOCIWFIRSTPRIV + 7)
-#define WE_SET_RSSI_OFFSET 1
-
-
 #define WE_FTM_MAX_STR_LEN 1024
-#define MAX_FTM_VAR_ARGS  7
-=======
-#define WE_FTM_MAX_STR_LEN 1024
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WE_FTM_MAX_STR_LEN 1024
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define MAX_NV_TABLE_SIZE  30000
 
@@ -188,26 +166,12 @@ typedef struct wlan_hdd_ftm_status_s
     v_BOOL_t  IsCmdPending;
     v_BOOL_t  cmd_iwpriv;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /** Large size of NV Table Handle **/
     eNvTable  processingNVTable;
     v_U32_t   targetNVTableSize;
     v_U8_t   *targetNVTablePointer;
     v_U32_t   processedNVTableSize;
     v_U8_t   *tempNVTableBuffer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 } wlan_hdd_ftm_status_t;
 typedef struct ftm_msg_s
@@ -253,15 +217,7 @@ typedef struct rateStr2rateIndex_s
 
 #define FTM_VOS_EVENT_WAIT_TIME 10000
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define SIZE_OF_TABLE(a) sizeof(a)/sizeof(a[0])                      
-=======
 #define SIZE_OF_TABLE(a) (sizeof(a) / sizeof(a[0]))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define SIZE_OF_TABLE(a) (sizeof(a) / sizeof(a[0]))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 int wlan_hdd_ftm_open(hdd_context_t *pHddCtx);
 void wlan_hdd_process_ftm_cmd (hdd_context_t *pHddCtx,tAniNlHdr *wnl);

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -49,48 +40,17 @@
  */
 
 /** 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-    \file palTimer.c
-  
-    \brief Implemenation of the Platform Abstracion Layer timer functions
-  
-    $Id$ 
-  
-  
-    Copyright (C) 2006 Airgo Networks, Incorporated
-  
-    This file contains function implementations for the Platform Abstration Layer.    
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     Copyright (C) 2006 Airgo Networks, Incorporated
 
     This file contains function implementations for the Platform
     Abstration Layer.
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  */
 
 #include <halTypes.h>
 #include <palTimer.h>
 #include <vos_timer.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
 #include <vos_memory.h>
-#endif
-=======
-#include <vos_memory.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include <vos_memory.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 typedef struct sPalTimer
 {   

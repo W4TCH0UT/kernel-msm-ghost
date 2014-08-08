@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -72,11 +63,6 @@ tSirRetStatus limSendBeaconParams(tpAniSirGlobal pMac,
                                   tpUpdateBeaconParams pUpdatedBcnParams,
                                   tpPESession  psessionEntry );
 //tSirRetStatus limSendBeaconParams(tpAniSirGlobal pMac, tpUpdateBeaconParams pUpdatedBcnParams);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 tSirRetStatus limSendModeUpdate(tpAniSirGlobal pMac, 
                                 tUpdateVHTOpMode *tempParam,
@@ -87,10 +73,6 @@ tANI_U32 limGetCenterChannel(tpAniSirGlobal pMac,
                              ePhyChanBondState secondaryChanOffset, 
                              tANI_U8 chanWidth);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI  
 tSirRetStatus limSendSwitchChnlParams(tpAniSirGlobal pMac, tANI_U8 chnlNumber, 
                                       ePhyChanBondState secondaryChnlOffset, 
@@ -108,15 +90,7 @@ tSirRetStatus limSetLinkState(tpAniSirGlobal pMac, tSirLinkState state,  tSirMac
 extern tSirRetStatus limSetLinkStateFT(tpAniSirGlobal pMac, tSirLinkState 
 state,tSirMacAddr bssId, tSirMacAddr selfMacAddr, int ft, tpPESession psessionEntry);
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-tSirRetStatus limSendSetTxPowerReq(tpAniSirGlobal pMac, tpSirSetTxPowerReq pTxPowerReq);
-=======
 tSirRetStatus limSendSetTxPowerReq(tpAniSirGlobal pMac, tANI_U32 *pTxPowerReq);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-tSirRetStatus limSendSetTxPowerReq(tpAniSirGlobal pMac, tANI_U32 *pTxPowerReq);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus limSendGetTxPowerReq(tpAniSirGlobal pMac, tpSirGetTxPowerReq pTxPowerReq);
 void limSetActiveEdcaParams(tpAniSirGlobal pMac, tSirMacEdcaParamRecord *plocalEdcaParams, tpPESession psessionEntry);
 #define CAPABILITY_FILTER_MASK  0x73CF
@@ -128,12 +102,6 @@ void limSetActiveEdcaParams(tpAniSirGlobal pMac, tSirMacEdcaParamRecord *plocalE
 #define HT_BYTE5_FILTER_MASK    0xFD
 #define DS_PARAM_CHANNEL_MASK   0x0
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 tSirRetStatus limSendBeaconFilterInfo(tpAniSirGlobal pMac, tpPESession psessionEntry);
 
 #ifdef FEATURE_WLAN_TDLS_INTERNAL
@@ -141,9 +109,5 @@ tSirRetStatus limSendTdlsLinkEstablish(tpAniSirGlobal pMac, tANI_U8 bIsPeerRespo
                 tANI_U8 ptiBufStatusOffset, tANI_U8 ptiFrameLen, tANI_U8 *ptiFrame, tANI_U8 *extCapability);
 tSirRetStatus limSendTdlsLinkTeardown(tpAniSirGlobal pMac, tANI_U16 staId);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #endif

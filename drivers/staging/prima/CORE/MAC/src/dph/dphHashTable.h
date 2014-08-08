@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -69,35 +60,12 @@
 static inline tANI_U8
 dphCompareMacAddr(tANI_U8 addr1[], tANI_U8 addr2[])
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if ((defined(ANI_PPC)) && defined(ANI_OS_TYPE_RTAI_LINUX))
-    /*
-     * Optimized comparison to take advantage of unaligned memory accesses
-     * supported by the CPU.
-    * This needs to be reviewed if the CPU changes.
-     */
-
-    return (((*((tANI_U32 *) addr1) - *((tANI_U32 *) addr2)) |
-         (*((tANI_U16 *) &(addr1[4])) - *((tANI_U16 *) &(addr2[4])))) == 0);
-#else
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return((addr1[0] == addr2[0]) &&
        (addr1[1] == addr2[1]) &&
        (addr1[2] == addr2[2]) &&
        (addr1[3] == addr2[3]) &&
        (addr1[4] == addr2[4]) &&
        (addr1[5] == addr2[5]));
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /// Hash table class

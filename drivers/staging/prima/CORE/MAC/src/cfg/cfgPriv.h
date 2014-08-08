@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -74,19 +65,7 @@
 #include <cfgApi.h>
 #include "cfgDef.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if (WNI_POLARIS_FW_PRODUCT == AP)
-    #include <wniCfgAp.h>
-#else
     #include <wniCfgSta.h>
-#endif
-=======
-    #include <wniCfgSta.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    #include <wniCfgSta.h>
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /*--------------------------------------------------------------------*/
 /* CFG miscellaneous definition                                       */

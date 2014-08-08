@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -48,14 +39,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if !defined( __VOS_TRACE_H )
 #define __VOS_TRACE_H
 
@@ -67,16 +51,6 @@
                
    Trace, logging, and debugging definitions and APIs
   
-<<<<<<< HEAD
-<<<<<<< HEAD
-   Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
-   
-   Qualcomm Confidential and Proprietary.
-  
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   ========================================================================*/
 
 /* $Header$ */
@@ -107,14 +81,7 @@ typedef enum
    VOS_TRACE_LEVEL_INFO_HIGH,
    VOS_TRACE_LEVEL_INFO_MED,
    VOS_TRACE_LEVEL_INFO_LOW,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    VOS_TRACE_LEVEL_DEBUG,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   VOS_TRACE_LEVEL_DEBUG,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
    // ALL means all trace levels will be active.  This value is in place for the 
    // vos_trace_setlevel() to allow the user to turn ON all traces.
@@ -135,14 +102,7 @@ typedef enum
 // below definition is obsolete and is no longer being used in BMP and WM
 // TODO: remove this once this is not used on Android
 #define VOS_ENABLE_TRACING 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #define WCONN_TRACE_KMSG_LOG_BUFF
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WCONN_TRACE_KMSG_LOG_BUFF
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include  <i_vos_trace.h>   
 
@@ -191,11 +151,6 @@ void vos_trace_setLevel( VOS_MODULE_ID module, VOS_TRACE_LEVEL level );
   --------------------------------------------------------------------------*/
 v_BOOL_t vos_trace_getLevel( VOS_MODULE_ID module, VOS_TRACE_LEVEL level );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WCONN_TRACE_KMSG_LOG_BUFF
 /*--------------------------------------------------------------------------
  \brief vos_wconn_trace_init(); - Initializing the spinlock,
@@ -214,8 +169,4 @@ void vos_wconn_trace_init(void);
 void vos_wconn_trace_exit(void);
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif

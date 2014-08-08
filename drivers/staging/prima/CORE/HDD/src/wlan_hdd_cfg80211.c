@@ -1,28 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Copyright (c) 2012, The Linux Foundation. All rights reserved.
- *
- * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
- *
- *
- * Permission to use, copy, modify, and/or distribute this software for
- * any purpose with or without fee is hereby granted, provided that the
- * above copyright notice and this permission notice appear in all
- * copies.
- *
- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
- * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
- * AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
- * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
- * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
- * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
- * PERFORMANCE OF THIS SOFTWARE.
- */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
   *
   * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -42,10 +18,6 @@
   * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
   * PERFORMANCE OF THIS SOFTWARE.
 */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**========================================================================
 
@@ -53,38 +25,6 @@
 
   \brief WLAN Host Device Driver implementation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  Copyright 2008 (c) Qualcomm, Incorporated.  All Rights Reserved.
-
-  Qualcomm Confidential and Proprietary.
-
-  ========================================================================*/
-
-/**========================================================================= 
-
-  EDIT HISTORY FOR FILE 
-
-
-  This section contains comments describing changes made to the module. 
-  Notice that changes are listed in reverse chronological order. 
-
-
-  $Header:$   $DateTime: $ $Author: $ 
-
-
-  when        who            what, where, why 
-  --------    ---            --------------------------------------------------------
- 21/12/09     Ashwani        Created module.  
-
- 07/06/10     Kumar Deepak   Implemented cfg80211 callbacks for ANDROID
-              Ganesh K       
-  ==========================================================================*/
-
-#ifdef CONFIG_CFG80211
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
   Copyright 2008 (c) Qualcomm Technologies, Inc.  All Rights Reserved.
 
   Qualcomm Technologies Confidential and Proprietary.
@@ -111,10 +51,6 @@
               Ganesh K
   ==========================================================================*/
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #include <linux/version.h>
 #include <linux/module.h>
@@ -139,33 +75,16 @@
 #include "sapInternal.h"
 #include "wlan_hdd_softap_tx_rx.h"
 #include "wlan_hdd_main.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #include "wlan_hdd_assoc.h"
 #include "wlan_hdd_power.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#include "wlan_hdd_assoc.h"
-#include "wlan_hdd_power.h"
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_BTAMP_FEATURE
 #include "bap_hdd_misc.h"
 #endif
 #include <qc_sap_ioctl.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
 #include "wlan_hdd_tdls.h"
 #endif
 #include "wlan_nv.h"
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #define g_mode_rates_size (12)
 #define a_mode_rates_size (8)
@@ -200,12 +119,6 @@
     .flags = flag, \
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-static const u32 hdd_cipher_suites[] = 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifndef WLAN_FEATURE_TDLS_DEBUG
 #define TDLS_LOG_LEVEL VOS_TRACE_LEVEL_INFO
 #else
@@ -218,10 +131,6 @@ static const u32 hdd_cipher_suites[] =
 #endif
 
 static const u32 hdd_cipher_suites[] =
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     WLAN_CIPHER_SUITE_WEP40,
     WLAN_CIPHER_SUITE_WEP104,
@@ -245,15 +154,7 @@ static inline int is_broadcast_ether_addr(const u8 *addr)
 }
 
 static struct ieee80211_channel hdd_channels_2_4_GHZ[] =
-<<<<<<< HEAD
-<<<<<<< HEAD
-{  
-=======
 {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-{
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     HDD2GHZCHAN(2412, 1, 0) ,
     HDD2GHZCHAN(2417, 2, 0) ,
     HDD2GHZCHAN(2422, 3, 0) ,
@@ -270,28 +171,12 @@ static struct ieee80211_channel hdd_channels_2_4_GHZ[] =
     HDD2GHZCHAN(2484, 14, 0) ,
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static struct ieee80211_channel hdd_social_channels_2_4_GHZ[] =
 {
     HDD2GHZCHAN(2412, 1, 0) ,
     HDD2GHZCHAN(2437, 6, 0) ,
     HDD2GHZCHAN(2462, 11, 0) ,
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-
-static struct ieee80211_channel hdd_channels_5_GHZ[] =
-{
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static struct ieee80211_channel hdd_channels_5_GHZ[] =
 {
@@ -302,10 +187,6 @@ static struct ieee80211_channel hdd_channels_5_GHZ[] =
     HDD5GHZCHAN(5040, 208, 0) ,
     HDD5GHZCHAN(5060, 212, 0) ,
     HDD5GHZCHAN(5080, 216, 0) ,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     HDD5GHZCHAN(5180, 36, 0) ,
     HDD5GHZCHAN(5200, 40, 0) ,
     HDD5GHZCHAN(5220, 44, 0) ,
@@ -334,34 +215,6 @@ static struct ieee80211_channel hdd_channels_5_GHZ[] =
 
 static struct ieee80211_rate g_mode_rates[] =
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    HDD_G_MODE_RATETAB(10, 0x1, 0),    
-    HDD_G_MODE_RATETAB(20, 0x2, 0),    
-    HDD_G_MODE_RATETAB(55, 0x4, 0),    
-    HDD_G_MODE_RATETAB(110, 0x8, 0),    
-    HDD_G_MODE_RATETAB(60, 0x10, 0),    
-    HDD_G_MODE_RATETAB(90, 0x20, 0),    
-    HDD_G_MODE_RATETAB(120, 0x40, 0),    
-    HDD_G_MODE_RATETAB(180, 0x80, 0),    
-    HDD_G_MODE_RATETAB(240, 0x100, 0),    
-    HDD_G_MODE_RATETAB(360, 0x200, 0),    
-    HDD_G_MODE_RATETAB(480, 0x400, 0),    
-    HDD_G_MODE_RATETAB(540, 0x800, 0),
-};   
-
-static struct ieee80211_rate a_mode_rates[] =
-{
-    HDD_G_MODE_RATETAB(60, 0x10, 0),    
-    HDD_G_MODE_RATETAB(90, 0x20, 0),    
-    HDD_G_MODE_RATETAB(120, 0x40, 0),    
-    HDD_G_MODE_RATETAB(180, 0x80, 0),    
-    HDD_G_MODE_RATETAB(240, 0x100, 0),    
-    HDD_G_MODE_RATETAB(360, 0x200, 0),    
-    HDD_G_MODE_RATETAB(480, 0x400, 0),    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     HDD_G_MODE_RATETAB(10, 0x1, 0),
     HDD_G_MODE_RATETAB(20, 0x2, 0),
     HDD_G_MODE_RATETAB(55, 0x4, 0),
@@ -385,10 +238,6 @@ static struct ieee80211_rate a_mode_rates[] =
     HDD_G_MODE_RATETAB(240, 0x100, 0),
     HDD_G_MODE_RATETAB(360, 0x200, 0),
     HDD_G_MODE_RATETAB(480, 0x400, 0),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     HDD_G_MODE_RATETAB(540, 0x800, 0),
 };
 
@@ -411,13 +260,6 @@ static struct ieee80211_supported_band wlan_hdd_band_2_4_GHZ =
     .ht_cap.mcs.tx_params  = IEEE80211_HT_MCS_TX_DEFINED,
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static struct ieee80211_supported_band wlan_hdd_band_p2p_2_4_GHZ =
 {
     .channels = hdd_social_channels_2_4_GHZ,
@@ -436,13 +278,6 @@ static struct ieee80211_supported_band wlan_hdd_band_p2p_2_4_GHZ =
     .ht_cap.mcs.rx_highest = cpu_to_le16( 72 ),
     .ht_cap.mcs.tx_params  = IEEE80211_HT_MCS_TX_DEFINED,
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static struct ieee80211_supported_band wlan_hdd_band_5_GHZ =
 {
@@ -465,15 +300,7 @@ static struct ieee80211_supported_band wlan_hdd_band_5_GHZ =
     .ht_cap.mcs.tx_params  = IEEE80211_HT_MCS_TX_DEFINED,
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* This structure contain information what kind of frame are expected in 
-=======
 /* This structure contain information what kind of frame are expected in
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-/* This structure contain information what kind of frame are expected in
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      TX/RX direction for each kind of interface */
 static const struct ieee80211_txrx_stypes
 wlan_hdd_txrx_stypes[NUM_NL80211_IFTYPES] = {
@@ -492,13 +319,6 @@ wlan_hdd_txrx_stypes[NUM_NL80211_IFTYPES] = {
             BIT(SIR_MAC_MGMT_DEAUTH) |
             BIT(SIR_MAC_MGMT_ACTION),
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P    
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     [NL80211_IFTYPE_P2P_CLIENT] = {
         .tx = 0xffff,
         .rx = BIT(SIR_MAC_MGMT_ACTION) |
@@ -515,14 +335,6 @@ wlan_hdd_txrx_stypes[NUM_NL80211_IFTYPES] = {
             BIT(SIR_MAC_MGMT_DEAUTH) |
             BIT(SIR_MAC_MGMT_ACTION),
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif    
-};
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,4,0))
@@ -582,10 +394,6 @@ wlan_hdd_iface_combination = {
 };
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static struct cfg80211_ops wlan_hdd_cfg80211_ops;
 
 /* Data rate 100KBPS based on IE Index */
@@ -607,29 +415,6 @@ struct index_data_rate_type
 static const struct
 {
    v_U8_t   beacon_rate_index;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   v_U16_t  supported_rate[3];
-} supported_data_rate[] =
-{
-/* IDX     HI  MID LO (RSSI-based index */
-   {2,   { 10,  10, 0}},
-   {4,   { 20,  20, 0}},
-   {11,  { 55,  55, 0}},
-   {12,  { 60,  60, 0}},
-   {18,  { 90,  90, 0}},
-   {22,  {110,  55, 0}},
-   {24,  {120, 120, 0}},
-   {36,  {180, 180, 0}},
-   {44,  {220, 220, 0}},
-   {48,  {240, 240, 0}},
-   {66,  {330, 240, 0}},
-   {72,  {360, 240, 0}},
-   {96,  {480, 240, 0}},
-   {108, {540, 240, 0}}
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    v_U16_t  supported_rate[4];
 } supported_data_rate[] =
 {
@@ -648,10 +433,6 @@ static const struct
    {72,  {360, 240, 90, 0}},
    {96,  {480, 240, 120, 0}},
    {108, {540, 240, 120, 0}}
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 /* MCS Based rate table */
@@ -668,20 +449,6 @@ static struct index_data_rate_type supported_mcs_rate[] =
    {7,  {650, 1350, 722, 1500}}
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-extern struct net_device_ops net_ops_struct;
-
-/*
- * FUNCTION: wlan_hdd_cfg80211_init
- * This function is called by hdd_wlan_startup() 
- * during initialization. 
- * This function is used to initialize and register wiphy structure.
- */
-struct wiphy *wlan_hdd_cfg80211_init(int priv_size)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
 
 #define DATA_RATE_11AC_MCS_MASK    0x03
@@ -728,26 +495,12 @@ extern struct net_device_ops net_ops_struct;
  * This function is used to allocate wiphy structure.
  */
 struct wiphy *wlan_hdd_cfg80211_wiphy_alloc(int priv_size)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 {
     struct wiphy *wiphy;
     ENTER();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* 
-     *   Create wiphy device 
-=======
     /*
      *   Create wiphy device
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    /*
-     *   Create wiphy device
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      */
     wiphy = wiphy_new(&wlan_hdd_cfg80211_ops, priv_size);
 
@@ -763,43 +516,11 @@ struct wiphy *wlan_hdd_cfg80211_wiphy_alloc(int priv_size)
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_update_band
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is called from the supplicant through a 
-=======
  * This function is called from the supplicant through a
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- * This function is called from the supplicant through a
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * private ioctl to change the band value
  */
 int wlan_hdd_cfg80211_update_band(struct wiphy *wiphy, eCsrBand eBand)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    ENTER();
-    switch(eBand)
-    {
-        case eCSR_BAND_24:
-            wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_2_4_GHZ;
-            wiphy->bands[IEEE80211_BAND_5GHZ] = NULL;
-            break;
-        case eCSR_BAND_5G:
-#ifdef WLAN_FEATURE_P2P
-            wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_p2p_2_4_GHZ;
-#else
-            wiphy->bands[IEEE80211_BAND_2GHZ] = NULL;
-#endif
-            wiphy->bands[IEEE80211_BAND_5GHZ] = &wlan_hdd_band_5_GHZ;
-            break;
-        case eCSR_BAND_ALL:
-        default:
-            wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_2_4_GHZ;
-            wiphy->bands[IEEE80211_BAND_5GHZ] = &wlan_hdd_band_5_GHZ;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int i, j;
     eNVChannelEnabledType channelEnabledState;
 
@@ -853,82 +574,28 @@ int wlan_hdd_cfg80211_update_band(struct wiphy *wiphy, eCsrBand eBand)
                                              |IEEE80211_CHAN_RADAR);
             }
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     return 0;
 }
 /*
  * FUNCTION: wlan_hdd_cfg80211_init
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is called by hdd_wlan_startup() 
- * during initialization. 
- * This function is used to initialize and register wiphy structure.
- */
-int wlan_hdd_cfg80211_register(struct device *dev, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * This function is called by hdd_wlan_startup()
  * during initialization.
  * This function is used to initialize and register wiphy structure.
  */
 int wlan_hdd_cfg80211_init(struct device *dev,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                struct wiphy *wiphy,
                                hdd_config_t *pCfg
                                )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     int i, j;
     hdd_context_t *pHddCtx = wiphy_priv(wiphy);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    int i, j;
-    hdd_context_t *pHddCtx = wiphy_priv(wiphy);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ENTER();
 
     /* Now bind the underlying wlan device with wiphy */
     set_wiphy_dev(wiphy, dev);
 
     wiphy->mgmt_stypes = wlan_hdd_txrx_stypes;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    wiphy->flags |=   WIPHY_FLAG_HAVE_AP_SME 
-                    | WIPHY_FLAG_AP_PROBE_RESP_OFFLOAD
-                    | WIPHY_FLAG_CUSTOM_REGULATORY;
-
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,4,0))
-    wiphy->flags |=   WIPHY_FLAG_HAS_REMAIN_ON_CHANNEL 
-                    | WIPHY_FLAG_OFFCHAN_TX;
-#endif
-
-    wiphy->max_scan_ssids = MAX_SCAN_SSID; 
-    
-    wiphy->max_scan_ie_len = 200 ; //TODO: define a macro
-
-    /* Supports STATION & AD-HOC modes right now */
-    wiphy->interface_modes =   BIT(NL80211_IFTYPE_STATION) 
-                             | BIT(NL80211_IFTYPE_ADHOC)
-#ifdef WLAN_FEATURE_P2P
-                             | BIT(NL80211_IFTYPE_P2P_CLIENT)
-                             | BIT(NL80211_IFTYPE_P2P_GO)
-#endif                       
-                             | BIT(NL80211_IFTYPE_AP);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (memcmp(pHddCtx->cfg_ini->crdaDefaultCountryCode,
                       CFG_CRDA_DEFAULT_COUNTRY_CODE_DEFAULT , 2) != 0)
     {
@@ -1007,10 +674,6 @@ int wlan_hdd_cfg80211_init(struct device *dev,
     wiphy->n_iface_combinations = 1;
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Before registering we need to update the ht capabilitied based
      * on ini values*/
     if( !pCfg->ShortGI20MhzEnable )
@@ -1030,27 +693,6 @@ int wlan_hdd_cfg80211_init(struct device *dev,
         wlan_hdd_band_5_GHZ.ht_cap.cap &= ~IEEE80211_HT_CAP_SUP_WIDTH_20_40;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /*Initialize band capability*/
-    switch(pCfg->nBandCapability)
-    {
-        case eCSR_BAND_24:
-            wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_2_4_GHZ;
-            break;
-        case eCSR_BAND_5G:
-#ifdef WLAN_FEATURE_P2P
-            wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_p2p_2_4_GHZ;
-#endif
-            wiphy->bands[IEEE80211_BAND_5GHZ] = &wlan_hdd_band_5_GHZ;
-            break;
-        case eCSR_BAND_ALL:
-        default:
-            wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_2_4_GHZ;
-            wiphy->bands[IEEE80211_BAND_5GHZ] = &wlan_hdd_band_5_GHZ;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    wiphy->bands[IEEE80211_BAND_2GHZ] = &wlan_hdd_band_2_4_GHZ;
    wiphy->bands[IEEE80211_BAND_5GHZ] = &wlan_hdd_band_5_GHZ;
 
@@ -1083,10 +725,6 @@ int wlan_hdd_cfg80211_init(struct device *dev,
                continue;
            }
        }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     /*Initialise the supported cipher suite details*/
     wiphy->cipher_suites = hdd_cipher_suites;
@@ -1096,20 +734,6 @@ int wlan_hdd_cfg80211_init(struct device *dev,
     wiphy->signal_type = CFG80211_SIGNAL_TYPE_MBM;
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-    wiphy->max_remain_on_channel_duration = 1000;
-#endif
-#endif
-
-    /* Register our wiphy dev with cfg80211 */
-    if (0 > wiphy_register(wiphy))
-    {
-        /* print eror */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wiphy->max_remain_on_channel_duration = 1000;
 #endif
 
@@ -1125,30 +749,12 @@ int wlan_hdd_cfg80211_register(struct wiphy *wiphy)
     if (0 > wiphy_register(wiphy))
     {
         /* print error */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         hddLog(VOS_TRACE_LEVEL_ERROR,"%s: wiphy register failed", __func__);
         return -EIO;
     }
 
     EXIT();
     return 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-}     
-
-/* In this function we will do all post VOS start initialization.
-   In this function we will register for all frame in which supplicant
-   is interested. 
-*/
-void wlan_hdd_cfg80211_post_voss_start(hdd_adapter_t* pAdapter)
-{
-#ifdef WLAN_FEATURE_P2P
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 /* In this function we will try to get default country code from crda.
@@ -1214,10 +820,6 @@ void wlan_hdd_cfg80211_update_reg_info(struct wiphy *wiphy)
 */
 void wlan_hdd_cfg80211_post_voss_start(hdd_adapter_t* pAdapter)
 {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
     /* Register for all P2P action, public action etc frames */
     v_U16_t type = (SIR_MAC_MGMT_FRAME << 2) | ( SIR_MAC_MGMT_ACTION << 4);
@@ -1228,29 +830,13 @@ void wlan_hdd_cfg80211_post_voss_start(hdd_adapter_t* pAdapter)
       initialized. Once we will move to 2.6.37 kernel, in which we have
       frame register ops, we will move this code as a part of that */
     /* GAS Initial Request */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type, 
-=======
     sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          (v_U8_t*)GAS_INITIAL_REQ, GAS_INITIAL_REQ_SIZE );
 
     /* GAS Initial Response */
     sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type,
                          (v_U8_t*)GAS_INITIAL_RSP, GAS_INITIAL_RSP_SIZE );
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* GAS Comeback Request */
     sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type,
                          (v_U8_t*)GAS_COMEBACK_REQ, GAS_COMEBACK_REQ_SIZE );
@@ -1261,39 +847,17 @@ void wlan_hdd_cfg80211_post_voss_start(hdd_adapter_t* pAdapter)
 
     /* P2P Public Action */
     sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         (v_U8_t*)P2P_PUBLIC_ACTION_FRAME, 
-=======
                          (v_U8_t*)P2P_PUBLIC_ACTION_FRAME,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                         (v_U8_t*)P2P_PUBLIC_ACTION_FRAME,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                   P2P_PUBLIC_ACTION_FRAME_SIZE );
 
     /* P2P Action */
     sme_RegisterMgmtFrame(hHal, pAdapter->sessionId, type,
                          (v_U8_t*)P2P_ACTION_FRAME,
                                   P2P_ACTION_FRAME_SIZE );
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* WLAN_FEATURE_P2P */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 void wlan_hdd_cfg80211_pre_voss_stop(hdd_adapter_t* pAdapter)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
     /* Register for all P2P action, public action etc frames */
     v_U16_t type = (SIR_MAC_MGMT_FRAME << 2) | ( SIR_MAC_MGMT_ACTION << 4);
@@ -1311,15 +875,7 @@ void wlan_hdd_cfg80211_pre_voss_stop(hdd_adapter_t* pAdapter)
     /* GAS Initial Response */
     sme_DeregisterMgmtFrame(hHal, pAdapter->sessionId, type,
                          (v_U8_t*)GAS_INITIAL_RSP, GAS_INITIAL_RSP_SIZE );
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* GAS Comeback Request */
     sme_DeregisterMgmtFrame(hHal, pAdapter->sessionId, type,
                          (v_U8_t*)GAS_COMEBACK_REQ, GAS_COMEBACK_REQ_SIZE );
@@ -1330,28 +886,13 @@ void wlan_hdd_cfg80211_pre_voss_stop(hdd_adapter_t* pAdapter)
 
     /* P2P Public Action */
     sme_DeregisterMgmtFrame(hHal, pAdapter->sessionId, type,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         (v_U8_t*)P2P_PUBLIC_ACTION_FRAME, 
-=======
                          (v_U8_t*)P2P_PUBLIC_ACTION_FRAME,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                         (v_U8_t*)P2P_PUBLIC_ACTION_FRAME,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                   P2P_PUBLIC_ACTION_FRAME_SIZE );
 
     /* P2P Action */
     sme_DeregisterMgmtFrame(hHal, pAdapter->sessionId, type,
                          (v_U8_t*)P2P_ACTION_FRAME,
                                   P2P_ACTION_FRAME_SIZE );
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* WLAN_FEATURE_P2P */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 #ifdef FEATURE_WLAN_WAPI
@@ -1369,14 +910,7 @@ void wlan_hdd_cfg80211_set_key_wapi(hdd_adapter_t* pAdapter, u8 key_index,
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                                         __func__,pAdapter->device_mode);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     vos_mem_zero(&setKey, sizeof(tCsrRoamSetKey));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    vos_mem_zero(&setKey, sizeof(tCsrRoamSetKey));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     setKey.keyId = key_index; // Store Key ID
     setKey.encType  = eCSR_ENCRYPT_TYPE_WPI; // SET WAPI Encryption
     setKey.keyDirection = eSIR_TX_RX;  // Key Directionn both TX and RX
@@ -1417,38 +951,16 @@ void wlan_hdd_cfg80211_set_key_wapi(hdd_adapter_t* pAdapter, u8 key_index,
 #endif /* FEATURE_WLAN_WAPI*/
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
-<<<<<<< HEAD
-<<<<<<< HEAD
-int wlan_hdd_cfg80211_alloc_new_beacon(hdd_adapter_t *pAdapter, 
-                                       beacon_data_t **ppBeacon,
-                                       struct beacon_parameters *params)
-#else
-int wlan_hdd_cfg80211_alloc_new_beacon(hdd_adapter_t *pAdapter, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int wlan_hdd_cfg80211_alloc_new_beacon(hdd_adapter_t *pAdapter,
                                        beacon_data_t **ppBeacon,
                                        struct beacon_parameters *params)
 #else
 int wlan_hdd_cfg80211_alloc_new_beacon(hdd_adapter_t *pAdapter,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                        beacon_data_t **ppBeacon,
                                        struct cfg80211_beacon_data *params,
                                        int dtim_period)
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-{    
-=======
 {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-{
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int size;
     beacon_data_t *beacon = NULL;
     beacon_data_t *old = NULL;
@@ -1500,15 +1012,7 @@ int wlan_hdd_cfg80211_alloc_new_beacon(hdd_adapter_t *pAdapter,
     else
         beacon->dtim_period = old->dtim_period;
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     beacon->head = ((u8 *) beacon) + sizeof(beacon_data_t);
     beacon->tail = beacon->head + head_len;
     beacon->head_len = head_len;
@@ -1517,38 +1021,16 @@ int wlan_hdd_cfg80211_alloc_new_beacon(hdd_adapter_t *pAdapter,
     if(params->head) {
         memcpy (beacon->head,params->head,beacon->head_len);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    else { 
-        if(old)
-            memcpy (beacon->head,old->head,beacon->head_len);
-    }
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     else {
         if(old)
             memcpy (beacon->head,old->head,beacon->head_len);
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if(params->tail) {
         memcpy (beacon->tail,params->tail,beacon->tail_len);
     }
     else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       if(old)   
-=======
        if(old)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       if(old)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            memcpy (beacon->tail,old->tail,beacon->tail_len);
     }
 
@@ -1565,21 +1047,9 @@ v_U8_t* wlan_hdd_cfg80211_get_ie_ptr(v_U8_t *pIes, int length, v_U8_t eid)
     int left = length;
     v_U8_t *ptr = pIes;
     v_U8_t elem_id,elem_len;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-    while(left >= 2)
-    {   
-=======
 
     while(left >= 2)
     {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-    while(left >= 2)
-    {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         elem_id  =  ptr[0];
         elem_len =  ptr[1];
         left -= 2;
@@ -1590,25 +1060,11 @@ v_U8_t* wlan_hdd_cfg80211_get_ie_ptr(v_U8_t *pIes, int length, v_U8_t eid)
                                                     eid,elem_len,left);
             return NULL;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (elem_id == eid) 
-        {
-            return ptr;
-        }
-   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (elem_id == eid)
         {
             return ptr;
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         left -= elem_len;
         ptr += (elem_len + 2);
     }
@@ -1618,15 +1074,7 @@ v_U8_t* wlan_hdd_cfg80211_get_ie_ptr(v_U8_t *pIes, int length, v_U8_t eid)
 /* Check if rate is 11g rate or not */
 static int wlan_hdd_rate_is_11g(u8 rate)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    u8 gRateArray[8] = {12, 18, 24, 36, 48, 72, 96, 104}; /* actual rate * 2 */
-=======
     static const u8 gRateArray[8] = {12, 18, 24, 36, 48, 72, 96, 108}; /* actual rate * 2 */
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    static const u8 gRateArray[8] = {12, 18, 24, 36, 48, 72, 96, 108}; /* actual rate * 2 */
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     u8 i;
     for (i = 0; i < 8; i++)
     {
@@ -1704,15 +1152,7 @@ static void wlan_hdd_set_sapHwmode(hdd_adapter_t *pHostapdAdapter)
     pIe = wlan_hdd_cfg80211_get_ie_ptr(pBeacon->tail, pBeacon->tail_len,
                                        WLAN_EID_HT_CAPABILITY);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if(pIe) 
-=======
     if(pIe)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if(pIe)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         pConfig->SapHw_mode= eSAP_DOT11_MODE_11n;
         if(require_ht)
@@ -1720,11 +1160,6 @@ static void wlan_hdd_set_sapHwmode(hdd_adapter_t *pHostapdAdapter)
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_add_ie(hdd_adapter_t* pHostapdAdapter, v_U8_t *genie,
                               v_U8_t *total_ielen, v_U8_t *oui, v_U8_t oui_size)
 {
@@ -1752,10 +1187,6 @@ static int wlan_hdd_add_ie(hdd_adapter_t* pHostapdAdapter, v_U8_t *genie,
     return 0;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
 static int wlan_hdd_cfg80211_update_apies(hdd_adapter_t* pHostapdAdapter,
                             struct beacon_parameters *params)
@@ -1765,20 +1196,8 @@ static int wlan_hdd_cfg80211_update_apies(hdd_adapter_t* pHostapdAdapter,
 #endif
 {
     v_U8_t *genie;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    v_U8_t total_ielen = 0, ielen = 0;
-    v_U8_t *pIe = NULL;
-    v_U8_t addIE[1] = {0};
-    beacon_data_t *pBeacon = pHostapdAdapter->sessionCtx.ap.beacon;
-=======
     v_U8_t total_ielen = 0;
     v_U8_t addIE[1] = {0};
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    v_U8_t total_ielen = 0;
-    v_U8_t addIE[1] = {0};
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int ret = 0;
 
     genie = vos_mem_malloc(MAX_GENIE_LEN);
@@ -1788,68 +1207,6 @@ static int wlan_hdd_cfg80211_update_apies(hdd_adapter_t* pHostapdAdapter,
         return -ENOMEM;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pIe = wlan_hdd_get_wps_ie_ptr(pBeacon->tail, pBeacon->tail_len);
-
-    if(pIe)
-    {
-        /*Copy the wps IE*/
-        ielen = pIe[1] + 2;
-        if( ielen <=MAX_GENIE_LEN)
-        {
-            vos_mem_copy(genie, pIe, ielen);
-        }
-        else 
-        {
-            hddLog( VOS_TRACE_LEVEL_ERROR, "**Wps Ie Length is too big***\n");
-            ret = -EINVAL;
-            goto done;
-        }
-        total_ielen = ielen;
-    }
-
-#ifdef WLAN_FEATURE_WFD
-    pIe = wlan_hdd_get_wfd_ie_ptr(pBeacon->tail,pBeacon->tail_len);
-
-    if(pIe) 
-    { 
-        ielen = pIe[1] + 2;
-        if(total_ielen + ielen <= MAX_GENIE_LEN) {
-            vos_mem_copy(&genie[total_ielen],pIe,(pIe[1] + 2));
-        }
-        else {
-           hddLog( VOS_TRACE_LEVEL_ERROR, "**Wps Ie + P2p Ie + Wfd Ie Length is too big***\n");
-           ret = -EINVAL;
-           goto done;
-        }
-        total_ielen += ielen; 
-    }
-#endif
-
-#ifdef WLAN_FEATURE_P2P
-    pIe = wlan_hdd_get_p2p_ie_ptr(pBeacon->tail,pBeacon->tail_len);
-
-    if(pIe)
-    {
-        ielen = pIe[1] + 2;
-        if(total_ielen + ielen <= MAX_GENIE_LEN)
-        {
-            vos_mem_copy(&genie[total_ielen], pIe, (pIe[1] + 2));
-        }
-        else
-        {
-            hddLog( VOS_TRACE_LEVEL_ERROR, 
-                    "**Wps Ie+ P2pIE Length is too big***\n");
-            ret = -EINVAL;
-            goto done;
-        }
-        total_ielen += ielen;
-    }
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (0 != wlan_hdd_add_ie(pHostapdAdapter, genie,
                               &total_ielen, WPS_OUI_TYPE, WPS_OUI_TYPE_SIZE))
     {
@@ -1882,10 +1239,6 @@ static int wlan_hdd_cfg80211_update_apies(hdd_adapter_t* pHostapdAdapter,
              goto done;
         }
     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (ccmCfgSetStr((WLAN_HDD_GET_CTX(pHostapdAdapter))->hHal,
        WNI_CFG_PROBE_RSP_BCN_ADDNIE_DATA, genie, total_ielen, NULL,
@@ -2071,84 +1424,23 @@ static int wlan_hdd_cfg80211_update_apies(hdd_adapter_t* pHostapdAdapter,
 
 done:
     vos_mem_free(genie);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return 0;
-}
-
-/* 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return ret;
 }
 
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: wlan_hdd_validate_operation_channel
  * called by wlan_hdd_cfg80211_start_bss() and
  * wlan_hdd_cfg80211_set_channel()
  * This function validates whether given channel is part of valid
-<<<<<<< HEAD
-<<<<<<< HEAD
- * channel list. 
- */ 
-static VOS_STATUS wlan_hdd_validate_operation_channel(hdd_adapter_t *pAdapter,int channel)
-{
-        
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * channel list.
  */
 VOS_STATUS wlan_hdd_validate_operation_channel(hdd_adapter_t *pAdapter,int channel)
 {
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U32_t num_ch = 0;
     u8 valid_ch[WNI_CFG_VALID_CHANNEL_LIST_LEN];
     u32 indx = 0;
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
-<<<<<<< HEAD
-<<<<<<< HEAD
-     
-    num_ch = WNI_CFG_VALID_CHANNEL_LIST_LEN;
-
-    if (0 != ccmCfgGetStr(hHal, WNI_CFG_VALID_CHANNEL_LIST,
-            valid_ch, &num_ch))
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR,
-                "%s: failed to get valid channel list\n", __func__);
-        return VOS_STATUS_E_FAILURE;
-    }
-
-    for (indx = 0; indx < num_ch; indx++)
-    {
-        if (channel == valid_ch[indx])
-        {
-            break;
-        }
-    }
-
-    if (indx >= num_ch)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR,
-                "%s: Invalid Channel [%d] \n", __func__, channel);
-        return VOS_STATUS_E_FAILURE;
-    }
-    return VOS_STATUS_SUCCESS;
-         
-}
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_U8_t fValidChannel = FALSE, count = 0;
     hdd_config_t *hdd_pConfig_ini= (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini;
 
@@ -2441,10 +1733,6 @@ VOS_STATUS wlan_sap_select_cbmode(void *pAdapter,eSapPhyMode SapHw_mode, v_U8_t 
     sme_UpdateConfig (pHddCtx->hHal,&smeConfig);
     return VOS_STATUS_SUCCESS;
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
 static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
@@ -2469,21 +1757,10 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     hdd_hostapd_state_t *pHostapdState;
     v_U8_t wpaRsnIEdata[(SIR_MAC_MAX_IE_LENGTH * 2)+4];  //Max ie length 255 * 2(WPA+RSN) + 2 bytes (vendor specific ID) * 2
     v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pHostapdAdapter))->pvosContext;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    struct qc_mac_acl_entry *acl_entry = NULL;
-    v_SINT_t i;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
     struct qc_mac_acl_entry *acl_entry = NULL;
     v_SINT_t i;
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pHostapdAdapter);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
@@ -2501,15 +1778,7 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     //pConfig->channel = pCommitConfig->channel;
 
     /*Protection parameter to enable or disable*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pConfig->protEnabled = 
-=======
     pConfig->protEnabled =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pConfig->protEnabled =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->apProtEnabled;
 
     pConfig->dtim_period = pBeacon->dtim_period;
@@ -2525,34 +1794,10 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
         if(pIe)
         {
             tANI_BOOLEAN restartNeeded;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pHostapdAdapter);
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pConfig->ieee80211d = 1;
             vos_mem_copy(pConfig->countryCode, &pIe[2], 3);
             sme_setRegInfo(hHal, pConfig->countryCode);
             sme_ResetCountryCodeInformation(hHal, &restartNeeded);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            /*
-             * If auto channel is configured i.e. channel is 0,
-             * so skip channel validation.
-             */
-            if( AUTO_CHANNEL_SELECT != pConfig->channel )
-            {
-                if(VOS_STATUS_SUCCESS != wlan_hdd_validate_operation_channel(pHostapdAdapter,pConfig->channel))
-                {
-                    hddLog(VOS_TRACE_LEVEL_ERROR,
-                            "%s: Invalid Channel [%d] \n", __func__, pConfig->channel);
-                    return -EINVAL;
-                }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
@@ -2569,20 +1814,10 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
                  hddLog(VOS_TRACE_LEVEL_ERROR,
                          "%s: Invalid Channel [%d] \n", __func__, pConfig->channel);
                  return -EINVAL;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            pConfig->ieee80211d = 0;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              if(1 != pHddCtx->is_dynamic_channel_range_set)
              {
                   hdd_config_t *hdd_pConfig= (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini;
@@ -2590,10 +1825,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
                        hdd_pConfig->apEndChannelNum,hdd_pConfig->apOperatingBand);
              }
                    pHddCtx->is_dynamic_channel_range_set = 0;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
     else
@@ -2603,18 +1834,8 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     pConfig->authType = eSAP_AUTO_SWITCH;
 
     capab_info = pMgmt_frame->u.beacon.capab_info;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    pConfig->privacy = (pMgmt_frame->u.beacon.capab_info & 
-=======
 
     pConfig->privacy = (pMgmt_frame->u.beacon.capab_info &
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-    pConfig->privacy = (pMgmt_frame->u.beacon.capab_info &
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         WLAN_CAPABILITY_PRIVACY) ? VOS_TRUE : VOS_FALSE;
 
     (WLAN_HDD_GET_AP_CTX_PTR(pHostapdAdapter))->uPrivacy = pConfig->privacy;
@@ -2648,27 +1869,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     {
         pConfig->wps_state = SAP_WPS_DISABLED;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pConfig->fwdWPSPBCProbeReq  = 1; // Forward WPS PBC probe request frame up 
-
-    pConfig->RSNWPAReqIELength = 0;
-    pConfig->pRSNWPAReqIE = NULL;
-    pIe = wlan_hdd_cfg80211_get_ie_ptr(pBeacon->tail, pBeacon->tail_len, 
-                                       WLAN_EID_RSN);
-    if(pIe && pIe[1])
-    { 
-        pConfig->RSNWPAReqIELength = pIe[1] + 2;
-        memcpy(&wpaRsnIEdata[0], pIe, pConfig->RSNWPAReqIELength);
-        pConfig->pRSNWPAReqIE = &wpaRsnIEdata[0];
-        /* The actual processing may eventually be more extensive than 
-         * this. Right now, just consume any PMKIDs that are  sent in 
-         * by the app.
-         * */
-        status = hdd_softap_unpackIE( 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pConfig->fwdWPSPBCProbeReq  = 1; // Forward WPS PBC probe request frame up
 
     pConfig->RSNWPAReqIELength = 0;
@@ -2685,10 +1885,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
          * by the app.
          * */
         status = hdd_softap_unpackIE(
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         vos_get_context( VOS_MODULE_ID_SME, pVosContext),
                         &RSNEncryptType,
                         &mcRSNEncryptType,
@@ -2698,45 +1894,19 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
 
         if( VOS_STATUS_SUCCESS == status )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            /* Now copy over all the security attributes you have 
-             * parsed out 
-=======
             /* Now copy over all the security attributes you have
              * parsed out
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            /* Now copy over all the security attributes you have
-             * parsed out
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
              * */
             pConfig->RSNEncryptType = RSNEncryptType; // Use the cipher type in the RSN IE
             pConfig->mcRSNEncryptType = mcRSNEncryptType;
             (WLAN_HDD_GET_AP_CTX_PTR(pHostapdAdapter))->ucEncryptType
                                                               = RSNEncryptType;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog( LOG1, FL("%s: CSR AuthType = %d, "
-=======
             hddLog( LOG1, FL("CSR AuthType = %d, "
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog( LOG1, FL("CSR AuthType = %d, "
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         "EncryptionType = %d mcEncryptionType = %d\n"),
                         RSNAuthType, RSNEncryptType, mcRSNEncryptType);
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pIe = wlan_hdd_get_vendor_oui_ie_ptr(WPA_OUI_TYPE, WPA_OUI_TYPE_SIZE,
                                          pBeacon->tail, pBeacon->tail_len);
 
@@ -2753,15 +1923,7 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
             pConfig->RSNWPAReqIELength = pIe[1] + 2;
             memcpy(&wpaRsnIEdata[0], pIe, pConfig->RSNWPAReqIELength);
             pConfig->pRSNWPAReqIE = &wpaRsnIEdata[0];
-<<<<<<< HEAD
-<<<<<<< HEAD
-            status = hdd_softap_unpackIE( 
-=======
             status = hdd_softap_unpackIE(
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            status = hdd_softap_unpackIE(
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                           vos_get_context( VOS_MODULE_ID_SME, pVosContext),
                           &RSNEncryptType,
                           &mcRSNEncryptType,
@@ -2771,52 +1933,25 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
 
             if( VOS_STATUS_SUCCESS == status )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                /* Now copy over all the security attributes you have 
-                 * parsed out 
-=======
                 /* Now copy over all the security attributes you have
                  * parsed out
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                /* Now copy over all the security attributes you have
-                 * parsed out
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                  * */
                 pConfig->RSNEncryptType = RSNEncryptType; // Use the cipher type in the RSN IE
                 pConfig->mcRSNEncryptType = mcRSNEncryptType;
                 (WLAN_HDD_GET_AP_CTX_PTR(pHostapdAdapter))->ucEncryptType
                                                               = RSNEncryptType;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog( LOG1, FL("%s: CSR AuthType = %d, "
-=======
                 hddLog( LOG1, FL("CSR AuthType = %d, "
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                hddLog( LOG1, FL("CSR AuthType = %d, "
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 "EncryptionType = %d mcEncryptionType = %d\n"),
                                 RSNAuthType, RSNEncryptType, mcRSNEncryptType);
             }
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pConfig->RSNWPAReqIELength > sizeof wpaRsnIEdata) {
         hddLog( VOS_TRACE_LEVEL_ERROR, "**RSNWPAReqIELength is too large***");
         return -EINVAL;
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pConfig->SSIDinfo.ssidHidden = VOS_FALSE;
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
@@ -2837,21 +1972,9 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     }
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    vos_mem_copy(pConfig->self_macaddr.bytes, 
-               pHostapdAdapter->macAddressCurrent.bytes, sizeof(v_MACADDR_t));
-    
-=======
     vos_mem_copy(pConfig->self_macaddr.bytes,
                pHostapdAdapter->macAddressCurrent.bytes, sizeof(v_MACADDR_t));
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    vos_mem_copy(pConfig->self_macaddr.bytes,
-               pHostapdAdapter->macAddressCurrent.bytes, sizeof(v_MACADDR_t));
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* default value */
     pConfig->SapMacaddr_acl = eSAP_ACCEPT_UNLESS_DENIED;
     pConfig->num_accept_mac = 0;
@@ -2867,49 +1990,21 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
             acl type : 1 byte
             no of mac addr in black list: 1 byte
             list of mac_acl_entries: variable, 6 bytes per mac address + sizeof(int) for vlan id
-<<<<<<< HEAD
-<<<<<<< HEAD
-    */    
-    if ((pIe != NULL) && (pIe[1] != 0))    
-=======
     */
     if ((pIe != NULL) && (pIe[1] != 0))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    */
-    if ((pIe != NULL) && (pIe[1] != 0))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         pConfig->SapMacaddr_acl = pIe[6];
         pConfig->num_deny_mac   = pIe[7];
         hddLog(VOS_TRACE_LEVEL_INFO,"acl type = %d no deny mac = %d\n",
                                      pIe[6], pIe[7]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (pConfig->num_deny_mac > MAX_MAC_ADDRESS_DENIED)
-            pConfig->num_deny_mac = MAX_MAC_ADDRESS_DENIED;
-=======
         if (pConfig->num_deny_mac > MAX_ACL_MAC_ADDRESS)
             pConfig->num_deny_mac = MAX_ACL_MAC_ADDRESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (pConfig->num_deny_mac > MAX_ACL_MAC_ADDRESS)
-            pConfig->num_deny_mac = MAX_ACL_MAC_ADDRESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         acl_entry = (struct qc_mac_acl_entry *)(pIe + 8);
         for (i = 0; i < pConfig->num_deny_mac; i++)
         {
             vos_mem_copy(&pConfig->deny_mac[i], acl_entry->addr, sizeof(qcmacaddr));
             acl_entry++;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }        
-=======
         }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     pIe = wlan_hdd_get_vendor_oui_ie_ptr(WHITELIST_OUI_TYPE, WPA_OUI_TYPE_SIZE,
                                          pBeacon->tail, pBeacon->tail_len);
@@ -2921,35 +2016,15 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
             acl type : 1 byte
             no of mac addr in white list: 1 byte
             list of mac_acl_entries: variable, 6 bytes per mac address + sizeof(int) for vlan id
-<<<<<<< HEAD
-<<<<<<< HEAD
-    */    
-    if ((pIe != NULL) && (pIe[1] != 0))    
-=======
     */
     if ((pIe != NULL) && (pIe[1] != 0))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    */
-    if ((pIe != NULL) && (pIe[1] != 0))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         pConfig->SapMacaddr_acl = pIe[6];
         pConfig->num_accept_mac   = pIe[7];
         hddLog(VOS_TRACE_LEVEL_INFO,"acl type = %d no accept mac = %d\n",
                                       pIe[6], pIe[7]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (pConfig->num_accept_mac > MAX_MAC_ADDRESS_ACCEPTED)
-            pConfig->num_accept_mac = MAX_MAC_ADDRESS_ACCEPTED;
-=======
         if (pConfig->num_accept_mac > MAX_ACL_MAC_ADDRESS)
             pConfig->num_accept_mac = MAX_ACL_MAC_ADDRESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (pConfig->num_accept_mac > MAX_ACL_MAC_ADDRESS)
-            pConfig->num_accept_mac = MAX_ACL_MAC_ADDRESS;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         acl_entry = (struct qc_mac_acl_entry *)(pIe + 8);
         for (i = 0; i < pConfig->num_accept_mac; i++)
         {
@@ -2957,17 +2032,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
             acl_entry++;
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    wlan_hdd_set_sapHwmode(pHostapdAdapter);
-
-#ifdef WLAN_FEATURE_11AC
-    if(((WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->dot11Mode == eHDD_DOT11_MODE_AUTO) || 
-       ((WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->dot11Mode == eHDD_DOT11_MODE_11ac) ||
-       ((WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->dot11Mode == eHDD_DOT11_MODE_11ac_ONLY) )
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     wlan_hdd_set_sapHwmode(pHostapdAdapter);
 
@@ -2981,25 +2045,13 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
          ((WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->dot11Mode == eHDD_DOT11_MODE_11ac) ||
          ((WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->dot11Mode == eHDD_DOT11_MODE_11ac_ONLY)) &&
            (sme_isHostFeatSupported(DOT11AC)) && (sme_isFwFeatSupported(DOT11AC)) )
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         pConfig->SapHw_mode = eSAP_DOT11_MODE_11ac;
     }
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     if( AUTO_CHANNEL_SELECT != pConfig->channel)
         wlan_sap_select_cbmode((WLAN_HDD_GET_CTX(pHostapdAdapter)),pConfig->SapHw_mode,pConfig->channel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if( AUTO_CHANNEL_SELECT != pConfig->channel)
-        wlan_sap_select_cbmode((WLAN_HDD_GET_CTX(pHostapdAdapter)),pConfig->SapHw_mode,pConfig->channel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // ht_capab is not what the name conveys,this is used for protection bitmap
     pConfig->ht_capab =
                  (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->apProtection;
@@ -3011,31 +2063,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     }
 
     //Uapsd Enabled Bit
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pConfig->UapsdEnable =  
-          (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->apUapsdEnabled;
-    //Enable OBSS protection
-    pConfig->obssProtEnabled = 
-           (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->apOBSSProtEnabled; 
-
-    hddLog(LOGW, FL("SOftAP macaddress : "MAC_ADDRESS_STR"\n"), 
-                 MAC_ADDR_ARRAY(pHostapdAdapter->macAddressCurrent.bytes));
-    hddLog(LOGW,FL("ssid =%s\n"), pConfig->SSIDinfo.ssid.ssId);  
-    hddLog(LOGW,FL("beaconint=%d, channel=%d\n"), (int)pConfig->beacon_int,
-                                                     (int)pConfig->channel);
-    hddLog(LOGW,FL("hw_mode=%x\n"),  pConfig->SapHw_mode);
-    hddLog(LOGW,FL("privacy=%d, authType=%d\n"), pConfig->privacy, 
-                                                 pConfig->authType); 
-    hddLog(LOGW,FL("RSN/WPALen=%d, \n"),(int)pConfig->RSNWPAReqIELength);
-    hddLog(LOGW,FL("Uapsd = %d\n"),pConfig->UapsdEnable); 
-    hddLog(LOGW,FL("ProtEnabled = %d, OBSSProtEnabled = %d\n"),
-                          pConfig->protEnabled, pConfig->obssProtEnabled);
-
-    if(test_bit(SOFTAP_BSS_STARTED, &pHostapdAdapter->event_flags)) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pConfig->UapsdEnable =
           (WLAN_HDD_GET_CTX(pHostapdAdapter))->cfg_ini->apUapsdEnabled;
     //Enable OBSS protection
@@ -3056,10 +2083,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
                           pConfig->protEnabled, pConfig->obssProtEnabled);
 
     if(test_bit(SOFTAP_BSS_STARTED, &pHostapdAdapter->event_flags))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         //Bss already started. just return.
         //TODO Probably it should update some beacon params.
@@ -3067,15 +2090,7 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
         EXIT();
         return 0;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pConfig->persona = pHostapdAdapter->device_mode;
 
     pSapEventCallback = hdd_hostapd_SAPEventCB;
@@ -3086,26 +2101,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
         return -EINVAL;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hddLog(LOG1, 
-           FL("Waiting for Scan to complete(auto mode) and BSS to start"));
-
-    status = vos_wait_single_event(&pHostapdState->vosEvent, 10000);
-   
-    if (!VOS_IS_STATUS_SUCCESS(status))
-    {  
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
-                 ("ERROR: HDD vos wait for single_event failed!!\n"));
-        VOS_ASSERT(0);
-    }
- 
-    //Succesfully started Bss update the state bit.
-    set_bit(SOFTAP_BSS_STARTED, &pHostapdAdapter->event_flags);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(LOG1,
            FL("Waiting for Scan to complete(auto mode) and BSS to start"));
 
@@ -3139,10 +2134,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
     }
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pHostapdState->bCommit = TRUE;
     EXIT();
 
@@ -3150,17 +2141,6 @@ static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
 }
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_add_beacon(struct wiphy *wiphy, 
-                                        struct net_device *dev, 
-                                        struct beacon_parameters *params)
-{
-    hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev);
-    int status=VOS_STATUS_SUCCESS; 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_cfg80211_add_beacon(struct wiphy *wiphy,
                                         struct net_device *dev,
                                         struct beacon_parameters *params)
@@ -3168,31 +2148,11 @@ static int wlan_hdd_cfg80211_add_beacon(struct wiphy *wiphy,
     hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev);
     hdd_context_t  *pHddCtx;
     int status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
     hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "device mode=%d\n",pAdapter->device_mode);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    if ( (pAdapter->device_mode == WLAN_HDD_SOFTAP) 
-#ifdef WLAN_FEATURE_P2P
-      || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     status = wlan_hdd_validate_context(pHddCtx);
 
@@ -3205,38 +2165,18 @@ static int wlan_hdd_cfg80211_add_beacon(struct wiphy *wiphy,
 
     if ( (pAdapter->device_mode == WLAN_HDD_SOFTAP)
       || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        )
     {
         beacon_data_t *old,*new;
 
         old = pAdapter->sessionCtx.ap.beacon;
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (old)
             return -EALREADY;
 
         status = wlan_hdd_cfg80211_alloc_new_beacon(pAdapter,&new,params);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if(status != VOS_STATUS_SUCCESS) 
-=======
         if(status != VOS_STATUS_SUCCESS)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if(status != VOS_STATUS_SUCCESS)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
              hddLog(VOS_TRACE_LEVEL_FATAL,
                    "%s:Error!!! Allocating the new beacon\n",__func__);
@@ -3251,18 +2191,6 @@ static int wlan_hdd_cfg80211_add_beacon(struct wiphy *wiphy,
     EXIT();
     return status;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
- 
-static int wlan_hdd_cfg80211_set_beacon(struct wiphy *wiphy, 
-                                        struct net_device *dev,
-                                        struct beacon_parameters *params)
-{
-    hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev); 
-    int status=VOS_STATUS_SUCCESS;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 static int wlan_hdd_cfg80211_set_beacon(struct wiphy *wiphy,
                                         struct net_device *dev,
@@ -3271,38 +2199,12 @@ static int wlan_hdd_cfg80211_set_beacon(struct wiphy *wiphy,
     hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev);
     hdd_context_t  *pHddCtx;
     int status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                                 __func__,pAdapter->device_mode);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    if ((pAdapter->device_mode == WLAN_HDD_SOFTAP) 
-#ifdef WLAN_FEATURE_P2P
-     || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-       ) 
-    {
-        beacon_data_t *old,*new;
-                
-        old = pAdapter->sessionCtx.ap.beacon;
-        
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     status = wlan_hdd_validate_context(pHddCtx);
 
@@ -3321,25 +2223,13 @@ static int wlan_hdd_cfg80211_set_beacon(struct wiphy *wiphy,
 
         old = pAdapter->sessionCtx.ap.beacon;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (!old)
             return -ENOENT;
 
         status = wlan_hdd_cfg80211_alloc_new_beacon(pAdapter,&new,params);
 
         if(status != VOS_STATUS_SUCCESS) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_FATAL, 
-=======
             hddLog(VOS_TRACE_LEVEL_FATAL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_FATAL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    "%s: Error!!! Allocating the new beacon\n",__func__);
             return -EINVAL;
        }
@@ -3367,39 +2257,6 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
     hdd_context_t  *pHddCtx    = NULL;
     hdd_scaninfo_t *pScanInfo  = NULL;
     hdd_adapter_t  *staAdapter = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_STATUS status = 0;
-
-    staAdapter = hdd_get_adapter(pAdapter->pHddCtx, WLAN_HDD_INFRA_STATION);
-
-    if (!staAdapter)
-    {
-        staAdapter = hdd_get_adapter(pAdapter->pHddCtx, WLAN_HDD_P2P_CLIENT);
-    }
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    if (staAdapter != NULL)
-    {
-        pScanInfo =  &staAdapter->scan_info;
-    }
-
-    ENTER();
-
-    if (NULL == pAdapter)
-    {
-        VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
-                   "%s: HDD adapter context is Null", __FUNCTION__);
-        return -ENODEV;
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS status;
 
     ENTER();
@@ -3435,79 +2292,33 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
 
     pScanInfo =  &pHddCtx->scan_info;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s:LOGP in Progress. Ignore!!!",__func__);
         return -EAGAIN;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    pHddCtx  =  (hdd_context_t*)pAdapter->pHddCtx;
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                               __func__,pAdapter->device_mode);
 
     if ((pScanInfo != NULL) && pScanInfo->mScanPending)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        INIT_COMPLETION(staAdapter->abortscan_event_var);
-        hdd_abort_mac_scan(staAdapter->pHddCtx);
-        status = wait_for_completion_interruptible_timeout(
-                           &staAdapter->abortscan_event_var,
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         INIT_COMPLETION(pScanInfo->abortscan_event_var);
         hdd_abort_mac_scan(staAdapter->pHddCtx);
         status = wait_for_completion_interruptible_timeout(
                            &pScanInfo->abortscan_event_var,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                            msecs_to_jiffies(WLAN_WAIT_TIME_ABORTSCAN));
         if (!status)
         {
             VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         "%s: Timeout occured while waiting for abortscan" ,
-                         __FUNCTION__);
-=======
                          "%s: Timeout occurred while waiting for abortscan" ,
                          __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                         "%s: Timeout occurred while waiting for abortscan" ,
-                         __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             VOS_ASSERT(pScanInfo->mScanPending);
             return 0;
         }
     }
 
     if ((pAdapter->device_mode == WLAN_HDD_SOFTAP)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
      || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-=======
-     || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-     || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        )
     {
         beacon_data_t *old;
@@ -3517,30 +2328,12 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
         if (!old)
             return -ENOENT;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef CONFIG_CFG80211
         hdd_cleanup_actionframe(pHddCtx, pAdapter);
-#endif
-=======
-        hdd_cleanup_actionframe(pHddCtx, pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hdd_cleanup_actionframe(pHddCtx, pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         mutex_lock(&pHddCtx->sap_lock);
         if(test_bit(SOFTAP_BSS_STARTED, &pAdapter->event_flags))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if ( VOS_STATUS_SUCCESS == (status = WLANSAP_StopBss((WLAN_HDD_GET_CTX(pAdapter))->pvosContext) ) )
-=======
             if ( VOS_STATUS_SUCCESS == (status = WLANSAP_StopBss(pHddCtx->pvosContext) ) )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            if ( VOS_STATUS_SUCCESS == (status = WLANSAP_StopBss(pHddCtx->pvosContext) ) )
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 hdd_hostapd_state_t *pHostapdState = WLAN_HDD_GET_HOSTAP_STATE_PTR(pAdapter);
 
@@ -3564,15 +2357,7 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
             return -EINVAL;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (ccmCfgSetInt((WLAN_HDD_GET_CTX(pAdapter))->hHal,
-=======
         if (ccmCfgSetInt(pHddCtx->hHal,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (ccmCfgSetInt(pHddCtx->hHal,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             WNI_CFG_PROBE_RSP_BCN_ADDNIE_FLAG, 0,NULL, eANI_BOOLEAN_FALSE)
                                                     ==eHAL_STATUS_FAILURE)
         {
@@ -3580,15 +2365,7 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
                "Could not pass on WNI_CFG_PROBE_RSP_BCN_ADDNIE_FLAG to CCM\n");
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if ( eHAL_STATUS_FAILURE == ccmCfgSetInt((WLAN_HDD_GET_CTX(pAdapter))->hHal,
-=======
         if ( eHAL_STATUS_FAILURE == ccmCfgSetInt(pHddCtx->hHal,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if ( eHAL_STATUS_FAILURE == ccmCfgSetInt(pHddCtx->hHal,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             WNI_CFG_ASSOC_RSP_ADDNIE_FLAG, 0, NULL,
                             eANI_BOOLEAN_FALSE) )
         {
@@ -3601,11 +2378,6 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
 
         pAdapter->sessionCtx.ap.beacon = NULL;
         kfree(old);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_P2P_DEBUG
         if((pAdapter->device_mode == WLAN_HDD_P2P_GO) &&
            (globalP2PConnectionStatus == P2P_GO_COMPLETED_STATE))
@@ -3615,10 +2387,6 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
             globalP2PConnectionStatus = P2P_NOT_ACTIVE;
         }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     EXIT();
     return status;
@@ -3626,37 +2394,6 @@ static int wlan_hdd_cfg80211_stop_ap (struct wiphy *wiphy,
 
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(3,3,0))
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_start_ap(struct wiphy *wiphy, 
-                                      struct net_device *dev, 
-                                      struct cfg80211_ap_settings *params)
-{
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
-    int            status = VOS_STATUS_SUCCESS; 
-
-    ENTER();
-
-    hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "device mode=%d\n", pAdapter->device_mode);
-
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s:LOGP in Progress. Ignore!!!",__func__);
-        return -EAGAIN;
-    }
-    if ((pAdapter->device_mode == WLAN_HDD_SOFTAP) 
-#ifdef WLAN_FEATURE_P2P
-      || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-       )
-    {
-        beacon_data_t  *old,*new;
-
-        old = pAdapter->sessionCtx.ap.beacon;
-   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_cfg80211_start_ap(struct wiphy *wiphy,
                                       struct net_device *dev,
                                       struct cfg80211_ap_settings *params)
@@ -3710,27 +2447,11 @@ static int wlan_hdd_cfg80211_start_ap(struct wiphy *wiphy,
 
         old = pAdapter->sessionCtx.ap.beacon;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (old)
             return -EALREADY;
 
         status = wlan_hdd_cfg80211_alloc_new_beacon(pAdapter, &new, &params->beacon, params->dtim_period);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if(status != VOS_STATUS_SUCCESS) 
-        {
-             hddLog(VOS_TRACE_LEVEL_FATAL,
-                   "%s:Error!!! Allocating the new beacon\n",__func__);
-             return -EINVAL;
-        }
-        pAdapter->sessionCtx.ap.beacon = new;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (status != 0)
         {
              hddLog(VOS_TRACE_LEVEL_FATAL,
@@ -3741,10 +2462,6 @@ static int wlan_hdd_cfg80211_start_ap(struct wiphy *wiphy,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0))
         wlan_hdd_cfg80211_set_channel(wiphy, dev, params->channel, params->channel_type);
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         status = wlan_hdd_cfg80211_start_bss(pAdapter, &params->beacon, params->ssid,
                                              params->ssid_len, params->hidden_ssid);
     }
@@ -3754,17 +2471,6 @@ static int wlan_hdd_cfg80211_start_ap(struct wiphy *wiphy,
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_change_beacon(struct wiphy *wiphy, 
-                                        struct net_device *dev,
-                                        struct cfg80211_beacon_data *params)
-{
-    hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev); 
-    int status=VOS_STATUS_SUCCESS;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_cfg80211_change_beacon(struct wiphy *wiphy,
                                         struct net_device *dev,
                                         struct cfg80211_beacon_data *params)
@@ -3772,36 +2478,11 @@ static int wlan_hdd_cfg80211_change_beacon(struct wiphy *wiphy,
     hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev);
     hdd_context_t *pHddCtx;
     int status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                                 __func__, pAdapter->device_mode);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s:LOGP in Progress. Ignore!!!",__func__);
-        return -EAGAIN;
-    }
-
-    if ((pAdapter->device_mode == WLAN_HDD_SOFTAP) 
-#ifdef WLAN_FEATURE_P2P
-     || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-       ) 
-    {
-        beacon_data_t *old,*new;
-                
-        old = pAdapter->sessionCtx.ap.beacon;
-        
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     status = wlan_hdd_validate_context(pHddCtx);
@@ -3821,25 +2502,13 @@ static int wlan_hdd_cfg80211_change_beacon(struct wiphy *wiphy,
 
         old = pAdapter->sessionCtx.ap.beacon;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (!old)
             return -ENOENT;
 
         status = wlan_hdd_cfg80211_alloc_new_beacon(pAdapter, &new, params, 0);
 
         if(status != VOS_STATUS_SUCCESS) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_FATAL, 
-=======
             hddLog(VOS_TRACE_LEVEL_FATAL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_FATAL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    "%s: Error!!! Allocating the new beacon\n",__func__);
             return -EINVAL;
        }
@@ -3863,35 +2532,11 @@ static int wlan_hdd_cfg80211_change_bss (struct wiphy *wiphy,
     hdd_adapter_t *pAdapter =  WLAN_HDD_GET_PRIV_PTR(dev);
 
     ENTER();
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                                __func__,pAdapter->device_mode);
 
     if((pAdapter->device_mode == WLAN_HDD_SOFTAP)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-     ||  (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-      ) 
-    {
-        /* ap_isolate == -1 means that in change bss, upper layer doesn't
-         * want to update this parameter */
-        if (-1 != params->ap_isolate) 
-        {
-            pAdapter->sessionCtx.ap.apDisableIntraBssFwd = !!params->ap_isolate;
-        } 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      ||  (pAdapter->device_mode == WLAN_HDD_P2P_GO)
       )
     {
@@ -3901,10 +2546,6 @@ static int wlan_hdd_cfg80211_change_bss (struct wiphy *wiphy,
         {
             pAdapter->sessionCtx.ap.apDisableIntraBssFwd = !!params->ap_isolate;
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     EXIT();
@@ -3925,36 +2566,15 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
     struct wireless_dev *wdev;
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX( pAdapter );
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tCsrRoamProfile *pRoamProfile = NULL;
-    eCsrRoamBssType LastBSSType;
-    hdd_config_t *pConfig = pHddCtx->cfg_ini;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t  *pP2pAdapter = NULL;
     tCsrRoamProfile *pRoamProfile = NULL;
     eCsrRoamBssType LastBSSType;
     hdd_config_t *pConfig = NULL;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eMib_dot11DesiredBssType connectedBssType;
     VOS_STATUS status;
 
     ENTER();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s:LOGP in Progress. Ignore!!!",__func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = wlan_hdd_validate_context(pHddCtx);
 
     if (0 != status)
@@ -3962,23 +2582,12 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                    "%s: HDD context is not valid", __func__);
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d",
                              __func__, pAdapter->device_mode);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     pConfig = pHddCtx->cfg_ini;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pConfig = pHddCtx->cfg_ini;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     wdev = ndev->ieee80211_ptr;
 
 #ifdef WLAN_BTAMP_FEATURE
@@ -4003,20 +2612,8 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
     wlan_hdd_clear_concurrency_mode(pHddCtx, pAdapter->device_mode);
 
     if( (pAdapter->device_mode == WLAN_HDD_INFRA_STATION)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
       || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
       || (pAdapter->device_mode == WLAN_HDD_P2P_DEVICE)
-#endif
-=======
-      || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
-      || (pAdapter->device_mode == WLAN_HDD_P2P_DEVICE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
-      || (pAdapter->device_mode == WLAN_HDD_P2P_DEVICE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       )
     {
         hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
@@ -4026,17 +2623,7 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
         switch (type)
         {
             case NL80211_IFTYPE_STATION:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
             case NL80211_IFTYPE_P2P_CLIENT:
-#endif
-=======
-            case NL80211_IFTYPE_P2P_CLIENT:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            case NL80211_IFTYPE_P2P_CLIENT:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 hddLog(VOS_TRACE_LEVEL_INFO,
                    "%s: setting interface Type to INFRASTRUCTURE", __func__);
                 pRoamProfile->BSSType = eCSR_BSS_TYPE_INFRASTRUCTURE;
@@ -4046,18 +2633,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                     pConfig->dot11Mode = eHDD_DOT11_MODE_11ac;
                 }
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-                pRoamProfile->phyMode = 
-                hdd_cfg_xlate_to_csr_phy_mode(pConfig->dot11Mode);
-                wdev->iftype = type;
-#ifdef WLAN_FEATURE_P2P
-                pAdapter->device_mode = (type == NL80211_IFTYPE_STATION) ?
-                                WLAN_HDD_INFRA_STATION: WLAN_HDD_P2P_CLIENT;
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pRoamProfile->phyMode =
                 hdd_cfg_xlate_to_csr_phy_mode(pConfig->dot11Mode);
                 wdev->iftype = type;
@@ -4089,10 +2664,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                 }
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             case NL80211_IFTYPE_ADHOC:
                 hddLog(VOS_TRACE_LEVEL_INFO,
@@ -4104,27 +2675,12 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                 break;
 
             case NL80211_IFTYPE_AP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
             case NL80211_IFTYPE_P2P_GO:
-#endif
-=======
-            case NL80211_IFTYPE_P2P_GO:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            case NL80211_IFTYPE_P2P_GO:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 hddLog(VOS_TRACE_LEVEL_INFO_HIGH,
                       "%s: setting interface Type to %s", __func__,
                       (type == NL80211_IFTYPE_AP) ? "SoftAP" : "P2pGo");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //Cancel any remain on channel for GO mode
                 if (NL80211_IFTYPE_P2P_GO == type)
                 {
@@ -4150,45 +2706,18 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                     }
                 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //De-init the adapter.
                 hdd_stop_adapter( pHddCtx, pAdapter );
                 hdd_deinit_adapter( pHddCtx, pAdapter );
                 memset(&pAdapter->sessionCtx, 0, sizeof(pAdapter->sessionCtx));
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-#ifdef WLAN_FEATURE_P2P
                 pAdapter->device_mode = (type == NL80211_IFTYPE_AP) ?
                                    WLAN_HDD_SOFTAP : WLAN_HDD_P2P_GO;
-#else
-                pAdapter->device_mode = WLAN_HDD_SOFTAP;
-#endif
-=======
-                pAdapter->device_mode = (type == NL80211_IFTYPE_AP) ?
-                                   WLAN_HDD_SOFTAP : WLAN_HDD_P2P_GO;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                pAdapter->device_mode = (type == NL80211_IFTYPE_AP) ?
-                                   WLAN_HDD_SOFTAP : WLAN_HDD_P2P_GO;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                 //Disable BMPS and IMPS if enabled
                 //before starting Go
                 if(WLAN_HDD_P2P_GO == pAdapter->device_mode)
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    if(VOS_STATUS_E_FAILURE == 
-=======
                     if(VOS_STATUS_E_FAILURE ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    if(VOS_STATUS_E_FAILURE ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        hdd_disable_bmps_imps(pHddCtx, WLAN_HDD_P2P_GO))
                     {
                        //Fail to Exit BMPS
@@ -4220,11 +2749,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
 
                 hdd_set_ap_ops( pAdapter->dev );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /* set country code for SAP not for P2P GO  */
                 if (NL80211_IFTYPE_AP == type)
                 {
@@ -4232,10 +2756,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                             pConfig->apCntryCode, pAdapter, pHddCtx->pvosContext);
                 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 status = hdd_init_ap_mode(pAdapter);
                 if(status != VOS_STATUS_SUCCESS)
                 {
@@ -4245,13 +2765,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                 }
                 hdd_set_conparam(1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /*interface type changed update in wiphy structure*/
                 if(wdev)
                 {
@@ -4274,46 +2787,17 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
         }
     }
     else if ( (pAdapter->device_mode == WLAN_HDD_SOFTAP)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
            || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-=======
-           || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             )
     {
        switch(type)
        {
            case NL80211_IFTYPE_STATION:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
            case NL80211_IFTYPE_P2P_CLIENT:
-#endif
-=======
-           case NL80211_IFTYPE_P2P_CLIENT:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           case NL80211_IFTYPE_P2P_CLIENT:
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            case NL80211_IFTYPE_ADHOC:
                 hdd_stop_adapter( pHddCtx, pAdapter );
                 hdd_deinit_adapter( pHddCtx, pAdapter );
                 wdev->iftype = type;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-                pAdapter->device_mode = (type == NL80211_IFTYPE_STATION) ?
-                                  WLAN_HDD_INFRA_STATION: WLAN_HDD_P2P_CLIENT;
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 //Check for sub-string p2p to confirm its a p2p interface
                 if (NULL != strstr(ndev->name,"p2p"))
                 {
@@ -4325,10 +2809,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                     pAdapter->device_mode = (type == NL80211_IFTYPE_STATION) ?
                                   WLAN_HDD_INFRA_STATION: WLAN_HDD_P2P_CLIENT;
                 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 hdd_set_conparam(0);
                 pHddCtx->change_iface = type;
                 memset(&pAdapter->sessionCtx, 0, sizeof(pAdapter->sessionCtx));
@@ -4339,22 +2819,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                 /* In case of JB, for P2P-GO, only change interface will be called,
                  * This is the right place to enable back bmps_imps()
                  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hdd_enable_bmps_imps(pHddCtx);
-                goto done;
-            case NL80211_IFTYPE_AP:
-#ifdef WLAN_FEATURE_P2P
-            case NL80211_IFTYPE_P2P_GO:
-#endif
-                wdev->iftype = type;
-#ifdef WLAN_FEATURE_P2P
-                pAdapter->device_mode = (type == NL80211_IFTYPE_AP) ?
-                                        WLAN_HDD_SOFTAP : WLAN_HDD_P2P_GO;
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if (pHddCtx->hdd_wlan_suspended)
                 {
                     hdd_set_pwrparams(pHddCtx);
@@ -4366,10 +2830,6 @@ int wlan_hdd_cfg80211_change_iface( struct wiphy *wiphy,
                 wdev->iftype = type;
                 pAdapter->device_mode = (type == NL80211_IFTYPE_AP) ?
                                         WLAN_HDD_SOFTAP : WLAN_HDD_P2P_GO;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                goto done;
            default:
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported interface Type",
@@ -4417,15 +2877,7 @@ done:
     /*set bitmask based on updated value*/
     wlan_hdd_set_concurrency_mode(pHddCtx, pAdapter->device_mode);
 #ifdef WLAN_BTAMP_FEATURE
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if((NL80211_IFTYPE_STATION == type) && (pHddCtx->concurrency_mode <= 1) && 
-=======
     if((NL80211_IFTYPE_STATION == type) && (pHddCtx->concurrency_mode <= 1) &&
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if((NL80211_IFTYPE_STATION == type) && (pHddCtx->concurrency_mode <= 1) &&
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        (pHddCtx->no_of_sessions[WLAN_HDD_INFRA_STATION] <=1))
     {
         //we are ok to do AMP
@@ -4436,11 +2888,6 @@ done:
     return 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
 static int wlan_hdd_tdls_add_station(struct wiphy *wiphy,
           struct net_device *dev, u8 *mac, bool update, tCsrStaParams *StaParams)
@@ -4624,10 +3071,6 @@ error:
 }
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_change_station(struct wiphy *wiphy,
                                          struct net_device *dev,
                                          u8 *mac,
@@ -4635,16 +3078,6 @@ static int wlan_hdd_change_station(struct wiphy *wiphy,
 {
     VOS_STATUS status = VOS_STATUS_SUCCESS;
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev );
-<<<<<<< HEAD
-<<<<<<< HEAD
-    v_MACADDR_t STAMacAddress;
-
-    ENTER();
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_context_t *pHddCtx;
     hdd_station_ctx_t *pHddStaCtx;
     v_MACADDR_t STAMacAddress;
@@ -4672,10 +3105,6 @@ static int wlan_hdd_change_station(struct wiphy *wiphy,
     }
 
     if (pHddCtx->isLogpInProgress)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                 "%s:LOGP in Progress. Ignore!!!", __func__);
@@ -4684,57 +3113,6 @@ static int wlan_hdd_change_station(struct wiphy *wiphy,
 
     vos_mem_copy(STAMacAddress.bytes, mac, sizeof(v_MACADDR_t));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( ( pAdapter->device_mode == WLAN_HDD_SOFTAP )
-#ifdef WLAN_FEATURE_P2P
-      || ( pAdapter->device_mode == WLAN_HDD_P2P_GO )
-#endif
-       )
-    {
-        if(params->sta_flags_set & BIT(NL80211_STA_FLAG_AUTHORIZED)) 
-        {
-            status = hdd_softap_change_STA_state( pAdapter, &STAMacAddress, 
-                                                  WLANTL_STA_AUTHENTICATED);
-
-            VOS_TRACE( VOS_MODULE_ID_HDD_SOFTAP, VOS_TRACE_LEVEL_ERROR,
-                "%s: Station MAC address does not matching", __FUNCTION__);
-            return -EINVAL;
-        }
-    }
-    
-    EXIT();
-    return status;
-}
-
-/*
- * FUNCTION: wlan_hdd_cfg80211_get_ibss_peer_staidx
- * This function is used to get peer station index in IBSS mode
- */
-static u8 wlan_hdd_cfg80211_get_ibss_peer_staidx(hdd_adapter_t* pAdapter)
-{
-    u8 idx = 0;
-    u8 temp[VOS_MAC_ADDR_SIZE] = {0}; 
-    ENTER();
-    memset(temp, 0, VOS_MAC_ADDR_SIZE);
-    for ( idx = 0; idx < HDD_MAX_NUM_IBSS_STA; idx++ )
-    {
-        if ( (0 != 
-            (WLAN_HDD_GET_STATION_CTX_PTR(pAdapter))->conn_info.staId[idx]) 
-          && memcmp((u8*)&(WLAN_HDD_GET_STATION_CTX_PTR(pAdapter))->conn_info.peerMacAddress[idx],
-                                                     temp, VOS_MAC_ADDR_SIZE) 
-           )
-        {
-            return idx;
-        }
-    }
-    return idx;
-}
-
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((pAdapter->device_mode == WLAN_HDD_SOFTAP)
       || (pAdapter->device_mode == WLAN_HDD_P2P_GO))
     {
@@ -4826,74 +3204,25 @@ static u8 wlan_hdd_cfg80211_get_ibss_peer_staidx(hdd_adapter_t* pAdapter)
     return status;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: wlan_hdd_cfg80211_add_key
  * This function is used to initialize the key information
  */
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy, 
-=======
 static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       struct net_device *ndev,
                                       u8 key_index, bool pairwise,
                                       const u8 *mac_addr,
                                       struct key_params *params
                                       )
 #else
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy, 
-=======
 static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       struct net_device *ndev,
                                       u8 key_index, const u8 *mac_addr,
                                       struct key_params *params
                                       )
 #endif
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev ); 
-    tCsrRoamSetKey  setKey;
-    u8 groupmacaddr[WNI_CFG_BSSID_LEN] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
-    int status = 0;
-    v_U32_t roamId= 0xFF; 
-    v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pAdapter))->pvosContext;  
-    hdd_hostapd_state_t *pHostapdState;
-    VOS_STATUS vos_status;
-
-    ENTER();
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
-            __func__,pAdapter->device_mode);
-
-    if (CSR_MAX_NUM_KEY <= key_index)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
     tCsrRoamSetKey  setKey;
     u8 groupmacaddr[WNI_CFG_BSSID_LEN] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
@@ -4923,23 +3252,11 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
     if (CSR_MAX_NUM_KEY <= key_index)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 key_index);
 
         return -EINVAL;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hddLog(VOS_TRACE_LEVEL_INFO, 
-            "%s: called with key index = %d & key length %d",
-            __func__, key_index, params->key_len);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (CSR_MAX_KEY_LEN < params->key_len)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key length %d", __func__,
@@ -4951,10 +3268,6 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
     hddLog(VOS_TRACE_LEVEL_INFO,
            "%s: called with key index = %d & key length %d",
            __func__, key_index, params->key_len);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /*extract key idx, key len and key*/
     vos_mem_zero(&setKey,sizeof(tCsrRoamSetKey));
@@ -4962,15 +3275,7 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
     setKey.keyLength = params->key_len;
     vos_mem_copy(&setKey.Key[0],params->key, params->key_len);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    switch (params->cipher) 
-=======
     switch (params->cipher)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    switch (params->cipher)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         case WLAN_CIPHER_SUITE_WEP40:
             setKey.encType = eCSR_ENCRYPT_TYPE_WEP40_STATICKEY;
@@ -4987,23 +3292,10 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
 
                 vos_mem_zero(pKey, CSR_MAX_KEY_LEN);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                /*Supplicant sends the 32bytes key in this order 
-
-                  |--------------|----------|----------|
-                  |   Tk1        |TX-MIC    |  RX Mic  | 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /*Supplicant sends the 32bytes key in this order
 
                   |--------------|----------|----------|
                   |   Tk1        |TX-MIC    |  RX Mic  |
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   |--------------|----------|----------|
                   <---16bytes---><--8bytes--><--8bytes-->
 
@@ -5011,31 +3303,11 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
                 /*Sme expects the 32 bytes key to be in the below order
 
                   |--------------|----------|----------|
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  |   Tk1        |RX-MIC    |  TX Mic  | 
-=======
                   |   Tk1        |RX-MIC    |  TX Mic  |
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  |   Tk1        |RX-MIC    |  TX Mic  |
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   |--------------|----------|----------|
                   <---16bytes---><--8bytes--><--8bytes-->
                   */
                 /* Copy the Temporal Key 1 (TK1) */
-<<<<<<< HEAD
-<<<<<<< HEAD
-                vos_mem_copy(pKey, params->key,16);
-
-                /*Copy the rx mic first*/
-                vos_mem_copy(&pKey[16],&params->key[24],8); 
-
-                /*Copy the tx mic */
-                vos_mem_copy(&pKey[24],&params->key[16],8); 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 vos_mem_copy(pKey, params->key, 16);
 
                 /*Copy the rx mic first*/
@@ -5043,10 +3315,6 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
 
                 /*Copy the tx mic */
                 vos_mem_copy(&pKey[24], &params->key[16], 8);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
                 break;
@@ -5080,48 +3348,17 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
             __func__, setKey.encType);
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    if ((pAdapter->device_mode == WLAN_HDD_SOFTAP)
-#ifdef WLAN_FEATURE_P2P
-            || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-       )
-    {
-
-
-        if ( 
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-                (!pairwise)
-#else
-                (!mac_addr || is_broadcast_ether_addr(mac_addr)) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
                 (!pairwise)
 #else
                 (!mac_addr || is_broadcast_ether_addr(mac_addr))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
            )
         {
             /* set group key*/
             VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "%s- %d: setting Broacast key",
-=======
                     "%s- %d: setting Broadcast key",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    "%s- %d: setting Broadcast key",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, __LINE__);
             setKey.keyDirection = eSIR_RX_ONLY;
             vos_mem_copy(setKey.peerMac,groupmacaddr,WNI_CFG_BSSID_LEN);
@@ -5136,24 +3373,12 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
             vos_mem_copy(setKey.peerMac, mac_addr,WNI_CFG_BSSID_LEN);
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pHostapdState = WLAN_HDD_GET_HOSTAP_STATE_PTR(pAdapter);
-        if( pHostapdState->bssState == BSS_START ) 
-        { 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if ((pAdapter->device_mode == WLAN_HDD_SOFTAP) ||
            (pAdapter->device_mode == WLAN_HDD_P2P_GO))
     {
         pHostapdState = WLAN_HDD_GET_HOSTAP_STATE_PTR(pAdapter);
         if( pHostapdState->bssState == BSS_START )
         {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = WLANSAP_SetKeySta( pVosContext, &setKey);
 
             if ( status != eHAL_STATUS_SUCCESS )
@@ -5175,158 +3400,20 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
         else
         {
             //Save the key in ap context. Issue setkey after the BSS is started.
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hdd_ap_ctx_t *pAPCtx = WLAN_HDD_GET_AP_CTX_PTR(pAdapter); 
-=======
             hdd_ap_ctx_t *pAPCtx = WLAN_HDD_GET_AP_CTX_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hdd_ap_ctx_t *pAPCtx = WLAN_HDD_GET_AP_CTX_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             vos_mem_copy(&pAPCtx->groupKey, &setKey, sizeof(tCsrRoamSetKey));
         }
     }
     else if ( (pAdapter->device_mode == WLAN_HDD_INFRA_STATION) 
 #ifdef WLAN_FEATURE_P2P
             || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 			|| (pAdapter->device_mode == WLAN_HDD_P2P_DEVICE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-			|| (pAdapter->device_mode == WLAN_HDD_P2P_DEVICE)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
             )
     {
         hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
         hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pWextState->roamProfile.Keys.KeyLength[key_index] = (u8)params->key_len;
-
-        vos_mem_copy(&pWextState->roamProfile.Keys.KeyMaterial[key_index][0], 
-                params->key, params->key_len);
-
-        pHddStaCtx->roam_info.roamingState = HDD_ROAM_STATE_SETTING_KEY;
-
-    if (!(  ( IW_AUTH_KEY_MGMT_802_1X 
-                    == (pWextState->authKeyMgmt & IW_AUTH_KEY_MGMT_802_1X)) 
-                    && (eCSR_AUTH_TYPE_OPEN_SYSTEM == pHddStaCtx->conn_info.authType)
-             )
-                &&
-                (  (WLAN_CIPHER_SUITE_WEP40 == params->cipher)
-                   || (WLAN_CIPHER_SUITE_WEP104 == params->cipher)
-                )
-           )
-        {
-            /* in case of static WEP, macaddr/bssid is not coming from nl80211
-             * interface, copy bssid for pairwise key and group macaddr for 
-             * group key initialization*/
-
-            tCsrRoamProfile          *pRoamProfile = &pWextState->roamProfile;
-
-            pWextState->roamProfile.negotiatedUCEncryptionType = 
-                pHddStaCtx->conn_info.ucEncryptionType = 
-                ((WLAN_CIPHER_SUITE_WEP40 == params->cipher) ?
-                 eCSR_ENCRYPT_TYPE_WEP40_STATICKEY :
-                 eCSR_ENCRYPT_TYPE_WEP104_STATICKEY);
-
-
-            hddLog(VOS_TRACE_LEVEL_INFO_MED, 
-                    "%s: Negotiated encryption type %d", __func__, 
-                    pWextState->roamProfile.negotiatedUCEncryptionType);
-
-            sme_SetCfgPrivacy((tpAniSirGlobal)WLAN_HDD_GET_HAL_CTX(pAdapter),
-                    &pWextState->roamProfile, true);
-            setKey.keyLength = 0;
-            setKey.keyDirection =  eSIR_TX_RX;
-
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-            if (pairwise) 
-            {
-#endif
-                if (mac_addr)
-                {
-                    vos_mem_copy(setKey.peerMac, mac_addr,WNI_CFG_BSSID_LEN);
-                }
-                else
-                {
-                    /* macaddr is NULL, set the peerMac to bssId in case of BSS, 
-                     * and peerMacAddress in case of IBSS*/
-                    if (eCSR_BSS_TYPE_START_IBSS == pRoamProfile->BSSType)
-                    {
-                        u8 staidx = wlan_hdd_cfg80211_get_ibss_peer_staidx(pAdapter);
-                        if (HDD_MAX_NUM_IBSS_STA != staidx)
-                        {
-                            vos_mem_copy(setKey.peerMac,
-                                    &pHddStaCtx->conn_info.peerMacAddress[staidx],
-                                    WNI_CFG_BSSID_LEN);
-
-                        } 
-                        else
-                        {
-                            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: No peerMac found", 
-                                    __func__);
-                            return -EOPNOTSUPP;
-                        } 
-                    }
-                    else
-                    {
-                        vos_mem_copy(setKey.peerMac,
-                                &pHddStaCtx->conn_info.bssId[0],
-                                WNI_CFG_BSSID_LEN);
-                    }
-                }
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-            }
-            else
-            {
-                /* set group key*/
-                VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-                        "%s- %d: setting Group key",
-                        __func__, __LINE__);
-                setKey.keyDirection = eSIR_RX_ONLY;
-                vos_mem_copy(setKey.peerMac, groupmacaddr, WNI_CFG_BSSID_LEN);
-            }
-#endif
-        }
-        else if (
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-                (!pairwise)
-#else
-                (!mac_addr || is_broadcast_ether_addr(mac_addr)) 
-#endif
-                )
-        {
-            /* set group key*/
-            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-                    "%s- %d: setting Group key",
-                    __func__, __LINE__);
-            setKey.keyDirection = eSIR_RX_ONLY;
-            vos_mem_copy(setKey.peerMac,groupmacaddr,WNI_CFG_BSSID_LEN);
-        }
-        else
-        {
-            /* set pairwise key*/
-            VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-                    "%s- %d: setting pairwise key",
-                    __func__, __LINE__);
-            setKey.keyDirection = eSIR_TX_RX;
-            vos_mem_copy(setKey.peerMac, mac_addr,WNI_CFG_BSSID_LEN);
-        }
-
-        hddLog(VOS_TRACE_LEVEL_INFO_MED, 
-                "%s: set key for peerMac %2x:%2x:%2x:%2x:%2x:%2x, direction %d",
-                __func__, setKey.peerMac[0], setKey.peerMac[1], 
-                setKey.peerMac[2], setKey.peerMac[3], 
-                setKey.peerMac[4], setKey.peerMac[5], 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
         if (!pairwise)
 #else
@@ -5359,10 +3446,6 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
                 __func__, setKey.peerMac[0], setKey.peerMac[1],
                 setKey.peerMac[2], setKey.peerMac[3],
                 setKey.peerMac[4], setKey.peerMac[5],
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 setKey.keyDirection);
 
         vos_status = wlan_hdd_check_ula_done(pAdapter);
@@ -5379,11 +3462,6 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
 
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
         /* The supplicant may attempt to set the PTK once pre-authentication
            is done. Save the key in the UMAC and include it in the ADD BSS
@@ -5402,10 +3480,6 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
            return -EINVAL;
         }
 #endif /* WLAN_FEATURE_VOWIFI_11R */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* issue set key request to SME*/
         status = sme_RoamSetKey( WLAN_HDD_GET_HAL_CTX(pAdapter),
@@ -5413,42 +3487,19 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
 
         if ( 0 != status )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "%s: sme_RoamSetKey failed, returned %d", __func__, status);
             pHddStaCtx->roam_info.roamingState = HDD_ROAM_STATE_NONE;
             return -EINVAL;
         }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /* in case of IBSS as there was no information available about WEP keys during 
-         * IBSS join, group key intialized with NULL key, so re-initialize group key 
-         * with correct value*/
-        if ( (eCSR_BSS_TYPE_START_IBSS == pWextState->roamProfile.BSSType) && 
-            !(  ( IW_AUTH_KEY_MGMT_802_1X 
-                    == (pWextState->authKeyMgmt & IW_AUTH_KEY_MGMT_802_1X)) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* in case of IBSS as there was no information available about WEP keys during
          * IBSS join, group key intialized with NULL key, so re-initialize group key
          * with correct value*/
         if ( (eCSR_BSS_TYPE_START_IBSS == pWextState->roamProfile.BSSType) &&
             !(  ( IW_AUTH_KEY_MGMT_802_1X
                     == (pWextState->authKeyMgmt & IW_AUTH_KEY_MGMT_802_1X))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     && (eCSR_AUTH_TYPE_OPEN_SYSTEM == pHddStaCtx->conn_info.authType)
                  )
                 &&
@@ -5460,19 +3511,6 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
             setKey.keyDirection = eSIR_RX_ONLY;
             vos_mem_copy(setKey.peerMac,groupmacaddr,WNI_CFG_BSSID_LEN);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_INFO_MED, 
-                    "%s: set key peerMac %2x:%2x:%2x:%2x:%2x:%2x, direction %d",
-                    __func__, setKey.peerMac[0], setKey.peerMac[1], 
-                    setKey.peerMac[2], setKey.peerMac[3], 
-                    setKey.peerMac[4], setKey.peerMac[5], 
-                    setKey.keyDirection);
-
-            status = sme_RoamSetKey( WLAN_HDD_GET_HAL_CTX(pAdapter), 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(VOS_TRACE_LEVEL_INFO_MED,
                     "%s: set key peerMac %2x:%2x:%2x:%2x:%2x:%2x, direction %d",
                     __func__, setKey.peerMac[0], setKey.peerMac[1],
@@ -5481,26 +3519,12 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
                     setKey.keyDirection);
 
             status = sme_RoamSetKey( WLAN_HDD_GET_HAL_CTX(pAdapter),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pAdapter->sessionId, &setKey, &roamId );
 
             if ( 0 != status )
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog(VOS_TRACE_LEVEL_ERROR, 
-                        "%s: sme_RoamSetKey failed for group key (IBSS), returned %d", 
-=======
                 hddLog(VOS_TRACE_LEVEL_ERROR,
                         "%s: sme_RoamSetKey failed for group key (IBSS), returned %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                hddLog(VOS_TRACE_LEVEL_ERROR,
-                        "%s: sme_RoamSetKey failed for group key (IBSS), returned %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         __func__, status);
                 pHddStaCtx->roam_info.roamingState = HDD_ROAM_STATE_NONE;
                 return -EINVAL;
@@ -5516,90 +3540,38 @@ static int wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
  * This function is used to get the key information
  */
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_get_key( 
-                        struct wiphy *wiphy, 
-                        struct net_device *ndev,
-                        u8 key_index, bool pairwise, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_cfg80211_get_key(
                         struct wiphy *wiphy,
                         struct net_device *ndev,
                         u8 key_index, bool pairwise,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         const u8 *mac_addr, void *cookie,
                         void (*callback)(void *cookie, struct key_params*)
                         )
 #else
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_get_key( 
-                        struct wiphy *wiphy, 
-=======
 static int wlan_hdd_cfg80211_get_key(
                         struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static int wlan_hdd_cfg80211_get_key(
-                        struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         struct net_device *ndev,
                         u8 key_index, const u8 *mac_addr, void *cookie,
                         void (*callback)(void *cookie, struct key_params*)
                         )
 #endif
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev ); 
-=======
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_wext_state_t *pWextState= WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     tCsrRoamProfile *pRoamProfile = &(pWextState->roamProfile);
     struct key_params params;
 
     ENTER();
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
-                                 __func__,pAdapter->device_mode);
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                                  __func__,pAdapter->device_mode);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     memset(&params, 0, sizeof(params));
 
     if (CSR_MAX_NUM_KEY <= key_index)
     {
         return -EINVAL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    }   
-=======
     }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     switch(pRoamProfile->EncryptionType.encryptionType[0])
     {
@@ -5643,19 +3615,6 @@ static int wlan_hdd_cfg80211_get_key(
  * This function is used to delete the key information
  */
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,38))
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy, 
-                                      struct net_device *ndev,
-                                      u8 key_index, 
-                                      bool pairwise, 
-                                      const u8 *mac_addr
-                                    )
-#else
-static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
                                       struct net_device *ndev,
                                       u8 key_index,
@@ -5664,10 +3623,6 @@ static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
                                     )
 #else
 static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       struct net_device *ndev,
                                       u8 key_index,
                                       const u8 *mac_addr
@@ -5677,40 +3632,17 @@ static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
     int status = 0;
 
     //This code needs to be revisited. There is sme_removeKey API, we should
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //plan to use that. After the change to use correct index in setkey, 
-=======
     //plan to use that. After the change to use correct index in setkey,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    //plan to use that. After the change to use correct index in setkey,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //it is observed that this is invalidating peer
     //key index whenever re-key is done. This is affecting data link.
     //It should be ok to ignore del_key.
 #if 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev ); 
-    v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pAdapter))->pvosContext;  
-    u8 groupmacaddr[WNI_CFG_BSSID_LEN] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
-    tCsrRoamSetKey  setKey;
-    v_U32_t roamId= 0xFF;
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
     v_CONTEXT_t pVosContext = (WLAN_HDD_GET_CTX(pAdapter))->pvosContext;
     u8 groupmacaddr[WNI_CFG_BSSID_LEN] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
     tCsrRoamSetKey  setKey;
     v_U32_t roamId= 0xFF;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ENTER();
 
     hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: device_mode = %d\n",
@@ -5718,15 +3650,7 @@ static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
 
     if (CSR_MAX_NUM_KEY <= key_index)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__, 
-=======
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 key_index);
 
         return -EINVAL;
@@ -5743,40 +3667,16 @@ static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
     setKey.encType = eCSR_ENCRYPT_TYPE_NONE;
 
     if ((pAdapter->device_mode == WLAN_HDD_SOFTAP)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-      || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-       ) 
-    { 
-       
-        hdd_hostapd_state_t *pHostapdState =  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       || (pAdapter->device_mode == WLAN_HDD_P2P_GO)
        )
     {
 
         hdd_hostapd_state_t *pHostapdState =
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                   WLAN_HDD_GET_HOSTAP_STATE_PTR(pAdapter);
         if( pHostapdState->bssState == BSS_START)
         {
             status = WLANSAP_SetKeySta( pVosContext, &setKey);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if ( status != eHAL_STATUS_SUCCESS )
             {
                 VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
@@ -5786,42 +3686,11 @@ static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
         }
     }
     else if ( (pAdapter->device_mode == WLAN_HDD_INFRA_STATION)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-           || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT) 
-#endif
-=======
            || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             )
     {
         hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        pHddStaCtx->roam_info.roamingState = HDD_ROAM_STATE_SETTING_KEY;   
-    
-        hddLog(VOS_TRACE_LEVEL_INFO_MED, 
-                "%s: delete key for peerMac %2x:%2x:%2x:%2x:%2x:%2x",
-                __func__, setKey.peerMac[0], setKey.peerMac[1], 
-                setKey.peerMac[2], setKey.peerMac[3], 
-                setKey.peerMac[4], setKey.peerMac[5]);
-        if(pAdapter->sessionCtx.station.conn_info.connState == 
-                                       eConnectionState_Associated) 
-        {
-            status = sme_RoamSetKey( WLAN_HDD_GET_HAL_CTX(pAdapter), 
-                                   pAdapter->sessionId, &setKey, &roamId );
-        
-            if ( 0 != status )
-            {
-                hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pHddStaCtx->roam_info.roamingState = HDD_ROAM_STATE_SETTING_KEY;
 
         hddLog(VOS_TRACE_LEVEL_INFO_MED,
@@ -5838,10 +3707,6 @@ static int wlan_hdd_cfg80211_del_key( struct wiphy *wiphy,
             if ( 0 != status )
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         "%s: sme_RoamSetKey failure, returned %d",
                                                      __func__, status);
                 pHddStaCtx->roam_info.roamingState = HDD_ROAM_STATE_NONE;
@@ -5869,24 +3734,6 @@ static int wlan_hdd_cfg80211_set_default_key( struct wiphy *wiphy,
                                               u8 key_index)
 #endif
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev ); 
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
-    int status = 0;
-    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
-
-    ENTER();
-
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d key_index = %d \n",
-                                         __func__,pAdapter->device_mode, key_index);
-   
-    if (CSR_MAX_NUM_KEY <= key_index)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
     int status;
     hdd_wext_state_t *pWextState;
@@ -5918,50 +3765,11 @@ static int wlan_hdd_cfg80211_set_default_key( struct wiphy *wiphy,
     if (CSR_MAX_NUM_KEY <= key_index)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid key index %d", __func__,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 key_index);
 
         return -EINVAL;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-    
-    if ((pAdapter->device_mode == WLAN_HDD_INFRA_STATION)
-#ifdef WLAN_FEATURE_P2P
-     || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
-#endif
-       ) 
-    {
-        if ( (key_index != pWextState->roamProfile.Keys.defaultIndex) && 
-             (eCSR_ENCRYPT_TYPE_TKIP != 
-                pWextState->roamProfile.EncryptionType.encryptionType[0]) &&
-             (eCSR_ENCRYPT_TYPE_AES != 
-                pWextState->roamProfile.EncryptionType.encryptionType[0])
-           )
-        {  
-            /* if default key index is not same as previous one, 
-             * then update the default key index */
-    
-            tCsrRoamSetKey  setKey;
-            v_U32_t roamId= 0xFF;
-            tCsrKeys *Keys = &pWextState->roamProfile.Keys;
-            
-            hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: default tx key index %d", 
-                    __func__, key_index);
-            
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     status = wlan_hdd_validate_context(pHddCtx);
 
@@ -5992,41 +3800,10 @@ static int wlan_hdd_cfg80211_set_default_key( struct wiphy *wiphy,
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: default tx key index %d",
                     __func__, key_index);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             Keys->defaultIndex = (u8)key_index;
             vos_mem_zero(&setKey,sizeof(tCsrRoamSetKey));
             setKey.keyId = key_index;
             setKey.keyLength = Keys->KeyLength[key_index];
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-            vos_mem_copy(&setKey.Key[0], 
-                    &Keys->KeyMaterial[key_index][0], 
-                    Keys->KeyLength[key_index]);
-    
-            setKey.keyDirection = eSIR_TX_ONLY;
-    
-            vos_mem_copy(setKey.peerMac, 
-                    &pHddStaCtx->conn_info.bssId[0],
-                    WNI_CFG_BSSID_LEN);
-    
-            setKey.encType = 
-                pWextState->roamProfile.EncryptionType.encryptionType[0];
-             
-            /* issue set key request */
-            status = sme_RoamSetKey( WLAN_HDD_GET_HAL_CTX(pAdapter), 
-                                   pAdapter->sessionId, &setKey, &roamId );
-    
-            if ( 0 != status )
-            {
-                hddLog(VOS_TRACE_LEVEL_ERROR, 
-                        "%s: sme_RoamSetKey failed, returned %d", __func__, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             vos_mem_copy(&setKey.Key[0],
                     &Keys->KeyMaterial[key_index][0],
@@ -6060,10 +3837,6 @@ static int wlan_hdd_cfg80211_set_default_key( struct wiphy *wiphy,
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR,
                         "%s: sme_RoamSetKey failed, returned %d", __func__,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         status);
                 return -EINVAL;
             }
@@ -6084,144 +3857,10 @@ static int wlan_hdd_cfg80211_set_default_key( struct wiphy *wiphy,
             pAPCtx->wepKey[key_index].keyDirection = eSIR_TX_DEFAULT;
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
- 
-    return status;
-}
-
-/**
- * FUNCTION: wlan_hdd_cfg80211_set_channel
- * This function is used to set the channel number 
- */
-int wlan_hdd_cfg80211_set_channel( struct wiphy *wiphy, struct net_device *dev,
-                                   struct ieee80211_channel *chan,
-                                   enum nl80211_channel_type channel_type
-                                 )
-{
-    v_U32_t num_ch = 0;
-    u32 channel = 0;
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev ); 
-    int freq = chan->center_freq; /* freq is in MHZ */ 
- 
-    ENTER();
-    
-    hddLog(VOS_TRACE_LEVEL_INFO, 
-                "%s: device_mode = %d  freq = %d \n",__func__, 
-                            pAdapter->device_mode, chan->center_freq);
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL, "%s:LOGP in Progress. Ignore!!!",__func__);
-        return -EAGAIN;
-    }
-
-    /* 
-     * Do freq to chan conversion
-     * TODO: for 11a
-     */
-
-    channel = ieee80211_frequency_to_channel(freq);
-    
-    /* Check freq range */
-    if ((WNI_CFG_CURRENT_CHANNEL_STAMIN > channel) || 
-            (WNI_CFG_CURRENT_CHANNEL_STAMAX < channel)) 
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, 
-                "%s: Channel [%d] is outside valid range from %d to %d\n",
-                __func__, channel, WNI_CFG_CURRENT_CHANNEL_STAMIN,
-                WNI_CFG_CURRENT_CHANNEL_STAMAX);
-        return -EINVAL;
-    }
-
-    num_ch = WNI_CFG_VALID_CHANNEL_LIST_LEN;
-
-    if ((WLAN_HDD_SOFTAP != pAdapter->device_mode)
-#ifdef WLAN_FEATURE_P2P
-     && (WLAN_HDD_P2P_GO != pAdapter->device_mode)
-#endif
-      )
-    {
-        if(VOS_STATUS_SUCCESS != wlan_hdd_validate_operation_channel(pAdapter,channel))
-        {
-            hddLog(VOS_TRACE_LEVEL_ERROR,
-                    "%s: Invalid Channel [%d] \n", __func__, channel);
-            return -EINVAL;
-        }
-        hddLog(VOS_TRACE_LEVEL_INFO_HIGH, 
-                "%s: set channel to [%d] for device mode =%d", 
-                          __func__, channel,pAdapter->device_mode);
-    }
-    if( (pAdapter->device_mode == WLAN_HDD_INFRA_STATION)
-#ifdef WLAN_FEATURE_P2P
-     || (pAdapter->device_mode == WLAN_HDD_P2P_CLIENT)
-#endif
-      )
-    {
-        hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter); 
-        tCsrRoamProfile * pRoamProfile = &pWextState->roamProfile;
-        hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
-
-        if (eConnectionState_IbssConnected == pHddStaCtx->conn_info.connState)
-        {
-           /* Link is up then return cant set channel*/
-            hddLog( VOS_TRACE_LEVEL_ERROR, 
-                   "%s: IBSS Associated, can't set the channel\n", __func__);
-            return -EINVAL;
-        }
-
-        num_ch = pRoamProfile->ChannelInfo.numOfChannels = 1;
-        pHddStaCtx->conn_info.operationChannel = channel; 
-        pRoamProfile->ChannelInfo.ChannelList = 
-            &pHddStaCtx->conn_info.operationChannel; 
-    }
-    else if ((pAdapter->device_mode == WLAN_HDD_SOFTAP) 
-#ifdef WLAN_FEATURE_P2P
-        ||   (pAdapter->device_mode == WLAN_HDD_P2P_GO)
-#endif
-            ) 
-    {
-        (WLAN_HDD_GET_AP_CTX_PTR(pAdapter))->sapConfig.channel = channel;
-
-        if ( WLAN_HDD_SOFTAP == pAdapter->device_mode )
-        {
-            hdd_config_t *cfg_param = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini;
-
-            /* If auto channel selection is configured as enable/ 1 then ignore
-            channel set by supplicant
-            */
-            if ( cfg_param->apAutoChannelSelection )
-            {
-                (WLAN_HDD_GET_AP_CTX_PTR(pAdapter))->sapConfig.channel = AUTO_CHANNEL_SELECT;
-
-                hddLog(VOS_TRACE_LEVEL_INFO_HIGH,
-                       "%s: set channel to auto channel (0) for device mode =%d",
-                       __func__, pAdapter->device_mode);
-            }
-        }
-    }
-    else 
-    {
-        hddLog(VOS_TRACE_LEVEL_FATAL, 
-               "%s: Invalid device mode failed to set valid channel", __func__);
-        return -EINVAL;
-    }
-    EXIT();
-    return 0;
-}
-
-
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     return status;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: wlan_hdd_cfg80211_inform_bss
  * This function is used to inform the BSS details to nl80211 interface.
@@ -6281,18 +3920,8 @@ static struct cfg80211_bss* wlan_hdd_cfg80211_inform_bss(
     {
         rssi = (VOS_MIN ((pBssDesc->rssi + pBssDesc->sinr), 0))*100;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return (cfg80211_inform_bss(wiphy, chan, pBssDesc->bssId, 
-                le64_to_cpu(*(__le64 *)pBssDesc->timeStamp), 
-=======
         return (cfg80211_inform_bss(wiphy, chan, pBssDesc->bssId,
                 le64_to_cpu(*(__le64 *)pBssDesc->timeStamp),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        return (cfg80211_inform_bss(wiphy, chan, pBssDesc->bssId,
-                le64_to_cpu(*(__le64 *)pBssDesc->timeStamp),
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pBssDesc->capabilityInfo,
                 pBssDesc->beaconInterval, ie, ie_length,
                 rssi, GFP_KERNEL ));
@@ -6327,22 +3956,12 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
     struct wireless_dev *wdev = dev->ieee80211_ptr;
     struct wiphy *wiphy = wdev->wiphy;
     int chan_no = bss_desc->channelId;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    int ie_length = GET_IE_LEN_IN_BSS_DESC( bss_desc->length );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_ENABLE_AGEIE_ON_SCAN_RESULTS
     qcom_ie_age *qie_age = NULL;
     int ie_length = GET_IE_LEN_IN_BSS_DESC( bss_desc->length ) + sizeof(qcom_ie_age);
 #else
     int ie_length = GET_IE_LEN_IN_BSS_DESC( bss_desc->length );
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     const char *ie =
         ((ie_length != 0) ? (const char *)&bss_desc->ieFields: NULL);
     unsigned int freq;
@@ -6352,16 +3971,8 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
     struct cfg80211_bss *bss_status = NULL;
     size_t frame_len = sizeof (struct ieee80211_mgmt) + ie_length;
     int rssi = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     hdd_context_t *pHddCtx;
     int status;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_context_t *pHddCtx;
-    int status;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_OPEN_SOURCE
     struct timespec ts;
 #endif
@@ -6371,11 +3982,6 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
     if (!mgmt)
         return NULL;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     status = wlan_hdd_validate_context(pHddCtx);
 
@@ -6386,10 +3992,6 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
         return NULL;
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     memcpy(mgmt->bssid, bss_desc->bssId, ETH_ALEN);
 
 #ifdef WLAN_OPEN_SOURCE
@@ -6407,18 +4009,6 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
 
     mgmt->u.probe_resp.beacon_int = bss_desc->beaconInterval;
     mgmt->u.probe_resp.capab_info = bss_desc->capabilityInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    memcpy(mgmt->u.probe_resp.variable, ie, ie_length);
-
-    mgmt->frame_control |=
-        (u16)(IEEE80211_FTYPE_MGMT | IEEE80211_STYPE_PROBE_RESP);
-
-#if (LINUX_VERSION_CODE > KERNEL_VERSION(2,6,38))
-    if (chan_no <= ARRAY_SIZE(hdd_channels_2_4_GHZ) && 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_ENABLE_AGEIE_ON_SCAN_RESULTS
     /* GPS Requirement: need age ie per entry. Using vendor specific. */
@@ -6448,23 +4038,11 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
 
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(2,6,38))
     if (chan_no <= ARRAY_SIZE(hdd_channels_2_4_GHZ) &&
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         (wiphy->bands[IEEE80211_BAND_2GHZ] != NULL))
     {
         freq = ieee80211_channel_to_frequency(chan_no, IEEE80211_BAND_2GHZ);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    else if ((chan_no > ARRAY_SIZE(hdd_channels_2_4_GHZ)) && 
-=======
     else if ((chan_no > ARRAY_SIZE(hdd_channels_2_4_GHZ)) &&
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    else if ((chan_no > ARRAY_SIZE(hdd_channels_2_4_GHZ)) &&
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         (wiphy->bands[IEEE80211_BAND_5GHZ] != NULL))
 
     {
@@ -6479,14 +4057,6 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
     freq = ieee80211_channel_to_frequency(chan_no);
 #endif
     chan = __ieee80211_get_channel(wiphy, freq);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    /*To keep the rssi icon of the connected AP in the scan window
-    *and the rssi icon of the wireless networks in sync 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*when the band is changed on the fly using the GUI, three things are done
      * 1. scan abort 2.flush scan results from cache 3.update the band with the new band user specified(refer to the hdd_setBand_helper function)
      * as part of the scan abort, message willbe queued to PE and we proceed with flushing and changinh the band.
@@ -6507,26 +4077,13 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
     }
     /*To keep the rssi icon of the connected AP in the scan window
     *and the rssi icon of the wireless networks in sync
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     * */
     if (( eConnectionState_Associated ==
              pAdapter->sessionCtx.station.conn_info.connState ) &&
              ( VOS_TRUE == vos_mem_compare(bss_desc->bssId,
                              pAdapter->sessionCtx.station.conn_info.bssId,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                             WNI_CFG_BSSID_LEN)))
-=======
                              WNI_CFG_BSSID_LEN)) &&
                              (pHddCtx->hdd_wlan_suspended == FALSE))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                             WNI_CFG_BSSID_LEN)) &&
-                             (pHddCtx->hdd_wlan_suspended == FALSE))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
        /* supplicant takes the signal strength in terms of mBm(100*dBm) */
        rssi = (pAdapter->rssi * 100);
@@ -6546,15 +4103,7 @@ wlan_hdd_cfg80211_inform_bss_frame( hdd_adapter_t *pAdapter,
  * FUNCTION: wlan_hdd_cfg80211_update_bss_db
  * This function is used to update the BSS data base of CFG8011
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-struct cfg80211_bss* wlan_hdd_cfg80211_update_bss_db( hdd_adapter_t *pAdapter, 
-=======
 struct cfg80211_bss* wlan_hdd_cfg80211_update_bss_db( hdd_adapter_t *pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-struct cfg80211_bss* wlan_hdd_cfg80211_update_bss_db( hdd_adapter_t *pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       tCsrRoamInfo *pRoamInfo
                                       )
 {
@@ -6569,15 +4118,7 @@ struct cfg80211_bss* wlan_hdd_cfg80211_update_bss_db( hdd_adapter_t *pAdapter,
 
     if (NULL != roamProfile.pBssDesc)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        bss = wlan_hdd_cfg80211_inform_bss(pAdapter, 
-=======
         bss = wlan_hdd_cfg80211_inform_bss(pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        bss = wlan_hdd_cfg80211_inform_bss(pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 &roamProfile);
 
         if (NULL == bss)
@@ -6599,23 +4140,10 @@ struct cfg80211_bss* wlan_hdd_cfg80211_update_bss_db( hdd_adapter_t *pAdapter,
 /*
  * FUNCTION: wlan_hdd_cfg80211_update_bss
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_update_bss( struct wiphy *wiphy, 
-                                         hdd_adapter_t *pAdapter 
-                                        )
-{   
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int wlan_hdd_cfg80211_update_bss( struct wiphy *wiphy,
                                          hdd_adapter_t *pAdapter
                                         )
 {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tHalHandle hHal = WLAN_HDD_GET_HAL_CTX(pAdapter);
     tCsrScanResultInfo *pScanResult;
     eHalStatus status = 0;
@@ -6646,18 +4174,6 @@ static int wlan_hdd_cfg80211_update_bss( struct wiphy *wiphy,
 
     while (pScanResult)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /* 
-         * cfg80211_inform_bss() is not updating ie field of bss entry, if 
-         * entry already exists in bss data base of cfg80211 for that 
-         * particular BSS ID.  Using cfg80211_inform_bss_frame to update the 
-         * bss entry instead of cfg80211_inform_bss, But this call expects 
-         * mgmt packet as input. As of now there is no possibility to get 
-         * the mgmt(probe response) frame from PE, converting bss_desc to 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /*
          * cfg80211_inform_bss() is not updating ie field of bss entry, if
          * entry already exists in bss data base of cfg80211 for that
@@ -6665,25 +4181,13 @@ static int wlan_hdd_cfg80211_update_bss( struct wiphy *wiphy,
          * bss entry instead of cfg80211_inform_bss, But this call expects
          * mgmt packet as input. As of now there is no possibility to get
          * the mgmt(probe response) frame from PE, converting bss_desc to
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          * ieee80211_mgmt(probe response) and passing to c
          * fg80211_inform_bss_frame.
          * */
 
         bss_status = wlan_hdd_cfg80211_inform_bss_frame(pAdapter,
                 &pScanResult->BssDescriptor);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if (NULL == bss_status)
         {
@@ -6698,46 +4202,14 @@ static int wlan_hdd_cfg80211_update_bss( struct wiphy *wiphy,
         pScanResult = sme_ScanResultGetNext(hHal, pResult);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    sme_ScanResultPurge(hHal, pResult); 
-
-    return 0; 
-=======
     sme_ScanResultPurge(hHal, pResult);
 
     return 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    sme_ScanResultPurge(hHal, pResult);
-
-    return 0;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 void
 hddPrintMacAddr(tCsrBssid macAddr, tANI_U8 logLevel)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    VOS_TRACE(VOS_MODULE_ID_HDD, logLevel, 
-           "%X:%X:%X:%X:%X:%X\n",
-           macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4],
-           macAddr[5]);
-} /****** end hddPrintMacAddr() ******/
-
-void
-hddPrintPmkId(tCsrBssid pmkId, tANI_U8 logLevel)
-{
-    VOS_TRACE(VOS_MODULE_ID_HDD, logLevel, 
-           "%X:%X:%X:%X:%X:%X:%X:%X:%X:%X:%X:%X:%X:%X:%X:%X\n",
-           pmkId[0], pmkId[1], pmkId[2], pmkId[3], pmkId[4],
-           pmkId[5], pmkId[6], pmkId[7], pmkId[8], pmkId[9],
-           pmkId[10], pmkId[11], pmkId[12], pmkId[13], pmkId[14],
-           pmkId[15]);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_TRACE(VOS_MODULE_ID_HDD, logLevel,
               "%02X:%02X:%02X:%02X:%02X:%02X\n",
               macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4],
@@ -6752,10 +4224,6 @@ hddPrintPmkId(tANI_U8 *pmkId, tANI_U8 logLevel)
               pmkId[0], pmkId[1], pmkId[2], pmkId[3], pmkId[4],
               pmkId[5], pmkId[6], pmkId[7], pmkId[8], pmkId[9], pmkId[10],
               pmkId[11], pmkId[12], pmkId[13], pmkId[14], pmkId[15]);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 } /****** end hddPrintPmkId() ******/
 
 //hddPrintMacAddr(tCsrBssid macAddr, tANI_U8 logLevel);
@@ -6778,41 +4246,18 @@ hddPrintPmkId(tANI_U8 *pmkId, tANI_U8 logLevel)
         hddLog(VOS_TRACE_LEVEL_INFO, "\n"); \
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_LFR
-=======
 #if defined(FEATURE_WLAN_LFR) && (LINUX_VERSION_CODE >= KERNEL_VERSION(3,4,0))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#if defined(FEATURE_WLAN_LFR) && (LINUX_VERSION_CODE >= KERNEL_VERSION(3,4,0))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*
  * FUNCTION: wlan_hdd_cfg80211_pmksa_candidate_notify
  * This function is used to notify the supplicant of a new PMKSA candidate.
  */
 int wlan_hdd_cfg80211_pmksa_candidate_notify(
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    hdd_adapter_t *pAdapter, tCsrRoamInfo *pRoamInfo, 
-=======
                     hdd_adapter_t *pAdapter, tCsrRoamInfo *pRoamInfo,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    hdd_adapter_t *pAdapter, tCsrRoamInfo *pRoamInfo,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     int index, bool preauth )
 {
 #ifdef FEATURE_WLAN_OKC
     struct net_device *dev = pAdapter->dev;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     hdd_context_t *pHddCtx = (hdd_context_t*)pAdapter->pHddCtx;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_context_t *pHddCtx = (hdd_context_t*)pAdapter->pHddCtx;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
     hddLog(VOS_TRACE_LEVEL_INFO, "%s is going to notify supplicant of:", __func__);
@@ -6823,39 +4268,6 @@ int wlan_hdd_cfg80211_pmksa_candidate_notify(
         return -EINVAL;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    dump_bssid(pRoamInfo->bssid);
-    cfg80211_pmksa_candidate_notify(dev, index,
-                                    pRoamInfo->bssid, preauth, GFP_KERNEL);
-#endif  /* FEATURE_WLAN_OKC */
-    return 0; 
-}
-#endif //FEATURE_WLAN_LFR
-
-/*
- * FUNCTION: hdd_cfg80211_scan_done_callback
- * scanning callback function, called after finishing scan
- *
- */
-static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle, 
-        void *pContext, tANI_U32 scanId, eCsrScanStatus status)
-{
-    struct net_device *dev = (struct net_device *) pContext;
-    //struct wireless_dev *wdev = dev->ieee80211_ptr;    
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev );
-    hdd_scaninfo_t *pScanInfo = &pAdapter->scan_info;
-    struct cfg80211_scan_request *req = NULL;
-    int ret = 0;
-
-    ENTER();
-
-    hddLog(VOS_TRACE_LEVEL_INFO,
-            "%s called with halHandle = %p, pContext = %p,"
-            "scanID = %d, returned status = %d\n", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (eANI_BOOLEAN_TRUE == hdd_is_okc_mode_enabled(pHddCtx))
     {
         dump_bssid(pRoamInfo->bssid);
@@ -6967,10 +4379,6 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
     hddLog(VOS_TRACE_LEVEL_INFO,
             "%s called with halHandle = %p, pContext = %p,"
             "scanID = %d, returned status = %d\n",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             __func__, halHandle, pContext, (int) scanId, (int) status);
 
     //Block on scan req completion variable. Can't wait forever though.
@@ -6990,24 +4398,6 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
     }
 
     /* Check the scanId */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (pScanInfo->scanId != scanId) 
-    {
-        hddLog(VOS_TRACE_LEVEL_INFO,
-                "%s called with mismatched scanId pScanInfo->scanId = %d "
-                "scanId = %d \n", __func__, (int) pScanInfo->scanId, 
-                (int) scanId);
-    }
-
-    ret = wlan_hdd_cfg80211_update_bss((WLAN_HDD_GET_CTX(pAdapter))->wiphy, 
-                                        pAdapter);
-
-    if (0 > ret)
-        hddLog(VOS_TRACE_LEVEL_INFO, "%s: NO SCAN result", __func__);    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pScanInfo->scanId != scanId)
     {
         hddLog(VOS_TRACE_LEVEL_INFO,
@@ -7021,29 +4411,10 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
 
     if (0 > ret)
         hddLog(VOS_TRACE_LEVEL_INFO, "%s: NO SCAN result", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 
     /* If any client wait scan result through WEXT
      * send scan done event to client */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (pAdapter->scan_info.waitScanResult)
-    {
-        /* The other scan request waiting for current scan finish
-         * Send event to notify current scan finished */
-        if(WEXT_SCAN_PENDING_DELAY == pAdapter->scan_info.scan_pending_option)
-        {
-            vos_event_set(&pAdapter->scan_info.scan_finished_event);
-        }
-        /* Send notify to WEXT client */
-        else if(WEXT_SCAN_PENDING_PIGGYBACK == pAdapter->scan_info.scan_pending_option)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (pHddCtx->scan_info.waitScanResult)
     {
         /* The other scan request waiting for current scan finish
@@ -7054,10 +4425,6 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
         }
         /* Send notify to WEXT client */
         else if(WEXT_SCAN_PENDING_PIGGYBACK == pHddCtx->scan_info.scan_pending_option)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             struct net_device *dev = pAdapter->dev;
             union iwreq_data wrqu;
@@ -7070,15 +4437,7 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
             wireless_send_event(dev, we_event, &wrqu, msg);
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pAdapter->scan_info.waitScanResult = FALSE;
-=======
     pHddCtx->scan_info.waitScanResult = FALSE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pHddCtx->scan_info.waitScanResult = FALSE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     /* Get the Scan Req */
     req = pAdapter->request;
@@ -7092,26 +4451,11 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
 
     /*
      * setting up 0, just in case.
-<<<<<<< HEAD
-<<<<<<< HEAD
-     */  
-=======
      */
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-     */
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     req->n_ssids = 0;
     req->n_channels = 0;
     req->ie = 0;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    complete(&pAdapter->abortscan_event_var);
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     pAdapter->request = NULL;
     /* Scan is no longer pending */
     pScanInfo->mScanPending = VOS_FALSE;
@@ -7120,21 +4464,6 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
      * cfg80211_scan_done informing NL80211 about completion
      * of scanning
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    cfg80211_scan_done(req, false);
-#ifdef WLAN_FEATURE_P2P
-    /* Flush out scan result after p2p_serach is done */
-    if(pScanInfo->flushP2pScanResults)
-    {
-        tANI_U8 sessionId = pAdapter->sessionId;
-        sme_ScanFlushP2PResult(WLAN_HDD_GET_HAL_CTX(pAdapter), sessionId);
-        pScanInfo->flushP2pScanResults = 0;
-    }
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //Begin Mot IKHSS7-28961 : Dont allow sleep so that supplicant
     // can fetch scan results before kerenel ages it out if slept immediately
     // and sleep duration is more than the ageout time.
@@ -7142,20 +4471,11 @@ static eHalStatus hdd_cfg80211_scan_done_callback(tHalHandle halHandle,
    //END IKHSS7-28961
     cfg80211_scan_done(req, false);
     complete(&pScanInfo->abortscan_event_var);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 allow_suspend:
     /* release the wake lock at the end of the scan*/
     hdd_allow_suspend();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* Acquire wakelock to handle the case where APP's tries to suspend
      * immediatly after the driver gets connect request(i.e after scan)
      * from supplicant, this result in app's is suspending and not able
@@ -7166,20 +4486,11 @@ allow_suspend:
     wlan_hdd_tdls_scan_done_callback(pAdapter);
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     EXIT();
     return 0;
 }
 
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: hdd_isScanAllowed
  * Go through each adapter and check if scan allowed
  *
@@ -7250,34 +4561,10 @@ v_BOOL_t hdd_isScanAllowed( hdd_context_t *pHddCtx )
 }
 
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: wlan_hdd_cfg80211_scan
  * this scan respond to scan trigger and update cfg80211 scan database
  * later, scan dump command can be used to recieve scan results
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-int wlan_hdd_cfg80211_scan( struct wiphy *wiphy, struct net_device *dev,
-        struct cfg80211_scan_request *request)
-{  
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev ); 
-    hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX( pAdapter );
-    hdd_wext_state_t *pwextBuf = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
-    hdd_config_t *cfg_param = (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini;
-    tCsrScanRequest scanRequest;
-    tANI_U8 *channelList = NULL, i;
-    v_U32_t scanId = 0;
-    int status = 0;
-    hdd_scaninfo_t *pScanInfo = &pAdapter->scan_info;
-#ifdef WLAN_FEATURE_P2P
-    v_U8_t* pP2pIe = NULL;
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,6,0))
                             struct net_device *dev,
@@ -7297,25 +4584,11 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
     int status;
     hdd_scaninfo_t *pScanInfo = NULL;
     v_U8_t* pP2pIe = NULL;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",
                                    __func__,pAdapter->device_mode);
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_BTAMP_FEATURE
-    //Scan not supported when AMP traffic is on.
-    if( VOS_TRUE == WLANBAP_AmpSessionOn() ) 
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     status = wlan_hdd_validate_context(pHddCtx);
 
@@ -7344,30 +4617,14 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
     if (VOS_TRUE == WLANBAP_AmpSessionOn())
     {
         hddLog(VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 "%s: No scanning when AMP is on", __func__);
         return -EOPNOTSUPP;
     }
 #endif
     //Scan on any other interface is not supported.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if( pAdapter->device_mode == WLAN_HDD_SOFTAP ) 
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
     if (pAdapter->device_mode == WLAN_HDD_SOFTAP)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (pAdapter->device_mode == WLAN_HDD_SOFTAP)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 "%s: Not scanning on device_mode = %d",
                                     __func__, pAdapter->device_mode);
         return -EOPNOTSUPP;
@@ -7376,32 +4633,6 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
     if (TRUE == pScanInfo->mScanPending)
     {
         hddLog(VOS_TRACE_LEVEL_INFO, "%s: mScanPending is TRUE", __func__);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return -EBUSY;                  
-    }
-
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
-                  "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLoadUnloadInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_FATAL,
-                  "%s:Unloading/Loading in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-    //Don't Allow Scan and return busy if Remain On 
-    //Channel and action frame is pending
-    //Otherwise Cancel Remain On Channel and allow Scan
-    //If no action frame pending
-    if(0 != wlan_hdd_check_remain_on_channel(pAdapter))
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EBUSY;
     }
 
@@ -7410,19 +4641,10 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
     //Otherwise Cancel Remain On Channel and allow Scan
     //If no action frame pending
     if (0 != wlan_hdd_check_remain_on_channel(pAdapter))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         hddLog(VOS_TRACE_LEVEL_INFO, "%s: Remain On Channel Pending", __func__);
         return -EBUSY;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
     /* if tdls disagree scan right now, return immediately.
        tdls will schedule the scan when scan is allowed. (return SUCCESS)
@@ -7440,43 +4662,18 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
         return status;
     }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     if (mutex_lock_interruptible(&pHddCtx->tmInfo.tmOperationLock))
     {
         VOS_TRACE(VOS_MODULE_ID_HDD,VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "%s: Aquire lock fail", __func__);
-        return -EAGAIN;
-    }    
-=======
                   "%s: Acquire lock fail", __func__);
         return -EAGAIN;
     }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  "%s: Acquire lock fail", __func__);
-        return -EAGAIN;
-    }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (TRUE == pHddCtx->tmInfo.tmAction.enterImps)
     {
         hddLog(VOS_TRACE_LEVEL_WARN,
                "%s: MAX TM Level Scan not allowed", __func__);
         mutex_unlock(&pHddCtx->tmInfo.tmOperationLock);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return -EBUSY;                  
-    }
-    mutex_unlock(&pHddCtx->tmInfo.tmOperationLock);
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         return -EBUSY;
     }
     mutex_unlock(&pHddCtx->tmInfo.tmOperationLock);
@@ -7489,40 +4686,17 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
         return -EBUSY;
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     vos_mem_zero( &scanRequest, sizeof(scanRequest));
 
     if (NULL != request)
     {
         hddLog(VOS_TRACE_LEVEL_INFO, "scan request for ssid = %d",
-<<<<<<< HEAD
-<<<<<<< HEAD
-               (int)request->n_ssids);  
-=======
                (int)request->n_ssids);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               (int)request->n_ssids);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         /* Even though supplicant doesn't provide any SSIDs, n_ssids is set to 1.
          * Becasue of this, driver is assuming that this is not wildcard scan and so
          * is not aging out the scan results.
          */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (request->ssids && '\0' == request->ssids->ssid[0])
-        {
-            request->n_ssids = 0;
-        }
-
-        if (0 < request->n_ssids)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Motorola - support passive scan for autonomous mode - START */
         if (NULL == request->ssids) {
             request->n_ssids = -1;
@@ -7538,10 +4712,6 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
             hddLog(VOS_TRACE_LEVEL_INFO, "requesting PASSIVE SCAN");
         /* Motorola - support passive scan for autonomous mode - END */
         } else if (0 < request->n_ssids)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             tCsrSSIDInfo *SsidInfo;
             int j;
@@ -7571,51 +4741,23 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
             }
             /* set the scan type to active */
             scanRequest.scanType = eSIR_ACTIVE_SCAN;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             scanRequest.minChnTime = cfg_param->nActiveMinChnTime;
             scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            scanRequest.minChnTime = cfg_param->nActiveMinChnTime;
-            scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else if(WLAN_HDD_P2P_GO == pAdapter->device_mode)
         {
             /* set the scan type to active */
             scanRequest.scanType = eSIR_ACTIVE_SCAN;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             scanRequest.minChnTime = cfg_param->nActiveMinChnTime;
             scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            scanRequest.minChnTime = cfg_param->nActiveMinChnTime;
-            scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         else
         {
             /*Set the scan type to default type, in this case it is ACTIVE*/
             scanRequest.scanType = pScanInfo->scan_mode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-        scanRequest.minChnTime = cfg_param->nActiveMinChnTime; 
-        scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
-=======
             scanRequest.minChnTime = cfg_param->nActiveMinChnTime;
             scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
         }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            scanRequest.minChnTime = cfg_param->nActiveMinChnTime;
-            scanRequest.maxChnTime = cfg_param->nActiveMaxChnTime;
-        }
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
     {
@@ -7655,11 +4797,6 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
         /* set requestType to full scan */
         scanRequest.requestType = eCSR_SCAN_REQUEST_FULL_SCAN;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Flush the scan results(only p2p beacons) for STA scan and P2P
          * search (Flush on both full  scan and social scan but not on single
          * channel scan).P2P  search happens on 3 social channels (1, 6, 11)
@@ -7678,10 +4815,6 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
                                                 pAdapter->sessionId );
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if( request->ie_len )
         {
             /* save this for future association (join requires this) */
@@ -7701,26 +4834,10 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
             scanRequest.uIEFieldLen = pScanInfo->scanAddIE.length;
             scanRequest.pIEField = pScanInfo->scanAddIE.addIEdata;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pP2pIe = wlan_hdd_get_p2p_ie_ptr((v_U8_t*)request->ie,
                                                        request->ie_len);
             if (pP2pIe != NULL)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                /* no_cck will be set during p2p find to disable 11b rates */
-                if(TRUE == request->no_cck)
-                {
-                    tANI_U8 sessionId = pAdapter->sessionId;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_P2P_DEBUG
                 if (((globalP2PConnectionStatus == P2P_GO_NEG_COMPLETED) ||
                     (globalP2PConnectionStatus == P2P_GO_NEG_PROCESS)) &&
@@ -7746,31 +4863,12 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
                 /* no_cck will be set during p2p find to disable 11b rates */
                 if(TRUE == request->no_cck)
                 {
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     hddLog(VOS_TRACE_LEVEL_INFO,
                            "%s: This is a P2P Search", __func__);
                     scanRequest.p2pSearch = 1;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    /* Flush the scan results only for P2P search.
-                       P2P search happens on 3 social channels (1, 6, 11) */
                     if( request->n_channels == WLAN_HDD_P2P_SOCIAL_CHANNELS )
                     {
-                         pScanInfo->flushP2pScanResults = 1;
-                         sme_ScanFlushP2PResult( WLAN_HDD_GET_HAL_CTX(pAdapter),
-                                          sessionId );
-=======
-                    if( request->n_channels == WLAN_HDD_P2P_SOCIAL_CHANNELS )
-                    {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    if( request->n_channels == WLAN_HDD_P2P_SOCIAL_CHANNELS )
-                    {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          /* set requestType to P2P Discovery */
                          scanRequest.requestType = eCSR_SCAN_P2P_DISCOVERY;
                     }
@@ -7790,39 +4888,17 @@ int wlan_hdd_cfg80211_scan( struct wiphy *wiphy,
 
                 }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
     INIT_COMPLETION(pScanInfo->scan_req_completion_event);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* acquire the wakelock to avoid the apps suspend during the scan. To 
-     * address the following issues.
-     * 1) Disconnected scenario: we are not allowing the suspend as WLAN is not in 
-     * BMPS/IMPS this result in android trying to suspend aggressively and backing off 
-     * for long time, this result in apps running at full power for long time.
-     * 2) Connected scenario: If we allow the suspend during the scan, RIVA will 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /* acquire the wakelock to avoid the apps suspend during the scan. To
      * address the following issues.
      * 1) Disconnected scenario: we are not allowing the suspend as WLAN is not in
      * BMPS/IMPS this result in android trying to suspend aggressively and backing off
      * for long time, this result in apps running at full power for long time.
      * 2) Connected scenario: If we allow the suspend during the scan, RIVA will
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      * be stuck in full power because of resume BMPS
      */
     hdd_prevent_suspend();
@@ -7869,21 +4945,9 @@ free_mem:
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_connect_start
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is used to start the association process 
- */
-int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter, 
-=======
  * This function is used to start the association process
  */
 int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- * This function is used to start the association process
- */
-int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         const u8 *ssid, size_t ssid_len, const u8 *bssid, u8 operatingChannel)
 {
     int status = 0;
@@ -7896,15 +4960,7 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
     ENTER();
 
     pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (SIR_MAC_MAX_SSID_LENGTH < ssid_len)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: wrong SSID len", __func__);
@@ -7913,15 +4969,7 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
 
     pRoamProfile = &pWextState->roamProfile;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (pRoamProfile) 
-=======
     if (pRoamProfile)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (pRoamProfile)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         int ret = 0;
         hdd_station_ctx_t *pHddStaCtx;
@@ -7934,15 +4982,7 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
         {
             /* Issue disconnect to CSR */
             INIT_COMPLETION(pAdapter->disconnect_comp_var);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if( eHAL_STATUS_SUCCESS == 
-=======
             if( eHAL_STATUS_SUCCESS ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            if( eHAL_STATUS_SUCCESS ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                   sme_RoamDisconnect( WLAN_HDD_GET_HAL_CTX(pAdapter),
                             pAdapter->sessionId,
                             eCSR_DISCONNECT_REASON_UNSPECIFIED ) )
@@ -7967,15 +5007,7 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
             }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (HDD_WMM_USER_MODE_NO_QOS == 
-=======
         if (HDD_WMM_USER_MODE_NO_QOS ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (HDD_WMM_USER_MODE_NO_QOS ==
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->WmmMode)
         {
             /*QoS not enabled in cfg file*/
@@ -7984,30 +5016,14 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
         else
         {
             /*QoS enabled, update uapsd mask from cfg file*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-            pRoamProfile->uapsd_mask = 
-=======
             pRoamProfile->uapsd_mask =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            pRoamProfile->uapsd_mask =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      (WLAN_HDD_GET_CTX(pAdapter))->cfg_ini->UapsdMask;
         }
 
         pRoamProfile->SSIDs.numOfSSIDs = 1;
         pRoamProfile->SSIDs.SSIDList->SSID.length = ssid_len;
         vos_mem_zero(pRoamProfile->SSIDs.SSIDList->SSID.ssId,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                sizeof(pRoamProfile->SSIDs.SSIDList->SSID.ssId)); 
-=======
                 sizeof(pRoamProfile->SSIDs.SSIDList->SSID.ssId));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                sizeof(pRoamProfile->SSIDs.SSIDList->SSID.ssId));
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         vos_mem_copy((void *)(pRoamProfile->SSIDs.SSIDList->SSID.ssId),
                 ssid, ssid_len);
 
@@ -8016,18 +5032,8 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
             pRoamProfile->BSSIDs.numOfBSSIDs = 1;
             vos_mem_copy((void *)(pRoamProfile->BSSIDs.bssid), bssid,
                     WNI_CFG_BSSID_LEN);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            /* Save BSSID in seperate variable as well, as RoamProfile 
-               BSSID is getting zeroed out in the association process. And in 
-=======
             /* Save BSSID in seperate variable as well, as RoamProfile
                BSSID is getting zeroed out in the association process. And in
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            /* Save BSSID in seperate variable as well, as RoamProfile
-               BSSID is getting zeroed out in the association process. And in
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                case of join failure we should send valid BSSID to supplicant
              */
             vos_mem_copy((void *)(pWextState->req_bssId), bssid,
@@ -8036,81 +5042,28 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
 
         if ((IW_AUTH_WPA_VERSION_WPA == pWextState->wpaVersion) ||
                 (IW_AUTH_WPA_VERSION_WPA2 == pWextState->wpaVersion))
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { 
-=======
         {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             /*set gen ie*/
             hdd_SetGENIEToCsr(pAdapter, &RSNAuthType);
             /*set auth*/
             hdd_set_csr_auth_type(pAdapter, RSNAuthType);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        else if ( (pWextState->roamProfile.AuthType.authType[0] == 
-                    eCSR_AUTH_TYPE_OPEN_SYSTEM)
-                && ((pWextState->roamProfile.EncryptionType.encryptionType[0] == 
-                        eCSR_ENCRYPT_TYPE_WEP40_STATICKEY) 
-                    || (pWextState->roamProfile.EncryptionType.encryptionType[0] == 
-                        eCSR_ENCRYPT_TYPE_WEP104_STATICKEY))
-                )
-        {
-            /*Android UI not having any option to configure the Authentication type to OPEN/SHARED;
-             * The authentication type will be always eCSR_AUTH_TYPE_OPEN_SYSTEM when WEP is used
-             * Use eCSR_AUTH_TYPE_AUTOSWITCH when WEP encryption used*/
-            (WLAN_HDD_GET_STATION_CTX_PTR(pAdapter))->conn_info.authType = 
-                                                     eCSR_AUTH_TYPE_AUTOSWITCH;
-            pWextState->roamProfile.AuthType.authType[0] = 
-                  (WLAN_HDD_GET_STATION_CTX_PTR(pAdapter))->conn_info.authType;
-        }
-#ifdef FEATURE_WLAN_WAPI
-        if (pAdapter->wapi_info.nWapiMode)
-        {
-            hddLog(LOG1, "%s: Setting WAPI AUTH Type and Encryption Mode values", __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_WAPI
         if (pAdapter->wapi_info.nWapiMode)
         {
             hddLog(LOG1, "%s: Setting WAPI AUTH Type and Encryption Mode values", __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             switch (pAdapter->wapi_info.wapiAuthMode)
             {
                 case WAPI_AUTH_MODE_PSK:
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    hddLog(LOG1, "%s: WAPI AUTH TYPE: PSK: %d", __FUNCTION__,
-=======
                     hddLog(LOG1, "%s: WAPI AUTH TYPE: PSK: %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    hddLog(LOG1, "%s: WAPI AUTH TYPE: PSK: %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                    pAdapter->wapi_info.wapiAuthMode);
                     pRoamProfile->AuthType.authType[0] = eCSR_AUTH_TYPE_WAPI_WAI_PSK;
                     break;
                 }
                 case WAPI_AUTH_MODE_CERT:
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    hddLog(LOG1, "%s: WAPI AUTH TYPE: CERT: %d", __FUNCTION__,
-=======
                     hddLog(LOG1, "%s: WAPI AUTH TYPE: CERT: %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                    hddLog(LOG1, "%s: WAPI AUTH TYPE: CERT: %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                     pAdapter->wapi_info.wapiAuthMode);
                     pRoamProfile->AuthType.authType[0] = eCSR_AUTH_TYPE_WAPI_WAI_CERTIFICATE;
                     break;
@@ -8119,15 +5072,7 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
             if ( pAdapter->wapi_info.wapiAuthMode == WAPI_AUTH_MODE_PSK ||
                 pAdapter->wapi_info.wapiAuthMode == WAPI_AUTH_MODE_CERT)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog(LOG1, "%s: WAPI PAIRWISE/GROUP ENCRYPTION: WPI", __FUNCTION__);
-=======
                 hddLog(LOG1, "%s: WAPI PAIRWISE/GROUP ENCRYPTION: WPI", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                hddLog(LOG1, "%s: WAPI PAIRWISE/GROUP ENCRYPTION: WPI", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 pRoamProfile->AuthType.numEntries = 1;
                 pRoamProfile->EncryptionType.numEntries = 1;
                 pRoamProfile->EncryptionType.encryptionType[0] = eCSR_ENCRYPT_TYPE_WPI;
@@ -8136,11 +5081,6 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
             }
         }
 #endif /* FEATURE_WLAN_WAPI */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_GTK_OFFLOAD
         /* Initializing gtkOffloadRequestParams */
         if ((WLAN_HDD_INFRA_STATION == pAdapter->device_mode) ||
@@ -8151,10 +5091,6 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
                  0, sizeof (tSirGtkOffloadParams));
         }
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         pRoamProfile->csrPersona = pAdapter->device_mode;
 
         if( operatingChannel )
@@ -8163,16 +5099,6 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
            pRoamProfile->ChannelInfo.numOfChannels = 1;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        status = sme_RoamConnect( WLAN_HDD_GET_HAL_CTX(pAdapter), 
-                            pAdapter->sessionId, pRoamProfile, &roamId);
-
-        pRoamProfile->ChannelInfo.ChannelList = NULL;
-        pRoamProfile->ChannelInfo.numOfChannels = 0;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* change conn_state to connecting before sme_RoamConnect(), because sme_RoamConnect()
          * has a direct path to call hdd_smeRoamCallback(), which will change the conn_state
          * If direct path, conn_state will be accordingly changed to NotConnected or Associated
@@ -8202,25 +5128,13 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
         pRoamProfile->ChannelInfo.ChannelList = NULL;
         pRoamProfile->ChannelInfo.numOfChannels = 0;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
     else
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: No valid Roam profile", __func__);
         return -EINVAL;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    EXIT(); 
-=======
     EXIT();
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    EXIT();
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return status;
 }
 
@@ -8232,30 +5146,12 @@ int wlan_hdd_cfg80211_connect_start( hdd_adapter_t  *pAdapter,
 static int wlan_hdd_cfg80211_set_auth_type(hdd_adapter_t *pAdapter,
         enum nl80211_auth_type auth_type)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);   
-=======
     hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
 
     ENTER();
 
     /*set authentication type*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-    switch (auth_type) 
-    {
-        case NL80211_AUTHTYPE_OPEN_SYSTEM:
-        case NL80211_AUTHTYPE_AUTOMATIC:
-            hddLog(VOS_TRACE_LEVEL_INFO, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     switch (auth_type)
     {
         case NL80211_AUTHTYPE_AUTOMATIC:
@@ -8269,38 +5165,18 @@ static int wlan_hdd_cfg80211_set_auth_type(hdd_adapter_t *pAdapter,
         case NL80211_AUTHTYPE_FT:
 #endif /* WLAN_FEATURE_VOWIFI_11R */
             hddLog(VOS_TRACE_LEVEL_INFO,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "%s: set authentication type to OPEN", __func__);
             pHddStaCtx->conn_info.authType = eCSR_AUTH_TYPE_OPEN_SYSTEM;
             break;
 
         case NL80211_AUTHTYPE_SHARED_KEY:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_INFO, 
-=======
             hddLog(VOS_TRACE_LEVEL_INFO,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_INFO,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "%s: set authentication type to SHARED", __func__);
             pHddStaCtx->conn_info.authType = eCSR_AUTH_TYPE_SHARED_KEY;
             break;
 #ifdef FEATURE_WLAN_CCX
         case NL80211_AUTHTYPE_NETWORK_EAP:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_INFO, 
-=======
             hddLog(VOS_TRACE_LEVEL_INFO,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_INFO,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                             "%s: set authentication type to CCKM WPA", __func__);
             pHddStaCtx->conn_info.authType = eCSR_AUTH_TYPE_CCKM_WPA;//eCSR_AUTH_TYPE_CCKM_RSN needs to be handled as well if required.
             break;
@@ -8308,32 +5184,14 @@ static int wlan_hdd_cfg80211_set_auth_type(hdd_adapter_t *pAdapter,
 
 
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-                    "%s: Unsupported authentication type %d", __func__, 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR,
                     "%s: Unsupported authentication type %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR,
-                    "%s: Unsupported authentication type %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     auth_type);
             pHddStaCtx->conn_info.authType = eCSR_AUTH_TYPE_UNKNOWN;
             return -EINVAL;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pWextState->roamProfile.AuthType.authType[0] = 
-=======
     pWextState->roamProfile.AuthType.authType[0] =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pWextState->roamProfile.AuthType.authType[0] =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                         pHddStaCtx->conn_info.authType;
     return 0;
 }
@@ -8343,66 +5201,30 @@ static int wlan_hdd_cfg80211_set_auth_type(hdd_adapter_t *pAdapter,
  * This function is used to set the key mgmt type(PSK/8021x).
  *
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_set_akm_suite( hdd_adapter_t *pAdapter, 
-=======
 static int wlan_hdd_set_akm_suite( hdd_adapter_t *pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static int wlan_hdd_set_akm_suite( hdd_adapter_t *pAdapter,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                    u32 key_mgmt
                                    )
 {
     hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     ENTER();
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     /*set key mgmt type*/
     switch(key_mgmt)
     {
         case WLAN_AKM_SUITE_PSK:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting key mgmt type to PSK", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
         case WLAN_AKM_SUITE_FT_PSK:
 #endif
             hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting key mgmt type to PSK",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__);
             pWextState->authKeyMgmt |= IW_AUTH_KEY_MGMT_PSK;
             break;
 
         case WLAN_AKM_SUITE_8021X:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting key mgmt type to 8021x", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_VOWIFI_11R
         case WLAN_AKM_SUITE_FT_8021X:
 #endif
             hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting key mgmt type to 8021x",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__);
             pWextState->authKeyMgmt |= IW_AUTH_KEY_MGMT_802_1X;
             break;
@@ -8417,15 +5239,7 @@ static int wlan_hdd_set_akm_suite( hdd_adapter_t *pAdapter,
 #endif
 
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported key mgmt type %d", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported key mgmt type %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported key mgmt type %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, key_mgmt);
             return -EINVAL;
 
@@ -8435,107 +5249,35 @@ static int wlan_hdd_set_akm_suite( hdd_adapter_t *pAdapter,
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_set_cipher
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is used to set the encryption type 
- * (NONE/WEP40/WEP104/TKIP/CCMP).
- */
-static int wlan_hdd_cfg80211_set_cipher( hdd_adapter_t *pAdapter, 
-                                u32 cipher, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * This function is used to set the encryption type
  * (NONE/WEP40/WEP104/TKIP/CCMP).
  */
 static int wlan_hdd_cfg80211_set_cipher( hdd_adapter_t *pAdapter,
                                 u32 cipher,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 bool ucast
                                 )
 {
     eCsrEncryptionType encryptionType = eCSR_ENCRYPT_TYPE_NONE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);   
-=======
     hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
 
     ENTER();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (!cipher) 
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: received cipher %d - considering none", 
-=======
     if (!cipher)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: received cipher %d - considering none",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (!cipher)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: received cipher %d - considering none",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__, cipher);
         encryptionType = eCSR_ENCRYPT_TYPE_NONE;
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-        /*set encryption method*/
-        switch (cipher) 
-=======
 
         /*set encryption method*/
         switch (cipher)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-        /*set encryption method*/
-        switch (cipher)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             case IW_AUTH_CIPHER_NONE:
                 encryptionType = eCSR_ENCRYPT_TYPE_NONE;
                 break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-            case WLAN_CIPHER_SUITE_WEP40:
-                if ((IW_AUTH_KEY_MGMT_802_1X == pWextState->authKeyMgmt) && 
-                    (eCSR_AUTH_TYPE_OPEN_SYSTEM == pHddStaCtx->conn_info.authType))
-                    encryptionType = eCSR_ENCRYPT_TYPE_WEP40;
-                else
-                    encryptionType = eCSR_ENCRYPT_TYPE_WEP40_STATICKEY;
-                break;
-    
-            case WLAN_CIPHER_SUITE_WEP104:
-                if ((IW_AUTH_KEY_MGMT_802_1X == pWextState->authKeyMgmt) && 
-                    (eCSR_AUTH_TYPE_OPEN_SYSTEM == pHddStaCtx->conn_info.authType))
-                    encryptionType = eCSR_ENCRYPT_TYPE_WEP104;
-                else
-                    encryptionType = eCSR_ENCRYPT_TYPE_WEP104_STATICKEY;
-                break;
-    
-            case WLAN_CIPHER_SUITE_TKIP:
-                encryptionType = eCSR_ENCRYPT_TYPE_TKIP;
-                break;
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             case WLAN_CIPHER_SUITE_WEP40:
                 encryptionType = eCSR_ENCRYPT_TYPE_WEP40;
@@ -8549,10 +5291,6 @@ static int wlan_hdd_cfg80211_set_cipher( hdd_adapter_t *pAdapter,
                 encryptionType = eCSR_ENCRYPT_TYPE_TKIP;
                 break;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             case WLAN_CIPHER_SUITE_CCMP:
                 encryptionType = eCSR_ENCRYPT_TYPE_AES;
                 break;
@@ -8568,15 +5306,7 @@ static int wlan_hdd_cfg80211_set_cipher( hdd_adapter_t *pAdapter,
             break;
 #endif
             default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported cipher type %d", 
-=======
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported cipher type %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Unsupported cipher type %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         __func__, cipher);
                 return -EOPNOTSUPP;
         }
@@ -8584,38 +5314,16 @@ static int wlan_hdd_cfg80211_set_cipher( hdd_adapter_t *pAdapter,
 
     if (ucast)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting unicast cipher type to %d", 
-                __func__, encryptionType);
-        pHddStaCtx->conn_info.ucEncryptionType            = encryptionType;
-        pWextState->roamProfile.EncryptionType.numEntries = 1;
-        pWextState->roamProfile.EncryptionType.encryptionType[0] = 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting unicast cipher type to %d",
                 __func__, encryptionType);
         pHddStaCtx->conn_info.ucEncryptionType            = encryptionType;
         pWextState->roamProfile.EncryptionType.numEntries = 1;
         pWextState->roamProfile.EncryptionType.encryptionType[0] =
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                           encryptionType;
     }
     else
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting mcast cipher type to %d", 
-=======
         hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting mcast cipher type to %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog(VOS_TRACE_LEVEL_INFO, "%s: setting mcast cipher type to %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__, encryptionType);
         pHddStaCtx->conn_info.mcEncryptionType                       = encryptionType;
         pWextState->roamProfile.mcEncryptionType.numEntries        = 1;
@@ -8630,18 +5338,8 @@ static int wlan_hdd_cfg80211_set_cipher( hdd_adapter_t *pAdapter,
  * FUNCTION: wlan_hdd_cfg80211_set_ie
  * This function is used to parse WPA/RSN IE's.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter, 
-                              u8 *ie, 
-=======
 int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                               u8 *ie,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
-                              u8 *ie,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                               size_t ie_len
                               )
 {
@@ -8667,34 +5365,6 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
         elementId = *genie++;
         eLen  = *genie++;
         remLen -= 2;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-        hddLog(VOS_TRACE_LEVEL_INFO, "%s: IE[0x%X], LEN[%d]\n", 
-            __func__, elementId, eLen);
-         
-        switch ( elementId ) 
-        {
-            case DOT11F_EID_WPA: 
-                if ((2+4) > eLen) /* should have at least OUI */
-                {
-                    hddLog(VOS_TRACE_LEVEL_ERROR, 
-                              "%s: Invalid WPA IE", __func__);
-                    return -EINVAL;
-                }
-                else if (0 == memcmp(&genie[0], "\x00\x50\xf2\x04", 4)) 
-                {
-                    v_U16_t curAddIELen = pWextState->assocAddIE.length;
-                    hddLog (VOS_TRACE_LEVEL_INFO, "%s Set WPS IE(len %d)", 
-                            __func__, eLen + 2);
-                    
-                    if( SIR_MAC_MAX_IE_LENGTH < (pWextState->assocAddIE.length + eLen) )
-                    {
-                       hddLog(VOS_TRACE_LEVEL_FATAL, "Cannot accomadate assocAddIE. "
-                                                      "Need bigger buffer space\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         hddLog(VOS_TRACE_LEVEL_INFO, "%s: IE[0x%X], LEN[%d]\n",
             __func__, elementId, eLen);
@@ -8718,76 +5388,31 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                     {
                        hddLog(VOS_TRACE_LEVEL_FATAL, "Cannot accommodate assocAddIE. "
                                                       "Need bigger buffer space");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        VOS_ASSERT(0);
                        return -ENOMEM;
                     }
                     // WSC IE is saved to Additional IE ; it should be accumulated to handle WPS IE + P2P IE
                     memcpy( pWextState->assocAddIE.addIEdata + curAddIELen, genie - 2, eLen + 2);
                     pWextState->assocAddIE.length += eLen + 2;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pWextState->roamProfile.bWPSAssociation = VOS_TRUE;
                     pWextState->roamProfile.pAddIEAssoc = pWextState->assocAddIE.addIEdata;
                     pWextState->roamProfile.nAddIEAssocLength = pWextState->assocAddIE.length;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-                else if (0 == memcmp(&genie[0], "\x00\x50\xf2", 3)) 
-                {  
-=======
                 else if (0 == memcmp(&genie[0], "\x00\x50\xf2", 3))
                 {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                else if (0 == memcmp(&genie[0], "\x00\x50\xf2", 3))
-                {
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     hddLog (VOS_TRACE_LEVEL_INFO, "%s Set WPA IE (len %d)",__func__, eLen + 2);
                     memset( pWextState->WPARSNIE, 0, MAX_WPA_RSN_IE_LEN );
                     memcpy( pWextState->WPARSNIE, genie - 2, (eLen + 2) /*ie_len*/);
                     pWextState->roamProfile.pWPAReqIE = pWextState->WPARSNIE;
                     pWextState->roamProfile.nWPAReqIELength = eLen + 2;//ie_len;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-                else if ( (0 == memcmp(&genie[0], P2P_OUI_TYPE, 
-                                                         P2P_OUI_TYPE_SIZE)) 
-=======
                 else if ( (0 == memcmp(&genie[0], P2P_OUI_TYPE,
                                                          P2P_OUI_TYPE_SIZE))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                else if ( (0 == memcmp(&genie[0], P2P_OUI_TYPE,
-                                                         P2P_OUI_TYPE_SIZE))
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         /*Consider P2P IE, only for P2P Client */
                          && (WLAN_HDD_P2P_CLIENT == pAdapter->device_mode) )
                 {
                     v_U16_t curAddIELen = pWextState->assocAddIE.length;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    hddLog (VOS_TRACE_LEVEL_INFO, "%s Set P2P IE(len %d)", 
-                            __func__, eLen + 2);
-                    
-                    if( SIR_MAC_MAX_IE_LENGTH < (pWextState->assocAddIE.length + eLen) )
-                    {
-                       hddLog(VOS_TRACE_LEVEL_FATAL, "Cannot accomadate assocAddIE "
-                                                      "Need bigger buffer space\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     hddLog (VOS_TRACE_LEVEL_INFO, "%s Set P2P IE(len %d)",
                             __func__, eLen + 2);
 
@@ -8795,29 +5420,12 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                     {
                        hddLog(VOS_TRACE_LEVEL_FATAL, "Cannot accommodate assocAddIE "
                                                       "Need bigger buffer space");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        VOS_ASSERT(0);
                        return -ENOMEM;
                     }
                     // P2P IE is saved to Additional IE ; it should be accumulated to handle WPS IE + P2P IE
                     memcpy( pWextState->assocAddIE.addIEdata + curAddIELen, genie - 2, eLen + 2);
                     pWextState->assocAddIE.length += eLen + 2;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    
-                    pWextState->roamProfile.pAddIEAssoc = pWextState->assocAddIE.addIEdata;
-                    pWextState->roamProfile.nAddIEAssocLength = pWextState->assocAddIE.length;
-                }
-#endif
-#ifdef WLAN_FEATURE_WFD
-                else if ( (0 == memcmp(&genie[0], WFD_OUI_TYPE, 
-                                                         WFD_OUI_TYPE_SIZE)) 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
                     pWextState->roamProfile.pAddIEAssoc = pWextState->assocAddIE.addIEdata;
                     pWextState->roamProfile.nAddIEAssocLength = pWextState->assocAddIE.length;
@@ -8825,26 +5433,10 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
 #ifdef WLAN_FEATURE_WFD
                 else if ( (0 == memcmp(&genie[0], WFD_OUI_TYPE,
                                                          WFD_OUI_TYPE_SIZE))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         /*Consider WFD IE, only for P2P Client */
                          && (WLAN_HDD_P2P_CLIENT == pAdapter->device_mode) )
                 {
                     v_U16_t curAddIELen = pWextState->assocAddIE.length;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    hddLog (VOS_TRACE_LEVEL_INFO, "%s Set WFD IE(len %d)", 
-                            __func__, eLen + 2);
-                    
-                    if( SIR_MAC_MAX_IE_LENGTH < (pWextState->assocAddIE.length + eLen) )
-                    {
-                       hddLog(VOS_TRACE_LEVEL_FATAL, "Cannot accomadate assocAddIE "
-                                                      "Need bigger buffer space\n");
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     hddLog (VOS_TRACE_LEVEL_INFO, "%s Set WFD IE(len %d)",
                             __func__, eLen + 2);
 
@@ -8852,10 +5444,6 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                     {
                        hddLog(VOS_TRACE_LEVEL_FATAL, "Cannot accommodate assocAddIE "
                                                       "Need bigger buffer space");
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                        VOS_ASSERT(0);
                        return -ENOMEM;
                     }
@@ -8863,24 +5451,11 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                     // WPS IE + P2P IE + WFD IE
                     memcpy( pWextState->assocAddIE.addIEdata + curAddIELen, genie - 2, eLen + 2);
                     pWextState->assocAddIE.length += eLen + 2;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pWextState->roamProfile.pAddIEAssoc = pWextState->assocAddIE.addIEdata;
                     pWextState->roamProfile.nAddIEAssocLength = pWextState->assocAddIE.length;
                 }
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /* Appending HS 2.0 Indication Element in Assiciation Request */
                 else if ( (0 == memcmp(&genie[0], HS20_OUI_TYPE,
                                        HS20_OUI_TYPE_SIZE)) )
@@ -8903,10 +5478,6 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                     pWextState->roamProfile.nAddIEAssocLength = pWextState->assocAddIE.length;
                 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 break;
             case DOT11F_EID_RSN:
                 hddLog (VOS_TRACE_LEVEL_INFO, "%s Set RSN IE(len %d)",__func__, eLen + 2);
@@ -8915,11 +5486,6 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                 pWextState->roamProfile.pRSNReqIE = pWextState->WPARSNIE;
                 pWextState->roamProfile.nRSNReqIELength = eLen + 2; //ie_len;
                 break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 /* Appending Extended Capabilities with Interworking bit set in Assoc Req */
             case DOT11F_EID_EXTCAP:
                 {
@@ -8941,25 +5507,13 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                     pWextState->roamProfile.nAddIEAssocLength = pWextState->assocAddIE.length;
                     break;
                 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_WAPI
             case WLAN_EID_WAPI:
                 pAdapter->wapi_info.nWapiMode = 1;   //Setting WAPI Mode to ON=1
                 hddLog(VOS_TRACE_LEVEL_INFO,"WAPI MODE IS  %lu \n",
                                           pAdapter->wapi_info.nWapiMode);
                 tmp = (u16 *)ie;
-<<<<<<< HEAD
-<<<<<<< HEAD
-                tmp = tmp + 2; // Skip element Id and Len, Version        
-=======
                 tmp = tmp + 2; // Skip element Id and Len, Version
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                tmp = tmp + 2; // Skip element Id and Len, Version
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 akmsuiteCount = WPA_GET_LE16(tmp);
                 tmp = tmp + 1;
                 akmlist = (int *)(tmp);
@@ -8977,18 +5531,6 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                 if (WAPI_PSK_AKM_SUITE == akmsuite[0])
                 {
                     hddLog(VOS_TRACE_LEVEL_INFO, "%s: WAPI AUTH MODE SET TO PSK",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                            __FUNCTION__);
-                    pAdapter->wapi_info.wapiAuthMode = WAPI_AUTH_MODE_PSK;
-                }    
-                if (WAPI_CERT_AKM_SUITE == akmsuite[0])
-                {     
-                    hddLog(VOS_TRACE_LEVEL_INFO, "%s: WAPI AUTH MODE SET TO CERTIFICATE",
-                                                             __FUNCTION__);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                             __func__);
                     pAdapter->wapi_info.wapiAuthMode = WAPI_AUTH_MODE_PSK;
                 }
@@ -8996,33 +5538,17 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
                 {
                     hddLog(VOS_TRACE_LEVEL_INFO, "%s: WAPI AUTH MODE SET TO CERTIFICATE",
                                                              __func__);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pAdapter->wapi_info.wapiAuthMode = WAPI_AUTH_MODE_CERT;
                 }
                 break;
 #endif
             default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog (VOS_TRACE_LEVEL_ERROR, 
-                        "%s Set UNKNOWN IE %X", __func__, elementId);
-                return 0;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 hddLog (VOS_TRACE_LEVEL_ERROR,
                         "%s Set UNKNOWN IE %X", __func__, elementId);
                 /* when Unknown IE is received we should break and continue
                  * to the next IE in the buffer instead we were returning
                  * so changing this to break */
                 break;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         genie += eLen;
         remLen -= eLen;
@@ -9032,16 +5558,6 @@ int wlan_hdd_cfg80211_set_ie( hdd_adapter_t *pAdapter,
 }
 
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- * FUNCTION: wlan_hdd_cfg80211_set_privacy
- * This function is used to initialize the security 
- * parameters during connect operation.
- */
-int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * FUNCTION: hdd_isWPAIEPresent
  * Parse the received IE to find the WPA IE
  *
@@ -9083,40 +5599,16 @@ static bool hdd_isWPAIEPresent(u8 *ie, u8 ie_len)
  * parameters during connect operation.
  */
 int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                    struct cfg80211_connect_params *req
                                    )
 {
     int status = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);   
-=======
     hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ENTER();
 
     /*set wpa version*/
     pWextState->wpaVersion = IW_AUTH_WPA_VERSION_DISABLED;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (req->crypto.wpa_versions) 
-    {
-        if ( (NL80211_WPA_VERSION_1 == req->crypto.wpa_versions)
-            && ( (req->ie_len) 
-           && (0 == memcmp( &req->ie[2], "\x00\x50\xf2",3) ) ) ) 
-           // Make sure that it is including a WPA IE.
-           /* Currently NL is putting WPA version 1 even for open, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (req->crypto.wpa_versions)
     {
         if ( (NL80211_WPA_VERSION_1 == req->crypto.wpa_versions)
@@ -9124,10 +5616,6 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
            && (hdd_isWPAIEPresent(req->ie, req->ie_len) ) ) )
            // Make sure that it is including a WPA IE.
            /* Currently NL is putting WPA version 1 even for open,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             * since p2p ie is also put in same buffer.
             * */
         {
@@ -9138,18 +5626,8 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
             pWextState->wpaVersion = IW_AUTH_WPA_VERSION_WPA2;
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: set wpa version to %d", __func__, 
-=======
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: set wpa version to %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: set wpa version to %d", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             pWextState->wpaVersion);
 
     /*set authentication type*/
@@ -9157,15 +5635,7 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
 
     if (0 > status)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
         hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 "%s: failed to set authentication type ", __func__);
         return status;
     }
@@ -9176,15 +5646,7 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
         status = wlan_hdd_set_akm_suite(pAdapter, req->crypto.akm_suites[0]);
         if (0 > status)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set akm suite", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set akm suite",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set akm suite",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__);
             return status;
         }
@@ -9197,15 +5659,7 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
                                       req->crypto.ciphers_pairwise[0], true);
         if (0 > status)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "%s: failed to set unicast cipher type", __func__);
             return status;
         }
@@ -9216,15 +5670,7 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
         status = wlan_hdd_cfg80211_set_cipher(pAdapter, 0, true);
         if (0 > status)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     "%s: failed to set unicast cipher type", __func__);
             return status;
         }
@@ -9236,15 +5682,7 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
 
     if (0 > status)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set mcast cipher type", 
-=======
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set mcast cipher type",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set mcast cipher type",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__);
         return status;
     }
@@ -9255,52 +5693,23 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
         status = wlan_hdd_cfg80211_set_ie(pAdapter, req->ie, req->ie_len);
         if ( 0 > status)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to parse the WPA/RSN IE", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to parse the WPA/RSN IE",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to parse the WPA/RSN IE",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__);
             return status;
         }
     }
 
     /*incase of WEP set default key information*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (req->key && req->key_len) 
-=======
     if (req->key && req->key_len)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    if (req->key && req->key_len)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         if ( (WLAN_CIPHER_SUITE_WEP40 == req->crypto.ciphers_pairwise[0])
                 || (WLAN_CIPHER_SUITE_WEP104 == req->crypto.ciphers_pairwise[0])
           )
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if ( IW_AUTH_KEY_MGMT_802_1X 
-                    == (pWextState->authKeyMgmt & IW_AUTH_KEY_MGMT_802_1X  ))
-            {
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Dynamic WEP not supported", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if ( IW_AUTH_KEY_MGMT_802_1X
                     == (pWextState->authKeyMgmt & IW_AUTH_KEY_MGMT_802_1X  ))
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Dynamic WEP not supported",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         __func__);
                 return -EOPNOTSUPP;
             }
@@ -9309,22 +5718,6 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
                 u8 key_len = req->key_len;
                 u8 key_idx = req->key_idx;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if ((eCSR_SECURITY_WEP_KEYSIZE_MAX_BYTES >= key_len) 
-                        && (CSR_MAX_NUM_KEY > key_idx)
-                  )
-                {
-                    hddLog(VOS_TRACE_LEVEL_INFO, 
-                     "%s: setting default wep key, key_idx = %hu key_len %hu", 
-                            __func__, key_idx, key_len);
-                    vos_mem_copy(
-                       &pWextState->roamProfile.Keys.KeyMaterial[key_idx][0], 
-                                  req->key, key_len);
-                    pWextState->roamProfile.Keys.KeyLength[key_idx] = 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 if ((eCSR_SECURITY_WEP_KEYSIZE_MAX_BYTES >= key_len)
                         && (CSR_MAX_NUM_KEY > key_idx)
                   )
@@ -9336,10 +5729,6 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
                        &pWextState->roamProfile.Keys.KeyMaterial[key_idx][0],
                                   req->key, key_len);
                     pWextState->roamProfile.Keys.KeyLength[key_idx] =
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                                                (u8)key_len;
                     pWextState->roamProfile.Keys.defaultIndex = (u8)key_idx;
                 }
@@ -9352,57 +5741,21 @@ int wlan_hdd_cfg80211_set_privacy( hdd_adapter_t *pAdapter,
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_set_privacy
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is used to initialize the security 
- * parameters during connect operation.
- */
-static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * This function is used to initialize the security
  * parameters during connect operation.
  */
 static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                       struct net_device *ndev,
                                       struct cfg80211_connect_params *req
                                       )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    int status = 0;
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev ); 
-=======
     int status;
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    int status;
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( ndev );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     VOS_STATUS exitbmpsStatus = VOS_STATUS_E_INVAL;
     hdd_context_t *pHddCtx = NULL;
 
     ENTER();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hddLog(VOS_TRACE_LEVEL_INFO, 
-             "%s: device_mode = %d\n",__func__,pAdapter->device_mode);
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hddLog(VOS_TRACE_LEVEL_INFO,
              "%s: device_mode = %d\n",__func__,pAdapter->device_mode);
 
@@ -9414,32 +5767,10 @@ static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                    "%s: HDD context is not valid", __func__);
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
 #ifdef WLAN_BTAMP_FEATURE
     //Infra connect not supported when AMP traffic is on.
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if( VOS_TRUE == WLANBAP_AmpSessionOn() ) 
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, 
-                "%s: No connection when AMP is on", __func__);
-        return -1;
-    }
-#endif
-    /*initialise security parameters*/
-    status = wlan_hdd_cfg80211_set_privacy(pAdapter, req); 
-
-    if ( 0 > status)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set security params", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if( VOS_TRUE == WLANBAP_AmpSessionOn() )
     {
         hddLog(VOS_TRACE_LEVEL_ERROR,
@@ -9453,43 +5784,16 @@ static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
     if ( 0 > status)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set security params",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__);
         return status;
     }
 
     //If Device Mode is Station Concurrent Sessions Exit BMps
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //P2P Mode will be taken care in Open/close adaptor
-    if((WLAN_HDD_INFRA_STATION == pAdapter->device_mode) &&
-        (vos_concurrent_sessions_running()))
-    {
-        v_CONTEXT_t pVosContext = vos_get_global_context( VOS_MODULE_ID_HDD, NULL );
-
-        if (NULL != pVosContext)
-        {
-            pHddCtx = vos_get_context( VOS_MODULE_ID_HDD, pVosContext);
-            if(NULL != pHddCtx)
-            {
-               exitbmpsStatus = hdd_disable_bmps_imps(pHddCtx, WLAN_HDD_INFRA_STATION);
-            }
-        }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //P2P Mode will be taken care in Open/close adapter
     if((WLAN_HDD_INFRA_STATION == pAdapter->device_mode) &&
         (vos_concurrent_sessions_running()))
     {
         exitbmpsStatus = hdd_disable_bmps_imps(pHddCtx, WLAN_HDD_INFRA_STATION);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if ( req->channel )
@@ -9501,16 +5805,7 @@ static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
     else
     {
         status = wlan_hdd_cfg80211_connect_start(pAdapter, req->ssid,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                  req->ssid_len, req->bssid,
-                                                  0);
-=======
                                                   req->ssid_len, req->bssid, 0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                                                  req->ssid_len, req->bssid, 0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (0 > status)
@@ -9519,19 +5814,10 @@ static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
         if((VOS_STATUS_SUCCESS == exitbmpsStatus) &&
             (NULL != pHddCtx))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (pHddCtx->hdd_wlan_suspended)
             {
                 hdd_set_pwrparams(pHddCtx);
             }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            //ReEnable Bmps and Imps back
            hdd_enable_bmps_imps(pHddCtx);
         }
@@ -9539,15 +5825,7 @@ static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: connect failed", __func__);
         return status;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    (WLAN_HDD_GET_CTX(pAdapter))->isAmpAllowed = VOS_FALSE;
-=======
     pHddCtx->isAmpAllowed = VOS_FALSE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pHddCtx->isAmpAllowed = VOS_FALSE;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     EXIT();
     return status;
 }
@@ -9557,44 +5835,11 @@ static int wlan_hdd_cfg80211_connect( struct wiphy *wiphy,
  * FUNCTION: wlan_hdd_cfg80211_disconnect
  * This function is used to issue a disconnect request to SME
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy, 
-=======
 static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                          struct net_device *dev,
                                          u16 reason
                                          )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev ); 
-    tCsrRoamProfile  *pRoamProfile = 
-                    &(WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter))->roamProfile;
-    int status = 0;
-    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
-    
-    ENTER();
-    
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n", 
-                                    __func__,pAdapter->device_mode);
-
-    hddLog(VOS_TRACE_LEVEL_INFO, "%s: Disconnect called with reason code %d", 
-            __func__, reason);    
-
-    if ((WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress)
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!",__func__);
-        return -EAGAIN;
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev );
     tCsrRoamProfile  *pRoamProfile =
                     &(WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter))->roamProfile;
@@ -9622,29 +5867,14 @@ static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy,
         return status;
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     if (NULL != pRoamProfile)
     {
         /*issue disconnect request to SME, if station is in connected state*/
         if (pHddStaCtx->conn_info.connState == eConnectionState_Associated)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            eCsrRoamDisconnectReason reasonCode = 
-                                       eCSR_DISCONNECT_REASON_UNSPECIFIED;
-=======
             eCsrRoamDisconnectReason reasonCode =
                                        eCSR_DISCONNECT_REASON_UNSPECIFIED;
             hdd_scaninfo_t *pScanInfo;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            eCsrRoamDisconnectReason reasonCode =
-                                       eCSR_DISCONNECT_REASON_UNSPECIFIED;
-            hdd_scaninfo_t *pScanInfo;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             switch(reason)
             {
                 case WLAN_REASON_MIC_FAILURE:
@@ -9667,17 +5897,6 @@ static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy,
                     reasonCode = eCSR_DISCONNECT_REASON_UNSPECIFIED;
                     break;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-            pHddStaCtx->conn_info.connState = eConnectionState_NotConnected;
-            (WLAN_HDD_GET_CTX(pAdapter))->isAmpAllowed = VOS_TRUE;
-            INIT_COMPLETION(pAdapter->disconnect_comp_var);
-
-            /*issue disconnect*/
-            status = sme_RoamDisconnect( WLAN_HDD_GET_HAL_CTX(pAdapter), 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             (WLAN_HDD_GET_CTX(pAdapter))->isAmpAllowed = VOS_TRUE;
             pHddStaCtx->conn_info.connState = eConnectionState_NotConnected;
             INIT_COMPLETION(pAdapter->disconnect_comp_var);
@@ -9710,24 +5929,12 @@ static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy,
 #endif
             /*issue disconnect*/
             status = sme_RoamDisconnect( WLAN_HDD_GET_HAL_CTX(pAdapter),
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                          pAdapter->sessionId, reasonCode);
 
             if ( 0 != status)
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "%s csrRoamDisconnect failure, returned %d \n", 
-=======
                         "%s csrRoamDisconnect failure, returned %d \n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                        "%s csrRoamDisconnect failure, returned %d \n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         __func__, (int)status );
                 return -EINVAL;
             }
@@ -9752,61 +5959,26 @@ static int wlan_hdd_cfg80211_disconnect( struct wiphy *wiphy,
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_set_privacy_ibss
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is used to initialize the security 
- * settings in IBSS mode.
- */
-static int wlan_hdd_cfg80211_set_privacy_ibss(
-                                         hdd_adapter_t *pAdapter, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * This function is used to initialize the security
  * settings in IBSS mode.
  */
 static int wlan_hdd_cfg80211_set_privacy_ibss(
                                          hdd_adapter_t *pAdapter,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                          struct cfg80211_ibss_params *params
                                          )
 {
     int status = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);   
-    eCsrEncryptionType encryptionType = eCSR_ENCRYPT_TYPE_NONE;
-    hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
-    
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     eCsrEncryptionType encryptionType = eCSR_ENCRYPT_TYPE_NONE;
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     ENTER();
 
     pWextState->wpaVersion = IW_AUTH_WPA_VERSION_DISABLED;
 
     if (params->ie_len && ( NULL != params->ie) )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (WLAN_EID_RSN == params->ie[0]) 
-=======
         if (WLAN_EID_RSN == params->ie[0])
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (WLAN_EID_RSN == params->ie[0])
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             pWextState->wpaVersion = IW_AUTH_WPA_VERSION_WPA2;
             encryptionType = eCSR_ENCRYPT_TYPE_AES;
@@ -9820,57 +5992,24 @@ static int wlan_hdd_cfg80211_set_privacy_ibss(
 
         if (0 > status)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to parse WPA/RSN IE", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to parse WPA/RSN IE",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to parse WPA/RSN IE",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__);
             return status;
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pWextState->roamProfile.AuthType.authType[0] = 
-                                pHddStaCtx->conn_info.authType = 
-=======
     pWextState->roamProfile.AuthType.authType[0] =
                                 pHddStaCtx->conn_info.authType =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pWextState->roamProfile.AuthType.authType[0] =
-                                pHddStaCtx->conn_info.authType =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                 eCSR_AUTH_TYPE_OPEN_SYSTEM;
 
     if (params->privacy)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /* Security enabled IBSS, At this time there is no information available 
-         * about the security paramters, so initialise the encryption type to 
-         * eCSR_ENCRYPT_TYPE_WEP40_STATICKEY.
-         * The correct security parameters will be updated later in 
-         * wlan_hdd_cfg80211_add_key */
-        /* Hal expects encryption type to be set inorder 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Security enabled IBSS, At this time there is no information available
          * about the security paramters, so initialise the encryption type to
          * eCSR_ENCRYPT_TYPE_WEP40_STATICKEY.
          * The correct security parameters will be updated later in
          * wlan_hdd_cfg80211_add_key */
         /* Hal expects encryption type to be set inorder
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          *enable privacy bit in beacons */
 
         encryptionType = eCSR_ENCRYPT_TYPE_WEP40_STATICKEY;
@@ -9885,54 +6024,18 @@ static int wlan_hdd_cfg80211_set_privacy_ibss(
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_join_ibss
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is used to create/join an IBSS 
- */
-static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy, 
-=======
  * This function is used to create/join an IBSS
  */
 static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- * This function is used to create/join an IBSS
- */
-static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                         struct net_device *dev,
                                         struct cfg80211_ibss_params *params
                                        )
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev ); 
-=======
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
     tCsrRoamProfile          *pRoamProfile;
     int status;
     hdd_station_ctx_t *pHddStaCtx = WLAN_HDD_GET_STATION_CTX_PTR(pAdapter);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    ENTER();
-    
-    hddLog(VOS_TRACE_LEVEL_INFO, 
-                  "%s: device_mode = %d\n",__func__,pAdapter->device_mode);
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_context_t *pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
 
     ENTER();
@@ -9947,23 +6050,11 @@ static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                    "%s: HDD context is not valid", __func__);
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (NULL == pWextState)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog (VOS_TRACE_LEVEL_ERROR, "%s ERROR: Data Storage Corruption\n", 
-=======
         hddLog (VOS_TRACE_LEVEL_ERROR, "%s ERROR: Data Storage Corruption\n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog (VOS_TRACE_LEVEL_ERROR, "%s ERROR: Data Storage Corruption\n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__);
         return -EIO;
     }
@@ -9972,15 +6063,7 @@ static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
 
     if ( eCSR_BSS_TYPE_START_IBSS != pRoamProfile->BSSType )
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog (VOS_TRACE_LEVEL_ERROR, 
-=======
         hddLog (VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog (VOS_TRACE_LEVEL_ERROR,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 "%s Interface type is not set to IBSS \n", __func__);
         return -EINVAL;
     }
@@ -9991,32 +6074,14 @@ static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
         u8 channelNum;
         if (IEEE80211_BAND_5GHZ == params->channel->band)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-                    "%s: IBSS join is called with unsupported band %d", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR,
                     "%s: IBSS join is called with unsupported band %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR,
-                    "%s: IBSS join is called with unsupported band %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, params->channel->band);
             return -EOPNOTSUPP;
         }
 
         /* Get channel number */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        channelNum = 
-=======
         channelNum =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        channelNum =
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                ieee80211_frequency_to_channel(params->channel->center_freq);
 
         /*TODO: use macro*/
@@ -10030,15 +6095,7 @@ static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
             if (0 != ccmCfgGetStr(hHal, WNI_CFG_VALID_CHANNEL_LIST,
                         validChan, &numChans))
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: No valid channel list", 
-=======
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: No valid channel list",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: No valid channel list",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         __func__);
                 return -EOPNOTSUPP;
             }
@@ -10052,88 +6109,37 @@ static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
             }
             if (indx >= numChans)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Not valid Channel %d", 
-=======
                 hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Not valid Channel %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Not valid Channel %d",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         __func__, channelNum);
                 return -EINVAL;
             }
             /* Set the Operational Channel */
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: set channel %d", __func__, 
-                    channelNum);
-            pRoamProfile->ChannelInfo.numOfChannels = 1;
-            pHddStaCtx->conn_info.operationChannel = channelNum;
-            pRoamProfile->ChannelInfo.ChannelList = 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(VOS_TRACE_LEVEL_INFO_HIGH, "%s: set channel %d", __func__,
                     channelNum);
             pRoamProfile->ChannelInfo.numOfChannels = 1;
             pHddStaCtx->conn_info.operationChannel = channelNum;
             pRoamProfile->ChannelInfo.ChannelList =
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 &pHddStaCtx->conn_info.operationChannel;
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Not valid Channel %hu", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Not valid Channel %hu",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Not valid Channel %hu",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, channelNum);
             return -EINVAL;
         }
     }
 
     /* Initialize security parameters */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    status = wlan_hdd_cfg80211_set_privacy_ibss(pAdapter, params); 
-    if (status < 0)
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set security parameters", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = wlan_hdd_cfg80211_set_privacy_ibss(pAdapter, params);
     if (status < 0)
     {
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: failed to set security parameters",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__);
         return status;
     }
 
     /* Issue connect start */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    status = wlan_hdd_cfg80211_connect_start(pAdapter, params->ssid, 
-=======
     status = wlan_hdd_cfg80211_connect_start(pAdapter, params->ssid,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    status = wlan_hdd_cfg80211_connect_start(pAdapter, params->ssid,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             params->ssid_len, params->bssid, 0);
 
     if (0 > status)
@@ -10147,28 +6153,6 @@ static int wlan_hdd_cfg80211_join_ibss( struct wiphy *wiphy,
 
 /*
  * FUNCTION: wlan_hdd_cfg80211_leave_ibss
-<<<<<<< HEAD
-<<<<<<< HEAD
- * This function is used to leave an IBSS 
- */
-static int wlan_hdd_cfg80211_leave_ibss( struct wiphy *wiphy, 
-                                         struct net_device *dev
-                                         )
-{
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR( dev ); 
-    hdd_wext_state_t *pWextState = WLAN_HDD_GET_WEXT_STATE_PTR(pAdapter);
-    tCsrRoamProfile *pRoamProfile;
-
-    ENTER();
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * This function is used to leave an IBSS
  */
 static int wlan_hdd_cfg80211_leave_ibss( struct wiphy *wiphy,
@@ -10190,24 +6174,12 @@ static int wlan_hdd_cfg80211_leave_ibss( struct wiphy *wiphy,
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                    "%s: HDD context is not valid", __func__);
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     hddLog(VOS_TRACE_LEVEL_INFO, "%s: device_mode = %d\n",__func__,pAdapter->device_mode);
     if (NULL == pWextState)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog (VOS_TRACE_LEVEL_ERROR, "%s ERROR: Data Storage Corruption\n", 
-=======
         hddLog (VOS_TRACE_LEVEL_ERROR, "%s ERROR: Data Storage Corruption\n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog (VOS_TRACE_LEVEL_ERROR, "%s ERROR: Data Storage Corruption\n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__);
         return -EIO;
     }
@@ -10217,15 +6189,7 @@ static int wlan_hdd_cfg80211_leave_ibss( struct wiphy *wiphy,
     /* Issue disconnect only if interface type is set to IBSS */
     if (eCSR_BSS_TYPE_START_IBSS != pRoamProfile->BSSType)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog (VOS_TRACE_LEVEL_ERROR, "%s: BSS Type is not set to IBSS", 
-=======
         hddLog (VOS_TRACE_LEVEL_ERROR, "%s: BSS Type is not set to IBSS",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog (VOS_TRACE_LEVEL_ERROR, "%s: BSS Type is not set to IBSS",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 __func__);
         return -EINVAL;
     }
@@ -10243,32 +6207,11 @@ static int wlan_hdd_cfg80211_leave_ibss( struct wiphy *wiphy,
  * This function is used to set the phy parameters
  * (RTS Threshold/FRAG Threshold/Retry Count etc ...)
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy, 
-=======
 static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         u32 changed)
 {
     hdd_context_t *pHddCtx = wiphy_priv(wiphy);
     tHalHandle hHal = pHddCtx->hHal;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    ENTER();
-
-    if ( pHddCtx->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int status;
 
     ENTER();
@@ -10280,10 +6223,6 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                    "%s: HDD context is not valid", __func__);
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     if (changed & WIPHY_PARAM_RTS_THRESHOLD)
@@ -10293,59 +6232,25 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
                                wiphy->rts_threshold;
 
         if ((WNI_CFG_RTS_THRESHOLD_STAMIN > rts_threshold) ||
-<<<<<<< HEAD
-<<<<<<< HEAD
-                (WNI_CFG_RTS_THRESHOLD_STAMAX < rts_threshold)) 
-        {
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-                    "%s: Invalid RTS Threshold value %hu", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 (WNI_CFG_RTS_THRESHOLD_STAMAX < rts_threshold))
         {
             hddLog(VOS_TRACE_LEVEL_ERROR,
                     "%s: Invalid RTS Threshold value %hu",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, rts_threshold);
             return -EINVAL;
         }
 
         if (0 != ccmCfgSetInt(hHal, WNI_CFG_RTS_THRESHOLD,
                     rts_threshold, ccmCfgSetCallback,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    eANI_BOOLEAN_TRUE)) 
-        {
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-                    "%s: ccmCfgSetInt failed for rts_threshold value %hu", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     eANI_BOOLEAN_TRUE))
         {
             hddLog(VOS_TRACE_LEVEL_ERROR,
                     "%s: ccmCfgSetInt failed for rts_threshold value %hu",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, rts_threshold);
             return -EIO;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set rts threshold %hu", __func__, 
-=======
         hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set rts threshold %hu", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set rts threshold %hu", __func__,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 rts_threshold);
     }
 
@@ -10356,46 +6261,20 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
                                 wiphy->frag_threshold;
 
         if ((WNI_CFG_FRAGMENTATION_THRESHOLD_STAMIN > frag_threshold)||
-<<<<<<< HEAD
-<<<<<<< HEAD
-                (WNI_CFG_FRAGMENTATION_THRESHOLD_STAMAX < frag_threshold) ) 
-        {
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-                    "%s: Invalid frag_threshold value %hu", __func__, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 (WNI_CFG_FRAGMENTATION_THRESHOLD_STAMAX < frag_threshold) )
         {
             hddLog(VOS_TRACE_LEVEL_ERROR,
                     "%s: Invalid frag_threshold value %hu", __func__,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     frag_threshold);
             return -EINVAL;
         }
 
         if (0 != ccmCfgSetInt(hHal, WNI_CFG_FRAGMENTATION_THRESHOLD,
                     frag_threshold, ccmCfgSetCallback,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    eANI_BOOLEAN_TRUE)) 
-        {
-            hddLog(VOS_TRACE_LEVEL_ERROR, 
-                    "%s: ccmCfgSetInt failed for frag_threshold value %hu", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     eANI_BOOLEAN_TRUE))
         {
             hddLog(VOS_TRACE_LEVEL_ERROR,
                     "%s: ccmCfgSetInt failed for frag_threshold value %hu",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, frag_threshold);
             return -EIO;
         }
@@ -10414,15 +6293,7 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
         if ((WNI_CFG_LONG_RETRY_LIMIT_STAMIN > retry_value) ||
                 (WNI_CFG_LONG_RETRY_LIMIT_STAMAX < retry_value))
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid Retry count %hu", 
-=======
             hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid Retry count %hu",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid Retry count %hu",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, retry_value);
             return -EINVAL;
         }
@@ -10431,19 +6302,6 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
         {
             if (0 != ccmCfgSetInt(hHal, WNI_CFG_LONG_RETRY_LIMIT,
                         retry_value, ccmCfgSetCallback,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        eANI_BOOLEAN_TRUE)) 
-            {
-                hddLog(VOS_TRACE_LEVEL_ERROR, 
-                        "%s: ccmCfgSetInt failed for long retry count %hu", 
-                        __func__, retry_value);
-                return -EIO;
-            }
-            hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set long retry count %hu", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         eANI_BOOLEAN_TRUE))
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR,
@@ -10452,29 +6310,12 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
                 return -EIO;
             }
             hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set long retry count %hu",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, retry_value);
         }
         else if (changed & WIPHY_PARAM_RETRY_SHORT)
         {
             if (0 != ccmCfgSetInt(hHal, WNI_CFG_SHORT_RETRY_LIMIT,
                         retry_value, ccmCfgSetCallback,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        eANI_BOOLEAN_TRUE)) 
-            {
-                hddLog(VOS_TRACE_LEVEL_ERROR, 
-                        "%s: ccmCfgSetInt failed for short retry count %hu", 
-                        __func__, retry_value);
-                return -EIO;
-            }
-            hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set short retry count %hu", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                         eANI_BOOLEAN_TRUE))
             {
                 hddLog(VOS_TRACE_LEVEL_ERROR,
@@ -10483,10 +6324,6 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
                 return -EIO;
             }
             hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set short retry count %hu",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     __func__, retry_value);
         }
     }
@@ -10500,50 +6337,13 @@ static int wlan_hdd_cfg80211_set_wiphy_params(struct wiphy *wiphy,
  */
 static int wlan_hdd_cfg80211_set_txpower(struct wiphy *wiphy,
 #if LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,35)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        enum tx_power_setting type, 
-#else
-        enum nl80211_tx_power_setting type, 
-=======
         enum tx_power_setting type,
 #else
         enum nl80211_tx_power_setting type,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        enum tx_power_setting type,
-#else
-        enum nl80211_tx_power_setting type,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
         int dbm)
 {
     hdd_context_t *pHddCtx = (hdd_context_t*) wiphy_priv(wiphy);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tHalHandle hHal = pHddCtx->hHal;
-    tSirMacAddr bssid = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
-    tSirMacAddr selfMac = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
-
-    ENTER();
-
-    if (0 != ccmCfgSetInt(hHal, WNI_CFG_CURRENT_TX_POWER_LEVEL, 
-                dbm, ccmCfgSetCallback, 
-                eANI_BOOLEAN_TRUE)) 
-    {
-        hddLog(VOS_TRACE_LEVEL_ERROR, 
-                "%s: ccmCfgSetInt failed for tx power %hu", __func__, dbm);
-        return -EIO;
-    }
-
-    if ( pHddCtx->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tHalHandle hHal = NULL;
     tSirMacAddr bssid = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
     tSirMacAddr selfMac = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
@@ -10569,10 +6369,6 @@ static int wlan_hdd_cfg80211_set_txpower(struct wiphy *wiphy,
         hddLog(VOS_TRACE_LEVEL_ERROR,
                 "%s: ccmCfgSetInt failed for tx power %hu", __func__, dbm);
         return -EIO;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     hddLog(VOS_TRACE_LEVEL_INFO_MED, "%s: set tx power level %d dbm", __func__,
@@ -10585,18 +6381,6 @@ static int wlan_hdd_cfg80211_set_txpower(struct wiphy *wiphy,
     case NL80211_TX_POWER_LIMITED: /*limit TX power by the mBm parameter*/
        if( sme_SetMaxTxPower(hHal, bssid, selfMac, dbm) != eHAL_STATUS_SUCCESS )
        {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Setting maximum tx power failed", 
-                 __func__); 
-          return -EIO;          
-       }
-       break;
-    case NL80211_TX_POWER_FIXED: /*fix TX power to the mBm parameter*/
-       hddLog(VOS_TRACE_LEVEL_ERROR, "%s: NL80211_TX_POWER_FIXED not supported", 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Setting maximum tx power failed",
                  __func__);
           return -EIO;
@@ -10604,26 +6388,12 @@ static int wlan_hdd_cfg80211_set_txpower(struct wiphy *wiphy,
        break;
     case NL80211_TX_POWER_FIXED: /*fix TX power to the mBm parameter*/
        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: NL80211_TX_POWER_FIXED not supported",
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
               __func__);
        return -EOPNOTSUPP;
        break;
     default:
-<<<<<<< HEAD
-<<<<<<< HEAD
-       hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid power setting type %d", 
-              __func__, type); 
-=======
        hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid power setting type %d",
               __func__, type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Invalid power setting type %d",
-              __func__, type);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return -EIO;
     }
 
@@ -10639,26 +6409,6 @@ static int wlan_hdd_cfg80211_get_txpower(struct wiphy *wiphy, int *dbm)
 
     hdd_adapter_t *pAdapter;
     hdd_context_t *pHddCtx = (hdd_context_t*) wiphy_priv(wiphy);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    ENTER();
-
-    if (NULL == pHddCtx)
-    {
-        hddLog(VOS_TRACE_LEVEL_FATAL,"%s: HDD context is Null",__func__);
-        *dbm = 0;
-        return -ENOENT;
-    }
-
-    if ( pHddCtx->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int status;
 
     ENTER();
@@ -10671,10 +6421,6 @@ static int wlan_hdd_cfg80211_get_txpower(struct wiphy *wiphy, int *dbm)
                    "%s: HDD context is not valid", __func__);
         *dbm = 0;
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     pAdapter = hdd_get_adapter(pHddCtx, WLAN_HDD_INFRA_STATION);
@@ -10701,13 +6447,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
 
     hdd_context_t *pHddCtx = (hdd_context_t*) wiphy_priv(wiphy);
     hdd_config_t  *pCfg    = pHddCtx->cfg_ini;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    tHalHandle hHal        = WLAN_HDD_GET_HAL_CTX(pAdapter);
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     tANI_U8  OperationalRates[CSR_DOT11_SUPPORTED_RATES_MAX];
     tANI_U32 ORLeng = CSR_DOT11_SUPPORTED_RATES_MAX;
@@ -10722,11 +6461,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
     tANI_U8  maxMCSIdx = 0;
     tANI_U8  rateFlag = 1;
     tANI_U8  i, j, rssidx;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     tANI_U16 temp;
     int status;
 
@@ -10734,10 +6468,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
     tANI_U32 vht_mcs_map;
     eDataRate11ACMaxMcs vhtMaxMcs;
 #endif /* WLAN_FEATURE_11AC */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
@@ -10750,16 +6480,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         return 0;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     status = wlan_hdd_validate_context(pHddCtx);
 
     if (0 != status)
@@ -10767,10 +6487,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
                    "%s: HDD context is not valid", __func__);
         return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     wlan_hdd_get_rssi(pAdapter, &sinfo->signal);
@@ -10783,33 +6499,15 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
     myRate = pAdapter->hdd_stats.ClassA_stat.tx_rate * 5;
 
 #ifdef LINKSPEED_DEBUG_ENABLED
-<<<<<<< HEAD
-<<<<<<< HEAD
-    pr_info("RSSI %d, RLMS %u, rate %d, rssi high %d, rssi low %d\n",
-=======
     pr_info("RSSI %d, RLMS %u, rate %d, rssi high %d, rssi mid %d, rssi low %d, rate_flags 0x%x, MCS %d\n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    pr_info("RSSI %d, RLMS %u, rate %d, rssi high %d, rssi mid %d, rssi low %d, rate_flags 0x%x, MCS %d\n",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             sinfo->signal,
             pCfg->reportMaxLinkSpeed,
             myRate,
             (int) pCfg->linkSpeedRssiHigh,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            (int) pCfg->linkSpeedRssiLow);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             (int) pCfg->linkSpeedRssiMid,
             (int) pCfg->linkSpeedRssiLow,
             (int) rate_flags,
             (int) pAdapter->hdd_stats.ClassA_stat.mcs_index);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif //LINKSPEED_DEBUG_ENABLED
 
     if (eHDD_LINK_SPEED_REPORT_ACTUAL != pCfg->reportMaxLinkSpeed)
@@ -10828,28 +6526,11 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
                 // report the max possible speed
                 rssidx = 0;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-            else if (sinfo->signal >= pCfg->linkSpeedRssiLow)
-=======
             else if (sinfo->signal >= pCfg->linkSpeedRssiMid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-            else if (sinfo->signal >= pCfg->linkSpeedRssiMid)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             {
                 // report middle speed
                 rssidx = 1;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-            else
-            {
-                // report actual speed
-                rssidx = 2;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             else if (sinfo->signal >= pCfg->linkSpeedRssiLow)
             {
                 // report middle speed
@@ -10859,10 +6540,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
             {
                 // report actual speed
                 rssidx = 3;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         else
@@ -10877,12 +6554,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         maxRate = 0;
 
         /* Get Basic Rate Set */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        ccmCfgGetStr(hHal, WNI_CFG_OPERATIONAL_RATE_SET, OperationalRates, &ORLeng);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (0 != ccmCfgGetStr(WLAN_HDD_GET_HAL_CTX(pAdapter), WNI_CFG_OPERATIONAL_RATE_SET,
                              OperationalRates, &ORLeng))
         {
@@ -10891,10 +6562,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
             return 0;
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         for (i = 0; i < ORLeng; i++)
         {
             for (j = 0; j < (sizeof(supported_data_rate) / sizeof(supported_data_rate[0])); j ++)
@@ -10911,12 +6578,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         }
 
         /* Get Extended Rate Set */
-<<<<<<< HEAD
-<<<<<<< HEAD
-        ccmCfgGetStr(hHal, WNI_CFG_EXTENDED_OPERATIONAL_RATE_SET, ExtendedRates, &ERLeng);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (0 != ccmCfgGetStr(WLAN_HDD_GET_HAL_CTX(pAdapter), WNI_CFG_EXTENDED_OPERATIONAL_RATE_SET,
                              ExtendedRates, &ERLeng))
         {
@@ -10925,10 +6586,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
             return 0;
         }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         for (i = 0; i < ERLeng; i++)
         {
             for (j = 0; j < (sizeof(supported_data_rate) / sizeof(supported_data_rate[0])); j ++)
@@ -10942,43 +6599,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
             /* Update MAX rate */
             maxRate = (currentRate > maxRate)?currentRate:maxRate;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        /* Get MCS Rate Set -- but only if we are connected at MCS
-           rates or if we are always reporting max speed or if we have
-           good rssi */
-        if ((0 == rssidx) || !(rate_flags & eHAL_TX_RATE_LEGACY))
-        {
-            ccmCfgGetStr(hHal, WNI_CFG_CURRENT_MCS_SET, MCSRates, &MCSLeng);
-            rateFlag = 0;
-            if (rate_flags & eHAL_TX_RATE_HT40)
-            {
-                rateFlag |= 1;
-            }
-            if (rate_flags & eHAL_TX_RATE_SGI)
-            {
-                rateFlag |= 2;
-            }
-
-            for (i = 0; i < MCSLeng; i++)
-            {
-                for (j = 0; j < (sizeof(supported_mcs_rate) / sizeof(supported_mcs_rate[0])); j++)
-                {
-                    if (supported_mcs_rate[j].beacon_rate_index == MCSRates[i])
-                    {
-                        currentRate = supported_mcs_rate[j].supported_rate[rateFlag];
-                        break;
-                    }
-                }
-                if (currentRate > maxRate)
-                {
-                    maxRate     = currentRate;
-                    maxSpeedMCS = 1;
-                    maxMCSIdx   = supported_mcs_rate[j].beacon_rate_index;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         /* Get MCS Rate Set -- but only if we are connected at MCS
            rates or if we are always reporting max speed or if we have
            good rssi */
@@ -11071,21 +6691,10 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
                         maxSpeedMCS = 1;
                         maxMCSIdx   = supported_mcs_rate[j].beacon_rate_index;
                     }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 }
             }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // make sure we report a value at least as big as our current rate
-        if (maxRate < myRate)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         else if (!(rate_flags & eHAL_TX_RATE_LEGACY))
         {
             maxRate = myRate;
@@ -11096,10 +6705,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         // make sure we report a value at least as big as our current rate
         if (((maxRate < myRate) && (0 == rssidx)) ||
              (0 == maxRate))
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
            maxRate = myRate;
            if (rate_flags & eHAL_TX_RATE_LEGACY)
@@ -11113,15 +6718,7 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
            }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (!maxSpeedMCS)
-=======
         if (rate_flags & eHAL_TX_RATE_LEGACY)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if (rate_flags & eHAL_TX_RATE_LEGACY)
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         {
             sinfo->txrate.legacy  = maxRate;
 #ifdef LINKSPEED_DEBUG_ENABLED
@@ -11131,20 +6728,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         else
         {
             sinfo->txrate.mcs    = maxMCSIdx;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            sinfo->txrate.flags |= RATE_INFO_FLAGS_MCS;
-            if (rate_flags & eHAL_TX_RATE_SGI)
-            {
-                sinfo->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
-            }
-            if (rate_flags & eHAL_TX_RATE_HT40)
-            {
-                sinfo->txrate.flags |= RATE_INFO_FLAGS_40_MHZ_WIDTH;
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
             sinfo->txrate.nss = 1;
             if (rate_flags & eHAL_TX_RATE_VHT80)
@@ -11175,10 +6758,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
                 sinfo->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
             }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef LINKSPEED_DEBUG_ENABLED
             pr_info("Reporting MCS rate %d flags %x\n",
                     sinfo->txrate.mcs,
@@ -11202,12 +6781,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
         {
             //must be MCS
             sinfo->txrate.mcs = pAdapter->hdd_stats.ClassA_stat.mcs_index;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            sinfo->txrate.flags |= RATE_INFO_FLAGS_MCS;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
             sinfo->txrate.nss = 1;
             if (rate_flags & eHAL_TX_RATE_VHT80)
@@ -11219,10 +6792,6 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
             {
                 sinfo->txrate.flags |= RATE_INFO_FLAGS_MCS;
             }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             if (rate_flags & eHAL_TX_RATE_SGI)
             {
                 sinfo->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
@@ -11231,21 +6800,12 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
             {
                 sinfo->txrate.flags |= RATE_INFO_FLAGS_40_MHZ_WIDTH;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_FEATURE_11AC
             else if (rate_flags & eHAL_TX_RATE_VHT80)
             {
                 sinfo->txrate.flags |= RATE_INFO_FLAGS_80_MHZ_WIDTH;
             }
 #endif /* WLAN_FEATURE_11AC */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef LINKSPEED_DEBUG_ENABLED
             pr_info("Reporting actual MCS rate %d flags %x\n",
                     sinfo->txrate.mcs,
@@ -11283,25 +6843,12 @@ static int wlan_hdd_cfg80211_get_station(struct wiphy *wiphy, struct net_device 
 }
 
 static int wlan_hdd_cfg80211_set_power_mgmt(struct wiphy *wiphy,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                     struct net_device *dev, bool mode, v_SINT_t timeout)
-{
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
-    VOS_STATUS vos_status;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                      struct net_device *dev, bool mode, int timeout)
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
     hdd_context_t *pHddCtx;
     VOS_STATUS vos_status;
     int status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     ENTER();
 
@@ -11310,16 +6857,6 @@ static int wlan_hdd_cfg80211_set_power_mgmt(struct wiphy *wiphy,
         hddLog(VOS_TRACE_LEVEL_ERROR, "%s: Adapter is NULL\n", __func__);
         return -ENODEV;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     pHddCtx = WLAN_HDD_GET_CTX(pAdapter);
     status = wlan_hdd_validate_context(pHddCtx);
@@ -11344,10 +6881,6 @@ static int wlan_hdd_cfg80211_set_power_mgmt(struct wiphy *wiphy,
                    "%s:Failed to enable ARPOFFLOAD Feature %d\n",
                    __func__, vos_status);
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
     /**The get power cmd from the supplicant gets updated by the nl only
@@ -11373,15 +6906,7 @@ static int wlan_hdd_set_default_mgmt_key(struct wiphy *wiphy,
     ENTER();
     return 0;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif //LINUX_VERSION_CODE 
-=======
 #endif //LINUX_VERSION_CODE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#endif //LINUX_VERSION_CODE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,4,0))
 static int wlan_hdd_set_txq_params(struct wiphy *wiphy,
@@ -11404,37 +6929,6 @@ static int wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
                                          struct net_device *dev, u8 *mac)
 {
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    ENTER();
-    if ( NULL == pAdapter || NULL == pAdapter->pHddCtx)
-    {
-        hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Invalid Adapter or HDD Context " ,__func__);
-        return -EINVAL;
-    }
-
-    if (((hdd_context_t*)pAdapter->pHddCtx)->isLoadUnloadInProgress)
-    {
-         hddLog( LOGE,
-                 "%s: Wlan Load/Unload is in progress", __func__);
-         return -EBUSY;
-    }
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    if ( (WLAN_HDD_SOFTAP == pAdapter->device_mode)
-#ifdef WLAN_FEATURE_P2P
-       || (WLAN_HDD_P2P_GO == pAdapter->device_mode)
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     hdd_context_t *pHddCtx;
     VOS_STATUS vos_status;
     int status;
@@ -11459,10 +6953,6 @@ static int wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
 
     if ( (WLAN_HDD_SOFTAP == pAdapter->device_mode)
        || (WLAN_HDD_P2P_GO == pAdapter->device_mode)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        )
     {
         if( NULL == mac )
@@ -11485,11 +6975,6 @@ static int wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             vos_status = hdd_softap_GetStaId(pAdapter,(v_MACADDR_t *)mac, &staId);
             if (!VOS_IS_STATUS_SUCCESS(vos_status))
@@ -11516,22 +7001,12 @@ static int wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
 
             pAdapter->aStaInfo[staId].isDeauthInProgress = TRUE;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             hddLog(VOS_TRACE_LEVEL_INFO,
                                 "%s: Delete STA with MAC::"
                                 "%02x:%02x:%02x:%02x:%02x:%02x",
                                 __func__,
                                 mac[0], mac[1], mac[2],
                                 mac[3], mac[4], mac[5]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            hdd_softap_sta_deauth(pAdapter, mac);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             vos_status = hdd_softap_sta_deauth(pAdapter, mac);
             if (!VOS_IS_STATUS_SUCCESS(vos_status))
@@ -11546,10 +7021,6 @@ static int wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
                 return -ENOENT;
             }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
@@ -11561,14 +7032,6 @@ static int wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
 static int wlan_hdd_cfg80211_add_station(struct wiphy *wiphy,
           struct net_device *dev, u8 *mac, struct station_parameters *params)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // TODO: Implement this later.
-    ENTER();
-    return 0;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     int status = -EPERM;
 #ifdef FEATURE_WLAN_TDLS
     u32 mask, set;
@@ -11590,10 +7053,6 @@ static int wlan_hdd_cfg80211_add_station(struct wiphy *wiphy,
     }
 #endif
     return status;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 
@@ -11603,42 +7062,6 @@ static int wlan_hdd_cfg80211_set_pmksa(struct wiphy *wiphy, struct net_device *d
 {
 #define MAX_PMKSAIDS_IN_CACHE 8
     static tPmkidCacheInfo PMKIDCache[MAX_PMKSAIDS_IN_CACHE]; // HDD Local cache
-<<<<<<< HEAD
-<<<<<<< HEAD
-    static tANI_U32 i = 0; // HDD Local Cache index 
-    tANI_U32 j=0;  
-    hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
-    tHalHandle halHandle;
-    eHalStatus result; 
-    tANI_U8  BSSIDMatched = 0;
-   
-    ENTER();
-
-    // Validate pAdapter  
-    if ( NULL == pAdapter || NULL == pAdapter->pHddCtx)
-    {
-        hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Invalid Adapter or HDD Context " ,__func__);
-        return -EINVAL;
-    }
-
-    if (((hdd_context_t*)pAdapter->pHddCtx)->isLoadUnloadInProgress)
-    {
-         hddLog( LOGE,
-                 "%s: Wlan Load/Unload is in progress", __func__);
-         return -EBUSY;
-    }
-
-    if ( (WLAN_HDD_GET_CTX(pAdapter))->isLogpInProgress )
-    {
-        VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                "%s:LOGP in Progress. Ignore!!!", __func__);
-        return -EAGAIN;
-    }
-
-    // Retrieve halHandle  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     static tANI_U32 i; // HDD Local Cache index
     tANI_U32 j=0;
     hdd_adapter_t *pAdapter = WLAN_HDD_GET_PRIV_PTR(dev);
@@ -11668,39 +7091,15 @@ static int wlan_hdd_cfg80211_set_pmksa(struct wiphy *wiphy, struct net_device *d
     }
 
     // Retrieve halHandle
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     halHandle = WLAN_HDD_GET_HAL_CTX(pAdapter);
 
     for (j = 0; j < i; j++)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if(vos_mem_compare(PMKIDCache[j].BSSID, 
-=======
         if(vos_mem_compare(PMKIDCache[j].BSSID,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        if(vos_mem_compare(PMKIDCache[j].BSSID,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                     pmksa->bssid, WNI_CFG_BSSID_LEN))
         {
             /* BSSID matched previous entry.  Overwrite it. */
             BSSIDMatched = 1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            vos_mem_copy(PMKIDCache[j].BSSID, 
-                    pmksa->bssid, WNI_CFG_BSSID_LEN);
-            vos_mem_copy(PMKIDCache[j].PMKID, 
-                    pmksa->pmkid,   
-                    CSR_RSN_PMKID_SIZE);
-            hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Reusing cache entry %d.", 
-                    __FUNCTION__, j );
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             vos_mem_copy(PMKIDCache[j].BSSID,
                     pmksa->bssid, WNI_CFG_BSSID_LEN);
             vos_mem_copy(PMKIDCache[j].PMKID,
@@ -11708,10 +7107,6 @@ static int wlan_hdd_cfg80211_set_pmksa(struct wiphy *wiphy, struct net_device *d
                     CSR_RSN_PMKID_SIZE);
             hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Reusing cache entry %d.",
                     __func__, j );
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             dump_bssid(pmksa->bssid);
             dump_pmkid(halHandle, pmksa->pmkid);
             break;
@@ -11722,25 +7117,6 @@ static int wlan_hdd_cfg80211_set_pmksa(struct wiphy *wiphy, struct net_device *d
     if(j == MAX_PMKSAIDS_IN_CACHE) i=0;
 
     if (!BSSIDMatched)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    { 
-        // Now, we DON'T have a BSSID match, so take a new entry in the cache.  
-        vos_mem_copy(PMKIDCache[i].BSSID, 
-                pmksa->bssid, ETHER_ADDR_LEN); 
-        vos_mem_copy(PMKIDCache[i].PMKID, 
-                pmksa->pmkid,   
-                CSR_RSN_PMKID_SIZE);
-        hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Adding a new cache entry %d.", 
-                __FUNCTION__, i );
-        dump_bssid(pmksa->bssid);
-        dump_pmkid(halHandle, pmksa->pmkid);
-        // Increment the HDD Local Cache index 
-        // The "i=0" doesn't work for the call to sme_RoamSetPMKIDCache() - LFR FIXME
-        if (i<=(MAX_PMKSAIDS_IN_CACHE-1)) i++; else i=0; 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     {
         // Now, we DON'T have a BSSID match, so take a new entry in the cache.
         vos_mem_copy(PMKIDCache[i].BSSID,
@@ -11755,26 +7131,10 @@ static int wlan_hdd_cfg80211_set_pmksa(struct wiphy *wiphy, struct net_device *d
         // Increment the HDD Local Cache index
         // The "i=0" doesn't work for the call to sme_RoamSetPMKIDCache() - LFR FIXME
         if (i<=(MAX_PMKSAIDS_IN_CACHE-1)) i++; else i=0;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 
 
     // Calling csrRoamSetPMKIDCache to configure the PMKIDs into the cache
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //hddLog(LOG1, FL("%s: Calling csrRoamSetPMKIDCache with %d cache entries."), 
-    //        __FUNCTION__, i );
-    hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Calling csrRoamSetPMKIDCache with %d cache entries.", 
-            __FUNCTION__, i );
-    // Finally set the PMKSA ID Cache in CSR
-    result = sme_RoamSetPMKIDCache(halHandle,pAdapter->sessionId, 
-                                    PMKIDCache, 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     //hddLog(LOG1, FL("%s: Calling csrRoamSetPMKIDCache with %d cache entries."),
     //        __func__, i );
     hddLog(VOS_TRACE_LEVEL_FATAL, "%s: Calling csrRoamSetPMKIDCache with %d cache entries.",
@@ -11782,10 +7142,6 @@ static int wlan_hdd_cfg80211_set_pmksa(struct wiphy *wiphy, struct net_device *d
     // Finally set the PMKSA ID Cache in CSR
     result = sme_RoamSetPMKIDCache(halHandle,pAdapter->sessionId,
                                     PMKIDCache,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                                     i );
     return 0;
 }
@@ -11807,23 +7163,6 @@ static int wlan_hdd_cfg80211_flush_pmksa(struct wiphy *wiphy, struct net_device 
 }
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-/* cfg80211_ops */
-static struct cfg80211_ops wlan_hdd_cfg80211_ops = 
-{
-    .add_virtual_intf = wlan_hdd_add_virtual_intf,
-    .del_virtual_intf = wlan_hdd_del_virtual_intf,
-    .change_virtual_intf = wlan_hdd_cfg80211_change_iface,
-    .change_station = wlan_hdd_change_station,
-#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
-    .add_beacon = wlan_hdd_cfg80211_add_beacon,
-    .del_beacon = wlan_hdd_cfg80211_del_beacon,
-    .set_beacon = wlan_hdd_cfg80211_set_beacon,
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined(WLAN_FEATURE_VOWIFI_11R) && defined(KERNEL_SUPPORT_11R_CFG80211)
 static int wlan_hdd_cfg80211_update_ft_ies(struct wiphy *wiphy,
           struct net_device *dev, struct cfg80211_update_ft_ies_params *ftie)
@@ -12909,10 +8248,6 @@ static struct cfg80211_ops wlan_hdd_cfg80211_ops =
     .add_beacon = wlan_hdd_cfg80211_add_beacon,
     .del_beacon = wlan_hdd_cfg80211_del_beacon,
     .set_beacon = wlan_hdd_cfg80211_set_beacon,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
     .start_ap = wlan_hdd_cfg80211_start_ap,
     .change_beacon = wlan_hdd_cfg80211_change_beacon,
@@ -12923,19 +8258,9 @@ static struct cfg80211_ops wlan_hdd_cfg80211_ops =
     .get_key = wlan_hdd_cfg80211_get_key,
     .del_key = wlan_hdd_cfg80211_del_key,
     .set_default_key = wlan_hdd_cfg80211_set_default_key,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    .set_channel = wlan_hdd_cfg80211_set_channel,
-=======
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,6,0))
     .set_channel = wlan_hdd_cfg80211_set_channel,
 #endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,6,0))
-    .set_channel = wlan_hdd_cfg80211_set_channel,
-#endif
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     .scan = wlan_hdd_cfg80211_scan,
     .connect = wlan_hdd_cfg80211_connect,
     .disconnect = wlan_hdd_cfg80211_disconnect,
@@ -12944,13 +8269,6 @@ static struct cfg80211_ops wlan_hdd_cfg80211_ops =
     .set_wiphy_params = wlan_hdd_cfg80211_set_wiphy_params,
     .set_tx_power = wlan_hdd_cfg80211_set_txpower,
     .get_tx_power = wlan_hdd_cfg80211_get_txpower,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     .remain_on_channel = wlan_hdd_cfg80211_remain_on_channel,
     .cancel_remain_on_channel =  wlan_hdd_cfg80211_cancel_remain_on_channel,
     .mgmt_tx =  wlan_hdd_action,
@@ -12959,13 +8277,6 @@ static struct cfg80211_ops wlan_hdd_cfg80211_ops =
      .set_default_mgmt_key = wlan_hdd_set_default_mgmt_key,
      .set_txq_params = wlan_hdd_set_txq_params,
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
      .get_station = wlan_hdd_cfg80211_get_station,
      .set_power_mgmt = wlan_hdd_cfg80211_set_power_mgmt,
      .del_station  = wlan_hdd_cfg80211_del_station,
@@ -12975,14 +8286,6 @@ static struct cfg80211_ops wlan_hdd_cfg80211_ops =
      .del_pmksa = wlan_hdd_cfg80211_del_pmksa,
      .flush_pmksa = wlan_hdd_cfg80211_flush_pmksa,
 #endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-};
-
-#endif // CONFIG_CFG80211
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined(WLAN_FEATURE_VOWIFI_11R) && defined(KERNEL_SUPPORT_11R_CFG80211)
      .update_ft_ies = wlan_hdd_cfg80211_update_ft_ies,
 #endif
@@ -13002,7 +8305,3 @@ static struct cfg80211_ops wlan_hdd_cfg80211_ops =
      .set_mac_acl = wlan_hdd_cfg80211_set_mac_acl,
 };
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

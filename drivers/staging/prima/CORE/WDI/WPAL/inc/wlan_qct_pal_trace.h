@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -157,13 +148,5 @@ wpt_boolean wpalTraceCheckLevel( wpt_moduleid module, wpt_tracelevel level );
   --------------------------------------------------------------------------*/
 void wpalTraceDisplay(void);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
 #define WPAL_BUG VOS_BUG
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WPAL_BUG VOS_BUG
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif // __WLAN_QCT_PAL_TRACE_H

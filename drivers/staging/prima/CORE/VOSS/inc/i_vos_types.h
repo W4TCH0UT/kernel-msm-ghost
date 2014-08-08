@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -177,18 +168,6 @@
 
 #define VOS_INLINE_FN  static inline
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define VOS_PACK_STRUCT_1  __attribute__ ((aligned(1), packed))
-#define VOS_PACK_STRUCT_2  __attribute__ ((aligned(2), packed))
-#define VOS_PACK_STRUCT_4  __attribute__ ((aligned(4), packed))
-#define VOS_PACK_STRUCT_8  __attribute__ ((aligned(8), packed))
-#define VOS_PACK_STRUCT_16 __attribute__ ((aligned(16), packed))
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #else
 #error "Compiling with an unknown compiler!!"
 #endif

@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -72,12 +63,6 @@
 #include "vos_api.h"
 #include "wlan_hdd_misc.h"
 #include "vos_sched.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
- 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #include "wlan_hdd_main.h"
 #include <net/cfg80211.h>
 
@@ -88,10 +73,6 @@ static char run_time_alpha2[2] = {0, 0}; /* country code from none-default count
 static v_BOOL_t crda_regulatory_entry_valid = VOS_FALSE;
 static v_BOOL_t crda_regulatory_run_time_entry_valid = VOS_FALSE;
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /*----------------------------------------------------------------------------
  * Preprocessor Definitions and Constants
  * -------------------------------------------------------------------------*/
@@ -141,15 +122,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_N_AMER_EXC_FCC, {'A', 'F'}},  //AFGHANISTAN
         { REGDOMAIN_WORLD,   {'A', 'G'}},  //ANTIGUA AND BARBUDA
         { REGDOMAIN_FCC,     {'A', 'I'}},  //ANGUILLA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'A', 'L'}},  //ALBANIA
-=======
         { REGDOMAIN_ETSI,    {'A', 'L'}},  //ALBANIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_ETSI,    {'A', 'L'}},  //ALBANIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_N_AMER_EXC_FCC, {'A', 'M'}},  //ARMENIA
         { REGDOMAIN_ETSI,    {'A', 'N'}},  //NETHERLANDS ANTILLES
         { REGDOMAIN_NO_5GHZ, {'A', 'O'}},  //ANGOLA
@@ -157,29 +130,13 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_WORLD,   {'A', 'R'}},  //ARGENTINA
         { REGDOMAIN_FCC,     {'A', 'S'}},  //AMERICAN SOMOA
         { REGDOMAIN_ETSI,    {'A', 'T'}},  //AUSTRIA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_APAC,    {'A', 'U'}},  //AUSTRALIA
-=======
         { REGDOMAIN_WORLD,   {'A', 'U'}},  //AUSTRALIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_WORLD,   {'A', 'U'}},  //AUSTRALIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_ETSI,    {'A', 'W'}},  //ARUBA
         { REGDOMAIN_WORLD,   {'A', 'X'}},  //ALAND ISLANDS
         { REGDOMAIN_N_AMER_EXC_FCC, {'A', 'Z'}},  //AZERBAIJAN
         { REGDOMAIN_ETSI,    {'B', 'A'}},  //BOSNIA AND HERZEGOVINA
         { REGDOMAIN_APAC,    {'B', 'B'}},  //BARBADOS
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'B', 'D'}},  //BANGLADESH
-=======
         { REGDOMAIN_HI_5GHZ, {'B', 'D'}},  //BANGLADESH
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_HI_5GHZ, {'B', 'D'}},  //BANGLADESH
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_ETSI,    {'B', 'E'}},  //BELGIUM
         { REGDOMAIN_HI_5GHZ, {'B', 'F'}},  //BURKINA FASO
         { REGDOMAIN_ETSI,    {'B', 'G'}},  //BULGARIA
@@ -206,15 +163,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_WORLD,   {'C', 'K'}},  //COOK ISLANDS
         { REGDOMAIN_APAC,    {'C', 'L'}},  //CHILE
         { REGDOMAIN_NO_5GHZ, {'C', 'M'}},  //CAMEROON
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_HI_5GHZ, {'C', 'N'}},  //CHINA
-=======
         { REGDOMAIN_APAC,    {'C', 'N'}},  //CHINA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_APAC,    {'C', 'N'}},  //CHINA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_APAC,    {'C', 'O'}},  //COLOMBIA
         { REGDOMAIN_APAC,    {'C', 'R'}},  //COSTA RICA
         { REGDOMAIN_NO_5GHZ, {'C', 'U'}},  //CUBA
@@ -227,15 +176,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'D', 'K'}},  //DENMARK
         { REGDOMAIN_WORLD,   {'D', 'M'}},  //DOMINICA
         { REGDOMAIN_APAC,    {'D', 'O'}},  //DOMINICAN REPUBLIC
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'D', 'Z'}},  //ALGERIA
-=======
         { REGDOMAIN_ETSI,    {'D', 'Z'}},  //ALGERIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_ETSI,    {'D', 'Z'}},  //ALGERIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_APAC,    {'E', 'C'}},  //ECUADOR
         { REGDOMAIN_ETSI,    {'E', 'E'}},  //ESTONIA
         { REGDOMAIN_N_AMER_EXC_FCC, {'E', 'G'}},  //EGYPT
@@ -266,15 +207,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'G', 'R'}},  //GREECE
         { REGDOMAIN_WORLD,   {'G', 'S'}},  //SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
         { REGDOMAIN_APAC,    {'G', 'T'}},  //GUATEMALA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_APAC,    {'G', 'U'}},  //GUAM
-=======
         { REGDOMAIN_FCC,     {'G', 'U'}},  //GUAM
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_FCC,     {'G', 'U'}},  //GUAM
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_NO_5GHZ, {'G', 'W'}},  //GUINEA-BISSAU
         { REGDOMAIN_HI_5GHZ, {'G', 'Y'}},  //GUYANA
         { REGDOMAIN_WORLD,   {'H', 'K'}},  //HONGKONG
@@ -285,15 +218,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'H', 'U'}},  //HUNGARY
         { REGDOMAIN_HI_5GHZ, {'I', 'D'}},  //INDONESIA
         { REGDOMAIN_ETSI,    {'I', 'E'}},  //IRELAND
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'I', 'L'}},  //ISRAEL
-=======
         { REGDOMAIN_N_AMER_EXC_FCC, {'I', 'L'}},  //ISRAEL
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_N_AMER_EXC_FCC, {'I', 'L'}},  //ISRAEL
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_WORLD,   {'I', 'M'}},  //ISLE OF MAN
         { REGDOMAIN_APAC,    {'I', 'N'}},  //INDIA
         { REGDOMAIN_WORLD,   {'I', 'O'}},  //BRITISH INDIAN OCEAN TERRITORY
@@ -308,29 +233,13 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_JAPAN,   {'J', '5'}},  //Japan alternate 5
         { REGDOMAIN_WORLD,   {'J', 'E'}},  //JERSEY
         { REGDOMAIN_WORLD,   {'J', 'M'}},  //JAMAICA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_WORLD,   {'J', 'O'}},  //JORDAN
-=======
         { REGDOMAIN_APAC,    {'J', 'O'}},  //JORDAN
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_APAC,    {'J', 'O'}},  //JORDAN
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_JAPAN,   {'J', 'P'}},  //JAPAN
         { REGDOMAIN_KOREA,   {'K', '1'}},  //Korea alternate 1
         { REGDOMAIN_KOREA,   {'K', '2'}},  //Korea alternate 2
         { REGDOMAIN_KOREA,   {'K', '3'}},  //Korea alternate 3
         { REGDOMAIN_KOREA,   {'K', '4'}},  //Korea alternate 4
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_HI_5GHZ, {'K', 'E'}},  //KENYA
-=======
         { REGDOMAIN_APAC,    {'K', 'E'}},  //KENYA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_APAC,    {'K', 'E'}},  //KENYA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_NO_5GHZ, {'K', 'G'}},  //KYRGYZSTAN
         { REGDOMAIN_ETSI,    {'K', 'H'}},  //CAMBODIA
         { REGDOMAIN_WORLD,   {'K', 'I'}},  //KIRIBATI
@@ -340,21 +249,9 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_KOREA,   {'K', 'R'}},  //KOREA, REPUBLIC OF
         { REGDOMAIN_N_AMER_EXC_FCC, {'K', 'W'}},  //KUWAIT
         { REGDOMAIN_FCC,     {'K', 'Y'}},  //CAYMAN ISLANDS
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'K', 'Z'}},  //KAZAKHSTAN
-        { REGDOMAIN_WORLD,   {'L', 'A'}},  //LAO PEOPLE'S DEMOCRATIC REPUBLIC
-        { REGDOMAIN_HI_5GHZ, {'L', 'B'}},  //LEBANON
-=======
         { REGDOMAIN_WORLD,   {'K', 'Z'}},  //KAZAKHSTAN
         { REGDOMAIN_WORLD,   {'L', 'A'}},  //LAO PEOPLE'S DEMOCRATIC REPUBLIC
         { REGDOMAIN_WORLD,   {'L', 'B'}},  //LEBANON
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_WORLD,   {'K', 'Z'}},  //KAZAKHSTAN
-        { REGDOMAIN_WORLD,   {'L', 'A'}},  //LAO PEOPLE'S DEMOCRATIC REPUBLIC
-        { REGDOMAIN_WORLD,   {'L', 'B'}},  //LEBANON
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_WORLD,   {'L', 'C'}},  //SAINT LUCIA
         { REGDOMAIN_ETSI,    {'L', 'I'}},  //LIECHTENSTEIN
         { REGDOMAIN_WORLD,   {'L', 'K'}},  //SRI LANKA
@@ -364,18 +261,8 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'L', 'U'}},  //LUXEMBOURG
         { REGDOMAIN_ETSI,    {'L', 'V'}},  //LATVIA
         { REGDOMAIN_NO_5GHZ, {'L', 'Y'}},  //LIBYAN ARAB JAMAHIRIYA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'M', 'A'}},  //MOROCCO
-        { REGDOMAIN_N_AMER_EXC_FCC, {'M', 'C'}},  //MONACO
-=======
         { REGDOMAIN_APAC,    {'M', 'A'}},  //MOROCCO
         { REGDOMAIN_ETSI,    {'M', 'C'}},  //MONACO
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_APAC,    {'M', 'A'}},  //MOROCCO
-        { REGDOMAIN_ETSI,    {'M', 'C'}},  //MONACO
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_ETSI,    {'M', 'D'}},  //MOLDOVA, REPUBLIC OF
         { REGDOMAIN_ETSI,    {'M', 'E'}},  //MONTENEGRO
         { REGDOMAIN_NO_5GHZ, {'M', 'G'}},  //MADAGASCAR
@@ -383,15 +270,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'M', 'K'}},  //MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
         { REGDOMAIN_NO_5GHZ, {'M', 'L'}},  //MALI
         { REGDOMAIN_WORLD,   {'M', 'M'}},  //MYANMAR
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'M', 'N'}},  //MONGOLIA
-=======
         { REGDOMAIN_WORLD,   {'M', 'N'}},  //MONGOLIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_WORLD,   {'M', 'N'}},  //MONGOLIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_APAC,    {'M', 'O'}},  //MACAO
         { REGDOMAIN_FCC,     {'M', 'P'}},  //NORTHERN MARIANA ISLANDS
         { REGDOMAIN_ETSI,    {'M', 'Q'}},  //MARTINIQUE
@@ -412,21 +291,6 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_WORLD,   {'N', 'I'}},  //NICARAGUA
         { REGDOMAIN_ETSI,    {'N', 'L'}},  //NETHERLANDS
         { REGDOMAIN_ETSI,    {'N', 'O'}},  //NORWAY
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_HI_5GHZ, {'N', 'P'}},  //NEPAL
-        { REGDOMAIN_NO_5GHZ, {'N', 'R'}},  //NAURU
-        { REGDOMAIN_WORLD,   {'N', 'U'}},  //NIUE
-        { REGDOMAIN_APAC,    {'N', 'Z'}},  //NEW ZEALAND
-        { REGDOMAIN_WORLD,   {'O', 'M'}},  //OMAN
-        { REGDOMAIN_APAC,    {'P', 'A'}},  //PANAMA
-        { REGDOMAIN_HI_5GHZ, {'P', 'E'}},  //PERU
-        { REGDOMAIN_ETSI,    {'P', 'F'}},  //FRENCH POLYNESIA
-        { REGDOMAIN_APAC,    {'P', 'G'}},  //PAPUA NEW GUINEA
-        { REGDOMAIN_HI_5GHZ, {'P', 'H'}},  //PHILIPPINES
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_APAC,    {'N', 'P'}},  //NEPAL
         { REGDOMAIN_NO_5GHZ, {'N', 'R'}},  //NAURU
         { REGDOMAIN_WORLD,   {'N', 'U'}},  //NIUE
@@ -437,10 +301,6 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'P', 'F'}},  //FRENCH POLYNESIA
         { REGDOMAIN_WORLD,   {'P', 'G'}},  //PAPUA NEW GUINEA
         { REGDOMAIN_WORLD,   {'P', 'H'}},  //PHILIPPINES
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_HI_5GHZ, {'P', 'K'}},  //PAKISTAN
         { REGDOMAIN_ETSI,    {'P', 'L'}},  //POLAND
         { REGDOMAIN_WORLD,   {'P', 'M'}},  //SAINT PIERRE AND MIQUELON
@@ -454,21 +314,9 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'R', 'E'}},  //REUNION
         { REGDOMAIN_ETSI,    {'R', 'O'}},  //ROMANIA
         { REGDOMAIN_ETSI,    {'R', 'S'}},  //SERBIA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_HI_5GHZ, {'R', 'U'}},  //RUSSIA
-        { REGDOMAIN_HI_5GHZ, {'R', 'W'}},  //RWANDA
-        { REGDOMAIN_APAC,    {'S', 'A'}},  //SAUDI ARABIA
-=======
         { REGDOMAIN_APAC,    {'R', 'U'}},  //RUSSIA
         { REGDOMAIN_WORLD,   {'R', 'W'}},  //RWANDA
         { REGDOMAIN_WORLD,   {'S', 'A'}},  //SAUDI ARABIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_APAC,    {'R', 'U'}},  //RUSSIA
-        { REGDOMAIN_WORLD,   {'R', 'W'}},  //RWANDA
-        { REGDOMAIN_WORLD,   {'S', 'A'}},  //SAUDI ARABIA
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_NO_5GHZ, {'S', 'B'}},  //SOLOMON ISLANDS
         { REGDOMAIN_NO_5GHZ, {'S', 'C'}},  //SEYCHELLES
         { REGDOMAIN_WORLD,   {'S', 'D'}},  //SUDAN
@@ -498,21 +346,6 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_NO_5GHZ, {'T', 'M'}},  //TURKMENISTAN
         { REGDOMAIN_N_AMER_EXC_FCC, {'T', 'N'}},  //TUNISIA
         { REGDOMAIN_NO_5GHZ, {'T', 'O'}},  //TONGA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_N_AMER_EXC_FCC, {'T', 'R'}},  //TURKEY
-        { REGDOMAIN_WORLD,   {'T', 'T'}},  //TRINIDAD AND TOBAGO
-        { REGDOMAIN_NO_5GHZ, {'T', 'V'}},  //TUVALU
-        { REGDOMAIN_WORLD,   {'T', 'W'}},  //TAIWAN, PROVINCE OF CHINA
-        { REGDOMAIN_HI_5GHZ, {'T', 'Z'}},  //TANZANIA, UNITED REPUBLIC OF
-        { REGDOMAIN_NO_5GHZ, {'U', 'A'}},  //UKRAINE
-        { REGDOMAIN_WORLD,   {'U', 'G'}},  //UGANDA
-        { REGDOMAIN_FCC,     {'U', 'M'}},  //UNITED STATES MINOR OUTLYING ISLANDS
-        { REGDOMAIN_WORLD,   {'U', 'Y'}},  //URUGUAY
-        { REGDOMAIN_WORLD,   {'U', 'Z'}},  //UZBEKISTAN
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_ETSI,    {'T', 'R'}},  //TURKEY
         { REGDOMAIN_WORLD,   {'T', 'T'}},  //TRINIDAD AND TOBAGO
         { REGDOMAIN_NO_5GHZ, {'T', 'V'}},  //TUVALU
@@ -523,24 +356,12 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_FCC,     {'U', 'M'}},  //UNITED STATES MINOR OUTLYING ISLANDS
         { REGDOMAIN_WORLD,   {'U', 'Y'}},  //URUGUAY
         { REGDOMAIN_FCC,     {'U', 'Z'}},  //UZBEKISTAN
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_ETSI,    {'V', 'A'}},  //HOLY SEE (VATICAN CITY STATE)
         { REGDOMAIN_WORLD,   {'V', 'C'}},  //SAINT VINCENT AND THE GRENADINES
         { REGDOMAIN_HI_5GHZ, {'V', 'E'}},  //VENEZUELA
         { REGDOMAIN_ETSI,    {'V', 'G'}},  //VIRGIN ISLANDS, BRITISH
         { REGDOMAIN_FCC,     {'V', 'I'}},  //VIRGIN ISLANDS, US
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_N_AMER_EXC_FCC, {'V', 'N'}},  //VIET NAM
-=======
         { REGDOMAIN_FCC,     {'V', 'N'}},  //VIET NAM
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_FCC,     {'V', 'N'}},  //VIET NAM
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         { REGDOMAIN_NO_5GHZ, {'V', 'U'}},  //VANUATU
         { REGDOMAIN_WORLD,   {'W', 'F'}},  //WALLIS AND FUTUNA
         { REGDOMAIN_N_AMER_EXC_FCC, {'W', 'S'}},  //SOMOA
@@ -548,15 +369,7 @@ static CountryInfoTable_t countryInfoTable =
         { REGDOMAIN_ETSI,    {'Y', 'T'}},  //MAYOTTE
         { REGDOMAIN_WORLD,   {'Z', 'A'}},  //SOUTH AFRICA
         { REGDOMAIN_APAC,    {'Z', 'M'}},  //ZAMBIA
-<<<<<<< HEAD
-<<<<<<< HEAD
-        { REGDOMAIN_NO_5GHZ, {'Z', 'W'}},  //ZIMBABWE
-=======
         { REGDOMAIN_ETSI,    {'Z', 'W'}},  //ZIMBABWE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-        { REGDOMAIN_ETSI,    {'Z', 'W'}},  //ZIMBABWE
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     }
 };
 typedef struct nvEFSTable_s
@@ -564,14 +377,6 @@ typedef struct nvEFSTable_s
    v_U32_t    nvValidityBitmap;
    sHalNv     halnv;
 } nvEFSTable_t;
-<<<<<<< HEAD
-<<<<<<< HEAD
-nvEFSTable_t *gnvEFSTable=NULL;
-/* EFS Table  to send the NV structure to HAL*/ 
-static nvEFSTable_t *pnvEFSTable =NULL;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 nvEFSTable_t *gnvEFSTable;
 
 #ifdef WLAN_NV_OTA_UPGRADE
@@ -610,10 +415,6 @@ nvEFSTable_cal_t *gnvCalTable=NULL;
 
 /* EFS Table  to send the NV structure to HAL*/ 
 static nvEFSTable_t *pnvEFSTable;
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 const tRfChannelProps rfChannels[NUM_RF_CHANNELS] =
 {
@@ -633,19 +434,6 @@ const tRfChannelProps rfChannels[NUM_RF_CHANNELS] =
     { 2467, 12 , RF_SUBBAND_2_4_GHZ},        //RF_CHAN_12,
     { 2472, 13 , RF_SUBBAND_2_4_GHZ},        //RF_CHAN_13,
     { 2484, 14 , RF_SUBBAND_2_4_GHZ},        //RF_CHAN_14,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-    { 0,    240, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_240,
-    { 0,    244, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_244,
-    { 0,    248, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_248,
-    { 0,    252, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_252,
-    { 0,    208, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_208,
-    { 0,    212, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_212,
-    { 0,    216, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_216,
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     { 4920, 240, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_240,
     { 4940, 244, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_244,
     { 4960, 248, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_248,
@@ -653,10 +441,6 @@ const tRfChannelProps rfChannels[NUM_RF_CHANNELS] =
     { 5040, 208, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_208,
     { 5060, 212, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_212,
     { 5080, 216, RF_SUBBAND_4_9_GHZ},        //RF_CHAN_216,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     { 5180, 36 , RF_SUBBAND_5_LOW_GHZ},      //RF_CHAN_36,
     { 5200, 40 , RF_SUBBAND_5_LOW_GHZ},      //RF_CHAN_40,
     { 5220, 44 , RF_SUBBAND_5_LOW_GHZ},      //RF_CHAN_44,
@@ -681,47 +465,6 @@ const tRfChannelProps rfChannels[NUM_RF_CHANNELS] =
     { 5785, 157, RF_SUBBAND_5_HIGH_GHZ},     //RF_CHAN_157,
     { 5805, 161, RF_SUBBAND_5_HIGH_GHZ},     //RF_CHAN_161,
     { 5825, 165, RF_SUBBAND_5_HIGH_GHZ},     //RF_CHAN_165,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_3,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_4,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_5,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_6,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_7,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_8,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_9,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_10,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_11,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_242,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_246,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_250,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_210,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_214,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_38,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_42,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_46,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_50,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_54,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_58,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_62,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_102,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_106,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_110,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_114,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_118,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_122,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_126,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_130,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_134,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_138,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_151,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_155,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_159,
-    { 0   , 0  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_163,
-#endif
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     { 2422, 3  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_3,
     { 2427, 4  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_4,
     { 2432, 5  , NUM_RF_SUBBANDS},           //RF_CHAN_BOND_5,
@@ -757,10 +500,6 @@ const tRfChannelProps rfChannels[NUM_RF_CHANNELS] =
     { 5775, 155, NUM_RF_SUBBANDS},           //RF_CHAN_BOND_155,
     { 5795, 159, NUM_RF_SUBBANDS},           //RF_CHAN_BOND_159,
     { 5815, 163, NUM_RF_SUBBANDS},           //RF_CHAN_BOND_163,
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 };
 
 extern const sHalNv nvDefaults;
@@ -770,15 +509,7 @@ const sRegulatoryChannel * regChannels = nvDefaults.tables.regDomains[0].channel
 /*----------------------------------------------------------------------------
    Function Definitions and Documentation
  * -------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len);
-=======
 VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len,v_U16_t table);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-VOS_STATUS wlan_write_to_efs (v_U8_t *pData, v_U16_t data_len,v_U16_t table);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**------------------------------------------------------------------------
   \brief vos_nv_init() - initialize the NV module
   The \a vos_nv_init() initializes the NV module.  This read the binary
@@ -792,14 +523,6 @@ VOS_STATUS vos_nv_init(void)
    return VOS_STATUS_SUCCESS;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-VOS_STATUS vos_nv_open(void)
-{
-    VOS_STATUS status = VOS_STATUS_SUCCESS;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* BEGIN IKJB42MAIN-9117, qjiang1, 04/10/2013 */
 static int device_is_obakem(void)
 {
@@ -842,10 +565,6 @@ VOS_STATUS vos_nv_open(void)
        v_SIZE_t bufSize_reg;
        v_SIZE_t bufSize_cal;
     #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_CONTEXT_t pVosContext= NULL;
     v_SIZE_t bufSize;
     v_SIZE_t nvReadBufSize;
@@ -853,38 +572,17 @@ VOS_STATUS vos_nv_open(void)
     
     /*Get the global context */
     pVosContext = vos_get_global_context(VOS_MODULE_ID_SYS, NULL);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     
     if(pVosContext == NULL)
     {
         return (eHAL_STATUS_FAILURE);
     }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     bufSize = sizeof(nvEFSTable_t);
     status = hdd_request_firmware(WLAN_NV_FILE,
                                   ((VosContextType*)(pVosContext))->pHDDContext,
                                   (v_VOID_t**)&gnvEFSTable, &nvReadBufSize);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if ( (!VOS_IS_STATUS_SUCCESS( status )) || !gnvEFSTable)
-    {
-         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                   "%s: unable to download NV file %s",
-                   __FUNCTION__, WLAN_NV_FILE);
-         return VOS_STATUS_E_RESOURCES;
-    }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 	#ifdef WLAN_NV_OTA_UPGRADE
     bufSize_reg = sizeof(nvEFSTable_reg_t);
     bufSize_cal = sizeof(nvEFSTable_cal_t);
@@ -920,10 +618,6 @@ VOS_STATUS vos_nv_open(void)
                 bufSize_cal, sizeof(nvEFSTable_cal_t), bufSize_reg, sizeof(nvEFSTable_reg_t));
     }
     #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
      /* Copying the read nv data to the globa NV EFS table */
     {
@@ -932,34 +626,12 @@ VOS_STATUS vos_nv_open(void)
         if (NULL == pnvEFSTable)
         {
             VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "%s : failed to allocate memory for NV", __FUNCTION__);
-=======
                       "%s : failed to allocate memory for NV", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                      "%s : failed to allocate memory for NV", __func__);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             return VOS_STATUS_E_NOMEM;
         }
 
         /*Copying the NV defaults */
         vos_mem_copy(&(pnvEFSTable->halnv),&nvDefaults,sizeof(sHalNv));
-<<<<<<< HEAD
-<<<<<<< HEAD
-       
-        if ( nvReadBufSize != bufSize)
-        {
-            pnvEFSTable->nvValidityBitmap = DEFAULT_NV_VALIDITY_BITMAP;
-            VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                      "!!!WARNING: INVALID NV FILE, DRIVER IS USING DEFAULT CAL VALUES %d %d!!!",
-                      nvReadBufSize, bufSize);
-            return (eHAL_STATUS_SUCCESS);
-        }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if ( (!VOS_IS_STATUS_SUCCESS( status )) || !gnvEFSTable)
         {
@@ -1014,10 +686,6 @@ VOS_STATUS vos_nv_open(void)
                return VOS_STATUS_SUCCESS;
            }
        }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
        pnvEFSTable->nvValidityBitmap = gnvEFSTable->nvValidityBitmap;
         /* Copy the valid fields to the NV Global structure */ 
@@ -1028,14 +696,6 @@ VOS_STATUS vos_nv_open(void)
 
                 if(vos_nv_read( VNV_FIELD_IMAGE, (v_VOID_t *)&pnvEFSTable->halnv.fields,
                    NULL, sizeof(sNvFields) ) != VOS_STATUS_SUCCESS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-                   return (eHAL_STATUS_FAILURE);
-            }
-        }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                    goto error;
                 #ifdef WLAN_NV_OTA_UPGRADE
                 if(motoNvOta == VOS_TRUE) {
@@ -1070,25 +730,12 @@ VOS_STATUS vos_nv_open(void)
                return VOS_STATUS_SUCCESS;
            }
        }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         if (vos_nv_getValidity(VNV_RATE_TO_POWER_TABLE, &itemIsValid) == 
              VOS_STATUS_SUCCESS)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_RATE_TO_POWER_TABLE, 
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.pwrOptimum[0],
-                  NULL, sizeof(tRateGroupPwr) * NUM_RF_SUBBANDS ) != VOS_STATUS_SUCCESS)
-               return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 			   #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1104,10 +751,6 @@ VOS_STATUS vos_nv_open(void)
                #ifdef WLAN_NV_OTA_UPGRADE
                    }
                #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
 
@@ -1117,15 +760,6 @@ VOS_STATUS vos_nv_open(void)
     
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_REGULARTORY_DOMAIN_TABLE,
-                (v_VOID_t *)&pnvEFSTable->halnv.tables.regDomains[0],
-                 NULL, sizeof(sRegulatoryDomains) * NUM_REG_DOMAINS ) != VOS_STATUS_SUCCESS)
-                    return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1141,10 +775,6 @@ VOS_STATUS vos_nv_open(void)
                #ifdef WLAN_NV_OTA_UPGRADE
                   }
                #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
 
@@ -1153,15 +783,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_DEFAULT_LOCATION,
-                (v_VOID_t *)&pnvEFSTable->halnv.tables.defaultCountryTable,
-                NULL, sizeof(sDefaultCountry) ) !=  VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1177,10 +798,6 @@ VOS_STATUS vos_nv_open(void)
                #ifdef WLAN_NV_OTA_UPGRADE
                   }
                #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
     
@@ -1189,15 +806,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_TPC_POWER_TABLE, 
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.plutCharacterized[0],
-                  NULL, sizeof(tTpcPowerTable) * NUM_RF_CHANNELS ) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1213,10 +821,6 @@ VOS_STATUS vos_nv_open(void)
                #ifdef WLAN_NV_OTA_UPGRADE
                   }
                #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
     
@@ -1225,15 +829,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_TPC_PDADC_OFFSETS,
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.plutPdadcOffset[0],
-                  NULL, sizeof(tANI_U16) * NUM_RF_CHANNELS ) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1249,10 +844,6 @@ VOS_STATUS vos_nv_open(void)
                #ifdef WLAN_NV_OTA_UPGRADE
                   }
                #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         if (vos_nv_getValidity(VNV_RSSI_CHANNEL_OFFSETS, &itemIsValid) == 
@@ -1260,19 +851,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_RSSI_CHANNEL_OFFSETS,
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.rssiChanOffsets[0],
-                  NULL, sizeof(sRssiChannelOffsets) * 2 ) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-            }
-        }
-    
-        if (vos_nv_getValidity(VNV_RF_CAL_VALUES, &itemIsValid) == 
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1292,25 +870,10 @@ VOS_STATUS vos_nv_open(void)
         }
     
         if (vos_nv_getValidity(VNV_HW_CAL_VALUES, &itemIsValid) == 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          VOS_STATUS_SUCCESS)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_RF_CAL_VALUES, (v_VOID_t *)&pnvEFSTable->halnv
-    .tables.rFCalValues, NULL, sizeof(sRFCalValues) ) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-            }
-        }
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1349,24 +912,11 @@ VOS_STATUS vos_nv_open(void)
               #endif
             }
         }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         if (vos_nv_getValidity(VNV_ANTENNA_PATH_LOSS, &itemIsValid) == 
          VOS_STATUS_SUCCESS)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_ANTENNA_PATH_LOSS,
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.antennaPathLoss[0], NULL, 
-                sizeof(tANI_S16)*NUM_RF_CHANNELS ) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                    if(motoNvOta == VOS_TRUE)
                    {
@@ -1382,10 +932,6 @@ VOS_STATUS vos_nv_open(void)
               #ifdef WLAN_NV_OTA_UPGRADE
                  }
               #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
         if (vos_nv_getValidity(VNV_PACKET_TYPE_POWER_LIMITS, &itemIsValid) == 
@@ -1393,15 +939,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_PACKET_TYPE_POWER_LIMITS, 
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.pktTypePwrLimits[0], NULL, 
-                sizeof(tANI_S16)*NUM_802_11_MODES*NUM_RF_CHANNELS ) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                    if(motoNvOta == VOS_TRUE)
                    {
@@ -1417,10 +954,6 @@ VOS_STATUS vos_nv_open(void)
               #ifdef WLAN_NV_OTA_UPGRADE
                  }
               #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
         }
 
@@ -1429,16 +962,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if(vos_nv_read( VNV_OFDM_CMD_PWR_OFFSET, 
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.ofdmCmdPwrOffset, NULL, 
-                                sizeof(sOfdmCmdPwrOffset)) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1455,10 +978,6 @@ VOS_STATUS vos_nv_open(void)
               #ifdef WLAN_NV_OTA_UPGRADE
                  }
               #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
 
         if (vos_nv_getValidity(VNV_TX_BB_FILTER_MODE, &itemIsValid) == 
@@ -1466,16 +985,6 @@ VOS_STATUS vos_nv_open(void)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-               if(vos_nv_read(VNV_TX_BB_FILTER_MODE, 
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.txbbFilterMode, NULL, 
-                sizeof(sTxBbFilterMode)) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1492,26 +1001,12 @@ VOS_STATUS vos_nv_open(void)
             #ifdef WLAN_NV_OTA_UPGRADE
                }
             #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
         if (vos_nv_getValidity(VNV_TABLE_VIRTUAL_RATE, &itemIsValid) == 
          VOS_STATUS_SUCCESS)
         {
             if (itemIsValid == VOS_TRUE)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-               if(vos_nv_read(VNV_TABLE_VIRTUAL_RATE, 
-                  (v_VOID_t *)&pnvEFSTable->halnv.tables.pwrOptimum_virtualRate, NULL, 
-                sizeof(gnvEFSTable->halnv.tables.pwrOptimum_virtualRate)) != VOS_STATUS_SUCCESS)
-                     return (eHAL_STATUS_FAILURE);
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                #ifdef WLAN_NV_OTA_UPGRADE
                   if(motoNvOta == VOS_TRUE)
                   {
@@ -1528,26 +1023,13 @@ VOS_STATUS vos_nv_open(void)
             #ifdef WLAN_NV_OTA_UPGRADE
                }
             #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         }
     }
 
     return VOS_STATUS_SUCCESS;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 error:
     vos_mem_free(pnvEFSTable);
     return eHAL_STATUS_FAILURE ;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-error:
-    vos_mem_free(pnvEFSTable);
-    return eHAL_STATUS_FAILURE ;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 }
 
 VOS_STATUS vos_nv_close(void)
@@ -1560,16 +1042,6 @@ VOS_STATUS vos_nv_close(void)
     if ( !VOS_IS_STATUS_SUCCESS( status ))
     {
         VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         "%s : vos_open failed\n",__func__);
-        return VOS_STATUS_E_FAILURE;
-    }
-    vos_mem_free(pnvEFSTable);
-    gnvEFSTable=NULL;
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                          "%s : vos_close failed\n",__func__);
         return VOS_STATUS_E_FAILURE;
     }
@@ -1608,10 +1080,6 @@ VOS_STATUS vos_nv_close(void)
     gnvCalTable=NULL;
 #endif
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     return VOS_STATUS_SUCCESS;
 }
 /**------------------------------------------------------------------------
@@ -1632,18 +1100,9 @@ VOS_STATUS vos_nv_getRegDomainFromCountryCode( v_REGDOMAIN_t *pRegDomain,
       const v_COUNTRYCODE_t countryCode )
 {
    int i;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    v_CONTEXT_t pVosContext = NULL;
    hdd_context_t *pHddCtx = NULL;
    struct wiphy *wiphy = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-   v_CONTEXT_t pVosContext = NULL;
-   hdd_context_t *pHddCtx = NULL;
-   struct wiphy *wiphy = NULL;
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // sanity checks
    if (NULL == pRegDomain)
    {
@@ -1665,11 +1124,6 @@ VOS_STATUS vos_nv_getRegDomainFromCountryCode( v_REGDOMAIN_t *pRegDomain,
             ("Reg domain table is empty\r\n") );
       return VOS_STATUS_E_EMPTY;
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    /* If CRDA regulatory settings is valid, i.e. crda is enabled
       and reg_notifier is called back.
       Intercept here and redirect to the Reg domain table's CRDA
@@ -1729,10 +1183,6 @@ VOS_STATUS vos_nv_getRegDomainFromCountryCode( v_REGDOMAIN_t *pRegDomain,
        }
    }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    // iterate the country info table until end of table or the country code
    // is found
    for (i = 0; i < countryInfoTable.countryCount &&
@@ -1883,15 +1333,7 @@ VOS_STATUS vos_nv_readMultiMacAddress( v_U8_t *pMacAddress,
       (NULL == pMacAddress))
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-          " Invalid Parameter from NV Client macCount %d, pMacAddress 0x%x",
-=======
           " Invalid Parameter from NV Client macCount %d, pMacAddress %p",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-          " Invalid Parameter from NV Client macCount %d, pMacAddress %p",
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
           macCount, pMacAddress);
    }
 
@@ -1929,13 +1371,6 @@ VOS_STATUS vos_nv_readMultiMacAddress( v_U8_t *pMacAddress,
           VOS_STATUS_E_FAILURE - unknown error
   \sa
   -------------------------------------------------------------------------*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifndef WLAN_FTM_STUB
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 VOS_STATUS vos_nv_setValidity( VNV_TYPE type, v_BOOL_t itemIsValid )
 {
@@ -1947,15 +1382,7 @@ VOS_STATUS vos_nv_setValidity( VNV_TYPE type, v_BOOL_t itemIsValid )
    if (VNV_TYPE_COUNT <= type)
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 ("%s: invalid type=%d"), __FUNCTION__, type );
-=======
                  ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_INVAL;
    }
    // read the validity bitmap
@@ -1976,15 +1403,7 @@ VOS_STATUS vos_nv_setValidity( VNV_TYPE type, v_BOOL_t itemIsValid )
        if (newNvValidityBitmap != lastNvValidityBitmap)
        {
            gnvEFSTable->nvValidityBitmap = newNvValidityBitmap;
-<<<<<<< HEAD
-<<<<<<< HEAD
-           status = wlan_write_to_efs((v_U8_t*)gnvEFSTable,sizeof(nvEFSTable_t));
-=======
            status = wlan_write_to_efs((v_U8_t*)gnvEFSTable,sizeof(nvEFSTable_t), 0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-           status = wlan_write_to_efs((v_U8_t*)gnvEFSTable,sizeof(nvEFSTable_t), 0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            if (! VOS_IS_STATUS_SUCCESS(status)) {
                VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, ("vos_nv_write_to_efs failed!!!\r\n"));
                status = VOS_STATUS_E_FAULT;
@@ -1994,13 +1413,6 @@ VOS_STATUS vos_nv_setValidity( VNV_TYPE type, v_BOOL_t itemIsValid )
 
    return status;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**------------------------------------------------------------------------
   \brief vos_nv_getValidity() - get the validity of an NV item.
   The \a vos_nv_getValidity() indicates if an NV item is valid.  The
@@ -2022,15 +1434,7 @@ VOS_STATUS vos_nv_getValidity( VNV_TYPE type, v_BOOL_t *pItemIsValid )
    if (VNV_TYPE_COUNT <= type)
    {
       VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 ("%s: invalid type=%d"), __FUNCTION__, type );
-=======
                  ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return VOS_STATUS_E_INVAL;
    }
    *pItemIsValid = (v_BOOL_t)((nvValidityBitmap >> type) & 1);
@@ -2066,15 +1470,7 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
     if (VNV_TYPE_COUNT <= type)
     {
        VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 ("%s: invalid type=%d"), __FUNCTION__, type );
-=======
                  ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                 ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_E_INVAL;
     }
     if (NULL == outputVoidBuffer)
@@ -2186,21 +1582,9 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
                memcpy(outputVoidBuffer,&gnvEFSTable->halnv.tables.rssiChanOffsets[0],bufferSize);
            }
            break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-       case VNV_RF_CAL_VALUES:
-
-           itemSize = sizeof(gnvEFSTable->halnv.tables.rFCalValues);
-=======
        case VNV_HW_CAL_VALUES:
 
            itemSize = sizeof(gnvEFSTable->halnv.tables.hwCalValues);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-       case VNV_HW_CAL_VALUES:
-
-           itemSize = sizeof(gnvEFSTable->halnv.tables.hwCalValues);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
            if(bufferSize != itemSize) {
 
@@ -2210,12 +1594,6 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
                status = VOS_STATUS_E_INVAL;
            }
            else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-               memcpy(outputVoidBuffer,&gnvEFSTable->halnv.tables.rFCalValues,bufferSize);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                memcpy(outputVoidBuffer,&gnvEFSTable->halnv.tables.hwCalValues,bufferSize);
            }
            break;
@@ -2232,10 +1610,6 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
            }
            else {
                memcpy(outputVoidBuffer,&gnvEFSTable->halnv.tables.fwConfig,bufferSize);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            }
            break;
        case VNV_ANTENNA_PATH_LOSS:
@@ -2259,15 +1633,7 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
                status = VOS_STATUS_E_INVAL;
            }
            else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-               memcpy(outputVoidBuffer,&gnvEFSTable->halnv.tables.pktTypePwrLimits[0][0],bufferSize);
-=======
                memcpy(outputVoidBuffer,gnvEFSTable->halnv.tables.pktTypePwrLimits,bufferSize);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-               memcpy(outputVoidBuffer,gnvEFSTable->halnv.tables.pktTypePwrLimits,bufferSize);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
            }
            break;
        case VNV_OFDM_CMD_PWR_OFFSET:
@@ -2295,26 +1661,6 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
            }
            break;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-       case VNV_FREQUENCY_FOR_1_3V_SUPPLY:
-           itemSize = sizeof(gnvEFSTable->halnv.tables.freqFor1p3VSupply);
-           if(bufferSize != itemSize) {
-               VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-                ("type = %d buffer size=%d is less than data size=%d\r\n"),type, bufferSize,
-                 itemSize);
-               status = VOS_STATUS_E_INVAL;
-           }
-           else {
-               memcpy(outputVoidBuffer,&gnvEFSTable->halnv.tables.freqFor1p3VSupply,bufferSize);
-           }
-           break;
-#endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
        case VNV_TABLE_VIRTUAL_RATE:
            itemSize = sizeof(gnvEFSTable->halnv.tables.pwrOptimum_virtualRate);
@@ -2334,13 +1680,6 @@ VOS_STATUS vos_nv_read( VNV_TYPE type, v_VOID_t *outputVoidBuffer,
    }
    return status;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifndef WLAN_FTM_STUB
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /**------------------------------------------------------------------------
   \brief vos_nv_write() - write to a NV item from an input buffer
@@ -2361,12 +1700,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
 {
     VOS_STATUS status = VOS_STATUS_SUCCESS;
     v_SIZE_t itemSize;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef WLAN_NV_OTA_UPGRADE
     int nv_type = 0;
     int three_files = 0;
@@ -2396,23 +1729,11 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
     }
 
 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     // sanity check
     if (VNV_TYPE_COUNT <= type)
     {
        VOS_TRACE( VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  ("%s: invalid type=%d"), __FUNCTION__, type );
-=======
                   ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                  ("%s: invalid type=%d"), __func__, type );
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
        return VOS_STATUS_E_INVAL;
     }
     if (NULL == inputVoidBuffer)
@@ -2439,11 +1760,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.fields,inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2452,10 +1768,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvCalTable->fields,inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         case VNV_RATE_TO_POWER_TABLE:
@@ -2468,11 +1780,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.pwrOptimum[0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2480,10 +1787,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvCalTable->pwrOptimum[0],inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         case VNV_REGULARTORY_DOMAIN_TABLE:
@@ -2496,11 +1799,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.regDomains[0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2508,10 +1806,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvRegTable->regDomains[0],inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         case VNV_DEFAULT_LOCATION:
@@ -2524,12 +1818,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.defaultCountryTable,inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            }
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2538,10 +1826,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                     }
                 #endif
 			}
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             break;
         case VNV_TPC_POWER_TABLE:
             itemSize = sizeof(gnvEFSTable->halnv.tables.plutCharacterized);
@@ -2553,11 +1837,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.plutCharacterized[0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2565,10 +1844,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvCalTable->plutCharacterized[0],inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         case VNV_TPC_PDADC_OFFSETS:
@@ -2581,11 +1856,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.plutPdadcOffset[0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2593,10 +1863,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvCalTable->plutPdadcOffset[0],inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
          case VNV_RSSI_CHANNEL_OFFSETS:
@@ -2612,16 +1878,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.rssiChanOffsets[0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            }
-            break;
-         case VNV_RF_CAL_VALUES:
-
-            itemSize = sizeof(gnvEFSTable->halnv.tables.rFCalValues);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2634,10 +1890,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
          case VNV_HW_CAL_VALUES:
 
             itemSize = sizeof(gnvEFSTable->halnv.tables.hwCalValues);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
             if(bufferSize != itemSize) {
 
@@ -2647,12 +1899,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                 status = VOS_STATUS_E_INVAL;
             }
             else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                memcpy(&gnvEFSTable->halnv.tables.rFCalValues,inputVoidBuffer,bufferSize);
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 memcpy(&gnvEFSTable->halnv.tables.hwCalValues,inputVoidBuffer,bufferSize);
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
@@ -2683,10 +1929,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvCalTable->fwConfig,inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
         case VNV_ANTENNA_PATH_LOSS:
@@ -2699,11 +1941,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.antennaPathLoss[0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                     if(three_files == 1)
                     {
@@ -2711,10 +1948,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                         memcpy(&gnvCalTable->antennaPathLoss[0],inputVoidBuffer,bufferSize);
                     }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -2728,11 +1961,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.pktTypePwrLimits[0][0],inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                 if(three_files == 1)
                 {
@@ -2740,10 +1968,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                     memcpy(&gnvCalTable->pktTypePwrLimits[0][0],inputVoidBuffer,bufferSize);
                 }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -2757,11 +1981,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.ofdmCmdPwrOffset,inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                 if(three_files == 1)
                 {
@@ -2769,10 +1988,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                     memcpy(&gnvCalTable->ofdmCmdPwrOffset,inputVoidBuffer,bufferSize);
                 }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -2786,28 +2001,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.txbbFilterMode,inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            }
-            break;
-            
-#ifdef FEATURE_WLAN_NON_INTEGRATED_SOC
-        case VNV_FREQUENCY_FOR_1_3V_SUPPLY:
-            itemSize = sizeof(gnvEFSTable->halnv.tables.freqFor1p3VSupply);
-            if(bufferSize != itemSize) {
-                VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-                 ("type = %d buffer size=%d is less than data size=%d\r\n"),type, bufferSize,
-                  itemSize);
-                status = VOS_STATUS_E_INVAL;
-            }
-            else {
-                memcpy(&gnvEFSTable->halnv.tables.freqFor1p3VSupply,inputVoidBuffer,bufferSize);
-            }
-            break;
-#endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                 if(three_files == 1)
                 {
@@ -2818,10 +2011,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             break;
             
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
         case VNV_TABLE_VIRTUAL_RATE:
             itemSize = sizeof(gnvEFSTable->halnv.tables.pwrOptimum_virtualRate);
@@ -2833,11 +2022,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
             }
             else {
                 memcpy(&gnvEFSTable->halnv.tables.pwrOptimum_virtualRate,inputVoidBuffer,bufferSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
                 #ifdef WLAN_NV_OTA_UPGRADE
                 if(three_files == 1)
                 {
@@ -2845,10 +2029,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
                     memcpy(&gnvCalTable->pwrOptimum_virtualRate,inputVoidBuffer,bufferSize);
                 }
                 #endif
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             }
             break;
 
@@ -2863,30 +2043,12 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
           VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, ("vos_nv_setValidity failed!!!\r\n"));
           status = VOS_STATUS_E_FAULT;
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-      status = wlan_write_to_efs((v_U8_t*)gnvEFSTable,sizeof(nvEFSTable_t));
-=======
       status = wlan_write_to_efs((v_U8_t*)gnvEFSTable,sizeof(nvEFSTable_t),0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-      status = wlan_write_to_efs((v_U8_t*)gnvEFSTable,sizeof(nvEFSTable_t),0);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
       if (! VOS_IS_STATUS_SUCCESS(status)) {
           VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR, ("vos_nv_write_to_efs failed!!!\r\n"));
           status = VOS_STATUS_E_FAULT;
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-   }
-   return status;
-}
-#endif
-  
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 	  
       #ifdef WLAN_NV_OTA_UPGRADE
       if(three_files == 1)
@@ -2917,10 +2079,6 @@ VOS_STATUS vos_nv_write( VNV_TYPE type, v_VOID_t *inputVoidBuffer,
    return status;
 }
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**------------------------------------------------------------------------
   \brief vos_nv_getChannelListWithPower() - function to return the list of
           supported channels with the power limit info too.
@@ -2955,13 +2113,6 @@ VOS_STATUS vos_nv_getChannelListWithPower(tChannelListWithPower *channels20MHz /
                 channels20MHz[count++].pwr  = regChannels[i].pwrLimit;
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         for( i = RF_CHAN_36; i <= RF_CHAN_165; i++ )
         {
             if( regChannels[i].enabled )
@@ -2970,26 +2121,12 @@ VOS_STATUS vos_nv_getChannelListWithPower(tChannelListWithPower *channels20MHz /
                 channels20MHz[count++].pwr  = regChannels[i].pwrLimit;
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         *num20MHzChannelsFound = (tANI_U8)count;
     }
 
     if( channels40MHz && num40MHzChannelsFound )
     {
         count = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         //center channels for 2.4 Ghz 40 MHz channels
         for( i = RF_CHAN_BOND_3; i <= RF_CHAN_BOND_11; i++ )
         {
@@ -3010,13 +2147,6 @@ VOS_STATUS vos_nv_getChannelListWithPower(tChannelListWithPower *channels20MHz /
                 channels40MHz[count++].pwr  = regChannels[i].pwrLimit;
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
         *num40MHzChannelsFound = (tANI_U8)count;
     }
     return (status);
@@ -3058,24 +2188,10 @@ VOS_STATUS vos_nv_getSupportedChannels( v_U8_t *p20MhzChannels, int *pNum20MhzCh
             {
                 p20MhzChannels[count++] = rfChannels[i].channelNum;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             for( i = RF_CHAN_36; i <= RF_CHAN_165; i++ )
             {
                 p20MhzChannels[count++] = rfChannels[i].channelNum;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
             status = VOS_STATUS_SUCCESS;
         }
         *pNum20MhzChannels = count;
@@ -3093,24 +2209,11 @@ VOS_STATUS vos_nv_getSupportedChannels( v_U8_t *p20MhzChannels, int *pNum20MhzCh
 VOS_STATUS vos_nv_readDefaultCountryTable( uNvTables *tableData )
 {
    
-<<<<<<< HEAD
-<<<<<<< HEAD
-   VOS_STATUS status;
-
-   status = vos_nv_read( VNV_DEFAULT_LOCATION, tableData, NULL, sizeof(sDefaultCountry) );
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    VOS_STATUS status = VOS_STATUS_SUCCESS;
    memcpy(&tableData->defaultCountryTable, &pnvEFSTable->halnv.tables.defaultCountryTable, sizeof(sDefaultCountry));
    pr_info("DefaultCountry is %c%c\n",
             tableData->defaultCountryTable.countryCode[0],
             tableData->defaultCountryTable.countryCode[1]);
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return status;
 }
 
@@ -3131,13 +2234,6 @@ VOS_STATUS vos_nv_getNVBuffer(v_VOID_t **pNvBuffer,v_SIZE_t *pSize)
    return VOS_STATUS_SUCCESS;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef FEATURE_WLAN_INTEGRATED_SOC
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**------------------------------------------------------------------------
   \brief vos_nv_setRegDomain - 
   \param clientCtxt  - Client Context, Not used for PRIMA
@@ -3147,36 +2243,17 @@ VOS_STATUS vos_nv_getNVBuffer(v_VOID_t **pNvBuffer,v_SIZE_t *pSize)
   -------------------------------------------------------------------------*/
 VOS_STATUS vos_nv_setRegDomain(void * clientCtxt, v_REGDOMAIN_t regId)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-   /* Client Context Argumant not used for PRIMA */
-   if(regId >= REGDOMAIN_COUNT)
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     v_CONTEXT_t pVosContext = NULL;
     hdd_context_t *pHddCtx = NULL;
     struct wiphy *wiphy = NULL;
    /* Client Context Argumant not used for PRIMA */
    if (regId >= REGDOMAIN_COUNT)
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
                 "VOS set reg domain, invalid REG domain ID %d", regId);
       return VOS_STATUS_E_INVAL;
    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   /* Set correct channel information based on REG Domain */
-   regChannels = pnvEFSTable->halnv.tables.regDomains[regId].channels;
-
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    pVosContext = vos_get_global_context(VOS_MODULE_ID_SYS, NULL);
    if (NULL != pVosContext)
       pHddCtx = vos_get_context(VOS_MODULE_ID_HDD, pVosContext);
@@ -3194,10 +2271,6 @@ VOS_STATUS vos_nv_setRegDomain(void * clientCtxt, v_REGDOMAIN_t regId)
       wiphy = pHddCtx->wiphy;
       regulatory_hint(wiphy, "00");
    }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
    return VOS_STATUS_SUCCESS;
 }
 
@@ -3230,26 +2303,12 @@ eNVChannelEnabledType vos_nv_getChannelEnabledState
    if(INVALID_RF_CHANNEL == channelEnum)
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_ERROR,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "vos_nv_getChannelEnabledState, invalid cahnnel %d", rfChannel);
-=======
                 "vos_nv_getChannelEnabledState, invalid channel %d", rfChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-                "vos_nv_getChannelEnabledState, invalid channel %d", rfChannel);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
       return NV_CHANNEL_INVALID;
    }
 
    return regChannels[channelEnum].enabled;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* FEATURE_WLAN_NON_INTEGRATED_SOC */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /******************************************************************
  Add CRDA regulatory support
@@ -3915,7 +2974,3 @@ int wlan_hdd_crda_reg_notifier(struct wiphy *wiphy,
     }
 return 0;
 }
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release

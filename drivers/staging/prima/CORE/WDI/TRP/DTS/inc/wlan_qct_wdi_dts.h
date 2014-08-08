@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -50,18 +41,9 @@
 
 #ifndef __WLAN_QCT_DTS_H
 #define __WLAN_QCT_DTS_H
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 #include "wlan_qct_wdi.h"
 
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-
-#include "wlan_qct_wdi.h"
-
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /**=========================================================================
  *     
  *       \file  wlan_qct_wdi_dts.h
@@ -157,11 +139,6 @@ typedef struct {
    void*        pUserData;
 } WDTS_SetPowerStateCbInfoType;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* Tx/Rx stats function
  * This function should be invoked to fetch the current stats
   * Parameters:
@@ -192,10 +169,6 @@ void WDTS_ActivateTrafficStats(void);
  */
 void WDTS_ClearTrafficStats(void);
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 /* DTS open  function. 
  * On open the transport device should initialize itself.
  * Parameters:
@@ -265,30 +238,14 @@ wpt_status WDTS_SetPowerState(void *pContext, WDTS_PowerStateType powerState,
  * User may request to display DXE channel snapshot
  * Or if host driver detects any abnormal stcuk may display
  * Parameters:
-<<<<<<< HEAD
-<<<<<<< HEAD
- *  displaySnapshot : Dispaly DXE snapshot option
-=======
  *  displaySnapshot : Display DXE snapshot option
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
- *  displaySnapshot : Display DXE snapshot option
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  *  enableStallDetect : Enable stall detect feature
                         This feature will take effect to data performance
                         Not integrate till fully verification
  * Return Value: NONE
  *
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-void WDTS_ChannelDebug(wpt_boolean dispalySnapshot, wpt_boolean toggleStallDetect);
-=======
 void WDTS_ChannelDebug(wpt_boolean displaySnapshot, wpt_boolean toggleStallDetect);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-void WDTS_ChannelDebug(wpt_boolean displaySnapshot, wpt_boolean toggleStallDetect);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 /* DTS Stop function. 
  * Stop Transport driver, ie DXE, SDIO

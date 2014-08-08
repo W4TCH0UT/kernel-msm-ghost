@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -119,15 +110,7 @@
 
 
 /// Start of Sirius/Host message types
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define WNI_HOST_MSG_START             0x1100
-=======
 #define WNI_HOST_MSG_START             0x1400
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-#define WNI_HOST_MSG_START             0x1400
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 enum eWniMsgTypes
 {
@@ -177,43 +160,17 @@ enum eWniMsgTypes
     eWNI_SME_STOP_BSS_REQ,
     eWNI_SME_STOP_BSS_RSP,
     eWNI_SME_DEL_BA_PEER_IND,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined( FEATURE_WLAN_INTEGRATED_SOC )
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_DEFINE_QOS_REQ,
     eWNI_SME_DEFINE_QOS_RSP,
     eWNI_SME_DELETE_QOS_REQ,
     eWNI_SME_DELETE_QOS_RSP,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
     eWNI_SME_PROMISCUOUS_MODE_REQ,
     eWNI_SME_PROMISCUOUS_MODE_RSP,
-#if defined( FEATURE_WLAN_INTEGRATED_SOC )
-=======
-    eWNI_SME_PROMISCUOUS_MODE_REQ,
-    eWNI_SME_PROMISCUOUS_MODE_RSP,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eWNI_SME_PROMISCUOUS_MODE_REQ,
-    eWNI_SME_PROMISCUOUS_MODE_RSP,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_LINK_TEST_START_REQ,
     eWNI_SME_LINK_TEST_START_RSP,
     eWNI_SME_LINK_TEST_STOP_REQ,
     eWNI_SME_LINK_TEST_STOP_RSP,
     eWNI_SME_LINK_TEST_REPORT_IND,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_NEIGHBOR_BSS_IND,
     eWNI_SME_MEASUREMENT_REQ,
     eWNI_SME_MEASUREMENT_RSP,
@@ -221,13 +178,6 @@ enum eWniMsgTypes
     eWNI_SME_SET_WDS_INFO_REQ,
     eWNI_SME_SET_WDS_INFO_RSP,
     eWNI_SME_WDS_INFO_IND,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined( FEATURE_WLAN_INTEGRATED_SOC )
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_SET_POWER_REQ,
     eWNI_SME_SET_POWER_RSP,
     eWNI_SME_CLIENT_SIDE_LOAD_BALANCE_REQ,
@@ -237,13 +187,6 @@ enum eWniMsgTypes
     eWNI_SME_SET_PROPRIETARY_IE_REQ,
     eWNI_SME_SET_PROPRIETARY_IE_RSP, // #endif
     eWNI_SME_DISCARD_SKB_NTF,  // Used to cleanup SKBs by HDD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_DEAUTH_CNF,
     eWNI_SME_MIC_FAILURE_IND,
     eWNI_SME_ADDTS_REQ,
@@ -281,17 +224,8 @@ enum eWniMsgTypes
     eWNI_SME_GET_STATISTICS_REQ,
     eWNI_SME_GET_STATISTICS_RSP,
     eWNI_SME_GET_RSSI_REQ,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_SOFTAP_FEATURE
-=======
     eWNI_SME_GET_ROAM_RSSI_REQ,
     eWNI_SME_GET_ROAM_RSSI_RSP,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eWNI_SME_GET_ROAM_RSSI_REQ,
-    eWNI_SME_GET_ROAM_RSSI_RSP,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_GET_ASSOC_STAS_REQ,
     eWNI_SME_TKIP_CNTR_MEAS_REQ,
     eWNI_SME_UPDATE_APWPSIE_REQ,
@@ -300,16 +234,7 @@ enum eWniMsgTypes
     eWNI_SME_SET_APWPARSNIEs_REQ,
     eWNI_SME_UPPER_LAYER_ASSOC_CNF,
     eWNI_SME_HIDE_SSID_REQ,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-#ifdef WLAN_FEATURE_P2P
-=======
     eWNI_SME_CHNG_MCC_BEACON_INTERVAL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eWNI_SME_CHNG_MCC_BEACON_INTERVAL,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_REMAIN_ON_CHANNEL_REQ,
     eWNI_SME_REMAIN_ON_CHN_IND,
     eWNI_SME_REMAIN_ON_CHN_RSP,
@@ -319,15 +244,7 @@ enum eWniMsgTypes
     eWNI_SME_ACTION_FRAME_SEND_CNF,
     eWNI_SME_ABORT_REMAIN_ON_CHAN_IND,
     eWNI_SME_UPDATE_NOA,
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif
-=======
     eWNI_SME_CLEAR_DFS_CHANNEL_LIST,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eWNI_SME_CLEAR_DFS_CHANNEL_LIST,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_PRE_CHANNEL_SWITCH_FULL_POWER,
     //General Power Save Messages
     eWNI_PMC_MSG_TYPES_BEGIN,
@@ -367,14 +284,6 @@ enum eWniMsgTypes
     eWNI_PMC_PACKET_COALESCING_FILTER_MATCH_COUNT_RSP,
 #endif // WLAN_FEATURE_PACKET_FILTERING
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eWNI_PMC_MSG_TYPES_END,
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #if defined WLAN_FEATURE_VOWIFI
     eWNI_SME_RRM_MSG_TYPE_BEGIN,
 
@@ -383,14 +292,6 @@ enum eWniMsgTypes
     eWNI_SME_BEACON_REPORT_REQ_IND,
     eWNI_SME_BEACON_REPORT_RESP_XMIT_IND,
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    eWNI_SME_RRM_MSG_TYPE_END,
-
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #endif
     eWNI_SME_ADD_STA_SELF_REQ,
     eWNI_SME_ADD_STA_SELF_RSP,
@@ -409,17 +310,7 @@ enum eWniMsgTypes
     eWNI_SME_CCX_ADJACENT_AP_REPORT,
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_P2P
     eWNI_SME_REGISTER_MGMT_FRAME_REQ,
-#endif
-=======
-    eWNI_SME_REGISTER_MGMT_FRAME_REQ,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-    eWNI_SME_REGISTER_MGMT_FRAME_REQ,
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
     eWNI_SME_COEX_IND,
 
@@ -437,26 +328,12 @@ enum eWniMsgTypes
 
     eWNI_SME_BTAMP_LOG_LINK_IND,//to serialize the create/accpet LL req from HCI
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#ifdef WLAN_FEATURE_GTK_OFFLOAD
-    eWNI_PMC_GTK_OFFLOAD_GETINFO_RSP,
-#endif // WLAN_FEATURE_GTK_OFFLOAD
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 #ifdef WLAN_WAKEUP_EVENTS
     eWNI_SME_WAKE_REASON_IND,
 #endif // WLAN_WAKEUP_EVENTS
     eWNI_SME_EXCLUDE_UNENCRYPTED,
     eWNI_SME_RSSI_IND, //RSSI indication from TL to be serialized on MC thread
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 #ifdef FEATURE_WLAN_TDLS
     eWNI_SME_TDLS_SEND_MGMT_REQ,    
     eWNI_SME_TDLS_SEND_MGMT_RSP,    
@@ -494,10 +371,6 @@ enum eWniMsgTypes
 #endif // WLAN_FEATURE_GTK_OFFLOAD
     eWNI_SME_CANDIDATE_FOUND_IND, //ROAM candidate indication from FW
     eWNI_SME_SET_V6_MC_FILTER, // IKJB42MAIN-1244, Motorola, a19091
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
     eWNI_SME_MSG_TYPES_END
 };
 
@@ -552,26 +425,12 @@ enum eWniMsgTypes
 /*                                   excluding variable data length    */
 /*---------------------------------------------------------------------*/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined( FEATURE_WLAN_INTEGRATED_SOC )
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 // Parameter update indication
 #define WNI_CFG_PARAM_UPDATE_IND_PID   0
 
 #define WNI_CFG_PARAM_UPDATE_IND_NUM   1
 #define WNI_CFG_PARAM_UPDATE_IND_LEN   (WNI_CFG_MB_HDR_LEN + \
                                        (WNI_CFG_PARAM_UPDATE_IND_NUM << 2))
-<<<<<<< HEAD
-<<<<<<< HEAD
-#endif /* FEATURE_WLAN_INTEGRATED_SOC */
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 
 // Configuration download request
 #define WNI_CFG_DNLD_REQ_NUM           0

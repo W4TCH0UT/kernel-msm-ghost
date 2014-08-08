@@ -1,9 +1,4 @@
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -24,10 +19,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 /*
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
  * Copyright (c) 2012, The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
@@ -60,23 +51,10 @@
 #include <wlan_hdd_includes.h>
 #include <vos_trace.h>
 // Global variables
-<<<<<<< HEAD
-<<<<<<< HEAD
-static struct hdd_context_s *pHddCtx = NULL;
-
-static int gWiFiChannel = 0;  /* WiFi associated channel 1-13, or 0 (none) */
-static int gAmpChannel = 0;   /* AMP associated channel 1-13, or 0 (none) */
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static struct hdd_context_s *pHddCtx;
 
 static int gWiFiChannel;  /* WiFi associated channel 1-13, or 0 (none) */
 static int gAmpChannel;   /* AMP associated channel 1-13, or 0 (none) */
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 static int gBtcDriverMode = WLAN_HDD_INFRA_STATION;  /* Driver mode in BTC */
 
 
@@ -229,14 +207,7 @@ void send_btc_nlink_msg (int type, int dest_pid)
       default:
          VOS_TRACE( VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR, 
             "BTC: Attempt to send unknown nlink message %d\n", type);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
          kfree_skb(skb);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
-         kfree_skb(skb);
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
          return;
    }
    if(dest_pid == 0)

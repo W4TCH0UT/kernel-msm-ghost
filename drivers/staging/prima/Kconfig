@@ -23,11 +23,6 @@ config PRIMA_WLAN_OKC
 	bool "Enable the Prima WLAN Opportunistic Key Caching feature"
 	default n
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 config PRIMA_WLAN_11AC_HIGH_TP
 	bool "Enable the Prima WLAN 802.11ac High Throughput option (depends upon kernel support)"
 	default n
@@ -40,8 +35,4 @@ config QCOM_TDLS
 	bool "Enable TDLS feature"
 	default y
 
-<<<<<<< HEAD
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
-=======
->>>>>>> 1eaa4f9... prima: import from Ghost KK mr2 source release
 endif # PRIMA_WLAN
