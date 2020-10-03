@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Product-Recommend",
     "version": "0.0.1",
-    "author": "Kalpaj Agrawalla [TEAM - 7]",
+    "author": "Pratik Jain #7",
     "description": "DELL Hackathon - Extension",
     "browser_action": {
         "default_title": "Product-Recommend"
